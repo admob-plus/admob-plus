@@ -7,9 +7,31 @@
   "devDependencies": {
     "husky": "^0.14.3",
     "lerna": "^3.0.0-beta.21",
-    "lint-staged": "^7.2.0"
+    "lint-staged": "^7.2.0",
+    "remark-cli": "^5.0.0",
+    "remark-lint-are-links-valid-duplicate": "^0.2.2",
+    "remark-lint-heading-whitespace": "^1.0.0",
+    "remark-lint-no-empty-sections": "^2.0.0",
+    "remark-lint-no-trailing-spaces": "^2.0.0",
+    "remark-preset-lint-consistent": "^2.0.2",
+    "remark-preset-lint-markdown-style-guide": "^2.1.2",
+    "remark-preset-lint-recommended": "^3.0.2"
   },
-  "lint-staged": {},
+  "lint-staged": {
+    "*.md": [
+      "remark --no-stdout"
+    ]
+  },
+  "remarkConfig": {
+    "plugins": [
+      "remark-preset-lint-recommended",
+      "remark-preset-lint-consistent",
+      "remark-preset-lint-markdown-style-guide",
+      "remark-lint-are-links-valid-duplicate",
+      "remark-lint-heading-whitespace",
+      "remark-lint-no-empty-sections"
+    ]
+  },
   "workspaces": [
     "packages/*"
   ]

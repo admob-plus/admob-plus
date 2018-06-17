@@ -1,6 +1,7 @@
 # admob-suite
 
-This will be successor of [cordova-plugin-admob-free](https://github.com/ratson/cordova-plugin-admob-free) with cleaner API and using modern tools.
+This will be successor of [cordova-plugin-admob-free](https://github.com/ratson/cordova-plugin-admob-free)
+with cleaner API and using modern tools.
 
 ## Contributing
 
@@ -9,7 +10,7 @@ This will be successor of [cordova-plugin-admob-free](https://github.com/ratson/
 
 ## Roadmap
 
-- [ ] Setup lerna
+- [x] Setup lerna
 - [ ] Integrate CI
 - [ ] Build with TypeScript
 - [ ] Promise API
