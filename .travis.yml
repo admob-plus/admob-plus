@@ -1,50 +1,29 @@
 sudo: false
+language: node_js
+node_js: 10
+
+cache:
+  yarn: true
+  directories:
+    - node_modules
+
 matrix:
   include:
-  - env: PLATFORM=ios-9.3
+  - env: PLATFORM=ios-11.4
     os: osx
-    osx_image: xcode7.3
-    language: node_js
-    node_js: '4.2'
-  - env: PLATFORM=ios-10.0
-    os: osx
-    osx_image: xcode7.3
-    language: node_js
-    node_js: '4.2'
-  - env: PLATFORM=android-4.4
-    os: linux
-    language: android
-    jdk: oraclejdk8
+    osx_image: xcode9.4
+  - language: android
     android:
       components:
-      - tools
-      - build-tools-26.0.2
-  - env: PLATFORM=android-5.1
-    os: linux
-    language: android
-    jdk: oraclejdk8
-    android:
-      components:
-      - tools
-      - build-tools-26.0.2
-  - env: PLATFORM=android-6.0
-    os: linux
-    language: android
-    jdk: oraclejdk8
-    android:
-      components:
-      - tools
-      - build-tools-26.0.2
-  - env: PLATFORM=android-7.0
-    os: linux
-    language: android
-    jdk: oraclejdk8
-    android:
-      components:
-      - tools
-      - build-tools-26.0.2
+        - tools
+        - platform-tools
+        - tools # required to get the newest Android SDK tools.
+        - build-tools-26.0.2
+        - android-26
+
 install:
-  - npm install
-  - npm install @commitlint/travis-cli
+  - yarn
+  - yarn add -D @commitlint/travis-cli
+
 script:
   - commitlint-travis
