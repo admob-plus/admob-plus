@@ -11,7 +11,7 @@ with cleaner API and using modern tools.
 ## Roadmap
 
 - [x] Setup lerna
-- [ ] Integrate CI
+- [x] Integrate CI
 - [ ] Build with TypeScript
 - [ ] Promise API
 - [ ] Swift support for iOS
