@@ -20,6 +20,8 @@ matrix:
         - tools # required to get the newest Android SDK tools.
         - build-tools-26.0.2
         - android-26
+    before_install:
+      - nvm install 10
 
 before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.7.0
@@ -27,7 +29,7 @@ before_install:
 
 install:
   - yarn
-  - yarn add -D @commitlint/travis-cli
+  - yarn global add @commitlint/travis-cli
 
 script:
   - commitlint-travis
