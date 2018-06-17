@@ -1,0 +1,14 @@
+{
+  "name": "cordova-plugin-admob-suite",
+  "version": "0.0.0",
+  "description": "Modern Cordova Plugin for Google AdMob",
+  "scripts": {
+    "prepare": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^2.9.2"
+  },
+  "author": "Ratson",
+  "license": "MIT",
+  "repository": "admob-suite/admob-suite"
+}
