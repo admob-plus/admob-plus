@@ -1,6 +1,4 @@
 sudo: false
-language: node_js
-node_js: 10
 
 cache:
   yarn: true
@@ -20,10 +18,9 @@ matrix:
         - tools # required to get the newest Android SDK tools.
         - build-tools-26.0.2
         - android-26
-    before_install:
-      - nvm install 10
 
 before_install:
+  - nvm install 10
   - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.7.0
   - export PATH=$HOME/.yarn/bin:$PATH
 
