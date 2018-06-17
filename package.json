@@ -1,9 +1,15 @@
 {
   "name": "admob-suite-monorepo",
   "private": true,
-  "devDependencies": {
-    "lerna": "^3.0.0-beta.21"
+  "scripts": {
+    "precommit": "lint-staged"
   },
+  "devDependencies": {
+    "husky": "^0.14.3",
+    "lerna": "^3.0.0-beta.21",
+    "lint-staged": "^7.2.0"
+  },
+  "lint-staged": {},
   "workspaces": [
     "packages/*"
   ]
