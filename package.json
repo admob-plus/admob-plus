@@ -1,0 +1,10 @@
+{
+  "name": "admob-suite-monorepo",
+  "private": true,
+  "devDependencies": {
+    "lerna": "^3.0.0-beta.21"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}
