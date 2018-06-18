@@ -3,6 +3,8 @@
   "private": true,
   "scripts": {
     "test": "jest",
+    "test-android": "cordova-testbed --platform android --plugin packages/cordova-plugin-admob-suite",
+    "test-ios": "cordova-testbed --platform ios --plugin packages/cordova-plugin-admob-suite",
     "commitmsg": "commitlint -E GIT_PARAMS",
     "precommit": "lint-staged"
   },
@@ -12,6 +14,7 @@
     "@commitlint/config-lerna-scopes": "^7.0.0",
     "@commitlint/prompt-cli": "^7.0.0",
     "@types/jest": "^23.1.0",
+    "cordova": "^8.0.0",
     "cordova-testbed": "^0.0.2",
     "husky": "^0.14.3",
     "jest": "^23.1.0",
