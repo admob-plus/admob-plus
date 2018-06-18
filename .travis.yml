@@ -19,6 +19,7 @@ matrix:
         - tools # required to get the newest Android SDK tools.
         - build-tools-26.0.2
         - android-26
+        - sys-img-armeabi-v7a-android-26
 
 before_install:
   - nvm install 10
