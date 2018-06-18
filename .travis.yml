@@ -10,7 +10,10 @@ matrix:
   - env: PLATFORM=ios-11.4
     os: osx
     osx_image: xcode9.4
-  - env: PLATFORM=android-4.4
+  - env:
+      - PLATFORM=android-4.4
+      - ANDROID_ABI=armeabi-v7a
+      - ANDROID_EMU_API_LEVEL=22
     language: android
     android:
       components:
@@ -19,7 +22,7 @@ matrix:
         - tools # required to get the newest Android SDK tools.
         - build-tools-26.0.2
         - android-26
-        - sys-img-armeabi-v7a-android-26
+        - sys-img-$ANDROID_ABI-android-$ANDROID_EMU_API_LEVEL
 
 before_install:
   - nvm install 10
@@ -29,7 +32,7 @@ before_install:
 install:
   - yarn
   - yarn global add @commitlint/travis-cli
-  - if [[ "$PLATFORM" =~ android ]]; then echo no | android create avd --force -n test -t android-26 --abi armeabi-v7a; fi
+  - if [[ "$PLATFORM" =~ android ]]; then echo no | android create avd --force -n test -t android-$ANDROID_EMU_API_LEVEL --abi $ANDROID_ABI; fi
 
 script:
   - commitlint-travis
