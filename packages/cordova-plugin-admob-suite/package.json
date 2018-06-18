@@ -1,7 +1,7 @@
 {
   "name": "cordova-plugin-admob-suite",
   "version": "0.0.0",
-  "description": "Modern Cordova Plugin for Google AdMob",
+  "description": "Modern Google AdMob Cordova Plugin",
   "scripts": {
     "prepare": "tsc"
   },
@@ -10,5 +10,26 @@
   },
   "author": "Ratson",
   "license": "MIT",
-  "repository": "admob-suite/admob-suite"
+  "repository": "admob-suite/admob-suite",
+  "keywords": [
+    "cordova",
+    "plugin",
+    "admob",
+    "suite",
+    "ecosystem:cordova",
+    "cordova-plugin-admob",
+    "cordova-admob",
+    "cordova-android",
+    "cordova-ios",
+    "google",
+    "admob-free",
+    "admobpro"
+  ],
+  "cordova": {
+    "id": "cordova-plugin-admob-suite",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  }
 }

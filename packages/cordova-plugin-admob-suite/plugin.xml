@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-admob-free" version="0.0.0"
+        xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>cordova-plugin-admob-suite</name>
+    <js-module name="AdMob" src="www/admob.js">
+        <clobbers target="admob" />
+    </js-module>
+</plugin>
