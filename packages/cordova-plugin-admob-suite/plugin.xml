@@ -6,4 +6,12 @@
     <js-module name="AdMob" src="www/admob.js">
         <clobbers target="admob" />
     </js-module>
+
+    <platform name="ios">
+        <dependency id="cordova-plugin-add-swift-support" version="^1.7.2" />
+        <dependency id="cordova-plugin-cocoapod-support" version="^1.5.0" />
+
+        <pods-config use-frameworks="true" />
+        <pod name="Google-Mobile-Ads-SDK" version="~> 7.31" />
+    </platform>
 </plugin>
