@@ -10,7 +10,8 @@ matrix:
   - env: PLATFORM=ios-11.4
     os: osx
     osx_image: xcode9.4
-  - language: android
+  - env: PLATFORM=android-4.4
+    language: android
     android:
       components:
         - tools
