@@ -29,6 +29,7 @@ before_install:
 install:
   - yarn
   - yarn global add @commitlint/travis-cli
+  - if [[ "$PLATFORM" =~ android ]]; then echo no | android create avd --force -n test -t android-26 --abi armeabi-v7a; fi
 
 script:
   - commitlint-travis
