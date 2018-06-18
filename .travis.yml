@@ -11,9 +11,9 @@ matrix:
     os: osx
     osx_image: xcode9.4
   - env:
-      - PLATFORM=android-4.4
+      - PLATFORM=android-8.0
       - ANDROID_ABI=armeabi-v7a
-      - ANDROID_EMU_API_LEVEL=22
+      - ANDROID_EMU_API_LEVEL=26
     language: android
     android:
       components:
@@ -22,7 +22,12 @@ matrix:
         - tools # required to get the newest Android SDK tools.
         - build-tools-26.0.2
         - android-26
-        - sys-img-$ANDROID_ABI-android-$ANDROID_EMU_API_LEVEL
+        - sys-img-armeabi-v7a-android-26
+  - env:
+      - PLATFORM=android-5.1
+      - ANDROID_ABI=armeabi-v7a
+      - ANDROID_EMU_API_LEVEL=22
+    language: android
 
 before_install:
   - nvm install 10
