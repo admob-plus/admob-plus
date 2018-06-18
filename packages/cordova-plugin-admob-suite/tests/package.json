@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "name": "cordova-plugin-admob-suite-tests",
+  "version": "0.0.0",
+  "cordova": {
+    "id": "cordova-plugin-admob-suite-tests",
+    "platforms": []
+  }
+}

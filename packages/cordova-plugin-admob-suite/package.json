@@ -6,6 +6,7 @@
     "prepare": "tsc"
   },
   "devDependencies": {
+    "cordova-testbed": "^0.0.2",
     "typescript": "^2.9.2"
   },
   "author": "Ratson",
