@@ -1,8 +1,12 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
+    "lib": [
+      "es2015"
+    ],
     "rootDir": "src",
-    "outDir": "www"
+    "outDir": "www",
+    "types": ["node"]
   },
   "include": [
     "src/**/*.ts"
