@@ -8,6 +8,15 @@
     </js-module>
 
     <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="AdMob">
+                <param name="ios-package" value="AMSPlugin" />
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/AMSPlugin-Bridging-Header.h" />
+        <source-file src="src/ios/AMSPlugin.swift" />
+
         <dependency id="cordova-plugin-add-swift-support" version="^1.7.2" />
         <dependency id="cordova-plugin-cocoapod-support" version="^1.5.0" />
 
