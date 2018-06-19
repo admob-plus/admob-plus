@@ -13,7 +13,7 @@
     "@commitlint/config-conventional": "^7.0.1",
     "@commitlint/config-lerna-scopes": "^7.0.0",
     "@commitlint/prompt-cli": "^7.0.0",
-    "@types/jest": "^23.1.0",
+    "@types/jest": "^23.1.1",
     "cordova": "^8.0.0",
     "cordova-testbed": "^0.0.2",
     "husky": "^0.14.3",

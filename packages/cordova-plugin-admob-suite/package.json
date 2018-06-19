@@ -7,8 +7,8 @@
   },
   "devDependencies": {
     "@types/execa": "^0.9.0",
-    "@types/node": "^9.6.8",
-    "execa": "^0.9.0",
+    "@types/node": "^10.3.4",
+    "execa": "^0.10.0",
     "typescript": "^2.9.2"
   },
   "author": "Ratson",
