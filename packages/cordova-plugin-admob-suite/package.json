@@ -6,8 +6,10 @@
     "prepare": "tsc"
   },
   "devDependencies": {
+    "@types/cordova": "^0.0.34",
     "@types/execa": "^0.9.0",
     "@types/node": "^10.3.4",
+    "cordova": "^8.0.0",
     "execa": "^0.10.0",
     "typescript": "^2.9.2"
   },
