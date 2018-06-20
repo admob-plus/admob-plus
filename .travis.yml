@@ -66,8 +66,8 @@ before_install:
   - if [[ "$PLATFORM" =~ android ]]; then android list targets; fi
 
 install:
-  - yarn
-  - yarn global add @commitlint/travis-cli
+  - travis_retry yarn
+  - travis_retry yarn global add @commitlint/travis-cli
   - if [[ "$PLATFORM" =~ android ]]; then echo no | android create avd --force -n test -t android-$ANDROID_API_LEVEL --abi $ANDROID_ABI; fi
 
 script:
