@@ -24,3 +24,4 @@ with cleaner API and using modern tools.
 - [ ] Firebase support
 - [ ] Ionic binding
 - [ ] Diagnostic tool
+- [ ] Mediation support
