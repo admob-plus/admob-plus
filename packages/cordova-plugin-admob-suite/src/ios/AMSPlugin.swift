@@ -1,4 +1,6 @@
-@objc(AMSPlugin) class AMSPlugin: CDVPlugin {
+@objc(AMSPlugin)
+class AMSPlugin: CDVPlugin {
     override func pluginInitialize() {
+        super.pluginInitialize()
     }
 }
