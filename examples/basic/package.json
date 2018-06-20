@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "name": "example.admob.basic",
+  "displayName": "AdmobBasicExample",
+  "version": "1.0.0",
+  "scripts": {
+    "prepare": "cordova prepare && cordova plugin add ../../packages/cordova-plugin-admob-suite --nosave --link"
+  },
+  "dependencies": {
+    "cordova-android": "^7.1.0",
+    "cordova-ios": "^4.5.4",
+    "cordova-plugin-whitelist": "^1.3.3"
+  },
+  "devDependencies": {
+    "cordova": "^8.0.0"
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-whitelist": {}
+    },
+    "platforms": [
+      "ios"
+    ]
+  }
+}
