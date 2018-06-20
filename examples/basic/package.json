@@ -4,15 +4,14 @@
   "displayName": "AdmobBasicExample",
   "version": "1.0.0",
   "scripts": {
-    "prepare": "run-s prepare:*",
+    "prepare": "run-s prepare:* prepare-plugin",
     "prepare:cordova": "cordova prepare",
-    "prepare:plugin": "cordova plugin add ../../packages/cordova-plugin-admob-suite --nosave --link",
-    "dev": "run-s dev:*",
-    "dev:del": "del platforms/ios/AdmobBasicExample/Plugins/cordova-plugin-admob-suite",
-    "dev:link": "ln -s ../../../../plugins/cordova-plugin-admob-suite/src/ios platforms/ios/AdmobBasicExample/Plugins/cordova-plugin-admob-suite",
-    "dev:open": "open platforms/ios/AdmobBasicExample.xcworkspace",
-    "resinstall-plugin": "run-s resinstall-plugin:* prepare:plugin dev:del dev:link",
-    "resinstall-plugin:remove": "cordova plugin remove cordova-plugin-admob-suite"
+    "dev": "open platforms/ios/AdmobBasicExample.xcworkspace",
+    "prepare-plugin": "run-s prepare-plugin:*",
+    "prepare-plugin:remove": "cordova plugin remove cordova-plugin-admob-suite || true",
+    "prepare-plugin:add": "cordova plugin add ../../packages/cordova-plugin-admob-suite --nosave --link",
+    "prepare-plugin:ios:del": "del platforms/ios/AdmobBasicExample/Plugins/cordova-plugin-admob-suite",
+    "prepare-plugin:ios:link": "ln -s ../../../../plugins/cordova-plugin-admob-suite/src/ios platforms/ios/AdmobBasicExample/Plugins/cordova-plugin-admob-suite"
   },
   "dependencies": {
     "cordova-android": "^7.1.0",
