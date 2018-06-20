@@ -3,7 +3,7 @@ import { exec } from 'cordova'
 
 const enum NativeActions {
   Service = 'AdMob',
-  show = 'show'
+  ready = 'ready'
 }
 
 function execAsync(action: NativeActions, args?: string[]) {
@@ -13,6 +13,9 @@ function execAsync(action: NativeActions, args?: string[]) {
 }
 
 class AdMob {
+  public ready() {
+    return execAsync(NativeActions.ready)
+  }
 }
 
 export = new AdMob()

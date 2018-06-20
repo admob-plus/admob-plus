@@ -9,6 +9,10 @@ const app = {
 
   onDeviceReady: function() {
     this.receivedEvent('deviceready')
+
+    admob.ready().then(() => {
+      console.log('admob ready')
+    })
   },
 
   receivedEvent: function(id) {
