@@ -16,12 +16,17 @@ class AMSPlugin: CDVPlugin {
 
     @objc(ready:)
     func ready(command: CDVInvokedUrlCommand) {
-        print("device ready")
+        let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
+        result?.setKeepCallbackAs(true);
+        self.commandDelegate!.send(result, callbackId: command.callbackId)
+    }
+
+    @objc(interstitial_prepare:)
+    func interstitial_prepare(command: CDVInvokedUrlCommand) {
+        interstitial.prepare()
 
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
         result?.setKeepCallbackAs(true);
         self.commandDelegate!.send(result, callbackId: command.callbackId)
-
-        interstitial.prepare()
     }
 }

@@ -4,6 +4,8 @@
     "tslint-config-concise"
   ],
   "jsRules": {},
-  "rules": {},
+  "rules": {
+    "max-classes-per-file": false
+  },
   "rulesDirectory": []
 }
