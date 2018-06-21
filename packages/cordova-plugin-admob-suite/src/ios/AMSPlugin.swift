@@ -1,9 +1,17 @@
 @objc(AMSPlugin)
 class AMSPlugin: CDVPlugin {
+    var interstitial: AMSInterstitial!
+
     override func pluginInitialize() {
         super.pluginInitialize()
 
-        print("initialize plugin")
+        interstitial = AMSInterstitial(plugin: self)
+
+        GADMobileAds.configure(withApplicationID: "ca-app-pub-3940256099942544~1458002511")
+    }
+
+    deinit {
+        interstitial = nil
     }
 
     @objc(ready:)
@@ -13,5 +21,7 @@ class AMSPlugin: CDVPlugin {
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
         result?.setKeepCallbackAs(true);
         self.commandDelegate!.send(result, callbackId: command.callbackId)
+
+        interstitial.prepare()
     }
 }

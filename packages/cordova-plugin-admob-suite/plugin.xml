@@ -15,6 +15,7 @@
         </config-file>
 
         <header-file src="src/ios/AMSPlugin-Bridging-Header.h" />
+        <source-file src="src/ios/AMSInterstitial.swift" />
         <source-file src="src/ios/AMSPlugin.swift" />
 
         <dependency id="cordova-plugin-add-swift-support" version="^1.7.2" />
