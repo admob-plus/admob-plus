@@ -1,6 +1,6 @@
 class AMSInterstitial : NSObject, GADInterstitialDelegate {
     weak var plugin: AMSPlugin!
-    var interstitial: GADInterstitial!
+    var interstitial: GADInterstitial?
 
     init(plugin: AMSPlugin) {
         super.init()
@@ -8,17 +8,29 @@ class AMSInterstitial : NSObject, GADInterstitialDelegate {
         self.plugin = plugin
     }
 
+    deinit {
+        interstitial = nil
+    }
+
     func prepare() {
-        interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+        let interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+        self.interstitial = interstitial
+
         let request = GADRequest()
         request.testDevices = [ kGADSimulatorID ]
         interstitial.load(request)
         interstitial.delegate = self
     }
 
+    func show() {
+        if ((interstitial?.isReady)!) {
+            interstitial?.present(fromRootViewController: plugin.viewController)
+        }
+    }
+
     @objc
     func interstitialDidReceiveAd(_ ad: GADInterstitial) {
-        interstitial.present(fromRootViewController: plugin.viewController)
+        self.show()
     }
 
     @objc

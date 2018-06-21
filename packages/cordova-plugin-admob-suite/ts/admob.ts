@@ -5,6 +5,7 @@ const enum NativeActions {
   Service = 'AdMob',
   ready = 'ready',
   interstitial_prepare = 'interstitial_prepare',
+  interstitial_show = 'interstitial_show',
 }
 
 function execAsync(action: NativeActions, args?: string[]) {
@@ -16,6 +17,10 @@ function execAsync(action: NativeActions, args?: string[]) {
 class Interstitial {
   public prepare() {
     return execAsync(NativeActions.interstitial_prepare)
+  }
+
+  public show() {
+    return execAsync(NativeActions.interstitial_show)
   }
 }
 
