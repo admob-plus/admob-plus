@@ -60,10 +60,6 @@
     "*.ts": [
       "tslint --fix",
       "git add"
-    ],
-    "**/package.json": [
-      "prettier --write",
-      "git add"
     ]
   },
   "remarkConfig": {
