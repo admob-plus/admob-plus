@@ -1,4 +1,3 @@
-
 import { exec } from 'cordova'
 
 const enum NativeActions {
@@ -6,6 +5,10 @@ const enum NativeActions {
   ready = 'ready',
   interstitial_prepare = 'interstitial_prepare',
   interstitial_show = 'interstitial_show',
+}
+
+const enum Events {
+  ready = 'admob.ready',
 }
 
 function execAsync(action: NativeActions, args?: string[]) {
@@ -31,16 +34,23 @@ class AdMob {
     document.addEventListener(
       'deviceready',
       () => {
-        this.ready().then(() => {
-          this.interstitial.prepare()
-        })
+        this.ready()
       },
       false
     )
   }
 
   private ready() {
-    return execAsync(NativeActions.ready)
+    exec(
+      (event) => {
+        alert(event.type)
+      },
+      (err) => {
+        alert(err)
+      },
+      NativeActions.Service,
+      NativeActions.ready
+    )
   }
 }
 

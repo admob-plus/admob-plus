@@ -13,15 +13,14 @@ class AMSPlugin: CDVPlugin {
 
     deinit {
         interstitial = nil
+        readyCallbackId = nil
     }
 
     @objc(ready:)
     func ready(command: CDVInvokedUrlCommand) {
         readyCallbackId = command.callbackId
 
-        let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
-        result?.setKeepCallbackAs(true);
-        self.commandDelegate!.send(result, callbackId: readyCallbackId)
+        self.emit(eventType: "admob.ready")
     }
 
     @objc(interstitial_prepare:)
@@ -38,5 +37,11 @@ class AMSPlugin: CDVPlugin {
 
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
         self.commandDelegate!.send(result, callbackId: command.callbackId)
+    }
+
+    func emit(eventType: String) {
+        let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: ["type": eventType])
+        result?.setKeepCallbackAs(true);
+        self.commandDelegate!.send(result, callbackId: readyCallbackId)
     }
 }
