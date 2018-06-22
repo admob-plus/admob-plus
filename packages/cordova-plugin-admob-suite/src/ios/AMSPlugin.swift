@@ -1,6 +1,7 @@
 @objc(AMSPlugin)
 class AMSPlugin: CDVPlugin {
     var interstitial: AMSInterstitial!
+    var readyCallbackId: String!
 
     override func pluginInitialize() {
         super.pluginInitialize()
@@ -16,9 +17,11 @@ class AMSPlugin: CDVPlugin {
 
     @objc(ready:)
     func ready(command: CDVInvokedUrlCommand) {
+        readyCallbackId = command.callbackId
+
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
         result?.setKeepCallbackAs(true);
-        self.commandDelegate!.send(result, callbackId: command.callbackId)
+        self.commandDelegate!.send(result, callbackId: readyCallbackId)
     }
 
     @objc(interstitial_prepare:)
