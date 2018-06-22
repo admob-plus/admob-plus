@@ -9,12 +9,6 @@ const app = {
 
   onDeviceReady: function() {
     this.receivedEvent('deviceready')
-
-    admob.ready().then(() => {
-      console.log('admob ready')
-    })
-
-    admob.interstitial.prepare()
   },
 
   receivedEvent: function(id) {

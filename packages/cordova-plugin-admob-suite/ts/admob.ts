@@ -27,7 +27,19 @@ class Interstitial {
 class AdMob {
   public interstitial = new Interstitial()
 
-  public ready() {
+  constructor() {
+    document.addEventListener(
+      'deviceready',
+      () => {
+        this.ready().then(() => {
+          this.interstitial.prepare()
+        })
+      },
+      false
+    )
+  }
+
+  private ready() {
     return execAsync(NativeActions.ready)
   }
 }
