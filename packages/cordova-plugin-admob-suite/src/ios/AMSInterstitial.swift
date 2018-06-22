@@ -10,6 +10,7 @@ class AMSInterstitial : NSObject, GADInterstitialDelegate {
 
     deinit {
         interstitial = nil
+        plugin = nil
     }
 
     func prepare() {
@@ -30,10 +31,26 @@ class AMSInterstitial : NSObject, GADInterstitialDelegate {
 
     @objc
     func interstitialDidReceiveAd(_ ad: GADInterstitial) {
-        self.show()
+        plugin.emit(eventType: "admob.interstitial.load")
     }
 
     @objc
     func interstitialDidFail(toPresentScreen ad: GADInterstitial) {
+        plugin.emit(eventType: "admob.interstitial.load_fail")
+    }
+
+    @objc
+    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+        plugin.emit(eventType: "admob.interstitial.close")
+    }
+
+    @objc
+    func interstitialWillPresentScreen(_ ad: GADInterstitial) {
+        plugin.emit(eventType: "admob.interstitial.open")
+    }
+
+    @objc
+    func interstitialWillLeaveApplication(_ ad: GADInterstitial) {
+        plugin.emit(eventType: "admob.interstitial.exit_app")
     }
 }

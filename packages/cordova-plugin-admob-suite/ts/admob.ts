@@ -9,6 +9,11 @@ const enum NativeActions {
 
 const enum Events {
   ready = 'admob.ready',
+  interstitial_load = 'admob.interstitial.load',
+  interstitial_load_fail = 'admob.interstitial.load_fail',
+  interstitial_open = 'admob.interstitial.open',
+  interstitial_close = 'admob.interstitial.close',
+  interstitial_exit_app = 'admob.interstitial.exit_app',
 }
 
 function execAsync(action: NativeActions, args?: string[]) {
@@ -44,6 +49,12 @@ class AdMob {
     exec(
       (event) => {
         alert(event.type)
+        switch (event.type) {
+          case Events.ready:
+            this.interstitial.prepare()
+          case Events.interstitial_load:
+            this.interstitial.show()
+        }
       },
       (err) => {
         alert(err)
