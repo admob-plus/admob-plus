@@ -1,5 +1,7 @@
+'use strict'
+
 const app = {
-  initialize: function() {
+  initialize() {
     document.addEventListener(
       'deviceready',
       this.onDeviceReady.bind(this),
@@ -7,11 +9,11 @@ const app = {
     )
   },
 
-  onDeviceReady: function() {
+  onDeviceReady() {
     this.receivedEvent('deviceready')
   },
 
-  receivedEvent: function(id) {
+  receivedEvent(id) {
     const parentElement = document.getElementById(id)
     const listeningElement = parentElement.querySelector('.listening')
     const receivedElement = parentElement.querySelector('.received')
@@ -19,7 +21,7 @@ const app = {
     listeningElement.setAttribute('style', 'display:none;')
     receivedElement.setAttribute('style', 'display:block;')
 
-    console.log('Received Event: ' + id)
+    console.log(`Received Event: ${id}`)
   },
 }
 

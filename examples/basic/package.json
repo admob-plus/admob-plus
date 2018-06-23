@@ -33,5 +33,10 @@
     "platforms": [
       "ios"
     ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "concise-browser"
+    ]
   }
 }

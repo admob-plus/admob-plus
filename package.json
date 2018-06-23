@@ -16,6 +16,9 @@
     "@types/jest": "^23.1.1",
     "cordova": "^8.0.0",
     "cordova-testbed": "^0.0.2",
+    "eslint": "^4.19.1",
+    "eslint-config-concise": "^0.26.1",
+    "eslint-config-concise-browser": "^0.26.0",
     "husky": "^0.14.3",
     "jest": "^23.1.0",
     "lerna": "^3.0.0-beta.21",
@@ -39,6 +42,11 @@
       "@commitlint/config-conventional"
     ]
   },
+  "eslintConfig": {
+    "extends": [
+      "concise"
+    ]
+  },
   "jest": {
     "transform": {
       "^.+\\.tsx?$": "ts-jest"
@@ -54,6 +62,10 @@
     ]
   },
   "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
     "*.md": [
       "remark --no-stdout"
     ],
