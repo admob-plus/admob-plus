@@ -9,7 +9,7 @@
     "prepare:prettier": "prettier --write package.json",
     "dev": "open platforms/ios/AdmobBasicExample.xcworkspace",
     "prepare-plugin": "run-s prepare-plugin:*",
-    "prepare-plugin:remove": "cordova plugin remove cordova-plugin-admob-suite --nosave || true",
+    "prepare-plugin:remove": "cordova plugin remove cordova-plugin-admob-suite --nosave > /dev/null || true",
     "prepare-plugin:build": "cd ../../packages/cordova-plugin-admob-suite && run-s prepare",
     "prepare-plugin:add": "cordova plugin add ../../packages/cordova-plugin-admob-suite --nosave --link",
     "prepare-plugin:ios:del": "del platforms/ios/AdmobBasicExample/Plugins/cordova-plugin-admob-suite",

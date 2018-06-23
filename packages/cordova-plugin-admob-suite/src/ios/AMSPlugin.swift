@@ -1,5 +1,7 @@
 @objc(AMSPlugin)
 class AMSPlugin: CDVPlugin {
+    let TEST_APPLICATION_ID = "ca-app-pub-3940256099942544~1458002511"
+
     var interstitial: AMSInterstitial!
     var readyCallbackId: String!
 
@@ -8,7 +10,13 @@ class AMSPlugin: CDVPlugin {
 
         interstitial = AMSInterstitial(plugin: self)
 
-        GADMobileAds.configure(withApplicationID: "ca-app-pub-3940256099942544~1458002511")
+        var applicationID = commandDelegate.settings["ADMOB_APPLICATOIN_ID".lowercased()] as? String
+        if (applicationID == nil) {
+            applicationID = TEST_APPLICATION_ID
+            NSLog("admob is using TEST_APPLICATION_ID")
+        }
+        GADMobileAds.configure(withApplicationID: applicationID!
+        )
     }
 
     deinit {

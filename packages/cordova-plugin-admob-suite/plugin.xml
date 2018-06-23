@@ -7,6 +7,8 @@
         <clobbers target="admob" />
     </js-module>
 
+    <preference name="ADMOB_APPLICATOIN_ID" />
+
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
             <feature name="AdMob">
