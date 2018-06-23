@@ -1,6 +1,6 @@
 @objc(AMSPlugin)
 class AMSPlugin: CDVPlugin {
-    let TEST_APPLICATION_ID = "ca-app-pub-3940256099942544~1458002511"
+    let testApplicationID = "ca-app-pub-3940256099942544~1458002511"
 
     var interstitial: AMSInterstitial!
     var readyCallbackId: String!
@@ -11,12 +11,11 @@ class AMSPlugin: CDVPlugin {
         interstitial = AMSInterstitial(plugin: self)
 
         var applicationID = commandDelegate.settings["ADMOB_APPLICATOIN_ID".lowercased()] as? String
-        if (applicationID == nil) {
-            applicationID = TEST_APPLICATION_ID
-            NSLog("admob is using TEST_APPLICATION_ID")
+        if applicationID == nil {
+            applicationID = testApplicationID
+            NSLog("admob is using testApplicationID")
         }
-        GADMobileAds.configure(withApplicationID: applicationID!
-        )
+        GADMobileAds.configure(withApplicationID: applicationID!)
     }
 
     deinit {
@@ -49,7 +48,7 @@ class AMSPlugin: CDVPlugin {
 
     func emit(eventType: String) {
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: ["type": eventType])
-        result?.setKeepCallbackAs(true);
+        result?.setKeepCallbackAs(true)
         self.commandDelegate!.send(result, callbackId: readyCallbackId)
     }
 }

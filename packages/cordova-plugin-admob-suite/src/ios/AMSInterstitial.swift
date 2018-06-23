@@ -1,4 +1,4 @@
-class AMSInterstitial : NSObject, GADInterstitialDelegate {
+class AMSInterstitial: NSObject, GADInterstitialDelegate {
     weak var plugin: AMSPlugin!
     var interstitial: GADInterstitial?
 
@@ -24,33 +24,33 @@ class AMSInterstitial : NSObject, GADInterstitialDelegate {
     }
 
     func show() {
-        if ((interstitial?.isReady)!) {
+        if (interstitial?.isReady)! {
             interstitial?.present(fromRootViewController: plugin.viewController)
         }
     }
 
     @objc
-    func interstitialDidReceiveAd(_ ad: GADInterstitial) {
+    func interstitialDidReceiveAd(_ adInterstitial: GADInterstitial) {
         plugin.emit(eventType: "admob.interstitial.load")
     }
 
     @objc
-    func interstitialDidFail(toPresentScreen ad: GADInterstitial) {
+    func interstitialDidFail(toPresentScreen adInterstitial: GADInterstitial) {
         plugin.emit(eventType: "admob.interstitial.load_fail")
     }
 
     @objc
-    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+    func interstitialDidDismissScreen(_ adInterstitial: GADInterstitial) {
         plugin.emit(eventType: "admob.interstitial.close")
     }
 
     @objc
-    func interstitialWillPresentScreen(_ ad: GADInterstitial) {
+    func interstitialWillPresentScreen(_ adInterstitial: GADInterstitial) {
         plugin.emit(eventType: "admob.interstitial.open")
     }
 
     @objc
-    func interstitialWillLeaveApplication(_ ad: GADInterstitial) {
+    func interstitialWillLeaveApplication(_ adInterstitial: GADInterstitial) {
         plugin.emit(eventType: "admob.interstitial.exit_app")
     }
 }
