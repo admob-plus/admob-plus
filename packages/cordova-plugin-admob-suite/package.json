@@ -2,6 +2,8 @@
   "name": "cordova-plugin-admob-suite",
   "version": "0.0.0",
   "description": "Modern Google AdMob Cordova Plugin",
+  "main": "www/admob.js",
+  "typings": "www/admob.d.ts",
   "scripts": {
     "prepare": "tsc"
   },
