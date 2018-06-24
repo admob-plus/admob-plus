@@ -57,7 +57,7 @@ matrix:
         - android-$ANDROID_API_LEVEL
         - android-$ANDROID_API_LEVEL
         - sys-img-$ANDROID_ABI-android-$ANDROID_API_LEVEL
-  - if: branch = master
+  - if: branch = master AND type != pull_request
     language: node_js
     after_success:
       - git config --global user.name "${GH_NAME}"
