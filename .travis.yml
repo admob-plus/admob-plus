@@ -1,4 +1,5 @@
 sudo: false
+language: node_js
 
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
@@ -76,3 +77,14 @@ script:
   - if [[ "$PLATFORM" =~ android ]]; then yarn test-android --build-only; fi
   - if [[ "$PLATFORM" =~ ios ]]; then yarn test-ios --build-only; fi
   - if [[ "$PLATFORM" =~ ios ]]; then cd packages/cordova-plugin-admob-suite/src/ios && swiftlint; fi
+
+deploy:
+  provider: script
+  script:
+    - git config --global user.name "${GH_NAME}"
+    - git config --global user.email "${GH_EMAIL}"
+    - echo "machine github.com login ${GH_NAME} password ${GH_TOKEN}" > ~/.netrc
+    - cd website && travis_retry yarn
+    - cd website && GIT_USER="${GH_NAME}" yarn publish-gh-pages
+  on:
+    branch: master
