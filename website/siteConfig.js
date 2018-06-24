@@ -11,7 +11,7 @@ const siteConfig = {
 
   headerLinks: [
     { doc: 'installation', label: 'Docs' },
-    { blog: true, label: 'Blog' },
+    // { blog: true, label: 'Blog' },
   ],
 
   colors: {
