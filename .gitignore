@@ -3,3 +3,7 @@ package-lock.json
 *.log
 *.lock
 node_modules/
+
+website/translated_docs
+website/build/
+website/i18n/*
