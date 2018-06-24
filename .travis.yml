@@ -64,7 +64,7 @@ matrix:
       - git config --global user.email "${GH_EMAIL}"
       - echo "machine github.com login ${GH_NAME} password ${GH_TOKEN}" > ~/.netrc
       - cd website && travis_retry yarn
-      - cd website && GIT_USER="${GH_NAME}" yarn publish-gh-pages
+      - GIT_USER="${GH_NAME}" yarn publish-gh-pages
 
 before_install:
   - nvm install 10
