@@ -9,7 +9,10 @@ const siteConfig = {
   projectName: 'admob-suite',
   organizationName: 'admob-suite',
 
-  headerLinks: [{ doc: 'installation', label: 'Docs' }],
+  headerLinks: [
+    { doc: 'installation', label: 'Docs' },
+    { blog: true, label: 'Blog' },
+  ],
 
   colors: {
     primaryColor: '#2E8555',
