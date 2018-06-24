@@ -63,8 +63,13 @@ matrix:
       - git config --global user.name "${GH_NAME}"
       - git config --global user.email "${GH_EMAIL}"
       - echo "machine github.com login ${GH_NAME} password ${GH_TOKEN}" > ~/.netrc
-      - cd website && travis_retry yarn
+      - pushd website
+      - travis_retry yarn
       - GIT_USER="${GH_NAME}" yarn publish-gh-pages
+      - popd
+      - git checkout -f gh-pages
+      - git remote add website git@github.com:admob-suite/admob-suite.github.io.git
+      - git push -u website gh-pages:master
 
 before_install:
   - nvm install 10
