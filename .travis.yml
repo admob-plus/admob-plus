@@ -67,8 +67,7 @@ matrix:
       - travis_retry yarn
       - GIT_USER="${GH_NAME}" yarn publish-gh-pages
       - popd
-      - git remote set-branches --add origin gh-pages
-      - git checkout -f gh-pages
+      - git fetch --depth 1 origin gh-pages:gh-pages
       - git remote add website git@github.com:admob-suite/admob-suite.github.io.git
       - git push -u website gh-pages:master
 
