@@ -19,4 +19,5 @@
         <preference name="UseSwiftLanguageVersion" value="4" />
     </platform>
     <engine name="ios" spec="^4.5.4" />
+    <engine name="android" spec="^7.1.0" />
 </widget>
