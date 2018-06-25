@@ -88,6 +88,6 @@ install:
 script:
   - commitlint-travis
   - yarn test
-  - if [[ "$PLATFORM" =~ android ]]; then yarn test-android --build-only; fi
-  - if [[ "$PLATFORM" =~ ios ]]; then yarn test-ios --build-only; fi
+  - if [[ "$PLATFORM" =~ android ]]; then yarn test-android; fi
+  - if [[ "$PLATFORM" =~ ios ]]; then yarn test-ios; fi
   - if [[ "$PLATFORM" =~ ios ]]; then cd packages/cordova-plugin-admob-suite/src/ios && swiftlint; fi
