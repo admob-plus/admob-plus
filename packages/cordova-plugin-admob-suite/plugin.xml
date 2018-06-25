@@ -12,7 +12,7 @@
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="AdMob">
-                <param name="android-package" value="admob.suite.AdMobPlugin"/>
+                <param name="android-package" value="admob.suite.AdMob"/>
             </feature>
         </config-file>
 
