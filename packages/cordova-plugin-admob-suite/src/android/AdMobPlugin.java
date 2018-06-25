@@ -32,6 +32,13 @@ public class AdMobPlugin extends CordovaPlugin {
         return false;
     }
 
+    @Override
+    public void onDestroy() {
+        readyCallbackContext = null;
+
+        super.onDestroy();
+    }
+
     private void emit(String eventType) {
         PluginResult result = new PluginResult(PluginResult.Status.OK, eventType);
         result.setKeepCallback(true);
