@@ -9,6 +9,16 @@
 
     <preference name="ADMOB_APPLICATOIN_ID" />
 
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="AdMob">
+                <param name="android-package" value="admob.suite.AdMobPlugin"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/AdMobPlugin.java" target-dir="src/admob/suite" />
+    </platform>
+
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
             <feature name="AdMob">
