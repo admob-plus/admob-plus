@@ -10,10 +10,13 @@ import org.json.JSONException;
 
 public class AdMob extends CordovaPlugin {
     private CallbackContext readyCallbackContext = null;
+    private InterstitialExecutor interstitialExecutor = null;
 
     @Override
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
+
+        interstitialExecutor = new InterstitialExecutor(this);
     }
 
     @Override
@@ -34,6 +37,11 @@ public class AdMob extends CordovaPlugin {
 
     @Override
     public void onDestroy() {
+        if (interstitialExecutor != null) {
+            interstitialExecutor.destroy();
+            interstitialExecutor = null;
+        }
+
         readyCallbackContext = null;
 
         super.onDestroy();
