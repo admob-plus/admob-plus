@@ -16,6 +16,10 @@
             </feature>
         </config-file>
 
+        <preference name="PLAY_SERVICES_VERSION" default="+" />
+
+        <framework src="com.google.android.gms:play-services-ads:$PLAY_SERVICES_VERSION" />
+
         <source-file src="src/android/Actions.java" target-dir="src/admob/suite" />
         <source-file src="src/android/AdMob.java" target-dir="src/admob/suite" />
         <source-file src="src/android/AbstractExecutor.java" target-dir="src/admob/suite" />

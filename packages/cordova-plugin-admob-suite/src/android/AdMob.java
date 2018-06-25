@@ -8,6 +8,8 @@ import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONException;
 
+import admob.suite.interstitial.InterstitialExecutor;
+
 public class AdMob extends CordovaPlugin {
     private CallbackContext readyCallbackContext = null;
     private InterstitialExecutor interstitialExecutor = null;
