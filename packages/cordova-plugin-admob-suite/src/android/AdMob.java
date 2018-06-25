@@ -8,7 +8,7 @@ import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-public class AdMobPlugin extends CordovaPlugin {
+public class AdMob extends CordovaPlugin {
     private CallbackContext readyCallbackContext = null;
 
     @Override
