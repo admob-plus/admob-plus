@@ -7,6 +7,7 @@
     "prepare": "run-s prepare:* prepare-plugin",
     "prepare:cordova": "cordova prepare",
     "prepare:prettier": "prettier --write package.json",
+    "prepare:chmod": "chmod +x platforms/android/gradlew",
     "dev": "open platforms/ios/AdmobBasicExample.xcworkspace",
     "prepare-plugin": "run-s prepare-plugin:*",
     "prepare-plugin:remove": "cordova plugin remove cordova-plugin-admob-suite --nosave &> /dev/null || true",
