@@ -7,6 +7,7 @@ import org.apache.cordova.CordovaWebView;
 import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONException;
+import com.google.android.gms.ads.MobileAds;
 
 import admob.suite.interstitial.InterstitialExecutor;
 
@@ -14,11 +15,15 @@ public class AdMob extends CordovaPlugin {
     private CallbackContext readyCallbackContext = null;
     private InterstitialExecutor interstitialExecutor = null;
 
+    private static final String TEST_APPLICATION_ID = "ca-app-pub-3940256099942544~3347511713";
+
     @Override
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
 
         interstitialExecutor = new InterstitialExecutor(this);
+
+        MobileAds.initialize(cordova.getActivity(), TEST_APPLICATION_ID);
     }
 
     @Override
@@ -29,9 +34,9 @@ public class AdMob extends CordovaPlugin {
             emit("admob.ready");
             return true;
         } else if (Actions.INTERSTITIAL_PREPARE.equals(action)) {
-            return true;
+            return interstitialExecutor.prepare(inputs, callbackContext);
         } else if (Actions.INTERSTITIAL_SHOW.equals(action)) {
-            return true;
+            return interstitialExecutor.show(inputs, callbackContext);
         }
 
         return false;
@@ -49,7 +54,7 @@ public class AdMob extends CordovaPlugin {
         super.onDestroy();
     }
 
-    private void emit(String eventType) {
+    public void emit(String eventType) {
         PluginResult result = new PluginResult(PluginResult.Status.OK, eventType);
         result.setKeepCallback(true);
         readyCallbackContext.sendPluginResult(result);
