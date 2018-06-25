@@ -16,6 +16,7 @@
             </feature>
         </config-file>
 
+        <source-file src="src/android/Actions.java" target-dir="src/admob/suite" />
         <source-file src="src/android/AdMobPlugin.java" target-dir="src/admob/suite" />
     </platform>
 

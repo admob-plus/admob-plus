@@ -15,6 +15,14 @@ public class AdMobPlugin extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray inputs, CallbackContext callbackContext) throws JSONException {
+        if (Actions.READY.equals(action)) {
+            return true;
+        } else if (Actions.INTERSTITIAL_PREPARE.equals(action)) {
+            return true;
+        } else if (Actions.INTERSTITIAL_SHOW.equals(action)) {
+            return true;
+        }
+
         return false;
     }
 }
