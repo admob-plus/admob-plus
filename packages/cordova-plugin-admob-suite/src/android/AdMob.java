@@ -25,7 +25,12 @@ public class AdMob extends CordovaPlugin {
 
         interstitialExecutor = new InterstitialExecutor(this);
 
-        MobileAds.initialize(cordova.getActivity(), TEST_APPLICATION_ID);
+
+        String applicationID = cordova.getActivity().getIntent().getStringExtra("ADMOB_APPLICATOIN_ID");
+        if (applicationID == null) {
+            applicationID = TEST_APPLICATION_ID;
+        }
+        MobileAds.initialize(cordova.getActivity(), applicationID);
     }
 
     @Override
