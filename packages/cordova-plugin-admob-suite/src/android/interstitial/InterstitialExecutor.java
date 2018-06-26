@@ -12,6 +12,7 @@ import admob.suite.AbstractExecutor;
 import admob.suite.AdMob;
 
 public class InterstitialExecutor extends AbstractExecutor {
+    private static final String TEST_AD_UNIT_ID = "ca-app-pub-3940256099942544/1033173712";
     private InterstitialAd interstitialAd = null;
 
     public InterstitialExecutor(AdMob plugin) {
@@ -27,7 +28,7 @@ public class InterstitialExecutor extends AbstractExecutor {
 
     public boolean prepare(JSONArray inputs, CallbackContext callbackContext) {
         interstitialAd = new InterstitialAd(plugin.cordova.getActivity());
-        interstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        interstitialAd.setAdUnitId(TEST_AD_UNIT_ID);
 
         interstitialAd.setAdListener(new AdListener() {
             @Override
