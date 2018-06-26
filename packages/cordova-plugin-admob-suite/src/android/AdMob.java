@@ -7,6 +7,8 @@ import org.apache.cordova.CordovaWebView;
 import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
+
 import com.google.android.gms.ads.MobileAds;
 
 import admob.suite.interstitial.InterstitialExecutor;
@@ -55,7 +57,14 @@ public class AdMob extends CordovaPlugin {
     }
 
     public void emit(String eventType) {
-        PluginResult result = new PluginResult(PluginResult.Status.OK, eventType);
+        JSONObject event = new JSONObject();
+        try {
+            event.put("type", eventType);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        PluginResult result = new PluginResult(PluginResult.Status.OK, event);
         result.setKeepCallback(true);
         readyCallbackContext.sendPluginResult(result);
     }
