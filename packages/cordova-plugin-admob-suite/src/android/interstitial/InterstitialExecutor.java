@@ -21,12 +21,42 @@ public class InterstitialExecutor extends AbstractExecutor {
 
     @Override
     public void destroy() {
-        interstitialAd = null;
+        clearInterstitialAd();
 
         super.destroy();
     }
 
     public boolean prepare(JSONArray inputs, CallbackContext callbackContext) {
+        plugin.cordova.getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                createAndLoadInterstitial();
+
+                PluginResult result = new PluginResult(PluginResult.Status.OK, "");
+                callbackContext.sendPluginResult(result);
+            }
+        });
+
+        return true;
+    }
+
+    public boolean show(JSONArray inputs, CallbackContext callbackContext) {
+        plugin.cordova.getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                showInterstitial();
+
+                PluginResult result = new PluginResult(PluginResult.Status.OK, "");
+                callbackContext.sendPluginResult(result);
+            }
+        });
+
+        return true;
+    }
+
+    private void createAndLoadInterstitial() {
+        clearInterstitialAd();
+
         interstitialAd = new InterstitialAd(plugin.cordova.getActivity());
         interstitialAd.setAdUnitId(TEST_AD_UNIT_ID);
 
@@ -59,21 +89,18 @@ public class InterstitialExecutor extends AbstractExecutor {
 
         AdRequest adRequest = new AdRequest.Builder().build();
         interstitialAd.loadAd(adRequest);
-
-        PluginResult result = new PluginResult(PluginResult.Status.OK, "");
-        callbackContext.sendPluginResult(result);
-
-        return true;
     }
 
-    public boolean show(JSONArray inputs, CallbackContext callbackContext) {
+    private void clearInterstitialAd() {
+        if (interstitialAd != null) {
+            interstitialAd.setAdListener(null);
+            interstitialAd = null;
+        }
+    }
+
+    private void showInterstitial() {
         if (interstitialAd != null && interstitialAd.isLoaded()) {
             interstitialAd.show();
         }
-
-        PluginResult result = new PluginResult(PluginResult.Status.OK, "");
-        callbackContext.sendPluginResult(result);
-
-        return true;
     }
 }
