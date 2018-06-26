@@ -7,7 +7,7 @@ import com.google.android.gms.ads.InterstitialAd;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
-
+import org.json.JSONObject;
 import admob.suite.AbstractExecutor;
 import admob.suite.AdMob;
 
@@ -26,11 +26,19 @@ public class InterstitialExecutor extends AbstractExecutor {
         super.destroy();
     }
 
-    public boolean prepare(JSONArray inputs, CallbackContext callbackContext) {
+    public boolean prepare(JSONArray args, CallbackContext callbackContext) {
+        JSONObject opts = args.optJSONObject(0);
+        String adUnitID = opts.optString("adUnitID");
+
+        if (adUnitID == null || "test".equals(adUnitID)) {
+             adUnitID = TEST_AD_UNIT_ID;
+        }
+
+        String finalAdUnitID = adUnitID;
         plugin.cordova.getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                createAndLoadInterstitial();
+                createAndLoadInterstitial(finalAdUnitID);
 
                 PluginResult result = new PluginResult(PluginResult.Status.OK, "");
                 callbackContext.sendPluginResult(result);
@@ -40,7 +48,7 @@ public class InterstitialExecutor extends AbstractExecutor {
         return true;
     }
 
-    public boolean show(JSONArray inputs, CallbackContext callbackContext) {
+    public boolean show(JSONArray args, CallbackContext callbackContext) {
         plugin.cordova.getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -54,11 +62,11 @@ public class InterstitialExecutor extends AbstractExecutor {
         return true;
     }
 
-    private void createAndLoadInterstitial() {
+    private void createAndLoadInterstitial(String adUnitID) {
         clearInterstitialAd();
 
         interstitialAd = new InterstitialAd(plugin.cordova.getActivity());
-        interstitialAd.setAdUnitId(TEST_AD_UNIT_ID);
+        interstitialAd.setAdUnitId(adUnitID);
 
         interstitialAd.setAdListener(new AdListener() {
             @Override
