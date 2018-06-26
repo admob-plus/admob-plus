@@ -11,7 +11,7 @@ class AMSPlugin: CDVPlugin {
         interstitial = AMSInterstitial(plugin: self)
 
         var applicationID = commandDelegate.settings["ADMOB_APPLICATOIN_ID".lowercased()] as? String
-        if applicationID == nil {
+        if applicationID == nil || applicationID == "test" {
             applicationID = testApplicationID
             NSLog("admob is using testApplicationID")
         }

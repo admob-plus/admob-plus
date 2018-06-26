@@ -27,7 +27,7 @@ public class AdMob extends CordovaPlugin {
 
 
         String applicationID = cordova.getActivity().getIntent().getStringExtra("ADMOB_APPLICATOIN_ID");
-        if (applicationID == null) {
+        if (applicationID == null || "test".equals(applicationID)) {
             applicationID = TEST_APPLICATION_ID;
         }
         MobileAds.initialize(cordova.getActivity(), applicationID);
