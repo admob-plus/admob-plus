@@ -16,15 +16,19 @@ const enum Events {
   interstitial_exit_app = 'admob.interstitial.exit_app',
 }
 
-function execAsync(action: NativeActions, args?: string[]) {
+function execAsync(action: NativeActions, args?: any[]) {
   return new Promise((resolve, reject) => {
     exec(resolve, reject, NativeActions.Service, action, args)
   })
 }
 
+interface IInterstitialPrepareOptions {
+  adUnitID?: string
+}
+
 class Interstitial {
-  public prepare() {
-    return execAsync(NativeActions.interstitial_prepare)
+  public prepare(opts: IInterstitialPrepareOptions = {}) {
+    return execAsync(NativeActions.interstitial_prepare, [opts])
   }
 
   public show() {
