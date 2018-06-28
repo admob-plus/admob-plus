@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "test": "jest",
+    "lint": "tslint --project .",
     "test-android": "run-s test-android:*",
     "test-android:testbed": "cordova-testbed --platform android --plugin packages/cordova-plugin-admob-suite --build-only",
     "test-android:example": "cd examples/basic && cordova build android",
