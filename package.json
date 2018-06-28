@@ -92,9 +92,14 @@
       "remark-lint-no-empty-sections"
     ]
   },
-  "workspaces": [
-    "packages/*",
-    "examples/*",
-    "website"
-  ]
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "examples/*",
+      "website"
+    ],
+    "nohoist": [
+      "ionic-angular-example/**"
+    ]
+  }
 }
