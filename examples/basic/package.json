@@ -5,9 +5,12 @@
   "version": "1.0.0",
   "scripts": {
     "prepare": "cordova prepare",
+    "dev-android": "run-s dev-ios:*",
+    "dev-android:del": "del platforms/android/app/src/main/java/admob/suite",
+    "dev-android:link": "ln -s $PWD/../../packages/cordova-plugin-admob-suite/src/android platforms/android/app/src/main/java/admob/suite",
     "dev-ios": "run-s dev-ios:*",
     "dev-ios:del": "del platforms/ios/AdmobBasicExample/Plugins/cordova-plugin-admob-suite",
-    "dev-ios:link": "ln -s ../../../../plugins/cordova-plugin-admob-suite/src/ios platforms/ios/AdmobBasicExample/Plugins/cordova-plugin-admob-suite",
+    "dev-ios:link": "ln -s $PWD/../../packages/cordova-plugin-admob-suite/src/ios platforms/ios/AdmobBasicExample/Plugins/cordova-plugin-admob-suite",
     "dev-ios:open": "open platforms/ios/AdmobBasicExample.xcworkspace"
   },
   "dependencies": {
