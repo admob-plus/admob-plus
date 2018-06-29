@@ -1,0 +1,25 @@
+{
+  "name": "ionic-admob",
+  "version": "0.0.0",
+  "description": "Ionic Native wrapper for cordova-plugin-admob-suite",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "prepare": "tsc"
+  },
+  "peerDependencies": {
+    "@angular/core": "*",
+    "@ionic-native/core": "^4.2.0",
+    "rxjs": "^5.0.1"
+  },
+  "devDependencies": {
+    "@angular/core": "^6.0.6",
+    "@ionic-native/core": "^4.8.0",
+    "rxjs": "^5.5.11",
+    "tslint-ionic-rules": "0.0.16",
+    "typescript": "^2.9.2"
+  },
+  "author": "Ratson",
+  "license": "MIT",
+  "repository": "admob-suite/admob-suite"
+}
