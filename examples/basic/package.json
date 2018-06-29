@@ -4,7 +4,7 @@
   "displayName": "AdmobBasicExample",
   "version": "1.0.0",
   "scripts": {
-    "prepare": "run-s prepare:* prepare-plugin",
+    "prepare": "run-s prepare:*",
     "prepare:cordova": "cordova prepare",
     "prepare:chmod": "test -f platforms/android/gradlew && chmod +x platforms/android/gradlew || true",
     "dev": "open platforms/ios/AdmobBasicExample.xcworkspace",
@@ -18,6 +18,7 @@
   "dependencies": {
     "cordova-android": "^7.1.0",
     "cordova-ios": "^4.5.4",
+    "cordova-plugin-admob-suite": "file:../../packages/cordova-plugin-admob-suite",
     "cordova-plugin-whitelist": "^1.3.3"
   },
   "devDependencies": {
@@ -27,7 +28,10 @@
   },
   "cordova": {
     "plugins": {
-      "cordova-plugin-whitelist": {}
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-admob-suite": {
+        "ADMOB_APPLICATOIN_ID": "test"
+      }
     },
     "platforms": [
       "ios",
