@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "Ionic Native wrapper for cordova-plugin-admob-suite",
   "main": "dist/index.js",
+  "module": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
     "prepare": "tsc"
