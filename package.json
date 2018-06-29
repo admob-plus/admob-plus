@@ -81,6 +81,10 @@
     "*.ts": [
       "prettier-tslint fix",
       "git add"
+    ],
+    "examples/*/package.json": [
+      "prettier --write",
+      "git add"
     ]
   },
   "remarkConfig": {
