@@ -12,16 +12,16 @@ with cleaner API and using modern tools.
 
 - [x] Setup lerna
 - [x] Integrate CI
-- [ ] Build with TypeScript
-- [ ] Promise API
-- [ ] Swift support for iOS
+- [x] Build with TypeScript
+- [x] Promise API
+- [x] Swift support for iOS
 - [ ] Kotlin support for Android
 - [ ] Implement Banner Ad
-- [ ] Implement Interstitial Ad
+- [x] Implement Interstitial Ad
 - [ ] Implement Reward Video Ad
-- [ ] Example projects
+- [x] Example projects
 - [ ] Documentation
 - [ ] Firebase support
-- [ ] Ionic binding
+- [x] Ionic binding
 - [ ] Diagnostic tool
 - [ ] Mediation support
