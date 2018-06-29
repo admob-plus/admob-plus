@@ -84,4 +84,5 @@
     <plugin name="cordova-plugin-admob-suite" spec="../../packages/cordova-plugin-admob-suite">
         <variable name="ADMOB_APPLICATOIN_ID" value="test" />
     </plugin>
+    <engine name="ios" spec="~4.5.4" />
 </widget>
