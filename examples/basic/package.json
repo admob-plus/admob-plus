@@ -5,7 +5,8 @@
   "version": "1.0.0",
   "scripts": {
     "prepare": "cordova prepare",
-    "dev-android": "run-s dev-ios:*",
+    "dev": "run-p dev-android dev-ios",
+    "dev-android": "run-s dev-android:*",
     "dev-android:del": "del platforms/android/app/src/main/java/admob/suite",
     "dev-android:link": "ln -s $PWD/../../packages/cordova-plugin-admob-suite/src/android platforms/android/app/src/main/java/admob/suite",
     "dev-ios": "run-s dev-ios:*",
