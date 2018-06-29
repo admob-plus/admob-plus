@@ -93,7 +93,6 @@ script:
   - if [[ "$PLATFORM" =~ ios ]]; then yarn test-ios; fi
   - if [[ "$PLATFORM" =~ ios ]]; then pushd packages/cordova-plugin-admob-suite/src/ios && swiftlint && popd; fi
   - pushd examples/ionic-angular
-  - npm install
-  - yarn build
+  # - yarn build
   - yarn lint
   - popd
