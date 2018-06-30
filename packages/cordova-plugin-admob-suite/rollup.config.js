@@ -1,6 +1,7 @@
 import commonjs from 'rollup-plugin-commonjs'
 import resolve from 'rollup-plugin-node-resolve'
 import typescript from 'rollup-plugin-typescript2'
+import findCacheDir from 'find-cache-dir'
 
 export default {
   external: ['cordova'],
@@ -11,7 +12,9 @@ export default {
     sourcemap: true,
   },
   plugins: [
-    typescript(),
+    typescript({
+      cacheRoot: findCacheDir({ name: 'rts2' }),
+    }),
     resolve({
       jsnext: true,
       main: true,
