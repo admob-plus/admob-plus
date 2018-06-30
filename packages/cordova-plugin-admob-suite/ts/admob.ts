@@ -1,40 +1,7 @@
 import { exec } from 'cordova'
 
-const enum NativeActions {
-  Service = 'AdMob',
-  ready = 'ready',
-  interstitial_prepare = 'interstitial_prepare',
-  interstitial_show = 'interstitial_show',
-}
-
-const enum Events {
-  ready = 'admob.ready',
-  interstitial_load = 'admob.interstitial.load',
-  interstitial_load_fail = 'admob.interstitial.load_fail',
-  interstitial_open = 'admob.interstitial.open',
-  interstitial_close = 'admob.interstitial.close',
-  interstitial_exit_app = 'admob.interstitial.exit_app',
-}
-
-function execAsync(action: NativeActions, args?: any[]) {
-  return new Promise((resolve, reject) => {
-    exec(resolve, reject, NativeActions.Service, action, args)
-  })
-}
-
-interface IInterstitialPrepareOptions {
-  adUnitID?: string
-}
-
-class Interstitial {
-  public prepare(opts: IInterstitialPrepareOptions = {}) {
-    return execAsync(NativeActions.interstitial_prepare, [opts])
-  }
-
-  public show() {
-    return execAsync(NativeActions.interstitial_show)
-  }
-}
+import { Events, NativeActions } from './base'
+import Interstitial from './interstitial'
 
 class AdMob {
   public interstitial = new Interstitial()
@@ -51,7 +18,7 @@ class AdMob {
 
   private ready() {
     exec(
-      (event) => {
+      event => {
         alert(event.type)
         switch (event.type) {
           case Events.ready:
@@ -60,7 +27,7 @@ class AdMob {
             this.interstitial.show()
         }
       },
-      (err) => {
+      err => {
         alert(err)
       },
       NativeActions.Service,
@@ -69,4 +36,4 @@ class AdMob {
   }
 }
 
-export = new AdMob()
+export default new AdMob()
