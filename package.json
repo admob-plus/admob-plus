@@ -24,6 +24,7 @@
     "eslint": "^5.0.1",
     "eslint-config-concise": "^0.27.3",
     "eslint-config-concise-browser": "^0.27.0",
+    "eslint-config-concise-esnext": "^0.27.0",
     "husky": "^0.14.3",
     "jest": "^23.2.0",
     "lerna": "^3.0.0-beta.21",
