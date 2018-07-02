@@ -18,9 +18,9 @@
         <allow-intent href="itms-apps:*" />
         <preference name="UseSwiftLanguageVersion" value="4" />
     </platform>
-    <engine name="ios" spec="^4.5.4" />
-    <engine name="android" spec="^7.1.0" />
-    <plugin name="cordova-plugin-admob-suite" spec="../../packages/cordova-plugin-admob-suite">
+    <plugin name="cordova-plugin-admob-suite" spec="~0.0.0">
         <variable name="ADMOB_APPLICATOIN_ID" value="test" />
     </plugin>
+    <engine name="ios" spec="^4.5.4" />
+    <engine name="android" spec="^7.1.0" />
 </widget>
