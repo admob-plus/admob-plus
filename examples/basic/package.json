@@ -4,7 +4,9 @@
   "displayName": "AdmobBasicExample",
   "version": "1.0.0",
   "scripts": {
-    "prepare": "cordova prepare --searchpath ../../packages",
+    "prepare": "run-s prepare:*",
+    "prepare:plugin": "cd ../../packages/cordova-plugin-admob-suite && run-s prepare",
+    "prepare:cordova": "cordova prepare --searchpath ../../packages",
     "dev": "run-p dev-android dev-ios",
     "dev-android": "run-s dev-android:*",
     "dev-android:del": "del platforms/android/app/src/main/java/admob/suite",
