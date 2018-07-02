@@ -11,6 +11,16 @@ const app = {
 
   onDeviceReady() {
     this.receivedEvent('deviceready')
+
+    admob.interstitial.prepare()
+    document.addEventListener(
+      'admob.interstitial.load',
+      () => {
+        alert('interstitial ready to show')
+        admob.interstitial.show()
+      },
+      false
+    )
   },
 
   receivedEvent(id) {
