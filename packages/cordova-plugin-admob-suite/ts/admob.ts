@@ -1,4 +1,4 @@
-import cordova, { exec } from 'cordova'
+import { exec } from 'cordova'
 
 import { Events, fireDocumentEvent, NativeActions } from './base'
 import Interstitial from './interstitial'
