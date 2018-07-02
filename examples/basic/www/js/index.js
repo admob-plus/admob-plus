@@ -16,7 +16,6 @@ const app = {
     document.addEventListener(
       'admob.interstitial.load',
       () => {
-        alert('interstitial ready to show')
         admob.interstitial.show()
       },
       false

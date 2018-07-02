@@ -20,13 +20,6 @@ class AdMob {
     exec(
       event => {
         fireDocumentEvent(event.type)
-        alert(event.type)
-        switch (event.type) {
-          case Events.ready:
-            this.interstitial.prepare()
-          case Events.interstitial_load:
-            this.interstitial.show()
-        }
       },
       err => {
         alert(err)
