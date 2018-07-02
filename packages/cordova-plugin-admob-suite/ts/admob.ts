@@ -1,6 +1,6 @@
-import { exec } from 'cordova'
+import cordova, { exec } from 'cordova'
 
-import { Events, NativeActions } from './base'
+import { Events, fireDocumentEvent, NativeActions } from './base'
 import Interstitial from './interstitial'
 
 class AdMob {
@@ -19,6 +19,7 @@ class AdMob {
   private ready() {
     exec(
       event => {
+        fireDocumentEvent(event.type)
         alert(event.type)
         switch (event.type) {
           case Events.ready:

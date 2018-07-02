@@ -21,3 +21,8 @@ export function execAsync(action: NativeActions, args?: any[]) {
     exec(resolve, reject, NativeActions.Service, action, args)
   })
 }
+
+export function fireDocumentEvent(eventName: string, data = null) {
+  const event = new CustomEvent(eventName, { detail: data })
+  document.dispatchEvent(event)
+}
