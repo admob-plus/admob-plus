@@ -9,6 +9,7 @@ class AMSPlugin: CDVPlugin {
     override func pluginInitialize() {
         super.pluginInitialize()
 
+        banner = AMSBanner(plugin: self)
         interstitial = AMSInterstitial(plugin: self)
 
         var applicationID = commandDelegate.settings["ADMOB_APPLICATOIN_ID".lowercased()] as? String
@@ -29,6 +30,8 @@ class AMSPlugin: CDVPlugin {
         readyCallbackId = command.callbackId
 
         self.emit(eventType: "admob.ready")
+
+        banner.show()
     }
 
     @objc(interstitial_prepare:)
