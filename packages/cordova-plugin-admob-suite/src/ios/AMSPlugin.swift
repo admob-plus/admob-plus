@@ -29,7 +29,7 @@ class AMSPlugin: CDVPlugin {
     func ready(command: CDVInvokedUrlCommand) {
         readyCallbackId = command.callbackId
 
-        self.emit(eventType: "admob.ready")
+        self.emit(eventType: "admob.ready", data: "ios")
 
         banner.show(adUnitID: "ca-app-pub-3940256099942544/2934735716")
     }
