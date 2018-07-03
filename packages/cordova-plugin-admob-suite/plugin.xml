@@ -35,6 +35,7 @@
         </config-file>
 
         <header-file src="src/ios/AMSPlugin-Bridging-Header.h" />
+        <source-file src="src/ios/AMSAdBase.swift" />
         <source-file src="src/ios/AMSBanner.swift" />
         <source-file src="src/ios/AMSInterstitial.swift" />
         <source-file src="src/ios/AMSPlugin.swift" />

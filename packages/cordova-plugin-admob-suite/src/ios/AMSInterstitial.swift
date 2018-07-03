@@ -1,16 +1,8 @@
-class AMSInterstitial: NSObject, GADInterstitialDelegate {
-    weak var plugin: AMSPlugin!
+class AMSInterstitial: AMSAdBase, GADInterstitialDelegate {
     var interstitial: GADInterstitial?
-
-    init(plugin: AMSPlugin) {
-        super.init()
-
-        self.plugin = plugin
-    }
 
     deinit {
         interstitial = nil
-        plugin = nil
     }
 
     func prepare() {
