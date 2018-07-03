@@ -50,9 +50,10 @@ class AMSPlugin: CDVPlugin {
         self.commandDelegate!.send(result, callbackId: command.callbackId)
     }
 
-    func emit(eventType: String) {
-        let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: ["type": eventType])
+    func emit(eventType: String, data: Any = false) {
+        let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: ["type": eventType, "data": data])
         result?.setKeepCallbackAs(true)
         self.commandDelegate!.send(result, callbackId: readyCallbackId)
     }
+
 }
