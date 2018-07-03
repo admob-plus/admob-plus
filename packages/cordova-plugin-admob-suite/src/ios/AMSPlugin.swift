@@ -2,6 +2,7 @@
 class AMSPlugin: CDVPlugin {
     let testApplicationID = "ca-app-pub-3940256099942544~1458002511"
 
+    var banner: AMSBanner!
     var interstitial: AMSInterstitial!
     var readyCallbackId: String!
 
