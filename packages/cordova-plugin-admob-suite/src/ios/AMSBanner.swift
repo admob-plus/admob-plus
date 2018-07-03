@@ -10,11 +10,11 @@ class AMSBanner: AMSAdBase {
         bannerView = nil
     }
 
-    func show() {
+    func show(adUnitID: String) {
         bannerView = GADBannerView(adSize: kGADAdSizeBanner)
         addBannerViewToView(bannerView)
         bannerView.rootViewController = plugin.viewController
-        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.adUnitID = adUnitID
         bannerView.load(GADRequest())
     }
 

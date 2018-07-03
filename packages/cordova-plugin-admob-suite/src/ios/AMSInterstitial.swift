@@ -5,8 +5,8 @@ class AMSInterstitial: AMSAdBase, GADInterstitialDelegate {
         interstitial = nil
     }
 
-    func prepare() {
-        let interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+    func prepare(adUnitID: String) {
+        let interstitial = GADInterstitial(adUnitID: adUnitID)
         self.interstitial = interstitial
 
         let request = GADRequest()
