@@ -30,8 +30,14 @@ class AMSPlugin: CDVPlugin {
         readyCallbackId = command.callbackId
 
         self.emit(eventType: "admob.ready", data: "ios")
+    }
 
+    @objc(banner_show:)
+    func banner_show(command: CDVInvokedUrlCommand) {
         banner.show(adUnitID: "ca-app-pub-3940256099942544/2934735716")
+
+        let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
+        self.commandDelegate!.send(result, callbackId: command.callbackId)
     }
 
     @objc(interstitial_prepare:)
