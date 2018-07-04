@@ -3,6 +3,7 @@ import { exec } from 'cordova'
 export const enum NativeActions {
   Service = 'AdMob',
   ready = 'ready',
+  banner_show = 'banner_show',
   interstitial_prepare = 'interstitial_prepare',
   interstitial_show = 'interstitial_show'
 }

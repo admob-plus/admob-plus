@@ -1,9 +1,12 @@
 import { exec } from 'cordova'
 
-import { Events, fireDocumentEvent, NativeActions } from './base'
+import Banner from './banner'
+import { fireDocumentEvent, NativeActions } from './base'
 import Interstitial from './interstitial'
 
 class AdMob {
+  public banner = new Banner()
+
   public interstitial = new Interstitial()
 
   constructor() {
