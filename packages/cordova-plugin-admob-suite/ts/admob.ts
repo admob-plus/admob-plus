@@ -15,7 +15,7 @@ class AdMob {
       () => {
         this.ready()
       },
-      false
+      false,
     )
   }
 
@@ -28,7 +28,7 @@ class AdMob {
         alert(err)
       },
       NativeActions.Service,
-      NativeActions.ready
+      NativeActions.ready,
     )
   }
 }
