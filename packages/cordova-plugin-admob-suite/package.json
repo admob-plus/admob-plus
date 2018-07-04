@@ -5,7 +5,9 @@
   "main": "www/admob.js",
   "typings": "www/admob.d.ts",
   "scripts": {
-    "prepare": "rollup -c"
+    "prepare": "run-s prepare:*",
+    "prepare:constants": "ts-node scripts/gen-constants",
+    "prepare:build": "rollup -c"
   },
   "devDependencies": {
     "@types/cordova": "^0.0.34",
@@ -14,10 +16,12 @@
     "cordova": "^8.0.0",
     "execa": "^0.10.0",
     "find-cache-dir": "^2.0.0",
+    "npm-run-all": "^4.1.3",
     "rollup": "^0.62.0",
     "rollup-plugin-commonjs": "^9.1.3",
     "rollup-plugin-node-resolve": "^3.3.0",
     "rollup-plugin-typescript2": "^0.15.1",
+    "ts-node": "^7.0.0",
     "typescript": "^2.9.2"
   },
   "author": "Ratson",
