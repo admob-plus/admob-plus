@@ -8,7 +8,7 @@ enum Actions {
   ready = 'ready',
   banner_show = 'banner_show',
   interstitial_prepare = 'interstitial_prepare',
-  interstitial_show = 'interstitial_show'
+  interstitial_show = 'interstitial_show',
 }
 
 enum Events {
@@ -17,10 +17,22 @@ enum Events {
   interstitial_load_fail = 'admob.interstitial.load_fail',
   interstitial_open = 'admob.interstitial.open',
   interstitial_close = 'admob.interstitial.close',
-  interstitial_exit_app = 'admob.interstitial.exit_app'
+  interstitial_exit_app = 'admob.interstitial.exit_app',
 }
 
-function buildConstantsTs() {
+function buildActionsJava(): string {
+  return `// ${warnMessage}
+package admob.suite;
+
+final class Actions {
+    static final String READY = "ready";
+    static final String INTERSTITIAL_PREPARE = "interstitial_prepare";
+    static final String INTERSTITIAL_SHOW = "interstitial_show";
+}
+`
+}
+
+function buildConstantsTs(): string {
   const linesActions = []
   for (const k in Actions) {
     linesActions.push(`  ${k} = '${Actions[k]}',`)
@@ -42,8 +54,16 @@ ${linesEvents.join('\n')}
 `
 }
 
-fs.promises.writeFile(
-  path.join(__dirname, '../ts/constants.ts'),
-  buildConstantsTs(),
-  'utf8'
-)
+function main() {
+  const l = [
+    { filepath: 'src/android/Actions.java', f: buildActionsJava },
+    { filepath: 'ts/constants.ts', f: buildConstantsTs },
+  ]
+  return Promise.all(
+    l.map(({ filepath, f }) =>
+      fs.promises.writeFile(path.join(__dirname, '..', filepath), f(), 'utf8'),
+    ),
+  )
+}
+
+main()
