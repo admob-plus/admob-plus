@@ -6,7 +6,7 @@
   "typings": "www/admob.d.ts",
   "scripts": {
     "prepare": "run-s prepare:*",
-    "prepare:constants": "ts-node scripts/gen-constants",
+    "prepare:gen": "ts-node scripts/gen",
     "prepare:build": "rollup -c"
   },
   "devDependencies": {
