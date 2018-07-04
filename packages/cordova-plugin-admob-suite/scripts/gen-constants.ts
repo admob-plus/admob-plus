@@ -34,6 +34,20 @@ ${linesActions}
 `
 }
 
+function buildEventsJava(): string {
+  const linesEvents = Object.keys(Events)
+    .map(k => `    static final String ${k.toUpperCase()} = "${Events[k]}";`)
+    .join('\n')
+
+  return `// ${warnMessage}
+package admob.suite;
+
+final class Events {
+${linesEvents}
+}
+`
+}
+
 function buildConstantsTs(): string {
   const linesActions = Object.keys(Actions)
     .map(k => `  ${k} = '${Actions[k]}',`)
@@ -58,6 +72,7 @@ ${linesEvents}
 function main() {
   const l = [
     { filepath: 'src/android/Actions.java', f: buildActionsJava },
+    { filepath: 'src/android/Events.java', f: buildEventsJava },
     { filepath: 'ts/constants.ts', f: buildConstantsTs },
   ]
   return Promise.all(
