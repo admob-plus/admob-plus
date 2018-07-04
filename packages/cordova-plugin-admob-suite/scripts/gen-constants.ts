@@ -21,13 +21,17 @@ enum Events {
 }
 
 function buildActionsJava(): string {
+  const linesActions = []
+  for (const k in Actions) {
+    linesActions.push(
+      `    static final String ${k.toUpperCase()} = "${Actions[k]}";`,
+    )
+  }
   return `// ${warnMessage}
 package admob.suite;
 
 final class Actions {
-    static final String READY = "ready";
-    static final String INTERSTITIAL_PREPARE = "interstitial_prepare";
-    static final String INTERSTITIAL_SHOW = "interstitial_show";
+${linesActions.join('\n')}
 }
 `
 }
