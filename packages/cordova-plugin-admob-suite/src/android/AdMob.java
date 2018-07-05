@@ -38,7 +38,7 @@ public class AdMob extends CordovaPlugin {
         if (Actions.READY.equals(action)) {
             readyCallbackContext = callbackContext;
 
-            emit("admob.ready");
+            emit(Events.READY);
             return true;
         } else if (Actions.INTERSTITIAL_PREPARE.equals(action)) {
             return interstitialExecutor.prepare(args, callbackContext);

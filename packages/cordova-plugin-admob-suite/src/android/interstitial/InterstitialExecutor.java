@@ -8,8 +8,10 @@ import org.apache.cordova.CallbackContext;
 import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONObject;
+
 import admob.suite.AbstractExecutor;
 import admob.suite.AdMob;
+import admob.suite.Events;
 
 public class InterstitialExecutor extends AbstractExecutor {
     private static final String TEST_AD_UNIT_ID = "ca-app-pub-3940256099942544/1033173712";
@@ -71,27 +73,27 @@ public class InterstitialExecutor extends AbstractExecutor {
         interstitialAd.setAdListener(new AdListener() {
             @Override
             public void onAdClosed() {
-                plugin.emit("admob.interstitial.close");
+                plugin.emit(Events.INTERSTITIAL_CLOSE);
             }
 
             @Override
             public void onAdFailedToLoad(int errorCode) {
-                plugin.emit("admob.interstitial.load_fail");
+                plugin.emit(Events.INTERSTITIAL_LOAD_FAIL);
             }
 
             @Override
             public void onAdLeftApplication() {
-                plugin.emit("admob.interstitial.exit_app");
+                plugin.emit(Events.INTERSTITIAL_EXIT_APP);
             }
 
             @Override
             public void onAdLoaded() {
-                plugin.emit("admob.interstitial.load");
+                plugin.emit(Events.INTERSTITIAL_LOAD);
             }
 
             @Override
             public void onAdOpened() {
-                plugin.emit("admob.interstitial.open");
+                plugin.emit(Events.INTERSTITIAL_OPEN);
             }
         });
 
