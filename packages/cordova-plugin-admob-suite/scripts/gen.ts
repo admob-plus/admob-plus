@@ -44,13 +44,15 @@ ${linesActions}
 
 function buildEventsJava(): string {
   const linesEvents = Object.keys(Events)
-    .map(k => `    static final String ${k.toUpperCase()} = "${Events[k]}";`)
+    .map(
+      k => `    public static final String ${k.toUpperCase()} = "${Events[k]}";`,
+    )
     .join('\n')
 
   return `// ${warnMessage}
 package admob.suite;
 
-final class Events {
+public final class Events {
 ${linesEvents}
 }
 `
