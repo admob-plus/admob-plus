@@ -5,11 +5,13 @@ import { fireDocumentEvent, NativeActions } from './base'
 import Interstitial from './interstitial'
 
 class AdMob {
-  public banner = new Banner()
-
-  public interstitial = new Interstitial()
+  public banner: Banner
+  public interstitial: Interstitial
 
   constructor() {
+    this.banner = new Banner()
+    this.interstitial = new Interstitial()
+
     document.addEventListener(
       'deviceready',
       () => {
