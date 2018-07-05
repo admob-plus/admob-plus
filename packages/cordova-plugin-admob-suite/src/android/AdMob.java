@@ -41,7 +41,7 @@ public class AdMob extends CordovaPlugin {
         if (Actions.READY.equals(action)) {
             readyCallbackContext = callbackContext;
 
-            emit(Events.READY);
+            emit(Events.READY, "android");
             return true;
         } else if (Actions.BANNER_SHOW.equals(action)) {
             return bannerExecutor.show(args, callbackContext);
@@ -72,9 +72,14 @@ public class AdMob extends CordovaPlugin {
     }
 
     public void emit(String eventType) {
+        emit(eventType, false);
+    }
+
+    public void emit(String eventType, Object data) {
         JSONObject event = new JSONObject();
         try {
             event.put("type", eventType);
+            event.put("data", data);
         } catch (JSONException e) {
             e.printStackTrace();
         }
