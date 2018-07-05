@@ -11,10 +11,13 @@ import org.json.JSONObject;
 
 import com.google.android.gms.ads.MobileAds;
 
+import admob.suite.banner.BannerExecutor;
 import admob.suite.interstitial.InterstitialExecutor;
 
 public class AdMob extends CordovaPlugin {
     private CallbackContext readyCallbackContext = null;
+
+    private BannerExecutor bannerExecutor = null;
     private InterstitialExecutor interstitialExecutor = null;
 
     private static final String TEST_APPLICATION_ID = "ca-app-pub-3940256099942544~3347511713";
@@ -24,7 +27,7 @@ public class AdMob extends CordovaPlugin {
         super.initialize(cordova, webView);
 
         interstitialExecutor = new InterstitialExecutor(this);
-
+        bannerExecutor = new BannerExecutor(this);
 
         String applicationID = cordova.getActivity().getIntent().getStringExtra("ADMOB_APPLICATOIN_ID");
         if (applicationID == null || "test".equals(applicationID)) {
@@ -40,6 +43,8 @@ public class AdMob extends CordovaPlugin {
 
             emit(Events.READY);
             return true;
+        } else if (Actions.BANNER_SHOW.equals(action)) {
+            return bannerExecutor.show(args, callbackContext);
         } else if (Actions.INTERSTITIAL_PREPARE.equals(action)) {
             return interstitialExecutor.prepare(args, callbackContext);
         } else if (Actions.INTERSTITIAL_SHOW.equals(action)) {
@@ -51,6 +56,11 @@ public class AdMob extends CordovaPlugin {
 
     @Override
     public void onDestroy() {
+        if (bannerExecutor != null) {
+            bannerExecutor.destroy();
+            bannerExecutor = null;
+        }
+
         if (interstitialExecutor != null) {
             interstitialExecutor.destroy();
             interstitialExecutor = null;
