@@ -29,7 +29,7 @@ export class AdBase {
     this.state = state
   }
 
-  protected getAdUnitID(adUnitID) {
+  protected getAdUnitID(adUnitID): string {
     if (this.state.devMode) {
       return this.testAdUnitID
     }
