@@ -17,7 +17,7 @@ export function fireDocumentEvent(eventName: string, data = null) {
 }
 
 export class AdBase {
-  private state: AdMobState
+  protected state: AdMobState
 
   constructor(state: AdMobState) {
     this.state = state
