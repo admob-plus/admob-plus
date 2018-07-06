@@ -12,10 +12,11 @@ class AdMob {
   private state: AdMobState
 
   constructor() {
-    this.state = new AdMobState()
+    const state = new AdMobState()
+    this.state = state
 
-    this.banner = new Banner(this.state)
-    this.interstitial = new Interstitial(this.state)
+    this.banner = new Banner(state)
+    this.interstitial = new Interstitial(state)
 
     document.addEventListener(
       'deviceready',
