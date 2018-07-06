@@ -1,11 +1,9 @@
-declare var cordova: any
-
 class AdMobState {
   public devMode = false
   public platform: string
 
   constructor() {
-    this.platform = cordova.platformId
+    this.platform = typeof cordova !== 'undefined' ? cordova.platformId : ''
   }
 }
 
