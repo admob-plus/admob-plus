@@ -1,3 +1,5 @@
+declare var cordova: any
+
 class AdMobState {
   public devMode = false
   public platform: string
