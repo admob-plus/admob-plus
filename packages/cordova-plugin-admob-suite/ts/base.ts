@@ -5,6 +5,11 @@ import AdMobState from './state'
 
 export { Events, NativeActions }
 
+export const enum Platforms {
+  android = 'android',
+  ios = 'ios',
+}
+
 export function execAsync(action: NativeActions, args?: any[]) {
   return new Promise((resolve, reject) => {
     exec(resolve, reject, NativeActions.Service, action, args)
