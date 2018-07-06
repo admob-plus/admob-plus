@@ -1,10 +1,10 @@
-import { execAsync, NativeActions } from './base'
+import { AdBase, execAsync, NativeActions } from './base'
 
 interface IInterstitialPrepareOptions {
   adUnitID?: string
 }
 
-export default class Interstitial {
+export default class Interstitial extends AdBase {
   public prepare(opts: IInterstitialPrepareOptions = {}) {
     return execAsync(NativeActions.interstitial_prepare, [opts])
   }
