@@ -6,9 +6,15 @@ interface IBannerShowOptions {
 
 export default class Banner extends AdBase {
   public show(opts: IBannerShowOptions = {}) {
-    return execAsync(NativeActions.banner_show, [opts])
+    return execAsync(NativeActions.banner_show, [
+      {
+        ...opts,
+        adUnitID: this.getAdUnitID(opts.adUnitID),
+      },
+    ])
   }
-  private get testAdUnitID() {
+
+  protected get testAdUnitID() {
     switch (this.state.platform) {
       case Platforms.android:
         return 'ca-app-pub-3940256099942544/6300978111'

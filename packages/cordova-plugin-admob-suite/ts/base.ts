@@ -23,8 +23,16 @@ export function fireDocumentEvent(eventName: string, data = null) {
 
 export class AdBase {
   protected state: AdMobState
+  protected testAdUnitID
 
   constructor(state: AdMobState) {
     this.state = state
+  }
+
+  protected getAdUnitID(adUnitID) {
+    if (this.state.devMode) {
+      return this.testAdUnitID
+    }
+    return adUnitID
   }
 }
