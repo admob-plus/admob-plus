@@ -11,6 +11,7 @@ import com.google.android.gms.ads.AdView;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 import admob.suite.AbstractExecutor;
 import admob.suite.AdMob;
@@ -26,10 +27,13 @@ public class BannerExecutor extends AbstractExecutor {
     }
 
     public boolean show(JSONArray args, CallbackContext callbackContext) {
+        JSONObject opts = args.optJSONObject(0);
+        String adUnitID = opts.optString("adUnitID");
+
         plugin.cordova.getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                showBanner();
+                showBanner(adUnitID);
 
                 PluginResult result = new PluginResult(PluginResult.Status.OK, "");
                 callbackContext.sendPluginResult(result);
@@ -48,11 +52,11 @@ public class BannerExecutor extends AbstractExecutor {
     }
 
 
-    private void showBanner() {
+    private void showBanner(String adUnitID) {
         if (adView == null) {
 
             adView = new AdView(plugin.cordova.getActivity());
-            adView.setAdUnitId("ca-app-pub-3940256099942544/6300978111");
+            adView.setAdUnitId(adUnitID);
             adView.setAdSize(AdSize.SMART_BANNER);
             adView.setAdListener(new AdListener() {
                 @Override
