@@ -30,10 +30,11 @@ public class BannerExecutor extends AbstractExecutor {
         JSONObject opts = args.optJSONObject(0);
         String adUnitID = opts.optString("adUnitID");
 
+        String finalAdUnitID = adUnitID;
         plugin.cordova.getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                showBanner(adUnitID);
+                showBanner(finalAdUnitID);
 
                 PluginResult result = new PluginResult(PluginResult.Status.OK, "");
                 callbackContext.sendPluginResult(result);

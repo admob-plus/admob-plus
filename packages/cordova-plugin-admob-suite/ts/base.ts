@@ -30,7 +30,7 @@ export class AdBase {
   }
 
   protected getAdUnitID(adUnitID): string {
-    if (this.state.devMode) {
+    if (adUnitID === 'test' || this.state.devMode) {
       return this.testAdUnitID
     }
     return adUnitID

@@ -14,7 +14,6 @@ import admob.suite.AdMob;
 import admob.suite.Events;
 
 public class InterstitialExecutor extends AbstractExecutor {
-    private static final String TEST_AD_UNIT_ID = "ca-app-pub-3940256099942544/1033173712";
     private InterstitialAd interstitialAd = null;
 
     public InterstitialExecutor(AdMob plugin) {
@@ -31,10 +30,6 @@ public class InterstitialExecutor extends AbstractExecutor {
     public boolean prepare(JSONArray args, CallbackContext callbackContext) {
         JSONObject opts = args.optJSONObject(0);
         String adUnitID = opts.optString("adUnitID");
-
-        if (adUnitID == null || "test".equals(adUnitID)) {
-             adUnitID = TEST_AD_UNIT_ID;
-        }
 
         String finalAdUnitID = adUnitID;
         plugin.cordova.getActivity().runOnUiThread(new Runnable() {
