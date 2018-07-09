@@ -12,6 +12,7 @@ const siteConfig = {
   headerLinks: [
     { doc: 'installation', label: 'Docs' },
     // { blog: true, label: 'Blog' },
+    { href: 'https://ratson.name/fund-admob-suite/', label: 'Funding' },
   ],
 
   colors: {
