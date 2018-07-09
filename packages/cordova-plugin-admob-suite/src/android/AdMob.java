@@ -13,12 +13,14 @@ import com.google.android.gms.ads.MobileAds;
 
 import admob.suite.banner.BannerExecutor;
 import admob.suite.interstitial.InterstitialExecutor;
+import admob.suite.rewardvideo.RewardVideoExecutor;
 
 public class AdMob extends CordovaPlugin {
     private CallbackContext readyCallbackContext = null;
 
     private BannerExecutor bannerExecutor = null;
     private InterstitialExecutor interstitialExecutor = null;
+    private RewardVideoExecutor rewardVideoExecutor = null;
 
     private static final String TEST_APPLICATION_ID = "ca-app-pub-3940256099942544~3347511713";
 
@@ -26,14 +28,15 @@ public class AdMob extends CordovaPlugin {
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
 
-        interstitialExecutor = new InterstitialExecutor(this);
-        bannerExecutor = new BannerExecutor(this);
-
         String applicationID = cordova.getActivity().getIntent().getStringExtra("ADMOB_APPLICATOIN_ID");
         if (applicationID == null || "test".equals(applicationID)) {
             applicationID = TEST_APPLICATION_ID;
         }
         MobileAds.initialize(cordova.getActivity(), applicationID);
+
+        interstitialExecutor = new InterstitialExecutor(this);
+        bannerExecutor = new BannerExecutor(this);
+        rewardVideoExecutor = new RewardVideoExecutor(this);
     }
 
     @Override
