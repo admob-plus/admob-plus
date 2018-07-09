@@ -3,11 +3,13 @@ import { exec } from 'cordova'
 import Banner from './banner'
 import { fireDocumentEvent, NativeActions } from './base'
 import Interstitial from './interstitial'
+import RewardVideo from './reward-video'
 import AdMobState from './state'
 
 class AdMob {
   public banner: Banner
   public interstitial: Interstitial
+  public rewardVideo: RewardVideo
 
   private state: AdMobState
 
@@ -17,6 +19,7 @@ class AdMob {
 
     this.banner = new Banner(state)
     this.interstitial = new Interstitial(state)
+    this.rewardVideo = new RewardVideo(state)
 
     document.addEventListener(
       'deviceready',
