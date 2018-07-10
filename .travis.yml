@@ -69,9 +69,6 @@ matrix:
       - travis_retry yarn
       - GIT_USER="${GH_NAME}" yarn publish-gh-pages
       - popd
-      - git fetch --depth 1 origin gh-pages:gh-pages
-      - git remote add website https://github.com/admob-suite/admob-suite.github.io.git
-      - git push -u website gh-pages:master
 
 before_install:
   - nvm install 10

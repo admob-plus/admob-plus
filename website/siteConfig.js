@@ -6,7 +6,7 @@ const siteConfig = {
   url: 'https://admob-suite.github.io',
   baseUrl: '/',
 
-  projectName: 'admob-suite',
+  projectName: 'admob-suite.github.io',
   organizationName: 'admob-suite',
 
   headerLinks: [
