@@ -1,6 +1,19 @@
-import { AdBase, Platforms } from './base'
+import { AdBase, execAsync, NativeActions, Platforms } from './base'
+
+interface IRewardVideoPrepareOptions {
+  adUnitID?: string
+}
 
 export default class RewardVideo extends AdBase {
+  public prepare(opts: IRewardVideoPrepareOptions = {}) {
+    return execAsync(NativeActions.reward_video_prepare, [
+      {
+        ...opts,
+        adUnitID: this.getAdUnitID(opts.adUnitID),
+      },
+    ])
+  }
+
   protected get testAdUnitID() {
     switch (this.state.platform) {
       case Platforms.android:
