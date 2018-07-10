@@ -5,6 +5,8 @@ export const enum NativeActions {
   banner_show = 'banner_show',
   interstitial_prepare = 'interstitial_prepare',
   interstitial_show = 'interstitial_show',
+  reward_video_prepare = 'reward_video_prepare',
+  reward_video_show = 'reward_video_show',
 }
 
 export const enum Events {

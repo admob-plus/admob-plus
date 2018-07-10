@@ -15,6 +15,9 @@ const Actions: { [index: string]: string } = {
 
   interstitial_prepare: 'interstitial_prepare',
   interstitial_show: 'interstitial_show',
+
+  reward_video_prepare: 'reward_video_prepare',
+  reward_video_show: 'reward_video_show',
 }
 
 const Events: { [index: string]: string } = {
