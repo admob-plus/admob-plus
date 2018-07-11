@@ -17,15 +17,7 @@ const app = {
 
   prepareAndShowInterstitialAd() {
     admob.banner.show()
-    admob.interstitial.prepare()
-
-    document.addEventListener(
-      'admob.interstitial.load',
-      () => {
-        admob.interstitial.show()
-      },
-      false
-    )
+    admob.interstitial.prepare().then(() => admob.interstitial.show())
   },
 
   receivedEvent(id) {
