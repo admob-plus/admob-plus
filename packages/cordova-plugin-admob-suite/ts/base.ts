@@ -21,6 +21,28 @@ export function fireDocumentEvent(eventName: string, data = null) {
   document.dispatchEvent(event)
 }
 
+export function waitEvent(successEvent, failEvent = '') {
+  return new Promise((resolve, reject) => {
+    document.addEventListener(
+      successEvent,
+      event => {
+        resolve(event)
+      },
+      false,
+    )
+
+    if (failEvent) {
+      document.addEventListener(
+        failEvent,
+        failedEvent => {
+          reject(failedEvent)
+        },
+        false,
+      )
+    }
+  })
+}
+
 export class AdBase {
   protected state: AdMobState
   protected testAdUnitID
