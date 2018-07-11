@@ -34,6 +34,7 @@ const Events: { [index: string]: string } = {
 function buildActionsJava(): string {
   const linesActions = Object.keys(Actions)
     .map(k => `    static final String ${k.toUpperCase()} = "${Actions[k]}";`)
+    .sort()
     .join('\n')
 
   return `// ${warnMessage}
@@ -50,6 +51,7 @@ function buildEventsJava(): string {
     .map(
       k => `    public static final String ${k.toUpperCase()} = "${Events[k]}";`,
     )
+    .sort()
     .join('\n')
 
   return `// ${warnMessage}
@@ -64,10 +66,12 @@ ${linesEvents}
 function buildConstantsTs(): string {
   const linesActions = Object.keys(Actions)
     .map(k => `  ${k} = '${Actions[k]}',`)
+    .sort()
     .join('\n')
 
   const linesEvents = Object.keys(Events)
     .map(k => `  ${k} = '${Events[k]}',`)
+    .sort()
     .join('\n')
 
   return `// ${warnMessage}
@@ -97,9 +101,11 @@ async function updateConfigXML() {
       }
       return `        <source-file src="src/android/${s}" target-dir="src/admob/suite${d}" />`
     })
+    .sort()
     .join('\n')
   const iosContent = iosFiles
     .map(s => `        <source-file src="src/ios/${s}" />`)
+    .sort()
     .join('\n')
   await replace({
     files: [path.join(__dirname, '../plugin.xml')],

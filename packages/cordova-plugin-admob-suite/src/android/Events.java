@@ -2,10 +2,10 @@
 package admob.suite;
 
 public final class Events {
-    public static final String READY = "admob.ready";
+    public static final String INTERSTITIAL_CLOSE = "admob.interstitial.close";
+    public static final String INTERSTITIAL_EXIT_APP = "admob.interstitial.exit_app";
     public static final String INTERSTITIAL_LOAD = "admob.interstitial.load";
     public static final String INTERSTITIAL_LOAD_FAIL = "admob.interstitial.load_fail";
     public static final String INTERSTITIAL_OPEN = "admob.interstitial.open";
-    public static final String INTERSTITIAL_CLOSE = "admob.interstitial.close";
-    public static final String INTERSTITIAL_EXIT_APP = "admob.interstitial.exit_app";
+    public static final String READY = "admob.ready";
 }
