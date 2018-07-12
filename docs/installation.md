@@ -4,4 +4,8 @@ title: Installation
 sidebar_label: Installation
 ---
 
-Coming Soon...
+Via [cordova](https://www.npmjs.com/package/cordova):
+
+```sh
+cordova plugin add cordova-plugin-admob-suite --save
+```
