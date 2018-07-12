@@ -1,17 +1,26 @@
-import { AdBase, execAsync, NativeActions, Platforms } from './base'
+import {
+  AdBase,
+  Events,
+  execAsync,
+  NativeActions,
+  Platforms,
+  waitEvent,
+} from './base'
 
 interface IRewardVideoPrepareOptions {
   adUnitID?: string
 }
 
 export default class RewardVideo extends AdBase {
-  public prepare(opts: IRewardVideoPrepareOptions = {}) {
-    return execAsync(NativeActions.reward_video_prepare, [
+  public async prepare(opts: IRewardVideoPrepareOptions = {}) {
+    await execAsync(NativeActions.reward_video_prepare, [
       {
         ...opts,
         adUnitID: this.getAdUnitID(opts.adUnitID),
       },
     ])
+
+    await waitEvent(Events.reward_video_load, Events.reward_video_load_fail)
   }
 
   protected get testAdUnitID() {
