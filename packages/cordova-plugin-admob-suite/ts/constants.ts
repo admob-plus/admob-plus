@@ -16,4 +16,12 @@ export const enum Events {
   interstitial_load_fail = 'admob.interstitial.load_fail',
   interstitial_open = 'admob.interstitial.open',
   ready = 'admob.ready',
+  reward_video_close = 'admob.reward_video.close',
+  reward_video_complete = 'admob.reward_video.complete',
+  reward_video_exit_app = 'admob.interstitial.exit_app',
+  reward_video_load = 'admob.reward_video.load',
+  reward_video_load_fail = 'admob.interstitial.load_fail',
+  reward_video_open = 'admob.reward_video.open',
+  reward_video_reward = 'admob.reward_video.reward',
+  reward_video_start = 'admob.reward_video.start',
 }

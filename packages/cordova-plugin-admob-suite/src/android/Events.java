@@ -8,4 +8,12 @@ public final class Events {
     public static final String INTERSTITIAL_LOAD_FAIL = "admob.interstitial.load_fail";
     public static final String INTERSTITIAL_OPEN = "admob.interstitial.open";
     public static final String READY = "admob.ready";
+    public static final String REWARD_VIDEO_CLOSE = "admob.reward_video.close";
+    public static final String REWARD_VIDEO_COMPLETE = "admob.reward_video.complete";
+    public static final String REWARD_VIDEO_EXIT_APP = "admob.interstitial.exit_app";
+    public static final String REWARD_VIDEO_LOAD = "admob.reward_video.load";
+    public static final String REWARD_VIDEO_LOAD_FAIL = "admob.interstitial.load_fail";
+    public static final String REWARD_VIDEO_OPEN = "admob.reward_video.open";
+    public static final String REWARD_VIDEO_REWARD = "admob.reward_video.reward";
+    public static final String REWARD_VIDEO_START = "admob.reward_video.start";
 }
