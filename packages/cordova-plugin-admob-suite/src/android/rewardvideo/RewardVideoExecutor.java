@@ -13,6 +13,7 @@ import org.json.JSONObject;
 
 import admob.suite.AbstractExecutor;
 import admob.suite.AdMob;
+import admob.suite.Events;
 
 public class RewardVideoExecutor extends AbstractExecutor {
     private RewardedVideoAd rewardedVideoAd;
@@ -52,42 +53,42 @@ public class RewardVideoExecutor extends AbstractExecutor {
         rewardedVideoAd.setRewardedVideoAdListener(new RewardedVideoAdListener() {
             @Override
             public void onRewardedVideoAdLoaded() {
-
+                plugin.emit(Events.REWARD_VIDEO_LOAD);
             }
 
             @Override
             public void onRewardedVideoAdOpened() {
-
+                plugin.emit(Events.REWARD_VIDEO_OPEN);
             }
 
             @Override
             public void onRewardedVideoStarted() {
-
+                plugin.emit(Events.REWARD_VIDEO_START);
             }
 
             @Override
             public void onRewardedVideoAdClosed() {
-
+                plugin.emit(Events.REWARD_VIDEO_CLOSE);
             }
 
             @Override
             public void onRewarded(RewardItem rewardItem) {
-
+                plugin.emit(Events.REWARD_VIDEO_REWARD);
             }
 
             @Override
             public void onRewardedVideoAdLeftApplication() {
-
+                plugin.emit(Events.REWARD_VIDEO_EXIT_APP);
             }
 
             @Override
             public void onRewardedVideoAdFailedToLoad(int i) {
-
+                plugin.emit(Events.REWARD_VIDEO_LOAD_FAIL);
             }
 
             @Override
             public void onRewardedVideoCompleted() {
-
+                plugin.emit(Events.REWARD_VIDEO_COMPLETE);
             }
         });
         rewardedVideoAd.loadAd(adUnitID, new AdRequest.Builder().build());
