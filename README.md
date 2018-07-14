@@ -15,3 +15,7 @@ AdMob Suite is the successor of [cordova-plugin-admob-free](https://github.com/r
 
 - [v1](https://github.com/admob-suite/admob-suite/projects/1)
 - [Post v1](https://github.com/admob-suite/admob-suite/projects/2)
+
+## License
+
+AdMob Suite is [MIT licensed](./LICENSE).
