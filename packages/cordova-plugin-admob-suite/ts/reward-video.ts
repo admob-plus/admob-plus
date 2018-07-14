@@ -12,8 +12,8 @@ interface IRewardVideoPrepareOptions {
 }
 
 export default class RewardVideo extends AdBase {
-  public async prepare(opts: IRewardVideoPrepareOptions = {}) {
-    await execAsync(NativeActions.reward_video_prepare, [
+  public async load(opts: IRewardVideoPrepareOptions = {}) {
+    await execAsync(NativeActions.reward_video_load, [
       {
         ...opts,
         adUnitID: this.getAdUnitID(opts.adUnitID),
