@@ -1,9 +1,7 @@
 class AMSBanner: AMSAdBase {
     var bannerView: GADBannerView!
     var view: UIView {
-        get {
-            return plugin.viewController.view
-        }
+        return self.plugin.viewController.view
     }
 
     deinit {
@@ -23,8 +21,7 @@ class AMSBanner: AMSAdBase {
         view.addSubview(bannerView)
         if #available(iOS 11.0, *) {
             positionBannerAtBottomOfSafeArea(bannerView)
-        }
-        else {
+        } else {
             positionBannerAtBottomOfView(bannerView)
         }
     }
