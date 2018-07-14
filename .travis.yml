@@ -89,6 +89,9 @@ script:
   - if [[ "$PLATFORM" =~ android ]]; then yarn test-android; fi
   - if [[ "$PLATFORM" =~ ios ]]; then yarn test-ios; fi
   - if [[ "$PLATFORM" =~ ios ]]; then pushd packages/cordova-plugin-admob-suite/src/ios && swiftlint && popd; fi
+  - pushd packages/cordova-plugin-admob-suite
+  - yarn prepare
+  - popd
   - pushd examples/ionic-angular
   # - yarn build
   - yarn lint
