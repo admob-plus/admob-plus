@@ -72,6 +72,28 @@ ${linesEvents}
 `
 }
 
+function buildConstantsSwift(): string {
+  const linesActions = Object.keys(Actions)
+    .map(k => `    static let ${k} = "${Actions[k]}"`)
+    .sort()
+    .join('\n')
+
+  const linesEvents = Object.keys(Events)
+    .map(k => `    static let ${k} = "${Events[k]}"`)
+    .sort()
+    .join('\n')
+
+  return `// ${warnMessage}
+struct AMSActions {
+${linesActions}
+}
+
+struct AMSActions {
+${linesEvents}
+}
+`
+}
+
 function buildConstantsTs(): string {
   const linesActions = Object.keys(Actions)
     .map(k => `  ${k} = '${Actions[k]}',`)
@@ -128,6 +150,7 @@ async function main() {
   const l = [
     { filepath: 'src/android/Actions.java', f: buildActionsJava },
     { filepath: 'src/android/Events.java', f: buildEventsJava },
+    { filepath: 'src/ios/AMSConstants.swift', f: buildConstantsSwift },
     { filepath: 'ts/constants.ts', f: buildConstantsTs },
   ]
   await Promise.all(
