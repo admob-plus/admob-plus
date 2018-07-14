@@ -23,26 +23,26 @@ class AMSInterstitial: AMSAdBase, GADInterstitialDelegate {
 
     @objc
     func interstitialDidReceiveAd(_ adInterstitial: GADInterstitial) {
-        plugin.emit(eventType: AMSEvents.interstitial_load)
+        plugin.emit(eventType: AMSEvents.interstitialLoad)
     }
 
     @objc
     func interstitialDidFail(toPresentScreen adInterstitial: GADInterstitial) {
-        plugin.emit(eventType: AMSEvents.interstitial_load_fail)
+        plugin.emit(eventType: AMSEvents.interstitialLoadFail)
     }
 
     @objc
     func interstitialDidDismissScreen(_ adInterstitial: GADInterstitial) {
-        plugin.emit(eventType: AMSEvents.interstitial_close)
+        plugin.emit(eventType: AMSEvents.interstitialClose)
     }
 
     @objc
     func interstitialWillPresentScreen(_ adInterstitial: GADInterstitial) {
-        plugin.emit(eventType: AMSEvents.interstitial_open)
+        plugin.emit(eventType: AMSEvents.interstitialOpen)
     }
 
     @objc
     func interstitialWillLeaveApplication(_ adInterstitial: GADInterstitial) {
-        plugin.emit(eventType: AMSEvents.interstitial_exit_app)
+        plugin.emit(eventType: AMSEvents.interstitialExitApp)
     }
 }

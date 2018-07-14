@@ -2,6 +2,7 @@ import fs from 'fs'
 import path from 'path'
 
 import glob from 'fast-glob'
+import _ from 'lodash'
 import replace from 'replace-in-file'
 
 const warnMessage =
@@ -74,7 +75,7 @@ ${linesEvents}
 
 function buildConstantsSwift(): string {
   const linesEvents = Object.keys(Events)
-    .map(k => `    static let ${k} = "${Events[k]}"`)
+    .map(k => `    static let ${_.camelCase(k)} = "${Events[k]}"`)
     .sort()
     .join('\n')
 
