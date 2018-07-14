@@ -34,7 +34,7 @@ class AMSPlugin: CDVPlugin {
 
     @objc(banner_show:)
     func banner_show(command: CDVInvokedUrlCommand) {
-        banner.show(adUnitID: "ca-app-pub-3940256099942544/2934735716")
+        banner.show(adUnitID: command.argument(at: 0) as! String)
 
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
         self.commandDelegate!.send(result, callbackId: command.callbackId)
@@ -42,7 +42,7 @@ class AMSPlugin: CDVPlugin {
 
     @objc(interstitial_load:)
     func interstitial_load(command: CDVInvokedUrlCommand) {
-        interstitial.load(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+        interstitial.load(adUnitID: command.argument(at: 0) as! String)
 
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
         self.commandDelegate!.send(result, callbackId: command.callbackId)
