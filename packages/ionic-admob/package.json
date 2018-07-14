@@ -14,8 +14,8 @@
     "rxjs": "^5.0.1"
   },
   "devDependencies": {
-    "@angular/core": "^6.0.6",
-    "@ionic-native/core": "^4.8.0",
+    "@angular/core": "^6.0.9",
+    "@ionic-native/core": "^4.9.2",
     "rxjs": "^5.5.11",
     "tslint-ionic-rules": "0.0.16",
     "typescript": "^2.9.2"

@@ -1,14 +1,14 @@
-import { Injectable } from '@angular/core';
-import { Cordova, IonicNativePlugin, Plugin } from '@ionic-native/core';
+import { Injectable } from "@angular/core";
+import { Cordova, IonicNativePlugin, Plugin } from "@ionic-native/core";
 
 @Plugin({
-  plugin: 'cordova-plugin-admob-suite',
-  pluginName: 'AdMob',
-  pluginRef: 'admob.interstitial'
+  plugin: "cordova-plugin-admob-suite",
+  pluginName: "AdMob",
+  pluginRef: "admob.interstitial"
 })
 export class AdMobInterstitial {
   @Cordova()
-  prepare(): Promise<any> {
+  load(): Promise<any> {
     return Promise.resolve();
   }
 
@@ -19,11 +19,11 @@ export class AdMobInterstitial {
 }
 
 @Plugin({
-  platforms: ['Android', 'iOS'],
-  plugin: 'cordova-plugin-admob-suite',
-  pluginName: 'AdMob',
-  pluginRef: 'admob',
-  repo: 'https://github.com/admob-suite/admob-suite'
+  platforms: ["Android", "iOS"],
+  plugin: "cordova-plugin-admob-suite",
+  pluginName: "AdMob",
+  pluginRef: "admob",
+  repo: "https://github.com/admob-suite/admob-suite"
 })
 @Injectable()
 export class AdMob extends IonicNativePlugin {
