@@ -58,7 +58,7 @@ export class AdBase {
     this.state = state
   }
 
-  protected getAdUnitID(adUnitID?: AdUnitIDOption): string {
+  protected resolveAdUnitID(adUnitID?: AdUnitIDOption): string {
     if (adUnitID === 'test' || this.state.devMode) {
       return this.testAdUnitID
     }

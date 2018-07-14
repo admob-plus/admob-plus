@@ -17,7 +17,7 @@ export default class Interstitial extends AdBase {
     await execAsync(NativeActions.interstitial_load, [
       {
         ...opts,
-        adUnitID: this.getAdUnitID(opts.id),
+        adUnitID: this.resolveAdUnitID(opts.id),
       },
     ])
 

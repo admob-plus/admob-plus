@@ -17,7 +17,7 @@ export default class RewardVideo extends AdBase {
     await execAsync(NativeActions.reward_video_load, [
       {
         ...opts,
-        adUnitID: this.getAdUnitID(opts.id),
+        adUnitID: this.resolveAdUnitID(opts.id),
       },
     ])
 

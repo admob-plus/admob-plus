@@ -15,7 +15,7 @@ export default class Banner extends AdBase {
     return execAsync(NativeActions.banner_show, [
       {
         ...opts,
-        adUnitID: this.getAdUnitID(opts.id),
+        adUnitID: this.resolveAdUnitID(opts.id),
       },
     ])
   }
