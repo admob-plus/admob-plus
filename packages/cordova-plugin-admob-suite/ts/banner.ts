@@ -1,7 +1,13 @@
-import { AdBase, execAsync, NativeActions, Platforms } from './base'
+import {
+  AdBase,
+  AdUnitIDOption,
+  execAsync,
+  NativeActions,
+  Platforms,
+} from './base'
 
 interface IBannerShowOptions {
-  adUnitID?: string
+  id?: AdUnitIDOption
 }
 
 export default class Banner extends AdBase {
@@ -9,7 +15,7 @@ export default class Banner extends AdBase {
     return execAsync(NativeActions.banner_show, [
       {
         ...opts,
-        adUnitID: this.getAdUnitID(opts.adUnitID),
+        adUnitID: this.getAdUnitID(opts.id),
       },
     ])
   }

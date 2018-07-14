@@ -1,5 +1,6 @@
 import {
   AdBase,
+  AdUnitIDOption,
   Events,
   execAsync,
   NativeActions,
@@ -8,7 +9,7 @@ import {
 } from './base'
 
 interface IRewardVideoPrepareOptions {
-  adUnitID?: string
+  id?: AdUnitIDOption
 }
 
 export default class RewardVideo extends AdBase {
@@ -16,7 +17,7 @@ export default class RewardVideo extends AdBase {
     await execAsync(NativeActions.reward_video_load, [
       {
         ...opts,
-        adUnitID: this.getAdUnitID(opts.adUnitID),
+        adUnitID: this.getAdUnitID(opts.id),
       },
     ])
 

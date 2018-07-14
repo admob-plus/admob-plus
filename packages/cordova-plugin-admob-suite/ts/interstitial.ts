@@ -9,7 +9,7 @@ import {
 } from './base'
 
 interface IInterstitialPrepareOptions {
-  adUnitID?: AdUnitIDOption
+  id?: AdUnitIDOption
 }
 
 export default class Interstitial extends AdBase {
@@ -17,7 +17,7 @@ export default class Interstitial extends AdBase {
     await execAsync(NativeActions.interstitial_load, [
       {
         ...opts,
-        adUnitID: this.getAdUnitID(opts.adUnitID),
+        adUnitID: this.getAdUnitID(opts.id),
       },
     ])
 
