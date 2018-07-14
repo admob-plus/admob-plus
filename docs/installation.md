@@ -4,8 +4,8 @@ title: Installation
 sidebar_label: Installation
 ---
 
-Via [cordova](https://www.npmjs.com/package/cordova):
+Via [Cordova CLI](https://www.npmjs.com/package/cordova):
 
 ```sh
-cordova plugin add cordova-plugin-admob-suite --save
+cordova plugin add cordova-plugin-admob-suite --variable ADMOB_APPLICATOIN_ID=ca-app-pub-xxx~xxx
 ```
