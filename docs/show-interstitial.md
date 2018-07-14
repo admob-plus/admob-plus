@@ -8,8 +8,9 @@ sidebar_label: Showing Interstitial Ad
 document.addEventListener('deviceready', () => {
   admob.interstitial.load({
     id: {
-      android: 'ca-app-pub-xxx/yyy',  // replace with your ad unit ID for android
-      ios: 'ca-app-pub-xxx/zzz',  // replace with your ad unit ID for ios
+      // replace with your ad unit IDs
+      android: 'ca-app-pub-xxx/yyy',
+      ios: 'ca-app-pub-xxx/zzz',
     },
   }).then(() => admob.interstitial.show())
 }, false)
