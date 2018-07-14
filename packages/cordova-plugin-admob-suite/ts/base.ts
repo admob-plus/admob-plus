@@ -1,4 +1,5 @@
 import { exec } from 'cordova'
+import { Platform } from 'ionic-angular'
 
 import { Events, NativeActions } from './constants'
 import AdMobState from './state'
@@ -43,6 +44,13 @@ export function waitEvent(successEvent, failEvent = '') {
   })
 }
 
+export type AdUnitIDOption =
+  | string
+  | {
+      android: string;
+      ios: string;
+    }
+
 export class AdBase {
   protected state: AdMobState
   protected testAdUnitID
@@ -51,10 +59,16 @@ export class AdBase {
     this.state = state
   }
 
-  protected getAdUnitID(adUnitID): string {
+  protected getAdUnitID(adUnitID?: AdUnitIDOption): string {
     if (adUnitID === 'test' || this.state.devMode) {
       return this.testAdUnitID
     }
-    return adUnitID
+    if (!adUnitID) {
+      throw new Error('adUnitID is missing')
+    }
+    if (typeof adUnitID === 'string') {
+      return adUnitID
+    }
+    return adUnitID[this.state.platform]
   }
 }

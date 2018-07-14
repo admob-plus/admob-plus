@@ -1,5 +1,6 @@
 import {
   AdBase,
+  AdUnitIDOption,
   Events,
   execAsync,
   NativeActions,
@@ -8,7 +9,7 @@ import {
 } from './base'
 
 interface IInterstitialPrepareOptions {
-  adUnitID?: string
+  adUnitID?: AdUnitIDOption
 }
 
 export default class Interstitial extends AdBase {
