@@ -1,7 +1,6 @@
 # [AdMob Suite](https://admob-suite.github.io)
 
-This will be successor of [cordova-plugin-admob-free](https://github.com/ratson/cordova-plugin-admob-free)
-with cleaner API and using modern tools.
+AdMob Suite is the successor of [cordova-plugin-admob-free](https://github.com/ratson/cordova-plugin-admob-free), which provides a cleaner API and build with modern tools.
 
 ## Installation
 
