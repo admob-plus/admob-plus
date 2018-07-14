@@ -12,12 +12,12 @@ const app = {
   onDeviceReady() {
     this.receivedEvent('deviceready')
 
-    this.prepareAndShowInterstitialAd()
+    this.loadAndShowInterstitialAd()
   },
 
-  prepareAndShowInterstitialAd() {
+  loadAndShowInterstitialAd() {
     admob.banner.show()
-    admob.interstitial.prepare().then(() => admob.interstitial.show())
+    admob.interstitial.load().then(() => admob.interstitial.show())
   },
 
   receivedEvent(id) {
