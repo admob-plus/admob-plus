@@ -13,8 +13,8 @@ interface IInterstitialPrepareOptions {
 }
 
 export default class Interstitial extends AdBase {
-  public async prepare(opts: IInterstitialPrepareOptions = {}) {
-    await execAsync(NativeActions.interstitial_prepare, [
+  public async load(opts: IInterstitialPrepareOptions = {}) {
+    await execAsync(NativeActions.interstitial_load, [
       {
         ...opts,
         adUnitID: this.getAdUnitID(opts.adUnitID),

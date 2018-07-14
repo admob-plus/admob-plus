@@ -1,5 +1,4 @@
 import { exec } from 'cordova'
-import { Platform } from 'ionic-angular'
 
 import { Events, NativeActions } from './constants'
 import AdMobState from './state'
