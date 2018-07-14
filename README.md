@@ -10,18 +10,5 @@ with cleaner API and using modern tools.
 
 ## Roadmap
 
-- [x] Setup lerna
-- [x] Integrate CI
-- [x] Build with TypeScript
-- [x] Promise API
-- [x] Swift support for iOS
-- [ ] Kotlin support for Android
-- [ ] Implement Banner Ad
-- [x] Implement Interstitial Ad
-- [ ] Implement Reward Video Ad
-- [x] Example projects
-- [ ] Documentation
-- [ ] Firebase support
-- [x] Ionic binding
-- [ ] Diagnostic tool
-- [ ] Mediation support
+- [v1](https://github.com/admob-suite/admob-suite/projects/1)
+- [Post v1](https://github.com/admob-suite/admob-suite/projects/2)
