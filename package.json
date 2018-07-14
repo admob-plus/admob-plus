@@ -46,6 +46,7 @@
     "tslint-config-concise": "^0.22.1",
     "typescript": "^2.9.2"
   },
+  "repository": "admob-suite/admob-suite",
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
