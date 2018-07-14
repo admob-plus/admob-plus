@@ -27,7 +27,7 @@ public class InterstitialExecutor extends AbstractExecutor {
         super.destroy();
     }
 
-    public boolean prepare(JSONArray args, CallbackContext callbackContext) {
+    public boolean load(JSONArray args, CallbackContext callbackContext) {
         JSONObject opts = args.optJSONObject(0);
         String adUnitID = opts.optString("adUnitID");
 

@@ -40,9 +40,9 @@ class AMSPlugin: CDVPlugin {
         self.commandDelegate!.send(result, callbackId: command.callbackId)
     }
 
-    @objc(interstitial_prepare:)
-    func interstitial_prepare(command: CDVInvokedUrlCommand) {
-        interstitial.prepare(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+    @objc(interstitial_load:)
+    func interstitial_load(command: CDVInvokedUrlCommand) {
+        interstitial.load(adUnitID: "ca-app-pub-3940256099942544/4411468910")
 
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
         self.commandDelegate!.send(result, callbackId: command.callbackId)

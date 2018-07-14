@@ -5,7 +5,7 @@ class AMSInterstitial: AMSAdBase, GADInterstitialDelegate {
         interstitial = nil
     }
 
-    func prepare(adUnitID: String) {
+    func load(adUnitID: String) {
         let interstitial = GADInterstitial(adUnitID: adUnitID)
         self.interstitial = interstitial
 

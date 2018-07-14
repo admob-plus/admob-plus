@@ -2,10 +2,10 @@
 export const enum NativeActions {
   Service = 'AdMob',
   banner_show = 'banner_show',
-  interstitial_prepare = 'interstitial_prepare',
+  interstitial_load = 'interstitial_load',
   interstitial_show = 'interstitial_show',
   ready = 'ready',
-  reward_video_prepare = 'reward_video_prepare',
+  reward_video_load = 'reward_video_load',
   reward_video_show = 'reward_video_show',
 }
 
