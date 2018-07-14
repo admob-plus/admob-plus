@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-admob-suite",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Modern Google AdMob Cordova Plugin",
   "main": "www/admob.js",
   "typings": "www/admob.d.ts",
