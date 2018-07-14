@@ -73,22 +73,13 @@ ${linesEvents}
 }
 
 function buildConstantsSwift(): string {
-  const linesActions = Object.keys(Actions)
-    .map(k => `    static let ${k} = "${Actions[k]}"`)
-    .sort()
-    .join('\n')
-
   const linesEvents = Object.keys(Events)
     .map(k => `    static let ${k} = "${Events[k]}"`)
     .sort()
     .join('\n')
 
   return `// ${warnMessage}
-struct AMSActions {
-${linesActions}
-}
-
-struct AMSActions {
+struct AMSEvents {
 ${linesEvents}
 }
 `
