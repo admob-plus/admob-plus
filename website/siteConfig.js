@@ -8,6 +8,7 @@ const siteConfig = {
 
   projectName: 'admob-suite.github.io',
   organizationName: 'admob-suite',
+  editUrl: 'https://github.com/admob-suite/admob-suite/edit/master/docs/',
 
   headerLinks: [
     { doc: 'installation', label: 'Docs' },
