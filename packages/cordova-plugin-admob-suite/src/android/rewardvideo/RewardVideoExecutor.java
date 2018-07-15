@@ -46,6 +46,20 @@ public class RewardVideoExecutor extends AbstractExecutor {
         return true;
     }
 
+    public boolean show(JSONArray args, CallbackContext callbackContext) {
+        plugin.cordova.getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                showRewardedVideo();
+
+                PluginResult result = new PluginResult(PluginResult.Status.OK, "");
+                callbackContext.sendPluginResult(result);
+            }
+        });
+
+        return true;
+    }
+
     private void createAndLoadRewardedVideo(String adUnitID) {
         clearRewardedVideoAd();
 
@@ -92,6 +106,12 @@ public class RewardVideoExecutor extends AbstractExecutor {
             }
         });
         rewardedVideoAd.loadAd(adUnitID, new AdRequest.Builder().build());
+    }
+
+    private void showRewardedVideo() {
+        if (rewardedVideoAd.isLoaded()) {
+            rewardedVideoAd.show();
+        }
     }
 
     private void clearRewardedVideoAd() {
