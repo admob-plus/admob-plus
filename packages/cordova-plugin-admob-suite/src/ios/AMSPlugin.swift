@@ -66,6 +66,14 @@ class AMSPlugin: CDVPlugin {
         self.commandDelegate!.send(result, callbackId: command.callbackId)
     }
 
+    @objc(reward_video_show:)
+    func reward_video_show(command: CDVInvokedUrlCommand) {
+        rewardVideo.show()
+
+        let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
+        self.commandDelegate!.send(result, callbackId: command.callbackId)
+    }
+
     func emit(eventType: String, data: Any = false) {
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: ["type": eventType, "data": data])
         result?.setKeepCallbackAs(true)
