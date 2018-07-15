@@ -24,6 +24,10 @@ export default class RewardVideo extends AdBase {
     await waitEvent(Events.reward_video_load, Events.reward_video_load_fail)
   }
 
+  public show() {
+    return execAsync(NativeActions.reward_video_show)
+  }
+
   protected get testAdUnitID() {
     switch (this.state.platform) {
       case Platforms.android:
