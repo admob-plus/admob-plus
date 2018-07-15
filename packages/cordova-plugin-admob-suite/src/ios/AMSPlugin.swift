@@ -4,6 +4,7 @@ class AMSPlugin: CDVPlugin {
 
     var banner: AMSBanner!
     var interstitial: AMSInterstitial!
+    var rewardVideo: AMSRewardVideo!
     var readyCallbackId: String!
 
     override func pluginInitialize() {
@@ -11,6 +12,7 @@ class AMSPlugin: CDVPlugin {
 
         banner = AMSBanner(plugin: self)
         interstitial = AMSInterstitial(plugin: self)
+        rewardVideo = AMSRewardVideo(plugin: self)
 
         var applicationID = commandDelegate.settings["ADMOB_APPLICATOIN_ID".lowercased()] as? String
         if applicationID == nil || applicationID == "test" {
@@ -51,6 +53,14 @@ class AMSPlugin: CDVPlugin {
     @objc(interstitial_show:)
     func interstitial_show(command: CDVInvokedUrlCommand) {
         interstitial.show()
+
+        let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
+        self.commandDelegate!.send(result, callbackId: command.callbackId)
+    }
+
+    @objc(reward_video_load:)
+    func reward_video_load(command: CDVInvokedUrlCommand) {
+        rewardVideo.load(adUnitID: (command.argument(at: 0) as? String)!)
 
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
         self.commandDelegate!.send(result, callbackId: command.callbackId)
