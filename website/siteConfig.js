@@ -13,7 +13,7 @@ const siteConfig = {
   headerLinks: [
     { doc: 'installation', label: 'Docs' },
     { doc: 'faq', label: 'FAQ' },
-    // { blog: true, label: 'Blog' },
+    { blog: true, label: 'Blog' },
     { href: 'https://ratson.name/fund-admob-suite/', label: 'Funding' },
   ],
 
