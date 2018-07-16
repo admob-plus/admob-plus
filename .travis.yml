@@ -16,7 +16,6 @@ jobs:
   - stage: lint
     language: node_js
     node_js: 10
-    before_install: skip
     install:
       - travis_retry yarn
       - travis_retry yarn global add @commitlint/travis-cli
