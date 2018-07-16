@@ -28,7 +28,8 @@ jobs:
       # - yarn build
       - yarn lint
       - popd
-  - env: PLATFORM=ios-11.4
+  - stage: test
+    env: PLATFORM=ios-11.4
     os: osx
     osx_image: xcode9.4
   - env:
