@@ -11,8 +11,23 @@ cache:
     - $HOME/.android/build-cache
     - node_modules
 
-matrix:
+jobs:
   include:
+  - stage: lint
+    language: node_js
+    node_js: 10
+    install:
+      - travis_retry yarn global add @commitlint/travis-cli
+    script:
+      - commitlint-travis
+      - yarn lint
+      - pushd packages/cordova-plugin-admob-suite
+      - yarn prepare
+      - popd
+      - pushd examples/ionic-angular
+      # - yarn build
+      - yarn lint
+      - popd
   - env: PLATFORM=ios-11.4
     os: osx
     osx_image: xcode9.4
@@ -79,20 +94,10 @@ before_install:
 
 install:
   - travis_retry yarn
-  - travis_retry yarn global add @commitlint/travis-cli
   - if [[ "$PLATFORM" =~ android ]]; then echo no | android create avd --force -n test -t android-$ANDROID_API_LEVEL --abi $ANDROID_ABI; fi
 
 script:
-  - commitlint-travis
   - yarn test
-  - yarn lint
   - if [[ "$PLATFORM" =~ android ]]; then yarn test-android; fi
   - if [[ "$PLATFORM" =~ ios ]]; then yarn test-ios; fi
   - if [[ "$PLATFORM" =~ ios ]]; then pushd packages/cordova-plugin-admob-suite/src/ios && swiftlint && popd; fi
-  - pushd packages/cordova-plugin-admob-suite
-  - yarn prepare
-  - popd
-  - pushd examples/ionic-angular
-  # - yarn build
-  - yarn lint
-  - popd
