@@ -17,6 +17,7 @@ jobs:
     language: node_js
     node_js: 10
     install:
+      - travis_retry yarn
       - travis_retry yarn global add @commitlint/travis-cli
     script:
       - commitlint-travis
@@ -73,8 +74,8 @@ jobs:
         - android-$ANDROID_API_LEVEL
         - android-$ANDROID_API_LEVEL
         - sys-img-$ANDROID_ABI-android-$ANDROID_API_LEVEL
-  - if: branch = master AND type != pull_request
-    stage: deploy
+  - stage: deploy
+    if: branch = master AND type != pull_request
     language: node_js
     node_js: 10
     after_success:
