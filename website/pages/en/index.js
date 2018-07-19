@@ -211,8 +211,11 @@ const Index = ({ language = '' }) => (
               title: <translate>Fully Open Source</translate>,
             },
             {
-              content:
-                "Do not send your application information to a remote server to control whether ad could be displayed. Therefore, you don't lose revenue because some server bugs.",
+              content: `Do not
+                [send](https://github.com/sunnycupertino/cordova-plugin-admob-simple/blob/f7cc64e9e018f2146b2735b5ae8d3b780fa24f72/src/android/AdMob.java#L728)
+                [your application information](https://forum.ionicframework.com/t/don-t-use-admob-pro-plugin-steal-30/90245)
+                to a remote server to control whether ad could be displayed. Therefore, you don't lose revenue because
+                [some server bugs](https://drive.google.com/file/d/0B5vtpya8P4b-NUZTdUhBVkFlU0E/view).`,
               title: <translate>No Remote Control</translate>,
             },
           ]}
