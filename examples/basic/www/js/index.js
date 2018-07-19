@@ -16,8 +16,11 @@ const app = {
   },
 
   loadAndShowInterstitialAd() {
-    admob.banner.show()
-    admob.interstitial.load().then(() => admob.interstitial.show())
+    admob.banner.show({ id: 'test' })
+    admob.interstitial
+      .load({ id: 'test' })
+      .then(() => admob.interstitial.show())
+    admob.rewardVideo.load({ id: 'test' }).then(() => admob.rewardVideo.show())
   },
 
   receivedEvent(id) {
