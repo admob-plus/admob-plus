@@ -51,6 +51,140 @@ const HomeSplash = () => (
   </SplashContainer>
 )
 
+const ExternalLink = ({ href, children }) => (
+  <a href={href} rel="external nofollow">
+    {children}
+  </a>
+)
+
+const ProjectCellContent = ({ urls }) => {
+  if (urls) {
+    return (
+      <span>
+        {urls.map(url => (
+          // eslint-disable-next-line jsx-a11y/accessible-emoji
+          <ExternalLink key={url} href={url}>
+            ❌
+          </ExternalLink>
+        ))}
+      </span>
+    )
+  }
+  if (urls === null) {
+    return '❓'
+  }
+  return '✅'
+}
+
+const ProjectTableRow = ({
+  url,
+  name,
+  adSharing,
+  binaryFiles,
+  remoteControl,
+}) => (
+  <tr>
+    <td style={{ textAlign: 'left' }}>
+      <ExternalLink href={url}>{name}</ExternalLink>
+    </td>
+    <td>
+      <ProjectCellContent urls={adSharing} />
+    </td>
+    <td>
+      <ProjectCellContent urls={binaryFiles} />
+    </td>
+    <td>
+      <ProjectCellContent urls={remoteControl} />
+    </td>
+  </tr>
+)
+
+const CompareTable = () => (
+  <div className="productShowcaseSection paddingBottom">
+    <h2>
+      <translate>Compare to other projects</translate>
+    </h2>
+    <table className="logos">
+      <tr>
+        <th>Project</th>
+        <th>No Ad-Sharing</th>
+        <th>Fully Open Sourced</th>
+        <th>No Remote Control</th>
+      </tr>
+      {[
+        {
+          url: 'https://github.com/admob-google/admob-cordova',
+          name: 'admob',
+          adSharing: null,
+          binaryFiles: [
+            'https://github.com/admob-google/admob-cordova/blob/master/src/android/libs/admobadplugin.jar',
+            'https://github.com/admob-google/admob-cordova/blob/master/src/ios/AdmobAPI.framework/AdmobAPI',
+          ],
+          remoteControl: null,
+        },
+        {
+          url: 'https://github.com/appfeel/admob-google-cordova',
+          name: 'cordova-admob',
+          adSharing: [
+            'https://github.com/appfeel/admob-google-cordova/blob/3f122f278a323a4bc9e580f400182a7bd690a346/src/android/AdMobAds.java#L569',
+          ],
+          binaryFiles: false,
+          remoteControl: false,
+        },
+        {
+          url: 'https://github.com/cranberrygame/cordova-plugin-ad-admob',
+          name: 'cordova-plugin-ad-admob',
+          adSharing: [
+            'https://github.com/cranberrygame/cordova-plugin-ad-admob/blob/7aaa397b19ab63579d6aa68fbf20ffdf795a15fc/src/android/AdMobPlugin.java#L330',
+          ],
+          binaryFiles: false,
+          remoteControl: false,
+        },
+        {
+          url: 'https://github.com/ratson/cordova-plugin-admob-free',
+          name: 'cordova-plugin-admob-free',
+          adSharing: false,
+          binaryFiles: false,
+          remoteControl: false,
+        },
+        {
+          url: 'https://github.com/sunnycupertino/cordova-plugin-admob-simple',
+          name: 'cordova-plugin-admob-simple',
+          adSharing: [
+            'https://github.com/sunnycupertino/cordova-plugin-admob-simple/blob/a58846c1ea14188a4aef44381ccd28ffdcae3bfa/src/android/AdMob.java#L207',
+          ],
+          binaryFiles: false,
+          remoteControl: [
+            'https://github.com/sunnycupertino/cordova-plugin-admob-simple/blob/f7cc64e9e018f2146b2735b5ae8d3b780fa24f72/src/android/AdMob.java#L728',
+          ],
+        },
+        {
+          url: 'https://github.com/admob-suite/admob-suite',
+          name: 'cordova-plugin-admob-suite',
+          adSharing: false,
+          binaryFiles: false,
+          remoteControl: false,
+        },
+        {
+          url: 'https://github.com/floatinghotpot/cordova-admob-pro',
+          name: 'cordova-plugin-admobpro',
+          adSharing: [
+            'https://github.com/floatinghotpot/cordova-admob-pro/wiki/License-Agreement#3-win-win-partnership',
+          ],
+          binaryFiles: [
+            'https://github.com/floatinghotpot/cordova-extension/blob/master/src/android/cordova-generic-ad.jar',
+            'https://github.com/floatinghotpot/cordova-extension/blob/master/src/ios/libCordovaGenericAd.a',
+          ],
+          remoteControl: [
+            'https://forum.ionicframework.com/t/don-t-use-admob-pro-plugin-steal-30/90245',
+            'https://drive.google.com/file/d/0B5vtpya8P4b-NUZTdUhBVkFlU0E/view',
+          ],
+        },
+      ].map(props => <ProjectTableRow key={props.name} {...props} />)}
+    </table>
+  </div>
+)
+
 const Index = ({ language = '' }) => (
   <div>
     <HomeSplash language={language} />
@@ -85,6 +219,7 @@ const Index = ({ language = '' }) => (
           layout="threeColumn"
         />
       </Container>
+      <CompareTable />
     </div>
   </div>
 )
