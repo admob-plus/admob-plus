@@ -4,7 +4,8 @@
       "installation"
     ],
     "Display Ads": [
-      "show-interstitial"
+      "show-interstitial",
+      "show-reward-video"
     ]
   }
 }
