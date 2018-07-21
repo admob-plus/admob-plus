@@ -1,7 +1,7 @@
 ---
 id: show-interstitial
 title: Showing Interstitial Ad
-sidebar_label: Showing Interstitial Ad
+sidebar_label: Interstitial Ad
 ---
 
 ```js

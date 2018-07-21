@@ -1,7 +1,9 @@
 {
   "docs": {
     "Getting Started": [
-      "installation",
+      "installation"
+    ],
+    "Display Ads": [
       "show-interstitial"
     ]
   }
