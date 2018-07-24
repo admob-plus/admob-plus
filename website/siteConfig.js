@@ -1,20 +1,20 @@
 'use strict'
 
 const siteConfig = {
-  title: 'AdMob Suite',
+  title: 'AdMob Plus',
   tagline: 'Modern AdMob Cordova Plugin',
-  url: 'https://admob-suite.github.io',
+  url: 'https://admob-plus.github.io',
   baseUrl: '/',
 
-  projectName: 'admob-suite.github.io',
-  organizationName: 'admob-suite',
-  editUrl: 'https://github.com/admob-suite/admob-suite/edit/master/docs/',
+  projectName: 'admob-plus.github.io',
+  organizationName: 'admob-plus',
+  editUrl: 'https://github.com/admob-plus/admob-plus/edit/master/docs/',
 
   headerLinks: [
     { doc: 'installation', label: 'Docs' },
     { doc: 'faq', label: 'FAQ' },
     { blog: true, label: 'Blog' },
-    { href: 'https://ratson.name/fund-admob-suite/', label: 'Funding' },
+    { href: 'https://ratson.name/fund-admob-plus/', label: 'Funding' },
   ],
 
   colors: {

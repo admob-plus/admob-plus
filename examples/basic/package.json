@@ -5,19 +5,19 @@
   "version": "1.0.0",
   "scripts": {
     "prepare": "run-s prepare:*",
-    "prepare:plugin": "cd ../../packages/cordova-plugin-admob-suite && run-s prepare",
+    "prepare:plugin": "cd ../../packages/cordova && run-s prepare",
     "prepare:cordova": "cordova prepare --searchpath ../../packages",
     "clean": "del package-lock.json platforms plugins",
     "link-plugin": "run-s prepare:plugin link-plugin:*",
-    "link-plugin:rm": "cordova plugin rm cordova-plugin-admob-suite --nosave >& /dev/null || true",
-    "link-plugin:add": "cordova plugin add ../../packages/cordova-plugin-admob-suite --link --nosave --variable ADMOB_APPLICATOIN_ID=test",
+    "link-plugin:rm": "cordova plugin rm cordova-admob-plus --nosave >& /dev/null || true",
+    "link-plugin:add": "cordova plugin add ../../packages/cordova --link --nosave --variable ADMOB_APPLICATOIN_ID=test",
     "dev": "run-p dev-android dev-ios",
     "dev-android": "run-s dev-android:*",
-    "dev-android:del": "del platforms/android/app/src/main/java/admob/suite",
-    "dev-android:link": "ln -s $PWD/../../packages/cordova-plugin-admob-suite/src/android platforms/android/app/src/main/java/admob/suite",
+    "dev-android:del": "del platforms/android/app/src/main/java/admob/plugin",
+    "dev-android:link": "ln -s $PWD/../../packages/cordova/src/android platforms/android/app/src/main/java/admob/plugin",
     "dev-ios": "run-s dev-ios:*",
-    "dev-ios:del": "del platforms/ios/AdmobBasicExample/Plugins/cordova-plugin-admob-suite",
-    "dev-ios:link": "ln -s $PWD/../../packages/cordova-plugin-admob-suite/src/ios platforms/ios/AdmobBasicExample/Plugins/cordova-plugin-admob-suite",
+    "dev-ios:del": "del platforms/ios/AdmobBasicExample/Plugins/cordova-admob-plus",
+    "dev-ios:link": "ln -s $PWD/../../packages/cordova/src/ios platforms/ios/AdmobBasicExample/Plugins/cordova-admob-plus",
     "dev-ios:open": "open platforms/ios/AdmobBasicExample.xcworkspace"
   },
   "dependencies": {
@@ -33,7 +33,7 @@
   "cordova": {
     "plugins": {
       "cordova-plugin-whitelist": {},
-      "cordova-plugin-admob-suite": {
+      "cordova-admob-plus": {
         "ADMOB_APPLICATOIN_ID": "test"
       }
     },

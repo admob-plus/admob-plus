@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "admob-suite-website",
+  "name": "admob-plus-website",
   "version": "0.0.0",
   "scripts": {
     "examples": "docusaurus-examples",

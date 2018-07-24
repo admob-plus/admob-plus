@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { Cordova, IonicNativePlugin, Plugin } from "@ionic-native/core";
 
 @Plugin({
-  plugin: "cordova-plugin-admob-suite",
+  plugin: "cordova-admob-plus",
   pluginName: "AdMob",
   pluginRef: "admob.interstitial"
 })
@@ -20,10 +20,10 @@ export class AdMobInterstitial {
 
 @Plugin({
   platforms: ["Android", "iOS"],
-  plugin: "cordova-plugin-admob-suite",
+  plugin: "cordova-admob-plus",
   pluginName: "AdMob",
   pluginRef: "admob",
-  repo: "https://github.com/admob-suite/admob-suite"
+  repo: "https://github.com/admob-plus/admob-plus"
 })
 @Injectable()
 export class AdMob extends IonicNativePlugin {

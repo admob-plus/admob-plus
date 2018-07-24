@@ -2,9 +2,9 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:rim="http://www.blackberry.com/ns/widgets"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    id="cordova-plugin-admob-suite-tests"
+    id="ccordova-admob-plus-tests"
     version="0.0.0">
-    <name>cordova-plugin-admob-suite-tests</name>
+    <name>cordova-admob-plus-tests</name>
 
     <js-module src="tests.js" name="tests">
     </js-module>

@@ -24,4 +24,4 @@ As a result, [cordova-plugin-admob-free](https://github.com/ratson/cordova-plugi
 
 ## Next
 
-AdMob Suite, being the successor of `cordova-plugin-admob-free`, is continue to be free and open source. Instead of stealing your revenve, [I ask funding explictily](https://ratson.name/fund-admob-suite), but you don't have to pay to enjoy all features.
+AdMob Plus, being the successor of `cordova-plugin-admob-free`, is continue to be free and open source. Instead of stealing your revenve, [I ask funding explictily](https://ratson.name/fund-admob-plus), but you don't have to pay to enjoy all features.

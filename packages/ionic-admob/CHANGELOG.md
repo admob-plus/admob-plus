@@ -9,10 +9,10 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Bug Fixes
 
-* **ionic-admob:** update AdMobInterstitial interface ([a1dfd53](https://github.com/admob-suite/admob-suite/commit/a1dfd53))
+* **ionic-admob:** update AdMobInterstitial interface ([a1dfd53](https://github.com/admob-plus/admob-plus/commit/a1dfd53))
 
 
 ### Features
 
-* **ionic-admob:** create package ([4b05113](https://github.com/admob-suite/admob-suite/commit/4b05113))
-* **ionic-admob:** set module field ([543d633](https://github.com/admob-suite/admob-suite/commit/543d633))
+* **ionic-admob:** create package ([4b05113](https://github.com/admob-plus/admob-plus/commit/4b05113))
+* **ionic-admob:** set module field ([543d633](https://github.com/admob-plus/admob-plus/commit/543d633))

@@ -1,4 +1,4 @@
-package admob.suite.interstitial;
+package admob.plugin.interstitial;
 
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
@@ -9,9 +9,9 @@ import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import admob.suite.AbstractExecutor;
-import admob.suite.AdMob;
-import admob.suite.Events;
+import admob.plugin.AbstractExecutor;
+import admob.plugin.AdMob;
+import admob.plugin.Events;
 
 public class InterstitialExecutor extends AbstractExecutor {
     private InterstitialAd interstitialAd = null;

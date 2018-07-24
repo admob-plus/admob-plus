@@ -1,4 +1,4 @@
-package admob.suite.rewardvideo;
+package admob.plugin.rewardvideo;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.MobileAds;
@@ -11,9 +11,9 @@ import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import admob.suite.AbstractExecutor;
-import admob.suite.AdMob;
-import admob.suite.Events;
+import admob.plugin.AbstractExecutor;
+import admob.plugin.AdMob;
+import admob.plugin.Events;
 
 public class RewardVideoExecutor extends AbstractExecutor {
     private RewardedVideoAd rewardedVideoAd;

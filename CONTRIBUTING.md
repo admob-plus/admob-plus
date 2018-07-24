@@ -6,4 +6,4 @@ Please ensure your bug description is clear and has sufficient instructions to b
 
 ## License
 
-By contributing to `admob-suite`, you agree that your contributions will be licensed under its **MIT** license.
+By contributing to `admob-plus`, you agree that your contributions will be licensed under its **MIT** license.

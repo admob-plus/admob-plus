@@ -1,4 +1,4 @@
-package admob.suite;
+package admob.plugin;
 
 public abstract class AbstractExecutor {
     protected AdMob plugin;

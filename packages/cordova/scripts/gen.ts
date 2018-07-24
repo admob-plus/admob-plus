@@ -48,7 +48,7 @@ function buildActionsJava(): string {
     .join('\n')
 
   return `// ${warnMessage}
-package admob.suite;
+package admob.plugin;
 
 final class Actions {
 ${linesActions}
@@ -65,7 +65,7 @@ function buildEventsJava(): string {
     .join('\n')
 
   return `// ${warnMessage}
-package admob.suite;
+package admob.plugin;
 
 public final class Events {
 ${linesEvents}
@@ -122,7 +122,7 @@ async function updateConfigXML() {
       } else {
         d = `/${d}`
       }
-      return `        <source-file src="src/android/${s}" target-dir="src/admob/suite${d}" />`
+      return `        <source-file src="src/android/${s}" target-dir="src/admob/plugin${d}" />`
     })
     .sort()
     .join('\n')

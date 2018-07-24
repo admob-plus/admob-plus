@@ -7,5 +7,5 @@ sidebar_label: Installation
 Via [Cordova CLI](https://www.npmjs.com/package/cordova):
 
 ```sh
-cordova plugin add cordova-plugin-admob-suite --variable ADMOB_APPLICATOIN_ID=ca-app-pub-xxx~xxx
+cordova plugin add cordova-admob-plus --variable ADMOB_APPLICATOIN_ID=ca-app-pub-xxx~xxx
 ```

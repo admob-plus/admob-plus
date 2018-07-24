@@ -1,4 +1,4 @@
-package admob.suite.banner;
+package admob.plugin.banner;
 
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -13,8 +13,8 @@ import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import admob.suite.AbstractExecutor;
-import admob.suite.AdMob;
+import admob.plugin.AbstractExecutor;
+import admob.plugin.AdMob;
 
 public class BannerExecutor extends AbstractExecutor {
     /**

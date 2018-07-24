@@ -1,4 +1,4 @@
-package admob.suite;
+package admob.plugin;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaInterface;
@@ -11,9 +11,9 @@ import org.json.JSONObject;
 
 import com.google.android.gms.ads.MobileAds;
 
-import admob.suite.banner.BannerExecutor;
-import admob.suite.interstitial.InterstitialExecutor;
-import admob.suite.rewardvideo.RewardVideoExecutor;
+import admob.plugin.banner.BannerExecutor;
+import admob.plugin.interstitial.InterstitialExecutor;
+import admob.plugin.rewardvideo.RewardVideoExecutor;
 
 public class AdMob extends CordovaPlugin {
     private CallbackContext readyCallbackContext = null;

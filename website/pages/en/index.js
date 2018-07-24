@@ -41,7 +41,7 @@ const HomeSplash = () => (
             <Button href={`${siteConfig.baseUrl}docs/installation`}>
               <translate>Get Started</translate>
             </Button>
-            <Button href="https://github.com/admob-suite/admob-suite">
+            <Button href="https://github.com/admob-plus/admob-plus">
               <translate>GitHub</translate>
             </Button>
           </div>
@@ -159,8 +159,8 @@ const CompareTable = () => (
           ],
         },
         {
-          url: 'https://github.com/admob-suite/admob-suite',
-          name: 'cordova-plugin-admob-suite',
+          url: 'https://github.com/admob-plus/admob-plus',
+          name: 'cordova-admob-plus',
           adSharing: false,
           binaryFiles: false,
           remoteControl: false,

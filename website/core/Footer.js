@@ -9,7 +9,7 @@ class Footer extends React.Component {
   }
 
   render() {
-    const githubUrl = 'https://github.com/admob-suite/admob-suite'
+    const githubUrl = 'https://github.com/admob-plus/admob-plus'
     return (
       <footer className="nav-footer" id="footer">
         <section className="sitemap">
@@ -25,7 +25,7 @@ class Footer extends React.Component {
               className="github-button"
               href={githubUrl}
               data-icon="octicon-star"
-              data-count-href="/admob-suite/admob-suite"
+              data-count-href="/admob-plus/admob-plus"
               data-show-count
               data-count-aria-label="# stargazers on GitHub"
               aria-label="Star this project on GitHub"

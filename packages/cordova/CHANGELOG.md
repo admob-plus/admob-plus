@@ -15,7 +15,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * **cordova-android:** fix android-package value ([7799239](https://github.com/admob-plus/admob-plus/commit/7799239))
 * execute correct action ([27692cf](https://github.com/admob-plus/admob-plus/commit/27692cf))
 * execute correct reward video action ([22a30f4](https://github.com/admob-plus/admob-plus/commit/22a30f4))
-* **ionic-admob:** update AdMobInterstitial interface ([a1dfd53](https://github.com/admob-plus/admob-plus/commit/a1dfd53))
 
 
 ### Features
@@ -79,4 +78,3 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * **cordova-ios:** show test interstitial ad ([f5f7d0a](https://github.com/admob-plus/admob-plus/commit/f5f7d0a))
 * **cordova-ios:** use argument ad unit id ([cbc0bf7](https://github.com/admob-plus/admob-plus/commit/cbc0bf7))
 * **ionic-admob:** create package ([4b05113](https://github.com/admob-plus/admob-plus/commit/4b05113))
-* **ionic-admob:** set module field ([543d633](https://github.com/admob-plus/admob-plus/commit/543d633))
