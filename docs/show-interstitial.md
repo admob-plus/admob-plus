@@ -4,6 +4,10 @@ title: Showing Interstitial Ad
 sidebar_label: Interstitial Ad
 ---
 
+Interstitial ads are full-screen ads that cover the interface of their host app. They're typically displayed at natural transition points in the flow of an app, such as between activities or during the pause between levels in a game. When an app shows an interstitial ad, the user has the choice to either tap on the ad and continue to its destination or close it and return to the app.
+
+## Usage
+
 ```js
 document.addEventListener('deviceready', () => {
   admob.interstitial.load({
@@ -14,4 +18,56 @@ document.addEventListener('deviceready', () => {
     },
   }).then(() => admob.interstitial.show())
 }, false)
+```
+
+## Events
+
+### Load Event
+
+Called when interstitial ad is loaded.
+
+```js
+document.addEventListener('admob.interstitial.load', () => {
+  // handle event
+})
+```
+
+### Load Fail Event
+
+Called when interstitial ad request failed.
+
+```js
+document.addEventListener('admob.interstitial.load_fail', () => {
+  // handle event
+})
+```
+
+### Open Event
+
+Called when interstitial ad opens a overlay that covers the screen.
+
+```js
+document.addEventListener('admob.interstitial.open', () => {
+  // handle event
+})
+```
+
+### Close Event
+
+Called when interstitial ad is closed.
+
+```js
+document.addEventListener('admob.interstitial.close', () => {
+  // handle event
+})
+```
+
+### Exit Application Event
+
+Called when interstitial ad leaves the application (e.g., to go to the browser).
+
+```js
+document.addEventListener('admob.interstitial.exit_app', () => {
+  // handle event
+})
 ```
