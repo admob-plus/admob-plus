@@ -15,6 +15,7 @@ import org.json.JSONObject;
 
 import admob.plugin.AbstractExecutor;
 import admob.plugin.AdMob;
+import admob.plugin.Events;
 
 public class BannerExecutor extends AbstractExecutor {
     /**
@@ -55,29 +56,33 @@ public class BannerExecutor extends AbstractExecutor {
 
     private void showBanner(String adUnitID) {
         if (adView == null) {
-
             adView = new AdView(plugin.cordova.getActivity());
             adView.setAdUnitId(adUnitID);
             adView.setAdSize(AdSize.SMART_BANNER);
             adView.setAdListener(new AdListener() {
                 @Override
                 public void onAdLoaded() {
+                    plugin.emit(Events.BANNER_LOAD);
                 }
 
                 @Override
                 public void onAdFailedToLoad(int errorCode) {
+                    plugin.emit(Events.BANNER_LOAD_FAIL);
                 }
 
                 @Override
                 public void onAdOpened() {
-                }
-
-                @Override
-                public void onAdLeftApplication() {
+                    plugin.emit(Events.BANNER_OPEN);
                 }
 
                 @Override
                 public void onAdClosed() {
+                    plugin.emit(Events.BANNER_CLOSE);
+                }
+
+                @Override
+                public void onAdLeftApplication() {
+                    plugin.emit(Events.BANNER_EXIT_APP);
                 }
             });
 
