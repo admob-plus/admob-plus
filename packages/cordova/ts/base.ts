@@ -21,11 +21,11 @@ export function fireDocumentEvent(eventName: string, data = null) {
   document.dispatchEvent(event)
 }
 
-export function waitEvent(successEvent, failEvent = '') {
+export function waitEvent(successEvent, failEvent = ''): Promise<Event> {
   return new Promise((resolve, reject) => {
     document.addEventListener(
       successEvent,
-      event => {
+      (event: Event) => {
         resolve(event)
       },
       false,

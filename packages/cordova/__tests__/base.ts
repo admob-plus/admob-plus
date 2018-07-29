@@ -12,6 +12,6 @@ test('waitEvent() once for fail event', async () => {
   const p = waitEvent('sucess', 'fail')
   fireDocumentEvent('fail')
 
-  const event = await p.catch(x => x)
+  const event = await p.catch((x: Event) => x)
   expect(event.type).toBe('fail')
 })
