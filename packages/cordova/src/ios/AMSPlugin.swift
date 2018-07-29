@@ -36,7 +36,8 @@ class AMSPlugin: CDVPlugin {
 
     @objc(banner_show:)
     func banner_show(command: CDVInvokedUrlCommand) {
-        banner.show(adUnitID: (command.argument(at: 0) as? String)!)
+        let opts = command.argument(at: 0) as! NSDictionary
+        banner.show(adUnitID: opts.value(forKey: "adUnitID") as! String)
 
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
         self.commandDelegate!.send(result, callbackId: command.callbackId)
@@ -44,7 +45,8 @@ class AMSPlugin: CDVPlugin {
 
     @objc(interstitial_load:)
     func interstitial_load(command: CDVInvokedUrlCommand) {
-        interstitial.load(adUnitID: (command.argument(at: 0) as? String)!)
+        let opts = command.argument(at: 0) as! NSDictionary
+        interstitial.load(adUnitID: opts.value(forKey: "adUnitID") as! String)
 
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
         self.commandDelegate!.send(result, callbackId: command.callbackId)
@@ -60,7 +62,8 @@ class AMSPlugin: CDVPlugin {
 
     @objc(reward_video_load:)
     func reward_video_load(command: CDVInvokedUrlCommand) {
-        rewardVideo.load(adUnitID: (command.argument(at: 0) as? String)!)
+        let opts = command.argument(at: 0) as! NSDictionary
+        rewardVideo.load(adUnitID: opts.value(forKey: "adUnitID") as! String)
 
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
         self.commandDelegate!.send(result, callbackId: command.callbackId)
