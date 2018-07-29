@@ -19,9 +19,9 @@ import { AdMob } from "ionic-admob";
   bootstrap: [IonicApp],
   entryComponents: [MyApp, AboutPage, ContactPage, HomePage, TabsPage],
   providers: [
-    AdMob,
     StatusBar,
     SplashScreen,
+    AdMob,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })

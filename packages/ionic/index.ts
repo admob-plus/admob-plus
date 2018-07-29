@@ -8,7 +8,7 @@ import { Cordova, IonicNativePlugin, Plugin } from "@ionic-native/core";
 })
 export class AdMobInterstitial {
   @Cordova()
-  load(): Promise<any> {
+  load(opts: { id?: string }): Promise<any> {
     return Promise.resolve();
   }
 
