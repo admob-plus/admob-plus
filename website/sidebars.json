@@ -7,6 +7,9 @@
       "show-banner",
       "show-interstitial",
       "show-reward-video"
+    ],
+    "Guides": [
+      "volume-control"
     ]
   }
 }
