@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.0.2"></a>
+## [0.0.2](https://github.com/admob-plus/admob-plus/compare/v0.0.1...v0.0.2) (2018-07-29)
+
+
+### Bug Fixes
+
+* **cordova-ios:** extract adUnitID from dictionary ([1f7484e](https://github.com/admob-plus/admob-plus/commit/1f7484e))
+* **ionic:** update admob.interstitial.load argument type ([7412b81](https://github.com/admob-plus/admob-plus/commit/7412b81))
+
+
+### Features
+
+* **cordova:** add admob.rewardVideo.show ([c37105d](https://github.com/admob-plus/admob-plus/commit/c37105d))
+* **cordova:** add banner events ([69217f9](https://github.com/admob-plus/admob-plus/commit/69217f9))
+* **cordova:** allow set app muted and volume ([5d18b18](https://github.com/admob-plus/admob-plus/commit/5d18b18))
+* **cordova:** rename to [@admob-plus](https://github.com/admob-plus)/cordova ([953658c](https://github.com/admob-plus/admob-plus/commit/953658c))
+* **cordova-android:** display banner at bottom ([6fc5f29](https://github.com/admob-plus/admob-plus/commit/6fc5f29))
+* **cordova-android:** emit banner events ([e2eac03](https://github.com/admob-plus/admob-plus/commit/e2eac03))
+* **cordova-android:** implement reward video show action ([131ecdf](https://github.com/admob-plus/admob-plus/commit/131ecdf))
+* **cordova-ios:** add AMSRewardVideo ([3ad42f8](https://github.com/admob-plus/admob-plus/commit/3ad42f8))
+* **cordova-ios:** emit banner events ([588d661](https://github.com/admob-plus/admob-plus/commit/588d661))
+* **cordova-ios:** guard command argument extraction ([3c5a2d8](https://github.com/admob-plus/admob-plus/commit/3c5a2d8))
+* **cordova-ios:** implement reward video show action ([e9129c4](https://github.com/admob-plus/admob-plus/commit/e9129c4))
+
+
+
+
+
 <a name="0.0.1"></a>
 ## 0.0.1 (2018-07-14)
 
