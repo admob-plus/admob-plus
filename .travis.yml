@@ -3,12 +3,15 @@ sudo: false
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
   - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+  - mkdir -p $HOME/.yarn_cache
+  - cp -f yarn.lock $HOME/.yarn_cache/yarn.lock
 cache:
   yarn: true
   directories:
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
     - $HOME/.android/build-cache
+    - $HOME/.yarn_cache
     - node_modules
 
 jobs:
@@ -89,6 +92,7 @@ jobs:
 
 before_install:
   - nvm install 10
+  - test -f $HOME/.yarn_cache/yarn.lock && cp $HOME/.yarn_cache/yarn.lock yarn.lock || true
   - travis_retry curl -o- -L https://yarnpkg.com/install.sh | bash
   - export PATH=$HOME/.yarn/bin:$PATH
   - yarn --version
