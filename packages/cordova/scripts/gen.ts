@@ -23,6 +23,12 @@ const Actions: { [index: string]: string } = {
 
 const Events: { [index: string]: string } = {
   ready: 'admob.ready',
+  // banner
+  banner_load: 'admob.banner.load',
+  banner_load_fail: 'admob.banner.load_fail',
+  banner_open: 'admob.banner.open',
+  banner_close: 'admob.banner.close',
+  banner_exit_app: 'admob.banner.exit_app',
   // interstitial
   interstitial_load: 'admob.interstitial.load',
   interstitial_load_fail: 'admob.interstitial.load_fail',

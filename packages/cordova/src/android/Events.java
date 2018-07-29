@@ -2,6 +2,11 @@
 package admob.plugin;
 
 public final class Events {
+    public static final String BANNER_CLOSE = "admob.banner.close";
+    public static final String BANNER_EXIT_APP = "admob.banner.exit_app";
+    public static final String BANNER_LOAD = "admob.banner.load";
+    public static final String BANNER_LOAD_FAIL = "admob.banner.load_fail";
+    public static final String BANNER_OPEN = "admob.banner.open";
     public static final String INTERSTITIAL_CLOSE = "admob.interstitial.close";
     public static final String INTERSTITIAL_EXIT_APP = "admob.interstitial.exit_app";
     public static final String INTERSTITIAL_LOAD = "admob.interstitial.load";

@@ -10,6 +10,11 @@ export const enum NativeActions {
 }
 
 export const enum Events {
+  banner_close = 'admob.banner.close',
+  banner_exit_app = 'admob.banner.exit_app',
+  banner_load = 'admob.banner.load',
+  banner_load_fail = 'admob.banner.load_fail',
+  banner_open = 'admob.banner.open',
   interstitial_close = 'admob.interstitial.close',
   interstitial_exit_app = 'admob.interstitial.exit_app',
   interstitial_load = 'admob.interstitial.load',
