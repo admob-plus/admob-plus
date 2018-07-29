@@ -2,7 +2,7 @@
 
 const siteConfig = {
   title: 'AdMob Plus',
-  tagline: 'Modern AdMob Cordova Plugin',
+  tagline: 'Trustable AdMob Cordova Plugin',
   url: 'https://admob-plus.github.io',
   baseUrl: '/',
 
