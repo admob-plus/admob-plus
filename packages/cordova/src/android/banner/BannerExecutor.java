@@ -1,7 +1,8 @@
 package admob.plugin.banner;
 
+import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
@@ -22,6 +23,8 @@ public class BannerExecutor extends AbstractExecutor {
      * The adView to display to the user.
      */
     private AdView adView;
+
+    private ViewGroup parentView;
 
     public BannerExecutor(AdMob plugin) {
         super(plugin);
@@ -86,13 +89,35 @@ public class BannerExecutor extends AbstractExecutor {
                 }
             });
 
-            FrameLayout layout = (FrameLayout) plugin.webView.getView().getParent();
-            layout.addView(adView);
+           addBannerView(adView);
         }
 
         AdRequest adRequest = new AdRequest.Builder()
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                 .build();
         adView.loadAd(adRequest);
+    }
+
+    private void addBannerView(AdView adView) {
+       View view = plugin.webView.getView();
+       ViewGroup wvParentView = (ViewGroup) view.getParent();
+       if (parentView == null) {
+           parentView = new LinearLayout(plugin.webView.getContext());
+       }
+
+       if (wvParentView != null && wvParentView != parentView) {
+           ViewGroup rootView = (ViewGroup)(view.getParent());
+           wvParentView.removeView(view);
+           ((LinearLayout) parentView).setOrientation(LinearLayout.VERTICAL);
+           parentView.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, 0.0F));
+           view.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, 1.0F));
+           parentView.addView(view);
+           rootView.addView(parentView);
+       }
+
+       parentView.addView(adView);
+       parentView.bringToFront();
+       parentView.requestLayout();
+       parentView.requestFocus();
     }
 }
