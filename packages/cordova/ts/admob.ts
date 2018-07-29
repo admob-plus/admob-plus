@@ -1,7 +1,7 @@
 import { exec } from 'cordova'
 
 import Banner from './banner'
-import { fireDocumentEvent, NativeActions } from './base'
+import { execAsync, fireDocumentEvent, NativeActions } from './base'
 import Interstitial from './interstitial'
 import RewardVideo from './reward-video'
 import AdMobState from './state'
@@ -28,6 +28,14 @@ class AdMob {
       },
       false,
     )
+  }
+
+  public setAppMuted(value: boolean) {
+    return execAsync(NativeActions.set_app_muted, [value])
+  }
+
+  public setAppVolume(value: number) {
+    return execAsync(NativeActions.set_app_volume, [value])
   }
 
   public setDevMode(value) {

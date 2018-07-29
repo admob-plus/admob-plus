@@ -7,6 +7,8 @@ export const enum NativeActions {
   ready = 'ready',
   reward_video_load = 'reward_video_load',
   reward_video_show = 'reward_video_show',
+  set_app_muted = 'set_app_muted',
+  set_app_volume = 'set_app_volume',
 }
 
 export const enum Events {

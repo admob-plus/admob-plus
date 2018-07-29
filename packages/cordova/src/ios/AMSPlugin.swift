@@ -34,6 +34,34 @@ class AMSPlugin: CDVPlugin {
         self.emit(eventType: AMSEvents.ready, data: "ios")
     }
 
+    @objc(set_app_muted:)
+    func set_app_muted(command: CDVInvokedUrlCommand) {
+        guard let applicationMuted = command.argument(at: 0) as? Bool
+            else {
+                let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: false)
+                self.commandDelegate!.send(result, callbackId: command.callbackId)
+                return
+        }
+        GADMobileAds.sharedInstance().applicationMuted = applicationMuted
+
+        let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
+        self.commandDelegate!.send(result, callbackId: command.callbackId)
+    }
+
+    @objc(set_app_volume:)
+    func set_app_volume(command: CDVInvokedUrlCommand) {
+        guard let applicationVolume = command.argument(at: 0) as? Float
+            else {
+                let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: false)
+                self.commandDelegate!.send(result, callbackId: command.callbackId)
+                return
+        }
+        GADMobileAds.sharedInstance().applicationVolume = applicationVolume
+
+        let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
+        self.commandDelegate!.send(result, callbackId: command.callbackId)
+    }
+
     @objc(banner_show:)
     func banner_show(command: CDVInvokedUrlCommand) {
         guard let opts = command.argument(at: 0) as? NSDictionary,

@@ -11,6 +11,8 @@ const warnMessage =
 /* tslint:disable:object-literal-sort-keys */
 const Actions: { [index: string]: string } = {
   ready: 'ready',
+  set_app_muted: 'set_app_muted',
+  set_app_volume: 'set_app_volume',
   // banner
   banner_show: 'banner_show',
   // interstitial

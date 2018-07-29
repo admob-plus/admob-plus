@@ -8,4 +8,6 @@ final class Actions {
     static final String READY = "ready";
     static final String REWARD_VIDEO_LOAD = "reward_video_load";
     static final String REWARD_VIDEO_SHOW = "reward_video_show";
+    static final String SET_APP_MUTED = "set_app_muted";
+    static final String SET_APP_VOLUME = "set_app_volume";
 }

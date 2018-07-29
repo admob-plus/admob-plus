@@ -56,6 +56,16 @@ public class AdMob extends CordovaPlugin {
             return rewardVideoExecutor.load(args, callbackContext);
         } else if (Actions.REWARD_VIDEO_SHOW.equals(action)) {
             return rewardVideoExecutor.show(args, callbackContext);
+        } else if (Actions.SET_APP_MUTED.equals(action)) {
+            JSONObject opts = args.opt(0);
+            MobileAds.setAppMuted(true);
+            PluginResult result = new PluginResult(PluginResult.Status.OK, "");
+            callbackContext.sendPluginResult(result);
+            return true;
+        } else if (Actions.SET_APP_VOLUME.equals(action)) {
+            JSONObject opts = args.optJSONObject(0);
+            MobileAds.setAppVolume(true);
+            return true;
         }
 
         return false;
