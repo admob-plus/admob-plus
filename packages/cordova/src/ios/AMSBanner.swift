@@ -1,4 +1,4 @@
-class AMSBanner: AMSAdBase {
+class AMSBanner: AMSAdBase, GADBannerViewDelegate {
     var bannerView: GADBannerView!
     var view: UIView {
         return self.plugin.viewController.view
@@ -10,6 +10,7 @@ class AMSBanner: AMSAdBase {
 
     func show(adUnitID: String) {
         bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+        bannerView.delegate = self
         addBannerViewToView(bannerView)
         bannerView.rootViewController = plugin.viewController
         bannerView.adUnitID = adUnitID
@@ -55,5 +56,29 @@ class AMSBanner: AMSAdBase {
                                               attribute: .top,
                                               multiplier: 1,
                                               constant: 0))
+    }
+
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        plugin.emit(eventType: AMSEvents.bannerLoad)
+    }
+
+    func adView(_ bannerView: GADBannerView,
+                didFailToReceiveAdWithError error: GADRequestError) {
+        plugin.emit(eventType: AMSEvents.bannerLoadFail)
+    }
+
+    func adViewWillPresentScreen(_ bannerView: GADBannerView) {
+        plugin.emit(eventType: AMSEvents.bannerOpen)
+    }
+
+    func adViewWillDismissScreen(_ bannerView: GADBannerView) {
+    }
+
+    func adViewDidDismissScreen(_ bannerView: GADBannerView) {
+        plugin.emit(eventType: AMSEvents.bannerClose)
+    }
+
+    func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
+        plugin.emit(eventType: AMSEvents.bannerExitApp)
     }
 }
