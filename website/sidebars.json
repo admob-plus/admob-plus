@@ -4,6 +4,7 @@
       "installation"
     ],
     "Display Ads": [
+      "show-banner",
       "show-interstitial",
       "show-reward-video"
     ]
