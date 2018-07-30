@@ -84,5 +84,6 @@
     <plugin name="cordova-admob-plus" spec="../../packages/cordova">
         <variable name="ADMOB_APPLICATOIN_ID" value="test" />
     </plugin>
+    <plugin name="cordova-plugin-statusbar" spec="^2.4.2" />
     <engine name="ios" spec="4.5.5" />
 </widget>

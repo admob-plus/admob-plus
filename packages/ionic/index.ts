@@ -1,5 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Cordova, IonicNativePlugin, Plugin } from "@ionic-native/core";
+import { Observable } from "rxjs/Observable";
+import { fromEvent } from "rxjs/observable/fromEvent";
 
 @Plugin({
   plugin: "cordova-admob-plus",
@@ -7,7 +9,7 @@ import { Cordova, IonicNativePlugin, Plugin } from "@ionic-native/core";
   pluginRef: "admob.interstitial"
 })
 export class AdMobInterstitial {
-  @Cordova()
+  @Cordova({ otherPromise: true })
   load(opts: { id?: string }): Promise<any> {
     return Promise.resolve();
   }
@@ -28,4 +30,8 @@ export class AdMobInterstitial {
 @Injectable()
 export class AdMob extends IonicNativePlugin {
   interstitial: AdMobInterstitial = new AdMobInterstitial();
+
+  on(event: string): Observable<any> {
+    return fromEvent(document, event);
+  }
 }
