@@ -24,9 +24,13 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
 
-      admob.interstitial
-        .load({ id: "test" })
-        .then(() => admob.interstitial.show());
+      return Promise.all([
+        admob.banner.show({ id: "test" }),
+        admob.interstitial
+          .load({ id: "test" })
+          .then(() => admob.interstitial.show()),
+        admob.rewardVideo.load({ id: "test" })
+      ]).then(() => admob.rewardVideo.show());
     });
   }
 }
