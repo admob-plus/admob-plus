@@ -19,10 +19,6 @@ jobs:
   - stage: lint
     language: node_js
     node_js: 10
-    before_install:
-      - test -f $HOME/.yarn_cache/yarn.lock && cp $HOME/.yarn_cache/yarn.lock yarn.lock || true
-      - travis_retry curl -o- -L https://yarnpkg.com/install.sh | bash
-      - export PATH=$HOME/.yarn/bin:$PATH
     install:
       - travis_retry yarn
       - travis_retry yarn global add @commitlint/travis-cli
@@ -98,6 +94,7 @@ before_install:
   - nvm install 10
   - test -f $HOME/.yarn_cache/yarn.lock && cp $HOME/.yarn_cache/yarn.lock yarn.lock || true
   - travis_retry curl -o- -L https://yarnpkg.com/install.sh | bash
+  - export PATH=$HOME/.yarn/bin:$PATH
   - if [[ "$PLATFORM" =~ android ]]; then android list sdk --extended --no-ui --all; fi
   - if [[ "$PLATFORM" =~ android ]]; then android list targets; fi
 
