@@ -97,6 +97,7 @@ jobs:
 before_install:
   - nvm install 10
   - test -f $HOME/.yarn_cache/yarn.lock && cp $HOME/.yarn_cache/yarn.lock yarn.lock || true
+  - travis_retry curl -o- -L https://yarnpkg.com/install.sh | bash
   - if [[ "$PLATFORM" =~ android ]]; then android list sdk --extended --no-ui --all; fi
   - if [[ "$PLATFORM" =~ android ]]; then android list targets; fi
 
