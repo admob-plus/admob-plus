@@ -19,6 +19,9 @@ jobs:
   - stage: lint
     language: node_js
     node_js: 10
+    before_install:
+      - test -f $HOME/.yarn_cache/yarn.lock && cp $HOME/.yarn_cache/yarn.lock yarn.lock || true
+      - yarn --version
     install:
       - travis_retry yarn
       - travis_retry yarn global add @commitlint/travis-cli
