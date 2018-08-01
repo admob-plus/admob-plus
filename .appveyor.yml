@@ -1,0 +1,12 @@
+cache:
+  - "%LOCALAPPDATA%\\Yarn"
+  - node_modules
+environment:
+  nodejs_version: "10"
+init:
+  - ps: Install-Product node $env:nodejs_version
+install:
+  - node --version
+  - npm --version
+  - yarn --version
+  - yarn
