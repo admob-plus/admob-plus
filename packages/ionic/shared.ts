@@ -3,4 +3,4 @@ export type AdUnitIDOption =
   | {
       android: string;
       ios: string;
-    };
+    }
