@@ -6,7 +6,9 @@
   "module": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
-    "prepare": "tsc"
+    "prepare": "run-s prepare:*",
+    "prepare:copy": "cp ../cordova/ts/shared.ts shared.ts",
+    "prepare:compile": "tsc"
   },
   "peerDependencies": {
     "@angular/core": "*",
@@ -16,6 +18,7 @@
   "devDependencies": {
     "@angular/core": "^5.2.11",
     "@ionic-native/core": "^4.10.1",
+    "npm-run-all": "^4.1.3",
     "rxjs": "^5.5.11",
     "tslint-ionic-rules": "0.0.17",
     "typescript": "^2.9.2"

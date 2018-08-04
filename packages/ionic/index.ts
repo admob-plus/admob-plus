@@ -3,12 +3,7 @@ import { Cordova, IonicNativePlugin, Plugin } from "@ionic-native/core";
 import { Observable } from "rxjs/Observable";
 import { fromEvent } from "rxjs/observable/fromEvent";
 
-type AdUnitIDOption =
-  | string
-  | {
-      android: string;
-      ios: string;
-    };
+import { AdUnitIDOption } from "./shared";
 
 @Plugin({
   plugin: "cordova-admob-plus",

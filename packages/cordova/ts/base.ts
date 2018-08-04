@@ -1,9 +1,10 @@
 import { exec } from 'cordova'
 
 import { Events, NativeActions } from './constants'
+import { AdUnitIDOption } from './shared'
 import AdMobState from './state'
 
-export { Events, NativeActions }
+export { AdUnitIDOption, Events, NativeActions }
 
 export const enum Platforms {
   android = 'android',
@@ -42,13 +43,6 @@ export function waitEvent(successEvent, failEvent = ''): Promise<Event> {
     }
   })
 }
-
-export type AdUnitIDOption =
-  | string
-  | {
-      android: string;
-      ios: string;
-    }
 
 export class AdBase {
   protected state: AdMobState
