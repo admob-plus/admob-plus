@@ -172,15 +172,17 @@ const CompareTable = () => (
             'https://github.com/floatinghotpot/cordova-admob-pro/wiki/License-Agreement#3-win-win-partnership',
           ],
           binaryFiles: [
-            'https://github.com/floatinghotpot/cordova-extension/blob/master/src/android/cordova-generic-ad.jar',
-            'https://github.com/floatinghotpot/cordova-extension/blob/master/src/ios/libCordovaGenericAd.a',
+            'https://unpkg.com/cordova-plugin-extension@1.5.4/src/android/cordova-generic-ad.jar',
+            'https://unpkg.com/cordova-plugin-extension@1.5.4/src/ios/libCordovaGenericAd.a',
           ],
           remoteControl: [
             'https://forum.ionicframework.com/t/don-t-use-admob-pro-plugin-steal-30/90245',
             'https://drive.google.com/file/d/0B5vtpya8P4b-NUZTdUhBVkFlU0E/view',
           ],
         },
-      ].map(props => <ProjectTableRow key={props.name} {...props} />)}
+      ].map(props => (
+        <ProjectTableRow key={props.name} {...props} />
+      ))}
     </table>
   </div>
 )
