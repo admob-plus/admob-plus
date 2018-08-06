@@ -64,6 +64,16 @@ export class AdMob extends IonicNativePlugin {
   public interstitial = new Interstitial()
   public rewardVideo = new RewardVideo()
 
+  @Cordova({ otherPromise: true })
+  public setAppMuted(value: boolean): Promise<any> {
+    return Promise.resolve()
+  }
+
+  @Cordova({ otherPromise: true })
+  public setAppVolume(value: number): Promise<any> {
+    return Promise.resolve()
+  }
+
   public on(event: string): Observable<any> {
     return fromEvent(document, event)
   }
