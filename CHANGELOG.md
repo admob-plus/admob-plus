@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.1.0"></a>
+# [0.1.0](https://github.com/admob-plus/admob-plus/compare/v0.0.2...v0.1.0) (2018-08-06)
+
+
+### Bug Fixes
+
+* **ionic:** decorate methods correctly ([0ce8af7](https://github.com/admob-plus/admob-plus/commit/0ce8af7))
+
+
+### Features
+
+* **ionic:** bind set volume methods ([5f75004](https://github.com/admob-plus/admob-plus/commit/5f75004))
+* **ionic:** define binding for all ad types ([0478f52](https://github.com/admob-plus/admob-plus/commit/0478f52))
+
+
+
+
+
 <a name="0.0.2"></a>
 ## [0.0.2](https://github.com/admob-plus/admob-plus/compare/v0.0.1...v0.0.2) (2018-07-29)
 
