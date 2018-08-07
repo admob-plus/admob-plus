@@ -1,5 +1,7 @@
 'use strict'
 
+const users = require('./data/users')
+
 const siteConfig = {
   title: 'AdMob Plus',
   tagline: 'Trustable AdMob Cordova Plugin',
@@ -13,6 +15,7 @@ const siteConfig = {
   headerLinks: [
     { doc: 'installation', label: 'Docs' },
     { doc: 'faq', label: 'FAQ' },
+    { page: 'users', label: 'Users' },
     { blog: true, label: 'Blog' },
     { href: 'https://ratson.name/fund-admob-plus/', label: 'Funding' },
   ],
@@ -31,6 +34,8 @@ const siteConfig = {
 
   /* On page navigation for the current documentation page */
   onPageNav: 'separate',
+
+  users,
 }
 
 module.exports = siteConfig
