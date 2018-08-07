@@ -18,6 +18,10 @@ class Footer extends React.Component {
             <a href={this.docUrl('installation.html')}>Getting Started</a>
           </div>
           <div>
+            <h5>Community</h5>
+            <a href={`${this.props.config.baseUrl}users`}>User Showcase</a>
+          </div>
+          <div>
             <h5>More</h5>
             <a href={githubUrl}>GitHub</a>
             <a href={`${githubUrl}/issues`}>Issues</a>
