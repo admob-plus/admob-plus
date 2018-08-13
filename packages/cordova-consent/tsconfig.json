@@ -1,0 +1,3 @@
+{
+  "extends": "../cordova/tsconfig.json"
+}

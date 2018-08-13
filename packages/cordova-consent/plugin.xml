@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-consent" version="0.0.0"
+        xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>@admob-plus/cordova-consent</name>
+    <js-module name="Consent" src="www/consent.js">
+        <clobbers target="consent" />
+    </js-module>
+
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Consent">
+                <param name="android-package" value="cordova.plugin.consent.Consent"/>
+            </feature>
+
+            <source-file src="src/android/Consent.java" target-dir="src/cordova/plugin/consent" />
+        </config-file>
+
+        <preference name="CONSENT_SDK_VERSION" default="+" />
+
+        <framework src="com.google.android.ads.consent:consent-library:$CONSENT_SDK_VERSION" />
+    </platform>
+</plugin>
