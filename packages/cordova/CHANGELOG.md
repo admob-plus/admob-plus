@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.1.1"></a>
+## [0.1.1](https://github.com/admob-plus/admob-plus/compare/v0.1.0...v0.1.1) (2018-08-14)
+
+
+### Bug Fixes
+
+* **cordova-android:** fix type errors ([14c24db](https://github.com/admob-plus/admob-plus/commit/14c24db))
+* **cordova-ios:** deinit vars ([b810b25](https://github.com/admob-plus/admob-plus/commit/b810b25))
+
+
+
+
+
 <a name="0.1.0"></a>
 # [0.1.0](https://github.com/admob-plus/admob-plus/compare/v0.0.2...v0.1.0) (2018-08-06)
 
