@@ -23,7 +23,9 @@ class AMSPlugin: CDVPlugin {
     }
 
     deinit {
+        banner = nil
         interstitial = nil
+        rewardVideo = nil
         readyCallbackId = nil
     }
 
