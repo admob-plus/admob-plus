@@ -26,7 +26,7 @@
     "cordova-admob-plus": "0.1.0",
     "cordova-ios": "4.5.5",
     "cordova-plugin-add-swift-support": "^1.7.2",
-    "cordova-plugin-cocoapod-support": "^1.5.0",
+    "cordova-plugin-cocoapod-support": "^1.6.0",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-ionic-keyboard": "^2.1.2",
     "cordova-plugin-ionic-webview": "^1.2.1",
@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "@ionic/app-scripts": "3.1.11",
-    "ionic": "4.0.5",
+    "ionic": "4.0.6",
     "typescript": "~2.6.2"
   },
   "eslintConfig": {
