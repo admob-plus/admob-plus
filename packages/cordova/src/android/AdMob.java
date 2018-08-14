@@ -1,5 +1,6 @@
 package admob.plugin;
 
+import java.math.BigDecimal;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.CordovaPlugin;
@@ -57,14 +58,16 @@ public class AdMob extends CordovaPlugin {
         } else if (Actions.REWARD_VIDEO_SHOW.equals(action)) {
             return rewardVideoExecutor.show(args, callbackContext);
         } else if (Actions.SET_APP_MUTED.equals(action)) {
-            JSONObject opts = args.opt(0);
-            MobileAds.setAppMuted(true);
+            boolean value = args.optBoolean(0);
+            MobileAds.setAppMuted(value);
             PluginResult result = new PluginResult(PluginResult.Status.OK, "");
             callbackContext.sendPluginResult(result);
             return true;
         } else if (Actions.SET_APP_VOLUME.equals(action)) {
-            JSONObject opts = args.optJSONObject(0);
-            MobileAds.setAppVolume(true);
+            float value = BigDecimal.valueOf(args.optDouble(0)).floatValue();
+            MobileAds.setAppVolume(value);
+            PluginResult result = new PluginResult(PluginResult.Status.OK, "");
+            callbackContext.sendPluginResult(result);
             return true;
         }
 
