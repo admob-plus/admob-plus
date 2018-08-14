@@ -6,10 +6,10 @@
     "lint": "tslint --project packages/cordova",
     "test-android": "run-s test-android:*",
     "test-android:testbed": "cordova-testbed --platform android --plugin packages/cordova --build-only",
-    "test-android:example": "cd examples/basic && cordova build android",
+    "test-android:example": "cd examples/basic && cordova platform add android && cordova build android",
     "test-ios": "run-s test-ios:*",
     "test-ios:testbed": "cordova-testbed --platform ios --plugin packages/cordova --build-only",
-    "test-ios:example": "cd examples/basic && cordova build ios",
+    "test-ios:example": "cd examples/basic && cordova platform add ios && cordova build ios",
     "commitmsg": "commitlint -E GIT_PARAMS",
     "precommit": "lint-staged"
   },
