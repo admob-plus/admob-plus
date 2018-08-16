@@ -10,13 +10,13 @@ Banner ads are rectangular image or text ads that occupy a spot within an app's 
 
 ```js
 document.addEventListener('deviceready', () => {
-  admob.banner.load({
+  admob.banner.show({
     id: {
       // replace with your ad unit IDs
       android: 'ca-app-pub-xxx/yyy',
       ios: 'ca-app-pub-xxx/zzz',
     },
-  }).then(() => admob.banner.show())
+  })
 }, false)
 ```
 
