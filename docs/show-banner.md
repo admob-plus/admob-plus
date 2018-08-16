@@ -20,6 +20,16 @@ document.addEventListener('deviceready', () => {
 }, false)
 ```
 
+## Methods
+
+### `admob.banner.show(config)`
+
+Displays banner ad.
+
+Returns a `Promise` that resolves as soon as banner is start loading, rejects when there is a problem calling native code.
+
+> Note: The current implementation is minimum, the return value of this API will likely be changed.
+
 ## Events
 
 ### Load Event
