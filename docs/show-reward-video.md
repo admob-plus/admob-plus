@@ -20,6 +20,20 @@ document.addEventListener('deviceready', () => {
 }, false)
 ```
 
+## Methods
+
+### `admob.rewardVideo.load(config)`
+
+Load reward video ad.
+
+Returns a `Promise` that resolves when ad request is loaded, rejects when ad request failed.
+
+### `admob.rewardVideo.show()`
+
+Displays loaded reward video ad.
+
+Returns a `Promise` that resolves as soon as reward video ad starts to play, rejects when there is a problem calling native code.
+
 ## Events
 
 ### Load Event
