@@ -20,6 +20,20 @@ document.addEventListener('deviceready', () => {
 }, false)
 ```
 
+## Methods
+
+### `admob.interstitial.load(config)`
+
+Load interstitial ad.
+
+Returns a `Promise` that resolves when ad request is loaded, rejects when ad request failed.
+
+### `admob.interstitial.show()`
+
+Displays loaded interstitial ad.
+
+Returns a `Promise` that resolves as soon as interstitial ad is shown, rejects when there is a problem calling native code.
+
 ## Events
 
 ### Load Event
