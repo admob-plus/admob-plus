@@ -48,6 +48,23 @@ public class BannerExecutor extends AbstractExecutor {
         return true;
     }
 
+    public boolean hide(JSONArray args, CallbackContext callbackContext) {
+        plugin.cordova.getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                if (adView != null) {
+                    adView.pause();
+                    adView.setVisibility(View.GONE);
+                }
+
+                PluginResult result = new PluginResult(PluginResult.Status.OK, "");
+                callbackContext.sendPluginResult(result);
+            }
+        });
+
+        return true;
+    }
+
     @Override
     public void destroy() {
         if (adView != null) {
@@ -55,7 +72,6 @@ public class BannerExecutor extends AbstractExecutor {
             adView = null;
         }
     }
-
 
     private void showBanner(String adUnitID) {
         if (adView == null) {
@@ -90,6 +106,9 @@ public class BannerExecutor extends AbstractExecutor {
             });
 
            addBannerView(adView);
+        } else if (adView.getVisibility() == View.GONE) {
+            adView.resume();
+            adView.setVisibility(View.VISIBLE);
         }
 
         AdRequest adRequest = new AdRequest.Builder()

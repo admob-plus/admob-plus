@@ -2,6 +2,7 @@
 package admob.plugin;
 
 final class Actions {
+    static final String BANNER_HIDE = "banner_hide";
     static final String BANNER_SHOW = "banner_show";
     static final String INTERSTITIAL_LOAD = "interstitial_load";
     static final String INTERSTITIAL_SHOW = "interstitial_show";

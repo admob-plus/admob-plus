@@ -47,6 +47,8 @@ public class AdMob extends CordovaPlugin {
 
             emit(Events.READY, "android");
             return true;
+        } else if (Actions.BANNER_HIDE.equals(action)) {
+            return bannerExecutor.hide(args, callbackContext);
         } else if (Actions.BANNER_SHOW.equals(action)) {
             return bannerExecutor.show(args, callbackContext);
         } else if (Actions.INTERSTITIAL_LOAD.equals(action)) {

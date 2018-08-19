@@ -15,6 +15,7 @@ const Actions: { [index: string]: string } = {
   set_app_volume: 'set_app_volume',
   // banner
   banner_show: 'banner_show',
+  banner_hide: 'banner_hide',
   // interstitial
   interstitial_load: 'interstitial_load',
   interstitial_show: 'interstitial_show',

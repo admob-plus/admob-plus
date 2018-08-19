@@ -9,12 +9,22 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
     }
 
     func show(adUnitID: String) {
-        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+        if (bannerView != nil) {
+            bannerView.isHidden = false
+        } else {
+            bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+        }
+
         bannerView.delegate = self
         addBannerViewToView(bannerView)
         bannerView.rootViewController = plugin.viewController
         bannerView.adUnitID = adUnitID
         bannerView.load(GADRequest())
+    }
+
+    func hide() {
+        bannerView.delegate = nil
+        bannerView.isHidden = true
     }
 
     func addBannerViewToView(_ bannerView: UIView) {

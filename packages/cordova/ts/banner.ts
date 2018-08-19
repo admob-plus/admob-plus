@@ -20,6 +20,10 @@ export default class Banner extends AdBase {
     ])
   }
 
+  public hide() {
+    return execAsync(NativeActions.banner_hide)
+  }
+
   protected get testAdUnitID() {
     switch (this.state.platform) {
       case Platforms.android:

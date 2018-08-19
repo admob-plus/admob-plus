@@ -79,6 +79,14 @@ class AMSPlugin: CDVPlugin {
         self.commandDelegate!.send(result, callbackId: command.callbackId)
     }
 
+    @objc(banner_hide:)
+    func banner_hide(command: CDVInvokedUrlCommand) {
+        banner.hide()
+
+        let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
+        self.commandDelegate!.send(result, callbackId: command.callbackId)
+    }
+
     @objc(interstitial_load:)
     func interstitial_load(command: CDVInvokedUrlCommand) {
         guard let opts = command.argument(at: 0) as? NSDictionary,
