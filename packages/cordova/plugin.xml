@@ -52,6 +52,6 @@
         <dependency id="cordova-plugin-cocoapod-support" version="^1.5.0" />
 
         <pods-config use-frameworks="true" />
-        <pod name="Google-Mobile-Ads-SDK" version="~> 7.31" />
+        <pod name="Google-Mobile-Ads-SDK" version="~> 7.32" />
     </platform>
 </plugin>
