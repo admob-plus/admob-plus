@@ -15,7 +15,7 @@
     "@types/lodash": "^4.14.116",
     "@types/node": "^10.7.1",
     "cordova": "^8.0.0",
-    "execa": "^0.10.0",
+    "execa": "^0.11.0",
     "fast-glob": "^2.2.2",
     "find-cache-dir": "^2.0.0",
     "lodash": "^4.17.10",

@@ -1,8 +1,4 @@
 {
-  "packages": [
-    "packages/cordova",
-    "packages/ionic"
-  ],
   "command": {
     "publish": {
       "conventionalCommits": true,
@@ -14,5 +10,7 @@
     "**/__tests__/**",
     "**/*.md"
   ],
+  "npmClient": "yarn",
+  "useWorkspaces": true,
   "version": "0.1.1"
 }
