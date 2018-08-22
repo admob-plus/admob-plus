@@ -30,6 +30,12 @@ Returns a `Promise` that resolves as soon as banner is start loading, rejects wh
 
 > Note: The current implementation is minimum, the return value of this API will likely be changed.
 
+### `admob.banner.hide()`
+
+Hides banner ad.
+
+Returns a `Promise` that resolves as soon as banner is hidden, rejects when there is a problem calling native code.
+
 ## Events
 
 ### Load Event
