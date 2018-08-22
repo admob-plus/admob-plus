@@ -2,7 +2,7 @@
   "private": true,
   "name": "example.admob.basic",
   "displayName": "AdmobBasicExample",
-  "version": "1.0.0",
+  "version": "0.2.0",
   "scripts": {
     "prepare": "run-s prepare:*",
     "prepare:plugin": "cd ../../packages/cordova && run-s prepare",

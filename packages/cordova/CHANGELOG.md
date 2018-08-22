@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.2.0"></a>
+# [0.2.0](https://github.com/admob-plus/admob-plus/compare/v0.1.1...v0.2.0) (2018-08-22)
+
+
+### Features
+
+* **cordova:** add hide banner action ([43cfb7a](https://github.com/admob-plus/admob-plus/commit/43cfb7a))
+* **cordova:** update Google-Mobile-Ads-SDK version ([7e18d3e](https://github.com/admob-plus/admob-plus/commit/7e18d3e))
+
+
+
+
+
 <a name="0.1.1"></a>
 ## [0.1.1](https://github.com/admob-plus/admob-plus/compare/v0.1.0...v0.1.1) (2018-08-14)
 
