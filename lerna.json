@@ -10,7 +10,9 @@
     "**/__tests__/**",
     "**/*.md"
   ],
-  "npmClient": "yarn",
-  "useWorkspaces": true,
+  "packages": [
+    "packages/*",
+    "examples/*"
+  ],
   "version": "0.1.1"
 }
