@@ -54,4 +54,16 @@
         <pods-config use-frameworks="true" />
         <pod name="Google-Mobile-Ads-SDK" version="~> 7.32" />
     </platform>
+
+    <platform name="browser">
+        <config-file target="config.xml" parent="/*">
+            <feature name="AdMob">
+                <param name="browser-package" value="AdMob" />
+            </feature>
+        </config-file>
+
+        <js-module src="src/browser/AdMobProxy.js" name="AdMobProxy">
+            <runs />
+        </js-module>
+    </platform>
 </plugin>
