@@ -103,15 +103,8 @@
   "workspaces": {
     "packages": [
       "packages/*",
-      "examples/*",
+      "examples/basic",
       "website"
-    ],
-    "nohoist": [
-      "**/@angular*",
-      "**/@angular*/**",
-      "**/@ionic-native/**",
-      "**/ionic*",
-      "examples/*/cordova-admob-plus"
     ]
   }
 }

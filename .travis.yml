@@ -29,7 +29,7 @@ jobs:
       - yarn prepare
       - popd
       - pushd examples/ionic-angular
-      # - yarn build
+      - yarn
       - yarn lint
       - popd
   - stage: test
