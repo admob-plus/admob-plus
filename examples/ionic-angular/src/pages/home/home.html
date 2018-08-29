@@ -1,17 +1,49 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>AdMob Plus</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <ion-card>
+    <ion-card-header>
+      <h1>Banner</h1>
+    </ion-card-header>
+
+    <ion-list>
+      <button ion-item (tap)="banner__show($event)">
+        admob.banner.show()
+      </button>
+    </ion-list>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <h1>Interstitial</h1>
+    </ion-card-header>
+
+    <ion-list>
+      <button ion-item (tap)="interstitial__load($event)">
+        admob.interstitial.load()
+      </button>
+      <button ion-item (tap)="interstitial__show($event)">
+        admob.interstitial.show()
+      </button>
+    </ion-list>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <h1>Reward Video</h1>
+    </ion-card-header>
+
+    <ion-list>
+      <button ion-item (tap)="reward_video__load($event)">
+        admob.rewardVideo.load()
+      </button>
+      <button ion-item (tap)="reward_video__show($event)">
+        admob.rewardVideo.show()
+      </button>
+    </ion-list>
+  </ion-card>
 </ion-content>
