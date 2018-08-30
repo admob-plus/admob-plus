@@ -14,10 +14,10 @@
     "precommit": "lint-staged"
   },
   "devDependencies": {
-    "@commitlint/cli": "^7.1.0",
-    "@commitlint/config-conventional": "^7.1.0",
-    "@commitlint/config-lerna-scopes": "^7.0.0",
-    "@commitlint/prompt-cli": "^7.0.0",
+    "@commitlint/cli": "^7.1.1",
+    "@commitlint/config-conventional": "^7.1.1",
+    "@commitlint/config-lerna-scopes": "^7.1.1",
+    "@commitlint/prompt-cli": "^7.1.1",
     "@types/jest": "^23.3.1",
     "cordova": "^8.0.0",
     "cordova-testbed": "^0.1.0",
@@ -44,7 +44,7 @@
     "ts-jest": "^23.1.4",
     "tslint": "^5.11.0",
     "tslint-config-concise": "^0.30.0",
-    "typescript": "^3.0.1"
+    "typescript": "^3.0.3"
   },
   "repository": "admob-plus/admob-plus",
   "commitlint": {

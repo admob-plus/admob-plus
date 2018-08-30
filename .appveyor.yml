@@ -13,3 +13,4 @@ install:
   - npm --version
   - yarn --version
   - yarn
+build: off
