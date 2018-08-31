@@ -12,6 +12,11 @@ import { AdUnitIDOption } from './shared'
 })
 export class Banner {
   @Cordova({ otherPromise: true })
+  public hide(): Promise<any> {
+    return Promise.resolve()
+  }
+
+  @Cordova({ otherPromise: true })
   public show(opts: { id?: AdUnitIDOption }): Promise<any> {
     return Promise.resolve()
   }
