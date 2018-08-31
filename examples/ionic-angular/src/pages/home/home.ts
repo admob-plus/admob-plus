@@ -13,6 +13,10 @@ export class HomePage {
     this.admob.banner.show({ id: "test" });
   }
 
+  banner__hide() {
+    this.admob.banner.hide();
+  }
+
   interstitial__load() {
     this.admob.interstitial.load({ id: "test" });
   }
