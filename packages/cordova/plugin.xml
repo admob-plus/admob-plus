@@ -32,6 +32,8 @@
     </platform>
 
     <platform name="ios">
+        <preference name="UseSwiftLanguageVersion" value="4" />
+
         <config-file target="config.xml" parent="/*">
             <feature name="AdMob">
                 <param name="ios-package" value="AMSPlugin" />
