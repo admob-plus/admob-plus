@@ -17,7 +17,7 @@ With the growing number of reported issues, it is clear that a better solution i
 * Official Ionic support
 * Rich documentation
 
-## Why funding using subscription plan instead of a (open amount) donation button?
+## How to fund this project?
 
 Unfortunately, transfer money between two parties is not free, payment processors charges transaction fee plus a fixed fee based on currency received.
 
@@ -25,7 +25,9 @@ Therefore, small transactions means the percentage for payment processors will b
 
 IMO, small teams should focus on their product and move forward as quick as possible, while established teams should consider giving back to the community for what makes them succeed.
 
-I choose to have [a few fixed amount subscription plans](https://ratson.name/fund-admob-plus/), which can be cancelled at any time, so people who want to fund more could simply subscribe the plan longer. This also help me easily determine how much time I would spend on the projects each month.
+I prefer to have [a few fixed amount subscription plans](https://ratson.name/fund-admob-plus/), which can be cancelled at any time, so people who want to fund more could simply subscribe the plan longer. This also help me easily determine how much time I would spend on the projects each month.
+
+However, [paypal.me](https://www.paypal.me/ratsonal) is also available as [suggested](https://github.com/admob-plus/admob-plus/issues/10) by [@Blanketsniffer](https://github.com/Blanketsniffer).
 
 Maintaining an open source project is a continuous effort, I wish the support goes the same if possible.
 
