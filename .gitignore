@@ -4,6 +4,9 @@ package-lock.json
 *.lock
 node_modules/
 
+examples/*/platforms
+examples/*/plugins
+
 website/translated_docs
 website/build/
 website/i18n/*
