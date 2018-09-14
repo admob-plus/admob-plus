@@ -33,7 +33,10 @@ class AMSPlugin: CDVPlugin {
     func ready(command: CDVInvokedUrlCommand) {
         readyCallbackId = command.callbackId
 
-        self.emit(eventType: AMSEvents.ready, data: "ios")
+        self.emit(eventType: AMSEvents.ready, data: [
+            "platform": "ios",
+            "isRunningInTestLab": false,
+            ])
     }
 
     @objc(set_app_muted:)
