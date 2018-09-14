@@ -1,5 +1,6 @@
 package admob.plugin;
 
+import android.provider.Settings;
 import java.math.BigDecimal;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaInterface;
@@ -45,7 +46,14 @@ public class AdMob extends CordovaPlugin {
         if (Actions.READY.equals(action)) {
             readyCallbackContext = callbackContext;
 
-            emit(Events.READY, "android");
+            JSONObject data = new JSONObject();
+            try {
+                data.put("platform", "android");
+                data.put("isRunningInTestLab", isRunningInTestLab());
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            emit(Events.READY, data);
             return true;
         } else if (Actions.BANNER_HIDE.equals(action)) {
             return bannerExecutor.hide(args, callbackContext);
@@ -109,5 +117,10 @@ public class AdMob extends CordovaPlugin {
         PluginResult result = new PluginResult(PluginResult.Status.OK, event);
         result.setKeepCallback(true);
         readyCallbackContext.sendPluginResult(result);
+    }
+
+    private boolean isRunningInTestLab() {
+        String testLabSetting = Settings.System.getString(cordova.getActivity().getContentResolver(), "firebase.test.lab");
+        return "true".equals(testLabSetting);
     }
 }
