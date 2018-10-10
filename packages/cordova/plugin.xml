@@ -7,7 +7,7 @@
         <clobbers target="admob" />
     </js-module>
 
-    <preference name="ADMOB_APPLICATOIN_ID" />
+    <preference name="ADMOB_APPLICATOIN_ID" default="test" />
 
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
