@@ -35,8 +35,7 @@ class AMSPlugin: CDVPlugin {
 
         self.emit(eventType: AMSEvents.ready, data: [
             "platform": "ios",
-            "isRunningInTestLab": false,
-            ])
+            "isRunningInTestLab": false])
     }
 
     @objc(set_app_muted:)

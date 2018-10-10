@@ -9,7 +9,7 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
     }
 
     func show(adUnitID: String) {
-        if (bannerView != nil) {
+        if bannerView != nil {
             bannerView.isHidden = false
         } else {
             bannerView = GADBannerView(adSize: kGADAdSizeBanner)
