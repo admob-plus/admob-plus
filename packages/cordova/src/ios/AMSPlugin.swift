@@ -15,11 +15,11 @@ class AMSPlugin: CDVPlugin {
         rewardVideo = AMSRewardVideo(plugin: self)
 
         var applicationID = commandDelegate.settings["ADMOB_APPLICATOIN_ID".lowercased()] as? String
-        if applicationID == nil || applicationID == "test" {
+        if applicationID == "test" {
             applicationID = testApplicationID
             NSLog("admob is using testApplicationID")
         }
-        GADMobileAds.configure(withApplicationID: applicationID!)
+        GADMobileAds.configure(withApplicationID: applicationID ?? testApplicationID)
     }
 
     deinit {
