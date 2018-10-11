@@ -16,7 +16,8 @@ cache:
 
 jobs:
   include:
-  - stage: lint
+  # lint
+  - stage: first
     language: node_js
     node_js: 10
     install:
@@ -31,6 +32,19 @@ jobs:
       - pushd examples/ionic-angular
       - yarn
       - yarn lint
+      - popd
+  # deploy-docs
+  - stage: first
+    if: branch = master AND type != pull_request
+    language: node_js
+    node_js: 10
+    after_success:
+      - git config --global user.name "${GH_NAME}"
+      - git config --global user.email "${GH_EMAIL}"
+      - echo "machine github.com login ${GH_NAME} password ${GH_TOKEN}" > ~/.netrc
+      - pushd website
+      - travis_retry yarn
+      - GIT_USER="${GH_NAME}" yarn publish-gh-pages
       - popd
   - stage: test
     env: PLATFORM=ios-11.4
@@ -77,18 +91,6 @@ jobs:
         - android-$ANDROID_API_LEVEL
         - android-$ANDROID_API_LEVEL
         - sys-img-$ANDROID_ABI-android-$ANDROID_API_LEVEL
-  - stage: deploy
-    if: branch = master AND type != pull_request
-    language: node_js
-    node_js: 10
-    after_success:
-      - git config --global user.name "${GH_NAME}"
-      - git config --global user.email "${GH_EMAIL}"
-      - echo "machine github.com login ${GH_NAME} password ${GH_TOKEN}" > ~/.netrc
-      - pushd website
-      - travis_retry yarn
-      - GIT_USER="${GH_NAME}" yarn publish-gh-pages
-      - popd
 
 before_install:
   - nvm install 10
