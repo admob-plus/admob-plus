@@ -45,7 +45,8 @@ class AdMob {
   private ready() {
     exec(
       event => {
-        fireDocumentEvent(event.type)
+        this.state.applicationId = event.data.applicationId
+        fireDocumentEvent(event.type, event.data)
       },
       err => {
         alert(err)

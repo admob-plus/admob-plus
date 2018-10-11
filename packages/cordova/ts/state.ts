@@ -1,4 +1,5 @@
 class AdMobState {
+  public applicationId: undefined | string
   public devMode = false
   public platform: string
 
