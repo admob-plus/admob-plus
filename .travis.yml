@@ -99,6 +99,7 @@ before_install:
   - export PATH=$HOME/.yarn/bin:$PATH
   - if [[ "$PLATFORM" =~ android ]]; then android list sdk --extended --no-ui --all; fi
   - if [[ "$PLATFORM" =~ android ]]; then android list targets; fi
+  - if [[ "$PLATFORM" =~ ios ]]; then npm install -g ios-deploy; fi
 
 install:
   - travis_retry yarn
