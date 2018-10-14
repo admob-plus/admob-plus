@@ -4,7 +4,7 @@ import {
   Events,
   execAsync,
   NativeActions,
-  Platforms,
+  TestIds,
   waitEvent,
 } from './base'
 
@@ -13,6 +13,9 @@ interface IInterstitialPrepareOptions {
 }
 
 export default class Interstitial extends AdBase {
+  protected testIdForAndroid = TestIds.interstitial_android
+  protected testIdForIOS = TestIds.interstitial_ios
+
   public async load(opts: IInterstitialPrepareOptions = {}) {
     await execAsync(NativeActions.interstitial_load, [
       {
@@ -26,14 +29,5 @@ export default class Interstitial extends AdBase {
 
   public show() {
     return execAsync(NativeActions.interstitial_show)
-  }
-
-  protected get testAdUnitID() {
-    switch (this.state.platform) {
-      case Platforms.android:
-        return 'ca-app-pub-3940256099942544/1033173712'
-      case Platforms.ios:
-        return 'ca-app-pub-3940256099942544/4411468910'
-    }
   }
 }

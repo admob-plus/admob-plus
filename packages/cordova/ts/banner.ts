@@ -3,7 +3,7 @@ import {
   AdUnitIDOption,
   execAsync,
   NativeActions,
-  Platforms,
+  TestIds,
 } from './base'
 
 interface IBannerShowOptions {
@@ -11,6 +11,9 @@ interface IBannerShowOptions {
 }
 
 export default class Banner extends AdBase {
+  protected testIdForAndroid = TestIds.banner_android
+  protected testIdForIOS = TestIds.banner_ios
+
   public show(opts: IBannerShowOptions = {}) {
     return execAsync(NativeActions.banner_show, [
       {
@@ -22,14 +25,5 @@ export default class Banner extends AdBase {
 
   public hide() {
     return execAsync(NativeActions.banner_hide)
-  }
-
-  protected get testAdUnitID() {
-    switch (this.state.platform) {
-      case Platforms.android:
-        return 'ca-app-pub-3940256099942544/6300978111'
-      case Platforms.ios:
-        return 'ca-app-pub-3940256099942544/2934735716'
-    }
   }
 }

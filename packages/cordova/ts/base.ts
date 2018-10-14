@@ -1,10 +1,10 @@
 import { exec } from 'cordova'
 
-import { Events, NativeActions } from './constants'
+import { Events, NativeActions, TestIds } from './constants'
 import { AdUnitIDOption } from './shared'
 import AdMobState from './state'
 
-export { AdUnitIDOption, Events, NativeActions }
+export { AdUnitIDOption, Events, NativeActions, TestIds }
 
 export const enum Platforms {
   android = 'android',
@@ -46,10 +46,20 @@ export function waitEvent(successEvent, failEvent = ''): Promise<Event> {
 
 export class AdBase {
   protected state: AdMobState
-  protected testAdUnitID
+  protected testIdForAndroid
+  protected testIdForIOS
 
   constructor(state: AdMobState) {
     this.state = state
+  }
+
+  protected get testAdUnitID() {
+    switch (this.state.platform) {
+      case Platforms.android:
+        return this.testIdForAndroid
+      case Platforms.ios:
+        return this.testIdForIOS
+    }
   }
 
   protected resolveAdUnitID(adUnitID?: AdUnitIDOption): string {
