@@ -33,3 +33,12 @@ export const enum Events {
   reward_video_reward = 'admob.reward_video.reward',
   reward_video_start = 'admob.reward_video.start',
 }
+
+export const enum TestIds {
+  banner_android = 'ca-app-pub-3940256099942544/6300978111',
+  interstitial_android = 'ca-app-pub-3940256099942544/1033173712',
+  reward_video_android = 'ca-app-pub-3940256099942544/5224354917',
+  banner_ios = 'ca-app-pub-3940256099942544/2934735716',
+  interstitial_ios = 'ca-app-pub-3940256099942544/4411468910',
+  reward_video_ios = 'ca-app-pub-3940256099942544/1712485313',
+}
