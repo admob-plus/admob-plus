@@ -51,18 +51,16 @@ jobs:
     os: osx
     osx_image: xcode10
   - env:
-      - PLATFORM=android-8.0
+      - PLATFORM=android-7.0
       - ANDROID_ABI=x86_64
       - ANDROID_API_LEVEL=28
+    os: linux
     language: android
+    jdk: oraclejdk8
     android:
       components:
-        - tools
-        - platform-tools
-        - tools # required to get the newest Android SDK tools.
-        - build-tools-$ANDROID_API_LEVEL
-        - android-$ANDROID_API_LEVEL
-        - sys-img-$ANDROID_ABI-android-$ANDROID_API_LEVEL
+      - tools
+      - build-tools-26.0.2
   - env:
       - PLATFORM=android-5.1
       - ANDROID_ABI=armeabi-v7a
