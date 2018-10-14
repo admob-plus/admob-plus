@@ -9,11 +9,13 @@ class AMSRewardVideo: AMSAdBase, GADRewardBasedVideoAdDelegate {
         rewardBasedVideo = GADRewardBasedVideoAd.sharedInstance()
         rewardBasedVideo?.delegate = self
 
-        rewardBasedVideo?.load(GADRequest(), withAdUnitID: adUnitID)
+        if rewardBasedVideo?.isReady == false {
+            rewardBasedVideo?.load(GADRequest(), withAdUnitID: adUnitID)
+        }
     }
 
     func show() {
-        if (rewardBasedVideo?.isReady)! {
+        if rewardBasedVideo?.isReady == true {
             rewardBasedVideo?.present(fromRootViewController: plugin.viewController)
         }
     }
