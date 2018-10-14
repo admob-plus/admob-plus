@@ -16,11 +16,15 @@ const app = {
   },
 
   showAds() {
-    admob.banner.show({ id: 'test' })
+    admob.banner.show({ id: 'test' }).catch(console.log)
     admob.interstitial
       .load({ id: 'test' })
       .then(() => admob.interstitial.show())
-    admob.rewardVideo.load({ id: 'test' }).then(() => admob.rewardVideo.show())
+      .catch(console.log)
+    admob.rewardVideo
+      .load({ id: 'test' })
+      .then(() => admob.rewardVideo.show())
+      .catch(console.log)
   },
 
   receivedEvent(id) {
