@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/admob-plus/admob-plus/compare/v0.3.0...v0.4.0) (2018-10-14)
+
+
+### Bug Fixes
+
+* **cordova-ios:** fix build error ([e802804](https://github.com/admob-plus/admob-plus/commit/e802804))
+
+
+### Features
+
+* **cordova:** add applicationId to state ([e5eeffe](https://github.com/admob-plus/admob-plus/commit/e5eeffe))
+* **cordova:** generate TestIds constants ([a30dc96](https://github.com/admob-plus/admob-plus/commit/a30dc96))
+* **cordova:** move testAdUnitID to AdBase ([3340921](https://github.com/admob-plus/admob-plus/commit/3340921))
+* **cordova:** set ADMOB_APPLICATOIN_ID preference default ([9312898](https://github.com/admob-plus/admob-plus/commit/9312898))
+* **cordova-android:** emit ready event with test lab info ([70ce0e8](https://github.com/admob-plus/admob-plus/commit/70ce0e8))
+* **cordova-ios:** emit ready event with test lab info ([57d5332](https://github.com/admob-plus/admob-plus/commit/57d5332))
+* **cordova-ios:** load rewarded video only when not ready ([c5d54a4](https://github.com/admob-plus/admob-plus/commit/c5d54a4))
+* **cordova-ios:** remove UseSwiftLanguageVersion preference ([eb5e2c2](https://github.com/admob-plus/admob-plus/commit/eb5e2c2))
+* **cordova-ios:** set UseSwiftLanguageVersion preference ([a88412c](https://github.com/admob-plus/admob-plus/commit/a88412c))
+* **cordova-ios:** update Google-Mobile-Ads-SDK to 7.34 ([c1b0104](https://github.com/admob-plus/admob-plus/commit/c1b0104))
+* **cordova-ios:** utilize cordova cocoapod support ([920a6ab](https://github.com/admob-plus/admob-plus/commit/920a6ab))
+
+
+
+
+
 <a name="0.3.0"></a>
 # [0.3.0](https://github.com/admob-plus/admob-plus/compare/v0.2.0...v0.3.0) (2018-08-25)
 

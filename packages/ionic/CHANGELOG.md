@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/admob-plus/admob-plus/compare/v0.3.0...v0.4.0) (2018-10-14)
+
+
+### Features
+
+* **ionic:** bind banner hide method ([72bf74a](https://github.com/admob-plus/admob-plus/commit/72bf74a))
+
+
+
+
+
 <a name="0.3.0"></a>
 # [0.3.0](https://github.com/admob-plus/admob-plus/compare/v0.2.0...v0.3.0) (2018-08-25)
 
