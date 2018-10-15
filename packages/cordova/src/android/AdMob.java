@@ -63,6 +63,8 @@ public class AdMob extends CordovaPlugin {
             return interstitialExecutor.load(args, callbackContext);
         } else if (Actions.INTERSTITIAL_SHOW.equals(action)) {
             return interstitialExecutor.show(args, callbackContext);
+        } else if (Actions.REWARD_VIDEO_IS_READY.equals(action)) {
+            return rewardVideoExecutor.isReady(args, callbackContext);
         } else if (Actions.REWARD_VIDEO_LOAD.equals(action)) {
             return rewardVideoExecutor.load(args, callbackContext);
         } else if (Actions.REWARD_VIDEO_SHOW.equals(action)) {

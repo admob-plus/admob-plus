@@ -29,6 +29,18 @@ public class RewardVideoExecutor extends AbstractExecutor {
         super.destroy();
     }
 
+    public boolean isReady(JSONArray args, CallbackContext callbackContext) {
+        plugin.cordova.getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                PluginResult result = new PluginResult(PluginResult.Status.OK, rewardedVideoAd ? rewardedVideoAd.isLoaded() : false);
+                callbackContext.sendPluginResult(result);
+            }
+        });
+
+        return true;
+    }
+
     public boolean load(JSONArray args, CallbackContext callbackContext) {
         JSONObject opts = args.optJSONObject(0);
         String adUnitID = opts.optString("adUnitID");
