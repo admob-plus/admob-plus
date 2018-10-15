@@ -6,6 +6,7 @@ before_cache:
   - mkdir -p $HOME/.yarn_cache
   - cp -f yarn.lock $HOME/.yarn_cache/yarn.lock
 cache:
+  cocoapods: true
   yarn: true
   directories:
     - $HOME/.gradle/caches/
@@ -52,7 +53,7 @@ jobs:
     osx_image: xcode10
   - env:
       - PLATFORM=android-7.0
-      - ANDROID_ABI=armeabi-v7a
+      - ANDROID_ABI=x86_64
       - ANDROID_API_LEVEL=28
     os: linux
     language: android
