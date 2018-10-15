@@ -20,6 +20,7 @@ const Actions: { [index: string]: string } = {
   interstitial_load: 'interstitial_load',
   interstitial_show: 'interstitial_show',
   // reward_video
+  reward_video_is_ready: 'reward_video_is_ready',
   reward_video_load: 'reward_video_load',
   reward_video_show: 'reward_video_show',
 }

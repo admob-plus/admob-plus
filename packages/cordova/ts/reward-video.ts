@@ -16,6 +16,10 @@ export default class RewardVideo extends AdBase {
   protected testIdForAndroid = TestIds.reward_video_android
   protected testIdForIOS = TestIds.reward_video_ios
 
+  public isReady() {
+    return execAsync(NativeActions.reward_video_is_ready)
+  }
+
   public async load(opts: IRewardVideoPrepareOptions = {}) {
     await execAsync(NativeActions.reward_video_load, [
       {

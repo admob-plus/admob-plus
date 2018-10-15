@@ -112,6 +112,12 @@ class AMSPlugin: CDVPlugin {
         self.commandDelegate!.send(result, callbackId: command.callbackId)
     }
 
+    @objc(reward_video_is_ready:)
+    func reward_video_is_ready(command: CDVInvokedUrlCommand) {
+        let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: rewardVideo.isReady())
+        self.commandDelegate!.send(result, callbackId: command.callbackId)
+    }
+
     @objc(reward_video_load:)
     func reward_video_load(command: CDVInvokedUrlCommand) {
         guard let opts = command.argument(at: 0) as? NSDictionary,

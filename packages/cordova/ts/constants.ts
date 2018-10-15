@@ -6,6 +6,7 @@ export const enum NativeActions {
   interstitial_load = 'interstitial_load',
   interstitial_show = 'interstitial_show',
   ready = 'ready',
+  reward_video_is_ready = 'reward_video_is_ready',
   reward_video_load = 'reward_video_load',
   reward_video_show = 'reward_video_show',
   set_app_muted = 'set_app_muted',

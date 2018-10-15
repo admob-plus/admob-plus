@@ -5,6 +5,11 @@ class AMSRewardVideo: AMSAdBase, GADRewardBasedVideoAdDelegate {
         rewardBasedVideo = nil
     }
 
+    func isReady() -> Bool {
+        rewardBasedVideo = GADRewardBasedVideoAd.sharedInstance()
+        return (rewardBasedVideo?.isReady == true)
+    }
+
     func load(adUnitID: String) {
         rewardBasedVideo = GADRewardBasedVideoAd.sharedInstance()
         rewardBasedVideo?.delegate = self
@@ -15,7 +20,7 @@ class AMSRewardVideo: AMSAdBase, GADRewardBasedVideoAdDelegate {
     }
 
     func show() {
-        if rewardBasedVideo?.isReady == true {
+        if isReady() {
             rewardBasedVideo?.present(fromRootViewController: plugin.viewController)
         }
     }
