@@ -52,17 +52,6 @@ jobs:
     os: osx
     osx_image: xcode10
   - env:
-      - PLATFORM=android-7.0
-      - ANDROID_ABI=x86_64
-      - ANDROID_API_LEVEL=28
-    os: linux
-    language: android
-    jdk: oraclejdk8
-    android:
-      components:
-      - tools
-      - build-tools-26.0.2
-  - env:
       - PLATFORM=android-5.1
       - ANDROID_ABI=armeabi-v7a
       - ANDROID_API_LEVEL=22
@@ -98,6 +87,7 @@ before_install:
   - export PATH=$HOME/.yarn/bin:$PATH
   - if [[ "$PLATFORM" =~ android ]]; then android list sdk --extended --no-ui --all; fi
   - if [[ "$PLATFORM" =~ android ]]; then android list targets; fi
+  - if [[ "$PLATFORM" =~ ios ]]; then pod --version; fi
 
 install:
   - travis_retry yarn
