@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/admob-plus/admob-plus/compare/v0.4.0...v0.5.0) (2018-10-16)
+
+
+### Features
+
+* **cordova-android:** implement REWARD_VIDEO_IS_READY action ([97ea835](https://github.com/admob-plus/admob-plus/commit/97ea835))
+* **cordova-ios:** add APP_ID_IOS preference ([43878d0](https://github.com/admob-plus/admob-plus/commit/43878d0))
+* **cordova-ios:** add reward_video_is_ready action ([c596cd8](https://github.com/admob-plus/admob-plus/commit/c596cd8))
+
+
+
+
+
 # [0.4.0](https://github.com/admob-plus/admob-plus/compare/v0.3.0...v0.4.0) (2018-10-14)
 
 
