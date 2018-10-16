@@ -7,7 +7,7 @@ sidebar_label: Ionic
 ## Installation
 
 ```sh
-ionic cordova plugin add cordova-admob-plus --variable ADMOB_APPLICATOIN_ID=ca-app-pub-xxx~xxx
+ionic cordova plugin add cordova-admob-plus --variable APP_ID_ANDROID=ca-app-pub-xxx~xxx --variable APP_ID_IOS=ca-app-pub-xxx~xxx
 npm install --save ionic-admob
 ```
 
