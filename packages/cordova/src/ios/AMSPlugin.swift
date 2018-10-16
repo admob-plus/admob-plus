@@ -14,12 +14,7 @@ class AMSPlugin: CDVPlugin {
         interstitial = AMSInterstitial(plugin: self)
         rewardVideo = AMSRewardVideo(plugin: self)
 
-        var applicationID = commandDelegate.settings["ADMOB_APPLICATOIN_ID".lowercased()] as? String
-        if applicationID == "test" {
-            applicationID = testApplicationID
-            NSLog("admob is using testApplicationID")
-        }
-        GADMobileAds.configure(withApplicationID: applicationID ?? testApplicationID)
+        GADMobileAds.configure(withApplicationID: getApplicationID())
     }
 
     deinit {
@@ -27,6 +22,15 @@ class AMSPlugin: CDVPlugin {
         interstitial = nil
         rewardVideo = nil
         readyCallbackId = nil
+    }
+
+    func getApplicationID() -> String {
+        let applicationID = commandDelegate.settings["ADMOB_APPLICATOIN_ID".lowercased()] as? String
+        if applicationID == nil || applicationID == "" || applicationID == "test" {
+            NSLog("admob is using testApplicationID")
+            return testApplicationID
+        }
+        return applicationID!
     }
 
     @objc(ready:)
