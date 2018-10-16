@@ -32,6 +32,8 @@
     </platform>
 
     <platform name="ios">
+        <preference name="APP_ID_IOS" default="test" />
+
         <config-file target="config.xml" parent="/*">
             <feature name="AdMob">
                 <param name="ios-package" value="AMSPlugin" />

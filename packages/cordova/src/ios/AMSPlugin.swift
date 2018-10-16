@@ -25,7 +25,7 @@ class AMSPlugin: CDVPlugin {
     }
 
     func getApplicationID() -> String {
-        let applicationID = commandDelegate.settings["ADMOB_APPLICATOIN_ID".lowercased()] as? String
+        let applicationID = commandDelegate.settings["APP_ID_IOS".lowercased()] as? String
         if applicationID == nil || applicationID == "" || applicationID == "test" {
             NSLog("admob is using testApplicationID")
             return testApplicationID
