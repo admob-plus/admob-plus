@@ -7,9 +7,9 @@
         <clobbers target="admob" />
     </js-module>
 
-    <preference name="ADMOB_APPLICATOIN_ID" default="test" />
-
     <platform name="android">
+        <preference name="APP_ID_ANDROID" default="test" />
+
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="AdMob">
                 <param name="android-package" value="admob.plugin.AdMob"/>

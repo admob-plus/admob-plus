@@ -60,7 +60,8 @@
       "cordova-plugin-ionic-webview": {},
       "cordova-plugin-ionic-keyboard": {},
       "cordova-admob-plus": {
-        "ADMOB_APPLICATOIN_ID": "test"
+        "APP_ID_ANDROID": "test",
+        "APP_ID_IOS": "test"
       },
       "cordova-plugin-statusbar": {}
     },

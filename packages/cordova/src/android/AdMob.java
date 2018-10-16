@@ -30,8 +30,8 @@ public class AdMob extends CordovaPlugin {
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
 
-        String applicationID = cordova.getActivity().getIntent().getStringExtra("ADMOB_APPLICATOIN_ID");
-        if (applicationID == null || "test".equals(applicationID)) {
+        String applicationID = cordova.getActivity().getIntent().getStringExtra("APP_ID_ANDROID");
+        if (applicationID == null || "".equals(applicationID) || "test".equals(applicationID)) {
             applicationID = TEST_APPLICATION_ID;
         }
         MobileAds.initialize(cordova.getActivity(), applicationID);

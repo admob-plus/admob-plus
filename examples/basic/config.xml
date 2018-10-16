@@ -19,7 +19,8 @@
         <preference name="UseSwiftLanguageVersion" value="4" />
     </platform>
     <plugin name="cordova-admob-plus" spec="~0.0.0">
-        <variable name="ADMOB_APPLICATOIN_ID" value="test" />
+        <variable name="APP_ID_ANDROID" value="test" />
+        <variable name="APP_ID_IOS" value="test" />
     </plugin>
     <engine name="ios" spec="^4.5.5" />
     <engine name="android" spec="^7.1.1" />
