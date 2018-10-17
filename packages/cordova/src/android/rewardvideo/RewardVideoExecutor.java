@@ -16,7 +16,7 @@ import admob.plugin.AdMob;
 import admob.plugin.Events;
 
 public class RewardVideoExecutor extends AbstractExecutor {
-    private RewardedVideoAd rewardedVideoAd;
+    private RewardedVideoAd rewardedVideoAd = null;
 
     public RewardVideoExecutor(AdMob plugin) {
         super(plugin);
@@ -33,7 +33,7 @@ public class RewardVideoExecutor extends AbstractExecutor {
         plugin.cordova.getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                PluginResult result = new PluginResult(PluginResult.Status.OK, rewardedVideoAd ? rewardedVideoAd.isLoaded() : false);
+                PluginResult result = new PluginResult(PluginResult.Status.OK, rewardedVideoAd == null ? false : rewardedVideoAd.isLoaded());
                 callbackContext.sendPluginResult(result);
             }
         });
