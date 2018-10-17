@@ -30,11 +30,7 @@ public class AdMob extends CordovaPlugin {
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
 
-        String applicationID = cordova.getActivity().getIntent().getStringExtra("APP_ID_ANDROID");
-        if (applicationID == null || "".equals(applicationID) || "test".equals(applicationID)) {
-            applicationID = TEST_APPLICATION_ID;
-        }
-        MobileAds.initialize(cordova.getActivity(), applicationID);
+        MobileAds.initialize(cordova.getActivity(), getApplicationID());
 
         interstitialExecutor = new InterstitialExecutor(this);
         bannerExecutor = new BannerExecutor(this);
@@ -119,6 +115,14 @@ public class AdMob extends CordovaPlugin {
         PluginResult result = new PluginResult(PluginResult.Status.OK, event);
         result.setKeepCallback(true);
         readyCallbackContext.sendPluginResult(result);
+    }
+
+    private String getApplicationID() {
+        String applicationID = cordova.getActivity().getIntent().getStringExtra("APP_ID_ANDROID");
+        if (applicationID == null || "".equals(applicationID) || "test".equals(applicationID)) {
+            return TEST_APPLICATION_ID;
+        }
+        return applicationID;
     }
 
     private boolean isRunningInTestLab() {
