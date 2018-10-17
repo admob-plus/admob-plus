@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.1](https://github.com/admob-plus/admob-plus/compare/v0.5.0...v0.5.1) (2018-10-17)
+
+
+### Bug Fixes
+
+* **cordova-android:** fix incompatible types error, close [#18](https://github.com/admob-plus/admob-plus/issues/18) ([71f2be8](https://github.com/admob-plus/admob-plus/commit/71f2be8))
+
+
+
+
+
 # [0.5.0](https://github.com/admob-plus/admob-plus/compare/v0.4.0...v0.5.0) (2018-10-16)
 
 
