@@ -39,6 +39,7 @@ class AMSPlugin: CDVPlugin {
 
         self.emit(eventType: AMSEvents.ready, data: [
             "platform": "ios",
+            "applicationID": getApplicationID(),
             "isRunningInTestLab": false])
     }
 

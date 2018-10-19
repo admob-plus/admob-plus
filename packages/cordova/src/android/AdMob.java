@@ -45,6 +45,7 @@ public class AdMob extends CordovaPlugin {
             JSONObject data = new JSONObject();
             try {
                 data.put("platform", "android");
+                data.put("applicationID", getApplicationID());
                 data.put("isRunningInTestLab", isRunningInTestLab());
             } catch (JSONException e) {
                 e.printStackTrace();
