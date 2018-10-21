@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/admob-plus/admob-plus/compare/v0.5.1...v0.6.0) (2018-10-21)
+
+
+### Features
+
+* **cordova:** add applicationID to ready event data ([0d032b5](https://github.com/admob-plus/admob-plus/commit/0d032b5))
+* **ionic:** bind setDevMode method ([1ffda97](https://github.com/admob-plus/admob-plus/commit/1ffda97))
+
+
+
+
+
 ## [0.5.1](https://github.com/admob-plus/admob-plus/compare/v0.5.0...v0.5.1) (2018-10-17)
 
 
