@@ -38,7 +38,7 @@ class AdMob {
     return execAsync(NativeActions.set_app_volume, [value])
   }
 
-  public setDevMode(value) {
+  public setDevMode(value: boolean) {
     this.state.devMode = value
   }
 
