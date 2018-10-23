@@ -24,7 +24,7 @@
     "rollup": "^0.66.6",
     "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-node-resolve": "^3.4.0",
-    "rollup-plugin-typescript2": "^0.17.1",
+    "rollup-plugin-typescript2": "^0.17.2",
     "ts-node": "^7.0.1",
     "typescript": "^3.1.3"
   },
