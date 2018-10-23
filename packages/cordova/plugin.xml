@@ -9,14 +9,19 @@
 
     <platform name="android">
         <preference name="APP_ID_ANDROID" default="test" />
+        <preference name="PLAY_SERVICES_VERSION" default="+" />
+
+        <config-file parent="/manifest/application" target="AndroidManifest.xml">
+            <meta-data
+                android:name="com.google.android.gms.ads.APPLICATION_ID"
+                android:value="$APP_ID_ANDROID"/>
+        </config-file>
 
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="AdMob">
                 <param name="android-package" value="admob.plugin.AdMob"/>
             </feature>
         </config-file>
-
-        <preference name="PLAY_SERVICES_VERSION" default="+" />
 
         <framework src="com.google.android.gms:play-services-ads:$PLAY_SERVICES_VERSION" />
 
