@@ -7,6 +7,7 @@ const siteConfig = {
   tagline: 'Trustable AdMob Cordova Plugin',
   url: 'https://admob-plus.github.io',
   baseUrl: '/',
+  enableUpdateTime: true,
 
   projectName: 'admob-plus.github.io',
   organizationName: 'admob-plus',
