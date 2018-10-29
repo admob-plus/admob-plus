@@ -18,7 +18,7 @@ const siteConfig = {
     { doc: 'faq', label: 'FAQ' },
     { page: 'users', label: 'Users' },
     { blog: true, label: 'Blog' },
-    { href: 'https://ratson.name/fund-admob-plus/', label: 'Funding' },
+    { page: 'funding', label: 'Funding' },
   ],
 
   colors: {
