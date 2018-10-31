@@ -13,6 +13,7 @@ const siteConfig = {
   organizationName: 'admob-plus',
   editUrl: 'https://github.com/admob-plus/admob-plus/edit/master/docs/',
 
+  headerIcon: 'img/logo.png',
   headerLinks: [
     { doc: 'installation', label: 'Docs' },
     { doc: 'faq', label: 'FAQ' },
@@ -22,8 +23,8 @@ const siteConfig = {
   ],
 
   colors: {
-    primaryColor: '#2E8555',
-    secondaryColor: '#205C3B',
+    primaryColor: '#F9B90A',
+    secondaryColor: '#E5352F',
   },
 
   highlight: {
