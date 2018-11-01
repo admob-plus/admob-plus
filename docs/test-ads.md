@@ -14,6 +14,12 @@ Under dev mode, test ads are served, it could be turn on as follow,
 admob.setDevMode(true)
 ```
 
+# Firebase Test Lab
+
+Pre-launch report in Google Play Console is powered by [Firebase Test Lab for Android](https://firebase.google.com/docs/test-lab/).
+
+It is important to use test ads in such environment, therefore this plugin will [detect it](https://firebase.google.com/docs/test-lab/android/android-studio#modify_instrumented_test_behavior_for) and do the right thing.
+
 
 ## Further reading
 
