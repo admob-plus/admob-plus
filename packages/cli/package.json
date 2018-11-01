@@ -9,6 +9,7 @@
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-help": "^2",
+    "execa": "^1.0.0",
     "tslib": "^1"
   },
   "devDependencies": {
@@ -24,7 +25,7 @@
     "nyc": "^13",
     "ts-node": "^7",
     "tslint": "^5",
-    "typescript": "^3.0"
+    "typescript": "^3.1"
   },
   "engines": {
     "node": ">=8.0.0"
