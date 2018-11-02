@@ -1,5 +1,6 @@
 import { Command, flags } from '@oclif/command'
 import * as execa from 'execa'
+import * as readPkgUp from 'read-pkg-up'
 
 export default class Check extends Command {
   public static description = 'check setup'
@@ -29,5 +30,9 @@ ok!
     if (ionicVersion) {
       this.log(`ionic: ${ionicVersion}`)
     }
+
+    const { pkg } = await readPkgUp()
+    const deps = { ...pkg.devDependencies, ...pkg.dependencies }
+    this.log(`cordova-admob-plus: ${deps['cordova-admob-plus']}`)
   }
 }
