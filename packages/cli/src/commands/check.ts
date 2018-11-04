@@ -1,5 +1,6 @@
 import { Command, flags } from '@oclif/command'
 import * as execa from 'execa'
+import * as _ from 'lodash'
 import * as readPkgUp from 'read-pkg-up'
 
 export default class Check extends Command {
@@ -32,7 +33,15 @@ ok!
     }
 
     const { pkg } = await readPkgUp()
-    const deps = { ...pkg.devDependencies, ...pkg.dependencies }
-    this.log(`cordova-admob-plus: ${deps['cordova-admob-plus']}`)
+    const deps: { [k: string]: string } = {
+      ...pkg.devDependencies,
+      ...pkg.dependencies,
+    }
+    const cordovaPlugins = _.reduce(
+      _.get(pkg, 'cordova.plugins'),
+      (acc, v, k) => ({ ...acc, [k]: deps[k] }),
+      {},
+    )
+    this.log(`cordova plugins: ${JSON.stringify(cordovaPlugins, null, 2)}`)
   }
 }
