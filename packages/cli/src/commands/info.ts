@@ -1,4 +1,5 @@
 import { Command, flags } from '@oclif/command'
+import * as envinfo from 'envinfo'
 import * as execa from 'execa'
 import * as _ from 'lodash'
 import * as readPkgUp from 'read-pkg-up'
@@ -16,6 +17,34 @@ export default class InfoCommand extends Command {
   public static args = []
 
   public async run() {
+    const { pkg } = await readPkgUp()
+    let infoText = ''
+    try {
+      infoText = await envinfo.run(
+        {
+          Binaries: ['Node', 'Yarn', 'npm', 'Watchman'],
+          IDEs: ['Xcode', 'Android Studio'],
+          SDKs: ['iOS SDK', 'Android SDK'],
+          System: ['OS', 'CPU', 'Memory', 'Shell'],
+          npmGlobalPackages: ['cordova', 'ionic'],
+          npmPackages: [
+            ...Object.keys(_.get(pkg, 'cordova.plugins')),
+            'cordova-admob-plus',
+          ],
+        },
+        {
+          title: 'AdMob Plus Environment Info',
+        },
+      )
+      this.log(infoText)
+    } catch (err) {
+      this.log(err)
+    }
+
+    if (infoText.indexOf('cordova') > -1) {
+      return
+    }
+
     const { stdout: cordovaVersion } = await execa('cordova', ['--version'], {
       reject: false,
     })
@@ -29,7 +58,6 @@ export default class InfoCommand extends Command {
       this.log(`ionic: ${ionicVersion}`)
     }
 
-    const { pkg } = await readPkgUp()
     const deps: { [k: string]: string } = {
       ...pkg.devDependencies,
       ...pkg.dependencies,
