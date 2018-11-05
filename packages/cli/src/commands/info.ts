@@ -3,14 +3,11 @@ import * as execa from 'execa'
 import * as _ from 'lodash'
 import * as readPkgUp from 'read-pkg-up'
 
-export default class Check extends Command {
-  public static description = 'check setup'
+export default class InfoCommand extends Command {
+  public static description =
+    'Get relevant version info about OS, toolchain and libraries'
 
-  public static examples = [
-    `$ admob-plus check
-ok!
-`,
-  ]
+  public static examples = [`$ admob-plus info`]
 
   public static flags = {
     help: flags.help({ char: 'h' }),
