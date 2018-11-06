@@ -11,12 +11,17 @@ export default class InfoCommand extends Command {
   public static examples = [`$ admob-plus info`]
 
   public static flags = {
+    clipboard: flags.boolean({
+      description: 'copy the environment report output to the clipboard',
+    }),
     help: flags.help({ char: 'h' }),
   }
 
   public static args = []
 
   public async run() {
+    const { flags: parsedFlags } = this.parse(InfoCommand)
+
     const { pkg } = await readPkgUp()
     let infoText = ''
     try {
@@ -33,6 +38,7 @@ export default class InfoCommand extends Command {
           ],
         },
         {
+          clipboard: parsedFlags.clipboard,
           title: 'AdMob Plus Environment Info',
         },
       )
