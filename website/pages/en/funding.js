@@ -28,7 +28,9 @@ const Funding = () => (
               },
               {
                 title: 'One-Off',
-                content: '[PayPal](https://www.paypal.me/ratsonal)',
+                content: `[![PayPal](${
+                  siteConfig.baseUrl
+                }img/paypal.svg)](https://www.paypal.me/ratsonal)`,
               },
             ]}
           />
