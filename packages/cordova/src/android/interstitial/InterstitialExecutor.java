@@ -31,14 +31,16 @@ public class InterstitialExecutor extends AbstractExecutor {
         JSONObject opts = args.optJSONObject(0);
         String adUnitID = opts.optString("adUnitID");
 
-        String finalAdUnitID = adUnitID;
+        final String finalAdUnitID = adUnitID;
+        final CallbackContext finalCallbackContext = callbackContext;
+
         plugin.cordova.getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 createAndLoadInterstitial(finalAdUnitID);
 
                 PluginResult result = new PluginResult(PluginResult.Status.OK, "");
-                callbackContext.sendPluginResult(result);
+                finalCallbackContext.sendPluginResult(result);
             }
         });
 
@@ -46,13 +48,15 @@ public class InterstitialExecutor extends AbstractExecutor {
     }
 
     public boolean show(JSONArray args, CallbackContext callbackContext) {
+        final CallbackContext finalCallbackContext = callbackContext;
+
         plugin.cordova.getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 showInterstitial();
 
                 PluginResult result = new PluginResult(PluginResult.Status.OK, "");
-                callbackContext.sendPluginResult(result);
+                finalCallbackContext.sendPluginResult(result);
             }
         });
 
