@@ -1,4 +1,5 @@
 import { Command, flags } from '@oclif/command'
+// @ts-ignore: No types
 import * as envinfo from 'envinfo'
 import * as execa from 'execa'
 import * as _ from 'lodash'
