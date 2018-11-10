@@ -30,11 +30,13 @@ public class RewardVideoExecutor extends AbstractExecutor {
     }
 
     public boolean isReady(JSONArray args, CallbackContext callbackContext) {
+        final CallbackContext finalCallbackContext = callbackContext;
+
         plugin.cordova.getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 PluginResult result = new PluginResult(PluginResult.Status.OK, rewardedVideoAd == null ? false : rewardedVideoAd.isLoaded());
-                callbackContext.sendPluginResult(result);
+                finalCallbackContext.sendPluginResult(result);
             }
         });
 
@@ -45,13 +47,16 @@ public class RewardVideoExecutor extends AbstractExecutor {
         JSONObject opts = args.optJSONObject(0);
         String adUnitID = opts.optString("adUnitID");
 
+        final String finalAdUnitID = adUnitID;
+        final CallbackContext finalCallbackContext = callbackContext;
+
         plugin.cordova.getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                createAndLoadRewardedVideo(adUnitID);
+                createAndLoadRewardedVideo(finalAdUnitID);
 
                 PluginResult result = new PluginResult(PluginResult.Status.OK, "");
-                callbackContext.sendPluginResult(result);
+                finalCallbackContext.sendPluginResult(result);
             }
         });
 
@@ -59,13 +64,15 @@ public class RewardVideoExecutor extends AbstractExecutor {
     }
 
     public boolean show(JSONArray args, CallbackContext callbackContext) {
+        final CallbackContext finalCallbackContext = callbackContext;
+
         plugin.cordova.getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 showRewardedVideo();
 
                 PluginResult result = new PluginResult(PluginResult.Status.OK, "");
-                callbackContext.sendPluginResult(result);
+                finalCallbackContext.sendPluginResult(result);
             }
         });
 
@@ -112,7 +119,6 @@ public class RewardVideoExecutor extends AbstractExecutor {
                 plugin.emit(Events.REWARD_VIDEO_LOAD_FAIL);
             }
 
-            @Override
             public void onRewardedVideoCompleted() {
                 plugin.emit(Events.REWARD_VIDEO_COMPLETE);
             }
