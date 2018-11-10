@@ -9,7 +9,7 @@
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-help": "^2",
-    "envinfo": "^5.11.1",
+    "envinfo": "^5.12.1",
     "execa": "^1.0.0",
     "lodash": "^4.17.11",
     "read-pkg-up": "^4.0.0",

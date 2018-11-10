@@ -10,10 +10,10 @@
   },
   "devDependencies": {
     "@types/cordova": "^0.0.34",
-    "@types/node": "^10.11.6",
-    "rollup": "^0.66.6",
+    "@types/node": "^10.12.5",
+    "rollup": "^0.67.0",
     "ts-node": "^7.0.1",
-    "typescript": "^3.1.2"
+    "typescript": "^3.1.6"
   },
   "author": "Ratson",
   "license": "MIT",
