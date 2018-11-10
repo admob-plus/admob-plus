@@ -2,7 +2,9 @@
   "name": "admob-plus-monorepo",
   "private": true,
   "scripts": {
-    "test": "jest",
+    "test": "run-s test:*",
+    "test:cli": "cd packages/cli && run-s test",
+    "test:jest": "jest",
     "lint": "tslint --project packages/cordova",
     "test-android": "run-s test-android:*",
     "test-android:testbed": "cordova-testbed --platform android --plugin packages/cordova --build-only",
@@ -62,6 +64,7 @@
     "transform": {
       "^.+\\.tsx?$": "ts-jest"
     },
+    "testPathIgnorePatterns": ["/node_modules/", "<rootDir>/packages/cli/"],
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
     "testURL": "http://localhost/",
     "moduleFileExtensions": [
