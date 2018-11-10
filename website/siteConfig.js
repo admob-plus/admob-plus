@@ -23,8 +23,8 @@ const siteConfig = {
   ],
 
   colors: {
-    primaryColor: '#F9B90A',
-    secondaryColor: '#E5352F',
+    primaryColor: '#6497AA',
+    secondaryColor: '#D3403A',
   },
 
   highlight: {
