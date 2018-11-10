@@ -13,6 +13,7 @@ const siteConfig = {
   organizationName: 'admob-plus',
   editUrl: 'https://github.com/admob-plus/admob-plus/edit/master/docs/',
 
+  footerIcon: 'img/logo.png',
   headerIcon: 'img/logo.png',
   headerLinks: [
     { doc: 'installation', label: 'Docs' },
