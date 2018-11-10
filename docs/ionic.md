@@ -15,6 +15,8 @@ npm install --save ionic-admob
 
 After installing a plugin’s package, add it to your app’s `NgModule`.
 
+Default is path `src/app/app.module.ts`.
+
 ```typescript
 ...
 
@@ -33,7 +35,9 @@ import { AdMob } from "ionic-admob";
 export class AppModule { }
 ```
 
-Then you would be able to inject `AdMob` instance to component,
+Then you would be able to inject `AdMob` instance to component.
+
+For example, edit path `src/app/app.component.ts`.
 
 ```typescript
 import { AdMob } from "ionic-admob";
