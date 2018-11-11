@@ -1,10 +1,38 @@
 import { Command, flags } from '@oclif/command'
 import * as clipboardy from 'clipboardy'
+import * as elementtree from 'elementtree'
 // @ts-ignore: No types
 import * as envinfo from 'envinfo'
 import * as execa from 'execa'
+import * as fse from 'fs-extra'
 import * as _ from 'lodash'
 import * as readPkgUp from 'read-pkg-up'
+
+const collectionAndroidManifestInfo = async () => {
+  const content = await fse.readFile(
+    'platforms/android/app/src/main/AndroidManifest.xml',
+    'utf8',
+  )
+  const etree = elementtree.parse(content)
+  const items = etree.findall(
+    './application/meta-data/[@android:name="com.google.android.gms.ads.APPLICATION_ID"]',
+  )
+  return {
+    count: items.length,
+    toString() {
+      switch (items.length) {
+        case 0:
+          return 'missing <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" ... />'
+        case 1:
+          return items[0].get('android:value') === 'test'
+            ? 'using test APPLICATION_ID'
+            : 'looks ok'
+        default:
+          return 'multiple <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" ... />'
+      }
+    },
+  }
+}
 
 export default class InfoCommand extends Command {
   public static description =
@@ -77,6 +105,12 @@ export default class InfoCommand extends Command {
         2,
       )}\n`
     }
+
+    try {
+      const androidInfo = await collectionAndroidManifestInfo()
+      infoText += `\nAndroidManifest.xml: ${androidInfo}\n`
+      // tslint:disable-next-line:no-empty
+    } catch (err) {}
 
     this.log(infoText)
 
