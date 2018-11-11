@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.2](https://github.com/admob-plus/admob-plus/compare/v0.9.1...v0.9.2) (2018-11-11)
+
+
+### Bug Fixes
+
+* **cordova:** get default testAdUnitID ([4128f7d](https://github.com/admob-plus/admob-plus/commit/4128f7d))
+
+
+
+
+
 ## [0.9.1](https://github.com/admob-plus/admob-plus/compare/v0.9.0...v0.9.1) (2018-11-11)
 
 **Note:** Version bump only for package admob-plus-monorepo
