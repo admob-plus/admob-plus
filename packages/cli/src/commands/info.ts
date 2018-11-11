@@ -35,6 +35,9 @@ export default class InfoCommand extends Command {
           System: ['OS', 'CPU', 'Memory', 'Shell'],
           npmGlobalPackages: ['cordova', 'ionic'],
           npmPackages: [
+            'cordova-android',
+            'cordova-browser',
+            'cordova-ios',
             ..._.keys(_.get(pkg, 'cordova.plugins')),
             'cordova-admob-plus',
           ],
