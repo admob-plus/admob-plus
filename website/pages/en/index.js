@@ -34,6 +34,9 @@ const ProjectTitle = () => (
 const HomeSplash = () => (
   <SplashContainer>
     <div className="inner">
+      <div className="projectLogo">
+        <img src={`${siteConfig.baseUrl}img/logo.png`} alt="AdMob Plus logo" />
+      </div>
       <ProjectTitle />
       <div className="section promoSection">
         <div className="promoRow">
