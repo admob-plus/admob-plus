@@ -1,4 +1,5 @@
 import { Command, flags } from '@oclif/command'
+import * as clipboardy from 'clipboardy'
 // @ts-ignore: No types
 import * as envinfo from 'envinfo'
 import * as execa from 'execa'
@@ -34,46 +35,50 @@ export default class InfoCommand extends Command {
           System: ['OS', 'CPU', 'Memory', 'Shell'],
           npmGlobalPackages: ['cordova', 'ionic'],
           npmPackages: [
-            ...Object.keys(_.get(pkg, 'cordova.plugins')),
+            ..._.keys(_.get(pkg, 'cordova.plugins')),
             'cordova-admob-plus',
           ],
         },
         {
-          clipboard: parsedFlags.clipboard,
+          console: false,
           title: 'AdMob Plus Environment Info',
         },
       )
-      this.log(infoText)
     } catch (err) {
       this.log(err)
     }
 
-    if (infoText.indexOf('cordova') > -1) {
-      return
+    if (infoText.indexOf('cordova') === -1) {
+      const { stdout: cordovaVersion } = await execa('cordova', ['--version'], {
+        reject: false,
+      })
+      infoText += `\ncordova: ${cordovaVersion}\n`
+
+      const { stdout: ionicVersion } = await execa('ionic', ['--version'], {
+        reject: false,
+      })
+      infoText += `ionic: ${ionicVersion}\n`
+
+      const deps: { [k: string]: string } = {
+        ...pkg.devDependencies,
+        ...pkg.dependencies,
+      }
+      const cordovaPlugins = _.reduce(
+        _.get(pkg, 'cordova.plugins'),
+        (acc, v, k) => ({ ...acc, [k]: deps[k] }),
+        {},
+      )
+      infoText += `cordova plugins: ${JSON.stringify(
+        cordovaPlugins,
+        null,
+        2,
+      )}\n`
     }
 
-    const { stdout: cordovaVersion } = await execa('cordova', ['--version'], {
-      reject: false,
-    })
+    this.log(infoText)
 
-    this.log(`cordova: ${cordovaVersion}`)
-
-    const { stdout: ionicVersion } = await execa('ionic', ['--version'], {
-      reject: false,
-    })
-    if (ionicVersion) {
-      this.log(`ionic: ${ionicVersion}`)
+    if (parsedFlags.clipboard) {
+      clipboardy.writeSync(infoText)
     }
-
-    const deps: { [k: string]: string } = {
-      ...pkg.devDependencies,
-      ...pkg.dependencies,
-    }
-    const cordovaPlugins = _.reduce(
-      _.get(pkg, 'cordova.plugins'),
-      (acc, v, k) => ({ ...acc, [k]: deps[k] }),
-      {},
-    )
-    this.log(`cordova plugins: ${JSON.stringify(cordovaPlugins, null, 2)}`)
   }
 }
