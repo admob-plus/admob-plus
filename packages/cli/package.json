@@ -26,6 +26,7 @@
     "@types/clipboardy": "^1.1.0",
     "@types/elementtree": "^0.1.0",
     "@types/fs-extra": "^5.0.4",
+    "@types/mocha": "^5.2.5",
     "@types/node": "^10",
     "@types/read-pkg-up": "^3.0.1",
     "chai": "^4",

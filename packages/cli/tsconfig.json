@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "typeRoots" : ["admob-plus"],
     "declaration": true,
     "importHelpers": true,
     "module": "commonjs",
