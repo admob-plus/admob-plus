@@ -3,7 +3,6 @@
   "version": "0.9.0",
   "private": true,
   "scripts": {
-    "prepare": "ionic cordova prepare --searchpath ../../packages",
     "clean": "ionic-app-scripts clean",
     "build": "ionic-app-scripts build",
     "lint": "ionic-app-scripts lint",
