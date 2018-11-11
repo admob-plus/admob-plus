@@ -62,12 +62,14 @@ export class AdBase {
     this.state = state
   }
 
-  protected get testAdUnitID() {
+  protected get testAdUnitID(): string {
     switch (this.state.platform) {
       case Platforms.android:
         return this.testIdForAndroid
       case Platforms.ios:
         return this.testIdForIOS
+      default:
+        return 'test'
     }
   }
 
