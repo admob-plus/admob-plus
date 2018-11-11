@@ -125,6 +125,7 @@
       "**/@angular*",
       "**/@angular*/**",
       "**/@ionic/**",
+      "**/@ionic/app-scripts",
       "**/@ionic-native/**",
       "**/@ionic-native/splash-screen",
       "**/@ionic-native/status-bar",
