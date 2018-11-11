@@ -208,7 +208,7 @@ const Index = ({ language = '' }) => (
             },
             {
               content: `Except Google provided
-                [AdMob SDKs](https://cocoapods.org/pods/GoogleMobileAds),
+                [AdMob SDKs](https://cocoapods.org/pods/Google-Mobile-Ads-SDK),
                 every line of code are on Github. You don't risk to
                 [execute](https://github.com/admob-google/admob-cordova/blob/master/src/android/libs/admobadplugin.jar)
                 [compiled](https://unpkg.com/cordova-plugin-extension@1.5.4/src/android/cordova-generic-ad.jar)
