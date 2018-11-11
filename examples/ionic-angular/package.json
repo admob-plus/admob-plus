@@ -1,6 +1,6 @@
 {
   "name": "ionic-angular-example",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",
