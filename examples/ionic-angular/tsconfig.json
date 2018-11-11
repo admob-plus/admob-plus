@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "typeRoots" : ["ionic-angular-example"],
     "allowSyntheticDefaultImports": true,
     "declaration": false,
     "emitDecoratorMetadata": true,
