@@ -27,6 +27,9 @@ jobs:
     script:
       - commitlint-travis
       - yarn lint
+      - pushd packages/cli
+      - yarn prepack
+      - popd
       - pushd packages/cordova
       - yarn prepare
       - popd
