@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/admob-plus/admob-plus/compare/v0.8.0...v0.9.0) (2018-11-11)
+
+
+### Bug Fixes
+
+* **cli:** copy full info text to clipboard ([a5e822a](https://github.com/admob-plus/admob-plus/commit/a5e822a))
+
+
+### Features
+
+* **cli:** print AndroidManifest.xml info ([559fa09](https://github.com/admob-plus/admob-plus/commit/559fa09))
+* **cli:** print cordova platforms package version ([cb34787](https://github.com/admob-plus/admob-plus/commit/cb34787))
+
+
+
+
+
 # [0.8.0](https://github.com/admob-plus/admob-plus/compare/v0.7.0...v0.8.0) (2018-11-10)
 
 
