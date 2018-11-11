@@ -18,7 +18,7 @@
         <allow-intent href="itms-apps:*" />
         <preference name="UseSwiftLanguageVersion" value="4" />
     </platform>
-    <plugin name="cordova-admob-plus" spec="~0.0.0">
+    <plugin name="cordova-admob-plus" spec="0.8.0">
         <variable name="APP_ID_ANDROID" value="test" />
         <variable name="APP_ID_IOS" value="test" />
     </plugin>
