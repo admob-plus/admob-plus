@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.3](https://github.com/admob-plus/admob-plus/compare/v0.9.2...v0.9.3) (2018-11-12)
+
+
+### Bug Fixes
+
+* **cordova:** relax engine verions, close [#38](https://github.com/admob-plus/admob-plus/issues/38) ([403974b](https://github.com/admob-plus/admob-plus/commit/403974b))
+
+
+
+
+
 ## [0.9.2](https://github.com/admob-plus/admob-plus/compare/v0.9.1...v0.9.2) (2018-11-11)
 
 
