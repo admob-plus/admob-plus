@@ -1,6 +1,10 @@
 package admob.plugin;
 
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
+import android.os.Bundle;
 import android.provider.Settings;
+import android.util.Log;
 import java.math.BigDecimal;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaInterface;
@@ -18,6 +22,8 @@ import admob.plugin.interstitial.InterstitialExecutor;
 import admob.plugin.rewardvideo.RewardVideoExecutor;
 
 public class AdMob extends CordovaPlugin {
+    private static final String TAG = "AdMob-Plus";
+
     private CallbackContext readyCallbackContext = null;
 
     private BannerExecutor bannerExecutor = null;
@@ -119,6 +125,14 @@ public class AdMob extends CordovaPlugin {
     }
 
     private String getApplicationID() {
+        try {
+            ApplicationInfo ai = cordova.getActivity().getApplicationContext().getPackageManager().getApplicationInfo(cordova.getActivity().getPackageName(), PackageManager.GET_META_DATA);
+            Bundle bundle = ai.metaData;
+            return bundle.getString("com.google.android.gms.ads.APPLICATION_ID");
+        } catch (Exception e) {
+            Log.e(TAG, "Forget to configure <meta-data android:name=\"com.google.android.gms.ads.APPLICATION_ID\" android:value=\"XXX\"/> in your AndroidManifest.xml file.");
+        }
+
         String applicationID = cordova.getActivity().getIntent().getStringExtra("APP_ID_ANDROID");
         if (applicationID == null || "".equals(applicationID) || "test".equals(applicationID)) {
             return TEST_APPLICATION_ID;
