@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://github.com/admob-plus/admob-plus/compare/v0.9.3...v0.10.0) (2018-11-14)
+
+
+### Bug Fixes
+
+* **cordova-android:** revert back to use <config-file /> ([5cc5ecc](https://github.com/admob-plus/admob-plus/commit/5cc5ecc))
+
+
+### Features
+
+* **cordova-android:** load application ID from AndroidManifest.xml ([e09747f](https://github.com/admob-plus/admob-plus/commit/e09747f))
+* **cordova-android:** set default PLAY_SERVICES_VERSION to 16.0.0 ([e764cca](https://github.com/admob-plus/admob-plus/commit/e764cca))
+
+
+
+
+
 ## [0.9.3](https://github.com/admob-plus/admob-plus/compare/v0.9.2...v0.9.3) (2018-11-12)
 
 
