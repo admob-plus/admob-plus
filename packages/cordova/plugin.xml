@@ -16,11 +16,11 @@
         <preference name="APP_ID_ANDROID" default="test" />
         <preference name="PLAY_SERVICES_VERSION" default="+" />
 
-        <edit-config target="AndroidManifest.xml" parent="/manifest/application/meta-data[@android:name='com.google.android.gms.ads.APPLICATION_ID']" mode="overwrite">
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
             <meta-data
                 android:name="com.google.android.gms.ads.APPLICATION_ID"
                 android:value="$APP_ID_ANDROID" />
-        </edit-config>
+        </config-file>
 
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="AdMob">
