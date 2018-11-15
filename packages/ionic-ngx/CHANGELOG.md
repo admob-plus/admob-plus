@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.3](https://github.com/admob-plus/admob-plus/compare/v0.11.2...v0.11.3) (2018-11-15)
+
+
+### Bug Fixes
+
+* **ionic:** remove decorator usage ([4a4022f](https://github.com/admob-plus/admob-plus/commit/4a4022f))
+
+
+
+
+
 ## [0.11.2](https://github.com/admob-plus/admob-plus/compare/v0.11.1...v0.11.2) (2018-11-15)
 
 
