@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.4](https://github.com/admob-plus/admob-plus/compare/v0.11.3...v0.11.4) (2018-11-15)
+
+
+### Bug Fixes
+
+* **ionic:** extend ad class with IonicNativePlugin ([c098467](https://github.com/admob-plus/admob-plus/commit/c098467))
+
+
+
+
+
 ## [0.11.3](https://github.com/admob-plus/admob-plus/compare/v0.11.2...v0.11.3) (2018-11-15)
 
 
