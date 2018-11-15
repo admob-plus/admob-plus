@@ -68,6 +68,9 @@ export default class InfoCommand extends Command {
             'cordova-ios',
             ..._.keys(_.get(pkg, 'cordova.plugins')),
             'cordova-admob-plus',
+            'cordova',
+            'ionic*',
+            '@ionic*',
           ],
         },
         {
