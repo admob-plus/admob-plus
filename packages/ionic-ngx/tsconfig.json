@@ -1,11 +1,10 @@
 {
-  "extends": "../../tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".",
     "declaration": true,
     "stripInternal": true,
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
+    "emitDecoratorMetadata": false,
     "noImplicitAny": true,
     "module": "es2015",
     "moduleResolution": "node",
@@ -14,6 +13,7 @@
     "target": "es5",
     "skipLibCheck": true,
     "lib": ["es2017", "dom"],
-    "strictPropertyInitialization": false
+    "inlineSources": true,
+    "sourceMap": true
   }
 }
