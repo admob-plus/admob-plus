@@ -4,7 +4,7 @@ import { fromEvent, Observable } from 'rxjs'
 
 import { AdUnitIDOption } from './shared'
 
-export class Banner {
+export class Banner extends IonicNativePlugin {
   public static plugin = 'cordova-admob-plus'
   public static pluginName = 'AdMob'
   public static pluginRef = 'admob.banner'
@@ -18,7 +18,7 @@ export class Banner {
   }
 }
 
-export class Interstitial {
+export class Interstitial extends IonicNativePlugin {
   public static plugin = 'cordova-admob-plus'
   public static pluginName = 'AdMob'
   public static pluginRef = 'admob.interstitial'
@@ -32,7 +32,7 @@ export class Interstitial {
   }
 }
 
-export class RewardVideo {
+export class RewardVideo extends IonicNativePlugin {
   public static plugin = 'cordova-admob-plus'
   public static pluginName = 'AdMob'
   public static pluginRef = 'admob.rewardVideo'
