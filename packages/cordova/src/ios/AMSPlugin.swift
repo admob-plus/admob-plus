@@ -1,6 +1,6 @@
 @objc(AMSPlugin)
 class AMSPlugin: CDVPlugin {
-    let testApplicationID = "ca-app-pub-3940256099942544~1458002511"
+    static let testApplicationID = "ca-app-pub-3940256099942544~1458002511"
 
     var banner: AMSBanner!
     var interstitial: AMSInterstitial!
@@ -28,7 +28,7 @@ class AMSPlugin: CDVPlugin {
         let applicationID = commandDelegate.settings["APP_ID_IOS".lowercased()] as? String
         if applicationID == nil || applicationID == "" || applicationID == "test" {
             NSLog("admob is using testApplicationID")
-            return testApplicationID
+            return AMSPlugin.testApplicationID
         }
         return applicationID!
     }
