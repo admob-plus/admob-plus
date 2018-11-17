@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "docusaurus": "^1.5.1",
-    "eslint-config-concise-react": "^0.32.0"
+    "eslint-config-concise-react": "^0.33.0"
   },
   "eslintConfig": {
     "extends": [
