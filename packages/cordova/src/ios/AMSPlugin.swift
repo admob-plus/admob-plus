@@ -40,6 +40,7 @@ class AMSPlugin: CDVPlugin {
         self.emit(eventType: AMSEvents.ready, data: [
             "platform": "ios",
             "applicationID": getApplicationID(),
+            "sdkVersion": GADRequest.sdkVersion(),
             "isRunningInTestLab": false])
     }
 
