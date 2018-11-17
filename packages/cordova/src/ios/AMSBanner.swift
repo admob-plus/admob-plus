@@ -35,6 +35,7 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
         } else {
             positionBannerAtBottomOfView(bannerView)
         }
+        self.resizeWebView()
     }
 
     @available (iOS 11, *)
@@ -68,6 +69,15 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
                                               constant: 0))
     }
 
+    func resizeWebView() {
+        var frame = view.frame
+        frame.size.height -= bannerView.frame.height
+        if #available(iOS 11.0, *) {
+            frame.size.height -= self.plugin.webView.safeAreaInsets.bottom
+        }
+        self.plugin.webView.frame = frame
+    }
+
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {
         plugin.emit(eventType: AMSEvents.bannerLoad)
     }
@@ -78,10 +88,12 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
     }
 
     func adViewWillPresentScreen(_ bannerView: GADBannerView) {
+        self.resizeWebView()
         plugin.emit(eventType: AMSEvents.bannerOpen)
     }
 
     func adViewWillDismissScreen(_ bannerView: GADBannerView) {
+        self.resizeWebView()
     }
 
     func adViewDidDismissScreen(_ bannerView: GADBannerView) {
