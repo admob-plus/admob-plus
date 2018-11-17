@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.5](https://github.com/admob-plus/admob-plus/compare/v0.11.4...v0.11.5) (2018-11-17)
+
+
+### Bug Fixes
+
+* **cordova-ios:** fix serialization error ([03f62fd](https://github.com/admob-plus/admob-plus/commit/03f62fd))
+
+
+
+
+
 ## [0.11.4](https://github.com/admob-plus/admob-plus/compare/v0.11.3...v0.11.4) (2018-11-15)
 
 
