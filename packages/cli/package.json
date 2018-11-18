@@ -1,7 +1,7 @@
 {
   "name": "admob-plus",
   "description": "AdMob Plus CLI",
-  "version": "0.11.0",
+  "version": "0.12.0",
   "bin": {
     "admob-plus": "./bin/run"
   },

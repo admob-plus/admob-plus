@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0](https://github.com/admob-plus/admob-plus/compare/v0.11.5...v0.12.0) (2018-11-18)
+
+
+### Bug Fixes
+
+* **cordova-ios:** resize webview ([b659a3e](https://github.com/admob-plus/admob-plus/commit/b659a3e))
+
+
+### Features
+
+* **cordova-ios:** emit sdkVersion ([e1a0914](https://github.com/admob-plus/admob-plus/commit/e1a0914))
+* **cordova-ios:** update Google-Mobile-Ads-SDK to 7.36 ([915847b](https://github.com/admob-plus/admob-plus/commit/915847b))
+
+
+
+
+
 ## [0.11.5](https://github.com/admob-plus/admob-plus/compare/v0.11.4...v0.11.5) (2018-11-17)
 
 
