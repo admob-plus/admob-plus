@@ -59,6 +59,7 @@ export default class InfoCommand extends Command {
         {
           Binaries: ['Node', 'Yarn', 'npm', 'Watchman'],
           IDEs: ['Xcode', 'Android Studio'],
+          Languages: ['Java'],
           SDKs: ['iOS SDK', 'Android SDK'],
           System: ['OS', 'CPU', 'Memory', 'Shell'],
           npmGlobalPackages: ['cordova', 'ionic'],
