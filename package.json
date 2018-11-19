@@ -11,10 +11,7 @@
     "test-android:example": "cd examples/basic && cordova platform add android && cordova build android",
     "test-ios": "run-s test-ios:*",
     "test-ios:testbed": "cordova-testbed --platform ios --plugin packages/cordova --build-only",
-    "test-ios:example": "cd examples/basic && cordova platform add ios && cordova build ios",
-    "pre-commit": "run-s pre-commit:*",
-    "pre-commit:lint-staged": "lint-staged",
-    "pre-commit:swiftlint": "cd packages/cordova/src/ios && swiftlint"
+    "test-ios:example": "cd examples/basic && cordova platform add ios && cordova build ios"
   },
   "devDependencies": {
     "@commitlint/cli": "^7.2.1",
