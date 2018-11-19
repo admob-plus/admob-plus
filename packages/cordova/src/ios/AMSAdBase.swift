@@ -10,4 +10,9 @@ class AMSAdBase: NSObject {
     deinit {
         plugin = nil
     }
+
+    func createGADRequest() {
+        let request = GADRequest()
+        return request
+    }
 }

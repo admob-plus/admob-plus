@@ -9,8 +9,7 @@ class AMSInterstitial: AMSAdBase, GADInterstitialDelegate {
         let interstitial = GADInterstitial(adUnitID: adUnitID)
         self.interstitial = interstitial
 
-        let request = GADRequest()
-        request.testDevices = [ kGADSimulatorID ]
+        let request = createGADRequest()
         interstitial.load(request)
         interstitial.delegate = self
     }

@@ -19,7 +19,8 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
         addBannerViewToView(bannerView)
         bannerView.rootViewController = plugin.viewController
         bannerView.adUnitID = adUnitID
-        bannerView.load(GADRequest())
+        let request = createGADRequest()
+        bannerView.load(request)
     }
 
     func hide() {

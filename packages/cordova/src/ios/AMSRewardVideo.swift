@@ -15,7 +15,8 @@ class AMSRewardVideo: AMSAdBase, GADRewardBasedVideoAdDelegate {
         rewardBasedVideo?.delegate = self
 
         if rewardBasedVideo?.isReady == false {
-            rewardBasedVideo?.load(GADRequest(), withAdUnitID: adUnitID)
+            let request = createGADRequest()
+            rewardBasedVideo?.load(request, withAdUnitID: adUnitID)
         }
     }
 
