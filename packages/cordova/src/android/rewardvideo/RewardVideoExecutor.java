@@ -117,7 +117,8 @@ public class RewardVideoExecutor extends AbstractExecutor {
                 plugin.emit(Events.REWARD_VIDEO_COMPLETE);
             }
         });
-        rewardedVideoAd.loadAd(adUnitID, new AdRequest.Builder().build());
+        AdRequest adRequest = createAdRequestBuilder().build();
+        rewardedVideoAd.loadAd(adUnitID, adRequest);
     }
 
     private void showRewardedVideo() {

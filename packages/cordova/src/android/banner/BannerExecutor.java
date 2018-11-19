@@ -111,9 +111,7 @@ public class BannerExecutor extends AbstractExecutor {
             adView.setVisibility(View.VISIBLE);
         }
 
-        AdRequest adRequest = new AdRequest.Builder()
-                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-                .build();
+        AdRequest adRequest = createAdRequestBuilder().build();
         adView.loadAd(adRequest);
     }
 

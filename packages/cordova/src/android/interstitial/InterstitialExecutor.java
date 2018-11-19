@@ -92,7 +92,7 @@ public class InterstitialExecutor extends AbstractExecutor {
             }
         });
 
-        AdRequest adRequest = new AdRequest.Builder().build();
+        AdRequest adRequest = createAdRequestBuilder().build();
         interstitialAd.loadAd(adRequest);
     }
 

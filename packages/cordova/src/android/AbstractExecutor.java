@@ -10,4 +10,8 @@ public abstract class AbstractExecutor {
     public void destroy() {
         this.plugin = null;
     }
+
+    protected AdRequest.Builder createAdRequestBuilder() {
+        return new AdRequest.Builder();
+    }
 }
