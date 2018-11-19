@@ -7,8 +7,6 @@ supportComment: >
   :wave: @{issue-author}, it takes time to develop new feature.
   Please consider [financial support the author](https://admob-plus.github.io/funding.html) to spend more time on this project,
   you may also ask to prioritize your request.
-  and feature requests. However, this issue appears to be a support request.
-  Please use our support channels to get help with the project.
 
 # Close issues marked as support requests
 close: false
