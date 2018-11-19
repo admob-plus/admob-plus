@@ -1,0 +1,20 @@
+# Label used to mark issues as support requests
+supportLabel: enhancement
+
+# Comment to post on issues marked as support requests, `{issue-author}` is an
+# optional placeholder. Set to `false` to disable
+supportComment: >
+  :wave: @{issue-author}, it takes time to develop new feature.
+  Please consider [financial support the author](https://admob-plus.github.io/funding.html) to spend more time on this project,
+  you may also ask to prioritize your request.
+  and feature requests. However, this issue appears to be a support request.
+  Please use our support channels to get help with the project.
+
+# Close issues marked as support requests
+close: false
+
+# Lock issues marked as support requests
+lock: false
+
+# Assign `off-topic` as the reason for locking. Set to `false` to disable
+setLockReason: true
