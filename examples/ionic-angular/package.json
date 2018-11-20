@@ -23,7 +23,7 @@
     "@ionic-native/splash-screen": "~4.17.0",
     "@ionic-native/status-bar": "~4.17.0",
     "@ionic/storage": "~2.2.0",
-    "cordova-admob-plus": "0.8.0",
+    "cordova-admob-plus": "0.12.1",
     "cordova-android": "^7.1.2",
     "cordova-browser": "^5.0.4",
     "cordova-ios": "^4.5.5",
@@ -61,7 +61,7 @@
       "cordova-plugin-ionic-webview": {},
       "cordova-plugin-ionic-keyboard": {},
       "cordova-admob-plus": {
-        "APP_ID_ANDROID": "test",
+        "APP_ID_ANDROID": "ca-app-pub-3940256099942544~334751171",
         "APP_ID_IOS": "test"
       },
       "cordova-plugin-statusbar": {}
