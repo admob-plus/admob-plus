@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.13.0](https://github.com/admob-plus/admob-plus/compare/v0.12.1...v0.13.0) (2018-11-20)
+
+
+### Features
+
+* **cli:** print Java version for info command ([0db95ac](https://github.com/admob-plus/admob-plus/commit/0db95ac))
+
+
+
+
+
 # [0.12.0](https://github.com/admob-plus/admob-plus/compare/v0.11.5...v0.12.0) (2018-11-18)
 
 **Note:** Version bump only for package admob-plus
