@@ -1,5 +1,7 @@
 package admob.plugin;
 
+import com.google.android.gms.ads.AdRequest;
+
 public abstract class AbstractExecutor {
     protected AdMob plugin;
 
