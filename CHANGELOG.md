@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.14.0](https://github.com/admob-plus/admob-plus/compare/v0.13.0...v0.14.0) (2018-11-21)
+
+
+### Bug Fixes
+
+* **cordova-android:** set ad unit id whenever showing banner ([695c23a](https://github.com/admob-plus/admob-plus/commit/695c23a))
+* **cordova-ios:** add banner view only once ([5cc6e87](https://github.com/admob-plus/admob-plus/commit/5cc6e87))
+
+
+### Features
+
+* **cordova:** export AdMob, Events, NativeActions ([9173520](https://github.com/admob-plus/admob-plus/commit/9173520))
+* **cordova:** target es5, close [#25](https://github.com/admob-plus/admob-plus/issues/25) ([0479c0b](https://github.com/admob-plus/admob-plus/commit/0479c0b))
+
+
+
+
+
 # [0.13.0](https://github.com/admob-plus/admob-plus/compare/v0.12.1...v0.13.0) (2018-11-20)
 
 
