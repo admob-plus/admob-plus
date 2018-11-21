@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.1](https://github.com/admob-plus/admob-plus/compare/v0.14.0...v0.14.1) (2018-11-21)
+
+
+### Bug Fixes
+
+* **cordova:** remove named export ([9035155](https://github.com/admob-plus/admob-plus/commit/9035155))
+* **cordova-ios:** fix return type ([ec34af6](https://github.com/admob-plus/admob-plus/commit/ec34af6))
+
+
+
+
+
 # [0.14.0](https://github.com/admob-plus/admob-plus/compare/v0.13.0...v0.14.0) (2018-11-21)
 
 
