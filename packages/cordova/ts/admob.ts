@@ -6,7 +6,9 @@ import Interstitial from './interstitial'
 import RewardVideo from './reward-video'
 import AdMobState from './state'
 
-class AdMob {
+export * from './constants'
+
+export class AdMob {
   public banner: Banner
   public interstitial: Interstitial
   public rewardVideo: RewardVideo
