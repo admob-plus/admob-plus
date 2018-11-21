@@ -6,9 +6,7 @@ import Interstitial from './interstitial'
 import RewardVideo from './reward-video'
 import AdMobState from './state'
 
-export * from './constants'
-
-export class AdMob {
+class AdMob {
   public banner: Banner
   public interstitial: Interstitial
   public rewardVideo: RewardVideo
@@ -59,4 +57,5 @@ export class AdMob {
   }
 }
 
-export default new AdMob()
+const admob = new AdMob()
+export default admob

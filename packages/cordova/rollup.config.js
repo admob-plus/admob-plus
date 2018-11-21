@@ -10,15 +10,16 @@ export default {
     file: 'www/admob.js',
     format: 'cjs',
     sourcemap: true,
+    exports: 'default',
   },
   plugins: [
-    typescript({
-      cacheRoot: findCacheDir({ name: 'rts2' }),
-    }),
     resolve({
       jsnext: true,
       main: true,
       browser: true,
+    }),
+    typescript({
+      cacheRoot: findCacheDir({ name: 'rts2' }),
     }),
     commonjs(),
   ],
