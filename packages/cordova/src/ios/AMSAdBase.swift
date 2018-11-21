@@ -11,7 +11,7 @@ class AMSAdBase: NSObject {
         plugin = nil
     }
 
-    func createGADRequest() {
+    func createGADRequest() -> GADRequest {
         let request = GADRequest()
         return request
     }
