@@ -13,11 +13,11 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
             bannerView.isHidden = false
         } else {
             bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+            bannerView.delegate = self
+            addBannerViewToView(bannerView)
+            bannerView.rootViewController = plugin.viewController
         }
 
-        bannerView.delegate = self
-        addBannerViewToView(bannerView)
-        bannerView.rootViewController = plugin.viewController
         bannerView.adUnitID = adUnitID
         let request = createGADRequest()
         bannerView.load(request)
