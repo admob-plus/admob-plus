@@ -10,6 +10,8 @@ interface IBannerShowOptions {
   id?: AdUnitIDOption
 }
 
+const AD_ID = 1
+
 export default class Banner extends AdBase {
   protected testIdForAndroid = TestIds.banner_android
   protected testIdForIOS = TestIds.banner_ios
@@ -19,11 +21,12 @@ export default class Banner extends AdBase {
       {
         ...opts,
         adUnitID: this.resolveAdUnitID(opts.id),
+        id: AD_ID,
       },
     ])
   }
 
   public hide() {
-    return execAsync(NativeActions.banner_hide)
+    return execAsync(NativeActions.banner_hide, [{id: AD_ID}])
   }
 }

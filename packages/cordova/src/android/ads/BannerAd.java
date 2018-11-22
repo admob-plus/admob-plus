@@ -1,4 +1,4 @@
-package admob.plugin.banner;
+package admob.plugin.ads;
 
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,47 +14,47 @@ import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import admob.plugin.AbstractExecutor;
-import admob.plugin.AdMob;
 import admob.plugin.Events;
 
-public class BannerExecutor extends AbstractExecutor {
-    /**
-     * The adView to display to the user.
-     */
+public class BannerAd extends AdBase {
     private AdView adView;
-
     private ViewGroup parentView;
 
-    public BannerExecutor(AdMob plugin) {
-        super(plugin);
+    private String adUnitID;
+
+    private BannerAd(int id, String adUnitID) {
+        super(id);
+
+        this.adUnitID = adUnitID;
     }
 
-    public boolean show(JSONArray args, CallbackContext callbackContext) {
+    public static boolean executeShowAction(JSONArray args, CallbackContext callbackContext) {
         JSONObject opts = args.optJSONObject(0);
-        String adUnitID = opts.optString("adUnitID");
 
-        String finalAdUnitID = adUnitID;
+        final BannerAd bannerAd = getOrCreate(opts);
         plugin.cordova.getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                showBanner(finalAdUnitID);
+                bannerAd.show();
 
                 PluginResult result = new PluginResult(PluginResult.Status.OK, "");
                 callbackContext.sendPluginResult(result);
             }
         });
 
-        return true;
+        return false;
     }
 
-    public boolean hide(JSONArray args, CallbackContext callbackContext) {
+    public static boolean executeHideAction(JSONArray args, CallbackContext callbackContext) {
+        JSONObject opts = args.optJSONObject(0);
+        final int id = opts.optInt("id");
+
         plugin.cordova.getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                if (adView != null) {
-                    adView.pause();
-                    adView.setVisibility(View.GONE);
+                BannerAd bannerAd = getAd(id);
+                if (bannerAd != null) {
+                    bannerAd.hide();
                 }
 
                 PluginResult result = new PluginResult(PluginResult.Status.OK, "");
@@ -65,15 +65,19 @@ public class BannerExecutor extends AbstractExecutor {
         return true;
     }
 
-    @Override
-    public void destroy() {
-        if (adView != null) {
-            adView.destroy();
-            adView = null;
-        }
+    private static BannerAd getAd(int id) {
+        AdBase ad = AdBase.getAd(id);
+        return (ad != null) ? (BannerAd) ad : null;
     }
 
-    private void showBanner(String adUnitID) {
+    private static BannerAd getOrCreate(JSONObject opts) {
+        int id = opts.optInt("id");
+        String adUnitID = opts.optString("adUnitID");
+        BannerAd ad = getAd(id);
+        return (ad != null) ? ad : new BannerAd(id, adUnitID);
+    }
+
+    public void show() {
         if (adView == null) {
             adView = new AdView(plugin.cordova.getActivity());
             adView.setAdUnitId(adUnitID);
@@ -105,7 +109,7 @@ public class BannerExecutor extends AbstractExecutor {
                 }
             });
 
-           addBannerView(adView);
+            addBannerView(adView);
         } else if (adView.getVisibility() == View.GONE) {
             adView.resume();
             adView.setVisibility(View.VISIBLE);
@@ -115,26 +119,43 @@ public class BannerExecutor extends AbstractExecutor {
         adView.loadAd(adRequest);
     }
 
+    public void hide() {
+        if (adView != null) {
+            adView.pause();
+            adView.setVisibility(View.GONE);
+        }
+    }
+
+    @Override
+    public void destroy() {
+        if (adView != null) {
+            adView.destroy();
+            adView = null;
+        }
+
+        super.destroy();
+    }
+
     private void addBannerView(AdView adView) {
-       View view = plugin.webView.getView();
-       ViewGroup wvParentView = (ViewGroup) view.getParent();
-       if (parentView == null) {
-           parentView = new LinearLayout(plugin.webView.getContext());
-       }
+        View view = plugin.webView.getView();
+        ViewGroup wvParentView = (ViewGroup) view.getParent();
+        if (parentView == null) {
+            parentView = new LinearLayout(plugin.webView.getContext());
+        }
 
-       if (wvParentView != null && wvParentView != parentView) {
-           ViewGroup rootView = (ViewGroup)(view.getParent());
-           wvParentView.removeView(view);
-           ((LinearLayout) parentView).setOrientation(LinearLayout.VERTICAL);
-           parentView.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, 0.0F));
-           view.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, 1.0F));
-           parentView.addView(view);
-           rootView.addView(parentView);
-       }
+        if (wvParentView != null && wvParentView != parentView) {
+            ViewGroup rootView = (ViewGroup)(view.getParent());
+            wvParentView.removeView(view);
+            ((LinearLayout) parentView).setOrientation(LinearLayout.VERTICAL);
+            parentView.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, 0.0F));
+            view.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, 1.0F));
+            parentView.addView(view);
+            rootView.addView(parentView);
+        }
 
-       parentView.addView(adView);
-       parentView.bringToFront();
-       parentView.requestLayout();
-       parentView.requestFocus();
+        parentView.addView(adView);
+        parentView.bringToFront();
+        parentView.requestLayout();
+        parentView.requestFocus();
     }
 }

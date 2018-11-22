@@ -17,18 +17,15 @@ import org.json.JSONObject;
 
 import com.google.android.gms.ads.MobileAds;
 
-import admob.plugin.banner.BannerExecutor;
-import admob.plugin.interstitial.InterstitialExecutor;
-import admob.plugin.rewardvideo.RewardVideoExecutor;
+import admob.plugin.ads.AdBase;
+import admob.plugin.ads.BannerAd;
+import admob.plugin.ads.InterstitialAd;
+import admob.plugin.ads.RewardedVideoAd;
 
 public class AdMob extends CordovaPlugin {
     private static final String TAG = "AdMob-Plus";
 
     private CallbackContext readyCallbackContext = null;
-
-    private BannerExecutor bannerExecutor = null;
-    private InterstitialExecutor interstitialExecutor = null;
-    private RewardVideoExecutor rewardVideoExecutor = null;
 
     private static final String TEST_APPLICATION_ID = "ca-app-pub-3940256099942544~3347511713";
 
@@ -37,10 +34,7 @@ public class AdMob extends CordovaPlugin {
         super.initialize(cordova, webView);
 
         MobileAds.initialize(cordova.getActivity(), getApplicationID());
-
-        interstitialExecutor = new InterstitialExecutor(this);
-        bannerExecutor = new BannerExecutor(this);
-        rewardVideoExecutor = new RewardVideoExecutor(this);
+        AdBase.initialize(this);
     }
 
     @Override
@@ -59,19 +53,19 @@ public class AdMob extends CordovaPlugin {
             emit(Events.READY, data);
             return true;
         } else if (Actions.BANNER_HIDE.equals(action)) {
-            return bannerExecutor.hide(args, callbackContext);
+            return BannerAd.executeHideAction(args, callbackContext);
         } else if (Actions.BANNER_SHOW.equals(action)) {
-            return bannerExecutor.show(args, callbackContext);
+            return BannerAd.executeShowAction(args, callbackContext);
         } else if (Actions.INTERSTITIAL_LOAD.equals(action)) {
-            return interstitialExecutor.load(args, callbackContext);
+            return InterstitialAd.executeLoadAction(args, callbackContext);
         } else if (Actions.INTERSTITIAL_SHOW.equals(action)) {
-            return interstitialExecutor.show(args, callbackContext);
+            return InterstitialAd.executeShowAction(args, callbackContext);
         } else if (Actions.REWARD_VIDEO_IS_READY.equals(action)) {
-            return rewardVideoExecutor.isReady(args, callbackContext);
+            return RewardedVideoAd.executeIsReadyAction(args, callbackContext);
         } else if (Actions.REWARD_VIDEO_LOAD.equals(action)) {
-            return rewardVideoExecutor.load(args, callbackContext);
+            return RewardedVideoAd.executeLoadAction(args, callbackContext);
         } else if (Actions.REWARD_VIDEO_SHOW.equals(action)) {
-            return rewardVideoExecutor.show(args, callbackContext);
+            return RewardedVideoAd.executeShowAction(args, callbackContext);
         } else if (Actions.SET_APP_MUTED.equals(action)) {
             boolean value = args.optBoolean(0);
             MobileAds.setAppMuted(value);
@@ -91,16 +85,6 @@ public class AdMob extends CordovaPlugin {
 
     @Override
     public void onDestroy() {
-        if (bannerExecutor != null) {
-            bannerExecutor.destroy();
-            bannerExecutor = null;
-        }
-
-        if (interstitialExecutor != null) {
-            interstitialExecutor.destroy();
-            interstitialExecutor = null;
-        }
-
         readyCallbackContext = null;
 
         super.onDestroy();

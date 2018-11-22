@@ -12,6 +12,8 @@ interface IInterstitialPrepareOptions {
   id?: AdUnitIDOption
 }
 
+const AD_ID = 2
+
 export default class Interstitial extends AdBase {
   protected testIdForAndroid = TestIds.interstitial_android
   protected testIdForIOS = TestIds.interstitial_ios
@@ -21,6 +23,7 @@ export default class Interstitial extends AdBase {
       {
         ...opts,
         adUnitID: this.resolveAdUnitID(opts.id),
+        id: AD_ID,
       },
     ])
 
@@ -28,6 +31,6 @@ export default class Interstitial extends AdBase {
   }
 
   public show() {
-    return execAsync(NativeActions.interstitial_show)
+    return execAsync(NativeActions.interstitial_show, [{id: AD_ID}])
   }
 }

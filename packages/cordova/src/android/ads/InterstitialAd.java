@@ -1,68 +1,82 @@
-package admob.plugin.interstitial;
+package admob.plugin.ads;
 
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.InterstitialAd;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import admob.plugin.AbstractExecutor;
-import admob.plugin.AdMob;
 import admob.plugin.Events;
 
-public class InterstitialExecutor extends AbstractExecutor {
-    private InterstitialAd interstitialAd = null;
+public class InterstitialAd extends AdBase {
+    private com.google.android.gms.ads.InterstitialAd interstitialAd = null;
 
-    public InterstitialExecutor(AdMob plugin) {
-        super(plugin);
+    InterstitialAd(int id) {
+        super(id);
+    }
+
+    public static boolean executeLoadAction(JSONArray args, CallbackContext callbackContext) {
+        JSONObject opts = args.optJSONObject(0);
+        final String adUnitID = opts.optString("adUnitID");
+
+        final InterstitialAd interstitialAd = getOrCreate(opts);
+        plugin.cordova.getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                interstitialAd.load(adUnitID);
+
+                PluginResult result = new PluginResult(PluginResult.Status.OK, "");
+                callbackContext.sendPluginResult(result);
+            }
+        });
+
+        return true;
+    }
+
+    public static boolean executeShowAction(JSONArray args, CallbackContext callbackContext) {
+        JSONObject opts = args.optJSONObject(0);
+        final int id = opts.optInt("id");
+
+        plugin.cordova.getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                InterstitialAd interstitialAd = getAd(id);
+                if (interstitialAd != null) {
+                    interstitialAd.show();
+                }
+
+                PluginResult result = new PluginResult(PluginResult.Status.OK, "");
+                callbackContext.sendPluginResult(result);
+            }
+        });
+
+        return true;
     }
 
     @Override
     public void destroy() {
-        clearInterstitialAd();
+        clear();
 
         super.destroy();
     }
 
-    public boolean load(JSONArray args, CallbackContext callbackContext) {
-        JSONObject opts = args.optJSONObject(0);
-        String adUnitID = opts.optString("adUnitID");
-
-        String finalAdUnitID = adUnitID;
-        plugin.cordova.getActivity().runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                createAndLoadInterstitial(finalAdUnitID);
-
-                PluginResult result = new PluginResult(PluginResult.Status.OK, "");
-                callbackContext.sendPluginResult(result);
-            }
-        });
-
-        return true;
+    private static InterstitialAd getAd(int id) {
+        AdBase ad = AdBase.getAd(id);
+        return (ad != null) ? (InterstitialAd) ad : null;
     }
 
-    public boolean show(JSONArray args, CallbackContext callbackContext) {
-        plugin.cordova.getActivity().runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                showInterstitial();
-
-                PluginResult result = new PluginResult(PluginResult.Status.OK, "");
-                callbackContext.sendPluginResult(result);
-            }
-        });
-
-        return true;
+    private static InterstitialAd getOrCreate(JSONObject opts) {
+        int id = opts.optInt("id");
+        InterstitialAd ad = getAd(id);
+        return (ad != null) ? ad : new InterstitialAd(id);
     }
 
-    private void createAndLoadInterstitial(String adUnitID) {
-        clearInterstitialAd();
+    private void load(String adUnitID) {
+        clear();
 
-        interstitialAd = new InterstitialAd(plugin.cordova.getActivity());
+        interstitialAd = new com.google.android.gms.ads.InterstitialAd(plugin.cordova.getActivity());
         interstitialAd.setAdUnitId(adUnitID);
 
         interstitialAd.setAdListener(new AdListener() {
@@ -96,16 +110,16 @@ public class InterstitialExecutor extends AbstractExecutor {
         interstitialAd.loadAd(adRequest);
     }
 
-    private void clearInterstitialAd() {
-        if (interstitialAd != null) {
-            interstitialAd.setAdListener(null);
-            interstitialAd = null;
+    private void show() {
+        if (interstitialAd != null && interstitialAd.isLoaded()) {
+            interstitialAd.show();
         }
     }
 
-    private void showInterstitial() {
-        if (interstitialAd != null && interstitialAd.isLoaded()) {
-            interstitialAd.show();
+    private void clear() {
+        if (interstitialAd != null) {
+            interstitialAd.setAdListener(null);
+            interstitialAd = null;
         }
     }
 }
