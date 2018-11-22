@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.2](http://github_ratson:admob-plus/admob-plus/compare/v0.14.1...v0.14.2) (2018-11-22)
+
+**Note:** Version bump only for package ionic-angular-example
+
+
+
+
+
 ## [0.14.1](http://github_ratson:admob-plus/admob-plus/compare/v0.14.0...v0.14.1) (2018-11-21)
 
 **Note:** Version bump only for package ionic-angular-example
