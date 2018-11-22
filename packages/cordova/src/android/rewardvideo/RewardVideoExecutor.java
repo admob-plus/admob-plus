@@ -122,7 +122,7 @@ public class RewardVideoExecutor extends AbstractExecutor {
     }
 
     private void showRewardedVideo() {
-        if (rewardedVideoAd.isLoaded()) {
+        if (rewardedVideoAd != null && rewardedVideoAd.isLoaded()) {
             rewardedVideoAd.show();
         }
     }
