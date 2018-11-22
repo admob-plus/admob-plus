@@ -3,6 +3,11 @@ id: faq
 title: Frequently Asked Questions
 ---
 
+## Why my iOS `.ipa` file is increased so much after including the plugin?
+
+Google AdMob requires [Google Mobile Ads SDK](https://developers.google.com/admob/ios/download) for iOS, which will contribute ~60MB to the app size.
+
+
 ## How this project relates to `cordova-plugin-admob-free`?
 
 `admob-plus` is the successor of [cordova-plugin-admob-free](https://github.com/ratson/cordova-plugin-admob-free), which provides a cleaner API and build with modern tools.
@@ -16,6 +21,7 @@ With the growing number of reported issues, it is clear that a better solution i
 * Rewrite iOS part using Swift
 * Official Ionic support
 * Rich documentation
+
 
 ## How to fund this project?
 
