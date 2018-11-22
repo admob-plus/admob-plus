@@ -76,6 +76,8 @@ public class BannerExecutor extends AbstractExecutor {
     private void showBanner(String adUnitID) {
         if (adView == null) {
             adView = new AdView(plugin.cordova.getActivity());
+            adView.setAdUnitId(adUnitID);
+            adView.setAdSize(AdSize.SMART_BANNER);
             adView.setAdListener(new AdListener() {
                 @Override
                 public void onAdLoaded() {
@@ -108,8 +110,6 @@ public class BannerExecutor extends AbstractExecutor {
             adView.resume();
             adView.setVisibility(View.VISIBLE);
         }
-        adView.setAdUnitId(adUnitID);
-        adView.setAdSize(AdSize.SMART_BANNER);
 
         AdRequest adRequest = createAdRequestBuilder().build();
         adView.loadAd(adRequest);
