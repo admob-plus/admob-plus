@@ -3,6 +3,96 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.15.0 (2018-11-23)
+
+
+
+## 0.14.2 (2018-11-22)
+
+
+
+## 0.14.1 (2018-11-21)
+
+
+
+# 0.14.0 (2018-11-21)
+
+
+
+# 0.13.0 (2018-11-20)
+
+
+
+# 0.12.0 (2018-11-18)
+
+
+
+# 0.11.0 (2018-11-15)
+
+
+
+# 0.10.0 (2018-11-14)
+
+
+
+## 0.9.2 (2018-11-11)
+
+
+
+## 0.9.1 (2018-11-11)
+
+
+
+# 0.9.0 (2018-11-11)
+
+
+
+# 0.8.0 (2018-11-10)
+
+
+
+# 0.7.0 (2018-10-25)
+
+
+
+# 0.6.0 (2018-10-21)
+
+
+
+## 0.5.1 (2018-10-17)
+
+
+
+# 0.5.0 (2018-10-16)
+
+
+
+# 0.4.0 (2018-10-14)
+
+
+
+# 0.3.0 (2018-08-25)
+
+
+
+# 0.2.0 (2018-08-22)
+
+
+### Bug Fixes
+
+* **ionic:** decorate methods correctly ([0ce8af7](http://github_ratson:admob-plus/admob-plus/commits/0ce8af7))
+* **ionic:** update admob.interstitial.load argument type ([7412b81](http://github_ratson:admob-plus/admob-plus/commits/7412b81))
+
+
+### Features
+
+* **cordova:** rename to @admob-plus/cordova ([953658c](http://github_ratson:admob-plus/admob-plus/commits/953658c))
+* **ionic:** define binding for all ad types ([0478f52](http://github_ratson:admob-plus/admob-plus/commits/0478f52))
+
+
+
+
+
 ## [0.14.2](http://github_ratson:admob-plus/admob-plus/compare/v0.14.1...v0.14.2) (2018-11-22)
 
 **Note:** Version bump only for package ionic-angular-example

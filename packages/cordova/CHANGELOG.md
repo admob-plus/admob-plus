@@ -3,6 +3,256 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.15.0 (2018-11-23)
+
+
+### Features
+
+* **core:** introduce [@admob-plus](https://github.com/admob-plus)/core to share code ([1bbf85e](https://github.com/admob-plus/admob-plus/commit/1bbf85e))
+
+
+
+## 0.14.2 (2018-11-22)
+
+
+### Bug Fixes
+
+* **cordova-android:** fix null pointer exception ([165635a](https://github.com/admob-plus/admob-plus/commit/165635a))
+
+
+
+## 0.14.1 (2018-11-21)
+
+
+### Bug Fixes
+
+* **cordova:** remove named export ([9035155](https://github.com/admob-plus/admob-plus/commit/9035155))
+* **cordova-ios:** fix return type ([ec34af6](https://github.com/admob-plus/admob-plus/commit/ec34af6))
+
+
+
+# 0.14.0 (2018-11-21)
+
+
+### Bug Fixes
+
+* **cordova-android:** set ad unit id whenever showing banner ([695c23a](https://github.com/admob-plus/admob-plus/commit/695c23a))
+* **cordova-ios:** add banner view only once ([5cc6e87](https://github.com/admob-plus/admob-plus/commit/5cc6e87))
+
+
+### Features
+
+* **cordova:** export AdMob, Events, NativeActions ([9173520](https://github.com/admob-plus/admob-plus/commit/9173520))
+* **cordova:** target es5, close [#25](https://github.com/admob-plus/admob-plus/issues/25) ([0479c0b](https://github.com/admob-plus/admob-plus/commit/0479c0b))
+
+
+
+# 0.13.0 (2018-11-20)
+
+
+### Bug Fixes
+
+* **cordova-android:** import missing package, close [#41](https://github.com/admob-plus/admob-plus/issues/41) ([e3af3f2](https://github.com/admob-plus/admob-plus/commit/e3af3f2))
+
+
+
+## 0.12.1 (2018-11-19)
+
+
+
+# 0.12.0 (2018-11-18)
+
+
+### Bug Fixes
+
+* **cordova-ios:** resize webview ([b659a3e](https://github.com/admob-plus/admob-plus/commit/b659a3e))
+
+
+### Features
+
+* **cordova-ios:** emit sdkVersion ([e1a0914](https://github.com/admob-plus/admob-plus/commit/e1a0914))
+* **cordova-ios:** update Google-Mobile-Ads-SDK to 7.36 ([915847b](https://github.com/admob-plus/admob-plus/commit/915847b))
+
+
+
+## 0.11.5 (2018-11-17)
+
+
+### Bug Fixes
+
+* **cordova-ios:** fix serialization error ([03f62fd](https://github.com/admob-plus/admob-plus/commit/03f62fd))
+
+
+
+# 0.11.0 (2018-11-15)
+
+
+
+# 0.10.0 (2018-11-14)
+
+
+### Bug Fixes
+
+* **cordova-android:** revert back to use <config-file /> ([5cc5ecc](https://github.com/admob-plus/admob-plus/commit/5cc5ecc))
+
+
+### Features
+
+* **cordova-android:** load application ID from AndroidManifest.xml ([e09747f](https://github.com/admob-plus/admob-plus/commit/e09747f))
+* **cordova-android:** set default PLAY_SERVICES_VERSION to 16.0.0 ([e764cca](https://github.com/admob-plus/admob-plus/commit/e764cca))
+
+
+
+## 0.9.3 (2018-11-12)
+
+
+### Bug Fixes
+
+* **cordova:** relax engine verions, close [#38](https://github.com/admob-plus/admob-plus/issues/38) ([403974b](https://github.com/admob-plus/admob-plus/commit/403974b))
+
+
+
+## 0.9.2 (2018-11-11)
+
+
+### Bug Fixes
+
+* **cordova:** get default testAdUnitID ([4128f7d](https://github.com/admob-plus/admob-plus/commit/4128f7d))
+
+
+
+# 0.9.0 (2018-11-11)
+
+
+### Features
+
+* **cordova-android:** overwrite APPLICATION_ID meta-data ([50534cb](https://github.com/admob-plus/admob-plus/commit/50534cb))
+* **cordova-android:** require latest engine ([54f0dbf](https://github.com/admob-plus/admob-plus/commit/54f0dbf))
+
+
+
+# 0.8.0 (2018-11-10)
+
+
+
+# 0.7.0 (2018-10-25)
+
+
+### Features
+
+* **cordova-android:** set com.google.android.gms.ads.APPLICATION_ID ([7cd05a8](https://github.com/admob-plus/admob-plus/commit/7cd05a8))
+
+
+
+# 0.6.0 (2018-10-21)
+
+
+### Features
+
+* **cordova:** add applicationID to ready event data ([0d032b5](https://github.com/admob-plus/admob-plus/commit/0d032b5))
+* **ionic:** bind setDevMode method ([1ffda97](https://github.com/admob-plus/admob-plus/commit/1ffda97))
+
+
+
+## 0.5.1 (2018-10-17)
+
+
+### Bug Fixes
+
+* **cordova-android:** fix incompatible types error, close [#18](https://github.com/admob-plus/admob-plus/issues/18) ([71f2be8](https://github.com/admob-plus/admob-plus/commit/71f2be8))
+
+
+
+# 0.5.0 (2018-10-16)
+
+
+### Features
+
+* **cordova-android:** implement REWARD_VIDEO_IS_READY action ([97ea835](https://github.com/admob-plus/admob-plus/commit/97ea835))
+* **cordova-ios:** add APP_ID_IOS preference ([43878d0](https://github.com/admob-plus/admob-plus/commit/43878d0))
+* **cordova-ios:** add reward_video_is_ready action ([c596cd8](https://github.com/admob-plus/admob-plus/commit/c596cd8))
+
+
+
+# 0.4.0 (2018-10-14)
+
+
+### Bug Fixes
+
+* **cordova-ios:** fix build error ([e802804](https://github.com/admob-plus/admob-plus/commit/e802804))
+
+
+### Features
+
+* **cordova:** add applicationId to state ([e5eeffe](https://github.com/admob-plus/admob-plus/commit/e5eeffe))
+* **cordova:** generate TestIds constants ([a30dc96](https://github.com/admob-plus/admob-plus/commit/a30dc96))
+* **cordova:** move testAdUnitID to AdBase ([3340921](https://github.com/admob-plus/admob-plus/commit/3340921))
+* **cordova:** set ADMOB_APPLICATOIN_ID preference default ([9312898](https://github.com/admob-plus/admob-plus/commit/9312898))
+* **cordova-android:** emit ready event with test lab info ([70ce0e8](https://github.com/admob-plus/admob-plus/commit/70ce0e8))
+* **cordova-ios:** emit ready event with test lab info ([57d5332](https://github.com/admob-plus/admob-plus/commit/57d5332))
+* **cordova-ios:** load rewarded video only when not ready ([c5d54a4](https://github.com/admob-plus/admob-plus/commit/c5d54a4))
+* **cordova-ios:** remove UseSwiftLanguageVersion preference ([eb5e2c2](https://github.com/admob-plus/admob-plus/commit/eb5e2c2))
+* **cordova-ios:** set UseSwiftLanguageVersion preference ([a88412c](https://github.com/admob-plus/admob-plus/commit/a88412c))
+* **cordova-ios:** update Google-Mobile-Ads-SDK to 7.34 ([c1b0104](https://github.com/admob-plus/admob-plus/commit/c1b0104))
+* **cordova-ios:** utilize cordova cocoapod support ([920a6ab](https://github.com/admob-plus/admob-plus/commit/920a6ab))
+
+
+
+# 0.3.0 (2018-08-25)
+
+
+### Features
+
+* **cordova:** add browser platform support ([db2484f](https://github.com/admob-plus/admob-plus/commit/db2484f))
+
+
+
+# 0.2.0 (2018-08-22)
+
+
+### Features
+
+* **cordova:** add hide banner action ([43cfb7a](https://github.com/admob-plus/admob-plus/commit/43cfb7a))
+* **cordova:** update Google-Mobile-Ads-SDK version ([7e18d3e](https://github.com/admob-plus/admob-plus/commit/7e18d3e))
+
+
+
+## 0.1.1 (2018-08-14)
+
+
+### Bug Fixes
+
+* **cordova-android:** fix type errors ([14c24db](https://github.com/admob-plus/admob-plus/commit/14c24db))
+* **cordova-ios:** deinit vars ([b810b25](https://github.com/admob-plus/admob-plus/commit/b810b25))
+
+
+
+# 0.1.0 (2018-08-06)
+
+
+
+## 0.0.2 (2018-07-29)
+
+
+### Bug Fixes
+
+* **cordova-ios:** extract adUnitID from dictionary ([1f7484e](https://github.com/admob-plus/admob-plus/commit/1f7484e))
+
+
+### Features
+
+* **cordova:** add banner events ([69217f9](https://github.com/admob-plus/admob-plus/commit/69217f9))
+* **cordova:** allow set app muted and volume ([5d18b18](https://github.com/admob-plus/admob-plus/commit/5d18b18))
+* **cordova:** rename to [@admob-plus](https://github.com/admob-plus)/cordova ([953658c](https://github.com/admob-plus/admob-plus/commit/953658c))
+* **cordova-android:** display banner at bottom ([6fc5f29](https://github.com/admob-plus/admob-plus/commit/6fc5f29))
+* **cordova-android:** emit banner events ([e2eac03](https://github.com/admob-plus/admob-plus/commit/e2eac03))
+* **cordova-ios:** emit banner events ([588d661](https://github.com/admob-plus/admob-plus/commit/588d661))
+* **cordova-ios:** guard command argument extraction ([3c5a2d8](https://github.com/admob-plus/admob-plus/commit/3c5a2d8))
+
+
+
+
+
 ## [0.14.2](https://github.com/admob-plus/admob-plus/compare/v0.14.1...v0.14.2) (2018-11-22)
 
 

@@ -3,6 +3,103 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.15.0 (2018-11-23)
+
+
+### Features
+
+* **core:** introduce [@admob-plus](https://github.com/admob-plus)/core to share code ([1bbf85e](https://github.com/admob-plus/admob-plus/commit/1bbf85e))
+
+
+
+# 0.14.0 (2018-11-21)
+
+
+
+# 0.13.0 (2018-11-20)
+
+
+
+# 0.12.0 (2018-11-18)
+
+
+
+# 0.11.0 (2018-11-15)
+
+
+
+# 0.10.0 (2018-11-14)
+
+
+
+# 0.9.0 (2018-11-11)
+
+
+
+# 0.8.0 (2018-11-10)
+
+
+
+# 0.7.0 (2018-10-25)
+
+
+
+# 0.6.0 (2018-10-21)
+
+
+### Features
+
+* **ionic:** bind setDevMode method ([1ffda97](https://github.com/admob-plus/admob-plus/commit/1ffda97))
+
+
+
+# 0.5.0 (2018-10-16)
+
+
+
+# 0.4.0 (2018-10-14)
+
+
+### Features
+
+* **ionic:** bind banner hide method ([72bf74a](https://github.com/admob-plus/admob-plus/commit/72bf74a))
+
+
+
+# 0.3.0 (2018-08-25)
+
+
+
+# 0.2.0 (2018-08-22)
+
+
+
+# 0.1.0 (2018-08-06)
+
+
+### Bug Fixes
+
+* **ionic:** decorate methods correctly ([0ce8af7](https://github.com/admob-plus/admob-plus/commit/0ce8af7))
+
+
+### Features
+
+* **ionic:** bind set volume methods ([5f75004](https://github.com/admob-plus/admob-plus/commit/5f75004))
+* **ionic:** define binding for all ad types ([0478f52](https://github.com/admob-plus/admob-plus/commit/0478f52))
+
+
+
+## 0.0.2 (2018-07-29)
+
+
+### Bug Fixes
+
+* **ionic:** update admob.interstitial.load argument type ([7412b81](https://github.com/admob-plus/admob-plus/commit/7412b81))
+
+
+
+
+
 # [0.14.0](https://github.com/admob-plus/admob-plus/compare/v0.13.0...v0.14.0) (2018-11-21)
 
 **Note:** Version bump only for package ionic-admob

@@ -1,6 +1,6 @@
 {
   "name": "@admob-plus/ionic",
-  "version": "0.14.0",
+  "version": "0.15.0",
   "description": "Ionic Native wrapper for cordova-admob-plus",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -14,7 +14,7 @@
     "rxjs": ">=6.2.2"
   },
   "dependencies": {
-    "@admob-plus/core": "^0.0.0"
+    "@admob-plus/core": "^0.1.0"
   },
   "devDependencies": {
     "@angular/core": "~7.0.4",

@@ -3,6 +3,78 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.15.0 (2018-11-23)
+
+
+### Features
+
+* **core:** introduce [@admob-plus](https://github.com/admob-plus)/core to share code ([1bbf85e](https://github.com/admob-plus/admob-plus/commit/1bbf85e))
+
+
+
+# 0.14.0 (2018-11-21)
+
+
+
+# 0.13.0 (2018-11-20)
+
+
+
+# 0.12.0 (2018-11-18)
+
+
+
+## 0.11.5 (2018-11-17)
+
+
+
+## 0.11.4 (2018-11-15)
+
+
+### Bug Fixes
+
+* **ionic:** extend ad class with IonicNativePlugin ([c098467](https://github.com/admob-plus/admob-plus/commit/c098467))
+
+
+
+## 0.11.3 (2018-11-15)
+
+
+### Bug Fixes
+
+* **ionic:** remove decorator usage ([4a4022f](https://github.com/admob-plus/admob-plus/commit/4a4022f))
+
+
+
+## 0.11.2 (2018-11-15)
+
+
+### Bug Fixes
+
+* **ionic:** build lib with es2017 ([4f919f9](https://github.com/admob-plus/admob-plus/commit/4f919f9))
+
+
+
+## 0.11.1 (2018-11-15)
+
+
+### Bug Fixes
+
+* **ionic:** mark scoped packages with public access ([666432e](https://github.com/admob-plus/admob-plus/commit/666432e))
+
+
+
+# 0.11.0 (2018-11-15)
+
+
+### Features
+
+* **ionic:** add [@admob-plus](https://github.com/admob-plus)/ionic package ([79d48e8](https://github.com/admob-plus/admob-plus/commit/79d48e8))
+
+
+
+
+
 # [0.14.0](https://github.com/admob-plus/admob-plus/compare/v0.13.0...v0.14.0) (2018-11-21)
 
 **Note:** Version bump only for package @admob-plus/ionic
