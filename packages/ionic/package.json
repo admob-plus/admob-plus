@@ -6,14 +6,15 @@
   "module": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
-    "prepare": "run-s prepare:*",
-    "prepare:copy": "cp ../cordova/ts/shared.ts shared.ts",
-    "prepare:compile": "tsc"
+    "prepare": "tsc"
   },
   "peerDependencies": {
     "@angular/core": "*",
     "@ionic-native/core": "^4.2.0",
     "rxjs": "^5.0.1"
+  },
+  "dependencies": {
+    "@admob-plus/core": "^0.0.0"
   },
   "devDependencies": {
     "@angular/core": "^5.2.11",

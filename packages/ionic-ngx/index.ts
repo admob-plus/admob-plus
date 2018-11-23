@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core'
 import { cordova, IonicNativePlugin } from '@ionic-native/core'
 import { fromEvent, Observable } from 'rxjs'
 
-import { AdUnitIDOption } from './shared'
+import { AdUnitIDOption } from '@admob-plus/core'
 
 export class Banner extends IonicNativePlugin {
   public static plugin = 'cordova-admob-plus'

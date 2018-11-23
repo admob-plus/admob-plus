@@ -1,0 +1,20 @@
+{
+  "name": "@admob-plus/core",
+  "version": "0.0.0",
+  "description": "AdMob Plus core",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "prepare": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "3.1.6"
+  },
+  "author": "Ratson",
+  "license": "MIT",
+  "repository": "admob-plus/admob-plus",
+  "publishConfig": {
+    "access": "public"
+  }
+}

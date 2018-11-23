@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "stripInternal": true,
+    "noImplicitAny": true,
+    "outDir": "dist",
+    "rootDir": ".",
+    "target": "es5",
+    "skipLibCheck": true,
+    "lib": ["es2017", "dom"]
+  }
+}
