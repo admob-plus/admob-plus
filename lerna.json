@@ -11,8 +11,10 @@
     "**/*.md"
   ],
   "packages": [
+    "packages/*",
     "examples/*",
-    "packages/*"
+    "website"
   ],
-  "version": "0.14.2"
+  "useWorkspaces": true,
+  "version": "independent"
 }
