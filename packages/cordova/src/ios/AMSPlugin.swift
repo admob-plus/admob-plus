@@ -2,25 +2,16 @@
 class AMSPlugin: CDVPlugin {
     static let testApplicationID = "ca-app-pub-3940256099942544~1458002511"
 
-    var banner: AMSBanner!
-    var interstitial: AMSInterstitial!
-    var rewardVideo: AMSRewardVideo!
     var readyCallbackId: String!
 
     override func pluginInitialize() {
         super.pluginInitialize()
 
-        banner = AMSBanner(plugin: self)
-        interstitial = AMSInterstitial(plugin: self)
-        rewardVideo = AMSRewardVideo(plugin: self)
-
+        AMSAdBase.plugin = self
         GADMobileAds.configure(withApplicationID: getApplicationID())
     }
 
     deinit {
-        banner = nil
-        interstitial = nil
-        rewardVideo = nil
         readyCallbackId = nil
     }
 
@@ -75,13 +66,18 @@ class AMSPlugin: CDVPlugin {
     @objc(banner_show:)
     func banner_show(command: CDVInvokedUrlCommand) {
         guard let opts = command.argument(at: 0) as? NSDictionary,
-            let adUnitID = opts.value(forKey: "adUnitID") as? String
+            let id = opts.value(forKey: "id") as? Int,
+            let adUnitID = opts.value(forKey: "adUnitID") as? String,
+            var banner = AMSAdBase.ads[id] as? AMSBanner?
             else {
                 let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: false)
                 self.commandDelegate!.send(result, callbackId: command.callbackId)
                 return
         }
-        banner.show(adUnitID: adUnitID)
+        if banner == nil {
+            banner = AMSBanner(id: id, adUnitID: adUnitID)
+        }
+        banner!.show()
 
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
         self.commandDelegate!.send(result, callbackId: command.callbackId)
@@ -89,6 +85,14 @@ class AMSPlugin: CDVPlugin {
 
     @objc(banner_hide:)
     func banner_hide(command: CDVInvokedUrlCommand) {
+        guard let opts = command.argument(at: 0) as? NSDictionary,
+            let id = opts.value(forKey: "id") as? Int,
+            let banner = AMSAdBase.ads[id] as? AMSBanner
+            else {
+                let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: false)
+                self.commandDelegate!.send(result, callbackId: command.callbackId)
+                return
+        }
         banner.hide()
 
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
@@ -98,13 +102,18 @@ class AMSPlugin: CDVPlugin {
     @objc(interstitial_load:)
     func interstitial_load(command: CDVInvokedUrlCommand) {
         guard let opts = command.argument(at: 0) as? NSDictionary,
-            let adUnitID = opts.value(forKey: "adUnitID") as? String
+            let id = opts.value(forKey: "id") as? Int,
+            let adUnitID = opts.value(forKey: "adUnitID") as? String,
+            var interstitial = AMSAdBase.ads[id] as? AMSInterstitial?
             else {
                 let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: false)
                 self.commandDelegate!.send(result, callbackId: command.callbackId)
                 return
         }
-        interstitial.load(adUnitID: adUnitID)
+        if interstitial == nil {
+            interstitial = AMSInterstitial(id: id, adUnitID: adUnitID)
+        }
+        interstitial!.load()
 
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
         self.commandDelegate!.send(result, callbackId: command.callbackId)
@@ -112,6 +121,14 @@ class AMSPlugin: CDVPlugin {
 
     @objc(interstitial_show:)
     func interstitial_show(command: CDVInvokedUrlCommand) {
+        guard let opts = command.argument(at: 0) as? NSDictionary,
+            let id = opts.value(forKey: "id") as? Int,
+            let interstitial = AMSAdBase.ads[id] as? AMSInterstitial
+            else {
+                let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: false)
+                self.commandDelegate!.send(result, callbackId: command.callbackId)
+                return
+        }
         interstitial.show()
 
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
@@ -120,6 +137,14 @@ class AMSPlugin: CDVPlugin {
 
     @objc(reward_video_is_ready:)
     func reward_video_is_ready(command: CDVInvokedUrlCommand) {
+        guard let opts = command.argument(at: 0) as? NSDictionary,
+            let id = opts.value(forKey: "id") as? Int,
+            let rewardVideo = AMSAdBase.ads[id] as? AMSRewardVideo
+            else {
+                let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: false)
+                self.commandDelegate!.send(result, callbackId: command.callbackId)
+                return
+        }
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: rewardVideo.isReady())
         self.commandDelegate!.send(result, callbackId: command.callbackId)
     }
@@ -127,13 +152,18 @@ class AMSPlugin: CDVPlugin {
     @objc(reward_video_load:)
     func reward_video_load(command: CDVInvokedUrlCommand) {
         guard let opts = command.argument(at: 0) as? NSDictionary,
-            let adUnitID = opts.value(forKey: "adUnitID") as? String
+            let id = opts.value(forKey: "id") as? Int,
+            let adUnitID = opts.value(forKey: "adUnitID") as? String,
+            var rewardVideo = AMSAdBase.ads[id] as? AMSRewardVideo?
             else {
                 let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: false)
                 self.commandDelegate!.send(result, callbackId: command.callbackId)
                 return
         }
-        rewardVideo.load(adUnitID: adUnitID)
+        if rewardVideo == nil {
+            rewardVideo = AMSRewardVideo(id: id, adUnitID: adUnitID)
+        }
+        rewardVideo!.load()
 
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
         self.commandDelegate!.send(result, callbackId: command.callbackId)
@@ -141,6 +171,15 @@ class AMSPlugin: CDVPlugin {
 
     @objc(reward_video_show:)
     func reward_video_show(command: CDVInvokedUrlCommand) {
+        guard let opts = command.argument(at: 0) as? NSDictionary,
+            let id = opts.value(forKey: "id") as? Int,
+            let adUnitID = opts.value(forKey: "adUnitID") as? String,
+            let rewardVideo = AMSAdBase.ads[id] as? AMSRewardVideo
+            else {
+                let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: false)
+                self.commandDelegate!.send(result, callbackId: command.callbackId)
+                return
+        }
         rewardVideo.show()
 
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)

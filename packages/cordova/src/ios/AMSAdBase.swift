@@ -1,14 +1,25 @@
 class AMSAdBase: NSObject {
-    weak var plugin: AMSPlugin!
+    static var ads = Dictionary<Int, Any>()
+    static weak var plugin: AMSPlugin!
 
-    init(plugin: AMSPlugin) {
+    var id: Int!
+    var adUnitID: String!
+
+    var plugin: AMSPlugin {
+        return AMSAdBase.plugin
+    }
+
+    init(id: Int, adUnitID: String) {
         super.init()
 
-        self.plugin = plugin
+        self.id = id
+        self.adUnitID = adUnitID
+        AMSAdBase.ads[id] = self
     }
 
     deinit {
-        plugin = nil
+        AMSAdBase.ads.removeValue(forKey: self.id)
+        self.adUnitID = nil
     }
 
     func createGADRequest() -> GADRequest {
