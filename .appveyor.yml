@@ -8,7 +8,9 @@ environment:
   nodejs_version: "11"
 init:
   - ps: Install-Product node $env:nodejs_version
-  - npm install -g yarn
+  - ps: Write-Host "Installing Yarn!"
+  - ps: (New-Object Net.WebClient).DownloadFile("https://yarnpkg.com/latest.msi", "$env:temp\yarn.msi")
+  - ps: cmd /c start /wait msiexec.exe /i $env:temp\yarn.msi /quiet /qn /norestart
 install:
   - node --version
   - npm --version
