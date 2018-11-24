@@ -13,10 +13,10 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
             bannerView.isHidden = false
         } else {
             bannerView = GADBannerView(adSize: kGADAdSizeBanner)
-            bannerView.delegate = self
             addBannerViewToView(bannerView)
             bannerView.rootViewController = plugin.viewController
         }
+        bannerView.delegate = self
 
         bannerView.adUnitID = adUnitID
         let request = createGADRequest()
@@ -24,8 +24,13 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
     }
 
     func hide() {
-        bannerView.delegate = nil
-        bannerView.isHidden = true
+        if (bannerView?.superview) != nil {
+            bannerView.delegate = nil
+            bannerView.rootViewController = nil
+            bannerView.removeFromSuperview()
+            bannerView = nil
+        }
+        self.resizeWebView()
     }
 
     func addBannerViewToView(_ bannerView: UIView) {
@@ -72,9 +77,11 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
 
     func resizeWebView() {
         var frame = view.frame
-        frame.size.height -= bannerView.frame.height
-        if #available(iOS 11.0, *) {
-            frame.size.height -= self.plugin.webView.safeAreaInsets.bottom
+        if bannerView != nil {
+            frame.size.height -= bannerView.frame.height
+            if #available(iOS 11.0, *) {
+                frame.size.height -= self.plugin.webView.safeAreaInsets.bottom
+            }
         }
         self.plugin.webView.frame = frame
     }

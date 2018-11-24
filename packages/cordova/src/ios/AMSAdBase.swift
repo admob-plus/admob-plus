@@ -26,4 +26,12 @@ class AMSAdBase: NSObject {
         let request = GADRequest()
         return request
     }
+
+    func fitAds() {
+        for (_, ad) in AMSAdBase.ads {
+            if let banner = ad as? AMSBanner {
+                banner.resizeWebView()
+            }
+        }
+    }
 }

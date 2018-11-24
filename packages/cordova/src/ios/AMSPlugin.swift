@@ -173,7 +173,6 @@ class AMSPlugin: CDVPlugin {
     func reward_video_show(command: CDVInvokedUrlCommand) {
         guard let opts = command.argument(at: 0) as? NSDictionary,
             let id = opts.value(forKey: "id") as? Int,
-            let adUnitID = opts.value(forKey: "adUnitID") as? String,
             let rewardVideo = AMSAdBase.ads[id] as? AMSRewardVideo
             else {
                 let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: false)
