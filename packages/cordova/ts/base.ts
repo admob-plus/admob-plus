@@ -1,8 +1,7 @@
 import { exec } from 'cordova'
 
-import { AdUnitIDOption } from '@admob-plus/core'
+import { AdUnitIDOption, Events, NativeActions } from '@admob-plus/core'
 
-import { Events, NativeActions } from './constants'
 import AdMobState from './state'
 
 export { AdUnitIDOption, Events, NativeActions }

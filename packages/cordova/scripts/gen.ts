@@ -153,7 +153,7 @@ async function main() {
     { filepath: 'src/android/Actions.java', f: buildActionsJava },
     { filepath: 'src/android/Events.java', f: buildEventsJava },
     { filepath: 'src/ios/AMSConstants.swift', f: buildConstantsSwift },
-    { filepath: 'ts/constants.ts', f: buildConstantsTs },
+    { filepath: '../core/constants.ts', f: buildConstantsTs },
   ]
   await Promise.all(
     l.map(({ filepath, f }) =>
