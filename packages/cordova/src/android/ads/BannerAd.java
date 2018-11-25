@@ -35,7 +35,7 @@ public class BannerAd extends AdBase {
         plugin.cordova.getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                bannerAd.show();
+                bannerAd.show(bannerAd.buildAdRequest(opts));
 
                 PluginResult result = new PluginResult(PluginResult.Status.OK, "");
                 callbackContext.sendPluginResult(result);
@@ -77,7 +77,7 @@ public class BannerAd extends AdBase {
         return (ad != null) ? ad : new BannerAd(id, adUnitID);
     }
 
-    public void show() {
+    public void show(AdRequest adRequest) {
         if (adView == null) {
             adView = new AdView(plugin.cordova.getActivity());
             adView.setAdUnitId(adUnitID);
@@ -115,7 +115,6 @@ public class BannerAd extends AdBase {
             adView.setVisibility(View.VISIBLE);
         }
 
-        AdRequest adRequest = createAdRequestBuilder().build();
         adView.loadAd(adRequest);
     }
 

@@ -25,7 +25,7 @@ public class InterstitialAd extends AdBase {
         plugin.cordova.getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                interstitialAd.load(adUnitID);
+                interstitialAd.load(interstitialAd.buildAdRequest(opts), adUnitID);
 
                 PluginResult result = new PluginResult(PluginResult.Status.OK, "");
                 callbackContext.sendPluginResult(result);
@@ -73,7 +73,7 @@ public class InterstitialAd extends AdBase {
         return (ad != null) ? ad : new InterstitialAd(id);
     }
 
-    private void load(String adUnitID) {
+    private void load(AdRequest adRequest, String adUnitID) {
         clear();
 
         interstitialAd = new com.google.android.gms.ads.InterstitialAd(plugin.cordova.getActivity());
@@ -106,7 +106,6 @@ public class InterstitialAd extends AdBase {
             }
         });
 
-        AdRequest adRequest = createAdRequestBuilder().build();
         interstitialAd.loadAd(adRequest);
     }
 

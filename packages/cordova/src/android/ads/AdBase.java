@@ -4,6 +4,8 @@ import android.util.SparseArray;
 
 import com.google.android.gms.ads.AdRequest;
 
+import org.json.JSONObject;
+
 import admob.plugin.AdMob;
 
 
@@ -31,7 +33,11 @@ public abstract class AdBase {
         return ads.get(id);
     }
 
-    AdRequest.Builder createAdRequestBuilder() {
-        return new AdRequest.Builder();
+    AdRequest buildAdRequest(JSONObject opts) {
+        AdRequest.Builder builder = new AdRequest.Builder();
+        if (opts.has("forChildDirectedTreatment")) {
+            builder.tagForChildDirectedTreatment(opts.optBoolean("forChildDirectedTreatment"));
+        }
+        return builder.build();
     }
 }

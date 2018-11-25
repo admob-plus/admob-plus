@@ -44,7 +44,7 @@ public class RewardedVideoAd extends AdBase {
         plugin.cordova.getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                rewardedVideoAd.createAndLoad(adUnitID);
+                rewardedVideoAd.createAndLoad(rewardedVideoAd.buildAdRequest(opts), adUnitID);
 
                 PluginResult result = new PluginResult(PluginResult.Status.OK, "");
                 callbackContext.sendPluginResult(result);
@@ -92,7 +92,7 @@ public class RewardedVideoAd extends AdBase {
         return (ad != null) ? ad : new RewardedVideoAd(id);
     }
 
-    private void createAndLoad(String adUnitID) {
+    private void createAndLoad(AdRequest adRequest, String adUnitID) {
         clear();
 
         rewardedVideoAd = MobileAds.getRewardedVideoAdInstance(plugin.cordova.getActivity());
@@ -137,7 +137,6 @@ public class RewardedVideoAd extends AdBase {
                 plugin.emit(Events.REWARD_VIDEO_COMPLETE);
             }
         });
-        AdRequest adRequest = createAdRequestBuilder().build();
         rewardedVideoAd.loadAd(adUnitID, adRequest);
     }
 
