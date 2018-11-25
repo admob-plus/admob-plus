@@ -4,3 +4,7 @@ export type AdUnitIDOption =
       android: string;
       ios: string;
     }
+
+export interface IAdRequest {
+  id?: AdUnitIDOption
+}

@@ -1,6 +1,7 @@
+import { IAdRequest } from '@admob-plus/core'
+
 import {
   AdBase,
-  AdUnitIDOption,
   Events,
   execAsync,
   NativeActions,
@@ -8,17 +9,13 @@ import {
   waitEvent,
 } from './base'
 
-interface IInterstitialPrepareOptions {
-  id?: AdUnitIDOption
-}
-
 const AD_ID = 2
 
 export default class Interstitial extends AdBase {
   protected testIdForAndroid = TestIds.interstitial_android
   protected testIdForIOS = TestIds.interstitial_ios
 
-  public async load(opts: IInterstitialPrepareOptions = {}) {
+  public async load(opts: IAdRequest = {}) {
     await execAsync(NativeActions.interstitial_load, [
       {
         ...opts,
@@ -31,6 +28,6 @@ export default class Interstitial extends AdBase {
   }
 
   public show() {
-    return execAsync(NativeActions.interstitial_show, [{id: AD_ID}])
+    return execAsync(NativeActions.interstitial_show, [{ id: AD_ID }])
   }
 }
