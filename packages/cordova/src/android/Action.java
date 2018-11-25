@@ -28,8 +28,8 @@ public class Action {
 
     public AdRequest buildAdRequest() {
         AdRequest.Builder builder = new AdRequest.Builder();
-        if (this.opts.has("forChildDirectedTreatment")) {
-            builder.tagForChildDirectedTreatment(opts.optBoolean("forChildDirectedTreatment"));
+        if (this.opts.has("childDirectedTreatment")) {
+            builder.tagForChildDirectedTreatment(opts.optBoolean("childDirectedTreatment"));
         }
         return builder.build();
     }

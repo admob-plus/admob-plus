@@ -7,5 +7,5 @@ export type AdUnitIDOption =
 
 export interface IAdRequest {
   id?: AdUnitIDOption
-  forChildDirectedTreatment?: boolean
+  childDirectedTreatment?: boolean
 }
