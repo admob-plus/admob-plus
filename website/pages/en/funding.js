@@ -49,7 +49,7 @@ const Funding = () => {
           </header>
           <p>
             AdMob-Plus is an MIT-licensed open source project. It&apos;s an
-            independent project maintened by{' '}
+            independent project maintained by{' '}
             <a href="https://github.com/ratson">@ratson</a>.
           </p>
           <p>Your support will fund him to</p>
