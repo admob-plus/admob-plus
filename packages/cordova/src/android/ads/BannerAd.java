@@ -11,31 +11,27 @@ import com.google.android.gms.ads.AdView;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.PluginResult;
-import org.json.JSONArray;
-import org.json.JSONObject;
 
+import admob.plugin.Action;
 import admob.plugin.Events;
 
 public class BannerAd extends AdBase {
     private AdView adView;
     private ViewGroup parentView;
 
-    private String adUnitID;
-
-    private BannerAd(int id, String adUnitID) {
-        super(id);
-
-        this.adUnitID = adUnitID;
+    BannerAd(int id, String adUnitID) {
+        super(id, adUnitID);
     }
 
-    public static boolean executeShowAction(JSONArray args, CallbackContext callbackContext) {
-        JSONObject opts = args.optJSONObject(0);
-
-        final BannerAd bannerAd = getOrCreate(opts);
+    public static boolean executeShowAction(Action action, CallbackContext callbackContext) {
         plugin.cordova.getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                bannerAd.show(bannerAd.buildAdRequest(opts));
+                BannerAd bannerAd = (BannerAd) action.getAd();
+                if (bannerAd == null) {
+                    bannerAd = new BannerAd(action.optId(), action.getAdUnitID());
+                }
+                bannerAd.show(action.buildAdRequest());
 
                 PluginResult result = new PluginResult(PluginResult.Status.OK, "");
                 callbackContext.sendPluginResult(result);
@@ -45,14 +41,11 @@ public class BannerAd extends AdBase {
         return false;
     }
 
-    public static boolean executeHideAction(JSONArray args, CallbackContext callbackContext) {
-        JSONObject opts = args.optJSONObject(0);
-        final int id = opts.optInt("id");
-
+    public static boolean executeHideAction(Action action, CallbackContext callbackContext) {
         plugin.cordova.getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                BannerAd bannerAd = getAd(id);
+                BannerAd bannerAd = (BannerAd) action.getAd();
                 if (bannerAd != null) {
                     bannerAd.hide();
                 }
@@ -63,18 +56,6 @@ public class BannerAd extends AdBase {
         });
 
         return true;
-    }
-
-    private static BannerAd getAd(int id) {
-        AdBase ad = AdBase.getAd(id);
-        return (ad != null) ? (BannerAd) ad : null;
-    }
-
-    private static BannerAd getOrCreate(JSONObject opts) {
-        int id = opts.optInt("id");
-        String adUnitID = opts.optString("adUnitID");
-        BannerAd ad = getAd(id);
-        return (ad != null) ? ad : new BannerAd(id, adUnitID);
     }
 
     public void show(AdRequest adRequest) {

@@ -2,22 +2,22 @@ package admob.plugin.ads;
 
 import android.util.SparseArray;
 
-import com.google.android.gms.ads.AdRequest;
-
-import org.json.JSONObject;
-
 import admob.plugin.AdMob;
 
 
 public abstract class AdBase {
     protected static AdMob plugin;
 
+    final int id;
+    protected String adUnitID;
+
     private static SparseArray<AdBase> ads = new SparseArray<AdBase>();
 
-    final int id;
 
-    AdBase(int id) {
+    AdBase(int id, String adUnitID) {
         this.id = id;
+        this.adUnitID = adUnitID;
+
         ads.put(id, this);
     }
 
@@ -29,15 +29,7 @@ public abstract class AdBase {
         ads.remove(id);
     }
 
-    static AdBase getAd(Integer id) {
+    public static AdBase getAd(Integer id) {
         return ads.get(id);
-    }
-
-    AdRequest buildAdRequest(JSONObject opts) {
-        AdRequest.Builder builder = new AdRequest.Builder();
-        if (opts.has("forChildDirectedTreatment")) {
-            builder.tagForChildDirectedTreatment(opts.optBoolean("forChildDirectedTreatment"));
-        }
-        return builder.build();
     }
 }

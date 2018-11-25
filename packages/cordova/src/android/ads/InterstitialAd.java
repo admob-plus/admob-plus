@@ -5,27 +5,26 @@ import com.google.android.gms.ads.AdRequest;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.PluginResult;
-import org.json.JSONArray;
-import org.json.JSONObject;
 
+import admob.plugin.Action;
 import admob.plugin.Events;
 
 public class InterstitialAd extends AdBase {
     private com.google.android.gms.ads.InterstitialAd interstitialAd = null;
 
-    InterstitialAd(int id) {
-        super(id);
+    InterstitialAd(int id, String adUnitID) {
+        super(id, adUnitID);
     }
 
-    public static boolean executeLoadAction(JSONArray args, CallbackContext callbackContext) {
-        JSONObject opts = args.optJSONObject(0);
-        final String adUnitID = opts.optString("adUnitID");
-
-        final InterstitialAd interstitialAd = getOrCreate(opts);
+    public static boolean executeLoadAction(Action action, CallbackContext callbackContext) {
         plugin.cordova.getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                interstitialAd.load(interstitialAd.buildAdRequest(opts), adUnitID);
+                InterstitialAd interstitialAd = (InterstitialAd) action.getAd();
+                if (interstitialAd == null) {
+                    interstitialAd = new InterstitialAd(action.optId(), action.getAdUnitID());
+                }
+                interstitialAd.load(action.buildAdRequest(), action.getAdUnitID());
 
                 PluginResult result = new PluginResult(PluginResult.Status.OK, "");
                 callbackContext.sendPluginResult(result);
@@ -35,14 +34,11 @@ public class InterstitialAd extends AdBase {
         return true;
     }
 
-    public static boolean executeShowAction(JSONArray args, CallbackContext callbackContext) {
-        JSONObject opts = args.optJSONObject(0);
-        final int id = opts.optInt("id");
-
+    public static boolean executeShowAction(Action action, CallbackContext callbackContext) {
         plugin.cordova.getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                InterstitialAd interstitialAd = getAd(id);
+                InterstitialAd interstitialAd = (InterstitialAd) action.getAd();
                 if (interstitialAd != null) {
                     interstitialAd.show();
                 }
@@ -60,17 +56,6 @@ public class InterstitialAd extends AdBase {
         clear();
 
         super.destroy();
-    }
-
-    private static InterstitialAd getAd(int id) {
-        AdBase ad = AdBase.getAd(id);
-        return (ad != null) ? (InterstitialAd) ad : null;
-    }
-
-    private static InterstitialAd getOrCreate(JSONObject opts) {
-        int id = opts.optInt("id");
-        InterstitialAd ad = getAd(id);
-        return (ad != null) ? ad : new InterstitialAd(id);
     }
 
     private void load(AdRequest adRequest, String adUnitID) {
