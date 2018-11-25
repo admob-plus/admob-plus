@@ -8,4 +8,5 @@ export type AdUnitIDOption =
 export interface IAdRequest {
   id?: AdUnitIDOption
   childDirectedTreatment?: boolean
+  underAgeOfConsent?: boolean
 }
