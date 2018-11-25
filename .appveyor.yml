@@ -15,5 +15,5 @@ install:
   - node --version
   - npm --version
   - yarn --version
-  - yarn
+  - yarn install --network-concurrency 1
 build: off
