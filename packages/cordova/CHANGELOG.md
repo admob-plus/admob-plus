@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.16.0](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.15.0...cordova-admob-plus@0.16.0) (2018-11-25)
+
+
+### Bug Fixes
+
+* **cordova-ios:** position banner correctly between ads ([9476f3a](https://github.com/admob-plus/admob-plus/commit/9476f3a))
+
+
+### Features
+
+* **cordova-android:** add forChildDirectedTreatment option ([cb0c4b5](https://github.com/admob-plus/admob-plus/commit/cb0c4b5))
+* **cordova-android:** add underAgeOfConsent option ([5bf1ef9](https://github.com/admob-plus/admob-plus/commit/5bf1ef9))
+* **cordova-android:** change option to childDirectedTreatment ([cf51c96](https://github.com/admob-plus/admob-plus/commit/cf51c96))
+* **core:** export constants ([37e1917](https://github.com/admob-plus/admob-plus/commit/37e1917))
+
+
+
+
+
 # 0.15.0 (2018-11-23)
 
 
