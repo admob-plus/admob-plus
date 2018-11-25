@@ -12,9 +12,7 @@
   ],
   "packages": [
     "packages/*",
-    "examples/*",
-    "website"
+    "examples/*"
   ],
-  "useWorkspaces": true,
   "version": "independent"
 }
