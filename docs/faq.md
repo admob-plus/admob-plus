@@ -8,6 +8,13 @@ title: Frequently Asked Questions
 Google AdMob requires [Google Mobile Ads SDK](https://developers.google.com/admob/ios/download) for iOS, which will contribute ~60MB to the app size.
 
 
+## How do I fix "error: local variable callbackContext is accessed from within inner class; needs to be declared final" error when building for Android?
+
+The problem is probably due to using an outdated version of Cordova, updating to the latest version should solve it.
+
+For more details, read [PR #37](https://github.com/admob-plus/admob-plus/pull/37).
+
+
 ## How this project relates to `cordova-plugin-admob-free`?
 
 `admob-plus` is the successor of [cordova-plugin-admob-free](https://github.com/ratson/cordova-plugin-admob-free), which provides a cleaner API and build with modern tools.
