@@ -5,7 +5,6 @@
   "version": "0.15.1",
   "scripts": {
     "prepare": "run-s prepare:*",
-    "prepare:plugin": "cd ../../packages/cordova && run-s prepare",
     "prepare:cordova": "cordova prepare --searchpath ../../packages",
     "prepare:lint-on": "replace-in-file 'abortOnError false;' 'abortOnError true;' platforms/android/app/build.gradle",
     "clean": "del package-lock.json platforms plugins",
@@ -22,7 +21,7 @@
     "dev-ios:open": "open platforms/ios/AdmobBasicExample.xcworkspace"
   },
   "dependencies": {
-    "cordova-admob-plus": "^0.16.0",
+    "cordova-admob-plus": "0.16.0",
     "cordova-android": "7.1.2",
     "cordova-browser": "5.0.4",
     "cordova-ios": "4.5.5",
