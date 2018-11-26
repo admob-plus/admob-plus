@@ -24,7 +24,7 @@
     "@ionic-native/status-bar": "~4.17.0",
     "@ionic/storage": "~2.2.0",
     "cordova-admob-plus": "^0.17.0",
-    "cordova-android": "7.1.2",
+    "cordova-android": "7.1.4",
     "cordova-browser": "5.0.4",
     "cordova-ios": "4.5.5",
     "cordova-plugin-add-swift-support": "1.7.2",
@@ -45,7 +45,8 @@
   "devDependencies": {
     "@ionic/app-scripts": "~3.2.0",
     "cordova": "^8.1.2",
-    "ionic": "^4.3.1",
+    "ionic": "^4.4.0",
+    "npm": "^4.6.1",
     "typescript": "~2.6.2"
   },
   "eslintConfig": {
