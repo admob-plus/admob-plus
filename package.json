@@ -8,10 +8,10 @@
     "lint": "tslint --project packages/cordova",
     "test-android": "run-s test-android:*",
     "test-android:testbed": "cordova-testbed --platform android --plugin packages/cordova --build-only",
-    "test-android:example": "cd examples/basic && cordova platform add android && run-s link-plugin && cordova build android",
+    "test-android:example": "cd examples/basic && run-s link-plugin && cordova build android",
     "test-ios": "run-s test-ios:*",
     "test-ios:testbed": "cordova-testbed --platform ios --plugin packages/cordova --build-only",
-    "test-ios:example": "cd examples/basic && cordova platform add ios && run-s link-plugin && cordova build ios"
+    "test-ios:example": "cd examples/basic && run-s link-plugin && cordova build ios"
   },
   "devDependencies": {
     "@commitlint/cli": "^7.2.1",
