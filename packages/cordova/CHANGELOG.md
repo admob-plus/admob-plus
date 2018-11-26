@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.17.0](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.16.0...cordova-admob-plus@0.17.0) (2018-11-26)
+
+
+### Features
+
+* **cordova-ios:** handle childDirectedTreatment ([862d6b6](https://github.com/admob-plus/admob-plus/commit/862d6b6))
+
+
+
+
+
 # [0.16.0](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.15.0...cordova-admob-plus@0.16.0) (2018-11-25)
 
 
