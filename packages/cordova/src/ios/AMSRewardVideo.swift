@@ -10,12 +10,11 @@ class AMSRewardVideo: AMSAdBase, GADRewardBasedVideoAdDelegate {
         return (rewardBasedVideo?.isReady == true)
     }
 
-    func load() {
+    func load(request: GADRequest) {
         rewardBasedVideo = GADRewardBasedVideoAd.sharedInstance()
         rewardBasedVideo?.delegate = self
 
         if rewardBasedVideo?.isReady == false {
-            let request = createGADRequest()
             rewardBasedVideo?.load(request, withAdUnitID: adUnitID)
         }
     }

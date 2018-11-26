@@ -5,11 +5,10 @@ class AMSInterstitial: AMSAdBase, GADInterstitialDelegate {
         interstitial = nil
     }
 
-    func load() {
+    func load(request: GADRequest) {
         let interstitial = GADInterstitial(adUnitID: adUnitID)
         self.interstitial = interstitial
 
-        let request = createGADRequest()
         interstitial.load(request)
         interstitial.delegate = self
     }

@@ -77,7 +77,7 @@ class AMSPlugin: CDVPlugin {
         if banner == nil {
             banner = AMSBanner(id: id, adUnitID: adUnitID)
         }
-        banner!.show()
+        banner!.show(request: createGADRequest(opts))
 
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
         self.commandDelegate!.send(result, callbackId: command.callbackId)
@@ -113,7 +113,7 @@ class AMSPlugin: CDVPlugin {
         if interstitial == nil {
             interstitial = AMSInterstitial(id: id, adUnitID: adUnitID)
         }
-        interstitial!.load()
+        interstitial!.load(request: createGADRequest(opts))
 
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
         self.commandDelegate!.send(result, callbackId: command.callbackId)
@@ -163,7 +163,7 @@ class AMSPlugin: CDVPlugin {
         if rewardVideo == nil {
             rewardVideo = AMSRewardVideo(id: id, adUnitID: adUnitID)
         }
-        rewardVideo!.load()
+        rewardVideo!.load(request: createGADRequest(opts))
 
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
         self.commandDelegate!.send(result, callbackId: command.callbackId)
@@ -183,6 +183,14 @@ class AMSPlugin: CDVPlugin {
 
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
         self.commandDelegate!.send(result, callbackId: command.callbackId)
+    }
+
+    func createGADRequest(_ opts: NSDictionary) -> GADRequest {
+        let request = GADRequest()
+        if let childDirectedTreatment = opts["childDirectedTreatment"] as? Bool {
+            request.tag(forChildDirectedTreatment: childDirectedTreatment)
+        }
+        return request
     }
 
     func emit(eventType: String, data: Any = false) {

@@ -8,7 +8,7 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
         bannerView = nil
     }
 
-    func show() {
+    func show(request: GADRequest) {
         if bannerView != nil {
             bannerView.isHidden = false
         } else {
@@ -19,7 +19,6 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
         bannerView.delegate = self
 
         bannerView.adUnitID = adUnitID
-        let request = createGADRequest()
         bannerView.load(request)
     }
 
