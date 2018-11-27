@@ -3,7 +3,7 @@ import { Cordova, IonicNativePlugin, Plugin } from '@ionic-native/core'
 import { Observable } from 'rxjs/Observable'
 import { fromEvent } from 'rxjs/observable/fromEvent'
 
-import { AdUnitIDOption } from '@admob-plus/core'
+import { IAdRequest } from '@admob-plus/core'
 
 @Plugin({
   plugin: 'cordova-admob-plus',
@@ -17,7 +17,7 @@ export class Banner {
   }
 
   @Cordova({ otherPromise: true })
-  public show(opts: { id?: AdUnitIDOption }): Promise<any> {
+  public show(opts: IAdRequest): Promise<any> {
     return Promise.resolve()
   }
 }
@@ -29,7 +29,7 @@ export class Banner {
 })
 export class Interstitial {
   @Cordova({ otherPromise: true })
-  public load(opts: { id?: AdUnitIDOption }): Promise<any> {
+  public load(opts: IAdRequest): Promise<any> {
     return Promise.resolve()
   }
 
@@ -46,7 +46,7 @@ export class Interstitial {
 })
 export class RewardVideo {
   @Cordova({ otherPromise: true })
-  public load(opts: { id?: AdUnitIDOption }): Promise<any> {
+  public load(opts: IAdRequest): Promise<any> {
     return Promise.resolve()
   }
 

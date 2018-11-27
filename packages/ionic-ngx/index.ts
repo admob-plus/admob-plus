@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core'
 import { cordova, IonicNativePlugin } from '@ionic-native/core'
 import { fromEvent, Observable } from 'rxjs'
 
-import { AdUnitIDOption } from '@admob-plus/core'
+import { IAdRequest } from '@admob-plus/core'
 
 export class Banner extends IonicNativePlugin {
   public static plugin = 'cordova-admob-plus'
@@ -13,7 +13,7 @@ export class Banner extends IonicNativePlugin {
     return cordova(this, 'hide', { otherPromise: true }, arguments)
   }
 
-  public show(opts: { id?: AdUnitIDOption }): Promise<any> {
+  public show(opts: IAdRequest): Promise<any> {
     return cordova(this, 'show', { otherPromise: true }, arguments)
   }
 }
@@ -23,7 +23,7 @@ export class Interstitial extends IonicNativePlugin {
   public static pluginName = 'AdMob'
   public static pluginRef = 'admob.interstitial'
 
-  public load(opts: { id?: AdUnitIDOption }): Promise<any> {
+  public load(opts: IAdRequest): Promise<any> {
     return cordova(this, 'load', { otherPromise: true }, arguments)
   }
 
@@ -37,7 +37,7 @@ export class RewardVideo extends IonicNativePlugin {
   public static pluginName = 'AdMob'
   public static pluginRef = 'admob.rewardVideo'
 
-  public load(opts: { id?: AdUnitIDOption }): Promise<any> {
+  public load(opts: IAdRequest): Promise<any> {
     return cordova(this, 'load', { otherPromise: true }, arguments)
   }
 
