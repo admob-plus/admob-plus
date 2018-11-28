@@ -16,5 +16,10 @@
   "repository": "admob-plus/admob-plus",
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "files": [
+    "*.ts",
+    "*.md",
+    "dist"
+  ]
 }
