@@ -38,7 +38,7 @@ public class BannerAd extends AdBase {
             }
         });
 
-        return false;
+        return true;
     }
 
     public static boolean executeHideAction(Action action, CallbackContext callbackContext) {
