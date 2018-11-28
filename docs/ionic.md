@@ -11,6 +11,9 @@ ionic cordova plugin add cordova-admob-plus --variable APP_ID_ANDROID=ca-app-pub
 npm install --save ionic-admob
 ```
 
+If your project depends on `@ionic-native/core@^5.0.0-beta.21`, `@admob-plus/ionic` should be used instead of `ionic-admob`.
+
+
 ## Add Plugin to Your App's Module
 
 After installing a plugin’s package, add it to your app’s `NgModule`.
