@@ -12,6 +12,7 @@ export const enum Platforms {
 }
 
 export const enum TestIds {
+  dummy = 'test',
   banner_android = 'ca-app-pub-3940256099942544/6300978111',
   interstitial_android = 'ca-app-pub-3940256099942544/1033173712',
   reward_video_android = 'ca-app-pub-3940256099942544/5224354917',
@@ -69,12 +70,12 @@ export class AdBase {
       case Platforms.ios:
         return this.testIdForIOS
       default:
-        return 'test'
+        return TestIds.dummy
     }
   }
 
   protected resolveAdUnitID(adUnitID?: AdUnitIDOption): string {
-    if (adUnitID === 'test' || this.state.devMode) {
+    if (adUnitID === TestIds.dummy || this.state.devMode) {
       return this.testAdUnitID
     }
     if (!adUnitID) {
