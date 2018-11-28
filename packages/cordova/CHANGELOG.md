@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.17.3](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.17.2...cordova-admob-plus@0.17.3) (2018-11-28)
+
+
+### Bug Fixes
+
+* **cordova-android:** fix banner action return value ([9774066](https://github.com/admob-plus/admob-plus/commit/9774066))
+
+
+
+
+
 ## [0.17.2](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.17.1...cordova-admob-plus@0.17.2) (2018-11-28)
 
 **Note:** Version bump only for package cordova-admob-plus
