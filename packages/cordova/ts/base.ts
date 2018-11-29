@@ -32,11 +32,14 @@ export function fireDocumentEvent(eventName: string, data = null) {
   document.dispatchEvent(event)
 }
 
-export function waitEvent(successEvent, failEvent = ''): Promise<Event> {
+export function waitEvent(
+  successEvent: string,
+  failEvent = '',
+): Promise<CustomEvent> {
   return new Promise((resolve, reject) => {
     document.addEventListener(
-      successEvent,
-      (event: Event) => {
+      successEvent as any,
+      (event: CustomEvent) => {
         resolve(event)
       },
       false,
@@ -44,8 +47,8 @@ export function waitEvent(successEvent, failEvent = ''): Promise<Event> {
 
     if (failEvent) {
       document.addEventListener(
-        failEvent,
-        failedEvent => {
+        failEvent as any,
+        (failedEvent: CustomEvent) => {
           reject(failedEvent)
         },
         false,
