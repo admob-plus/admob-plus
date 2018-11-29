@@ -11,6 +11,8 @@ import com.google.android.gms.ads.AdView;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.PluginResult;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import admob.plugin.Action;
 import admob.plugin.Events;
@@ -71,7 +73,7 @@ public class BannerAd extends AdBase {
 
                 @Override
                 public void onAdFailedToLoad(int errorCode) {
-                    plugin.emit(Events.BANNER_LOAD_FAIL);
+                    plugin.emit(Events.BANNER_LOAD_FAIL, buildErrorPayload(errorCode));
                 }
 
                 @Override

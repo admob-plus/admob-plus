@@ -7,6 +7,8 @@ import com.google.android.gms.ads.reward.RewardedVideoAdListener;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.PluginResult;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import admob.plugin.Action;
 import admob.plugin.Events;
@@ -110,8 +112,8 @@ public class RewardedVideoAd extends AdBase {
             }
 
             @Override
-            public void onRewardedVideoAdFailedToLoad(int i) {
-                plugin.emit(Events.REWARD_VIDEO_LOAD_FAIL);
+            public void onRewardedVideoAdFailedToLoad(int errorCode) {
+                plugin.emit(Events.REWARD_VIDEO_LOAD_FAIL, buildErrorPayload(errorCode));
             }
 
             @Override

@@ -5,6 +5,8 @@ import com.google.android.gms.ads.AdRequest;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.PluginResult;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import admob.plugin.Action;
 import admob.plugin.Events;
@@ -72,7 +74,7 @@ public class InterstitialAd extends AdBase {
 
             @Override
             public void onAdFailedToLoad(int errorCode) {
-                plugin.emit(Events.INTERSTITIAL_LOAD_FAIL);
+                plugin.emit(Events.INTERSTITIAL_LOAD_FAIL, buildErrorPayload(errorCode));
             }
 
             @Override
