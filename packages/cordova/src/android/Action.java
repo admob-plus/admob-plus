@@ -32,6 +32,15 @@ public class Action {
     public AdRequest buildAdRequest() {
         Bundle extras = new Bundle();
         AdRequest.Builder builder = new AdRequest.Builder();
+        JSONArray testDevices = this.opts.optJSONArray("testDevices");
+        if (testDevices != null) {
+            for (int i = 0; i < testDevices.length(); i++) {
+                String testDevice = testDevices.optString(i);
+                if (testDevice != null) {
+                    builder.addTestDevice(testDevice);
+                }
+            }
+        }
         if (this.opts.has("childDirectedTreatment")) {
             builder.tagForChildDirectedTreatment(opts.optBoolean("childDirectedTreatment"));
         }
