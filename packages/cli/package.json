@@ -11,7 +11,7 @@
     "@oclif/plugin-help": "^2",
     "clipboardy": "^1.2.3",
     "elementtree": "^0.1.7",
-    "envinfo": "^5.12.1",
+    "envinfo": "^6.0.1",
     "execa": "^1.0.0",
     "fs-extra": "^7.0.1",
     "lodash": "^4.17.11",
@@ -35,7 +35,7 @@
     "nyc": "^13",
     "ts-node": "^7",
     "tslint": "^5",
-    "typescript": "^3.1"
+    "typescript": "^3.2"
   },
   "engines": {
     "node": ">=8.0.0"

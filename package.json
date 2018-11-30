@@ -27,10 +27,10 @@
     "eslint-config-concise-esnext": "^0.34.0",
     "husky": "^1.2.0",
     "jest": "^23.6.0",
-    "lerna": "^3.5.0",
+    "lerna": "^3.5.1",
     "lint-staged": "^8.1.0",
     "npm-run-all": "^4.1.5",
-    "prettier": "^1.15.2",
+    "prettier": "^1.15.3",
     "prettier-eslint-cli": "^5.0.0-beta.0",
     "prettier-tslint": "^0.4.0",
     "remark-cli": "^6.0.1",
@@ -45,7 +45,7 @@
     "tslint": "^5.11.0",
     "tslint-config-concise": "^0.34.0",
     "tslint-eslint-rules": "^5.4.0",
-    "typescript": "^3.1.6"
+    "typescript": "^3.2.1"
   },
   "repository": "admob-plus/admob-plus",
   "commitlint": {
