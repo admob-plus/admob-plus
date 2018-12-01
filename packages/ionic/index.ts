@@ -3,7 +3,7 @@ import { Cordova, IonicNativePlugin, Plugin } from '@ionic-native/core'
 import { Observable } from 'rxjs/Observable'
 import { fromEvent } from 'rxjs/observable/fromEvent'
 
-import { IAdRequest } from '@admob-plus/core'
+import { IAdRequest, IBannerRequest } from '@admob-plus/core'
 
 @Plugin({
   plugin: 'cordova-admob-plus',
@@ -17,7 +17,7 @@ export class Banner {
   }
 
   @Cordova({ otherPromise: true })
-  public show(opts: IAdRequest): Promise<any> {
+  public show(opts: IBannerRequest): Promise<any> {
     return Promise.resolve()
   }
 }

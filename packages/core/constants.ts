@@ -34,3 +34,12 @@ export const enum Events {
   reward_video_reward = 'admob.reward_video.reward',
   reward_video_start = 'admob.reward_video.start',
 }
+
+export enum AdSizeType {
+  BANNER,
+  LARGE_BANNER,
+  MEDIUM_RECTANGLE,
+  FULL_BANNER,
+  LEADERBOARD,
+  SMART_BANNER,
+}

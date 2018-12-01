@@ -20,9 +20,11 @@ import admob.plugin.Events;
 public class BannerAd extends AdBase {
     private AdView adView;
     private ViewGroup parentView;
+    private AdSize adSize;
 
-    BannerAd(int id, String adUnitID) {
+    BannerAd(int id, String adUnitID, AdSize adSize) {
         super(id, adUnitID);
+        this.adSize = adSize;
     }
 
     public static boolean executeShowAction(Action action, CallbackContext callbackContext) {
@@ -31,7 +33,7 @@ public class BannerAd extends AdBase {
             public void run() {
                 BannerAd bannerAd = (BannerAd) action.getAd();
                 if (bannerAd == null) {
-                    bannerAd = new BannerAd(action.optId(), action.getAdUnitID());
+                    bannerAd = new BannerAd(action.optId(), action.getAdUnitID(), action.getAdSize());
                 }
                 bannerAd.show(action.buildAdRequest());
 
@@ -64,7 +66,7 @@ public class BannerAd extends AdBase {
         if (adView == null) {
             adView = new AdView(plugin.cordova.getActivity());
             adView.setAdUnitId(adUnitID);
-            adView.setAdSize(AdSize.SMART_BANNER);
+            adView.setAdSize(adSize);
             adView.setAdListener(new AdListener() {
                 @Override
                 public void onAdLoaded() {

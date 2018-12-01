@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core'
 import { cordova, IonicNativePlugin } from '@ionic-native/core'
 import { fromEvent, Observable } from 'rxjs'
 
-import { IAdRequest } from '@admob-plus/core'
+import { IAdRequest, IBannerRequest } from '@admob-plus/core'
 
 export class Banner extends IonicNativePlugin {
   public static plugin = 'cordova-admob-plus'
@@ -13,7 +13,7 @@ export class Banner extends IonicNativePlugin {
     return cordova(this, 'hide', { otherPromise: true }, arguments)
   }
 
-  public show(opts: IAdRequest): Promise<any> {
+  public show(opts: IBannerRequest): Promise<any> {
     return cordova(this, 'show', { otherPromise: true }, arguments)
   }
 }

@@ -34,6 +34,7 @@
         <source-file src="src/android/Action.java" target-dir="src/admob/plugin" />
         <source-file src="src/android/Actions.java" target-dir="src/admob/plugin" />
         <source-file src="src/android/AdMob.java" target-dir="src/admob/plugin" />
+        <source-file src="src/android/AdSizeType.java" target-dir="src/admob/plugin" />
         <source-file src="src/android/Events.java" target-dir="src/admob/plugin" />
         <source-file src="src/android/ads/AdBase.java" target-dir="src/admob/plugin/ads" />
         <source-file src="src/android/ads/BannerAd.java" target-dir="src/admob/plugin/ads" />

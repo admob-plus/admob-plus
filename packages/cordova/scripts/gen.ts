@@ -51,6 +51,15 @@ const Events: { [index: string]: string } = {
 }
 /* tslint:enable:object-literal-sort-keys */
 
+const AdSizeTypes = [
+  'BANNER',
+  'LARGE_BANNER',
+  'MEDIUM_RECTANGLE',
+  'FULL_BANNER',
+  'LEADERBOARD',
+  'SMART_BANNER',
+]
+
 function buildActionsJava(): string {
   const linesActions = Object.keys(Actions)
     .map(k => `    static final String ${k.toUpperCase()} = "${Actions[k]}";`)
@@ -83,6 +92,27 @@ ${linesEvents}
 `
 }
 
+function buildAdSizeTypeJava(): string {
+  return `// ${warnMessage}
+package admob.plugin;
+
+import com.google.android.gms.ads.AdSize;
+
+public enum AdSizeType {
+    ${AdSizeTypes.map(s => `${s}`).join(', ')};
+
+    public static AdSize getAdSize(Object adSize) {
+${AdSizeTypes.map(
+    s => `      if (AdSizeType.${s}.equals(adSize)) {
+          return AdSize.${s};
+      }`,
+  ).join('\n')}
+      return null;
+    }
+}
+`
+}
+
 function buildConstantsSwift(): string {
   const linesEvents = Object.keys(Events)
     .map(k => `    static let ${_.camelCase(k)} = "${Events[k]}"`)
@@ -107,6 +137,8 @@ function buildConstantsTs(): string {
     .sort()
     .join('\n')
 
+  const adSizeType = AdSizeTypes.map(s => `  ${s},`).join('\n')
+
   return `// ${warnMessage}
 export const enum NativeActions {
   Service = 'AdMob',
@@ -115,6 +147,10 @@ ${linesActions}
 
 export const enum Events {
 ${linesEvents}
+}
+
+export enum AdSizeType {
+${adSizeType}
 }
 `
 }
@@ -150,6 +186,7 @@ async function updateConfigXML() {
 
 async function main() {
   const l = [
+    { filepath: 'src/android/AdSizeType.java', f: buildAdSizeTypeJava },
     { filepath: 'src/android/Actions.java', f: buildActionsJava },
     { filepath: 'src/android/Events.java', f: buildEventsJava },
     { filepath: 'src/ios/AMSConstants.swift', f: buildConstantsSwift },

@@ -13,3 +13,23 @@ export interface IAdRequest {
   childDirectedTreatment?: boolean
   underAgeOfConsent?: boolean
 }
+
+export enum AdSizeType {
+  BANNER,
+  LARGE_BANNER,
+  MEDIUM_RECTANGLE,
+  FULL_BANNER,
+  LEADERBOARD,
+  SMART_BANNER,
+}
+
+type AdSize =
+  | AdSizeType
+  | {
+      width: number;
+      height: number;
+    }
+
+export interface IBannerRequest extends IAdRequest {
+  size?: AdSize
+}

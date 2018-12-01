@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import com.google.ads.mediation.admob.AdMobAdapter;
 import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -21,8 +22,22 @@ public class Action {
         return opts.optInt("id");
     }
 
+
     public AdBase getAd() {
         return AdBase.getAd(optId());
+    }
+
+    public AdSize getAdSize() {
+        final String name = "size";
+        if (!this.opts.has(name)) {
+            return AdSize.SMART_BANNER;
+        }
+        AdSize adSize = AdSizeType.getAdSize(this.opts.opt(name));
+        if (adSize != null) {
+            return adSize;
+        }
+        JSONObject adSizeObj = this.opts.optJSONObject(name);
+        return new AdSize(adSizeObj.optInt("width"), adSizeObj.optInt("height"));
     }
 
     public String getAdUnitID() {
