@@ -1,7 +1,15 @@
 class AMSBanner: AMSAdBase, GADBannerViewDelegate {
     var bannerView: GADBannerView!
+    var adSize: GADAdSize!
+
     var view: UIView {
         return self.plugin.viewController.view
+    }
+
+    init(id: Int, adUnitID: String, adSize: GADAdSize) {
+        super.init(id: id, adUnitID: adUnitID)
+
+        self.adSize = adSize
     }
 
     deinit {
