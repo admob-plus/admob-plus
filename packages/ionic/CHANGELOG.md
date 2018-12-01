@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.17.0](https://github.com/admob-plus/admob-plus/compare/ionic-admob@0.16.2...ionic-admob@0.17.0) (2018-12-01)
+
+
+### Features
+
+* **cordova-android:** add banner size option ([14f3367](https://github.com/admob-plus/admob-plus/commit/14f3367))
+
+
+
+
+
 ## [0.16.2](https://github.com/admob-plus/admob-plus/compare/ionic-admob@0.16.1...ionic-admob@0.16.2) (2018-11-28)
 
 **Note:** Version bump only for package ionic-admob

@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.18.0](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.17.3...cordova-admob-plus@0.18.0) (2018-12-01)
+
+
+### Features
+
+* **cordova-android:** add banner size option ([14f3367](https://github.com/admob-plus/admob-plus/commit/14f3367))
+* **cordova-android:** add testDevices option to IAdRequest ([abd5a0c](https://github.com/admob-plus/admob-plus/commit/abd5a0c))
+* **cordova-android:** emit error code with event ([9af895b](https://github.com/admob-plus/admob-plus/commit/9af895b))
+
+
+
+
+
 ## [0.17.3](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.17.2...cordova-admob-plus@0.17.3) (2018-11-28)
 
 

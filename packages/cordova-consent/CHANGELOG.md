@@ -3,6 +3,74 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.15.0 (2018-12-01)
+
+
+
+# 0.14.0 (2018-11-21)
+
+
+
+# 0.13.0 (2018-11-20)
+
+
+
+# 0.12.0 (2018-11-18)
+
+
+
+# 0.11.0 (2018-11-15)
+
+
+
+# 0.10.0 (2018-11-14)
+
+
+
+# 0.9.0 (2018-11-11)
+
+
+
+# 0.8.0 (2018-11-10)
+
+
+
+# 0.7.0 (2018-10-25)
+
+
+
+# 0.6.0 (2018-10-21)
+
+
+
+# 0.5.0 (2018-10-16)
+
+
+
+# 0.4.0 (2018-10-14)
+
+
+
+# 0.3.0 (2018-08-25)
+
+
+### Features
+
+* **cordova:** add browser platform support ([db2484f](https://github.com/admob-plus/admob-plus/commit/db2484f))
+
+
+
+# 0.2.0 (2018-08-22)
+
+
+### Features
+
+* **cordova-consent:** create plugin ([662d66f](https://github.com/admob-plus/admob-plus/commit/662d66f))
+
+
+
+
+
 # [0.14.0](https://github.com/admob-plus/admob-plus/compare/v0.13.0...v0.14.0) (2018-11-21)
 
 **Note:** Version bump only for package cordova-plugin-consent
