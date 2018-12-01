@@ -187,6 +187,9 @@ class AMSPlugin: CDVPlugin {
 
     func createGADRequest(_ opts: NSDictionary) -> GADRequest {
         let request = GADRequest()
+        if let testDevices = opts["testDevices"] as? [String] {
+            request.testDevices = testDevices
+        }
         if let childDirectedTreatment = opts["childDirectedTreatment"] as? Bool {
             request.tag(forChildDirectedTreatment: childDirectedTreatment)
         }
