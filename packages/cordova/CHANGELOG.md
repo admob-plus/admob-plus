@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.19.0](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.18.0...cordova-admob-plus@0.19.0) (2018-12-01)
+
+
+### Features
+
+* **cordova:** rename childDirectedTreatment to childDirected ([b3e9a08](https://github.com/admob-plus/admob-plus/commit/b3e9a08))
+* **cordova-ios:** set banner size ([14b6985](https://github.com/admob-plus/admob-plus/commit/14b6985))
+* **cordova-ios:** set testDevices ([813a146](https://github.com/admob-plus/admob-plus/commit/813a146))
+
+
+
+
+
 # [0.18.0](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.17.3...cordova-admob-plus@0.18.0) (2018-12-01)
 
 
