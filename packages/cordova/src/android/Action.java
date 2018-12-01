@@ -56,8 +56,8 @@ public class Action {
                 }
             }
         }
-        if (this.opts.has("childDirectedTreatment")) {
-            builder.tagForChildDirectedTreatment(opts.optBoolean("childDirectedTreatment"));
+        if (this.opts.has("childDirected")) {
+            builder.tagForChildDirectedTreatment(opts.optBoolean("childDirected"));
         }
         if (this.opts.has("underAgeOfConsent")) {
             extras.putBoolean("tag_for_under_age_of_consent", opts.optBoolean("underAgeOfConsent"));

@@ -191,8 +191,8 @@ class AMSPlugin: CDVPlugin {
         if let testDevices = opts["testDevices"] as? [String] {
             request.testDevices = testDevices
         }
-        if let childDirectedTreatment = opts["childDirectedTreatment"] as? Bool {
-            request.tag(forChildDirectedTreatment: childDirectedTreatment)
+        if let childDirected = opts["childDirected"] as? Bool {
+            request.tag(forChildDirectedTreatment: childDirected)
         }
         return request
     }
