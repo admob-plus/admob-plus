@@ -28,6 +28,8 @@ Load interstitial ad.
 
 Returns a `Promise` that resolves when ad request is loaded, rejects when ad request failed.
 
+See [`config`](./ad-request-options.md#reference).
+
 ### `admob.interstitial.show()`
 
 Displays loaded interstitial ad.

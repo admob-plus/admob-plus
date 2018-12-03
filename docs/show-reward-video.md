@@ -28,6 +28,8 @@ Load reward video ad.
 
 Returns a `Promise` that resolves when ad request is loaded, rejects when ad request failed.
 
+See [`config`](./ad-request-options.md#reference).
+
 ### `admob.rewardVideo.show()`
 
 Displays loaded reward video ad.

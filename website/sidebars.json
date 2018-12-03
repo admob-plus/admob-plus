@@ -12,6 +12,9 @@
       "ionic",
       "test-ads",
       "volume-control"
+    ],
+    "API Reference": [
+      "ad-request-options"
     ]
   }
 }
