@@ -37,6 +37,9 @@ public class Action {
             return adSize;
         }
         JSONObject adSizeObj = this.opts.optJSONObject(name);
+        if (adSizeObj == null) {
+            return AdSize.SMART_BANNER;
+        }
         return new AdSize(adSizeObj.optInt("width"), adSizeObj.optInt("height"));
     }
 
