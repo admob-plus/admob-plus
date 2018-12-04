@@ -82,7 +82,7 @@
     <plugin name="cordova-plugin-ionic-webview" spec="1.2.1" />
     <plugin name="cordova-plugin-ionic-keyboard" spec="2.1.2" />
     <plugin name="cordova-admob-plus" spec="../../packages/cordova">
-        <variable name="APP_ID_ANDROID" value="ca-app-pub-3940256099942544~334751171" />
+        <variable name="APP_ID_ANDROID" value="ca-app-pub-3940256099942544~3347511713" />
         <variable name="APP_ID_IOS" value="test" />
     </plugin>
     <plugin name="cordova-plugin-statusbar" spec="2.4.2" />
