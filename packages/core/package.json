@@ -9,7 +9,7 @@
     "prepare": "tsc"
   },
   "devDependencies": {
-    "typescript": "^3.2.1"
+    "typescript": "^3.2.2"
   },
   "author": "Ratson",
   "license": "MIT",

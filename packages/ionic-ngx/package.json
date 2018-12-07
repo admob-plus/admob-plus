@@ -17,12 +17,12 @@
     "@admob-plus/core": "^0.4.0"
   },
   "devDependencies": {
-    "@angular/core": "~7.1.0",
-    "@ionic-native/core": "^5.0.0-beta.21",
+    "@angular/core": "~7.1.2",
+    "@ionic-native/core": "^5.0.0-beta.22",
     "npm-run-all": "^4.1.5",
     "rxjs": "^6.3.3",
-    "tslint-ionic-rules": "0.0.20",
-    "typescript": "3.2.1"
+    "tslint-ionic-rules": "0.0.21",
+    "typescript": "3.2.2"
   },
   "author": "Ratson",
   "license": "MIT",

@@ -20,7 +20,7 @@
     "@commitlint/prompt-cli": "^7.2.1",
     "@types/jest": "^23.3.10",
     "cordova": "^8.1.2",
-    "cordova-testbed": "^0.2.0",
+    "cordova-testbed": "^0.3.0",
     "eslint": "^5.9.0",
     "eslint-config-concise": "^0.34.0",
     "eslint-config-concise-browser": "^0.34.0",
@@ -45,7 +45,7 @@
     "tslint": "^5.11.0",
     "tslint-config-concise": "^0.34.0",
     "tslint-eslint-rules": "^5.4.0",
-    "typescript": "^3.2.1"
+    "typescript": "^3.2.2"
   },
   "repository": "admob-plus/admob-plus",
   "commitlint": {
