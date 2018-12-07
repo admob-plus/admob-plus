@@ -13,6 +13,8 @@ npm install --save ionic-admob
 
 If your project depends on `@ionic-native/core@beta`, `@admob-plus/ionic` should be used instead of `ionic-admob`.
 
+> Ionic team and community maintain [a native plugin](https://ionicframework.com/docs/native/admob-plus/) too.
+> Due to different release cycle, it may get outdated and break sometime.
 
 ## Add Plugin to Your App's Module
 
