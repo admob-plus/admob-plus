@@ -76,6 +76,31 @@ public class RewardedVideoAd extends AdBase {
         super.destroy();
     }
 
+    @Override
+    String getLoadedEvent() {
+        return Events.REWARD_VIDEO_LOAD;
+    }
+
+    @Override
+    String getFailedToLoadEvent() {
+        return Events.REWARD_VIDEO_LOAD_FAIL;
+    }
+
+    @Override
+    String getOpenedEvent() {
+        return Events.REWARD_VIDEO_OPEN;
+    }
+
+    @Override
+    String getClosedEvent() {
+        return Events.REWARD_VIDEO_CLOSE;
+    }
+
+    @Override
+    String getLeftApplicationEvent() {
+        return Events.REWARD_VIDEO_EXIT_APP;
+    }
+
     private void createAndLoad(AdRequest adRequest) {
         clear();
 
@@ -83,12 +108,12 @@ public class RewardedVideoAd extends AdBase {
         rewardedVideoAd.setRewardedVideoAdListener(new RewardedVideoAdListener() {
             @Override
             public void onRewardedVideoAdLoaded() {
-                plugin.emit(Events.REWARD_VIDEO_LOAD);
+                plugin.emit(getLoadedEvent());
             }
 
             @Override
             public void onRewardedVideoAdOpened() {
-                plugin.emit(Events.REWARD_VIDEO_OPEN);
+                plugin.emit(getOpenedEvent());
             }
 
             @Override
@@ -98,7 +123,7 @@ public class RewardedVideoAd extends AdBase {
 
             @Override
             public void onRewardedVideoAdClosed() {
-                plugin.emit(Events.REWARD_VIDEO_CLOSE);
+                plugin.emit(getClosedEvent());
             }
 
             @Override
@@ -108,12 +133,12 @@ public class RewardedVideoAd extends AdBase {
 
             @Override
             public void onRewardedVideoAdLeftApplication() {
-                plugin.emit(Events.REWARD_VIDEO_EXIT_APP);
+                plugin.emit(getLeftApplicationEvent());
             }
 
             @Override
             public void onRewardedVideoAdFailedToLoad(int errorCode) {
-                plugin.emit(Events.REWARD_VIDEO_LOAD_FAIL, buildErrorPayload(errorCode));
+                plugin.emit(getFailedToLoadEvent(), buildErrorPayload(errorCode));
             }
 
             @Override

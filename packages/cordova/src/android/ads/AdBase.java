@@ -45,4 +45,10 @@ public abstract class AdBase {
     public void destroy() {
         ads.remove(id);
     }
+
+    abstract String getLoadedEvent();
+    abstract String getFailedToLoadEvent();
+    abstract String getOpenedEvent();
+    abstract String getClosedEvent();
+    abstract String getLeftApplicationEvent();
 }

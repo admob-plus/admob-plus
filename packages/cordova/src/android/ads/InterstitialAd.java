@@ -1,12 +1,9 @@
 package admob.plugin.ads;
 
-import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.PluginResult;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import admob.plugin.Action;
 import admob.plugin.Events;
@@ -60,38 +57,38 @@ public class InterstitialAd extends AdBase {
         super.destroy();
     }
 
+    @Override
+    String getLoadedEvent() {
+        return Events.INTERSTITIAL_LOAD;
+    }
+
+    @Override
+    String getFailedToLoadEvent() {
+        return Events.INTERSTITIAL_LOAD_FAIL;
+    }
+
+    @Override
+    String getOpenedEvent() {
+        return Events.INTERSTITIAL_OPEN;
+    }
+
+    @Override
+    String getClosedEvent() {
+        return Events.INTERSTITIAL_CLOSE;
+    }
+
+    @Override
+    String getLeftApplicationEvent() {
+        return Events.INTERSTITIAL_EXIT_APP;
+    }
+
     private void load(AdRequest adRequest, String adUnitID) {
         clear();
 
         interstitialAd = new com.google.android.gms.ads.InterstitialAd(plugin.cordova.getActivity());
         interstitialAd.setAdUnitId(adUnitID);
 
-        interstitialAd.setAdListener(new AdListener() {
-            @Override
-            public void onAdClosed() {
-                plugin.emit(Events.INTERSTITIAL_CLOSE);
-            }
-
-            @Override
-            public void onAdFailedToLoad(int errorCode) {
-                plugin.emit(Events.INTERSTITIAL_LOAD_FAIL, buildErrorPayload(errorCode));
-            }
-
-            @Override
-            public void onAdLeftApplication() {
-                plugin.emit(Events.INTERSTITIAL_EXIT_APP);
-            }
-
-            @Override
-            public void onAdLoaded() {
-                plugin.emit(Events.INTERSTITIAL_LOAD);
-            }
-
-            @Override
-            public void onAdOpened() {
-                plugin.emit(Events.INTERSTITIAL_OPEN);
-            }
-        });
+        interstitialAd.setAdListener(new AdListener(this));
 
         interstitialAd.loadAd(adRequest);
     }
