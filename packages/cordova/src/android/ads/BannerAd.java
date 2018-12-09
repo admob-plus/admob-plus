@@ -117,6 +117,16 @@ public class BannerAd extends AdBase {
         return Events.BANNER_EXIT_APP;
     }
 
+    @Override
+    String getImpressionEvent() {
+        return Events.BANNER_IMPRESSION;
+    }
+
+    @Override
+    String getClickedEvent() {
+        return Events.BANNER_CLICK;
+    }
+
     private void addBannerView(AdView adView) {
         View view = plugin.webView.getView();
         ViewGroup wvParentView = (ViewGroup) view.getParent();

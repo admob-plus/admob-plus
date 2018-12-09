@@ -82,6 +82,16 @@ public class InterstitialAd extends AdBase {
         return Events.INTERSTITIAL_EXIT_APP;
     }
 
+    @Override
+    String getImpressionEvent() {
+        return Events.INTERSTITIAL_IMPRESSION;
+    }
+
+    @Override
+    String getClickedEvent() {
+        return Events.INTERSTITIAL_CLICK;
+    }
+
     private void load(AdRequest adRequest, String adUnitID) {
         clear();
 
