@@ -51,4 +51,6 @@ public abstract class AdBase {
     abstract String getOpenedEvent();
     abstract String getClosedEvent();
     abstract String getLeftApplicationEvent();
+    abstract String getImpressionEvent();
+    abstract String getClickedEvent();
 }

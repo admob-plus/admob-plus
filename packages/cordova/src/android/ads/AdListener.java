@@ -3,7 +3,7 @@ package admob.plugin.ads;
 public class AdListener extends com.google.android.gms.ads.AdListener {
     private AdBase ad;
 
-    public AdListener(AdBase ad) {
+    AdListener(AdBase ad) {
         super();
 
         this.ad = ad;
@@ -32,5 +32,15 @@ public class AdListener extends com.google.android.gms.ads.AdListener {
     @Override
     public void onAdLeftApplication() {
         AdBase.plugin.emit(ad.getLeftApplicationEvent());
+    }
+
+    @Override
+    public void onAdImpression() {
+        AdBase.plugin.emit(ad.getImpressionEvent());
+    }
+
+    @Override
+    public void onAdClicked() {
+        AdBase.plugin.emit(ad.getClickedEvent());
     }
 }
