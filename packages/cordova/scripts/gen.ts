@@ -33,12 +33,16 @@ const Events: { [index: string]: string } = {
   banner_open: 'admob.banner.open',
   banner_close: 'admob.banner.close',
   banner_exit_app: 'admob.banner.exit_app',
+  banner_impression: 'admob.banner.impression',
+  banner_click: 'admob.banner.click',
   // interstitial
   interstitial_load: 'admob.interstitial.load',
   interstitial_load_fail: 'admob.interstitial.load_fail',
   interstitial_open: 'admob.interstitial.open',
   interstitial_close: 'admob.interstitial.close',
   interstitial_exit_app: 'admob.interstitial.exit_app',
+  interstitial_impression: 'admob.interstitial.impression',
+  interstitial_click: 'admob.interstitial.click',
   // reward_video
   reward_video_load: 'admob.reward_video.load',
   reward_video_load_fail: 'admob.reward_video.load_fail',
@@ -48,6 +52,8 @@ const Events: { [index: string]: string } = {
   reward_video_complete: 'admob.reward_video.complete',
   reward_video_reward: 'admob.reward_video.reward',
   reward_video_exit_app: 'admob.reward_video.exit_app',
+  reward_video_impression: 'admob.reward_video.impression',
+  reward_video_click: 'admob.reward_video.click',
 }
 /* tslint:enable:object-literal-sort-keys */
 

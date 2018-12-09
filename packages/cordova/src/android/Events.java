@@ -2,20 +2,26 @@
 package admob.plugin;
 
 public final class Events {
+    public static final String BANNER_CLICK = "admob.banner.click";
     public static final String BANNER_CLOSE = "admob.banner.close";
     public static final String BANNER_EXIT_APP = "admob.banner.exit_app";
+    public static final String BANNER_IMPRESSION = "admob.banner.impression";
     public static final String BANNER_LOAD = "admob.banner.load";
     public static final String BANNER_LOAD_FAIL = "admob.banner.load_fail";
     public static final String BANNER_OPEN = "admob.banner.open";
+    public static final String INTERSTITIAL_CLICK = "admob.interstitial.click";
     public static final String INTERSTITIAL_CLOSE = "admob.interstitial.close";
     public static final String INTERSTITIAL_EXIT_APP = "admob.interstitial.exit_app";
+    public static final String INTERSTITIAL_IMPRESSION = "admob.interstitial.impression";
     public static final String INTERSTITIAL_LOAD = "admob.interstitial.load";
     public static final String INTERSTITIAL_LOAD_FAIL = "admob.interstitial.load_fail";
     public static final String INTERSTITIAL_OPEN = "admob.interstitial.open";
     public static final String READY = "admob.ready";
+    public static final String REWARD_VIDEO_CLICK = "admob.reward_video.click";
     public static final String REWARD_VIDEO_CLOSE = "admob.reward_video.close";
     public static final String REWARD_VIDEO_COMPLETE = "admob.reward_video.complete";
     public static final String REWARD_VIDEO_EXIT_APP = "admob.reward_video.exit_app";
+    public static final String REWARD_VIDEO_IMPRESSION = "admob.reward_video.impression";
     public static final String REWARD_VIDEO_LOAD = "admob.reward_video.load";
     public static final String REWARD_VIDEO_LOAD_FAIL = "admob.reward_video.load_fail";
     public static final String REWARD_VIDEO_OPEN = "admob.reward_video.open";
