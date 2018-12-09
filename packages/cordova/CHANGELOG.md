@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.20.0](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.19.1...cordova-admob-plus@0.20.0) (2018-12-09)
+
+
+### Bug Fixes
+
+* **cordova-android:** add AdListener to source-file ([87a6b50](https://github.com/admob-plus/admob-plus/commit/87a6b50))
+
+
+### Features
+
+* **cordova:** add more event constants ([92bc3ba](https://github.com/admob-plus/admob-plus/commit/92bc3ba))
+* **cordova-android:** emit impression and clicked events ([e52991d](https://github.com/admob-plus/admob-plus/commit/e52991d))
+* **cordova-android:** set default PLAY_SERVICES_VERSION to 17.1.2 ([c404f36](https://github.com/admob-plus/admob-plus/commit/c404f36))
+
+
+
+
+
 ## [0.19.1](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.19.0...cordova-admob-plus@0.19.1) (2018-12-04)
 
 
