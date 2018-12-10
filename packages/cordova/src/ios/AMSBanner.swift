@@ -20,7 +20,7 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
         if bannerView != nil {
             bannerView.isHidden = false
         } else {
-            bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+            bannerView = GADBannerView(adSize: self.adSize)
             addBannerViewToView(bannerView)
             bannerView.rootViewController = plugin.viewController
         }
