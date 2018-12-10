@@ -7,7 +7,8 @@
   "scripts": {
     "prepare": "run-s prepare:*",
     "prepare:gen": "ts-node scripts/gen",
-    "prepare:build": "rollup -c"
+    "prepare:build": "rollup -c",
+    "prepare:clean": "del src/.DS_Store src/**/.DS_Store"
   },
   "devDependencies": {
     "@admob-plus/core": "^0.5.0",
@@ -16,6 +17,7 @@
     "@types/lodash": "^4.14.118",
     "@types/node": "^10.12.12",
     "cordova": "^8.1.2",
+    "del-cli": "^1.1.0",
     "execa": "^1.0.0",
     "fast-glob": "^2.2.4",
     "find-cache-dir": "^2.0.0",
