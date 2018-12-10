@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.21.0](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.20.1...cordova-admob-plus@0.21.0) (2018-12-10)
+
+
+### Features
+
+* **cordova-ios:** use smart banner size by default ([8bca981](https://github.com/admob-plus/admob-plus/commit/8bca981))
+
+
+
+
+
 ## [0.20.1](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.20.0...cordova-admob-plus@0.20.1) (2018-12-09)
 
 
