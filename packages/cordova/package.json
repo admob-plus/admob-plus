@@ -24,7 +24,7 @@
     "replace-in-file": "^3.4.2",
     "rollup": "^0.67.4",
     "rollup-plugin-commonjs": "^9.2.0",
-    "rollup-plugin-node-resolve": "^3.4.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
     "rollup-plugin-typescript2": "^0.18.0",
     "ts-node": "^7.0.1",
     "typescript": "^3.2.2"
