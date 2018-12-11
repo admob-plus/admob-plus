@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.22.1](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.22.0...cordova-admob-plus@0.22.1) (2018-12-11)
+
+
+### Bug Fixes
+
+* **cordova-android:** show banner at the top correctly ([68e3d47](https://github.com/admob-plus/admob-plus/commit/68e3d47))
+
+
+
+
+
 # [0.22.0](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.21.0...cordova-admob-plus@0.22.0) (2018-12-11)
 
 
