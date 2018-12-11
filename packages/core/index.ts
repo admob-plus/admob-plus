@@ -30,7 +30,9 @@ type AdSize =
       height: number;
     }
 
+type BannerPosition = 'bottom' | 'top'
+
 export interface IBannerRequest extends IAdRequest {
-  position?: 'bottom' | 'top'
+  position?: BannerPosition
   size?: AdSize
 }
