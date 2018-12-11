@@ -148,14 +148,17 @@ public class BannerAd extends AdBase {
             wvParentView.removeView(view);
             LinearLayout content = (LinearLayout) parentView;
             content.setOrientation(LinearLayout.VERTICAL);
-            content.setGravity(this.gravity);
             parentView.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, 0.0F));
             view.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, 1.0F));
             parentView.addView(view);
             rootView.addView(parentView);
         }
 
-        parentView.addView(adView);
+        if (gravity == Gravity.TOP) {
+            parentView.addView(adView, 0);
+        } else {
+            parentView.addView(adView);
+        }
         parentView.bringToFront();
         parentView.requestLayout();
         parentView.requestFocus();
