@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/core@0.5.0...@admob-plus/core@0.6.0) (2018-12-11)
+
+
+### Features
+
+* **cordova-android:** allow set banner position ([0091d7f](https://github.com/admob-plus/admob-plus/commit/0091d7f))
+
+
+
+
+
 # [0.5.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/core@0.4.0...@admob-plus/core@0.5.0) (2018-12-09)
 
 
