@@ -31,5 +31,6 @@ type AdSize =
     }
 
 export interface IBannerRequest extends IAdRequest {
+  position?: 'bottom' | 'top'
   size?: AdSize
 }

@@ -1,5 +1,6 @@
 package admob.plugin.ads;
 
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -18,10 +19,13 @@ public class BannerAd extends AdBase {
     private AdView adView;
     private ViewGroup parentView;
     private AdSize adSize;
+    private int gravity;
 
-    BannerAd(int id, String adUnitID, AdSize adSize) {
+    BannerAd(int id, String adUnitID, AdSize adSize, int gravity) {
         super(id, adUnitID);
+
         this.adSize = adSize;
+        this.gravity = gravity;
     }
 
     public static boolean executeShowAction(Action action, CallbackContext callbackContext) {
@@ -30,7 +34,12 @@ public class BannerAd extends AdBase {
             public void run() {
                 BannerAd bannerAd = (BannerAd) action.getAd();
                 if (bannerAd == null) {
-                    bannerAd = new BannerAd(action.optId(), action.getAdUnitID(), action.getAdSize());
+                    bannerAd = new BannerAd(
+                        action.optId(),
+                        action.getAdUnitID(),
+                        action.getAdSize(),
+                        "top".equals(action.optPosition()) ? Gravity.TOP : Gravity.BOTTOM
+                    );
                 }
                 bannerAd.show(action.buildAdRequest());
 
@@ -137,7 +146,9 @@ public class BannerAd extends AdBase {
         if (wvParentView != null && wvParentView != parentView) {
             ViewGroup rootView = (ViewGroup)(view.getParent());
             wvParentView.removeView(view);
-            ((LinearLayout) parentView).setOrientation(LinearLayout.VERTICAL);
+            LinearLayout content = (LinearLayout) parentView;
+            content.setOrientation(LinearLayout.VERTICAL);
+            content.setGravity(this.gravity);
             parentView.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, 0.0F));
             view.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, 1.0F));
             parentView.addView(view);

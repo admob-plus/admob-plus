@@ -22,6 +22,9 @@ public class Action {
         return opts.optInt("id");
     }
 
+    public String optPosition() {
+        return opts.optString("position");
+    }
 
     public AdBase getAd() {
         return AdBase.getAd(optId());
