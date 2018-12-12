@@ -1,15 +1,17 @@
 class AMSBanner: AMSAdBase, GADBannerViewDelegate {
     var bannerView: GADBannerView!
     var adSize: GADAdSize!
+    var position: String!
 
     var view: UIView {
         return self.plugin.viewController.view
     }
 
-    init(id: Int, adUnitID: String, adSize: GADAdSize) {
+    init(id: Int, adUnitID: String, adSize: GADAdSize, position: String) {
         super.init(id: id, adUnitID: adUnitID)
 
         self.adSize = adSize
+        self.position = position
     }
 
     deinit {
@@ -44,27 +46,24 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
         bannerView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(bannerView)
         if #available(iOS 11.0, *) {
-            positionBannerAtBottomOfSafeArea(bannerView)
+            positionBannerInSafeArea(bannerView)
         } else {
-            positionBannerAtBottomOfView(bannerView)
+            positionBanner(bannerView)
         }
         self.resizeWebView()
     }
 
     @available (iOS 11, *)
-    func positionBannerAtBottomOfSafeArea(_ bannerView: UIView) {
-        // Position the banner. Stick it to the bottom of the Safe Area.
-        // Centered horizontally.
+    func positionBannerInSafeArea(_ bannerView: UIView) {
         let guide: UILayoutGuide = view.safeAreaLayoutGuide
-
         NSLayoutConstraint.activate(
             [bannerView.centerXAnchor.constraint(equalTo: guide.centerXAnchor),
-             bannerView.bottomAnchor.constraint(equalTo: guide.bottomAnchor)]
+             bannerView.bottomAnchor.constraint(equalTo: position == "top" ? guide.topAnchor : guide.bottomAnchor,
+                                                constant: position == "top" ? self.plugin.webView.safeAreaInsets.top : 0)]
         )
     }
 
-    func positionBannerAtBottomOfView(_ bannerView: UIView) {
-        // Center the banner horizontally.
+    func positionBanner(_ bannerView: UIView) {
         view.addConstraint(NSLayoutConstraint(item: bannerView,
                                               attribute: .centerX,
                                               relatedBy: .equal,
@@ -72,19 +71,34 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
                                               attribute: .centerX,
                                               multiplier: 1,
                                               constant: 0))
-        // Lock the banner to the top of the bottom layout guide.
-        view.addConstraint(NSLayoutConstraint(item: bannerView,
-                                              attribute: .bottom,
-                                              relatedBy: .equal,
-                                              toItem: plugin.viewController.bottomLayoutGuide,
-                                              attribute: .top,
-                                              multiplier: 1,
-                                              constant: 0))
+        if position == "top" {
+            view.addConstraint(NSLayoutConstraint(item: bannerView,
+                                                  attribute: .top,
+                                                  relatedBy: .equal,
+                                                  toItem: plugin.viewController.topLayoutGuide,
+                                                  attribute: .top,
+                                                  multiplier: 1,
+                                                  constant: 0))
+        } else {
+            view.addConstraint(NSLayoutConstraint(item: bannerView,
+                                                  attribute: .bottom,
+                                                  relatedBy: .equal,
+                                                  toItem: plugin.viewController.bottomLayoutGuide,
+                                                  attribute: .top,
+                                                  multiplier: 1,
+                                                  constant: 0))
+        }
     }
 
     func resizeWebView() {
         var frame = view.frame
         if bannerView != nil {
+            if position == "top" {
+                frame.origin.y += bannerView.frame.height
+                if #available(iOS 11.0, *) {
+                    frame.origin.y += self.plugin.webView.safeAreaInsets.top
+                }
+            }
             frame.size.height -= bannerView.frame.height
             if #available(iOS 11.0, *) {
                 frame.size.height -= self.plugin.webView.safeAreaInsets.bottom
