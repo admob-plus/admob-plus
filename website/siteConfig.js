@@ -4,7 +4,7 @@ const users = require('./data/users')
 
 const siteConfig = {
   title: 'AdMob Plus',
-  tagline: 'Trustable AdMob Cordova Plugin',
+  tagline: 'Trustable AdMob Plugin for Cordova, Ionic',
   url: 'https://admob-plus.github.io',
   baseUrl: '/',
   enableUpdateTime: true,
