@@ -9,10 +9,12 @@
       "show-reward-video"
     ],
     "Guides": [
-      "ionic",
       "test-ads",
       "volume-control",
       "designed-for-families"
+    ],
+    "Ionic Guides": [
+      "ionic"
     ],
     "API Reference": [
       "ad-request-options"

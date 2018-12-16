@@ -1,7 +1,7 @@
 ---
 id: ionic
 title: Ionic
-sidebar_label: Ionic
+sidebar_label: Installation
 ---
 
 ## Installation
