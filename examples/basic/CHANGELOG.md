@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.16.2](http://github_ratson:admob-plus/admob-plus/compare/example.admob.basic@0.16.1...example.admob.basic@0.16.2) (2018-12-16)
+
+**Note:** Version bump only for package example.admob.basic
+
+
+
+
+
 ## [0.16.1](http://github_ratson:admob-plus/admob-plus/compare/example.admob.basic@0.16.0...example.admob.basic@0.16.1) (2018-12-11)
 
 **Note:** Version bump only for package example.admob.basic

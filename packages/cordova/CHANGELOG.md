@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.23.0](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.22.1...cordova-admob-plus@0.23.0) (2018-12-16)
+
+
+### Features
+
+* **cordova-ios:** allow set banner position ([b10417a](https://github.com/admob-plus/admob-plus/commit/b10417a))
+* **cordova-ios:** update Google-Mobile-Ads-SDK to 7.37 ([0424ac8](https://github.com/admob-plus/admob-plus/commit/0424ac8))
+
+
+
+
+
 ## [0.22.1](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.22.0...cordova-admob-plus@0.22.1) (2018-12-11)
 
 
