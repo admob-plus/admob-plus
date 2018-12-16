@@ -22,13 +22,38 @@ document.addEventListener('deviceready', () => {
 
 ## Methods
 
-### `admob.banner.show(config)`
+### `admob.banner.show(config: IBannerRequest)`
 
 Displays banner ad.
 
 Returns a `Promise` that resolves as soon as banner is start loading, rejects when there is a problem calling native code.
 
-See [`config`](./ad-request-options.md#reference).
+```ts
+interface IBannerRequest extends IAdRequest {
+  position?: BannerPosition
+  size?: AdSize
+}
+
+type BannerPosition = 'bottom' | 'top'
+
+type AdSize =
+  | AdSizeType
+  | {
+      width: number;
+      height: number;
+    }
+
+enum AdSizeType {
+  BANNER,
+  LARGE_BANNER,
+  MEDIUM_RECTANGLE,
+  FULL_BANNER,
+  LEADERBOARD,
+  SMART_BANNER,
+}
+```
+
+See also [`IAdRequest`](./ad-request-options.md#iadrequest).
 
 > Note: The current implementation is minimum, the return value of this API will likely be changed.
 
