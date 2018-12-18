@@ -2,14 +2,14 @@ import { Injectable } from '@angular/core'
 import { cordova, IonicNativePlugin } from '@ionic-native/core'
 import { fromEvent, Observable } from 'rxjs'
 
-import { IAdRequest, IBannerRequest } from '@admob-plus/core'
+import { AdUnitIDOption, IAdRequest, IBannerRequest } from '@admob-plus/core'
 
 export class Banner extends IonicNativePlugin {
   public static plugin = 'cordova-admob-plus'
   public static pluginName = 'AdMob'
   public static pluginRef = 'admob.banner'
 
-  public hide(): Promise<any> {
+  public hide(id: AdUnitIDOption): Promise<any> {
     return cordova(this, 'hide', { otherPromise: true }, arguments)
   }
 
