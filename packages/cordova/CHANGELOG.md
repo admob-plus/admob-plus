@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.24.1](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.24.0...cordova-admob-plus@0.24.1) (2018-12-18)
+
+
+### Bug Fixes
+
+* **cordova:** use int id to hide banner ([b372b51](https://github.com/admob-plus/admob-plus/commit/b372b51))
+
+
+
+
+
 # [0.24.0](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.23.0...cordova-admob-plus@0.24.0) (2018-12-18)
 
 
