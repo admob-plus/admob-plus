@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.24.0](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.23.0...cordova-admob-plus@0.24.0) (2018-12-18)
+
+
+### Bug Fixes
+
+* **cordova:** set default banner position to bottom ([097b8e4](https://github.com/admob-plus/admob-plus/commit/097b8e4))
+
+
+### Features
+
+* **cordova:** allow multiple banners ([74f9ec5](https://github.com/admob-plus/admob-plus/commit/74f9ec5))
+
+
+
+
+
 # [0.23.0](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.22.1...cordova-admob-plus@0.23.0) (2018-12-16)
 
 
