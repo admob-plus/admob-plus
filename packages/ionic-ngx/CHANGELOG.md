@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.19.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/ionic@0.18.2...@admob-plus/ionic@0.19.0) (2018-12-18)
+
+
+### Features
+
+* **ionic:** require id to hide banner ([37d280c](https://github.com/admob-plus/admob-plus/commit/37d280c))
+
+
+
+
+
 ## [0.18.2](https://github.com/admob-plus/admob-plus/compare/@admob-plus/ionic@0.18.1...@admob-plus/ionic@0.18.2) (2018-12-16)
 
 **Note:** Version bump only for package @admob-plus/ionic
