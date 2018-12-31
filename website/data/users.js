@@ -8,4 +8,11 @@ module.exports = [
     infoLink:
       'https://github.com/admob-plus/admob-plus/tree/master/examples/basic',
   },
+  {
+    caption: 'Eternity Pilot',
+    image:
+      'http://b3l7.com/images/eternityPilot.png',
+    infoLink:
+      'http://eternitypilot.com',
+  },
 ]
