@@ -30,7 +30,7 @@
     "@types/node": "^10",
     "@types/read-pkg-up": "^3.0.1",
     "chai": "^4",
-    "globby": "^8",
+    "globby": "^9",
     "mocha": "^5",
     "nyc": "^13",
     "ts-node": "^7",
