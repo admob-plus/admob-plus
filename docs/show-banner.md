@@ -57,9 +57,9 @@ See also [`IAdRequest`](./ad-request-options.md#iadrequest).
 
 > Note: The current implementation is minimum, the return value of this API will likely be changed.
 
-### `admob.banner.hide()`
+### `admob.banner.hide(id: AdUnitIDOption)`
 
-Hides banner ad.
+Hides banner ad of [`id`](./ad-request-options.md#adunitidoption).
 
 Returns a `Promise` that resolves as soon as banner is hidden, rejects when there is a problem calling native code.
 
