@@ -44,7 +44,7 @@ Child-directed setting.
 
 Optional `boolean`.
 
-Check out the official [Andorid](https://developers.google.com/admob/android/targeting#child-directed_setting) and [iOS](https://developers.google.com/admob/ios/targeting#child-directed_setting) doc for more info.
+Check out the official [Android](https://developers.google.com/admob/android/targeting#child-directed_setting) and [iOS](https://developers.google.com/admob/ios/targeting#child-directed_setting) doc for more info.
 
 #### `testDevices`
 
