@@ -14,7 +14,7 @@ export class HomePage {
   }
 
   banner__hide() {
-    this.admob.banner.hide();
+    this.admob.banner.hide("test");
   }
 
   interstitial__load() {
