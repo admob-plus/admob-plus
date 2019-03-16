@@ -42,7 +42,6 @@ public class BannerAd extends AdBase {
                     );
                 }
                 bannerAd.show(action.buildAdRequest());
-
                 PluginResult result = new PluginResult(PluginResult.Status.OK, "");
                 callbackContext.sendPluginResult(result);
             }
@@ -79,6 +78,16 @@ public class BannerAd extends AdBase {
         } else if (adView.getVisibility() == View.GONE) {
             adView.resume();
             adView.setVisibility(View.VISIBLE);
+        } else {
+            View view = plugin.webView.getView();
+            ViewGroup wvParentView = (ViewGroup) view.getParent();
+            if (parentView != wvParentView) {
+                parentView.removeAllViews();
+                if (parentView.getParent() != null) {
+                    ((ViewGroup)parentView.getParent()).removeView(parentView);
+                }
+                addBannerView(adView);
+            }
         }
 
         adView.loadAd(adRequest);
@@ -144,14 +153,13 @@ public class BannerAd extends AdBase {
         }
 
         if (wvParentView != null && wvParentView != parentView) {
-            ViewGroup rootView = (ViewGroup)(view.getParent());
             wvParentView.removeView(view);
             LinearLayout content = (LinearLayout) parentView;
             content.setOrientation(LinearLayout.VERTICAL);
             parentView.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, 0.0F));
             view.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, 1.0F));
             parentView.addView(view);
-            rootView.addView(parentView);
+            wvParentView.addView(parentView);
         }
 
         if (gravity == Gravity.TOP) {
