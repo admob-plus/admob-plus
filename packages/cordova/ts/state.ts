@@ -6,7 +6,7 @@ class AdMobState {
   public platform: string
 
   public nextId: AdId = 100
-  public adUnits: {string?: AdId} = {}
+  public adUnits: { [key: string]: AdId } = {}
 
   constructor() {
     this.platform = typeof cordova !== 'undefined' ? cordova.platformId : ''
