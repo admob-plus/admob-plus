@@ -101,6 +101,20 @@ class AMSPlugin: CDVPlugin {
         self.commandDelegate!.send(result, callbackId: command.callbackId)
     }
 
+    @objc(interstitial_is_loaded:)
+    func interstitial_is_loaded(command: CDVInvokedUrlCommand) {
+        guard let opts = command.argument(at: 0) as? NSDictionary,
+            let id = opts.value(forKey: "id") as? Int,
+            let interstitial = AMSAdBase.ads[id] as? AMSInterstitial
+            else {
+                let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: false)
+                self.commandDelegate!.send(result, callbackId: command.callbackId)
+                return
+        }
+        let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: interstitial.isLoaded())
+        self.commandDelegate!.send(result, callbackId: command.callbackId)
+    }
+
     @objc(interstitial_load:)
     func interstitial_load(command: CDVInvokedUrlCommand) {
         guard let opts = command.argument(at: 0) as? NSDictionary,

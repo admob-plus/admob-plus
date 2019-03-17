@@ -57,6 +57,8 @@ public class AdMob extends CordovaPlugin {
             return BannerAd.executeHideAction(action, callbackContext);
         } else if (Actions.BANNER_SHOW.equals(actionKey)) {
             return BannerAd.executeShowAction(action, callbackContext);
+        } else if (Actions.INTERSTITIAL_IS_LOADED.equals(actionKey)) {
+            return InterstitialAd.executeIsLoadedAction(action, callbackContext);
         } else if (Actions.INTERSTITIAL_LOAD.equals(actionKey)) {
             return InterstitialAd.executeLoadAction(action, callbackContext);
         } else if (Actions.INTERSTITIAL_SHOW.equals(actionKey)) {

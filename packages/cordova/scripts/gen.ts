@@ -1,8 +1,7 @@
-import fs from 'fs'
-import path from 'path'
-
 import glob from 'fast-glob'
+import fs from 'fs'
 import _ from 'lodash'
+import path from 'path'
 import replace from 'replace-in-file'
 
 const warnMessage =
@@ -17,6 +16,7 @@ const Actions: { [index: string]: string } = {
   banner_show: 'banner_show',
   banner_hide: 'banner_hide',
   // interstitial
+  interstitial_is_loaded: 'interstitial_is_loaded',
   interstitial_load: 'interstitial_load',
   interstitial_show: 'interstitial_show',
   // reward_video
@@ -109,10 +109,10 @@ public enum AdSizeType {
 
     public static AdSize getAdSize(Object adSize) {
 ${AdSizeTypes.map(
-    s => `      if (AdSizeType.${s}.equals(adSize)) {
+  s => `      if (AdSizeType.${s}.equals(adSize)) {
           return AdSize.${s};
       }`,
-  ).join('\n')}
+).join('\n')}
       return null;
     }
 }

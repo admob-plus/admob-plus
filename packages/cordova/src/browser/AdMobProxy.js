@@ -5,6 +5,7 @@ const AdMob = {
   banner_show() {},
   interstitial_load() {},
   interstitial_show() {},
+  interstitial_is_loaded() {},
   ready() {},
   reward_video_load() {},
   reward_video_show() {},

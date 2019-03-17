@@ -3,6 +3,7 @@ export const enum NativeActions {
   Service = 'AdMob',
   banner_hide = 'banner_hide',
   banner_show = 'banner_show',
+  interstitial_is_loaded = 'interstitial_is_loaded',
   interstitial_load = 'interstitial_load',
   interstitial_show = 'interstitial_show',
   ready = 'ready',
