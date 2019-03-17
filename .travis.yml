@@ -20,7 +20,7 @@ jobs:
   - stage: first
     env: JOB=lint
     language: node_js
-    node_js: 10
+    node_js: 11
     install:
       - travis_retry yarn
       - travis_retry yarn global add @commitlint/travis-cli
@@ -38,7 +38,7 @@ jobs:
     env: JOB=deploy-docs
     if: branch = master AND type != pull_request
     language: node_js
-    node_js: 10
+    node_js: 11
     after_success:
       - git config --global user.name "${GH_NAME}"
       - git config --global user.email "${GH_EMAIL}"
