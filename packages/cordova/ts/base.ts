@@ -1,6 +1,5 @@
-import { exec } from 'cordova'
-
 import { AdUnitIDOption, Events, NativeActions } from '@admob-plus/core'
+import { exec } from 'cordova'
 
 import AdMobState from './state'
 
@@ -59,8 +58,8 @@ export function waitEvent(
 
 export class AdBase {
   protected state: AdMobState
-  protected testIdForAndroid
-  protected testIdForIOS
+  protected testIdForAndroid!: string
+  protected testIdForIOS!: string
 
   constructor(state: AdMobState) {
     this.state = state
@@ -87,6 +86,12 @@ export class AdBase {
     if (typeof adUnitID === 'string') {
       return adUnitID
     }
-    return adUnitID[this.state.platform]
+    switch (this.state.platform) {
+      case Platforms.android:
+      case Platforms.ios:
+        return adUnitID[this.state.platform]
+      default:
+        return TestIds.dummy
+    }
   }
 }
