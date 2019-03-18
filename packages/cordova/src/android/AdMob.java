@@ -46,8 +46,8 @@ public class AdMob extends CordovaPlugin {
         Action action = new Action(args);
         if (Actions.READY.equals(actionKey)) {
             readyCallbackContext = callbackContext;
-            waitingForReadyCallbackContextResults.forEach((item) -> {
-              readyCallbackContext(item);
+            waitingForReadyCallbackContextResults.forEach((result) -> {
+              readyCallbackContext.sendPluginResult(result);
             });
             waitingForReadyCallbackContextResults = null;
             JSONObject data = new JSONObject();
