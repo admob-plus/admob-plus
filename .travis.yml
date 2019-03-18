@@ -89,13 +89,14 @@ before_install:
   - export PATH=$HOME/.yarn/bin:$PATH
   - if [[ "$PLATFORM" =~ android ]]; then android list sdk --extended --no-ui --all; fi
   - if [[ "$PLATFORM" =~ android ]]; then android list targets; fi
-  - if [[ "$PLATFORM" =~ android ]]; then yes | sdkmanager --licenses; fi
+  - if [[ "$PLATFORM" =~ android ]]; then yes | sdkmanager --update &>/dev/null && yes | sdkmanager --licenses &>/dev/null || true; fi
+  - if [[ "$PLATFORM" =~ android ]]; then sdkmanager --version; fi
   - if [[ "$PLATFORM" =~ ios ]]; then pod --version; fi
 
 install:
   - travis_retry yarn
   - if [[ "$PLATFORM" =~ android ]]; then echo y | android update sdk -u --filter android-22,android-23,android-24,android-25,android-26,android-27,android-28; fi
-  - if [[ "$PLATFORM" =~ android ]]; then echo no | android create avd --force -n test -t android-$ANDROID_API_LEVEL --abi $ANDROID_ABI; fi
+  - if [[ "$PLATFORM" =~ android ]]; then echo no | android create avd --force -n test -k "system-images;android-$ANDROID_API_LEVEL;default;$ANDROID_ABI" --abi $ANDROID_ABI; fi
   - if [[ "$PLATFORM" =~ ios ]]; then pod repo update; fi
   - if [[ "$PLATFORM" =~ ios ]]; then npm install -g ios-deploy; fi
   # https://github.com/apache/cordova-ios/issues/523
