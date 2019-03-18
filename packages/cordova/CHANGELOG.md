@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.25.0](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.24.1...cordova-admob-plus@0.25.0) (2019-03-18)
+
+
+### Bug Fixes
+
+* **android:** add waiting for ready callback context results ([#81](https://github.com/admob-plus/admob-plus/issues/81)) ([ae90b20](https://github.com/admob-plus/admob-plus/commit/ae90b20))
+* **cordova:** fix adUnitID type ([a51cc0a](https://github.com/admob-plus/admob-plus/commit/a51cc0a))
+* **cordova:** fix banner display after resume, close [#72](https://github.com/admob-plus/admob-plus/issues/72) ([344c037](https://github.com/admob-plus/admob-plus/commit/344c037))
+* **cordova:** fix test ID type ([f1aa7bc](https://github.com/admob-plus/admob-plus/commit/f1aa7bc))
+
+
+### Features
+
+* **cordova:** add interstitial.isLoaded method ([f52a624](https://github.com/admob-plus/admob-plus/commit/f52a624))
+* **cordova:** update Google-Mobile-Ads-SDK ([72350ba](https://github.com/admob-plus/admob-plus/commit/72350ba))
+* **cordova:** update PLAY_SERVICES_VERSION ([5ff6bbf](https://github.com/admob-plus/admob-plus/commit/5ff6bbf))
+
+
+
+
+
 ## [0.24.1](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.24.0...cordova-admob-plus@0.24.1) (2018-12-18)
 
 
