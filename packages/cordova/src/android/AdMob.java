@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
 import java.math.BigDecimal;
+import java.util.ArrayList;
+
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.CordovaPlugin;
@@ -29,6 +31,8 @@ public class AdMob extends CordovaPlugin {
 
     private static final String TEST_APPLICATION_ID = "ca-app-pub-3940256099942544~3347511713";
 
+    private ArrayList<PluginResult> waitingForReadyCallbackContextResults = new ArrayList<PluginResult>();
+
     @Override
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
@@ -42,7 +46,10 @@ public class AdMob extends CordovaPlugin {
         Action action = new Action(args);
         if (Actions.READY.equals(actionKey)) {
             readyCallbackContext = callbackContext;
-
+            waitingForReadyCallbackContextResults.forEach((result) -> {
+              readyCallbackContext.sendPluginResult(result);
+            });
+            waitingForReadyCallbackContextResults = null;
             JSONObject data = new JSONObject();
             try {
                 data.put("platform", "android");
@@ -108,7 +115,11 @@ public class AdMob extends CordovaPlugin {
 
         PluginResult result = new PluginResult(PluginResult.Status.OK, event);
         result.setKeepCallback(true);
-        readyCallbackContext.sendPluginResult(result);
+        if (readyCallbackContext == null) {
+          waitingForReadyCallbackContextResults.add(result);
+        } else {
+          readyCallbackContext.sendPluginResult(result);
+        }
     }
 
     private String getApplicationID() {
