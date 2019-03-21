@@ -23,6 +23,15 @@ The problem is probably due to using an outdated version of Cordova, updating to
 For more details, read [PR #37](https://github.com/admob-plus/admob-plus/pull/37).
 
 
+## Why Google report shows less impressions than the number of Ad request calls?
+
+First of all, make sure your Ad request and display code are correct.
+
+The Ad server may not have ads to serve for every request, which returns `NO_FILL` response.
+
+It is receommended to track the impressions via event API instead of just the API calls, as it is not necessary result in showing Ads.
+
+
 ## How this project relates to `cordova-plugin-admob-free`?
 
 `admob-plus` is the successor of [cordova-plugin-admob-free](https://github.com/ratson/cordova-plugin-admob-free), which provides a cleaner API and build with modern tools.
