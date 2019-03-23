@@ -1,6 +1,6 @@
 {
   "name": "ionic-angular-example",
-  "version": "0.16.6",
+  "version": "0.16.7",
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",
@@ -23,7 +23,7 @@
     "@ionic-native/splash-screen": "~4.20.0",
     "@ionic-native/status-bar": "~4.20.0",
     "@ionic/storage": "~2.2.0",
-    "cordova-admob-plus": "^0.25.0",
+    "cordova-admob-plus": "^0.25.1",
     "cordova-android": "8.0.0",
     "cordova-browser": "6.0.0",
     "cordova-ios": "5.0.0",

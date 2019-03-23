@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.25.1](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.25.0...cordova-admob-plus@0.25.1) (2019-03-23)
+
+
+### Bug Fixes
+
+* **cordova-ios:** set GADApplicationIdentifier, close [#83](https://github.com/admob-plus/admob-plus/issues/83) ([05520e1](https://github.com/admob-plus/admob-plus/commit/05520e1))
+
+
+
+
+
 # [0.25.0](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.24.1...cordova-admob-plus@0.25.0) (2019-03-18)
 
 
