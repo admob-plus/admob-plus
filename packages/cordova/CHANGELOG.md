@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.27.0](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.25.1...cordova-admob-plus@0.27.0) (2019-04-11)
+
+
+### Bug Fixes
+
+* **cordova-android:** ensuse ready emit only once ([f4aae11](https://github.com/admob-plus/admob-plus/commit/f4aae11))
+
+
+### Features
+
+* **cordova-ios:** update cordova-plugin-add-swift-support ([90fa3d0](https://github.com/admob-plus/admob-plus/commit/90fa3d0))
+* **cordova-ios:** update cordova-plugin-add-swift-support to v2.0.2 ([9ab407f](https://github.com/admob-plus/admob-plus/commit/9ab407f))
+
+
+
+
+
 # [0.26.0](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.25.1...cordova-admob-plus@0.26.0) (2019-04-11)
 
 
