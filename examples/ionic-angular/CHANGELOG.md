@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.17.0](http://github_ratson:admob-plus/admob-plus/compare/ionic-angular-example@0.16.7...ionic-angular-example@0.17.0) (2019-04-11)
+
+
+### Features
+
+* **cordova-ios:** update cordova-plugin-add-swift-support to v2.0.2 ([9ab407f](http://github_ratson:admob-plus/admob-plus/commits/9ab407f))
+
+
+
+
+
 ## [0.16.7](http://github_ratson:admob-plus/admob-plus/compare/ionic-angular-example@0.16.6...ionic-angular-example@0.16.7) (2019-03-23)
 
 **Note:** Version bump only for package ionic-angular-example
