@@ -36,4 +36,9 @@ module.exports = [
     image: 'https://lh3.googleusercontent.com/lqwyOWVJjsp65-5Tl3ZhVxggcJcZyg1NauxbgKyzam5hfSzHizLUpNZQ-aMdJj0flg=s180-rw',
     infoLink: 'https://play.google.com/store/apps/details?id=fr.pirateduck.app',
   },
+  {
+    caption: 'Argendolar Pro- Cotizacion del Dolar en Argentina',
+    image: 'http://latirus.com/img/apps/argendolar.png',
+    infoLink: 'https://play.google.com/store/apps/details?id=com.latirus.argendolarpro',
+  }
 ]
