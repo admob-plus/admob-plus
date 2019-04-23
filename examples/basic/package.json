@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "admob-plus": "^0.15.1",
-    "cordova": "^8.1.2",
+    "cordova": "^9.0.0",
     "del-cli": "^1.1.0",
     "ios-sim": "^8.0.1",
     "link-dir": "^2.0.1",
