@@ -1,5 +1,5 @@
-import { WebPlugin } from '@capacitor/core'
-import { AdmobPlusPlugin } from './definitions'
+import { registerWebPlugin, WebPlugin } from '@capacitor/core'
+import { AdmobPlusPlugin, LoadAdOptions } from './definitions'
 
 export class AdmobPlusWeb extends WebPlugin implements AdmobPlusPlugin {
   constructor() {
@@ -7,11 +7,22 @@ export class AdmobPlusWeb extends WebPlugin implements AdmobPlusPlugin {
       name: 'AdmobPlus',
       platforms: ['web'],
     })
+    registerWebPlugin(this)
   }
 
   public async echo(options: { value: string }): Promise<{ value: string }> {
     console.log('ECHO', options)
     return options
+  }
+
+  public interstitial_load(options: LoadAdOptions): Promise<void> {
+    console.log('interstitial:load', options)
+    return Promise.resolve()
+  }
+
+  public interstitial_show(options: { id: number }): Promise<void> {
+    console.log('interstitial:show', options)
+    return Promise.resolve()
   }
 }
 
