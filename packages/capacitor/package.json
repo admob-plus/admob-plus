@@ -1,14 +1,14 @@
 {
   "name": "@admob-plus/capacitor",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "Capacitor AdMob Plugin",
   "main": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
   "scripts": {
-    "build": "npm run clean && tsc",
+    "build": "run-s clean && tsc",
     "clean": "rm -rf ./dist",
     "watch": "tsc --watch",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "run-s build"
   },
   "author": "Ratson",
   "license": "MIT",
@@ -16,6 +16,7 @@
     "@capacitor/core": "latest"
   },
   "devDependencies": {
+    "npm-run-all": "^4.1.5",
     "typescript": "^3.4.5"
   },
   "files": [
