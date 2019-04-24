@@ -26,10 +26,15 @@ public class AdmobPlus extends Plugin {
     }
 
     @PluginMethod()
-    public void interstitial_load(PluginCall call) {
-        Interstitial interstitial = Ad.createInterstitial(call.getInt("id"), this);
-        AdRequest.Builder builder = createAdRequestBuilder(call);
-        interstitial.load(call.getString("adUnitId"), builder.build());
+    public void interstitial_load(final PluginCall call) {
+        final Interstitial interstitial = Ad.createInterstitial(call.getInt("id"), this);
+        final AdRequest.Builder builder = createAdRequestBuilder(call);
+        bridge.executeOnMainThread(new Runnable() {
+            @Override
+            public void run() {
+                interstitial.load(call.getString("adUnitId"), builder.build());
+            }
+        });
     }
 
     @PluginMethod()
@@ -38,8 +43,13 @@ public class AdmobPlus extends Plugin {
         if (ad == null) {
             return;
         }
-        Interstitial interstitial = (Interstitial) ad;
-        interstitial.show();
+        final Interstitial interstitial = (Interstitial) ad;
+        bridge.executeOnMainThread(new Runnable() {
+            @Override
+            public void run() {
+                interstitial.show();
+            }
+        });
     }
 
     private AdRequest.Builder createAdRequestBuilder(PluginCall call) {

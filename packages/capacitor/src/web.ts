@@ -1,4 +1,4 @@
-import { registerWebPlugin, WebPlugin } from '@capacitor/core'
+import { WebPlugin } from '@capacitor/core'
 import { AdmobPlusPlugin, LoadAdOptions } from './definitions'
 
 export class AdmobPlusWeb extends WebPlugin implements AdmobPlusPlugin {
@@ -7,7 +7,6 @@ export class AdmobPlusWeb extends WebPlugin implements AdmobPlusPlugin {
       name: 'AdmobPlus',
       platforms: ['web'],
     })
-    registerWebPlugin(this)
   }
 
   public async echo(options: { value: string }): Promise<{ value: string }> {
