@@ -7,7 +7,7 @@ import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 
 @NativePlugin()
-public class AdmobPlusPlugin extends Plugin {
+public class AdmobPlus extends Plugin {
 
     @PluginMethod()
     public void echo(PluginCall call) {

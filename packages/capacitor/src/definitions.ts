@@ -1,9 +1,9 @@
 declare global {
   interface PluginRegistry {
-    AdmobPlusPlugin?: AdmobPlusPluginPlugin
+    AdmobPlus?: AdmobPlusPlugin
   }
 }
 
-export interface AdmobPlusPluginPlugin {
+export interface AdmobPlusPlugin {
   echo(options: { value: string }): Promise<{ value: string }>
 }

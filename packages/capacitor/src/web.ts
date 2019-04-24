@@ -1,11 +1,10 @@
 import { WebPlugin } from '@capacitor/core'
-import { AdmobPlusPluginPlugin } from './definitions'
+import { AdmobPlusPlugin } from './definitions'
 
-export class AdmobPlusPluginWeb extends WebPlugin
-  implements AdmobPlusPluginPlugin {
+export class AdmobPlusWeb extends WebPlugin implements AdmobPlusPlugin {
   constructor() {
     super({
-      name: 'AdmobPlusPlugin',
+      name: 'AdmobPlus',
       platforms: ['web'],
     })
   }
@@ -16,6 +15,6 @@ export class AdmobPlusPluginWeb extends WebPlugin
   }
 }
 
-const AdmobPlusPlugin = new AdmobPlusPluginWeb()
+const AdmobPlus = new AdmobPlusWeb()
 
-export { AdmobPlusPlugin }
+export { AdmobPlus }

@@ -1,6 +1,6 @@
 {
-  "name": "admob-plus-capacitor",
-  "version": "0.0.0",
+  "name": "@admob-plus/capacitor",
+  "version": "0.0.1",
   "description": "Capacitor AdMob Plugin",
   "main": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -16,7 +16,7 @@
     "@capacitor/core": "latest"
   },
   "devDependencies": {
-    "typescript": "^3.4.4"
+    "typescript": "^3.4.5"
   },
   "files": [
     "dist/",
@@ -39,5 +39,8 @@
     }
   },
   "repository": "admob-plus/admob-plus",
-  "homepage": "https://admob-plus.github.io"
+  "homepage": "https://admob-plus.github.io",
+  "publishConfig": {
+    "access": "public"
+  }
 }
