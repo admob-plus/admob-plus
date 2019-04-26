@@ -20,6 +20,11 @@ export default {
     }),
     typescript({
       cacheRoot: findCacheDir({ name: 'rts2' }),
+      tsconfigDefaults: {
+        compilerOptions: {
+          module: 'es2015',
+        },
+      },
     }),
     commonjs(),
   ],
