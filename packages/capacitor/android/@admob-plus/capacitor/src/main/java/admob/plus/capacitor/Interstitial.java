@@ -11,8 +11,19 @@ public class Interstitial extends Ad {
         super(id, plugin);
     }
 
+    @Override
     String getAdType() {
         return "interstitial";
+    }
+
+    @Override
+    void remove() {
+        if (interstitial != null) {
+            interstitial.setAdListener(null);
+            interstitial = null;
+        }
+
+        super.remove();
     }
 
     void load(String adUnitId, AdRequest adRequest) {
