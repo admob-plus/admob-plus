@@ -11,6 +11,10 @@ public class Interstitial extends Ad {
         super(id, plugin);
     }
 
+    String getAdType() {
+        return "interstitial";
+    }
+
     void load(String adUnitId, AdRequest adRequest) {
         interstitial = new InterstitialAd(plugin.getContext());
         interstitial.setAdUnitId(adUnitId);

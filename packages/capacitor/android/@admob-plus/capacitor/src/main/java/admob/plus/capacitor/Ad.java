@@ -25,8 +25,16 @@ public class Ad {
         return (ad != null) ? (Interstitial) ad : new Interstitial(id, plugin);
     }
 
+    String getAdType() {
+        return null;
+    }
+
     void remove() {
         ads.remove(id);
+    }
+
+    void emitEvent(String eventName) {
+        this.plugin.getBridge().triggerDocumentJSEvent(String.format("admob.%s.%s", this.getAdType(), eventName));
     }
 
     static class Listener extends AdListener {
@@ -40,7 +48,7 @@ public class Ad {
 
         @Override
         public void onAdLoaded() {
-            this.ad.plugin.getBridge().triggerDocumentJSEvent("admob.interstitial.load");
+            this.ad.emitEvent("load");
         }
     }
 }
