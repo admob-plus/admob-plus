@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.4](https://github.com/admob-plus/admob-plus/compare/@admob-plus/core@0.7.3...@admob-plus/core@0.7.4) (2019-04-28)
+
+**Note:** Version bump only for package @admob-plus/core
+
+
+
+
+
 ## [0.7.3](https://github.com/admob-plus/admob-plus/compare/@admob-plus/core@0.7.2...@admob-plus/core@0.7.3) (2019-04-26)
 
 **Note:** Version bump only for package @admob-plus/core
