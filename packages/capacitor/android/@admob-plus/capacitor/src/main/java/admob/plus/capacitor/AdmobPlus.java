@@ -1,6 +1,7 @@
 package admob.plus.capacitor;
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 
 import com.getcapacitor.JSArray;
 import com.getcapacitor.JSObject;
@@ -40,9 +41,8 @@ public class AdmobPlus extends Plugin {
 
     @PluginMethod()
     public void interstitial_isLoaded(final PluginCall call) {
-        Ad ad = Ad.getAdById(call.getInt("id"));
+        Ad ad = getAdOrReject(call);
         if (ad == null) {
-            call.reject("missing id");
             return;
         }
         final Interstitial interstitial = (Interstitial) ad;
@@ -58,9 +58,8 @@ public class AdmobPlus extends Plugin {
 
     @PluginMethod()
     public void interstitial_show(final PluginCall call) {
-        Ad ad = Ad.getAdById(call.getInt("id"));
+        Ad ad = getAdOrReject(call);
         if (ad == null) {
-            call.reject("missing id");
             return;
         }
         final Interstitial interstitial = (Interstitial) ad;
@@ -71,6 +70,17 @@ public class AdmobPlus extends Plugin {
                 call.resolve();
             }
         });
+    }
+
+    @Nullable
+    private Ad getAdOrRejectMissing(PluginCall call) {
+        Integer adId = call.getInt("id");
+        Ad ad = Ad.getAdById(adId);
+        if (ad == null) {
+            call.reject(String.format("can not find ad for %s", adId));
+            return null;
+        }
+        return ad;
     }
 
     private AdRequest.Builder createAdRequestBuilder(PluginCall call) {
