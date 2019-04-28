@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@0.2.0...@admob-plus/capacitor@0.2.1) (2019-04-28)
+
+
+### Bug Fixes
+
+* **capacitor:** fix calling missing method ([7fa2054](https://github.com/admob-plus/admob-plus/commit/7fa2054))
+
+
+
+
+
 # [0.2.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@0.1.0...@admob-plus/capacitor@0.2.0) (2019-04-28)
 
 

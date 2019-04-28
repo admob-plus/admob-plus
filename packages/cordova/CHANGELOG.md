@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.28.2](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.28.1...cordova-admob-plus@0.28.2) (2019-04-28)
+
+**Note:** Version bump only for package cordova-admob-plus
+
+
+
+
+
 ## [0.28.1](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.28.0...cordova-admob-plus@0.28.1) (2019-04-28)
 
 **Note:** Version bump only for package cordova-admob-plus
