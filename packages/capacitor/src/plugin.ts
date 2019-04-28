@@ -43,6 +43,13 @@ export class InterstitialAd extends Ad {
     })
   }
 
+  public async isLoaded() {
+    const { isLoaded } = await Plugins.AdmobPlus.interstitial_isLoaded({
+      id: this.id,
+    })
+    return isLoaded
+  }
+
   public show() {
     return Plugins.AdmobPlus.interstitial_show({ id: this.id })
   }

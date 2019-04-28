@@ -1,5 +1,5 @@
 import { WebPlugin } from '@capacitor/core'
-import { AdmobPlusPlugin, LoadAdOptions } from './definitions'
+import { AdmobPlusPlugin, IsLoadedResult, LoadAdOptions } from './definitions'
 
 export class AdmobPlusWeb extends WebPlugin implements AdmobPlusPlugin {
   constructor() {
@@ -17,6 +17,12 @@ export class AdmobPlusWeb extends WebPlugin implements AdmobPlusPlugin {
   public interstitial_load(options: LoadAdOptions): Promise<void> {
     console.log('interstitial:load', options)
     return Promise.resolve()
+  }
+
+  public interstitial_isLoaded(options: {
+    id: number;
+  }): Promise<IsLoadedResult> {
+    return Promise.resolve({ isLoaded: false })
   }
 
   public interstitial_show(options: { id: number }): Promise<void> {

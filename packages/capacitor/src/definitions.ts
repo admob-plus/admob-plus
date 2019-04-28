@@ -11,8 +11,13 @@ export interface LoadAdOptions {
   testDevices?: string[]
 }
 
+export interface IsLoadedResult {
+  isLoaded: boolean
+}
+
 export interface AdmobPlusPlugin {
   echo(options: { value: string }): Promise<{ value: string }>
   interstitial_load(options: LoadAdOptions): Promise<void>
+  interstitial_isLoaded(options: { id: number }): Promise<IsLoadedResult>
   interstitial_show(options: { id: number }): Promise<void>
 }

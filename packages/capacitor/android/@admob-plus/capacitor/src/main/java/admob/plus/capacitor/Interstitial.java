@@ -18,8 +18,12 @@ public class Interstitial extends Ad {
         interstitial.loadAd(adRequest);
     }
 
+    Boolean isLoaded() {
+        return interstitial != null && interstitial.isLoaded();
+    }
+
     void show() {
-        if (interstitial != null && interstitial.isLoaded()) {
+        if (isLoaded()) {
             interstitial.show();
         }
     }

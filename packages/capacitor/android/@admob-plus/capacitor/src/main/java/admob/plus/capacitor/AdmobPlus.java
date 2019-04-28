@@ -33,14 +33,34 @@ public class AdmobPlus extends Plugin {
             @Override
             public void run() {
                 interstitial.load(call.getString("adUnitId"), builder.build());
+                call.resolve();
             }
         });
     }
 
     @PluginMethod()
-    public void interstitial_show(PluginCall call) {
+    public void interstitial_isLoaded(final PluginCall call) {
         Ad ad = Ad.getAdById(call.getInt("id"));
         if (ad == null) {
+            call.reject("missing id");
+            return;
+        }
+        final Interstitial interstitial = (Interstitial) ad;
+        bridge.executeOnMainThread(new Runnable() {
+            @Override
+            public void run() {
+                final JSObject result = new JSObject();
+                result.put("isLoaded", interstitial.isLoaded());
+                call.resolve(result);
+            }
+        });
+    }
+
+    @PluginMethod()
+    public void interstitial_show(final PluginCall call) {
+        Ad ad = Ad.getAdById(call.getInt("id"));
+        if (ad == null) {
+            call.reject("missing id");
             return;
         }
         final Interstitial interstitial = (Interstitial) ad;
@@ -48,6 +68,7 @@ public class AdmobPlus extends Plugin {
             @Override
             public void run() {
                 interstitial.show();
+                call.resolve();
             }
         });
     }
