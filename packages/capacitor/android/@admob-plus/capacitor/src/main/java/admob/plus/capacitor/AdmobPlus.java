@@ -41,7 +41,7 @@ public class AdmobPlus extends Plugin {
 
     @PluginMethod()
     public void interstitial_isLoaded(final PluginCall call) {
-        Ad ad = getAdOrReject(call);
+        Ad ad = getAdOrRejectMissing(call);
         if (ad == null) {
             return;
         }
@@ -58,7 +58,7 @@ public class AdmobPlus extends Plugin {
 
     @PluginMethod()
     public void interstitial_show(final PluginCall call) {
-        Ad ad = getAdOrReject(call);
+        Ad ad = getAdOrRejectMissing(call);
         if (ad == null) {
             return;
         }
