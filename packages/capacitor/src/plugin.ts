@@ -30,11 +30,19 @@ class Ad {
     this.nonPersonalizedAds = options.nonPersonalizedAds || true
     this.testDevices = options.testDevices || []
   }
+
+  get plugin() {
+    const plugin = Plugins.AdmobPlus
+    if (!plugin) {
+      throw new Error('plugin is not installed')
+    }
+    return plugin
+  }
 }
 
 export class InterstitialAd extends Ad {
   public load() {
-    return Plugins.AdmobPlus.interstitial_load({
+    return this.plugin.interstitial_load({
       adUnitId: this.adUnitId,
       childDirected: this.childDirected,
       id: this.id,
@@ -44,13 +52,13 @@ export class InterstitialAd extends Ad {
   }
 
   public async isLoaded() {
-    const { isLoaded } = await Plugins.AdmobPlus.interstitial_isLoaded({
+    const { isLoaded } = await this.plugin.interstitial_isLoaded({
       id: this.id,
     })
     return isLoaded
   }
 
   public show() {
-    return Plugins.AdmobPlus.interstitial_show({ id: this.id })
+    return this.plugin.interstitial_show({ id: this.id })
   }
 }

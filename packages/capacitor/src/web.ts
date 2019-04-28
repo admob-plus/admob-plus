@@ -19,7 +19,8 @@ export class AdmobPlusWeb extends WebPlugin implements AdmobPlusPlugin {
     return Promise.resolve()
   }
 
-  public interstitial_isLoaded(options: {
+  // tslint:disable-next-line: variable-name
+  public interstitial_isLoaded(_options: {
     id: number;
   }): Promise<IsLoadedResult> {
     return Promise.resolve({ isLoaded: false })
