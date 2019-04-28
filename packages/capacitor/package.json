@@ -23,7 +23,15 @@
     "dist/",
     "ios/",
     "android/",
-    "AdmobPlusCapacitor.podspec"
+    "AdmobPlusCapacitor.podspec",
+    "!**/.DS_Store",
+    "!**/.idea/",
+    "!**/*.iml",
+    "!android/captures",
+    "!android/build",
+    "!android/.gradle",
+    "!android/local.properties",
+    "!android/.externalNativeBuild"
   ],
   "keywords": [
     "capacitor",
