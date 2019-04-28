@@ -1,7 +1,7 @@
 {
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "declaration": true,
     "experimentalDecorators": true,
     "lib": [
       "dom",
@@ -13,11 +13,9 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "outDir": "dist/esm",
+    "rootDir": "src",
     "sourceMap": true,
     "target": "es2015",
     "types": []
-  },
-  "files": [
-    "src/index.ts"
-  ]
+  }
 }

@@ -1,6 +1,6 @@
 {
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "declaration": true,
     "stripInternal": true,
     "noImplicitAny": true,
     "outDir": "dist",

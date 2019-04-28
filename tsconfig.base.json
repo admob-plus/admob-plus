@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "composite": true,
+    "strict": true,
+    "tsBuildInfoFile": "node_modules/.tsbuildinfo"
+  }
+}

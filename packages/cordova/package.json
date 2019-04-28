@@ -15,7 +15,7 @@
     "@types/cordova": "^0.0.34",
     "@types/execa": "^0.9.0",
     "@types/lodash": "^4.14.123",
-    "@types/node": "^11.13.7",
+    "@types/node": "^11.13.8",
     "cordova": "^9.0.0",
     "del-cli": "^1.1.0",
     "execa": "^1.0.0",
