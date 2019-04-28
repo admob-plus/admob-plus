@@ -50,5 +50,35 @@ public class Ad {
         public void onAdLoaded() {
             this.ad.emitEvent("load");
         }
+
+        @Override
+        public void onAdFailedToLoad(int errorCode) {
+            this.ad.emitEvent("load_fail");
+        }
+
+        @Override
+        public void onAdOpened() {
+            this.ad.emitEvent("open");
+        }
+
+        @Override
+        public void onAdClosed() {
+            this.ad.emitEvent("close");
+        }
+
+        @Override
+        public void onAdLeftApplication() {
+            this.ad.emitEvent("exit_app");
+        }
+
+        @Override
+        public void onAdImpression() {
+            this.ad.emitEvent("impression");
+        }
+
+        @Override
+        public void onAdClicked() {
+            this.ad.emitEvent("click");
+        }
     }
 }
