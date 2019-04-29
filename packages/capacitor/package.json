@@ -5,7 +5,7 @@
   "main": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
   "scripts": {
-    "build": "run-s clean && tsc",
+    "build": "run-s clean && tsc -b && test -e dist/esm/index.js",
     "clean": "rm -rf ./dist",
     "watch": "tsc --watch",
     "prepublishOnly": "run-s build"
