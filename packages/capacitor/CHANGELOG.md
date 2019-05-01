@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@0.2.2...@admob-plus/capacitor@0.3.0) (2019-05-01)
+
+
+### Features
+
+* **capacitor:** pass ad id to event listener ([7494283](https://github.com/admob-plus/admob-plus/commit/7494283))
+* **capacitor:** update to latest directory layout ([00a3299](https://github.com/admob-plus/admob-plus/commit/00a3299))
+
+
+
+
+
 ## [0.2.2](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@0.2.1...@admob-plus/capacitor@0.2.2) (2019-04-30)
 
 **Note:** Version bump only for package @admob-plus/capacitor

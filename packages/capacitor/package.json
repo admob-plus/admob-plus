@@ -1,6 +1,6 @@
 {
   "name": "@admob-plus/capacitor",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "Capacitor AdMob Plugin",
   "main": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -16,8 +16,8 @@
     "@capacitor/core": "latest"
   },
   "devDependencies": {
-    "@capacitor/ios": "latest",
     "@capacitor/android": "latest",
+    "@capacitor/ios": "latest",
     "npm-run-all": "^4.1.5",
     "typescript": "^3.4.5"
   },
