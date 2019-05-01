@@ -116,12 +116,13 @@
     ]
   },
   "resolutions": {
-    "node-sass": "^4.11.0"
+    "node-sass": "^4.12.0"
   },
   "workspaces": {
     "nohoist": [
       "**/@angular*",
       "**/@angular*/**",
+      "**/@capacitor/**",
       "**/@ionic/**",
       "**/@ionic/app-scripts",
       "**/@ionic/app-scripts/**",
