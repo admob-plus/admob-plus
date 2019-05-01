@@ -2,6 +2,7 @@ package admob.plus.capacitor;
 
 import android.util.SparseArray;
 
+import com.getcapacitor.JSObject;
 import com.google.android.gms.ads.AdListener;
 
 public class Ad {
@@ -34,7 +35,9 @@ public class Ad {
     }
 
     void emitEvent(String eventName) {
-        this.plugin.getBridge().triggerDocumentJSEvent(String.format("admob.%s.%s", this.getAdType(), eventName));
+        JSObject data = new JSObject();
+        data.put("id", this.id);
+        this.plugin.getBridge().triggerDocumentJSEvent(String.format("admob.%s.%s", this.getAdType(), eventName), data.toString());
     }
 
     static class Listener extends AdListener {
