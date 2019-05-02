@@ -40,6 +40,11 @@ class Ad {
   }
 }
 
+export const isFirebaseTestLabDevice = async () => {
+  const { value } = await Plugins.AdmobPlus!.isFirebaseTestLabDevice()
+  return value
+}
+
 export class InterstitialAd extends Ad {
   public load() {
     return this.plugin.interstitial_load({

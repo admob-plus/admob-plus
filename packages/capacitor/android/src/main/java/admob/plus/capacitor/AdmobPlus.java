@@ -1,6 +1,7 @@
 package admob.plus.capacitor;
 
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.annotation.Nullable;
 
 import com.getcapacitor.JSArray;
@@ -23,6 +24,13 @@ public class AdmobPlus extends Plugin {
 
         JSObject ret = new JSObject();
         ret.put("value", value);
+        call.success(ret);
+    }
+
+    @PluginMethod()
+    public void isFirebaseTestLabDevice(PluginCall call) {
+        JSObject ret = new JSObject();
+        ret.put("value", isRunningInTestLab());
         call.success(ret);
     }
 
@@ -107,5 +115,10 @@ public class AdmobPlus extends Plugin {
         }
 
         return builder;
+    }
+
+    private boolean isRunningInTestLab() {
+        String testLabSetting = Settings.System.getString(bridge.getContext().getContentResolver(), "firebase.test.lab");
+        return "true".equals(testLabSetting);
     }
 }

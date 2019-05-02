@@ -14,6 +14,10 @@ export class AdmobPlusWeb extends WebPlugin implements AdmobPlusPlugin {
     return options
   }
 
+  public async isFirebaseTestLabDevice(): Promise<{ value: boolean }> {
+    return { value: false }
+  }
+
   public interstitial_load(options: LoadAdOptions): Promise<void> {
     console.log('interstitial:load', options)
     return Promise.resolve()
