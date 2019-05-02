@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@0.3.0...@admob-plus/capacitor@0.4.0) (2019-05-02)
+
+
+### Features
+
+* **capacitor:** export isFirebaseTestLabDevice ([e8242e5](https://github.com/admob-plus/admob-plus/commit/e8242e5))
+
+
+
+
+
 # [0.3.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@0.2.2...@admob-plus/capacitor@0.3.0) (2019-05-01)
 
 
