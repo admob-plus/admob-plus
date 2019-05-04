@@ -88,7 +88,7 @@ jobs:
         - sys-img-$ANDROID_ABI-android-$ANDROID_API_LEVEL
 
 before_install:
-  - nvm install 11
+  - nvm install 12
   - test -f $HOME/.yarn_cache/yarn.lock && cp $HOME/.yarn_cache/yarn.lock yarn.lock || true
   - travis_retry curl -o- -L https://yarnpkg.com/install.sh | bash
   - export PATH=$HOME/.yarn/bin:$PATH
