@@ -16,7 +16,7 @@
     "@types/execa": "^0.9.0",
     "@types/lodash": "^4.14.123",
     "@types/node": "^11.13.8",
-    "cordova": "^9.0.0",
+    "cordova": "9.0.1-nightly.2019.4.26.f7637760",
     "del-cli": "^1.1.0",
     "execa": "^1.0.0",
     "fast-glob": "^2.2.6",
@@ -28,8 +28,7 @@
     "rollup-plugin-commonjs": "^9.3.4",
     "rollup-plugin-node-resolve": "^4.2.3",
     "rollup-plugin-typescript2": "^0.21.0",
-    "ts-node": "^8.1.0",
-    "typescript": "^3.4.5"
+    "ts-node": "^8.1.0"
   },
   "author": "Ratson",
   "license": "MIT",
