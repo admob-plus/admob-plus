@@ -14,13 +14,13 @@
     "test-ios:example": "cd examples/basic && run-s link-plugin && cordova build ios"
   },
   "devDependencies": {
-    "@commitlint/cli": "^7.6.0",
+    "@commitlint/cli": "^7.6.1",
     "@commitlint/config-conventional": "^7.6.0",
     "@commitlint/config-lerna-scopes": "^7.6.0",
-    "@commitlint/prompt-cli": "^7.6.0",
+    "@commitlint/prompt-cli": "^7.6.1",
     "@types/jest": "^24.0.12",
     "cordova": "9.0.1-nightly.2019.4.26.f7637760",
-    "cordova-testbed": "^0.7.0",
+    "cordova-testbed": "^0.8.0",
     "eslint": "^5.16.0",
     "eslint-config-concise": "^0.36.0",
     "eslint-config-concise-browser": "^0.36.0",
