@@ -47,6 +47,18 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
         view.addSubview(bannerView)
         if #available(iOS 11.0, *) {
             positionBannerInSafeArea(bannerView)
+
+            let background = UIView()
+            background.translatesAutoresizingMaskIntoConstraints = false
+            background.backgroundColor = .black
+            view.addSubview(background)
+            view.sendSubviewToBack(background)
+            NSLayoutConstraint.activate([
+                background.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                background.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                background.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+                background.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            ])
         } else {
             positionBanner(bannerView)
         }
@@ -56,11 +68,13 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
     @available (iOS 11, *)
     func positionBannerInSafeArea(_ bannerView: UIView) {
         let guide: UILayoutGuide = view.safeAreaLayoutGuide
-        NSLayoutConstraint.activate(
-            [bannerView.centerXAnchor.constraint(equalTo: guide.centerXAnchor),
-             bannerView.bottomAnchor.constraint(equalTo: position == "top" ? guide.topAnchor : guide.bottomAnchor,
-                                                constant: position == "top" ? self.plugin.webView.safeAreaInsets.top : 0)]
-        )
+        NSLayoutConstraint.activate([
+            bannerView.centerXAnchor.constraint(equalTo: guide.centerXAnchor),
+            bannerView.bottomAnchor.constraint(
+                equalTo: position == "top" ? guide.topAnchor : guide.bottomAnchor,
+                constant: position == "top" ? self.plugin.webView.safeAreaInsets.top : 0
+            )
+        ])
     }
 
     func positionBanner(_ bannerView: UIView) {
