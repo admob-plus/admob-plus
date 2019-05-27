@@ -57,7 +57,7 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
                 background.leadingAnchor.constraint(equalTo: view.leadingAnchor),
                 background.trailingAnchor.constraint(equalTo: view.trailingAnchor),
                 background.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-                background.topAnchor.constraint(equalTo: bannerView.topAnchor)
+                background.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
             ])
         } else {
             positionBanner(bannerView)
