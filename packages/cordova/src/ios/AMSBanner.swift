@@ -12,9 +12,13 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
 
         self.adSize = adSize
         self.position = position
+
+        NotificationCenter.default.addObserver(self, selector: #selector(resizeWebView),
+                                               name: UIDevice.orientationDidChangeNotification, object: nil)
     }
 
     deinit {
+        NotificationCenter.default.removeObserver(self)
         bannerView = nil
     }
 
@@ -104,8 +108,11 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
         }
     }
 
-    func resizeWebView() {
+    @objc func resizeWebView() {
         var frame = view.frame
+        if #available(iOS 11.0, *) {
+            frame = view.safeAreaLayoutGuide.layoutFrame
+        }
         if bannerView != nil {
             if position == "top" {
                 frame.origin.y += bannerView.frame.height
