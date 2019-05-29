@@ -207,7 +207,7 @@ class AMSPlugin: CDVPlugin {
             request.testDevices = testDevices
         }
         if let childDirected = opts["childDirected"] as? Bool {
-            request.tag(forChildDirectedTreatment: childDirected)
+            GADMobileAds.sharedInstance().requestConfiguration.tag(forChildDirectedTreatment: childDirected)
         }
         return request
     }
