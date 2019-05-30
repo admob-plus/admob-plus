@@ -8,7 +8,7 @@ class AMSPlugin: CDVPlugin {
         super.pluginInitialize()
 
         AMSAdBase.plugin = self
-        GADMobileAds.configure(withApplicationID: getApplicationID())
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
     }
 
     deinit {
