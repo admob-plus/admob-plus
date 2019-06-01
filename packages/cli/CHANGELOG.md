@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.15.3](https://github.com/admob-plus/admob-plus/compare/admob-plus@0.15.1...admob-plus@0.15.3) (2019-06-01)
+
+
+### Bug Fixes
+
+* **cli:** fix read-pkg-up type error ([00819be](https://github.com/admob-plus/admob-plus/commit/00819be))
+
+
+
+
+
 ## [0.15.2](https://github.com/admob-plus/admob-plus/compare/admob-plus@0.15.1...admob-plus@0.15.2) (2019-04-26)
 
 **Note:** Version bump only for package admob-plus

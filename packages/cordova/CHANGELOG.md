@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.29.0](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.28.2...cordova-admob-plus@0.29.0) (2019-06-01)
+
+
+### Bug Fixes
+
+* **cordova-ios:** extend black background to safe area ([b294c44](https://github.com/admob-plus/admob-plus/commit/b294c44))
+* **cordova-ios:** fix forChildDirectedTreatment deprecated warning ([de15ea6](https://github.com/admob-plus/admob-plus/commit/de15ea6))
+* **cordova-ios:** fix GADMobileAds.configure deprecated warning ([98fea4a](https://github.com/admob-plus/admob-plus/commit/98fea4a))
+* **cordova-ios:** set banner view background to black ([3449e32](https://github.com/admob-plus/admob-plus/commit/3449e32))
+* **cordova-ios:** set unsafe area background to black ([6814bdd](https://github.com/admob-plus/admob-plus/commit/6814bdd))
+
+
+### Features
+
+* **cordova-ios:** resize views on orientation change ([76cabc1](https://github.com/admob-plus/admob-plus/commit/76cabc1))
+* **cordova-ios:** update Google-Mobile-Ads-SDK to v7.44 ([ce74251](https://github.com/admob-plus/admob-plus/commit/ce74251))
+
+
+
+
+
 ## [0.28.2](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.28.1...cordova-admob-plus@0.28.2) (2019-04-28)
 
 **Note:** Version bump only for package cordova-admob-plus
