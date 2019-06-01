@@ -52,7 +52,7 @@ export default class InfoCommand extends Command {
   public async run() {
     const { flags: parsedFlags } = this.parse(InfoCommand)
 
-    const { pkg } = await readPkgUp()
+    const { package: pkg } = (await readPkgUp())!
     let infoText = ''
     try {
       infoText = await envinfo.run(

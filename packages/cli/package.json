@@ -28,7 +28,6 @@
     "@types/fs-extra": "^7.0.0",
     "@types/mocha": "^5.2.6",
     "@types/node": "^12",
-    "@types/read-pkg-up": "^3.0.1",
     "chai": "^4",
     "globby": "^9",
     "mocha": "^6",
