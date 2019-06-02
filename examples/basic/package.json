@@ -2,7 +2,7 @@
   "private": true,
   "name": "example.admob.basic",
   "displayName": "AdmobBasicExample",
-  "version": "0.16.12",
+  "version": "0.16.13",
   "scripts": {
     "prepare": "run-s prepare:*",
     "prepare:cordova": "cordova prepare --searchpath ../../packages",
@@ -21,7 +21,7 @@
     "dev-ios:open": "open platforms/ios/AdmobBasicExample.xcworkspace"
   },
   "dependencies": {
-    "cordova-admob-plus": "^0.29.0",
+    "cordova-admob-plus": "^0.29.1",
     "cordova-android": "8.0.0",
     "cordova-browser": "6.0.0",
     "cordova-ios": "5.0.1",

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.29.1](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.29.0...cordova-admob-plus@0.29.1) (2019-06-02)
+
+
+### Bug Fixes
+
+* **cordova-ios:** update webview height after banner load ([11732d5](https://github.com/admob-plus/admob-plus/commit/11732d5))
+
+
+
+
+
 # [0.29.0](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.28.2...cordova-admob-plus@0.29.0) (2019-06-01)
 
 
