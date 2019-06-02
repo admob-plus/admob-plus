@@ -34,6 +34,7 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
 
         bannerView.adUnitID = adUnitID
         bannerView.load(request)
+        self.resizeWebView()
     }
 
     func hide() {
