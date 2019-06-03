@@ -14,8 +14,7 @@ export default {
   },
   plugins: [
     resolve({
-      jsnext: true,
-      main: true,
+      mainFields: ['module', 'main', 'jsnext:main'],
       browser: true,
     }),
     typescript({
