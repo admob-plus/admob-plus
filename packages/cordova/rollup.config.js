@@ -9,7 +9,7 @@ export default {
   output: {
     file: 'www/admob.js',
     format: 'cjs',
-    sourcemap: true,
+    sourcemap: false,
     exports: 'default',
   },
   plugins: [
