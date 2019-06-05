@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.30.0](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.29.1...cordova-admob-plus@0.30.0) (2019-06-05)
+
+
+### Bug Fixes
+
+* **cordova-ios:** use safe area layout frame only when banner is visible ([fde16b7](https://github.com/admob-plus/admob-plus/commit/fde16b7))
+
+
+### Features
+
+* **cordova-ios:** resize webview using layout constraints ([c289ac3](https://github.com/admob-plus/admob-plus/commit/c289ac3))
+
+
+
+
+
 ## [0.29.1](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.29.0...cordova-admob-plus@0.29.1) (2019-06-02)
 
 
