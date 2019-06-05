@@ -111,10 +111,10 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
 
     @objc func resizeWebView() {
         var frame = view.frame
-        if #available(iOS 11.0, *) {
-            frame = view.safeAreaLayoutGuide.layoutFrame
-        }
         if bannerView != nil {
+            if #available(iOS 11.0, *) {
+                frame = view.safeAreaLayoutGuide.layoutFrame
+            }
             if position == "top" {
                 frame.origin.y += bannerView.frame.height
                 if #available(iOS 11.0, *) {
