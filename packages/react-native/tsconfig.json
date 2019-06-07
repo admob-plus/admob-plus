@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "react-native",
+    "stripInternal": true,
+    "noImplicitAny": true,
+    "outDir": "dist",
+    "rootDir": ".",
+    "target": "es5",
+    "skipLibCheck": true,
+    "lib": ["es2017", "dom"]
+  }
+}
