@@ -8,7 +8,7 @@ module.exports = {
   },
   testPathIgnorePatterns: [
     ...defaults.testPathIgnorePatterns,
-    '<rootDir>/examples/*/plugins/',
+    '/examples/.*/plugins/',
     '<rootDir>/packages/cli/',
   ],
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$',
