@@ -1,4 +1,7 @@
-export * from './constants'
+import { AdSizeType } from './constants'
+
+export { Events, NativeActions } from './constants'
+export { AdSizeType }
 
 export type AdUnitIDOption =
   | string
@@ -12,15 +15,6 @@ export interface IAdRequest {
   testDevices?: string[]
   childDirected?: boolean
   underAgeOfConsent?: boolean
-}
-
-export enum AdSizeType {
-  BANNER,
-  LARGE_BANNER,
-  MEDIUM_RECTANGLE,
-  FULL_BANNER,
-  LEADERBOARD,
-  SMART_BANNER,
 }
 
 type AdSize =

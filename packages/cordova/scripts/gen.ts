@@ -146,12 +146,12 @@ function buildConstantsTs(): string {
   const adSizeType = AdSizeTypes.map(s => `  ${s},`).join('\n')
 
   return `// ${warnMessage}
-export const enum NativeActions {
+export enum NativeActions {
   Service = 'AdMob',
 ${linesActions}
 }
 
-export const enum Events {
+export enum Events {
 ${linesEvents}
 }
 
