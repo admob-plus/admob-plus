@@ -9,12 +9,12 @@
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-help": "^2",
-    "clipboardy": "^2.0.0",
+    "clipboardy": "^2.1.0",
     "elementtree": "^0.1.7",
     "envinfo": "^7.3.1",
-    "execa": "^1.0.0",
-    "fs-extra": "^8.0.1",
-    "lodash": "^4.17.11",
+    "execa": "^2.0.4",
+    "fs-extra": "^8.1.0",
+    "lodash": "^4.17.15",
     "read-pkg-up": "^6.0.0",
     "tslib": "^1"
   },
@@ -25,16 +25,16 @@
     "@types/chai": "^4",
     "@types/clipboardy": "^2.0.1",
     "@types/elementtree": "^0.1.0",
-    "@types/fs-extra": "^7.0.0",
-    "@types/mocha": "^5.2.6",
+    "@types/fs-extra": "^8.0.0",
+    "@types/mocha": "^5.2.7",
     "@types/node": "^12",
     "chai": "^4",
-    "globby": "^9",
+    "globby": "^10",
     "mocha": "^6",
     "nyc": "^14",
     "ts-node": "^8",
     "tslint": "^5",
-    "typescript": "^3.4"
+    "typescript": "^3.6"
   },
   "engines": {
     "node": ">=8.0.0"
