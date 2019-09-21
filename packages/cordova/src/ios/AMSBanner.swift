@@ -2,6 +2,7 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
     var bannerView: GADBannerView!
     var adSize: GADAdSize!
     var position: String!
+    var constraintsToHide: [NSLayoutConstraint]!
 
     var view: UIView {
         return self.plugin.viewController.view
@@ -12,6 +13,10 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
 
         self.adSize = adSize
         self.position = position
+        self.constraintsToHide = [
+            self.plugin.webView.topAnchor.constraint(equalTo: view.topAnchor),
+            self.plugin.webView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ]
     }
 
     deinit {
@@ -19,6 +24,7 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
     }
 
     func show(request: GADRequest) {
+        NSLayoutConstraint.deactivate(self.constraintsToHide)
         if bannerView != nil {
             bannerView.isHidden = false
         } else {
@@ -38,6 +44,7 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
             bannerView.rootViewController = nil
             bannerView.removeFromSuperview()
             bannerView = nil
+            NSLayoutConstraint.activate(self.constraintsToHide)
         }
     }
 
@@ -70,7 +77,7 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
         var constraints = [
             bannerView.centerXAnchor.constraint(equalTo: guide.centerXAnchor),
             self.plugin.webView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            self.plugin.webView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            self.plugin.webView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ]
         if position == "top" {
             constraints += [
@@ -82,7 +89,7 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
             constraints += [
                 bannerView.bottomAnchor.constraint(equalTo: guide.bottomAnchor),
                 self.plugin.webView.topAnchor.constraint(equalTo: view.topAnchor),
-                self.plugin.webView.bottomAnchor.constraint(equalTo: bannerView.topAnchor),
+                self.plugin.webView.bottomAnchor.constraint(equalTo: bannerView.topAnchor)
             ]
         }
         NSLayoutConstraint.activate(constraints)
