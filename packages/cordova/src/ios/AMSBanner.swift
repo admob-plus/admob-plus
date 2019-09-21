@@ -52,7 +52,7 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
             background.translatesAutoresizingMaskIntoConstraints = false
             background.backgroundColor = .black
             view.addSubview(background)
-            view.sendSubview(toBack: background)
+            view.sendSubviewToBack(background)
             NSLayoutConstraint.activate([
                 background.leadingAnchor.constraint(equalTo: view.leadingAnchor),
                 background.trailingAnchor.constraint(equalTo: view.trailingAnchor),
