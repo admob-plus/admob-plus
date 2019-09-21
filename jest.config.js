@@ -4,6 +4,7 @@ const { defaults } = require('jest-config')
 
 module.exports = {
   transform: {
+    ...defaults.transform,
     '^.+\\.tsx?$': 'ts-jest',
   },
   testPathIgnorePatterns: [
