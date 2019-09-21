@@ -190,8 +190,26 @@ const CompareTable = () => (
   </div>
 )
 
+const AntiChinazi = () => (
+  <div style={{ background: 'yellow', padding: 6, textAlign: 'center' }}>
+    Development progress is slow, as we,
+    <br />
+    Hongkongers are fighting for freedom and democracy.
+    <br />
+    Join us on&nbsp;
+    <a
+      href="https://twitter.com/hashtag/929GlobalAntiTotalitarianism"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      #929GlobalAntiTotalitarianism
+    </a>
+  </div>
+)
+
 const Index = ({ language = '' }) => (
   <div>
+    <AntiChinazi />
     <HomeSplash language={language} />
     <div className="mainContainer">
       <Container padding={['bottom', 'top']} background="light">
