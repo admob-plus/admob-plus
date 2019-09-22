@@ -1,0 +1,12 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+# 0.1.0 (2019-09-22)
+
+
+### Features
+
+* **react-native:** add RNAdMobPlus.isTestDevice for Android ([05ee5a0](https://github.com/admob-plus/admob-plus/commit/05ee5a0))
+* **react-native:** create library with react-native-create-library ([6cb7a1d](https://github.com/admob-plus/admob-plus/commit/6cb7a1d))

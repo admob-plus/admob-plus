@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/core@0.7.4...@admob-plus/core@0.8.0) (2019-09-22)
+
+
+### Features
+
+* **core:** export Events, NativeActions ([f42d2c4](https://github.com/admob-plus/admob-plus/commit/f42d2c4))
+
+
+
+
+
 ## [0.7.4](https://github.com/admob-plus/admob-plus/compare/@admob-plus/core@0.7.3...@admob-plus/core@0.7.4) (2019-04-28)
 
 **Note:** Version bump only for package @admob-plus/core

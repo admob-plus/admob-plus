@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.31.0](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.30.0...cordova-admob-plus@0.31.0) (2019-09-22)
+
+
+### Bug Fixes
+
+* **cordova-ios:** fix white screen showing from hidden banner, close [#97](https://github.com/admob-plus/admob-plus/issues/97) ([a482636](https://github.com/admob-plus/admob-plus/commit/a482636))
+* **cordova-ios:** update deprecated method sendSubviewToBack to sendSubview(toBack:) ([#106](https://github.com/admob-plus/admob-plus/issues/106)) ([9216c5d](https://github.com/admob-plus/admob-plus/commit/9216c5d))
+
+
+### Features
+
+* **cordova-ios:** update Google-Mobile-Ads-SDK to v7.50 ([6e14157](https://github.com/admob-plus/admob-plus/commit/6e14157))
+* **core:** export Events, NativeActions ([f42d2c4](https://github.com/admob-plus/admob-plus/commit/f42d2c4))
+
+
+
+
+
 # [0.30.0](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.29.1...cordova-admob-plus@0.30.0) (2019-06-05)
 
 
