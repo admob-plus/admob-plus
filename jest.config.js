@@ -14,5 +14,5 @@ module.exports = {
   ],
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$',
   testURL: 'http://localhost/',
-  moduleFileExtensions: [...defaults.moduleFileExtensions, 'ts', 'tsx'],
+  moduleFileExtensions: ['ts', 'tsx', ...defaults.moduleFileExtensions],
 }
