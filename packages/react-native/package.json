@@ -14,11 +14,11 @@
     "react-native": "*"
   },
   "devDependencies": {
-    "@types/react": "^16.8.19",
-    "@types/react-native": "^0.57.60",
-    "react": "^16.8.6",
-    "react-native": "^0.59.9",
-    "typescript": "^3.5.1"
+    "@types/react": "^16.9.2",
+    "@types/react-native": "^0.60.15",
+    "react": "^16.9.0",
+    "react-native": "^0.60.5",
+    "typescript": "^3.6.3"
   },
   "author": "Ratson",
   "license": "MIT",
