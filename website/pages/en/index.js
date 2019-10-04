@@ -196,13 +196,13 @@ const AntiChinazi = () => (
     <br />
     Hongkongers are fighting for freedom and democracy.
     <br />
-    Join us on&nbsp;
+    Keep an eye on&nbsp;
     <a
-      href="https://twitter.com/hashtag/929GlobalAntiTotalitarianism"
+      href="https://twitter.com/hashtag/HongKongProtests"
       target="_blank"
       rel="noopener noreferrer"
     >
-      #929GlobalAntiTotalitarianism
+      #HongKongProtests
     </a>
   </div>
 )
