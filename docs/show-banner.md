@@ -16,6 +16,14 @@ document.addEventListener('deviceready', () => {
       android: 'ca-app-pub-xxx/yyy',
       ios: 'ca-app-pub-xxx/zzz',
     },
+  }).then(() => {
+    setTimeout(() => {
+      admob.banner.hide({
+        // replace with your ad unit IDs
+        android: 'ca-app-pub-xxx/yyy',
+        ios: 'ca-app-pub-xxx/zzz',
+      })
+    }, 10000)
   })
 }, false)
 ```
