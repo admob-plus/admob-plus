@@ -38,7 +38,7 @@ repositories {
 
 
 dependencies {
-    api 'com.google.firebase:firebase-ads:17.2.0'
+    api 'com.google.firebase:firebase-ads:18.2.0'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':capacitor-android')
     testImplementation 'junit:junit:4.12'
