@@ -47,4 +47,10 @@ class AMSInterstitial: AMSAdBase, GADInterstitialDelegate {
     func interstitialWillLeaveApplication(_ adInterstitial: GADInterstitial) {
         plugin.emit(eventType: AMSEvents.interstitialExitApp)
     }
+
+    @objc
+    func interstitial(_ ad: GADInterstitial, didFailToReceiveAdWithError error: GADRequestError) {
+        plugin.emit(eventType: AMSEvents.interstitialLoadFail)
+    }
+
 }
