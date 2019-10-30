@@ -40,5 +40,10 @@ module.exports = [
     caption: 'Argendolar Pro- Cotizacion del Dolar en Argentina',
     image: 'http://latirus.com/img/apps/argendolar.png',
     infoLink: 'https://play.google.com/store/apps/details?id=com.latirus.argendolarpro',
+  },
+  {
+    caption: 'Moray Doomsday - free multiplayer fighting games',
+    image: 'https://lh3.googleusercontent.com/30WHxjxPU1MY2e_HHo6jiK2g0bwZxiVbgBXqtDLPqj45KIo9YUGVu-XKi2YDBsJ3_2isl7FmEcNv-yhNi4MWoEjTyZ_9xkpC5Q3V_Bbr2iSC2QhH_y3X1YMPaAB14xbDgnSj8Zns=s128-no',
+    infoLink: 'https://play.google.com/store/apps/details?id=com.crasheros.app',
   }
 ]
