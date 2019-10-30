@@ -190,27 +190,25 @@ const CompareTable = () => (
   </div>
 )
 
+const TwitterTagLink = ({ tag }) => (
+  <a
+    href={`https://twitter.com/hashtag/${tag}`}
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    #{tag}
+  </a>
+)
+
 const AntiChinazi = () => (
   <div style={{ background: 'yellow', padding: 6, textAlign: 'center' }}>
     Development progress is slow, as we,
     <br />
     Hongkongers are fighting for freedom and democracy.
     <br />
-    <a
-      href="https://twitter.com/hashtag/BoycottChina"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      #BoycottChina
-    </a>
+    <TwitterTagLink tag="BoycottChina" />
     &nbsp;
-    <a
-      href="https://twitter.com/hashtag/StandWithHongKong"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      #StandWithHongKong
-    </a>
+    <TwitterTagLink tag="StandWithHongKong" />
   </div>
 )
 
