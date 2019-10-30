@@ -36,6 +36,7 @@ jobs:
       - yarn prepack
       - popd
       - pushd examples/ionic-angular
+      - yarn
       - yarn lint
       - popd
   - stage: first
