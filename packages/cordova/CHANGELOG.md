@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.32.0](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.31.0...cordova-admob-plus@0.32.0) (2019-11-17)
+
+
+### Features
+
+* **cordova-ios:** update Google-Mobile-Ads-SDK to v7.51 ([b1fcbac](https://github.com/admob-plus/admob-plus/commit/b1fcbac))
+
+
+
+
+
 # [0.31.0](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.30.0...cordova-admob-plus@0.31.0) (2019-09-22)
 
 
