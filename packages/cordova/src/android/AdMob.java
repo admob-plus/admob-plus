@@ -119,7 +119,9 @@ public class AdMob extends CordovaPlugin {
         PluginResult result = new PluginResult(PluginResult.Status.OK, event);
         result.setKeepCallback(true);
         if (readyCallbackContext == null) {
-          waitingForReadyCallbackContextResults.add(result);
+            if (waitingForReadyCallbackContextResults instanceof ArrayList) {
+                waitingForReadyCallbackContextResults.add(result);
+            }
         } else {
           readyCallbackContext.sendPluginResult(result);
         }
