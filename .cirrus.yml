@@ -1,0 +1,19 @@
+lint_task:
+  container:
+    image: node:latest
+  node_modules_cache:
+    folder: node_modules
+    fingerprint_script: curl https://api.cirrus-ci.com/v1/artifact/github/admob-plus/admob-plus/lint/yarn_lock/yarn.lock
+    populate_script: yarn
+  yarn_lock_artifacts:
+    path: yarn.lock
+  script:
+    - yarn lint
+    - yarn lerna run prepare --scope=@admob-plus/core --scope=cordova-admob-plus
+    - pushd packages/cli
+    - yarn prepack
+    - popd
+    - pushd examples/ionic-angular
+    - yarn
+    - yarn lint
+    - popd
