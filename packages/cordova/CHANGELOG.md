@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.33.0](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.32.0...cordova-admob-plus@0.33.0) (2019-12-16)
+
+
+### Bug Fixes
+
+* **cordova-android:** avoid NullPointerException ([ff742fd](https://github.com/admob-plus/admob-plus/commit/ff742fd))
+
+
+### Features
+
+* **cordova-android:** update default PLAY_SERVICES_VERSION to v18.3.0 ([c0a26f2](https://github.com/admob-plus/admob-plus/commit/c0a26f2))
+
+
+
+
+
 # [0.32.0](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.31.0...cordova-admob-plus@0.32.0) (2019-11-17)
 
 
