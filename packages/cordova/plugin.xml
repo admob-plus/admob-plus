@@ -14,7 +14,7 @@
 
     <platform name="android">
         <preference name="APP_ID_ANDROID" default="test" />
-        <preference name="PLAY_SERVICES_VERSION" default="18.2.0" />
+        <preference name="PLAY_SERVICES_VERSION" default="18.3.0" />
 
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
             <meta-data
