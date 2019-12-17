@@ -12,8 +12,9 @@ cordova plugin add cordova-admob-plus --variable APP_ID_ANDROID=ca-app-pub-xxx~x
 
 For Android developer, `com.google.android.gms:play-services-ads:$PLAY_SERVICES_VERSION` is available for configuration, the default is `--PLAY_SERVICES_VERSION=18.3.0`.
 
-For iOS developer, add `<preference name="UseSwiftLanguageVersion" value="5" />` to `config.xml` for using Swift 5.
+When using with other plugins and encountering errors, try install `cordova-plugin-androidx` and `cordova-plugin-androidx-adapter` to fix.
 
+For iOS developer, add `<preference name="UseSwiftLanguageVersion" value="5" />` to `config.xml` for using Swift 5.
 
 ## Using Ionic
 
