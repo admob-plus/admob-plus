@@ -36,9 +36,8 @@
         "WEB_APPLICATION_CLIENT_ID": "mywebapplicationclientid",
         "PLAY_SERVICES_VERSION": "17.0.0"
       },
-      "cordova-android-support-gradle-release": {
-        "ANDROID_SUPPORT_VERSION": "27.0.2"
-      }
+      "cordova-plugin-androidx": {},
+      "cordova-plugin-androidx-adapter": {}
     },
     "platforms": [
       "android"
@@ -47,7 +46,8 @@
   "dependencies": {
     "cordova-admob-plus": "^0.32.0",
     "cordova-android": "8.1.0",
-    "cordova-android-support-gradle-release": "3.0.1",
+    "cordova-plugin-androidx": "^1.0.2",
+    "cordova-plugin-androidx-adapter": "^1.1.0",
     "cordova-plugin-facebook4": "^6.2.0",
     "cordova-plugin-google-analytics": "^1.8.6",
     "cordova-plugin-googleplus": "^8.2.1",
