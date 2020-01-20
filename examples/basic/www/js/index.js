@@ -5,7 +5,7 @@ const app = {
     document.addEventListener(
       'deviceready',
       this.onDeviceReady.bind(this),
-      false
+      false,
     )
   },
 
@@ -16,7 +16,7 @@ const app = {
   },
 
   showAds() {
-    admob.banner.show({ id: 'test' }).catch(console.log)
+    admob.banner.show({ id: 'test', npa: '1' }).catch(console.log)
     admob.interstitial
       .load({ id: 'test' })
       .then(() => admob.interstitial.show())

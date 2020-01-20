@@ -15,6 +15,7 @@ export interface IAdRequest {
   testDevices?: string[]
   childDirected?: boolean
   underAgeOfConsent?: boolean
+  npa?: '1'
 }
 
 type AdSize =
