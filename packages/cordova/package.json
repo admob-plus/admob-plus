@@ -1,6 +1,6 @@
 {
   "name": "cordova-admob-plus",
-  "version": "0.33.0",
+  "version": "0.34.0",
   "description": "Trustable Google AdMob Cordova Plugin",
   "main": "www/admob.js",
   "typings": "www/admob.d.ts",
@@ -11,7 +11,7 @@
     "prepare:clean": "del src/.DS_Store src/**/.DS_Store"
   },
   "devDependencies": {
-    "@admob-plus/core": "^0.8.0",
+    "@admob-plus/core": "^0.9.0",
     "@types/cordova": "^0.0.34",
     "@types/lodash": "^4.14.149",
     "@types/node": "^13.1.8",
