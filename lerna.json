@@ -1,5 +1,8 @@
 {
   "command": {
+    "bootstrap": {
+      "npmClientArgs": ["--no-package-lock"]
+    },
     "publish": {
       "conventionalCommits": true,
       "message": "chore(release): publish"
