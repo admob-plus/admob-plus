@@ -1,0 +1,50 @@
+{
+  "private": true,
+  "name": "example.consent",
+  "displayName": "HelloCordova",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "prepare": "run-s prepare:* link-plugin",
+    "prepare:cordova": "cordova prepare --searchpath ../../packages",
+    "prepare:lint-on": "replace-in-file 'abortOnError false;' 'abortOnError true;' platforms/android/app/build.gradle",
+    "clean": "del package-lock.json platforms plugins",
+    "link-plugin": "run-s link-plugin:*",
+    "link-plugin:rm": "cordova plugin rm cordova-plugin-consent --nosave > /dev/null 2>&1 || true",
+    "link-plugin:add": "cordova plugin add --link --nosave --searchpath ../../packages cordova-plugin-consent",
+    "dev-android": "run-s dev-android:*",
+    "dev-android:del": "del platforms/android/app/src/main/java/cordova/plugin/consent",
+    "dev-android:link": "link-dir $PWD/../../packages/cordova-consent/src/android platforms/android/app/src/main/java/cordova/plugin/consent",
+    "dev-android:open": "open -a 'Android Studio' platforms/android",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cordova-android": "^8.1.0"
+  },
+  "devDependencies": {
+    "cordova-plugin-whitelist": "^1.3.4",
+    "del-cli": "^3.0.0",
+    "npm-run-all": "^4.1.5",
+    "link-dir": "^2.0.1",
+    "replace-in-file": "^5.0.2"
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-consent": {
+        "CONSENT_SDK_VERSION": "1.0.6+"
+      }
+    },
+    "platforms": [
+      "android"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "concise-browser"
+    ],
+    "globals": {
+      "consent": true
+    }
+  }
+}

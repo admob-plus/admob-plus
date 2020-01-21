@@ -1,1 +1,5 @@
-export default {}
+export default {
+  init() {
+    alert(1)
+  },
+}

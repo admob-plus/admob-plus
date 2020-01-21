@@ -8,6 +8,9 @@ public class Consent extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) {
+        ConsentInformation consentInformation = ConsentInformation
+                .getInstance(cordova.getActivity().getApplicationContext());
+
         return false;
     }
 }
