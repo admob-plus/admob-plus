@@ -1,0 +1,97 @@
+import * as del from 'del'
+import * as execa from 'execa'
+// @ts-ignore
+import linkDir from 'link-dir'
+import * as path from 'path'
+import * as replaceInFileReal from 'replace-in-file'
+import replaceInFileCJS from 'replace-in-file'
+import * as yargs from 'yargs'
+
+const replaceInFile = (replaceInFileReal as any) as typeof replaceInFileCJS
+
+const linkPlugin = async (plugin: string) => {
+  await execa('cordova plugin rm cordova-plugin-consent --nosave ', {
+    shell: true,
+    reject: false,
+  })
+  await execa(
+    `cordova plugin add --link --nosave --searchpath ../../packages ${plugin}`,
+    {
+      shell: true,
+      stdio: 'inherit',
+    },
+  )
+}
+
+const prepare = async (opts: { plugin: string }) => {
+  await execa('cordova prepare --searchpath ../../packages', {
+    shell: true,
+    stdio: 'inherit',
+  })
+  await Promise.all([
+    replaceInFile({
+      files: path.join(process.cwd(), 'platforms/android/app/build.gradle'),
+      from: 'abortOnError false;',
+      to: 'abortOnError true;',
+    }),
+    linkPlugin(opts.plugin),
+  ])
+}
+
+const androidOpen = async (opts: {
+  pluginDir: string;
+  javaPackagePath: string;
+}) => {
+  const targetDir = path.join(
+    'platforms/android/app/src/main/java',
+    opts.javaPackagePath,
+  )
+  await del([targetDir])
+  await linkDir(
+    path.join(__dirname, '../packages', opts.pluginDir, 'src/android'),
+    targetDir,
+  )
+  await execa('open -a \'Android Studio\' platforms/android', {
+    shell: true,
+    stdio: 'inherit',
+  })
+}
+
+const cli = yargs
+  .command('clean', '', {}, () =>
+    del(['package-lock.json', 'platforms', 'plugins']),
+  )
+  .command(
+    'prepare',
+    '',
+    {
+      plugin: {
+        type: 'string',
+        demand: true,
+      },
+    },
+    argv => argv.plugin && prepare({ plugin: argv.plugin }),
+  )
+  .command(
+    'android',
+    'open Android Studio for development',
+    {
+      dir: {
+        type: 'string',
+        demand: true,
+      },
+      java: {
+        type: 'string',
+        demand: true,
+      },
+    },
+    argv =>
+      argv.dir &&
+      argv.java &&
+      androidOpen({ pluginDir: argv.dir, javaPackagePath: argv.java }),
+  )
+  .help()
+
+if (cli.argv._.length === 0) {
+  cli.showHelp()
+}
