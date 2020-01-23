@@ -38,6 +38,16 @@ const prepare = async (opts: { plugin: string }) => {
   ])
 }
 
+const androidRun = async (argv: { deivce: boolean }) => {
+  await execa(
+    'cordova',
+    ['run', 'android', '--verbose'].concat(argv.deivce ? ['--device'] : []),
+    {
+      stdio: 'inherit',
+    },
+  )
+}
+
 const androidOpen = async (opts: {
   pluginDir: string;
   javaPackagePath: string;
@@ -74,6 +84,16 @@ const cli = yargs
   )
   .command(
     'android',
+    '',
+    {
+      device: {
+        default: true,
+      },
+    },
+    androidRun as any,
+  )
+  .command(
+    'open-android',
     'open Android Studio for development',
     {
       dir: {
