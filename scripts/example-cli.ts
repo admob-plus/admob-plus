@@ -23,6 +23,8 @@ const linkPlugin = async (plugin: string) => {
   )
 }
 
+const clean = () => del(['package-lock.json', 'platforms', 'plugins'])
+
 const prepare = async (opts: { plugin: string }) => {
   await execa('cordova prepare --searchpath ../../packages', {
     shell: true,
@@ -68,9 +70,7 @@ const androidOpen = async (opts: {
 }
 
 const cli = yargs
-  .command('clean', '', {}, () =>
-    del(['package-lock.json', 'platforms', 'plugins']),
-  )
+  .command('clean', '', {}, clean)
   .command(
     'prepare',
     '',
