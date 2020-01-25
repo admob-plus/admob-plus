@@ -9,6 +9,9 @@ import * as yargs from 'yargs'
 
 const replaceInFile = (replaceInFileReal as any) as typeof replaceInFileCJS
 
+const pkgsDirJoin = (...args: string[]) =>
+  path.join(__dirname, '../packages', ...args)
+
 const linkPlugin = async (plugin: string) => {
   await execa('cordova plugin rm cordova-plugin-consent --nosave ', {
     shell: true,
@@ -59,10 +62,7 @@ const androidOpen = async (opts: {
     opts.javaPackagePath,
   )
   await del([targetDir])
-  await linkDir(
-    path.join(__dirname, '../packages', opts.pluginDir, 'src/android'),
-    targetDir,
-  )
+  await linkDir(pkgsDirJoin(opts.pluginDir, 'src/android'), targetDir)
   await execa('open -a \'Android Studio\' platforms/android', {
     shell: true,
     stdio: 'inherit',
