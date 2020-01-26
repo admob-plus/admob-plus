@@ -37,6 +37,7 @@
     "prettier": "^1.19.1",
     "prettier-eslint-cli": "^5.0.0",
     "prettier-tslint": "^0.4.2",
+    "read-pkg": "^5.2.0",
     "remark-cli": "^7.0.1",
     "remark-lint-are-links-valid-duplicate": "^0.2.2",
     "remark-lint-heading-whitespace": "^1.0.0",

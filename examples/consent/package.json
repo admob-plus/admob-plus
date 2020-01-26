@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "cli": "../../node_modules/.bin/ts-node ../../scripts/example-cli.ts",
-    "prepare": "run-s 'cli prepare --plugin=cordova-plugin-consent'",
+    "prepare": "run-s 'cli prepare --dir=cordova-consent'",
     "dev-android": "run-s 'cli android --dir=cordova-consent --java=cordova/plugin/consent'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

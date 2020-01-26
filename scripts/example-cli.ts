@@ -3,8 +3,8 @@ import * as execa from 'execa'
 // @ts-ignore
 import linkDir from 'link-dir'
 import * as path from 'path'
-import * as replaceInFileReal from 'replace-in-file'
-import replaceInFileCJS from 'replace-in-file'
+import * as readPkg from 'read-pkg'
+import replaceInFileCJS, * as replaceInFileReal from 'replace-in-file'
 import * as yargs from 'yargs'
 
 const replaceInFile = (replaceInFileReal as any) as typeof replaceInFileCJS
@@ -19,16 +19,19 @@ const linkPlugin = async (plugin: string) => {
   })
   await execa(
     `cordova plugin add --link --nosave --searchpath ../../packages ${plugin}`,
-    {
-      shell: true,
-      stdio: 'inherit',
-    },
+    { shell: true, stdio: 'inherit' },
   )
 }
 
 const clean = () => del(['package-lock.json', 'platforms', 'plugins'])
 
-const prepare = async (opts: { plugin: string }) => {
+const prepare = async (opts: { pluginDir: string }) => {
+  const pkg = await readPkg({ cwd: pkgsDirJoin(opts.pluginDir) })
+  await execa('run-s prepare', {
+    cwd: pkgsDirJoin(opts.pluginDir),
+    shell: true,
+    stdio: 'inherit',
+  })
   await execa('cordova prepare --searchpath ../../packages', {
     shell: true,
     stdio: 'inherit',
@@ -39,7 +42,7 @@ const prepare = async (opts: { plugin: string }) => {
       from: 'abortOnError false;',
       to: 'abortOnError true;',
     }),
-    linkPlugin(opts.plugin),
+    linkPlugin(pkg.name),
   ])
 }
 
@@ -47,9 +50,7 @@ const androidRun = async (argv: { deivce: boolean }) => {
   await execa(
     'cordova',
     ['run', 'android', '--verbose'].concat(argv.deivce ? ['--device'] : []),
-    {
-      stdio: 'inherit',
-    },
+    { stdio: 'inherit' },
   )
 }
 
@@ -74,36 +75,16 @@ const cli = yargs
   .command(
     'prepare',
     '',
-    {
-      plugin: {
-        type: 'string',
-        demand: true,
-      },
-    },
-    argv => argv.plugin && prepare({ plugin: argv.plugin }),
+    { dir: { type: 'string', demand: true } },
+    argv => argv.dir && prepare({ pluginDir: argv.dir }),
   )
-  .command(
-    'android',
-    '',
-    {
-      device: {
-        default: true,
-      },
-    },
-    androidRun as any,
-  )
+  .command('android', '', { device: { default: true } }, androidRun as any)
   .command(
     'open-android',
     'open Android Studio for development',
     {
-      dir: {
-        type: 'string',
-        demand: true,
-      },
-      java: {
-        type: 'string',
-        demand: true,
-      },
+      dir: { type: 'string', demand: true },
+      java: { type: 'string', demand: true },
     },
     argv =>
       argv.dir &&
