@@ -46,7 +46,11 @@ const prepare = async (opts: { pluginDir: string }) => {
   ])
 }
 
-const androidRun = async (argv: { deivce: boolean }) => {
+const androidRun = async (argv: { clean: boolean; deivce: boolean }) => {
+  if (argv.clean) {
+    await clean()
+    await execa('run-s prepare', { shell: true, stdio: 'inherit' })
+  }
   await execa(
     'cordova',
     ['run', 'android', '--verbose'].concat(argv.deivce ? ['--device'] : []),
@@ -78,7 +82,15 @@ const cli = yargs
     { dir: { type: 'string', demand: true } },
     argv => argv.dir && prepare({ pluginDir: argv.dir }),
   )
-  .command('android', '', { device: { default: true } }, androidRun as any)
+  .command(
+    'android',
+    '',
+    {
+      clean: { type: 'boolean' },
+      device: { default: true },
+    },
+    androidRun as any,
+  )
   .command(
     'open-android',
     'open Android Studio for development',
