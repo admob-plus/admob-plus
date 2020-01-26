@@ -16,6 +16,7 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <engine name="android" spec="8.1.0" />
     <platform name="android">
         <allow-intent href="market:*" />
     </platform>

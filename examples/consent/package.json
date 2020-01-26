@@ -7,22 +7,20 @@
   "scripts": {
     "cli": "../../node_modules/.bin/ts-node ../../scripts/example-cli.ts",
     "prepare": "run-s 'cli prepare --dir=cordova-consent'",
-    "dev-android": "run-s 'cli android --dir=cordova-consent --java=cordova/plugin/consent'",
+    "dev-android": "run-s 'cli open-android --dir=cordova-consent --java=cordova/plugin/consent'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "cordova-android": "^8.1.0"
+    "cordova-android": "^8.1.0",
+    "cordova-plugin-whitelist": "^1.3.4"
   },
   "devDependencies": {
-    "cordova-plugin-whitelist": "^1.3.4",
     "npm-run-all": "^4.1.5"
   },
   "cordova": {
     "plugins": {
       "cordova-plugin-whitelist": {},
-      "cordova-plugin-consent": {
-        "CONSENT_SDK_VERSION": "1.0.6+"
-      }
+      "cordova-plugin-consent": {}
     },
     "platforms": [
       "android"

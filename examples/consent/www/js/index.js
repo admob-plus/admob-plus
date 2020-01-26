@@ -11,7 +11,11 @@ const app = {
 
   onDeviceReady() {
     this.receivedEvent('deviceready')
-    consent.init()
+
+    consent
+      .checkConsent(['pub-0123456789012345'])
+      .then(alert)
+      .catch(alert)
   },
 
   receivedEvent(id) {

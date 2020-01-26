@@ -20,7 +20,7 @@
     "@commitlint/prompt-cli": "^8.3.5",
     "@types/jest": "^24.9.1",
     "@types/yargs": "^15.0.1",
-    "cordova": "9.0.1-nightly.2019.4.26.f7637760",
+    "cordova": "9.0.1-nightly.2019.11.10.44afc892",
     "cordova-testbed": "^0.8.0",
     "eslint": "^6.8.0",
     "eslint-config-concise": "^0.37.1",
