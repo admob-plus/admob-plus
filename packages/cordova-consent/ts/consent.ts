@@ -15,4 +15,7 @@ export default {
   isRequestLocationInEeaOrUnknown() {
     return execAsync('isRequestLocationInEeaOrUnknown')
   },
+  addTestDevice(deviceId: string) {
+    return execAsync('addTestDevice', [deviceId])
+  },
 }

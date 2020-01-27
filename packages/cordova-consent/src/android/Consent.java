@@ -19,12 +19,15 @@ public class Consent extends CordovaPlugin {
         try {
             if ("checkConsent".equals(action)) {
                 this.checkConsent(args, callbackContext);
-                return true;
             } else if ("isRequestLocationInEeaOrUnknown".equals(action)) {
                 callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, ConsentInformation
                         .getInstance(cordova.getActivity().getApplicationContext()).isRequestLocationInEeaOrUnknown()));
-                return true;
+            } else if ("addTestDevice".equals(action)) {
+                ConsentInformation.getInstance(cordova.getActivity().getApplicationContext())
+                        .addTestDevice(args.getString(0));
+                callbackContext.success();
             }
+            return true;
         } catch (JSONException e) {
             Log.d(TAG, Log.getStackTraceString(e));
             callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.JSON_EXCEPTION));
