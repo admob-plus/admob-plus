@@ -8,9 +8,12 @@ const execAsync = (action: string, args?: any[]) => {
   })
 }
 
+type ConsentStatus = 'PERSONALIZED' | 'NON_PERSONALIZED' | 'UNKNOWN'
+
 export default {
-  checkConsent(publisherIds: string[]) {
-    return execAsync('checkConsent', [publisherIds])
+  async checkConsent(publisherIds: string[]) {
+    const result = await execAsync('checkConsent', [publisherIds])
+    return result as ConsentStatus
   },
   isRequestLocationInEeaOrUnknown() {
     return execAsync('isRequestLocationInEeaOrUnknown')
