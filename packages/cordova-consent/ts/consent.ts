@@ -18,4 +18,7 @@ export default {
   addTestDevice(deviceId: string) {
     return execAsync('addTestDevice', [deviceId])
   },
+  setDebugGeography(geography: 'EEA' | 'NOT_EEA') {
+    return execAsync('setDebugGeography', [geography])
+  },
 }

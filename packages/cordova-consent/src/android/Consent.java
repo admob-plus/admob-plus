@@ -26,6 +26,16 @@ public class Consent extends CordovaPlugin {
                 ConsentInformation.getInstance(cordova.getActivity().getApplicationContext())
                         .addTestDevice(args.getString(0));
                 callbackContext.success();
+            } else if ("setDebugGeography".equals(action)) {
+                String geography = args.getString(0);
+                if ("EEA".equals(geography)) {
+                    ConsentInformation.getInstance(cordova.getActivity().getApplicationContext())
+                            .setDebugGeography(DebugGeography.DEBUG_GEOGRAPHY_EEA);
+                } else if ("NOT_EEA".equals(geography)) {
+                    ConsentInformation.getInstance(cordova.getActivity().getApplicationContext())
+                            .setDebugGeography(DebugGeography.DEBUG_GEOGRAPHY_NOT_EEA);
+                }
+                callbackContext.success();
             }
             return true;
         } catch (JSONException e) {
