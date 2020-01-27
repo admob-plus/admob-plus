@@ -13,6 +13,10 @@ const app = {
     this.receivedEvent('deviceready')
 
     consent
+      .isRequestLocationInEeaOrUnknown()
+      .then(result => console.log('isRequestLocationInEeaOrUnknown', result))
+
+    consent
       .checkConsent(['pub-0123456789012345'])
       .then(alert)
       .catch(alert)

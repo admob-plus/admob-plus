@@ -12,4 +12,7 @@ export default {
   checkConsent(publisherIds: string[]) {
     return execAsync('checkConsent', [publisherIds])
   },
+  isRequestLocationInEeaOrUnknown() {
+    return execAsync('isRequestLocationInEeaOrUnknown')
+  },
 }
