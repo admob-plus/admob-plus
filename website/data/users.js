@@ -45,5 +45,10 @@ module.exports = [
     caption: 'Moray Doomsday - free multiplayer fighting games',
     image: 'https://lh3.googleusercontent.com/30WHxjxPU1MY2e_HHo6jiK2g0bwZxiVbgBXqtDLPqj45KIo9YUGVu-XKi2YDBsJ3_2isl7FmEcNv-yhNi4MWoEjTyZ_9xkpC5Q3V_Bbr2iSC2QhH_y3X1YMPaAB14xbDgnSj8Zns=s128-no',
     infoLink: 'https://play.google.com/store/apps/details?id=com.crasheros.app',
+  },
+  {
+    caption: 'Drop It: Block Paradise! Free',
+    image: 'https://lh3.googleusercontent.com/HHHy-IMUtlx55G7-iBBHHxNG4gTIZlhYjwjDnRRL_1KGaVcO3RK9EeGsyA0RLkxNows=s180-rw',
+    infoLink: 'https://play.google.com/store/apps/details?id=com.zenfaproductions.dropitads',
   }
 ]
