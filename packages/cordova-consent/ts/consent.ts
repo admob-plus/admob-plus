@@ -1,6 +1,8 @@
 // @ts-ignore
 import { exec, fireDocumentEvent } from 'cordova'
 
+type ConsentStatus = 'PERSONALIZED' | 'NON_PERSONALIZED' | 'UNKNOWN'
+
 const state = {
   nextFormId: 0,
   forms: new Map<number, ConsentForm>(),
@@ -72,7 +74,10 @@ class ConsentForm {
   async show() {
     await execAsync('showConsentForm', [{ id: this.id }])
     const result = await waitEvent('consent.form.closed', 'consent.form.error')
-    return result
+    return (result as any) as {
+      consentStatus: ConsentStatus;
+      userPrefersAdFree: boolean;
+    }
   }
 }
 
@@ -92,8 +97,6 @@ document.addEventListener(
   },
   false,
 )
-
-type ConsentStatus = 'PERSONALIZED' | 'NON_PERSONALIZED' | 'UNKNOWN'
 
 export default {
   Form: ConsentForm,
