@@ -1,4 +1,4 @@
-// @ts-ignore
+/// <reference path="../../../index.d.ts" />
 import { exec, fireDocumentEvent } from 'cordova'
 
 type ConsentStatus = 'PERSONALIZED' | 'NON_PERSONALIZED' | 'UNKNOWN'
