@@ -12,7 +12,7 @@ $ npm install -g admob-plus
 $ admob-plus COMMAND
 running command...
 $ admob-plus (-v|--version|version)
-admob-plus/0.15.4 darwin-x64 node-v12.10.0
+admob-plus/0.15.4 darwin-x64 node-v13.7.0
 $ admob-plus --help [COMMAND]
 USAGE
   $ admob-plus COMMAND

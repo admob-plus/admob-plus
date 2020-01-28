@@ -43,7 +43,7 @@ jobs:
     env: JOB=deploy-docs
     if: branch = master AND type != pull_request
     language: node_js
-    node_js: 12
+    node_js: 13
     install:
       - travis_retry yarn
       - yarn lerna run --scope @admob-plus/core prepare
