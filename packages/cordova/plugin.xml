@@ -20,6 +20,9 @@
             <meta-data
                 android:name="com.google.android.gms.ads.APPLICATION_ID"
                 android:value="$APP_ID_ANDROID" />
+            <meta-data
+                android:name="com.google.android.gms.ads.DELAY_APP_MEASUREMENT_INIT"
+                android:value="true"/>
         </config-file>
 
         <config-file target="res/xml/config.xml" parent="/*">
