@@ -1,0 +1,35 @@
+name: Node CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x, 13.x]
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: set up JDK 1.8
+      uses: actions/setup-java@v1
+      with:
+        java-version: 1.8
+    - name: npm install, build, and test
+      run: |
+        yarn
+        yarn lint
+        yarn lerna run prepare --scope=@admob-plus/core --scope=cordova-admob-plus
+        yarn test
+        pushd examples/ionic-angular
+        yarn
+        yarn lint
+        popd
+      env:
+        CI: true
