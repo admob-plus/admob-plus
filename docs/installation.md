@@ -12,9 +12,24 @@ cordova plugin add cordova-admob-plus --variable APP_ID_ANDROID=ca-app-pub-xxx~x
 
 For Android developer, `com.google.android.gms:play-services-ads:$PLAY_SERVICES_VERSION` is available for configuration, the default is `--PLAY_SERVICES_VERSION=18.3.0`.
 
-When using with other plugins and encountering errors, try install `cordova-plugin-androidx` and `cordova-plugin-androidx-adapter` to fix.
+When using with other plugins and encountering errors, try the following to fix.
+
+```sh
+cordova plugin add cordova-plugin-androidx
+cordova plugin add cordova-plugin-androidx-adapter
+```
 
 For iOS developer, add `<preference name="UseSwiftLanguageVersion" value="5" />` to `config.xml` for using Swift 5.
+
+## With Consent SDK
+
+In order to fulfill GDPR, it is important to ask user's consent before displaying personalized ads.
+
+Install `cordova-plugin-consent` and following [the example code](https://github.com/admob-plus/admob-plus/blob/master/examples/consent/www/js/index.js#L15).
+
+```sh
+cordova plugin add cordova-plugin-consent
+```
 
 ## Using Ionic
 
