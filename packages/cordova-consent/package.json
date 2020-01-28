@@ -1,5 +1,4 @@
 {
-  "private": true,
   "name": "cordova-plugin-consent",
   "version": "0.15.2",
   "description": "Google Consent SDK Cordova Plugin",
