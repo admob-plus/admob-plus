@@ -8,15 +8,30 @@ const app = {
       false,
     )
   },
-
   onDeviceReady() {
     this.receivedEvent('deviceready')
-    this.showConsent().catch(console.error)
-  },
-  async showConsent() {
     // NOTE: update the following to make it works
     const testDeviceId = '33BE2250B43518CCDA7DE426D04EE231'
-    const publisherIds = ['pub-0123456789012345']
+    this.showConsent(testDeviceId)
+      .then(async ({ consentStatus }) => {
+        console.log('consentStatus', consentStatus)
+        if (consentStatus === 'PERSONALIZED') {
+          await admob.banner.show({
+            id: 'test',
+            testDevices: [testDeviceId],
+          })
+        } else {
+          await admob.banner.show({
+            id: 'test',
+            testDevices: [testDeviceId],
+            npa: '1',
+          })
+        }
+      })
+      .catch(console.error)
+  },
+  async showConsent(testDeviceId) {
+    const publisherIds = ['pub-3940256099942544']
 
     await consent.addTestDevice(testDeviceId)
     await consent.setDebugGeography('EEA')
@@ -24,7 +39,7 @@ const app = {
 
     const ok = await consent.isRequestLocationInEeaOrUnknown()
     if (!ok) {
-      alert('please update testDeviceId and publisherIds')
+      alert('please update testDeviceId from logcat')
     }
 
     const form = new consent.Form({
@@ -34,7 +49,8 @@ const app = {
       personalizedAds: true,
     })
     await form.load()
-    await form.show()
+    const result = await form.show()
+    return result
   },
   receivedEvent(id) {
     const parentElement = document.getElementById(id)

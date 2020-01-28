@@ -12,6 +12,8 @@
   },
   "dependencies": {
     "cordova-android": "^8.1.0",
+    "cordova-plugin-androidx": "^1.0.2",
+    "cordova-plugin-androidx-adapter": "^1.1.0",
     "cordova-plugin-whitelist": "^1.3.4"
   },
   "devDependencies": {
@@ -20,7 +22,13 @@
   "cordova": {
     "plugins": {
       "cordova-plugin-whitelist": {},
-      "cordova-plugin-consent": {}
+      "cordova-plugin-consent": {},
+      "cordova-admob-plus": {
+        "APP_ID_ANDROID": "ca-app-pub-3940256099942544~3347511713",
+        "APP_ID_IOS": "ca-app-pub-3940256099942544~1458002511"
+      },
+      "cordova-plugin-androidx": {},
+      "cordova-plugin-androidx-adapter": {}
     },
     "platforms": [
       "android"
@@ -31,6 +39,7 @@
       "concise-browser"
     ],
     "globals": {
+      "admob": true,
       "consent": true
     }
   }
