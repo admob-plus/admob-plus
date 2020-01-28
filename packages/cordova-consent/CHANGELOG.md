@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.16.0](https://github.com/admob-plus/admob-plus/compare/cordova-plugin-consent@0.15.2...cordova-plugin-consent@0.16.0) (2020-01-28)
+
+
+### Features
+
+* **cordova-consent:** add addTestDevice action ([fe71961](https://github.com/admob-plus/admob-plus/commit/fe71961))
+* **cordova-consent:** add checkConsent API ([1d66bcf](https://github.com/admob-plus/admob-plus/commit/1d66bcf))
+* **cordova-consent:** add ConsentForm ([08b19e3](https://github.com/admob-plus/admob-plus/commit/08b19e3))
+* **cordova-consent:** add isRequestLocationInEeaOrUnknown action ([3179a7d](https://github.com/admob-plus/admob-plus/commit/3179a7d))
+* **cordova-consent:** add setDebugGeography action ([952c928](https://github.com/admob-plus/admob-plus/commit/952c928))
+* **cordova-consent:** prepare for release ([0e9d920](https://github.com/admob-plus/admob-plus/commit/0e9d920))
+
+
+
+
+
 ## [0.15.2](https://github.com/admob-plus/admob-plus/compare/cordova-plugin-consent@0.15.1...cordova-plugin-consent@0.15.2) (2020-01-20)
 
 **Note:** Version bump only for package cordova-plugin-consent

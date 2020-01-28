@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.35.0](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.34.0...cordova-admob-plus@0.35.0) (2020-01-28)
+
+
+### Features
+
+* **cordova:** delay app measurement ([5ce4ac5](https://github.com/admob-plus/admob-plus/commit/5ce4ac5))
+
+
+
+
+
 # [0.34.0](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.33.0...cordova-admob-plus@0.34.0) (2020-01-20)
 
 

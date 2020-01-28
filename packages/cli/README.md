@@ -12,7 +12,7 @@ $ npm install -g admob-plus
 $ admob-plus COMMAND
 running command...
 $ admob-plus (-v|--version|version)
-admob-plus/0.15.4 darwin-x64 node-v13.7.0
+admob-plus/0.15.5 darwin-x64 node-v13.7.0
 $ admob-plus --help [COMMAND]
 USAGE
   $ admob-plus COMMAND
@@ -57,5 +57,5 @@ EXAMPLE
   $ admob-plus info
 ```
 
-_See code: [src/commands/info.ts](https://github.com/admob-plus/admob-plus/blob/v0.15.4/src/commands/info.ts)_
+_See code: [src/commands/info.ts](https://github.com/admob-plus/admob-plus/blob/v0.15.5/src/commands/info.ts)_
 <!-- commandsstop -->
