@@ -122,7 +122,7 @@ public class InterstitialAd extends AdBase {
     }
 
     private void show() {
-        if (interstitialAd != null && interstitialAd.isLoaded()) {
+        if (isLoaded()) {
             interstitialAd.show();
         }
     }
