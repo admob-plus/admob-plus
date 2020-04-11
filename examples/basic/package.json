@@ -21,7 +21,7 @@
     "dev-ios:open": "open platforms/ios/AdmobBasicExample.xcworkspace"
   },
   "dependencies": {
-    "cordova-admob-plus": "^0.35.0",
+    "cordova-admob-plus": "^0.36.0",
     "cordova-android": "8.1.0",
     "cordova-browser": "6.0.0",
     "cordova-ios": "5.1.1",

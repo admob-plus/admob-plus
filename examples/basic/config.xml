@@ -22,7 +22,7 @@
         <variable name="APP_ID_ANDROID" value="ca-app-pub-3940256099942544~3347511713" />
         <variable name="APP_ID_IOS" value="ca-app-pub-3940256099942544~1458002511" />
     </plugin>
-    <engine name="ios" spec="5.0.0" />
-    <engine name="android" spec="8.0.0" />
+    <engine name="ios" spec="5.1.1" />
+    <engine name="android" spec="8.1.0" />
     <engine name="browser" spec="6.0.0" />
 </widget>

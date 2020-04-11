@@ -12,7 +12,14 @@ const app = {
   onDeviceReady() {
     this.receivedEvent('deviceready')
 
-    this.showAds()
+    this.checkIsLoaded().then(() => this.showAds())
+  },
+
+  checkIsLoaded() {
+    return admob.interstitial.isLoaded().then(result => {
+      alert(result)
+      return result
+    })
   },
 
   showAds() {
