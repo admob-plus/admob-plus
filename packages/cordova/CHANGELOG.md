@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.36.0](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.35.0...cordova-admob-plus@0.36.0) (2020-04-11)
+
+
+### Bug Fixes
+
+* **cordova-android:** handle null interstitialAd for isLoaded() ([620a92e](https://github.com/admob-plus/admob-plus/commit/620a92e))
+
+
+### Features
+
+* **cordova-android:** update default PLAY_SERVICES_VERSION to v19.0.1 ([3de3f59](https://github.com/admob-plus/admob-plus/commit/3de3f59))
+* **cordova-ios:** update Google-Mobile-Ads-SDK to v7.57 ([514e472](https://github.com/admob-plus/admob-plus/commit/514e472))
+
+
+
+
+
 # [0.35.0](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.34.0...cordova-admob-plus@0.35.0) (2020-01-28)
 
 
