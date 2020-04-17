@@ -32,6 +32,10 @@ public abstract class AdBase {
         return ads.get(id);
     }
 
+    public static AdMob getPlugin() {
+        return AdBase.plugin; 
+    }
+
     JSONObject buildErrorPayload(int errorCode) {
         JSONObject data = new JSONObject();
         try {

@@ -2,6 +2,9 @@ package admob.plugin;
 
 import android.os.Bundle;
 
+import android.util.DisplayMetrics;
+import android.view.Display;
+
 import com.google.ads.mediation.admob.AdMobAdapter;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
@@ -33,7 +36,7 @@ public class Action {
     public AdSize getAdSize() {
         final String name = "size";
         if (!this.opts.has(name)) {
-            return AdSize.SMART_BANNER;
+            return this.getAdaptiveBanner();
         }
         AdSize adSize = AdSizeType.getAdSize(this.opts.opt(name));
         if (adSize != null) {
@@ -41,7 +44,7 @@ public class Action {
         }
         JSONObject adSizeObj = this.opts.optJSONObject(name);
         if (adSizeObj == null) {
-            return AdSize.SMART_BANNER;
+            return this.getAdaptiveBanner();
         }
         return new AdSize(adSizeObj.optInt("width"), adSizeObj.optInt("height"));
     }
@@ -72,5 +75,14 @@ public class Action {
             extras.putBoolean("tag_for_under_age_of_consent", opts.optBoolean("underAgeOfConsent"));
         }
         return builder.addNetworkExtrasBundle(AdMobAdapter.class, extras).build();
+    }
+    private AdSize getAdaptiveBanner() {
+        Display display = AdBase.getPlugin().cordova.getActivity().getWindowManager().getDefaultDisplay();
+        DisplayMetrics outMetrics = new DisplayMetrics();
+        display.getMetrics(outMetrics);
+        float widthPixels = outMetrics.widthPixels;
+        float density = outMetrics.density;
+        int adWidth = (int) (widthPixels / density);
+        return AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(AdBase.getPlugin().webView.getContext(), adWidth);
     }
 }
