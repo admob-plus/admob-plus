@@ -74,6 +74,23 @@ const androidOpen = async (opts: {
   })
 }
 
+const iosOpen = async (opts: { pluginDir: string }) => {
+  const pkgExample = await readPkg()
+  const pkg = await readPkg({ cwd: pkgsDirJoin(opts.pluginDir) })
+  const targetDir = path.join(
+    'platforms/ios',
+    pkgExample.displayName,
+    'Plugins',
+    pkg.name,
+  )
+  await del([targetDir])
+  await linkDir(pkgsDirJoin(opts.pluginDir, 'src/ios'), targetDir)
+  await execa(`open platforms/ios/${pkgExample.displayName}.xcworkspace`, {
+    shell: true,
+    stdio: 'inherit',
+  })
+}
+
 const cli = yargs
   .command('clean', '', {}, clean)
   .command(
@@ -102,6 +119,14 @@ const cli = yargs
       argv.dir &&
       argv.java &&
       androidOpen({ pluginDir: argv.dir, javaPackagePath: argv.java }),
+  )
+  .command(
+    'open-ios',
+    'open Xcode for development',
+    {
+      dir: { type: 'string', demand: true },
+    },
+    argv => argv.dir && iosOpen({ pluginDir: argv.dir }),
   )
   .help()
 
