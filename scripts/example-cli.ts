@@ -13,7 +13,7 @@ const pkgsDirJoin = (...args: string[]) =>
   path.join(__dirname, '../packages', ...args)
 
 const linkPlugin = async (plugin: string) => {
-  await execa('cordova plugin rm cordova-plugin-consent --nosave ', {
+  await execa(`cordova plugin rm ${plugin} --nosave`, {
     shell: true,
     reject: false,
   })
