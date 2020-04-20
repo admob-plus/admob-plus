@@ -1,7 +1,7 @@
 @objc(AMSPlugin)
 class AMSPlugin: CDVPlugin {
     static let testApplicationID = "ca-app-pub-3940256099942544~1458002511"
-
+    var banner: AMSBanner!
     var readyCallbackId: String!
 
     override func pluginInitialize() {
@@ -69,17 +69,18 @@ class AMSPlugin: CDVPlugin {
             let id = opts.value(forKey: "id") as? Int,
             let adUnitID = opts.value(forKey: "adUnitID") as? String,
             let position = opts.value(forKey: "position") as? String,
-            var banner = AMSAdBase.ads[id] as? AMSBanner?
+            let aux = AMSAdBase.ads[id] as? AMSBanner?
             else {
                 let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: false)
                 self.commandDelegate!.send(result, callbackId: command.callbackId)
                 return
         }
-        if banner == nil {
+        
+        if aux == nil {
             let adSize = getAdSize(opts)
-            banner = AMSBanner(id: id, adUnitID: adUnitID, adSize: adSize, position: position)
+            self.banner = AMSBanner(id: id, adUnitID: adUnitID, adSize: adSize, position: position)
         }
-        banner!.show(request: createGADRequest(opts))
+        self.banner.show(request: createGADRequest(opts))
 
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
         self.commandDelegate!.send(result, callbackId: command.callbackId)
@@ -87,16 +88,7 @@ class AMSPlugin: CDVPlugin {
 
     @objc(banner_hide:)
     func banner_hide(command: CDVInvokedUrlCommand) {
-        guard let opts = command.argument(at: 0) as? NSDictionary,
-            let id = opts.value(forKey: "id") as? Int,
-            let banner = AMSAdBase.ads[id] as? AMSBanner
-            else {
-                let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: false)
-                self.commandDelegate!.send(result, callbackId: command.callbackId)
-                return
-        }
-        banner.hide()
-
+        self.banner.hide()
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
         self.commandDelegate!.send(result, callbackId: command.callbackId)
     }

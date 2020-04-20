@@ -10,8 +10,17 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
 
     init(id: Int, adUnitID: String, adSize: GADAdSize, position: String) {
         super.init(id: id, adUnitID: adUnitID)
-
-        self.adSize = adSize
+        let frame = { () -> CGRect in
+            // Here safe area is taken into account, hence the view frame is used
+            // after the view has been laid out.
+            if #available(iOS 11.0, *) {
+                return view.frame.inset(by: view.safeAreaInsets)
+            } else {
+                return view.frame
+            }
+        }()
+        let viewWidth = frame.size.width
+        self.adSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(viewWidth)
         self.position = position
         self.constraintsToHide = [
             self.plugin.webView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -74,25 +83,25 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
     @available (iOS 11, *)
     func positionBannerInSafeArea(_ bannerView: UIView) {
         let guide: UILayoutGuide = view.safeAreaLayoutGuide
-        self.constraintsForBanner = [
+        var constraints = [
             bannerView.centerXAnchor.constraint(equalTo: guide.centerXAnchor),
             self.plugin.webView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             self.plugin.webView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ]
         if position == "top" {
-            self.constraintsForBanner += [
+            constraints += [
                 bannerView.topAnchor.constraint(equalTo: guide.topAnchor),
                 self.plugin.webView.topAnchor.constraint(equalTo: bannerView.bottomAnchor),
                 self.plugin.webView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
             ]
         } else {
-            self.constraintsForBanner += [
+            constraints += [
                 bannerView.bottomAnchor.constraint(equalTo: guide.bottomAnchor),
                 self.plugin.webView.topAnchor.constraint(equalTo: view.topAnchor),
                 self.plugin.webView.bottomAnchor.constraint(equalTo: bannerView.topAnchor)
             ]
         }
-        NSLayoutConstraint.activate(self.constraintsForBanner)
+        NSLayoutConstraint.activate(constraints)
     }
 
     func positionBanner(_ bannerView: UIView) {
