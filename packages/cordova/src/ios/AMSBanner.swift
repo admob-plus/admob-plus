@@ -53,6 +53,13 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
             bannerView.rootViewController = nil
             bannerView.removeFromSuperview()
             bannerView = nil
+            if #available(iOS 11.0, *) {
+                let guide: UILayoutGuide = view.safeAreaLayoutGuide
+                self.constraintsToHide = [
+                    self.plugin.webView.topAnchor.constraint(equalTo: guide.topAnchor),
+                    self.plugin.webView.bottomAnchor.constraint(equalTo: guide.bottomAnchor)
+                ]
+            }
             NSLayoutConstraint.activate(self.constraintsToHide)
         }
     }
