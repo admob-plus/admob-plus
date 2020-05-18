@@ -20,4 +20,18 @@
 
         <framework src="com.google.android.ads.consent:consent-library:$CONSENT_SDK_VERSION" />
     </platform>
+
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Consent">
+                <param name="ios-package" value="AMSConsent" />
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/AMSConsent-Bridging-Header.h" />
+        <source-file src="src/ios/AMSConsent.swift" />
+
+        <dependency id="cordova-plugin-add-swift-support" version="^2.0.2" />
+        <framework src="PersonalizedAdConsent" type="podspec" spec="~> 1.0.5" />
+    </platform>
 </plugin>
