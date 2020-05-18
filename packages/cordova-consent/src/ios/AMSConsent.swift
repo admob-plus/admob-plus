@@ -112,7 +112,6 @@ class AMSConsent: CDVPlugin {
     
     @objc(showConsentForm:)
     func showConsentForm(command: CDVInvokedUrlCommand) {
-        print("XXXX showConsentForm")
         guard let opts = command.argument(at: 0) as? NSDictionary,
             let id = opts.value(forKey: "id") as? Int,
             let form = AMSConsent.forms[id] as? PACConsentForm
