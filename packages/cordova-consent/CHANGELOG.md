@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.17.0](https://github.com/admob-plus/admob-plus/compare/cordova-plugin-consent@0.16.1...cordova-plugin-consent@0.17.0) (2020-05-18)
+
+
+### Features
+
+* **cordova-consent:** add iOS support ([6405fd5](https://github.com/admob-plus/admob-plus/commit/6405fd5))
+
+
+
+
+
 ## [0.16.1](https://github.com/admob-plus/admob-plus/compare/cordova-plugin-consent@0.16.0...cordova-plugin-consent@0.16.1) (2020-04-11)
 
 **Note:** Version bump only for package cordova-plugin-consent
