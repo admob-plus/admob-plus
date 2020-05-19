@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.17.1](https://github.com/admob-plus/admob-plus/compare/cordova-plugin-consent@0.17.0...cordova-plugin-consent@0.17.1) (2020-05-19)
+
+
+### Bug Fixes
+
+* **cordova-consent:** add ios to supported platforms ([20d1e5e](https://github.com/admob-plus/admob-plus/commit/20d1e5e))
+
+
+
+
+
 # [0.17.0](https://github.com/admob-plus/admob-plus/compare/cordova-plugin-consent@0.16.1...cordova-plugin-consent@0.17.0) (2020-05-18)
 
 
