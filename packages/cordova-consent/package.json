@@ -27,7 +27,8 @@
   "cordova": {
     "id": "cordova-plugin-consent",
     "platforms": [
-      "android"
+      "android",
+      "ios"
     ]
   },
   "eslintConfig": {
