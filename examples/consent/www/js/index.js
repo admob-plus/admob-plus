@@ -12,6 +12,7 @@ const app = {
     this.receivedEvent('deviceready')
     // NOTE: update the following to make it works
     const testDeviceId = '33BE2250B43518CCDA7DE426D04EE231'
+    console.log('show consent form')
     this.showConsent(testDeviceId)
       .then(async ({ consentStatus }) => {
         console.log('consentStatus', consentStatus)

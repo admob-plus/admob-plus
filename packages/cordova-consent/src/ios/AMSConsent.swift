@@ -124,20 +124,21 @@ class AMSConsent: CDVPlugin {
         form.present(from: self.viewController) { (error, userPrefersAdFree) in
             if let error = error {
                 // Handle error.
-                let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: error.localizedDescription)
-                self.commandDelegate!.send(result, callbackId: command.callbackId)
-            } else if userPrefersAdFree {
-                // User prefers to use a paid version of the app.
-                let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
-                self.commandDelegate!.send(result, callbackId: command.callbackId)
+                self.emit(eventType: "consent.form.error", data: [
+                    "errorDescription": error.localizedDescription])
             } else {
                 // Check the user's consent choice.
                 let status =
                     PACConsentInformation.sharedInstance.consentStatus
-                let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: "\(status)")
-                self.commandDelegate!.send(result, callbackId: command.callbackId)
+                self.emit(eventType: "consent.form.closed", data: [
+                    "consentStatus": "\(status)",
+                    "userPrefersAdFree": userPrefersAdFree])
             }
         }
+        
+        self.emit(eventType: "consent.form.opened")
+        let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
+        self.commandDelegate!.send(result, callbackId: command.callbackId)
     }
     
     func emit(eventType: String, data: Any = false) {
