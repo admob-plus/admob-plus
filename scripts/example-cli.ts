@@ -1,7 +1,6 @@
+import linkDir from '@frat/link-dir'
 import * as del from 'del'
 import * as execa from 'execa'
-// @ts-ignore
-import linkDir from 'link-dir'
 import * as path from 'path'
 import * as readPkg from 'read-pkg'
 import { replaceInFile } from 'replace-in-file'
