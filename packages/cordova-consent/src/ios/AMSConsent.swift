@@ -144,11 +144,11 @@ class AMSConsent: CDVPlugin {
     func convertConsentStatus(_ status: PACConsentStatus) -> String {
         switch status {
         case PACConsentStatus.nonPersonalized:
-            return "PACConsentStatusNonPersonalized"
+            return "NON_PERSONALIZED"
         case PACConsentStatus.personalized:
-            return "PACConsentStatusPersonalized"
+            return "PERSONALIZED"
         default:
-            return "PACConsentStatusUnknown"
+            return "UNKNOWN"
         }
     }
     
