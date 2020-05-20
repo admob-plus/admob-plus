@@ -74,7 +74,7 @@ class AMSConsent: CDVPlugin {
             } else {
                 let status =
                     PACConsentInformation.sharedInstance.consentStatus
-                let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: "\(status)")
+                let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: self.convertConsentStatus(status))
                 self.commandDelegate!.send(result, callbackId: command.callbackId)
             }
         }
@@ -131,7 +131,7 @@ class AMSConsent: CDVPlugin {
                 let status =
                     PACConsentInformation.sharedInstance.consentStatus
                 self.emit(eventType: "consent.form.closed", data: [
-                    "consentStatus": "\(status)",
+                    "consentStatus": self.convertConsentStatus(status),
                     "userPrefersAdFree": userPrefersAdFree])
             }
         }
@@ -139,6 +139,17 @@ class AMSConsent: CDVPlugin {
         self.emit(eventType: "consent.form.opened")
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
         self.commandDelegate!.send(result, callbackId: command.callbackId)
+    }
+    
+    func convertConsentStatus(_ status: PACConsentStatus) -> String {
+        switch status {
+        case PACConsentStatus.nonPersonalized:
+            return "PACConsentStatusNonPersonalized"
+        case PACConsentStatus.personalized:
+            return "PACConsentStatusPersonalized"
+        default:
+            return "PACConsentStatusUnknown"
+        }
     }
     
     func emit(eventType: String, data: Any = false) {
