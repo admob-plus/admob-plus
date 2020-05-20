@@ -4,10 +4,8 @@ import * as execa from 'execa'
 import linkDir from 'link-dir'
 import * as path from 'path'
 import * as readPkg from 'read-pkg'
-import replaceInFileCJS, * as replaceInFileReal from 'replace-in-file'
+import { replaceInFile } from 'replace-in-file'
 import * as yargs from 'yargs'
-
-const replaceInFile = (replaceInFileReal as any) as typeof replaceInFileCJS
 
 const pkgsDirJoin = (...args: string[]) =>
   path.join(__dirname, '../packages', ...args)
