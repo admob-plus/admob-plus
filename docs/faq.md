@@ -32,6 +32,25 @@ The Ad server may not have ads to serve for every request, which returns `NO_FIL
 It is receommended to track the impressions via event API instead of just the API calls, as it is not necessary result in showing Ads.
 
 
+## How to use `WKWebView` instead of the default `UIWebView` for iOS?
+
+There is [Cordova plugin](https://github.com/apache/cordova-plugin-wkwebview-engine) for this, which could be installed by
+
+```sh
+cordova plugin add cordova-plugin-wkwebview-engine
+```
+
+Then add the following to `config.xml`,
+
+```xml
+<feature name="CDVWKWebViewEngine">
+  <param name="ios-package" value="CDVWKWebViewEngine" />
+</feature>
+
+<preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
+```
+
+
 ## How this project relates to `cordova-plugin-admob-free`?
 
 `admob-plus` is the successor of [cordova-plugin-admob-free](https://github.com/ratson/cordova-plugin-admob-free), which provides a cleaner API and build with modern tools.
