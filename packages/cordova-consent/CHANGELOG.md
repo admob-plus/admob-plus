@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.17.3](https://github.com/admob-plus/admob-plus/compare/cordova-plugin-consent@0.17.2...cordova-plugin-consent@0.17.3) (2020-05-20)
+
+
+### Bug Fixes
+
+* **cordova-consent:** convert consent status to correct string value ([daa6672](https://github.com/admob-plus/admob-plus/commit/daa6672c713d4adf0f0f4c77e1fb22d7bd5a705a))
+
+
+
+
+
 ## [0.17.2](https://github.com/admob-plus/admob-plus/compare/cordova-plugin-consent@0.17.1...cordova-plugin-consent@0.17.2) (2020-05-20)
 
 
