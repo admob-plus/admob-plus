@@ -2,6 +2,11 @@
 
 module.exports = [
   {
+    caption: 'Magiscore',
+    image: 'https://lh3.googleusercontent.com/aCf8h8BVsRjqMsLfXqJCE5Kj771unVP5gBdyq1_CIOAJF959X2yyD1hWvUBBGG3vA9o=s360',
+    infoLink: 'https://magiscore.nl',
+  },
+  {
     caption: 'Jelly doods',
     image:
       'https://lh3.googleusercontent.com/oMqa6mkyEN8vef5raCBF2nRYzuvQEimMofBBbuCugt4pK0_ByrBYqv8Oti8dumf_Ftg=s360-rw',
@@ -50,5 +55,5 @@ module.exports = [
     caption: 'Drop It: Block Paradise! Free',
     image: 'https://lh3.googleusercontent.com/HHHy-IMUtlx55G7-iBBHHxNG4gTIZlhYjwjDnRRL_1KGaVcO3RK9EeGsyA0RLkxNows=s180-rw',
     infoLink: 'https://play.google.com/store/apps/details?id=com.zenfaproductions.dropitads',
-  }
+  },
 ]
