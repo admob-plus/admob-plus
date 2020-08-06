@@ -13,8 +13,9 @@
                 <param name="android-package" value="cordova.plugin.consent.Consent"/>
             </feature>
 
-            <source-file src="src/android/Consent.java" target-dir="src/cordova/plugin/consent" />
         </config-file>
+        
+        <source-file src="src/android/Consent.java" target-dir="src/cordova/plugin/consent" />
 
         <preference name="CONSENT_SDK_VERSION" default="+" />
 
