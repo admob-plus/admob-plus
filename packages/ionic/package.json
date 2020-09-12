@@ -1,6 +1,6 @@
 {
   "name": "ionic-admob",
-  "version": "0.19.10",
+  "version": "0.19.11",
   "description": "Ionic Native wrapper for cordova-admob-plus",
   "main": "dist/index.js",
   "module": "dist/index.js",
