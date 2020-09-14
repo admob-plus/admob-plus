@@ -9,20 +9,20 @@ import * as yargs from 'yargs'
 const pkgsDirJoin = (...args: string[]) =>
   path.join(__dirname, '../packages', ...args)
 
-const linkPlugin = async (plugin: string) => {
+const linkPlugin = async (plugin: string, addOpts: string) => {
   await execa(`cordova plugin rm ${plugin} --nosave`, {
     shell: true,
     reject: false,
   })
   await execa(
-    `cordova plugin add --link --nosave --searchpath ../../packages ${plugin}`,
+    `cordova plugin add --link --nosave --searchpath ../../packages ${plugin} ${addOpts}`,
     { shell: true, stdio: 'inherit' },
   )
 }
 
 const clean = () => del(['package-lock.json', 'platforms', 'plugins'])
 
-const prepare = async (opts: { pluginDir: string }) => {
+const prepare = async (opts: { pluginDir: string; addOpts: string }) => {
   const pkg = await readPkg({ cwd: pkgsDirJoin(opts.pluginDir) })
   await execa('run-s prepare', {
     cwd: pkgsDirJoin(opts.pluginDir),
@@ -39,7 +39,7 @@ const prepare = async (opts: { pluginDir: string }) => {
       from: 'abortOnError false;',
       to: 'abortOnError true;',
     }),
-    linkPlugin(pkg.name),
+    linkPlugin(pkg.name, opts.addOpts),
   ])
 }
 
@@ -65,7 +65,7 @@ const androidOpen = async (opts: {
   )
   await del([targetDir])
   await linkDir(pkgsDirJoin(opts.pluginDir, 'src/android'), targetDir)
-  await execa('open -a \'Android Studio\' platforms/android', {
+  await execa('open -a "Android Studio" platforms/android', {
     shell: true,
     stdio: 'inherit',
   })
@@ -93,8 +93,12 @@ const cli = yargs
   .command(
     'prepare',
     '',
-    { dir: { type: 'string', demand: true } },
-    argv => argv.dir && prepare({ pluginDir: argv.dir }),
+    {
+      dir: { type: 'string', demand: true },
+      'add-opts': { type: 'string', default: '' },
+    },
+    (argv) =>
+      argv.dir && prepare({ pluginDir: argv.dir, addOpts: argv['add-opts'] }),
   )
   .command(
     'android',
@@ -112,7 +116,7 @@ const cli = yargs
       dir: { type: 'string', demand: true },
       java: { type: 'string', demand: true },
     },
-    argv =>
+    (argv) =>
       argv.dir &&
       argv.java &&
       androidOpen({ pluginDir: argv.dir, javaPackagePath: argv.java }),
@@ -123,7 +127,7 @@ const cli = yargs
     {
       dir: { type: 'string', demand: true },
     },
-    argv => argv.dir && iosOpen({ pluginDir: argv.dir }),
+    (argv) => argv.dir && iosOpen({ pluginDir: argv.dir }),
   )
   .help()
 
