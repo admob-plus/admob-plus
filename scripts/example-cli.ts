@@ -43,14 +43,14 @@ const prepare = async (opts: { pluginDir: string; addOpts: string }) => {
   ])
 }
 
-const androidRun = async (argv: { clean: boolean; deivce: boolean }) => {
+const androidRun = async (argv: { clean: boolean; device: boolean }) => {
   if (argv.clean) {
     await clean()
     await execa('run-s prepare', { shell: true, stdio: 'inherit' })
   }
   await execa(
     'cordova',
-    ['run', 'android', '--verbose'].concat(argv.deivce ? ['--device'] : []),
+    ['run', 'android', '--verbose'].concat(argv.device ? ['--device'] : []),
     { stdio: 'inherit' },
   )
 }
