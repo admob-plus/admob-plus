@@ -10,6 +10,7 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <platform name="android">
+        <preference name="AndroidXEnabled" value="true" />
         <allow-intent href="market:*" />
     </platform>
     <platform name="ios">
