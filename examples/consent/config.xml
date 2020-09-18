@@ -18,6 +18,7 @@
     <allow-intent href="geo:*" />
     <engine name="android" spec="8.1.0" />
     <platform name="android">
+        <preference name="AndroidXEnabled" value="true" />
         <allow-intent href="market:*" />
     </platform>
     <platform name="ios">
