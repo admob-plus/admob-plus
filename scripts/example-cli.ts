@@ -22,7 +22,7 @@ const linkPlugin = async (plugin: string, addOpts: string) => {
 
 const clean = () => del(['package-lock.json', 'platforms', 'plugins'])
 
-const prepare = async (opts: { pluginDir: string; addOpts: string }) => {
+const prepare = async (opts: { pluginDir: string }) => {
   const pkg = await readPkg({ cwd: pkgsDirJoin(opts.pluginDir) })
   await execa('run-s prepare', {
     cwd: pkgsDirJoin(opts.pluginDir),
@@ -33,13 +33,19 @@ const prepare = async (opts: { pluginDir: string; addOpts: string }) => {
     shell: true,
     stdio: 'inherit',
   })
+
+  const pkgExample = await readPkg()
+  const pluginVars = pkgExample.cordova.plugins[pkg.name]
+  const addOpts = Object.keys(pluginVars)
+    .map((k) => `--variable ${k}=${pluginVars[k]}`)
+    .join(' ')
   await Promise.all([
     replaceInFile({
       files: path.join(process.cwd(), 'platforms/android/app/build.gradle'),
       from: 'abortOnError false;',
       to: 'abortOnError true;',
     }),
-    linkPlugin(pkg.name, opts.addOpts),
+    linkPlugin(pkg.name, addOpts),
   ])
 }
 
@@ -93,12 +99,8 @@ const cli = yargs
   .command(
     'prepare',
     '',
-    {
-      dir: { type: 'string', demand: true },
-      'add-opts': { type: 'string', default: '' },
-    },
-    (argv) =>
-      argv.dir && prepare({ pluginDir: argv.dir, addOpts: argv['add-opts'] }),
+    { dir: { type: 'string', demand: true } },
+    (argv) => argv.dir && prepare({ pluginDir: argv.dir }),
   )
   .command(
     'android',
