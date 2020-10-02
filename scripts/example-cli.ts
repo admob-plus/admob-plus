@@ -80,14 +80,9 @@ const androidOpen = async (opts: {
 const iosOpen = async (opts: { pluginDir: string }) => {
   const pkgExample = await readPkg()
   const pkg = await readPkg({ cwd: pkgsDirJoin(opts.pluginDir) })
-  const targetDir = path.join(
-    'platforms/ios',
-    pkgExample.displayName,
-    'Plugins',
-    pkg.name,
-  )
+  const targetDir = path.join('plugins', pkg.name, 'src/ios')
   await del([targetDir])
-  await linkDir(pkgsDirJoin(opts.pluginDir, 'src/ios'), targetDir)
+  await execa('ln', ['-s', pkgsDirJoin(opts.pluginDir, 'src/ios'), targetDir])
   await execa(`open platforms/ios/${pkgExample.displayName}.xcworkspace`, {
     shell: true,
     stdio: 'inherit',
