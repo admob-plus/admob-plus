@@ -8,14 +8,18 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
         return self.plugin.viewController.view
     }
 
+    var mainView: UIView {
+        return self.plugin.webView
+    }
+
     init(id: Int, adUnitID: String, adSize: GADAdSize, position: String) {
         super.init(id: id, adUnitID: adUnitID)
 
         self.adSize = adSize
         self.position = position
         self.constraintsToHide = [
-            self.plugin.webView.topAnchor.constraint(equalTo: view.topAnchor),
-            self.plugin.webView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            mainView.topAnchor.constraint(equalTo: view.topAnchor),
+            mainView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ]
     }
 
@@ -49,7 +53,7 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
     }
 
     func addBannerViewToView(_ bannerView: UIView) {
-        self.plugin.webView.translatesAutoresizingMaskIntoConstraints = false
+        mainView.translatesAutoresizingMaskIntoConstraints = false
         bannerView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(bannerView)
         if #available(iOS 11.0, *) {
@@ -76,20 +80,20 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
         let guide: UILayoutGuide = view.safeAreaLayoutGuide
         var constraints = [
             bannerView.centerXAnchor.constraint(equalTo: guide.centerXAnchor),
-            self.plugin.webView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            self.plugin.webView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            mainView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            mainView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ]
         if position == "top" {
             constraints += [
                 bannerView.topAnchor.constraint(equalTo: guide.topAnchor),
-                self.plugin.webView.topAnchor.constraint(equalTo: bannerView.bottomAnchor),
-                self.plugin.webView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+                mainView.topAnchor.constraint(equalTo: bannerView.bottomAnchor),
+                mainView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
             ]
         } else {
             constraints += [
                 bannerView.bottomAnchor.constraint(equalTo: guide.bottomAnchor),
-                self.plugin.webView.topAnchor.constraint(equalTo: view.topAnchor),
-                self.plugin.webView.bottomAnchor.constraint(equalTo: bannerView.topAnchor)
+                mainView.topAnchor.constraint(equalTo: view.topAnchor),
+                mainView.bottomAnchor.constraint(equalTo: bannerView.topAnchor)
             ]
         }
         NSLayoutConstraint.activate(constraints)
