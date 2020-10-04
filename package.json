@@ -21,6 +21,7 @@
     "@frat/link-dir": "^2.3.0",
     "@types/jest": "^26.0.13",
     "@types/yargs": "^15.0.5",
+    "copy-and-watch": "^0.1.5",
     "cordova": "10.0.0",
     "cordova-testbed": "^0.8.0",
     "eslint": "^7.8.1",

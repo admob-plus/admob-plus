@@ -81,12 +81,26 @@ const iosOpen = async (opts: { pluginDir: string }) => {
   const pkgExample = await readPkg()
   const pkg = await readPkg({ cwd: pkgsDirJoin(opts.pluginDir) })
   const targetDir = path.join('plugins', pkg.name, 'src/ios')
-  await del([targetDir])
-  await execa('ln', ['-s', pkgsDirJoin(opts.pluginDir, 'src/ios'), targetDir])
+  const watchBin = require.resolve('copy-and-watch/bin/copy-and-watch')
+  await execa(
+    watchBin,
+    [pkgsDirJoin(opts.pluginDir, 'src/ios/**/*'), targetDir],
+    { stdio: 'inherit' },
+  )
   await execa(`open platforms/ios/${pkgExample.displayName}.xcworkspace`, {
     shell: true,
     stdio: 'inherit',
   })
+  await execa(
+    watchBin,
+    [
+      '--watch',
+      '--skip-initial-copy',
+      `${targetDir}/**/*`,
+      pkgsDirJoin(opts.pluginDir, 'src/ios'),
+    ],
+    { stdio: 'inherit' },
+  )
 }
 
 const cli = yargs
