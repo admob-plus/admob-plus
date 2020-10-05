@@ -4,7 +4,7 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
     var position: String!
     var constraintsToHide: [NSLayoutConstraint]!
 
-    var view: UIView {
+    var rootView: UIView {
         return self.plugin.viewController.view
     }
 
@@ -18,8 +18,8 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
         self.adSize = adSize
         self.position = position
         self.constraintsToHide = [
-            mainView.topAnchor.constraint(equalTo: view.topAnchor),
-            mainView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            mainView.topAnchor.constraint(equalTo: rootView.topAnchor),
+            mainView.bottomAnchor.constraint(equalTo: rootView.bottomAnchor)
         ]
     }
 
@@ -55,19 +55,19 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
     func addBannerViewToView(_ bannerView: UIView) {
         mainView.translatesAutoresizingMaskIntoConstraints = false
         bannerView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(bannerView)
+        rootView.addSubview(bannerView)
         if #available(iOS 11.0, *) {
             positionBannerInSafeArea(bannerView)
 
             let background = UIView()
             background.translatesAutoresizingMaskIntoConstraints = false
             background.backgroundColor = .black
-            view.addSubview(background)
-            view.sendSubviewToBack(background)
+            rootView.addSubview(background)
+            rootView.sendSubviewToBack(background)
             NSLayoutConstraint.activate([
-                background.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                background.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-                background.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+                background.leadingAnchor.constraint(equalTo: rootView.leadingAnchor),
+                background.trailingAnchor.constraint(equalTo: rootView.trailingAnchor),
+                background.bottomAnchor.constraint(equalTo: rootView.bottomAnchor),
                 background.topAnchor.constraint(equalTo: bannerView.topAnchor)
             ])
         } else {
@@ -77,22 +77,22 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
 
     @available (iOS 11, *)
     func positionBannerInSafeArea(_ bannerView: UIView) {
-        let guide: UILayoutGuide = view.safeAreaLayoutGuide
+        let guide: UILayoutGuide = rootView.safeAreaLayoutGuide
         var constraints = [
             bannerView.centerXAnchor.constraint(equalTo: guide.centerXAnchor),
-            mainView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            mainView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            mainView.leadingAnchor.constraint(equalTo: rootView.leadingAnchor),
+            mainView.trailingAnchor.constraint(equalTo: rootView.trailingAnchor)
         ]
         if position == "top" {
             constraints += [
                 bannerView.topAnchor.constraint(equalTo: guide.topAnchor),
                 mainView.topAnchor.constraint(equalTo: bannerView.bottomAnchor),
-                mainView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+                mainView.bottomAnchor.constraint(equalTo: rootView.bottomAnchor)
             ]
         } else {
             constraints += [
                 bannerView.bottomAnchor.constraint(equalTo: guide.bottomAnchor),
-                mainView.topAnchor.constraint(equalTo: view.topAnchor),
+                mainView.topAnchor.constraint(equalTo: rootView.topAnchor),
                 mainView.bottomAnchor.constraint(equalTo: bannerView.topAnchor)
             ]
         }
@@ -100,15 +100,15 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
     }
 
     func positionBanner(_ bannerView: UIView) {
-        view.addConstraint(NSLayoutConstraint(item: bannerView,
+        rootView.addConstraint(NSLayoutConstraint(item: bannerView,
                                               attribute: .centerX,
                                               relatedBy: .equal,
-                                              toItem: view,
+                                              toItem: rootView,
                                               attribute: .centerX,
                                               multiplier: 1,
                                               constant: 0))
         if position == "top" {
-            view.addConstraint(NSLayoutConstraint(item: bannerView,
+            rootView.addConstraint(NSLayoutConstraint(item: bannerView,
                                                   attribute: .top,
                                                   relatedBy: .equal,
                                                   toItem: plugin.viewController.topLayoutGuide,
@@ -116,7 +116,7 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
                                                   multiplier: 1,
                                                   constant: 0))
         } else {
-            view.addConstraint(NSLayoutConstraint(item: bannerView,
+            rootView.addConstraint(NSLayoutConstraint(item: bannerView,
                                                   attribute: .bottom,
                                                   relatedBy: .equal,
                                                   toItem: plugin.viewController.bottomLayoutGuide,
