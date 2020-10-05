@@ -80,6 +80,7 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
         let guide: UILayoutGuide = rootView.safeAreaLayoutGuide
         var constraints = [
             bannerView.centerXAnchor.constraint(equalTo: guide.centerXAnchor),
+            bannerView.heightAnchor.constraint(equalToConstant: bannerView.frame.height),
             mainView.leadingAnchor.constraint(equalTo: rootView.leadingAnchor),
             mainView.trailingAnchor.constraint(equalTo: rootView.trailingAnchor)
         ]
