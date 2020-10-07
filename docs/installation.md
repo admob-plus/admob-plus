@@ -21,9 +21,10 @@ cordova plugin add cordova-plugin-androidx-adapter
 
 or add `<preference name="AndroidXEnabled" value="true" />` to `config.xml` for `Cordova>=9`.
 
-For iOS developer, add `<preference name="UseSwiftLanguageVersion" value="5" />` to `config.xml` for using Swift 5.
-* Add to the section `<platform name="ios">`
+For iOS developer,
+* Add `<preference name="SwiftVersion" value="5.3" />` to the section `<platform name="ios">` in `config.xml`
 * After adding this preference, you need to run `cordova platform remove ios` then `cordova platform add ios` to take effect
+* Run `pod repo update` to ensure latest SDK is ready
 
 ## With Consent SDK
 
