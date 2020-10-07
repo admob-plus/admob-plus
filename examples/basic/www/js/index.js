@@ -28,7 +28,7 @@ const app = {
     })
     bannerTop.show({ position: 'top' })
     const banner = new admob.BannerAd({
-      adUnitId: 'ca-app-pub-3940256099942544/6300978111',
+      adUnitId: 'ca-app-pub-3940256099942544/2934735716',
     })
     banner.show({ position: 'bottom' })
   },
