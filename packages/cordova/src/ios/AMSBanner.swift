@@ -81,19 +81,22 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
         var constraints = [
             bannerView.centerXAnchor.constraint(equalTo: guide.centerXAnchor),
             bannerView.heightAnchor.constraint(equalToConstant: bannerView.frame.height),
-            mainView.leadingAnchor.constraint(equalTo: rootView.leadingAnchor),
-            mainView.trailingAnchor.constraint(equalTo: rootView.trailingAnchor)
+            mainView.widthAnchor.constraint(equalTo: rootView.widthAnchor)
         ]
         if position == "top" {
+            let c = mainView.bottomAnchor.constraint(equalTo: rootView.bottomAnchor)
+            c.priority = UILayoutPriority(999)
             constraints += [
                 bannerView.topAnchor.constraint(equalTo: guide.topAnchor),
-                mainView.topAnchor.constraint(equalTo: bannerView.bottomAnchor),
-                mainView.bottomAnchor.constraint(equalTo: rootView.bottomAnchor)
+                c,
+                mainView.topAnchor.constraint(equalTo: bannerView.bottomAnchor)
             ]
         } else {
+            let c = mainView.topAnchor.constraint(equalTo: rootView.topAnchor)
+            c.priority = UILayoutPriority(999)
             constraints += [
                 bannerView.bottomAnchor.constraint(equalTo: guide.bottomAnchor),
-                mainView.topAnchor.constraint(equalTo: rootView.topAnchor),
+                c,
                 mainView.bottomAnchor.constraint(equalTo: bannerView.topAnchor)
             ]
         }
