@@ -12,7 +12,8 @@ const app = {
   onDeviceReady() {
     this.receivedEvent('deviceready')
 
-    this.checkIsLoaded().then(() => this.showAds())
+    this.showAds()
+    this.checkIsLoaded()
   },
 
   checkIsLoaded() {
