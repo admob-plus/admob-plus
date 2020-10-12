@@ -1,7 +1,9 @@
 ---
 title: How cordova-plugin-admobpro works
 author: Ratson
-authorURL: https://github.com/ratson
+author_url: https://github.com/ratson
+author_image_url: https://avatars.githubusercontent.com/u/2682937?v=4
+tags: [admob, cordova]
 ---
 
 I believe most [`cordova-plugin-admobpro`](https://www.npmjs.com/package/cordova-plugin-admobpro) users do not know how the plugin works, as the author does not explain it or intentionally hide it. This blog post is going to uncover the details, so users could have better understanding about what is added to their projects.

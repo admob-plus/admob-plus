@@ -1,26 +1,43 @@
 {
-  "private": true,
   "name": "admob-plus-website",
   "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "examples": "docusaurus-examples",
-    "start": "docusaurus-start",
-    "build": "docusaurus-build",
-    "publish-gh-pages": "docusaurus-publish",
-    "write-translations": "docusaurus-write-translations",
-    "version": "docusaurus-version",
-    "rename-version": "docusaurus-rename-version"
+    "docusaurus": "docusaurus",
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy",
+    "serve": "docusaurus serve"
+  },
+  "dependencies": {
+    "@docusaurus/core": "2.0.0-alpha.65",
+    "@docusaurus/preset-classic": "2.0.0-alpha.65",
+    "@mdx-js/react": "^1.6.18",
+    "clsx": "^1.1.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   },
   "devDependencies": {
-    "docusaurus": "^1.14.4",
-    "eslint-config-concise-react": "^0.37.1"
+    "eslint-config-concise-esnext": "^0.39.0",
+    "eslint-config-concise-react": "^0.39.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "eslintConfig": {
     "extends": [
+      "concise-esnext",
       "concise-react"
-    ],
-    "rules": {
-      "security/detect-non-literal-require": "off"
-    }
+    ]
   }
 }
