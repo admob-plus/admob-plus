@@ -22,6 +22,8 @@ module.exports = {
           position: 'left',
         },
         { to: 'blog', label: 'Blog', position: 'left' },
+        { to: 'users', label: 'Users', position: 'left' },
+        { to: 'funding', label: 'Funding', position: 'right' },
         {
           href: 'https://github.com/admob-plus/admob-plus',
           label: 'GitHub',
