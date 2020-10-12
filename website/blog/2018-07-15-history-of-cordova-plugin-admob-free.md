@@ -1,7 +1,9 @@
 ---
 title: History of cordova-plugin-admob-free
 author: Ratson
-authorURL: https://github.com/ratson
+author_url: https://github.com/ratson
+author_image_url: https://avatars.githubusercontent.com/u/2682937?v=4
+tags: [admob, cordova, cordova-plugin-admobpro]
 ---
 
 2 years ago, I have a cordova project needed to add Google AdMob for showing ads. I was searching an open source solution, soon landed to the popular [cordova-plugin-admobpro](https://www.npmjs.com/package/cordova-plugin-admobpro).

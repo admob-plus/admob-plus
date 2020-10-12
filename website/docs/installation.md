@@ -2,6 +2,7 @@
 id: installation
 title: Installation
 sidebar_label: Installation
+slug: /
 ---
 
 Via [Cordova CLI](https://www.npmjs.com/package/cordova):
