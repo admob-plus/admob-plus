@@ -6,7 +6,6 @@
   "typings": "www/admob.d.ts",
   "scripts": {
     "prepare": "run-s prepare:*",
-    "prepare:gen": "ts-node scripts/gen",
     "prepare:build": "rollup -c",
     "prepare:clean": "del src/.DS_Store src/**/.DS_Store"
   },

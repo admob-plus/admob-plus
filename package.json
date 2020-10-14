@@ -2,6 +2,7 @@
   "name": "admob-plus-monorepo",
   "private": true,
   "scripts": {
+    "prepare": "ts-node scripts/gen",
     "test": "run-s test:*",
     "test:cli": "cd packages/cli && run-s test",
     "test:jest": "jest",
