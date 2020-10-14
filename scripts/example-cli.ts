@@ -5,9 +5,7 @@ import * as path from 'path'
 import * as readPkg from 'read-pkg'
 import { replaceInFile } from 'replace-in-file'
 import * as yargs from 'yargs'
-
-const pkgsDirJoin = (...args: string[]) =>
-  path.join(__dirname, '../packages', ...args)
+import { pkgsDirJoin } from './utils'
 
 const linkPlugin = async (plugin: string, addOpts: string) => {
   await execa(`cordova plugin rm ${plugin} --nosave`, {
