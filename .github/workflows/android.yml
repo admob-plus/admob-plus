@@ -63,6 +63,10 @@ jobs:
           echo "/usr/local/lib/android/sdk/tools" >> $GITHUB_PATH
           yarn
           yarn lerna run prepare --scope=@admob-plus/core --scope=cordova-admob-plus
+          pushd examples/basic
+          ../../node_modules/.bin/cordova platform rm ios
+          yarn
+          popd
 
       - name: Test
         uses: reactivecircus/android-emulator-runner@v2
