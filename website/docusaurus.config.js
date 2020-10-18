@@ -66,7 +66,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} AdMob Plus Authors.`,
+      copyright: `Copyright © ${new Date().getFullYear()} <a href="https://github.com/admob-plus/admob-plus/graphs/contributors">AdMob Plus Contributors</a>.`,
     },
   },
   presets: [
