@@ -4,6 +4,7 @@
     { "path": "packages/capacitor" },
     { "path": "packages/cordova" },
     { "path": "packages/core" },
+    { "path": "website" },
   ],
   "files": []
 }

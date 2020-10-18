@@ -15,9 +15,7 @@ const Funding = () => {
         <div className="row margin-bottom--lg">
           <div className="post">
             <header className="postHeader">
-              <h2>
-                <translate>Supporting AdMob-Plus</translate>
-              </h2>
+              <h2>Supporting AdMob-Plus</h2>
             </header>
             <p>
               AdMob-Plus is an MIT-licensed open source project. It&apos;s an

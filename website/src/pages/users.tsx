@@ -22,7 +22,7 @@ const Users = () => {
         </div>
         <div className="row logos">
           {users.map(user => (
-            <Showcase key={user} user={user} />
+            <Showcase key={user.image} user={user} />
           ))}
         </div>
         <div className="text--center">
