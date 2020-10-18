@@ -85,6 +85,7 @@
     "*.md": "remark --no-stdout",
     "*.ts": "prettier-tslint fix",
     "examples/*/package.json": "prettier --write",
+    "packages/cli/oclif.manifest.json": "exit 1",
     "packages/cordova/src/ios/*.swift": "swiftlint lint --strict --path"
   },
   "remarkConfig": {
