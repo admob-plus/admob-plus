@@ -62,6 +62,13 @@ const users: { caption: string; image: string; infoLink: string }[] = [
     infoLink:
       'https://play.google.com/store/apps/details?id=com.zenfaproductions.dropitads',
   },
+  {
+    caption: 'Talk a While',
+    image:
+      'https://lh3.googleusercontent.com/DTBNT0n1GYSGDSmbfhw-fe4e0UAmnkzPJ28f3tK2PfNYODt872cqGXknomfKuY4DYTo=s180',
+    infoLink:
+      'https://play.google.com/store/apps/details?id=io.acerbastimur.talkawhile',
+  },
 ]
 
 export default users
