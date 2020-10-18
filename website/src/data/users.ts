@@ -1,4 +1,4 @@
-export default [
+const users: { caption: string; image: string; infoLink: string }[] = [
   {
     caption: 'Magiscore',
     image:
@@ -63,3 +63,5 @@ export default [
       'https://play.google.com/store/apps/details?id=com.zenfaproductions.dropitads',
   },
 ]
+
+export default users
