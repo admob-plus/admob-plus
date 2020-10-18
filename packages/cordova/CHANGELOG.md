@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.39.0](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.37.0...cordova-admob-plus@0.39.0) (2020-10-18)
+
+
+### Bug Fixes
+
+* **cordova-ios:** anchor banner height so it displays correctly ([85ec428](https://github.com/admob-plus/admob-plus/commit/85ec428eb22878b59dd52a8cbe18e71fee0bb228))
+* **cordova-ios:** display both top + bottom banner correctly ([ea75add](https://github.com/admob-plus/admob-plus/commit/ea75add356b31223459e36d2c6f44956a1e14a27))
+* **cordova-ios:** fix adSize reading wrong key ([c4f08cc](https://github.com/admob-plus/admob-plus/commit/c4f08cc333afa97434341158bce0e847105978dd))
+
+
+### Features
+
+* **cordova:** add BannerAd class ([cc51b7d](https://github.com/admob-plus/admob-plus/commit/cc51b7db5d3b0ec18c1e661c12c4a1c1f6f17e4f))
+* **cordova:** require cordova-ios >= 5.0.0 ([a9a435e](https://github.com/admob-plus/admob-plus/commit/a9a435eddf904f43561ea3dcbeb4268996c76e04))
+* **cordova:** update Google-Mobile-Ads-SDK to v7.66 ([4f60597](https://github.com/admob-plus/admob-plus/commit/4f60597f89ad4658f5eb8a28dd2a48849f82a9dc))
+* **cordova-ios:** add RewardVideoLoadFail Event on iOS ([#160](https://github.com/admob-plus/admob-plus/issues/160)) ([9cd7927](https://github.com/admob-plus/admob-plus/commit/9cd7927c763c26249bbc56c261675d7ee9c3c338))
+
+
+
+
+
 # [0.38.0](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.37.0...cordova-admob-plus@0.38.0) (2020-10-07)
 
 
