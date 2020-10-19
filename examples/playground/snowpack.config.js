@@ -1,5 +1,8 @@
-
 module.exports = {
+  buildOptions: {
+    baseUrl: './',
+    out: 'www',
+  },
   mount: {
     public: '/',
     src: '/_dist_',
@@ -16,5 +19,6 @@ module.exports = {
         output: 'stream',
       },
     ],
+    '@snowpack/plugin-webpack',
   ],
 }
