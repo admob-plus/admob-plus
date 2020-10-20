@@ -6,26 +6,8 @@ import { execAsync, fireDocumentEvent, NativeActions } from './base'
 import Interstitial from './interstitial'
 import RewardVideo from './reward-video'
 import AdMobState from './state'
-
-type MobileAdOptions = { adUnitId: string }
-
-class MobileAd {
-  private static allAds: { [s: number]: MobileAd } = {}
-
-  private _id: number
-  public adUnitId: string
-
-  constructor({ adUnitId }: MobileAdOptions) {
-    this.adUnitId = adUnitId
-
-    this._id = 10001 + Object.keys(MobileAd.allAds).length
-    MobileAd.allAds[this.id] = this
-  }
-
-  public get id() {
-    return this._id
-  }
-}
+import { MobileAd } from './base'
+import type { MobileAdOptions } from './base'
 
 class BannerAd extends MobileAd {
   constructor({ adUnitId }: MobileAdOptions) {

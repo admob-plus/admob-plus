@@ -3,6 +3,26 @@ import { exec } from 'cordova'
 
 import AdMobState from './state'
 
+export type MobileAdOptions = { adUnitId: string }
+
+export class MobileAd {
+  private static allAds: { [s: number]: MobileAd } = {}
+
+  private _id: number
+  public adUnitId: string
+
+  constructor({ adUnitId }: MobileAdOptions) {
+    this.adUnitId = adUnitId
+
+    this._id = 10001 + Object.keys(MobileAd.allAds).length
+    MobileAd.allAds[this.id] = this
+  }
+
+  public get id() {
+    return this._id
+  }
+}
+
 export { AdUnitIDOption, Events, NativeActions }
 
 export const enum Platforms {
