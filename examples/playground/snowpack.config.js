@@ -20,5 +20,6 @@ module.exports = {
       },
     ],
     '@snowpack/plugin-webpack',
+    './snowpack-plugin.js',
   ],
 }
