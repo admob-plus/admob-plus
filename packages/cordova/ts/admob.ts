@@ -6,30 +6,7 @@ import { execAsync, fireDocumentEvent, NativeActions } from './base'
 import Interstitial from './interstitial'
 import RewardVideo from './reward-video'
 import AdMobState from './state'
-import { MobileAd } from './base'
-import type { MobileAdOptions } from './base'
-
-class BannerAd extends MobileAd {
-  constructor({ adUnitId }: MobileAdOptions) {
-    super({ adUnitId })
-  }
-
-  public show(opts: IBannerRequest) {
-    return execAsync(NativeActions.banner_show, [
-      {
-        position: 'bottom',
-        size: AdSizeType.SMART_BANNER,
-        ...opts,
-        adUnitID: this.adUnitId,
-        id: this.id,
-      },
-    ])
-  }
-
-  public hide() {
-    return execAsync(NativeActions.banner_hide, [{ id: this.id }])
-  }
-}
+import { BannerAd } from './banner'
 
 class AdMob {
   public banner: Banner
