@@ -1,6 +1,7 @@
-const internalIp = require('internal-ip')
 const execa = require('execa')
 const fse = require('fs-extra')
+const internalIp = require('internal-ip')
+const path = require('path')
 
 module.exports = function (snowpackConfig, pluginOptions) {
   return {
@@ -22,6 +23,15 @@ module.exports = function (snowpackConfig, pluginOptions) {
         await fse.copy('config.base.xml', 'config.xml')
       }
       await execa('cordova', ['prepare'])
+    },
+    // eslint-disable-next-line consistent-return
+    transform({ contents, id }) {
+      if (id === path.resolve('public/index.html')) {
+        return contents.replace(
+          '</noscript>',
+          '</noscript>\n<script type="text/javascript" src="cordova.js"></script>',
+        )
+      }
     },
   }
 }
