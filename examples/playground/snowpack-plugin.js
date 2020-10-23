@@ -3,9 +3,20 @@ const fse = require('fs-extra')
 const internalIp = require('internal-ip')
 const path = require('path')
 
-module.exports = function (snowpackConfig, pluginOptions) {
+module.exports = function (snowpackConfig, pluginOptions = {}) {
+  const platform = pluginOptions.platform || 'browser'
+
   return {
     name: 'playground-snowpack-plugin',
+    config(config) {
+      /* eslint-disable no-param-reassign */
+      config.mount[`platforms/${platform}/www`] = {
+        url: '/',
+        static: true,
+        resolve: false,
+      }
+      /* eslint-enable no-param-reassign */
+    },
     async run({ isDev }) {
       if (isDev) {
         const xmlText = await fse.readFile('config.base.xml', 'utf8')
