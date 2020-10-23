@@ -1,3 +1,4 @@
+const assert = require('assert')
 const execa = require('execa')
 const fse = require('fs-extra')
 const internalIp = require('internal-ip')
@@ -34,6 +35,10 @@ module.exports = function (snowpackConfig, pluginOptions = {}) {
         await fse.copy('config.base.xml', 'config.xml')
       }
       await execa('cordova', ['prepare'])
+      assert(
+        await fse.pathExists(`platforms/${platform}/www`),
+        `you may need to run "cordova platform add ${platform}"`,
+      )
     },
     // eslint-disable-next-line consistent-return
     transform({ contents, id }) {
