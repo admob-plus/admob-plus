@@ -20,6 +20,6 @@ module.exports = {
       },
     ],
     '@snowpack/plugin-webpack',
-    './snowpack-plugin.js',
+    ['./snowpack-plugin.js', { platform: process.env.CORDOVA_PLATFORM }],
   ],
 }
