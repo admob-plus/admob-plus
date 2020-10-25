@@ -34,11 +34,16 @@ module.exports = function (snowpackConfig, pluginOptions = {}) {
       } else {
         await fse.copy('config.base.xml', 'config.xml')
       }
+
       await execa('cordova', ['prepare'])
       assert(
         await fse.pathExists(`platforms/${platform}/www`),
         `you may need to run "cordova platform add ${platform}"`,
       )
+
+      if (isDev && platform !== 'browser') {
+        await execa('cordova', ['run', platform])
+      }
     },
     // eslint-disable-next-line consistent-return
     transform({ contents, id }) {
