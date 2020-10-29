@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { Link, Route, Routes } from 'react-router-dom'
-import './App.css'
 
 interface AppProps {}
 
@@ -21,8 +20,8 @@ const Home: React.FC = () => {
 
 const App: React.FC<AppProps> = ({}) => {
   return (
-    <div className="App">
-      <header className="App-header">
+    <div>
+      <header>
         <p>AdMob Plus</p>
         <nav>
           <Link to="/">Home</Link>
