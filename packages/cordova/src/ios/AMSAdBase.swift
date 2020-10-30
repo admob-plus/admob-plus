@@ -1,5 +1,5 @@
 class AMSAdBase: NSObject {
-    static var ads = Dictionary<Int, Any>()
+    static var ads = [Int: Any]()
     static weak var plugin: AMSPlugin!
 
     var id: Int!

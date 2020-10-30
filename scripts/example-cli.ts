@@ -5,17 +5,15 @@ import * as path from 'path'
 import * as readPkg from 'read-pkg'
 import { replaceInFile } from 'replace-in-file'
 import * as yargs from 'yargs'
+import { pkgsDirJoin } from './utils'
 
-const pkgsDirJoin = (...args: string[]) =>
-  path.join(__dirname, '../packages', ...args)
-
-const linkPlugin = async (plugin: string) => {
+const linkPlugin = async (plugin: string, addOpts: string) => {
   await execa(`cordova plugin rm ${plugin} --nosave`, {
     shell: true,
     reject: false,
   })
   await execa(
-    `cordova plugin add --link --nosave --searchpath ../../packages ${plugin}`,
+    `cordova plugin add --link --nosave --searchpath ../../packages ${plugin} ${addOpts}`,
     { shell: true, stdio: 'inherit' },
   )
 }
@@ -33,24 +31,30 @@ const prepare = async (opts: { pluginDir: string }) => {
     shell: true,
     stdio: 'inherit',
   })
+
+  const pkgExample = await readPkg()
+  const pluginVars = pkgExample.cordova.plugins[pkg.name]
+  const addOpts = Object.keys(pluginVars)
+    .map((k) => `--variable ${k}=${pluginVars[k]}`)
+    .join(' ')
   await Promise.all([
     replaceInFile({
       files: path.join(process.cwd(), 'platforms/android/app/build.gradle'),
       from: 'abortOnError false;',
       to: 'abortOnError true;',
     }),
-    linkPlugin(pkg.name),
+    linkPlugin(pkg.name, addOpts),
   ])
 }
 
-const androidRun = async (argv: { clean: boolean; deivce: boolean }) => {
+const androidRun = async (argv: { clean: boolean; device: boolean }) => {
   if (argv.clean) {
     await clean()
     await execa('run-s prepare', { shell: true, stdio: 'inherit' })
   }
   await execa(
     'cordova',
-    ['run', 'android', '--verbose'].concat(argv.deivce ? ['--device'] : []),
+    ['run', 'android', '--verbose'].concat(argv.device ? ['--device'] : []),
     { stdio: 'inherit' },
   )
 }
@@ -65,7 +69,7 @@ const androidOpen = async (opts: {
   )
   await del([targetDir])
   await linkDir(pkgsDirJoin(opts.pluginDir, 'src/android'), targetDir)
-  await execa('open -a \'Android Studio\' platforms/android', {
+  await execa('open -a "Android Studio" platforms/android', {
     shell: true,
     stdio: 'inherit',
   })
@@ -74,18 +78,27 @@ const androidOpen = async (opts: {
 const iosOpen = async (opts: { pluginDir: string }) => {
   const pkgExample = await readPkg()
   const pkg = await readPkg({ cwd: pkgsDirJoin(opts.pluginDir) })
-  const targetDir = path.join(
-    'platforms/ios',
-    pkgExample.displayName,
-    'Plugins',
-    pkg.name,
+  const targetDir = path.join('plugins', pkg.name, 'src/ios')
+  const watchBin = require.resolve('copy-and-watch/bin/copy-and-watch')
+  await execa(
+    watchBin,
+    [pkgsDirJoin(opts.pluginDir, 'src/ios/**/*'), targetDir],
+    { stdio: 'inherit' },
   )
-  await del([targetDir])
-  await linkDir(pkgsDirJoin(opts.pluginDir, 'src/ios'), targetDir)
   await execa(`open platforms/ios/${pkgExample.displayName}.xcworkspace`, {
     shell: true,
     stdio: 'inherit',
   })
+  await execa(
+    watchBin,
+    [
+      '--watch',
+      '--skip-initial-copy',
+      `${targetDir}/**/*`,
+      pkgsDirJoin(opts.pluginDir, 'src/ios'),
+    ],
+    { stdio: 'inherit' },
+  )
 }
 
 const cli = yargs
@@ -94,7 +107,7 @@ const cli = yargs
     'prepare',
     '',
     { dir: { type: 'string', demand: true } },
-    argv => argv.dir && prepare({ pluginDir: argv.dir }),
+    (argv) => argv.dir && prepare({ pluginDir: argv.dir }),
   )
   .command(
     'android',
@@ -112,7 +125,7 @@ const cli = yargs
       dir: { type: 'string', demand: true },
       java: { type: 'string', demand: true },
     },
-    argv =>
+    (argv) =>
       argv.dir &&
       argv.java &&
       androidOpen({ pluginDir: argv.dir, javaPackagePath: argv.java }),
@@ -123,7 +136,7 @@ const cli = yargs
     {
       dir: { type: 'string', demand: true },
     },
-    argv => argv.dir && iosOpen({ pluginDir: argv.dir }),
+    (argv) => argv.dir && iosOpen({ pluginDir: argv.dir }),
   )
   .help()
 

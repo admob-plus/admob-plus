@@ -219,7 +219,7 @@ class AMSPlugin: CDVPlugin {
     }
 
     func getAdSize(_ opts: NSDictionary) -> GADAdSize {
-        if let adSizeType = opts.value(forKey: "adSize") as? Int {
+        if let adSizeType = opts.value(forKey: "size") as? Int {
             switch adSizeType {
             case 0:
                 return kGADAdSizeBanner

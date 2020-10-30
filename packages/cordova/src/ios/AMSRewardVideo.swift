@@ -29,6 +29,10 @@ class AMSRewardVideo: AMSAdBase, GADRewardBasedVideoAdDelegate {
         plugin.emit(eventType: AMSEvents.rewardVideoReward)
     }
 
+    func rewardBasedVideoAd(_ rewardBasedVideoAd: GADRewardBasedVideoAd, didFailToLoadWithError error: Error) {
+        plugin.emit(eventType: AMSEvents.rewardVideoLoadFail)
+    }
+
     func rewardBasedVideoAdDidReceive(_ rewardBasedVideoAd: GADRewardBasedVideoAd) {
         plugin.emit(eventType: AMSEvents.rewardVideoLoad)
     }

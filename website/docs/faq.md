@@ -50,6 +50,12 @@ Then add the following to `config.xml`,
 <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
 ```
 
+## How to fix `'sendSubviewToBack' has been renamed to 'sendSubview(toBack:)'` error for iOS?
+
+This is probally caused by using outdated version of Swift to build the project.
+
+Please ensusre `<preference name="SwiftVersion" value="5.3" />` is added to the section `<platform name="ios">` in `config.xml`, then clean build the project.
+
 
 ## How this project relates to `cordova-plugin-admob-free`?
 
