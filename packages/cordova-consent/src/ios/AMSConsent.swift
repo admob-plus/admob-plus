@@ -84,17 +84,21 @@ class AMSConsent: CDVPlugin {
     func loadConsentForm(command: CDVInvokedUrlCommand) {
         guard let opts = command.argument(at: 0) as? NSDictionary,
             let id = opts.value(forKey: "id") as? Int,
+            let adFree = opts.value(forKey: "adFree") as? Bool,
+            let nonPersonalizedAds = opts.value(forKey: "nonPersonalizedAds") as? Bool,
+            let personalizedAds = opts.value(forKey: "personalizedAds") as? Bool,
             let privacyUrlStr = opts.value(forKey: "privacyUrl") as? String,
             let privacyUrl = URL(string: privacyUrlStr),
             let form = PACConsentForm(applicationPrivacyPolicyURL: privacyUrl)
+
             else {
                 let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: false)
                 self.commandDelegate!.send(result, callbackId: command.callbackId)
                 return
         }
-        form.shouldOfferPersonalizedAds = true
-        form.shouldOfferNonPersonalizedAds = true
-        form.shouldOfferAdFree = true
+        form.shouldOfferPersonalizedAds = personalizedAds
+        form.shouldOfferNonPersonalizedAds = nonPersonalizedAds
+        form.shouldOfferAdFree = adFree
         AMSConsent.forms[id] = form
         form.load {(_ error: Error?) -> Void in
             if let error = error {
