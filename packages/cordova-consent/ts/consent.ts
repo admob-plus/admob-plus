@@ -79,6 +79,8 @@ class ConsentForm {
       userPrefersAdFree: boolean;
     }
   }
+
+
 }
 
 document.addEventListener(
@@ -113,4 +115,8 @@ export default {
   setDebugGeography(geography: 'EEA' | 'NOT_EEA') {
     return execAsync('setDebugGeography', [geography])
   },
+  requestTrackingAuthorization(){
+    return execAsync('requestTrackingAuthorization')
+  }
+
 }

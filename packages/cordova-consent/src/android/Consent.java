@@ -57,6 +57,9 @@ public class Consent extends CordovaPlugin {
                 loadConsentForm(args, callbackContext);
             } else if ("showConsentForm".equals(action)) {
                 showConsentForm(args, callbackContext);
+            }else if("requestTrackingAuthorization".equals(action)){
+                // Only for iOS
+                callbackContext.success("NOT_IOS");
             } else {
                 return false;
             }

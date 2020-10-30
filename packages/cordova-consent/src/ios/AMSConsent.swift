@@ -11,6 +11,28 @@ class AMSConsent: CDVPlugin {
     deinit {
         readyCallbackId = nil
     }
+
+    @objc(requestTrackingAuthorization:)
+    func requestTrackingAuthorization() {
+        ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
+            // Tracking authorization completed. Start loading ads here.           
+             var msgStatus = ""
+            if (status.rawValue == ATTrackingManager.AuthorizationStatus.authorized.rawValue){
+                msgStatus = "authorized"
+            }else if(status.rawValue == ATTrackingManager.AuthorizationStatus.denied.rawValue){
+                msgStatus = "denied"
+            }else if(status.rawValue == ATTrackingManager.AuthorizationStatus.notDetermined.rawValue){
+                msgStatus = "notDetermined"
+            }else if(status.rawValue == ATTrackingManager.AuthorizationStatus.restricted.rawValue){
+                msgStatus = "restricted"
+            }
+
+        let result = CDVPluginResult(
+            status: CDVCommandStatus_OK, 
+            messageAs: msgStatus)
+            self.commandDelegate!.send(result, callbackId: command.callbackId) 
+        })
+    }
     
     @objc(ready:)
     func ready(command: CDVInvokedUrlCommand) {
