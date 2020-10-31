@@ -106,9 +106,9 @@ public class Consent extends CordovaPlugin {
         Boolean personalizedAds = false;
         try {
             privacyUrl = new URL(obj.getString("privacyUrl"));
-            adFree = obj.getString("adFree");
-            nonPersonalizedAds = obj.getString("nonPersonalizedAds");
-            personalizedAds = obj.getString("personalizedAds");
+            adFree = obj.getBoolean("adFree");
+            nonPersonalizedAds = obj.getBoolean("nonPersonalizedAds");
+            personalizedAds = obj.getBoolean("personalizedAds");
         } catch (MalformedURLException e) {
             e.printStackTrace();
             callbackContext.error("Invalid privacyUrl");
