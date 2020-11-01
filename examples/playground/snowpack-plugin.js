@@ -18,8 +18,10 @@ module.exports = function (snowpackConfig, pluginOptions = {}) {
       }
       /* eslint-enable no-param-reassign */
     },
-    async run({ isDev }) {
+    async run({ isDev, log }) {
       if (isDev) {
+        log('WORKER_MSG', { level: 'log', msg: `plaform: ${platform}` })
+
         const xmlText = await fse.readFile('config.base.xml', 'utf8')
         const configXml = xmlText.replace(
           /<content src="index\.html" \/>\s+<access origin="\*" \/>/,
@@ -44,6 +46,8 @@ module.exports = function (snowpackConfig, pluginOptions = {}) {
       if (isDev && platform !== 'browser') {
         await execa('cordova', ['run', platform])
       }
+
+      log('WORKER_RESET', {})
     },
     // eslint-disable-next-line consistent-return
     transform({ contents, id }) {
