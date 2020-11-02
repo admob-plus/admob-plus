@@ -9,9 +9,18 @@ const Home: React.FC = () => {
   }, [count, setCount])
 
   return (
-    <p>
-      Page has been open for <code>{count}</code> seconds.
-    </p>
+    <>
+      <p>
+        Page has been open for <code>{count}</code> seconds.
+      </p>
+      <button
+        onClick={() => {
+          window.location.reload()
+        }}
+      >
+        reload
+      </button>
+    </>
   )
 }
 
