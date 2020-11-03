@@ -16,6 +16,9 @@ module.exports = function (snowpackConfig, pluginOptions = {}) {
         static: true,
         resolve: false,
       }
+      if (platform !== 'browser') {
+        config.devOptions.open = 'none'
+      }
       /* eslint-enable no-param-reassign */
     },
     async run({ isDev, log }) {
