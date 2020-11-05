@@ -1,18 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
 const Home: React.FC = () => {
-  const [count, setCount] = useState(0)
-
-  useEffect(() => {
-    const timer = setTimeout(() => setCount(count + 1), 1000)
-    return () => clearTimeout(timer)
-  }, [count, setCount])
-
   return (
-    <>
-      <p>
-        Page has been open for <code>{count}</code> seconds.
-      </p>
+    <div>
       <button
         onClick={() => {
           window.location.reload()
@@ -20,7 +10,7 @@ const Home: React.FC = () => {
       >
         reload
       </button>
-    </>
+    </div>
   )
 }
 
