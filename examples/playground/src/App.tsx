@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, Route, Routes } from 'react-router-dom'
+import Logs from './components/Logs'
 import Banner from './routes/Banner'
 import Home from './routes/Home'
 import Interstitial from './routes/Interstitial'
@@ -25,6 +26,7 @@ const App: React.FC<AppProps> = ({}) => {
         <Route path="interstitial" element={<Interstitial />} />
         <Route path="reward-video" element={<RewardVideo />} />
       </Routes>
+      <Logs />
     </div>
   )
 }
