@@ -1,5 +1,5 @@
 {
-  "extends": "../tsconfig.base.json",
+  "extends": "@admob-plus-internal/tsconfig",
   "compilerOptions": {
     "allowJs": true,
     "esModuleInterop": true,

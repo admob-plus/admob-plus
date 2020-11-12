@@ -1,5 +1,5 @@
 {
-  "extends": "./tsconfig.base.json",
+  "extends": "@admob-plus-internal/tsconfig",
   "references": [
     { "path": "packages/capacitor" },
     { "path": "packages/cordova" },
