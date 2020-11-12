@@ -1,0 +1,6 @@
+{
+  "extends": "@admob-plus-internal/tsconfig",
+  "compilerOptions": {
+    "esModuleInterop": true
+  }
+}
