@@ -4,20 +4,20 @@
   "displayName": "AdmobBasicExample",
   "version": "0.16.15",
   "scripts": {
-    "cli": "../../node_modules/.bin/ts-node ../../scripts/example-cli.ts",
-    "prepare": "run-s 'cli prepare --dir=cordova'",
-    "dev-android": "run-s 'cli open-android --dir=cordova --java=admob/plugin'",
-    "dev-ios": "run-s 'cli open-ios --dir=cordova'"
+    "prepare": "example prepare --dir=cordova",
+    "dev-android": "example open-android --dir=cordova --java=admob/plugin",
+    "dev-ios": "example open-ios --dir=cordova"
   },
   "dependencies": {
-    "cordova-admob-plus": "^0.37.0",
+    "cordova-admob-plus": "^0.39.0",
     "cordova-android": "9.0.0",
     "cordova-browser": "6.0.0",
     "cordova-ios": "6.1.1",
     "cordova-plugin-whitelist": "1.3.4"
   },
   "devDependencies": {
-    "admob-plus": "^0.15.6",
+    "@admob-plus-internal/cli": "file:../../internal/cli",
+    "admob-plus": "^0.15.7",
     "cordova": "^10.0.0",
     "npm-run-all": "^4.1.5"
   },

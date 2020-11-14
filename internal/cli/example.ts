@@ -1,10 +1,11 @@
+#!/usr/bin/env ts-node-script
 import linkDir from '@frat/link-dir'
-import * as del from 'del'
-import * as execa from 'execa'
-import * as path from 'path'
-import * as readPkg from 'read-pkg'
+import del from 'del'
+import execa from 'execa'
+import path from 'path'
+import readPkg from 'read-pkg'
 import { replaceInFile } from 'replace-in-file'
-import * as yargs from 'yargs'
+import yargs from 'yargs'
 import { pkgsDirJoin } from './utils'
 
 const linkPlugin = async (plugin: string, addOpts: string) => {
@@ -13,7 +14,7 @@ const linkPlugin = async (plugin: string, addOpts: string) => {
     reject: false,
   })
   await execa(
-    `cordova plugin add --link --nosave --searchpath ../../packages ${plugin} ${addOpts}`,
+    `cordova plugin add --link --nosave --searchpath ${pkgsDirJoin()} ${plugin} ${addOpts}`,
     { shell: true, stdio: 'inherit' },
   )
 }
@@ -27,7 +28,7 @@ const prepare = async (opts: { pluginDir: string }) => {
     shell: true,
     stdio: 'inherit',
   })
-  await execa('cordova prepare --searchpath ../../packages', {
+  await execa(`cordova prepare --searchpath ${pkgsDirJoin()}`, {
     shell: true,
     stdio: 'inherit',
   })
@@ -60,8 +61,8 @@ const androidRun = async (argv: { clean: boolean; device: boolean }) => {
 }
 
 const androidOpen = async (opts: {
-  pluginDir: string;
-  javaPackagePath: string;
+  pluginDir: string
+  javaPackagePath: string
 }) => {
   const targetDir = path.join(
     'platforms/android/app/src/main/java',
