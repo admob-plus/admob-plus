@@ -2,6 +2,7 @@ import assert from 'assert'
 import escaladeSync from 'escalade/sync'
 import path from 'path'
 
+// eslint-disable-next-line consistent-return
 const pkgsDir = escaladeSync(__dirname, (_dir, names) => {
   if (names.includes('packages')) {
     return 'packages'

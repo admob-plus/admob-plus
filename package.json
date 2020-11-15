@@ -74,9 +74,9 @@
     }
   },
   "lint-staged": {
-    "*.{jt}s": [
+    "*.{js,jsx,ts,tsx}": [
       "prettier-eslint --write",
-      "eslint --fix"
+      "eslint --ext .js,.jsx,.ts,tsx --fix"
     ],
     "*.md": "remark --no-stdout",
     "examples/*/package.json": "prettier --write",

@@ -8,4 +8,7 @@ module.exports = {
       extends: ['concise-typescript'],
     },
   ],
+  rules: {
+    'function-paren-newline': 'off',
+  },
 }
