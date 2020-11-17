@@ -76,7 +76,7 @@
                 <source url="https://github.com/CocoaPods/Specs.git" />
             </config>
             <pods use-frameworks="true">
-                <pod name="Google-Mobile-Ads-SDK" spec="~> 7.66" />
+                <pod name="Google-Mobile-Ads-SDK" spec="~> 7.68" />
             </pods>
         </podspec>
     </platform>
