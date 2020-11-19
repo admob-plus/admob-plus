@@ -1,4 +1,4 @@
-#!/usr/bin/env ts-node-script
+#!/usr/bin/env node
 import glob from 'fast-glob'
 import fsp from 'fs/promises'
 import _ from 'lodash'
@@ -110,10 +110,10 @@ public enum AdSizeType {
 
     public static AdSize getAdSize(Object adSize) {
 ${AdSizeTypes.map(
-  (s) => `      if (AdSizeType.${s}.equals(adSize)) {
+    (s) => `      if (AdSizeType.${s}.equals(adSize)) {
           return AdSize.${s};
       }`,
-).join('\n')}
+  ).join('\n')}
       return null;
     }
 }

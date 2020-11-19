@@ -1,6 +1,9 @@
 {
   "extends": "@admob-plus-internal/tsconfig",
   "compilerOptions": {
-    "esModuleInterop": true
-  }
+    "esModuleInterop": true,
+    "rootDir": "src",
+    "outDir": "lib"
+  },
+  "include": ["src"]
 }

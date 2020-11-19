@@ -1,4 +1,4 @@
-#!/usr/bin/env ts-node-script
+#!/usr/bin/env node
 import linkDir from '@frat/link-dir'
 import del from 'del'
 import execa from 'execa'
