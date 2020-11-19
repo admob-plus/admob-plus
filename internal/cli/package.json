@@ -7,7 +7,8 @@
     "gen": "./lib/gen.js"
   },
   "scripts": {
-    "prepare": "tsc -b"
+    "prepare": "tsc -b",
+    "gen": "ts-node -T src/gen.ts"
   },
   "dependencies": {
     "@admob-plus-internal/tsconfig": "file:../tsconfig",
@@ -24,6 +25,7 @@
     "yargs": "^16.1.1"
   },
   "devDependencies": {
-    "@types/yargs": "^15.0.10"
+    "@types/yargs": "^15.0.10",
+    "ts-node": "^9.0.0"
   }
 }
