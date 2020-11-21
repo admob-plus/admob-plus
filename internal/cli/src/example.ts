@@ -43,7 +43,7 @@ const prepare = async (opts: { pluginDir: string }) => {
     cwd: pkgsDirJoin(opts.pluginDir),
     stdio: 'inherit',
   })
-  await execa(cordovaBin, ['prepare', '--searchpath', pkgsDirJoin()], {
+  await execa(cordovaBin, ['prepare', '--searchpath', pkgsDirJoin(), '--verbose'], {
     stdio: 'inherit',
   })
 

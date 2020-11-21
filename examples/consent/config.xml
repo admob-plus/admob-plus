@@ -16,7 +16,6 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    <engine name="android" spec="8.1.0" />
     <platform name="android">
         <preference name="AndroidXEnabled" value="true" />
         <allow-intent href="market:*" />
@@ -24,6 +23,9 @@
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
-        <preference name="UseSwiftLanguageVersion" value="5" />
+        <preference name="deployment-target" value="11.0" />
+        <preference name="SwiftVersion" value="5.3" />
     </platform>
+    <engine name="ios" spec="6.1.1" />
+    <engine name="android" spec="9.0.0" />
 </widget>
