@@ -120,7 +120,7 @@ ${AdSizeTypes.map(
 `
 }
 
-function buildConstantsSwift(): string {
+function buildGeneratedSwift(): string {
   const linesEvents = Object.keys(Events)
     .map((k) => `    static let ${_.camelCase(k)} = "${Events[k]}"`)
     .sort()
@@ -209,8 +209,8 @@ async function main() {
       f: buildEventsJava,
     },
     {
-      filepath: 'cordova/src/ios/AMSConstants.swift',
-      f: buildConstantsSwift,
+      filepath: 'cordova/src/ios/AMSGenerated.swift',
+      f: buildGeneratedSwift,
     },
     { filepath: 'core/constants.ts', f: buildConstantsTs },
   ]
