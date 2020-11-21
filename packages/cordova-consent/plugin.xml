@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <plugin id="cordova-plugin-consent" version="0.0.0"
-        xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <name>@admob-plus/cordova-consent</name>
     <js-module name="Consent" src="www/consent.js">
         <clobbers target="consent" />
@@ -14,7 +14,7 @@
             </feature>
 
         </config-file>
-        
+
         <source-file src="src/android/Consent.java" target-dir="src/cordova/plugin/consent" />
 
         <preference name="CONSENT_SDK_VERSION" default="+" />
@@ -32,7 +32,13 @@
         <header-file src="src/ios/AMSConsent-Bridging-Header.h" />
         <source-file src="src/ios/AMSConsent.swift" />
 
-        <dependency id="cordova-plugin-add-swift-support" version="^2.0.2" />
-        <framework src="PersonalizedAdConsent" type="podspec" spec="~> 1.0.5" />
+        <podspec>
+            <config>
+                <source url="https://github.com/CocoaPods/Specs.git" />
+            </config>
+            <pods use-frameworks="true">
+                <pod name="PersonalizedAdConsent" spec="~> 1.0.5" />
+            </pods>
+        </podspec>
     </platform>
 </plugin>
