@@ -127,6 +127,11 @@ function buildGeneratedSwift(): string {
     .join('\n')
 
   return `// ${warnMessage}
+struct AMSBannerPosition {
+    static let bottom = "bottom"
+    static let top = "top"
+}
+
 struct AMSEvents {
 ${linesEvents}
 }
