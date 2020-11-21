@@ -2,7 +2,6 @@
   "name": "admob-plus-monorepo",
   "private": true,
   "scripts": {
-    "prepare": "gen",
     "test": "run-s test:*",
     "test:cli": "cd packages/cli && run-s test",
     "test:jest": "jest",
@@ -92,6 +91,8 @@
       "**/@ionic-native/**",
       "**/@ionic-native/splash-screen",
       "**/@ionic-native/status-bar",
+      "**/@types/mocha",
+      "**/@types/react-native",
       "**/ionic-angular",
       "**/ionic-angular/**",
       "**/ionicons",
@@ -102,7 +103,7 @@
     ],
     "packages": [
       "packages/*",
-      "tools/*",
+      "internal/*",
       "website"
     ]
   }
