@@ -12,7 +12,7 @@ $ npm install -g admob-plus
 $ admob-plus COMMAND
 running command...
 $ admob-plus (-v|--version|version)
-admob-plus/0.15.7 darwin-x64 node-v14.14.0
+admob-plus/0.15.8 darwin-x64 node-v15.2.1
 $ admob-plus --help [COMMAND]
 USAGE
   $ admob-plus COMMAND
@@ -25,8 +25,6 @@ USAGE
 * [`admob-plus info`](#admob-plus-info)
 
 ## `admob-plus help [COMMAND]`
-
-display help for admob-plus
 
 ```
 USAGE
@@ -43,8 +41,6 @@ _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.0
 
 ## `admob-plus info`
 
-Get relevant version info about OS, toolchain and libraries
-
 ```
 USAGE
   $ admob-plus info
@@ -57,5 +53,5 @@ EXAMPLE
   $ admob-plus info
 ```
 
-_See code: [src/commands/info.ts](https://github.com/admob-plus/admob-plus/blob/v0.15.7/src/commands/info.ts)_
+_See code: [src/commands/info.ts](https://github.com/admob-plus/admob-plus/blob/v0.15.8/src/commands/info.ts)_
 <!-- commandsstop -->

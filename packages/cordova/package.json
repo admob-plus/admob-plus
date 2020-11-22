@@ -1,6 +1,6 @@
 {
   "name": "cordova-admob-plus",
-  "version": "0.39.0",
+  "version": "0.40.0",
   "description": "Trustable Google AdMob Cordova Plugin",
   "main": "www/admob.js",
   "typings": "www/admob.d.ts",
@@ -8,7 +8,7 @@
     "prepare": "rollup -c"
   },
   "devDependencies": {
-    "@admob-plus/core": "^0.9.2",
+    "@admob-plus/core": "^0.9.3",
     "@rollup/plugin-commonjs": "^16.0.0",
     "@rollup/plugin-node-resolve": "^10.0.0",
     "@rollup/plugin-typescript": "^6.1.0",

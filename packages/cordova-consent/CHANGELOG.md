@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.18.0](https://github.com/admob-plus/admob-plus/compare/cordova-plugin-consent@0.17.5...cordova-plugin-consent@0.18.0) (2020-11-22)
+
+
+### Bug Fixes
+
+* **cordova-consent:** fix ios build error ([a73f18f](https://github.com/admob-plus/admob-plus/commit/a73f18fb8797baa3706df3c167b97bb2cdc07a58))
+* **cordova-consent:** update build config ([289c2bd](https://github.com/admob-plus/admob-plus/commit/289c2bdd65cc7cda384a9051b4337e44f206a03b))
+
+
+### Features
+
+* **cordova-consent:** remove usage of cordova-plugin-add-swift-support ([b5ef248](https://github.com/admob-plus/admob-plus/commit/b5ef2489623f11f8b065ef857fd0b3ed959623b4))
+
+
+
+
+
 ## [0.17.5](https://github.com/admob-plus/admob-plus/compare/cordova-plugin-consent@0.17.4...cordova-plugin-consent@0.17.5) (2020-09-12)
 
 
