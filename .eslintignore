@@ -1,4 +1,5 @@
 examples/*
+internal/cli/lib
 packages/*
 scripts/*
 website/*

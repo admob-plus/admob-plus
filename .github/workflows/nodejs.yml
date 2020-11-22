@@ -45,6 +45,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: |
+            .eslintcache
             yarn.lock
             node_modules
             */node_modules
