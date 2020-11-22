@@ -56,7 +56,6 @@ jobs:
 
       - name: Build
         run: |
-          yarn lerna run prepare --scope=@admob-plus/core --scope=cordova-admob-plus
           pushd packages/cli
           yarn prepack
           popd
@@ -132,9 +131,8 @@ jobs:
           echo "/usr/local/lib/android/sdk/platform-tools" >> $GITHUB_PATH
           echo "/usr/local/lib/android/sdk/tools" >> $GITHUB_PATH
           yarn
-          yarn lerna run prepare --scope=@admob-plus/core --scope=cordova-admob-plus
           pushd examples/basic
-          ../../node_modules/.bin/cordova platform rm ios
+          npx cordova platform rm ios
           yarn
           popd
 
@@ -149,14 +147,14 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node-version: [15.x]
+        node-version: ['15']
         os: [macos-latest]
 
     steps:
       - uses: actions/checkout@v2
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2-beta
         with:
           node-version: ${{ matrix.node-version }}
 
@@ -169,9 +167,9 @@ jobs:
         id: yarn-cache
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-${{ matrix.node-version }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-${{ matrix.node-version }}-yarn-
+            ${{ runner.os }}-yarn-
 
       - name: Restore node_modules
         uses: actions/cache@v2
