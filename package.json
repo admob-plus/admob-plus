@@ -2,6 +2,7 @@
   "name": "admob-plus-monorepo",
   "private": true,
   "scripts": {
+    "postinstall": "husky install",
     "test": "run-s test:*",
     "test:cli": "cd packages/cli && run-s test",
     "test:jest": "jest",
@@ -30,7 +31,7 @@
     "eslint-config-concise-esnext": "^0.39.0",
     "eslint-config-concise-typescript": "^0.39.0",
     "eslint-plugin-react": "^7.20.6",
-    "husky": "^4.3.0",
+    "husky": "^5.0.1",
     "jest": "^26.5.3",
     "lerna": "^3.22.1",
     "lint-staged": "^10.4.2",
@@ -53,12 +54,6 @@
     "extends": [
       "@commitlint/config-conventional"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged"
-    }
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
