@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import assert from 'assert'
 import linkDir from '@frat/link-dir'
 import del from 'del'
 import execa from 'execa'
@@ -9,19 +8,14 @@ import { replaceInFile } from 'replace-in-file'
 import yargs from 'yargs'
 import { pkgsDirJoin } from './utils'
 
-const cordovaBin = require.resolve('cordova/bin/cordova')
-const watchBin = require.resolve('copy-and-watch/bin/copy-and-watch')
-
-const npmBin = process.env.npm_execpath
-assert(npmBin)
-
 const linkPlugin = async (plugin: string, addOpts: string[]) => {
-  await execa(cordovaBin, ['plugin', 'rm', plugin, '--nosave'], {
+  await execa('npx', ['cordova', 'plugin', 'rm', plugin, '--nosave'], {
     reject: false,
   })
   await execa(
-    cordovaBin,
+    'npx',
     [
+      'cordova',
       'plugin',
       'add',
       '--link',
@@ -39,13 +33,17 @@ const clean = () => del(['package-lock.json', 'platforms', 'plugins'])
 
 const prepare = async (opts: { pluginDir: string }) => {
   const pkg = await readPkg({ cwd: pkgsDirJoin(opts.pluginDir) })
-  await execa(npmBin, ['run', 'prepare'], {
+  await execa('npm', ['run', 'prepare'], {
     cwd: pkgsDirJoin(opts.pluginDir),
     stdio: 'inherit',
   })
-  await execa(cordovaBin, ['prepare', '--searchpath', pkgsDirJoin(), '--verbose'], {
-    stdio: 'inherit',
-  })
+  await execa(
+    'npx',
+    ['cordova', 'prepare', '--searchpath', pkgsDirJoin(), '--verbose'],
+    {
+      stdio: 'inherit',
+    },
+  )
 
   const pkgExample = await readPkg()
   const pluginVars = pkgExample.cordova.plugins[pkg.name]
@@ -65,11 +63,13 @@ const prepare = async (opts: { pluginDir: string }) => {
 const androidRun = async (argv: { clean: boolean; device: boolean }) => {
   if (argv.clean) {
     await clean()
-    await execa(npmBin, ['run', 'prepare'], { stdio: 'inherit' })
+    await execa('npm', ['run', 'prepare'], { stdio: 'inherit' })
   }
   await execa(
-    cordovaBin,
-    ['run', 'android', '--verbose'].concat(argv.device ? ['--device'] : []),
+    'npx',
+    ['cordova', 'run', 'android', '--verbose'].concat(
+      argv.device ? ['--device'] : [],
+    ),
     { stdio: 'inherit' },
   )
 }
@@ -95,17 +95,20 @@ const iosOpen = async (opts: { pluginDir: string }) => {
   const pkg = await readPkg({ cwd: pkgsDirJoin(opts.pluginDir) })
   const targetDir = path.join('plugins', pkg.name, 'src/ios')
   await execa(
-    watchBin,
-    [pkgsDirJoin(opts.pluginDir, 'src/ios/**/*'), targetDir],
-    { stdio: 'inherit' },
+    'npx',
+    ['copy-and-watch', pkgsDirJoin(opts.pluginDir, 'src/ios/**/*'), targetDir],
+    {
+      stdio: 'inherit',
+    },
   )
   await execa(`open platforms/ios/${pkgExample.displayName}.xcworkspace`, {
     shell: true,
     stdio: 'inherit',
   })
   await execa(
-    watchBin,
+    'npx',
     [
+      'copy-and-watch',
       '--watch',
       '--skip-initial-copy',
       `${targetDir}/**/*`,
