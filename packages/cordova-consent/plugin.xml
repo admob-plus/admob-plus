@@ -29,7 +29,7 @@
             </feature>
         </config-file>
 
-        <header-file src="src/ios/AMSConsent-Bridging-Header.h" />
+        <header-file src="src/ios/AMSConsent-Bridging-Header.h" type="BridgingHeader" />
         <source-file src="src/ios/AMSConsent.swift" />
 
         <podspec>

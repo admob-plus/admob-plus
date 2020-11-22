@@ -1,3 +1,6 @@
+import AppTrackingTransparency
+import AdSupport
+
 @objc(AMSConsent)
 class AMSConsent: CDVPlugin {
     static var forms = Dictionary<Int, Any>()
@@ -13,25 +16,29 @@ class AMSConsent: CDVPlugin {
     }
 
     @objc(requestTrackingAuthorization:)
-    func requestTrackingAuthorization() {
-        ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
-            // Tracking authorization completed. Start loading ads here.           
-             var msgStatus = ""
-            if (status.rawValue == ATTrackingManager.AuthorizationStatus.authorized.rawValue){
-                msgStatus = "authorized"
-            }else if(status.rawValue == ATTrackingManager.AuthorizationStatus.denied.rawValue){
-                msgStatus = "denied"
-            }else if(status.rawValue == ATTrackingManager.AuthorizationStatus.notDetermined.rawValue){
-                msgStatus = "notDetermined"
-            }else if(status.rawValue == ATTrackingManager.AuthorizationStatus.restricted.rawValue){
-                msgStatus = "restricted"
-            }
+    func requestTrackingAuthorization(command: CDVInvokedUrlCommand) {
+        if #available(iOS 14, *) {
+            ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
+                // Tracking authorization completed. Start loading ads here.
+                var msgStatus = ""
+                if (status.rawValue == ATTrackingManager.AuthorizationStatus.authorized.rawValue){
+                    msgStatus = "authorized"
+                }else if(status.rawValue == ATTrackingManager.AuthorizationStatus.denied.rawValue){
+                    msgStatus = "denied"
+                }else if(status.rawValue == ATTrackingManager.AuthorizationStatus.notDetermined.rawValue){
+                    msgStatus = "notDetermined"
+                }else if(status.rawValue == ATTrackingManager.AuthorizationStatus.restricted.rawValue){
+                    msgStatus = "restricted"
+                }
 
-        let result = CDVPluginResult(
-            status: CDVCommandStatus_OK, 
-            messageAs: msgStatus)
-            self.commandDelegate!.send(result, callbackId: command.callbackId) 
-        })
+                let result = CDVPluginResult(
+                    status: CDVCommandStatus_OK,
+                    messageAs: msgStatus)
+                self.commandDelegate!.send(result, callbackId: command.callbackId)
+            })
+        } else {
+            // TODO Fallback on earlier versions
+        }
     }
     
     @objc(ready:)
