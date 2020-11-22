@@ -65,10 +65,13 @@ jobs:
         run: |
           yarn lint
           yarn test
-          pushd examples/ionic-angular
-          yarn
-          yarn lint
-          popd
+          if [ "$RUNNER_OS" != "Windows" ]; then
+            pushd examples/ionic-angular
+            yarn
+            yarn lint
+            popd
+          fi
+        shell: bash
 
   test-android:
     name: Android on ${{ matrix.os }}
@@ -166,9 +169,9 @@ jobs:
         id: yarn-cache
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-${{ matrix.node-version }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-yarn-
+            ${{ runner.os }}-${{ matrix.node-version }}-yarn-
 
       - name: Restore node_modules
         uses: actions/cache@v2
@@ -185,7 +188,6 @@ jobs:
           echo $(yarn global bin) >> $GITHUB_PATH
           yarn global add ios-deploy
           yarn
-          yarn lerna run prepare --scope=@admob-plus/core --scope=cordova-admob-plus
           pushd examples/basic
           yarn
           popd
