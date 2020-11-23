@@ -57,6 +57,9 @@ public class Consent extends CordovaPlugin {
                 loadConsentForm(args, callbackContext);
             } else if ("showConsentForm".equals(action)) {
                 showConsentForm(args, callbackContext);
+            }else if("requestTrackingAuthorization".equals(action)){
+                // Only for iOS
+                callbackContext.success("NOT_IOS");
             } else {
                 return false;
             }
@@ -98,8 +101,14 @@ public class Consent extends CordovaPlugin {
         JSONObject obj = args.optJSONObject(0);
         int id = obj.getInt("id");
         URL privacyUrl = null;
+        Boolean adFree = false;
+        Boolean nonPersonalizedAds = false;
+        Boolean personalizedAds = false;
         try {
             privacyUrl = new URL(obj.getString("privacyUrl"));
+            adFree = obj.getBoolean("adFree");
+            nonPersonalizedAds = obj.getBoolean("nonPersonalizedAds");
+            personalizedAds = obj.getBoolean("personalizedAds");
         } catch (MalformedURLException e) {
             e.printStackTrace();
             callbackContext.error("Invalid privacyUrl");
@@ -144,7 +153,19 @@ public class Consent extends CordovaPlugin {
                         emit("consent.form.error", data);
                     }
                 });
-        formBuilder = formBuilder.withPersonalizedAdsOption().withNonPersonalizedAdsOption().withAdFreeOption();
+
+        if(personalizedAds) {
+            formBuilder = formBuilder.withPersonalizedAdsOption();
+        }
+
+        if(nonPersonalizedAds) {
+            formBuilder = formBuilder.withNonPersonalizedAdsOption();
+        }
+
+        if(adFree) {
+            formBuilder = formBuilder.withAdFreeOption();
+        }
+
         final ConsentForm.Builder formBuilderFinal = formBuilder;
         cordova.getActivity().runOnUiThread(new Runnable() {
             @Override

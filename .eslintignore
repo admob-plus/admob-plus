@@ -1,0 +1,10 @@
+examples/*
+internal/cli/lib
+packages/*
+scripts/*
+website/*
+
+!packages/cordova
+packages/cordova/www
+packages/cordova/src
+packages/cordova/ts

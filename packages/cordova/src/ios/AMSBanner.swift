@@ -83,7 +83,7 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
             bannerView.heightAnchor.constraint(equalToConstant: bannerView.frame.height),
             mainView.widthAnchor.constraint(equalTo: rootView.widthAnchor)
         ]
-        if position == "top" {
+        if position == AMSBannerPosition.top {
             let c = mainView.bottomAnchor.constraint(equalTo: rootView.bottomAnchor)
             c.priority = UILayoutPriority(999)
             constraints += [
@@ -111,11 +111,11 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
                                               attribute: .centerX,
                                               multiplier: 1,
                                               constant: 0))
-        if position == "top" {
+        if position == AMSBannerPosition.top {
             rootView.addConstraint(NSLayoutConstraint(item: bannerView,
                                                   attribute: .top,
                                                   relatedBy: .equal,
-                                                  toItem: plugin.viewController.topLayoutGuide,
+                                                  toItem: rootView.safeAreaLayoutGuide.topAnchor,
                                                   attribute: .top,
                                                   multiplier: 1,
                                                   constant: 0))
@@ -123,7 +123,7 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
             rootView.addConstraint(NSLayoutConstraint(item: bannerView,
                                                   attribute: .bottom,
                                                   relatedBy: .equal,
-                                                  toItem: plugin.viewController.bottomLayoutGuide,
+                                                  toItem: rootView.safeAreaLayoutGuide.bottomAnchor,
                                                   attribute: .top,
                                                   multiplier: 1,
                                                   constant: 0))

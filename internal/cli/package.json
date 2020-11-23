@@ -1,0 +1,32 @@
+{
+  "name": "@admob-plus-internal/cli",
+  "version": "0.0.0",
+  "private": true,
+  "bin": {
+    "example": "./lib/example.js",
+    "gen": "./lib/gen.js"
+  },
+  "scripts": {
+    "prepare": "tsc -b",
+    "postprepare": "ts-node -T src/gen.ts"
+  },
+  "dependencies": {
+    "@admob-plus-internal/tsconfig": "file:../tsconfig",
+    "@frat/link-dir": "^2.3.0",
+    "copy-and-watch": "^0.1.5",
+    "cordova": "^10.0.0",
+    "del": "^6.0.0",
+    "escalade": "^3.1.1",
+    "execa": "^4.1.0",
+    "fast-glob": "^3.2.4",
+    "lodash": "^4.17.20",
+    "read-pkg": "^5.2.0",
+    "replace-in-file": "^6.1.0",
+    "typescript": "^4.0.3",
+    "yargs": "^16.1.1"
+  },
+  "devDependencies": {
+    "@types/yargs": "^15.0.10",
+    "ts-node": "^9.0.0"
+  }
+}

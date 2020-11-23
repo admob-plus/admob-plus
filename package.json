@@ -2,47 +2,45 @@
   "name": "admob-plus-monorepo",
   "private": true,
   "scripts": {
-    "prepare": "ts-node scripts/gen",
+    "postinstall": "is-ci || husky install",
+    "prepare": "lerna run prepare --ignore @admob-plus/ionic",
     "test": "run-s test:*",
-    "test:cli": "cd packages/cli && run-s test",
+    "test:pkgs": "lerna run test",
     "test:jest": "jest",
-    "lint": "tslint --project packages/cordova",
-    "test-android": "run-s test-android:*",
+    "lint": "eslint --cache --ext .js,.jsx,.ts,tsx .",
+    "test-android": "run-s 'test-android:*'",
     "//test-android:testbed": "cordova-testbed --platform android --plugin packages/cordova --build-only",
     "test-android:example": "cd examples/basic && cordova build android",
-    "test-ios": "run-s test-ios:*",
+    "test-ios": "run-s 'test-ios:*'",
     "test-ios:lint": "swiftlint --config $(pwd)/.swiftlint.yml --path packages/cordova/src/ios",
     "//test-ios:testbed": "cordova-testbed --platform ios --plugin packages/cordova --build-only",
     "test-ios:example": "cd examples/basic && cordova build ios"
   },
   "devDependencies": {
+    "@admob-plus-internal/cli": "file:./internal/cli",
+    "@admob-plus-internal/tsconfig": "file:./internal/tsconfig",
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
     "@commitlint/config-lerna-scopes": "^11.0.0",
     "@commitlint/prompt-cli": "^11.0.0",
-    "@frat/link-dir": "^2.3.0",
-    "@types/jest": "^26.0.14",
-    "@types/yargs": "^15.0.9",
-    "copy-and-watch": "^0.1.5",
+    "@types/jest": "^26.0.15",
     "cordova": "10.0.0",
     "cordova-testbed": "^0.8.0",
-    "eslint": "^7.8.1",
-    "eslint-config-concise": "^0.37.1",
-    "eslint-config-concise-browser": "^0.37.0",
-    "eslint-config-concise-esnext": "^0.37.0",
-    "eslint-plugin-react": "^7.20.6",
-    "execa": "^4.0.3",
-    "fast-glob": "^3.2.4",
-    "find-cache-dir": "^3.3.1",
-    "husky": "^4.3.0",
-    "jest": "^26.5.3",
+    "eslint": "^7.14.0",
+    "eslint-config-concise": "^0.39.1",
+    "eslint-config-concise-browser": "^0.39.0",
+    "eslint-config-concise-esnext": "^0.39.0",
+    "eslint-config-concise-typescript": "^0.39.0",
+    "eslint-plugin-react": "^7.21.5",
+    "execa": "^4.1.0",
+    "husky": "^5.0.1",
+    "is-ci": "^2.0.0",
+    "jest": "^26.6.3",
     "lerna": "^3.22.1",
-    "lint-staged": "^10.4.2",
-    "lodash": "^4.17.20",
+    "lint-staged": "^10.5.1",
     "npm-run-all": "^4.1.5",
-    "prettier": "^2.1.2",
+    "prettier": "^2.2.0",
     "prettier-eslint-cli": "^5.0.0",
-    "prettier-tslint": "^0.4.2",
     "read-pkg": "^5.2.0",
     "remark-cli": "^9.0.0",
     "remark-lint-are-links-valid-duplicate": "^0.2.2",
@@ -51,15 +49,9 @@
     "remark-lint-no-trailing-spaces": "^2.0.1",
     "remark-preset-lint-consistent": "^4.0.0",
     "remark-preset-lint-markdown-style-guide": "^4.0.0",
-    "remark-preset-lint-recommended": "^4.0.1",
-    "replace-in-file": "^6.1.0",
-    "ts-jest": "^26.3.0",
-    "ts-node": "^9.0.0",
-    "tslint": "^6.1.3",
-    "tslint-config-concise": "^0.37.0",
-    "tslint-eslint-rules": "^5.4.0",
-    "typescript": "^4.0.3",
-    "yargs": "^16.0.3"
+    "remark-preset-lint-recommended": "^5.0.0",
+    "ts-jest": "^26.4.4",
+    "typescript": "^4.1.2"
   },
   "repository": "admob-plus/admob-plus",
   "commitlint": {
@@ -67,24 +59,12 @@
       "@commitlint/config-conventional"
     ]
   },
-  "eslintConfig": {
-    "extends": [
-      "concise"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
-    "*.js": [
+    "*.{js,jsx,ts,tsx}": [
       "prettier-eslint --write",
-      "eslint --fix"
+      "eslint --ext .js,.jsx,.ts,tsx --fix"
     ],
     "*.md": "remark --no-stdout",
-    "*.ts": "prettier-tslint fix",
     "examples/*/package.json": "prettier --write",
     "packages/cli/oclif.manifest.json": "exit 1",
     "packages/cordova/src/ios/*.swift": "swiftlint lint --strict --path"
@@ -110,6 +90,8 @@
       "**/@ionic-native/**",
       "**/@ionic-native/splash-screen",
       "**/@ionic-native/status-bar",
+      "**/@types/mocha",
+      "**/@types/react-native",
       "**/ionic-angular",
       "**/ionic-angular/**",
       "**/ionicons",
@@ -120,6 +102,7 @@
     ],
     "packages": [
       "packages/*",
+      "internal/*",
       "website"
     ]
   }

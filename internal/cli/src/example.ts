@@ -1,20 +1,31 @@
+#!/usr/bin/env node
 import linkDir from '@frat/link-dir'
-import * as del from 'del'
-import * as execa from 'execa'
-import * as path from 'path'
-import * as readPkg from 'read-pkg'
+import del from 'del'
+import execa from 'execa'
+import path from 'path'
+import readPkg from 'read-pkg'
 import { replaceInFile } from 'replace-in-file'
-import * as yargs from 'yargs'
+import yargs from 'yargs'
 import { pkgsDirJoin } from './utils'
 
-const linkPlugin = async (plugin: string, addOpts: string) => {
-  await execa(`cordova plugin rm ${plugin} --nosave`, {
-    shell: true,
+const linkPlugin = async (plugin: string, addOpts: string[]) => {
+  await execa('npx', ['cordova', 'plugin', 'rm', plugin, '--nosave'], {
     reject: false,
   })
   await execa(
-    `cordova plugin add --link --nosave --searchpath ../../packages ${plugin} ${addOpts}`,
-    { shell: true, stdio: 'inherit' },
+    'npx',
+    [
+      'cordova',
+      'plugin',
+      'add',
+      '--link',
+      '--nosave',
+      '--searchpath',
+      pkgsDirJoin(),
+      plugin,
+      ...addOpts,
+    ],
+    { stdio: 'inherit' },
   )
 }
 
@@ -22,21 +33,23 @@ const clean = () => del(['package-lock.json', 'platforms', 'plugins'])
 
 const prepare = async (opts: { pluginDir: string }) => {
   const pkg = await readPkg({ cwd: pkgsDirJoin(opts.pluginDir) })
-  await execa('run-s prepare', {
+  await execa('npm', ['run', 'prepare'], {
     cwd: pkgsDirJoin(opts.pluginDir),
-    shell: true,
     stdio: 'inherit',
   })
-  await execa('cordova prepare --searchpath ../../packages', {
-    shell: true,
-    stdio: 'inherit',
-  })
+  await execa(
+    'npx',
+    ['cordova', 'prepare', '--searchpath', pkgsDirJoin(), '--verbose'],
+    {
+      stdio: 'inherit',
+    },
+  )
 
   const pkgExample = await readPkg()
   const pluginVars = pkgExample.cordova.plugins[pkg.name]
   const addOpts = Object.keys(pluginVars)
-    .map((k) => `--variable ${k}=${pluginVars[k]}`)
-    .join(' ')
+    .map((k) => ['--variable', `${k}=${pluginVars[k]}`])
+    .flat()
   await Promise.all([
     replaceInFile({
       files: path.join(process.cwd(), 'platforms/android/app/build.gradle'),
@@ -50,18 +63,20 @@ const prepare = async (opts: { pluginDir: string }) => {
 const androidRun = async (argv: { clean: boolean; device: boolean }) => {
   if (argv.clean) {
     await clean()
-    await execa('run-s prepare', { shell: true, stdio: 'inherit' })
+    await execa('npm', ['run', 'prepare'], { stdio: 'inherit' })
   }
   await execa(
-    'cordova',
-    ['run', 'android', '--verbose'].concat(argv.device ? ['--device'] : []),
+    'npx',
+    ['cordova', 'run', 'android', '--verbose'].concat(
+      argv.device ? ['--device'] : [],
+    ),
     { stdio: 'inherit' },
   )
 }
 
 const androidOpen = async (opts: {
-  pluginDir: string;
-  javaPackagePath: string;
+  pluginDir: string
+  javaPackagePath: string
 }) => {
   const targetDir = path.join(
     'platforms/android/app/src/main/java',
@@ -79,19 +94,21 @@ const iosOpen = async (opts: { pluginDir: string }) => {
   const pkgExample = await readPkg()
   const pkg = await readPkg({ cwd: pkgsDirJoin(opts.pluginDir) })
   const targetDir = path.join('plugins', pkg.name, 'src/ios')
-  const watchBin = require.resolve('copy-and-watch/bin/copy-and-watch')
   await execa(
-    watchBin,
-    [pkgsDirJoin(opts.pluginDir, 'src/ios/**/*'), targetDir],
-    { stdio: 'inherit' },
+    'npx',
+    ['copy-and-watch', pkgsDirJoin(opts.pluginDir, 'src/ios/**/*'), targetDir],
+    {
+      stdio: 'inherit',
+    },
   )
   await execa(`open platforms/ios/${pkgExample.displayName}.xcworkspace`, {
     shell: true,
     stdio: 'inherit',
   })
   await execa(
-    watchBin,
+    'npx',
     [
+      'copy-and-watch',
       '--watch',
       '--skip-initial-copy',
       `${targetDir}/**/*`,

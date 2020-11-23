@@ -1,11 +1,10 @@
 {
   "name": "@admob-plus/react-native",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "AdMob Plus for React Native",
   "main": "index.js",
   "scripts": {
-    "prepare": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepare": "tsc"
   },
   "keywords": [
     "react-native"

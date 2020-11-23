@@ -1,3 +1,6 @@
+import AppTrackingTransparency
+import AdSupport
+
 @objc(AMSConsent)
 class AMSConsent: CDVPlugin {
     static var forms = Dictionary<Int, Any>()
@@ -10,6 +13,32 @@ class AMSConsent: CDVPlugin {
     
     deinit {
         readyCallbackId = nil
+    }
+
+    @objc(requestTrackingAuthorization:)
+    func requestTrackingAuthorization(command: CDVInvokedUrlCommand) {
+        if #available(iOS 14, *) {
+            ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
+                // Tracking authorization completed. Start loading ads here.
+                var msgStatus = ""
+                if (status.rawValue == ATTrackingManager.AuthorizationStatus.authorized.rawValue){
+                    msgStatus = "authorized"
+                }else if(status.rawValue == ATTrackingManager.AuthorizationStatus.denied.rawValue){
+                    msgStatus = "denied"
+                }else if(status.rawValue == ATTrackingManager.AuthorizationStatus.notDetermined.rawValue){
+                    msgStatus = "notDetermined"
+                }else if(status.rawValue == ATTrackingManager.AuthorizationStatus.restricted.rawValue){
+                    msgStatus = "restricted"
+                }
+
+                let result = CDVPluginResult(
+                    status: CDVCommandStatus_OK,
+                    messageAs: msgStatus)
+                self.commandDelegate!.send(result, callbackId: command.callbackId)
+            })
+        } else {
+            // TODO Fallback on earlier versions
+        }
     }
     
     @objc(ready:)
@@ -84,17 +113,21 @@ class AMSConsent: CDVPlugin {
     func loadConsentForm(command: CDVInvokedUrlCommand) {
         guard let opts = command.argument(at: 0) as? NSDictionary,
             let id = opts.value(forKey: "id") as? Int,
+            let adFree = opts.value(forKey: "adFree") as? Bool,
+            let nonPersonalizedAds = opts.value(forKey: "nonPersonalizedAds") as? Bool,
+            let personalizedAds = opts.value(forKey: "personalizedAds") as? Bool,
             let privacyUrlStr = opts.value(forKey: "privacyUrl") as? String,
             let privacyUrl = URL(string: privacyUrlStr),
             let form = PACConsentForm(applicationPrivacyPolicyURL: privacyUrl)
+
             else {
                 let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: false)
                 self.commandDelegate!.send(result, callbackId: command.callbackId)
                 return
         }
-        form.shouldOfferPersonalizedAds = true
-        form.shouldOfferNonPersonalizedAds = true
-        form.shouldOfferAdFree = true
+        form.shouldOfferPersonalizedAds = personalizedAds
+        form.shouldOfferNonPersonalizedAds = nonPersonalizedAds
+        form.shouldOfferAdFree = adFree
         AMSConsent.forms[id] = form
         form.load {(_ error: Error?) -> Void in
             if let error = error {

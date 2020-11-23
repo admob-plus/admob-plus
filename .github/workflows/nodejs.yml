@@ -14,10 +14,13 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node-version: [12.x, 13.x, 14.x]
+        node-version: [12.x, 14.x, 15.x]
         os: [ubuntu-latest, windows-latest, macos-latest]
 
     steps:
+      - name: Config git
+        run: git config --global core.autocrlf input
+
       - uses: actions/checkout@v2
 
       - name: Use Node.js ${{ matrix.node-version }}
@@ -42,6 +45,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: |
+            .eslintcache
             yarn.lock
             node_modules
             */node_modules
@@ -53,7 +57,6 @@ jobs:
 
       - name: Build
         run: |
-          yarn lerna run prepare --scope=@admob-plus/core --scope=cordova-admob-plus
           pushd packages/cli
           yarn prepack
           popd
@@ -62,17 +65,20 @@ jobs:
         run: |
           yarn lint
           yarn test
-          pushd examples/ionic-angular
-          yarn
-          yarn lint
-          popd
+          if [ "$RUNNER_OS" != "Windows" ]; then
+            pushd examples/ionic-angular
+            yarn
+            yarn lint
+            popd
+          fi
+        shell: bash
 
   test-android:
     name: Android on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node-version: [14.x]
+        node-version: [15.x]
         os: [ubuntu-latest]
 
     steps:
@@ -126,9 +132,8 @@ jobs:
           echo "/usr/local/lib/android/sdk/platform-tools" >> $GITHUB_PATH
           echo "/usr/local/lib/android/sdk/tools" >> $GITHUB_PATH
           yarn
-          yarn lerna run prepare --scope=@admob-plus/core --scope=cordova-admob-plus
           pushd examples/basic
-          ../../node_modules/.bin/cordova platform rm ios
+          npx cordova platform rm ios
           yarn
           popd
 
@@ -143,14 +148,14 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node-version: [14.x]
+        node-version: ['15']
         os: [macos-latest]
 
     steps:
       - uses: actions/checkout@v2
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2-beta
         with:
           node-version: ${{ matrix.node-version }}
 
@@ -182,7 +187,6 @@ jobs:
           echo $(yarn global bin) >> $GITHUB_PATH
           yarn global add ios-deploy
           yarn
-          yarn lerna run prepare --scope=@admob-plus/core --scope=cordova-admob-plus
           pushd examples/basic
           yarn
           popd
@@ -201,7 +205,7 @@ jobs:
 
       - uses: actions/setup-node@v1
         with:
-          node-version: '14.x'
+          node-version: '15.x'
 
       - name: Release to GitHub Pages
         run: |

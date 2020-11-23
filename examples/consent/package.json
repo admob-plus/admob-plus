@@ -5,20 +5,17 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "cli": "../../node_modules/.bin/ts-node ../../scripts/example-cli.ts",
-    "prepare": "run-s 'cli prepare --dir=cordova-consent'",
-    "dev-android": "run-s 'cli open-android --dir=cordova-consent --java=cordova/plugin/consent'",
-    "dev-ios": "run-s 'cli open-ios --dir=cordova-consent'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepare": "example prepare --dir=cordova-consent",
+    "dev-android": "example open-android --dir=cordova-consent --java=cordova/plugin/consent",
+    "dev-ios": "example open-ios --dir=cordova-consent"
   },
   "dependencies": {
-    "cordova": "^10.0.0",
     "cordova-android": "^9.0.0",
     "cordova-ios": "6.1.1",
     "cordova-plugin-whitelist": "^1.3.4"
   },
   "devDependencies": {
-    "npm-run-all": "^4.1.5"
+    "@admob-plus-internal/cli": "file:../../internal/cli"
   },
   "cordova": {
     "plugins": {
