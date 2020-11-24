@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "postinstall": "is-ci || husky install",
-    "prepare": "lerna run prepare --ignore @admob-plus/ionic",
+    "prepare": "lerna run prepare",
     "test": "run-s test:*",
     "test:pkgs": "lerna run test",
     "test:jest": "jest",
