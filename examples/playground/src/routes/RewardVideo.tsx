@@ -1,3 +1,4 @@
+import { Button } from '@chakra-ui/react'
 import * as React from 'react'
 
 export interface RewardVideoProps {}
@@ -5,20 +6,20 @@ export interface RewardVideoProps {}
 const RewardVideo: React.FC<RewardVideoProps> = () => {
   return (
     <div>
-      <button
+      <Button
         onClick={() => {
           admob.rewardVideo.load({ id: 'test' })
         }}
       >
         load
-      </button>
-      <button
+      </Button>
+      <Button
         onClick={() => {
           admob.rewardVideo.show()
         }}
       >
         show
-      </button>
+      </Button>
     </div>
   )
 }

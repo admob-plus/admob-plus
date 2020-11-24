@@ -1,3 +1,4 @@
+import { Button } from '@chakra-ui/react'
 import * as React from 'react'
 
 export interface InterstitialProps {}
@@ -5,20 +6,20 @@ export interface InterstitialProps {}
 const Interstitial: React.FC<InterstitialProps> = () => {
   return (
     <div>
-      <button
+      <Button
         onClick={() => {
           admob.interstitial.load({ id: 'test' })
         }}
       >
         load
-      </button>
-      <button
+      </Button>
+      <Button
         onClick={() => {
           admob.interstitial.show()
         }}
       >
         show
-      </button>
+      </Button>
     </div>
   )
 }

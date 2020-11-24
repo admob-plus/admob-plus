@@ -1,15 +1,16 @@
+import { Button } from '@chakra-ui/react'
 import React from 'react'
 
 const Home: React.FC = () => {
   return (
     <div>
-      <button
+      <Button
         onClick={() => {
           window.location.reload()
         }}
       >
         reload
-      </button>
+      </Button>
     </div>
   )
 }

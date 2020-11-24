@@ -1,3 +1,4 @@
+import { Button, ButtonGroup, Box } from '@chakra-ui/react'
 import * as React from 'react'
 
 export interface BannerProps {}
@@ -17,34 +18,40 @@ const Banner: React.FC<BannerProps> = () => {
 
   return (
     <div>
-      <button
-        onClick={() => {
-          bannerTop.show({ position: 'top' })
-        }}
-      >
-        show top
-      </button>
-      <button
-        onClick={() => {
-          bannerTop.hide()
-        }}
-      >
-        hide top
-      </button>
-      <button
-        onClick={() => {
-          banner.show({ position: 'bottom' })
-        }}
-      >
-        show bottom
-      </button>
-      <button
-        onClick={() => {
-          banner.hide()
-        }}
-      >
-        hide bottom
-      </button>
+      <Box>
+        <ButtonGroup>
+          <Button
+            onClick={() => {
+              bannerTop.show({ position: 'top' })
+            }}
+          >
+            show top
+          </Button>
+          <Button
+            onClick={() => {
+              bannerTop.hide()
+            }}
+          >
+            hide top
+          </Button>
+        </ButtonGroup>
+      </Box>
+      <ButtonGroup>
+        <Button
+          onClick={() => {
+            banner.show({ position: 'bottom' })
+          }}
+        >
+          show bottom
+        </Button>
+        <Button
+          onClick={() => {
+            banner.hide()
+          }}
+        >
+          hide bottom
+        </Button>
+      </ButtonGroup>
     </div>
   )
 }
