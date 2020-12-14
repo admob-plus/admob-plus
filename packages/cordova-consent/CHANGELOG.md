@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.19.0](https://github.com/admob-plus/admob-plus/compare/cordova-plugin-consent@0.18.0...cordova-plugin-consent@0.19.0) (2020-12-13)
+
+
+### Features
+
+* use CocoaPods CDN ([16542e1](https://github.com/admob-plus/admob-plus/commit/16542e1a4766eb3451eef8a89889b35231b8dc2b)), closes [#205](https://github.com/admob-plus/admob-plus/issues/205)
+
+
+
+
+
 # [0.18.0](https://github.com/admob-plus/admob-plus/compare/cordova-plugin-consent@0.17.5...cordova-plugin-consent@0.18.0) (2020-11-22)
 
 

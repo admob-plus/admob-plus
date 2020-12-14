@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.20.0](https://github.com/admob-plus/admob-plus/compare/ionic-admob@0.19.12...ionic-admob@0.20.0) (2020-12-13)
+
+
+### Bug Fixes
+
+* **ionic:** update dependencies ([ad9422e](https://github.com/admob-plus/admob-plus/commit/ad9422ecb537561842932554f27e78b52a89d2e1))
+
+
+### Features
+
+* **ionic:** support RXJS without compat ([#208](https://github.com/admob-plus/admob-plus/issues/208)) ([c202b0e](https://github.com/admob-plus/admob-plus/commit/c202b0e17b41d6094586774cc7a63873a2e86d95))
+
+
+
+
+
 ## [0.19.12](https://github.com/admob-plus/admob-plus/compare/ionic-admob@0.19.11...ionic-admob@0.19.12) (2020-11-22)
 
 **Note:** Version bump only for package ionic-admob

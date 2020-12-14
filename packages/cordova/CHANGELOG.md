@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.41.0](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.40.0...cordova-admob-plus@0.41.0) (2020-12-13)
+
+
+### Features
+
+* use CocoaPods CDN ([16542e1](https://github.com/admob-plus/admob-plus/commit/16542e1a4766eb3451eef8a89889b35231b8dc2b)), closes [#205](https://github.com/admob-plus/admob-plus/issues/205)
+* **cordova:** update Google-Mobile-Ads-SDK to v7.69 ([c0e07c4](https://github.com/admob-plus/admob-plus/commit/c0e07c40d24b841c8fafc8269cbf30629836dcf0))
+
+
+
+
+
 # [0.40.0](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.39.0...cordova-admob-plus@0.40.0) (2020-11-22)
 
 

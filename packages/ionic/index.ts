@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core'
 import { Cordova, IonicNativePlugin, Plugin } from '@ionic-native/core'
-import { Observable } from 'rxjs/Observable'
-import { fromEvent } from 'rxjs/observable/fromEvent'
+import { fromEvent, Observable } from 'rxjs'
 
 import { AdUnitIDOption, IAdRequest, IBannerRequest } from '@admob-plus/core'
 

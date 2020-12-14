@@ -12,18 +12,18 @@
     "favicon": "convert static/img/logo.png -define icon:auto-resize=64,48,32,16 static/img/favicon.ico"
   },
   "dependencies": {
-    "@docusaurus/core": "2.0.0-alpha.68",
-    "@docusaurus/preset-classic": "2.0.0-alpha.68",
-    "@mdx-js/react": "^1.6.21",
+    "@docusaurus/core": "2.0.0-alpha.69",
+    "@docusaurus/preset-classic": "2.0.0-alpha.69",
+    "@mdx-js/react": "^1.6.22",
     "clsx": "^1.1.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "2.0.0-alpha.68",
-    "eslint-config-concise-esnext": "^0.39.0",
-    "eslint-config-concise-react": "^0.39.0",
-    "typescript": "^4.1.2"
+    "@docusaurus/module-type-aliases": "2.0.0-alpha.69",
+    "eslint-config-concise-esnext": "^0.40.1",
+    "eslint-config-concise-react": "^0.40.1",
+    "typescript": "^4.1.3"
   },
   "browserslist": {
     "production": [
