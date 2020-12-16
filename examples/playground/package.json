@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "prepare": "example prepare --dir=cordova",
+    "prepare": "npm run build && example prepare --dir=cordova",
     "start": "snowpack dev",
     "build": "snowpack build",
     "ios": "cordova run ios"
