@@ -2,9 +2,11 @@
 import linkDir from '@frat/link-dir'
 import del from 'del'
 import execa from 'execa'
+import fsp from 'fs/promises'
 import path from 'path'
 import readPkg from 'read-pkg'
 import { replaceInFile } from 'replace-in-file'
+import { parseStringPromise } from 'xml2js'
 import yargs from 'yargs'
 import { pkgsDirJoin } from './utils'
 
@@ -91,19 +93,20 @@ const androidOpen = async (opts: {
 }
 
 const iosOpen = async (opts: { pluginDir: string }) => {
-  const pkgExample = await readPkg()
+  const cwd = process.cwd()
   const pkg = await readPkg({ cwd: pkgsDirJoin(opts.pluginDir) })
   const targetDir = path.join('plugins', pkg.name, 'src/ios')
   await execa(
     'npx',
     ['copy-and-watch', pkgsDirJoin(opts.pluginDir, 'src/ios/**/*'), targetDir],
-    {
-      stdio: 'inherit',
-    },
+    { stdio: 'inherit', cwd },
   )
-  await execa(`open platforms/ios/${pkgExample.displayName}.xcworkspace`, {
-    shell: true,
+  const configXML = await fsp.readFile(path.join(cwd, 'config.xml'), 'utf-8')
+  const config = await parseStringPromise(configXML)
+  const name = config.widget.name[0]
+  await execa('open', [`platforms/ios/${name}.xcworkspace`], {
     stdio: 'inherit',
+    cwd,
   })
   await execa(
     'npx',
@@ -114,7 +117,7 @@ const iosOpen = async (opts: { pluginDir: string }) => {
       `${targetDir}/**/*`,
       pkgsDirJoin(opts.pluginDir, 'src/ios'),
     ],
-    { stdio: 'inherit' },
+    { stdio: 'inherit', cwd },
   )
 }
 
