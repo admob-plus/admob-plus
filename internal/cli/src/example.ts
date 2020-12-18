@@ -92,8 +92,8 @@ const androidOpen = async (opts: {
   })
 }
 
-const iosOpen = async (opts: { pluginDir: string }) => {
-  const cwd = process.cwd()
+const iosOpen = async (opts: { cwd: string; pluginDir: string }) => {
+  const { cwd } = opts
   const pkg = await readPkg({ cwd: pkgsDirJoin(opts.pluginDir) })
   const targetDir = path.join('plugins', pkg.name, 'src/ios')
   await execa(
@@ -154,9 +154,10 @@ const cli = yargs
     'open-ios',
     'open Xcode for development',
     {
+      cwd: { default: process.cwd() },
       dir: { type: 'string', demand: true },
     },
-    (argv) => argv.dir && iosOpen({ pluginDir: argv.dir }),
+    (argv) => argv.dir && iosOpen({ ...argv, pluginDir: argv.dir }),
   )
   .help()
 
