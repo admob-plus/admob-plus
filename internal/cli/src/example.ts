@@ -121,46 +121,50 @@ const iosOpen = async (opts: { cwd: string; pluginDir: string }) => {
   )
 }
 
-const cli = yargs
-  .command('clean', '', {}, clean)
-  .command(
-    'prepare',
-    '',
-    { dir: { type: 'string', demand: true } },
-    (argv) => argv.dir && prepare({ pluginDir: argv.dir }),
-  )
-  .command(
-    'android',
-    '',
-    {
-      clean: { type: 'boolean' },
-      device: { default: true },
-    },
-    androidRun as any,
-  )
-  .command(
-    'open-android',
-    'open Android Studio for development',
-    {
-      dir: { type: 'string', demand: true },
-      java: { type: 'string', demand: true },
-    },
-    (argv) =>
-      argv.dir &&
-      argv.java &&
-      androidOpen({ pluginDir: argv.dir, javaPackagePath: argv.java }),
-  )
-  .command(
-    'open-ios',
-    'open Xcode for development',
-    {
-      cwd: { default: process.cwd() },
-      dir: { type: 'string', demand: true },
-    },
-    (argv) => argv.dir && iosOpen({ ...argv, pluginDir: argv.dir }),
-  )
-  .help()
+const main = () => {
+  const cli = yargs
+    .command('clean', '', {}, clean)
+    .command(
+      'prepare',
+      '',
+      { dir: { type: 'string', demand: true } },
+      (argv) => argv.dir && prepare({ pluginDir: argv.dir }),
+    )
+    .command(
+      'android',
+      '',
+      {
+        clean: { type: 'boolean' },
+        device: { default: true },
+      },
+      androidRun as any,
+    )
+    .command(
+      'open-android',
+      'open Android Studio for development',
+      {
+        dir: { type: 'string', demand: true },
+        java: { type: 'string', demand: true },
+      },
+      (argv) =>
+        argv.dir &&
+        argv.java &&
+        androidOpen({ pluginDir: argv.dir, javaPackagePath: argv.java }),
+    )
+    .command(
+      'open-ios',
+      'open Xcode for development',
+      {
+        cwd: { default: process.cwd() },
+        dir: { type: 'string', demand: true },
+      },
+      (argv) => argv.dir && iosOpen({ ...argv, pluginDir: argv.dir }),
+    )
+    .help()
 
-if (cli.argv._.length === 0) {
-  cli.showHelp()
+  if (cli.argv._.length === 0) {
+    cli.showHelp()
+  }
 }
+
+main()
