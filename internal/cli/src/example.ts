@@ -77,25 +77,28 @@ const androidRun = async (argv: { clean: boolean; device: boolean }) => {
 }
 
 const androidOpen = async (opts: {
+  cwd: string
   pluginDir: string
   javaPackagePath: string
 }) => {
+  const { cwd } = opts
   const targetDir = path.join(
+    cwd,
     'platforms/android/app/src/main/java',
     opts.javaPackagePath,
   )
-  await del([targetDir])
+  await del([targetDir], { cwd })
   await linkDir(pkgsDirJoin(opts.pluginDir, 'src/android'), targetDir)
-  await execa('open -a "Android Studio" platforms/android', {
-    shell: true,
+  await execa('open', ['-a', 'Android Studio', 'platforms/android'], {
     stdio: 'inherit',
+    cwd,
   })
 }
 
 const iosOpen = async (opts: { cwd: string; pluginDir: string }) => {
   const { cwd } = opts
   const pkg = await readPkg({ cwd: pkgsDirJoin(opts.pluginDir) })
-  const targetDir = path.join('plugins', pkg.name, 'src/ios')
+  const targetDir = path.join(cwd, 'plugins', pkg.name, 'src/ios')
   await execa(
     'npx',
     ['copy-and-watch', pkgsDirJoin(opts.pluginDir, 'src/ios/**/*'), targetDir],
@@ -122,6 +125,7 @@ const iosOpen = async (opts: { cwd: string; pluginDir: string }) => {
 }
 
 const main = () => {
+  const cwd = process.cwd()
   const cli = yargs
     .command('clean', '', {}, clean)
     .command(
@@ -143,19 +147,24 @@ const main = () => {
       'open-android',
       'open Android Studio for development',
       {
+        cwd: { default: cwd },
         dir: { type: 'string', demand: true },
         java: { type: 'string', demand: true },
       },
       (argv) =>
         argv.dir &&
         argv.java &&
-        androidOpen({ pluginDir: argv.dir, javaPackagePath: argv.java }),
+        androidOpen({
+          ...argv,
+          pluginDir: argv.dir,
+          javaPackagePath: argv.java,
+        }),
     )
     .command(
       'open-ios',
       'open Xcode for development',
       {
-        cwd: { default: process.cwd() },
+        cwd: { default: cwd },
         dir: { type: 'string', demand: true },
       },
       (argv) => argv.dir && iosOpen({ ...argv, pluginDir: argv.dir }),
