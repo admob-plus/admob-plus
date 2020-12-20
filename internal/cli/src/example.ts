@@ -128,11 +128,8 @@ const main = () => {
   const cwd = process.cwd()
   const cli = yargs
     .command('clean', '', {}, clean)
-    .command(
-      'prepare',
-      '',
-      { dir: { type: 'string', demand: true } },
-      (argv) => argv.dir && prepare({ pluginDir: argv.dir }),
+    .command('prepare', '', { dir: { type: 'string', demand: true } }, (argv) =>
+      prepare({ pluginDir: argv.dir }),
     )
     .command(
       'android',
@@ -152,8 +149,6 @@ const main = () => {
         java: { type: 'string', demand: true },
       },
       (argv) =>
-        argv.dir &&
-        argv.java &&
         androidOpen({
           ...argv,
           pluginDir: argv.dir,
@@ -167,7 +162,7 @@ const main = () => {
         cwd: { default: cwd },
         dir: { type: 'string', demand: true },
       },
-      (argv) => argv.dir && iosOpen({ ...argv, pluginDir: argv.dir }),
+      (argv) => iosOpen({ ...argv, pluginDir: argv.dir }),
     )
     .help()
 
