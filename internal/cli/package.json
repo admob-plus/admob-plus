@@ -11,7 +11,6 @@
     "postprepare": "ts-node -TH src/gen.ts"
   },
   "dependencies": {
-    "xml2js": "^0.4.23",
     "@admob-plus-internal/tsconfig": "file:../tsconfig",
     "@frat/link-dir": "^2.3.0",
     "copy-and-watch": "^0.1.5",
@@ -24,6 +23,7 @@
     "read-pkg": "^5.2.0",
     "replace-in-file": "^6.1.0",
     "typescript": "^4.1.3",
+    "xml2js": "^0.4.23",
     "yargs": "^16.2.0"
   },
   "devDependencies": {

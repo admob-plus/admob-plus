@@ -10,7 +10,7 @@
     "@chakra-ui/react": "^1.0.1",
     "@emotion/react": "^11.1.1",
     "@emotion/styled": "^11.0.0",
-    "cordova-admob-plus": "^0.40.0",
+    "cordova-admob-plus": "^0.41.0",
     "cordova-android": "9.0.0",
     "cordova-browser": "6.0.0",
     "cordova-ios": "6.1.1",
