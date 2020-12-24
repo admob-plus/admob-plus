@@ -31,7 +31,7 @@ class AMSPlugin: CDVPlugin {
         self.emit(eventType: AMSEvents.ready, data: [
             "platform": "ios",
             "applicationID": getApplicationID(),
-            "sdkVersion": GADRequest.sdkVersion(),
+            "sdkVersion": GADMobileAds.sharedInstance().sdkVersion,
             "isRunningInTestLab": false])
     }
 
