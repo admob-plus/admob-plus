@@ -1,59 +1,44 @@
-class AMSRewardVideo: AMSAdBase, GADRewardBasedVideoAdDelegate {
-    var rewardBasedVideo: GADRewardBasedVideoAd?
+class AMSRewardVideo: AMSAdBase, GADRewardedAdDelegate {
+    var rewardBasedVideo: GADRewardedAd?
+
+    override init(id: Int, adUnitID: String) {
+        super.init(id: id, adUnitID: adUnitID)
+        rewardBasedVideo = GADRewardedAd(adUnitID: adUnitID)
+    }
 
     deinit {
         rewardBasedVideo = nil
     }
 
     func isReady() -> Bool {
-        rewardBasedVideo = GADRewardBasedVideoAd.sharedInstance()
         return (rewardBasedVideo?.isReady == true)
     }
 
     func load(request: GADRequest) {
-        rewardBasedVideo = GADRewardBasedVideoAd.sharedInstance()
-        rewardBasedVideo?.delegate = self
-
         if rewardBasedVideo?.isReady == false {
-            rewardBasedVideo?.load(request, withAdUnitID: adUnitID)
+            rewardBasedVideo?.load(request)
         }
     }
 
     func show() {
         if isReady() {
-            rewardBasedVideo?.present(fromRootViewController: plugin.viewController)
+            rewardBasedVideo?.present(fromRootViewController: plugin.viewController, delegate: self)
         }
     }
 
-    func rewardBasedVideoAd(_ rewardBasedVideoAd: GADRewardBasedVideoAd, didRewardUserWith reward: GADAdReward) {
+    func rewardedAd(_ rewardedAd: GADRewardedAd, userDidEarn reward: GADAdReward) {
         plugin.emit(eventType: AMSEvents.rewardVideoReward)
     }
 
-    func rewardBasedVideoAd(_ rewardBasedVideoAd: GADRewardBasedVideoAd, didFailToLoadWithError error: Error) {
+    func rewardedAd(_ rewardedAd: GADRewardedAd, didFailToPresentWithError error: Error) {
         plugin.emit(eventType: AMSEvents.rewardVideoLoadFail)
     }
 
-    func rewardBasedVideoAdDidReceive(_ rewardBasedVideoAd: GADRewardBasedVideoAd) {
-        plugin.emit(eventType: AMSEvents.rewardVideoLoad)
-    }
-
-    func rewardBasedVideoAdDidOpen(_ rewardBasedVideoAd: GADRewardBasedVideoAd) {
+    func rewardedAdDidPresent(_ rewardedAd: GADRewardedAd) {
         plugin.emit(eventType: AMSEvents.rewardVideoOpen)
     }
 
-    func rewardBasedVideoAdDidClose(_ rewardBasedVideoAd: GADRewardBasedVideoAd) {
+    func rewardedAdDidDismiss(_ rewardedAd: GADRewardedAd) {
         plugin.emit(eventType: AMSEvents.rewardVideoClose)
-    }
-
-    func rewardBasedVideoAdDidStartPlaying(_ rewardBasedVideoAd: GADRewardBasedVideoAd) {
-        plugin.emit(eventType: AMSEvents.rewardVideoStart)
-    }
-
-    func rewardBasedVideoAdDidCompletePlaying(_ rewardBasedVideoAd: GADRewardBasedVideoAd) {
-        plugin.emit(eventType: AMSEvents.rewardVideoComplete)
-    }
-
-    func rewardBasedVideoAdWillLeaveApplication(_ rewardBasedVideoAd: GADRewardBasedVideoAd) {
-        plugin.emit(eventType: AMSEvents.rewardVideoExitApp)
     }
 }
