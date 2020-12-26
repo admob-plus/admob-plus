@@ -204,7 +204,7 @@ class AMSPlugin: CDVPlugin {
     func createGADRequest(_ opts: NSDictionary) -> GADRequest {
         let request = GADRequest()
         if let testDevices = opts["testDevices"] as? [String] {
-            request.testDevices = testDevices
+            GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = testDevices
         }
         if let childDirected = opts["childDirected"] as? Bool {
             GADMobileAds.sharedInstance().requestConfiguration.tag(forChildDirectedTreatment: childDirected)
