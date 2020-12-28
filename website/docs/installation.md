@@ -25,7 +25,7 @@ or add `<preference name="AndroidXEnabled" value="true" />` to `config.xml` for 
 For iOS developer,
 * Add `<preference name="SwiftVersion" value="5.3" />` to the section `<platform name="ios">` in `config.xml`
 * After adding this preference, you need to run `cordova platform remove ios` then `cordova platform add ios` to take effect
-* Run `pod repo update` to ensure latest SDK is ready
+* Run `pod repo update` or `cd platforms/ios && pod install --repo-update` to ensure latest SDK is ready
 
 ## With Consent SDK
 

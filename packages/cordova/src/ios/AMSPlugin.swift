@@ -31,7 +31,7 @@ class AMSPlugin: CDVPlugin {
         self.emit(eventType: AMSEvents.ready, data: [
             "platform": "ios",
             "applicationID": getApplicationID(),
-            "sdkVersion": GADRequest.sdkVersion(),
+            "sdkVersion": GADMobileAds.sharedInstance().sdkVersion,
             "isRunningInTestLab": false])
     }
 
@@ -204,7 +204,7 @@ class AMSPlugin: CDVPlugin {
     func createGADRequest(_ opts: NSDictionary) -> GADRequest {
         let request = GADRequest()
         if let testDevices = opts["testDevices"] as? [String] {
-            request.testDevices = testDevices
+            GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = testDevices
         }
         if let childDirected = opts["childDirected"] as? Bool {
             GADMobileAds.sharedInstance().requestConfiguration.tag(forChildDirectedTreatment: childDirected)

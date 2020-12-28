@@ -17,6 +17,7 @@
     "test-ios:example": "cd examples/basic && cordova build ios"
   },
   "devDependencies": {
+    "@types/xml2js": "^0.4.7",
     "@admob-plus-internal/cli": "file:./internal/cli",
     "@admob-plus-internal/tsconfig": "file:./internal/tsconfig",
     "@commitlint/cli": "^11.0.0",
@@ -26,12 +27,13 @@
     "@types/jest": "^26.0.19",
     "cordova": "10.0.0",
     "cordova-testbed": "^0.8.0",
-    "eslint": "^7.15.0",
+    "eslint": "^7.16.0",
     "eslint-config-concise": "^0.40.1",
     "eslint-config-concise-browser": "^0.40.1",
     "eslint-config-concise-esnext": "^0.40.1",
     "eslint-config-concise-typescript": "^0.40.1",
     "eslint-plugin-react": "^7.21.5",
+    "execa": "^5.0.0",
     "husky": "^5.0.1",
     "is-ci": "^2.0.0",
     "jest": "^26.6.3",
