@@ -179,11 +179,7 @@ async function updateConfigXML() {
   const androidContent = androidFiles
     .map((s) => {
       let d = path.dirname(s.toString())
-      if (d === '.') {
-        d = ''
-      } else {
-        d = `/${d}`
-      }
+      d = d === '.' ? '' : `/${d}`
       return `        <source-file src="src/android/${s}" target-dir="src/admob/plugin${d}" />`
     })
     .sort()
