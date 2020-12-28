@@ -1,5 +1,6 @@
 {
   "name": "admob-plus-monorepo",
+  "version": "0.0.0",
   "private": true,
   "scripts": {
     "postinstall": "is-ci || husky install",

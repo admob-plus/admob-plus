@@ -7,10 +7,10 @@
     "ios": "cordova run ios"
   },
   "dependencies": {
-    "@chakra-ui/react": "^1.0.4",
+    "@chakra-ui/react": "^1.1.0",
     "@emotion/react": "^11.1.4",
     "@emotion/styled": "^11.0.0",
-    "cordova-admob-plus": "^0.41.0",
+    "cordova-admob-plus": "^0.42.0",
     "cordova-android": "9.0.0",
     "cordova-browser": "6.0.0",
     "cordova-ios": "6.1.1",
