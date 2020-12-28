@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.42.0](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.41.0...cordova-admob-plus@0.42.0) (2020-12-28)
+
+
+### Features
+
+* **cordova-ios:** remove deprecated usage of request.testDevices ([8fcb2b4](https://github.com/admob-plus/admob-plus/commit/8fcb2b4ad3ab002b9bebbf36cd2bc18ef770d117))
+* **cordova-ios:** replace deprecated GADRewardBasedVideoAd with GADRewardedAd ([9a1e554](https://github.com/admob-plus/admob-plus/commit/9a1e5545bb3a9ca350ba36fe2db962fc6803624d))
+
+
+
+
+
 # [0.41.0](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.40.0...cordova-admob-plus@0.41.0) (2020-12-13)
 
 
