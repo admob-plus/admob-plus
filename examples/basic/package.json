@@ -9,7 +9,7 @@
     "dev-ios": "example open-ios --dir=cordova"
   },
   "dependencies": {
-    "cordova-admob-plus": "^0.39.0",
+    "cordova-admob-plus": "^0.41.0",
     "cordova-android": "9.0.0",
     "cordova-browser": "6.0.0",
     "cordova-ios": "6.1.1",
