@@ -7,8 +7,8 @@
     "gen": "./lib/gen.js"
   },
   "scripts": {
-    "prepare": "tsc -b",
-    "postprepare": "ts-node -TH src/gen.ts"
+    "prepack": "tsc -b",
+    "prepare": "ts-node -TH src/gen.ts"
   },
   "dependencies": {
     "@admob-plus-internal/tsconfig": "file:../tsconfig",
