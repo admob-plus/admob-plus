@@ -2,13 +2,12 @@ import assert from 'assert'
 import escaladeSync from 'escalade/sync'
 import path from 'path'
 
-// eslint-disable-next-line consistent-return
-const pkgsDir = escaladeSync(__dirname, (_dir, names) => {
-  if (names.includes('packages')) {
-    return 'packages'
-  }
-})
-assert(pkgsDir, `can not find "packages" dir from ${__dirname}`)
+const cwd = process.cwd()
+const pkgsDir = escaladeSync(
+  cwd,
+  (_dir, names) => names.includes('packages') && 'packages',
+)
+assert(pkgsDir, `can not find "packages" dir from ${cwd}`)
 
 export const pkgsDirJoin = (...args: string[]): string =>
   path.join(pkgsDir, ...args)
