@@ -5,7 +5,7 @@
   "main": "www/consent.js",
   "typings": "www/consent.d.ts",
   "scripts": {
-    "prepare": "rollup -c"
+    "prepack": "rollup -c"
   },
   "devDependencies": {
     "@types/cordova": "^0.0.34",

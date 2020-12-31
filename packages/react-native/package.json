@@ -4,7 +4,7 @@
   "description": "AdMob Plus for React Native",
   "main": "index.js",
   "scripts": {
-    "prepare": "tsc"
+    "prepack": "tsc"
   },
   "keywords": [
     "react-native"

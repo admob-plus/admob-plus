@@ -6,7 +6,7 @@
   "module": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
-    "prepare": "tsc"
+    "prepack": "tsc"
   },
   "peerDependencies": {
     "@angular/core": ">=11.0.2",

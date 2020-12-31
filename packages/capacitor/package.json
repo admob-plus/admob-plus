@@ -8,7 +8,7 @@
     "build": "run-s clean && tsc -b && test -e dist/esm/index.js",
     "clean": "rm -rf ./dist",
     "watch": "tsc --watch",
-    "prepublishOnly": "run-s build"
+    "prepack": "run-s build"
   },
   "author": "Ratson",
   "license": "MIT",
