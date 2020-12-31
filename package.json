@@ -18,14 +18,14 @@
     "test-ios:example": "cd examples/basic && cordova build ios"
   },
   "devDependencies": {
-    "@types/xml2js": "^0.4.7",
-    "@admob-plus-internal/cli": "file:./internal/cli",
-    "@admob-plus-internal/tsconfig": "file:./internal/tsconfig",
+    "@admob-plus-internal/cli": "workspace:*",
+    "@admob-plus-internal/tsconfig": "workspace:*",
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
     "@commitlint/config-lerna-scopes": "^11.0.0",
     "@commitlint/prompt-cli": "^11.0.0",
     "@types/jest": "^26.0.19",
+    "@types/xml2js": "^0.4.7",
     "cordova": "10.0.0",
     "cordova-testbed": "^0.8.0",
     "eslint": "^7.16.0",
@@ -103,8 +103,9 @@
       "**/ionic-admob"
     ],
     "packages": [
-      "packages/*",
+      "examples/*",
       "internal/*",
+      "packages/*",
       "website"
     ]
   }

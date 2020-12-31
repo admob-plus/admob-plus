@@ -53,7 +53,9 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('**/package.json') }}
 
       - name: Install dependencies
-        run: yarn
+        run: |
+          yarn set version berry
+          yarn
 
       - name: Build
         run: |

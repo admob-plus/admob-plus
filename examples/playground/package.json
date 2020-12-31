@@ -22,7 +22,7 @@
     "react-router-dom": "^6.0.0-beta.0"
   },
   "devDependencies": {
-    "@admob-plus-internal/cli": "file:../../internal/cli",
+    "@admob-plus-internal/cli": "workspace:*",
     "@snowpack/plugin-dotenv": "^2.0.5",
     "@snowpack/plugin-react-refresh": "^2.3.9",
     "@snowpack/plugin-run-script": "^2.2.1",
