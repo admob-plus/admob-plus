@@ -43,7 +43,7 @@ const clean = (opts: { cwd: string }) =>
 const prepare = async (opts: { cwd: string; pluginDir: string }) => {
   const { cwd } = opts
   const pkg = await readPkg({ cwd: pkgsDirJoin(opts.pluginDir) })
-  await execa('npm', ['run', 'prepare'], {
+  await execa('yarn', ['prepack'], {
     cwd: pkgsDirJoin(opts.pluginDir),
     stdio: 'inherit',
   })
@@ -76,7 +76,7 @@ const androidRun = async (argv: {
   const { cwd } = argv
   if (argv.clean) {
     await clean({ cwd })
-    await execa('npm', ['run', 'prepare'], { cwd, stdio: 'inherit' })
+    await execa('yarn', ['prepare'], { cwd, stdio: 'inherit' })
   }
   await execa(
     'npx',

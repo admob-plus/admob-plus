@@ -7,6 +7,7 @@
     "gen": "./lib/gen.js"
   },
   "scripts": {
+    "postinstall": "yarn prepack",
     "prepack": "tsc -b",
     "prepare": "ts-node -TH src/gen.ts"
   },
