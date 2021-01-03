@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "prepare": "npm run build && example prepare --dir=cordova",
+    "prepare": "yarn build && example prepare --dir=cordova",
     "start": "snowpack dev",
     "build": "snowpack build",
     "ios": "cordova run ios"
@@ -10,7 +10,7 @@
     "@chakra-ui/react": "^1.1.0",
     "@emotion/react": "^11.1.4",
     "@emotion/styled": "^11.0.0",
-    "cordova-admob-plus": "^0.42.0",
+    "cordova-admob-plus": "*",
     "cordova-android": "9.0.0",
     "cordova-browser": "6.0.0",
     "cordova-ios": "6.1.1",
@@ -29,14 +29,18 @@
     "@snowpack/plugin-typescript": "^1.1.1",
     "@snowpack/plugin-webpack": "^2.2.0",
     "@types/jest": "^26.0.19",
+    "@types/lodash": "^4",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/snowpack-env": "^2.3.3",
     "cordova": "^10.0.0",
+    "core-js": "^3.8.2",
     "eslint-config-concise-esnext": "^0.40.1",
     "execa": "^5.0.0",
     "fs-extra": "^9.0.1",
     "internal-ip": "^6.2.0",
+    "lodash": "^4.17.20",
+    "pnp-webpack-plugin": "^1.6.4",
     "snowpack": "^2.18.5",
     "typescript": "^4.1.3"
   },

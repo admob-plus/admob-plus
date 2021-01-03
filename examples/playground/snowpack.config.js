@@ -1,3 +1,6 @@
+const _ = require('lodash')
+const PnpWebpackPlugin = require('pnp-webpack-plugin')
+
 module.exports = {
   buildOptions: {
     baseUrl: './',
@@ -11,7 +14,20 @@ module.exports = {
     '@snowpack/plugin-react-refresh',
     '@snowpack/plugin-dotenv',
     '@snowpack/plugin-typescript',
-    '@snowpack/plugin-webpack',
+    [
+      '@snowpack/plugin-webpack',
+      {
+        extendConfig: (config) =>
+          _.merge(config, {
+            resolve: {
+              plugins: [PnpWebpackPlugin],
+            },
+            resolveLoader: {
+              plugins: [PnpWebpackPlugin.moduleLoader(module)],
+            },
+          }),
+      },
+    ],
     ['./snowpack-plugin.js', { platform: process.env.CORDOVA_PLATFORM }],
   ],
 }
