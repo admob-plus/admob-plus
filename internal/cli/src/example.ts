@@ -8,7 +8,7 @@ import readPkg from 'read-pkg'
 import { replaceInFile } from 'replace-in-file'
 import { parseStringPromise } from 'xml2js'
 import yargs from 'yargs'
-import { pkgsDirJoin } from './utils'
+import { collectPkgs, pkgsDirJoin } from './utils'
 
 const linkPlugin = async (
   plugin: string,
@@ -40,32 +40,48 @@ const linkPlugin = async (
 const clean = (opts: { cwd: string }) =>
   del(['package-lock.json', 'platforms', 'plugins'], opts)
 
-const prepare = async (opts: { cwd: string; pluginDir: string }) => {
+const prepackPlugins = async (pkg: readPkg.NormalizedPackageJson) => {
+  const pkgs = await collectPkgs()
+  return Promise.all(
+    Object.values(pkgs)
+      .filter((x) => (pkg.dependencies || {})[x.name])
+      .map(async (pkgPlugin) => {
+        await execa('yarn', ['prepack'], {
+          cwd: pkgPlugin.dir,
+          stdio: 'inherit',
+        })
+
+        return pkgPlugin
+      }),
+  )
+}
+
+const prepare = async (opts: { cwd: string }) => {
   const { cwd } = opts
-  const pkg = await readPkg({ cwd: pkgsDirJoin(opts.pluginDir) })
-  await execa('yarn', ['prepack'], {
-    cwd: pkgsDirJoin(opts.pluginDir),
-    stdio: 'inherit',
+  const pkgExample = await readPkg({ cwd })
+  const pluginPkgs = await prepackPlugins(pkgExample)
+  const linkTasks = pluginPkgs.map((pkg) => async () => {
+    const pluginVars = pkgExample.cordova.plugins[pkg.name]
+    const addOpts = Object.keys(pluginVars)
+      .map((k) => ['--variable', `${k}=${pluginVars[k]}`])
+      .flat()
+    await Promise.all([
+      replaceInFile({
+        files: path.join(cwd, 'platforms/android/app/build.gradle'),
+        from: 'abortOnError false;',
+        to: 'abortOnError true;',
+      }),
+      linkPlugin(pkg.name, addOpts, { cwd }),
+    ])
   })
+
   await execa(
     'npx',
     ['cordova', 'prepare', '--searchpath', pkgsDirJoin(), '--verbose'],
     { cwd, stdio: 'inherit' },
   )
 
-  const pkgExample = await readPkg({ cwd })
-  const pluginVars = pkgExample.cordova.plugins[pkg.name]
-  const addOpts = Object.keys(pluginVars)
-    .map((k) => ['--variable', `${k}=${pluginVars[k]}`])
-    .flat()
-  await Promise.all([
-    replaceInFile({
-      files: path.join(cwd, 'platforms/android/app/build.gradle'),
-      from: 'abortOnError false;',
-      to: 'abortOnError true;',
-    }),
-    linkPlugin(pkg.name, addOpts, { cwd }),
-  ])
+  await Promise.all(linkTasks.map((f) => f()))
 }
 
 const androidRun = async (argv: {
@@ -139,12 +155,7 @@ const main = () => {
   const cli = yargs
     .option('cwd', { default: process.cwd(), global: true })
     .command('clean', '', {}, clean as any)
-    .command(
-      'prepare',
-      '',
-      { dir: { type: 'string', demand: true } },
-      (argv: any) => prepare({ ...argv, pluginDir: argv.dir }),
-    )
+    .command('prepare', '', {}, prepare as any)
     .command(
       'android',
       '',
