@@ -50,29 +50,29 @@ const prepare = async (opts: { cwd: string }) => {
   const pkgExample = await readPkg({ cwd })
   const pluginPkgs = await collectPluginPkgs(pkgExample)
 
-  await Promise.all(
-    Object.values(pluginPkgs).map(async (pkgPlugin) => {
+  const linkTasks = await Promise.all(
+    pluginPkgs.map(async (pkg) => {
       await execa('yarn', ['prepack'], {
-        cwd: pkgPlugin.dir,
+        cwd: pkg.dir,
         stdio: 'inherit',
       })
-      return pkgPlugin
+
+      return async () => {
+        const pluginVars = pkgExample.cordova.plugins[pkg.name]
+        const addOpts = Object.keys(pluginVars)
+          .map((k) => ['--variable', `${k}=${pluginVars[k]}`])
+          .flat()
+        await Promise.all([
+          replaceInFile({
+            files: path.join(cwd, 'platforms/android/app/build.gradle'),
+            from: 'abortOnError false;',
+            to: 'abortOnError true;',
+          }),
+          linkPlugin(pkg.name, addOpts, { cwd }),
+        ])
+      }
     }),
   )
-  const linkTasks = pluginPkgs.map((pkg) => async () => {
-    const pluginVars = pkgExample.cordova.plugins[pkg.name]
-    const addOpts = Object.keys(pluginVars)
-      .map((k) => ['--variable', `${k}=${pluginVars[k]}`])
-      .flat()
-    await Promise.all([
-      replaceInFile({
-        files: path.join(cwd, 'platforms/android/app/build.gradle'),
-        from: 'abortOnError false;',
-        to: 'abortOnError true;',
-      }),
-      linkPlugin(pkg.name, addOpts, { cwd }),
-    ])
-  })
 
   await execa(
     'npx',
