@@ -40,26 +40,25 @@ const linkPlugin = async (
 const clean = (opts: { cwd: string }) =>
   del(['package-lock.json', 'platforms', 'plugins'], opts)
 
-const prepackPlugins = async (pkg: readPkg.NormalizedPackageJson) => {
+const collectPluginPkgs = async (pkg: readPkg.NormalizedPackageJson) => {
   const pkgs = await collectPkgs()
-  return Promise.all(
-    Object.values(pkgs)
-      .filter((x) => (pkg.dependencies || {})[x.name])
-      .map(async (pkgPlugin) => {
-        await execa('yarn', ['prepack'], {
-          cwd: pkgPlugin.dir,
-          stdio: 'inherit',
-        })
-
-        return pkgPlugin
-      }),
-  )
+  return Object.values(pkgs).filter((x) => (pkg.dependencies || {})[x.name])
 }
 
 const prepare = async (opts: { cwd: string }) => {
   const { cwd } = opts
   const pkgExample = await readPkg({ cwd })
-  const pluginPkgs = await prepackPlugins(pkgExample)
+  const pluginPkgs = await collectPluginPkgs(pkgExample)
+
+  await Promise.all(
+    Object.values(pluginPkgs).map(async (pkgPlugin) => {
+      await execa('yarn', ['prepack'], {
+        cwd: pkgPlugin.dir,
+        stdio: 'inherit',
+      })
+      return pkgPlugin
+    }),
+  )
   const linkTasks = pluginPkgs.map((pkg) => async () => {
     const pluginVars = pkgExample.cordova.plugins[pkg.name]
     const addOpts = Object.keys(pluginVars)
