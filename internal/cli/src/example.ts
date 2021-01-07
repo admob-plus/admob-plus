@@ -121,15 +121,35 @@ const androidOpen = async (opts: {
   })
 }
 
-const iosOpen = async (opts: { cwd: string; pluginDir: string }) => {
+const iosOpen = async (opts: { cwd: string }) => {
   const { cwd } = opts
-  const pkg = await readPkg({ cwd: pkgsDirJoin(opts.pluginDir) })
-  const targetDir = path.join(cwd, 'plugins', pkg.name, 'src/ios')
-  await execa(
-    'npx',
-    ['copy-and-watch', pkgsDirJoin(opts.pluginDir, 'src/ios/**/*'), targetDir],
-    { stdio: 'inherit', cwd },
+  const pkgExample = await readPkg({ cwd })
+  const pluginPkgs = await collectPluginPkgs(pkgExample)
+
+  const watchTasks = await Promise.all(
+    pluginPkgs.map(async (pkg) => {
+      const targetDir = path.join(cwd, 'plugins', pkg.name, 'src/ios')
+      await execa(
+        'npx',
+        ['copy-and-watch', pkgsDirJoin(pkg.dir, 'src/ios/**/*'), targetDir],
+        { stdio: 'inherit', cwd },
+      )
+
+      return () =>
+        execa(
+          'npx',
+          [
+            'copy-and-watch',
+            '--watch',
+            '--skip-initial-copy',
+            `${targetDir}/**/*`,
+            pkgsDirJoin(pkg.dir, 'src/ios'),
+          ],
+          { stdio: 'inherit', cwd },
+        )
+    }),
   )
+
   const configXML = await fsp.readFile(path.join(cwd, 'config.xml'), 'utf-8')
   const config = await parseStringPromise(configXML)
   const name = config.widget.name[0]
@@ -137,17 +157,8 @@ const iosOpen = async (opts: { cwd: string; pluginDir: string }) => {
     stdio: 'inherit',
     cwd,
   })
-  await execa(
-    'npx',
-    [
-      'copy-and-watch',
-      '--watch',
-      '--skip-initial-copy',
-      `${targetDir}/**/*`,
-      pkgsDirJoin(opts.pluginDir, 'src/ios'),
-    ],
-    { stdio: 'inherit', cwd },
-  )
+
+  await Promise.all(watchTasks.map((f) => f()))
 }
 
 const main = () => {
@@ -178,14 +189,7 @@ const main = () => {
           javaPackagePath: argv.java,
         }),
     )
-    .command(
-      'open-ios',
-      'open Xcode for development',
-      {
-        dir: { type: 'string', demand: true },
-      },
-      (argv: any) => iosOpen({ ...argv, pluginDir: argv.dir }),
-    )
+    .command('open-ios', 'open Xcode for development', {}, iosOpen as any)
     .help()
 
   if (cli.argv._.length === 0) {
