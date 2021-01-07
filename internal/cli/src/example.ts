@@ -102,11 +102,7 @@ const androidRun = async (argv: {
   )
 }
 
-const androidOpen = async (opts: {
-  cwd: string
-  pluginDir: string
-  javaPackagePath: string
-}) => {
+const androidOpen = async (opts: { cwd: string; javaPackagePath: string }) => {
   const { cwd } = opts
   const targetDir = path.join(
     cwd,
@@ -114,7 +110,15 @@ const androidOpen = async (opts: {
     opts.javaPackagePath,
   )
   await del([targetDir], { cwd })
-  await linkDir(pkgsDirJoin(opts.pluginDir, 'src/android'), targetDir)
+
+  const pkgExample = await readPkg({ cwd })
+  const pluginPkgs = await collectPluginPkgs(pkgExample)
+  await Promise.all(
+    pluginPkgs.map(async (pkg) => {
+      await linkDir(pkgsDirJoin(pkg.dir, 'src/android'), targetDir)
+    }),
+  )
+
   await execa('open', ['-a', 'Android Studio', 'platforms/android'], {
     stdio: 'inherit',
     cwd,
@@ -179,13 +183,11 @@ const main = () => {
       'open-android',
       'open Android Studio for development',
       {
-        dir: { type: 'string', demand: true },
         java: { type: 'string', demand: true },
       },
       (argv: any) =>
         androidOpen({
           ...argv,
-          pluginDir: argv.dir,
           javaPackagePath: argv.java,
         }),
     )
