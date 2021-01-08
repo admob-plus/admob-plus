@@ -115,7 +115,7 @@ const androidOpen = async (opts: { cwd: string; javaPackagePath: string }) => {
   const pluginPkgs = await collectPluginPkgs(pkgExample)
   await Promise.all(
     pluginPkgs.map(async (pkg) => {
-      await linkDir(pkgsDirJoin(pkg.dir, 'src/android'), targetDir)
+      await linkDir(path.join(pkg.dir, 'src/android'), targetDir)
     }),
   )
 
@@ -135,7 +135,7 @@ const iosOpen = async (opts: { cwd: string }) => {
       const targetDir = path.join(cwd, 'plugins', pkg.name, 'src/ios')
       await execa(
         'npx',
-        ['copy-and-watch', pkgsDirJoin(pkg.dir, 'src/ios/**/*'), targetDir],
+        ['copy-and-watch', path.join(pkg.dir, 'src/ios/**/*'), targetDir],
         { stdio: 'inherit', cwd },
       )
 
@@ -147,7 +147,7 @@ const iosOpen = async (opts: { cwd: string }) => {
             '--watch',
             '--skip-initial-copy',
             `${targetDir}/**/*`,
-            pkgsDirJoin(pkg.dir, 'src/ios'),
+            path.join(pkg.dir, 'src/ios'),
           ],
           { stdio: 'inherit', cwd },
         )

@@ -4,9 +4,9 @@
   "displayName": "AdmobBasicExample",
   "version": "0.16.15",
   "scripts": {
-    "prepare": "example prepare --dir=cordova",
-    "dev-android": "example open-android --dir=cordova --java=admob/plugin",
-    "dev-ios": "example open-ios --dir=cordova"
+    "prepare": "example prepare",
+    "dev-android": "example open-android --java=admob/plugin",
+    "dev-ios": "example open-ios"
   },
   "dependencies": {
     "cordova-admob-plus": "*",
