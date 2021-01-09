@@ -10,20 +10,28 @@ import { parseStringPromise } from 'xml2js'
 import yargs from 'yargs'
 import { collectPkgs, pkgsDirJoin } from './utils'
 
+const copyAndWatchBin = require.resolve('copy-and-watch/bin/copy-and-watch')
+const cordovaBin = require.resolve('cordova/bin/cordova')
+
 const linkPlugin = async (
   plugin: string,
   addOpts: string[],
   opts: { cwd: string },
 ) => {
   const { cwd } = opts
-  await execa('npx', ['cordova', 'plugin', 'rm', plugin, '--nosave'], {
-    cwd,
-    reject: false,
-  })
   await execa(
-    'npx',
+    'yarn',
+    ['node', cordovaBin, 'plugin', 'rm', plugin, '--nosave'],
+    {
+      cwd,
+      reject: false,
+    },
+  )
+  await execa(
+    'yarn',
     [
-      'cordova',
+      'node',
+      cordovaBin,
       'plugin',
       'add',
       '--link',
@@ -75,8 +83,8 @@ const prepare = async (opts: { cwd: string }) => {
   )
 
   await execa(
-    'npx',
-    ['cordova', 'prepare', '--searchpath', pkgsDirJoin(), '--verbose'],
+    'yarn',
+    ['node', cordovaBin, 'prepare', '--searchpath', pkgsDirJoin(), '--verbose'],
     { cwd, stdio: 'inherit' },
   )
 
@@ -94,8 +102,8 @@ const androidRun = async (argv: {
     await execa('yarn', ['prepare'], { cwd, stdio: 'inherit' })
   }
   await execa(
-    'npx',
-    ['cordova', 'run', 'android', '--verbose'].concat(
+    'yarn',
+    ['node', cordovaBin, 'run', 'android', '--verbose'].concat(
       argv.device ? ['--device'] : [],
     ),
     { cwd, stdio: 'inherit' },
@@ -134,16 +142,22 @@ const iosOpen = async (opts: { cwd: string }) => {
     pluginPkgs.map(async (pkg) => {
       const targetDir = path.join(cwd, 'plugins', pkg.name, 'src/ios')
       await execa(
-        'npx',
-        ['copy-and-watch', path.join(pkg.dir, 'src/ios/**/*'), targetDir],
+        'yarn',
+        [
+          'node',
+          copyAndWatchBin,
+          path.join(pkg.dir, 'src/ios/**/*'),
+          targetDir,
+        ],
         { stdio: 'inherit', cwd },
       )
 
       return () =>
         execa(
-          'npx',
+          'yarn',
           [
-            'copy-and-watch',
+            'node',
+            copyAndWatchBin,
             '--watch',
             '--skip-initial-copy',
             `${targetDir}/**/*`,
