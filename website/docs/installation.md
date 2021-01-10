@@ -11,7 +11,7 @@ Via [Cordova CLI](https://www.npmjs.com/package/cordova):
 cordova plugin add cordova-admob-plus --variable APP_ID_ANDROID=ca-app-pub-xxx~xxx --variable APP_ID_IOS=ca-app-pub-xxx~xxx
 ```
 
-For Android developer, `com.google.android.gms:play-services-ads:$PLAY_SERVICES_VERSION` is available for configuration, the default is `--PLAY_SERVICES_VERSION=19.5.0`.
+For Android developer, `com.google.android.gms:play-services-ads:$PLAY_SERVICES_VERSION` is available for configuration, the default is `--PLAY_SERVICES_VERSION=19.6.0`.
 
 When using with other plugins and encountering errors, try the following to fix.
 
