@@ -5,7 +5,7 @@
   "version": "0.16.15",
   "scripts": {
     "prepare": "example prepare",
-    "dev-android": "example open-android --java=admob/plugin",
+    "dev-android": "example open-android",
     "dev-ios": "example open-ios"
   },
   "dependencies": {

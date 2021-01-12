@@ -5,8 +5,10 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
-import java.math.BigDecimal;
-import java.util.ArrayList;
+
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaInterface;
@@ -17,7 +19,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.google.android.gms.ads.MobileAds;
+import java.math.BigDecimal;
+import java.util.ArrayList;
 
 import admob.plugin.ads.AdBase;
 import admob.plugin.ads.BannerAd;
@@ -37,7 +40,11 @@ public class AdMob extends CordovaPlugin {
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
 
-        MobileAds.initialize(cordova.getActivity(), getApplicationID());
+        MobileAds.initialize(cordova.getActivity(), new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
         AdBase.initialize(this);
     }
 
@@ -118,9 +125,9 @@ public class AdMob extends CordovaPlugin {
         PluginResult result = new PluginResult(PluginResult.Status.OK, event);
         result.setKeepCallback(true);
         if (readyCallbackContext == null) {
-          waitingForReadyCallbackContextResults.add(result);
+            waitingForReadyCallbackContextResults.add(result);
         } else {
-          readyCallbackContext.sendPluginResult(result);
+            readyCallbackContext.sendPluginResult(result);
         }
     }
 
