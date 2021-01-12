@@ -1,7 +1,7 @@
 import { Command, flags } from '@oclif/command'
 import * as clipboardy from 'clipboardy'
 import * as elementtree from 'elementtree'
-// @ts-ignore: No types
+// @ts-expect-error: no types
 import * as envinfo from 'envinfo'
 import * as execa from 'execa'
 import * as fse from 'fs-extra'
@@ -38,7 +38,7 @@ export default class InfoCommand extends Command {
   public static description =
     'Get relevant version info about OS, toolchain and libraries'
 
-  public static examples = [`$ admob-plus info`]
+  public static examples = ['$ admob-plus info']
 
   public static flags = {
     clipboard: flags.boolean({
@@ -49,7 +49,7 @@ export default class InfoCommand extends Command {
 
   public static args = []
 
-  public async run() {
+  public async run(): Promise<void> {
     const { flags: parsedFlags } = this.parse(InfoCommand)
 
     const { packageJson: pkg } = (await readPkgUp())!
@@ -83,7 +83,7 @@ export default class InfoCommand extends Command {
       this.log(err)
     }
 
-    if (infoText.indexOf('cordova') === -1) {
+    if (!infoText.includes('cordova')) {
       const { stdout: cordovaVersion } = await execa('cordova', ['--version'], {
         reject: false,
       })
@@ -105,7 +105,7 @@ export default class InfoCommand extends Command {
       )
       infoText += `cordova plugins: ${JSON.stringify(
         cordovaPlugins,
-        null,
+        undefined,
         2,
       )}\n`
     }
@@ -114,7 +114,7 @@ export default class InfoCommand extends Command {
       const androidInfo = await collectionAndroidManifestInfo()
       infoText += `\nAndroidManifest.xml: ${androidInfo}\n`
       // tslint:disable-next-line:no-empty
-    } catch (err) {}
+    } catch {}
 
     this.log(infoText)
 
