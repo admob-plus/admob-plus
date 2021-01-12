@@ -12,6 +12,8 @@ import { collectPkgs, pkgsDirJoin } from './utils'
 
 const copyAndWatchBin = require.resolve('copy-and-watch/bin/copy-and-watch')
 const cordovaBin = require.resolve('cordova/bin/cordova')
+const nodeBin = (args: string[], opts: execa.Options<string>) =>
+  execa('yarn', ['node', ...args], { stdio: 'inherit', ...opts })
 
 const linkPlugin = async (
   plugin: string,
@@ -19,18 +21,12 @@ const linkPlugin = async (
   opts: { cwd: string },
 ) => {
   const { cwd } = opts
-  await execa(
-    'yarn',
-    ['node', cordovaBin, 'plugin', 'rm', plugin, '--nosave'],
-    {
-      cwd,
-      reject: false,
-    },
-  )
-  await execa(
-    'yarn',
+  await nodeBin([cordovaBin, 'plugin', 'rm', plugin, '--nosave'], {
+    cwd,
+    reject: false,
+  })
+  await nodeBin(
     [
-      'node',
       cordovaBin,
       'plugin',
       'add',
@@ -41,7 +37,7 @@ const linkPlugin = async (
       plugin,
       ...addOpts,
     ],
-    { cwd, stdio: 'inherit' },
+    { cwd },
   )
 }
 
@@ -82,10 +78,9 @@ const prepare = async (opts: { cwd: string }) => {
     }),
   )
 
-  await execa(
-    'yarn',
-    ['node', cordovaBin, 'prepare', '--searchpath', pkgsDirJoin(), '--verbose'],
-    { cwd, stdio: 'inherit' },
+  await nodeBin(
+    [cordovaBin, 'prepare', '--searchpath', pkgsDirJoin(), '--verbose'],
+    { cwd },
   )
 
   await Promise.all(linkTasks.map((f) => f()))
@@ -101,12 +96,11 @@ const androidRun = async (argv: {
     await clean({ cwd })
     await execa('yarn', ['prepare'], { cwd, stdio: 'inherit' })
   }
-  await execa(
-    'yarn',
-    ['node', cordovaBin, 'run', 'android', '--verbose'].concat(
+  await nodeBin(
+    [cordovaBin, 'run', 'android', '--verbose'].concat(
       argv.device ? ['--device'] : [],
     ),
-    { cwd, stdio: 'inherit' },
+    { cwd },
   )
 }
 
@@ -141,29 +135,21 @@ const iosOpen = async (opts: { cwd: string }) => {
   const watchTasks = await Promise.all(
     pluginPkgs.map(async (pkg) => {
       const targetDir = path.join(cwd, 'plugins', pkg.name, 'src/ios')
-      await execa(
-        'yarn',
-        [
-          'node',
-          copyAndWatchBin,
-          path.join(pkg.dir, 'src/ios/**/*'),
-          targetDir,
-        ],
-        { stdio: 'inherit', cwd },
+      await nodeBin(
+        [copyAndWatchBin, path.join(pkg.dir, 'src/ios/**/*'), targetDir],
+        { cwd },
       )
 
       return () =>
-        execa(
-          'yarn',
+        nodeBin(
           [
-            'node',
             copyAndWatchBin,
             '--watch',
             '--skip-initial-copy',
             `${targetDir}/**/*`,
             path.join(pkg.dir, 'src/ios'),
           ],
-          { stdio: 'inherit', cwd },
+          { cwd },
         )
     }),
   )
