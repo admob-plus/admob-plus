@@ -104,19 +104,31 @@ const androidRun = async (argv: {
   )
 }
 
-const androidOpen = async (opts: { cwd: string; javaPackagePath: string }) => {
-  const { cwd } = opts
-  const targetDir = path.join(
-    cwd,
-    'platforms/android/app/src/main/java',
-    opts.javaPackagePath,
-  )
-  await del([targetDir], { cwd })
+const resolveJavaPackagePath = (pkgName: string) => {
+  switch (pkgName) {
+    case 'cordova-admob-plus':
+      return 'admob/plugin'
+    case 'cordova-plugin-consent':
+      return 'cordova/plugin/consent'
+    default:
+      return ''
+  }
+}
 
+const androidOpen = async (opts: { cwd: string }) => {
+  const { cwd } = opts
   const pkgExample = await readPkg({ cwd })
   const pluginPkgs = await collectPluginPkgs(pkgExample)
   await Promise.all(
     pluginPkgs.map(async (pkg) => {
+      const javaPackagePath = resolveJavaPackagePath(pkg.name)
+      const targetDir = path.join(
+        cwd,
+        'platforms/android/app/src/main/java',
+        javaPackagePath,
+      )
+      await del([targetDir], { cwd })
+
       await linkDir(path.join(pkg.dir, 'src/android'), targetDir)
     }),
   )
@@ -182,14 +194,8 @@ const main = () => {
     .command(
       'open-android',
       'open Android Studio for development',
-      {
-        java: { type: 'string', demand: true },
-      },
-      (argv: any) =>
-        androidOpen({
-          ...argv,
-          javaPackagePath: argv.java,
-        }),
+      {},
+      androidOpen as any,
     )
     .command('open-ios', 'open Xcode for development', {}, iosOpen as any)
     .help()
