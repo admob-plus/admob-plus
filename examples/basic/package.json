@@ -16,7 +16,7 @@
     "cordova-plugin-whitelist": "1.3.4"
   },
   "devDependencies": {
-    "@admob-plus-internal/cli": "workspace:*"
+    "@admob-plus-internal/cli": "file:../../internal/cli"
   },
   "cordova": {
     "plugins": {

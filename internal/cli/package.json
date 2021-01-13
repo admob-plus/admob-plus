@@ -12,7 +12,7 @@
     "prepare": "ts-node -TH src/gen.ts"
   },
   "dependencies": {
-    "@admob-plus-internal/tsconfig": "workspace:*",
+    "@admob-plus-internal/tsconfig": "file:../tsconfig",
     "@frat/link-dir": "^2.3.0",
     "copy-and-watch": "^0.1.5",
     "cordova": "^10.0.0",

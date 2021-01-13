@@ -18,8 +18,8 @@
     "test-ios:example": "cd examples/basic && cordova build ios"
   },
   "devDependencies": {
-    "@admob-plus-internal/cli": "workspace:*",
-    "@admob-plus-internal/tsconfig": "workspace:*",
+    "@admob-plus-internal/cli": "file:./internal/cli",
+    "@admob-plus-internal/tsconfig": "file:./internal/tsconfig",
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
     "@commitlint/config-lerna-scopes": "^11.0.0",
