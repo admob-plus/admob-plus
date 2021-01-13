@@ -9,7 +9,7 @@
   "scripts": {
     "postinstall": "yarn prepack",
     "prepack": "tsc -b",
-    "prepare": "ts-node -TH src/gen.ts"
+    "gen": "ts-node -TH src/gen.ts"
   },
   "dependencies": {
     "@admob-plus-internal/tsconfig": "file:../tsconfig",
