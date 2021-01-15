@@ -1,5 +1,5 @@
 import { exec } from 'cordova'
-import Banner, { BannerAd } from './banner'
+import BannerAd from './banner'
 import {
   execAsync,
   fireDocumentEvent,
@@ -13,7 +13,6 @@ import AdMobState from './state'
 class AdMob {
   public readonly BannerAd = BannerAd
 
-  public banner: Banner
   public interstitial: Interstitial
   public rewardVideo: RewardVideo
 
@@ -23,7 +22,6 @@ class AdMob {
     const state = new AdMobState()
     this.state = state
 
-    this.banner = new Banner(state)
     this.interstitial = new Interstitial(state)
     this.rewardVideo = new RewardVideo(state)
 
