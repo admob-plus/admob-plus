@@ -63,8 +63,6 @@ public class AdMob extends CordovaPlugin {
             readyCallbackContext = callbackContext;
             JSONObject data = new JSONObject();
             try {
-                data.put("platform", "android");
-                data.put("applicationID", getApplicationID());
                 data.put("isRunningInTestLab", isRunningInTestLab());
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -131,22 +129,6 @@ public class AdMob extends CordovaPlugin {
         } else {
             readyCallbackContext.sendPluginResult(result);
         }
-    }
-
-    private String getApplicationID() {
-        try {
-            ApplicationInfo ai = cordova.getActivity().getApplicationContext().getPackageManager().getApplicationInfo(cordova.getActivity().getPackageName(), PackageManager.GET_META_DATA);
-            Bundle bundle = ai.metaData;
-            return bundle.getString("com.google.android.gms.ads.APPLICATION_ID");
-        } catch (Exception e) {
-            Log.e(TAG, "Forget to configure <meta-data android:name=\"com.google.android.gms.ads.APPLICATION_ID\" android:value=\"XXX\"/> in your AndroidManifest.xml file.");
-        }
-
-        String applicationID = cordova.getActivity().getIntent().getStringExtra("APP_ID_ANDROID");
-        if (applicationID == null || "".equals(applicationID) || "test".equals(applicationID)) {
-            return TEST_APPLICATION_ID;
-        }
-        return applicationID;
     }
 
     private boolean isRunningInTestLab() {

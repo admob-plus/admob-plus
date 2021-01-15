@@ -86,7 +86,7 @@ export class AdBase {
   }
 
   protected get testAdUnitID(): string {
-    switch (this.state.platform) {
+    switch (cordova.platformId) {
       case Platforms.android:
         return this.testIdForAndroid
       case Platforms.ios:
@@ -106,10 +106,10 @@ export class AdBase {
     if (typeof adUnitID === 'string') {
       return adUnitID
     }
-    switch (this.state.platform) {
+    switch (cordova.platformId) {
       case Platforms.android:
       case Platforms.ios:
-        return adUnitID[this.state.platform]
+        return adUnitID[cordova.platformId]
       default:
         return TestIds.dummy
     }
