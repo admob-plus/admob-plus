@@ -1,6 +1,6 @@
-import { AdUnitIDOption, Events } from '@admob-plus/core'
+import { AdUnitIDOption } from '@admob-plus/core'
 import { exec } from 'cordova'
-import { NativeActions } from './generated'
+import { AdSizeType, Events, NativeActions } from './generated'
 import AdMobState from './state'
 
 export type MobileAdOptions = { adUnitId: string }
@@ -19,7 +19,7 @@ export class MobileAd {
   }
 }
 
-export { AdUnitIDOption, Events, NativeActions }
+export { AdSizeType, Events, AdUnitIDOption, NativeActions }
 
 export enum MaxAdContentRating {
   G = 'G',

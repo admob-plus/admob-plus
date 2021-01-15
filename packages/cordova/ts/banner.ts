@@ -1,12 +1,16 @@
-import { AdSizeType, AdUnitIDOption, IBannerRequest } from '@admob-plus/core'
-
-import { AdBase, execAsync, NativeActions, TestIds } from './base'
-import { MobileAd } from './base'
+import { AdUnitIDOption, IBannerRequest } from '@admob-plus/core'
 import type { MobileAdOptions } from './base'
+import { AdBase, AdSizeType, execAsync, MobileAd, NativeActions, TestIds } from './base'
+
 
 enum BannerPosition {
   top = 'top',
   bottom = 'bottom',
+}
+
+type ShowOptions = {
+  position?: BannerPosition
+  size?: AdSizeType
 }
 
 export class BannerAd extends MobileAd {
@@ -14,8 +18,8 @@ export class BannerAd extends MobileAd {
     super({ adUnitId })
   }
 
-  public show(opts: IBannerRequest) {
-    return execAsync(NativeActions.banner_show, [
+  public show(opts: ShowOptions) {
+    return execAsync(NativeActions.bannerShow, [
       {
         position: BannerPosition.bottom,
         size: AdSizeType.SMART_BANNER,
@@ -27,7 +31,7 @@ export class BannerAd extends MobileAd {
   }
 
   public hide() {
-    return execAsync(NativeActions.banner_hide, [{ id: this.id }])
+    return execAsync(NativeActions.bannerHide, [{ id: this.id }])
   }
 }
 
@@ -37,7 +41,7 @@ export default class Banner extends AdBase {
 
   public show(opts: IBannerRequest) {
     const adUnitID = this.resolveAdUnitID(opts.id)
-    return execAsync(NativeActions.banner_show, [
+    return execAsync(NativeActions.bannerShow, [
       {
         position: 'bottom',
         size: AdSizeType.SMART_BANNER,
@@ -50,7 +54,7 @@ export default class Banner extends AdBase {
 
   public hide(id: AdUnitIDOption) {
     const adUnitID = this.resolveAdUnitID(id)
-    return execAsync(NativeActions.banner_hide, [
+    return execAsync(NativeActions.bannerHide, [
       { id: this.state.getAdId(adUnitID) },
     ])
   }
