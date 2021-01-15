@@ -9,17 +9,14 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 
-import org.apache.cordova.CallbackContext;
-import org.apache.cordova.PluginResult;
-
 import admob.plugin.Action;
 import admob.plugin.Events;
 
 public class BannerAd extends AdBase {
+    private final AdSize adSize;
+    private final int gravity;
     private AdView adView;
     private ViewGroup parentView;
-    private AdSize adSize;
-    private int gravity;
 
     BannerAd(int id, String adUnitID, AdSize adSize, int gravity) {
         super(id, adUnitID);
@@ -28,43 +25,17 @@ public class BannerAd extends AdBase {
         this.gravity = gravity;
     }
 
-    public static boolean executeShowAction(Action action, CallbackContext callbackContext) {
-        plugin.cordova.getActivity().runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                BannerAd bannerAd = (BannerAd) action.getAd();
-                if (bannerAd == null) {
-                    bannerAd = new BannerAd(
-                        action.optId(),
-                        action.getAdUnitID(),
-                        action.getAdSize(),
-                        "top".equals(action.optPosition()) ? Gravity.TOP : Gravity.BOTTOM
-                    );
-                }
-                bannerAd.show(action.buildAdRequest());
-                PluginResult result = new PluginResult(PluginResult.Status.OK, "");
-                callbackContext.sendPluginResult(result);
-            }
-        });
-
-        return true;
-    }
-
-    public static boolean executeHideAction(Action action, CallbackContext callbackContext) {
-        plugin.cordova.getActivity().runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                BannerAd bannerAd = (BannerAd) action.getAd();
-                if (bannerAd != null) {
-                    bannerAd.hide();
-                }
-
-                PluginResult result = new PluginResult(PluginResult.Status.OK, "");
-                callbackContext.sendPluginResult(result);
-            }
-        });
-
-        return true;
+    public static BannerAd getOrCreate(Action action) {
+        BannerAd bannerAd = (BannerAd) action.getAd();
+        if (bannerAd != null) {
+            return bannerAd;
+        }
+        return new BannerAd(
+                action.optId(),
+                action.getAdUnitID(),
+                action.getAdSize(),
+                "top".equals(action.optPosition()) ? Gravity.TOP : Gravity.BOTTOM
+        );
     }
 
     public void show(AdRequest adRequest) {
@@ -84,7 +55,7 @@ public class BannerAd extends AdBase {
             if (parentView != wvParentView) {
                 parentView.removeAllViews();
                 if (parentView.getParent() != null) {
-                    ((ViewGroup)parentView.getParent()).removeView(parentView);
+                    ((ViewGroup) parentView.getParent()).removeView(parentView);
                 }
                 addBannerView(adView);
             }

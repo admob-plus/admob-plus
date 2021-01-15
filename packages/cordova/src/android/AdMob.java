@@ -52,10 +52,10 @@ public class AdMob extends CordovaPlugin {
         } else if (Actions.CONFIG_REQUEST.equals(actionKey)) {
             MobileAds.setRequestConfiguration(action.getRequestConfiguration());
             return ok(callbackContext);
-        } else if (Actions.BANNER_HIDE.equals(actionKey)) {
-            return BannerAd.executeHideAction(action, callbackContext);
         } else if (Actions.BANNER_SHOW.equals(actionKey)) {
-            return BannerAd.executeShowAction(action, callbackContext);
+            return executeBannerShow(action, callbackContext);
+        } else if (Actions.BANNER_HIDE.equals(actionKey)) {
+            return executeBannerHide(action, callbackContext);
         } else if (Actions.INTERSTITIAL_IS_LOADED.equals(actionKey)) {
             return InterstitialAd.executeIsLoadedAction(action, callbackContext);
         } else if (Actions.INTERSTITIAL_LOAD.equals(actionKey)) {
@@ -98,6 +98,34 @@ public class AdMob extends CordovaPlugin {
             e.printStackTrace();
         }
         emit(Generated.Events.READY, data);
+        return true;
+    }
+
+    public boolean executeBannerShow(Action action, CallbackContext callbackContext) {
+        cordova.getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                BannerAd bannerAd = BannerAd.getOrCreate(action);
+                bannerAd.show(action.buildAdRequest());
+                ok(callbackContext);
+            }
+        });
+
+        return true;
+    }
+
+    public boolean executeBannerHide(Action action, CallbackContext callbackContext) {
+        cordova.getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                BannerAd bannerAd = (BannerAd) action.getAd();
+                if (bannerAd != null) {
+                    bannerAd.hide();
+                }
+                ok(callbackContext);
+            }
+        });
+
         return true;
     }
 
