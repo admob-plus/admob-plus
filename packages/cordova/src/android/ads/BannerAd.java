@@ -5,9 +5,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.LoadAdError;
 
 import admob.plugin.Action;
 import admob.plugin.Generated.Events;
@@ -43,7 +45,37 @@ public class BannerAd extends AdBase {
             adView = new AdView(plugin.cordova.getActivity());
             adView.setAdUnitId(adUnitID);
             adView.setAdSize(adSize);
-            adView.setAdListener(new AdListener(this));
+            adView.setAdListener(new AdListener() {
+                @Override
+                public void onAdClicked() {
+                    plugin.emit(Events.BANNER_CLICK);
+                }
+
+                @Override
+                public void onAdClosed() {
+                    plugin.emit(Events.BANNER_CLOSE);
+                }
+
+                @Override
+                public void onAdFailedToLoad(LoadAdError error) {
+                    plugin.emit(Events.BANNER_LOAD_FAIL, buildErrorPayload(error.getCode()));
+                }
+
+                @Override
+                public void onAdImpression() {
+                    plugin.emit(Events.BANNER_IMPRESSION);
+                }
+
+                @Override
+                public void onAdLoaded() {
+                    plugin.emit(Events.BANNER_LOAD);
+                }
+
+                @Override
+                public void onAdOpened() {
+                    plugin.emit(Events.BANNER_OPEN);
+                }
+            });
 
             addBannerView(adView);
         } else if (adView.getVisibility() == View.GONE) {
@@ -79,36 +111,6 @@ public class BannerAd extends AdBase {
         }
 
         super.destroy();
-    }
-
-    @Override
-    String getLoadedEvent() {
-        return Events.BANNER_LOAD;
-    }
-
-    @Override
-    String getFailedToLoadEvent() {
-        return Events.BANNER_LOAD_FAIL;
-    }
-
-    @Override
-    String getOpenedEvent() {
-        return Events.BANNER_OPEN;
-    }
-
-    @Override
-    String getClosedEvent() {
-        return Events.BANNER_CLOSE;
-    }
-
-    @Override
-    String getImpressionEvent() {
-        return Events.BANNER_IMPRESSION;
-    }
-
-    @Override
-    String getClickedEvent() {
-        return Events.BANNER_CLICK;
     }
 
     private void addBannerView(AdView adView) {

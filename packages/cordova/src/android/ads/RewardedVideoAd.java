@@ -34,26 +34,6 @@ public class RewardedAd extends AdBase {
         super.destroy();
     }
 
-    @Override
-    String getLoadedEvent() {
-        return Events.REWARDED_LOAD;
-    }
-
-    @Override
-    String getFailedToLoadEvent() {
-        return Events.REWARDED_LOAD_FAIL;
-    }
-
-    @Override
-    String getOpenedEvent() {
-        return Events.REWARDED_OPEN;
-    }
-
-    @Override
-    String getClosedEvent() {
-        return Events.REWARDED_CLOSE;
-    }
-
     public void createAndLoad(AdRequest adRequest) {
         clear();
 
@@ -61,12 +41,12 @@ public class RewardedAd extends AdBase {
         rewardedAd.loadAd(adRequest, new RewardedAdLoadCallback() {
             @Override
             public void onRewardedAdLoaded() {
-                plugin.emit(getLoadedEvent());
+                plugin.emit(Events.REWARDED_LOAD);
             }
 
             @Override
             public void onRewardedAdFailedToLoad(LoadAdError adError) {
-                plugin.emit(getFailedToLoadEvent(), buildErrorPayload(adError.getCode()));
+                plugin.emit(Events.REWARDED_LOAD_FAIL, buildErrorPayload(adError.getCode()));
             }
         });
     }
@@ -82,12 +62,12 @@ public class RewardedAd extends AdBase {
         rewardedAd.show(plugin.cordova.getActivity(), new RewardedAdCallback() {
             @Override
             public void onRewardedAdOpened() {
-                plugin.emit(getOpenedEvent());
+                plugin.emit(Events.REWARDED_OPEN);
             }
 
             @Override
             public void onRewardedAdClosed() {
-                plugin.emit(getClosedEvent());
+                plugin.emit(Events.REWARDED_CLOSE);
             }
 
             @Override

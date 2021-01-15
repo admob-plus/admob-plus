@@ -41,20 +41,4 @@ public abstract class AdBase {
     public void destroy() {
         ads.remove(id);
     }
-
-    abstract String getLoadedEvent();
-
-    abstract String getFailedToLoadEvent();
-
-    abstract String getOpenedEvent();
-
-    abstract String getClosedEvent();
-
-    String getImpressionEvent() {
-        throw new UnsupportedOperationException();
-    }
-
-    String getClickedEvent() {
-        throw new UnsupportedOperationException();
-    }
 }

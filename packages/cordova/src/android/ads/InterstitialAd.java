@@ -1,6 +1,8 @@
 package admob.plugin.ads;
 
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.LoadAdError;
 
 import admob.plugin.Action;
 import admob.plugin.Generated.Events;
@@ -27,42 +29,42 @@ public class InterstitialAd extends AdBase {
         super.destroy();
     }
 
-    @Override
-    String getLoadedEvent() {
-        return Events.INTERSTITIAL_LOAD;
-    }
-
-    @Override
-    String getFailedToLoadEvent() {
-        return Events.INTERSTITIAL_LOAD_FAIL;
-    }
-
-    @Override
-    String getOpenedEvent() {
-        return Events.INTERSTITIAL_OPEN;
-    }
-
-    @Override
-    String getClosedEvent() {
-        return Events.INTERSTITIAL_CLOSE;
-    }
-
-    @Override
-    String getImpressionEvent() {
-        return Events.INTERSTITIAL_IMPRESSION;
-    }
-
-    @Override
-    String getClickedEvent() {
-        return Events.INTERSTITIAL_CLICK;
-    }
-
     public void load(AdRequest adRequest, String adUnitID) {
         clear();
 
         interstitialAd = new com.google.android.gms.ads.InterstitialAd(plugin.cordova.getActivity());
         interstitialAd.setAdUnitId(adUnitID);
-        interstitialAd.setAdListener(new AdListener(this));
+        interstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdClicked() {
+                plugin.emit(Events.INTERSTITIAL_CLICK);
+            }
+
+            @Override
+            public void onAdClosed() {
+                plugin.emit(Events.INTERSTITIAL_CLOSE);
+            }
+
+            @Override
+            public void onAdFailedToLoad(LoadAdError error) {
+                plugin.emit(Events.INTERSTITIAL_LOAD_FAIL, buildErrorPayload(error.getCode()));
+            }
+
+            @Override
+            public void onAdImpression() {
+                plugin.emit(Events.INTERSTITIAL_IMPRESSION);
+            }
+
+            @Override
+            public void onAdLoaded() {
+                plugin.emit(Events.INTERSTITIAL_LOAD);
+            }
+
+            @Override
+            public void onAdOpened() {
+                plugin.emit(Events.INTERSTITIAL_OPEN);
+            }
+        });
         interstitialAd.loadAd(adRequest);
     }
 
