@@ -8,18 +8,14 @@ export type MobileAdOptions = { adUnitId: string }
 export class MobileAd {
   private static allAds: { [s: number]: MobileAd } = {}
 
-  private _id: number
-  public adUnitId: string
+  public readonly adUnitId: string
+  public readonly id: number
 
   constructor({ adUnitId }: MobileAdOptions) {
     this.adUnitId = adUnitId
 
-    this._id = 10001 + Object.keys(MobileAd.allAds).length
+    this.id = 10001 + Object.keys(MobileAd.allAds).length
     MobileAd.allAds[this.id] = this
-  }
-
-  public get id() {
-    return this._id
   }
 }
 

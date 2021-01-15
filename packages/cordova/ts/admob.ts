@@ -1,14 +1,13 @@
 import { exec } from 'cordova'
-import { IBannerRequest, AdSizeType } from '@admob-plus/core'
-
-import Banner from './banner'
+import Banner, { BannerAd } from './banner'
 import { execAsync, fireDocumentEvent, NativeActions } from './base'
 import Interstitial from './interstitial'
 import RewardVideo from './reward-video'
 import AdMobState from './state'
-import { BannerAd } from './banner'
 
 class AdMob {
+  public readonly BannerAd = BannerAd
+
   public banner: Banner
   public interstitial: Interstitial
   public rewardVideo: RewardVideo
@@ -30,10 +29,6 @@ class AdMob {
       },
       false,
     )
-  }
-
-  public get BannerAd() {
-    return BannerAd
   }
 
   public setAppMuted(value: boolean) {
