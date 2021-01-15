@@ -4,25 +4,22 @@ import {
   execAsync,
   fireDocumentEvent,
   NativeActions,
-  RequestConfig,
+  RequestConfig
 } from './base'
 import InterstitialAd from './interstitial'
-import RewardVideo from './reward-video'
+import RewardedAd from './rewarded'
 import AdMobState from './state'
 
 class AdMob {
   public readonly BannerAd = BannerAd
   public readonly InterstitialAd = InterstitialAd
-
-  public rewardVideo: RewardVideo
+  public readonly RewardedAd = RewardedAd
 
   private state: AdMobState
 
   constructor() {
     const state = new AdMobState()
     this.state = state
-
-    this.rewardVideo = new RewardVideo(state)
 
     document.addEventListener(
       'deviceready',
