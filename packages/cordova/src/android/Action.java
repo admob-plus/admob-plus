@@ -2,6 +2,8 @@ package admob.plugin;
 
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
+
 import com.google.ads.mediation.admob.AdMobAdapter;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
@@ -26,6 +28,7 @@ public class Action {
         return opts.optString("position");
     }
 
+    @Nullable
     public AdBase getAd() {
         return AdBase.getAd(optId());
     }
@@ -46,6 +49,7 @@ public class Action {
         return new AdSize(adSizeObj.optInt("width"), adSizeObj.optInt("height"));
     }
 
+    @Nullable
     public String getAdUnitID() {
         return this.opts.optString("adUnitID");
     }

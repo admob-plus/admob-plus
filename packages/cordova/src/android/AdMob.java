@@ -47,6 +47,7 @@ public class AdMob extends CordovaPlugin {
     @Override
     public boolean execute(String actionKey, JSONArray args, CallbackContext callbackContext) {
         Action action = new Action(args);
+
         if (Actions.READY.equals(actionKey)) {
             if (readyCallbackContext == null) {
                 for (PluginResult result : eventQueue) {
