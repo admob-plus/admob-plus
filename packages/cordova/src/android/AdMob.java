@@ -29,7 +29,7 @@ public class AdMob extends CordovaPlugin {
 
     private CallbackContext readyCallbackContext = null;
 
-    private ArrayList<PluginResult> eventQueue = new ArrayList<PluginResult>();
+    private final ArrayList<PluginResult> eventQueue = new ArrayList<PluginResult>();
 
     @Override
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
@@ -49,23 +49,7 @@ public class AdMob extends CordovaPlugin {
         Action action = new Action(args);
 
         if (Actions.READY.equals(actionKey)) {
-            if (readyCallbackContext == null) {
-                for (PluginResult result : eventQueue) {
-                    callbackContext.sendPluginResult(result);
-                }
-                eventQueue.clear();
-            } else {
-                Log.e(TAG, "Ready action should only be called once.");
-            }
-            readyCallbackContext = callbackContext;
-            JSONObject data = new JSONObject();
-            try {
-                data.put("isRunningInTestLab", isRunningInTestLab());
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            emit(Generated.Events.READY, data);
-            return true;
+            return executeReady(callbackContext);
         } else if (Actions.BANNER_HIDE.equals(actionKey)) {
             return BannerAd.executeHideAction(action, callbackContext);
         } else if (Actions.BANNER_SHOW.equals(actionKey)) {
@@ -97,6 +81,26 @@ public class AdMob extends CordovaPlugin {
         }
 
         return false;
+    }
+
+    private boolean executeReady(CallbackContext callbackContext) {
+        if (readyCallbackContext == null) {
+            for (PluginResult result : eventQueue) {
+                callbackContext.sendPluginResult(result);
+            }
+            eventQueue.clear();
+        } else {
+            Log.e(TAG, "Ready action should only be called once.");
+        }
+        readyCallbackContext = callbackContext;
+        JSONObject data = new JSONObject();
+        try {
+            data.put("isRunningInTestLab", isRunningInTestLab());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        emit(Generated.Events.READY, data);
+        return true;
     }
 
     @Override
