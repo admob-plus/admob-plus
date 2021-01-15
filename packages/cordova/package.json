@@ -8,7 +8,6 @@
     "prepack": "rollup -c"
   },
   "devDependencies": {
-    "@admob-plus/core": "^0.9.3",
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-node-resolve": "^11.0.1",
     "@rollup/plugin-typescript": "^8.1.0",
