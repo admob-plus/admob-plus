@@ -12,6 +12,7 @@ const warnMessage =
 const Actions = _.mapValues(
   {
     ready: null,
+    configRequest: null,
     setAppMuted: null,
     setAppVolume: null,
     // BannerAd

@@ -3,6 +3,7 @@ export enum NativeActions {
   Service = 'AdMob',
   bannerHide = 'banner.hide',
   bannerShow = 'banner.show',
+  configRequest = 'configRequest',
   interstitialIsLoaded = 'interstitial.isLoaded',
   interstitialLoad = 'interstitial.load',
   interstitialShow = 'interstitial.show',

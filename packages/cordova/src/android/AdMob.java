@@ -23,6 +23,7 @@ import admob.plugin.ads.AdBase;
 import admob.plugin.ads.BannerAd;
 import admob.plugin.ads.InterstitialAd;
 import admob.plugin.ads.RewardedVideoAd;
+import admob.plugin.Generated.Actions;
 
 public class AdMob extends CordovaPlugin {
     private static final String TAG = "AdMob-Plus";
@@ -50,6 +51,11 @@ public class AdMob extends CordovaPlugin {
 
         if (Actions.READY.equals(actionKey)) {
             return executeReady(callbackContext);
+        } else if (Actions.CONFIG_REQUEST.equals(actionKey)) {
+            MobileAds.setRequestConfiguration(action.getRequestConfiguration());
+            PluginResult result = new PluginResult(PluginResult.Status.OK, "");
+            callbackContext.sendPluginResult(result);
+            return true;
         } else if (Actions.BANNER_HIDE.equals(actionKey)) {
             return BannerAd.executeHideAction(action, callbackContext);
         } else if (Actions.BANNER_SHOW.equals(actionKey)) {
@@ -60,11 +66,11 @@ public class AdMob extends CordovaPlugin {
             return InterstitialAd.executeLoadAction(action, callbackContext);
         } else if (Actions.INTERSTITIAL_SHOW.equals(actionKey)) {
             return InterstitialAd.executeShowAction(action, callbackContext);
-        } else if (Actions.REWARD_VIDEO_IS_READY.equals(actionKey)) {
+        } else if (Actions.REWARDED_IS_READY.equals(actionKey)) {
             return RewardedVideoAd.executeIsReadyAction(action, callbackContext);
-        } else if (Actions.REWARD_VIDEO_LOAD.equals(actionKey)) {
+        } else if (Actions.REWARDED_LOAD.equals(actionKey)) {
             return RewardedVideoAd.executeLoadAction(action, callbackContext);
-        } else if (Actions.REWARD_VIDEO_SHOW.equals(actionKey)) {
+        } else if (Actions.REWARDED_SHOW.equals(actionKey)) {
             return RewardedVideoAd.executeShowAction(action, callbackContext);
         } else if (Actions.SET_APP_MUTED.equals(actionKey)) {
             boolean value = args.optBoolean(0);
@@ -133,7 +139,8 @@ public class AdMob extends CordovaPlugin {
     }
 
     private boolean isRunningInTestLab() {
-        String testLabSetting = Settings.System.getString(cordova.getActivity().getContentResolver(), "firebase.test.lab");
+        String testLabSetting = Settings.System.getString(cordova.getActivity().getContentResolver(),
+                "firebase.test.lab");
         return "true".equals(testLabSetting);
     }
 }

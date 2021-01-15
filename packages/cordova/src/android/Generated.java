@@ -7,6 +7,7 @@ public final class Generated {
     public final class Actions {
         public static final String BANNER_HIDE = "banner.hide";
         public static final String BANNER_SHOW = "banner.show";
+        public static final String CONFIG_REQUEST = "configRequest";
         public static final String INTERSTITIAL_IS_LOADED = "interstitial.isLoaded";
         public static final String INTERSTITIAL_LOAD = "interstitial.load";
         public static final String INTERSTITIAL_SHOW = "interstitial.show";

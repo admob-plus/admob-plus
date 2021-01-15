@@ -1,6 +1,6 @@
-import { AdUnitIDOption, Events, NativeActions } from '@admob-plus/core'
+import { AdUnitIDOption, Events } from '@admob-plus/core'
 import { exec } from 'cordova'
-
+import { NativeActions } from './generated'
 import AdMobState from './state'
 
 export type MobileAdOptions = { adUnitId: string }
@@ -20,6 +20,33 @@ export class MobileAd {
 }
 
 export { AdUnitIDOption, Events, NativeActions }
+
+export enum MaxAdContentRating {
+  G = 'G',
+  MA = 'MA',
+  PG = 'PG',
+  T = 'T',
+  UNSPECIFIED = '',
+}
+
+export enum ChildDirectedTreatmentTag {
+  FALSE = 0,
+  TRUE = 1,
+  UNSPECIFIED = -1,
+}
+
+export enum UnderAgeOfConsentTag {
+  FALSE = 0,
+  TRUE = 1,
+  UNSPECIFIED = -1,
+}
+
+export type RequestConfig = {
+  maxAdContentRating?: MaxAdContentRating
+  tagForChildDirectedTreatment?: ChildDirectedTreatmentTag
+  tagForUnderAgeOfConsent?: UnderAgeOfConsentTag
+  testDeviceIds?: string[]
+}
 
 export const enum Platforms {
   android = 'android',

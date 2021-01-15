@@ -7,14 +7,18 @@ import androidx.annotation.Nullable;
 import com.google.ads.mediation.admob.AdMobAdapter;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.RequestConfiguration;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import admob.plugin.ads.AdBase;
 
 public class Action {
-    private JSONObject opts;
+    private final JSONObject opts;
 
     Action(JSONArray args) {
         this.opts = args.optJSONObject(0);
@@ -52,6 +56,31 @@ public class Action {
     @Nullable
     public String getAdUnitID() {
         return this.opts.optString("adUnitID");
+    }
+
+    public RequestConfiguration getRequestConfiguration() {
+        RequestConfiguration.Builder builder = new RequestConfiguration.Builder();
+        if (this.opts.has("maxAdContentRating")) {
+            builder.setMaxAdContentRating(this.opts.optString("maxAdContentRating"));
+        }
+        if (this.opts.has("tagForChildDirectedTreatment")) {
+            builder.setTagForChildDirectedTreatment(this.opts.optInt("tagForChildDirectedTreatment"));
+        }
+        if (this.opts.has("tagForUnderAgeOfConsent")) {
+            builder.setTagForUnderAgeOfConsent(this.opts.optInt("tagForUnderAgeOfConsent"));
+        }
+        if (this.opts.has("testDeviceIds")) {
+            List<String> testDeviceIds = new ArrayList<String>();
+            JSONArray ids = this.opts.optJSONArray("testDeviceIds");
+            for (int i = 0; i < ids.length(); i++) {
+                String testDeviceId = ids.optString(i);
+                if (testDeviceId != null) {
+                    testDeviceIds.add(testDeviceId);
+                }
+            }
+            builder.setTestDeviceIds(testDeviceIds);
+        }
+        return builder.build();
     }
 
     public AdRequest buildAdRequest() {
