@@ -2,9 +2,6 @@ package admob.plugin.ads;
 
 import com.google.android.gms.ads.AdRequest;
 
-import org.apache.cordova.CallbackContext;
-import org.apache.cordova.PluginResult;
-
 import admob.plugin.Action;
 import admob.plugin.Events;
 
@@ -15,53 +12,12 @@ public class InterstitialAd extends AdBase {
         super(id, adUnitID);
     }
 
-    public static boolean executeIsLoadedAction(Action action, CallbackContext callbackContext) {
-        plugin.cordova.getActivity().runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                InterstitialAd interstitialAd = (InterstitialAd) action.getAd();
-
-                PluginResult result = new PluginResult(PluginResult.Status.OK, interstitialAd != null && interstitialAd.isLoaded());
-                callbackContext.sendPluginResult(result);
-            }
-        });
-
-        return true;
-    }
-
-    public static boolean executeLoadAction(Action action, CallbackContext callbackContext) {
-        plugin.cordova.getActivity().runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                InterstitialAd interstitialAd = (InterstitialAd) action.getAd();
-                if (interstitialAd == null) {
-                    interstitialAd = new InterstitialAd(action.optId(), action.getAdUnitID());
-                }
-                interstitialAd.load(action.buildAdRequest(), action.getAdUnitID());
-
-                PluginResult result = new PluginResult(PluginResult.Status.OK, "");
-                callbackContext.sendPluginResult(result);
-            }
-        });
-
-        return true;
-    }
-
-    public static boolean executeShowAction(Action action, CallbackContext callbackContext) {
-        plugin.cordova.getActivity().runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                InterstitialAd interstitialAd = (InterstitialAd) action.getAd();
-                if (interstitialAd != null) {
-                    interstitialAd.show();
-                }
-
-                PluginResult result = new PluginResult(PluginResult.Status.OK, "");
-                callbackContext.sendPluginResult(result);
-            }
-        });
-
-        return true;
+    public static InterstitialAd getOrCreate(Action action) {
+        InterstitialAd interstitialAd = (InterstitialAd) action.getAd();
+        if (interstitialAd == null) {
+            interstitialAd = new InterstitialAd(action.optId(), action.getAdUnitID());
+        }
+        return interstitialAd;
     }
 
     @Override
@@ -92,11 +48,6 @@ public class InterstitialAd extends AdBase {
     }
 
     @Override
-    String getLeftApplicationEvent() {
-        return Events.INTERSTITIAL_EXIT_APP;
-    }
-
-    @Override
     String getImpressionEvent() {
         return Events.INTERSTITIAL_IMPRESSION;
     }
@@ -106,22 +57,20 @@ public class InterstitialAd extends AdBase {
         return Events.INTERSTITIAL_CLICK;
     }
 
-    private void load(AdRequest adRequest, String adUnitID) {
+    public void load(AdRequest adRequest, String adUnitID) {
         clear();
 
         interstitialAd = new com.google.android.gms.ads.InterstitialAd(plugin.cordova.getActivity());
         interstitialAd.setAdUnitId(adUnitID);
-
         interstitialAd.setAdListener(new AdListener(this));
-
         interstitialAd.loadAd(adRequest);
     }
 
-    private boolean isLoaded() {
+    public boolean isLoaded() {
         return interstitialAd != null && interstitialAd.isLoaded();
     }
 
-    private void show() {
+    public void show() {
         if (isLoaded()) {
             interstitialAd.show();
         }

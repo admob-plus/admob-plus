@@ -57,11 +57,11 @@ public class AdMob extends CordovaPlugin {
         } else if (Actions.BANNER_HIDE.equals(actionKey)) {
             return executeBannerHide(action, callbackContext);
         } else if (Actions.INTERSTITIAL_IS_LOADED.equals(actionKey)) {
-            return InterstitialAd.executeIsLoadedAction(action, callbackContext);
+            return executeInterstitialIsLoaded(action, callbackContext);
         } else if (Actions.INTERSTITIAL_LOAD.equals(actionKey)) {
-            return InterstitialAd.executeLoadAction(action, callbackContext);
+            return executeInterstitialLoad(action, callbackContext);
         } else if (Actions.INTERSTITIAL_SHOW.equals(actionKey)) {
-            return InterstitialAd.executeShowAction(action, callbackContext);
+            return executeInterstitialShow(action, callbackContext);
         } else if (Actions.REWARDED_IS_READY.equals(actionKey)) {
             return RewardedVideoAd.executeIsReadyAction(action, callbackContext);
         } else if (Actions.REWARDED_LOAD.equals(actionKey)) {
@@ -101,7 +101,7 @@ public class AdMob extends CordovaPlugin {
         return true;
     }
 
-    public boolean executeBannerShow(Action action, CallbackContext callbackContext) {
+    private boolean executeBannerShow(Action action, CallbackContext callbackContext) {
         cordova.getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -110,11 +110,10 @@ public class AdMob extends CordovaPlugin {
                 ok(callbackContext);
             }
         });
-
         return true;
     }
 
-    public boolean executeBannerHide(Action action, CallbackContext callbackContext) {
+    private boolean executeBannerHide(Action action, CallbackContext callbackContext) {
         cordova.getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -125,9 +124,47 @@ public class AdMob extends CordovaPlugin {
                 ok(callbackContext);
             }
         });
-
         return true;
     }
+
+    private boolean executeInterstitialIsLoaded(Action action, CallbackContext callbackContext) {
+        cordova.getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                InterstitialAd interstitialAd = (InterstitialAd) action.getAd();
+                PluginResult result = new PluginResult(PluginResult.Status.OK, interstitialAd != null && interstitialAd.isLoaded());
+                callbackContext.sendPluginResult(result);
+            }
+        });
+        return true;
+    }
+
+    private boolean executeInterstitialLoad(Action action, CallbackContext callbackContext) {
+        cordova.getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                InterstitialAd interstitialAd = InterstitialAd.getOrCreate(action);
+                interstitialAd.load(action.buildAdRequest(), action.getAdUnitID());
+                ok(callbackContext);
+            }
+        });
+        return true;
+    }
+
+    private boolean executeInterstitialShow(Action action, CallbackContext callbackContext) {
+        cordova.getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                InterstitialAd interstitialAd = (InterstitialAd) action.getAd();
+                if (interstitialAd != null) {
+                    interstitialAd.show();
+                }
+                ok(callbackContext);
+            }
+        });
+        return true;
+    }
+
 
     private boolean ok(CallbackContext callbackContext) {
         PluginResult result = new PluginResult(PluginResult.Status.OK, "");
