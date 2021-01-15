@@ -1,72 +1,30 @@
 package admob.plugin.ads;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.reward.RewardItem;
-import com.google.android.gms.ads.reward.RewardedVideoAdListener;
+import androidx.annotation.NonNull;
 
-import org.apache.cordova.CallbackContext;
-import org.apache.cordova.PluginResult;
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.google.android.gms.ads.AdError;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.rewarded.RewardItem;
+import com.google.android.gms.ads.rewarded.RewardedAdCallback;
+import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
 
 import admob.plugin.Action;
-import admob.plugin.Events;
+import admob.plugin.Generated.Events;
 
-public class RewardedVideoAd extends AdBase {
-    private com.google.android.gms.ads.reward.RewardedVideoAd rewardedVideoAd = null;
+public class RewardedAd extends AdBase {
+    private com.google.android.gms.ads.rewarded.RewardedAd rewardedAd = null;
 
-    RewardedVideoAd(int id, String adUnitID) {
+    RewardedAd(int id, String adUnitID) {
         super(id, adUnitID);
     }
 
-    public static boolean executeIsReadyAction(Action action, CallbackContext callbackContext) {
-        plugin.cordova.getActivity().runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                RewardedVideoAd rewardedVideoAd = (RewardedVideoAd) action.getAd();
-
-                PluginResult result = new PluginResult(PluginResult.Status.OK, rewardedVideoAd != null && rewardedVideoAd.isReady());
-                callbackContext.sendPluginResult(result);
-            }
-        });
-
-        return true;
-    }
-
-    public static boolean executeLoadAction(Action action, CallbackContext callbackContext) {
-        plugin.cordova.getActivity().runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                RewardedVideoAd rewardedVideoAd = (RewardedVideoAd) action.getAd();
-                if (rewardedVideoAd == null) {
-                    rewardedVideoAd = new RewardedVideoAd(action.optId(), action.getAdUnitID());
-                }
-                rewardedVideoAd.createAndLoad(action.buildAdRequest());
-
-                PluginResult result = new PluginResult(PluginResult.Status.OK, "");
-                callbackContext.sendPluginResult(result);
-            }
-        });
-
-        return true;
-    }
-
-    public static boolean executeShowAction(Action action, CallbackContext callbackContext) {
-        plugin.cordova.getActivity().runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                RewardedVideoAd rewardedVideoAd = (RewardedVideoAd) action.getAd();
-                if (rewardedVideoAd != null) {
-                    rewardedVideoAd.show();
-                }
-
-                PluginResult result = new PluginResult(PluginResult.Status.OK, "");
-                callbackContext.sendPluginResult(result);
-            }
-        });
-
-        return true;
+    public static RewardedAd getOrCreate(Action action) {
+        RewardedAd rewardedAd = (RewardedAd) action.getAd();
+        if (rewardedAd == null) {
+            rewardedAd = new RewardedAd(action.optId(), action.getAdUnitID());
+        }
+        return rewardedAd;
     }
 
     @Override
@@ -78,91 +36,75 @@ public class RewardedVideoAd extends AdBase {
 
     @Override
     String getLoadedEvent() {
-        return Events.REWARD_VIDEO_LOAD;
+        return Events.REWARDED_LOAD;
     }
 
     @Override
     String getFailedToLoadEvent() {
-        return Events.REWARD_VIDEO_LOAD_FAIL;
+        return Events.REWARDED_LOAD_FAIL;
     }
 
     @Override
     String getOpenedEvent() {
-        return Events.REWARD_VIDEO_OPEN;
+        return Events.REWARDED_OPEN;
     }
 
     @Override
     String getClosedEvent() {
-        return Events.REWARD_VIDEO_CLOSE;
+        return Events.REWARDED_CLOSE;
     }
 
-    @Override
-    String getLeftApplicationEvent() {
-        return Events.REWARD_VIDEO_EXIT_APP;
-    }
-
-    private void createAndLoad(AdRequest adRequest) {
+    public void createAndLoad(AdRequest adRequest) {
         clear();
 
-        rewardedVideoAd = MobileAds.getRewardedVideoAdInstance(plugin.cordova.getActivity());
-        rewardedVideoAd.setRewardedVideoAdListener(new RewardedVideoAdListener() {
+        rewardedAd = new com.google.android.gms.ads.rewarded.RewardedAd(plugin.cordova.getActivity(), this.adUnitID);
+        rewardedAd.loadAd(adRequest, new RewardedAdLoadCallback() {
             @Override
-            public void onRewardedVideoAdLoaded() {
+            public void onRewardedAdLoaded() {
                 plugin.emit(getLoadedEvent());
             }
 
             @Override
-            public void onRewardedVideoAdOpened() {
+            public void onRewardedAdFailedToLoad(LoadAdError adError) {
+                plugin.emit(getFailedToLoadEvent(), buildErrorPayload(adError.getCode()));
+            }
+        });
+    }
+
+    public boolean isReady() {
+        return rewardedAd != null && rewardedAd.isLoaded();
+    }
+
+    public void show() {
+        if (!isReady()) {
+            return;
+        }
+        rewardedAd.show(plugin.cordova.getActivity(), new RewardedAdCallback() {
+            @Override
+            public void onRewardedAdOpened() {
                 plugin.emit(getOpenedEvent());
             }
 
             @Override
-            public void onRewardedVideoStarted() {
-                plugin.emit(Events.REWARD_VIDEO_START);
-            }
-
-            @Override
-            public void onRewardedVideoAdClosed() {
+            public void onRewardedAdClosed() {
                 plugin.emit(getClosedEvent());
             }
 
             @Override
-            public void onRewarded(RewardItem rewardItem) {
-                plugin.emit(Events.REWARD_VIDEO_REWARD);
+            public void onUserEarnedReward(@NonNull RewardItem reward) {
+                plugin.emit(Events.REWARDED_REWARD);
             }
 
             @Override
-            public void onRewardedVideoAdLeftApplication() {
-                plugin.emit(getLeftApplicationEvent());
-            }
-
-            @Override
-            public void onRewardedVideoAdFailedToLoad(int errorCode) {
-                plugin.emit(getFailedToLoadEvent(), buildErrorPayload(errorCode));
-            }
-
-            @Override
-            public void onRewardedVideoCompleted() {
-                plugin.emit(Events.REWARD_VIDEO_COMPLETE);
+            public void onRewardedAdFailedToShow(AdError adError) {
+                // Ad failed to display.
             }
         });
-        rewardedVideoAd.loadAd(adUnitID, adRequest);
-    }
-
-    private boolean isReady() {
-        return rewardedVideoAd != null && rewardedVideoAd.isLoaded();
-    }
-
-    private void show() {
-        if (isReady()) {
-            rewardedVideoAd.show();
-        }
     }
 
     private void clear() {
-        if (rewardedVideoAd != null) {
-            rewardedVideoAd.setRewardedVideoAdListener(null);
-            rewardedVideoAd = null;
+        if (rewardedAd != null) {
+            rewardedAd = null;
         }
     }
 }

@@ -23,7 +23,7 @@ import admob.plugin.Generated.Actions;
 import admob.plugin.ads.AdBase;
 import admob.plugin.ads.BannerAd;
 import admob.plugin.ads.InterstitialAd;
-import admob.plugin.ads.RewardedVideoAd;
+import admob.plugin.ads.RewardedAd;
 
 public class AdMob extends CordovaPlugin {
     private static final String TAG = "AdMob-Plus";
@@ -63,11 +63,11 @@ public class AdMob extends CordovaPlugin {
         } else if (Actions.INTERSTITIAL_SHOW.equals(actionKey)) {
             return executeInterstitialShow(action, callbackContext);
         } else if (Actions.REWARDED_IS_READY.equals(actionKey)) {
-            return RewardedVideoAd.executeIsReadyAction(action, callbackContext);
+            return executeRewardedIsReady(action, callbackContext);
         } else if (Actions.REWARDED_LOAD.equals(actionKey)) {
-            return RewardedVideoAd.executeLoadAction(action, callbackContext);
+            return executeRewardedLoad(action, callbackContext);
         } else if (Actions.REWARDED_SHOW.equals(actionKey)) {
-            return RewardedVideoAd.executeShowAction(action, callbackContext);
+            return executeRewardedShow(action, callbackContext);
         } else if (Actions.SET_APP_MUTED.equals(actionKey)) {
             boolean value = args.optBoolean(0);
             MobileAds.setAppMuted(value);
@@ -165,6 +165,43 @@ public class AdMob extends CordovaPlugin {
         return true;
     }
 
+    private boolean executeRewardedIsReady(Action action, CallbackContext callbackContext) {
+        cordova.getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                RewardedAd rewardedAd = (RewardedAd) action.getAd();
+                PluginResult result = new PluginResult(PluginResult.Status.OK, rewardedAd != null && rewardedAd.isReady());
+                callbackContext.sendPluginResult(result);
+            }
+        });
+        return true;
+    }
+
+    private boolean executeRewardedLoad(Action action, CallbackContext callbackContext) {
+        cordova.getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                RewardedAd rewardedAd = RewardedAd.getOrCreate(action);
+                rewardedAd.createAndLoad(action.buildAdRequest());
+                ok(callbackContext);
+            }
+        });
+        return true;
+    }
+
+    private boolean executeRewardedShow(Action action, CallbackContext callbackContext) {
+        cordova.getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                RewardedAd rewardedAd = (RewardedAd) action.getAd();
+                if (rewardedAd != null) {
+                    rewardedAd.show();
+                }
+                ok(callbackContext);
+            }
+        });
+        return true;
+    }
 
     private boolean ok(CallbackContext callbackContext) {
         PluginResult result = new PluginResult(PluginResult.Status.OK, "");

@@ -3,7 +3,7 @@ package admob.plugin.ads;
 import com.google.android.gms.ads.AdRequest;
 
 import admob.plugin.Action;
-import admob.plugin.Events;
+import admob.plugin.Generated.Events;
 
 public class InterstitialAd extends AdBase {
     private com.google.android.gms.ads.InterstitialAd interstitialAd = null;
