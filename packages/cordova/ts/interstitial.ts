@@ -1,37 +1,24 @@
-import {
-  AdBase,
-  Events,
-  execAsync,
-  NativeActions,
-  TestIds,
-  waitEvent,
-} from './base'
+import type { MobileAdOptions } from './base'
+import { Events, execAsync, MobileAd, NativeActions, waitEvent } from './base'
 
-import { IAdRequest } from '@admob-plus/core'
-
-const AD_ID = 2
-
-export default class Interstitial extends AdBase {
-  protected testIdForAndroid = TestIds.interstitial_android
-  protected testIdForIOS = TestIds.interstitial_ios
-
-  public isLoaded() {
-    return execAsync(NativeActions.interstitial_is_loaded, [{ id: AD_ID }])
+export default class InterstitialAd extends MobileAd {
+  constructor({ adUnitId }: MobileAdOptions) {
+    super({ adUnitId })
   }
 
-  public async load(opts: IAdRequest = {}) {
-    await execAsync(NativeActions.interstitial_load, [
-      {
-        ...opts,
-        adUnitID: this.resolveAdUnitID(opts.id),
-        id: AD_ID,
-      },
+  public isLoaded() {
+    return execAsync(NativeActions.interstitialIsLoaded, [{ id: this.id }])
+  }
+
+  public async load() {
+    await execAsync(NativeActions.interstitialLoad, [
+      { adUnitID: this.adUnitId, id: this.id },
     ])
 
-    await waitEvent(Events.interstitial_load, Events.interstitial_load_fail)
+    await waitEvent(Events.interstitialLoad, Events.interstitialLoadFail)
   }
 
   public show() {
-    return execAsync(NativeActions.interstitial_show, [{ id: AD_ID }])
+    return execAsync(NativeActions.interstitialShow, [{ id: this.id }])
   }
 }

@@ -6,14 +6,14 @@ import {
   NativeActions,
   RequestConfig,
 } from './base'
-import Interstitial from './interstitial'
+import InterstitialAd from './interstitial'
 import RewardVideo from './reward-video'
 import AdMobState from './state'
 
 class AdMob {
   public readonly BannerAd = BannerAd
+  public readonly InterstitialAd = InterstitialAd
 
-  public interstitial: Interstitial
   public rewardVideo: RewardVideo
 
   private state: AdMobState
@@ -22,7 +22,6 @@ class AdMob {
     const state = new AdMobState()
     this.state = state
 
-    this.interstitial = new Interstitial(state)
     this.rewardVideo = new RewardVideo(state)
 
     document.addEventListener(
