@@ -1,7 +1,9 @@
 package admob.plugin.ads;
 
+import com.google.android.gms.ads.LoadAdError;
+
 public class AdListener extends com.google.android.gms.ads.AdListener {
-    private AdBase ad;
+    private final AdBase ad;
 
     AdListener(AdBase ad) {
         super();
@@ -10,18 +12,8 @@ public class AdListener extends com.google.android.gms.ads.AdListener {
     }
 
     @Override
-    public void onAdLoaded() {
-        AdBase.plugin.emit(ad.getLoadedEvent());
-    }
-
-    @Override
-    public void onAdFailedToLoad(int errorCode) {
-        AdBase.plugin.emit(ad.getFailedToLoadEvent(), ad.buildErrorPayload(errorCode));
-    }
-
-    @Override
-    public void onAdOpened() {
-        AdBase.plugin.emit(ad.getOpenedEvent());
+    public void onAdClicked() {
+        AdBase.plugin.emit(ad.getClickedEvent());
     }
 
     @Override
@@ -30,8 +22,8 @@ public class AdListener extends com.google.android.gms.ads.AdListener {
     }
 
     @Override
-    public void onAdLeftApplication() {
-        AdBase.plugin.emit(ad.getLeftApplicationEvent());
+    public void onAdFailedToLoad(LoadAdError error) {
+        AdBase.plugin.emit(ad.getFailedToLoadEvent(), ad.buildErrorPayload(error.getCode()));
     }
 
     @Override
@@ -40,7 +32,12 @@ public class AdListener extends com.google.android.gms.ads.AdListener {
     }
 
     @Override
-    public void onAdClicked() {
-        AdBase.plugin.emit(ad.getClickedEvent());
+    public void onAdLoaded() {
+        AdBase.plugin.emit(ad.getLoadedEvent());
+    }
+
+    @Override
+    public void onAdOpened() {
+        AdBase.plugin.emit(ad.getOpenedEvent());
     }
 }

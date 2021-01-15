@@ -9,13 +9,10 @@ import admob.plugin.AdMob;
 
 
 public abstract class AdBase {
+    private static final SparseArray<AdBase> ads = new SparseArray<AdBase>();
     protected static AdMob plugin;
-
     final int id;
     String adUnitID;
-
-    private static SparseArray<AdBase> ads = new SparseArray<AdBase>();
-
 
     AdBase(int id, String adUnitID) {
         this.id = id;
@@ -46,10 +43,18 @@ public abstract class AdBase {
     }
 
     abstract String getLoadedEvent();
+
     abstract String getFailedToLoadEvent();
+
     abstract String getOpenedEvent();
+
     abstract String getClosedEvent();
-    abstract String getLeftApplicationEvent();
-    String getImpressionEvent() { return null; }
-    String getClickedEvent() { return null; }
+
+    String getImpressionEvent() {
+        throw new UnsupportedOperationException();
+    }
+
+    String getClickedEvent() {
+        throw new UnsupportedOperationException();
+    }
 }

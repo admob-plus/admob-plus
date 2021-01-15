@@ -10,7 +10,7 @@ import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 
 import admob.plugin.Action;
-import admob.plugin.Events;
+import admob.plugin.Generated.Events;
 
 public class BannerAd extends AdBase {
     private final AdSize adSize;
@@ -99,11 +99,6 @@ public class BannerAd extends AdBase {
     @Override
     String getClosedEvent() {
         return Events.BANNER_CLOSE;
-    }
-
-    @Override
-    String getLeftApplicationEvent() {
-        return Events.BANNER_EXIT_APP;
     }
 
     @Override
