@@ -57,6 +57,8 @@ public class AdMob extends CordovaPlugin {
                     callbackContext.sendPluginResult(result);
                 }
                 eventQueue.clear();
+            } else {
+                Log.e(TAG, "Ready action should only be called once.");
             }
             readyCallbackContext = callbackContext;
             JSONObject data = new JSONObject();
