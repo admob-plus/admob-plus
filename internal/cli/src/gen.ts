@@ -31,6 +31,7 @@ const Actions = _.mapValues(
 
 const Events = _.mapValues(
   {
+    initComplete: null,
     ready: null,
     // BannerAd
     bannerLoad: 'banner.load',

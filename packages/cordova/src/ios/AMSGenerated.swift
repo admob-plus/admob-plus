@@ -12,6 +12,7 @@ struct AMSEvents {
     static let bannerLoad = "admob.banner.load"
     static let bannerLoadFail = "admob.banner.loadFail"
     static let bannerOpen = "admob.banner.open"
+    static let initComplete = "admob.initComplete"
     static let interstitialClick = "admob.interstitial.click"
     static let interstitialClose = "admob.interstitial.close"
     static let interstitialExitApp = "admob.interstitial.exitApp"

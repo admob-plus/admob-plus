@@ -1,8 +1,5 @@
 package admob.plugin;
 
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageManager;
-import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
 
@@ -32,8 +29,6 @@ public class AdMob extends CordovaPlugin {
 
     private CallbackContext readyCallbackContext = null;
 
-    private static final String TEST_APPLICATION_ID = "ca-app-pub-3940256099942544~3347511713";
-
     private ArrayList<PluginResult> eventQueue = new ArrayList<PluginResult>();
 
     @Override
@@ -43,6 +38,7 @@ public class AdMob extends CordovaPlugin {
         MobileAds.initialize(cordova.getActivity(), new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {
+                emit(Generated.Events.INIT_COMPLETE);
             }
         });
         AdBase.initialize(this);
@@ -67,7 +63,7 @@ public class AdMob extends CordovaPlugin {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            emit(Events.READY, data);
+            emit(Generated.Events.READY, data);
             return true;
         } else if (Actions.BANNER_HIDE.equals(actionKey)) {
             return BannerAd.executeHideAction(action, callbackContext);
