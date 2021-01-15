@@ -54,9 +54,7 @@ class AdMob {
         this.state.applicationId = event.data.applicationId
         fireDocumentEvent(event.type, event.data)
       },
-      (err) => {
-        alert(err)
-      },
+      console.error,
       NativeActions.Service,
       NativeActions.ready,
     )
