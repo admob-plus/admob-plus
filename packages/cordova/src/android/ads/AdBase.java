@@ -20,7 +20,6 @@ public abstract class AdBase {
     AdBase(int id, String adUnitID) {
         this.id = id;
         this.adUnitID = adUnitID;
-
         ads.put(id, this);
     }
 
