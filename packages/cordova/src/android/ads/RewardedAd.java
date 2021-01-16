@@ -51,12 +51,12 @@ public class RewardedAd extends AdBase {
         });
     }
 
-    public boolean isReady() {
+    public boolean isLoaded() {
         return rewardedAd != null && rewardedAd.isLoaded();
     }
 
     public void show() {
-        if (!isReady()) {
+        if (!isLoaded()) {
             return;
         }
         rewardedAd.show(plugin.cordova.getActivity(), new RewardedAdCallback() {

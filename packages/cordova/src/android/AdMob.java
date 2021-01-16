@@ -62,8 +62,8 @@ public class AdMob extends CordovaPlugin {
             return executeInterstitialLoad(action, callbackContext);
         } else if (Actions.INTERSTITIAL_SHOW.equals(actionKey)) {
             return executeInterstitialShow(action, callbackContext);
-        } else if (Actions.REWARDED_IS_READY.equals(actionKey)) {
-            return executeRewardedIsReady(action, callbackContext);
+        } else if (Actions.REWARDED_IS_LOADED.equals(actionKey)) {
+            return executeRewardedIsLoaded(action, callbackContext);
         } else if (Actions.REWARDED_LOAD.equals(actionKey)) {
             return executeRewardedLoad(action, callbackContext);
         } else if (Actions.REWARDED_SHOW.equals(actionKey)) {
@@ -165,12 +165,12 @@ public class AdMob extends CordovaPlugin {
         return true;
     }
 
-    private boolean executeRewardedIsReady(Action action, CallbackContext callbackContext) {
+    private boolean executeRewardedIsLoaded(Action action, CallbackContext callbackContext) {
         cordova.getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 RewardedAd rewardedAd = (RewardedAd) action.getAd();
-                PluginResult result = new PluginResult(PluginResult.Status.OK, rewardedAd != null && rewardedAd.isReady());
+                PluginResult result = new PluginResult(PluginResult.Status.OK, rewardedAd != null && rewardedAd.isLoaded());
                 callbackContext.sendPluginResult(result);
             }
         });

@@ -23,7 +23,7 @@ const Actions = _.mapValues(
     interstitialLoad: 'interstitial.load',
     interstitialShow: 'interstitial.show',
     // RewardedAd
-    rewardedIsReady: 'rewarded.isReady',
+    rewardedIsLoaded: 'rewarded.isLoaded',
     rewardedLoad: 'rewarded.load',
     rewardedShow: 'rewarded.show',
   },

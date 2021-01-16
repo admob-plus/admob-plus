@@ -6,8 +6,8 @@ export default class RewardedAd extends MobileAd {
     super({ adUnitId })
   }
 
-  public isReady() {
-    return execAsync(NativeActions.rewardedIsReady, [{ id: this.id }])
+  public isLoaded() {
+    return execAsync(NativeActions.rewardedIsLoaded, [{ id: this.id }])
   }
 
   public async load() {

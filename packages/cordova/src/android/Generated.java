@@ -12,7 +12,7 @@ public final class Generated {
         public static final String INTERSTITIAL_LOAD = "interstitial.load";
         public static final String INTERSTITIAL_SHOW = "interstitial.show";
         public static final String READY = "ready";
-        public static final String REWARDED_IS_READY = "rewarded.isReady";
+        public static final String REWARDED_IS_LOADED = "rewarded.isLoaded";
         public static final String REWARDED_LOAD = "rewarded.load";
         public static final String REWARDED_SHOW = "rewarded.show";
         public static final String SET_APP_MUTED = "setAppMuted";

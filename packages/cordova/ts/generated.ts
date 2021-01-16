@@ -8,7 +8,7 @@ export enum NativeActions {
   interstitialLoad = 'interstitial.load',
   interstitialShow = 'interstitial.show',
   ready = 'ready',
-  rewardedIsReady = 'rewarded.isReady',
+  rewardedIsLoaded = 'rewarded.isLoaded',
   rewardedLoad = 'rewarded.load',
   rewardedShow = 'rewarded.show',
   setAppMuted = 'setAppMuted',
