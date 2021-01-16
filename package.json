@@ -28,14 +28,14 @@
     "@types/xml2js": "^0.4.7",
     "cordova": "10.0.0",
     "cordova-testbed": "^0.8.0",
-    "eslint": "^7.17.0",
+    "eslint": "^7.18.0",
     "eslint-config-concise": "^0.40.1",
     "eslint-config-concise-browser": "^0.40.1",
     "eslint-config-concise-esnext": "^0.40.1",
     "eslint-config-concise-typescript": "^0.40.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-react": "^7.22.0",
-    "eslint-plugin-unicorn": "^26.0.0",
+    "eslint-plugin-unicorn": "^26.0.1",
     "execa": "^5.0.0",
     "husky": "^5.0.1",
     "is-ci": "^2.0.0",
@@ -83,32 +83,15 @@
       "remark-lint-no-empty-sections"
     ]
   },
-  "workspaces": {
-    "nohoist": [
-      "**/@angular*",
-      "**/@angular*/**",
-      "**/@capacitor/**",
-      "**/@ionic/**",
-      "**/@ionic/app-scripts",
-      "**/@ionic/app-scripts/**",
-      "**/@ionic-native/**",
-      "**/@ionic-native/splash-screen",
-      "**/@ionic-native/status-bar",
-      "**/@types/mocha",
-      "**/@types/react-native",
-      "**/ionic-angular",
-      "**/ionic-angular/**",
-      "**/ionicons",
-      "**/ionicons/**",
-      "**/cordova-admob-plus",
-      "**/ionic",
-      "**/ionic-admob"
-    ],
-    "packages": [
-      "examples/*",
-      "internal/*",
-      "packages/*",
-      "website"
-    ]
-  }
+  "resolutions": {
+    "@admob-plus-internal/cli": "workspace:*",
+    "@admob-plus-internal/tsconfig": "workspace:*",
+    "cordova-admob-plus": "workspace:*"
+  },
+  "workspaces": [
+    "examples/*",
+    "internal/*",
+    "packages/*",
+    "website"
+  ]
 }
