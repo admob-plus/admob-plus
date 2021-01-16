@@ -18,7 +18,6 @@ export enum NativeActions {
 export enum Events {
   bannerClick = 'admob.banner.click',
   bannerClose = 'admob.banner.close',
-  bannerExitApp = 'admob.banner.exitApp',
   bannerImpression = 'admob.banner.impression',
   bannerLoad = 'admob.banner.load',
   bannerLoadFail = 'admob.banner.loadFail',
@@ -26,7 +25,6 @@ export enum Events {
   initComplete = 'admob.initComplete',
   interstitialClick = 'admob.interstitial.click',
   interstitialClose = 'admob.interstitial.close',
-  interstitialExitApp = 'admob.interstitial.exitApp',
   interstitialImpression = 'admob.interstitial.impression',
   interstitialLoad = 'admob.interstitial.load',
   interstitialLoadFail = 'admob.interstitial.loadFail',
@@ -35,7 +33,6 @@ export enum Events {
   rewardedClick = 'admob.rewarded.click',
   rewardedClose = 'admob.rewarded.close',
   rewardedComplete = 'admob.rewarded.complete',
-  rewardedExitApp = 'admob.rewarded.exitApp',
   rewardedImpression = 'admob.rewarded.impression',
   rewardedLoad = 'admob.rewarded.load',
   rewardedLoadFail = 'admob.rewarded.loadFail',

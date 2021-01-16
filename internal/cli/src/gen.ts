@@ -39,7 +39,6 @@ const Events = _.mapValues(
     bannerLoadFail: 'banner.loadFail',
     bannerOpen: 'banner.open',
     bannerClose: 'banner.close',
-    bannerExitApp: 'banner.exitApp',
     bannerImpression: 'banner.impression',
     bannerClick: 'banner.click',
     // InterstitialAd
@@ -47,7 +46,6 @@ const Events = _.mapValues(
     interstitialLoadFail: 'interstitial.loadFail',
     interstitialOpen: 'interstitial.open',
     interstitialClose: 'interstitial.close',
-    interstitialExitApp: 'interstitial.exitApp',
     interstitialImpression: 'interstitial.impression',
     interstitialClick: 'interstitial.click',
     // RewardedAd
@@ -58,7 +56,6 @@ const Events = _.mapValues(
     rewardedStart: 'rewarded.start',
     rewardedComplete: 'rewarded.complete',
     rewardedReward: 'rewarded.reward',
-    rewardedExitApp: 'rewarded.exitApp',
     rewardedImpression: 'rewarded.impression',
     rewardedClick: 'rewarded.click',
   },

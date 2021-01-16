@@ -22,7 +22,6 @@ public final class Generated {
     public final class Events {
         public static final String BANNER_CLICK = "admob.banner.click";
         public static final String BANNER_CLOSE = "admob.banner.close";
-        public static final String BANNER_EXIT_APP = "admob.banner.exitApp";
         public static final String BANNER_IMPRESSION = "admob.banner.impression";
         public static final String BANNER_LOAD = "admob.banner.load";
         public static final String BANNER_LOAD_FAIL = "admob.banner.loadFail";
@@ -30,7 +29,6 @@ public final class Generated {
         public static final String INIT_COMPLETE = "admob.initComplete";
         public static final String INTERSTITIAL_CLICK = "admob.interstitial.click";
         public static final String INTERSTITIAL_CLOSE = "admob.interstitial.close";
-        public static final String INTERSTITIAL_EXIT_APP = "admob.interstitial.exitApp";
         public static final String INTERSTITIAL_IMPRESSION = "admob.interstitial.impression";
         public static final String INTERSTITIAL_LOAD = "admob.interstitial.load";
         public static final String INTERSTITIAL_LOAD_FAIL = "admob.interstitial.loadFail";
@@ -39,7 +37,6 @@ public final class Generated {
         public static final String REWARDED_CLICK = "admob.rewarded.click";
         public static final String REWARDED_CLOSE = "admob.rewarded.close";
         public static final String REWARDED_COMPLETE = "admob.rewarded.complete";
-        public static final String REWARDED_EXIT_APP = "admob.rewarded.exitApp";
         public static final String REWARDED_IMPRESSION = "admob.rewarded.impression";
         public static final String REWARDED_LOAD = "admob.rewarded.load";
         public static final String REWARDED_LOAD_FAIL = "admob.rewarded.loadFail";
