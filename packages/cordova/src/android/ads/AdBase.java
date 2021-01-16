@@ -1,5 +1,6 @@
 package admob.plugin.ads;
 
+import android.app.Activity;
 import android.util.SparseArray;
 
 import org.json.JSONException;
@@ -36,6 +37,10 @@ public abstract class AdBase {
             e.printStackTrace();
         }
         return data;
+    }
+
+    protected Activity getActivity() {
+        return plugin.cordova.getActivity();
     }
 
     public void destroy() {

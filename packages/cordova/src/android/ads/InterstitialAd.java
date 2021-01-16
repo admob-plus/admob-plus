@@ -32,7 +32,7 @@ public class InterstitialAd extends AdBase {
     public void load(AdRequest adRequest, String adUnitID) {
         clear();
 
-        interstitialAd = new com.google.android.gms.ads.InterstitialAd(plugin.cordova.getActivity());
+        interstitialAd = new com.google.android.gms.ads.InterstitialAd(getActivity());
         interstitialAd.setAdUnitId(adUnitID);
         interstitialAd.setAdListener(new AdListener() {
             @Override

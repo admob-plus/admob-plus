@@ -1,5 +1,6 @@
 package admob.plugin.ads;
 
+import android.app.Activity;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,7 +43,7 @@ public class BannerAd extends AdBase {
 
     public void show(AdRequest adRequest) {
         if (adView == null) {
-            adView = new AdView(plugin.cordova.getActivity());
+            adView = new AdView(getActivity());
             adView.setAdUnitId(adUnitID);
             adView.setAdSize(adSize);
             adView.setAdListener(new AdListener() {

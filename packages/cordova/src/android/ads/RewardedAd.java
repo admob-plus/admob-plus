@@ -37,7 +37,7 @@ public class RewardedAd extends AdBase {
     public void createAndLoad(AdRequest adRequest) {
         clear();
 
-        rewardedAd = new com.google.android.gms.ads.rewarded.RewardedAd(plugin.cordova.getActivity(), this.adUnitID);
+        rewardedAd = new com.google.android.gms.ads.rewarded.RewardedAd(getActivity(), this.adUnitID);
         rewardedAd.loadAd(adRequest, new RewardedAdLoadCallback() {
             @Override
             public void onRewardedAdLoaded() {
@@ -59,7 +59,7 @@ public class RewardedAd extends AdBase {
         if (!isLoaded()) {
             return;
         }
-        rewardedAd.show(plugin.cordova.getActivity(), new RewardedAdCallback() {
+        rewardedAd.show(getActivity(), new RewardedAdCallback() {
             @Override
             public void onRewardedAdOpened() {
                 plugin.emit(Events.REWARDED_OPEN);
