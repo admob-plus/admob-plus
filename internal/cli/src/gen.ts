@@ -53,11 +53,8 @@ const Events = _.mapValues(
     rewardedLoadFail: 'rewarded.loadFail',
     rewardedOpen: 'rewarded.open',
     rewardedClose: 'rewarded.close',
-    rewardedStart: 'rewarded.start',
-    rewardedComplete: 'rewarded.complete',
     rewardedReward: 'rewarded.reward',
-    rewardedImpression: 'rewarded.impression',
-    rewardedClick: 'rewarded.click',
+    rewardedShowFail: 'rewarded.showFail',
   },
   (v, k) => `admob.${v === null ? k : v}`,
 )
@@ -95,7 +92,7 @@ function buildJava(): string {
     .join('\n')
 
   const linesAdSizeType = [
-    `${indent4(2)}${AdSizeTypes.map((s) => `${s}`).join(', ')}`,
+    `${indent4(2)}${AdSizeTypes.map((s) => `${s}`).join(', ')};`,
     '',
     `${indent4(2)}public static AdSize getAdSize(Object adSize) {`,
     ..._.flatMap(AdSizeTypes, (s) => [

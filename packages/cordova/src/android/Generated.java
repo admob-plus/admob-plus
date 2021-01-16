@@ -34,19 +34,16 @@ public final class Generated {
         public static final String INTERSTITIAL_LOAD_FAIL = "admob.interstitial.loadFail";
         public static final String INTERSTITIAL_OPEN = "admob.interstitial.open";
         public static final String READY = "admob.ready";
-        public static final String REWARDED_CLICK = "admob.rewarded.click";
         public static final String REWARDED_CLOSE = "admob.rewarded.close";
-        public static final String REWARDED_COMPLETE = "admob.rewarded.complete";
-        public static final String REWARDED_IMPRESSION = "admob.rewarded.impression";
         public static final String REWARDED_LOAD = "admob.rewarded.load";
         public static final String REWARDED_LOAD_FAIL = "admob.rewarded.loadFail";
         public static final String REWARDED_OPEN = "admob.rewarded.open";
         public static final String REWARDED_REWARD = "admob.rewarded.reward";
-        public static final String REWARDED_START = "admob.rewarded.start";
+        public static final String REWARDED_SHOW_FAIL = "admob.rewarded.showFail";
     }
 
     public enum AdSizeType {
-        BANNER, LARGE_BANNER, MEDIUM_RECTANGLE, FULL_BANNER, LEADERBOARD, SMART_BANNER
+        BANNER, LARGE_BANNER, MEDIUM_RECTANGLE, FULL_BANNER, LEADERBOARD, SMART_BANNER;
 
         public static AdSize getAdSize(Object adSize) {
             if (AdSizeType.BANNER.equals(adSize)) {

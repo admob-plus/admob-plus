@@ -30,15 +30,12 @@ export enum Events {
   interstitialLoadFail = 'admob.interstitial.loadFail',
   interstitialOpen = 'admob.interstitial.open',
   ready = 'admob.ready',
-  rewardedClick = 'admob.rewarded.click',
   rewardedClose = 'admob.rewarded.close',
-  rewardedComplete = 'admob.rewarded.complete',
-  rewardedImpression = 'admob.rewarded.impression',
   rewardedLoad = 'admob.rewarded.load',
   rewardedLoadFail = 'admob.rewarded.loadFail',
   rewardedOpen = 'admob.rewarded.open',
   rewardedReward = 'admob.rewarded.reward',
-  rewardedStart = 'admob.rewarded.start',
+  rewardedShowFail = 'admob.rewarded.showFail',
 }
 
 export enum AdSizeType {

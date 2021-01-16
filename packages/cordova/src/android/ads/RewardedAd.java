@@ -77,7 +77,7 @@ public class RewardedAd extends AdBase {
 
             @Override
             public void onRewardedAdFailedToShow(AdError adError) {
-                // Ad failed to display.
+                plugin.emit(Events.REWARDED_SHOW_FAIL, buildErrorPayload(adError.getCode()));
             }
         });
     }
