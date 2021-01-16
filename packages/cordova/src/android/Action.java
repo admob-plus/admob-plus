@@ -15,6 +15,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+import admob.plugin.Generated.AdSizeType;
 import admob.plugin.ads.AdBase;
 
 public class Action {
