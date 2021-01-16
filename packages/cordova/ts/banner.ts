@@ -6,24 +6,29 @@ enum Position {
   bottom = 'bottom',
 }
 
-type ShowOptions = {
+type Options = {
   position?: Position
   size?: AdSizeType
 }
 
 export default class BannerAd extends MobileAd {
   public readonly Position = Position
+  private opts: Options
 
-  constructor({ adUnitId }: MobileAdOptions) {
+  constructor({ adUnitId, ...opts }: MobileAdOptions & Options) {
     super({ adUnitId })
+
+    this.opts = {
+      position: Position.bottom,
+      size: AdSizeType.SMART_BANNER,
+      ...opts,
+    }
   }
 
-  public show(opts: ShowOptions) {
+  public show(opts: Options) {
     return execAsync(NativeActions.bannerShow, [
       {
-        position: Position.bottom,
-        size: AdSizeType.SMART_BANNER,
-        ...opts,
+        ...this.opts,
         adUnitID: this.adUnitId,
         id: this.id,
       },
