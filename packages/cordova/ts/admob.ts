@@ -4,7 +4,7 @@ import {
   execAsync,
   fireDocumentEvent,
   NativeActions,
-  RequestConfig
+  RequestConfig,
 } from './base'
 import InterstitialAd from './interstitial'
 import RewardedAd from './rewarded'
@@ -46,6 +46,10 @@ class AdMob {
       NativeActions.ready,
     )
   }
+}
+
+declare global {
+  const admob: AdMob
 }
 
 const admob = new AdMob()
