@@ -10,7 +10,7 @@
       "es2015"
     ],
     "rootDir": "ts",
-    "outDir": "www",
+    "outDir": "lib",
     "types": ["node"]
   },
   "include": [

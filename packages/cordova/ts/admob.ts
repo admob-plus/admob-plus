@@ -1,13 +1,13 @@
 import { exec } from 'cordova'
 import BannerAd from './banner'
+import InterstitialAd from './interstitial'
+import RewardedAd from './rewarded'
 import {
   execAsync,
   fireDocumentEvent,
   NativeActions,
-  RequestConfig,
-} from './base'
-import InterstitialAd from './interstitial'
-import RewardedAd from './rewarded'
+  RequestConfig
+} from './shared'
 
 class AdMob {
   public readonly BannerAd = BannerAd
@@ -46,10 +46,6 @@ class AdMob {
       NativeActions.ready,
     )
   }
-}
-
-declare global {
-  const admob: AdMob
 }
 
 const admob = new AdMob()

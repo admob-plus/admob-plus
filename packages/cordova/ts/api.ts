@@ -1,4 +1,3 @@
-import { exec } from 'cordova'
 import { AdSizeType, Events, NativeActions } from './generated'
 
 export type MobileAdOptions = { adUnitId: string }
@@ -49,40 +48,4 @@ export type RequestConfig = {
 export const enum Platforms {
   android = 'android',
   ios = 'ios',
-}
-
-export function execAsync(action: NativeActions, args?: any[]) {
-  return new Promise((resolve, reject) => {
-    exec(resolve, reject, NativeActions.Service, action, args)
-  })
-}
-
-export function fireDocumentEvent(eventName: string, data = null) {
-  const event = new CustomEvent(eventName, { detail: data })
-  document.dispatchEvent(event)
-}
-
-export function waitEvent(
-  successEvent: string,
-  failEvent = '',
-): Promise<CustomEvent> {
-  return new Promise((resolve, reject) => {
-    document.addEventListener(
-      successEvent as any,
-      (event: CustomEvent) => {
-        resolve(event)
-      },
-      false,
-    )
-
-    if (failEvent) {
-      document.addEventListener(
-        failEvent as any,
-        (failedEvent: CustomEvent) => {
-          reject(failedEvent)
-        },
-        false,
-      )
-    }
-  })
 }

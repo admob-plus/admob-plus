@@ -1,5 +1,10 @@
-import type { MobileAdOptions } from './base'
-import { AdSizeType, execAsync, MobileAd, NativeActions } from './base'
+import {
+  AdSizeType,
+  execAsync,
+  MobileAd,
+  MobileAdOptions,
+  NativeActions,
+} from './shared'
 
 type Position = 'top' | 'bottom'
 

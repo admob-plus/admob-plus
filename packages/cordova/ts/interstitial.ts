@@ -1,5 +1,11 @@
-import type { MobileAdOptions } from './base'
-import { Events, execAsync, MobileAd, NativeActions, waitEvent } from './base'
+import {
+  Events,
+  execAsync,
+  MobileAd,
+  MobileAdOptions,
+  NativeActions,
+  waitEvent,
+} from './shared'
 
 export default class InterstitialAd extends MobileAd {
   constructor({ adUnitId }: MobileAdOptions) {

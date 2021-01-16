@@ -2,10 +2,10 @@
   "name": "cordova-admob-plus",
   "version": "0.42.0",
   "description": "Trustable Google AdMob Cordova Plugin",
-  "main": "www/admob.js",
-  "typings": "www/admob.d.ts",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
   "scripts": {
-    "prepack": "rollup -c"
+    "prepack": "rollup -c && tsc -b"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",
@@ -14,7 +14,8 @@
     "@types/cordova": "^0.0.34",
     "cordova": "10.0.0",
     "npm-run-all": "^4.1.5",
-    "rollup": "^2.36.2"
+    "rollup": "^2.36.2",
+    "typescript": "^4.1.3"
   },
   "author": "Ratson",
   "license": "MIT",
@@ -24,6 +25,7 @@
     "*.ts",
     "*.md",
     "*.xml",
+    "lib",
     "src",
     "ts",
     "www"

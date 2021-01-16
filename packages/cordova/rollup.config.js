@@ -2,11 +2,13 @@ import commonjs from '@rollup/plugin-commonjs'
 import resolve from '@rollup/plugin-node-resolve'
 import typescript from '@rollup/plugin-typescript'
 
+const outDir = 'www'
+
 export default {
   external: ['cordova'],
   input: './ts/admob.ts',
   output: {
-    dir: 'www',
+    dir: outDir,
     format: 'cjs',
     sourcemap: false,
     exports: 'default',
@@ -19,6 +21,8 @@ export default {
     typescript({
       module: 'es2015',
       composite: false,
+      declaration: false,
+      outDir,
     }),
     commonjs(),
   ],
