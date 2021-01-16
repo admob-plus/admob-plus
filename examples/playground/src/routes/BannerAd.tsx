@@ -1,20 +1,22 @@
 import { Button, ButtonGroup, Box } from '@chakra-ui/react'
+import { Global } from '@emotion/react'
 import * as React from 'react'
 
 export interface BannerProps {}
 
-let bannerTop: any
-let banner: any
-
-const Banner: React.FC<BannerProps> = () => {
-  React.useEffect(() => {
-    bannerTop = new admob.BannerAd({
-      adUnitId: 'ca-app-pub-3940256099942544/6300978111',
-    })
-    banner = new admob.BannerAd({
-      adUnitId: 'ca-app-pub-3940256099942544/2934735716',
-    })
-  }, [])
+const BannerAd: React.FC<BannerProps> = () => {
+  const banners = React.useMemo(
+    () => ({
+      top: new admob.BannerAd({
+        adUnitId: 'ca-app-pub-3940256099942544/6300978111',
+        position: 'top',
+      }),
+      bottom: new admob.BannerAd({
+        adUnitId: 'ca-app-pub-3940256099942544/6300978111',
+      }),
+    }),
+    [admob],
+  )
 
   return (
     <div>
@@ -22,14 +24,14 @@ const Banner: React.FC<BannerProps> = () => {
         <ButtonGroup>
           <Button
             onClick={() => {
-              bannerTop.show({ position: 'top' })
+              banners.top.show()
             }}
           >
             show top
           </Button>
           <Button
             onClick={() => {
-              bannerTop.hide()
+              banners.top.hide()
             }}
           >
             hide top
@@ -39,14 +41,14 @@ const Banner: React.FC<BannerProps> = () => {
       <ButtonGroup>
         <Button
           onClick={() => {
-            banner.show({ position: 'bottom' })
+            banners.bottom.show()
           }}
         >
           show bottom
         </Button>
         <Button
           onClick={() => {
-            banner.hide()
+            banners.bottom.hide()
           }}
         >
           hide bottom
@@ -56,4 +58,4 @@ const Banner: React.FC<BannerProps> = () => {
   )
 }
 
-export default Banner
+export default BannerAd

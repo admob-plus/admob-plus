@@ -3,19 +3,27 @@ import * as React from 'react'
 
 export interface InterstitialProps {}
 
-const Interstitial: React.FC<InterstitialProps> = () => {
+const InterstitialAd: React.FC<InterstitialProps> = () => {
+  const interstitial = React.useMemo(
+    () =>
+      new admob.InterstitialAd({
+        adUnitId: 'ca-app-pub-3940256099942544/1033173712',
+      }),
+    [admob],
+  )
+
   return (
     <div>
       <Button
         onClick={() => {
-          admob.interstitial.load({ id: 'test' })
+          interstitial.load()
         }}
       >
         load
       </Button>
       <Button
         onClick={() => {
-          admob.interstitial.show()
+          interstitial.show()
         }}
       >
         show
@@ -24,4 +32,4 @@ const Interstitial: React.FC<InterstitialProps> = () => {
   )
 }
 
-export default Interstitial
+export default InterstitialAd

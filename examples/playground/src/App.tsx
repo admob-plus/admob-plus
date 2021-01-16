@@ -4,15 +4,15 @@ import {
   Heading,
   HStack,
   Link,
-  SimpleGrid
+  SimpleGrid,
 } from '@chakra-ui/react'
 import React from 'react'
 import { Link as RouterLink, Route, Routes } from 'react-router-dom'
 import Logs from './components/Logs'
-import Banner from './routes/Banner'
+import BannerAd from './routes/BannerAd'
 import Home from './routes/Home'
-import Interstitial from './routes/Interstitial'
-import RewardVideo from './routes/RewardVideo'
+import InterstitialAd from './routes/InterstitialAd'
+import RewardedAd from './routes/RewardedAd'
 
 interface AppProps {}
 
@@ -28,22 +28,22 @@ const App: React.FC<AppProps> = ({}) => {
           </Heading>
           <HStack as="nav">
             <Link as={RouterLink} to="/banner">
-              Banner
+              Banner Ad
             </Link>
             <Link as={RouterLink} to="/interstitial">
-              Interstitial
+              Interstitial Ad
             </Link>
-            <Link as={RouterLink} to="/reward-video">
-              Reward Video
+            <Link as={RouterLink} to="/rewarded">
+              Rewarded Ad
             </Link>
           </HStack>
         </Box>
         <Box>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="banner" element={<Banner />} />
-            <Route path="interstitial" element={<Interstitial />} />
-            <Route path="reward-video" element={<RewardVideo />} />
+            <Route path="banner" element={<BannerAd />} />
+            <Route path="interstitial" element={<InterstitialAd />} />
+            <Route path="rewarded" element={<RewardedAd />} />
           </Routes>
         </Box>
         <Box bg="#F5F5F5">

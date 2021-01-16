@@ -3,19 +3,27 @@ import * as React from 'react'
 
 export interface RewardVideoProps {}
 
-const RewardVideo: React.FC<RewardVideoProps> = () => {
+const RewardedAd: React.FC<RewardVideoProps> = () => {
+  const rewarded = React.useMemo(
+    () =>
+      new admob.RewardedAd({
+        adUnitId: 'ca-app-pub-3940256099942544/5224354917',
+      }),
+    [admob],
+  )
+
   return (
     <div>
       <Button
         onClick={() => {
-          admob.rewardVideo.load({ id: 'test' })
+          rewarded.load()
         }}
       >
         load
       </Button>
       <Button
         onClick={() => {
-          admob.rewardVideo.show()
+          rewarded.show()
         }}
       >
         show
@@ -24,4 +32,4 @@ const RewardVideo: React.FC<RewardVideoProps> = () => {
   )
 }
 
-export default RewardVideo
+export default RewardedAd
