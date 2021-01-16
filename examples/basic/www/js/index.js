@@ -12,38 +12,38 @@ const app = {
   onDeviceReady() {
     this.receivedEvent('deviceready')
 
-    this.showAds()
-    this.checkIsLoaded()
+    this.showBannerAd()
+    this.showBannerAdTop()
+    this.showInterstitialAd()
+    this.showRewardedAd()
   },
 
-  checkIsLoaded() {
-    return admob.interstitial.isLoaded().then(result => {
-      console.log(result)
-      return result
-    })
-  },
-
-  showAds() {
-    const bannerTop = new admob.BannerAd({
+  showBannerAd() {
+    const banner = new admob.BannerAd({
       adUnitId: 'ca-app-pub-3940256099942544/6300978111',
     })
-    bannerTop.show({ position: 'top' })
-    const banner = new admob.BannerAd({
-      adUnitId: 'ca-app-pub-3940256099942544/2934735716',
-    })
-    banner.show({ position: 'bottom' })
+    return banner.show({ position: 'bottom' })
   },
 
-  showAdsOld() {
-    admob.banner.show({ id: 'test', npa: '1' }).catch(console.log)
-    admob.interstitial
-      .load({ id: 'test' })
-      .then(() => admob.interstitial.show())
-      .catch(console.log)
-    admob.rewardVideo
-      .load({ id: 'test' })
-      .then(() => admob.rewardVideo.show())
-      .catch(console.log)
+  showBannerAdTop() {
+    const banner = new admob.BannerAd({
+      adUnitId: 'ca-app-pub-3940256099942544/6300978111',
+    })
+    return banner.show({ position: 'top' })
+  },
+
+  showInterstitialAd() {
+    const interstitial = new admob.InterstitialAd({
+      adUnitId: 'ca-app-pub-3940256099942544/1033173712',
+    })
+    return interstitial.load().then(() => interstitial.show())
+  },
+
+  showRewardedAd() {
+    const rewarded = new admob.RewardedAd({
+      adUnitId: 'ca-app-pub-3940256099942544/5224354917',
+    })
+    return rewarded.load().then(() => rewarded.show())
   },
 
   receivedEvent(id) {
