@@ -126,8 +126,10 @@ ${linesAdSizeType}
 }
 
 function buildGeneratedSwift(): string {
-  const linesEvents = Object.keys(Events)
-    .map((k) => `    static let ${_.camelCase(k)} = "${Events[k]}"`)
+  const linesEvents = _.map(
+    Events,
+    (v, k) => `${indent4(1)}static let ${_.camelCase(k)} = "${v}"`,
+  )
     .sort()
     .join('\n')
 
