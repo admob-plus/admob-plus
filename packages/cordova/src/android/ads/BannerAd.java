@@ -19,7 +19,7 @@ public class BannerAd extends AdBase {
     private final AdSize adSize;
     private final int gravity;
     private AdView adView;
-    private ViewGroup parentView;
+    private static ViewGroup parentView;
 
     BannerAd(int id, String adUnitID, AdSize adSize, int gravity) {
         super(id, adUnitID);
