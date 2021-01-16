@@ -30,7 +30,6 @@ const linkPlugin = async (
       cordovaBin,
       'plugin',
       'add',
-      '--link',
       '--nosave',
       '--searchpath',
       pkgsDirJoin(),
@@ -119,7 +118,7 @@ const androidOpen = async (opts: { cwd: string }) => {
   const { cwd } = opts
   const pkgExample = await readPkg({ cwd })
   const pluginPkgs = await collectPluginPkgs(pkgExample)
-  await Promise.all(
+  const watchTasks = await Promise.all(
     pluginPkgs.map(async (pkg) => {
       const javaPackagePath = resolveJavaPackagePath(pkg.name)
       const targetDir = path.join(
@@ -127,9 +126,23 @@ const androidOpen = async (opts: { cwd: string }) => {
         'platforms/android/app/src/main/java',
         javaPackagePath,
       )
-      await del([targetDir], { cwd })
 
-      await linkDir(path.join(pkg.dir, 'src/android'), targetDir)
+      await nodeBin(
+        [copyAndWatchBin, path.join(pkg.dir, 'src/android/**/*'), targetDir],
+        { cwd },
+      )
+
+      return () =>
+        nodeBin(
+          [
+            copyAndWatchBin,
+            '--watch',
+            '--skip-initial-copy',
+            `${targetDir}/**/*`,
+            path.join(pkg.dir, 'src/android'),
+          ],
+          { cwd },
+        )
     }),
   )
 
@@ -137,6 +150,8 @@ const androidOpen = async (opts: { cwd: string }) => {
     stdio: 'inherit',
     cwd,
   })
+
+  await Promise.all(watchTasks.map((f) => f()))
 }
 
 const iosOpen = async (opts: { cwd: string }) => {
