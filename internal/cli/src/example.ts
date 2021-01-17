@@ -121,27 +121,38 @@ const androidOpen = async (opts: { cwd: string }) => {
   const watchTasks = await Promise.all(
     pluginPkgs.map(async (pkg) => {
       const javaPackagePath = resolveJavaPackagePath(pkg.name)
-      const targetDir = path.join(
-        cwd,
-        'platforms/android/app/src/main/java',
-        javaPackagePath,
-      )
+      const targetDirs = [
+        path.join(cwd, 'platforms/android/app/src/main/java', javaPackagePath),
+        path.join(cwd, 'plugins', pkg.name, 'src/android'),
+      ]
 
-      await nodeBin(
-        [copyAndWatchBin, path.join(pkg.dir, 'src/android/**/*'), targetDir],
-        { cwd },
+      await Promise.all(
+        targetDirs.map((targetDir) =>
+          nodeBin(
+            [
+              copyAndWatchBin,
+              path.join(pkg.dir, 'src/android/**/*'),
+              targetDir,
+            ],
+            { cwd },
+          ),
+        ),
       )
 
       return () =>
-        nodeBin(
-          [
-            copyAndWatchBin,
-            '--watch',
-            '--skip-initial-copy',
-            `${targetDir}/**/*`,
-            path.join(pkg.dir, 'src/android'),
-          ],
-          { cwd },
+        Promise.all(
+          targetDirs.map((targetDir) =>
+            nodeBin(
+              [
+                copyAndWatchBin,
+                '--watch',
+                '--skip-initial-copy',
+                `${targetDir}/**/*`,
+                path.join(pkg.dir, 'src/android'),
+              ],
+              { cwd },
+            ),
+          ),
         )
     }),
   )
@@ -159,31 +170,44 @@ const iosOpen = async (opts: { cwd: string }) => {
   const pkgExample = await readPkg({ cwd })
   const pluginPkgs = await collectPluginPkgs(pkgExample)
 
+  const configXML = await fsp.readFile(path.join(cwd, 'config.xml'), 'utf-8')
+  const config = await parseStringPromise(configXML)
+  const name = config.widget.name[0]
+
   const watchTasks = await Promise.all(
     pluginPkgs.map(async (pkg) => {
-      const targetDir = path.join(cwd, 'plugins', pkg.name, 'src/ios')
-      await nodeBin(
-        [copyAndWatchBin, path.join(pkg.dir, 'src/ios/**/*'), targetDir],
-        { cwd },
+      const targetDirs = [
+        path.join(cwd, 'platforms/ios', name, 'Plugin', pkg.name),
+        path.join(cwd, 'plugins', pkg.name, 'src/ios'),
+      ]
+
+      await Promise.all(
+        targetDirs.map((targetDir) =>
+          nodeBin(
+            [copyAndWatchBin, path.join(pkg.dir, 'src/ios/**/*'), targetDir],
+            { cwd },
+          ),
+        ),
       )
 
       return () =>
-        nodeBin(
-          [
-            copyAndWatchBin,
-            '--watch',
-            '--skip-initial-copy',
-            `${targetDir}/**/*`,
-            path.join(pkg.dir, 'src/ios'),
-          ],
-          { cwd },
+        Promise.all(
+          targetDirs.map((targetDir) =>
+            nodeBin(
+              [
+                copyAndWatchBin,
+                '--watch',
+                '--skip-initial-copy',
+                `${targetDir}/**/*`,
+                path.join(pkg.dir, 'src/ios'),
+              ],
+              { cwd },
+            ),
+          ),
         )
     }),
   )
 
-  const configXML = await fsp.readFile(path.join(cwd, 'config.xml'), 'utf-8')
-  const config = await parseStringPromise(configXML)
-  const name = config.widget.name[0]
   await execa('open', [`platforms/ios/${name}.xcworkspace`], {
     stdio: 'inherit',
     cwd,
