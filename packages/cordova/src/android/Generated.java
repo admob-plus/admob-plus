@@ -5,16 +5,16 @@ import com.google.android.gms.ads.AdSize;
 
 public final class Generated {
     public final class Actions {
-        public static final String BANNER_HIDE = "banner.hide";
-        public static final String BANNER_SHOW = "banner.show";
+        public static final String BANNER_HIDE = "bannerHide";
+        public static final String BANNER_SHOW = "bannerShow";
         public static final String CONFIG_REQUEST = "configRequest";
-        public static final String INTERSTITIAL_IS_LOADED = "interstitial.isLoaded";
-        public static final String INTERSTITIAL_LOAD = "interstitial.load";
-        public static final String INTERSTITIAL_SHOW = "interstitial.show";
+        public static final String INTERSTITIAL_IS_LOADED = "interstitialIsLoaded";
+        public static final String INTERSTITIAL_LOAD = "interstitialLoad";
+        public static final String INTERSTITIAL_SHOW = "interstitialShow";
         public static final String READY = "ready";
-        public static final String REWARDED_IS_LOADED = "rewarded.isLoaded";
-        public static final String REWARDED_LOAD = "rewarded.load";
-        public static final String REWARDED_SHOW = "rewarded.show";
+        public static final String REWARDED_IS_LOADED = "rewardedIsLoaded";
+        public static final String REWARDED_LOAD = "rewardedLoad";
+        public static final String REWARDED_SHOW = "rewardedShow";
         public static final String SET_APP_MUTED = "setAppMuted";
         public static final String SET_APP_VOLUME = "setAppVolume";
     }

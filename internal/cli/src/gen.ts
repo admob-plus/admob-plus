@@ -16,16 +16,16 @@ const Actions = _.mapValues(
     setAppMuted: null,
     setAppVolume: null,
     // BannerAd
-    bannerShow: 'banner.show',
-    bannerHide: 'banner.hide',
+    bannerShow: null,
+    bannerHide: null,
     // InterstitialAd
-    interstitialIsLoaded: 'interstitial.isLoaded',
-    interstitialLoad: 'interstitial.load',
-    interstitialShow: 'interstitial.show',
+    interstitialIsLoaded: null,
+    interstitialLoad: null,
+    interstitialShow: null,
     // RewardedAd
-    rewardedIsLoaded: 'rewarded.isLoaded',
-    rewardedLoad: 'rewarded.load',
-    rewardedShow: 'rewarded.show',
+    rewardedIsLoaded: null,
+    rewardedLoad: null,
+    rewardedShow: null,
   },
   (v, k) => (v === null ? k : v),
 )
