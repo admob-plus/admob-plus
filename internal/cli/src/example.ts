@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-import linkDir from '@frat/link-dir'
+import chokidar from 'chokidar'
+import cpy from 'cpy'
 import del from 'del'
 import execa from 'execa'
 import fsp from 'fs/promises'
@@ -10,10 +11,25 @@ import { parseStringPromise } from 'xml2js'
 import yargs from 'yargs'
 import { collectPkgs, pkgsDirJoin } from './utils'
 
-const copyAndWatchBin = require.resolve('copy-and-watch/bin/copy-and-watch')
 const cordovaBin = require.resolve('cordova/bin/cordova')
 const nodeBin = (args: string[], opts: execa.Options<string>) =>
   execa('yarn', ['node', ...args], { stdio: 'inherit', ...opts })
+
+const watchCopy = async (sourceDir: string, targetDir: string) =>
+  new Promise(() => {
+    console.log(sourceDir, '->', targetDir)
+
+    chokidar.watch(sourceDir).on('all', async (event, filepath) => {
+      if (!['add', 'change'].includes(event)) {
+        return
+      }
+      console.log(event, filepath)
+      await cpy(path.relative(sourceDir, filepath), targetDir, {
+        parents: true,
+        cwd: path.resolve(sourceDir),
+      })
+    })
+  })
 
 const linkPlugin = async (
   plugin: string,
@@ -128,30 +144,17 @@ const androidOpen = async (opts: { cwd: string }) => {
 
       await Promise.all(
         targetDirs.map((targetDir) =>
-          nodeBin(
-            [
-              copyAndWatchBin,
-              path.join(pkg.dir, 'src/android/**/*'),
-              targetDir,
-            ],
-            { cwd },
-          ),
+          cpy('**/*', targetDir, {
+            parents: true,
+            cwd: path.join(pkg.dir, 'src/android'),
+          }),
         ),
       )
 
       return () =>
         Promise.all(
           targetDirs.map((targetDir) =>
-            nodeBin(
-              [
-                copyAndWatchBin,
-                '--watch',
-                '--skip-initial-copy',
-                `${targetDir}/**/*`,
-                path.join(pkg.dir, 'src/android'),
-              ],
-              { cwd },
-            ),
+            watchCopy(targetDir, path.join(pkg.dir, 'src/android')),
           ),
         )
     }),
@@ -183,26 +186,17 @@ const iosOpen = async (opts: { cwd: string }) => {
 
       await Promise.all(
         targetDirs.map((targetDir) =>
-          nodeBin(
-            [copyAndWatchBin, path.join(pkg.dir, 'src/ios/**/*'), targetDir],
-            { cwd },
-          ),
+          cpy('**/*', targetDir, {
+            parents: true,
+            cwd: path.join(pkg.dir, 'src/ios'),
+          }),
         ),
       )
 
       return () =>
         Promise.all(
           targetDirs.map((targetDir) =>
-            nodeBin(
-              [
-                copyAndWatchBin,
-                '--watch',
-                '--skip-initial-copy',
-                `${targetDir}/**/*`,
-                path.join(pkg.dir, 'src/ios'),
-              ],
-              { cwd },
-            ),
+            watchCopy(targetDir, path.join(pkg.dir, 'src/ios')),
           ),
         )
     }),
