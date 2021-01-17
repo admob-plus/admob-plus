@@ -3,7 +3,6 @@ class AMSRewardVideo: AMSAdBase, GADRewardedAdDelegate {
 
     override init(id: Int, adUnitID: String) {
         super.init(id: id, adUnitID: adUnitID)
-        rewardBasedVideo = GADRewardedAd(adUnitID: adUnitID)
     }
 
     deinit {
@@ -15,8 +14,16 @@ class AMSRewardVideo: AMSAdBase, GADRewardedAdDelegate {
     }
 
     func load(request: GADRequest) {
-        if rewardBasedVideo?.isReady == false {
-            rewardBasedVideo?.load(request)
+        let rewardBasedVideo = GADRewardedAd(adUnitID: adUnitID)
+        self.rewardBasedVideo = rewardBasedVideo
+
+        rewardBasedVideo.load(request) { error in
+            if let error = error {
+                NSLog("Error while loading the reward based video: %@", error)
+                self.plugin.emit(eventType: AMSEvents.rewardVideoLoadFail)
+            } else {
+                self.plugin.emit(eventType: AMSEvents.rewardVideoLoad)
+            }
         }
     }
 
