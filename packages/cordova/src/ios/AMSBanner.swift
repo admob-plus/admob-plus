@@ -149,8 +149,4 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
     func adViewDidDismissScreen(_ bannerView: GADBannerView) {
         plugin.emit(eventType: AMSEvents.bannerClose)
     }
-
-    func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
-        plugin.emit(eventType: AMSEvents.bannerExitApp)
-    }
 }

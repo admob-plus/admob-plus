@@ -42,9 +42,4 @@ class AMSInterstitial: AMSAdBase, GADInterstitialDelegate {
     func interstitialWillPresentScreen(_ adInterstitial: GADInterstitial) {
         plugin.emit(eventType: AMSEvents.interstitialOpen)
     }
-
-    @objc
-    func interstitialWillLeaveApplication(_ adInterstitial: GADInterstitial) {
-        plugin.emit(eventType: AMSEvents.interstitialExitApp)
-    }
 }
