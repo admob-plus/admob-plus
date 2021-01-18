@@ -199,7 +199,7 @@ class AMSPlugin: CDVPlugin {
         return request
     }
 
-    func emit(eventType: String, data: Any = false) {
+    func emit(eventType: String, data: Any = NSNull()) {
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: ["type": eventType, "data": data])
         result?.setKeepCallbackAs(true)
         self.commandDelegate!.send(result, callbackId: readyCallbackId)

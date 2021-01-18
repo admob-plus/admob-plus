@@ -217,7 +217,7 @@ public class AdMob extends CordovaPlugin {
     }
 
     public void emit(String eventType) {
-        emit(eventType, false);
+        emit(eventType, null);
     }
 
     public void emit(String eventType, Object data) {
