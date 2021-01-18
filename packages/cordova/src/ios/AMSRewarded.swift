@@ -16,7 +16,13 @@ class AMSRewarded: AMSAdBase, GADRewardedAdDelegate {
 
     func load(request: GADRequest) {
         if rewardedAd?.isReady == false {
-            rewardedAd?.load(request)
+            rewardedAd?.load(GADRequest()) { error in
+                if error != nil {
+                    self.plugin.emit(eventType: AMSEvents.rewardedLoad)
+                } else {
+                    self.plugin.emit(eventType: AMSEvents.rewardedLoadFail)
+                }
+            }
         }
     }
 
