@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@admob-plus-internal/tsconfig": "file:../tsconfig",
-    "chokidar": "^3.5.1",
+    "@frat/sane": "^4.2.1",
     "cordova": "^10.0.0",
     "cpy": "^8.1.1",
     "del": "^6.0.0",

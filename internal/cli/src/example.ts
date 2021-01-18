@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import chokidar from 'chokidar'
+import sane from '@frat/sane'
 import cpy from 'cpy'
 import del from 'del'
 import execa from 'execa'
@@ -15,21 +15,22 @@ const cordovaBin = require.resolve('cordova/bin/cordova')
 const nodeBin = (args: string[], opts: execa.Options<string>) =>
   execa('yarn', ['node', ...args], { stdio: 'inherit', ...opts })
 
-const watchCopy = async (sourceDir: string, targetDir: string) =>
-  new Promise(() => {
-    console.log(sourceDir, '->', targetDir)
+const watchCopy = async (sourceDir: string, targetDir: string) => {
+  console.log(sourceDir, '->', targetDir)
 
-    chokidar.watch(sourceDir).on('all', async (event, filepath) => {
-      if (!['add', 'change'].includes(event)) {
-        return
-      }
-      console.log(event, filepath)
-      await cpy(path.relative(sourceDir, filepath), targetDir, {
+  const watcher = sane(sourceDir, { glob: ['**/*'] })
+
+  return new Promise(() => {
+    watcher.on('change', async (filepath: string, root: string) => {
+      console.log('file changed', filepath)
+
+      await cpy(filepath, targetDir, {
         parents: true,
-        cwd: path.resolve(sourceDir),
+        cwd: root,
       })
     })
   })
+}
 
 const linkPlugin = async (
   plugin: string,
@@ -180,7 +181,7 @@ const iosOpen = async (opts: { cwd: string }) => {
   const watchTasks = await Promise.all(
     pluginPkgs.map(async (pkg) => {
       const targetDirs = [
-        path.join(cwd, 'platforms/ios', name, 'Plugin', pkg.name),
+        path.join(cwd, 'platforms/ios', name, 'Plugins', pkg.name),
         path.join(cwd, 'plugins', pkg.name, 'src/ios'),
       ]
 
