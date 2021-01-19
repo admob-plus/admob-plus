@@ -5,7 +5,7 @@
   "main": "www/consent.js",
   "typings": "www/consent.d.ts",
   "scripts": {
-    "prepack": "rollup -c"
+    "prepack": "yarn rollup -c"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",
