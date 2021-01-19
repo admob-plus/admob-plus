@@ -1,29 +1,17 @@
 {
   "command": {
-    "bootstrap": {
-      "npmClientArgs": [
-        "--no-package-lock"
-      ]
-    },
     "publish": {
       "conventionalCommits": true,
-      "ignoreChanges": [
-        "internal/**",
-        "**/__fixtures__/**",
-        "**/__tests__/**",
-        "**/*.md"
-      ],
       "message": "chore(release): publish"
     }
   },
   "ignoreChanges": [
+    "examples/**",
+    "internal/**",
     "**/__fixtures__/**",
     "**/__tests__/**",
     "**/*.md"
   ],
-  "packages": [
-    "internal/*",
-    "packages/*"
-  ],
+  "npmClient": "yarn",
   "version": "independent"
 }
