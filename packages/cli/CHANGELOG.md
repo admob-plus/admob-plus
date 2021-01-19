@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.0](https://github.com/admob-plus/admob-plus/compare/admob-plus@0.15.8...admob-plus@1.0.0-alpha.0) (2021-01-19)
+
+
+### Features
+
+* **playground:** update to use new API ([f1fc569](https://github.com/admob-plus/admob-plus/commit/f1fc569dc541ca11f7dd8f6acedf80cf76e2c62d))
+
+
+
+
+
 ## [0.15.8](https://github.com/admob-plus/admob-plus/compare/admob-plus@0.15.7...admob-plus@0.15.8) (2020-11-22)
 
 **Note:** Version bump only for package admob-plus

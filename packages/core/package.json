@@ -1,6 +1,6 @@
 {
   "name": "@admob-plus/core",
-  "version": "0.9.3",
+  "version": "1.0.0-alpha.0",
   "description": "AdMob Plus core",
   "main": "dist/index.js",
   "module": "dist/index.js",

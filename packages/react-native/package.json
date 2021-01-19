@@ -1,6 +1,6 @@
 {
   "name": "@admob-plus/react-native",
-  "version": "0.1.2",
+  "version": "1.0.0-alpha.0",
   "description": "AdMob Plus for React Native",
   "main": "index.js",
   "scripts": {
