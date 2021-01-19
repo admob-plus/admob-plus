@@ -9,7 +9,7 @@
     "dev-ios": "example open-ios"
   },
   "dependencies": {
-    "cordova-admob-plus": "*",
+    "admob-plus-cordova": "*",
     "cordova-android": "9.0.0",
     "cordova-browser": "6.0.0",
     "cordova-ios": "6.1.1",
@@ -21,7 +21,7 @@
   "cordova": {
     "plugins": {
       "cordova-plugin-whitelist": {},
-      "cordova-admob-plus": {
+      "admob-plus-cordova": {
         "APP_ID_ANDROID": "ca-app-pub-3940256099942544~3347511713",
         "APP_ID_IOS": "ca-app-pub-3940256099942544~1458002511"
       }

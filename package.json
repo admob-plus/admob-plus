@@ -86,7 +86,7 @@
   "resolutions": {
     "@admob-plus-internal/cli": "workspace:*",
     "@admob-plus-internal/tsconfig": "workspace:*",
-    "cordova-admob-plus": "workspace:*"
+    "admob-plus-cordova": "workspace:*"
   },
   "workspaces": [
     "examples/*",

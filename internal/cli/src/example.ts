@@ -122,7 +122,7 @@ const androidRun = async (argv: {
 
 const resolveJavaPackagePath = (pkgName: string) => {
   switch (pkgName) {
-    case 'cordova-admob-plus':
+    case 'admob-plus-cordova':
       return 'admob/plugin'
     case 'cordova-plugin-consent':
       return 'cordova/plugin/consent'

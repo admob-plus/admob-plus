@@ -7,10 +7,10 @@
     "ios": "cordova run ios"
   },
   "dependencies": {
-    "@chakra-ui/react": "^1.1.4",
+    "@chakra-ui/react": "^1.1.5",
     "@emotion/react": "^11.1.4",
     "@emotion/styled": "^11.0.0",
-    "cordova-admob-plus": "*",
+    "admob-plus-cordova": "*",
     "cordova-android": "^9.0.0",
     "cordova-browser": "^6.0.0",
     "cordova-ios": "^6.1.1",
@@ -34,7 +34,7 @@
     "@types/react-dom": "^17.0.0",
     "@types/snowpack-env": "^2.3.3",
     "cordova": "^10.0.0",
-    "core-js": "^3.8.2",
+    "core-js": "^3.8.3",
     "eslint-config-concise-esnext": "^0.40.1",
     "execa": "^5.0.0",
     "fs-extra": "^9.0.1",
@@ -52,7 +52,7 @@
     ],
     "plugins": {
       "cordova-plugin-whitelist": {},
-      "cordova-admob-plus": {
+      "admob-plus-cordova": {
         "APP_ID_ANDROID": "ca-app-pub-3940256099942544~3347511713",
         "APP_ID_IOS": "ca-app-pub-3940256099942544~1458002511"
       }

@@ -57,6 +57,6 @@ declare module '*.png' {
 }
 
 /* CUSTOM: ADD YOUR OWN HERE */
-import admobDefault from 'cordova-admob-plus'
+import admobDefault from 'admob-plus-cordova'
 
 declare const admob: typeof admobDefault
