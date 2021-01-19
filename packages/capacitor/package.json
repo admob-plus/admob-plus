@@ -5,10 +5,10 @@
   "main": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
   "scripts": {
-    "build": "run-s clean && tsc -b && test -e dist/esm/index.js",
+    "build": "yarn clean && tsc -b && test -e dist/esm/index.js",
     "clean": "rm -rf ./dist",
     "watch": "tsc --watch",
-    "prepack": "run-s build"
+    "prepack": "yarn build"
   },
   "author": "Ratson",
   "license": "MIT",
@@ -18,7 +18,6 @@
   "devDependencies": {
     "@capacitor/android": "latest",
     "@capacitor/ios": "latest",
-    "npm-run-all": "^4.1.5",
     "typescript": "^3.4.5"
   },
   "files": [
