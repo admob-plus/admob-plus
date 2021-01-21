@@ -2,6 +2,7 @@
   "compilerOptions": {
     "declaration": true,
     "composite": true,
+    "skipLibCheck": true,
     "strict": true
   }
 }
