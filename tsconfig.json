@@ -2,6 +2,7 @@
   "extends": "@admob-plus-internal/tsconfig",
   "references": [
     { "path": "internal/cli" },
+    { "path": "internal/rollup-config" },
     { "path": "packages/capacitor" },
     { "path": "packages/cordova" },
     { "path": "packages/core" },

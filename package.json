@@ -85,6 +85,7 @@
   },
   "resolutions": {
     "@admob-plus-internal/cli": "workspace:*",
+    "@admob-plus-internal/rollup-config": "workspace:*",
     "@admob-plus-internal/tsconfig": "workspace:*",
     "admob-plus-cordova": "workspace:*"
   },

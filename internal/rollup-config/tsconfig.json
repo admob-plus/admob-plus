@@ -1,0 +1,8 @@
+{
+  "extends": "@admob-plus-internal/tsconfig",
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "lib": ["es2019"]
+  },
+  "include": ["*.ts"]
+}

@@ -1,29 +1,5 @@
-import commonjs from '@rollup/plugin-commonjs'
-import resolve from '@rollup/plugin-node-resolve'
-import typescript from '@rollup/plugin-typescript'
+import buildConfig from '@admob-plus-internal/rollup-config/cordova'
 
-const outDir = 'www'
-
-export default {
-  external: ['cordova'],
+export default buildConfig({
   input: './ts/admob.ts',
-  output: {
-    dir: outDir,
-    format: 'cjs',
-    sourcemap: false,
-    exports: 'default',
-  },
-  plugins: [
-    resolve({
-      mainFields: ['module', 'main', 'jsnext:main'],
-      browser: true,
-    }),
-    typescript({
-      module: 'es2015',
-      composite: false,
-      declaration: false,
-      outDir,
-    }),
-    commonjs(),
-  ],
-}
+})

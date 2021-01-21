@@ -1,6 +1,5 @@
-import config from '../cordova/rollup.config'
+import buildConfig from '@admob-plus-internal/rollup-config/cordova'
 
-export default {
-  ...config,
+export default buildConfig({
   input: './ts/consent.ts',
-}
+})
