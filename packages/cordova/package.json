@@ -34,16 +34,17 @@
     "cordova",
     "plugin",
     "admob",
-    "plus",
     "ecosystem:cordova",
-    "cordova-plugin-admob",
+    "admob-free",
+    "admobpro",
+    "cordova-admob-plus",
     "cordova-admob",
     "cordova-android",
     "cordova-ios",
+    "cordova-plugin-admob",
     "google",
-    "suite",
-    "admob-free",
-    "admobpro"
+    "plus",
+    "suite"
   ],
   "cordova": {
     "id": "cordova-admob-plus",
