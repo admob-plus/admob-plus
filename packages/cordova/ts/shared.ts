@@ -9,11 +9,6 @@ export function execAsync(action: NativeActions, args?: any[]) {
   })
 }
 
-export function fireDocumentEvent(eventName: string, data = null) {
-  const event = new CustomEvent(eventName, { detail: data })
-  document.dispatchEvent(event)
-}
-
 export function waitEvent(
   successEvent: string,
   failEvent = '',

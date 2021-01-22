@@ -1,4 +1,4 @@
-import { AdSizeType, Events, NativeActions } from './generated'
+export { AdSizeType, Events, fireDocumentEvent, NativeActions } from './generated'
 
 export type MobileAdOptions = { adUnitId: string }
 
@@ -15,8 +15,6 @@ export class MobileAd {
     MobileAd.allAds[this.id] = this
   }
 }
-
-export { AdSizeType, Events, NativeActions }
 
 export enum MaxAdContentRating {
   G = 'G',

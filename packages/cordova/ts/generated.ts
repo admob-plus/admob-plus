@@ -46,3 +46,8 @@ export enum AdSizeType {
   LEADERBOARD,
   SMART_BANNER,
 }
+
+export function fireDocumentEvent(eventName: string, data = null) {
+  const event = new CustomEvent(eventName, { detail: data })
+  document.dispatchEvent(event)
+}

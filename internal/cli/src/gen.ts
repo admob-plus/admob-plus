@@ -145,6 +145,12 @@ ${linesEvents}
 `
 }
 
+const fireDocumentEventTs = `
+export function fireDocumentEvent(eventName: string, data = null) {
+  const event = new CustomEvent(eventName, { detail: data })
+  document.dispatchEvent(event)
+}`
+
 function buildTypeScript(): string {
   const linesActions = _.map(Actions, (v, k) => `  ${k} = '${v}',`)
     .sort()
@@ -169,6 +175,7 @@ ${linesEvents}
 export enum AdSizeType {
 ${adSizeType}
 }
+${fireDocumentEventTs}
 `
 }
 
