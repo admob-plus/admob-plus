@@ -6,6 +6,9 @@ module.exports = {
     {
       files: ['*.ts', '*.tsx'],
       extends: ['concise-typescript'],
+      rules: {
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
+      },
     },
   ],
   rules: {
