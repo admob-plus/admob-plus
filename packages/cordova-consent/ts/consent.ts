@@ -1,5 +1,5 @@
-/// <reference path="../../../index.d.ts" />
-import { exec, fireDocumentEvent } from 'cordova'
+import { exec } from 'cordova'
+import { fireDocumentEvent } from './generated'
 
 type ConsentStatus = 'PERSONALIZED' | 'NON_PERSONALIZED' | 'UNKNOWN'
 
@@ -75,22 +75,20 @@ class ConsentForm {
     await execAsync('showConsentForm', [{ id: this.id }])
     const result = await waitEvent('consent.form.closed', 'consent.form.error')
     return (result as any) as {
-      consentStatus: ConsentStatus;
-      userPrefersAdFree: boolean;
+      consentStatus: ConsentStatus
+      userPrefersAdFree: boolean
     }
   }
-
-
 }
 
 document.addEventListener(
   'deviceready',
   () => {
     exec(
-      event => {
+      (event) => {
         fireDocumentEvent(event.type, event.data)
       },
-      err => {
+      (err) => {
         console.log(err)
       },
       'Consent',
@@ -115,8 +113,7 @@ export default {
   setDebugGeography(geography: 'EEA' | 'NOT_EEA') {
     return execAsync('setDebugGeography', [geography])
   },
-  requestTrackingAuthorization(){
+  requestTrackingAuthorization() {
     return execAsync('requestTrackingAuthorization')
-  }
-
+  },
 }

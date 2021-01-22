@@ -179,6 +179,12 @@ ${fireDocumentEventTs}
 `
 }
 
+function buildConsentTypeScript(): string {
+  return `// ${warnMessage}
+${fireDocumentEventTs}
+`
+}
+
 async function updateConfigXML() {
   const [androidFiles, iosFiles] = await Promise.all([
     glob(['**/*.java'], {
@@ -218,6 +224,7 @@ async function main() {
       f: buildGeneratedSwift,
     },
     { filepath: 'cordova/ts/generated.ts', f: buildTypeScript },
+    { filepath: 'cordova-consent/ts/generated.ts', f: buildConsentTypeScript },
   ]
   await Promise.all(
     l.map(({ filepath, f }) =>
