@@ -1,17 +1,11 @@
 import { exec } from 'cordova'
-import { fireDocumentEvent } from './generated'
+import { execAsync, fireDocumentEvent } from './generated'
 
 type ConsentStatus = 'PERSONALIZED' | 'NON_PERSONALIZED' | 'UNKNOWN'
 
 const state = {
   nextFormId: 0,
   forms: new Map<number, ConsentForm>(),
-}
-
-const execAsync = (action: string, args?: any[]) => {
-  return new Promise((resolve, reject) => {
-    exec(resolve, reject, 'Consent', action, args)
-  })
 }
 
 const waitEvent = (

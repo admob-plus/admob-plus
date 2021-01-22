@@ -1,13 +1,4 @@
-import { exec } from 'cordova'
-import { NativeActions } from './api'
-
 export * from './api'
-
-export function execAsync(action: NativeActions, args?: any[]) {
-  return new Promise((resolve, reject) => {
-    exec(resolve, reject, NativeActions.Service, action, args)
-  })
-}
 
 export function waitEvent(
   successEvent: string,

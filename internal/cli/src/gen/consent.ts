@@ -1,9 +1,10 @@
 import { pkgsDirJoin } from '../utils'
-import { warnMessage, fireDocumentEventTs } from './shared'
+import { buildUtils, warnMessage } from './shared'
 
 function buildTypeScript(): string {
   return `// ${warnMessage}
-${fireDocumentEventTs}
+import { exec } from 'cordova'
+${buildUtils('Consent')}
 `
 }
 

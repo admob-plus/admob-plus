@@ -1,6 +1,6 @@
 import _ from 'lodash'
 import { pkgsDirJoin } from '../utils'
-import { fireDocumentEventTs, indent4, warnMessage } from './shared'
+import { buildUtils, indent4, warnMessage } from './shared'
 
 export const Actions = _.mapValues(
   {
@@ -148,8 +148,9 @@ function buildTypeScript(): string {
   const adSizeType = AdSizeTypes.map((s) => `  ${s},`).join('\n')
 
   return `// ${warnMessage}
+import { exec } from 'cordova'
+
 export enum NativeActions {
-  Service = 'AdMob',
 ${linesActions}
 }
 
@@ -160,7 +161,7 @@ ${linesEvents}
 export enum AdSizeType {
 ${adSizeType}
 }
-${fireDocumentEventTs}
+${buildUtils('AdMob', 'NativeActions')}
 `
 }
 

@@ -5,7 +5,13 @@ export const warnMessage =
 
 export const indent4 = (n: number) => _.repeat(' ', 4 * n)
 
-export const fireDocumentEventTs = `
+export const buildUtils = (service: string, actionType = 'string') => `
+export const execAsync = (action: ${actionType}, args?: any[]) => {
+  return new Promise((resolve, reject) => {
+    exec(resolve, reject, '${service}', action, args)
+  })
+}
+
 export function fireDocumentEvent(eventName: string, data = null) {
   const event = new CustomEvent(eventName, { detail: data })
   document.dispatchEvent(event)
