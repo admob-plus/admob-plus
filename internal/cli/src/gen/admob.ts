@@ -1,4 +1,5 @@
 import _ from 'lodash'
+import { pkgsDirJoin } from '../utils'
 import { fireDocumentEventTs, indent4, warnMessage } from './shared'
 
 export const Actions = _.mapValues(
@@ -172,4 +173,6 @@ export default async () => ({
     },
     { path: 'cordova/ts/generated.ts', f: buildTypeScript },
   ],
+  pkgDir: pkgsDirJoin('cordova'),
+  tagertDir: 'src/admob/plugin',
 })
