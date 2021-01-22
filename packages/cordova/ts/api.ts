@@ -1,4 +1,4 @@
-export { AdSizeType, Events, execAsync, fireDocumentEvent, NativeActions } from './generated'
+export { AdSizeType, Events } from './generated'
 
 export type MobileAdOptions = { adUnitId: string }
 

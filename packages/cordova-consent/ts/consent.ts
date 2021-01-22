@@ -1,5 +1,5 @@
 import { exec } from 'cordova'
-import { execAsync, fireDocumentEvent } from './generated'
+import { execAsync, fireDocumentEvent, waitEvent } from './generated'
 
 type ConsentStatus = 'PERSONALIZED' | 'NON_PERSONALIZED' | 'UNKNOWN'
 
@@ -7,32 +7,6 @@ const state = {
   nextFormId: 0,
   forms: new Map<number, ConsentForm>(),
 }
-
-const waitEvent = (
-  successEvent: string,
-  failEvent = '',
-): Promise<CustomEvent> => {
-  return new Promise((resolve, reject) => {
-    document.addEventListener(
-      successEvent as any,
-      (event: CustomEvent) => {
-        resolve(event)
-      },
-      false,
-    )
-
-    if (failEvent) {
-      document.addEventListener(
-        failEvent as any,
-        (failedEvent: CustomEvent) => {
-          reject(failedEvent)
-        },
-        false,
-      )
-    }
-  })
-}
-
 interface ConsentFormOptions {
   privacyUrl: string
   adFree?: boolean
