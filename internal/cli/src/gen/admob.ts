@@ -1,8 +1,10 @@
 import _ from 'lodash'
 import { pkgsDirJoin } from '../utils'
-import { buildUtils, indent4, warnMessage } from './shared'
+import {
+  buildUtils, indent4, renderJavaContants, warnMessage,
+} from './shared'
 
-export const Actions = _.mapValues(
+const Actions = _.mapValues(
   {
     ready: null,
     configRequest: null,
@@ -20,10 +22,10 @@ export const Actions = _.mapValues(
     rewardedLoad: null,
     rewardedShow: null,
   },
-  (v, k) => (v === null ? k : v),
+  (v, k) => (v === null ? k : v) as string,
 )
 
-export const Events = _.mapValues(
+const Events = _.mapValues(
   {
     initComplete: null,
     ready: null,
@@ -52,7 +54,7 @@ export const Events = _.mapValues(
   (v, k) => `admob.${v === null ? k : v}`,
 )
 
-export const AdSizeTypes = [
+const AdSizeTypes = [
   'BANNER',
   'LARGE_BANNER',
   'MEDIUM_RECTANGLE',
@@ -62,25 +64,8 @@ export const AdSizeTypes = [
 ]
 
 function buildJava(): string {
-  const linesActions = _.map(
-    Actions,
-    (v, k) =>
-      `${indent4(2)}public static final String ${_.snakeCase(
-        k,
-      ).toUpperCase()} = "${v}";`,
-  )
-    .sort()
-    .join('\n')
-
-  const linesEvents = _.map(
-    Events,
-    (v, k) =>
-      `${indent4(2)}public static final String ${_.snakeCase(
-        k,
-      ).toUpperCase()} = "${v}";`,
-  )
-    .sort()
-    .join('\n')
+  const linesActions = renderJavaContants(Actions)
+  const linesEvents = renderJavaContants(Events)
 
   const linesAdSizeType = [
     `${indent4(2)}${AdSizeTypes.map((s) => `${s}`).join(', ')};`,

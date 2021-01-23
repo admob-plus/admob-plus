@@ -5,6 +5,17 @@ export const warnMessage =
 
 export const indent4 = (n: number) => _.repeat(' ', 4 * n)
 
+export const renderJavaContants = (m: { [key: string]: string }) =>
+  _.map(
+    m,
+    (v, k) =>
+      `${indent4(2)}public static final String ${_.snakeCase(
+        k,
+      ).toUpperCase()} = "${v}";`,
+  )
+    .sort()
+    .join('\n')
+
 export const buildUtils = (service: string, actionType = 'string') => `
 export const execAsync = (action: ${actionType}, args?: any[]) => {
   return new Promise((resolve, reject) => {
