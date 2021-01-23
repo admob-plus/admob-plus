@@ -1,7 +1,11 @@
 import _ from 'lodash'
 import { pkgsDirJoin } from '../utils'
 import {
-  buildUtils, indent4, renderJavaContants, warnMessage,
+  buildUtils,
+  indent4,
+  renderJavaContants,
+  renderSwiftContants,
+  warnMessage,
 } from './shared'
 
 const Actions = _.mapValues(
@@ -102,12 +106,7 @@ ${linesAdSizeType}
 }
 
 function buildSwift(): string {
-  const linesEvents = _.map(
-    Events,
-    (v, k) => `${indent4(1)}static let ${_.camelCase(k)} = "${v}"`,
-  )
-    .sort()
-    .join('\n')
+  const linesEvents = renderSwiftContants(Events)
 
   return `// ${warnMessage}
 struct AMSBannerPosition {

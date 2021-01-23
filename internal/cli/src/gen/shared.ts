@@ -16,6 +16,11 @@ export const renderJavaContants = (m: { [key: string]: string }) =>
     .sort()
     .join('\n')
 
+export const renderSwiftContants = (m: { [key: string]: string }) =>
+  _.map(m, (v, k) => `${indent4(1)}static let ${_.camelCase(k)} = "${v}"`)
+    .sort()
+    .join('\n')
+
 export const buildUtils = (service: string, actionType = 'string') => `
 export const execAsync = (action: ${actionType}, args?: any[]) => {
   return new Promise((resolve, reject) => {
