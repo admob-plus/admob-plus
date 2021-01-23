@@ -2,18 +2,35 @@ package cordova.plugin.consent;
 
 import android.util.Log;
 import android.util.SparseArray;
-import com.google.ads.consent.*;
-import org.apache.cordova.*;
-import org.json.*;
-import java.util.*;
+
+import com.google.ads.consent.ConsentForm;
+import com.google.ads.consent.ConsentFormListener;
+import com.google.ads.consent.ConsentInfoUpdateListener;
+import com.google.ads.consent.ConsentInformation;
+import com.google.ads.consent.ConsentStatus;
+import com.google.ads.consent.DebugGeography;
+
+import org.apache.cordova.CallbackContext;
+import org.apache.cordova.CordovaInterface;
+import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.CordovaWebView;
+import org.apache.cordova.PluginResult;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+
+import cordova.plugin.consent.Generated.Actions;
 
 public class Consent extends CordovaPlugin {
-    private String TAG = this.getClass().getSimpleName();
-
+    private static final SparseArray<ConsentForm> forms = new SparseArray<ConsentForm>();
+    private final ArrayList<PluginResult> eventQueue = new ArrayList<PluginResult>();
+    private final String TAG = this.getClass().getSimpleName();
     private CallbackContext readyCallbackContext = null;
-    private static SparseArray<ConsentForm> forms = new SparseArray<ConsentForm>();
 
     @Override
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
@@ -23,9 +40,8 @@ public class Consent extends CordovaPlugin {
     @Override
     public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) {
         try {
-            if ("ready".equals(action)) {
-                readyCallbackContext = callbackContext;
-                emit("ready");
+            if (Actions.READY.equals(action)) {
+                return executeReady(callbackContext);
             } else if ("checkConsent".equals(action)) {
                 this.checkConsent(args, callbackContext);
             } else if ("isRequestLocationInEeaOrUnknown".equals(action)) {
@@ -57,7 +73,7 @@ public class Consent extends CordovaPlugin {
                 loadConsentForm(args, callbackContext);
             } else if ("showConsentForm".equals(action)) {
                 showConsentForm(args, callbackContext);
-            }else if("requestTrackingAuthorization".equals(action)){
+            } else if ("requestTrackingAuthorization".equals(action)) {
                 // Only for iOS
                 callbackContext.success("NOT_IOS");
             } else {
@@ -69,6 +85,20 @@ public class Consent extends CordovaPlugin {
             callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.JSON_EXCEPTION));
             return true;
         }
+    }
+
+    private boolean executeReady(CallbackContext callbackContext) {
+        if (readyCallbackContext == null) {
+            for (PluginResult result : eventQueue) {
+                callbackContext.sendPluginResult(result);
+            }
+            eventQueue.clear();
+        } else {
+            Log.e(TAG, "Ready action should only be called once.");
+        }
+        readyCallbackContext = callbackContext;
+        emit(Generated.Events.READY);
+        return true;
     }
 
     @Override
@@ -154,15 +184,15 @@ public class Consent extends CordovaPlugin {
                     }
                 });
 
-        if(personalizedAds) {
+        if (personalizedAds) {
             formBuilder = formBuilder.withPersonalizedAdsOption();
         }
 
-        if(nonPersonalizedAds) {
+        if (nonPersonalizedAds) {
             formBuilder = formBuilder.withNonPersonalizedAdsOption();
         }
 
-        if(adFree) {
+        if (adFree) {
             formBuilder = formBuilder.withAdFreeOption();
         }
 
@@ -199,22 +229,23 @@ public class Consent extends CordovaPlugin {
         return list.toArray(new String[list.size()]);
     }
 
-    private void emit(String eventType) {
-        emit(eventType, false);
+    public void emit(String eventType) {
+        emit(eventType, null);
     }
 
-    private void emit(final String eventType, final Object data) {
-        final JSONObject event = new JSONObject();
+    public void emit(String eventType, Object data) {
+        JSONObject event = new JSONObject();
         try {
             event.put("type", eventType);
             event.put("data", data);
-        } catch (final JSONException e) {
+        } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        final PluginResult result = new PluginResult(PluginResult.Status.OK, event);
+        PluginResult result = new PluginResult(PluginResult.Status.OK, event);
         result.setKeepCallback(true);
         if (readyCallbackContext == null) {
+            eventQueue.add(result);
         } else {
             readyCallbackContext.sendPluginResult(result);
         }
