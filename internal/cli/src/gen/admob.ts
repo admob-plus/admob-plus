@@ -5,6 +5,7 @@ import {
   indent4,
   renderJavaContants,
   renderSwiftContants,
+  renderTsContants,
   warnMessage,
 } from './shared'
 
@@ -121,13 +122,8 @@ ${linesEvents}
 }
 
 function buildTypeScript(): string {
-  const linesActions = _.map(Actions, (v, k) => `  ${k} = '${v}',`)
-    .sort()
-    .join('\n')
-
-  const linesEvents = _.map(Events, (v, k) => `  ${k} = '${v}',`)
-    .sort()
-    .join('\n')
+  const linesActions = renderTsContants(Actions)
+  const linesEvents = renderTsContants(Events)
 
   const adSizeType = AdSizeTypes.map((s) => `  ${s},`).join('\n')
 

@@ -21,6 +21,11 @@ export const renderSwiftContants = (m: { [key: string]: string }) =>
     .sort()
     .join('\n')
 
+export const renderTsContants = (m: { [key: string]: string }) =>
+  _.map(m, (v, k) => `  ${k} = '${v}',`)
+    .sort()
+    .join('\n')
+
 export const buildUtils = (service: string, actionType = 'string') => `
 export const execAsync = (action: ${actionType}, args?: any[]) => {
   return new Promise((resolve, reject) => {
