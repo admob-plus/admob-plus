@@ -8,6 +8,7 @@ public final class Generated {
         public static final String LOAD_FORM = "loadForm";
         public static final String READY = "ready";
         public static final String REQUEST_INFO_UPDATE = "requestInfoUpdate";
+        public static final String RESET = "reset";
         public static final String SHOW_FORM = "showForm";
     }
 

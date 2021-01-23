@@ -1,10 +1,9 @@
-import { exec } from 'cordova'
 import BannerAd from './banner'
 import InterstitialAd from './interstitial'
 import RewardedAd from './rewarded'
 import {
   execAsync,
-  fireDocumentEvent,
+  initPlugin,
   NativeActions,
   RequestConfig
 } from './shared'
@@ -15,13 +14,7 @@ class AdMob {
   public readonly RewardedAd = RewardedAd
 
   constructor() {
-    document.addEventListener(
-      'deviceready',
-      () => {
-        this.ready()
-      },
-      false,
-    )
+    initPlugin()
   }
 
   public configRequest(requestConfig: RequestConfig) {
@@ -34,17 +27,6 @@ class AdMob {
 
   public setAppVolume(value: number) {
     return execAsync(NativeActions.setAppVolume, [value])
-  }
-
-  private ready() {
-    exec(
-      (event) => {
-        fireDocumentEvent(event.type, event.data)
-      },
-      console.error,
-      NativeActions.Service,
-      NativeActions.ready,
-    )
   }
 }
 

@@ -61,4 +61,21 @@ export function waitEvent(
       )
     }
   })
+}
+
+export const initPlugin = () => {
+  document.addEventListener(
+    'deviceready',
+    () => {
+      exec(
+        (event) => {
+          fireDocumentEvent(event.type, event.data)
+        },
+        console.error,
+        '${service}',
+        NativeActions.ready,
+      )
+    },
+    false,
+  )
 }`

@@ -7,6 +7,7 @@ export enum NativeActions {
   loadForm = 'loadForm',
   ready = 'ready',
   requestInfoUpdate = 'requestInfoUpdate',
+  reset = 'reset',
   showForm = 'showForm',
 }
 
@@ -48,4 +49,21 @@ export function waitEvent(
       )
     }
   })
+}
+
+export const initPlugin = () => {
+  document.addEventListener(
+    'deviceready',
+    () => {
+      exec(
+        (event) => {
+          fireDocumentEvent(event.type, event.data)
+        },
+        console.error,
+        'Consent',
+        NativeActions.ready,
+      )
+    },
+    false,
+  )
 }
