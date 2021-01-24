@@ -9,14 +9,15 @@
     "dev-ios": "example open-ios"
   },
   "dependencies": {
-    "admob-plus-cordova": "*",
     "cordova-android": "9.0.0",
     "cordova-browser": "6.0.0",
     "cordova-ios": "6.1.1",
     "cordova-plugin-whitelist": "1.3.4"
   },
   "devDependencies": {
-    "@admob-plus-internal/cli": "file:../../internal/cli"
+    "@admob-plus-internal/cli": "file:../../internal/cli",
+    "admob-plus-cordova": "file:../../packages/cordova",
+    "npm": "^6.14.11"
   },
   "cordova": {
     "plugins": {

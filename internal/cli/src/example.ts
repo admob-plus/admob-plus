@@ -60,7 +60,7 @@ const linkPlugin = async (
 }
 
 const clean = (opts: { cwd: string }) =>
-  del(['package-lock.json', 'platforms', 'plugins'], opts)
+  del(['package-lock.json', 'platforms', 'plugins', 'node_modules'], opts)
 
 const collectPluginPkgs = async (pkg: readPkg.NormalizedPackageJson) => {
   const pkgs = await collectPkgs()
