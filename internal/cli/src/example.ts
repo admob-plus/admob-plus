@@ -11,9 +11,12 @@ import { parseStringPromise } from 'xml2js'
 import yargs from 'yargs'
 import { collectPkgs, pkgsDirJoin } from './utils'
 
-const cordovaBin = require.resolve('cordova/bin/cordova')
+const cordovaPath = require.resolve('cordova/bin/cordova')
+
 const nodeBin = (args: string[], opts: execa.Options<string>) =>
   execa('yarn', ['node', ...args], { stdio: 'inherit', ...opts })
+const cordovaBin = (args: string[], opts: execa.Options<string>) =>
+  nodeBin([cordovaPath, ...args], opts)
 
 const watchCopy = async (sourceDir: string, targetDir: string) => {
   console.log(sourceDir, '->', targetDir)
@@ -38,13 +41,12 @@ const linkPlugin = async (
   opts: { cwd: string },
 ) => {
   const { cwd } = opts
-  await nodeBin([cordovaBin, 'plugin', 'rm', plugin, '--nosave'], {
+  await cordovaBin(['plugin', 'rm', plugin, '--nosave'], {
     cwd,
     reject: false,
   })
-  await nodeBin(
+  await cordovaBin(
     [
-      cordovaBin,
       'plugin',
       'add',
       '--nosave',
@@ -94,10 +96,9 @@ const prepare = async (opts: { cwd: string }) => {
     }),
   )
 
-  await nodeBin(
-    [cordovaBin, 'prepare', '--searchpath', pkgsDirJoin(), '--verbose'],
-    { cwd },
-  )
+  await cordovaBin(['prepare', '--searchpath', pkgsDirJoin(), '--verbose'], {
+    cwd,
+  })
 
   await Promise.all(linkTasks.map((f) => f()))
 }
@@ -112,10 +113,8 @@ const androidRun = async (argv: {
     await clean({ cwd })
     await execa('yarn', ['prepare'], { cwd, stdio: 'inherit' })
   }
-  await nodeBin(
-    [cordovaBin, 'run', 'android', '--verbose'].concat(
-      argv.device ? ['--device'] : [],
-    ),
+  await cordovaBin(
+    ['run', 'android', '--verbose'].concat(argv.device ? ['--device'] : []),
     { cwd },
   )
 }
@@ -247,7 +246,7 @@ const main = () => {
     )
     .command('open-ios', 'open Xcode for development', {}, iosOpen as any)
     .command('cordova', 'run cordova command', {}, async (opts: any) => {
-      await nodeBin([cordovaBin, ...process.argv.slice(3)], { cwd: opts.cwd })
+      await cordovaBin(process.argv.slice(3), { cwd: opts.cwd })
     })
     .help()
 
