@@ -246,6 +246,9 @@ const main = () => {
       androidOpen as any,
     )
     .command('open-ios', 'open Xcode for development', {}, iosOpen as any)
+    .command('cordova', 'run cordova command', {}, async (opts: any) => {
+      await nodeBin([cordovaBin, ...process.argv.slice(3)], { cwd: opts.cwd })
+    })
     .help()
 
   if (cli.argv._.length === 0) {
