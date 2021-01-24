@@ -64,7 +64,9 @@ const clean = (opts: { cwd: string }) =>
 
 const collectPluginPkgs = async (pkg: readPkg.NormalizedPackageJson) => {
   const pkgs = await collectPkgs()
-  return Object.values(pkgs).filter((x) => (pkg.dependencies || {})[x.name])
+  return Object.values(pkgs).filter(
+    (x) => ({ ...pkg.dependencies, ...pkg.devDependencies }[x.name]),
+  )
 }
 
 const prepare = async (opts: { cwd: string }) => {
@@ -134,6 +136,7 @@ const androidOpen = async (opts: { cwd: string }) => {
   const { cwd } = opts
   const pkgExample = await readPkg({ cwd })
   const pluginPkgs = await collectPluginPkgs(pkgExample)
+
   const watchTasks = await Promise.all(
     pluginPkgs.map(async (pkg) => {
       const javaPackagePath = resolveJavaPackagePath(pkg.name)
