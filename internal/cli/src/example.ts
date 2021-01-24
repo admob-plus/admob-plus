@@ -215,7 +215,21 @@ const main = () => {
   const cli = yargs
     .option('cwd', { default: process.cwd(), global: true })
     .command('clean', '', {}, clean as any)
-    .command('prepare', '', {}, prepare as any)
+    .command(
+      'prepare',
+      '',
+      {
+        clean: {
+          default: false,
+        },
+      },
+      async (opts) => {
+        if (opts.clean) {
+          await clean(opts as any)
+        }
+        await prepare(opts as any)
+      },
+    )
     .command(
       'android',
       '',
