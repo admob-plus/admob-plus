@@ -3,12 +3,13 @@ package cordova.plugin.consent;
 import android.util.Log;
 import android.util.SparseArray;
 
-import com.google.ads.consent.ConsentForm;
-import com.google.ads.consent.ConsentFormListener;
-import com.google.ads.consent.ConsentInfoUpdateListener;
-import com.google.ads.consent.ConsentInformation;
-import com.google.ads.consent.ConsentStatus;
-import com.google.ads.consent.DebugGeography;
+import androidx.annotation.Nullable;
+
+import com.google.android.ump.ConsentForm;
+import com.google.android.ump.ConsentInformation;
+import com.google.android.ump.ConsentRequestParameters;
+import com.google.android.ump.FormError;
+import com.google.android.ump.UserMessagingPlatform;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaInterface;
@@ -19,10 +20,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 
 import cordova.plugin.consent.Generated.Actions;
 
@@ -38,53 +36,33 @@ public class Consent extends CordovaPlugin {
     }
 
     @Override
-    public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) {
-        try {
-            if (Actions.READY.equals(action)) {
+    public boolean execute(String actionKey, JSONArray args, final CallbackContext callbackContext) {
+        Action action = new Action(args);
+        Log.d(TAG, actionKey);
+
+        switch (actionKey) {
+            case Actions.READY:
                 return executeReady(callbackContext);
-            } else if ("checkConsent".equals(action)) {
-                this.checkConsent(args, callbackContext);
-            } else if ("isRequestLocationInEeaOrUnknown".equals(action)) {
-                cordova.getThreadPool().execute(new Runnable() {
-                    @Override
-                    public void run() {
-                        callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK,
-                                ConsentInformation.getInstance(cordova.getActivity().getApplicationContext())
-                                        .isRequestLocationInEeaOrUnknown()));
-                    }
-                });
-            } else if ("addTestDevice".equals(action)) {
-                ConsentInformation.getInstance(cordova.getActivity().getApplicationContext())
-                        .addTestDevice(args.getString(0));
+            case Actions.GET_STATUS:
+                callbackContext.success(getConsentInformation().getConsentStatus());
+                break;
+            case Actions.IS_FORM_AVAILABLE:
+                return executeIsConsentFormAvailable(callbackContext);
+            case Actions.REQUEST_INFO_UPDATE:
+                return executeRequestInfoUpdate(action, callbackContext);
+            case Actions.LOAD_FORM:
+                return executeLoadForm(action, callbackContext);
+            case Actions.SHOW_FORM:
+                return executeShowForm(action, callbackContext);
+            case Actions.RESET:
+                getConsentInformation().reset();
                 callbackContext.success();
-            } else if ("setDebugGeography".equals(action)) {
-                String geography = args.getString(0);
-                if ("EEA".equals(geography)) {
-                    ConsentInformation.getInstance(cordova.getActivity().getApplicationContext())
-                            .setDebugGeography(DebugGeography.DEBUG_GEOGRAPHY_EEA);
-                } else if ("NOT_EEA".equals(geography)) {
-                    ConsentInformation.getInstance(cordova.getActivity().getApplicationContext())
-                            .setDebugGeography(DebugGeography.DEBUG_GEOGRAPHY_NOT_EEA);
-                } else {
-                    return false;
-                }
-                callbackContext.success();
-            } else if ("loadConsentForm".equals(action)) {
-                loadConsentForm(args, callbackContext);
-            } else if ("showConsentForm".equals(action)) {
-                showConsentForm(args, callbackContext);
-            } else if ("requestTrackingAuthorization".equals(action)) {
-                // Only for iOS
-                callbackContext.success("NOT_IOS");
-            } else {
+                break;
+            default:
                 return false;
-            }
-            return true;
-        } catch (JSONException e) {
-            Log.d(TAG, Log.getStackTraceString(e));
-            callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.JSON_EXCEPTION));
-            return true;
         }
+
+        return true;
     }
 
     private boolean executeReady(CallbackContext callbackContext) {
@@ -101,132 +79,80 @@ public class Consent extends CordovaPlugin {
         return true;
     }
 
+    private boolean executeRequestInfoUpdate(Action action, CallbackContext callbackContext) {
+        ConsentRequestParameters params = action.getConsentRequestParameters(cordova.getActivity());
+        ConsentInformation consentInformation = getConsentInformation();
+        consentInformation.requestConsentInfoUpdate(
+                cordova.getActivity(),
+                params,
+                new ConsentInformation.OnConsentInfoUpdateSuccessListener() {
+                    @Override
+                    public void onConsentInfoUpdateSuccess() {
+                        callbackContext.success();
+                    }
+                },
+                new ConsentInformation.OnConsentInfoUpdateFailureListener() {
+                    @Override
+                    public void onConsentInfoUpdateFailure(FormError formError) {
+                        callbackContext.error(formError.getMessage());
+                    }
+                });
+
+        return true;
+    }
+
+    private boolean executeLoadForm(Action action, CallbackContext callbackContext) {
+        UserMessagingPlatform.loadConsentForm(
+                cordova.getActivity(),
+                new UserMessagingPlatform.OnConsentFormLoadSuccessListener() {
+                    @Override
+                    public void onConsentFormLoadSuccess(ConsentForm consentForm) {
+                        forms.put(consentForm.hashCode(), consentForm);
+                        callbackContext.success(consentForm.hashCode());
+                    }
+                },
+                new UserMessagingPlatform.OnConsentFormLoadFailureListener() {
+                    @Override
+                    public void onConsentFormLoadFailure(FormError formError) {
+                        callbackContext.error(formError.getMessage());
+                    }
+                }
+        );
+        return true;
+    }
+
+    private boolean executeShowForm(Action action, CallbackContext callbackContext) {
+        ConsentForm consentForm = forms.get(action.optId());
+        consentForm.show(
+                cordova.getActivity(),
+                new ConsentForm.OnConsentFormDismissedListener() {
+                    @Override
+                    public void onConsentFormDismissed(@Nullable FormError formError) {
+                        if (formError == null) {
+                            callbackContext.success();
+                        } else {
+                            callbackContext.error(formError.getMessage());
+                        }
+                    }
+                });
+        return true;
+    }
+
+    private boolean executeIsConsentFormAvailable(CallbackContext callbackContext) {
+        PluginResult result = new PluginResult(PluginResult.Status.OK, getConsentInformation().isConsentFormAvailable());
+        callbackContext.sendPluginResult(result);
+        return true;
+    }
+
+    private ConsentInformation getConsentInformation() {
+        return UserMessagingPlatform.getConsentInformation(cordova.getActivity());
+    }
+
     @Override
     public void onDestroy() {
         readyCallbackContext = null;
 
         super.onDestroy();
-    }
-
-    private void checkConsent(JSONArray args, final CallbackContext callbackContext) throws JSONException {
-        ConsentInformation consentInformation = ConsentInformation
-                .getInstance(cordova.getActivity().getApplicationContext());
-        String[] publisherIds = convertJSONArray(args.getJSONArray(0));
-        consentInformation.requestConsentInfoUpdate(publisherIds, new ConsentInfoUpdateListener() {
-            @Override
-            public void onConsentInfoUpdated(ConsentStatus consentStatus) {
-                // User's consent status successfully updated.
-                callbackContext.success(consentStatus.toString());
-            }
-
-            @Override
-            public void onFailedToUpdateConsentInfo(String errorDescription) {
-                // User's consent status failed to update.
-                callbackContext.error(errorDescription);
-            }
-        });
-    }
-
-    private void loadConsentForm(final JSONArray args, final CallbackContext callbackContext) throws JSONException {
-        JSONObject obj = args.optJSONObject(0);
-        int id = obj.getInt("id");
-        URL privacyUrl = null;
-        Boolean adFree = false;
-        Boolean nonPersonalizedAds = false;
-        Boolean personalizedAds = false;
-        try {
-            privacyUrl = new URL(obj.getString("privacyUrl"));
-            adFree = obj.getBoolean("adFree");
-            nonPersonalizedAds = obj.getBoolean("nonPersonalizedAds");
-            personalizedAds = obj.getBoolean("personalizedAds");
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-            callbackContext.error("Invalid privacyUrl");
-            return;
-        }
-        ConsentForm.Builder formBuilder = new ConsentForm.Builder(cordova.getActivity(), privacyUrl)
-                .withListener(new ConsentFormListener() {
-                    @Override
-                    public void onConsentFormLoaded() {
-                        Log.d(TAG, "Consent form loaded successfully.");
-                        emit("consent.form.loaded");
-                    }
-
-                    @Override
-                    public void onConsentFormOpened() {
-                        Log.d(TAG, "Consent form was displayed.");
-                        emit("consent.form.opened");
-                    }
-
-                    @Override
-                    public void onConsentFormClosed(ConsentStatus consentStatus, Boolean userPrefersAdFree) {
-                        Log.d(TAG, "Consent form was closed.");
-                        JSONObject data = new JSONObject();
-                        try {
-                            data.put("consentStatus", consentStatus.toString());
-                            data.put("userPrefersAdFree", userPrefersAdFree);
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                        emit("consent.form.closed", data);
-                    }
-
-                    @Override
-                    public void onConsentFormError(String errorDescription) {
-                        Log.d(TAG, "Consent form error: " + errorDescription);
-                        JSONObject data = new JSONObject();
-                        try {
-                            data.put("errorDescription", errorDescription);
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                        emit("consent.form.error", data);
-                    }
-                });
-
-        if (personalizedAds) {
-            formBuilder = formBuilder.withPersonalizedAdsOption();
-        }
-
-        if (nonPersonalizedAds) {
-            formBuilder = formBuilder.withNonPersonalizedAdsOption();
-        }
-
-        if (adFree) {
-            formBuilder = formBuilder.withAdFreeOption();
-        }
-
-        final ConsentForm.Builder formBuilderFinal = formBuilder;
-        cordova.getActivity().runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                ConsentForm form = formBuilderFinal.build();
-                forms.put(id, form);
-                form.load();
-            }
-        });
-        callbackContext.success();
-    }
-
-    private void showConsentForm(final JSONArray args, final CallbackContext callbackContext) throws JSONException {
-        JSONObject obj = args.optJSONObject(0);
-        int id = obj.getInt("id");
-        final ConsentForm form = forms.get(id);
-        cordova.getActivity().runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                form.show();
-            }
-        });
-        callbackContext.success();
-    }
-
-    private String[] convertJSONArray(JSONArray arr) throws JSONException {
-        List<String> list = new ArrayList<String>();
-        for (int i = 0; i < arr.length(); i++) {
-            list.add(arr.getString(i));
-        }
-        return list.toArray(new String[list.size()]);
     }
 
     public void emit(String eventType) {

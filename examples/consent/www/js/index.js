@@ -8,28 +8,26 @@ const app = {
       false,
     )
   },
-  onDeviceReady() {
+  async onDeviceReady() {
     this.receivedEvent('deviceready')
-    // NOTE: update the following to make it works
-    const testDeviceId = '33BE2250B43518CCDA7DE426D04EE231'
-    console.log('show consent form')
-    this.showConsent(testDeviceId)
-      .then(async ({ consentStatus }) => {
-        console.log('consentStatus', consentStatus)
-        if (consentStatus === 'PERSONALIZED') {
-          await admob.banner.show({
-            id: 'test',
-            testDevices: [testDeviceId],
-          })
-        } else {
-          await admob.banner.show({
-            id: 'test',
-            testDevices: [testDeviceId],
-            npa: '1',
-          })
-        }
-      })
-      .catch(console.error)
+
+    console.log('isFormAvailable:', await consent.isFormAvailable())
+    try {
+      await consent.requestInfoUpdate()
+    } catch (error) {
+      alert(`requestInfoUpdate error: ${error}`)
+      return
+    }
+    console.log(
+      'isFormAvailable after update:',
+      await consent.isFormAvailable(),
+    )
+    try {
+      const form = await consent.loadForm()
+      form.show()
+    } catch (error) {
+      alert(`form error: ${error}`)
+    }
   },
   async showConsent(testDeviceId) {
     const publisherIds = ['pub-3940256099942544']
