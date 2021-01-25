@@ -4,7 +4,7 @@ AdMob Plus is the successor of [cordova-plugin-admob-free](https://github.com/ra
 
 ## Installation
 
-[Getting started on admob-plus.github.io](https://admob-plus.github.io/docs/installation.html)
+[Getting started on admob-plus.github.io](https://admob-plus.github.io/docs/)
 
 ## Contributing
 
