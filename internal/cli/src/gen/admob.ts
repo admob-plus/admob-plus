@@ -15,6 +15,7 @@ const Actions = _.mapValues(
     configRequest: null,
     setAppMuted: null,
     setAppVolume: null,
+    start: null,
     // BannerAd
     bannerShow: null,
     bannerHide: null,
@@ -32,7 +33,6 @@ const Actions = _.mapValues(
 
 const Events = _.mapValues(
   {
-    initComplete: null,
     ready: null,
     // BannerAd
     bannerLoad: 'banner.load',

@@ -28,6 +28,10 @@ class AdMob {
   public setAppVolume(value: number) {
     return execAsync(NativeActions.setAppVolume, [value])
   }
+
+  public start() {
+    return execAsync(NativeActions.start)
+  }
 }
 
 const admob = new AdMob()

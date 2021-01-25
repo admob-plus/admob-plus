@@ -6,7 +6,6 @@ class AMSPlugin: CDVPlugin {
         super.pluginInitialize()
 
         AMSAdBase.plugin = self
-        GADMobileAds.sharedInstance().start(completionHandler: nil)
     }
 
     deinit {
@@ -20,6 +19,14 @@ class AMSPlugin: CDVPlugin {
         self.emit(eventType: AMSEvents.ready, data: [
             "sdkVersion": GADMobileAds.sharedInstance().sdkVersion,
             "isRunningInTestLab": false])
+    }
+
+    @objc(start:)
+    func start(command: CDVInvokedUrlCommand) {
+        GADMobileAds.sharedInstance().start(completionHandler: {
+            let result = CDVPluginResult(status: CDVCommandStatus_OK)
+            self.commandDelegate.send(result, callbackId: command.callbackId)
+        })
     }
 
     @objc(setAppMuted:)

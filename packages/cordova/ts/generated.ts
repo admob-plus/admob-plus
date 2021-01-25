@@ -14,6 +14,7 @@ export enum NativeActions {
   rewardedShow = 'rewardedShow',
   setAppMuted = 'setAppMuted',
   setAppVolume = 'setAppVolume',
+  start = 'start',
 }
 
 export enum Events {
@@ -23,7 +24,6 @@ export enum Events {
   bannerLoad = 'admob.banner.load',
   bannerLoadFail = 'admob.banner.loadFail',
   bannerOpen = 'admob.banner.open',
-  initComplete = 'admob.initComplete',
   interstitialClick = 'admob.interstitial.click',
   interstitialClose = 'admob.interstitial.close',
   interstitialImpression = 'admob.interstitial.impression',

@@ -34,12 +34,6 @@ public class AdMob extends CordovaPlugin {
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
 
-        MobileAds.initialize(cordova.getActivity(), new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-                emit(Generated.Events.INIT_COMPLETE);
-            }
-        });
         AdBase.initialize(this);
     }
 
@@ -49,6 +43,13 @@ public class AdMob extends CordovaPlugin {
 
         if (Actions.READY.equals(actionKey)) {
             return executeReady(callbackContext);
+        } else if (Actions.START.equals(actionKey)) {
+            MobileAds.initialize(cordova.getActivity(), new OnInitializationCompleteListener() {
+                @Override
+                public void onInitializationComplete(InitializationStatus initializationStatus) {
+                    callbackContext.sucess();
+                }
+            });
         } else if (Actions.CONFIG_REQUEST.equals(actionKey)) {
             MobileAds.setRequestConfiguration(action.getRequestConfiguration());
             return ok(callbackContext);

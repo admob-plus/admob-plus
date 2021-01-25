@@ -17,6 +17,7 @@ public final class Generated {
         public static final String REWARDED_SHOW = "rewardedShow";
         public static final String SET_APP_MUTED = "setAppMuted";
         public static final String SET_APP_VOLUME = "setAppVolume";
+        public static final String START = "start";
     }
 
     public final class Events {
@@ -26,7 +27,6 @@ public final class Generated {
         public static final String BANNER_LOAD = "admob.banner.load";
         public static final String BANNER_LOAD_FAIL = "admob.banner.loadFail";
         public static final String BANNER_OPEN = "admob.banner.open";
-        public static final String INIT_COMPLETE = "admob.initComplete";
         public static final String INTERSTITIAL_CLICK = "admob.interstitial.click";
         public static final String INTERSTITIAL_CLOSE = "admob.interstitial.close";
         public static final String INTERSTITIAL_IMPRESSION = "admob.interstitial.impression";
