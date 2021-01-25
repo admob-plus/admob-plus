@@ -49,7 +49,7 @@ function buildSwift(): string {
   const linesEvents = renderSwiftContants(Events)
 
   return `// ${warnMessage}
-struct AMCEvents {
+struct CSNEvents {
 ${linesEvents}
 }
 `
@@ -74,7 +74,7 @@ export default () => ({
   files: [
     { path: 'cordova-consent/src/android/Generated.java', f: buildJava },
     {
-      path: 'cordova-consent/src/ios/AMCGenerated.swift',
+      path: 'cordova-consent/src/ios/CSNGenerated.swift',
       f: buildSwift,
     },
     { path: 'cordova-consent/ts/generated.ts', f: buildTypeScript },

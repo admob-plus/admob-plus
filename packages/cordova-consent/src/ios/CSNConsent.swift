@@ -1,16 +1,16 @@
 import AppTrackingTransparency
 import AdSupport
 
-@objc(AMSConsent)
-class AMSConsent: CDVPlugin {
+@objc(CSNConsent)
+class CSNConsent: CDVPlugin {
     static var forms = Dictionary<Int, Any>()
-    
+
     var readyCallbackId: String!
-    
+
     override func pluginInitialize() {
         super.pluginInitialize()
     }
-    
+
     deinit {
         readyCallbackId = nil
     }
@@ -40,20 +40,20 @@ class AMSConsent: CDVPlugin {
             // TODO Fallback on earlier versions
         }
     }
-    
+
     @objc(ready:)
     func ready(command: CDVInvokedUrlCommand) {
         readyCallbackId = command.callbackId
-        
+
         self.emit(eventType: "ready")
     }
-    
+
     @objc(isRequestLocationInEeaOrUnknown:)
     func isRequestLocationInEeaOrUnknown(command: CDVInvokedUrlCommand) {
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: PACConsentInformation.sharedInstance.isRequestLocationInEEAOrUnknown)
         self.commandDelegate!.send(result, callbackId: command.callbackId)
     }
-    
+
     @objc(addTestDevice:)
     func addTestDevice(command: CDVInvokedUrlCommand) {
         guard let deviceId = command.argument(at: 0) as? String
@@ -63,11 +63,11 @@ class AMSConsent: CDVPlugin {
                 return
         }
         PACConsentInformation.sharedInstance.debugIdentifiers?.append(deviceId)
-        
+
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
         self.commandDelegate!.send(result, callbackId: command.callbackId)
     }
-    
+
     @objc(setDebugGeography:)
     func setDebugGeography(command: CDVInvokedUrlCommand) {
         guard let geography = command.argument(at: 0) as? String
@@ -76,7 +76,7 @@ class AMSConsent: CDVPlugin {
                 self.commandDelegate!.send(result, callbackId: command.callbackId)
                 return
         }
-        
+
         if geography == "EEA" {
             PACConsentInformation.sharedInstance.debugGeography = PACDebugGeography.EEA
         } else if geography == "NOT_EEA" {
@@ -87,7 +87,7 @@ class AMSConsent: CDVPlugin {
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
         self.commandDelegate!.send(result, callbackId: command.callbackId)
     }
-    
+
     @objc(checkConsent:)
     func checkConsent(command: CDVInvokedUrlCommand) {
         guard let publisherIds = command.argument(at: 0) as? Array<String>
@@ -108,7 +108,7 @@ class AMSConsent: CDVPlugin {
             }
         }
     }
-    
+
     @objc(loadConsentForm:)
     func loadConsentForm(command: CDVInvokedUrlCommand) {
         guard let opts = command.argument(at: 0) as? NSDictionary,
@@ -128,7 +128,7 @@ class AMSConsent: CDVPlugin {
         form.shouldOfferPersonalizedAds = personalizedAds
         form.shouldOfferNonPersonalizedAds = nonPersonalizedAds
         form.shouldOfferAdFree = adFree
-        AMSConsent.forms[id] = form
+        CSNConsent.forms[id] = form
         form.load {(_ error: Error?) -> Void in
             if let error = error {
                 self.emit(eventType: "consent.form.error", data: [
@@ -138,22 +138,22 @@ class AMSConsent: CDVPlugin {
                 self.emit(eventType: "consent.form.loaded")
             }
         }
-        
+
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
         self.commandDelegate!.send(result, callbackId: command.callbackId)
     }
-    
+
     @objc(showConsentForm:)
     func showConsentForm(command: CDVInvokedUrlCommand) {
         guard let opts = command.argument(at: 0) as? NSDictionary,
             let id = opts.value(forKey: "id") as? Int,
-            let form = AMSConsent.forms[id] as? PACConsentForm
+            let form = CSNConsent.forms[id] as? PACConsentForm
             else {
                 let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: false)
                 self.commandDelegate!.send(result, callbackId: command.callbackId)
                 return
         }
-        
+
         form.present(from: self.viewController) { (error, userPrefersAdFree) in
             if let error = error {
                 // Handle error.
@@ -168,12 +168,12 @@ class AMSConsent: CDVPlugin {
                     "userPrefersAdFree": userPrefersAdFree])
             }
         }
-        
+
         self.emit(eventType: "consent.form.opened")
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
         self.commandDelegate!.send(result, callbackId: command.callbackId)
     }
-    
+
     func convertConsentStatus(_ status: PACConsentStatus) -> String {
         switch status {
         case PACConsentStatus.nonPersonalized:
@@ -184,7 +184,7 @@ class AMSConsent: CDVPlugin {
             return "UNKNOWN"
         }
     }
-    
+
     func emit(eventType: String, data: Any = false) {
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: ["type": eventType, "data": data])
         result?.setKeepCallbackAs(true)
