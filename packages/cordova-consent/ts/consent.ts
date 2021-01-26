@@ -41,6 +41,14 @@ class Consent {
   public reset() {
     return execAsync(NativeActions.reset)
   }
+
+  public async requestTrackingAuthorization() {
+    if (cordova.platformId === 'ios') {
+      return execAsync('requestTrackingAuthorization')
+    }
+
+    return false
+  }
 }
 
 export default new Consent()

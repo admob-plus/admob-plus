@@ -3,7 +3,7 @@ import AdSupport
 
 @objc(CSNConsent)
 class CSNConsent: CDVPlugin {
-    static var forms = Dictionary<Int, Any>()
+    static var forms = Dictionary<Int, UMPConsentForm>()
 
     var readyCallbackId: String!
 
@@ -15,180 +15,118 @@ class CSNConsent: CDVPlugin {
         readyCallbackId = nil
     }
 
-    @objc(requestTrackingAuthorization:)
-    func requestTrackingAuthorization(command: CDVInvokedUrlCommand) {
-        if #available(iOS 14, *) {
-            ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
-                // Tracking authorization completed. Start loading ads here.
-                var msgStatus = ""
-                if (status.rawValue == ATTrackingManager.AuthorizationStatus.authorized.rawValue){
-                    msgStatus = "authorized"
-                }else if(status.rawValue == ATTrackingManager.AuthorizationStatus.denied.rawValue){
-                    msgStatus = "denied"
-                }else if(status.rawValue == ATTrackingManager.AuthorizationStatus.notDetermined.rawValue){
-                    msgStatus = "notDetermined"
-                }else if(status.rawValue == ATTrackingManager.AuthorizationStatus.restricted.rawValue){
-                    msgStatus = "restricted"
-                }
-
-                let result = CDVPluginResult(
-                    status: CDVCommandStatus_OK,
-                    messageAs: msgStatus)
-                self.commandDelegate!.send(result, callbackId: command.callbackId)
-            })
-        } else {
-            // TODO Fallback on earlier versions
-        }
-    }
-
     @objc(ready:)
     func ready(command: CDVInvokedUrlCommand) {
         readyCallbackId = command.callbackId
 
-        self.emit(eventType: "ready")
+        self.emit(eventType: CSNEvents.ready)
     }
 
-    @objc(isRequestLocationInEeaOrUnknown:)
-    func isRequestLocationInEeaOrUnknown(command: CDVInvokedUrlCommand) {
-        let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: PACConsentInformation.sharedInstance.isRequestLocationInEEAOrUnknown)
-        self.commandDelegate!.send(result, callbackId: command.callbackId)
-    }
-
-    @objc(addTestDevice:)
-    func addTestDevice(command: CDVInvokedUrlCommand) {
-        guard let deviceId = command.argument(at: 0) as? String
-            else {
-                let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: false)
-                self.commandDelegate!.send(result, callbackId: command.callbackId)
-                return
-        }
-        PACConsentInformation.sharedInstance.debugIdentifiers?.append(deviceId)
-
-        let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
-        self.commandDelegate!.send(result, callbackId: command.callbackId)
-    }
-
-    @objc(setDebugGeography:)
-    func setDebugGeography(command: CDVInvokedUrlCommand) {
-        guard let geography = command.argument(at: 0) as? String
-            else {
-                let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: false)
-                self.commandDelegate!.send(result, callbackId: command.callbackId)
-                return
-        }
-
-        if geography == "EEA" {
-            PACConsentInformation.sharedInstance.debugGeography = PACDebugGeography.EEA
-        } else if geography == "NOT_EEA" {
-            PACConsentInformation.sharedInstance.debugGeography = PACDebugGeography.notEEA
+    @objc(requestTrackingAuthorization:)
+    func requestTrackingAuthorization(command: CDVInvokedUrlCommand) {
+        if #available(iOS 14, *) {
+            ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
+                let result = CDVPluginResult(
+                    status: CDVCommandStatus_OK,
+                    messageAs: status.rawValue)
+                self.commandDelegate.send(result, callbackId: command.callbackId)
+            })
         } else {
-            PACConsentInformation.sharedInstance.debugGeography = PACDebugGeography.disabled
-        }
-        let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
-        self.commandDelegate!.send(result, callbackId: command.callbackId)
-    }
-
-    @objc(checkConsent:)
-    func checkConsent(command: CDVInvokedUrlCommand) {
-        guard let publisherIds = command.argument(at: 0) as? Array<String>
-            else {
-                let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: false)
-                self.commandDelegate!.send(result, callbackId: command.callbackId)
-                return
-        }
-        PACConsentInformation.sharedInstance.requestConsentInfoUpdate(forPublisherIdentifiers: publisherIds) {(_ error: Error?) -> Void in
-            if let error = error {
-                let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: error.localizedDescription)
-                self.commandDelegate!.send(result, callbackId: command.callbackId)
-            } else {
-                let status =
-                    PACConsentInformation.sharedInstance.consentStatus
-                let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: self.convertConsentStatus(status))
-                self.commandDelegate!.send(result, callbackId: command.callbackId)
-            }
+            let result = CDVPluginResult(status: CDVCommandStatus_OK)
+            self.commandDelegate.send(result, callbackId: command.callbackId)
         }
     }
 
-    @objc(loadConsentForm:)
-    func loadConsentForm(command: CDVInvokedUrlCommand) {
+    @objc(requestInfoUpdate:)
+    func requestInfoUpdate(command: CDVInvokedUrlCommand) {
+        guard let opts = command.argument(at: 0) as? NSDictionary
+        else {
+            let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: false)
+            self.commandDelegate.send(result, callbackId: command.callbackId)
+            return
+        }
+
+        let parameters = UMPRequestParameters()
+
+        if let tagForUnderAgeOfConsent = opts.value(forKey: "tagForUnderAgeOfConsent") as? Bool {
+            parameters.tagForUnderAgeOfConsent = tagForUnderAgeOfConsent
+        }
+
+        UMPConsentInformation.sharedInstance.requestConsentInfoUpdate(
+            with: parameters,
+            completionHandler: { error in
+              if error != nil {
+                let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: error?.localizedDescription)
+                self.commandDelegate.send(result, callbackId: command.callbackId)
+              } else {
+                let result = CDVPluginResult(status: CDVCommandStatus_OK)
+                self.commandDelegate.send(result, callbackId: command.callbackId)
+              }
+            })
+    }
+
+    @objc(getStatus:)
+    func getStatus(command: CDVInvokedUrlCommand) {
+        let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: UMPConsentInformation.sharedInstance.formStatus.rawValue)
+        self.commandDelegate.send(result, callbackId: command.callbackId)
+    }
+
+    @objc(isFormAvailable:)
+    func isFormAvailable(command: CDVInvokedUrlCommand) {
+        let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: UMPConsentInformation.sharedInstance.formStatus == UMPFormStatus.available)
+        self.commandDelegate.send(result, callbackId: command.callbackId)
+    }
+
+    @objc(loadForm:)
+    func loadForm(command: CDVInvokedUrlCommand) {
+        UMPConsentForm.load(
+            completionHandler: { form, loadError in
+              if loadError != nil {
+                let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: loadError?.localizedDescription)
+                self.commandDelegate.send(result, callbackId: command.callbackId)
+              } else {
+                CSNConsent.forms[form.hashValue] = form
+                let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: form.hashValue)
+                self.commandDelegate.send(result, callbackId: command.callbackId)
+              }
+            })
+    }
+
+    @objc(showForm:)
+    func showForm(command: CDVInvokedUrlCommand) {
         guard let opts = command.argument(at: 0) as? NSDictionary,
-            let id = opts.value(forKey: "id") as? Int,
-            let adFree = opts.value(forKey: "adFree") as? Bool,
-            let nonPersonalizedAds = opts.value(forKey: "nonPersonalizedAds") as? Bool,
-            let personalizedAds = opts.value(forKey: "personalizedAds") as? Bool,
-            let privacyUrlStr = opts.value(forKey: "privacyUrl") as? String,
-            let privacyUrl = URL(string: privacyUrlStr),
-            let form = PACConsentForm(applicationPrivacyPolicyURL: privacyUrl)
-
-            else {
-                let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: false)
-                self.commandDelegate!.send(result, callbackId: command.callbackId)
-                return
-        }
-        form.shouldOfferPersonalizedAds = personalizedAds
-        form.shouldOfferNonPersonalizedAds = nonPersonalizedAds
-        form.shouldOfferAdFree = adFree
-        CSNConsent.forms[id] = form
-        form.load {(_ error: Error?) -> Void in
-            if let error = error {
-                self.emit(eventType: "consent.form.error", data: [
-                    "errorDescription": error.localizedDescription])
-                return
-            } else {
-                self.emit(eventType: "consent.form.loaded")
-            }
+              let id = opts.value(forKey: "id") as? Int,
+              let form = CSNConsent.forms[id]
+        else {
+            let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: false)
+            self.commandDelegate.send(result, callbackId: command.callbackId)
+            return
         }
 
-        let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
-        self.commandDelegate!.send(result, callbackId: command.callbackId)
+        form.present(
+            from: self.viewController,
+            completionHandler: { dismissError in
+                if dismissError != nil {
+                    let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: dismissError?.localizedDescription)
+                    self.commandDelegate.send(result, callbackId: command.callbackId)
+                } else {
+                    let result = CDVPluginResult(status: CDVCommandStatus_OK)
+                    self.commandDelegate.send(result, callbackId: command.callbackId)
+                }
+           })
     }
 
-    @objc(showConsentForm:)
-    func showConsentForm(command: CDVInvokedUrlCommand) {
-        guard let opts = command.argument(at: 0) as? NSDictionary,
-            let id = opts.value(forKey: "id") as? Int,
-            let form = CSNConsent.forms[id] as? PACConsentForm
-            else {
-                let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: false)
-                self.commandDelegate!.send(result, callbackId: command.callbackId)
-                return
-        }
+    @objc(reset:)
+    func reset(command: CDVInvokedUrlCommand) {
+        UMPConsentInformation.sharedInstance.reset()
 
-        form.present(from: self.viewController) { (error, userPrefersAdFree) in
-            if let error = error {
-                // Handle error.
-                self.emit(eventType: "consent.form.error", data: [
-                    "errorDescription": error.localizedDescription])
-            } else {
-                // Check the user's consent choice.
-                let status =
-                    PACConsentInformation.sharedInstance.consentStatus
-                self.emit(eventType: "consent.form.closed", data: [
-                    "consentStatus": self.convertConsentStatus(status),
-                    "userPrefersAdFree": userPrefersAdFree])
-            }
-        }
-
-        self.emit(eventType: "consent.form.opened")
-        let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
-        self.commandDelegate!.send(result, callbackId: command.callbackId)
+        let result = CDVPluginResult(status: CDVCommandStatus_OK)
+        self.commandDelegate.send(result, callbackId: command.callbackId)
     }
 
-    func convertConsentStatus(_ status: PACConsentStatus) -> String {
-        switch status {
-        case PACConsentStatus.nonPersonalized:
-            return "NON_PERSONALIZED"
-        case PACConsentStatus.personalized:
-            return "PERSONALIZED"
-        default:
-            return "UNKNOWN"
-        }
-    }
-
-    func emit(eventType: String, data: Any = false) {
+    func emit(eventType: String, data: Any = NSNull()) {
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: ["type": eventType, "data": data])
         result?.setKeepCallbackAs(true)
-        self.commandDelegate!.send(result, callbackId: readyCallbackId)
+        self.commandDelegate.send(result, callbackId: readyCallbackId)
     }
 }
-

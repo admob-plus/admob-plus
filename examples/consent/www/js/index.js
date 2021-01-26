@@ -12,8 +12,12 @@ const app = {
     this.receivedEvent('deviceready')
 
     console.log('isFormAvailable:', await consent.isFormAvailable())
+    if (cordova.platformId === 'ios') {
+      console.log("requestTrackingAuthorization", await consent.requestTrackingAuthorization())
+    }
+
     try {
-      await consent.requestInfoUpdate()
+      console.log("requestInfoUpdate", await consent.requestInfoUpdate())
     } catch (error) {
       alert(`requestInfoUpdate error: ${error}`)
       return
@@ -28,28 +32,6 @@ const app = {
     } catch (error) {
       alert(`form error: ${error}`)
     }
-  },
-  async showConsent(testDeviceId) {
-    const publisherIds = ['pub-3940256099942544']
-
-    await consent.addTestDevice(testDeviceId)
-    await consent.setDebugGeography('EEA')
-    console.log(await consent.checkConsent(publisherIds))
-
-    const ok = await consent.isRequestLocationInEeaOrUnknown()
-    if (!ok) {
-      alert('please update testDeviceId from logcat')
-    }
-
-    const form = new consent.Form({
-      privacyUrl: 'https://policies.google.com/privacy',
-      adFree: true,
-      nonPersonalizedAds: true,
-      personalizedAds: true,
-    })
-    await form.load()
-    const result = await form.show()
-    return result
   },
   receivedEvent(id) {
     const parentElement = document.getElementById(id)
