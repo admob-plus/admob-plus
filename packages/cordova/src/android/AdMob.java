@@ -41,45 +41,51 @@ public class AdMob extends CordovaPlugin {
     public boolean execute(String actionKey, JSONArray args, CallbackContext callbackContext) {
         Action action = new Action(args);
 
-        if (Actions.READY.equals(actionKey)) {
-            return executeReady(callbackContext);
-        } else if (Actions.START.equals(actionKey)) {
-            MobileAds.initialize(cordova.getActivity(), new OnInitializationCompleteListener() {
-                @Override
-                public void onInitializationComplete(InitializationStatus initializationStatus) {
-                    callbackContext.sucess();
-                }
-            });
-        } else if (Actions.CONFIG_REQUEST.equals(actionKey)) {
-            MobileAds.setRequestConfiguration(action.getRequestConfiguration());
-            return ok(callbackContext);
-        } else if (Actions.BANNER_SHOW.equals(actionKey)) {
-            return executeBannerShow(action, callbackContext);
-        } else if (Actions.BANNER_HIDE.equals(actionKey)) {
-            return executeBannerHide(action, callbackContext);
-        } else if (Actions.INTERSTITIAL_IS_LOADED.equals(actionKey)) {
-            return executeInterstitialIsLoaded(action, callbackContext);
-        } else if (Actions.INTERSTITIAL_LOAD.equals(actionKey)) {
-            return executeInterstitialLoad(action, callbackContext);
-        } else if (Actions.INTERSTITIAL_SHOW.equals(actionKey)) {
-            return executeInterstitialShow(action, callbackContext);
-        } else if (Actions.REWARDED_IS_LOADED.equals(actionKey)) {
-            return executeRewardedIsLoaded(action, callbackContext);
-        } else if (Actions.REWARDED_LOAD.equals(actionKey)) {
-            return executeRewardedLoad(action, callbackContext);
-        } else if (Actions.REWARDED_SHOW.equals(actionKey)) {
-            return executeRewardedShow(action, callbackContext);
-        } else if (Actions.SET_APP_MUTED.equals(actionKey)) {
-            boolean value = args.optBoolean(0);
-            MobileAds.setAppMuted(value);
-            return ok(callbackContext);
-        } else if (Actions.SET_APP_VOLUME.equals(actionKey)) {
-            float value = BigDecimal.valueOf(args.optDouble(0)).floatValue();
-            MobileAds.setAppVolume(value);
-            return ok(callbackContext);
+        switch (actionKey) {
+            case Actions.READY:
+                return executeReady(callbackContext);
+            case Actions.START:
+                MobileAds.initialize(cordova.getActivity(), new OnInitializationCompleteListener() {
+                    @Override
+                    public void onInitializationComplete(InitializationStatus initializationStatus) {
+                        callbackContext.success();
+                    }
+                });
+                break;
+            case Actions.CONFIG_REQUEST:
+                MobileAds.setRequestConfiguration(action.getRequestConfiguration());
+                callbackContext.success();
+            case Actions.BANNER_SHOW:
+                return executeBannerShow(action, callbackContext);
+            case Actions.BANNER_HIDE:
+                return executeBannerHide(action, callbackContext);
+            case Actions.INTERSTITIAL_IS_LOADED:
+                return executeInterstitialIsLoaded(action, callbackContext);
+            case Actions.INTERSTITIAL_LOAD:
+                return executeInterstitialLoad(action, callbackContext);
+            case Actions.INTERSTITIAL_SHOW:
+                return executeInterstitialShow(action, callbackContext);
+            case Actions.REWARDED_IS_LOADED:
+                return executeRewardedIsLoaded(action, callbackContext);
+            case Actions.REWARDED_LOAD:
+                return executeRewardedLoad(action, callbackContext);
+            case Actions.REWARDED_SHOW:
+                return executeRewardedShow(action, callbackContext);
+            case Actions.SET_APP_MUTED: {
+                boolean value = args.optBoolean(0);
+                MobileAds.setAppMuted(value);
+                callbackContext.success();
+            }
+            case Actions.SET_APP_VOLUME: {
+                float value = BigDecimal.valueOf(args.optDouble(0)).floatValue();
+                MobileAds.setAppVolume(value);
+                callbackContext.success();
+            }
+            default:
+                return false;
         }
 
-        return false;
+        return true;
     }
 
     private boolean executeReady(CallbackContext callbackContext) {
@@ -108,7 +114,7 @@ public class AdMob extends CordovaPlugin {
             public void run() {
                 BannerAd bannerAd = BannerAd.getOrCreate(action);
                 bannerAd.show(action.buildAdRequest());
-                ok(callbackContext);
+                callbackContext.success();
             }
         });
         return true;
@@ -122,7 +128,7 @@ public class AdMob extends CordovaPlugin {
                 if (bannerAd != null) {
                     bannerAd.hide();
                 }
-                ok(callbackContext);
+                callbackContext.success();
             }
         });
         return true;
@@ -146,7 +152,7 @@ public class AdMob extends CordovaPlugin {
             public void run() {
                 InterstitialAd interstitialAd = InterstitialAd.getOrCreate(action);
                 interstitialAd.load(action.buildAdRequest(), action.getAdUnitID());
-                ok(callbackContext);
+                callbackContext.success();
             }
         });
         return true;
@@ -160,7 +166,7 @@ public class AdMob extends CordovaPlugin {
                 if (interstitialAd != null) {
                     interstitialAd.show();
                 }
-                ok(callbackContext);
+                callbackContext.success();
             }
         });
         return true;
@@ -184,7 +190,7 @@ public class AdMob extends CordovaPlugin {
             public void run() {
                 RewardedAd rewardedAd = RewardedAd.getOrCreate(action);
                 rewardedAd.createAndLoad(action.buildAdRequest());
-                ok(callbackContext);
+                callbackContext.success();
             }
         });
         return true;
@@ -198,15 +204,9 @@ public class AdMob extends CordovaPlugin {
                 if (rewardedAd != null) {
                     rewardedAd.show();
                 }
-                ok(callbackContext);
+                callbackContext.success();
             }
         });
-        return true;
-    }
-
-    private boolean ok(CallbackContext callbackContext) {
-        PluginResult result = new PluginResult(PluginResult.Status.OK, "");
-        callbackContext.sendPluginResult(result);
         return true;
     }
 
