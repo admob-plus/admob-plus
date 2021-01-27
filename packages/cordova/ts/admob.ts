@@ -2,6 +2,7 @@ import BannerAd from './banner'
 import InterstitialAd from './interstitial'
 import RewardedAd from './rewarded'
 import {
+  Events,
   execAsync,
   initPlugin,
   NativeActions,
@@ -12,6 +13,8 @@ class AdMob {
   public readonly BannerAd = BannerAd
   public readonly InterstitialAd = InterstitialAd
   public readonly RewardedAd = RewardedAd
+
+  public readonly Events = Events
 
   constructor() {
     initPlugin()
