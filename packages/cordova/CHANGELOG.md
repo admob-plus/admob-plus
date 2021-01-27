@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.3](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.0.0-alpha.2...admob-plus-cordova@1.0.0-alpha.3) (2021-01-27)
+
+
+### Bug Fixes
+
+* **cordova/ios:** pass completionHandler status ([1ed3ce2](https://github.com/admob-plus/admob-plus/commit/1ed3ce242410f324ae1734b9429cf61751b888b7))
+
+
+
+
+
 # [1.0.0-alpha.2](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.0.0-alpha.1...admob-plus-cordova@1.0.0-alpha.2) (2021-01-27)
 
 
