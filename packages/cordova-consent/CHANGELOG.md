@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.1](https://github.com/admob-plus/admob-plus/compare/cordova-plugin-consent@1.0.0-alpha.0...cordova-plugin-consent@1.0.0-alpha.1) (2021-01-27)
+
+
+### Features
+
+* **cordova-consent:** generate constants ([6dd5091](https://github.com/admob-plus/admob-plus/commit/6dd50914b731b1b517701a8e90a2db38733ec784))
+* **cordova-consent:** generate fireDocumentEvent() ([b00814f](https://github.com/admob-plus/admob-plus/commit/b00814f6fdb8b9ff17491d6019e5150271a3cbb2))
+* **cordova-consent/android:** implement ready action ([ec72cc4](https://github.com/admob-plus/admob-plus/commit/ec72cc4b195f32c74bc89a829d96f999b493973e))
+* **cordova-consent/android:** rewrite with new API ([47b27ae](https://github.com/admob-plus/admob-plus/commit/47b27ae45bdab757dc133128ff69b82129a058c1))
+* **cordova-consent/ios:** rewrite with new API ([d6a9053](https://github.com/admob-plus/admob-plus/commit/d6a9053ece9e37b32f642d2e2e4216fa42e7f745))
+* **internal/cli:** generate execAsync() ([4c5f46b](https://github.com/admob-plus/admob-plus/commit/4c5f46bd9ab54cd21b73cd209dde00865d9745e0))
+* **internal/cli:** generate initPlugin() ([69fdc2a](https://github.com/admob-plus/admob-plus/commit/69fdc2aff01a783017c9d22d4e4e02f2c1437c00))
+* **internal/cli:** generate waitEvent() ([d7b4fe8](https://github.com/admob-plus/admob-plus/commit/d7b4fe88180690d9a9bca6d9ca318b9b8956d77a))
+* **internal/rollup-config:** extract rollup config into an internal package ([92f1b46](https://github.com/admob-plus/admob-plus/commit/92f1b4662422325298661c099879e5962fe5aabb))
+
+
+
+
+
 # [1.0.0-alpha.0](https://github.com/admob-plus/admob-plus/compare/cordova-plugin-consent@0.19.0...cordova-plugin-consent@1.0.0-alpha.0) (2021-01-19)
 
 **Note:** Version bump only for package cordova-plugin-consent

@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.1](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.0.0-alpha.0...admob-plus-cordova@1.0.0-alpha.1) (2021-01-27)
+
+
+### Features
+
+* **cordova:** add admob.start() ([4bc7c9c](https://github.com/admob-plus/admob-plus/commit/4bc7c9cd923f5bdbf0cd91e109dd47bd2da3fdd3))
+* **cordova:** generate fireDocumentEvent() ([71c7e41](https://github.com/admob-plus/admob-plus/commit/71c7e413e31c9ed37a9142af4aefac1524436353))
+* **internal/cli:** generate execAsync() ([4c5f46b](https://github.com/admob-plus/admob-plus/commit/4c5f46bd9ab54cd21b73cd209dde00865d9745e0))
+* **internal/cli:** generate initPlugin() ([69fdc2a](https://github.com/admob-plus/admob-plus/commit/69fdc2aff01a783017c9d22d4e4e02f2c1437c00))
+* **internal/cli:** generate waitEvent() ([d7b4fe8](https://github.com/admob-plus/admob-plus/commit/d7b4fe88180690d9a9bca6d9ca318b9b8956d77a))
+* **internal/rollup-config:** extract rollup config into an internal package ([92f1b46](https://github.com/admob-plus/admob-plus/commit/92f1b4662422325298661c099879e5962fe5aabb))
+
+
+
+
+
 # 1.0.0-alpha.0 (2021-01-19)
 
 
