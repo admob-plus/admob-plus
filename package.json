@@ -5,7 +5,7 @@
   "scripts": {
     "postinstall": "is-ci || husky install",
     "prepare": "lerna run prepare",
-    "test": "run-s test:*",
+    "test": "run-s 'test:*'",
     "test:pkgs": "lerna run test",
     "test:jest": "jest",
     "lint": "eslint --cache --ext .js,.jsx,.ts,tsx .",
