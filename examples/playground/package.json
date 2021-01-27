@@ -7,7 +7,7 @@
     "ios": "cordova run ios"
   },
   "dependencies": {
-    "@chakra-ui/react": "^1.1.5",
+    "@chakra-ui/react": "^1.1.6",
     "@emotion/react": "^11.1.4",
     "@emotion/styled": "^11.0.0",
     "admob-plus-cordova": "*",
@@ -37,7 +37,7 @@
     "core-js": "^3.8.3",
     "eslint-config-concise-esnext": "^0.40.1",
     "execa": "^5.0.0",
-    "fs-extra": "^9.0.1",
+    "fs-extra": "^9.1.0",
     "internal-ip": "^6.2.0",
     "lodash": "^4.17.20",
     "pnp-webpack-plugin": "^1.6.4",
