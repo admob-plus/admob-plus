@@ -1,4 +1,4 @@
-import { fireDocumentEvent, waitEvent } from '../ts/base'
+import { fireDocumentEvent, waitEvent } from '../ts/shared'
 
 test('waitEvent() once for sucess event', async () => {
   const p = waitEvent('sucess')
