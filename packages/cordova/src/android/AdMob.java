@@ -47,7 +47,7 @@ public class AdMob extends CordovaPlugin {
             case Actions.START:
                 MobileAds.initialize(cordova.getActivity(), new OnInitializationCompleteListener() {
                     @Override
-                    public void onInitializationComplete(InitializationStatus initializationStatus) {
+                    public void onInitializationComplete(InitializationStatus status) {
                         callbackContext.success();
                     }
                 });

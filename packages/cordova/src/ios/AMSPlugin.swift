@@ -23,7 +23,7 @@ class AMSPlugin: CDVPlugin {
 
     @objc(start:)
     func start(command: CDVInvokedUrlCommand) {
-        GADMobileAds.sharedInstance().start(completionHandler: {
+        GADMobileAds.sharedInstance().start(completionHandler: { status in
             let result = CDVPluginResult(status: CDVCommandStatus_OK)
             self.commandDelegate.send(result, callbackId: command.callbackId)
         })
