@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.4](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.0.0-alpha.3...admob-plus-cordova@1.0.0-alpha.4) (2021-01-27)
+
+
+### Features
+
+* **cordova:** expose admob.Events ([9763336](https://github.com/admob-plus/admob-plus/commit/9763336eb00e8b4f9e428714943dec23fd0a466d))
+
+
+
+
+
 # [1.0.0-alpha.3](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.0.0-alpha.2...admob-plus-cordova@1.0.0-alpha.3) (2021-01-27)
 
 
