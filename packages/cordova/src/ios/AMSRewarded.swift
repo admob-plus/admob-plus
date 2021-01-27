@@ -14,15 +14,11 @@ class AMSRewarded: AMSAdBase, GADRewardedAdDelegate {
         return (rewardedAd?.isReady == true)
     }
 
-    func load(request: GADRequest) {
+    func load(request: GADRequest, completionHandler: @escaping GADRewardedAdLoadCompletionHandler) {
         if rewardedAd?.isReady == false {
-            rewardedAd?.load(GADRequest()) { error in
-                if error != nil {
-                    self.plugin.emit(eventType: AMSEvents.rewardedLoad)
-                } else {
-                    self.plugin.emit(eventType: AMSEvents.rewardedLoadFail)
-                }
-            }
+            rewardedAd?.load(GADRequest(), completionHandler: completionHandler)
+        } else {
+            completionHandler(nil)
         }
     }
 

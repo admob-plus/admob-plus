@@ -16,12 +16,10 @@ export default class RewardedAd extends MobileAd {
     return execAsync(NativeActions.rewardedIsLoaded, [{ id: this.id }])
   }
 
-  public async load() {
-    await execAsync(NativeActions.rewardedLoad, [
+  public load() {
+    return execAsync(NativeActions.rewardedLoad, [
       { adUnitID: this.adUnitId, id: this.id },
     ])
-
-    await waitEvent(Events.rewardedLoad, Events.rewardedLoadFail)
   }
 
   public show() {

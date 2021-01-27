@@ -12,12 +12,17 @@ const app = {
   onDeviceReady() {
     this.receivedEvent('deviceready')
 
-    admob.start().then(() => {
-      this.showBannerAd()
-      this.showBannerAdTop()
-      this.showInterstitialAd()
-      this.showRewardedAd()
-    })
+    admob
+      .start()
+      .then(() =>
+        Promise.all([
+          this.showBannerAd(),
+          this.showBannerAdTop(),
+          this.showInterstitialAd(),
+          this.showRewardedAd(),
+        ]),
+      )
+      .catch(alert)
   },
 
   showBannerAd() {

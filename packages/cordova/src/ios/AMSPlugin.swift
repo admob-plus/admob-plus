@@ -156,7 +156,7 @@ class AMSPlugin: CDVPlugin {
                 return
         }
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: rewarded.isReady())
-        self.commandDelegate!.send(result, callbackId: command.callbackId)
+        self.commandDelegate.send(result, callbackId: command.callbackId)
     }
 
     @objc(rewardedLoad:)
@@ -166,17 +166,27 @@ class AMSPlugin: CDVPlugin {
             let adUnitID = opts.value(forKey: "adUnitID") as? String,
             var rewarded = AMSAdBase.ads[id] as? AMSRewarded?
             else {
-                let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: false)
-                self.commandDelegate!.send(result, callbackId: command.callbackId)
+                let result = CDVPluginResult(status: CDVCommandStatus_ERROR)
+                self.commandDelegate.send(result, callbackId: command.callbackId)
                 return
         }
         if rewarded == nil {
             rewarded = AMSRewarded(id: id, adUnitID: adUnitID)
         }
-        rewarded!.load(request: createGADRequest(opts))
+        rewarded!.load(request: createGADRequest(opts)) { error in
+            if error == nil {
+                self.emit(eventType: AMSEvents.rewardedLoad)
 
-        let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
-        self.commandDelegate!.send(result, callbackId: command.callbackId)
+                let result = CDVPluginResult(status: CDVCommandStatus_OK)
+                self.commandDelegate.send(result, callbackId: command.callbackId)
+            } else {
+                self.emit(eventType: AMSEvents.rewardedLoadFail)
+
+                let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: error?.description)
+                self.commandDelegate.send(result, callbackId: command.callbackId)
+            }
+        }
+
     }
 
     @objc(rewardedShow:)
