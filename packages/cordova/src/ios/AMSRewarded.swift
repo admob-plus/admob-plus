@@ -16,7 +16,7 @@ class AMSRewarded: AMSAdBase, GADRewardedAdDelegate {
 
     func load(request: GADRequest, completionHandler: @escaping GADRewardedAdLoadCompletionHandler) {
         if rewardedAd?.isReady == false {
-            rewardedAd?.load(GADRequest(), completionHandler: completionHandler)
+            rewardedAd?.load(request, completionHandler: completionHandler)
         } else {
             completionHandler(nil)
         }
