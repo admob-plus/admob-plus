@@ -145,6 +145,23 @@ ${buildUtils('AdMob', 'NativeActions')}
 `
 }
 
+const buildProxyJs = () => {
+  const linesActions = _.map(Actions, (v, k) => `  ${k}() {},`)
+    .sort()
+    .join('\n')
+
+  return `// ${warnMessage}
+'use strict'
+
+const AdMob = {
+${linesActions}
+}
+
+// eslint-disable-next-line node/no-missing-require
+require('cordova/exec/proxy').add('AdMob', AdMob)
+`
+}
+
 export default async () => ({
   files: [
     { path: 'cordova/src/android/Generated.java', f: buildJava },
@@ -153,6 +170,7 @@ export default async () => ({
       f: buildSwift,
     },
     { path: 'cordova/ts/generated.ts', f: buildTypeScript },
+    { path: 'cordova/src/browser/AdMobProxy.js', f: buildProxyJs },
   ],
   pkgDir: pkgsDirJoin('cordova'),
   tagertDir: 'src/admob/plugin',
