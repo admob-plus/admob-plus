@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.5](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.0.0-alpha.4...admob-plus-cordova@1.0.0-alpha.5) (2021-01-28)
+
+
+### Bug Fixes
+
+* **cordova/ios:** load created request ([699655c](https://github.com/admob-plus/admob-plus/commit/699655c3487ed618cb64f87a50ee722c19b252ef))
+
+
+### Features
+
+* **cordova:** generate browser proxy ([e2c15ae](https://github.com/admob-plus/admob-plus/commit/e2c15aedbfee443febb6d3bbd393471564eb4d82))
+* **cordova/ios:** disable App Transport Security restrictions ([489a5e7](https://github.com/admob-plus/admob-plus/commit/489a5e76749d8ce26a0249192b4461b6f128aa9c))
+
+
+
+
+
 # [1.0.0-alpha.4](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.0.0-alpha.3...admob-plus-cordova@1.0.0-alpha.4) (2021-01-27)
 
 
