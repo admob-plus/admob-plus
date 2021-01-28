@@ -34,13 +34,13 @@ class AMSPlugin: CDVPlugin {
         guard let applicationMuted = command.argument(at: 0) as? Bool
             else {
                 let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: false)
-                self.commandDelegate!.send(result, callbackId: command.callbackId)
+                self.commandDelegate.send(result, callbackId: command.callbackId)
                 return
         }
         GADMobileAds.sharedInstance().applicationMuted = applicationMuted
 
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
-        self.commandDelegate!.send(result, callbackId: command.callbackId)
+        self.commandDelegate.send(result, callbackId: command.callbackId)
     }
 
     @objc(setAppVolume:)
@@ -48,13 +48,13 @@ class AMSPlugin: CDVPlugin {
         guard let applicationVolume = command.argument(at: 0) as? Float
             else {
                 let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: false)
-                self.commandDelegate!.send(result, callbackId: command.callbackId)
+                self.commandDelegate.send(result, callbackId: command.callbackId)
                 return
         }
         GADMobileAds.sharedInstance().applicationVolume = applicationVolume
 
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
-        self.commandDelegate!.send(result, callbackId: command.callbackId)
+        self.commandDelegate.send(result, callbackId: command.callbackId)
     }
 
     @objc(bannerShow:)
@@ -66,7 +66,7 @@ class AMSPlugin: CDVPlugin {
             var banner = AMSAdBase.ads[id] as? AMSBanner?
             else {
                 let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: false)
-                self.commandDelegate!.send(result, callbackId: command.callbackId)
+                self.commandDelegate.send(result, callbackId: command.callbackId)
                 return
         }
         if banner == nil {
@@ -76,7 +76,7 @@ class AMSPlugin: CDVPlugin {
         banner!.show(request: createGADRequest(opts))
 
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
-        self.commandDelegate!.send(result, callbackId: command.callbackId)
+        self.commandDelegate.send(result, callbackId: command.callbackId)
     }
 
     @objc(bannerHide:)
@@ -86,13 +86,13 @@ class AMSPlugin: CDVPlugin {
             let banner = AMSAdBase.ads[id] as? AMSBanner
             else {
                 let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: false)
-                self.commandDelegate!.send(result, callbackId: command.callbackId)
+                self.commandDelegate.send(result, callbackId: command.callbackId)
                 return
         }
         banner.hide()
 
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
-        self.commandDelegate!.send(result, callbackId: command.callbackId)
+        self.commandDelegate.send(result, callbackId: command.callbackId)
     }
 
     @objc(interstitialIsLoaded:)
@@ -102,11 +102,11 @@ class AMSPlugin: CDVPlugin {
             let interstitial = AMSAdBase.ads[id] as? AMSInterstitial
             else {
                 let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: false)
-                self.commandDelegate!.send(result, callbackId: command.callbackId)
+                self.commandDelegate.send(result, callbackId: command.callbackId)
                 return
         }
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: interstitial.isLoaded())
-        self.commandDelegate!.send(result, callbackId: command.callbackId)
+        self.commandDelegate.send(result, callbackId: command.callbackId)
     }
 
     @objc(interstitialLoad:)
@@ -117,7 +117,7 @@ class AMSPlugin: CDVPlugin {
             var interstitial = AMSAdBase.ads[id] as? AMSInterstitial?
             else {
                 let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: false)
-                self.commandDelegate!.send(result, callbackId: command.callbackId)
+                self.commandDelegate.send(result, callbackId: command.callbackId)
                 return
         }
         if interstitial == nil {
@@ -126,7 +126,7 @@ class AMSPlugin: CDVPlugin {
         interstitial!.load(request: createGADRequest(opts))
 
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
-        self.commandDelegate!.send(result, callbackId: command.callbackId)
+        self.commandDelegate.send(result, callbackId: command.callbackId)
     }
 
     @objc(interstitialShow:)
@@ -136,13 +136,13 @@ class AMSPlugin: CDVPlugin {
             let interstitial = AMSAdBase.ads[id] as? AMSInterstitial
             else {
                 let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: false)
-                self.commandDelegate!.send(result, callbackId: command.callbackId)
+                self.commandDelegate.send(result, callbackId: command.callbackId)
                 return
         }
         interstitial.show()
 
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
-        self.commandDelegate!.send(result, callbackId: command.callbackId)
+        self.commandDelegate.send(result, callbackId: command.callbackId)
     }
 
     @objc(rewardedIsLoaded:)
@@ -152,7 +152,7 @@ class AMSPlugin: CDVPlugin {
             let rewarded = AMSAdBase.ads[id] as? AMSRewarded
             else {
                 let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: false)
-                self.commandDelegate!.send(result, callbackId: command.callbackId)
+                self.commandDelegate.send(result, callbackId: command.callbackId)
                 return
         }
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: rewarded.isReady())
@@ -196,13 +196,13 @@ class AMSPlugin: CDVPlugin {
             let rewarded = AMSAdBase.ads[id] as? AMSRewarded
             else {
                 let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: false)
-                self.commandDelegate!.send(result, callbackId: command.callbackId)
+                self.commandDelegate.send(result, callbackId: command.callbackId)
                 return
         }
         rewarded.show()
 
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
-        self.commandDelegate!.send(result, callbackId: command.callbackId)
+        self.commandDelegate.send(result, callbackId: command.callbackId)
     }
 
     func createGADRequest(_ opts: NSDictionary) -> GADRequest {
@@ -219,7 +219,7 @@ class AMSPlugin: CDVPlugin {
     func emit(eventType: String, data: Any = NSNull()) {
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: ["type": eventType, "data": data])
         result?.setKeepCallbackAs(true)
-        self.commandDelegate!.send(result, callbackId: readyCallbackId)
+        self.commandDelegate.send(result, callbackId: readyCallbackId)
     }
 
     func getAdSize(_ opts: NSDictionary) -> GADAdSize {
