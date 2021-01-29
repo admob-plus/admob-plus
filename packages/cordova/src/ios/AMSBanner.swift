@@ -53,6 +53,12 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
     }
 
     func addBannerViewToView(_ bannerView: UIView) {
+        DispatchQueue.main.async { [unowned self] in
+            self.addBannerViewToViewUnsafe(bannerView)
+        }
+    }
+
+    func addBannerViewToViewUnsafe(_ bannerView: UIView) {
         mainView.translatesAutoresizingMaskIntoConstraints = false
         bannerView.translatesAutoresizingMaskIntoConstraints = false
         rootView.addSubview(bannerView)
