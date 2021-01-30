@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@types/xml2js": "^0.4.8",
-    "@types/yargs": "^15.0.12",
+    "@types/yargs": "^16.0.0",
     "ts-node": "^9.1.1"
   }
 }

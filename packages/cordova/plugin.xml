@@ -13,6 +13,11 @@
         <engine name="cordova-ios" version=">=5.0.0" />
     </engines>
 
+    <hook type="after_plugin_add" src="scripts/iosNSAppTransportSecurity.js" />
+    <hook type="after_plugin_install" src="scripts/iosNSAppTransportSecurity.js" />
+    <hook type="after_prepare" src="scripts/iosNSAppTransportSecurity.js" />
+    <hook type="before_compile" src="scripts/iosNSAppTransportSecurity.js" />
+
     <platform name="android">
         <preference name="APP_ID_ANDROID" default="test" />
         <preference name="PLAY_SERVICES_VERSION" default="19.7.0" />
