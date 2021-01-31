@@ -28,7 +28,7 @@
     "@types/xml2js": "^0.4.8",
     "cordova": "10.0.0",
     "cordova-testbed": "^0.8.0",
-    "eslint": "^7.18.0",
+    "eslint": "^7.19.0",
     "eslint-config-concise": "^0.40.1",
     "eslint-config-concise-browser": "^0.40.1",
     "eslint-config-concise-esnext": "^0.40.1",
