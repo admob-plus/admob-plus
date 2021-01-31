@@ -152,8 +152,6 @@ jobs:
 
       - name: Install dependencies
         run: |
-          echo $(yarn global bin) >> $GITHUB_PATH
-          yarn global add ios-deploy
           yarn
           pushd examples/basic
           yarn
