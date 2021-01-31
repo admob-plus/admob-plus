@@ -89,6 +89,18 @@ module.exports = {
     },
   },
   plugins: [
+    [
+      'docusaurus-plugin-typedoc',
+      {
+        entryPoints: ['../packages/cordova/ts/index.ts'],
+        tsconfig: '../packages/cordova/tsconfig.json',
+        out: 'cordova/api',
+        readme: 'none',
+        sidebar: {
+          sidebarFile: 'sidebar/typedoc-cordova.js',
+        },
+      },
+    ],
   ],
   presets: [
     [

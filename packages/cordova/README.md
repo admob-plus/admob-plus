@@ -18,4 +18,4 @@ AdMob Plus is the successor of [cordova-plugin-admob-free](https://github.com/ra
 
 ## License
 
-AdMob Plus is [MIT licensed](./LICENSE).
+AdMob Plus is [MIT licensed](../../LICENSE).

@@ -1,7 +1,9 @@
 export { AdSizeType, Events } from './generated'
 
+/** @internal */
 export type MobileAdOptions = { adUnitId: string }
 
+/** @internal */
 export class MobileAd {
   private static allAds: { [s: number]: MobileAd } = {}
 

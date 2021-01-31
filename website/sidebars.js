@@ -8,9 +8,8 @@ module.exports = {
           'cordova/ads/interstitial',
           'cordova/ads/rewarded',
         ],
-        'Advanced Topics': [
-          'cordova/volume-control',
-        ]
+        'Advanced Topics': ['cordova/volume-control'],
+        API: require('./sidebar/typedoc-cordova.js'),
       },
     ],
   },
