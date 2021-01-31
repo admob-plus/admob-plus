@@ -1,0 +1,86 @@
+{
+  "version-0.x/docs": [
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Getting Started",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-0.x/installation"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Display Ads",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-0.x/show-banner"
+        },
+        {
+          "type": "doc",
+          "id": "version-0.x/show-interstitial"
+        },
+        {
+          "type": "doc",
+          "id": "version-0.x/show-reward-video"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Guides",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-0.x/test-ads"
+        },
+        {
+          "type": "doc",
+          "id": "version-0.x/volume-control"
+        },
+        {
+          "type": "doc",
+          "id": "version-0.x/designed-for-families"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Ionic Guides",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-0.x/ionic"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "API Reference",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-0.x/ad-request-options"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Troubleshooting",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-0.x/faq"
+        }
+      ]
+    }
+  ]
+}

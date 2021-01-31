@@ -1,3 +1,11 @@
+const versions = require('./versions.json')
+
+const allDocHomesPaths = [
+  '/docs/',
+  '/docs/next/',
+  ...versions.slice(1).map((version) => `/docs/${version}/`),
+]
+
 module.exports = {
   title: 'AdMob Plus',
   tagline: 'Trustable AdMob Plugin for Cordova, Ionic',
@@ -23,6 +31,17 @@ module.exports = {
         },
         { to: 'blog', label: 'Blog', position: 'left' },
         { to: 'users', label: 'Users', position: 'left' },
+        {
+          type: 'docsVersionDropdown',
+          position: 'right',
+          dropdownActiveClassDisabled: true,
+          dropdownItemsAfter: [
+            {
+              to: '/versions',
+              label: 'All versions',
+            },
+          ],
+        },
         { to: 'funding', label: 'Funding', position: 'right' },
         {
           href: 'https://github.com/admob-plus/admob-plus',
@@ -69,6 +88,8 @@ module.exports = {
       copyright: `Copyright © ${new Date().getFullYear()} <a href="https://github.com/admob-plus/admob-plus/graphs/contributors">AdMob Plus Contributors</a>.`,
     },
   },
+  plugins: [
+  ],
   presets: [
     [
       '@docusaurus/preset-classic',
@@ -77,6 +98,7 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
             'https://github.com/admob-plus/admob-plus/edit/master/website/',
+          lastVersion: 'current',
         },
         blog: {
           showReadingTime: true,
