@@ -4,7 +4,6 @@ import typescript from '@rollup/plugin-typescript'
 
 const outDir = 'www'
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export default (config: any) => ({
   external: ['cordova'],
   output: {

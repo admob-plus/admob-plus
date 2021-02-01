@@ -1,5 +1,7 @@
 examples/*
 internal/cli/lib
+internal/rollup-config/*.js
+internal/rollup-config/*.d.ts
 packages/*
 scripts/*
 website/*
@@ -8,6 +10,6 @@ website/*
 packages/cli/lib
 
 !packages/cordova
+packages/cordova/lib
 packages/cordova/www
-packages/cordova/src
 packages/cordova/ts

@@ -10,6 +10,12 @@ module.exports = {
         '@typescript-eslint/explicit-module-boundary-types': 'off',
       },
     },
+    {
+      files: ['packages/cordova/src/browser/AdMobProxy.js'],
+      rules: {
+        strict: 'off',
+      },
+    },
   ],
   rules: {
     'function-paren-newline': 'off',

@@ -116,7 +116,7 @@ const androidRun = async (argv: {
     await execa('yarn', ['prepare'], { cwd, stdio: 'inherit' })
   }
   await cordovaBin(
-    ['run', 'android', '--verbose'].concat(argv.device ? ['--device'] : []),
+    ['run', 'android', '--verbose', ...(argv.device ? ['--device'] : [])],
     { cwd },
   )
 }
