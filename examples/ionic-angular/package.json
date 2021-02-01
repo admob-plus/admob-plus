@@ -73,6 +73,6 @@
     ]
   },
   "resolutions": {
-    "node-sass": "^4.11.0"
+    "node-sass": "^5.0.0"
   }
 }
