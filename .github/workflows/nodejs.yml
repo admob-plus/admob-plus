@@ -27,7 +27,6 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-      - run: yarn set version berry
 
       - name: Restore Node cache
         uses: actions/cache@v2
@@ -40,6 +39,12 @@ jobs:
             */node_modules
             */*/node_modules
           key: ${{ runner.os }}-${{ hashFiles('**/package.json') }}
+
+      - name: Config Yarn
+        run: |
+          yarn set version berry
+          yarn config set pnpFallbackMode all
+          yarn config set pnpMode loose
 
       - name: Install dependencies
         run: |
@@ -83,7 +88,6 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-      - run: yarn set version berry
 
       - name: Restore Node cache
         uses: actions/cache@v2
@@ -95,6 +99,12 @@ jobs:
             */node_modules
             */*/node_modules
           key: ${{ runner.os }}-${{ hashFiles('**/package.json') }}
+
+      - name: Config Yarn
+        run: |
+          yarn set version berry
+          yarn config set pnpFallbackMode all
+          yarn config set pnpMode loose
 
       - name: Restore Gradle cache
         uses: actions/cache@v2
@@ -137,7 +147,6 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-      - run: yarn set version berry
 
       - name: Restore Node cache
         uses: actions/cache@v2
@@ -149,6 +158,12 @@ jobs:
             */node_modules
             */*/node_modules
           key: ${{ runner.os }}-${{ hashFiles('**/package.json') }}
+
+      - name: Config Yarn
+        run: |
+          yarn set version berry
+          yarn config set pnpFallbackMode all
+          yarn config set pnpMode loose
 
       - name: Install dependencies
         run: |
@@ -172,7 +187,12 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '15.x'
-      - run: yarn set version berry
+
+      - name: Config Yarn
+        run: |
+          yarn set version berry
+          yarn config set pnpFallbackMode all
+          yarn config set pnpMode loose
 
       - name: Release to GitHub Pages
         run: |
