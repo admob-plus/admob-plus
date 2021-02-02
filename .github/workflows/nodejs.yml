@@ -44,7 +44,7 @@ jobs:
         run: |
           yarn set version berry
           yarn --version
-          yarn set version latest
+          yarn set version from sources
           yarn --version
           yarn config set pnpFallbackMode all
           yarn config set pnpMode loose
