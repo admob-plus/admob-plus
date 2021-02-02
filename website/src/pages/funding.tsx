@@ -3,7 +3,7 @@ import Layout from '@theme/Layout'
 import React from 'react'
 import useBaseUrl from '@docusaurus/useBaseUrl'
 
-const Funding = () => {
+const Funding: React.FC = () => {
   const context = useDocusaurusContext()
   const { siteConfig = {} } = context
   return (
@@ -40,9 +40,14 @@ const Funding = () => {
         <div className="row text--center margin-bottom--xl">
           <div className="col col--3 col--offset-2">
             <h2>Recurring</h2>
-            <a href="https://ratson.name/fund-admob-plus/">
-              Stripe-powered Signup Page
-            </a>
+            <p>
+              <a href="https://github.com/sponsors/ratson/">GitHub Sponsors</a>
+            </p>
+            <p>
+              <a href="https://ratson.name/fund-admob-plus/">
+                Stripe-powered Signup Page
+              </a>
+            </p>
           </div>
           <div className="col col--3 col--offset-1">
             <h2>One-Off</h2>
