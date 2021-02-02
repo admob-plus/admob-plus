@@ -60,12 +60,6 @@ jobs:
         run: |
           yarn lint
           yarn test
-          if [ "$RUNNER_OS" != "Windows" ]; then
-            pushd examples/ionic-angular
-            yarn
-            yarn lint
-            popd
-          fi
         shell: bash
 
   test-android:
