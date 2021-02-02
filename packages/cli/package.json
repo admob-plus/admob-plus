@@ -43,7 +43,7 @@
   "files": [
     "/bin",
     "/lib",
-    "/npm-shrinkwrap.json",
+    "/src",
     "/oclif.manifest.json"
   ],
   "author": "Ratson",
