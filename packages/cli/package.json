@@ -9,7 +9,7 @@
     "@oclif/plugin-help": "^3.2.1",
     "clipboardy": "^2.3.0",
     "elementtree": "^0.1.7",
-    "envinfo": "^7.7.3",
+    "envinfo": "^7.7.4",
     "execa": "^5.0.0",
     "fs-extra": "^9.1.0",
     "lodash": "^4.17.20",

@@ -88,7 +88,8 @@
     "@admob-plus-internal/rollup-config": "workspace:*",
     "@admob-plus-internal/tsconfig": "workspace:*",
     "admob-plus-cordova": "workspace:*",
-    "cordova-plugin-consent": "workspace:*"
+    "cordova-plugin-consent": "workspace:*",
+    "node-preload": "0.2.0"
   },
   "workspaces": [
     "examples/*",
