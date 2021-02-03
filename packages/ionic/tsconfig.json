@@ -1,4 +1,5 @@
 {
+  "extends": "@admob-plus-internal/tsconfig",
   "compilerOptions": {
     "baseUrl": ".",
     "declaration": true,
@@ -8,12 +9,13 @@
     "noImplicitAny": true,
     "module": "es2015",
     "moduleResolution": "node",
-    "outDir": "dist",
-    "rootDir": ".",
+    "outDir": "ngx",
+    "rootDir": "src",
     "target": "es5",
     "skipLibCheck": true,
     "lib": ["es2017", "dom"],
     "inlineSources": true,
     "sourceMap": true
-  }
+  },
+  "include": ["src/**/*.ts"]
 }

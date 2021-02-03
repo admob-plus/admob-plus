@@ -6,7 +6,9 @@
     { "path": "packages/capacitor" },
     { "path": "packages/cordova" },
     { "path": "packages/core" },
-    { "path": "website" },
+    { "path": "packages/ioinc" },
+    { "path": "packages/ioinc/tsconfig.build.json" },
+    { "path": "website" }
   ],
   "files": []
 }
