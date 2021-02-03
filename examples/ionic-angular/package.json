@@ -1,0 +1,62 @@
+{
+  "private": true,
+  "name": "example.ionic-angular",
+  "version": "0.0.1",
+  "scripts": {
+    "postinstall": "mkdir -p node_modules",
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
+  },
+  "dependencies": {
+    "@angular/common": "~11.0.5",
+    "@angular/core": "~11.0.5",
+    "@angular/forms": "~11.0.5",
+    "@angular/platform-browser": "~11.0.5",
+    "@angular/platform-browser-dynamic": "~11.0.5",
+    "@angular/router": "~11.0.5",
+    "@ionic/angular": "^5.5.2",
+    "rxjs": "~6.6.0",
+    "tslib": "^2.0.0",
+    "zone.js": "~0.10.2"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~0.1101.2",
+    "@angular/cli": "~11.2.0-next.0",
+    "@angular/compiler": "~11.0.5",
+    "@angular/compiler-cli": "~11.0.5",
+    "@angular/language-service": "~11.0.5",
+    "@ionic/angular-toolkit": "^3.0.0",
+    "@ionic/cli": "^6.12.4",
+    "@types/jasmine": "~3.6.0",
+    "@types/jasminewd2": "~2.0.3",
+    "@types/node": "^14.14.22",
+    "admob-plus-cordova": "file:../../packages/cordova",
+    "codelyzer": "^6.0.0",
+    "cordova": "^10.0.0",
+    "jasmine-core": "~3.6.0",
+    "jasmine-spec-reporter": "~6.0.0",
+    "karma": "~6.1.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage": "~2.0.3",
+    "karma-coverage-istanbul-reporter": "~3.0.2",
+    "karma-jasmine": "~4.0.0",
+    "karma-jasmine-html-reporter": "^1.5.0",
+    "npm": "^6.14.11",
+    "protractor": "~7.0.0",
+    "ts-node": "~9.1.1",
+    "tslint": "~6.1.0",
+    "typescript": "~4.0.2"
+  },
+  "cordova": {
+    "plugins": {
+      "admob-plus-cordova": {
+        "APP_ID_ANDROID": "ca-app-pub-3940256099942544~3347511713",
+        "APP_ID_IOS": "ca-app-pub-3940256099942544~1458002511"
+      }
+    }
+  }
+}
