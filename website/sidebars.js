@@ -10,14 +10,13 @@ module.exports = {
         ],
         'Advanced Topics': ['cordova/volume-control'],
         API: require('./sidebar/typedoc-cordova.js'),
-        References: [
-          {
-            type: 'link',
-            label: 'CHANGELOG',
-            href:
-              'https://github.com/admob-plus/admob-plus/blob/master/packages/cordova/CHANGELOG.md',
-          },
-        ],
+      },
+      'cordova/faq',
+      {
+        type: 'link',
+        label: 'CHANGELOG',
+        href:
+          'https://github.com/admob-plus/admob-plus/blob/master/packages/cordova/CHANGELOG.md',
       },
     ],
   },
