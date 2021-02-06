@@ -5,7 +5,7 @@ supportLabel: enhancement
 # optional placeholder. Set to `false` to disable
 supportComment: >
   :wave: @{issue-author}, it takes time to develop new feature.
-  Please consider [financial support the author](https://admob-plus.github.io/funding.html) to spend more time on this project,
+  Please consider [financial support the author](https://admob-plus.github.io/funding) to spend more time on this project,
   you may also ask to prioritize your request.
 
 # Close issues marked as support requests
