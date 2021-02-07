@@ -38,7 +38,7 @@ jobs:
             node_modules
             */node_modules
             */*/node_modules
-          key: ${{ runner.os }}-${{ matrix.node-version }}-${{ hashFiles('**/package.json') }}-${{ secrets.CACHE_VERSION }}
+          key: ${{ runner.os }}-node${{ matrix.node-version }}-${{ hashFiles('**/package.json') }}-${{ secrets.CACHE_VERSION }}
 
       - name: Config Yarn
         run: |
@@ -95,7 +95,7 @@ jobs:
             node_modules
             */node_modules
             */*/node_modules
-          key: ${{ runner.os }}-${{ matrix.node-version }}-${{ hashFiles('**/package.json') }}
+          key: ${{ runner.os }}-node${{ matrix.node-version }}-${{ hashFiles('**/package.json') }}-${{ secrets.CACHE_VERSION }}
 
       - name: Config Yarn
         run: |
@@ -155,7 +155,7 @@ jobs:
             node_modules
             */node_modules
             */*/node_modules
-          key: ${{ runner.os }}-${{ matrix.node-version }}-${{ hashFiles('**/package.json') }}
+          key: ${{ runner.os }}-node${{ matrix.node-version }}-${{ hashFiles('**/package.json') }}-${{ secrets.CACHE_VERSION }}
 
       - name: Config Yarn
         run: |
