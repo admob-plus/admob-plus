@@ -2,13 +2,33 @@ import { Injectable } from '@angular/core'
 import { cordova, IonicNativePlugin } from '@ionic-native/core'
 import { fromEvent, Observable } from 'rxjs'
 
-const plugin = 'cordova-admob-plus'
+const plugin = 'admob-plus-cordova'
 const pluginName = 'AdMob'
 
 export class BannerAd extends IonicNativePlugin {
   public static plugin = plugin
   public static pluginName = pluginName
   public static pluginRef = 'admob.BannerAd'
+
+  private _objectInstance: any
+
+  constructor(opts: { adUnitId: string }) {
+    super()
+
+    this._objectInstance = new (BannerAd.getPlugin())(opts)
+  }
+
+  load(): Promise<unknown> {
+    return this._objectInstance.load()
+  }
+
+  show(): Promise<unknown> {
+    return this._objectInstance.show()
+  }
+
+  hide(): Promise<unknown> {
+    return this._objectInstance.hide()
+  }
 }
 
 export class InterstitialAd extends IonicNativePlugin {

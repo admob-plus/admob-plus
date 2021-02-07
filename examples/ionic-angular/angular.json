@@ -166,6 +166,7 @@
     }
   },
   "cli": {
+    "analytics": false,
     "defaultCollection": "@ionic/angular-toolkit",
     "packageManager": "yarn"
   },

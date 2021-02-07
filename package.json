@@ -93,8 +93,7 @@
     "@admob-plus/react-native": "workspace:*",
     "admob-plus-cordova": "workspace:*",
     "admob-plus": "workspace:*",
-    "cordova-plugin-consent": "workspace:*",
-    "node-preload": "0.2.0"
+    "cordova-plugin-consent": "workspace:*"
   },
   "workspaces": [
     "examples/*",
