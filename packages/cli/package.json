@@ -6,7 +6,7 @@
   "dependencies": {
     "@oclif/command": "^1.8.0",
     "@oclif/config": "^1.17.0",
-    "@oclif/plugin-help": "^3.2.1",
+    "@oclif/plugin-help": "^3.2.2",
     "clipboardy": "^2.3.0",
     "elementtree": "^0.1.7",
     "envinfo": "^7.7.4",
@@ -18,22 +18,16 @@
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1.26.0",
-    "@oclif/test": "^1.2.8",
-    "@types/chai": "^4.2.14",
     "@types/clipboardy": "^2.0.1",
     "@types/elementtree": "^0.1.0",
     "@types/eslint": "^7",
     "@types/fs-extra": "^9.0.6",
     "@types/lodash": "^4.14.168",
-    "@types/mocha": "^8.2.0",
     "@types/node": "^14.14.25",
-    "chai": "^4.2.0",
     "eslint": "^7.19.0",
     "eslint-config-oclif": "^3.1.0",
     "eslint-config-oclif-typescript": "^0.2.0",
     "globby": "^11.0.2",
-    "mocha": "^8.2.1",
-    "nyc": "^15.1.0",
     "ts-node": "^9.1.1",
     "typescript": "^4.1"
   },
@@ -62,15 +56,7 @@
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "eslint . --ext .ts",
     "prepack": "rm -rf lib && tsc -b && yarn oclif-dev manifest && yarn oclif-dev readme",
-    "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
     "version": "yarn oclif-dev readme && git add README.md"
   },
-  "types": "lib/index.d.ts",
-  "mocha": {
-    "require": "ts-node/register",
-    "watch-extensions": "ts",
-    "recursive": true,
-    "reporter": "spec",
-    "timeout": 30000
-  }
+  "types": "lib/index.d.ts"
 }

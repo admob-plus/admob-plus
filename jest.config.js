@@ -10,7 +10,6 @@ module.exports = {
   testPathIgnorePatterns: [
     ...defaults.testPathIgnorePatterns,
     '/examples/.*/plugins/',
-    '<rootDir>/packages/cli/',
   ],
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$',
   testURL: 'http://localhost/',
