@@ -120,8 +120,8 @@ jobs:
           echo "/usr/local/lib/android/sdk/tools" >> $GITHUB_PATH
           yarn
           pushd examples/basic
-          npx cordova platform rm ios
-          yarn
+          yarn example cordova platform rm ios
+          yarn prepare
           popd
 
       - name: Test
@@ -168,7 +168,7 @@ jobs:
         run: |
           yarn
           pushd examples/basic
-          yarn
+          yarn prepare
           popd
 
       - name: Test
