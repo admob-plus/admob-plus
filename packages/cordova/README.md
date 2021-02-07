@@ -1,6 +1,6 @@
-# [AdMob Plus](https://admob-plus.github.io)
+# [AdMob Plus Cordova](https://admob-plus.github.io)
 
-AdMob Plus is the successor of [cordova-plugin-admob-free](https://github.com/ratson/cordova-plugin-admob-free), which provides a cleaner API and build with modern tools.
+AdMob Plus Cordova is the successor of [cordova-plugin-admob-free](https://github.com/ratson/cordova-plugin-admob-free), which provides a cleaner API and build with modern tools.
 
 ## Documentation
 
@@ -14,4 +14,4 @@ You can find the documentation [on the website](https://admob-plus.github.io/doc
 
 ## License
 
-AdMob Plus is [MIT licensed](../../LICENSE).
+AdMob Plus Cordova is [MIT licensed](../../LICENSE).
