@@ -100,6 +100,7 @@ jobs:
       - name: Config Yarn
         run: |
           yarn set version berry
+          yarn set version from sources
           yarn config set pnpFallbackMode all
           yarn config set pnpMode loose
 
@@ -159,6 +160,7 @@ jobs:
       - name: Config Yarn
         run: |
           yarn set version berry
+          yarn set version from sources
           yarn config set pnpFallbackMode all
           yarn config set pnpMode loose
 
