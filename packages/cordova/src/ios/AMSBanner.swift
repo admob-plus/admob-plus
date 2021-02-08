@@ -1,3 +1,4 @@
+
 class AMSBanner: AMSAdBase, GADBannerViewDelegate {
     var bannerView: GADBannerView!
     var adSize: GADAdSize!
@@ -136,23 +137,24 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
         }
     }
 
-    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
         plugin.emit(eventType: AMSEvents.bannerLoad)
     }
 
-    func adView(_ bannerView: GADBannerView,
-                didFailToReceiveAdWithError error: GADRequestError) {
-        plugin.emit(eventType: AMSEvents.bannerLoadFail)
+    func bannerView(_ bannerView: GADBannerView,
+                    didFailToReceiveAdWithError error: Error) {
+        plugin.emit(eventType: AMSEvents.bannerLoadFail, data: error.localizedDescription)
     }
 
-    func adViewWillPresentScreen(_ bannerView: GADBannerView) {
+    func bannerViewWillPresentScreen(_ bannerView: GADBannerView) {
         plugin.emit(eventType: AMSEvents.bannerOpen)
     }
 
-    func adViewWillDismissScreen(_ bannerView: GADBannerView) {
+    func bannerViewWillDismissScreen(_ bannerView: GADBannerView) {
+        // TODO
     }
 
-    func adViewDidDismissScreen(_ bannerView: GADBannerView) {
+    func bannerViewDidDismissScreen(_ bannerView: GADBannerView) {
         plugin.emit(eventType: AMSEvents.bannerClose)
     }
 }

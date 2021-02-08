@@ -9,6 +9,10 @@ class AMSAdBase: NSObject {
         return AMSAdBase.plugin
     }
 
+    var commandDelegate: CDVCommandDelegate {
+        return self.plugin.commandDelegate
+    }
+
     init(id: Int, adUnitID: String) {
         super.init()
 

@@ -1,45 +1,59 @@
-class AMSInterstitial: AMSAdBase, GADInterstitialDelegate {
-    var interstitial: GADInterstitial?
+class AMSInterstitial: AMSAdBase, GADFullScreenContentDelegate {
+    var interstitial: GADInterstitialAd?
 
     deinit {
         interstitial = nil
     }
 
     func isLoaded() -> Bool {
-        return (interstitial?.isReady == true)
+        return self.interstitial != nil
     }
 
-    func load(request: GADRequest) {
-        let interstitial = GADInterstitial(adUnitID: adUnitID)
-        self.interstitial = interstitial
+    func load(_ command: CDVInvokedUrlCommand, request: GADRequest) {
+        GADInterstitialAd.load(
+            withAdUnitID: adUnitID,
+            request: request,
+            completionHandler: { ad, error in
+                if error != nil {
+                    self.plugin.emit(eventType: AMSEvents.interstitialLoadFail)
 
-        interstitial.load(request)
-        interstitial.delegate = self
+                    let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: error?.localizedDescription)
+                    self.plugin.commandDelegate.send(result, callbackId: command.callbackId)
+                    return
+                }
+
+                self.interstitial = ad
+                ad?.fullScreenContentDelegate = self
+
+                self.plugin.emit(eventType: AMSEvents.interstitialLoad)
+
+                let result = CDVPluginResult(status: CDVCommandStatus_OK)
+                self.commandDelegate.send(result, callbackId: command.callbackId)
+         })
     }
 
-    func show() {
-        if (interstitial?.isReady)! {
+    func show(_ command: CDVInvokedUrlCommand) {
+        if isLoaded() {
             interstitial?.present(fromRootViewController: plugin.viewController)
         }
+
+        let result = CDVPluginResult(status: CDVCommandStatus_OK)
+        self.commandDelegate.send(result, callbackId: command.callbackId)
     }
 
-    @objc
-    func interstitialDidReceiveAd(_ adInterstitial: GADInterstitial) {
-        plugin.emit(eventType: AMSEvents.interstitialLoad)
+    func adDidRecordImpression(_ ad: GADFullScreenPresentingAd) {
+        self.plugin.emit(eventType: AMSEvents.interstitialImpression)
     }
 
-    @objc
-    func interstitialDidFail(toPresentScreen adInterstitial: GADInterstitial) {
-        plugin.emit(eventType: AMSEvents.interstitialLoadFail)
+    func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
+        // TODO
     }
 
-    @objc
-    func interstitialDidDismissScreen(_ adInterstitial: GADInterstitial) {
-        plugin.emit(eventType: AMSEvents.interstitialClose)
-    }
-
-    @objc
-    func interstitialWillPresentScreen(_ adInterstitial: GADInterstitial) {
+    func adDidPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
         plugin.emit(eventType: AMSEvents.interstitialOpen)
+    }
+
+    func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        plugin.emit(eventType: AMSEvents.interstitialClose)
     }
 }

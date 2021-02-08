@@ -33,13 +33,13 @@ class AMSPlugin: CDVPlugin {
     func setAppMuted(command: CDVInvokedUrlCommand) {
         guard let applicationMuted = command.argument(at: 0) as? Bool
             else {
-                let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: false)
+                let result = CDVPluginResult(status: CDVCommandStatus_ERROR)
                 self.commandDelegate.send(result, callbackId: command.callbackId)
                 return
         }
         GADMobileAds.sharedInstance().applicationMuted = applicationMuted
 
-        let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
+        let result = CDVPluginResult(status: CDVCommandStatus_OK)
         self.commandDelegate.send(result, callbackId: command.callbackId)
     }
 
@@ -47,13 +47,13 @@ class AMSPlugin: CDVPlugin {
     func setAppVolume(command: CDVInvokedUrlCommand) {
         guard let applicationVolume = command.argument(at: 0) as? Float
             else {
-                let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: false)
+                let result = CDVPluginResult(status: CDVCommandStatus_ERROR)
                 self.commandDelegate.send(result, callbackId: command.callbackId)
                 return
         }
         GADMobileAds.sharedInstance().applicationVolume = applicationVolume
 
-        let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
+        let result = CDVPluginResult(status: CDVCommandStatus_OK)
         self.commandDelegate.send(result, callbackId: command.callbackId)
     }
 
@@ -65,7 +65,7 @@ class AMSPlugin: CDVPlugin {
             let position = opts.value(forKey: "position") as? String,
             var banner = AMSAdBase.ads[id] as? AMSBanner?
             else {
-                let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: false)
+                let result = CDVPluginResult(status: CDVCommandStatus_ERROR)
                 self.commandDelegate.send(result, callbackId: command.callbackId)
                 return
         }
@@ -75,7 +75,7 @@ class AMSPlugin: CDVPlugin {
         }
         banner!.show(request: createGADRequest(opts))
 
-        let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
+        let result = CDVPluginResult(status: CDVCommandStatus_OK)
         self.commandDelegate.send(result, callbackId: command.callbackId)
     }
 
@@ -85,13 +85,13 @@ class AMSPlugin: CDVPlugin {
             let id = opts.value(forKey: "id") as? Int,
             let banner = AMSAdBase.ads[id] as? AMSBanner
             else {
-                let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: false)
+                let result = CDVPluginResult(status: CDVCommandStatus_ERROR)
                 self.commandDelegate.send(result, callbackId: command.callbackId)
                 return
         }
         banner.hide()
 
-        let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
+        let result = CDVPluginResult(status: CDVCommandStatus_OK)
         self.commandDelegate.send(result, callbackId: command.callbackId)
     }
 
@@ -101,7 +101,7 @@ class AMSPlugin: CDVPlugin {
             let id = opts.value(forKey: "id") as? Int,
             let interstitial = AMSAdBase.ads[id] as? AMSInterstitial
             else {
-                let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: false)
+                let result = CDVPluginResult(status: CDVCommandStatus_ERROR)
                 self.commandDelegate.send(result, callbackId: command.callbackId)
                 return
         }
@@ -116,17 +116,14 @@ class AMSPlugin: CDVPlugin {
             let adUnitID = opts.value(forKey: "adUnitID") as? String,
             var interstitial = AMSAdBase.ads[id] as? AMSInterstitial?
             else {
-                let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: false)
+                let result = CDVPluginResult(status: CDVCommandStatus_ERROR)
                 self.commandDelegate.send(result, callbackId: command.callbackId)
                 return
         }
         if interstitial == nil {
             interstitial = AMSInterstitial(id: id, adUnitID: adUnitID)
         }
-        interstitial!.load(request: createGADRequest(opts))
-
-        let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
-        self.commandDelegate.send(result, callbackId: command.callbackId)
+        interstitial!.load(command, request: createGADRequest(opts))
     }
 
     @objc(interstitialShow:)
@@ -135,14 +132,11 @@ class AMSPlugin: CDVPlugin {
             let id = opts.value(forKey: "id") as? Int,
             let interstitial = AMSAdBase.ads[id] as? AMSInterstitial
             else {
-                let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: false)
+                let result = CDVPluginResult(status: CDVCommandStatus_ERROR)
                 self.commandDelegate.send(result, callbackId: command.callbackId)
                 return
         }
-        interstitial.show()
-
-        let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
-        self.commandDelegate.send(result, callbackId: command.callbackId)
+        interstitial.show(command)
     }
 
     @objc(rewardedIsLoaded:)
@@ -151,7 +145,7 @@ class AMSPlugin: CDVPlugin {
             let id = opts.value(forKey: "id") as? Int,
             let rewarded = AMSAdBase.ads[id] as? AMSRewarded
             else {
-                let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: false)
+                let result = CDVPluginResult(status: CDVCommandStatus_ERROR)
                 self.commandDelegate.send(result, callbackId: command.callbackId)
                 return
         }
@@ -173,20 +167,7 @@ class AMSPlugin: CDVPlugin {
         if rewarded == nil {
             rewarded = AMSRewarded(id: id, adUnitID: adUnitID)
         }
-        rewarded!.load(request: createGADRequest(opts)) { error in
-            if error == nil {
-                self.emit(eventType: AMSEvents.rewardedLoad)
-
-                let result = CDVPluginResult(status: CDVCommandStatus_OK)
-                self.commandDelegate.send(result, callbackId: command.callbackId)
-            } else {
-                self.emit(eventType: AMSEvents.rewardedLoadFail)
-
-                let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: error?.description)
-                self.commandDelegate.send(result, callbackId: command.callbackId)
-            }
-        }
-
+        rewarded!.load(command, request: createGADRequest(opts))
     }
 
     @objc(rewardedShow:)
@@ -195,14 +176,11 @@ class AMSPlugin: CDVPlugin {
             let id = opts.value(forKey: "id") as? Int,
             let rewarded = AMSAdBase.ads[id] as? AMSRewarded
             else {
-                let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: false)
+                let result = CDVPluginResult(status: CDVCommandStatus_ERROR)
                 self.commandDelegate.send(result, callbackId: command.callbackId)
                 return
         }
-        rewarded.show()
-
-        let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
-        self.commandDelegate.send(result, callbackId: command.callbackId)
+        rewarded.show(command)
     }
 
     func createGADRequest(_ opts: NSDictionary) -> GADRequest {
