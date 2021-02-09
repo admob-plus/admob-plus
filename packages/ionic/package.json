@@ -10,11 +10,10 @@
   },
   "peerDependencies": {
     "@ionic-native/core": "^5.31.1",
+    "admob-plus-cordova": "^1.0.0-alpha.5",
     "rxjs": ">=6.6.3"
   },
-  "dependencies": {
-    "admob-plus-cordova": "^1.0.0-alpha.5"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@angular/core": "~11.1.2",
     "@ionic-native/core": "^5.0.0-beta.23",

@@ -18,10 +18,6 @@ export class BannerAd extends IonicNativePlugin {
     this._objectInstance = new (BannerAd.getPlugin())(opts)
   }
 
-  load(): Promise<unknown> {
-    return this._objectInstance.load()
-  }
-
   show(): Promise<unknown> {
     return this._objectInstance.show()
   }
@@ -35,12 +31,44 @@ export class InterstitialAd extends IonicNativePlugin {
   public static plugin = plugin
   public static pluginName = pluginName
   public static pluginRef = 'admob.InterstitialAd'
+
+  private _objectInstance: any
+
+  constructor(opts: { adUnitId: string }) {
+    super()
+
+    this._objectInstance = new (InterstitialAd.getPlugin())(opts)
+  }
+
+  public load() {
+    return this._objectInstance.load()
+  }
+
+  public show() {
+    return this._objectInstance.show()
+  }
 }
 
 export class RewardedAd extends IonicNativePlugin {
   public static plugin = plugin
   public static pluginName = pluginName
   public static pluginRef = 'admob.RewardedAd'
+
+  private _objectInstance: any
+
+  constructor(opts: { adUnitId: string }) {
+    super()
+
+    this._objectInstance = new (RewardedAd.getPlugin())(opts)
+  }
+
+  public load() {
+    return this._objectInstance.load()
+  }
+
+  public show() {
+    return this._objectInstance.show()
+  }
 }
 
 @Injectable()
@@ -54,6 +82,10 @@ export class AdMob extends IonicNativePlugin {
   public readonly BannerAd = BannerAd
   public readonly InterstitialAd = InterstitialAd
   public readonly RewardedAd = RewardedAd
+
+  public start(): Promise<void> {
+    return cordova(this, 'start', { otherPromise: true }, arguments)
+  }
 
   public setAppMuted(value: boolean): Promise<any> {
     return cordova(this, 'setAppMuted', { otherPromise: true }, arguments)
