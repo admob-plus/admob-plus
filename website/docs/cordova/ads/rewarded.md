@@ -11,12 +11,14 @@ Reward video ads are full-screen video ads that users have the option of watchin
 let rewarded
 
 document.addEventListener('deviceready', async () => {
-    rewarded = new admob.RewardedAd({
-      adUnitId: 'ca-app-pub-xxx/yyy',
-    })
+  await admob.start()
 
-    await rewarded.load()
-    await rewarded.show()
+  rewarded = new admob.RewardedAd({
+    adUnitId: 'ca-app-pub-xxx/yyy',
+  })
+
+  await rewarded.load()
+  await rewarded.show()
 }, false)
 
 document.addEventListener('admob.rewarded.close', async () => {

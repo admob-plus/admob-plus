@@ -9,11 +9,13 @@ Interstitial ads are full-screen ads that cover the interface of their host app.
 
 ```js
 document.addEventListener('deviceready', async () => {
-   const interstitial = new admob.InterstitialAd({
-      adUnitId: 'ca-app-pub-xxx/yyy',
-    })
+  await admob.start()
 
-    await interstitial.load()
-    await interstitial.show()
+  const interstitial = new admob.InterstitialAd({
+    adUnitId: 'ca-app-pub-xxx/yyy',
+  })
+
+  await interstitial.load()
+  await interstitial.show()
 }, false)
 ```
