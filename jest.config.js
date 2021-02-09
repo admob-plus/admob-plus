@@ -10,6 +10,7 @@ module.exports = {
   testPathIgnorePatterns: [
     ...defaults.testPathIgnorePatterns,
     '/examples/.*/plugins/',
+    '/examples/ionic-angular/',
   ],
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$',
   testURL: 'http://localhost/',
