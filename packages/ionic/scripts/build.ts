@@ -6,6 +6,12 @@ const main = async () => {
   await del(['build', 'lib', 'ngx'])
 
   await execa('tsc', { stdio: 'inherit' })
+  await fse.outputJSON('./ngx/package.json', {
+    ...require('../package.json'),
+    typings: 'index.d.ts',
+    main: 'index.js',
+    module: 'index.js',
+  })
 
   const s = await fse.readFile('./src/index.ts', 'utf8')
   await fse.outputFile(
