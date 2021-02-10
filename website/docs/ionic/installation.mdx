@@ -1,0 +1,32 @@
+---
+title: Installation
+sidebar_label: Installation
+---
+
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+
+<Tabs
+  defaultValue="cordova"
+  values={[
+    {label: 'Cordova', value: 'cordova'},
+    {label: 'Capacitor', value: 'capacitor'},
+  ]}>
+  <TabItem value="cordova">
+
+```shell
+ionic cordova plugin add cordova-admob-plus
+npm install @admob-plus/ionic
+```
+
+</TabItem>
+  <TabItem value="capacitor">
+
+```shell
+npm install @admob-plus/ionic
+npm install admob-plus-cordova
+ionic cap sync
+```
+
+  </TabItem>
+</Tabs>
