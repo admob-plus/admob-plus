@@ -1,12 +1,12 @@
 {
   "name": "@admob-plus/ionic",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.0-alpha.1",
   "description": "Ionic Native wrapper for cordova-admob-plus",
   "main": "lib/index.js",
   "module": "lib/index.js",
   "typings": "lib/index.d.ts",
   "scripts": {
-    "prepack": "ts-node -TH --skip-project scripts/build"
+    "prepack": "yarn ts-node -TH --skip-project scripts/build"
   },
   "peerDependencies": {
     "@ionic-native/core": "^5.31.1",
