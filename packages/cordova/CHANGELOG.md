@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.6](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.0.0-alpha.5...admob-plus-cordova@1.0.0-alpha.6) (2021-02-10)
+
+
+### Bug Fixes
+
+* **cordova/ios:** add hooks to override NSAppTransportSecurity ([24967ed](https://github.com/admob-plus/admob-plus/commit/24967ed7830cf343919e96f826cdfd996dd2c00f))
+* **cordova/ios:** update for SDK v8 ([1aae239](https://github.com/admob-plus/admob-plus/commit/1aae2394951b89457c3547916584b1d37edcb9d5))
+
+
+### Features
+
+* **cordova/android:** update Google-Mobile-Ads-SDK to v19.7.0 ([91ca2dd](https://github.com/admob-plus/admob-plus/commit/91ca2ddb63b7317a6446986be01be1bf3b68cf97))
+* **cordova/ios:** update Google-Mobile-Ads-SDK to v8.0 ([f906c89](https://github.com/admob-plus/admob-plus/commit/f906c89e735d174e2387b6955ea7b773630adf59))
+
+
+
+
+
 # [1.0.0-alpha.5](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.0.0-alpha.4...admob-plus-cordova@1.0.0-alpha.5) (2021-01-28)
 
 

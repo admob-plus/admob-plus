@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.1](https://github.com/admob-plus/admob-plus/compare/@admob-plus/ionic@1.0.0-alpha.0...@admob-plus/ionic@1.0.0-alpha.1) (2021-02-10)
+
+
+### Features
+
+* **ionic:** build lib/ and ngx/ from single source ([89d23d7](https://github.com/admob-plus/admob-plus/commit/89d23d775f32deaa664462f98124a82d7ba6deb8))
+* **ionic:** implement BannerAd ([d432a0f](https://github.com/admob-plus/admob-plus/commit/d432a0f238cf794c2965ced8cd2e6b1970773c39))
+* **ionic:** implement InterstitialAd, RewardedAd ([755ab4d](https://github.com/admob-plus/admob-plus/commit/755ab4d11a82ef21ba8db2fccf9242fb9c7cf1d0))
+* remove ionic-admob package ([753a45f](https://github.com/admob-plus/admob-plus/commit/753a45f375f48ceda41d5f694d906ed76d5213ad))
+
+
+
+
+
 # [1.0.0-alpha.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/ionic@0.19.11...@admob-plus/ionic@1.0.0-alpha.0) (2021-01-19)
 
 **Note:** Version bump only for package @admob-plus/ionic
