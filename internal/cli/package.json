@@ -22,8 +22,8 @@
     "fast-glob": "^3.2.5",
     "lodash": "^4.17.20",
     "read-pkg": "^5.2.0",
-    "replace-in-file": "^6.1.0",
-    "typescript": "^4.1.3",
+    "replace-in-file": "^6.2.0",
+    "typescript": "^4.1.5",
     "xml2js": "^0.4.23",
     "yargs": "^16.2.0"
   },
