@@ -9,11 +9,6 @@ export class AdmobPlusWeb extends WebPlugin implements AdmobPlusPlugin {
     })
   }
 
-  public async echo(options: { value: string }): Promise<{ value: string }> {
-    console.log('ECHO', options)
-    return options
-  }
-
   public async isFirebaseTestLabDevice(): Promise<{ value: boolean }> {
     return { value: false }
   }

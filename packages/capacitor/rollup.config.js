@@ -6,7 +6,10 @@ export default {
     file: 'dist/plugin.js',
     format: 'iife',
     name: 'capacitorPlugin',
+    globals: {
+      '@capacitor/core': 'capacitorExports',
+    },
     sourcemap: true,
   },
-  plugins: [nodeResolve()],
+  plugins: [nodeResolve({ resolveOnly: ['lodash'] })],
 }

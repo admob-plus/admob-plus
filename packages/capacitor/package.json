@@ -2,23 +2,27 @@
   "name": "@admob-plus/capacitor",
   "version": "1.0.0-alpha.0",
   "description": "Capacitor AdMob Plugin",
-  "main": "dist/esm/index.js",
+  "main": "dist/plugin.js",
+  "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
   "scripts": {
     "build": "yarn clean && tsc -b && test -e dist/esm/index.js",
-    "clean": "rm -rf ./dist",
+    "clean": "rimraf ./dist",
     "watch": "tsc --watch",
     "prepack": "yarn build"
   },
   "author": "Ratson",
   "license": "MIT",
   "dependencies": {
-    "@capacitor/core": "latest"
+    "@capacitor/core": "^2.4.6"
   },
   "devDependencies": {
-    "@capacitor/android": "latest",
-    "@capacitor/ios": "latest",
-    "typescript": "^3.4.5"
+    "@capacitor/android": "^2.4.6",
+    "@capacitor/ios": "^2.4.6",
+    "@rollup/plugin-node-resolve": "^8.1.0",
+    "rimraf": "^3.0.0",
+    "rollup": "^2.21.0",
+    "typescript": "^4.1.5"
   },
   "files": [
     "dist/",
@@ -38,7 +42,8 @@
     "capacitor",
     "plugin",
     "native",
-    "admob"
+    "admob",
+    "plus"
   ],
   "capacitor": {
     "ios": {

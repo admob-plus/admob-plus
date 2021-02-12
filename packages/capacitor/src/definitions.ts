@@ -16,7 +16,6 @@ export interface IsLoadedResult {
 }
 
 export interface AdmobPlusPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>
   isFirebaseTestLabDevice(): Promise<{ value: boolean }>
   interstitial_load(options: LoadAdOptions): Promise<void>
   interstitial_isLoaded(options: { id: number }): Promise<IsLoadedResult>
