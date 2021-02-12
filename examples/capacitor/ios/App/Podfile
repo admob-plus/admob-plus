@@ -1,0 +1,18 @@
+platform :ios, '12.0'
+use_frameworks!
+
+# workaround to avoid Xcode caching of Pods that requires
+# Product -> Clean Build Folder after new Cordova plugins installed
+# Requires CocoaPods 1.6 or newer
+install! 'cocoapods', :disable_input_output_paths => true
+
+def capacitor_pods
+  pod 'Capacitor', :path => '../../../../.yarn/unplugged/@capacitor-ios-virtual-48152c7d28/node_modules/@capacitor/ios'
+  pod 'CapacitorCordova', :path => '../../../../.yarn/unplugged/@capacitor-ios-virtual-48152c7d28/node_modules/@capacitor/ios'
+
+end
+
+target 'App' do
+  capacitor_pods
+  # Add your Pods here
+end

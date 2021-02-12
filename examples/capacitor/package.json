@@ -1,21 +1,14 @@
 {
-  "name": "capacitor-app",
+  "private": true,
+  "name": "admob-plus-capacitor-example",
   "version": "1.0.0",
-  "description": "An Amazing Capacitor App",
   "main": "index.js",
-  "keywords": [
-    "capacitor",
-    "mobile"
-  ],
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "dependencies": {
-    "@capacitor/core": "next"
+    "@capacitor/core": "^3.0.0-beta.2",
+    "@capacitor/ios": "^3.0.0-beta.2"
   },
   "devDependencies": {
-    "@capacitor/cli": "next"
-  },
-  "author": "",
-  "license": "ISC"
+    "@capacitor/cli": "^3.0.0-beta.2"
+  }
 }
