@@ -1,7 +1,7 @@
 {
   "name": "admob-plus",
   "description": "AdMob Plus CLI",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "bin": "./bin/run",
   "dependencies": {
     "@oclif/command": "^1.8.0",
