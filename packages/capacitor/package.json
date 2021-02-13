@@ -28,44 +28,39 @@
     "native"
   ],
   "scripts": {
-    "verify": "npm run verify:ios && npm run verify:android && npm run verify:web",
+    "verify": "yarn verify:ios && yarn verify:android && yarn verify:web",
     "verify:ios": "cd ios && pod install && xcodebuild -workspace Plugin.xcworkspace -scheme Plugin && cd ..",
     "verify:android": "cd android && ./gradlew clean build test && cd ..",
-    "verify:web": "npm run build",
-    "lint": "npm run eslint && npm run prettier -- --check && npm run swiftlint -- lint",
-    "fmt": "npm run eslint -- --fix && npm run prettier -- --write && npm run swiftlint -- autocorrect --format",
+    "verify:web": "yarn build",
+    "lint": "yarn eslint && yarn prettier -- --check && yarn swiftlint -- lint",
+    "fmt": "yarn eslint -- --fix && yarn prettier -- --write && yarn swiftlint -- autocorrect --format",
     "eslint": "eslint . --ext ts",
     "prettier": "prettier \"**/*.{css,html,ts,js,java}\"",
     "swiftlint": "node-swiftlint",
     "docgen": "docgen --api AdmobPlusPlugin --output-readme README.md --output-json dist/docs.json",
-    "build": "npm run clean && npm run docgen && tsc && rollup -c rollup.config.js",
+    "build": "yarn clean && yarn docgen && tsc && rollup -c rollup.config.js",
     "clean": "rimraf ./dist",
     "watch": "tsc --watch",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "yarn build"
   },
   "devDependencies": {
     "@capacitor/android": "^3.0.0-beta.2",
     "@capacitor/core": "^3.0.0-beta.2",
-    "@capacitor/docgen": "^0.0.10",
+    "@capacitor/docgen": "^0.0.15",
     "@capacitor/ios": "^3.0.0-beta.2",
     "@ionic/eslint-config": "^0.3.0",
     "@ionic/prettier-config": "^1.0.1",
     "@ionic/swiftlint-config": "^1.1.2",
-    "eslint": "^7.11.0",
-    "prettier": "~2.2.0",
-    "prettier-plugin-java": "~1.0.0",
+    "eslint": "^7.20.0",
+    "prettier": "~2.2.1",
+    "prettier-plugin-java": "~1.0.1",
     "rimraf": "^3.0.2",
-    "rollup": "^2.32.0",
+    "rollup": "^2.39.0",
     "swiftlint": "^1.0.1",
-    "typescript": "~4.0.3"
+    "typescript": "~4.1.5"
   },
   "peerDependencies": {
     "@capacitor/core": "^3.0.0-beta.2"
-  },
-  "prettier": "@ionic/prettier-config",
-  "swiftlint": "@ionic/swiftlint-config",
-  "eslintConfig": {
-    "extends": "@ionic/eslint-config/recommended"
   },
   "capacitor": {
     "ios": {
