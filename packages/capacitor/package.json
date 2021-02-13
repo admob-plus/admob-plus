@@ -25,7 +25,9 @@
   "keywords": [
     "capacitor",
     "plugin",
-    "native"
+    "native",
+    "admob",
+    "plus"
   ],
   "scripts": {
     "verify": "yarn verify:ios && yarn verify:android && yarn verify:web",
@@ -62,6 +64,11 @@
   "peerDependencies": {
     "@capacitor/core": "^3.0.0-beta.2"
   },
+  "homepage": "https://admob-plus.github.io",
+  "publishConfig": {
+    "access": "public"
+  },
+  "preferUnplugged": true,
   "capacitor": {
     "ios": {
       "src": "ios"

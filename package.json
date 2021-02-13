@@ -88,7 +88,7 @@
     "@admob-plus-internal/cli": "workspace:*",
     "@admob-plus-internal/rollup-config": "workspace:*",
     "@admob-plus-internal/tsconfig": "workspace:*",
-    "@admob-plus/capacitor": "workspace:*",
+    "@admob-plus/capacitor": "link:./packages/capacitor",
     "@admob-plus/ionic": "workspace:*",
     "@admob-plus/react-native": "workspace:*",
     "admob-plus-cordova": "workspace:*",

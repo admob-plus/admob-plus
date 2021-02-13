@@ -12,11 +12,7 @@ public class AdmobPlusPlugin extends Plugin {
     private AdmobPlus implementation = new AdmobPlus();
 
     @PluginMethod
-    public void echo(PluginCall call) {
-        String value = call.getString("value");
-
-        JSObject ret = new JSObject();
-        ret.put("value", implementation.echo(value));
-        call.resolve(ret);
+    public void start(PluginCall call) {
+        call.resolve();
     }
 }

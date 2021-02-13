@@ -1,18 +1,15 @@
 import Foundation
 import Capacitor
+import GoogleMobileAds
 
-/**
- * Please read the Capacitor iOS Plugin Development Guide
- * here: https://capacitorjs.com/docs/plugins/ios
- */
+
 @objc(AdmobPlusPlugin)
 public class AdmobPlusPlugin: CAPPlugin {
     private let implementation = AdmobPlus()
 
-    @objc func echo(_ call: CAPPluginCall) {
-        let value = call.getString("value") ?? ""
-        call.resolve([
-            "value": implementation.echo(value)
-        ])
+    @objc func start(_ call: CAPPluginCall) {
+        GADMobileAds.sharedInstance().start(completionHandler: { status in
+            call.resolve()
+        })
     }
 }
