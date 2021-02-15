@@ -2,10 +2,9 @@ import Foundation
 import Capacitor
 import GoogleMobileAds
 
-
-@objc(AdmobPlusPlugin)
-public class AdmobPlusPlugin: CAPPlugin {
-    private let implementation = AdmobPlus()
+@objc(AdMobPlusPlugin)
+public class AdMobPlusPlugin: CAPPlugin {
+    private let implementation = AdMobPlus()
 
     @objc func start(_ call: CAPPluginCall) {
         GADMobileAds.sharedInstance().start(completionHandler: { status in

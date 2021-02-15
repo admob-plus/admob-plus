@@ -1,3 +1,3 @@
-export interface AdmobPlusPlugin {
+export interface AdMobPlusPlugin {
   start(): Promise<void>
 }

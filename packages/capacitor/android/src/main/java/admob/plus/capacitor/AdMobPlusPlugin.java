@@ -6,10 +6,10 @@ import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
 
-@CapacitorPlugin(name = "AdmobPlus")
-public class AdmobPlusPlugin extends Plugin {
+@CapacitorPlugin(name = "AdMobPlus")
+public class AdMobPlusPlugin extends Plugin {
 
-    private AdmobPlus implementation = new AdmobPlus();
+    private AdMobPlus implementation = new AdMobPlus();
 
     @PluginMethod
     public void start(PluginCall call) {

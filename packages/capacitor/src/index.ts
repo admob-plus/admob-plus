@@ -1,10 +1,9 @@
 import { registerPlugin } from '@capacitor/core'
+import type { AdMobPlusPlugin } from './definitions'
 
-import type { AdmobPlusPlugin } from './definitions'
-
-const AdmobPlus = registerPlugin<AdmobPlusPlugin>('AdmobPlus', {
-  web: () => import('./web').then((m) => new m.AdmobPlusWeb()),
+const AdMobPlus = registerPlugin<AdMobPlusPlugin>('AdMobPlus', {
+  web: () => import('./web').then((m) => new m.AdMobPlusWeb()),
 })
 
 export * from './definitions'
-export { AdmobPlus }
+export { AdMobPlus }

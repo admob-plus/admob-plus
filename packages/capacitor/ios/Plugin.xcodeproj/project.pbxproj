@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		03FC29A292ACC40490383A1F /* Pods_Plugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B2A61DA5A1F2DD4F959604D /* Pods_Plugin.framework */; };
 		20C0B05DCFC8E3958A738AF2 /* Pods_PluginTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6753A823D3815DB436415E3 /* Pods_PluginTests.framework */; };
-		2F98D68224C9AAE500613A4C /* AdmobPlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98D68124C9AAE400613A4C /* AdmobPlus.swift */; };
+		2F98D68224C9AAE500613A4C /* AdMobPlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98D68124C9AAE400613A4C /* AdMobPlus.swift */; };
 		50ADFF92201F53D600D50D53 /* Plugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50ADFF88201F53D600D50D53 /* Plugin.framework */; };
-		50ADFF97201F53D600D50D53 /* AdmobPlusPluginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ADFF96201F53D600D50D53 /* AdmobPlusPluginTests.swift */; };
-		50ADFF99201F53D600D50D53 /* AdmobPlusPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 50ADFF8B201F53D600D50D53 /* AdmobPlusPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		50ADFF97201F53D600D50D53 /* AdMobPlusPluginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ADFF96201F53D600D50D53 /* AdMobPlusPluginTests.swift */; };
+		50ADFF99201F53D600D50D53 /* AdMobPlusPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 50ADFF8B201F53D600D50D53 /* AdMobPlusPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		50ADFFA42020D75100D50D53 /* Capacitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50ADFFA52020D75100D50D53 /* Capacitor.framework */; };
-		50ADFFA82020EE4F00D50D53 /* AdmobPlusPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 50ADFFA72020EE4F00D50D53 /* AdmobPlusPlugin.m */; };
-		50E1A94820377CB70090CE1A /* AdmobPlusPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E1A94720377CB70090CE1A /* AdmobPlusPlugin.swift */; };
+		50ADFFA82020EE4F00D50D53 /* AdMobPlusPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 50ADFFA72020EE4F00D50D53 /* AdMobPlusPlugin.m */; };
+		50E1A94820377CB70090CE1A /* AdMobPlusPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E1A94720377CB70090CE1A /* AdMobPlusPlugin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,17 +29,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2F98D68124C9AAE400613A4C /* AdmobPlus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdmobPlus.swift; sourceTree = "<group>"; };
+		2F98D68124C9AAE400613A4C /* AdMobPlus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdMobPlus.swift; sourceTree = "<group>"; };
 		3B2A61DA5A1F2DD4F959604D /* Pods_Plugin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Plugin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50ADFF88201F53D600D50D53 /* Plugin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Plugin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		50ADFF8B201F53D600D50D53 /* AdmobPlusPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdmobPlusPlugin.h; sourceTree = "<group>"; };
+		50ADFF8B201F53D600D50D53 /* AdMobPlusPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdMobPlusPlugin.h; sourceTree = "<group>"; };
 		50ADFF8C201F53D600D50D53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50ADFF91201F53D600D50D53 /* PluginTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PluginTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		50ADFF96201F53D600D50D53 /* AdmobPlusPluginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobPlusPluginTests.swift; sourceTree = "<group>"; };
+		50ADFF96201F53D600D50D53 /* AdMobPlusPluginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobPlusPluginTests.swift; sourceTree = "<group>"; };
 		50ADFF98201F53D600D50D53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50ADFFA52020D75100D50D53 /* Capacitor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Capacitor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		50ADFFA72020EE4F00D50D53 /* AdmobPlusPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdmobPlusPlugin.m; sourceTree = "<group>"; };
-		50E1A94720377CB70090CE1A /* AdmobPlusPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdmobPlusPlugin.swift; sourceTree = "<group>"; };
+		50ADFFA72020EE4F00D50D53 /* AdMobPlusPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdMobPlusPlugin.m; sourceTree = "<group>"; };
+		50E1A94720377CB70090CE1A /* AdMobPlusPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdMobPlusPlugin.swift; sourceTree = "<group>"; };
 		5E23F77F099397094342571A /* Pods-Plugin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Plugin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Plugin/Pods-Plugin.debug.xcconfig"; sourceTree = "<group>"; };
 		91781294A431A2A7CC6EB714 /* Pods-Plugin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Plugin.release.xcconfig"; path = "Pods/Target Support Files/Pods-Plugin/Pods-Plugin.release.xcconfig"; sourceTree = "<group>"; };
 		96ED1B6440D6672E406C8D19 /* Pods-PluginTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PluginTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PluginTests/Pods-PluginTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -92,10 +92,10 @@
 		50ADFF8A201F53D600D50D53 /* Plugin */ = {
 			isa = PBXGroup;
 			children = (
-				50E1A94720377CB70090CE1A /* AdmobPlusPlugin.swift */,
-				2F98D68124C9AAE400613A4C /* AdmobPlus.swift */,
-				50ADFF8B201F53D600D50D53 /* AdmobPlusPlugin.h */,
-				50ADFFA72020EE4F00D50D53 /* AdmobPlusPlugin.m */,
+				50E1A94720377CB70090CE1A /* AdMobPlusPlugin.swift */,
+				2F98D68124C9AAE400613A4C /* AdMobPlus.swift */,
+				50ADFF8B201F53D600D50D53 /* AdMobPlusPlugin.h */,
+				50ADFFA72020EE4F00D50D53 /* AdMobPlusPlugin.m */,
 				50ADFF8C201F53D600D50D53 /* Info.plist */,
 			);
 			path = Plugin;
@@ -104,7 +104,7 @@
 		50ADFF95201F53D600D50D53 /* PluginTests */ = {
 			isa = PBXGroup;
 			children = (
-				50ADFF96201F53D600D50D53 /* AdmobPlusPluginTests.swift */,
+				50ADFF96201F53D600D50D53 /* AdMobPlusPluginTests.swift */,
 				50ADFF98201F53D600D50D53 /* Info.plist */,
 			);
 			path = PluginTests;
@@ -138,7 +138,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50ADFF99201F53D600D50D53 /* AdmobPlusPlugin.h in Headers */,
+				50ADFF99201F53D600D50D53 /* AdMobPlusPlugin.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,9 +306,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50E1A94820377CB70090CE1A /* AdmobPlusPlugin.swift in Sources */,
-				2F98D68224C9AAE500613A4C /* AdmobPlus.swift in Sources */,
-				50ADFFA82020EE4F00D50D53 /* AdmobPlusPlugin.m in Sources */,
+				50E1A94820377CB70090CE1A /* AdMobPlusPlugin.swift in Sources */,
+				2F98D68224C9AAE500613A4C /* AdMobPlus.swift in Sources */,
+				50ADFFA82020EE4F00D50D53 /* AdMobPlusPlugin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,7 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50ADFF97201F53D600D50D53 /* AdmobPlusPluginTests.swift in Sources */,
+				50ADFF97201F53D600D50D53 /* AdMobPlusPluginTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

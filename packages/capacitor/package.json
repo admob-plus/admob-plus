@@ -39,7 +39,7 @@
     "eslint": "eslint . --ext ts",
     "prettier": "prettier \"**/*.{css,html,ts,js,java}\"",
     "swiftlint": "node-swiftlint",
-    "docgen": "docgen --api AdmobPlusPlugin --output-readme README.md --output-json dist/docs.json",
+    "docgen": "docgen --api AdMobPlusPlugin --output-readme README.md --output-json dist/docs.json",
     "build": "yarn clean && yarn docgen && tsc && rollup -c rollup.config.js",
     "clean": "rimraf ./dist",
     "watch": "tsc --watch",
@@ -53,12 +53,8 @@
     "@ionic/eslint-config": "^0.3.0",
     "@ionic/prettier-config": "^1.0.1",
     "@ionic/swiftlint-config": "^1.1.2",
-    "eslint": "^7.20.0",
-    "prettier": "~2.2.1",
-    "prettier-plugin-java": "~1.0.1",
     "rimraf": "^3.0.2",
     "rollup": "^2.39.0",
-    "swiftlint": "^1.0.1",
     "typescript": "~4.1.5"
   },
   "peerDependencies": {

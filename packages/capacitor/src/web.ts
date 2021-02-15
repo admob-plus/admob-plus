@@ -1,8 +1,8 @@
 import { WebPlugin } from '@capacitor/core'
 
-import type { AdmobPlusPlugin } from './definitions'
+import type { AdMobPlusPlugin } from './definitions'
 
-export class AdmobPlusWeb extends WebPlugin implements AdmobPlusPlugin {
+export class AdMobPlusWeb extends WebPlugin implements AdMobPlusPlugin {
   async start(): Promise<void> {
     console.log('start')
   }

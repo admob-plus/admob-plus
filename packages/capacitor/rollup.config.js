@@ -4,7 +4,7 @@ export default {
     {
       file: 'dist/plugin.js',
       format: 'iife',
-      name: 'capacitorAdmobPlus',
+      name: 'capacitorAdMobPlus',
       globals: {
         '@capacitor/core': 'capacitorExports',
       },
