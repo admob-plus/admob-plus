@@ -31,13 +31,8 @@ class AMSInterstitial: AMSAdBase, GADFullScreenContentDelegate {
 
     func show(_ call: CAPPluginCall) {
         DispatchQueue.main.async {
-            guard let viewController = UIApplication.shared.keyWindow?.rootViewController else {
-                call.reject("Cannot find viewController")
-                return
-            }
-
             if self.isLoaded() {
-                self.interstitial?.present(fromRootViewController: viewController)
+                self.interstitial?.present(fromRootViewController: self.rootViewController)
             }
 
             call.resolve()

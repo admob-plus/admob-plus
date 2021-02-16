@@ -21,7 +21,7 @@ public class AdMobPlusPlugin: CAPPlugin {
         if interstitial == nil {
             interstitial = AMSInterstitial(id: id, adUnitId: adUnitId)
         }
-        interstitial!.load(call, request: createGADRequest(call))
+        interstitial!.load(call, request: self.createGADRequest(call))
     }
 
     @objc func interstitialShow(_ call: CAPPluginCall) {
@@ -32,6 +32,30 @@ public class AdMobPlusPlugin: CAPPlugin {
             return
         }
         interstitial.show(call)
+    }
+
+    @objc func rewardedLoad(_ call: CAPPluginCall) {
+        guard let id = call.getInt("id"),
+              let adUnitId = call.getString("adUnitId")
+        else {
+            call.reject("Invalid options")
+            return
+        }
+        var rewarded = AMSAdBase.ads[id] as? AMSRewarded
+        if rewarded == nil {
+            rewarded = AMSRewarded(id: id, adUnitId: adUnitId)
+        }
+        rewarded!.load(call, request: self.createGADRequest(call))
+    }
+
+    @objc func rewardedShow(_ call: CAPPluginCall) {
+        guard let id = call.getInt("id"),
+              let rewarded = AMSAdBase.ads[id] as? AMSRewarded
+        else {
+            call.reject("Invalid options")
+            return
+        }
+        rewarded.show(call)
     }
 
     func createGADRequest(_ call: CAPPluginCall) -> GADRequest {

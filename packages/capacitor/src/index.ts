@@ -9,7 +9,7 @@ type MobileAdOptions = { adUnitId: string }
 
 class MobileAd {
   private static allAds: { [s: number]: MobileAd } = {}
-  private _counter = 0
+  private static _counter = 1
 
   public readonly adUnitId: string
   public readonly id: number
@@ -17,13 +17,8 @@ class MobileAd {
   constructor({ adUnitId }: MobileAdOptions) {
     this.adUnitId = adUnitId
 
-    this.id = this.nextId()
+    this.id = MobileAd._counter++
     MobileAd.allAds[this.id] = this
-  }
-
-  private nextId() {
-    this._counter += 1
-    return this._counter
   }
 }
 
@@ -41,5 +36,19 @@ class InterstitialAd extends MobileAd {
   }
 }
 
+class RewardedAd extends MobileAd {
+  constructor({ adUnitId }: MobileAdOptions) {
+    super({ adUnitId })
+  }
+
+  public load() {
+    return AdMobPlus.rewardedLoad({ id: this.id, adUnitId: this.adUnitId })
+  }
+
+  public show() {
+    return AdMobPlus.rewardedShow({ id: this.id })
+  }
+}
+
 export * from './definitions'
-export { AdMobPlus, InterstitialAd }
+export { AdMobPlus, InterstitialAd, RewardedAd }

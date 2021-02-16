@@ -17,4 +17,12 @@ export class AdMobPlusWeb extends WebPlugin implements AdMobPlusPlugin {
   async interstitialShow(opts: { id: number }): Promise<void> {
     console.log('interstitialShow', opts)
   }
+
+  async rewardedLoad(opts: { id: number; adUnitId: string }): Promise<void> {
+    console.log('rewardedLoad', opts)
+  }
+
+  async rewardedShow(opts: { id: number }): Promise<void> {
+    console.log('rewardedShow', opts)
+  }
 }

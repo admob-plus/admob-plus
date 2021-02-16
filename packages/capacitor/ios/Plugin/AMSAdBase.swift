@@ -4,6 +4,10 @@ class AMSAdBase: NSObject {
     var id: Int!
     var adUnitId: String!
 
+    var rootViewController: UIViewController {
+        return (UIApplication.shared.keyWindow?.rootViewController)!
+    }
+
     init(id: Int, adUnitId: String) {
         super.init()
 
@@ -13,7 +17,11 @@ class AMSAdBase: NSObject {
     }
 
     deinit {
-        AMSAdBase.ads.removeValue(forKey: self.id)
+        if let key = self.id {
+            DispatchQueue.main.async {
+                AMSAdBase.ads.removeValue(forKey: key)
+            }
+        }
         self.adUnitId = nil
     }
 }
