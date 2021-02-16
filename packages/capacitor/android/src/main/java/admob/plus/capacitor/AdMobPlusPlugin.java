@@ -10,6 +10,7 @@ import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
 import admob.plus.capacitor.ads.InterstitialAd;
+import admob.plus.capacitor.ads.RewardedAd;
 
 @CapacitorPlugin(name = "AdMobPlus")
 public class AdMobPlusPlugin extends Plugin {
@@ -39,6 +40,24 @@ public class AdMobPlusPlugin extends Plugin {
         InterstitialAd interstitialAd = InterstitialAd.getOrCreate(call);
         getActivity().runOnUiThread(() -> {
             interstitialAd.show(this, call);
+        });
+    }
+
+    @PluginMethod
+    private void rewardedLoad(PluginCall call) {
+        RewardedAd rewardedAd = RewardedAd.getOrCreate(call);
+        AdRequest adRequest = new AdRequest.Builder().build();
+
+        getActivity().runOnUiThread(() -> {
+            rewardedAd.load(this, call, adRequest);
+        });
+    }
+
+    @PluginMethod
+    private void rewardedShow(PluginCall call) {
+        RewardedAd rewardedAd = RewardedAd.getOrCreate(call);
+        getActivity().runOnUiThread(() -> {
+            rewardedAd.show(this, call);
         });
     }
 }
