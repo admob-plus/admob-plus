@@ -14,6 +14,8 @@ npx cap sync
 <docgen-index>
 
 * [`start()`](#start)
+* [`interstitialLoad(...)`](#interstitialload)
+* [`interstitialShow(...)`](#interstitialshow)
 
 </docgen-index>
 
@@ -25,6 +27,36 @@ npx cap sync
 ```typescript
 start() => any
 ```
+
+**Returns:** <code>any</code>
+
+--------------------
+
+
+### interstitialLoad(...)
+
+```typescript
+interstitialLoad(opts: { id: number; adUnitID: string; }) => any
+```
+
+| Param      | Type                                           |
+| ---------- | ---------------------------------------------- |
+| **`opts`** | <code>{ id: number; adUnitID: string; }</code> |
+
+**Returns:** <code>any</code>
+
+--------------------
+
+
+### interstitialShow(...)
+
+```typescript
+interstitialShow(opts: { id: number; }) => any
+```
+
+| Param      | Type                         |
+| ---------- | ---------------------------- |
+| **`opts`** | <code>{ id: number; }</code> |
 
 **Returns:** <code>any</code>
 
