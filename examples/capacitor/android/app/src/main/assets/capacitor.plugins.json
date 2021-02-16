@@ -1,0 +1,6 @@
+[
+	{
+		"pkg": "@admob-plus/capacitor",
+		"classpath": "admob.plus.capacitor.AdMobPlusPlugin"
+	}
+]
