@@ -2,18 +2,18 @@ class AMSAdBase: NSObject {
     static var ads = [Int: Any]()
 
     var id: Int!
-    var adUnitID: String!
+    var adUnitId: String!
 
-    init(id: Int, adUnitID: String) {
+    init(id: Int, adUnitId: String) {
         super.init()
 
         self.id = id
-        self.adUnitID = adUnitID
+        self.adUnitId = adUnitId
         AMSAdBase.ads[id] = self
     }
 
     deinit {
         AMSAdBase.ads.removeValue(forKey: self.id)
-        self.adUnitID = nil
+        self.adUnitId = nil
     }
 }

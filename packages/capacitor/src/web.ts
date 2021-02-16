@@ -9,7 +9,7 @@ export class AdMobPlusWeb extends WebPlugin implements AdMobPlusPlugin {
 
   async interstitialLoad(opts: {
     id: number
-    adUnitID: string
+    adUnitId: string
   }): Promise<void> {
     console.log('interstitialLoad', opts)
   }

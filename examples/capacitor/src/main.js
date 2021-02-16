@@ -1,13 +1,13 @@
-import { AdMobPlus } from '@admob-plus/capacitor'
+import { AdMobPlus, InterstitialAd } from '@admob-plus/capacitor'
 
 const main = async () => {
   await AdMobPlus.start()
 
-  await AdMobPlus.interstitialLoad({
-    id: 1,
-    adUnitID: 'ca-app-pub-3940256099942544/1033173712',
+  const interstitial = new InterstitialAd({
+    adUnitId: 'ca-app-pub-3940256099942544/1033173712',
   })
-  await AdMobPlus.interstitialShow({ id: 1 })
+  await interstitial.load()
+  await interstitial.show()
 }
 
 main().catch(console.error)

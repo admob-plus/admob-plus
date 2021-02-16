@@ -36,12 +36,12 @@ start() => any
 ### interstitialLoad(...)
 
 ```typescript
-interstitialLoad(opts: { id: number; adUnitID: string; }) => any
+interstitialLoad(opts: { id: number; adUnitId: string; }) => any
 ```
 
 | Param      | Type                                           |
 | ---------- | ---------------------------------------------- |
-| **`opts`** | <code>{ id: number; adUnitID: string; }</code> |
+| **`opts`** | <code>{ id: number; adUnitId: string; }</code> |
 
 **Returns:** <code>any</code>
 

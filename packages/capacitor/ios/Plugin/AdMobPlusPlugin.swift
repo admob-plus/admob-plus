@@ -12,14 +12,14 @@ public class AdMobPlusPlugin: CAPPlugin {
 
     @objc func interstitialLoad(_ call: CAPPluginCall) {
         guard let id = call.getInt("id"),
-              let adUnitID = call.getString("adUnitID")
+              let adUnitId = call.getString("adUnitId")
         else {
             call.reject("Invalid options")
             return
         }
         var interstitial = AMSAdBase.ads[id] as? AMSInterstitial
         if interstitial == nil {
-            interstitial = AMSInterstitial(id: id, adUnitID: adUnitID)
+            interstitial = AMSInterstitial(id: id, adUnitId: adUnitId)
         }
         interstitial!.load(call, request: createGADRequest(call))
     }
