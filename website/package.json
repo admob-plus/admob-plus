@@ -24,8 +24,8 @@
     "docusaurus-plugin-typedoc": "^0.9.0",
     "eslint-config-concise-esnext": "^0.40.1",
     "eslint-config-concise-react": "^0.40.1",
-    "typedoc": "^0.20.24",
-    "typedoc-plugin-markdown": "^3.4.5",
+    "typedoc": "^0.20.25",
+    "typedoc-plugin-markdown": "^3.5.0",
     "typescript": "^4.1.5"
   },
   "browserslist": {

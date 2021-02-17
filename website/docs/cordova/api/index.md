@@ -31,14 +31,14 @@ hide_title: true
 
 ### MobileAdOptions
 
-Ƭ **MobileAdOptions**: { `adUnitId`: *string*  }
+Ƭ **MobileAdOptions**: *object*
 
 **`internal`** 
 
 #### Type declaration:
 
 Name | Type |
------- | ------ |
+:------ | :------ |
 `adUnitId` | *string* |
 
 Defined in: api.ts:4
@@ -47,16 +47,16 @@ ___
 
 ### RequestConfig
 
-Ƭ **RequestConfig**: { `maxAdContentRating?`: [*MaxAdContentRating*](enums/maxadcontentrating.md) ; `tagForChildDirectedTreatment?`: [*ChildDirectedTreatmentTag*](enums/childdirectedtreatmenttag.md) ; `tagForUnderAgeOfConsent?`: [*UnderAgeOfConsentTag*](enums/underageofconsenttag.md) ; `testDeviceIds?`: *string*[]  }
+Ƭ **RequestConfig**: *object*
 
 #### Type declaration:
 
 Name | Type |
------- | ------ |
-`maxAdContentRating?` | [*MaxAdContentRating*](enums/maxadcontentrating.md) |
-`tagForChildDirectedTreatment?` | [*ChildDirectedTreatmentTag*](enums/childdirectedtreatmenttag.md) |
-`tagForUnderAgeOfConsent?` | [*UnderAgeOfConsentTag*](enums/underageofconsenttag.md) |
-`testDeviceIds?` | *string*[] |
+:------ | :------ |
+`maxAdContentRating`? | [*MaxAdContentRating*](enums/maxadcontentrating.md) |
+`tagForChildDirectedTreatment`? | [*ChildDirectedTreatmentTag*](enums/childdirectedtreatmenttag.md) |
+`tagForUnderAgeOfConsent`? | [*UnderAgeOfConsentTag*](enums/underageofconsenttag.md) |
+`testDeviceIds`? | *string*[] |
 
 Defined in: api.ts:41
 
