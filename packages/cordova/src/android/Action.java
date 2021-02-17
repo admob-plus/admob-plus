@@ -56,7 +56,7 @@ public class Action {
 
     @Nullable
     public String getAdUnitID() {
-        return this.opts.optString("adUnitID");
+        return this.opts.optString("adUnitId");
     }
 
     public RequestConfiguration getRequestConfiguration() {

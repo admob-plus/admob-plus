@@ -61,7 +61,7 @@ class AMSPlugin: CDVPlugin {
     func bannerShow(command: CDVInvokedUrlCommand) {
         guard let opts = command.argument(at: 0) as? NSDictionary,
             let id = opts.value(forKey: "id") as? Int,
-            let adUnitID = opts.value(forKey: "adUnitID") as? String,
+            let adUnitId = opts.value(forKey: "adUnitId") as? String,
             let position = opts.value(forKey: "position") as? String,
             var banner = AMSAdBase.ads[id] as? AMSBanner?
             else {
@@ -71,7 +71,7 @@ class AMSPlugin: CDVPlugin {
         }
         if banner == nil {
             let adSize = getAdSize(opts)
-            banner = AMSBanner(id: id, adUnitID: adUnitID, adSize: adSize, position: position)
+            banner = AMSBanner(id: id, adUnitId: adUnitId, adSize: adSize, position: position)
         }
         banner!.show(request: createGADRequest(opts))
 
@@ -113,7 +113,7 @@ class AMSPlugin: CDVPlugin {
     func interstitialLoad(command: CDVInvokedUrlCommand) {
         guard let opts = command.argument(at: 0) as? NSDictionary,
             let id = opts.value(forKey: "id") as? Int,
-            let adUnitID = opts.value(forKey: "adUnitID") as? String,
+            let adUnitId = opts.value(forKey: "adUnitId") as? String,
             var interstitial = AMSAdBase.ads[id] as? AMSInterstitial?
             else {
                 let result = CDVPluginResult(status: CDVCommandStatus_ERROR)
@@ -121,7 +121,7 @@ class AMSPlugin: CDVPlugin {
                 return
         }
         if interstitial == nil {
-            interstitial = AMSInterstitial(id: id, adUnitID: adUnitID)
+            interstitial = AMSInterstitial(id: id, adUnitId: adUnitId)
         }
         interstitial!.load(command, request: createGADRequest(opts))
     }
@@ -157,7 +157,7 @@ class AMSPlugin: CDVPlugin {
     func rewardedLoad(command: CDVInvokedUrlCommand) {
         guard let opts = command.argument(at: 0) as? NSDictionary,
             let id = opts.value(forKey: "id") as? Int,
-            let adUnitID = opts.value(forKey: "adUnitID") as? String,
+            let adUnitId = opts.value(forKey: "adUnitId") as? String,
             var rewarded = AMSAdBase.ads[id] as? AMSRewarded?
             else {
                 let result = CDVPluginResult(status: CDVCommandStatus_ERROR)
@@ -165,7 +165,7 @@ class AMSPlugin: CDVPlugin {
                 return
         }
         if rewarded == nil {
-            rewarded = AMSRewarded(id: id, adUnitID: adUnitID)
+            rewarded = AMSRewarded(id: id, adUnitId: adUnitId)
         }
         rewarded!.load(command, request: createGADRequest(opts))
     }

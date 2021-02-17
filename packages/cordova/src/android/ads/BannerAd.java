@@ -21,8 +21,8 @@ public class BannerAd extends AdBase {
     private AdView adView;
     private static ViewGroup parentView;
 
-    BannerAd(int id, String adUnitID, AdSize adSize, int gravity) {
-        super(id, adUnitID);
+    BannerAd(int id, String adUnitId, AdSize adSize, int gravity) {
+        super(id, adUnitId);
 
         this.adSize = adSize;
         this.gravity = gravity;
@@ -44,7 +44,7 @@ public class BannerAd extends AdBase {
     public void show(AdRequest adRequest) {
         if (adView == null) {
             adView = new AdView(getActivity());
-            adView.setAdUnitId(adUnitID);
+            adView.setAdUnitId(adUnitId);
             adView.setAdSize(adSize);
             adView.setAdListener(new AdListener() {
                 @Override

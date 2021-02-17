@@ -18,7 +18,7 @@ export default class RewardedAd extends MobileAd {
 
   public load() {
     return execAsync(NativeActions.rewardedLoad, [
-      { adUnitID: this.adUnitId, id: this.id },
+      { adUnitId: this.adUnitId, id: this.id },
     ])
   }
 

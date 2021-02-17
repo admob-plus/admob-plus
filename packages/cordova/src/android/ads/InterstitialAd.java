@@ -10,8 +10,8 @@ import admob.plugin.Generated.Events;
 public class InterstitialAd extends AdBase {
     private com.google.android.gms.ads.InterstitialAd interstitialAd = null;
 
-    InterstitialAd(int id, String adUnitID) {
-        super(id, adUnitID);
+    InterstitialAd(int id, String adUnitId) {
+        super(id, adUnitId);
     }
 
     public static InterstitialAd getOrCreate(Action action) {
@@ -29,11 +29,11 @@ public class InterstitialAd extends AdBase {
         super.destroy();
     }
 
-    public void load(AdRequest adRequest, String adUnitID) {
+    public void load(AdRequest adRequest, String adUnitId) {
         clear();
 
         interstitialAd = new com.google.android.gms.ads.InterstitialAd(getActivity());
-        interstitialAd.setAdUnitId(adUnitID);
+        interstitialAd.setAdUnitId(adUnitId);
         interstitialAd.setAdListener(new AdListener() {
             @Override
             public void onAdClicked() {

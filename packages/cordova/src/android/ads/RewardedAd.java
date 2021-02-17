@@ -15,8 +15,8 @@ import admob.plugin.Generated.Events;
 public class RewardedAd extends AdBase {
     private com.google.android.gms.ads.rewarded.RewardedAd rewardedAd = null;
 
-    RewardedAd(int id, String adUnitID) {
-        super(id, adUnitID);
+    RewardedAd(int id, String adUnitId) {
+        super(id, adUnitId);
     }
 
     public static RewardedAd getOrCreate(Action action) {
@@ -37,7 +37,7 @@ public class RewardedAd extends AdBase {
     public void createAndLoad(AdRequest adRequest) {
         clear();
 
-        rewardedAd = new com.google.android.gms.ads.rewarded.RewardedAd(getActivity(), this.adUnitID);
+        rewardedAd = new com.google.android.gms.ads.rewarded.RewardedAd(getActivity(), this.adUnitId);
         rewardedAd.loadAd(adRequest, new RewardedAdLoadCallback() {
             @Override
             public void onRewardedAdLoaded() {

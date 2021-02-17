@@ -1,8 +1,8 @@
 class AMSRewarded: AMSAdBase, GADFullScreenContentDelegate {
     var rewardedAd: GADRewardedAd?
 
-    override init(id: Int, adUnitID: String) {
-        super.init(id: id, adUnitID: adUnitID)
+    override init(id: Int, adUnitId: String) {
+        super.init(id: id, adUnitId: adUnitId)
     }
 
     deinit {
@@ -14,7 +14,7 @@ class AMSRewarded: AMSAdBase, GADFullScreenContentDelegate {
     }
 
     func load(_ command: CDVInvokedUrlCommand, request: GADRequest) {
-        GADRewardedAd.load(withAdUnitID: adUnitID, request: request, completionHandler: { ad, error in
+        GADRewardedAd.load(withAdUnitID: adUnitId, request: request, completionHandler: { ad, error in
             if error != nil {
                 self.plugin.emit(eventType: AMSEvents.rewardedLoadFail)
 

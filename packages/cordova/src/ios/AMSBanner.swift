@@ -1,4 +1,3 @@
-
 class AMSBanner: AMSAdBase, GADBannerViewDelegate {
     var bannerView: GADBannerView!
     var adSize: GADAdSize!
@@ -13,8 +12,8 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
         return self.plugin.webView
     }
 
-    init(id: Int, adUnitID: String, adSize: GADAdSize, position: String) {
-        super.init(id: id, adUnitID: adUnitID)
+    init(id: Int, adUnitId: String, adSize: GADAdSize, position: String) {
+        super.init(id: id, adUnitId: adUnitId)
 
         self.adSize = adSize
         self.position = position
@@ -39,7 +38,7 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
         }
         bannerView.delegate = self
 
-        bannerView.adUnitID = adUnitID
+        bannerView.adUnitID = adUnitId
         bannerView.load(request)
     }
 

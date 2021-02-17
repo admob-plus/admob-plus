@@ -18,7 +18,7 @@ export default class InterstitialAd extends MobileAd {
 
   public async load() {
     await execAsync(NativeActions.interstitialLoad, [
-      { adUnitID: this.adUnitId, id: this.id },
+      { adUnitId: this.adUnitId, id: this.id },
     ])
 
     await waitEvent(Events.interstitialLoad, Events.interstitialLoadFail)

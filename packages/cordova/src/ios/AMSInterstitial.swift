@@ -11,7 +11,7 @@ class AMSInterstitial: AMSAdBase, GADFullScreenContentDelegate {
 
     func load(_ command: CDVInvokedUrlCommand, request: GADRequest) {
         GADInterstitialAd.load(
-            withAdUnitID: adUnitID,
+            withAdUnitID: adUnitId,
             request: request,
             completionHandler: { ad, error in
                 if error != nil {

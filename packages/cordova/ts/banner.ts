@@ -30,7 +30,7 @@ export default class BannerAd extends MobileAd {
     return execAsync(NativeActions.bannerShow, [
       {
         ...this.opts,
-        adUnitID: this.adUnitId,
+        adUnitId: this.adUnitId,
         id: this.id,
       },
     ])

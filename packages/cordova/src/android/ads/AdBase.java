@@ -13,11 +13,11 @@ public abstract class AdBase {
     private static final SparseArray<AdBase> ads = new SparseArray<AdBase>();
     protected static AdMob plugin;
     final int id;
-    String adUnitID;
+    String adUnitId;
 
-    AdBase(int id, String adUnitID) {
+    AdBase(int id, String adUnitId) {
         this.id = id;
-        this.adUnitID = adUnitID;
+        this.adUnitId = adUnitId;
         ads.put(id, this);
     }
 
