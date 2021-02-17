@@ -29,20 +29,14 @@
     "www"
   ],
   "keywords": [
+    "admob",
     "cordova",
     "plugin",
-    "admob",
     "ecosystem:cordova",
-    "admob-free",
+    "free",
     "admobpro",
-    "cordova-admob-plus",
-    "cordova-admob",
-    "cordova-android",
-    "cordova-ios",
-    "cordova-plugin-admob",
     "google",
-    "plus",
-    "suite"
+    "plus"
   ],
   "cordova": {
     "id": "admob-plus-cordova",
