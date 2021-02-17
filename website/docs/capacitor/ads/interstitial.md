@@ -1,0 +1,20 @@
+---
+title: Interstitial Ad
+sidebar_label: Interstitial
+---
+
+## Usage
+
+```ts
+import { AdMobPlus, InterstitialAd } from '@admob-plus/capacitor'
+
+(async () => {
+  await AdMobPlus.start()
+
+  const interstitial = new InterstitialAd({
+    adUnitId: 'ca-app-pub-3940256099942544/1033173712',
+  })
+  await interstitial.load()
+  await interstitial.show()
+})()
+```
