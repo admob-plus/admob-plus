@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.1](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.0.0-alpha.0...@admob-plus/capacitor@1.0.0-alpha.1) (2021-02-17)
+
+
+### Features
+
+* **capacitor:** export InterstitialAd class ([923a71d](https://github.com/admob-plus/admob-plus/commit/923a71da9e304be37e12442a3c6d9e292191c14b))
+* **capacitor:** implement start() method ([ffcbf50](https://github.com/admob-plus/admob-plus/commit/ffcbf50ed6a37754b428a106242ba7b06725b360))
+* **capacitor:** npm init @capacitor/plugin ([4b53a48](https://github.com/admob-plus/admob-plus/commit/4b53a486aa6beecd69c05a7f8d95d2f3e7f2d48e))
+* **capacitor:** remove echo() method ([4ea239f](https://github.com/admob-plus/admob-plus/commit/4ea239ffb88685866185ce3eea8a03c288e37fc9))
+* **capacitor:** rename AdmobPlus to AdMobPlus ([a17fec8](https://github.com/admob-plus/admob-plus/commit/a17fec8f17cfefd6b89492e20899d17c51765780))
+* **capacitor/android:** implement AdMobPlus.start() ([a0d701a](https://github.com/admob-plus/admob-plus/commit/a0d701a1b6b03fc1f2176d706453e970cbf0e442))
+* **capacitor/android:** implement interstitial ad methods ([aa5314a](https://github.com/admob-plus/admob-plus/commit/aa5314a763970c570d2694d0a244e7c0cbb16d98))
+* **capacitor/android:** implement RewardedAd ([7e0a620](https://github.com/admob-plus/admob-plus/commit/7e0a620fff905b28dc5eebacdc00d1a7baeeba2f))
+* **capacitor/ios:** export RewardedAd class ([9a43a7f](https://github.com/admob-plus/admob-plus/commit/9a43a7fd73d433a71284d1fa579b2ad461cad167))
+* **capacitor/ios:** implement interstitial ad methods ([67bf01d](https://github.com/admob-plus/admob-plus/commit/67bf01d5cc13fe41f7de8042e64fa3ffc846be33))
+* **example/capacitor:** cap add android ([3e80918](https://github.com/admob-plus/admob-plus/commit/3e809186d5da6b5b2cf087e9938520b7815beafa))
+
+
+
+
+
 # [1.0.0-alpha.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@0.4.2...@admob-plus/capacitor@1.0.0-alpha.0) (2021-01-19)
 
 **Note:** Version bump only for package @admob-plus/capacitor

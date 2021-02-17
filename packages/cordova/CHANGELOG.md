@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.8](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.0.0-alpha.7...admob-plus-cordova@1.0.0-alpha.8) (2021-02-17)
+
+
+### Features
+
+* **cordova/ios:** set SKAdNetworkItems ([244c07a](https://github.com/admob-plus/admob-plus/commit/244c07ab4c10fd3d291f72468e4dd9f9a7e0fbb5))
+
+
+
+
+
 # [1.0.0-alpha.7](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.0.0-alpha.5...admob-plus-cordova@1.0.0-alpha.7) (2021-02-12)
 
 
