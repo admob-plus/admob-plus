@@ -91,6 +91,7 @@
     "@admob-plus/capacitor": "link:./packages/capacitor",
     "@admob-plus/ionic": "workspace:*",
     "@admob-plus/react-native": "workspace:*",
+    "@types/node": "^14.14.28",
     "admob-plus-cordova": "workspace:*",
     "admob-plus": "workspace:*",
     "cordova-plugin-consent": "workspace:*"

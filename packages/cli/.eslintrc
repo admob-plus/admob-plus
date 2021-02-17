@@ -1,5 +1,5 @@
 {
-  "extends": ["oclif", "oclif-typescript", "concise"],
+  "extends": ["concise"],
   "rules": {
     "unicorn/prevent-abbreviations": "off"
   }
