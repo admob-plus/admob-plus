@@ -1,5 +1,17 @@
 module.exports = {
   docs: {
+    Capacitor: [
+      'capacitor/installation',
+      {
+        'Ad Formats': ['capacitor/ads/interstitial', 'capacitor/ads/rewarded'],
+      },
+      {
+        type: 'link',
+        label: 'CHANGELOG',
+        href:
+          'https://github.com/admob-plus/admob-plus/blob/master/packages/capacitor/CHANGELOG.md',
+      },
+    ],
     Cordova: [
       'cordova/installation',
       {

@@ -22,7 +22,9 @@ hide_title: true
 
 #### Parameters:
 
-• **__namedParameters**: [*MobileAdOptions*](../index.md#mobileadoptions)
+Name | Type |
+:------ | :------ |
+`__namedParameters` | [*MobileAdOptions*](../index.md#mobileadoptions) |
 
 **Returns:** [*RewardedAd*](rewardedad.md)
 
@@ -54,9 +56,9 @@ Defined in: api.ts:11
 
 ### isLoaded
 
-▸ **isLoaded**(): *Promise*<*unknown*\>
+▸ **isLoaded**(): *Promise*<unknown\>
 
-**Returns:** *Promise*<*unknown*\>
+**Returns:** *Promise*<unknown\>
 
 Defined in: rewarded.ts:15
 
@@ -64,9 +66,9 @@ ___
 
 ### load
 
-▸ **load**(): *Promise*<*unknown*\>
+▸ **load**(): *Promise*<unknown\>
 
-**Returns:** *Promise*<*unknown*\>
+**Returns:** *Promise*<unknown\>
 
 Defined in: rewarded.ts:19
 
@@ -74,8 +76,8 @@ ___
 
 ### show
 
-▸ **show**(): *Promise*<*unknown*\>
+▸ **show**(): *Promise*<unknown\>
 
-**Returns:** *Promise*<*unknown*\>
+**Returns:** *Promise*<unknown\>
 
 Defined in: rewarded.ts:25

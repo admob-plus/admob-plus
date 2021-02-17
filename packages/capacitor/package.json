@@ -1,43 +1,27 @@
 {
   "name": "@admob-plus/capacitor",
   "version": "1.0.0-alpha.0",
-  "description": "Capacitor AdMob Plugin",
-  "main": "dist/plugin.js",
+  "description": "AdMob Plus Capacitor Plugin",
+  "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
-  "scripts": {
-    "build": "yarn clean && tsc -b && test -e dist/esm/index.js",
-    "clean": "rimraf ./dist",
-    "watch": "tsc --watch",
-    "prepack": "yarn build"
-  },
+  "unpkg": "dist/plugin.js",
+  "files": [
+    "android/src/main/",
+    "android/build.gradle",
+    "dist/",
+    "ios/Plugin/",
+    "AdmobPlusCapacitor.podspec"
+  ],
   "author": "Ratson",
   "license": "MIT",
-  "dependencies": {
-    "@capacitor/core": "^2.4.6"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/admob-plus/admob-plus.git"
   },
-  "devDependencies": {
-    "@capacitor/android": "^2.4.6",
-    "@capacitor/ios": "^2.4.6",
-    "@rollup/plugin-node-resolve": "^8.1.0",
-    "rimraf": "^3.0.0",
-    "rollup": "^2.21.0",
-    "typescript": "^4.1.5"
+  "bugs": {
+    "url": "https://github.com/admob-plus/admob-plus/issues"
   },
-  "files": [
-    "dist/",
-    "ios/",
-    "android/",
-    "AdmobPlusCapacitor.podspec",
-    "!**/.DS_Store",
-    "!**/.idea/",
-    "!**/*.iml",
-    "!android/captures",
-    "!android/build",
-    "!android/.gradle",
-    "!android/local.properties",
-    "!android/.externalNativeBuild"
-  ],
   "keywords": [
     "capacitor",
     "plugin",
@@ -45,6 +29,42 @@
     "admob",
     "plus"
   ],
+  "scripts": {
+    "verify": "yarn verify:ios && yarn verify:android && yarn verify:web",
+    "verify:ios": "cd ios && pod install && xcodebuild -workspace Plugin.xcworkspace -scheme Plugin && cd ..",
+    "verify:android": "cd android && ./gradlew clean build test && cd ..",
+    "verify:web": "yarn build",
+    "lint": "yarn eslint && yarn prettier -- --check && yarn swiftlint -- lint",
+    "fmt": "yarn eslint -- --fix && yarn prettier -- --write && yarn swiftlint -- autocorrect --format",
+    "eslint": "eslint . --ext ts",
+    "prettier": "prettier \"**/*.{css,html,ts,js,java}\"",
+    "swiftlint": "node-swiftlint",
+    "docgen": "docgen --api AdMobPlusPlugin --output-readme README.md --output-json dist/docs.json",
+    "build": "yarn clean && yarn docgen && tsc && rollup -c rollup.config.js",
+    "clean": "rimraf ./dist",
+    "watch": "tsc --watch",
+    "prepublishOnly": "yarn build"
+  },
+  "devDependencies": {
+    "@capacitor/android": "^3.0.0-beta.2",
+    "@capacitor/core": "^3.0.0-beta.2",
+    "@capacitor/docgen": "^0.0.15",
+    "@capacitor/ios": "^3.0.0-beta.2",
+    "@ionic/eslint-config": "^0.3.0",
+    "@ionic/prettier-config": "^1.0.1",
+    "@ionic/swiftlint-config": "^1.1.2",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.39.0",
+    "typescript": "~4.1.5"
+  },
+  "peerDependencies": {
+    "@capacitor/core": "^3.0.0-beta.2"
+  },
+  "homepage": "https://admob-plus.github.io",
+  "publishConfig": {
+    "access": "public"
+  },
+  "preferUnplugged": true,
   "capacitor": {
     "ios": {
       "src": "ios"
@@ -52,10 +72,5 @@
     "android": {
       "src": "android"
     }
-  },
-  "repository": "admob-plus/admob-plus",
-  "homepage": "https://admob-plus.github.io",
-  "publishConfig": {
-    "access": "public"
   }
 }

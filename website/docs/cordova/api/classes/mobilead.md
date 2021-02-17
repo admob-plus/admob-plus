@@ -28,7 +28,9 @@ hide_title: true
 
 #### Parameters:
 
-• **__namedParameters**: [*MobileAdOptions*](../index.md#mobileadoptions)
+Name | Type |
+:------ | :------ |
+`__namedParameters` | [*MobileAdOptions*](../index.md#mobileadoptions) |
 
 **Returns:** [*MobileAd*](mobilead.md)
 
@@ -54,6 +56,8 @@ ___
 
 ### allAds
 
-▪ `Private` `Static` **allAds**: { [s: number]: [*MobileAd*](mobilead.md);  }
+▪ `Private` `Static` **allAds**: *object*
+
+#### Type declaration:
 
 Defined in: api.ts:8

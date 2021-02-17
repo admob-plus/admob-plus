@@ -5,3 +5,4 @@ node_modules/
 .DS_Store
 .sourcemaps
 /www/capacitor.js
+/www/dist/

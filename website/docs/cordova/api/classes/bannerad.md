@@ -22,7 +22,9 @@ hide_title: true
 
 #### Parameters:
 
-• **__namedParameters**: [*MobileAdOptions*](../index.md#mobileadoptions) & Options
+Name | Type |
+:------ | :------ |
+`__namedParameters` | [*MobileAdOptions*](../index.md#mobileadoptions) & Options |
 
 **Returns:** [*BannerAd*](bannerad.md)
 
@@ -62,9 +64,9 @@ Defined in: banner.ts:17
 
 ### hide
 
-▸ **hide**(): *Promise*<*unknown*\>
+▸ **hide**(): *Promise*<unknown\>
 
-**Returns:** *Promise*<*unknown*\>
+**Returns:** *Promise*<unknown\>
 
 Defined in: banner.ts:39
 
@@ -72,8 +74,8 @@ ___
 
 ### show
 
-▸ **show**(): *Promise*<*unknown*\>
+▸ **show**(): *Promise*<unknown\>
 
-**Returns:** *Promise*<*unknown*\>
+**Returns:** *Promise*<unknown\>
 
 Defined in: banner.ts:29

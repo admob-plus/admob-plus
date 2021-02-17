@@ -1,36 +1,28 @@
 import { WebPlugin } from '@capacitor/core'
-import { AdmobPlusPlugin, IsLoadedResult, LoadAdOptions } from './definitions'
 
-export class AdmobPlusWeb extends WebPlugin implements AdmobPlusPlugin {
-  constructor() {
-    super({
-      name: 'AdmobPlus',
-      platforms: ['web'],
-    })
+import type { AdMobPlusPlugin } from './definitions'
+
+export class AdMobPlusWeb extends WebPlugin implements AdMobPlusPlugin {
+  async start(): Promise<void> {
+    console.log('start')
   }
 
-  public async isFirebaseTestLabDevice(): Promise<{ value: boolean }> {
-    return { value: false }
+  async interstitialLoad(opts: {
+    id: number
+    adUnitId: string
+  }): Promise<void> {
+    console.log('interstitialLoad', opts)
   }
 
-  public interstitial_load(options: LoadAdOptions): Promise<void> {
-    console.log('interstitial:load', options)
-    return Promise.resolve()
+  async interstitialShow(opts: { id: number }): Promise<void> {
+    console.log('interstitialShow', opts)
   }
 
-  // tslint:disable-next-line: variable-name
-  public interstitial_isLoaded(_options: {
-    id: number;
-  }): Promise<IsLoadedResult> {
-    return Promise.resolve({ isLoaded: false })
+  async rewardedLoad(opts: { id: number; adUnitId: string }): Promise<void> {
+    console.log('rewardedLoad', opts)
   }
 
-  public interstitial_show(options: { id: number }): Promise<void> {
-    console.log('interstitial:show', options)
-    return Promise.resolve()
+  async rewardedShow(opts: { id: number }): Promise<void> {
+    console.log('rewardedShow', opts)
   }
 }
-
-const AdmobPlus = new AdmobPlusWeb()
-
-export { AdmobPlus }

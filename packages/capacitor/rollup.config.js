@@ -1,15 +1,22 @@
-import nodeResolve from 'rollup-plugin-node-resolve'
-
 export default {
   input: 'dist/esm/index.js',
-  output: {
-    file: 'dist/plugin.js',
-    format: 'iife',
-    name: 'capacitorPlugin',
-    globals: {
-      '@capacitor/core': 'capacitorExports',
+  output: [
+    {
+      file: 'dist/plugin.js',
+      format: 'iife',
+      name: 'capacitorAdMobPlus',
+      globals: {
+        '@capacitor/core': 'capacitorExports',
+      },
+      sourcemap: true,
+      inlineDynamicImports: true,
     },
-    sourcemap: true,
-  },
-  plugins: [nodeResolve({ resolveOnly: ['lodash'] })],
+    {
+      file: 'dist/plugin.cjs.js',
+      format: 'cjs',
+      sourcemap: true,
+      inlineDynamicImports: true,
+    },
+  ],
+  external: ['@capacitor/core'],
 }

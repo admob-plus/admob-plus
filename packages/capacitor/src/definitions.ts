@@ -1,23 +1,9 @@
-declare global {
-  interface PluginRegistry {
-    AdmobPlus?: AdmobPlusPlugin
-  }
-}
-export interface LoadAdOptions {
-  id: number
-  adUnitId: string
-  childDirected?: boolean
-  nonPersonalizedAds: boolean
-  testDevices?: string[]
-}
+export interface AdMobPlusPlugin {
+  start(): Promise<void>
 
-export interface IsLoadedResult {
-  isLoaded: boolean
-}
+  interstitialLoad(opts: { id: number; adUnitId: string }): Promise<void>
+  interstitialShow(opts: { id: number }): Promise<void>
 
-export interface AdmobPlusPlugin {
-  isFirebaseTestLabDevice(): Promise<{ value: boolean }>
-  interstitial_load(options: LoadAdOptions): Promise<void>
-  interstitial_isLoaded(options: { id: number }): Promise<IsLoadedResult>
-  interstitial_show(options: { id: number }): Promise<void>
+  rewardedLoad(opts: { id: number; adUnitId: string }): Promise<void>
+  rewardedShow(opts: { id: number }): Promise<void>
 }

@@ -1,7 +1,3 @@
-
-  <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="admob.plus.capacitor.admobpluscapacitor">
-
-    <uses-permission android:name="android.permission.INTERNET" />
-
-  </manifest>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="admob.plus.capacitor">
+</manifest>

@@ -3,12 +3,17 @@
   "name": "admob-plus-capacitor-example",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "prepare": "webpack --mode production && cap sync"
+  },
   "dependencies": {
+    "@admob-plus/capacitor": "file:../../packages/capacitor",
     "@capacitor/core": "^3.0.0-beta.2",
     "@capacitor/ios": "^3.0.0-beta.2"
   },
   "devDependencies": {
-    "@capacitor/cli": "^3.0.0-beta.2"
+    "@capacitor/cli": "^3.0.0-beta.2",
+    "webpack": "^5.22.0",
+    "webpack-cli": "^4.5.0"
   }
 }
