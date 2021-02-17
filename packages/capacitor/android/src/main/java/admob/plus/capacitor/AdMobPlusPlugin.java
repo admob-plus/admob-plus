@@ -26,37 +26,37 @@ public class AdMobPlusPlugin extends Plugin {
     }
 
     @PluginMethod
-    private void interstitialLoad(PluginCall call) {
-        InterstitialAd interstitialAd = InterstitialAd.getOrCreate(call);
-        AdRequest adRequest = new AdRequest.Builder().build();
+    public void interstitialLoad(PluginCall call) {
+        final InterstitialAd interstitialAd = InterstitialAd.getOrCreate(call);
+        final AdRequest adRequest = new AdRequest.Builder().build();
 
-        getActivity().runOnUiThread(() -> {
+        getBridge().executeOnMainThread(() -> {
             interstitialAd.load(this, call, adRequest);
         });
     }
 
     @PluginMethod
-    private void interstitialShow(PluginCall call) {
+    public void interstitialShow(PluginCall call) {
         InterstitialAd interstitialAd = InterstitialAd.getOrCreate(call);
-        getActivity().runOnUiThread(() -> {
+        getBridge().executeOnMainThread(() -> {
             interstitialAd.show(this, call);
         });
     }
 
     @PluginMethod
-    private void rewardedLoad(PluginCall call) {
-        RewardedAd rewardedAd = RewardedAd.getOrCreate(call);
-        AdRequest adRequest = new AdRequest.Builder().build();
+    public void rewardedLoad(PluginCall call) {
+        final RewardedAd rewardedAd = RewardedAd.getOrCreate(call);
+        final AdRequest adRequest = new AdRequest.Builder().build();
 
-        getActivity().runOnUiThread(() -> {
+        getBridge().executeOnMainThread(() -> {
             rewardedAd.load(this, call, adRequest);
         });
     }
 
     @PluginMethod
-    private void rewardedShow(PluginCall call) {
+    public void rewardedShow(PluginCall call) {
         RewardedAd rewardedAd = RewardedAd.getOrCreate(call);
-        getActivity().runOnUiThread(() -> {
+        getBridge().executeOnMainThread(() -> {
             rewardedAd.show(this, call);
         });
     }

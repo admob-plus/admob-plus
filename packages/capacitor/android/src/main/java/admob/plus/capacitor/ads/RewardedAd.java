@@ -16,8 +16,8 @@ import admob.plus.capacitor.AdMobPlusPlugin;
 public class RewardedAd extends AdBase {
     private com.google.android.gms.ads.rewarded.RewardedAd mRewardedAd = null;
 
-    RewardedAd(int id, String adUnitID) {
-        super(id, adUnitID);
+    RewardedAd(int id, String adUnitId) {
+        super(id, adUnitId);
     }
 
     public static RewardedAd getOrCreate(PluginCall call) {
@@ -43,6 +43,7 @@ public class RewardedAd extends AdBase {
             @Override
             public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                 mRewardedAd = null;
+                call.reject(loadAdError.getMessage());
             }
 
             @Override
@@ -67,7 +68,7 @@ public class RewardedAd extends AdBase {
                         // don't show the ad a second time.
                     }
                 });
-
+                call.resolve();
             }
         });
     }
