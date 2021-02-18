@@ -29,7 +29,7 @@
   "author": "Ratson",
   "license": "MIT",
   "repository": "admob-plus/admob-plus",
-  "homepage": "https://admob-plus.github.io/docs/ionic.html",
+  "homepage": "https://admob-plus.github.io/docs/ionic",
   "publishConfig": {
     "access": "public"
   },
