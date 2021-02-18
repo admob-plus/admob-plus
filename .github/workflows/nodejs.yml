@@ -121,7 +121,7 @@ jobs:
           yarn
           yarn workspace '@admob-plus-internal/cli' prepack
           yarn workspace '@admob-plus-internal/rollup-config' prepack
-          pushd examples/basic
+          pushd examples/cordova
           yarn example cordova platform rm ios
           yarn prepare
           popd
@@ -171,7 +171,7 @@ jobs:
           yarn
           yarn workspace '@admob-plus-internal/cli' prepack
           yarn workspace '@admob-plus-internal/rollup-config' prepack
-          pushd examples/basic
+          pushd examples/cordova
           yarn prepare
           popd
 
