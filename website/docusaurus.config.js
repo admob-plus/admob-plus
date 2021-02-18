@@ -8,7 +8,7 @@ const allDocHomesPaths = [
 
 module.exports = {
   title: 'AdMob Plus',
-  tagline: 'Trustable AdMob Plugin for Cordova, Ionic',
+  tagline: 'Trustable AdMob Plugin for Cordova, Capacitor, Ionic',
   url: 'https://admob-plus.github.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -16,6 +16,9 @@ module.exports = {
   organizationName: 'admob-plus',
   projectName: 'admob-plus.github.io',
   themeConfig: {
+    colorMode: {
+      respectPrefersColorScheme: true
+    },
     navbar: {
       title: 'AdMob Plus',
       logo: {
