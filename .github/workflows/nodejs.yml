@@ -130,7 +130,10 @@ jobs:
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: 28
-          script: yarn test-android
+          script: |
+            pushd examples/cordova
+            yarn test
+            popd
 
   test-ios:
     name: iOS on ${{ matrix.os }}
@@ -178,6 +181,9 @@ jobs:
       - name: Test
         run: |
           yarn test-ios
+          pushd examples/cordova
+          yarn test
+          popd
 
   deploy-docs:
     name: Deploy website

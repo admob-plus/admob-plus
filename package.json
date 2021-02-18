@@ -11,11 +11,9 @@
     "lint": "eslint --cache --ext .js,.jsx,.ts,tsx .",
     "test-android": "run-s 'test-android:*'",
     "//test-android:testbed": "cordova-testbed --platform android --plugin packages/cordova --build-only",
-    "test-android:example": "cd examples/basic && cordova build android",
     "test-ios": "run-s 'test-ios:*'",
     "test-ios:lint": "swiftlint --config $(pwd)/.swiftlint.yml --path packages/cordova/src/ios",
-    "//test-ios:testbed": "cordova-testbed --platform ios --plugin packages/cordova --build-only",
-    "test-ios:example": "cd examples/basic && cordova build ios"
+    "//test-ios:testbed": "cordova-testbed --platform ios --plugin packages/cordova --build-only"
   },
   "devDependencies": {
     "@admob-plus-internal/cli": "file:./internal/cli",
