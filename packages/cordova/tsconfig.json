@@ -11,7 +11,7 @@
     ],
     "rootDir": "ts",
     "outDir": "lib",
-    "types": ["node"]
+    "types": ["node", "cordova"]
   },
   "include": [
     "ts/**/*.ts"

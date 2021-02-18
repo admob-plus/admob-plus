@@ -11,10 +11,11 @@ import {
 const Actions = _.mapValues(
   {
     ready: null,
+    getConsentStatus: null,
+    getConsentType: null,
     requestInfoUpdate: null,
-    isFormAvailable: null,
     loadForm: null,
-    getStatus: null,
+    getFormStatus: null,
     showForm: null,
     reset: null,
   },

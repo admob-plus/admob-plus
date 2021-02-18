@@ -43,11 +43,9 @@ public class Consent extends CordovaPlugin {
         switch (actionKey) {
             case Actions.READY:
                 return executeReady(callbackContext);
-            case Actions.GET_STATUS:
+            case Actions.GET_FORM_STATUS:
                 callbackContext.success(getConsentInformation().getConsentStatus());
                 break;
-            case Actions.IS_FORM_AVAILABLE:
-                return executeIsConsentFormAvailable(callbackContext);
             case Actions.REQUEST_INFO_UPDATE:
                 return executeRequestInfoUpdate(action, callbackContext);
             case Actions.LOAD_FORM:
@@ -135,12 +133,6 @@ public class Consent extends CordovaPlugin {
                         }
                     }
                 });
-        return true;
-    }
-
-    private boolean executeIsConsentFormAvailable(CallbackContext callbackContext) {
-        PluginResult result = new PluginResult(PluginResult.Status.OK, getConsentInformation().isConsentFormAvailable());
-        callbackContext.sendPluginResult(result);
         return true;
     }
 

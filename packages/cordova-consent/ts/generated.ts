@@ -2,8 +2,9 @@
 import { exec } from 'cordova'
 
 export enum NativeActions {
-  getStatus = 'getStatus',
-  isFormAvailable = 'isFormAvailable',
+  getConsentStatus = 'getConsentStatus',
+  getConsentType = 'getConsentType',
+  getFormStatus = 'getFormStatus',
   loadForm = 'loadForm',
   ready = 'ready',
   requestInfoUpdate = 'requestInfoUpdate',

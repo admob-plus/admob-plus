@@ -65,15 +65,21 @@ class CSNConsent: CDVPlugin {
             })
     }
 
-    @objc(getStatus:)
-    func getStatus(command: CDVInvokedUrlCommand) {
+    @objc(getFormStatus:)
+    func getFormStatus(command: CDVInvokedUrlCommand) {
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: UMPConsentInformation.sharedInstance.formStatus.rawValue)
         self.commandDelegate.send(result, callbackId: command.callbackId)
     }
 
-    @objc(isFormAvailable:)
-    func isFormAvailable(command: CDVInvokedUrlCommand) {
-        let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: UMPConsentInformation.sharedInstance.formStatus == UMPFormStatus.available)
+    @objc(getConsentStatus:)
+    func getConsentStatus(command: CDVInvokedUrlCommand) {
+        let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: UMPConsentInformation.sharedInstance.consentStatus.rawValue)
+        self.commandDelegate.send(result, callbackId: command.callbackId)
+    }
+
+    @objc(getConsentType:)
+    func getConsentType(command: CDVInvokedUrlCommand) {
+        let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: UMPConsentInformation.sharedInstance.consentType.rawValue)
         self.commandDelegate.send(result, callbackId: command.callbackId)
     }
 

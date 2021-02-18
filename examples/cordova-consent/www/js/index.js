@@ -12,6 +12,7 @@ const app = {
     this.receivedEvent('deviceready')
 
     console.log('isFormAvailable:', await consent.isFormAvailable())
+    console.log("status:", await consent.getStatus())
     if (cordova.platformId === 'ios') {
       console.log("requestTrackingAuthorization", await consent.requestTrackingAuthorization())
     }
