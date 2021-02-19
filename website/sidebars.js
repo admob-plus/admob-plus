@@ -25,7 +25,11 @@ module.exports = {
             'cordova/ads/interstitial',
             'cordova/ads/rewarded',
           ],
-          'Advanced Topics': ['cordova/consent', 'cordova/volume-control'],
+          'Advanced Topics': ['cordova/volume-control'],
+          'User Consent': [
+            'cordova/consent/request',
+            { API: require('./sidebar/typedoc-cordova-consent.js') },
+          ],
           API: require('./sidebar/typedoc-cordova.js'),
         },
         'cordova/faq',

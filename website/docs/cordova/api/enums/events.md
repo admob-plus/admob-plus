@@ -14,7 +14,7 @@ hide_title: true
 
 • **bannerClick**: = "admob.banner.click"
 
-Defined in: generated.ts:21
+Defined in: generated.ts:22
 
 ___
 
@@ -22,7 +22,7 @@ ___
 
 • **bannerClose**: = "admob.banner.close"
 
-Defined in: generated.ts:22
+Defined in: generated.ts:23
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 • **bannerImpression**: = "admob.banner.impression"
 
-Defined in: generated.ts:23
+Defined in: generated.ts:24
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 • **bannerLoad**: = "admob.banner.load"
 
-Defined in: generated.ts:24
+Defined in: generated.ts:25
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 • **bannerLoadFail**: = "admob.banner.loadFail"
 
-Defined in: generated.ts:25
+Defined in: generated.ts:26
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 • **bannerOpen**: = "admob.banner.open"
 
-Defined in: generated.ts:26
+Defined in: generated.ts:27
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 • **interstitialClick**: = "admob.interstitial.click"
 
-Defined in: generated.ts:27
+Defined in: generated.ts:28
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 • **interstitialClose**: = "admob.interstitial.close"
 
-Defined in: generated.ts:28
+Defined in: generated.ts:29
 
 ___
 
@@ -78,7 +78,7 @@ ___
 
 • **interstitialImpression**: = "admob.interstitial.impression"
 
-Defined in: generated.ts:29
+Defined in: generated.ts:30
 
 ___
 
@@ -86,7 +86,7 @@ ___
 
 • **interstitialLoad**: = "admob.interstitial.load"
 
-Defined in: generated.ts:30
+Defined in: generated.ts:31
 
 ___
 
@@ -94,7 +94,7 @@ ___
 
 • **interstitialLoadFail**: = "admob.interstitial.loadFail"
 
-Defined in: generated.ts:31
+Defined in: generated.ts:32
 
 ___
 
@@ -102,7 +102,7 @@ ___
 
 • **interstitialOpen**: = "admob.interstitial.open"
 
-Defined in: generated.ts:32
+Defined in: generated.ts:33
 
 ___
 
@@ -110,7 +110,7 @@ ___
 
 • **ready**: = "admob.ready"
 
-Defined in: generated.ts:33
+Defined in: generated.ts:34
 
 ___
 
@@ -118,7 +118,7 @@ ___
 
 • **rewardedClose**: = "admob.rewarded.close"
 
-Defined in: generated.ts:34
+Defined in: generated.ts:35
 
 ___
 
@@ -126,7 +126,7 @@ ___
 
 • **rewardedLoad**: = "admob.rewarded.load"
 
-Defined in: generated.ts:35
+Defined in: generated.ts:36
 
 ___
 
@@ -134,7 +134,7 @@ ___
 
 • **rewardedLoadFail**: = "admob.rewarded.loadFail"
 
-Defined in: generated.ts:36
+Defined in: generated.ts:37
 
 ___
 
@@ -142,7 +142,7 @@ ___
 
 • **rewardedOpen**: = "admob.rewarded.open"
 
-Defined in: generated.ts:37
+Defined in: generated.ts:38
 
 ___
 
@@ -150,7 +150,7 @@ ___
 
 • **rewardedReward**: = "admob.rewarded.reward"
 
-Defined in: generated.ts:38
+Defined in: generated.ts:39
 
 ___
 
@@ -158,4 +158,4 @@ ___
 
 • **rewardedShowFail**: = "admob.rewarded.showFail"
 
-Defined in: generated.ts:39
+Defined in: generated.ts:40

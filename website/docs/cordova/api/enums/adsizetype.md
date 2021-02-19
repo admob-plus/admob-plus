@@ -14,7 +14,7 @@ hide_title: true
 
 • **BANNER**: = 0
 
-Defined in: generated.ts:43
+Defined in: generated.ts:44
 
 ___
 
@@ -22,7 +22,7 @@ ___
 
 • **FULL\_BANNER**: = 3
 
-Defined in: generated.ts:46
+Defined in: generated.ts:47
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 • **LARGE\_BANNER**: = 1
 
-Defined in: generated.ts:44
+Defined in: generated.ts:45
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 • **LEADERBOARD**: = 4
 
-Defined in: generated.ts:47
+Defined in: generated.ts:48
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 • **MEDIUM\_RECTANGLE**: = 2
 
-Defined in: generated.ts:45
+Defined in: generated.ts:46
 
 ___
 
@@ -54,4 +54,4 @@ ___
 
 • **SMART\_BANNER**: = 5
 
-Defined in: generated.ts:48
+Defined in: generated.ts:49

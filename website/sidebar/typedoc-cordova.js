@@ -9,6 +9,7 @@ module.exports = [
       "cordova/api/enums/events",
       "cordova/api/enums/maxadcontentrating",
       "cordova/api/enums/platforms",
+      "cordova/api/enums/trackingauthorizationstatus",
       "cordova/api/enums/underageofconsenttag"
     ]
   },

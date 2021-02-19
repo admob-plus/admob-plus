@@ -17,7 +17,7 @@ module.exports = {
   projectName: 'admob-plus.github.io',
   themeConfig: {
     colorMode: {
-      respectPrefersColorScheme: true
+      respectPrefersColorScheme: true,
     },
     navbar: {
       title: 'AdMob Plus',
@@ -95,12 +95,26 @@ module.exports = {
     [
       'docusaurus-plugin-typedoc',
       {
+        id: 'typedoc-cordova',
         entryPoints: ['../packages/cordova/ts/index.ts'],
         tsconfig: '../packages/cordova/tsconfig.json',
         out: 'cordova/api',
         readme: 'none',
         sidebar: {
           sidebarFile: 'sidebar/typedoc-cordova.js',
+        },
+      },
+    ],
+    [
+      'docusaurus-plugin-typedoc',
+      {
+        id: 'typedoc-cordova-consent',
+        entryPoints: ['../packages/cordova-consent/ts/index.ts'],
+        tsconfig: '../packages/cordova-consent/tsconfig.json',
+        out: 'cordova/consent/api',
+        readme: 'none',
+        sidebar: {
+          sidebarFile: 'sidebar/typedoc-cordova-consent.js',
         },
       },
     ],

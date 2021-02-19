@@ -18,6 +18,7 @@ hide_title: true
 - [Events](enums/events.md)
 - [MaxAdContentRating](enums/maxadcontentrating.md)
 - [Platforms](enums/platforms.md)
+- [TrackingAuthorizationStatus](enums/trackingauthorizationstatus.md)
 - [UnderAgeOfConsentTag](enums/underageofconsenttag.md)
 
 ### Classes
@@ -66,4 +67,4 @@ Defined in: api.ts:41
 
 • `Const` **default**: *AdMob*
 
-Defined in: admob.ts:40
+Defined in: admob.ts:55

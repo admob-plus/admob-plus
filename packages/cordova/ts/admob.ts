@@ -17,6 +17,7 @@ class AdMob {
   public readonly RewardedAd = RewardedAd
 
   public readonly Events = Events
+  public readonly TrackingAuthorizationStatus = TrackingAuthorizationStatus
 
   constructor() {
     initPlugin()
