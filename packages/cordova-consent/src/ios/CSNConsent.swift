@@ -1,6 +1,3 @@
-import AppTrackingTransparency
-import AdSupport
-
 @objc(CSNConsent)
 class CSNConsent: CDVPlugin {
     static var forms = Dictionary<Int, UMPConsentForm>()
