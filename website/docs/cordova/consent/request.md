@@ -1,6 +1,7 @@
 ---
 title: Request User Consent
 sidebar_label: Request Consent
+slug: /cordova/consent
 ---
 
 ## Installation
