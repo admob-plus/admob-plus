@@ -43,10 +43,10 @@ class ConsentForm {
 }
 
 class Consent {
-  public static readonly ConsentStatus = ConsentStatus
-  public static readonly ConsentType = ConsentType
-  public static readonly FormStatus = FormStatus
-  public static readonly TrackingAuthorizationStatus = TrackingAuthorizationStatus
+  public readonly ConsentStatus = ConsentStatus
+  public readonly ConsentType = ConsentType
+  public readonly FormStatus = FormStatus
+  public readonly TrackingAuthorizationStatus = TrackingAuthorizationStatus
 
   constructor() {
     initPlugin()
@@ -94,4 +94,6 @@ class Consent {
   }
 }
 
-export default new Consent()
+const consent = new Consent()
+
+export default consent
