@@ -12,6 +12,10 @@ const app = {
   onDeviceReady() {
     this.receivedEvent('deviceready')
 
+    if (cordova.platformId === 'ios') {
+      admob.requestTrackingAuthorization().then(console.log)
+    }
+
     admob
       .start()
       .then(() =>

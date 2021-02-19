@@ -19,7 +19,7 @@
     <hook type="before_compile" src="scripts/iosNSAppTransportSecurity.js" />
 
     <platform name="android">
-        <preference name="APP_ID_ANDROID" default="test" />
+        <preference name="APP_ID_ANDROID" default="ca-app-pub-xxx~yyy" />
         <preference name="PLAY_SERVICES_VERSION" default="19.7.0" />
 
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
@@ -51,7 +51,8 @@
     </platform>
 
     <platform name="ios">
-        <preference name="APP_ID_IOS" default="test" />
+        <preference name="APP_ID_IOS" default="ca-app-pub-xxx~yyy" />
+        <preference name="USAGE" default="This identifier will be used to deliver personalized ads to you." />
 
         <config-file target="config.xml" parent="/*">
             <feature name="AdMob">
@@ -76,6 +77,10 @@
                 <key>NSAllowsArbitraryLoadsInWebContent</key>
                 <true/>
             </dict>
+        </config-file>
+
+        <config-file target="*-Info.plist" parent="NSUserTrackingUsageDescription">
+            <string>$USAGE</string>
         </config-file>
 
         <config-file target="*-Info.plist" parent="SKAdNetworkItems">

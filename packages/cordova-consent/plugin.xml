@@ -26,16 +26,10 @@
     </platform>
 
     <platform name="ios">
-        <preference name="USAGE" default="This identifier will be used to deliver personalized ads to you." />
-
         <config-file target="config.xml" parent="/*">
             <feature name="Consent">
                 <param name="ios-package" value="CSNConsent" />
             </feature>
-        </config-file>
-
-        <config-file target="*-Info.plist" parent="NSUserTrackingUsageDescription">
-            <string>$USAGE</string>
         </config-file>
 
         <header-file src="src/ios/CSNConsent-Bridging-Header.h" type="BridgingHeader" />
