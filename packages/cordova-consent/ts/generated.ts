@@ -8,6 +8,7 @@ export enum NativeActions {
   loadForm = 'loadForm',
   ready = 'ready',
   requestInfoUpdate = 'requestInfoUpdate',
+  requestTrackingAuthorization = 'requestTrackingAuthorization',
   reset = 'reset',
   showForm = 'showForm',
 }

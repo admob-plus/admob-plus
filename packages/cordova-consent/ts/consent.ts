@@ -84,7 +84,7 @@ class Consent {
     TrackingAuthorizationStatus | false
   > {
     if (cordova.platformId === 'ios') {
-      const n = await execAsync('requestTrackingAuthorization')
+      const n = await execAsync(NativeActions.requestTrackingAuthorization)
       return TrackingAuthorizationStatus[
         TrackingAuthorizationStatus[n as number]
       ]
