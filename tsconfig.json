@@ -1,13 +1,16 @@
 {
   "extends": "@admob-plus-internal/tsconfig",
+  "compilerOptions": {
+    "suppressImplicitAnyIndexErrors": true
+  },
   "references": [
     { "path": "internal/cli" },
     { "path": "internal/rollup-config" },
     { "path": "packages/capacitor" },
     { "path": "packages/cordova" },
-    { "path": "packages/core" },
-    { "path": "packages/ioinc" },
-    { "path": "packages/ioinc/tsconfig.build.json" },
+    { "path": "packages/cordova-consent" },
+    { "path": "packages/ionic" },
+    { "path": "packages/ionic/tsconfig.build.json" },
     { "path": "website" }
   ],
   "files": []
