@@ -1,4 +1,7 @@
-import AppTrackingTransparency
+#if canImport(AppTrackingTransparency)
+    import AppTrackingTransparency
+#endif
+import AdSupport
 
 @objc(AMSPlugin)
 class AMSPlugin: CDVPlugin {
