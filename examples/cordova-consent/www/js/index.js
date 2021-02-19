@@ -11,27 +11,33 @@ const app = {
   async onDeviceReady() {
     this.receivedEvent('deviceready')
 
-    console.log('isFormAvailable:', await consent.isFormAvailable())
-    console.log("status:", await consent.getStatus())
-    if (cordova.platformId === 'ios') {
-      console.log("requestTrackingAuthorization", await consent.requestTrackingAuthorization())
-    }
+    const consentStatus = await consent.getConsentStatus()
+    console.log('consentStatus:', consentStatus)
+    if (consentStatus === consent.ConsentStatus.Required) {
+      if (cordova.platformId === 'ios') {
+        await consent.requestTrackingAuthorization()
+      }
+      await consent.requestInfoUpdate()
 
-    try {
-      console.log("requestInfoUpdate", await consent.requestInfoUpdate())
-    } catch (error) {
-      alert(`requestInfoUpdate error: ${error}`)
-      return
-    }
-    console.log(
-      'isFormAvailable after update:',
-      await consent.isFormAvailable(),
-    )
-    try {
-      const form = await consent.loadForm()
-      form.show()
-    } catch (error) {
-      alert(`form error: ${error}`)
+      if ((await consent.getFormStatus()) === consent.FormStatus.Available) {
+        const form = await consent.loadForm()
+        form.show()
+      }
+
+      if (
+        [
+          consent.ConsentStatus.NotRequired,
+          consent.ConsentStatus.Obtained,
+        ].includes(await consent.getConsentStatus())
+      ) {
+        await admob.start()
+
+        const interstitial = new admob.InterstitialAd({
+          adUnitId: 'ca-app-pub-3940256099942544/1033173712',
+        })
+        await interstitial.load()
+        await interstitial.show()
+      }
     }
   },
   receivedEvent(id) {
