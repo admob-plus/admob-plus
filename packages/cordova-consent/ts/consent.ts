@@ -52,8 +52,19 @@ class Consent {
     initPlugin()
   }
 
-  public getFormStatus() {
-    return execAsync(NativeActions.getFormStatus)
+  public async getConsentStatus(): Promise<ConsentStatus> {
+    const n = await execAsync(NativeActions.getConsentStatus)
+    return ConsentStatus[ConsentStatus[n as number]]
+  }
+
+  public async getConsentType(): Promise<ConsentType> {
+    const n = await execAsync(NativeActions.getConsentType)
+    return ConsentType[ConsentType[n as number]]
+  }
+
+  public async getFormStatus(): Promise<FormStatus> {
+    const n = await execAsync(NativeActions.getFormStatus)
+    return FormStatus[FormStatus[n as number]]
   }
 
   public requestInfoUpdate(opts: RequestInfoUpdateOptions = {}) {
@@ -69,9 +80,14 @@ class Consent {
     return execAsync(NativeActions.reset)
   }
 
-  public async requestTrackingAuthorization() {
+  public async requestTrackingAuthorization(): Promise<
+    TrackingAuthorizationStatus | false
+  > {
     if (cordova.platformId === 'ios') {
-      return execAsync('requestTrackingAuthorization')
+      const n = await execAsync('requestTrackingAuthorization')
+      return TrackingAuthorizationStatus[
+        TrackingAuthorizationStatus[n as number]
+      ]
     }
 
     return false
