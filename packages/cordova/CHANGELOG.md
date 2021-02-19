@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.9](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.0.0-alpha.8...admob-plus-cordova@1.0.0-alpha.9) (2021-02-19)
+
+
+### Features
+
+* **cordova:** add NSUserTrackingUsageDescription ([c789c87](https://github.com/admob-plus/admob-plus/commit/c789c87e9d2943ff9a744f530d792cb602338f61))
+* **cordova:** add requestTrackingAuthorization() method ([f371103](https://github.com/admob-plus/admob-plus/commit/f371103396a32926ea45f0b5a1a95b5e8288dc47))
+* **cordova-consent:** remove isFormAvailable() ([f5a4d91](https://github.com/admob-plus/admob-plus/commit/f5a4d917e8e9520a744d6cdbfc240196c7582f8a))
+
+
+
+
+
 # [1.0.0-alpha.8](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.0.0-alpha.7...admob-plus-cordova@1.0.0-alpha.8) (2021-02-17)
 
 

@@ -1,7 +1,7 @@
 {
   "name": "admob-plus",
   "description": "AdMob Plus CLI",
-  "version": "1.0.0-alpha.3",
+  "version": "1.0.0-alpha.4",
   "bin": "./bin/run",
   "dependencies": {
     "clipboardy": "^2.3.0",
