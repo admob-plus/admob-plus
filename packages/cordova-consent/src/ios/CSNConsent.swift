@@ -22,21 +22,6 @@ class CSNConsent: CDVPlugin {
         self.emit(eventType: CSNEvents.ready)
     }
 
-    @objc(requestTrackingAuthorization:)
-    func requestTrackingAuthorization(command: CDVInvokedUrlCommand) {
-        if #available(iOS 14, *) {
-            ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
-                let result = CDVPluginResult(
-                    status: CDVCommandStatus_OK,
-                    messageAs: status.rawValue)
-                self.commandDelegate.send(result, callbackId: command.callbackId)
-            })
-        } else {
-            let result = CDVPluginResult(status: CDVCommandStatus_OK)
-            self.commandDelegate.send(result, callbackId: command.callbackId)
-        }
-    }
-
     @objc(requestInfoUpdate:)
     func requestInfoUpdate(command: CDVInvokedUrlCommand) {
         guard let opts = command.argument(at: 0) as? NSDictionary

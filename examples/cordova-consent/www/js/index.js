@@ -15,7 +15,7 @@ const app = {
     console.log('consentStatus:', consentStatus)
     if (consentStatus === consent.ConsentStatus.Required) {
       if (cordova.platformId === 'ios') {
-        await consent.requestTrackingAuthorization()
+        await admob.requestTrackingAuthorization()
       }
       await consent.requestInfoUpdate()
 

@@ -1,3 +1,5 @@
+import AppTrackingTransparency
+
 @objc(AMSPlugin)
 class AMSPlugin: CDVPlugin {
     var readyCallbackId: String!
@@ -19,6 +21,21 @@ class AMSPlugin: CDVPlugin {
         self.emit(eventType: AMSEvents.ready, data: [
             "sdkVersion": GADMobileAds.sharedInstance().sdkVersion,
             "isRunningInTestLab": false])
+    }
+
+    @objc(requestTrackingAuthorization:)
+    func requestTrackingAuthorization(command: CDVInvokedUrlCommand) {
+        if #available(iOS 14, *) {
+            ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
+                let result = CDVPluginResult(
+                    status: CDVCommandStatus_OK,
+                    messageAs: status.rawValue)
+                self.commandDelegate.send(result, callbackId: command.callbackId)
+            })
+        } else {
+            let result = CDVPluginResult(status: CDVCommandStatus_OK)
+            self.commandDelegate.send(result, callbackId: command.callbackId)
+        }
     }
 
     @objc(start:)

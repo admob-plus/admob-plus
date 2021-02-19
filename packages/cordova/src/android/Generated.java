@@ -12,6 +12,7 @@ public final class Generated {
         public static final String INTERSTITIAL_LOAD = "interstitialLoad";
         public static final String INTERSTITIAL_SHOW = "interstitialShow";
         public static final String READY = "ready";
+        public static final String REQUEST_TRACKING_AUTHORIZATION = "requestTrackingAuthorization";
         public static final String REWARDED_IS_LOADED = "rewardedIsLoaded";
         public static final String REWARDED_LOAD = "rewardedLoad";
         public static final String REWARDED_SHOW = "rewardedShow";

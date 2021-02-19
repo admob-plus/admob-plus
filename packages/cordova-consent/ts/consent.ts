@@ -4,13 +4,6 @@ type RequestInfoUpdateOptions = {
   tagForUnderAgeOfConsent?: boolean
 }
 
-enum TrackingAuthorizationStatus {
-  notDetermined = 0,
-  restricted = 1,
-  denied = 2,
-  authorized = 3,
-}
-
 enum ConsentStatus {
   Unknown = 0,
   Required = 1,
@@ -78,19 +71,6 @@ class Consent {
 
   public reset() {
     return execAsync(NativeActions.reset)
-  }
-
-  public async requestTrackingAuthorization(): Promise<
-    TrackingAuthorizationStatus | false
-  > {
-    if (cordova.platformId === 'ios') {
-      const n = await execAsync(NativeActions.requestTrackingAuthorization)
-      return TrackingAuthorizationStatus[
-        TrackingAuthorizationStatus[n as number]
-      ]
-    }
-
-    return false
   }
 }
 

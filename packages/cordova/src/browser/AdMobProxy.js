@@ -9,6 +9,7 @@ const AdMob = {
   interstitialLoad() {},
   interstitialShow() {},
   ready() {},
+  requestTrackingAuthorization() {},
   rewardedIsLoaded() {},
   rewardedLoad() {},
   rewardedShow() {},

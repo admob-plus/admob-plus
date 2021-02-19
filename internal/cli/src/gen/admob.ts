@@ -16,6 +16,7 @@ const Actions = _.mapValues(
     setAppMuted: null,
     setAppVolume: null,
     start: null,
+    requestTrackingAuthorization: null,
     // BannerAd
     bannerShow: null,
     bannerHide: null,

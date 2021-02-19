@@ -49,3 +49,10 @@ export const enum Platforms {
   android = 'android',
   ios = 'ios',
 }
+
+export enum TrackingAuthorizationStatus {
+  notDetermined = 0,
+  restricted = 1,
+  denied = 2,
+  authorized = 3,
+}

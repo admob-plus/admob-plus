@@ -9,6 +9,7 @@ export enum NativeActions {
   interstitialLoad = 'interstitialLoad',
   interstitialShow = 'interstitialShow',
   ready = 'ready',
+  requestTrackingAuthorization = 'requestTrackingAuthorization',
   rewardedIsLoaded = 'rewardedIsLoaded',
   rewardedLoad = 'rewardedLoad',
   rewardedShow = 'rewardedShow',

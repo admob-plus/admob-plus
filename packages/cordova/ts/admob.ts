@@ -6,7 +6,9 @@ import {
   execAsync,
   initPlugin,
   NativeActions,
-  RequestConfig
+  Platforms,
+  RequestConfig,
+  TrackingAuthorizationStatus
 } from './shared'
 
 class AdMob {
@@ -34,6 +36,18 @@ class AdMob {
 
   public start() {
     return execAsync(NativeActions.start)
+  }
+
+  public async requestTrackingAuthorization(): Promise<
+    TrackingAuthorizationStatus | false
+  > {
+    if (cordova.platformId === Platforms.ios) {
+      const n = await execAsync(NativeActions.requestTrackingAuthorization)
+      return TrackingAuthorizationStatus[
+        TrackingAuthorizationStatus[n as number]
+      ]
+    }
+    return false
   }
 }
 
