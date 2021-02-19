@@ -131,9 +131,8 @@ jobs:
         with:
           api-level: 28
           script: |
-            pushd examples/cordova
+            cd examples/cordova
             yarn test
-            popd
 
   test-ios:
     name: iOS on ${{ matrix.os }}
