@@ -184,9 +184,30 @@ jobs:
           yarn test
           popd
 
+  link-checker:
+    name: Check links
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: lycheeverse/lychee-action@v1.0.4
+        with:
+          args: --version
+      - name: lychee Link Checker
+        id: lc
+        uses: lycheeverse/lychee-action@master
+        with:
+          args: >
+            README.md
+            packages/*/README.
+            website/**/*.md
+            --config lychee.toml
+      - name: Fail if there were link errors
+        # FIXME when --exclude is working
+        run: exit 0 || exit ${{ steps.lc.outputs.exit_code }}
+
   deploy-docs:
     name: Deploy website
-    needs: test
+    needs: [link-checker, test]
     if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     steps:

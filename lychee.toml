@@ -1,0 +1,3 @@
+verbose = true
+
+exclude = ["adlic.rjfun.com.", "https://github.com/admob-plus/admob-plus/blob/"]
