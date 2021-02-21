@@ -14,6 +14,8 @@ npx cap sync
 <docgen-index>
 
 * [`start()`](#start)
+* [`bannerShow(...)`](#bannershow)
+* [`bannerHide(...)`](#bannerhide)
 * [`interstitialLoad(...)`](#interstitialload)
 * [`interstitialShow(...)`](#interstitialshow)
 * [`rewardedLoad(...)`](#rewardedload)
@@ -29,6 +31,36 @@ npx cap sync
 ```typescript
 start() => any
 ```
+
+**Returns:** <code>any</code>
+
+--------------------
+
+
+### bannerShow(...)
+
+```typescript
+bannerShow(opts: { id: number; adUnitId: string; }) => any
+```
+
+| Param      | Type                                           |
+| ---------- | ---------------------------------------------- |
+| **`opts`** | <code>{ id: number; adUnitId: string; }</code> |
+
+**Returns:** <code>any</code>
+
+--------------------
+
+
+### bannerHide(...)
+
+```typescript
+bannerHide(opts: { id: number; }) => any
+```
+
+| Param      | Type                         |
+| ---------- | ---------------------------- |
+| **`opts`** | <code>{ id: number; }</code> |
 
 **Returns:** <code>any</code>
 
