@@ -4,8 +4,12 @@ class AMSAdBase: NSObject {
     var id: Int!
     var adUnitId: String!
 
+    var window: UIWindow {
+        return UIApplication.shared.keyWindow!
+    }
+
     var rootViewController: UIViewController {
-        return (UIApplication.shared.keyWindow?.rootViewController)!
+        return window.rootViewController!
     }
 
     init(id: Int, adUnitId: String) {

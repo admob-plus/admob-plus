@@ -6,10 +6,33 @@ import GoogleMobileAds
 public class AdMobPlusPlugin: CAPPlugin {
     @objc func start(_ call: CAPPluginCall) {
         GADMobileAds.sharedInstance().start(completionHandler: { status in
+            GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = [ kGADSimulatorID ] as? [String]
+
             call.resolve()
         })
+        
     }
-
+    
+    @objc func bannerShow(_ call: CAPPluginCall) {
+        if let banner = AMSBanner.getOrCreate(call) {
+            DispatchQueue.main.async {
+                banner.show(call, request: self.createGADRequest(call))
+            }
+        }
+    }
+    
+    @objc func bannerHide(_ call: CAPPluginCall) {
+        guard let id = call.getInt("id"),
+              let banner = AMSAdBase.ads[id] as? AMSBanner
+        else {
+            call.reject("Invalid options")
+            return
+        }
+        DispatchQueue.main.async {
+            banner.hide(call)
+        }
+    }
+    
     @objc func interstitialLoad(_ call: CAPPluginCall) {
         guard let id = call.getInt("id"),
               let adUnitId = call.getString("adUnitId")
@@ -23,7 +46,7 @@ public class AdMobPlusPlugin: CAPPlugin {
         }
         interstitial!.load(call, request: self.createGADRequest(call))
     }
-
+    
     @objc func interstitialShow(_ call: CAPPluginCall) {
         guard let id = call.getInt("id"),
               let interstitial = AMSAdBase.ads[id] as? AMSInterstitial
@@ -33,7 +56,7 @@ public class AdMobPlusPlugin: CAPPlugin {
         }
         interstitial.show(call)
     }
-
+    
     @objc func rewardedLoad(_ call: CAPPluginCall) {
         guard let id = call.getInt("id"),
               let adUnitId = call.getString("adUnitId")
@@ -47,7 +70,7 @@ public class AdMobPlusPlugin: CAPPlugin {
         }
         rewarded!.load(call, request: self.createGADRequest(call))
     }
-
+    
     @objc func rewardedShow(_ call: CAPPluginCall) {
         guard let id = call.getInt("id"),
               let rewarded = AMSAdBase.ads[id] as? AMSRewarded
@@ -57,7 +80,7 @@ public class AdMobPlusPlugin: CAPPlugin {
         }
         rewarded.show(call)
     }
-
+    
     func createGADRequest(_ call: CAPPluginCall) -> GADRequest {
         let request = GADRequest()
         if let testDevices = call.getArray("testDevices", String.self) {

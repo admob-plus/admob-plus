@@ -40,12 +40,12 @@ start() => any
 ### bannerShow(...)
 
 ```typescript
-bannerShow(opts: { id: number; adUnitId: string; }) => any
+bannerShow(opts: { id: number; adUnitId: string; position?: 'bottom' | 'top'; }) => any
 ```
 
-| Param      | Type                                           |
-| ---------- | ---------------------------------------------- |
-| **`opts`** | <code>{ id: number; adUnitId: string; }</code> |
+| Param      | Type                                                                         |
+| ---------- | ---------------------------------------------------------------------------- |
+| **`opts`** | <code>{ id: number; adUnitId: string; position?: 'bottom' \| 'top'; }</code> |
 
 **Returns:** <code>any</code>
 
