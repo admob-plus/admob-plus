@@ -9,6 +9,8 @@ import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
+import admob.plus.capacitor.ads.AdBase;
+import admob.plus.capacitor.ads.BannerAd;
 import admob.plus.capacitor.ads.InterstitialAd;
 import admob.plus.capacitor.ads.RewardedAd;
 
@@ -22,6 +24,30 @@ public class AdMobPlusPlugin extends Plugin {
             public void onInitializationComplete(InitializationStatus status) {
                 call.resolve();
             }
+        });
+    }
+
+    @PluginMethod
+    public void bannerShow(PluginCall call) {
+        final BannerAd bannerAd = BannerAd.getOrCreate(call);
+        final AdRequest adRequest = new AdRequest.Builder().build();
+
+        getBridge().executeOnMainThread(() -> {
+            bannerAd.show(this, call, adRequest);
+        });
+    }
+
+    @PluginMethod
+    public void bannerHide(PluginCall call) {
+        Integer id = call.getInt("id");
+        final BannerAd bannerAd = (BannerAd) AdBase.getAd(id);
+        if (bannerAd == null) {
+            call.reject("Invalid options");
+            return;
+        }
+
+        getBridge().executeOnMainThread(() -> {
+            bannerAd.hide(this, call);
         });
     }
 
