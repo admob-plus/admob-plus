@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Events } from '@admob-plus/core'
+import { Events } from 'admob-plus-cordova'
 
 const eventTypes = [
   'deviceready',
