@@ -129,8 +129,6 @@ function buildTypeScript(): string {
   const adSizeType = AdSizeTypes.map((s) => `  ${s},`).join('\n')
 
   return `// ${warnMessage}
-import { exec } from 'cordova'
-
 export enum NativeActions {
 ${linesActions}
 }

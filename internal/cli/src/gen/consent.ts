@@ -58,8 +58,6 @@ ${linesEvents}
 
 function buildTypeScript(): string {
   return `// ${warnMessage}
-import { exec } from 'cordova'
-
 export enum NativeActions {
 ${renderTsContants(Actions)}
 }

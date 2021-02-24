@@ -29,7 +29,7 @@ export const renderTsContants = (m: { [key: string]: string }) =>
 export const buildUtils = (service: string, actionType = 'string') => `
 export const execAsync = (action: ${actionType}, args?: any[]) => {
   return new Promise((resolve, reject) => {
-    exec(resolve, reject, '${service}', action, args)
+    cordova.exec(resolve, reject, '${service}', action, args)
   })
 }
 
@@ -67,7 +67,7 @@ export const initPlugin = () => {
   document.addEventListener(
     'deviceready',
     () => {
-      exec(
+      cordova.exec(
         (event) => {
           fireDocumentEvent(event.type, event.data)
         },
