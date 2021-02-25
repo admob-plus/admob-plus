@@ -9,7 +9,7 @@ const InterstitialAd: React.FC<InterstitialProps> = () => {
       new admob.InterstitialAd({
         adUnitId: 'ca-app-pub-3940256099942544/1033173712',
       }),
-    [admob],
+    [],
   )
 
   return (

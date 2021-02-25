@@ -1,5 +1,4 @@
 import { Button, ButtonGroup, Box } from '@chakra-ui/react'
-import { Global } from '@emotion/react'
 import * as React from 'react'
 
 export interface BannerProps {}
@@ -15,7 +14,7 @@ const BannerAd: React.FC<BannerProps> = () => {
         adUnitId: 'ca-app-pub-3940256099942544/6300978111',
       }),
     }),
-    [admob],
+    [],
   )
 
   return (
