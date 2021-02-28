@@ -5,7 +5,6 @@ const buildReactApp = () =>
 
 const main = async () => {
   await buildReactApp()
-
 }
 
 export default main

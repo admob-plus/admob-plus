@@ -11,7 +11,7 @@ const main = async () => {
   dotenv.config()
 
   const platform = (process.env.PLATFORM as Platform) || Platform.ios
-  await execa('cordova', ['prepare'], { stdio: 'inherit' })
+  await execa('example', ['prepare'], { stdio: 'inherit' })
 
   switch (platform) {
     case Platform.browser:
@@ -32,26 +32,24 @@ const main = async () => {
       ])
       return
     case Platform.android:
-      await execa('open', ['-a', 'Android Studio', 'platforms/android'], {
-        stdio: 'inherit',
-      })
+      await execa('example', ['open-android'], { stdio: 'inherit' })
       break
     case Platform.ios:
-      await execa('open', ['platforms/ios/AdMob Plus Playground.xcworkspace'], {
-        stdio: 'inherit',
-      })
-      await execa(
-        'cra-build-watch',
-        [
-          '--build-path',
-          process.env.BUILD_PATH,
-          '--after-rebuild-hook',
-          `rsync -avz www/ platforms/${platform}/www`,
-        ],
-        {
-          stdio: 'inherit',
-        },
-      )
+      await Promise.all([
+        execa('example', ['open-ios'], { stdio: 'inherit' }),
+        execa(
+          'cra-build-watch',
+          [
+            '--build-path',
+            process.env.BUILD_PATH,
+            '--after-rebuild-hook',
+            `rsync -avz www/ platforms/${platform}/www`,
+          ],
+          {
+            stdio: 'inherit',
+          },
+        ),
+      ])
       break
     default:
   }
