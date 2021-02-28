@@ -12,7 +12,7 @@
     "@admob-plus-internal/cli": "file:../../internal/cli",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
-    "@testing-library/user-event": "^12.7.3",
+    "@testing-library/user-event": "^12.8.0",
     "@types/cordova": "^0.0.34",
     "@types/fs-extra": "^9.0.7",
     "@types/jest": "^26.0.20",
