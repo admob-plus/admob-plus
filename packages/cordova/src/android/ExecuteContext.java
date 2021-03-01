@@ -6,7 +6,6 @@ import androidx.annotation.Nullable;
 
 import com.google.ads.mediation.admob.AdMobAdapter;
 import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.RequestConfiguration;
 
 import org.apache.cordova.CallbackContext;
@@ -16,7 +15,6 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-import admob.plugin.Generated.AdSizeType;
 import admob.plugin.ads.AdBase;
 
 public class ExecuteContext {
@@ -24,7 +22,7 @@ public class ExecuteContext {
     public final String actionKey;
     public final JSONArray args;
     public final CallbackContext callbackContext;
-    private final JSONObject opts;
+    public final JSONObject opts;
 
     ExecuteContext(AdMob plugin, String actionKey, JSONArray args, CallbackContext callbackContext) {
         this.plugin = plugin;
@@ -45,22 +43,6 @@ public class ExecuteContext {
     @Nullable
     public AdBase getAd() {
         return AdBase.getAd(optId());
-    }
-
-    public AdSize getAdSize() {
-        final String name = "size";
-        if (!this.opts.has(name)) {
-            return AdSize.SMART_BANNER;
-        }
-        AdSize adSize = AdSizeType.getAdSize(this.opts.opt(name));
-        if (adSize != null) {
-            return adSize;
-        }
-        JSONObject adSizeObj = this.opts.optJSONObject(name);
-        if (adSizeObj == null) {
-            return AdSize.SMART_BANNER;
-        }
-        return new AdSize(adSizeObj.optInt("width"), adSizeObj.optInt("height"));
     }
 
     @Nullable

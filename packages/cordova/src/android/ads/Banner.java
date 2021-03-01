@@ -11,7 +11,10 @@ import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.LoadAdError;
 
+import org.json.JSONObject;
+
 import admob.plugin.ExecuteContext;
+import admob.plugin.Generated;
 import admob.plugin.Generated.Events;
 
 public class Banner extends AdBase {
@@ -35,9 +38,25 @@ public class Banner extends AdBase {
         return new Banner(
                 ctx.optId(),
                 ctx.getAdUnitID(),
-                ctx.getAdSize(),
+                getAdSize(ctx),
                 "top".equals(ctx.optPosition()) ? Gravity.TOP : Gravity.BOTTOM
         );
+    }
+
+    private static AdSize getAdSize(ExecuteContext ctx) {
+        final String name = "size";
+        if (!ctx.opts.has(name)) {
+            return AdSize.SMART_BANNER;
+        }
+        AdSize adSize = Generated.AdSizeType.getAdSize(ctx.opts.opt(name));
+        if (adSize != null) {
+            return adSize;
+        }
+        JSONObject adSizeObj = ctx.opts.optJSONObject(name);
+        if (adSizeObj == null) {
+            return AdSize.SMART_BANNER;
+        }
+        return new AdSize(adSizeObj.optInt("width"), adSizeObj.optInt("height"));
     }
 
     public void show(ExecuteContext ctx) {
