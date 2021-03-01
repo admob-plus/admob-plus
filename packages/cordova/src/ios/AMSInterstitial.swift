@@ -15,7 +15,7 @@ class AMSInterstitial: AMSAdBase, GADFullScreenContentDelegate {
             request: request,
             completionHandler: { ad, error in
                 if error != nil {
-                    self.plugin.emit(eventType: AMSEvents.interstitialLoadFail)
+                    self.plugin.emit(eventType: AMSEvents.interstitialLoadFail, data: error!.localizedDescription)
 
                     let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: error?.localizedDescription)
                     self.plugin.commandDelegate.send(result, callbackId: command.callbackId)
@@ -41,19 +41,16 @@ class AMSInterstitial: AMSAdBase, GADFullScreenContentDelegate {
         self.commandDelegate.send(result, callbackId: command.callbackId)
     }
 
-    func adDidRecordImpression(_ ad: GADFullScreenPresentingAd) {
-        self.plugin.emit(eventType: AMSEvents.interstitialImpression)
-    }
-
     func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
-        // TODO
+        plugin.emit(eventType: AMSEvents.interstitialShowFail, data: error.localizedDescription)
     }
 
     func adDidPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        plugin.emit(eventType: AMSEvents.interstitialOpen)
+        print("AMSEvents show")
+        plugin.emit(eventType: AMSEvents.interstitialShow)
     }
 
     func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        plugin.emit(eventType: AMSEvents.interstitialClose)
+        plugin.emit(eventType: AMSEvents.interstitialDismiss)
     }
 }

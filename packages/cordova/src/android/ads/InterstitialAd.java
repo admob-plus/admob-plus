@@ -43,18 +43,18 @@ public class InterstitialAd extends AdBase {
                 mInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
                     @Override
                     public void onAdDismissedFullScreenContent() {
-                        plugin.emit(Events.INTERSTITIAL_CLOSE);
+                        plugin.emit(Events.INTERSTITIAL_DISMISS);
                     }
 
                     @Override
                     public void onAdFailedToShowFullScreenContent(AdError adError) {
-                        // TODO
+                        plugin.emit(Events.INTERSTITIAL_SHOW_FAIL, adError.toString());
                     }
 
                     @Override
                     public void onAdShowedFullScreenContent() {
-                        plugin.emit(Events.INTERSTITIAL_OPEN);
                         mInterstitialAd = null;
+                        plugin.emit(Events.INTERSTITIAL_SHOW);
                     }
                 });
 
@@ -64,7 +64,7 @@ public class InterstitialAd extends AdBase {
             @Override
             public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                 mInterstitialAd = null;
-                plugin.emit(Events.INTERSTITIAL_LOAD_FAIL, buildErrorPayload(loadAdError.getCode()));
+                plugin.emit(Events.INTERSTITIAL_LOAD_FAIL, loadAdError.toString());
             }
         });
     }

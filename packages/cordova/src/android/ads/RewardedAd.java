@@ -51,9 +51,8 @@ public class RewardedAd extends AdBase {
                 mRewardedAd = rewardedAd;
                 mRewardedAd.setFullScreenContentCallback(new FullScreenContentCallback() {
                     @Override
-                    public void onAdShowedFullScreenContent() {
-                        mRewardedAd = null;
-                        plugin.emit(Events.REWARDED_OPEN);
+                    public void onAdDismissedFullScreenContent() {
+                        plugin.emit(Events.REWARDED_DISMISS);
                     }
 
                     @Override
@@ -62,8 +61,9 @@ public class RewardedAd extends AdBase {
                     }
 
                     @Override
-                    public void onAdDismissedFullScreenContent() {
-                        plugin.emit(Events.REWARDED_CLOSE);
+                    public void onAdShowedFullScreenContent() {
+                        mRewardedAd = null;
+                        plugin.emit(Events.REWARDED_SHOW);
                     }
                 });
                 plugin.emit(Events.REWARDED_LOAD);

@@ -44,19 +44,15 @@ class AMSRewarded: AMSAdBase, GADFullScreenContentDelegate {
         self.commandDelegate.send(result, callbackId: command.callbackId)
     }
 
-    func adDidRecordImpression(_ ad: GADFullScreenPresentingAd) {
-        // TODO
-    }
-
     func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
-        plugin.emit(eventType: AMSEvents.rewardedShowFail)
+        plugin.emit(eventType: AMSEvents.rewardedShowFail, data: error.localizedDescription)
     }
 
     func adDidPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        plugin.emit(eventType: AMSEvents.rewardedOpen)
+        plugin.emit(eventType: AMSEvents.rewardedShow)
     }
 
     func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        plugin.emit(eventType: AMSEvents.rewardedClose)
+        plugin.emit(eventType: AMSEvents.rewardedDismiss)
     }
 }
