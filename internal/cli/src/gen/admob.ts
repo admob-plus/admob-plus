@@ -110,12 +110,12 @@ function buildSwift(): string {
   const linesEvents = renderSwiftContants(Events)
 
   return `// ${warnMessage}
-struct AMSBannerPosition {
+struct AMBBannerPosition {
     static let bottom = "bottom"
     static let top = "top"
 }
 
-struct AMSEvents {
+struct AMBEvents {
 ${linesEvents}
 }
 `
@@ -164,7 +164,7 @@ export default async () => ({
   files: [
     { path: 'cordova/src/android/Generated.java', f: buildJava },
     {
-      path: 'cordova/src/ios/AMSGenerated.swift',
+      path: 'cordova/src/ios/AMBGenerated.swift',
       f: buildSwift,
     },
     { path: 'cordova/ts/generated.ts', f: buildTypeScript },

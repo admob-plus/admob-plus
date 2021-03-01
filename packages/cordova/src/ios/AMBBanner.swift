@@ -1,4 +1,4 @@
-class AMSBanner: AMSAdBase, GADBannerViewDelegate {
+class AMBBanner: AMBAdBase, GADBannerViewDelegate {
     var bannerView: GADBannerView!
     var adSize: GADAdSize!
     var position: String!
@@ -89,7 +89,7 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
             bannerView.heightAnchor.constraint(equalToConstant: bannerView.frame.height),
             mainView.widthAnchor.constraint(equalTo: rootView.widthAnchor)
         ]
-        if position == AMSBannerPosition.top {
+        if position == AMBBannerPosition.top {
             let c = mainView.bottomAnchor.constraint(equalTo: rootView.bottomAnchor)
             c.priority = UILayoutPriority(999)
             constraints += [
@@ -117,7 +117,7 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
                                               attribute: .centerX,
                                               multiplier: 1,
                                               constant: 0))
-        if position == AMSBannerPosition.top {
+        if position == AMBBannerPosition.top {
             rootView.addConstraint(NSLayoutConstraint(item: bannerView,
                                                   attribute: .top,
                                                   relatedBy: .equal,
@@ -137,16 +137,16 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
     }
 
     func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
-        plugin.emit(eventType: AMSEvents.bannerLoad)
+        plugin.emit(eventType: AMBEvents.bannerLoad)
     }
 
     func bannerView(_ bannerView: GADBannerView,
                     didFailToReceiveAdWithError error: Error) {
-        plugin.emit(eventType: AMSEvents.bannerLoadFail, data: error.localizedDescription)
+        plugin.emit(eventType: AMBEvents.bannerLoadFail, data: error.localizedDescription)
     }
 
     func bannerViewWillPresentScreen(_ bannerView: GADBannerView) {
-        plugin.emit(eventType: AMSEvents.bannerOpen)
+        plugin.emit(eventType: AMBEvents.bannerOpen)
     }
 
     func bannerViewWillDismissScreen(_ bannerView: GADBannerView) {
@@ -154,6 +154,6 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
     }
 
     func bannerViewDidDismissScreen(_ bannerView: GADBannerView) {
-        plugin.emit(eventType: AMSEvents.bannerClose)
+        plugin.emit(eventType: AMBEvents.bannerClose)
     }
 }

@@ -1,4 +1,4 @@
-class AMSInterstitial: AMSAdBase, GADFullScreenContentDelegate {
+class AMBInterstitial: AMBAdBase, GADFullScreenContentDelegate {
     var interstitial: GADInterstitialAd?
 
     deinit {
@@ -15,7 +15,7 @@ class AMSInterstitial: AMSAdBase, GADFullScreenContentDelegate {
             request: request,
             completionHandler: { ad, error in
                 if error != nil {
-                    self.plugin.emit(eventType: AMSEvents.interstitialLoadFail, data: error!.localizedDescription)
+                    self.plugin.emit(eventType: AMBEvents.interstitialLoadFail, data: error!.localizedDescription)
 
                     let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: error?.localizedDescription)
                     self.plugin.commandDelegate.send(result, callbackId: command.callbackId)
@@ -25,7 +25,7 @@ class AMSInterstitial: AMSAdBase, GADFullScreenContentDelegate {
                 self.interstitial = ad
                 ad?.fullScreenContentDelegate = self
 
-                self.plugin.emit(eventType: AMSEvents.interstitialLoad)
+                self.plugin.emit(eventType: AMBEvents.interstitialLoad)
 
                 let result = CDVPluginResult(status: CDVCommandStatus_OK)
                 self.commandDelegate.send(result, callbackId: command.callbackId)
@@ -42,15 +42,15 @@ class AMSInterstitial: AMSAdBase, GADFullScreenContentDelegate {
     }
 
     func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
-        plugin.emit(eventType: AMSEvents.interstitialShowFail, data: error.localizedDescription)
+        plugin.emit(eventType: AMBEvents.interstitialShowFail, data: error.localizedDescription)
     }
 
     func adDidPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        print("AMSEvents show")
-        plugin.emit(eventType: AMSEvents.interstitialShow)
+        print("AMBEvents show")
+        plugin.emit(eventType: AMBEvents.interstitialShow)
     }
 
     func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        plugin.emit(eventType: AMSEvents.interstitialDismiss)
+        plugin.emit(eventType: AMBEvents.interstitialDismiss)
     }
 }

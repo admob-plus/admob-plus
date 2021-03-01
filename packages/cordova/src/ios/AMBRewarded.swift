@@ -1,4 +1,4 @@
-class AMSRewarded: AMSAdBase, GADFullScreenContentDelegate {
+class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
     var rewardedAd: GADRewardedAd?
 
     override init(id: Int, adUnitId: String) {
@@ -16,7 +16,7 @@ class AMSRewarded: AMSAdBase, GADFullScreenContentDelegate {
     func load(_ command: CDVInvokedUrlCommand, request: GADRequest) {
         GADRewardedAd.load(withAdUnitID: adUnitId, request: request, completionHandler: { ad, error in
             if error != nil {
-                self.plugin.emit(eventType: AMSEvents.rewardedLoadFail)
+                self.plugin.emit(eventType: AMBEvents.rewardedLoadFail)
 
                 let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: error?.localizedDescription)
                 self.plugin.commandDelegate.send(result, callbackId: command.callbackId)
@@ -25,7 +25,7 @@ class AMSRewarded: AMSAdBase, GADFullScreenContentDelegate {
 
             self.rewardedAd = ad
 
-            self.plugin.emit(eventType: AMSEvents.rewardedLoad)
+            self.plugin.emit(eventType: AMBEvents.rewardedLoad)
 
             let result = CDVPluginResult(status: CDVCommandStatus_OK)
             self.commandDelegate.send(result, callbackId: command.callbackId)
@@ -36,7 +36,7 @@ class AMSRewarded: AMSAdBase, GADFullScreenContentDelegate {
         if isReady() {
             rewardedAd?.present(fromRootViewController: plugin.viewController, userDidEarnRewardHandler: {
                 // TODO include self.rewardedAd.adReward
-                self.plugin.emit(eventType: AMSEvents.rewardedReward)
+                self.plugin.emit(eventType: AMBEvents.rewardedReward)
             })
         }
 
@@ -45,14 +45,14 @@ class AMSRewarded: AMSAdBase, GADFullScreenContentDelegate {
     }
 
     func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
-        plugin.emit(eventType: AMSEvents.rewardedShowFail, data: error.localizedDescription)
+        plugin.emit(eventType: AMBEvents.rewardedShowFail, data: error.localizedDescription)
     }
 
     func adDidPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        plugin.emit(eventType: AMSEvents.rewardedShow)
+        plugin.emit(eventType: AMBEvents.rewardedShow)
     }
 
     func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        plugin.emit(eventType: AMSEvents.rewardedDismiss)
+        plugin.emit(eventType: AMBEvents.rewardedDismiss)
     }
 }
