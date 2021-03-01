@@ -70,7 +70,7 @@ public class InterstitialAd extends AdBase {
     }
 
     public boolean isLoaded() {
-        return mInterstitialAd != null
+        return mInterstitialAd != null;
     }
 
     public void show() {
