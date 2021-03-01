@@ -4,13 +4,9 @@ import android.provider.Settings;
 import android.util.Log;
 
 import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
 import org.apache.cordova.CallbackContext;
-import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.CordovaPlugin;
-import org.apache.cordova.CordovaWebView;
 import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -20,7 +16,6 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 
 import admob.plugin.Generated.Actions;
-import admob.plugin.ads.AdBase;
 import admob.plugin.ads.Banner;
 import admob.plugin.ads.Interstitial;
 import admob.plugin.ads.Rewarded;
@@ -29,13 +24,6 @@ public class AdMob extends CordovaPlugin {
     private static final String TAG = "AdMob-Plus";
     private final ArrayList<PluginResult> eventQueue = new ArrayList<PluginResult>();
     private CallbackContext readyCallbackContext = null;
-
-    @Override
-    public void initialize(CordovaInterface cordova, CordovaWebView webView) {
-        super.initialize(cordova, webView);
-
-        AdBase.initialize(this);
-    }
 
     @Override
     public boolean execute(String actionKey, JSONArray args, CallbackContext callbackContext) {

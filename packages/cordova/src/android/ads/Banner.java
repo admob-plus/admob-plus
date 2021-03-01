@@ -69,48 +69,48 @@ public class Banner extends AdBase {
             adView.setAdListener(new AdListener() {
                 @Override
                 public void onAdClicked() {
-                    plugin.emit(Events.BANNER_CLICK);
+                    ctx.plugin.emit(Events.BANNER_CLICK);
                 }
 
                 @Override
                 public void onAdClosed() {
-                    plugin.emit(Events.BANNER_CLOSE);
+                    ctx.plugin.emit(Events.BANNER_CLOSE);
                 }
 
                 @Override
                 public void onAdFailedToLoad(LoadAdError error) {
-                    plugin.emit(Events.BANNER_LOAD_FAIL, error.toString());
+                    ctx.plugin.emit(Events.BANNER_LOAD_FAIL, error.toString());
                 }
 
                 @Override
                 public void onAdImpression() {
-                    plugin.emit(Events.BANNER_IMPRESSION);
+                    ctx.plugin.emit(Events.BANNER_IMPRESSION);
                 }
 
                 @Override
                 public void onAdLoaded() {
-                    plugin.emit(Events.BANNER_LOAD);
+                    ctx.plugin.emit(Events.BANNER_LOAD);
                 }
 
                 @Override
                 public void onAdOpened() {
-                    plugin.emit(Events.BANNER_OPEN);
+                    ctx.plugin.emit(Events.BANNER_OPEN);
                 }
             });
 
-            addBannerView(adView);
+            addBannerView(ctx, adView);
         } else if (adView.getVisibility() == View.GONE) {
             adView.resume();
             adView.setVisibility(View.VISIBLE);
         } else {
-            View view = plugin.webView.getView();
+            View view = ctx.plugin.webView.getView();
             ViewGroup wvParentView = (ViewGroup) view.getParent();
             if (parentView != wvParentView) {
                 parentView.removeAllViews();
                 if (parentView.getParent() != null) {
                     ((ViewGroup) parentView.getParent()).removeView(parentView);
                 }
-                addBannerView(adView);
+                addBannerView(ctx, adView);
             }
         }
 
@@ -135,11 +135,11 @@ public class Banner extends AdBase {
         super.destroy();
     }
 
-    private void addBannerView(AdView adView) {
-        View view = plugin.webView.getView();
+    private void addBannerView(ExecuteContext ctx, AdView adView) {
+        View view = ctx.plugin.webView.getView();
         ViewGroup wvParentView = (ViewGroup) view.getParent();
         if (parentView == null) {
-            parentView = new LinearLayout(plugin.webView.getContext());
+            parentView = new LinearLayout(ctx.plugin.webView.getContext());
         }
 
         if (wvParentView != null && wvParentView != parentView) {
