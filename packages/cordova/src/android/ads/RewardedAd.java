@@ -6,9 +6,10 @@ import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.FullScreenContentCallback;
 import com.google.android.gms.ads.LoadAdError;
-import com.google.android.gms.ads.OnUserEarnedRewardListener;
-import com.google.android.gms.ads.rewarded.RewardItem;
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import admob.plugin.Action;
 import admob.plugin.Generated.Events;
@@ -42,7 +43,7 @@ public class RewardedAd extends AdBase {
             @Override
             public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                 mRewardedAd = null;
-                plugin.emit(Events.REWARDED_LOAD_FAIL, buildErrorPayload(loadAdError.getCode()));
+                plugin.emit(Events.REWARDED_LOAD_FAIL, loadAdError.toString());
             }
 
             @Override
@@ -57,7 +58,7 @@ public class RewardedAd extends AdBase {
 
                     @Override
                     public void onAdFailedToShowFullScreenContent(AdError adError) {
-                        plugin.emit(Events.REWARDED_SHOW_FAIL, buildErrorPayload(adError.getCode()));
+                        plugin.emit(Events.REWARDED_SHOW_FAIL, adError.toString());
                     }
 
                     @Override
@@ -75,17 +76,18 @@ public class RewardedAd extends AdBase {
     }
 
     public void show() {
-        if (!isLoaded()) {
-            return;
+        if (isLoaded()) {
+            mRewardedAd.show(getActivity(), rewardItem -> {
+                JSONObject data = new JSONObject();
+                try {
+                    data.put("amount", rewardItem.getAmount());
+                    data.put("type", rewardItem.getType());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                plugin.emit(Events.REWARDED_REWARD, data);
+            });
         }
-        mRewardedAd.show(getActivity(), new OnUserEarnedRewardListener() {
-            @Override
-            public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-                int rewardAmount = rewardItem.getAmount();
-                String rewardType = rewardItem.getType();
-                plugin.emit(Events.REWARDED_REWARD);
-            }
-        });
     }
 
     private void clear() {
