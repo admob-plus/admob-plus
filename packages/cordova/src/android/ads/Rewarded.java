@@ -37,7 +37,9 @@ public class Rewarded extends AdBase {
         super.destroy();
     }
 
-    public void createAndLoad(AdRequest adRequest) {
+    public void createAndLoad(ExecuteContext ctx) {
+        AdRequest adRequest = ctx.buildAdRequest();
+
         clear();
 
         RewardedAd.load(getActivity(), adUnitId, adRequest, new RewardedAdLoadCallback() {
@@ -45,6 +47,7 @@ public class Rewarded extends AdBase {
             public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                 mRewardedAd = null;
                 plugin.emit(Events.REWARDED_LOAD_FAIL, loadAdError.toString());
+                ctx.callbackContext.error(loadAdError.toString());
             }
 
             @Override
@@ -67,7 +70,9 @@ public class Rewarded extends AdBase {
                         plugin.emit(Events.REWARDED_SHOW);
                     }
                 });
+
                 plugin.emit(Events.REWARDED_LOAD);
+                ctx.callbackContext.success();
             }
         });
     }
@@ -76,7 +81,7 @@ public class Rewarded extends AdBase {
         return mRewardedAd != null;
     }
 
-    public void show() {
+    public void show(ExecuteContext ctx) {
         if (isLoaded()) {
             mRewardedAd.show(getActivity(), rewardItem -> {
                 JSONObject data = new JSONObject();
@@ -88,6 +93,9 @@ public class Rewarded extends AdBase {
                 }
                 plugin.emit(Events.REWARDED_REWARD, data);
             });
+            ctx.callbackContext.success();
+        } else {
+            ctx.callbackContext.error("Ad is not loaded");
         }
     }
 

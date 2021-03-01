@@ -40,7 +40,9 @@ public class Banner extends AdBase {
         );
     }
 
-    public void show(AdRequest adRequest) {
+    public void show(ExecuteContext ctx) {
+        AdRequest adRequest = ctx.buildAdRequest();
+
         if (adView == null) {
             adView = new AdView(getActivity());
             adView.setAdUnitId(adUnitId);
@@ -94,6 +96,7 @@ public class Banner extends AdBase {
         }
 
         adView.loadAd(adRequest);
+        ctx.callbackContext.success();
     }
 
     public void hide() {

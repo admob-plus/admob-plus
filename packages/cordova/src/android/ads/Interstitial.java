@@ -63,12 +63,14 @@ public class Interstitial extends AdBase {
                 });
 
                 plugin.emit(Events.INTERSTITIAL_LOAD);
+                ctx.callbackContext.success();
             }
 
             @Override
             public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                 mInterstitialAd = null;
                 plugin.emit(Events.INTERSTITIAL_LOAD_FAIL, loadAdError.toString());
+                ctx.callbackContext.error(loadAdError.toString());
             }
         });
     }
@@ -77,9 +79,12 @@ public class Interstitial extends AdBase {
         return mInterstitialAd != null;
     }
 
-    public void show() {
+    public void show(ExecuteContext ctx) {
         if (isLoaded()) {
             mInterstitialAd.show(getActivity());
+            ctx.callbackContext.success();
+        } else {
+            ctx.callbackContext.error("Ad is not loaded");
         }
     }
 

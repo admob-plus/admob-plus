@@ -106,8 +106,7 @@ public class AdMob extends CordovaPlugin {
     private boolean executeBannerShow(ExecuteContext ctx) {
         cordova.getActivity().runOnUiThread(() -> {
             Banner banner = Banner.getOrCreate(ctx);
-            banner.show(ctx.buildAdRequest());
-            ctx.callbackContext.success();
+            banner.show(ctx);
         });
         return true;
     }
@@ -117,8 +116,10 @@ public class AdMob extends CordovaPlugin {
             Banner banner = (Banner) ctx.getAd();
             if (banner != null) {
                 banner.hide();
+                ctx.callbackContext.success();
+            } else {
+                ctx.callbackContext.error("Ad not found");
             }
-            ctx.callbackContext.success();
         });
         return true;
     }
@@ -136,7 +137,6 @@ public class AdMob extends CordovaPlugin {
         cordova.getActivity().runOnUiThread(() -> {
             Interstitial interstitial = Interstitial.getOrCreate(ctx);
             interstitial.load(ctx);
-            ctx.callbackContext.success();
         });
         return true;
     }
@@ -145,9 +145,10 @@ public class AdMob extends CordovaPlugin {
         cordova.getActivity().runOnUiThread(() -> {
             Interstitial interstitial = (Interstitial) ctx.getAd();
             if (interstitial != null) {
-                interstitial.show();
+                interstitial.show(ctx);
+            } else {
+                ctx.callbackContext.error("Ad not found");
             }
-            ctx.callbackContext.success();
         });
         return true;
     }
@@ -164,8 +165,7 @@ public class AdMob extends CordovaPlugin {
     private boolean executeRewardedLoad(ExecuteContext ctx) {
         cordova.getActivity().runOnUiThread(() -> {
             Rewarded rewarded = Rewarded.getOrCreate(ctx);
-            rewarded.createAndLoad(ctx.buildAdRequest());
-            ctx.callbackContext.success();
+            rewarded.createAndLoad(ctx);
         });
         return true;
     }
@@ -174,9 +174,10 @@ public class AdMob extends CordovaPlugin {
         cordova.getActivity().runOnUiThread(() -> {
             Rewarded rewarded = (Rewarded) ctx.getAd();
             if (rewarded != null) {
-                rewarded.show();
+                rewarded.show(ctx);
+            } else {
+                ctx.callbackContext.error("Ad not found");
             }
-            ctx.callbackContext.success();
         });
         return true;
     }
