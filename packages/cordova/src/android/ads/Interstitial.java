@@ -9,7 +9,7 @@ import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 
-import admob.plugin.Action;
+import admob.plugin.ExecuteContext;
 import admob.plugin.Generated.Events;
 
 public class Interstitial extends AdBase {
@@ -19,10 +19,10 @@ public class Interstitial extends AdBase {
         super(id, adUnitId);
     }
 
-    public static Interstitial getOrCreate(Action action) {
-        Interstitial interstitial = (Interstitial) action.getAd();
+    public static Interstitial getOrCreate(ExecuteContext ctx) {
+        Interstitial interstitial = (Interstitial) ctx.getAd();
         if (interstitial == null) {
-            interstitial = new Interstitial(action.optId(), action.getAdUnitID());
+            interstitial = new Interstitial(ctx.optId(), ctx.getAdUnitID());
         }
         return interstitial;
     }
@@ -34,7 +34,10 @@ public class Interstitial extends AdBase {
         super.destroy();
     }
 
-    public void load(AdRequest adRequest, String adUnitId) {
+    public void load(ExecuteContext ctx) {
+        AdRequest adRequest = ctx.buildAdRequest();
+        String adUnitId = ctx.getAdUnitID();
+
         clear();
 
         InterstitialAd.load(getActivity(), adUnitId, adRequest, new InterstitialAdLoadCallback() {

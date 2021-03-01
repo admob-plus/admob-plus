@@ -9,6 +9,7 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.RequestConfiguration;
 
+import org.apache.cordova.CallbackContext;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -18,10 +19,18 @@ import java.util.List;
 import admob.plugin.Generated.AdSizeType;
 import admob.plugin.ads.AdBase;
 
-public class Action {
+public class ExecuteContext {
+    public final AdMob plugin;
+    public final String actionKey;
+    public final JSONArray args;
+    public final CallbackContext callbackContext;
     private final JSONObject opts;
 
-    Action(JSONArray args) {
+    ExecuteContext(AdMob plugin, String actionKey, JSONArray args, CallbackContext callbackContext) {
+        this.plugin = plugin;
+        this.actionKey = actionKey;
+        this.args = args;
+        this.callbackContext = callbackContext;
         this.opts = args.optJSONObject(0);
     }
 

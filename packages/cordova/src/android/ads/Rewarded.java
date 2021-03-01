@@ -12,7 +12,7 @@ import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import admob.plugin.Action;
+import admob.plugin.ExecuteContext;
 import admob.plugin.Generated.Events;
 
 public class Rewarded extends AdBase {
@@ -22,10 +22,10 @@ public class Rewarded extends AdBase {
         super(id, adUnitId);
     }
 
-    public static Rewarded getOrCreate(Action action) {
-        Rewarded rewarded = (Rewarded) action.getAd();
+    public static Rewarded getOrCreate(ExecuteContext ctx) {
+        Rewarded rewarded = (Rewarded) ctx.getAd();
         if (rewarded == null) {
-            rewarded = new Rewarded(action.optId(), action.getAdUnitID());
+            rewarded = new Rewarded(ctx.optId(), ctx.getAdUnitID());
         }
         return rewarded;
     }

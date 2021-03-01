@@ -11,7 +11,7 @@ import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.LoadAdError;
 
-import admob.plugin.Action;
+import admob.plugin.ExecuteContext;
 import admob.plugin.Generated.Events;
 
 public class Banner extends AdBase {
@@ -27,16 +27,16 @@ public class Banner extends AdBase {
         this.gravity = gravity;
     }
 
-    public static Banner getOrCreate(Action action) {
-        Banner banner = (Banner) action.getAd();
+    public static Banner getOrCreate(ExecuteContext ctx) {
+        Banner banner = (Banner) ctx.getAd();
         if (banner != null) {
             return banner;
         }
         return new Banner(
-                action.optId(),
-                action.getAdUnitID(),
-                action.getAdSize(),
-                "top".equals(action.optPosition()) ? Gravity.TOP : Gravity.BOTTOM
+                ctx.optId(),
+                ctx.getAdUnitID(),
+                ctx.getAdSize(),
+                "top".equals(ctx.optPosition()) ? Gravity.TOP : Gravity.BOTTOM
         );
     }
 
