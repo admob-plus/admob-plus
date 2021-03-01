@@ -21,9 +21,9 @@ import java.util.ArrayList;
 
 import admob.plugin.Generated.Actions;
 import admob.plugin.ads.AdBase;
-import admob.plugin.ads.BannerAd;
-import admob.plugin.ads.InterstitialAd;
-import admob.plugin.ads.RewardedAd;
+import admob.plugin.ads.Banner;
+import admob.plugin.ads.Interstitial;
+import admob.plugin.ads.Rewarded;
 
 public class AdMob extends CordovaPlugin {
     private static final String TAG = "AdMob-Plus";
@@ -110,8 +110,8 @@ public class AdMob extends CordovaPlugin {
 
     private boolean executeBannerShow(Action action, CallbackContext callbackContext) {
         cordova.getActivity().runOnUiThread(() -> {
-            BannerAd bannerAd = BannerAd.getOrCreate(action);
-            bannerAd.show(action.buildAdRequest());
+            Banner banner = Banner.getOrCreate(action);
+            banner.show(action.buildAdRequest());
             callbackContext.success();
         });
         return true;
@@ -119,9 +119,9 @@ public class AdMob extends CordovaPlugin {
 
     private boolean executeBannerHide(Action action, CallbackContext callbackContext) {
         cordova.getActivity().runOnUiThread(() -> {
-            BannerAd bannerAd = (BannerAd) action.getAd();
-            if (bannerAd != null) {
-                bannerAd.hide();
+            Banner banner = (Banner) action.getAd();
+            if (banner != null) {
+                banner.hide();
             }
             callbackContext.success();
         });
@@ -130,8 +130,8 @@ public class AdMob extends CordovaPlugin {
 
     private boolean executeInterstitialIsLoaded(Action action, CallbackContext callbackContext) {
         cordova.getActivity().runOnUiThread(() -> {
-            InterstitialAd interstitialAd = (InterstitialAd) action.getAd();
-            PluginResult result = new PluginResult(PluginResult.Status.OK, interstitialAd != null && interstitialAd.isLoaded());
+            Interstitial interstitial = (Interstitial) action.getAd();
+            PluginResult result = new PluginResult(PluginResult.Status.OK, interstitial != null && interstitial.isLoaded());
             callbackContext.sendPluginResult(result);
         });
         return true;
@@ -139,8 +139,8 @@ public class AdMob extends CordovaPlugin {
 
     private boolean executeInterstitialLoad(Action action, CallbackContext callbackContext) {
         cordova.getActivity().runOnUiThread(() -> {
-            InterstitialAd interstitialAd = InterstitialAd.getOrCreate(action);
-            interstitialAd.load(action.buildAdRequest(), action.getAdUnitID());
+            Interstitial interstitial = Interstitial.getOrCreate(action);
+            interstitial.load(action.buildAdRequest(), action.getAdUnitID());
             callbackContext.success();
         });
         return true;
@@ -148,9 +148,9 @@ public class AdMob extends CordovaPlugin {
 
     private boolean executeInterstitialShow(Action action, CallbackContext callbackContext) {
         cordova.getActivity().runOnUiThread(() -> {
-            InterstitialAd interstitialAd = (InterstitialAd) action.getAd();
-            if (interstitialAd != null) {
-                interstitialAd.show();
+            Interstitial interstitial = (Interstitial) action.getAd();
+            if (interstitial != null) {
+                interstitial.show();
             }
             callbackContext.success();
         });
@@ -159,8 +159,8 @@ public class AdMob extends CordovaPlugin {
 
     private boolean executeRewardedIsLoaded(Action action, CallbackContext callbackContext) {
         cordova.getActivity().runOnUiThread(() -> {
-            RewardedAd rewardedAd = (RewardedAd) action.getAd();
-            PluginResult result = new PluginResult(PluginResult.Status.OK, rewardedAd != null && rewardedAd.isLoaded());
+            Rewarded rewarded = (Rewarded) action.getAd();
+            PluginResult result = new PluginResult(PluginResult.Status.OK, rewarded != null && rewarded.isLoaded());
             callbackContext.sendPluginResult(result);
         });
         return true;
@@ -168,8 +168,8 @@ public class AdMob extends CordovaPlugin {
 
     private boolean executeRewardedLoad(Action action, CallbackContext callbackContext) {
         cordova.getActivity().runOnUiThread(() -> {
-            RewardedAd rewardedAd = RewardedAd.getOrCreate(action);
-            rewardedAd.createAndLoad(action.buildAdRequest());
+            Rewarded rewarded = Rewarded.getOrCreate(action);
+            rewarded.createAndLoad(action.buildAdRequest());
             callbackContext.success();
         });
         return true;
@@ -177,9 +177,9 @@ public class AdMob extends CordovaPlugin {
 
     private boolean executeRewardedShow(Action action, CallbackContext callbackContext) {
         cordova.getActivity().runOnUiThread(() -> {
-            RewardedAd rewardedAd = (RewardedAd) action.getAd();
-            if (rewardedAd != null) {
-                rewardedAd.show();
+            Rewarded rewarded = (Rewarded) action.getAd();
+            if (rewarded != null) {
+                rewarded.show();
             }
             callbackContext.success();
         });

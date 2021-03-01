@@ -14,25 +14,25 @@ import com.google.android.gms.ads.LoadAdError;
 import admob.plugin.Action;
 import admob.plugin.Generated.Events;
 
-public class BannerAd extends AdBase {
+public class Banner extends AdBase {
     private static ViewGroup parentView;
     private final AdSize adSize;
     private final int gravity;
     private AdView adView;
 
-    BannerAd(int id, String adUnitId, AdSize adSize, int gravity) {
+    Banner(int id, String adUnitId, AdSize adSize, int gravity) {
         super(id, adUnitId);
 
         this.adSize = adSize;
         this.gravity = gravity;
     }
 
-    public static BannerAd getOrCreate(Action action) {
-        BannerAd bannerAd = (BannerAd) action.getAd();
-        if (bannerAd != null) {
-            return bannerAd;
+    public static Banner getOrCreate(Action action) {
+        Banner banner = (Banner) action.getAd();
+        if (banner != null) {
+            return banner;
         }
-        return new BannerAd(
+        return new Banner(
                 action.optId(),
                 action.getAdUnitID(),
                 action.getAdSize(),

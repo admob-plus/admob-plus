@@ -6,6 +6,7 @@ import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.FullScreenContentCallback;
 import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.rewarded.RewardedAd;
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
 
 import org.json.JSONException;
@@ -14,19 +15,19 @@ import org.json.JSONObject;
 import admob.plugin.Action;
 import admob.plugin.Generated.Events;
 
-public class RewardedAd extends AdBase {
-    private com.google.android.gms.ads.rewarded.RewardedAd mRewardedAd = null;
+public class Rewarded extends AdBase {
+    private RewardedAd mRewardedAd = null;
 
-    RewardedAd(int id, String adUnitId) {
+    Rewarded(int id, String adUnitId) {
         super(id, adUnitId);
     }
 
-    public static RewardedAd getOrCreate(Action action) {
-        RewardedAd rewardedAd = (RewardedAd) action.getAd();
-        if (rewardedAd == null) {
-            rewardedAd = new RewardedAd(action.optId(), action.getAdUnitID());
+    public static Rewarded getOrCreate(Action action) {
+        Rewarded rewarded = (Rewarded) action.getAd();
+        if (rewarded == null) {
+            rewarded = new Rewarded(action.optId(), action.getAdUnitID());
         }
-        return rewardedAd;
+        return rewarded;
     }
 
     @Override
@@ -39,7 +40,7 @@ public class RewardedAd extends AdBase {
     public void createAndLoad(AdRequest adRequest) {
         clear();
 
-        com.google.android.gms.ads.rewarded.RewardedAd.load(getActivity(), adUnitId, adRequest, new RewardedAdLoadCallback() {
+        RewardedAd.load(getActivity(), adUnitId, adRequest, new RewardedAdLoadCallback() {
             @Override
             public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                 mRewardedAd = null;
@@ -47,7 +48,7 @@ public class RewardedAd extends AdBase {
             }
 
             @Override
-            public void onAdLoaded(@NonNull com.google.android.gms.ads.rewarded.RewardedAd rewardedAd) {
+            public void onAdLoaded(@NonNull RewardedAd rewardedAd) {
                 mRewardedAd = rewardedAd;
                 mRewardedAd.setFullScreenContentCallback(new FullScreenContentCallback() {
                     @Override
