@@ -1,5 +1,6 @@
 package admob.plugin;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -82,5 +83,9 @@ public class ExecuteContext {
             extras.putString("npa", opts.optString("npa"));
         }
         return builder.addNetworkExtrasBundle(AdMobAdapter.class, extras).build();
+    }
+
+    public Activity getActivity() {
+        return plugin.cordova.getActivity();
     }
 }

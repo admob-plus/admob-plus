@@ -42,11 +42,11 @@ public class Rewarded extends AdBase {
 
         clear();
 
-        RewardedAd.load(getActivity(), adUnitId, adRequest, new RewardedAdLoadCallback() {
+        RewardedAd.load(ctx.getActivity(), adUnitId, adRequest, new RewardedAdLoadCallback() {
             @Override
             public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                 mRewardedAd = null;
-                plugin.emit(Events.REWARDED_LOAD_FAIL, loadAdError.toString());
+                ctx.plugin.emit(Events.REWARDED_LOAD_FAIL, loadAdError.toString());
                 ctx.callbackContext.error(loadAdError.toString());
             }
 
@@ -56,22 +56,22 @@ public class Rewarded extends AdBase {
                 mRewardedAd.setFullScreenContentCallback(new FullScreenContentCallback() {
                     @Override
                     public void onAdDismissedFullScreenContent() {
-                        plugin.emit(Events.REWARDED_DISMISS);
+                        ctx.plugin.emit(Events.REWARDED_DISMISS);
                     }
 
                     @Override
                     public void onAdFailedToShowFullScreenContent(AdError adError) {
-                        plugin.emit(Events.REWARDED_SHOW_FAIL, adError.toString());
+                        ctx.plugin.emit(Events.REWARDED_SHOW_FAIL, adError.toString());
                     }
 
                     @Override
                     public void onAdShowedFullScreenContent() {
                         mRewardedAd = null;
-                        plugin.emit(Events.REWARDED_SHOW);
+                        ctx.plugin.emit(Events.REWARDED_SHOW);
                     }
                 });
 
-                plugin.emit(Events.REWARDED_LOAD);
+                ctx.plugin.emit(Events.REWARDED_LOAD);
                 ctx.callbackContext.success();
             }
         });
@@ -83,7 +83,7 @@ public class Rewarded extends AdBase {
 
     public void show(ExecuteContext ctx) {
         if (isLoaded()) {
-            mRewardedAd.show(getActivity(), rewardItem -> {
+            mRewardedAd.show(ctx.getActivity(), rewardItem -> {
                 JSONObject data = new JSONObject();
                 try {
                     data.put("amount", rewardItem.getAmount());
@@ -91,7 +91,7 @@ public class Rewarded extends AdBase {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                plugin.emit(Events.REWARDED_REWARD, data);
+                ctx.plugin.emit(Events.REWARDED_REWARD, data);
             });
             ctx.callbackContext.success();
         } else {

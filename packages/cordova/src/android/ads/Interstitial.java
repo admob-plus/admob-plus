@@ -40,36 +40,36 @@ public class Interstitial extends AdBase {
 
         clear();
 
-        InterstitialAd.load(getActivity(), adUnitId, adRequest, new InterstitialAdLoadCallback() {
+        InterstitialAd.load(ctx.getActivity(), adUnitId, adRequest, new InterstitialAdLoadCallback() {
             @Override
             public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
                 mInterstitialAd = interstitialAd;
                 mInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
                     @Override
                     public void onAdDismissedFullScreenContent() {
-                        plugin.emit(Events.INTERSTITIAL_DISMISS);
+                        ctx.plugin.emit(Events.INTERSTITIAL_DISMISS);
                     }
 
                     @Override
                     public void onAdFailedToShowFullScreenContent(AdError adError) {
-                        plugin.emit(Events.INTERSTITIAL_SHOW_FAIL, adError.toString());
+                        ctx.plugin.emit(Events.INTERSTITIAL_SHOW_FAIL, adError.toString());
                     }
 
                     @Override
                     public void onAdShowedFullScreenContent() {
                         mInterstitialAd = null;
-                        plugin.emit(Events.INTERSTITIAL_SHOW);
+                        ctx.plugin.emit(Events.INTERSTITIAL_SHOW);
                     }
                 });
 
-                plugin.emit(Events.INTERSTITIAL_LOAD);
+                ctx.plugin.emit(Events.INTERSTITIAL_LOAD);
                 ctx.callbackContext.success();
             }
 
             @Override
             public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                 mInterstitialAd = null;
-                plugin.emit(Events.INTERSTITIAL_LOAD_FAIL, loadAdError.toString());
+                ctx.plugin.emit(Events.INTERSTITIAL_LOAD_FAIL, loadAdError.toString());
                 ctx.callbackContext.error(loadAdError.toString());
             }
         });
@@ -81,7 +81,7 @@ public class Interstitial extends AdBase {
 
     public void show(ExecuteContext ctx) {
         if (isLoaded()) {
-            mInterstitialAd.show(getActivity());
+            mInterstitialAd.show(ctx.getActivity());
             ctx.callbackContext.success();
         } else {
             ctx.callbackContext.error("Ad is not loaded");
