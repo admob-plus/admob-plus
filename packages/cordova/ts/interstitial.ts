@@ -1,10 +1,8 @@
 import {
-  Events,
   execAsync,
   MobileAd,
   MobileAdOptions,
-  NativeActions,
-  waitEvent,
+  NativeActions
 } from './shared'
 
 export default class InterstitialAd extends MobileAd {
@@ -16,12 +14,10 @@ export default class InterstitialAd extends MobileAd {
     return execAsync(NativeActions.interstitialIsLoaded, [{ id: this.id }])
   }
 
-  public async load() {
-    await execAsync(NativeActions.interstitialLoad, [
+  public  load() {
+    return execAsync(NativeActions.interstitialLoad, [
       { adUnitId: this.adUnitId, id: this.id },
     ])
-
-    await waitEvent(Events.interstitialLoad, Events.interstitialLoadFail)
   }
 
   public show() {
