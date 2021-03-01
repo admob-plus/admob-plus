@@ -29,16 +29,6 @@ public abstract class AdBase {
         return ads.get(id);
     }
 
-    JSONObject buildErrorPayload(int errorCode) {
-        JSONObject data = new JSONObject();
-        try {
-            data.put("errorCode", errorCode);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        return data;
-    }
-
     protected Activity getActivity() {
         return plugin.cordova.getActivity();
     }

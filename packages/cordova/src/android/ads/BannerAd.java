@@ -1,6 +1,5 @@
 package admob.plugin.ads;
 
-import android.app.Activity;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,10 +15,10 @@ import admob.plugin.Action;
 import admob.plugin.Generated.Events;
 
 public class BannerAd extends AdBase {
+    private static ViewGroup parentView;
     private final AdSize adSize;
     private final int gravity;
     private AdView adView;
-    private static ViewGroup parentView;
 
     BannerAd(int id, String adUnitId, AdSize adSize, int gravity) {
         super(id, adUnitId);
@@ -59,7 +58,7 @@ public class BannerAd extends AdBase {
 
                 @Override
                 public void onAdFailedToLoad(LoadAdError error) {
-                    plugin.emit(Events.BANNER_LOAD_FAIL, buildErrorPayload(error.getCode()));
+                    plugin.emit(Events.BANNER_LOAD_FAIL, error.toString());
                 }
 
                 @Override
