@@ -30,7 +30,7 @@ Name | Type |
 
 Inherited from: [MobileAd](mobilead.md)
 
-Defined in: interstitial.ts:10
+Defined in: interstitial.ts:3
 
 ## Properties
 
@@ -56,11 +56,11 @@ Defined in: api.ts:11
 
 ### isLoaded
 
-▸ **isLoaded**(): *Promise*<unknown\>
+▸ **isLoaded**(): *Promise*<boolean\>
 
-**Returns:** *Promise*<unknown\>
+**Returns:** *Promise*<boolean\>
 
-Defined in: interstitial.ts:15
+Defined in: interstitial.ts:8
 
 ___
 
@@ -70,14 +70,14 @@ ___
 
 **Returns:** *Promise*<void\>
 
-Defined in: interstitial.ts:19
+Defined in: interstitial.ts:14
 
 ___
 
 ### show
 
-▸ **show**(): *Promise*<unknown\>
+▸ **show**(): *Promise*<void\>
 
-**Returns:** *Promise*<unknown\>
+**Returns:** *Promise*<void\>
 
-Defined in: interstitial.ts:27
+Defined in: interstitial.ts:20
