@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.2](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.0.0-alpha.1...@admob-plus/capacitor@1.0.0-alpha.2) (2021-03-02)
+
+
+### Features
+
+* **capacitor:** add BannerAd ([c41ab3c](https://github.com/admob-plus/admob-plus/commit/c41ab3cccf9febc4035f788e0821f5e8532a3796))
+* **capacitor/android:** implement BannerAd ([33a7d1f](https://github.com/admob-plus/admob-plus/commit/33a7d1fc8758485979dbb9cde3557f5b04bfe676))
+* **capacitor/ios:** implement BannerAd ([7d68fcf](https://github.com/admob-plus/admob-plus/commit/7d68fcf9172e77e977df510d2782bbbfe888d339))
+
+
+
+
+
 # [1.0.0-alpha.1](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.0.0-alpha.0...@admob-plus/capacitor@1.0.0-alpha.1) (2021-02-17)
 
 

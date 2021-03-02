@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.11](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.0.0-alpha.10...admob-plus-cordova@1.0.0-alpha.11) (2021-03-02)
+
+
+### Features
+
+* **cordova:** align event name with native API ([8f810b8](https://github.com/admob-plus/admob-plus/commit/8f810b848c6e2005c5cc60ae7ebd588ab3ddd4dd))
+* **cordova/android:** attach rewardItem to reward event ([9d999d6](https://github.com/admob-plus/admob-plus/commit/9d999d65143b9d7a0785613b4af57c8993339231))
+* **cordova/android:** resolve call after load finished ([9a1c4b4](https://github.com/admob-plus/admob-plus/commit/9a1c4b4f3b0d76fc62539dce778a5868e15649ee))
+* **cordova/android:** use com.google.android.gms.ads.interstitial.InterstitialAd ([e73940f](https://github.com/admob-plus/admob-plus/commit/e73940f1d23c3d1fdf4b7be7264dbd0be42c645f))
+* **cordova/android:** use com.google.android.gms.ads.rewarded.RewardedAd ([8ff9d7c](https://github.com/admob-plus/admob-plus/commit/8ff9d7c252fd39c7e70563af34263ff13efd8b04))
+* **cordova/ios:** update Google-Mobile-Ads-SDK to v8.1 ([a7515bd](https://github.com/admob-plus/admob-plus/commit/a7515bdf039862babc150a901ca60e64e66bf3ae))
+
+
+
+
+
 # [1.0.0-alpha.10](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.0.0-alpha.9...admob-plus-cordova@1.0.0-alpha.10) (2021-02-19)
 
 **Note:** Version bump only for package admob-plus-cordova
