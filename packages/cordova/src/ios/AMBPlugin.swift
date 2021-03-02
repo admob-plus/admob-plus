@@ -90,7 +90,7 @@ class AMBPlugin: CDVPlugin {
                 return
         }
         if banner == nil {
-            let adSize = getAdSize(opts)
+            let adSize = AMBBanner.getAdSize(opts)
             banner = AMBBanner(id: id, adUnitId: adUnitId, adSize: adSize, position: position)
         }
         banner!.show(request: createGADRequest(opts))
@@ -218,34 +218,5 @@ class AMBPlugin: CDVPlugin {
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: ["type": eventType, "data": data])
         result?.setKeepCallbackAs(true)
         self.commandDelegate.send(result, callbackId: readyCallbackId)
-    }
-
-    func getAdSize(_ opts: NSDictionary) -> GADAdSize {
-        if let adSizeType = opts.value(forKey: "size") as? Int {
-            switch adSizeType {
-            case 0:
-                return kGADAdSizeBanner
-            case 1:
-                return kGADAdSizeLargeBanner
-            case 2:
-                return kGADAdSizeMediumRectangle
-            case 3:
-                return kGADAdSizeFullBanner
-            case 4:
-                return kGADAdSizeLeaderboard
-            default: break
-            }
-        }
-        guard let adSizeDict = opts.value(forKey: "size") as? NSDictionary,
-            let width = adSizeDict.value(forKey: "width") as? Int,
-            let height = adSizeDict.value(forKey: "height") as? Int
-            else {
-                if UIDevice.current.orientation.isPortrait {
-                    return kGADAdSizeSmartBannerPortrait
-                } else {
-                    return kGADAdSizeSmartBannerLandscape
-                }
-        }
-        return GADAdSizeFromCGSize(CGSize(width: width, height: height))
     }
 }

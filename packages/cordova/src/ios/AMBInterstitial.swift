@@ -46,7 +46,6 @@ class AMBInterstitial: AMBAdBase, GADFullScreenContentDelegate {
     }
 
     func adDidPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        print("AMBEvents show")
         plugin.emit(eventType: AMBEvents.interstitialShow)
     }
 
