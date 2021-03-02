@@ -30,28 +30,24 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate {
     static func getAdSize(_ opts: NSDictionary) -> GADAdSize {
         if let adSizeType = opts.value(forKey: "size") as? Int {
             switch adSizeType {
-                case 0:
-                    return kGADAdSizeBanner
-                case 1:
-                    return kGADAdSizeLargeBanner
-                case 2:
-                    return kGADAdSizeMediumRectangle
-                case 3:
-                    return kGADAdSizeFullBanner
-                case 4:
-                    return kGADAdSizeLeaderboard
-                default: break
+            case 0:
+                return kGADAdSizeBanner
+            case 1:
+                return kGADAdSizeLargeBanner
+            case 2:
+                return kGADAdSizeMediumRectangle
+            case 3:
+                return kGADAdSizeFullBanner
+            case 4:
+                return kGADAdSizeLeaderboard
+            default: break
             }
         }
         guard let adSizeDict = opts.value(forKey: "size") as? NSDictionary,
               let width = adSizeDict.value(forKey: "width") as? Int,
               let height = adSizeDict.value(forKey: "height") as? Int
         else {
-            if UIDevice.current.orientation.isPortrait {
-                return kGADAdSizeSmartBannerPortrait
-            } else {
-                return kGADAdSizeSmartBannerLandscape
-            }
+            return kGADAdSizeBanner
         }
         return GADAdSizeFromCGSize(CGSize(width: width, height: height))
     }
@@ -140,28 +136,28 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate {
 
     func positionBanner(_ bannerView: UIView) {
         rootView.addConstraint(NSLayoutConstraint(item: bannerView,
-                                              attribute: .centerX,
-                                              relatedBy: .equal,
-                                              toItem: rootView,
-                                              attribute: .centerX,
-                                              multiplier: 1,
-                                              constant: 0))
+                                                  attribute: .centerX,
+                                                  relatedBy: .equal,
+                                                  toItem: rootView,
+                                                  attribute: .centerX,
+                                                  multiplier: 1,
+                                                  constant: 0))
         if position == AMBBannerPosition.top {
             rootView.addConstraint(NSLayoutConstraint(item: bannerView,
-                                                  attribute: .top,
-                                                  relatedBy: .equal,
-                                                  toItem: rootView.safeAreaLayoutGuide.topAnchor,
-                                                  attribute: .top,
-                                                  multiplier: 1,
-                                                  constant: 0))
+                                                      attribute: .top,
+                                                      relatedBy: .equal,
+                                                      toItem: rootView.safeAreaLayoutGuide.topAnchor,
+                                                      attribute: .top,
+                                                      multiplier: 1,
+                                                      constant: 0))
         } else {
             rootView.addConstraint(NSLayoutConstraint(item: bannerView,
-                                                  attribute: .bottom,
-                                                  relatedBy: .equal,
-                                                  toItem: rootView.safeAreaLayoutGuide.bottomAnchor,
-                                                  attribute: .top,
-                                                  multiplier: 1,
-                                                  constant: 0))
+                                                      attribute: .bottom,
+                                                      relatedBy: .equal,
+                                                      toItem: rootView.safeAreaLayoutGuide.bottomAnchor,
+                                                      attribute: .top,
+                                                      multiplier: 1,
+                                                      constant: 0))
         }
     }
 
@@ -179,7 +175,6 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate {
     }
 
     func bannerViewWillDismissScreen(_ bannerView: GADBannerView) {
-        // TODO
     }
 
     func bannerViewDidDismissScreen(_ bannerView: GADBannerView) {
