@@ -34,6 +34,7 @@ jobs:
           path: |
             .eslintcache
             yarn.lock
+            .yarnrc.yml
             .yarn
             node_modules
             */node_modules
@@ -46,8 +47,10 @@ jobs:
           yarn --version
           yarn set version from sources
           yarn --version
+          yarn config set enableImmutableInstalls false
           yarn config set pnpFallbackMode all
           yarn config set pnpMode loose
+        if: hashFiles('.yarnrc.yml') == ''
 
       - name: Install dependencies
         run: |
@@ -101,6 +104,7 @@ jobs:
         run: |
           yarn set version berry
           yarn set version from sources
+          yarn config set enableImmutableInstalls false
           yarn config set pnpFallbackMode all
           yarn config set pnpMode loose
 
@@ -165,6 +169,7 @@ jobs:
         run: |
           yarn set version berry
           yarn set version from sources
+          yarn config set enableImmutableInstalls false
           yarn config set pnpFallbackMode all
           yarn config set pnpMode loose
 
