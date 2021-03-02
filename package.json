@@ -12,7 +12,7 @@
     "test-android": "run-s 'test-android:*'",
     "//test-android:testbed": "cordova-testbed --platform android --plugin packages/cordova --build-only",
     "test-ios": "run-s 'test-ios:*'",
-    "test-ios:lint": "swiftlint --path packages/cordova/src/ios",
+    "test-ios:lint": "node-swiftlint --path packages/cordova/src/ios",
     "//test-ios:testbed": "cordova-testbed --platform ios --plugin packages/cordova --build-only"
   },
   "devDependencies": {
@@ -53,6 +53,7 @@
     "remark-preset-lint-consistent": "^4.0.0",
     "remark-preset-lint-markdown-style-guide": "^4.0.0",
     "remark-preset-lint-recommended": "^5.0.0",
+    "swiftlint": "^1.0.1",
     "ts-jest": "^26.5.2",
     "typescript": "^4.2.2"
   },
@@ -70,7 +71,7 @@
     "*.md": "remark --no-stdout",
     "examples/*/package.json": "prettier --write",
     "packages/cli/oclif.manifest.json": "exit 1",
-    "packages/cordova/src/ios/*.swift": "swiftlint lint --strict --path"
+    "*.swift": "node-swiftlint lint --strict --path"
   },
   "remarkConfig": {
     "plugins": [
