@@ -225,8 +225,8 @@ jobs:
       - name: Config Yarn
         run: |
           yarn set version berry
+          yarn set version from sources
           yarn config set enableImmutableInstalls false
-          yarn config set enableInlineHunks true
           yarn config set pnpFallbackMode all
           yarn config set pnpMode loose
 
