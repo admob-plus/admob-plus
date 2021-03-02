@@ -22,6 +22,7 @@
     "@commitlint/config-conventional": "^12.0.1",
     "@commitlint/config-lerna-scopes": "^12.0.1",
     "@commitlint/prompt-cli": "^12.0.1",
+    "@types/cordova": "^0.0.34",
     "@types/jest": "^26.0.20",
     "@types/node": "^14.14.31",
     "@types/xml2js": "^0.4.8",

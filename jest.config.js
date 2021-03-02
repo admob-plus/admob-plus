@@ -11,6 +11,7 @@ module.exports = {
     ...defaults.testPathIgnorePatterns,
     '/examples/.*/plugins/',
     '/examples/ionic-angular/',
+    '/examples/playground/',
   ],
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$',
   testURL: 'http://localhost/',

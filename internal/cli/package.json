@@ -20,10 +20,10 @@
     "escalade": "^3.1.1",
     "execa": "^5.0.0",
     "fast-glob": "^3.2.5",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "read-pkg": "^5.2.0",
     "replace-in-file": "^6.2.0",
-    "typescript": "^4.1.5",
+    "typescript": "^4.2.2",
     "xml2js": "^0.4.23",
     "yargs": "^16.2.0"
   },
