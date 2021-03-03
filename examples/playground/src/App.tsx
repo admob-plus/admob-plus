@@ -4,10 +4,10 @@ import {
   Heading,
   HStack,
   Link,
-  SimpleGrid,
+  SimpleGrid
 } from '@chakra-ui/react'
 import React from 'react'
-import { Link as RouterLink, Route, Routes } from 'react-router-dom'
+import { Link as RouterLink, Route, Switch } from 'wouter'
 import Logs from './components/Logs'
 import BannerAd from './routes/BannerAd'
 import Home from './routes/Home'
@@ -16,7 +16,7 @@ import RewardedAd from './routes/RewardedAd'
 
 interface AppProps {}
 
-const App: React.FC<AppProps> = ({}) => {
+const App: React.FC<AppProps> = () => {
   return (
     <Container>
       <SimpleGrid height="100vh" spacingY="20px" templateRows="auto 1fr 1fr">
@@ -39,12 +39,20 @@ const App: React.FC<AppProps> = ({}) => {
           </HStack>
         </Box>
         <Box>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="banner" element={<BannerAd />} />
-            <Route path="interstitial" element={<InterstitialAd />} />
-            <Route path="rewarded" element={<RewardedAd />} />
-          </Routes>
+          <Switch>
+            <Route path="/">
+              <Home />
+            </Route>
+            <Route path="/banner">
+              <BannerAd />
+            </Route>
+            <Route path="/interstitial">
+              <InterstitialAd />
+            </Route>
+            <Route path="/rewarded">
+              <RewardedAd />
+            </Route>
+          </Switch>
         </Box>
         <Box bg="#F5F5F5">
           <Logs />

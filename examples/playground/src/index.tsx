@@ -1,14 +1,22 @@
 import { ChakraProvider } from '@chakra-ui/react'
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { HashRouter as Router } from 'react-router-dom'
+import { Router } from 'wouter'
 import App from './App'
 import './index.css'
 import reportWebVitals from './reportWebVitals'
+import useHashLocation from './useHashLocation'
+
+if (typeof admob === 'undefined') {
+  class Dummy {}
+
+  // @ts-ignore
+  window.admob = { BannerAd: Dummy }
+}
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
+    <Router hook={useHashLocation}>
       <ChakraProvider>
         <App />
       </ChakraProvider>
