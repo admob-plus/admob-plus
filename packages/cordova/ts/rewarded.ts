@@ -1,10 +1,8 @@
 import {
-  Events,
   execAsync,
   MobileAd,
   MobileAdOptions,
-  NativeActions,
-  waitEvent,
+  NativeActions
 } from './shared'
 
 export default class RewardedAd extends MobileAd {

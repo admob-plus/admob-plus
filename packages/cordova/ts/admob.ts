@@ -1,6 +1,7 @@
 import BannerAd from './banner'
 import InterstitialAd from './interstitial'
 import RewardedAd from './rewarded'
+import RewardedInterstitialAd from './rewarded-interstitial'
 import {
   Events,
   execAsync,
@@ -15,6 +16,7 @@ class AdMob {
   public readonly BannerAd = BannerAd
   public readonly InterstitialAd = InterstitialAd
   public readonly RewardedAd = RewardedAd
+  public readonly RewardedInterstitialAd = RewardedInterstitialAd
 
   public readonly Events = Events
   public readonly TrackingAuthorizationStatus = TrackingAuthorizationStatus

@@ -28,6 +28,10 @@ const Actions = _.mapValues(
     rewardedIsLoaded: null,
     rewardedLoad: null,
     rewardedShow: null,
+    // RewardedInterstitialAd
+    rewardedInterstitialIsLoaded: null,
+    rewardedInterstitialLoad: null,
+    rewardedInterstitialShow: null,
   },
   (v, k) => (v === null ? k : v) as string,
 )
@@ -55,6 +59,13 @@ const Events = _.mapValues(
     rewardedReward: 'rewarded.reward',
     rewardedShow: 'rewarded.show',
     rewardedShowFail: 'rewarded.showFail',
+    // RewardedInterstitialAd
+    rewardedInterstitialDismiss: 'rewardedInterstitial.dismiss',
+    rewardedInterstitialLoad: 'rewardedInterstitial.load',
+    rewardedInterstitialLoadFail: 'rewardedInterstitial.loadFail',
+    rewardedInterstitialReward: 'rewardedInterstitial.reward',
+    rewardedInterstitialShow: 'rewardedInterstitial.show',
+    rewardedInterstitialShowFail: 'rewardedInterstitial.showFail',
   },
   (v, k) => `admob.${v === null ? k : v}`,
 )

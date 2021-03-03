@@ -13,6 +13,9 @@ public final class Generated {
         public static final String INTERSTITIAL_SHOW = "interstitialShow";
         public static final String READY = "ready";
         public static final String REQUEST_TRACKING_AUTHORIZATION = "requestTrackingAuthorization";
+        public static final String REWARDED_INTERSTITIAL_IS_LOADED = "rewardedInterstitialIsLoaded";
+        public static final String REWARDED_INTERSTITIAL_LOAD = "rewardedInterstitialLoad";
+        public static final String REWARDED_INTERSTITIAL_SHOW = "rewardedInterstitialShow";
         public static final String REWARDED_IS_LOADED = "rewardedIsLoaded";
         public static final String REWARDED_LOAD = "rewardedLoad";
         public static final String REWARDED_SHOW = "rewardedShow";
@@ -35,6 +38,12 @@ public final class Generated {
         public static final String INTERSTITIAL_SHOW_FAIL = "admob.interstitial.showFail";
         public static final String READY = "admob.ready";
         public static final String REWARDED_DISMISS = "admob.rewarded.dismiss";
+        public static final String REWARDED_INTERSTITIAL_DISMISS = "admob.rewardedInterstitial.dismiss";
+        public static final String REWARDED_INTERSTITIAL_LOAD = "admob.rewardedInterstitial.load";
+        public static final String REWARDED_INTERSTITIAL_LOAD_FAIL = "admob.rewardedInterstitial.loadFail";
+        public static final String REWARDED_INTERSTITIAL_REWARD = "admob.rewardedInterstitial.reward";
+        public static final String REWARDED_INTERSTITIAL_SHOW = "admob.rewardedInterstitial.show";
+        public static final String REWARDED_INTERSTITIAL_SHOW_FAIL = "admob.rewardedInterstitial.showFail";
         public static final String REWARDED_LOAD = "admob.rewarded.load";
         public static final String REWARDED_LOAD_FAIL = "admob.rewarded.loadFail";
         public static final String REWARDED_REWARD = "admob.rewarded.reward";
