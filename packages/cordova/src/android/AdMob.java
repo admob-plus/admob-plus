@@ -39,6 +39,7 @@ public class AdMob extends CordovaPlugin {
             case Actions.CONFIG_REQUEST:
                 MobileAds.setRequestConfiguration(ctx.getRequestConfiguration());
                 callbackContext.success();
+                break;
             case Actions.BANNER_SHOW:
                 return executeBannerShow(ctx);
             case Actions.BANNER_HIDE:
@@ -65,11 +66,13 @@ public class AdMob extends CordovaPlugin {
                 boolean value = args.optBoolean(0);
                 MobileAds.setAppMuted(value);
                 callbackContext.success();
+                break;
             }
             case Actions.SET_APP_VOLUME: {
                 float value = BigDecimal.valueOf(args.optDouble(0)).floatValue();
                 MobileAds.setAppVolume(value);
                 callbackContext.success();
+                break;
             }
             default:
                 return false;
