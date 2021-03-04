@@ -7,13 +7,6 @@ import './index.css'
 import reportWebVitals from './reportWebVitals'
 import useHashLocation from './useHashLocation'
 
-if (typeof admob === 'undefined') {
-  class Dummy {}
-
-  // @ts-ignore
-  window.admob = { BannerAd: Dummy }
-}
-
 ReactDOM.render(
   <React.StrictMode>
     <Router hook={useHashLocation}>

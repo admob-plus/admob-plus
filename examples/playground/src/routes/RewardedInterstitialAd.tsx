@@ -1,13 +1,13 @@
 import { Button } from '@chakra-ui/react'
 import * as React from 'react'
 
-export interface RewardedAdProps {}
+export interface RewardInterstitialAdProps {}
 
-const RewardedAd: React.FC<RewardedAdProps> = () => {
+const RewardedInterstitialAd: React.FC<RewardInterstitialAdProps> = () => {
   const rewarded = React.useMemo(
     () =>
-      new admob.RewardedAd({
-        adUnitId: 'ca-app-pub-3940256099942544/5224354917',
+      new admob.RewardedInterstitialAd({
+        adUnitId: 'ca-app-pub-3940256099942544/6978759866',
       }),
     [],
   )
@@ -32,4 +32,4 @@ const RewardedAd: React.FC<RewardedAdProps> = () => {
   )
 }
 
-export default RewardedAd
+export default RewardedInterstitialAd

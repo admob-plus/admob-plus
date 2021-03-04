@@ -4,7 +4,7 @@ import {
   Heading,
   HStack,
   Link,
-  SimpleGrid
+  SimpleGrid,
 } from '@chakra-ui/react'
 import React from 'react'
 import { Link as RouterLink, Route, Switch } from 'wouter'
@@ -12,6 +12,7 @@ import Logs from './components/Logs'
 import BannerAd from './routes/BannerAd'
 import Home from './routes/Home'
 import InterstitialAd from './routes/InterstitialAd'
+import RewardedInterstitialAd from './routes/RewardedInterstitialAd'
 import RewardedAd from './routes/RewardedAd'
 
 interface AppProps {}
@@ -36,6 +37,9 @@ const App: React.FC<AppProps> = () => {
             <Link as={RouterLink} to="/rewarded">
               Rewarded Ad
             </Link>
+            <Link as={RouterLink} to="/rewarded-interstitial">
+              Rewarded Interstitial Ad
+            </Link>
           </HStack>
         </Box>
         <Box>
@@ -51,6 +55,9 @@ const App: React.FC<AppProps> = () => {
             </Route>
             <Route path="/rewarded">
               <RewardedAd />
+            </Route>
+            <Route path="/rewarded-interstitial">
+              <RewardedInterstitialAd />
             </Route>
           </Switch>
         </Box>
