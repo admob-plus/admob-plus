@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import admob.plugin.ads.AdBase;
+import admob.plugin.ads.RewardedInterstitial;
 
 public class ExecuteContext {
     public final AdMob plugin;
@@ -44,6 +45,15 @@ public class ExecuteContext {
     @Nullable
     public AdBase getAd() {
         return AdBase.getAd(optId());
+    }
+
+    @Nullable
+    public AdBase getAdOrError() {
+        AdBase ad = getAd();
+        if (ad == null) {
+            callbackContext.error("Ad not found");
+        }
+        return ad;
     }
 
     @Nullable

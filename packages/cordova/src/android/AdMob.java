@@ -138,11 +138,9 @@ public class AdMob extends CordovaPlugin {
 
     private boolean executeInterstitialShow(ExecuteContext ctx) {
         cordova.getActivity().runOnUiThread(() -> {
-            Interstitial interstitial = (Interstitial) ctx.getAd();
+            Interstitial interstitial = (Interstitial) ctx.getAdOrError();
             if (interstitial != null) {
                 interstitial.show(ctx);
-            } else {
-                ctx.callbackContext.error("Ad not found");
             }
         });
         return true;
@@ -167,11 +165,9 @@ public class AdMob extends CordovaPlugin {
 
     private boolean executeRewardedShow(ExecuteContext ctx) {
         cordova.getActivity().runOnUiThread(() -> {
-            Rewarded rewarded = (Rewarded) ctx.getAd();
+            Rewarded rewarded = (Rewarded) ctx.getAdOrError();
             if (rewarded != null) {
                 rewarded.show(ctx);
-            } else {
-                ctx.callbackContext.error("Ad not found");
             }
         });
         return true;
@@ -196,11 +192,9 @@ public class AdMob extends CordovaPlugin {
 
     private boolean executeRewardedInterstitialShow(ExecuteContext ctx) {
         cordova.getActivity().runOnUiThread(() -> {
-            RewardedInterstitial ad = (RewardedInterstitial) ctx.getAd();
+            RewardedInterstitial ad = (RewardedInterstitial) ctx.getAdOrError();
             if (ad != null) {
                 ad.show(ctx);
-            } else {
-                ctx.callbackContext.error("Ad not found");
             }
         });
         return true;
