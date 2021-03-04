@@ -111,12 +111,10 @@ public class AdMob extends CordovaPlugin {
 
     private boolean executeBannerHide(ExecuteContext ctx) {
         cordova.getActivity().runOnUiThread(() -> {
-            Banner banner = (Banner) ctx.getAd();
+            Banner banner = (Banner) ctx.getAdOrError();
             if (banner != null) {
                 banner.hide();
                 ctx.callbackContext.success();
-            } else {
-                ctx.callbackContext.error("Ad not found");
             }
         });
         return true;
@@ -151,7 +149,7 @@ public class AdMob extends CordovaPlugin {
 
     private boolean executeRewardedIsLoaded(ExecuteContext ctx) {
         cordova.getActivity().runOnUiThread(() -> {
-            Rewarded rewarded = (Rewarded) ctx.getAd();
+            Rewarded rewarded = ctx.getAd(Rewarded.class);
             PluginResult result = new PluginResult(PluginResult.Status.OK, rewarded != null && rewarded.isLoaded());
             ctx.callbackContext.sendPluginResult(result);
         });

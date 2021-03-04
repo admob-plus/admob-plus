@@ -48,6 +48,11 @@ public class ExecuteContext {
     }
 
     @Nullable
+    public <T extends AdBase> T getAd(Class<T> type) {
+        return type.cast(getAd());
+    }
+
+    @Nullable
     public AdBase getAdOrError() {
         AdBase ad = getAd();
         if (ad == null) {
