@@ -19,6 +19,7 @@ import admob.plugin.Generated.Actions;
 import admob.plugin.ads.Banner;
 import admob.plugin.ads.Interstitial;
 import admob.plugin.ads.Rewarded;
+import admob.plugin.ads.RewardedInterstitial;
 
 public class AdMob extends CordovaPlugin {
     private static final String TAG = "AdMob-Plus";
@@ -54,6 +55,12 @@ public class AdMob extends CordovaPlugin {
                 return executeRewardedLoad(ctx);
             case Actions.REWARDED_SHOW:
                 return executeRewardedShow(ctx);
+            case Actions.REWARDED_INTERSTITIAL_IS_LOADED:
+                return executeRewardedInterstitialIsLoaded(ctx);
+            case Actions.REWARDED_INTERSTITIAL_LOAD:
+                return executeRewardedInterstitialLoad(ctx);
+            case Actions.REWARDED_INTERSTITIAL_SHOW:
+                return executeRewardedInterstitialShow(ctx);
             case Actions.SET_APP_MUTED: {
                 boolean value = args.optBoolean(0);
                 MobileAds.setAppMuted(value);
@@ -163,6 +170,35 @@ public class AdMob extends CordovaPlugin {
             Rewarded rewarded = (Rewarded) ctx.getAd();
             if (rewarded != null) {
                 rewarded.show(ctx);
+            } else {
+                ctx.callbackContext.error("Ad not found");
+            }
+        });
+        return true;
+    }
+
+    private boolean executeRewardedInterstitialIsLoaded(ExecuteContext ctx) {
+        cordova.getActivity().runOnUiThread(() -> {
+            RewardedInterstitial ad = (RewardedInterstitial) ctx.getAd();
+            PluginResult result = new PluginResult(PluginResult.Status.OK, ad != null && ad.isLoaded());
+            ctx.callbackContext.sendPluginResult(result);
+        });
+        return true;
+    }
+
+    private boolean executeRewardedInterstitialLoad(ExecuteContext ctx) {
+        cordova.getActivity().runOnUiThread(() -> {
+            RewardedInterstitial ad = RewardedInterstitial.getOrCreate(ctx);
+            ad.createAndLoad(ctx);
+        });
+        return true;
+    }
+
+    private boolean executeRewardedInterstitialShow(ExecuteContext ctx) {
+        cordova.getActivity().runOnUiThread(() -> {
+            RewardedInterstitial ad = (RewardedInterstitial) ctx.getAd();
+            if (ad != null) {
+                ad.show(ctx);
             } else {
                 ctx.callbackContext.error("Ad not found");
             }
