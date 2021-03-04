@@ -158,7 +158,7 @@ public class AdMob extends CordovaPlugin {
     private boolean executeRewardedLoad(ExecuteContext ctx) {
         cordova.getActivity().runOnUiThread(() -> {
             Rewarded rewarded = Rewarded.getOrCreate(ctx);
-            rewarded.createAndLoad(ctx);
+            rewarded.load(ctx);
         });
         return true;
     }
@@ -185,7 +185,7 @@ public class AdMob extends CordovaPlugin {
     private boolean executeRewardedInterstitialLoad(ExecuteContext ctx) {
         cordova.getActivity().runOnUiThread(() -> {
             RewardedInterstitial ad = RewardedInterstitial.getOrCreate(ctx);
-            ad.createAndLoad(ctx);
+            ad.load(ctx);
         });
         return true;
     }

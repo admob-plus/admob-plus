@@ -37,7 +37,7 @@ public class Rewarded extends AdBase {
         super.destroy();
     }
 
-    public void createAndLoad(ExecuteContext ctx) {
+    public void load(ExecuteContext ctx) {
         AdRequest adRequest = ctx.buildAdRequest();
 
         clear();
