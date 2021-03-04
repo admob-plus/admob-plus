@@ -1,31 +1,26 @@
-class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
-    var rewardedAd: GADRewardedAd?
-
-    override init(id: Int, adUnitId: String) {
-        super.init(id: id, adUnitId: adUnitId)
-    }
+class AMBRewardedInterstitial: AMBAdBase, GADFullScreenContentDelegate {
+    var rewardedInterstitial: GADRewardedInterstitialAd?
 
     deinit {
-        rewardedAd = nil
+        rewardedInterstitial = nil
     }
-
     func isReady() -> Bool {
-        return self.rewardedAd != nil
+        return self.rewardedInterstitial != nil
     }
 
     func load(_ command: CDVInvokedUrlCommand, request: GADRequest) {
-        GADRewardedAd.load(withAdUnitID: adUnitId, request: request, completionHandler: { ad, error in
+        GADRewardedInterstitialAd.load(withAdUnitID: adUnitId, request: request, completionHandler: { ad, error in
             if error != nil {
-                self.plugin.emit(eventType: AMBEvents.rewardedLoadFail)
+                self.plugin.emit(eventType: AMBEvents.rewardedInterstitialLoadFail)
 
                 let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: error?.localizedDescription)
                 self.plugin.commandDelegate.send(result, callbackId: command.callbackId)
                 return
             }
 
-            self.rewardedAd = ad
+            self.rewardedInterstitial = ad
 
-            self.plugin.emit(eventType: AMBEvents.rewardedLoad)
+            self.plugin.emit(eventType: AMBEvents.rewardedInterstitialLoad)
 
             let result = CDVPluginResult(status: CDVCommandStatus_OK)
             self.commandDelegate.send(result, callbackId: command.callbackId)
@@ -34,9 +29,9 @@ class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
 
     func show(_ command: CDVInvokedUrlCommand) {
         if isReady() {
-            rewardedAd?.present(fromRootViewController: plugin.viewController, userDidEarnRewardHandler: {
-                let reward = self.rewardedAd!.adReward
-                self.plugin.emit(eventType: AMBEvents.rewardedReward, data: [
+            rewardedInterstitial?.present(fromRootViewController: plugin.viewController, userDidEarnRewardHandler: {
+                let reward = self.rewardedInterstitial!.adReward
+                self.plugin.emit(eventType: AMBEvents.rewardedInterstitialReward, data: [
                     "amount": reward.amount,
                     "type": reward.type
                 ])
@@ -48,14 +43,14 @@ class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
     }
 
     func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
-        plugin.emit(eventType: AMBEvents.rewardedShowFail, data: error.localizedDescription)
+        plugin.emit(eventType: AMBEvents.rewardedInterstitialShowFail, data: error.localizedDescription)
     }
 
     func adDidPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        plugin.emit(eventType: AMBEvents.rewardedShow)
+        plugin.emit(eventType: AMBEvents.rewardedInterstitialShow)
     }
 
     func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        plugin.emit(eventType: AMBEvents.rewardedDismiss)
+        plugin.emit(eventType: AMBEvents.rewardedInterstitialDismiss)
     }
 }

@@ -203,6 +203,50 @@ class AMBPlugin: CDVPlugin {
         rewarded.show(command)
     }
 
+    @objc(rewardedInterstitialIsLoaded:)
+    func rewardedInterstitialIsLoaded(command: CDVInvokedUrlCommand) {
+        guard let opts = command.argument(at: 0) as? NSDictionary,
+              let id = opts.value(forKey: "id") as? Int,
+              let rewardedInterstitial = AMBAdBase.ads[id] as? AMBRewardedInterstitial
+        else {
+            let result = CDVPluginResult(status: CDVCommandStatus_ERROR)
+            self.commandDelegate.send(result, callbackId: command.callbackId)
+            return
+        }
+        let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: rewardedInterstitial.isReady())
+        self.commandDelegate.send(result, callbackId: command.callbackId)
+    }
+
+    @objc(rewardedInterstitialLoad:)
+    func rewardedInterstitialLoad(command: CDVInvokedUrlCommand) {
+        guard let opts = command.argument(at: 0) as? NSDictionary,
+              let id = opts.value(forKey: "id") as? Int,
+              let adUnitId = opts.value(forKey: "adUnitId") as? String,
+              var rewardedInterstitial = AMBAdBase.ads[id] as? AMBRewardedInterstitial?
+        else {
+            let result = CDVPluginResult(status: CDVCommandStatus_ERROR)
+            self.commandDelegate.send(result, callbackId: command.callbackId)
+            return
+        }
+        if rewardedInterstitial == nil {
+            rewardedInterstitial = AMBRewardedInterstitial(id: id, adUnitId: adUnitId)
+        }
+        rewardedInterstitial!.load(command, request: createGADRequest(opts))
+    }
+
+    @objc(rewardedInterstitialShow:)
+    func rewardedInterstitialShow(command: CDVInvokedUrlCommand) {
+        guard let opts = command.argument(at: 0) as? NSDictionary,
+              let id = opts.value(forKey: "id") as? Int,
+              let rewardedInterstitial = AMBAdBase.ads[id] as? AMBRewardedInterstitial
+        else {
+            let result = CDVPluginResult(status: CDVCommandStatus_ERROR)
+            self.commandDelegate.send(result, callbackId: command.callbackId)
+            return
+        }
+        rewardedInterstitial.show(command)
+    }
+
     func createGADRequest(_ opts: NSDictionary) -> GADRequest {
         let request = GADRequest()
         if let testDevices = opts["testDevices"] as? [String] {

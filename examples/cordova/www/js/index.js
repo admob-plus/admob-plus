@@ -24,6 +24,7 @@ const app = {
           this.showBannerAdTop(),
           this.showInterstitialAd(),
           this.showRewardedAd(),
+          this.showRewardedInterstitialAd(),
         ]),
       )
       .catch(alert)
@@ -55,6 +56,13 @@ const app = {
       adUnitId: 'ca-app-pub-3940256099942544/5224354917',
     })
     return rewarded.load().then(() => rewarded.show())
+  },
+
+  showRewardedInterstitialAd() {
+    const rewardedInterstitial = new admob.RewardedInterstitialAd({
+      adUnitId: 'ca-app-pub-3940256099942544/6978759866',
+    })
+    return rewardedInterstitial.load().then(() => rewardedInterstitial.show())
   },
 
   receivedEvent(id) {
