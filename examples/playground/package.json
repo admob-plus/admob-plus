@@ -36,7 +36,7 @@
     "internal-ip": "^6.2.0",
     "react-scripts": "4.0.3",
     "ts-node": "^9.1.1",
-    "typescript": "^4.2.2"
+    "typescript": "^4.2.3"
   },
   "scripts": {
     "start": "ts-node -TH -P ../../internal/cli/tsconfig.json scripts/dev.ts",

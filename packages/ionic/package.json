@@ -10,13 +10,13 @@
   },
   "peerDependencies": {
     "@ionic-native/core": "^5.31.1",
-    "admob-plus-cordova": "^1.0.0-alpha.10",
+    "admob-plus-cordova": "^1.0.0-alpha.11",
     "rxjs": ">=6.6.6"
   },
   "devDependencies": {
-    "@angular/core": "~11.2.3",
+    "@angular/core": "~11.2.4",
     "@ionic-native/core": "^5.31.1",
-    "@types/fs-extra": "^9.0.7",
+    "@types/fs-extra": "^9.0.8",
     "@types/node": "^14.14.31",
     "del": "^6.0.0",
     "execa": "^5.0.0",
@@ -24,7 +24,7 @@
     "npm-run-all": "^4.1.5",
     "rxjs": "^6.6.3",
     "ts-node": "^9.1.1",
-    "typescript": "4.2.2"
+    "typescript": "4.2.3"
   },
   "author": "Ratson",
   "license": "MIT",
