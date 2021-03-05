@@ -39,7 +39,7 @@ export const command = 'info'
 export const desc =
   'Get relevant version info about OS, toolchain and libraries'
 
-export const builder = (yargs: Argv<any>) =>
+export const builder = (yargs: Argv<unknown>) =>
   yargs.options({
     clipboard: {
       type: 'boolean',
@@ -48,7 +48,7 @@ export const builder = (yargs: Argv<any>) =>
   })
 
 export const handler = async (argv: ReturnType<typeof builder>['argv']) => {
-  const { packageJson: pkg } = (await readPkgUp())!
+  const pkg = { ...(await readPkgUp())?.packageJson }
   let infoText = ''
   try {
     infoText = await envinfo.run(
@@ -56,11 +56,14 @@ export const handler = async (argv: ReturnType<typeof builder>['argv']) => {
         Binaries: ['Node', 'Yarn', 'npm', 'Watchman'],
         IDEs: ['Xcode', 'Android Studio'],
         Languages: ['Java'],
+        Managers: ['CocoaPods'],
         SDKs: ['iOS SDK', 'Android SDK'],
         System: ['OS', 'CPU', 'Memory', 'Shell'],
+        Utilities: ['Clang'],
         npmGlobalPackages: ['cordova', 'ionic'],
         npmPackages: [
           ..._.keys(_.get(pkg, 'cordova.plugins')),
+          'admob-plus',
           '@admob-plus/*',
           '@ionic*',
           'admob-plus-cordova',
