@@ -1,12 +1,58 @@
-import admobInstance from './admob'
-
-declare global {
-  const admob: typeof admobInstance
-}
+import BannerAd from './banner'
+import InterstitialAd from './interstitial'
+import RewardedAd from './rewarded'
+import RewardedInterstitialAd from './rewarded-interstitial'
+import {
+  Events,
+  execAsync,
+  initPlugin,
+  NativeActions,
+  Platforms,
+  RequestConfig,
+  TrackingAuthorizationStatus,
+} from './shared'
 
 export * from './api'
-export { default as BannerAd } from './banner'
-export { default as InterstitialAd } from './interstitial'
-export { default as RewardedAd } from './rewarded'
+export { BannerAd, InterstitialAd, RewardedAd, RewardedInterstitialAd }
 
-export default admobInstance
+export default class AdMob {
+  public readonly BannerAd = BannerAd
+  public readonly InterstitialAd = InterstitialAd
+  public readonly RewardedAd = RewardedAd
+  public readonly RewardedInterstitialAd = RewardedInterstitialAd
+
+  public readonly Events = Events
+  public readonly TrackingAuthorizationStatus = TrackingAuthorizationStatus
+
+  constructor() {
+    initPlugin()
+  }
+
+  public configRequest(requestConfig: RequestConfig) {
+    return execAsync(NativeActions.configRequest, [requestConfig])
+  }
+
+  public setAppMuted(value: boolean) {
+    return execAsync(NativeActions.setAppMuted, [value])
+  }
+
+  public setAppVolume(value: number) {
+    return execAsync(NativeActions.setAppVolume, [value])
+  }
+
+  public start() {
+    return execAsync(NativeActions.start)
+  }
+
+  public async requestTrackingAuthorization(): Promise<
+    TrackingAuthorizationStatus | false
+  > {
+    if (cordova.platformId === Platforms.ios) {
+      const n = await execAsync(NativeActions.requestTrackingAuthorization)
+      return TrackingAuthorizationStatus[
+        TrackingAuthorizationStatus[n as number]
+      ]
+    }
+    return false
+  }
+}
