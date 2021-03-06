@@ -1,4 +1,4 @@
-import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider, ColorModeScript, theme } from '@chakra-ui/react'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Router } from 'wouter'
@@ -9,8 +9,9 @@ import useHashLocation from './useHashLocation'
 
 ReactDOM.render(
   <React.StrictMode>
+    <ColorModeScript />
     <Router hook={useHashLocation}>
-      <ChakraProvider>
+      <ChakraProvider theme={theme}>
         <App />
       </ChakraProvider>
     </Router>

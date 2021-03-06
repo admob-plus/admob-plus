@@ -8,12 +8,13 @@ import {
 } from '@chakra-ui/react'
 import React from 'react'
 import { Link as RouterLink, Route, Switch } from 'wouter'
+import ColorModeSwitcher from './components/ColorModeSwitcher'
 import Logs from './components/Logs'
 import BannerAd from './routes/BannerAd'
 import Home from './routes/Home'
 import InterstitialAd from './routes/InterstitialAd'
-import RewardedInterstitialAd from './routes/RewardedInterstitialAd'
 import RewardedAd from './routes/RewardedAd'
+import RewardedInterstitialAd from './routes/RewardedInterstitialAd'
 
 interface AppProps {}
 
@@ -22,11 +23,12 @@ const App: React.FC<AppProps> = () => {
     <Container>
       <SimpleGrid height="100vh" spacingY="20px" templateRows="auto 1fr 1fr">
         <Box as="header">
-          <Heading>
-            <Link as={RouterLink} to="/">
-              AdMob Plus
-            </Link>
-          </Heading>
+            <Heading>
+              <Link as={RouterLink} to="/">
+                AdMob Plus
+              </Link>
+            <ColorModeSwitcher justifySelf="flex-end" />
+            </Heading>
           <HStack as="nav">
             <Link as={RouterLink} to="/banner">
               Banner Ad
