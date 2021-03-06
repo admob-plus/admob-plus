@@ -3,7 +3,7 @@ title: Rewarded Ad
 sidebar_label: Rewarded
 ---
 
-Reward video ads are full-screen video ads that users have the option of watching in full in exchange for in-app rewards.
+Rewarded ads are ads that users have the option of interacting with in exchange for in-app rewards.
 
 ## Usage
 
@@ -21,7 +21,7 @@ document.addEventListener('deviceready', async () => {
   await rewarded.show()
 }, false)
 
-document.addEventListener('admob.rewarded.close', async () => {
+document.addEventListener('admob.rewarded.dismiss', async () => {
   // Once a rewarded ad is shown, it cannot be shown again.
   // Starts loading the next rewarded ad as soon as it is dismissed.
   await rewarded.load()

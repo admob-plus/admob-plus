@@ -24,6 +24,7 @@ module.exports = {
             'cordova/ads/banner',
             'cordova/ads/interstitial',
             'cordova/ads/rewarded',
+            'cordova/ads/rewarded-interstitial',
           ],
           'Advanced Topics': ['cordova/volume-control'],
           'User Consent': [

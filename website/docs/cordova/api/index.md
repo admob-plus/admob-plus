@@ -67,4 +67,4 @@ Defined in: api.ts:41
 
 • `Const` **default**: *AdMob*
 
-Defined in: admob.ts:55
+Defined in: admob.ts:57

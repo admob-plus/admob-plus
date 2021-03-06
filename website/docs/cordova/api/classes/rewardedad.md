@@ -30,7 +30,7 @@ Name | Type |
 
 Inherited from: [MobileAd](mobilead.md)
 
-Defined in: rewarded.ts:10
+Defined in: rewarded.ts:8
 
 ## Properties
 
@@ -60,7 +60,7 @@ Defined in: api.ts:11
 
 **Returns:** *Promise*<unknown\>
 
-Defined in: rewarded.ts:15
+Defined in: rewarded.ts:13
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 **Returns:** *Promise*<unknown\>
 
-Defined in: rewarded.ts:19
+Defined in: rewarded.ts:17
 
 ___
 
@@ -80,4 +80,4 @@ ___
 
 **Returns:** *Promise*<unknown\>
 
-Defined in: rewarded.ts:25
+Defined in: rewarded.ts:23
