@@ -23,7 +23,7 @@ document.addEventListener('deviceready', async () => {
     await consent.requestInfoUpdate()
   }
 
-  const formStatus = await consent.getFormAvailable()
+  const formStatus = await consent.getFormStatus()
   if (formStatus === consent.FormStatus.Available) {
       const form = await consent.loadForm()
       form.show()
