@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.12](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.0.0-alpha.11...admob-plus-cordova@1.0.0-alpha.12) (2021-03-07)
+
+
+### Bug Fixes
+
+* **cordova/android:** break switch case ([08e9c34](https://github.com/admob-plus/admob-plus/commit/08e9c34f5ea682018b2318971c1b5f542940f6b6))
+
+
+### Features
+
+* **cordova:** add RewardedInterstitialAd class ([5b8e073](https://github.com/admob-plus/admob-plus/commit/5b8e073c5343f3847f7d234ed61742ad7c719fe6))
+* **cordova:** export default AdMob class instead of instance ([1bc3c89](https://github.com/admob-plus/admob-plus/commit/1bc3c892e525dd627450492e7f3c4f3da6dc4f8b))
+* **cordova/android:** implement RewardedInterstitialAd ([0812d53](https://github.com/admob-plus/admob-plus/commit/0812d53484fce971c6aaa7b5ec5100e22f853ccf))
+* **cordova/ios:** implement RewardedInterstitialAd ([3767a0e](https://github.com/admob-plus/admob-plus/commit/3767a0e5a633576ea77b1952fdf47dc8bed8069b))
+
+
+
+
+
 # [1.0.0-alpha.11](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.0.0-alpha.10...admob-plus-cordova@1.0.0-alpha.11) (2021-03-02)
 
 

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.6](https://github.com/admob-plus/admob-plus/compare/admob-plus@1.0.0-alpha.5...admob-plus@1.0.0-alpha.6) (2021-03-07)
+
+
+### Features
+
+* **cli:** align indentation of printed text ([ef75833](https://github.com/admob-plus/admob-plus/commit/ef7583375ff8ee48b28608ba4fa48b29e39243c5))
+* **cli:** report CocoaPods version ([6dda4b5](https://github.com/admob-plus/admob-plus/commit/6dda4b5056ccdb91cab43f439f9d4f8d5a43293a))
+
+
+
+
+
 # [1.0.0-alpha.5](https://github.com/admob-plus/admob-plus/compare/admob-plus@1.0.0-alpha.4...admob-plus@1.0.0-alpha.5) (2021-03-02)
 
 **Note:** Version bump only for package admob-plus
