@@ -4,9 +4,9 @@
   "version": "1.0.0-alpha.5",
   "bin": "./bin/run",
   "dependencies": {
+    "@frat/envinfo": "^7.8.4",
     "clipboardy": "^2.3.0",
     "elementtree": "^0.1.7",
-    "envinfo": "^7.7.4",
     "execa": "^5.0.0",
     "fs-extra": "^9.1.0",
     "lodash": "^4.17.21",
