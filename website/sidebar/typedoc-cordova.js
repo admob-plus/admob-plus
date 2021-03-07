@@ -17,10 +17,12 @@ module.exports = [
     "type": "category",
     "label": "Classes",
     "items": [
+      "cordova/api/classes/admob",
       "cordova/api/classes/bannerad",
       "cordova/api/classes/interstitialad",
       "cordova/api/classes/mobilead",
-      "cordova/api/classes/rewardedad"
+      "cordova/api/classes/rewardedad",
+      "cordova/api/classes/rewardedinterstitialad"
     ]
   }
 ];

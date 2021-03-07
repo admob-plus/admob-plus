@@ -1,4 +1,4 @@
-import AdMob from '.'
+import { AdMob } from '.'
 
 const admob = new AdMob()
 

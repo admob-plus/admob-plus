@@ -20,6 +20,8 @@ hide_title: true
 
   ↳ [*RewardedAd*](rewardedad.md)
 
+  ↳ [*RewardedInterstitialAd*](rewardedinterstitialad.md)
+
 ## Constructors
 
 ### constructor

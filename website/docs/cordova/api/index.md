@@ -23,10 +23,18 @@ hide_title: true
 
 ### Classes
 
+- [AdMob](classes/admob.md)
 - [BannerAd](classes/bannerad.md)
 - [InterstitialAd](classes/interstitialad.md)
 - [MobileAd](classes/mobilead.md)
 - [RewardedAd](classes/rewardedad.md)
+- [RewardedInterstitialAd](classes/rewardedinterstitialad.md)
+
+## References
+
+### default
+
+Renames and exports: [AdMob](classes/admob.md)
 
 ## Type aliases
 
@@ -60,11 +68,3 @@ Name | Type |
 `testDeviceIds`? | *string*[] |
 
 Defined in: api.ts:41
-
-## Variables
-
-### default
-
-• `Const` **default**: *AdMob*
-
-Defined in: admob.ts:57

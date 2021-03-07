@@ -15,7 +15,7 @@ import {
 export * from './api'
 export { BannerAd, InterstitialAd, RewardedAd, RewardedInterstitialAd }
 
-export default class AdMob {
+export class AdMob {
   public readonly BannerAd = BannerAd
   public readonly InterstitialAd = InterstitialAd
   public readonly RewardedAd = RewardedAd
@@ -56,3 +56,5 @@ export default class AdMob {
     return false
   }
 }
+
+export default AdMob
