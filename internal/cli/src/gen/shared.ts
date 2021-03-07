@@ -33,9 +33,9 @@ export const execAsync = (action: ${actionType}, args?: any[]) => {
   })
 }
 
-export function fireDocumentEvent(eventName: string, data = null) {
-  const event = new CustomEvent(eventName, { detail: data })
-  document.dispatchEvent(event)
+export function fireDocumentEvent(eventName: string, data = undefined) {
+  // @ts-expect-error
+  cordova.fireDocumentEvent(event, data)
 }
 
 export function waitEvent(

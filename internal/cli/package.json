@@ -15,7 +15,7 @@
     "@admob-plus-internal/tsconfig": "file:../tsconfig",
     "@frat/sane": "^4.2.1",
     "cordova": "^10.0.0",
-    "cpy": "^8.1.1",
+    "cpy": "^8.1.2",
     "del": "^6.0.0",
     "escalade": "^3.1.1",
     "execa": "^5.0.0",
