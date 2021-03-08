@@ -52,3 +52,7 @@ Google AdMob requires [Google Mobile Ads SDK](https://developers.google.com/admo
 This is probally caused by using outdated version of Swift to build the project.
 
 Please ensusre `<preference name="SwiftVersion" value="5.3" />` is added to the section `<platform name="ios">` in `config.xml`, then clean build the project.
+
+### Do I need to enable [SKAdNetwork](https://developers.google.com/admob/ios/ios14#skadnetwork) manually?
+
+No, [`SKAdNetworkItems`](https://github.com/admob-plus/admob-plus/blob/master/packages/cordova/plugin.xml#L87) will be set by the plugin, which located in `platforms/ios/<PROJECT>/<PROJECT>-Info.plist`.
