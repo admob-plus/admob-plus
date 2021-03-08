@@ -9,6 +9,23 @@ class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
         rewardedAd = nil
     }
 
+    static func getGADServerSideVerificationOptions(
+        _ command: CDVInvokedUrlCommand
+    ) -> GADServerSideVerificationOptions? {
+        guard let opts = command.argument(at: 0) as? NSDictionary,
+              let serverSideVerification = opts.value(forKey: "serverSideVerification") as? NSDictionary,
+              let customData = serverSideVerification.value(forKey: "customData") as? String,
+              let userId = serverSideVerification.value(forKey: "userId") as? String
+        else {
+            return nil
+        }
+
+        let options = GADServerSideVerificationOptions.init()
+        options.customRewardString = customData
+        options.userIdentifier = userId
+        return options
+    }
+
     func isReady() -> Bool {
         return self.rewardedAd != nil
     }
@@ -23,6 +40,7 @@ class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
                 return
             }
 
+            ad?.serverSideVerificationOptions = AMBRewarded.getGADServerSideVerificationOptions(command)
             self.rewardedAd = ad
 
             self.plugin.emit(eventType: AMBEvents.rewardedLoad)

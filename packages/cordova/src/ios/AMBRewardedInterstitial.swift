@@ -18,6 +18,7 @@ class AMBRewardedInterstitial: AMBAdBase, GADFullScreenContentDelegate {
                 return
             }
 
+            ad?.serverSideVerificationOptions = AMBRewarded.getGADServerSideVerificationOptions(command)
             self.rewardedInterstitial = ad
 
             self.plugin.emit(eventType: AMBEvents.rewardedInterstitialLoad)
