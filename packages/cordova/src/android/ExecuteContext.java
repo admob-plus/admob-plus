@@ -8,6 +8,7 @@ import androidx.annotation.Nullable;
 import com.google.ads.mediation.admob.AdMobAdapter;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.RequestConfiguration;
+import com.google.android.gms.ads.rewarded.ServerSideVerificationOptions;
 
 import org.apache.cordova.CallbackContext;
 import org.json.JSONArray;
@@ -87,6 +88,29 @@ public class ExecuteContext {
                 }
             }
             builder.setTestDeviceIds(testDeviceIds);
+        }
+        return builder.build();
+    }
+
+    @Nullable
+    public ServerSideVerificationOptions getServerSideVerificationOptions() {
+        String param = "serverSideVerification";
+        if (!this.opts.has(param)) {
+            return null;
+        }
+        JSONObject serverSideVerification = this.opts.optJSONObject(param);
+        if (serverSideVerification == null) {
+            return null;
+        }
+
+        ServerSideVerificationOptions.Builder builder = new ServerSideVerificationOptions.Builder();
+        String customData = serverSideVerification.optString("customData");
+        if (customData != null) {
+            builder.setCustomData(customData);
+        }
+        String userId = serverSideVerification.optString("userId");
+        if (userId != null) {
+            builder.setUserId(userId);
         }
         return builder.build();
     }

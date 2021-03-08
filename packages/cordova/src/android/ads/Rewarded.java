@@ -53,6 +53,7 @@ public class Rewarded extends AdBase {
             @Override
             public void onAdLoaded(@NonNull RewardedAd rewardedAd) {
                 mAd = rewardedAd;
+                mAd.setServerSideVerificationOptions(ctx.getServerSideVerificationOptions());
                 mAd.setFullScreenContentCallback(new FullScreenContentCallback() {
                     @Override
                     public void onAdDismissedFullScreenContent() {

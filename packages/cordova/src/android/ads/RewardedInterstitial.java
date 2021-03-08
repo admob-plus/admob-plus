@@ -53,6 +53,7 @@ public class RewardedInterstitial extends AdBase {
             @Override
             public void onAdLoaded(@NonNull RewardedInterstitialAd rewardedAd) {
                 mAd = rewardedAd;
+                mAd.setServerSideVerificationOptions(ctx.getServerSideVerificationOptions());
                 mAd.setFullScreenContentCallback(new FullScreenContentCallback() {
                     @Override
                     public void onAdDismissedFullScreenContent() {
