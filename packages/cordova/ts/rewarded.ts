@@ -2,12 +2,21 @@ import {
   execAsync,
   MobileAd,
   MobileAdOptions,
-  NativeActions
+  NativeActions,
+  ServerSideVerificationOptions,
 } from './shared'
 
+export interface RewardedAdOptions extends MobileAdOptions {
+  serverSideVerification?: ServerSideVerificationOptions
+}
+
 export default class RewardedAd extends MobileAd {
-  constructor({ adUnitId }: MobileAdOptions) {
-    super({ adUnitId })
+  private opts: RewardedAdOptions
+
+  constructor(opts: RewardedAdOptions) {
+    super({ adUnitId: opts.adUnitId })
+
+    this.opts = opts
   }
 
   public isLoaded() {
@@ -16,7 +25,7 @@ export default class RewardedAd extends MobileAd {
 
   public load() {
     return execAsync(NativeActions.rewardedLoad, [
-      { adUnitId: this.adUnitId, id: this.id },
+      { ...this.opts, id: this.id },
     ])
   }
 

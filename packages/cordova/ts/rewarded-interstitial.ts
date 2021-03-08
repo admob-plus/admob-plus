@@ -1,8 +1,15 @@
-import { execAsync, MobileAd, MobileAdOptions, NativeActions } from './shared'
+import { RewardedAdOptions } from './rewarded'
+import { execAsync, MobileAd, NativeActions } from './shared'
+
+interface RewardedInterstitialAdOptions extends RewardedAdOptions {}
 
 export default class RewardedInterstitialAd extends MobileAd {
-  constructor({ adUnitId }: MobileAdOptions) {
-    super({ adUnitId })
+  private opts: RewardedAdOptions
+
+  constructor(opts: RewardedInterstitialAdOptions) {
+    super({ adUnitId: opts.adUnitId })
+
+    this.opts = opts
   }
 
   public isLoaded() {
@@ -13,7 +20,7 @@ export default class RewardedInterstitialAd extends MobileAd {
 
   public load() {
     return execAsync(NativeActions.rewardedInterstitialLoad, [
-      { adUnitId: this.adUnitId, id: this.id },
+      { ...this.opts, id: this.id },
     ])
   }
 
