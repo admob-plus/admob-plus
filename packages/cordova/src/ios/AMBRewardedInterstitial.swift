@@ -11,7 +11,7 @@ class AMBRewardedInterstitial: AMBAdBase, GADFullScreenContentDelegate {
     func load(_ ctx: AMBContext, request: GADRequest) {
         GADRewardedInterstitialAd.load(withAdUnitID: adUnitId, request: request, completionHandler: { ad, error in
             if error != nil {
-                self.plugin.emit(eventType: AMBEvents.rewardedInterstitialLoadFail)
+                self.emit(AMBEvents.rewardedInterstitialLoadFail)
 
                 ctx.error(error)
                 return
@@ -20,7 +20,7 @@ class AMBRewardedInterstitial: AMBAdBase, GADFullScreenContentDelegate {
             ad?.serverSideVerificationOptions = AMBRewarded.getGADServerSideVerificationOptions(ctx.command)
             self.rewardedInterstitial = ad
 
-            self.plugin.emit(eventType: AMBEvents.rewardedInterstitialLoad)
+            self.emit(AMBEvents.rewardedInterstitialLoad)
 
             ctx.success()
         })
@@ -30,7 +30,7 @@ class AMBRewardedInterstitial: AMBAdBase, GADFullScreenContentDelegate {
         if isReady() {
             rewardedInterstitial?.present(fromRootViewController: plugin.viewController, userDidEarnRewardHandler: {
                 let reward = self.rewardedInterstitial!.adReward
-                self.plugin.emit(eventType: AMBEvents.rewardedInterstitialReward, data: [
+                self.emit(AMBEvents.rewardedInterstitialReward, [
                     "amount": reward.amount,
                     "type": reward.type
                 ])
@@ -41,14 +41,14 @@ class AMBRewardedInterstitial: AMBAdBase, GADFullScreenContentDelegate {
     }
 
     func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
-        plugin.emit(eventType: AMBEvents.rewardedInterstitialShowFail, data: error.localizedDescription)
+        self.emit(AMBEvents.rewardedInterstitialShowFail, error)
     }
 
     func adDidPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        plugin.emit(eventType: AMBEvents.rewardedInterstitialShow)
+        self.emit(AMBEvents.rewardedInterstitialShow)
     }
 
     func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        plugin.emit(eventType: AMBEvents.rewardedInterstitialDismiss)
+        self.emit(AMBEvents.rewardedInterstitialDismiss)
     }
 }

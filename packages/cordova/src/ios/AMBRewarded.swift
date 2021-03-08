@@ -33,7 +33,7 @@ class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
     func load(_ ctx: AMBContext, request: GADRequest) {
         GADRewardedAd.load(withAdUnitID: adUnitId, request: request, completionHandler: { ad, error in
             if error != nil {
-                self.plugin.emit(eventType: AMBEvents.rewardedLoadFail)
+                self.emit(AMBEvents.rewardedLoadFail)
 
                 ctx.error(error)
                 return
@@ -42,7 +42,7 @@ class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
             ad?.serverSideVerificationOptions = AMBRewarded.getGADServerSideVerificationOptions(ctx.command)
             self.rewardedAd = ad
 
-            self.plugin.emit(eventType: AMBEvents.rewardedLoad)
+            self.emit(AMBEvents.rewardedLoad)
 
             ctx.success()
         })
@@ -52,7 +52,7 @@ class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
         if isReady() {
             rewardedAd?.present(fromRootViewController: plugin.viewController, userDidEarnRewardHandler: {
                 let reward = self.rewardedAd!.adReward
-                self.plugin.emit(eventType: AMBEvents.rewardedReward, data: [
+                self.emit(AMBEvents.rewardedReward, [
                     "amount": reward.amount,
                     "type": reward.type
                 ])
@@ -63,14 +63,14 @@ class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
     }
 
     func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
-        plugin.emit(eventType: AMBEvents.rewardedShowFail, data: error.localizedDescription)
+        self.emit(AMBEvents.rewardedShowFail, error)
     }
 
     func adDidPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        plugin.emit(eventType: AMBEvents.rewardedShow)
+        self.emit(AMBEvents.rewardedShow)
     }
 
     func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        plugin.emit(eventType: AMBEvents.rewardedDismiss)
+        self.emit(AMBEvents.rewardedDismiss)
     }
 }

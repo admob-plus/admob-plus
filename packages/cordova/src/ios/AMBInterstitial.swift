@@ -15,8 +15,7 @@ class AMBInterstitial: AMBAdBase, GADFullScreenContentDelegate {
             request: request,
             completionHandler: { ad, error in
                 if error != nil {
-                    self.plugin.emit(eventType: AMBEvents.interstitialLoadFail, data: error!.localizedDescription)
-
+                    self.emit(AMBEvents.interstitialLoadFail, error!)
                     ctx.error(error)
                     return
                 }
@@ -24,7 +23,7 @@ class AMBInterstitial: AMBAdBase, GADFullScreenContentDelegate {
                 self.interstitial = ad
                 ad?.fullScreenContentDelegate = self
 
-                self.plugin.emit(eventType: AMBEvents.interstitialLoad)
+                self.emit(AMBEvents.interstitialLoad)
 
                 ctx.success()
          })
@@ -39,14 +38,14 @@ class AMBInterstitial: AMBAdBase, GADFullScreenContentDelegate {
     }
 
     func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
-        plugin.emit(eventType: AMBEvents.interstitialShowFail, data: error.localizedDescription)
+        self.emit(AMBEvents.interstitialShowFail, error)
     }
 
     func adDidPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        plugin.emit(eventType: AMBEvents.interstitialShow)
+        self.emit(AMBEvents.interstitialShow)
     }
 
     func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        plugin.emit(eventType: AMBEvents.interstitialDismiss)
+        self.emit(AMBEvents.interstitialDismiss)
     }
 }

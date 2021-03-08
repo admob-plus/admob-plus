@@ -162,22 +162,22 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate {
     }
 
     func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
-        plugin.emit(eventType: AMBEvents.bannerLoad)
+        self.emit(AMBEvents.bannerLoad)
     }
 
     func bannerView(_ bannerView: GADBannerView,
                     didFailToReceiveAdWithError error: Error) {
-        plugin.emit(eventType: AMBEvents.bannerLoadFail, data: error.localizedDescription)
+        self.emit(AMBEvents.bannerLoadFail, error)
     }
 
     func bannerViewWillPresentScreen(_ bannerView: GADBannerView) {
-        plugin.emit(eventType: AMBEvents.bannerOpen)
+        self.emit(AMBEvents.bannerOpen)
     }
 
     func bannerViewWillDismissScreen(_ bannerView: GADBannerView) {
     }
 
     func bannerViewDidDismissScreen(_ bannerView: GADBannerView) {
-        plugin.emit(eventType: AMBEvents.bannerClose)
+        self.emit(AMBEvents.bannerClose)
     }
 }
