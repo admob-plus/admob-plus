@@ -56,3 +56,11 @@ Please ensusre `<preference name="SwiftVersion" value="5.3" />` is added to the 
 ### Do I need to enable [SKAdNetwork](https://developers.google.com/admob/ios/ios14#skadnetwork) manually?
 
 No, [`SKAdNetworkItems`](https://github.com/admob-plus/admob-plus/blob/master/packages/cordova/plugin.xml#L87) will be set by the plugin, which located in `platforms/ios/<PROJECT>/<PROJECT>-Info.plist`.
+
+### How to fix `'GoogleMobileAds/GoogleMobileAds.h' file not found` error?
+
+This is likely caused by CocoaPods is not installing the dependencies correctly.
+
+Run `pod repo update` and `cd platforms/ios && pod install --repo-update` to ensure latest SDK is ready.
+
+A clean build / remove then re-add the plugin may be necessary.
