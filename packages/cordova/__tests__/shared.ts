@@ -1,3 +1,4 @@
+import 'cordova-browser/cordova-lib/cordova'
 import { fireDocumentEvent, waitEvent } from '../ts/shared'
 
 test('waitEvent() once for sucess event', async () => {

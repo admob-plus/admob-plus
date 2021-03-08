@@ -22,7 +22,7 @@ export const execAsync = (action: string, args?: any[]) => {
 
 export function fireDocumentEvent(eventName: string, data = undefined) {
   // @ts-expect-error
-  cordova.fireDocumentEvent(event, data)
+  cordova.fireDocumentEvent(eventName, data)
 }
 
 export function waitEvent(
