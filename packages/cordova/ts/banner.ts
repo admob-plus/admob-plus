@@ -8,16 +8,16 @@ import {
 
 type Position = 'top' | 'bottom'
 
-type Options = {
+interface BannerAdOptions extends MobileAdOptions {
   position?: Position
   size?: AdSizeType
 }
 
 export default class BannerAd extends MobileAd {
-  private opts: Options
+  private opts: BannerAdOptions
 
-  constructor({ adUnitId, ...opts }: MobileAdOptions & Options) {
-    super({ adUnitId })
+  constructor(opts: BannerAdOptions) {
+    super({ adUnitId: opts.adUnitId })
 
     this.opts = {
       position: 'bottom',
@@ -27,13 +27,7 @@ export default class BannerAd extends MobileAd {
   }
 
   public show() {
-    return execAsync(NativeActions.bannerShow, [
-      {
-        ...this.opts,
-        adUnitId: this.adUnitId,
-        id: this.id,
-      },
-    ])
+    return execAsync(NativeActions.bannerShow, [{ ...this.opts, id: this.id }])
   }
 
   public hide() {
