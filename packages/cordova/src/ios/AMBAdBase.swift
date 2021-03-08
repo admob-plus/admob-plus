@@ -23,14 +23,16 @@ class AMBAdBase: NSObject {
     }
 
     func emit(_ eventType: String) {
-        plugin.emit(eventType: eventType)
+        self.emit(eventType, ["adId": self.id!])
     }
 
     func emit(_ eventType: String, _ error: Error) {
-        plugin.emit(eventType: eventType, data: error.localizedDescription)
+        self.emit(eventType, ["message": error.localizedDescription])
     }
 
     func emit(_ eventType: String, _ data: [String: Any]) {
-        plugin.emit(eventType: eventType, data: data)
+        var d: [String: Any] = ["adId": self.id!]
+        d.merge(data) { (current, _) in current }
+        plugin.emit(eventType: eventType, data: d)
     }
 }
