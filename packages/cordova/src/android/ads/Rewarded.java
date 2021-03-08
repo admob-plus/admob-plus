@@ -16,7 +16,7 @@ import admob.plugin.ExecuteContext;
 import admob.plugin.Generated.Events;
 
 public class Rewarded extends AdBase {
-    private RewardedAd mRewardedAd = null;
+    private RewardedAd mAd = null;
 
     Rewarded(int id, String adUnitId) {
         super(id, adUnitId);
@@ -45,15 +45,15 @@ public class Rewarded extends AdBase {
         RewardedAd.load(ctx.getActivity(), adUnitId, adRequest, new RewardedAdLoadCallback() {
             @Override
             public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
-                mRewardedAd = null;
+                mAd = null;
                 ctx.plugin.emit(Events.REWARDED_LOAD_FAIL, loadAdError.toString());
                 ctx.callbackContext.error(loadAdError.toString());
             }
 
             @Override
             public void onAdLoaded(@NonNull RewardedAd rewardedAd) {
-                mRewardedAd = rewardedAd;
-                mRewardedAd.setFullScreenContentCallback(new FullScreenContentCallback() {
+                mAd = rewardedAd;
+                mAd.setFullScreenContentCallback(new FullScreenContentCallback() {
                     @Override
                     public void onAdDismissedFullScreenContent() {
                         ctx.plugin.emit(Events.REWARDED_DISMISS);
@@ -66,7 +66,7 @@ public class Rewarded extends AdBase {
 
                     @Override
                     public void onAdShowedFullScreenContent() {
-                        mRewardedAd = null;
+                        mAd = null;
                         ctx.plugin.emit(Events.REWARDED_SHOW);
                     }
                 });
@@ -78,12 +78,12 @@ public class Rewarded extends AdBase {
     }
 
     public boolean isLoaded() {
-        return mRewardedAd != null;
+        return mAd != null;
     }
 
     public void show(ExecuteContext ctx) {
         if (isLoaded()) {
-            mRewardedAd.show(ctx.getActivity(), rewardItem -> {
+            mAd.show(ctx.getActivity(), rewardItem -> {
                 JSONObject data = new JSONObject();
                 try {
                     data.put("amount", rewardItem.getAmount());
@@ -100,8 +100,8 @@ public class Rewarded extends AdBase {
     }
 
     private void clear() {
-        if (mRewardedAd != null) {
-            mRewardedAd = null;
+        if (mAd != null) {
+            mAd = null;
         }
     }
 }
