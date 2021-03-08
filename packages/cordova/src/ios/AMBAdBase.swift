@@ -9,10 +9,6 @@ class AMBAdBase: NSObject {
         return AMBAdBase.plugin
     }
 
-    var commandDelegate: CDVCommandDelegate {
-        return self.plugin.commandDelegate
-    }
-
     init(id: Int, adUnitId: String) {
         super.init()
 

@@ -28,66 +28,66 @@ class AMBPlugin: CDVPlugin {
 
     @objc(requestTrackingAuthorization:)
     func requestTrackingAuthorization(command: CDVInvokedUrlCommand) {
+        let ctx = AMBContext(plugin: self, command: command)
+
         if #available(iOS 14, *) {
             ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
-                let result = CDVPluginResult(
-                    status: CDVCommandStatus_OK,
-                    messageAs: status.rawValue)
-                self.commandDelegate.send(result, callbackId: command.callbackId)
+                ctx.success(status.rawValue)
             })
         } else {
-            let result = CDVPluginResult(status: CDVCommandStatus_OK)
-            self.commandDelegate.send(result, callbackId: command.callbackId)
+            ctx.success()
         }
     }
 
     @objc(start:)
     func start(command: CDVInvokedUrlCommand) {
+        let ctx = AMBContext(plugin: self, command: command)
+
         GADMobileAds.sharedInstance().start(completionHandler: { status in
-            let result = CDVPluginResult(status: CDVCommandStatus_OK)
-            self.commandDelegate.send(result, callbackId: command.callbackId)
+            ctx.success(status)
         })
     }
 
     @objc(setAppMuted:)
     func setAppMuted(command: CDVInvokedUrlCommand) {
+        let ctx = AMBContext(plugin: self, command: command)
+
         guard let applicationMuted = command.argument(at: 0) as? Bool
-            else {
-                let result = CDVPluginResult(status: CDVCommandStatus_ERROR)
-                self.commandDelegate.send(result, callbackId: command.callbackId)
-                return
+        else {
+            ctx.error()
+            return
         }
         GADMobileAds.sharedInstance().applicationMuted = applicationMuted
 
-        let result = CDVPluginResult(status: CDVCommandStatus_OK)
-        self.commandDelegate.send(result, callbackId: command.callbackId)
+        ctx.success()
     }
 
     @objc(setAppVolume:)
     func setAppVolume(command: CDVInvokedUrlCommand) {
+        let ctx = AMBContext(plugin: self, command: command)
+
         guard let applicationVolume = command.argument(at: 0) as? Float
-            else {
-                let result = CDVPluginResult(status: CDVCommandStatus_ERROR)
-                self.commandDelegate.send(result, callbackId: command.callbackId)
-                return
+        else {
+            ctx.error()
+            return
         }
         GADMobileAds.sharedInstance().applicationVolume = applicationVolume
 
-        let result = CDVPluginResult(status: CDVCommandStatus_OK)
-        self.commandDelegate.send(result, callbackId: command.callbackId)
+        ctx.success()
     }
 
     @objc(bannerShow:)
     func bannerShow(command: CDVInvokedUrlCommand) {
+        let ctx = AMBContext(plugin: self, command: command)
+
         guard let opts = command.argument(at: 0) as? NSDictionary,
-            let id = opts.value(forKey: "id") as? Int,
-            let adUnitId = opts.value(forKey: "adUnitId") as? String,
-            let position = opts.value(forKey: "position") as? String,
-            var banner = AMBAdBase.ads[id] as? AMBBanner?
-            else {
-                let result = CDVPluginResult(status: CDVCommandStatus_ERROR)
-                self.commandDelegate.send(result, callbackId: command.callbackId)
-                return
+              let id = opts.value(forKey: "id") as? Int,
+              let adUnitId = opts.value(forKey: "adUnitId") as? String,
+              let position = opts.value(forKey: "position") as? String,
+              var banner = AMBAdBase.ads[id] as? AMBBanner?
+        else {
+            ctx.error()
+            return
         }
         if banner == nil {
             let adSize = AMBBanner.getAdSize(opts)
@@ -95,156 +95,161 @@ class AMBPlugin: CDVPlugin {
         }
         banner!.show(request: createGADRequest(opts))
 
-        let result = CDVPluginResult(status: CDVCommandStatus_OK)
-        self.commandDelegate.send(result, callbackId: command.callbackId)
+        ctx.success()
     }
 
     @objc(bannerHide:)
     func bannerHide(command: CDVInvokedUrlCommand) {
+        let ctx = AMBContext(plugin: self, command: command)
+
         guard let opts = command.argument(at: 0) as? NSDictionary,
-            let id = opts.value(forKey: "id") as? Int,
-            let banner = AMBAdBase.ads[id] as? AMBBanner
-            else {
-                let result = CDVPluginResult(status: CDVCommandStatus_ERROR)
-                self.commandDelegate.send(result, callbackId: command.callbackId)
-                return
+              let id = opts.value(forKey: "id") as? Int,
+              let banner = AMBAdBase.ads[id] as? AMBBanner
+        else {
+            ctx.error()
+            return
         }
         banner.hide()
 
-        let result = CDVPluginResult(status: CDVCommandStatus_OK)
-        self.commandDelegate.send(result, callbackId: command.callbackId)
+        ctx.success()
     }
 
     @objc(interstitialIsLoaded:)
     func interstitialIsLoaded(command: CDVInvokedUrlCommand) {
+        let ctx = AMBContext(plugin: self, command: command)
+
         guard let opts = command.argument(at: 0) as? NSDictionary,
-            let id = opts.value(forKey: "id") as? Int,
-            let interstitial = AMBAdBase.ads[id] as? AMBInterstitial
-            else {
-                let result = CDVPluginResult(status: CDVCommandStatus_ERROR)
-                self.commandDelegate.send(result, callbackId: command.callbackId)
-                return
+              let id = opts.value(forKey: "id") as? Int,
+              let interstitial = AMBAdBase.ads[id] as? AMBInterstitial
+        else {
+            ctx.error()
+            return
         }
-        let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: interstitial.isLoaded())
-        self.commandDelegate.send(result, callbackId: command.callbackId)
+        ctx.success(interstitial.isLoaded())
     }
 
     @objc(interstitialLoad:)
     func interstitialLoad(command: CDVInvokedUrlCommand) {
+        let ctx = AMBContext(plugin: self, command: command)
+
         guard let opts = command.argument(at: 0) as? NSDictionary,
-            let id = opts.value(forKey: "id") as? Int,
-            let adUnitId = opts.value(forKey: "adUnitId") as? String,
-            var interstitial = AMBAdBase.ads[id] as? AMBInterstitial?
-            else {
-                let result = CDVPluginResult(status: CDVCommandStatus_ERROR)
-                self.commandDelegate.send(result, callbackId: command.callbackId)
-                return
+              let id = opts.value(forKey: "id") as? Int,
+              let adUnitId = opts.value(forKey: "adUnitId") as? String,
+              var interstitial = AMBAdBase.ads[id] as? AMBInterstitial?
+        else {
+            ctx.error()
+            return
         }
         if interstitial == nil {
             interstitial = AMBInterstitial(id: id, adUnitId: adUnitId)
         }
-        interstitial!.load(command, request: createGADRequest(opts))
+        interstitial!.load(ctx, request: createGADRequest(opts))
     }
 
     @objc(interstitialShow:)
     func interstitialShow(command: CDVInvokedUrlCommand) {
+        let ctx = AMBContext(plugin: self, command: command)
+
         guard let opts = command.argument(at: 0) as? NSDictionary,
-            let id = opts.value(forKey: "id") as? Int,
-            let interstitial = AMBAdBase.ads[id] as? AMBInterstitial
-            else {
-                let result = CDVPluginResult(status: CDVCommandStatus_ERROR)
-                self.commandDelegate.send(result, callbackId: command.callbackId)
-                return
+              let id = opts.value(forKey: "id") as? Int,
+              let interstitial = AMBAdBase.ads[id] as? AMBInterstitial
+        else {
+            ctx.error()
+            return
         }
-        interstitial.show(command)
+        interstitial.show(ctx)
     }
 
     @objc(rewardedIsLoaded:)
     func rewardedIsLoaded(command: CDVInvokedUrlCommand) {
+        let ctx = AMBContext(plugin: self, command: command)
+
         guard let opts = command.argument(at: 0) as? NSDictionary,
-            let id = opts.value(forKey: "id") as? Int,
-            let rewarded = AMBAdBase.ads[id] as? AMBRewarded
-            else {
-                let result = CDVPluginResult(status: CDVCommandStatus_ERROR)
-                self.commandDelegate.send(result, callbackId: command.callbackId)
-                return
+              let id = opts.value(forKey: "id") as? Int,
+              let rewarded = AMBAdBase.ads[id] as? AMBRewarded
+        else {
+            ctx.error()
+            return
         }
-        let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: rewarded.isReady())
-        self.commandDelegate.send(result, callbackId: command.callbackId)
+        ctx.success(rewarded.isReady())
     }
 
     @objc(rewardedLoad:)
     func rewardedLoad(command: CDVInvokedUrlCommand) {
+        let ctx = AMBContext(plugin: self, command: command)
+
         guard let opts = command.argument(at: 0) as? NSDictionary,
-            let id = opts.value(forKey: "id") as? Int,
-            let adUnitId = opts.value(forKey: "adUnitId") as? String,
-            var rewarded = AMBAdBase.ads[id] as? AMBRewarded?
-            else {
-                let result = CDVPluginResult(status: CDVCommandStatus_ERROR)
-                self.commandDelegate.send(result, callbackId: command.callbackId)
-                return
+              let id = opts.value(forKey: "id") as? Int,
+              let adUnitId = opts.value(forKey: "adUnitId") as? String,
+              var rewarded = AMBAdBase.ads[id] as? AMBRewarded?
+        else {
+            ctx.error()
+            return
         }
         if rewarded == nil {
             rewarded = AMBRewarded(id: id, adUnitId: adUnitId)
         }
-        rewarded!.load(command, request: createGADRequest(opts))
+        rewarded!.load(ctx, request: createGADRequest(opts))
     }
 
     @objc(rewardedShow:)
     func rewardedShow(command: CDVInvokedUrlCommand) {
+        let ctx = AMBContext(plugin: self, command: command)
+
         guard let opts = command.argument(at: 0) as? NSDictionary,
-            let id = opts.value(forKey: "id") as? Int,
-            let rewarded = AMBAdBase.ads[id] as? AMBRewarded
-            else {
-                let result = CDVPluginResult(status: CDVCommandStatus_ERROR)
-                self.commandDelegate.send(result, callbackId: command.callbackId)
-                return
+              let id = opts.value(forKey: "id") as? Int,
+              let rewarded = AMBAdBase.ads[id] as? AMBRewarded
+        else {
+            ctx.error()
+            return
         }
-        rewarded.show(command)
+        rewarded.show(ctx)
     }
 
     @objc(rewardedInterstitialIsLoaded:)
     func rewardedInterstitialIsLoaded(command: CDVInvokedUrlCommand) {
+        let ctx = AMBContext(plugin: self, command: command)
+
         guard let opts = command.argument(at: 0) as? NSDictionary,
               let id = opts.value(forKey: "id") as? Int,
               let rewardedInterstitial = AMBAdBase.ads[id] as? AMBRewardedInterstitial
         else {
-            let result = CDVPluginResult(status: CDVCommandStatus_ERROR)
-            self.commandDelegate.send(result, callbackId: command.callbackId)
+            ctx.error()
             return
         }
-        let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: rewardedInterstitial.isReady())
-        self.commandDelegate.send(result, callbackId: command.callbackId)
+        ctx.success(rewardedInterstitial.isReady())
     }
 
     @objc(rewardedInterstitialLoad:)
     func rewardedInterstitialLoad(command: CDVInvokedUrlCommand) {
+        let ctx = AMBContext(plugin: self, command: command)
+
         guard let opts = command.argument(at: 0) as? NSDictionary,
               let id = opts.value(forKey: "id") as? Int,
               let adUnitId = opts.value(forKey: "adUnitId") as? String,
               var rewardedInterstitial = AMBAdBase.ads[id] as? AMBRewardedInterstitial?
         else {
-            let result = CDVPluginResult(status: CDVCommandStatus_ERROR)
-            self.commandDelegate.send(result, callbackId: command.callbackId)
+            ctx.error()
             return
         }
         if rewardedInterstitial == nil {
             rewardedInterstitial = AMBRewardedInterstitial(id: id, adUnitId: adUnitId)
         }
-        rewardedInterstitial!.load(command, request: createGADRequest(opts))
+        rewardedInterstitial!.load(ctx, request: createGADRequest(opts))
     }
 
     @objc(rewardedInterstitialShow:)
     func rewardedInterstitialShow(command: CDVInvokedUrlCommand) {
+        let ctx = AMBContext(plugin: self, command: command)
+
         guard let opts = command.argument(at: 0) as? NSDictionary,
               let id = opts.value(forKey: "id") as? Int,
               let rewardedInterstitial = AMBAdBase.ads[id] as? AMBRewardedInterstitial
         else {
-            let result = CDVPluginResult(status: CDVCommandStatus_ERROR)
-            self.commandDelegate.send(result, callbackId: command.callbackId)
+            ctx.error()
             return
         }
-        rewardedInterstitial.show(command)
+        rewardedInterstitial.show(ctx)
     }
 
     func createGADRequest(_ opts: NSDictionary) -> GADRequest {

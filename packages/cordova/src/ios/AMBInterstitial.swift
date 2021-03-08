@@ -9,7 +9,7 @@ class AMBInterstitial: AMBAdBase, GADFullScreenContentDelegate {
         return self.interstitial != nil
     }
 
-    func load(_ command: CDVInvokedUrlCommand, request: GADRequest) {
+    func load(_ ctx: AMBContext, request: GADRequest) {
         GADInterstitialAd.load(
             withAdUnitID: adUnitId,
             request: request,
@@ -17,8 +17,7 @@ class AMBInterstitial: AMBAdBase, GADFullScreenContentDelegate {
                 if error != nil {
                     self.plugin.emit(eventType: AMBEvents.interstitialLoadFail, data: error!.localizedDescription)
 
-                    let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: error?.localizedDescription)
-                    self.plugin.commandDelegate.send(result, callbackId: command.callbackId)
+                    ctx.error(error)
                     return
                 }
 
@@ -27,18 +26,16 @@ class AMBInterstitial: AMBAdBase, GADFullScreenContentDelegate {
 
                 self.plugin.emit(eventType: AMBEvents.interstitialLoad)
 
-                let result = CDVPluginResult(status: CDVCommandStatus_OK)
-                self.commandDelegate.send(result, callbackId: command.callbackId)
+                ctx.success()
          })
     }
 
-    func show(_ command: CDVInvokedUrlCommand) {
+    func show(_ ctx: AMBContext) {
         if isLoaded() {
             interstitial?.present(fromRootViewController: plugin.viewController)
         }
 
-        let result = CDVPluginResult(status: CDVCommandStatus_OK)
-        self.commandDelegate.send(result, callbackId: command.callbackId)
+        ctx.success()
     }
 
     func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {

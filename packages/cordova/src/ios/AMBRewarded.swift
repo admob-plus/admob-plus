@@ -30,27 +30,25 @@ class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
         return self.rewardedAd != nil
     }
 
-    func load(_ command: CDVInvokedUrlCommand, request: GADRequest) {
+    func load(_ ctx: AMBContext, request: GADRequest) {
         GADRewardedAd.load(withAdUnitID: adUnitId, request: request, completionHandler: { ad, error in
             if error != nil {
                 self.plugin.emit(eventType: AMBEvents.rewardedLoadFail)
 
-                let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: error?.localizedDescription)
-                self.plugin.commandDelegate.send(result, callbackId: command.callbackId)
+                ctx.error(error)
                 return
             }
 
-            ad?.serverSideVerificationOptions = AMBRewarded.getGADServerSideVerificationOptions(command)
+            ad?.serverSideVerificationOptions = AMBRewarded.getGADServerSideVerificationOptions(ctx.command)
             self.rewardedAd = ad
 
             self.plugin.emit(eventType: AMBEvents.rewardedLoad)
 
-            let result = CDVPluginResult(status: CDVCommandStatus_OK)
-            self.commandDelegate.send(result, callbackId: command.callbackId)
+            ctx.success()
         })
     }
 
-    func show(_ command: CDVInvokedUrlCommand) {
+    func show(_ ctx: AMBContext) {
         if isReady() {
             rewardedAd?.present(fromRootViewController: plugin.viewController, userDidEarnRewardHandler: {
                 let reward = self.rewardedAd!.adReward
@@ -61,8 +59,7 @@ class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
             })
         }
 
-        let result = CDVPluginResult(status: CDVCommandStatus_OK)
-        self.commandDelegate.send(result, callbackId: command.callbackId)
+        ctx.success()
     }
 
     func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
