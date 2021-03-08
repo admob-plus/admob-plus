@@ -18,13 +18,13 @@ hide_title: true
 
 ### constructor
 
-\+ **new BannerAd**(`__namedParameters`: [*MobileAdOptions*](../index.md#mobileadoptions) & Options): [*BannerAd*](bannerad.md)
+\+ **new BannerAd**(`opts`: [*BannerAdOptions*](../interfaces/banneradoptions.md)): [*BannerAd*](bannerad.md)
 
 #### Parameters:
 
 Name | Type |
 :------ | :------ |
-`__namedParameters` | [*MobileAdOptions*](../index.md#mobileadoptions) & Options |
+`opts` | [*BannerAdOptions*](../interfaces/banneradoptions.md) |
 
 **Returns:** [*BannerAd*](bannerad.md)
 
@@ -56,7 +56,7 @@ ___
 
 ### opts
 
-• `Private` **opts**: Options
+• `Private` **opts**: [*BannerAdOptions*](../interfaces/banneradoptions.md)
 
 Defined in: banner.ts:17
 
@@ -68,7 +68,7 @@ Defined in: banner.ts:17
 
 **Returns:** *Promise*<unknown\>
 
-Defined in: banner.ts:39
+Defined in: banner.ts:33
 
 ___
 

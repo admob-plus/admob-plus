@@ -18,19 +18,19 @@ hide_title: true
 
 ### constructor
 
-\+ **new RewardedInterstitialAd**(`__namedParameters`: [*MobileAdOptions*](../index.md#mobileadoptions)): [*RewardedInterstitialAd*](rewardedinterstitialad.md)
+\+ **new RewardedInterstitialAd**(`opts`: [*RewardedInterstitialAdOptions*](../interfaces/rewardedinterstitialadoptions.md)): [*RewardedInterstitialAd*](rewardedinterstitialad.md)
 
 #### Parameters:
 
 Name | Type |
 :------ | :------ |
-`__namedParameters` | [*MobileAdOptions*](../index.md#mobileadoptions) |
+`opts` | [*RewardedInterstitialAdOptions*](../interfaces/rewardedinterstitialadoptions.md) |
 
 **Returns:** [*RewardedInterstitialAd*](rewardedinterstitialad.md)
 
 Inherited from: [MobileAd](mobilead.md)
 
-Defined in: rewarded-interstitial.ts:3
+Defined in: rewarded-interstitial.ts:7
 
 ## Properties
 
@@ -52,6 +52,14 @@ Inherited from: [MobileAd](mobilead.md).[id](mobilead.md#id)
 
 Defined in: api.ts:11
 
+___
+
+### opts
+
+• `Private` **opts**: [*RewardedAdOptions*](../interfaces/rewardedadoptions.md)
+
+Defined in: rewarded-interstitial.ts:7
+
 ## Methods
 
 ### isLoaded
@@ -60,7 +68,7 @@ Defined in: api.ts:11
 
 **Returns:** *Promise*<unknown\>
 
-Defined in: rewarded-interstitial.ts:8
+Defined in: rewarded-interstitial.ts:15
 
 ___
 
@@ -70,7 +78,7 @@ ___
 
 **Returns:** *Promise*<unknown\>
 
-Defined in: rewarded-interstitial.ts:14
+Defined in: rewarded-interstitial.ts:21
 
 ___
 
@@ -80,4 +88,4 @@ ___
 
 **Returns:** *Promise*<unknown\>
 
-Defined in: rewarded-interstitial.ts:20
+Defined in: rewarded-interstitial.ts:27

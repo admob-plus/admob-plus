@@ -30,6 +30,13 @@ hide_title: true
 - [RewardedAd](classes/rewardedad.md)
 - [RewardedInterstitialAd](classes/rewardedinterstitialad.md)
 
+### Interfaces
+
+- [BannerAdOptions](interfaces/banneradoptions.md)
+- [RewardedAdOptions](interfaces/rewardedadoptions.md)
+- [RewardedInterstitialAdOptions](interfaces/rewardedinterstitialadoptions.md)
+- [ServerSideVerificationOptions](interfaces/serversideverificationoptions.md)
+
 ## References
 
 ### default

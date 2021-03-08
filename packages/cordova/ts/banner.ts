@@ -8,7 +8,7 @@ import {
 
 type Position = 'top' | 'bottom'
 
-interface BannerAdOptions extends MobileAdOptions {
+export interface BannerAdOptions extends MobileAdOptions {
   position?: Position
   size?: AdSizeType
 }

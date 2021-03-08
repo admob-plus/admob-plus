@@ -24,5 +24,15 @@ module.exports = [
       "cordova/api/classes/rewardedad",
       "cordova/api/classes/rewardedinterstitialad"
     ]
+  },
+  {
+    "type": "category",
+    "label": "Interfaces",
+    "items": [
+      "cordova/api/interfaces/banneradoptions",
+      "cordova/api/interfaces/rewardedadoptions",
+      "cordova/api/interfaces/rewardedinterstitialadoptions",
+      "cordova/api/interfaces/serversideverificationoptions"
+    ]
   }
 ];

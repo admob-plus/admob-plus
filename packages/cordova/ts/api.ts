@@ -56,8 +56,3 @@ export enum TrackingAuthorizationStatus {
   denied = 2,
   authorized = 3,
 }
-
-export interface ServerSideVerificationOptions {
-  customData?: string
-  userId?: string
-}

@@ -1,7 +1,9 @@
-import BannerAd from './banner'
+import BannerAd, { BannerAdOptions } from './banner'
 import InterstitialAd from './interstitial'
-import RewardedAd from './rewarded'
-import RewardedInterstitialAd from './rewarded-interstitial'
+import RewardedAd, { RewardedAdOptions, ServerSideVerificationOptions } from './rewarded'
+import RewardedInterstitialAd, {
+  RewardedInterstitialAdOptions
+} from './rewarded-interstitial'
 import {
   Events,
   execAsync,
@@ -9,11 +11,20 @@ import {
   NativeActions,
   Platforms,
   RequestConfig,
-  TrackingAuthorizationStatus,
+  TrackingAuthorizationStatus
 } from './shared'
 
 export * from './api'
-export { BannerAd, InterstitialAd, RewardedAd, RewardedInterstitialAd }
+export {
+  BannerAd,
+  BannerAdOptions,
+  InterstitialAd,
+  RewardedAd,
+  RewardedAdOptions,
+  RewardedInterstitialAd,
+  RewardedInterstitialAdOptions,
+  ServerSideVerificationOptions,
+}
 
 export class AdMob {
   public readonly BannerAd = BannerAd

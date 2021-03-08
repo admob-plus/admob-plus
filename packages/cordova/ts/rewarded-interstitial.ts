@@ -1,7 +1,7 @@
 import { RewardedAdOptions } from './rewarded'
 import { execAsync, MobileAd, NativeActions } from './shared'
 
-interface RewardedInterstitialAdOptions extends RewardedAdOptions {}
+export interface RewardedInterstitialAdOptions extends RewardedAdOptions {}
 
 export default class RewardedInterstitialAd extends MobileAd {
   private opts: RewardedAdOptions

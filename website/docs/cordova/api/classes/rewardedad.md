@@ -18,19 +18,19 @@ hide_title: true
 
 ### constructor
 
-\+ **new RewardedAd**(`__namedParameters`: [*MobileAdOptions*](../index.md#mobileadoptions)): [*RewardedAd*](rewardedad.md)
+\+ **new RewardedAd**(`opts`: [*RewardedAdOptions*](../interfaces/rewardedadoptions.md)): [*RewardedAd*](rewardedad.md)
 
 #### Parameters:
 
 Name | Type |
 :------ | :------ |
-`__namedParameters` | [*MobileAdOptions*](../index.md#mobileadoptions) |
+`opts` | [*RewardedAdOptions*](../interfaces/rewardedadoptions.md) |
 
 **Returns:** [*RewardedAd*](rewardedad.md)
 
 Inherited from: [MobileAd](mobilead.md)
 
-Defined in: rewarded.ts:8
+Defined in: rewarded.ts:18
 
 ## Properties
 
@@ -52,6 +52,14 @@ Inherited from: [MobileAd](mobilead.md).[id](mobilead.md#id)
 
 Defined in: api.ts:11
 
+___
+
+### opts
+
+• `Private` **opts**: [*RewardedAdOptions*](../interfaces/rewardedadoptions.md)
+
+Defined in: rewarded.ts:18
+
 ## Methods
 
 ### isLoaded
@@ -60,7 +68,7 @@ Defined in: api.ts:11
 
 **Returns:** *Promise*<unknown\>
 
-Defined in: rewarded.ts:13
+Defined in: rewarded.ts:26
 
 ___
 
@@ -70,7 +78,7 @@ ___
 
 **Returns:** *Promise*<unknown\>
 
-Defined in: rewarded.ts:17
+Defined in: rewarded.ts:30
 
 ___
 
@@ -80,4 +88,4 @@ ___
 
 **Returns:** *Promise*<unknown\>
 
-Defined in: rewarded.ts:23
+Defined in: rewarded.ts:36
