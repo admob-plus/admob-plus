@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.10](https://github.com/admob-plus/admob-plus/compare/cordova-plugin-consent@1.0.0-alpha.9...cordova-plugin-consent@1.0.0-alpha.10) (2021-03-09)
+
+
+### Bug Fixes
+
+* pass correct param to cordova.fireDocumentEvent() ([ea69c9d](https://github.com/admob-plus/admob-plus/commit/ea69c9de782a7cea78473092742777b18b01f919))
+
+
+
+
+
 # [1.0.0-alpha.9](https://github.com/admob-plus/admob-plus/compare/cordova-plugin-consent@1.0.0-alpha.8...cordova-plugin-consent@1.0.0-alpha.9) (2021-03-07)
 
 **Note:** Version bump only for package cordova-plugin-consent

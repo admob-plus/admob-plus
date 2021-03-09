@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.13](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.0.0-alpha.12...admob-plus-cordova@1.0.0-alpha.13) (2021-03-09)
+
+
+### Bug Fixes
+
+* **cordova:** add scripts/ to publish files ([4b70760](https://github.com/admob-plus/admob-plus/commit/4b707604e0b261392de37d24032a69a96e0bda94))
+* pass correct param to cordova.fireDocumentEvent() ([ea69c9d](https://github.com/admob-plus/admob-plus/commit/ea69c9de782a7cea78473092742777b18b01f919))
+
+
+### Features
+
+* **cordova:** add ServerSideVerificationOptions ([8579e00](https://github.com/admob-plus/admob-plus/commit/8579e0004ae95828eca24d5c51ef121d0d4445b9))
+* **cordova:** export ad options ([683a6f6](https://github.com/admob-plus/admob-plus/commit/683a6f650479eb75c84334706e730f87bcb3288c))
+* **cordova/android:** emit event with adId ([bb17838](https://github.com/admob-plus/admob-plus/commit/bb1783828fbbc19c7440e2d503b359c5d78b062c))
+* **cordova/android:** handle serverSideVerification option ([106b922](https://github.com/admob-plus/admob-plus/commit/106b922d0ab95a6b3dac7fbcd9fb7c2fa0eb7550))
+* **cordova/ios:** emit event with adId ([3b11594](https://github.com/admob-plus/admob-plus/commit/3b11594325132e01e20d14ce5be559a30d3d4a03))
+* **cordova/ios:** handle serverSideVerification option ([14b55ff](https://github.com/admob-plus/admob-plus/commit/14b55ff066c798ed0e8dabc4a44dad765765d268))
+
+
+
+
+
 # [1.0.0-alpha.12](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.0.0-alpha.11...admob-plus-cordova@1.0.0-alpha.12) (2021-03-07)
 
 
