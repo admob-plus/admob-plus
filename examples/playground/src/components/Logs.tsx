@@ -9,18 +9,17 @@ const eventTypes = [
 export interface LogsProps {}
 
 const Logs: React.FC<LogsProps> = () => {
-  const [events, setEvents] = React.useState<
-    Array<{ time: Date; type: string; detail?: any }>
-  >([])
+  const [logs, setLogs] = React.useState<Array<{ time: Date; event: Event }>>(
+    [],
+  )
 
   React.useEffect(() => {
     const listener = (event: Event) => {
-      setEvents((prev) => [
+      setLogs((prev) => [
         ...prev,
         {
           time: new Date(),
-          type: event.type,
-          detail: (event as CustomEvent).detail,
+          event,
         },
       ])
     }
@@ -38,11 +37,9 @@ const Logs: React.FC<LogsProps> = () => {
 
   return (
     <div>
-      {events.map((event, i) => (
+      {logs.map((log, i) => (
         <div key={i}>
-          {typeof event.detail === 'undefined'
-            ? event.type
-            : `${event.type}: ${JSON.stringify(event.detail)}`}
+          {log.event.type}: {JSON.stringify(log.event)}
         </div>
       ))}
     </div>
