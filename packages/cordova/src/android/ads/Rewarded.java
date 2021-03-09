@@ -9,9 +9,6 @@ import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.rewarded.RewardedAd;
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import admob.plugin.ExecuteContext;
 import admob.plugin.Generated.Events;
 
@@ -46,7 +43,7 @@ public class Rewarded extends AdBase {
             @Override
             public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                 mAd = null;
-                ctx.plugin.emit(Events.REWARDED_LOAD_FAIL, loadAdError.toString());
+                emit(ctx, Events.REWARDED_LOAD_FAIL, loadAdError);
                 ctx.callbackContext.error(loadAdError.toString());
             }
 
@@ -57,22 +54,22 @@ public class Rewarded extends AdBase {
                 mAd.setFullScreenContentCallback(new FullScreenContentCallback() {
                     @Override
                     public void onAdDismissedFullScreenContent() {
-                        ctx.plugin.emit(Events.REWARDED_DISMISS);
+                        emit(ctx, Events.REWARDED_DISMISS);
                     }
 
                     @Override
                     public void onAdFailedToShowFullScreenContent(AdError adError) {
-                        ctx.plugin.emit(Events.REWARDED_SHOW_FAIL, adError.toString());
+                        emit(ctx, Events.REWARDED_SHOW_FAIL, adError);
                     }
 
                     @Override
                     public void onAdShowedFullScreenContent() {
                         mAd = null;
-                        ctx.plugin.emit(Events.REWARDED_SHOW);
+                        emit(ctx, Events.REWARDED_SHOW);
                     }
                 });
 
-                ctx.plugin.emit(Events.REWARDED_LOAD);
+                emit(ctx, Events.REWARDED_LOAD);
                 ctx.callbackContext.success();
             }
         });
@@ -85,14 +82,7 @@ public class Rewarded extends AdBase {
     public void show(ExecuteContext ctx) {
         if (isLoaded()) {
             mAd.show(ctx.getActivity(), rewardItem -> {
-                JSONObject data = new JSONObject();
-                try {
-                    data.put("amount", rewardItem.getAmount());
-                    data.put("type", rewardItem.getType());
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-                ctx.plugin.emit(Events.REWARDED_REWARD, data);
+                emit(ctx, Events.REWARDED_REWARD, rewardItem);
             });
             ctx.callbackContext.success();
         } else {

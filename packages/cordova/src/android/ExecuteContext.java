@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import admob.plugin.ads.AdBase;
-import admob.plugin.ads.RewardedInterstitial;
 
 public class ExecuteContext {
     public final AdMob plugin;

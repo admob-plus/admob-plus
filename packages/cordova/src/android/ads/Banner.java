@@ -69,32 +69,32 @@ public class Banner extends AdBase {
             adView.setAdListener(new AdListener() {
                 @Override
                 public void onAdClicked() {
-                    ctx.plugin.emit(Events.BANNER_CLICK);
+                    emit(ctx, Events.BANNER_CLICK);
                 }
 
                 @Override
                 public void onAdClosed() {
-                    ctx.plugin.emit(Events.BANNER_CLOSE);
+                    emit(ctx, Events.BANNER_CLOSE);
                 }
 
                 @Override
                 public void onAdFailedToLoad(LoadAdError error) {
-                    ctx.plugin.emit(Events.BANNER_LOAD_FAIL, error.toString());
+                    emit(ctx, Events.BANNER_LOAD_FAIL, error);
                 }
 
                 @Override
                 public void onAdImpression() {
-                    ctx.plugin.emit(Events.BANNER_IMPRESSION);
+                    emit(ctx, Events.BANNER_IMPRESSION);
                 }
 
                 @Override
                 public void onAdLoaded() {
-                    ctx.plugin.emit(Events.BANNER_LOAD);
+                    emit(ctx, Events.BANNER_LOAD);
                 }
 
                 @Override
                 public void onAdOpened() {
-                    ctx.plugin.emit(Events.BANNER_OPEN);
+                    emit(ctx, Events.BANNER_OPEN);
                 }
             });
 
