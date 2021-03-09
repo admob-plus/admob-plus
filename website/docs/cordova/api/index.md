@@ -74,4 +74,4 @@ Name | Type |
 `tagForUnderAgeOfConsent`? | [*UnderAgeOfConsentTag*](enums/underageofconsenttag.md) |
 `testDeviceIds`? | *string*[] |
 
-Defined in: api.ts:41
+Defined in: api.ts:47

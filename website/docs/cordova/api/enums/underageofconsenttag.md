@@ -14,7 +14,7 @@ hide_title: true
 
 • **FALSE**: = 0
 
-Defined in: api.ts:36
+Defined in: api.ts:42
 
 ___
 
@@ -22,7 +22,7 @@ ___
 
 • **TRUE**: = 1
 
-Defined in: api.ts:37
+Defined in: api.ts:43
 
 ___
 
@@ -30,4 +30,4 @@ ___
 
 • **UNSPECIFIED**: = -1
 
-Defined in: api.ts:38
+Defined in: api.ts:44

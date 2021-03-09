@@ -36,7 +36,7 @@ Name | Type |
 
 **Returns:** [*MobileAd*](mobilead.md)
 
-Defined in: api.ts:11
+Defined in: api.ts:12
 
 ## Properties
 
@@ -44,7 +44,7 @@ Defined in: api.ts:11
 
 • `Readonly` **adUnitId**: *string*
 
-Defined in: api.ts:10
+Defined in: api.ts:11
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 • `Readonly` **id**: *number*
 
-Defined in: api.ts:11
+Defined in: api.ts:12
 
 ___
 
@@ -63,3 +63,21 @@ ___
 #### Type declaration:
 
 Defined in: api.ts:8
+
+___
+
+### idCounter
+
+▪ `Private` `Static` **idCounter**: *number*= 0
+
+Defined in: api.ts:9
+
+## Methods
+
+### nextId
+
+▸ `Private` `Static`**nextId**(): *number*
+
+**Returns:** *number*
+
+Defined in: api.ts:21

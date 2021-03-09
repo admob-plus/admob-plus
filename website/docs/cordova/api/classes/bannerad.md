@@ -40,7 +40,7 @@ Defined in: banner.ts:17
 
 Inherited from: [MobileAd](mobilead.md).[adUnitId](mobilead.md#adunitid)
 
-Defined in: api.ts:10
+Defined in: api.ts:11
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 Inherited from: [MobileAd](mobilead.md).[id](mobilead.md#id)
 
-Defined in: api.ts:11
+Defined in: api.ts:12
 
 ___
 
