@@ -6,6 +6,7 @@ export type MobileAdOptions = { adUnitId: string }
 /** @internal */
 export class MobileAd {
   private static allAds: { [s: number]: MobileAd } = {}
+  private static idCounter = 0
 
   public readonly adUnitId: string
   public readonly id: number
@@ -13,8 +14,13 @@ export class MobileAd {
   constructor({ adUnitId }: MobileAdOptions) {
     this.adUnitId = adUnitId
 
-    this.id = 10001 + Object.keys(MobileAd.allAds).length
+    this.id = MobileAd.nextId()
     MobileAd.allAds[this.id] = this
+  }
+
+  private static nextId() {
+    MobileAd.idCounter += 1
+    return MobileAd.idCounter
   }
 }
 
