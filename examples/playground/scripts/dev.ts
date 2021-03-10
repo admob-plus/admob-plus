@@ -11,6 +11,7 @@ const main = async () => {
   dotenv.config()
 
   const platform = (process.env.PLATFORM as Platform) || Platform.ios
+  const buildPath = process.env.BUILD_PATH
   await execa('example', ['prepare'], { stdio: 'inherit' })
 
   switch (platform) {
@@ -20,19 +21,29 @@ const main = async () => {
           'cra-build-watch',
           [
             '--build-path',
-            process.env.BUILD_PATH,
+            buildPath,
             '--after-rebuild-hook',
             `cordova build ${platform}`,
           ],
-          {
-            stdio: 'inherit',
-          },
+          { stdio: 'inherit' },
         ),
         execa('cordova', ['run', platform], { stdio: 'inherit' }),
       ])
       return
     case Platform.android:
-      await execa('example', ['open-android'], { stdio: 'inherit' })
+      await Promise.all([
+        execa('example', ['open-android'], { stdio: 'inherit' }),
+        execa(
+          'cra-build-watch',
+          [
+            '--build-path',
+            buildPath,
+            '--after-rebuild-hook',
+            `rsync -avz www/ platforms/${platform}/app/src/main/assets/www`,
+          ],
+          { stdio: 'inherit' },
+        ),
+      ])
       break
     case Platform.ios:
       await Promise.all([
@@ -41,13 +52,11 @@ const main = async () => {
           'cra-build-watch',
           [
             '--build-path',
-            process.env.BUILD_PATH,
+            buildPath,
             '--after-rebuild-hook',
             `rsync -avz www/ platforms/${platform}/www`,
           ],
-          {
-            stdio: 'inherit',
-          },
+          { stdio: 'inherit' },
         ),
       ])
       break
