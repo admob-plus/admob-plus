@@ -5,9 +5,6 @@ import android.util.SparseArray;
 import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.rewarded.RewardItem;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -37,29 +34,23 @@ public abstract class AdBase {
     }
 
     public void emit(ExecuteContext ctx, String eventType, AdError error) {
-        Map<String, Object> data = new HashMap<String, Object>() {{
+        this.emit(ctx, eventType, new HashMap<String, Object>() {{
             put("code", error.getCode());
             put("message", error.getMessage());
             put("cause", error.getCause());
-        }};
-        this.emit(ctx, eventType, data);
+        }});
     }
 
     public void emit(ExecuteContext ctx, String eventType, RewardItem rewardItem) {
-        Map<String, Object> data = new HashMap<String, Object>() {{
+        this.emit(ctx, eventType, new HashMap<String, Object>() {{
             put("amount", rewardItem.getAmount());
             put("type", rewardItem.getType());
-        }};
-        this.emit(ctx, eventType, data);
+        }});
     }
 
     public void emit(ExecuteContext ctx, String eventType, Map<String, Object> data) {
-        JSONObject result = new JSONObject(data);
-        try {
-            result.put("adId", this.id);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        ctx.plugin.emit(eventType, result);
+        ctx.plugin.emit(eventType, new HashMap<String, Object>(data) {{
+            put("adId", id);
+        }});
     }
 }

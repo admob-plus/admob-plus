@@ -9,11 +9,12 @@ import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import admob.plugin.Generated.Actions;
 import admob.plugin.ads.Banner;
@@ -91,13 +92,7 @@ public class AdMob extends CordovaPlugin {
             Log.e(TAG, "Ready action should only be called once.");
         }
         readyCallbackContext = callbackContext;
-        JSONObject data = new JSONObject();
-        try {
-            data.put("isRunningInTestLab", isRunningInTestLab());
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        emit(Generated.Events.READY, data);
+        emit(Generated.Events.READY);
         return true;
     }
 
@@ -212,14 +207,11 @@ public class AdMob extends CordovaPlugin {
         emit(eventType, null);
     }
 
-    public void emit(String eventType, Object data) {
-        JSONObject event = new JSONObject();
-        try {
-            event.put("type", eventType);
-            event.put("data", data);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+    public void emit(String eventType, Map<String, Object> data) {
+        JSONObject event = new JSONObject(new HashMap<String, Object>() {{
+            put("type", eventType);
+            put("data", data);
+        }});
 
         PluginResult result = new PluginResult(PluginResult.Status.OK, event);
         result.setKeepCallback(true);
