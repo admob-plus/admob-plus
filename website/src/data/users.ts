@@ -33,6 +33,13 @@ const users: { caption: string; image: string; infoLink: string }[] = [
     infoLink: 'https://eternitypilot.com',
   },
   {
+    caption: 'Learn music theory with Sonid',
+    image:
+      'https://sonid.app/favicon.png',
+    infoLink:
+      'https://sonid.app/',
+  },
+  {
     caption: 'Ludum',
     image: 'https://ludum.app/assets/images/logo-sliced.png',
     infoLink: 'https://ludum.app/',
