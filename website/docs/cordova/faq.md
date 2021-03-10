@@ -22,6 +22,11 @@ The Ad server may not have ads to serve for every request, which returns `NO_FIL
 
 It is receommended to track the impressions via event API instead of just the API calls, as it is not necessary result in showing Ads.
 
+### What does `{isTrusted: false}` event message means?
+
+`Event.isTrusted` is [a part of the Web API](https://developer.mozilla.org/en-US/docs/Web/API/Event/isTrusted), `false` indicates that the event was created or modified by a script or dispatched via `dispatchEvent()`.
+
+
 ## Android
 
 ### How to use with `cordova-android-play-services-gradle-release`?
