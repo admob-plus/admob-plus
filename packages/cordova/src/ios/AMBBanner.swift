@@ -67,18 +67,18 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate {
     func show(request: GADRequest) {
         if bannerView == nil {
             bannerView = GADBannerView(adSize: self.adSize)
+            bannerView.delegate = self
             bannerView.rootViewController = plugin.viewController
         } else {
             bannerView.isHidden = false
         }
 
-        if position == AMBBannerPosition.top {
+        switch position {
+        case AMBBannerPosition.top:
             stackView.insertArrangedSubview(bannerView, at: 0)
-        } else {
+        default:
             stackView.addArrangedSubview(bannerView)
         }
-
-        bannerView.delegate = self
 
         bannerView.adUnitID = adUnitId
         bannerView.load(request)
