@@ -25,6 +25,9 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate {
 
     deinit {
         bannerView = nil
+        adSize = nil
+        position = nil
+        constraintsToHide = nil
     }
 
     static func getAdSize(_ opts: NSDictionary) -> GADAdSize {
