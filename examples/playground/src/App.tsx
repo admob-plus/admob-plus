@@ -1,10 +1,12 @@
 import {
   Box,
   Container,
+  Flex,
   Heading,
   HStack,
   Link,
   SimpleGrid,
+  Spacer,
 } from '@chakra-ui/react'
 import React from 'react'
 import { Link as RouterLink, Route, Switch } from 'wouter'
@@ -23,12 +25,15 @@ const App: React.FC<AppProps> = () => {
     <Container>
       <SimpleGrid height="100vh" spacingY="20px" templateRows="auto 1fr 1fr">
         <Box as="header">
-            <Heading>
+          <Heading>
+            <Flex>
               <Link as={RouterLink} to="/">
                 AdMob Plus
               </Link>
-            <ColorModeSwitcher justifySelf="flex-end" />
-            </Heading>
+              <Spacer />
+              <ColorModeSwitcher justifySelf="flex-end" />
+            </Flex>
+          </Heading>
           <HStack as="nav">
             <Link as={RouterLink} to="/banner">
               Banner Ad
