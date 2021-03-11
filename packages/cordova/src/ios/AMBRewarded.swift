@@ -39,8 +39,9 @@ class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
                 return
             }
 
-            ad?.serverSideVerificationOptions = AMBRewarded.getGADServerSideVerificationOptions(ctx.command)
             self.rewardedAd = ad
+            ad?.fullScreenContentDelegate = self
+            ad?.serverSideVerificationOptions = AMBRewarded.getGADServerSideVerificationOptions(ctx.command)
 
             self.emit(AMBEvents.rewardedLoad)
 
