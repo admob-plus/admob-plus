@@ -27,9 +27,17 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate {
             stackView.axis = .vertical
             stackView.distribution = .fill
             stackView.alignment = .fill
-            stackView.frame = rootView.safeAreaLayoutGuide.layoutFrame
             rootView.addSubview(stackView)
             stackView.addArrangedSubview(mainView)
+
+            let guide = rootView.safeAreaLayoutGuide
+            stackView.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                stackView.leadingAnchor.constraint(equalTo: rootView.leadingAnchor),
+                stackView.trailingAnchor.constraint(equalTo: rootView.trailingAnchor),
+                stackView.bottomAnchor.constraint(equalTo: guide.bottomAnchor),
+                stackView.topAnchor.constraint(equalTo: guide.topAnchor)
+            ])
         }
     }
 
