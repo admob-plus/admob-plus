@@ -21,9 +21,7 @@ class AMBPlugin: CDVPlugin {
     func ready(command: CDVInvokedUrlCommand) {
         readyCallbackId = command.callbackId
 
-        self.emit(eventType: AMBEvents.ready, data: [
-            "sdkVersion": GADMobileAds.sharedInstance().sdkVersion,
-            "isRunningInTestLab": false])
+        self.emit(eventType: AMBEvents.ready, data: ["isRunningInTestLab": false])
     }
 
     @objc(requestTrackingAuthorization:)
@@ -43,8 +41,8 @@ class AMBPlugin: CDVPlugin {
     func start(command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(plugin: self, command: command)
 
-        GADMobileAds.sharedInstance().start(completionHandler: { status in
-            ctx.success(status)
+        GADMobileAds.sharedInstance().start(completionHandler: { _ in
+            ctx.success(["version": GADMobileAds.sharedInstance().sdkVersion])
         })
     }
 

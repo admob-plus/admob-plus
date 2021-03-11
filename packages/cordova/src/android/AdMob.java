@@ -35,7 +35,9 @@ public class AdMob extends CordovaPlugin {
             case Actions.READY:
                 return executeReady(callbackContext);
             case Actions.START:
-                MobileAds.initialize(cordova.getActivity(), status -> callbackContext.success());
+                MobileAds.initialize(cordova.getActivity(), status -> callbackContext.success(new JSONObject(new HashMap<String, Object>() {{
+                    put("version", MobileAds.getVersionString());
+                }})));
                 break;
             case Actions.CONFIG_REQUEST:
                 MobileAds.setRequestConfiguration(ctx.getRequestConfiguration());
@@ -92,7 +94,9 @@ public class AdMob extends CordovaPlugin {
             Log.e(TAG, "Ready action should only be called once.");
         }
         readyCallbackContext = callbackContext;
-        emit(Generated.Events.READY);
+        emit(Generated.Events.READY, new HashMap<String, Object>() {{
+            put("isRunningInTestLab", isRunningInTestLab());
+        }});
         return true;
     }
 
