@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.14](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.0.0-alpha.13...admob-plus-cordova@1.0.0-alpha.14) (2021-03-11)
+
+
+### Bug Fixes
+
+* **cordova/android:** prevent setting null for SSV ([f715789](https://github.com/admob-plus/admob-plus/commit/f71578915ed16c41791565c64d3eb765a8bafb6a))
+* **cordova/ios:** set fullScreenContentDelegate for rewared ads ([9f72095](https://github.com/admob-plus/admob-plus/commit/9f720956b9ad55a6f66ca5e571c67cabb0b184f1))
+
+
+### Features
+
+* **cordova:** export global.admob ([02af575](https://github.com/admob-plus/admob-plus/commit/02af5759b1c8fa770844cceec05ac689a26e0172))
+* **cordova/ios:** use UIStackView to arrange banner view ([a78e9a1](https://github.com/admob-plus/admob-plus/commit/a78e9a1c0fb394e0724e0a0e0ef865ec8a7f6928))
+
+
+
+
+
 # [1.0.0-alpha.13](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.0.0-alpha.12...admob-plus-cordova@1.0.0-alpha.13) (2021-03-09)
 
 
