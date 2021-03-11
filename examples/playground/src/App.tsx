@@ -22,57 +22,55 @@ interface AppProps {}
 
 const App: React.FC<AppProps> = () => {
   return (
-    <Container>
-      <SimpleGrid height="100vh" spacingY="20px" templateRows="auto 1fr 1fr">
-        <Box as="header">
-          <Heading>
-            <Flex>
-              <Link as={RouterLink} to="/">
-                AdMob Plus
-              </Link>
-              <Spacer />
-              <ColorModeSwitcher justifySelf="flex-end" />
-            </Flex>
-          </Heading>
-          <HStack as="nav">
-            <Link as={RouterLink} to="/banner">
-              Banner Ad
+    <SimpleGrid height="100vh" spacingY="20px" templateRows="auto 1fr 1fr">
+      <Container as="header">
+        <Heading>
+          <Flex>
+            <Link as={RouterLink} to="/">
+              AdMob Plus
             </Link>
-            <Link as={RouterLink} to="/interstitial">
-              Interstitial Ad
-            </Link>
-            <Link as={RouterLink} to="/rewarded">
-              Rewarded Ad
-            </Link>
-            <Link as={RouterLink} to="/rewarded-interstitial">
-              Rewarded Interstitial Ad
-            </Link>
-          </HStack>
-        </Box>
-        <Box>
-          <Switch>
-            <Route path="/">
-              <Home />
-            </Route>
-            <Route path="/banner">
-              <BannerAd />
-            </Route>
-            <Route path="/interstitial">
-              <InterstitialAd />
-            </Route>
-            <Route path="/rewarded">
-              <RewardedAd />
-            </Route>
-            <Route path="/rewarded-interstitial">
-              <RewardedInterstitialAd />
-            </Route>
-          </Switch>
-        </Box>
-        <Box bg="#F5F5F5">
-          <Logs />
-        </Box>
-      </SimpleGrid>
-    </Container>
+            <Spacer />
+            <ColorModeSwitcher justifySelf="flex-end" />
+          </Flex>
+        </Heading>
+        <HStack as="nav">
+          <Link as={RouterLink} to="/banner">
+            Banner Ad
+          </Link>
+          <Link as={RouterLink} to="/interstitial">
+            Interstitial Ad
+          </Link>
+          <Link as={RouterLink} to="/rewarded">
+            Rewarded Ad
+          </Link>
+          <Link as={RouterLink} to="/rewarded-interstitial">
+            Rewarded Interstitial Ad
+          </Link>
+        </HStack>
+      </Container>
+      <Container>
+        <Switch>
+          <Route path="/">
+            <Home />
+          </Route>
+          <Route path="/banner">
+            <BannerAd />
+          </Route>
+          <Route path="/interstitial">
+            <InterstitialAd />
+          </Route>
+          <Route path="/rewarded">
+            <RewardedAd />
+          </Route>
+          <Route path="/rewarded-interstitial">
+            <RewardedInterstitialAd />
+          </Route>
+        </Switch>
+      </Container>
+      <Flex maxH="50vh">
+        <Logs />
+      </Flex>
+    </SimpleGrid>
   )
 }
 

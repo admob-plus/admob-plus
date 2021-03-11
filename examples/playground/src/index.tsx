@@ -9,7 +9,7 @@ import useHashLocation from './useHashLocation'
 
 ReactDOM.render(
   <React.StrictMode>
-    <ColorModeScript />
+    <ColorModeScript initialColorMode={theme.config.initialColorMode} />
     <Router hook={useHashLocation}>
       <ChakraProvider theme={theme}>
         <App />

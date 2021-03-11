@@ -1,3 +1,4 @@
+import { Box, useColorMode } from '@chakra-ui/react'
 import { Events } from 'admob-plus-cordova'
 import * as React from 'react'
 
@@ -20,6 +21,7 @@ export interface LogsProps {}
 
 const Logs: React.FC<LogsProps> = () => {
   const [logs, setLogs] = React.useState<Array<Log>>([])
+  const { colorMode } = useColorMode()
 
   React.useEffect(() => {
     const listener = (event: Event) => {
@@ -44,11 +46,15 @@ const Logs: React.FC<LogsProps> = () => {
   }, [])
 
   return (
-    <div>
+    <Box
+      style={{ overflow: 'auto' }}
+      bg={colorMode === 'dark' ? 'gray.700' : 'gray.200'}
+      w="100%"
+    >
       {logs.map((log, i) => (
         <div key={i}>{logLine(log)}</div>
       ))}
-    </div>
+    </Box>
   )
 }
 
