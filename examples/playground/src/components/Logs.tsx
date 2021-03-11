@@ -51,9 +51,12 @@ const Logs: React.FC<LogsProps> = () => {
       bg={colorMode === 'dark' ? 'gray.700' : 'gray.200'}
       w="100%"
     >
-      {logs.map((log, i) => (
-        <div key={i}>{logLine(log)}</div>
-      ))}
+      {logs
+        .slice()
+        .reverse()
+        .map((log, i) => (
+          <div key={i}>{logLine(log)}</div>
+        ))}
     </Box>
   )
 }
