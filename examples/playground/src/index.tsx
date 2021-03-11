@@ -1,6 +1,7 @@
 import { ChakraProvider, ColorModeScript, theme } from '@chakra-ui/react'
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { RecoilRoot } from 'recoil'
 import { Router } from 'wouter'
 import App from './App'
 import './index.css'
@@ -12,7 +13,9 @@ ReactDOM.render(
     <ColorModeScript initialColorMode={theme.config.initialColorMode} />
     <Router hook={useHashLocation}>
       <ChakraProvider theme={theme}>
-        <App />
+        <RecoilRoot>
+          <App />
+        </RecoilRoot>
       </ChakraProvider>
     </Router>
   </React.StrictMode>,
