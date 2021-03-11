@@ -8,6 +8,7 @@ import com.google.android.gms.ads.FullScreenContentCallback;
 import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.rewarded.RewardedAd;
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
+import com.google.android.gms.ads.rewarded.ServerSideVerificationOptions;
 
 import admob.plugin.ExecuteContext;
 import admob.plugin.Generated.Events;
@@ -50,7 +51,10 @@ public class Rewarded extends AdBase {
             @Override
             public void onAdLoaded(@NonNull RewardedAd rewardedAd) {
                 mAd = rewardedAd;
-                mAd.setServerSideVerificationOptions(ctx.getServerSideVerificationOptions());
+                ServerSideVerificationOptions ssv = ctx.getServerSideVerificationOptions();
+                if (ssv != null) {
+                    mAd.setServerSideVerificationOptions(ssv);
+                }
                 mAd.setFullScreenContentCallback(new FullScreenContentCallback() {
                     @Override
                     public void onAdDismissedFullScreenContent() {

@@ -103,13 +103,11 @@ public class ExecuteContext {
         }
 
         ServerSideVerificationOptions.Builder builder = new ServerSideVerificationOptions.Builder();
-        String customData = serverSideVerification.optString("customData");
-        if (customData != null) {
-            builder.setCustomData(customData);
+        if (serverSideVerification.has("customData")) {
+            builder.setCustomData(serverSideVerification.optString("customData"));
         }
-        String userId = serverSideVerification.optString("userId");
-        if (userId != null) {
-            builder.setUserId(userId);
+        if (serverSideVerification.has("userId")) {
+            builder.setUserId(serverSideVerification.optString("userId"));
         }
         return builder.build();
     }

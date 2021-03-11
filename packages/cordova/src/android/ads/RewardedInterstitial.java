@@ -6,6 +6,7 @@ import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.FullScreenContentCallback;
 import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.rewarded.ServerSideVerificationOptions;
 import com.google.android.gms.ads.rewardedinterstitial.RewardedInterstitialAd;
 import com.google.android.gms.ads.rewardedinterstitial.RewardedInterstitialAdLoadCallback;
 
@@ -50,7 +51,10 @@ public class RewardedInterstitial extends AdBase {
             @Override
             public void onAdLoaded(@NonNull RewardedInterstitialAd rewardedAd) {
                 mAd = rewardedAd;
-                mAd.setServerSideVerificationOptions(ctx.getServerSideVerificationOptions());
+                ServerSideVerificationOptions ssv = ctx.getServerSideVerificationOptions();
+                if (ssv != null) {
+                    mAd.setServerSideVerificationOptions(ssv);
+                }
                 mAd.setFullScreenContentCallback(new FullScreenContentCallback() {
                     @Override
                     public void onAdDismissedFullScreenContent() {
