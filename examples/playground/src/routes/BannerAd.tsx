@@ -33,8 +33,7 @@ const BannerAd: React.FC<BannerProps> = () => {
         onSubmit={(event) => {
           event.preventDefault()
 
-          // @ts-ignore
-          const formData = new FormData(event.target)
+          const formData = new FormData(event.target as HTMLFormElement)
           setBanners((prevState) => [
             ...prevState,
             new admob.BannerAd({
@@ -60,7 +59,7 @@ const BannerAd: React.FC<BannerProps> = () => {
       </form>
       <List>
         {banners.map((ad) => (
-          <ListItem>
+          <ListItem key={ad.id}>
             <Flex>
               <Box>
                 {ad.id}: {_.get(ad, 'opts.position')}
