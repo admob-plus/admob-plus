@@ -1,6 +1,9 @@
 import BannerAd, { BannerAdOptions } from './banner'
 import InterstitialAd from './interstitial'
-import RewardedAd, { RewardedAdOptions, ServerSideVerificationOptions } from './rewarded'
+import RewardedAd, {
+  RewardedAdOptions,
+  ServerSideVerificationOptions
+} from './rewarded'
 import RewardedInterstitialAd, {
   RewardedInterstitialAdOptions
 } from './rewarded-interstitial'
@@ -66,6 +69,10 @@ export class AdMob {
     }
     return false
   }
+}
+
+declare global {
+  const admob: AdMob
 }
 
 export default AdMob
