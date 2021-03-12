@@ -34,14 +34,15 @@ const app = {
     const banner = new admob.BannerAd({
       adUnitId: 'ca-app-pub-3940256099942544/6300978111',
     })
-    return banner.show({ position: 'bottom' })
+    return banner.show()
   },
 
   showBannerAdTop() {
     const banner = new admob.BannerAd({
       adUnitId: 'ca-app-pub-3940256099942544/6300978111',
+      position: 'top',
     })
-    return banner.show({ position: 'top' })
+    return banner.show()
   },
 
   showInterstitialAd() {
