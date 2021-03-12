@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.15](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.0.0-alpha.14...admob-plus-cordova@1.0.0-alpha.15) (2021-03-12)
+
+
+### Bug Fixes
+
+* **cordova/ios:** accept dictionary for success() ([0c82153](https://github.com/admob-plus/admob-plus/commit/0c821539d7971c4dd2d8e045a1730b7365b4557a))
+
+
+
+
+
 # [1.0.0-alpha.14](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.0.0-alpha.13...admob-plus-cordova@1.0.0-alpha.14) (2021-03-11)
 
 
