@@ -33,7 +33,7 @@ class AMBPlugin: CDVPlugin {
                 ctx.success(status.rawValue)
             })
         } else {
-            ctx.success()
+            ctx.success(false)
         }
     }
 
