@@ -2,10 +2,10 @@ import BannerAd, { BannerAdOptions } from './banner'
 import InterstitialAd from './interstitial'
 import RewardedAd, {
   RewardedAdOptions,
-  ServerSideVerificationOptions
+  ServerSideVerificationOptions,
 } from './rewarded'
 import RewardedInterstitialAd, {
-  RewardedInterstitialAdOptions
+  RewardedInterstitialAdOptions,
 } from './rewarded-interstitial'
 import {
   Events,
@@ -14,7 +14,7 @@ import {
   NativeActions,
   Platforms,
   RequestConfig,
-  TrackingAuthorizationStatus
+  TrackingAuthorizationStatus,
 } from './shared'
 
 export * from './api'
@@ -55,7 +55,7 @@ export class AdMob {
   }
 
   public start() {
-    return execAsync(NativeActions.start)
+    return execAsync(NativeActions.start) as Promise<{ version: string }>
   }
 
   public async requestTrackingAuthorization(): Promise<
@@ -63,9 +63,11 @@ export class AdMob {
   > {
     if (cordova.platformId === Platforms.ios) {
       const n = await execAsync(NativeActions.requestTrackingAuthorization)
-      return TrackingAuthorizationStatus[
-        TrackingAuthorizationStatus[n as number]
-      ]
+      if (n !== false) {
+        return TrackingAuthorizationStatus[
+          TrackingAuthorizationStatus[n as number]
+        ]
+      }
     }
     return false
   }
