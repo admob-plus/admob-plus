@@ -18,6 +18,7 @@ module.exports = {
         },
       ],
       Cordova: [
+        'cordova/getting-started',
         'cordova/installation',
         {
           'Ad Formats': [
