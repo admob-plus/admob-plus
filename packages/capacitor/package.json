@@ -44,7 +44,7 @@
     "clean": "rimraf ./dist",
     "watch": "tsc --watch",
     "prepublishOnly": "yarn build",
-    "prepack": "rimraf ./dist/*.tsbuildinfo"
+    "prepack": "yarn rimraf ./dist/*.tsbuildinfo"
   },
   "devDependencies": {
     "@capacitor/android": "^3.0.0-beta.3",
