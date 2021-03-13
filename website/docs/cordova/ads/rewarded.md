@@ -27,3 +27,28 @@ document.addEventListener('admob.rewarded.dismiss', async () => {
   await rewarded.load()
 })
 ```
+
+## Events
+
+### `admob.rewarded.load`
+
+### `admob.rewarded.loadFail`
+
+### `admob.rewarded.show`
+
+### `admob.rewarded.showFail`
+
+### `admob.rewarded.reward`
+
+User has earned reward.
+
+```js
+{
+  reward: {
+    amount: 10,
+    type: "coins"
+  }
+}
+```
+
+### `admob.rewarded.dismiss`

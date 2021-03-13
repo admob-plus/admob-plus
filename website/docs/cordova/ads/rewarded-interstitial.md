@@ -25,3 +25,28 @@ document.addEventListener('admob.rewardedInterstitial.dismiss', async () => {
   await rewarded.load()
 })
 ```
+
+## Events
+
+### `admob.rewardedInterstitial.load`
+
+### `admob.rewardedInterstitial.loadFail`
+
+### `admob.rewardedInterstitial.show`
+
+### `admob.rewardedInterstitial.showFail`
+
+### `admob.rewardedInterstitial.reward`
+
+User has earned reward.
+
+```js
+{
+  reward: {
+    amount: 1,
+    type: "Reward"
+  }
+}
+```
+
+### `admob.rewardedInterstitial.dismiss`
