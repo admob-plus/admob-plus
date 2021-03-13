@@ -43,8 +43,10 @@ public abstract class AdBase {
 
     public void emit(ExecuteContext ctx, String eventType, RewardItem rewardItem) {
         this.emit(ctx, eventType, new HashMap<String, Object>() {{
-            put("amount", rewardItem.getAmount());
-            put("type", rewardItem.getType());
+            put("reward", new HashMap<String, Object>() {{
+                put("amount", rewardItem.getAmount());
+                put("type", rewardItem.getType());
+            }});
         }});
     }
 
