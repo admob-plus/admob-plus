@@ -119,6 +119,10 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate {
         self.emit(AMBEvents.bannerLoadFail, error)
     }
 
+    func bannerViewDidRecordImpression(_ bannerView: GADBannerView) {
+        self.emit(AMBEvents.bannerImpression)
+    }
+
     func bannerViewWillPresentScreen(_ bannerView: GADBannerView) {
         self.emit(AMBEvents.bannerOpen)
     }
