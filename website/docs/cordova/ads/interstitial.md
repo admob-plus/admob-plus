@@ -19,3 +19,15 @@ document.addEventListener('deviceready', async () => {
   await interstitial.show()
 }, false)
 ```
+
+## Events
+
+### `admob.interstitial.load`
+
+### `admob.interstitial.loadFail`
+
+### `admob.interstitial.show`
+
+### `admob.interstitial.showFail`
+
+### `admob.interstitial.dismiss`
