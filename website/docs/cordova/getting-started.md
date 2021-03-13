@@ -16,7 +16,7 @@ This allows [requesting user consent](./cordova/consent) before contacting any A
 
 Therefore, `admob.start()` must be called before loading ads.
 
-Note that `admob` is undeifned until [`deviceready`](https://cordova.apache.org/docs/en/latest/cordova/events/events.html#deviceready) event is fired.
+Note that `admob` is undefined until [`deviceready`](https://cordova.apache.org/docs/en/latest/cordova/events/events.html#deviceready) event is fired.
 
 ```js
 document.addEventListener('deviceready', async () => {
