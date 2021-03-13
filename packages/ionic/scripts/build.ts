@@ -3,7 +3,7 @@ import * as execa from 'execa'
 import * as fse from 'fs-extra'
 
 const main = async () => {
-  await del(['build', 'lib', 'ngx'])
+  await del(['build', 'lib', 'ngx', '*.tsbuildinfo'])
 
   await execa('tsc', { stdio: 'inherit' })
   await fse.outputJSON('./ngx/package.json', {
