@@ -21,7 +21,9 @@ class AMBPlugin: CDVPlugin {
     func ready(command: CDVInvokedUrlCommand) {
         readyCallbackId = command.callbackId
 
-        self.emit(eventType: AMBEvents.ready, data: ["isRunningInTestLab": false])
+        DispatchQueue.global(qos: .background).async {
+            self.emit(eventType: AMBEvents.ready, data: ["isRunningInTestLab": false])
+        }
     }
 
     @objc(requestTrackingAuthorization:)
