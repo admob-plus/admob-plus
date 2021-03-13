@@ -16,7 +16,23 @@ document.addEventListener('deviceready', async () => {
   })
 
   await banner.show()
-
-  await banner.hide()
 }, false)
+
+document.addEventListener('admob.banner.impression', async () => {
+  await banner.hide()
+})
 ```
+
+## Events
+
+### `admob.banner.load`
+
+An ad is received and is ready for display.
+
+### `admob.banner.loadFail`
+
+An ad request has been failed.
+
+### `admob.banner.impression`
+
+An ad has been disaplayed.
