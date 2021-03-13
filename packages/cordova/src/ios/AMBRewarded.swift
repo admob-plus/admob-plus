@@ -53,10 +53,7 @@ class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
         if isReady() {
             rewardedAd?.present(fromRootViewController: plugin.viewController, userDidEarnRewardHandler: {
                 let reward = self.rewardedAd!.adReward
-                self.emit(AMBEvents.rewardedReward, [
-                    "amount": reward.amount,
-                    "type": reward.type
-                ])
+                self.emit(AMBEvents.rewardedReward, reward)
             })
         }
 

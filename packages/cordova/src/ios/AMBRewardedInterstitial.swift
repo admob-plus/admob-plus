@@ -31,10 +31,7 @@ class AMBRewardedInterstitial: AMBAdBase, GADFullScreenContentDelegate {
         if isReady() {
             rewardedInterstitial?.present(fromRootViewController: plugin.viewController, userDidEarnRewardHandler: {
                 let reward = self.rewardedInterstitial!.adReward
-                self.emit(AMBEvents.rewardedInterstitialReward, [
-                    "amount": reward.amount,
-                    "type": reward.type
-                ])
+                self.emit(AMBEvents.rewardedInterstitialReward, reward)
             })
         }
 
