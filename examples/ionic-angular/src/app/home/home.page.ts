@@ -1,6 +1,6 @@
+import { AdMob } from '@admob-plus/ionic/ngx';
 import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
-import { AdMob } from '@admob-plus/ionic/ngx';
 
 @Component({
   selector: 'app-home',

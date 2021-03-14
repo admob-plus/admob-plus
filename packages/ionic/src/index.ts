@@ -1,21 +1,40 @@
 import { Injectable } from '@angular/core'
-import { cordova, IonicNativePlugin } from '@ionic-native/core'
+import { IonicNativePlugin } from '@ionic-native/core'
+import {
+  AdMob as IAdMob,
+  BannerAd as IBannerAd,
+  BannerAdOptions,
+  InterstitialAd as IInterstitialAd,
+  NativeActions,
+  RewardedAd as IRewardedAd,
+  RewardedAdOptions,
+} from 'admob-plus-cordova'
 import { fromEvent, Observable } from 'rxjs'
 
 const plugin = 'admob-plus-cordova'
 const pluginName = 'AdMob'
 
-export class BannerAd extends IonicNativePlugin {
+export class BannerAd
+  extends IonicNativePlugin
+  implements Omit<IBannerAd, 'opts'> {
   public static plugin = plugin
   public static pluginName = pluginName
   public static pluginRef = 'admob.BannerAd'
 
-  private _objectInstance: any
+  private _objectInstance: IBannerAd
 
-  constructor(opts: { adUnitId: string }) {
+  constructor(opts: BannerAdOptions) {
     super()
 
     this._objectInstance = new (BannerAd.getPlugin())(opts)
+  }
+
+  get adUnitId() {
+    return this._objectInstance.adUnitId
+  }
+
+  get id() {
+    return this._objectInstance.id
   }
 
   show(): Promise<unknown> {
@@ -27,17 +46,31 @@ export class BannerAd extends IonicNativePlugin {
   }
 }
 
-export class InterstitialAd extends IonicNativePlugin {
+export class InterstitialAd
+  extends IonicNativePlugin
+  implements Omit<IInterstitialAd, 'opts'> {
   public static plugin = plugin
   public static pluginName = pluginName
   public static pluginRef = 'admob.InterstitialAd'
 
-  private _objectInstance: any
+  private _objectInstance: IInterstitialAd
 
   constructor(opts: { adUnitId: string }) {
     super()
 
     this._objectInstance = new (InterstitialAd.getPlugin())(opts)
+  }
+
+  get adUnitId() {
+    return this._objectInstance.adUnitId
+  }
+
+  get id() {
+    return this._objectInstance.id
+  }
+
+  public isLoaded() {
+    return this._objectInstance.isLoaded()
   }
 
   public load() {
@@ -49,17 +82,31 @@ export class InterstitialAd extends IonicNativePlugin {
   }
 }
 
-export class RewardedAd extends IonicNativePlugin {
+export class RewardedAd
+  extends IonicNativePlugin
+  implements Omit<IRewardedAd, 'opts'> {
   public static plugin = plugin
   public static pluginName = pluginName
   public static pluginRef = 'admob.RewardedAd'
 
-  private _objectInstance: any
+  private _objectInstance: IRewardedAd
 
-  constructor(opts: { adUnitId: string }) {
+  constructor(opts: RewardedAdOptions) {
     super()
 
     this._objectInstance = new (RewardedAd.getPlugin())(opts)
+  }
+
+  get adUnitId() {
+    return this._objectInstance.adUnitId
+  }
+
+  get id() {
+    return this._objectInstance.id
+  }
+
+  public isLoaded() {
+    return this._objectInstance.isLoaded()
   }
 
   public load() {
@@ -72,7 +119,20 @@ export class RewardedAd extends IonicNativePlugin {
 }
 
 @Injectable()
-export class AdMob extends IonicNativePlugin {
+export class AdMob
+  extends IonicNativePlugin
+  implements
+    Omit<
+      IAdMob,
+      | 'BannerAd'
+      | 'InterstitialAd'
+      | 'RewardedAd'
+      | 'Events'
+      | 'RewardedInterstitialAd'
+      | 'TrackingAuthorizationStatus'
+      | 'configRequest'
+      | 'requestTrackingAuthorization'
+    > {
   public static platforms = ['Android', 'iOS']
   public static plugin = plugin
   public static pluginName = pluginName
@@ -83,16 +143,20 @@ export class AdMob extends IonicNativePlugin {
   public readonly InterstitialAd = InterstitialAd
   public readonly RewardedAd = RewardedAd
 
-  public start(): Promise<void> {
-    return cordova(this, 'start', { otherPromise: true }, arguments)
+  get admob(): IAdMob {
+    return AdMob.getPlugin()
   }
 
-  public setAppMuted(value: boolean): Promise<any> {
-    return cordova(this, 'setAppMuted', { otherPromise: true }, arguments)
+  public start() {
+    return this.admob.start()
   }
 
-  public setAppVolume(value: number): Promise<any> {
-    return cordova(this, 'setAppVolume', { otherPromise: true }, arguments)
+  public setAppMuted(...opts: Parameters<IAdMob[NativeActions.setAppMuted]>) {
+    return this.admob.setAppMuted(...opts)
+  }
+
+  public setAppVolume(...opts: Parameters<IAdMob[NativeActions.setAppVolume]>) {
+    return this.admob.setAppVolume(...opts)
   }
 
   public on(event: string): Observable<any> {
