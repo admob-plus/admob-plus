@@ -8,6 +8,7 @@ import {
   NativeActions,
   RewardedAd as IRewardedAd,
   RewardedAdOptions,
+  TrackingAuthorizationStatus,
 } from 'admob-plus-cordova'
 import { fromEvent, Observable } from 'rxjs'
 
@@ -125,13 +126,11 @@ export class AdMob
     Omit<
       IAdMob,
       | 'BannerAd'
+      | 'Events'
       | 'InterstitialAd'
       | 'RewardedAd'
-      | 'Events'
       | 'RewardedInterstitialAd'
       | 'TrackingAuthorizationStatus'
-      | 'configRequest'
-      | 'requestTrackingAuthorization'
     > {
   public static platforms = ['Android', 'iOS']
   public static plugin = plugin
@@ -147,6 +146,12 @@ export class AdMob
     return AdMob.getPlugin()
   }
 
+  public configRequest(
+    ...opts: Parameters<IAdMob[NativeActions.configRequest]>
+  ) {
+    return this.admob.configRequest(...opts)
+  }
+
   public start() {
     return this.admob.start()
   }
@@ -159,7 +164,13 @@ export class AdMob
     return this.admob.setAppVolume(...opts)
   }
 
+  public requestTrackingAuthorization() {
+    return this.admob.requestTrackingAuthorization()
+  }
+
   public on(event: string): Observable<any> {
     return fromEvent(document, event)
   }
 }
+
+export { TrackingAuthorizationStatus }
