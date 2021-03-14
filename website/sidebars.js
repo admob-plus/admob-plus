@@ -46,6 +46,7 @@ module.exports = {
         },
       ],
       Ionic: [
+        'ionic/getting-started',
         'ionic/installation',
         {
           'Ad Formats': [
