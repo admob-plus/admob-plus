@@ -8,16 +8,24 @@ Interstitial ads are full-screen ads that cover the interface of their host app.
 ## Usage
 
 ```js
+let interstitial
+
 document.addEventListener('deviceready', async () => {
   await admob.start()
 
-  const interstitial = new admob.InterstitialAd({
+  interstitial = new admob.InterstitialAd({
     adUnitId: 'ca-app-pub-xxx/yyy',
   })
 
   await interstitial.load()
   await interstitial.show()
 }, false)
+
+document.addEventListener('admob.interstitial.dismiss', async () => {
+  // Once a interstitial ad is shown, it cannot be shown again.
+  // Starts loading the next interstitial ad as soon as it is dismissed.
+  await interstitial.load()
+})
 ```
 
 ## Events
