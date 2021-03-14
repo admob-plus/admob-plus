@@ -8,7 +8,9 @@ import {
   NativeActions,
   RewardedAd as IRewardedAd,
   RewardedAdOptions,
-  TrackingAuthorizationStatus,
+  RewardedInterstitialAd as IRewardedInterstitialAd,
+  RewardedInterstitialAdOptions,
+  TrackingAuthorizationStatus
 } from 'admob-plus-cordova'
 import { fromEvent, Observable } from 'rxjs'
 
@@ -119,6 +121,42 @@ export class RewardedAd
   }
 }
 
+export class RewardedInterstitialAd
+  extends IonicNativePlugin
+  implements Omit<IRewardedInterstitialAd, 'opts'> {
+  public static plugin = plugin
+  public static pluginName = pluginName
+  public static pluginRef = 'admob.RewardedInterstitialAd'
+
+  private _objectInstance: IRewardedInterstitialAd
+
+  constructor(opts: RewardedInterstitialAdOptions) {
+    super()
+
+    this._objectInstance = new (RewardedInterstitialAd.getPlugin())(opts)
+  }
+
+  get adUnitId() {
+    return this._objectInstance.adUnitId
+  }
+
+  get id() {
+    return this._objectInstance.id
+  }
+
+  public isLoaded() {
+    return this._objectInstance.isLoaded()
+  }
+
+  public load() {
+    return this._objectInstance.load()
+  }
+
+  public show() {
+    return this._objectInstance.show()
+  }
+}
+
 @Injectable()
 export class AdMob
   extends IonicNativePlugin
@@ -141,6 +179,7 @@ export class AdMob
   public readonly BannerAd = BannerAd
   public readonly InterstitialAd = InterstitialAd
   public readonly RewardedAd = RewardedAd
+  public readonly RewardedInterstitialAd = RewardedInterstitialAd
 
   get admob(): IAdMob {
     return AdMob.getPlugin()
