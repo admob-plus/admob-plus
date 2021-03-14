@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.2](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.0.0-beta.1...@admob-plus/capacitor@1.0.0-beta.2) (2021-03-14)
+
+
+### Features
+
+* **capacitor/ios:** update Google-Mobile-Ads-SDK to v8.2.0.1 ([2183d9d](https://github.com/admob-plus/admob-plus/commit/2183d9da923ed443c036c6bff6f9754210d5cfb3))
+
+
+
+
+
 # [1.0.0-beta.1](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.0.0-beta.0...@admob-plus/capacitor@1.0.0-beta.1) (2021-03-13)
 
 **Note:** Version bump only for package @admob-plus/capacitor

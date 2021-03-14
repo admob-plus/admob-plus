@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.2](https://github.com/admob-plus/admob-plus/compare/@admob-plus/ionic@1.0.0-beta.1...@admob-plus/ionic@1.0.0-beta.2) (2021-03-14)
+
+
+### Features
+
+* **ionic:** add RewardedInterstitialAd class ([bd90774](https://github.com/admob-plus/admob-plus/commit/bd907740b331bf26fcfaa107d9aba4c4c12a78cc))
+* **ionic:** export TrackingAuthorizationStatus ([a604cc6](https://github.com/admob-plus/admob-plus/commit/a604cc6389cb1073684355731a253c4e7bddf01a))
+
+
+
+
+
 # [1.0.0-beta.1](https://github.com/admob-plus/admob-plus/compare/@admob-plus/ionic@1.0.0-beta.0...@admob-plus/ionic@1.0.0-beta.1) (2021-03-13)
 
 **Note:** Version bump only for package @admob-plus/ionic
