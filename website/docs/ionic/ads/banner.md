@@ -32,3 +32,7 @@ export class HomePage {
   }
 }
 ```
+
+## Related
+
+* [Banner Ad - Cordova](/docs/cordova/ads/banner)

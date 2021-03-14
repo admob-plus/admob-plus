@@ -30,3 +30,7 @@ export class HomePage {
   }
 }
 ```
+
+## Related
+
+* [Interstitial Ad - Cordova](/docs/cordova/ads/interstitial)

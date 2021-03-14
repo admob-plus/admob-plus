@@ -50,3 +50,7 @@ User has earned reward.
 ```
 
 ### `admob.rewardedInterstitial.dismiss`
+
+## Related
+
+* [Rewarded Ads Server-side Verification](../rewarded-ads-ssv.md)

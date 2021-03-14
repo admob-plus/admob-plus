@@ -30,3 +30,7 @@ export class HomePage {
   }
 }
 ```
+
+## Related
+
+* [Rewarded Ad - Cordova](/docs/cordova/ads/rewarded)
