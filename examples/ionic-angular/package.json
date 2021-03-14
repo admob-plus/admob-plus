@@ -22,8 +22,7 @@
     "@angular/router": "~11.2.5",
     "@ionic-native/core": "^5.31.1",
     "@ionic/angular": "^5.6.0",
-    "admob-plus-cordova": "file:../../packages/cordova",
-    "rxjs": "~6.6.6",
+    "cordova-ios": "6.3.0-nightly.2021.2.10.a3a3936a",
     "tslib": "^2.1.0",
     "zone.js": "~0.11.4"
   },
@@ -38,6 +37,7 @@
     "@types/jasmine": "~3.6.6",
     "@types/jasminewd2": "~2.0.8",
     "@types/node": "^14.14.34",
+    "admob-plus-cordova": "file:../../packages/cordova",
     "codelyzer": "^6.0.1",
     "cordova": "^10.0.1-nightly.2021.2.10.189ac49b",
     "cordova-plugin-device": "^2.0.3",
@@ -65,7 +65,8 @@
     "plugins": {
       "admob-plus-cordova": {
         "APP_ID_ANDROID": "ca-app-pub-3940256099942544~3347511713",
-        "APP_ID_IOS": "ca-app-pub-3940256099942544~1458002511"
+        "APP_ID_IOS": "ca-app-pub-3940256099942544~1458002511",
+        "USAGE": "This identifier will be used to deliver personalized ads to you."
       },
       "cordova-plugin-whitelist": {},
       "cordova-plugin-statusbar": {},
@@ -77,5 +78,10 @@
     "platforms": [
       "ios"
     ]
+  },
+  "dependenciesMeta": {
+    "@angular/compiler-cli": {
+      "unplugged": true
+    }
   }
 }

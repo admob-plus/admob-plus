@@ -36,4 +36,12 @@ export class HomePage {
     await rewarded.load();
     await rewarded.show();
   }
+
+  async showRewardedInterstitialAd() {
+    const rewarded = new this.admob.RewardedInterstitialAd({
+      adUnitId: 'ca-app-pub-3940256099942544/6978759866',
+    });
+    await rewarded.load();
+    await rewarded.show();
+  }
 }
