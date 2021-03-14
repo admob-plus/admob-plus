@@ -53,6 +53,7 @@ module.exports = {
             'ionic/ads/interstitial',
             'ionic/ads/rewarded',
           ],
+          API: require('./sidebar/typedoc-ionic.js'),
         },
         {
           type: 'link',

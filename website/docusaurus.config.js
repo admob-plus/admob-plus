@@ -118,6 +118,20 @@ module.exports = {
         },
       },
     ],
+    [
+      'docusaurus-plugin-typedoc',
+      {
+        id: 'typedoc-ionic',
+        entryPoints: ['../packages/ionic/src/index.ts'],
+        tsconfig: '../packages/ionic/tsconfig.json',
+        out: 'ionic/api',
+        readme: 'none',
+        sidebar: {
+          sidebarFile: 'sidebar/typedoc-ionic.js',
+        },
+        excludeExternals:true
+      },
+    ],
   ],
   presets: [
     [
