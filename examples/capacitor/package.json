@@ -8,12 +8,12 @@
   },
   "dependencies": {
     "@admob-plus/capacitor": "file:../../packages/capacitor",
-    "@capacitor/core": "^3.0.0-beta.3",
-    "@capacitor/ios": "^3.0.0-beta.3"
+    "@capacitor/core": "^3.0.0-rc.0",
+    "@capacitor/ios": "^3.0.0-rc.0"
   },
   "devDependencies": {
-    "@capacitor/cli": "^3.0.0-beta.3",
-    "webpack": "^5.24.3",
+    "@capacitor/cli": "^3.0.0-rc.0",
+    "webpack": "^5.25.0",
     "webpack-cli": "^4.5.0"
   }
 }
