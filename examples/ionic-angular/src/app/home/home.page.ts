@@ -1,6 +1,7 @@
 import { AdMob } from '@admob-plus/ionic/ngx';
 import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
+import { Events } from 'admob-plus-cordova';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +11,13 @@ import { Platform } from '@ionic/angular';
 export class HomePage {
   constructor(private platform: Platform, private admob: AdMob) {
     this.platform.ready().then(async () => {
-      await admob.start();
+      await this.admob.start();
+
+      Object.values(Events).forEach(eventName => {
+        this.admob.on(eventName).subscribe((event) => {
+          console.log(eventName, JSON.stringify(event));
+        });
+      })
     });
   }
 
