@@ -6,9 +6,9 @@ sidebar_label: Banner
 ## Usage
 
 ```ts
+import { AdMob } from '@admob-plus/ionic/ngx';
 import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
-import { AdMob } from '@admob-plus/ionic/ngx';
 
 @Component({
   selector: 'app-home',
@@ -18,9 +18,9 @@ import { AdMob } from '@admob-plus/ionic/ngx';
 export class HomePage {
   constructor(private platform: Platform, private admob: AdMob) {
     this.platform.ready().then(async () => {
-      await admob.start();
+      await this.admob.start();
 
-      const banner = new admob.BannerAd({
+      const banner = new this.admob.BannerAd({
         adUnitId: 'ca-app-pub-xxx/yyy',
       });
       await banner.show();
