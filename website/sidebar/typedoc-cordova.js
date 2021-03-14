@@ -8,6 +8,7 @@ module.exports = [
       "cordova/api/enums/childdirectedtreatmenttag",
       "cordova/api/enums/events",
       "cordova/api/enums/maxadcontentrating",
+      "cordova/api/enums/nativeactions",
       "cordova/api/enums/platforms",
       "cordova/api/enums/trackingauthorizationstatus",
       "cordova/api/enums/underageofconsenttag"

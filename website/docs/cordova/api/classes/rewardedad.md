@@ -28,7 +28,7 @@ Name | Type |
 
 **Returns:** [*RewardedAd*](rewardedad.md)
 
-Inherited from: [MobileAd](mobilead.md)
+Overrides: [MobileAd](mobilead.md)
 
 Defined in: rewarded.ts:18
 

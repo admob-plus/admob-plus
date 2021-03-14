@@ -22,6 +22,8 @@ hide_title: true
 
 • **adUnitId**: *string*
 
+Inherited from: void
+
 Defined in: api.ts:4
 
 ___

@@ -17,6 +17,7 @@ hide_title: true
 - [ChildDirectedTreatmentTag](enums/childdirectedtreatmenttag.md)
 - [Events](enums/events.md)
 - [MaxAdContentRating](enums/maxadcontentrating.md)
+- [NativeActions](enums/nativeactions.md)
 - [Platforms](enums/platforms.md)
 - [TrackingAuthorizationStatus](enums/trackingauthorizationstatus.md)
 - [UnderAgeOfConsentTag](enums/underageofconsenttag.md)

@@ -28,7 +28,7 @@ Name | Type |
 
 **Returns:** [*BannerAd*](bannerad.md)
 
-Inherited from: [MobileAd](mobilead.md)
+Overrides: [MobileAd](mobilead.md)
 
 Defined in: banner.ts:17
 

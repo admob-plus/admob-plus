@@ -28,7 +28,7 @@ Name | Type |
 
 **Returns:** [*InterstitialAd*](interstitialad.md)
 
-Inherited from: [MobileAd](mobilead.md)
+Overrides: [MobileAd](mobilead.md)
 
 Defined in: interstitial.ts:3
 

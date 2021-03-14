@@ -28,7 +28,7 @@ Name | Type |
 
 **Returns:** [*RewardedInterstitialAd*](rewardedinterstitialad.md)
 
-Inherited from: [MobileAd](mobilead.md)
+Overrides: [MobileAd](mobilead.md)
 
 Defined in: rewarded-interstitial.ts:7
 
