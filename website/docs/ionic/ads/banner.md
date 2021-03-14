@@ -25,7 +25,9 @@ export class HomePage {
       });
       await banner.show();
 
-      await banner.hide();
+      this.admob.on('admob.banner.impression').subscribe(async () => {
+        await banner.hide();
+      });
     });
   }
 }
