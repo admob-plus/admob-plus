@@ -23,6 +23,19 @@ document.addEventListener('admob.banner.impression', async () => {
 })
 ```
 
+## Display Position
+
+By default, banner ad is displayed at the `bottom` of screen.
+
+It can be changed with `position` option when creating the ad instance,
+
+```js {3}
+new admob.BannerAd({
+  adUnitId: 'ca-app-pub-xxx/yyy',
+  position: 'top',  // display banner at the top of screen
+})
+```
+
 ## Events
 
 ### `admob.banner.load`
