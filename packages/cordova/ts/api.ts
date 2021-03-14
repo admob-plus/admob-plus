@@ -1,4 +1,4 @@
-export { AdSizeType, Events } from './generated'
+export { AdSizeType, Events, NativeActions } from './generated'
 
 /** @internal */
 export type MobileAdOptions = { adUnitId: string }
