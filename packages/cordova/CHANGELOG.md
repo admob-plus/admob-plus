@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.2](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.0.0-beta.1...admob-plus-cordova@1.0.0-beta.2) (2021-03-15)
+
+
+### Bug Fixes
+
+* **cordova/ios:** resolve configRequest() ([a124643](https://github.com/admob-plus/admob-plus/commit/a124643aae7c890fe4559dc355281103763234d3))
+
+
+### Features
+
+* **cordova:** remove ChildDirectedTreatmentTag, UnderAgeOfConsentTag ([27fbf1c](https://github.com/admob-plus/admob-plus/commit/27fbf1cfaa781c43943d2e935d68ddbcc03d83bc))
+* **cordova/ios:** implement configRequest() ([ed4e9de](https://github.com/admob-plus/admob-plus/commit/ed4e9de2dc49f80ac40c1b8769a829899b48dbe8))
+
+
+
+
+
 # [1.0.0-beta.1](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.0.0-beta.0...admob-plus-cordova@1.0.0-beta.1) (2021-03-14)
 
 **Note:** Version bump only for package admob-plus-cordova
