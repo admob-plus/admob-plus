@@ -32,22 +32,10 @@ export enum MaxAdContentRating {
   UNSPECIFIED = '',
 }
 
-export enum ChildDirectedTreatmentTag {
-  FALSE = 0,
-  TRUE = 1,
-  UNSPECIFIED = -1,
-}
-
-export enum UnderAgeOfConsentTag {
-  FALSE = 0,
-  TRUE = 1,
-  UNSPECIFIED = -1,
-}
-
 export type RequestConfig = {
   maxAdContentRating?: MaxAdContentRating
-  tagForChildDirectedTreatment?: ChildDirectedTreatmentTag
-  tagForUnderAgeOfConsent?: UnderAgeOfConsentTag
+  tagForChildDirectedTreatment?: boolean | null
+  tagForUnderAgeOfConsent?: boolean | null
   testDeviceIds?: string[]
 }
 

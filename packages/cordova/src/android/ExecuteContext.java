@@ -71,11 +71,13 @@ public class ExecuteContext {
         if (this.opts.has("maxAdContentRating")) {
             builder.setMaxAdContentRating(this.opts.optString("maxAdContentRating"));
         }
-        if (this.opts.has("tagForChildDirectedTreatment")) {
-            builder.setTagForChildDirectedTreatment(this.opts.optInt("tagForChildDirectedTreatment"));
+        Integer tagForChildDirectedTreatment = optChildDirectedTreatmentTag();
+        if (tagForChildDirectedTreatment != null) {
+            builder.setTagForChildDirectedTreatment(tagForChildDirectedTreatment);
         }
-        if (this.opts.has("tagForUnderAgeOfConsent")) {
-            builder.setTagForUnderAgeOfConsent(this.opts.optInt("tagForUnderAgeOfConsent"));
+        Integer tagForUnderAgeOfConsent = optUnderAgeOfConsentTag();
+        if (tagForUnderAgeOfConsent != null) {
+            builder.setTagForUnderAgeOfConsent(tagForChildDirectedTreatment);
         }
         if (this.opts.has("testDeviceIds")) {
             List<String> testDeviceIds = new ArrayList<String>();
@@ -89,6 +91,42 @@ public class ExecuteContext {
             builder.setTestDeviceIds(testDeviceIds);
         }
         return builder.build();
+    }
+
+    @Nullable
+    private Integer optChildDirectedTreatmentTag() {
+        String name = "tagForChildDirectedTreatment";
+        if (!this.opts.has(name)) {
+            return null;
+        }
+
+        if (this.opts.opt(name) == null) {
+            return RequestConfiguration.TAG_FOR_CHILD_DIRECTED_TREATMENT_UNSPECIFIED;
+        }
+
+        if (this.opts.optBoolean(name)) {
+            return RequestConfiguration.TAG_FOR_CHILD_DIRECTED_TREATMENT_TRUE;
+        }
+
+        return RequestConfiguration.TAG_FOR_CHILD_DIRECTED_TREATMENT_FALSE;
+    }
+
+    @Nullable
+    private Integer optUnderAgeOfConsentTag() {
+        String name = "tagForUnderAgeOfConsent";
+        if (!this.opts.has(name)) {
+            return null;
+        }
+
+        if (this.opts.opt(name) == null) {
+            return RequestConfiguration.TAG_FOR_UNDER_AGE_OF_CONSENT_UNSPECIFIED;
+        }
+
+        if (this.opts.optBoolean(name)) {
+            return RequestConfiguration.TAG_FOR_UNDER_AGE_OF_CONSENT_TRUE;
+        }
+
+        return RequestConfiguration.TAG_FOR_UNDER_AGE_OF_CONSENT_FALSE;
     }
 
     @Nullable

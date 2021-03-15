@@ -6,18 +6,26 @@ import {
   RadioGroup,
   Stack,
 } from '@chakra-ui/react'
-import {
-  ChildDirectedTreatmentTag,
-  MaxAdContentRating,
-  RequestConfig,
-  UnderAgeOfConsentTag,
-} from 'admob-plus-cordova'
+import { MaxAdContentRating, RequestConfig } from 'admob-plus-cordova'
 import React from 'react'
 
 const initialHref = window.location.href
 
 const reload = () => {
   window.location.href = initialHref
+}
+
+const toBool = (s: FormDataEntryValue | null) => {
+  switch (s) {
+    case 'true':
+      return true
+    case 'false':
+      return false
+    case 'null':
+      return null
+    default:
+      return undefined
+  }
 }
 
 const Home: React.FC = () => {
@@ -33,25 +41,17 @@ const Home: React.FC = () => {
 
           let maxAdContentRating = formData.get('maxAdContentRating')
           config.maxAdContentRating =
-            maxAdContentRating === null || maxAdContentRating === '-'
+            maxAdContentRating === null || maxAdContentRating === 'null'
               ? MaxAdContentRating.UNSPECIFIED
               : (maxAdContentRating as MaxAdContentRating)
 
-          let tagForChildDirectedTreatment = formData.get(
-            'tagForChildDirectedTreatment',
+          config.tagForChildDirectedTreatment = toBool(
+            formData.get('tagForChildDirectedTreatment'),
           )
-          config.tagForChildDirectedTreatment =
-            tagForChildDirectedTreatment === null
-              ? ChildDirectedTreatmentTag.UNSPECIFIED
-              : (Number(
-                  tagForChildDirectedTreatment,
-                ) as ChildDirectedTreatmentTag)
 
-          let tagForUnderAgeOfConsent = formData.get('tagForUnderAgeOfConsent')
-          config.tagForUnderAgeOfConsent =
-            tagForUnderAgeOfConsent === null
-              ? UnderAgeOfConsentTag.UNSPECIFIED
-              : (Number(tagForUnderAgeOfConsent) as UnderAgeOfConsentTag)
+          config.tagForUnderAgeOfConsent = toBool(
+            formData.get('tagForUnderAgeOfConsent'),
+          )
 
           await admob.configRequest(config)
         }}
@@ -65,7 +65,7 @@ const Home: React.FC = () => {
                   key={k}
                   value={
                     MaxAdContentRating[k as keyof typeof MaxAdContentRating] ||
-                    '-'
+                    'null'
                   }
                 >
                   {k}
@@ -76,45 +76,25 @@ const Home: React.FC = () => {
         </FormControl>
         <FormControl as="fieldset">
           <FormLabel as="legend">ChildDirectedTreatmentTag</FormLabel>
-          <RadioGroup
-            defaultValue={ChildDirectedTreatmentTag.UNSPECIFIED.toString()}
-            name="tagForChildDirectedTreatment"
-          >
+          <RadioGroup defaultValue="-" name="tagForChildDirectedTreatment">
             <Stack>
-              {Object.keys(ChildDirectedTreatmentTag)
-                .filter((x) => Number.isNaN(+x))
-                .map((k) => (
-                  <Radio
-                    key={k}
-                    value={ChildDirectedTreatmentTag[
-                      k as keyof typeof ChildDirectedTreatmentTag
-                    ].toString()}
-                  >
-                    {k}
-                  </Radio>
-                ))}
+              {['true', 'false', 'null'].map((k) => (
+                <Radio key={k} value={k}>
+                  {k}
+                </Radio>
+              ))}
             </Stack>
           </RadioGroup>
         </FormControl>
         <FormControl as="fieldset">
           <FormLabel as="legend">UnderAgeOfConsentTag</FormLabel>
-          <RadioGroup
-            defaultValue={UnderAgeOfConsentTag.UNSPECIFIED.toString()}
-            name="tagForUnderAgeOfConsent"
-          >
+          <RadioGroup defaultValue="-" name="tagForUnderAgeOfConsent">
             <Stack>
-              {Object.keys(UnderAgeOfConsentTag)
-                .filter((x) => Number.isNaN(+x))
-                .map((k) => (
-                  <Radio
-                    key={k}
-                    value={UnderAgeOfConsentTag[
-                      k as keyof typeof UnderAgeOfConsentTag
-                    ].toString()}
-                  >
-                    {k}
-                  </Radio>
-                ))}
+              {['true', 'false', 'null'].map((k) => (
+                <Radio key={k} value={k}>
+                  {k}
+                </Radio>
+              ))}
             </Stack>
           </RadioGroup>
         </FormControl>

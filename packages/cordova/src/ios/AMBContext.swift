@@ -39,25 +39,11 @@ class AMBContext {
     }
 
     func optChildDirectedTreatmentTag() -> Bool? {
-        switch opts?["tagForChildDirectedTreatment"] as? Int {
-        case 0:
-            return false
-        case 1:
-            return true
-        default:
-            return nil
-        }
+        return opts?["tagForChildDirectedTreatment"] as? Bool
     }
 
     func optUnderAgeOfConsentTag() -> Bool? {
-        switch opts?["tagForUnderAgeOfConsent"] as? Int {
-        case 0:
-            return false
-        case 1:
-            return true
-        default:
-            return nil
-        }
+        return opts?["tagForUnderAgeOfConsent"] as? Bool
     }
 
     func optTestDeviceIds() -> [String]? {
