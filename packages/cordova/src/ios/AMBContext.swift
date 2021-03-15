@@ -1,4 +1,6 @@
 class AMBContext {
+    static weak var plugin: AMBPlugin!
+
     let plugin: AMBPlugin
     let command: CDVInvokedUrlCommand
 

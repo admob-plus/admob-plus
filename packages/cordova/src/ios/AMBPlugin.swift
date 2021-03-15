@@ -10,7 +10,7 @@ class AMBPlugin: CDVPlugin {
     override func pluginInitialize() {
         super.pluginInitialize()
 
-        AMBAdBase.plugin = self
+        AMBContext.plugin = self
     }
 
     deinit {

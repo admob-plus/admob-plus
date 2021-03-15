@@ -1,12 +1,11 @@
 class AMBAdBase: NSObject {
     static var ads = [Int: AMBAdBase]()
-    static weak var plugin: AMBPlugin!
 
     let id: Int
     let adUnitId: String
 
     var plugin: AMBPlugin {
-        return AMBAdBase.plugin
+        return AMBContext.plugin
     }
 
     init(id: Int, adUnitId: String) {
