@@ -26,6 +26,28 @@ class AMBPlugin: CDVPlugin {
         }
     }
 
+    @objc(configRequest:)
+    func configRequest(command: CDVInvokedUrlCommand) {
+        let ctx = AMBContext(plugin: self, command: command)
+        let requestConfiguration = GADMobileAds.sharedInstance().requestConfiguration
+
+        if let maxAdContentRating = ctx.optMaxAdContentRating() {
+            requestConfiguration.maxAdContentRating = maxAdContentRating
+        }
+
+        if let tag = ctx.optChildDirectedTreatmentTag() {
+            requestConfiguration.tag(forChildDirectedTreatment: tag)
+        }
+
+        if let tag = ctx.optUnderAgeOfConsentTag() {
+            requestConfiguration.tagForUnderAge(ofConsent: tag)
+        }
+
+        if let testDevices = ctx.optTestDeviceIds() {
+            requestConfiguration.testDeviceIdentifiers = testDevices
+        }
+    }
+
     @objc(requestTrackingAuthorization:)
     func requestTrackingAuthorization(command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(plugin: self, command: command)
