@@ -1,6 +1,6 @@
 class AMBContext {
-    var plugin: AMBPlugin!
-    var command: CDVInvokedUrlCommand!
+    let plugin: AMBPlugin
+    let command: CDVInvokedUrlCommand
 
     var commandDelegate: CDVCommandDelegate {
         return self.plugin.commandDelegate
@@ -9,11 +9,6 @@ class AMBContext {
     init(plugin: AMBPlugin, command: CDVInvokedUrlCommand) {
         self.plugin = plugin
         self.command = command
-    }
-
-    deinit {
-        plugin = nil
-        command = nil
     }
 
     func sendResult(_ message: CDVPluginResult?) {
