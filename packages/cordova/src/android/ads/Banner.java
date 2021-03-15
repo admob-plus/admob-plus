@@ -31,13 +31,13 @@ public class Banner extends AdBase {
     }
 
     public static Banner getOrCreate(ExecuteContext ctx) {
-        Banner banner = (Banner) ctx.getAd();
+        Banner banner = (Banner) ctx.optAd();
         if (banner != null) {
             return banner;
         }
         return new Banner(
                 ctx.optId(),
-                ctx.getAdUnitID(),
+                ctx.optAdUnitID(),
                 getAdSize(ctx),
                 "top".equals(ctx.optPosition()) ? Gravity.TOP : Gravity.BOTTOM
         );

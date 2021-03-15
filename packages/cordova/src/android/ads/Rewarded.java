@@ -21,9 +21,9 @@ public class Rewarded extends AdBase {
     }
 
     public static Rewarded getOrCreate(ExecuteContext ctx) {
-        Rewarded rewarded = (Rewarded) ctx.getAd();
+        Rewarded rewarded = (Rewarded) ctx.optAd();
         if (rewarded == null) {
-            rewarded = new Rewarded(ctx.optId(), ctx.getAdUnitID());
+            rewarded = new Rewarded(ctx.optId(), ctx.optAdUnitID());
         }
         return rewarded;
     }
@@ -51,7 +51,7 @@ public class Rewarded extends AdBase {
             @Override
             public void onAdLoaded(@NonNull RewardedAd rewardedAd) {
                 mAd = rewardedAd;
-                ServerSideVerificationOptions ssv = ctx.getServerSideVerificationOptions();
+                ServerSideVerificationOptions ssv = ctx.optServerSideVerificationOptions();
                 if (ssv != null) {
                     mAd.setServerSideVerificationOptions(ssv);
                 }

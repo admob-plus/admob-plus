@@ -20,9 +20,9 @@ public class Interstitial extends AdBase {
     }
 
     public static Interstitial getOrCreate(ExecuteContext ctx) {
-        Interstitial interstitial = (Interstitial) ctx.getAd();
+        Interstitial interstitial = (Interstitial) ctx.optAd();
         if (interstitial == null) {
-            interstitial = new Interstitial(ctx.optId(), ctx.getAdUnitID());
+            interstitial = new Interstitial(ctx.optId(), ctx.optAdUnitID());
         }
         return interstitial;
     }
@@ -36,7 +36,7 @@ public class Interstitial extends AdBase {
 
     public void load(ExecuteContext ctx) {
         AdRequest adRequest = ctx.buildAdRequest();
-        String adUnitId = ctx.getAdUnitID();
+        String adUnitId = ctx.optAdUnitID();
 
         clear();
 

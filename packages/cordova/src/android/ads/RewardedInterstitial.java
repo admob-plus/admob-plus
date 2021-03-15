@@ -21,9 +21,9 @@ public class RewardedInterstitial extends AdBase {
     }
 
     public static RewardedInterstitial getOrCreate(ExecuteContext ctx) {
-        RewardedInterstitial rewarded = (RewardedInterstitial) ctx.getAd();
+        RewardedInterstitial rewarded = (RewardedInterstitial) ctx.optAd();
         if (rewarded == null) {
-            rewarded = new RewardedInterstitial(ctx.optId(), ctx.getAdUnitID());
+            rewarded = new RewardedInterstitial(ctx.optId(), ctx.optAdUnitID());
         }
         return rewarded;
     }
@@ -51,7 +51,7 @@ public class RewardedInterstitial extends AdBase {
             @Override
             public void onAdLoaded(@NonNull RewardedInterstitialAd rewardedAd) {
                 mAd = rewardedAd;
-                ServerSideVerificationOptions ssv = ctx.getServerSideVerificationOptions();
+                ServerSideVerificationOptions ssv = ctx.optServerSideVerificationOptions();
                 if (ssv != null) {
                     mAd.setServerSideVerificationOptions(ssv);
                 }

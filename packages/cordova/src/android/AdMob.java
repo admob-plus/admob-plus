@@ -40,7 +40,7 @@ public class AdMob extends CordovaPlugin {
                 }})));
                 break;
             case Actions.CONFIG_REQUEST:
-                MobileAds.setRequestConfiguration(ctx.getRequestConfiguration());
+                MobileAds.setRequestConfiguration(ctx.optRequestConfiguration());
                 callbackContext.success();
                 break;
             case Actions.BANNER_SHOW:
@@ -121,7 +121,7 @@ public class AdMob extends CordovaPlugin {
 
     private boolean executeInterstitialIsLoaded(ExecuteContext ctx) {
         cordova.getActivity().runOnUiThread(() -> {
-            Interstitial interstitial = (Interstitial) ctx.getAd();
+            Interstitial interstitial = (Interstitial) ctx.optAd();
             PluginResult result = new PluginResult(PluginResult.Status.OK, interstitial != null && interstitial.isLoaded());
             ctx.callbackContext.sendPluginResult(result);
         });
@@ -148,7 +148,7 @@ public class AdMob extends CordovaPlugin {
 
     private boolean executeRewardedIsLoaded(ExecuteContext ctx) {
         cordova.getActivity().runOnUiThread(() -> {
-            Rewarded rewarded = ctx.getAd(Rewarded.class);
+            Rewarded rewarded = ctx.optAd(Rewarded.class);
             PluginResult result = new PluginResult(PluginResult.Status.OK, rewarded != null && rewarded.isLoaded());
             ctx.callbackContext.sendPluginResult(result);
         });
@@ -175,7 +175,7 @@ public class AdMob extends CordovaPlugin {
 
     private boolean executeRewardedInterstitialIsLoaded(ExecuteContext ctx) {
         cordova.getActivity().runOnUiThread(() -> {
-            RewardedInterstitial ad = (RewardedInterstitial) ctx.getAd();
+            RewardedInterstitial ad = (RewardedInterstitial) ctx.optAd();
             PluginResult result = new PluginResult(PluginResult.Status.OK, ad != null && ad.isLoaded());
             ctx.callbackContext.sendPluginResult(result);
         });

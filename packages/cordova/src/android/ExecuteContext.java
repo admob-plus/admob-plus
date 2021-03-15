@@ -43,18 +43,18 @@ public class ExecuteContext {
     }
 
     @Nullable
-    public AdBase getAd() {
+    public AdBase optAd() {
         return AdBase.getAd(optId());
     }
 
     @Nullable
-    public <T extends AdBase> T getAd(Class<T> type) {
-        return type.cast(getAd());
+    public <T extends AdBase> T optAd(Class<T> type) {
+        return type.cast(optAd());
     }
 
     @Nullable
     public AdBase getAdOrError() {
-        AdBase ad = getAd();
+        AdBase ad = optAd();
         if (ad == null) {
             callbackContext.error("Ad not found");
         }
@@ -62,11 +62,11 @@ public class ExecuteContext {
     }
 
     @Nullable
-    public String getAdUnitID() {
+    public String optAdUnitID() {
         return this.opts.optString("adUnitId");
     }
 
-    public RequestConfiguration getRequestConfiguration() {
+    public RequestConfiguration optRequestConfiguration() {
         RequestConfiguration.Builder builder = new RequestConfiguration.Builder();
         if (this.opts.has("maxAdContentRating")) {
             builder.setMaxAdContentRating(this.opts.optString("maxAdContentRating"));
@@ -92,7 +92,7 @@ public class ExecuteContext {
     }
 
     @Nullable
-    public ServerSideVerificationOptions getServerSideVerificationOptions() {
+    public ServerSideVerificationOptions optServerSideVerificationOptions() {
         String param = "serverSideVerification";
         if (!this.opts.has(param)) {
             return null;
