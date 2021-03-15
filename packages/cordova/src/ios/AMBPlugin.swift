@@ -46,6 +46,8 @@ class AMBPlugin: CDVPlugin {
         if let testDevices = ctx.optTestDeviceIds() {
             requestConfiguration.testDeviceIdentifiers = testDevices
         }
+
+        ctx.success()
     }
 
     @objc(requestTrackingAuthorization:)
