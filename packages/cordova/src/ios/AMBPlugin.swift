@@ -28,7 +28,7 @@ class AMBPlugin: CDVPlugin {
 
     @objc(configRequest:)
     func configRequest(command: CDVInvokedUrlCommand) {
-        let ctx = AMBContext(plugin: self, command: command)
+        let ctx = AMBContext(command)
         let requestConfiguration = GADMobileAds.sharedInstance().requestConfiguration
 
         if let maxAdContentRating = ctx.optMaxAdContentRating() {
@@ -50,7 +50,7 @@ class AMBPlugin: CDVPlugin {
 
     @objc(requestTrackingAuthorization:)
     func requestTrackingAuthorization(command: CDVInvokedUrlCommand) {
-        let ctx = AMBContext(plugin: self, command: command)
+        let ctx = AMBContext(command)
 
         if #available(iOS 14, *) {
             ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
@@ -63,7 +63,7 @@ class AMBPlugin: CDVPlugin {
 
     @objc(start:)
     func start(command: CDVInvokedUrlCommand) {
-        let ctx = AMBContext(plugin: self, command: command)
+        let ctx = AMBContext(command)
 
         GADMobileAds.sharedInstance().start(completionHandler: { _ in
             ctx.success(["version": GADMobileAds.sharedInstance().sdkVersion])
@@ -72,7 +72,7 @@ class AMBPlugin: CDVPlugin {
 
     @objc(setAppMuted:)
     func setAppMuted(command: CDVInvokedUrlCommand) {
-        let ctx = AMBContext(plugin: self, command: command)
+        let ctx = AMBContext(command)
 
         guard let applicationMuted = command.argument(at: 0) as? Bool
         else {
@@ -86,7 +86,7 @@ class AMBPlugin: CDVPlugin {
 
     @objc(setAppVolume:)
     func setAppVolume(command: CDVInvokedUrlCommand) {
-        let ctx = AMBContext(plugin: self, command: command)
+        let ctx = AMBContext(command)
 
         guard let applicationVolume = command.argument(at: 0) as? Float
         else {
@@ -100,7 +100,7 @@ class AMBPlugin: CDVPlugin {
 
     @objc(bannerShow:)
     func bannerShow(command: CDVInvokedUrlCommand) {
-        let ctx = AMBContext(plugin: self, command: command)
+        let ctx = AMBContext(command)
 
         guard let opts = command.argument(at: 0) as? NSDictionary,
               let id = opts.value(forKey: "id") as? Int,
@@ -122,7 +122,7 @@ class AMBPlugin: CDVPlugin {
 
     @objc(bannerHide:)
     func bannerHide(command: CDVInvokedUrlCommand) {
-        let ctx = AMBContext(plugin: self, command: command)
+        let ctx = AMBContext(command)
 
         guard let opts = command.argument(at: 0) as? NSDictionary,
               let id = opts.value(forKey: "id") as? Int,
@@ -138,7 +138,7 @@ class AMBPlugin: CDVPlugin {
 
     @objc(interstitialIsLoaded:)
     func interstitialIsLoaded(command: CDVInvokedUrlCommand) {
-        let ctx = AMBContext(plugin: self, command: command)
+        let ctx = AMBContext(command)
 
         guard let opts = command.argument(at: 0) as? NSDictionary,
               let id = opts.value(forKey: "id") as? Int,
@@ -152,7 +152,7 @@ class AMBPlugin: CDVPlugin {
 
     @objc(interstitialLoad:)
     func interstitialLoad(command: CDVInvokedUrlCommand) {
-        let ctx = AMBContext(plugin: self, command: command)
+        let ctx = AMBContext(command)
 
         guard let opts = command.argument(at: 0) as? NSDictionary,
               let id = opts.value(forKey: "id") as? Int,
@@ -170,7 +170,7 @@ class AMBPlugin: CDVPlugin {
 
     @objc(interstitialShow:)
     func interstitialShow(command: CDVInvokedUrlCommand) {
-        let ctx = AMBContext(plugin: self, command: command)
+        let ctx = AMBContext(command)
 
         guard let opts = command.argument(at: 0) as? NSDictionary,
               let id = opts.value(forKey: "id") as? Int,
@@ -184,7 +184,7 @@ class AMBPlugin: CDVPlugin {
 
     @objc(rewardedIsLoaded:)
     func rewardedIsLoaded(command: CDVInvokedUrlCommand) {
-        let ctx = AMBContext(plugin: self, command: command)
+        let ctx = AMBContext(command)
 
         guard let opts = command.argument(at: 0) as? NSDictionary,
               let id = opts.value(forKey: "id") as? Int,
@@ -198,7 +198,7 @@ class AMBPlugin: CDVPlugin {
 
     @objc(rewardedLoad:)
     func rewardedLoad(command: CDVInvokedUrlCommand) {
-        let ctx = AMBContext(plugin: self, command: command)
+        let ctx = AMBContext(command)
 
         guard let opts = command.argument(at: 0) as? NSDictionary,
               let id = opts.value(forKey: "id") as? Int,
@@ -216,7 +216,7 @@ class AMBPlugin: CDVPlugin {
 
     @objc(rewardedShow:)
     func rewardedShow(command: CDVInvokedUrlCommand) {
-        let ctx = AMBContext(plugin: self, command: command)
+        let ctx = AMBContext(command)
 
         guard let opts = command.argument(at: 0) as? NSDictionary,
               let id = opts.value(forKey: "id") as? Int,
@@ -230,7 +230,7 @@ class AMBPlugin: CDVPlugin {
 
     @objc(rewardedInterstitialIsLoaded:)
     func rewardedInterstitialIsLoaded(command: CDVInvokedUrlCommand) {
-        let ctx = AMBContext(plugin: self, command: command)
+        let ctx = AMBContext(command)
 
         guard let opts = command.argument(at: 0) as? NSDictionary,
               let id = opts.value(forKey: "id") as? Int,
@@ -244,7 +244,7 @@ class AMBPlugin: CDVPlugin {
 
     @objc(rewardedInterstitialLoad:)
     func rewardedInterstitialLoad(command: CDVInvokedUrlCommand) {
-        let ctx = AMBContext(plugin: self, command: command)
+        let ctx = AMBContext(command)
 
         guard let opts = command.argument(at: 0) as? NSDictionary,
               let id = opts.value(forKey: "id") as? Int,
@@ -262,7 +262,7 @@ class AMBPlugin: CDVPlugin {
 
     @objc(rewardedInterstitialShow:)
     func rewardedInterstitialShow(command: CDVInvokedUrlCommand) {
-        let ctx = AMBContext(plugin: self, command: command)
+        let ctx = AMBContext(command)
 
         guard let opts = command.argument(at: 0) as? NSDictionary,
               let id = opts.value(forKey: "id") as? Int,

@@ -1,12 +1,14 @@
 class AMBContext {
     static weak var plugin: AMBPlugin!
 
-    let plugin: AMBPlugin
     let command: CDVInvokedUrlCommand
 
-    init(plugin: AMBPlugin, command: CDVInvokedUrlCommand) {
-        self.plugin = plugin
+    init(_ command: CDVInvokedUrlCommand) {
         self.command = command
+    }
+
+    var plugin: AMBPlugin {
+        return AMBContext.plugin
     }
 
     var commandDelegate: CDVCommandDelegate {
