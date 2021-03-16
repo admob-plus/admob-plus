@@ -1,5 +1,5 @@
 class AMBAdBase: NSObject {
-    static var ads = [Int: Any]()
+    static var ads = [Int: AMBAdBase]()
 
     var id: Int!
     var adUnitId: String!

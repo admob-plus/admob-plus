@@ -10,7 +10,6 @@ public class AdMobPlusPlugin: CAPPlugin {
 
             call.resolve()
         })
-        
     }
     
     @objc func bannerShow(_ call: CAPPluginCall) {
@@ -22,14 +21,14 @@ public class AdMobPlusPlugin: CAPPlugin {
     }
     
     @objc func bannerHide(_ call: CAPPluginCall) {
-        guard let id = call.getInt("id"),
-              let banner = AMBAdBase.ads[id] as? AMBBanner
-        else {
-            call.reject("Invalid options")
-            return
-        }
-        DispatchQueue.main.async {
-            banner.hide(call)
+        let ctx = AMBContext(plugin: self, call: call)
+
+        if let banner = ctx.getAd() as? AMBBanner {
+            DispatchQueue.main.async {
+                banner.hide(call)
+            }
+        } else {
+            call.reject("Ad not found")
         }
     }
     
