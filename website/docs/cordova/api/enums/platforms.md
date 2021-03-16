@@ -14,7 +14,7 @@ hide_title: true
 
 • **android**: = "android"
 
-Defined in: api.ts:55
+Defined in: api.ts:43
 
 ___
 
@@ -22,4 +22,4 @@ ___
 
 • **ios**: = "ios"
 
-Defined in: api.ts:56
+Defined in: api.ts:44

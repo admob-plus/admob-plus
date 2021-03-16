@@ -29,6 +29,7 @@ module.exports = {
           ],
           'Advanced Topics': [
             'cordova/rewarded-ads-ssv',
+            'cordova/targeting',
             'cordova/volume-control',
           ],
           'User Consent': [

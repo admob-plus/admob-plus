@@ -14,7 +14,7 @@ hide_title: true
 
 • **authorized**: = 3
 
-Defined in: api.ts:63
+Defined in: api.ts:51
 
 ___
 
@@ -22,7 +22,7 @@ ___
 
 • **denied**: = 2
 
-Defined in: api.ts:62
+Defined in: api.ts:50
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 • **notDetermined**: = 0
 
-Defined in: api.ts:60
+Defined in: api.ts:48
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 • **restricted**: = 1
 
-Defined in: api.ts:61
+Defined in: api.ts:49

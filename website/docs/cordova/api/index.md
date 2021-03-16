@@ -14,13 +14,11 @@ hide_title: true
 ### Enumerations
 
 - [AdSizeType](enums/adsizetype.md)
-- [ChildDirectedTreatmentTag](enums/childdirectedtreatmenttag.md)
 - [Events](enums/events.md)
 - [MaxAdContentRating](enums/maxadcontentrating.md)
 - [NativeActions](enums/nativeactions.md)
 - [Platforms](enums/platforms.md)
 - [TrackingAuthorizationStatus](enums/trackingauthorizationstatus.md)
-- [UnderAgeOfConsentTag](enums/underageofconsenttag.md)
 
 ### Classes
 
@@ -71,8 +69,8 @@ ___
 Name | Type |
 :------ | :------ |
 `maxAdContentRating`? | [*MaxAdContentRating*](enums/maxadcontentrating.md) |
-`tagForChildDirectedTreatment`? | [*ChildDirectedTreatmentTag*](enums/childdirectedtreatmenttag.md) |
-`tagForUnderAgeOfConsent`? | [*UnderAgeOfConsentTag*](enums/underageofconsenttag.md) |
+`tagForChildDirectedTreatment`? | *boolean* \| *null* |
+`tagForUnderAgeOfConsent`? | *boolean* \| *null* |
 `testDeviceIds`? | *string*[] |
 
-Defined in: api.ts:47
+Defined in: api.ts:35
