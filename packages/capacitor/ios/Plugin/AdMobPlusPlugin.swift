@@ -14,7 +14,7 @@ public class AdMobPlusPlugin: CAPPlugin {
     }
     
     @objc func bannerShow(_ call: CAPPluginCall) {
-        if let banner = AMSBanner.getOrCreate(call) {
+        if let banner = AMBBanner.getOrCreate(call) {
             DispatchQueue.main.async {
                 banner.show(call, request: self.createGADRequest(call))
             }
@@ -23,7 +23,7 @@ public class AdMobPlusPlugin: CAPPlugin {
     
     @objc func bannerHide(_ call: CAPPluginCall) {
         guard let id = call.getInt("id"),
-              let banner = AMSAdBase.ads[id] as? AMSBanner
+              let banner = AMBAdBase.ads[id] as? AMBBanner
         else {
             call.reject("Invalid options")
             return
@@ -40,16 +40,16 @@ public class AdMobPlusPlugin: CAPPlugin {
             call.reject("Invalid options")
             return
         }
-        var interstitial = AMSAdBase.ads[id] as? AMSInterstitial
+        var interstitial = AMBAdBase.ads[id] as? AMBInterstitial
         if interstitial == nil {
-            interstitial = AMSInterstitial(id: id, adUnitId: adUnitId)
+            interstitial = AMBInterstitial(id: id, adUnitId: adUnitId)
         }
         interstitial!.load(call, request: self.createGADRequest(call))
     }
     
     @objc func interstitialShow(_ call: CAPPluginCall) {
         guard let id = call.getInt("id"),
-              let interstitial = AMSAdBase.ads[id] as? AMSInterstitial
+              let interstitial = AMBAdBase.ads[id] as? AMBInterstitial
         else {
             call.reject("Invalid options")
             return
@@ -64,16 +64,16 @@ public class AdMobPlusPlugin: CAPPlugin {
             call.reject("Invalid options")
             return
         }
-        var rewarded = AMSAdBase.ads[id] as? AMSRewarded
+        var rewarded = AMBAdBase.ads[id] as? AMBRewarded
         if rewarded == nil {
-            rewarded = AMSRewarded(id: id, adUnitId: adUnitId)
+            rewarded = AMBRewarded(id: id, adUnitId: adUnitId)
         }
         rewarded!.load(call, request: self.createGADRequest(call))
     }
     
     @objc func rewardedShow(_ call: CAPPluginCall) {
         guard let id = call.getInt("id"),
-              let rewarded = AMSAdBase.ads[id] as? AMSRewarded
+              let rewarded = AMBAdBase.ads[id] as? AMBRewarded
         else {
             call.reject("Invalid options")
             return

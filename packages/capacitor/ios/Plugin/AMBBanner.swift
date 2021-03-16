@@ -1,7 +1,7 @@
 import Capacitor
 import GoogleMobileAds
 
-class AMSBanner: AMSAdBase, GADAdSizeDelegate, GADBannerViewDelegate {
+class AMBBanner: AMBAdBase, GADAdSizeDelegate, GADBannerViewDelegate {
     var bannerView: GADBannerView!
     var adSize: GADAdSize!
     var position: String!
@@ -29,17 +29,17 @@ class AMSBanner: AMSAdBase, GADAdSizeDelegate, GADBannerViewDelegate {
         removeBannerView()
     }
 
-    static func getOrCreate(_ call: CAPPluginCall) -> AMSBanner? {
+    static func getOrCreate(_ call: CAPPluginCall) -> AMBBanner? {
         guard let id = call.getInt("id"),
               let adUnitId = call.getString("adUnitId")
         else {
             call.reject("Invalid options")
             return nil
         }
-        var banner = AMSAdBase.ads[id] as? AMSBanner
+        var banner = AMBAdBase.ads[id] as? AMBBanner
         if banner == nil {
             let adSize = kGADAdSizeBanner
-            banner = AMSBanner(id: id, adUnitId: adUnitId, adSize: adSize, position: call.getString("position", "bottom"))
+            banner = AMBBanner(id: id, adUnitId: adUnitId, adSize: adSize, position: call.getString("position", "bottom"))
         }
         return banner
     }

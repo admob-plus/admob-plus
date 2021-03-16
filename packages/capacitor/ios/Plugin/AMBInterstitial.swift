@@ -1,7 +1,7 @@
 import Capacitor
 import GoogleMobileAds
 
-class AMSInterstitial: AMSAdBase, GADFullScreenContentDelegate {
+class AMBInterstitial: AMBAdBase, GADFullScreenContentDelegate {
     var interstitial: GADInterstitialAd?
 
     deinit {

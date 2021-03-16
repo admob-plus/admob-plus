@@ -1,7 +1,7 @@
 import Capacitor
 import GoogleMobileAds
 
-class AMSRewarded: AMSAdBase, GADFullScreenContentDelegate {
+class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
     var rewardedAd: GADRewardedAd?
 
     override init(id: Int, adUnitId: String) {
