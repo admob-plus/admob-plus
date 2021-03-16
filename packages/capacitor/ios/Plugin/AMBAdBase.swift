@@ -1,8 +1,8 @@
 class AMBAdBase: NSObject {
     static var ads = [Int: AMBAdBase]()
 
-    var id: Int!
-    var adUnitId: String!
+    let id: Int
+    let adUnitId: String
 
     var window: UIWindow {
         return UIApplication.shared.keyWindow!
@@ -13,19 +13,17 @@ class AMBAdBase: NSObject {
     }
 
     init(id: Int, adUnitId: String) {
-        super.init()
-
         self.id = id
         self.adUnitId = adUnitId
+
+        super.init()
+
         AMBAdBase.ads[id] = self
     }
 
     deinit {
-        if let key = self.id {
-            DispatchQueue.main.async {
-                AMBAdBase.ads.removeValue(forKey: key)
-            }
+        DispatchQueue.main.async {
+            AMBAdBase.ads.removeValue(forKey: self.id)
         }
-        self.adUnitId = nil
     }
 }
