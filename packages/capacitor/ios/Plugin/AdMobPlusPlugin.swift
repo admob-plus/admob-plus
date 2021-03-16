@@ -13,7 +13,9 @@ public class AdMobPlusPlugin: CAPPlugin {
     }
     
     @objc func bannerShow(_ call: CAPPluginCall) {
-        if let banner = AMBBanner.getOrCreate(call) {
+        let ctx = AMBContext(plugin: self, call: call)
+
+        if let banner = AMBBanner.getOrCreate(ctx) {
             DispatchQueue.main.async {
                 banner.show(call, request: self.createGADRequest(call))
             }

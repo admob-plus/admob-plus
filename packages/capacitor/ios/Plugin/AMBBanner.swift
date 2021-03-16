@@ -29,19 +29,20 @@ class AMBBanner: AMBAdBase, GADAdSizeDelegate, GADBannerViewDelegate {
         removeBannerView()
     }
 
-    static func getOrCreate(_ call: CAPPluginCall) -> AMBBanner? {
-        guard let id = call.getInt("id"),
-              let adUnitId = call.getString("adUnitId")
+    static func getOrCreate(_ ctx: AMBContext) -> AMBBanner? {
+        if let banner = ctx.getAd() as? AMBBanner {
+            return banner
+        }
+
+        guard let id = ctx.call.getInt("id"),
+              let adUnitId = ctx.call.getString("adUnitId")
         else {
-            call.reject("Invalid options")
+            ctx.call.reject("Invalid options")
             return nil
         }
-        var banner = AMBAdBase.ads[id] as? AMBBanner
-        if banner == nil {
-            let adSize = kGADAdSizeBanner
-            banner = AMBBanner(id: id, adUnitId: adUnitId, adSize: adSize, position: call.getString("position", "bottom"))
-        }
-        return banner
+
+        let adSize = kGADAdSizeBanner
+        return  AMBBanner(id: id, adUnitId: adUnitId, adSize: adSize, position: ctx.call.getString("position", "bottom"))
     }
 
     func show(_ call: CAPPluginCall, request: GADRequest) {

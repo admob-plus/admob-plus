@@ -22,8 +22,6 @@ class AMBAdBase: NSObject {
     }
 
     deinit {
-        DispatchQueue.main.async {
-            AMBAdBase.ads.removeValue(forKey: self.id)
-        }
+        AMBAdBase.ads.removeValue(forKey: self.id)
     }
 }

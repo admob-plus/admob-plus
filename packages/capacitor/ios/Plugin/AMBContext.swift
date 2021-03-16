@@ -1,4 +1,5 @@
 import Capacitor
+import GoogleMobileAds
 
 class AMBContext {
     let plugin: AdMobPlusPlugin
