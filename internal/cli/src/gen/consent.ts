@@ -79,5 +79,5 @@ export default () => ({
     { path: 'cordova-consent/ts/generated.ts', f: buildTypeScript },
   ],
   pkgDir: pkgsDirJoin('cordova-consent'),
-  tagertDir: 'src/cordova/plugin/consent',
+  targetDir: 'src/cordova/plugin/consent',
 })

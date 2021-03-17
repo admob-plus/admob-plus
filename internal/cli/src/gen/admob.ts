@@ -182,5 +182,5 @@ export default async () => ({
     { path: 'cordova/src/browser/AdMobProxy.js', f: buildProxyJs },
   ],
   pkgDir: pkgsDirJoin('cordova'),
-  tagertDir: 'src/admob/plugin',
+  targetDir: 'src/admob/plugin',
 })

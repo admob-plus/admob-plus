@@ -6,15 +6,16 @@ import path from 'path'
 import { replaceInFile } from 'replace-in-file'
 import { pkgsDirJoin } from '../utils'
 import admob from './admob'
+import capacitor from './capacitor'
 import consent from './consent'
 import { indent4 } from './shared'
 
 async function updateConfigXML({
   pkgDir,
-  tagertDir,
+  targetDir,
 }: {
   pkgDir: string
-  tagertDir: string
+  targetDir: string
 }) {
   const [androidFiles, iosFiles] = await Promise.all([
     glob(['**/*.java'], {
@@ -26,7 +27,7 @@ async function updateConfigXML({
   ])
   const androidContent = androidFiles
     .map((s) => {
-      const d = path.join(tagertDir, path.dirname(s.toString()))
+      const d = path.join(targetDir, path.dirname(s.toString()))
       return `${indent4(
         2,
       )}<source-file src="src/android/${s}" target-dir="${d}" />`
@@ -46,7 +47,7 @@ async function updateConfigXML({
 }
 
 async function main() {
-  const specs = await Promise.all([admob, consent].map((f) => f()))
+  const specs = await Promise.all([admob, capacitor, consent].map((f) => f()))
 
   await Promise.all(
     _.flatMap(specs, ({ files }) => files).map((x) =>
@@ -54,7 +55,7 @@ async function main() {
     ),
   )
 
-  await Promise.all(specs.map(updateConfigXML))
+  await Promise.all(specs.filter((x) => x.targetDir).map(updateConfigXML))
 }
 
 main()
