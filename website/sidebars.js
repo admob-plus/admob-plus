@@ -27,6 +27,9 @@ module.exports = {
             'cordova/ads/rewarded',
             'cordova/ads/rewarded-interstitial',
           ],
+        },
+        'cordova/test-ads',
+        {
           'Advanced Topics': [
             'cordova/rewarded-ads-ssv',
             'cordova/targeting',
