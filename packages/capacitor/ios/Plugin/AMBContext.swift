@@ -2,15 +2,19 @@ import Capacitor
 import GoogleMobileAds
 
 class AMBContext {
-    let plugin: AdMobPlusPlugin
+    static weak var plugin: AdMobPlusPlugin!
+
     let call: CAPPluginCall
 
-    init(plugin: AdMobPlusPlugin, call: CAPPluginCall) {
-        self.plugin = plugin
+    var plugin: AdMobPlusPlugin {
+        return AMBContext.plugin
+    }
+
+    init(_ call: CAPPluginCall) {
         self.call = call
     }
 
-    func getAd() -> AMBAdBase? {
+    func optAd() -> AMBAdBase? {
         guard let id = call.getInt("id"),
               let ad = AMBAdBase.ads[id]
         else {

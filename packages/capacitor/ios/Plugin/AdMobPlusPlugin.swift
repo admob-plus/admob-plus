@@ -4,30 +4,34 @@ import GoogleMobileAds
 
 @objc(AdMobPlusPlugin)
 public class AdMobPlusPlugin: CAPPlugin {
+    @objc override public func load() {
+        AMBContext.plugin = self
+    }
+
     @objc func start(_ call: CAPPluginCall) {
         GADMobileAds.sharedInstance().start(completionHandler: { status in
-            GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = [ kGADSimulatorID ] as? [String]
-
             call.resolve()
         })
     }
-    
-    @objc func bannerShow(_ call: CAPPluginCall) {
-        let ctx = AMBContext(plugin: self, call: call)
 
-        if let banner = AMBBanner.getOrCreate(ctx) {
-            DispatchQueue.main.async {
-                banner.show(call, request: self.createGADRequest(call))
+    @objc func bannerShow(_ call: CAPPluginCall) {
+        let ctx = AMBContext(call)
+
+        DispatchQueue.main.async {
+            if let banner = AMBBanner.getOrCreate(ctx) {
+                banner.show(request: self.createGADRequest(call))
+                call.resolve()
             }
         }
     }
-    
-    @objc func bannerHide(_ call: CAPPluginCall) {
-        let ctx = AMBContext(plugin: self, call: call)
 
-        if let banner = ctx.getAd() as? AMBBanner {
+    @objc func bannerHide(_ call: CAPPluginCall) {
+        let ctx = AMBContext(call)
+
+        if let banner = ctx.optAd() as? AMBBanner {
             DispatchQueue.main.async {
-                banner.hide(call)
+                banner.hide()
+                call.resolve()
             }
         } else {
             call.reject("Ad not found")
