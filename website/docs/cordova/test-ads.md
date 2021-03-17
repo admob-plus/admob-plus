@@ -5,7 +5,30 @@ sidebar_label: Test Ads
 
 It is important to use test ads during development so that you can click on them without charging Google advertisers. If you click on too many ads without being in test mode, you risk your account being flagged for invalid activity.
 
-## Add your test device programmatically
+## Simple solution : use the Google provided sample ad units
+
+The quickest way to enable testing is to use Google-provided test ad units.
+
+These ad units are **not** associated with your AdMob account, so there's no risk of your account generating invalid traffic when using these ad units.
+
+| Format *) | Test ID |
+|---|---|
+| App Open | ca-app-pub-3940256099942544/3419835294 |
+| Banner | ca-app-pub-3940256099942544/6300978111 |
+| Interstitial | ca-app-pub-3940256099942544/1033173712 |
+| Interstitial Video | ca-app-pub-3940256099942544/8691691433 |
+| Rewarded | ca-app-pub-3940256099942544/5224354917 |
+| Rewarded Interstitial | ca-app-pub-3940256099942544/5354046379 |
+| Native Advanced | ca-app-pub-3940256099942544/2247696110 |
+| Native Advanced Video | ca-app-pub-3940256099942544/1044960115 |
+
+_*) Please note that not all formats are (yet) supported by this plug-in and don't forget to use your own ID when in production._
+
+* [Enabling test ads - Mobile Ads SDK (Android)](https://developers.google.com/admob/android/test-ads#sample_ad_units)
+
+---
+
+## Advanced solution : add your test device programmatically
 
 1. Load your ads-integrated app and make an ad request.
 2. Copy your test device ID from console / logcat output to your clipboard.
