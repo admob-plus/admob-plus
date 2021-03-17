@@ -108,6 +108,7 @@ class AMBBanner: AMBAdBase, GADAdSizeDelegate, GADBannerViewDelegate {
     }
 
     func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
+        emit("banner.load")
     }
 
     func bannerView(_ bannerView: GADBannerView,

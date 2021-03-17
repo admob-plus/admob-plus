@@ -8,6 +8,10 @@ import {
 const main = async () => {
   await AdMobPlus.start()
 
+  AdMobPlus.addListener("banner.load", (info) => {
+    console.log("banner.load", info)
+  })
+
   const banner = new BannerAd({
     adUnitId: 'ca-app-pub-3940256099942544/6300978111',
     position: 'bottom',

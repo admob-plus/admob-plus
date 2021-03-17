@@ -84,6 +84,11 @@
       "remark-lint-no-empty-sections"
     ]
   },
+  "dependenciesMeta": {
+    "native-run": {
+      "unplugged": true
+    }
+  },
   "resolutions": {
     "@admob-plus-internal/cli": "workspace:*",
     "@admob-plus-internal/rollup-config": "workspace:*",
