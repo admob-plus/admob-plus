@@ -1,5 +1,6 @@
 import _ from 'lodash'
 import { pkgsDirJoin } from '../utils'
+import { AdEvents } from './capacitor'
 import {
   buildUtils,
   indent4,
@@ -39,33 +40,7 @@ const Actions = _.mapValues(
 const Events = _.mapValues(
   {
     ready: null,
-    // BannerAd
-    bannerLoad: 'banner.load',
-    bannerLoadFail: 'banner.loadFail',
-    bannerOpen: 'banner.open',
-    bannerClose: 'banner.close',
-    bannerImpression: 'banner.impression',
-    bannerClick: 'banner.click',
-    // InterstitialAd
-    interstitialDismiss: 'interstitial.dismiss',
-    interstitialLoad: 'interstitial.load',
-    interstitialLoadFail: 'interstitial.loadFail',
-    interstitialShow: 'interstitial.show',
-    interstitialShowFail: 'interstitial.showFail',
-    // RewardedAd
-    rewardedDismiss: 'rewarded.dismiss',
-    rewardedLoad: 'rewarded.load',
-    rewardedLoadFail: 'rewarded.loadFail',
-    rewardedReward: 'rewarded.reward',
-    rewardedShow: 'rewarded.show',
-    rewardedShowFail: 'rewarded.showFail',
-    // RewardedInterstitialAd
-    rewardedInterstitialDismiss: 'rewardedInterstitial.dismiss',
-    rewardedInterstitialLoad: 'rewardedInterstitial.load',
-    rewardedInterstitialLoadFail: 'rewardedInterstitial.loadFail',
-    rewardedInterstitialReward: 'rewardedInterstitial.reward',
-    rewardedInterstitialShow: 'rewardedInterstitial.show',
-    rewardedInterstitialShowFail: 'rewardedInterstitial.showFail',
+    ...AdEvents,
   },
   (v, k) => `admob.${v === null ? k : v}`,
 )
