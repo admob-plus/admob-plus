@@ -33,7 +33,7 @@ class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
         DispatchQueue.main.async {
             if self.isReady() {
                 self.rewardedAd?.present(fromRootViewController: self.rootViewController, userDidEarnRewardHandler: {
-                    // TODO include self.rewardedAd.adReward
+                    self.emit(AMBEvents.rewardedReward, self.rewardedAd!.adReward)
                 })
             }
 
@@ -42,18 +42,17 @@ class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
     }
 
     func adDidRecordImpression(_ ad: GADFullScreenPresentingAd) {
-        // TODO
     }
 
     func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
-        // TODO
+        self.emit(AMBEvents.rewardedShowFail, error)
     }
 
     func adDidPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        // TODO
+        self.emit(AMBEvents.rewardedShow)
     }
 
     func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        // TODO
+        self.emit(AMBEvents.rewardedDismiss)
     }
 }
