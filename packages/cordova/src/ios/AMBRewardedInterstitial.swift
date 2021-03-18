@@ -2,6 +2,7 @@ class AMBRewardedInterstitial: AMBAdBase, GADFullScreenContentDelegate {
     var rewardedInterstitial: GADRewardedInterstitialAd?
 
     deinit {
+        rewardedInterstitial?.fullScreenContentDelegate = nil
         rewardedInterstitial = nil
     }
     func isReady() -> Bool {

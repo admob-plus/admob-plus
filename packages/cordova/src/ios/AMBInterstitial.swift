@@ -2,6 +2,7 @@ class AMBInterstitial: AMBAdBase, GADFullScreenContentDelegate {
     var interstitial: GADInterstitialAd?
 
     deinit {
+        interstitial?.fullScreenContentDelegate = nil
         interstitial = nil
     }
 

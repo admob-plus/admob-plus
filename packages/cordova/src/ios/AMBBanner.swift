@@ -53,7 +53,12 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
     }
 
     deinit {
-        bannerView = nil
+        if bannerView != nil {
+            bannerView.delegate = nil
+            bannerView.adSizeDelegate = nil
+            bannerView.removeFromSuperview()
+            bannerView = nil
+        }
         adSize = nil
         position = nil
     }

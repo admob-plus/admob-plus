@@ -6,6 +6,7 @@ class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
     }
 
     deinit {
+        rewardedAd?.fullScreenContentDelegate = nil
         rewardedAd = nil
     }
 
