@@ -22,7 +22,7 @@ class AMBPlugin: CDVPlugin {
         readyCallbackId = command.callbackId
 
         DispatchQueue.global(qos: .background).async {
-            self.emit(eventType: AMBEvents.ready, data: ["isRunningInTestLab": false])
+            self.emit(AMBEvents.ready, data: ["isRunningInTestLab": false])
         }
     }
 
@@ -287,8 +287,8 @@ class AMBPlugin: CDVPlugin {
         return request
     }
 
-    func emit(eventType: String, data: Any = NSNull()) {
-        let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: ["type": eventType, "data": data])
+    func emit(_ eventName: String, data: Any = NSNull()) {
+        let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: ["type": eventName, "data": data])
         result?.setKeepCallbackAs(true)
         self.commandDelegate.send(result, callbackId: readyCallbackId)
     }
