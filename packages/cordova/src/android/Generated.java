@@ -32,13 +32,16 @@ public final class Generated {
         public static final String BANNER_LOAD_FAIL = "admob.banner.loadfail";
         public static final String BANNER_OPEN = "admob.banner.open";
         public static final String INTERSTITIAL_DISMISS = "admob.interstitial.dismiss";
+        public static final String INTERSTITIAL_IMPRESSION = "admob.interstitial.impression";
         public static final String INTERSTITIAL_LOAD = "admob.interstitial.load";
         public static final String INTERSTITIAL_LOAD_FAIL = "admob.interstitial.loadfail";
         public static final String INTERSTITIAL_SHOW = "admob.interstitial.show";
         public static final String INTERSTITIAL_SHOW_FAIL = "admob.interstitial.showfail";
         public static final String READY = "admob.ready";
         public static final String REWARDED_DISMISS = "admob.rewarded.dismiss";
+        public static final String REWARDED_IMPRESSION = "admob.rewarded.impression";
         public static final String REWARDED_INTERSTITIAL_DISMISS = "admob.rewardedi.dismiss";
+        public static final String REWARDED_INTERSTITIAL_IMPRESSION = "admob.rewardedi.impression";
         public static final String REWARDED_INTERSTITIAL_LOAD = "admob.rewardedi.load";
         public static final String REWARDED_INTERSTITIAL_LOAD_FAIL = "admob.rewardedi.loadfail";
         public static final String REWARDED_INTERSTITIAL_REWARD = "admob.rewardedi.reward";

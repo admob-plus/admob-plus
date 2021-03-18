@@ -19,12 +19,14 @@ export const AdEvents = {
   bannerClick: 'banner.click',
   // InterstitialAd
   interstitialDismiss: 'interstitial.dismiss',
+  interstitialImpression: 'interstitial.impression',
   interstitialLoad: 'interstitial.load',
   interstitialLoadFail: 'interstitial.loadfail',
   interstitialShow: 'interstitial.show',
   interstitialShowFail: 'interstitial.showfail',
   // RewardedAd
   rewardedDismiss: 'rewarded.dismiss',
+  rewardedImpression: 'rewarded.impression',
   rewardedLoad: 'rewarded.load',
   rewardedLoadFail: 'rewarded.loadfail',
   rewardedReward: 'rewarded.reward',
@@ -32,6 +34,7 @@ export const AdEvents = {
   rewardedShowFail: 'rewarded.showfail',
   // RewardedInterstitialAd
   rewardedInterstitialDismiss: 'rewardedi.dismiss',
+  rewardedInterstitialImpression: 'rewardedi.impression',
   rewardedInterstitialLoad: 'rewardedi.load',
   rewardedInterstitialLoadFail: 'rewardedi.loadfail',
   rewardedInterstitialReward: 'rewardedi.reward',

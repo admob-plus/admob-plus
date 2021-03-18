@@ -10,12 +10,15 @@ public final class Generated {
         public static final String BANNER_LOAD_FAIL = "banner.loadfail";
         public static final String BANNER_OPEN = "banner.open";
         public static final String INTERSTITIAL_DISMISS = "interstitial.dismiss";
+        public static final String INTERSTITIAL_IMPRESSION = "interstitial.impression";
         public static final String INTERSTITIAL_LOAD = "interstitial.load";
         public static final String INTERSTITIAL_LOAD_FAIL = "interstitial.loadfail";
         public static final String INTERSTITIAL_SHOW = "interstitial.show";
         public static final String INTERSTITIAL_SHOW_FAIL = "interstitial.showfail";
         public static final String REWARDED_DISMISS = "rewarded.dismiss";
+        public static final String REWARDED_IMPRESSION = "rewarded.impression";
         public static final String REWARDED_INTERSTITIAL_DISMISS = "rewardedi.dismiss";
+        public static final String REWARDED_INTERSTITIAL_IMPRESSION = "rewardedi.impression";
         public static final String REWARDED_INTERSTITIAL_LOAD = "rewardedi.load";
         public static final String REWARDED_INTERSTITIAL_LOAD_FAIL = "rewardedi.loadfail";
         public static final String REWARDED_INTERSTITIAL_REWARD = "rewardedi.reward";
