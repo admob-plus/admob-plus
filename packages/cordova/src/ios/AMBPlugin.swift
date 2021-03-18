@@ -117,7 +117,7 @@ class AMBPlugin: CDVPlugin {
             let adSize = AMBBanner.getAdSize(opts)
             banner = AMBBanner(id: id, adUnitId: adUnitId, adSize: adSize, position: position)
         }
-        banner!.show(request: createGADRequest(opts))
+        banner!.show(request: ctx.optGADRequest())
 
         ctx.success()
     }
@@ -156,7 +156,7 @@ class AMBPlugin: CDVPlugin {
         if interstitial == nil {
             interstitial = AMBInterstitial(id: id, adUnitId: adUnitId)
         }
-        interstitial!.load(ctx, request: createGADRequest(opts))
+        interstitial!.load(ctx)
     }
 
     @objc(interstitialShow:)
@@ -192,7 +192,7 @@ class AMBPlugin: CDVPlugin {
         if rewarded == nil {
             rewarded = AMBRewarded(id: id, adUnitId: adUnitId)
         }
-        rewarded!.load(ctx, request: createGADRequest(opts))
+        rewarded!.load(ctx)
     }
 
     @objc(rewardedShow:)
@@ -228,7 +228,7 @@ class AMBPlugin: CDVPlugin {
         if rewardedInterstitial == nil {
             rewardedInterstitial = AMBRewardedInterstitial(id: id, adUnitId: adUnitId)
         }
-        rewardedInterstitial!.load(ctx, request: createGADRequest(opts))
+        rewardedInterstitial!.load(ctx)
     }
 
     @objc(rewardedInterstitialShow:)
@@ -238,17 +238,6 @@ class AMBPlugin: CDVPlugin {
         if let rewardedInterstitial = ctx.optAdOrError() as? AMBRewardedInterstitial {
             rewardedInterstitial.show(ctx)
         }
-    }
-
-    func createGADRequest(_ opts: NSDictionary) -> GADRequest {
-        let request = GADRequest()
-        if let testDevices = opts["testDevices"] as? [String] {
-            GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = testDevices
-        }
-        if let childDirected = opts["childDirected"] as? Bool {
-            GADMobileAds.sharedInstance().requestConfiguration.tag(forChildDirectedTreatment: childDirected)
-        }
-        return request
     }
 
     func emit(_ eventName: String, data: Any = NSNull()) {

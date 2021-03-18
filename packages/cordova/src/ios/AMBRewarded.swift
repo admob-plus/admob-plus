@@ -31,8 +31,8 @@ class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
         return self.rewardedAd != nil
     }
 
-    func load(_ ctx: AMBContext, request: GADRequest) {
-        GADRewardedAd.load(withAdUnitID: adUnitId, request: request, completionHandler: { ad, error in
+    func load(_ ctx: AMBContext) {
+        GADRewardedAd.load(withAdUnitID: adUnitId, request: ctx.optGADRequest(), completionHandler: { ad, error in
             if error != nil {
                 self.emit(AMBEvents.rewardedLoadFail)
 

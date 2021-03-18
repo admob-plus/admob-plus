@@ -71,6 +71,19 @@ class AMBContext {
         return nil
     }
 
+    func optGADRequest() -> GADRequest {
+        let request = GADRequest()
+        if let contentURL = opts?["contentURL"] as? String {
+            request.contentURL = contentURL
+        }
+        if let additionalParameters = opts?["additionalParameters"] as? [AnyHashable: Any] {
+            let extras = GADExtras()
+            extras.additionalParameters = additionalParameters
+            request.register(extras)
+        }
+        return request
+    }
+
     func sendResult(_ message: CDVPluginResult?) {
         self.commandDelegate.send(message, callbackId: command.callbackId)
     }

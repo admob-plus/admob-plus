@@ -10,10 +10,10 @@ class AMBInterstitial: AMBAdBase, GADFullScreenContentDelegate {
         return self.interstitial != nil
     }
 
-    func load(_ ctx: AMBContext, request: GADRequest) {
+    func load(_ ctx: AMBContext) {
         GADInterstitialAd.load(
             withAdUnitID: adUnitId,
-            request: request,
+            request: ctx.optGADRequest(),
             completionHandler: { ad, error in
                 if error != nil {
                     self.emit(AMBEvents.interstitialLoadFail, error!)

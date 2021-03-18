@@ -9,8 +9,8 @@ class AMBRewardedInterstitial: AMBAdBase, GADFullScreenContentDelegate {
         return self.rewardedInterstitial != nil
     }
 
-    func load(_ ctx: AMBContext, request: GADRequest) {
-        GADRewardedInterstitialAd.load(withAdUnitID: adUnitId, request: request, completionHandler: { ad, error in
+    func load(_ ctx: AMBContext) {
+        GADRewardedInterstitialAd.load(withAdUnitID: adUnitId, request: ctx.optGADRequest(), completionHandler: { ad, error in
             if error != nil {
                 self.emit(AMBEvents.rewardedInterstitialLoadFail)
 
