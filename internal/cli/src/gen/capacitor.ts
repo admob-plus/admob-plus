@@ -1,16 +1,18 @@
 import { AdMobPlusWeb } from '@admob-plus/capacitor/src/web'
+import assert from 'assert'
+import _ from 'lodash'
 import { pkgsDirJoin } from '../utils'
 import {
   indent4,
-  warnMessage,
   renderJavaContants,
   renderSwiftContants,
+  warnMessage,
 } from './shared'
 
 export const AdEvents = {
   // BannerAd
   bannerLoad: 'banner.load',
-  bannerLoadFail: 'banner.loadFail',
+  bannerLoadFail: 'banner.loadfail',
   bannerOpen: 'banner.open',
   bannerClose: 'banner.close',
   bannerImpression: 'banner.impression',
@@ -18,24 +20,27 @@ export const AdEvents = {
   // InterstitialAd
   interstitialDismiss: 'interstitial.dismiss',
   interstitialLoad: 'interstitial.load',
-  interstitialLoadFail: 'interstitial.loadFail',
+  interstitialLoadFail: 'interstitial.loadfail',
   interstitialShow: 'interstitial.show',
-  interstitialShowFail: 'interstitial.showFail',
+  interstitialShowFail: 'interstitial.showfail',
   // RewardedAd
   rewardedDismiss: 'rewarded.dismiss',
   rewardedLoad: 'rewarded.load',
-  rewardedLoadFail: 'rewarded.loadFail',
+  rewardedLoadFail: 'rewarded.loadfail',
   rewardedReward: 'rewarded.reward',
   rewardedShow: 'rewarded.show',
-  rewardedShowFail: 'rewarded.showFail',
+  rewardedShowFail: 'rewarded.showfail',
   // RewardedInterstitialAd
-  rewardedInterstitialDismiss: 'rewardedInterstitial.dismiss',
-  rewardedInterstitialLoad: 'rewardedInterstitial.load',
-  rewardedInterstitialLoadFail: 'rewardedInterstitial.loadFail',
-  rewardedInterstitialReward: 'rewardedInterstitial.reward',
-  rewardedInterstitialShow: 'rewardedInterstitial.show',
-  rewardedInterstitialShowFail: 'rewardedInterstitial.showFail',
+  rewardedInterstitialDismiss: 'rewardedi.dismiss',
+  rewardedInterstitialLoad: 'rewardedi.load',
+  rewardedInterstitialLoadFail: 'rewardedi.loadfail',
+  rewardedInterstitialReward: 'rewardedi.reward',
+  rewardedInterstitialShow: 'rewardedi.show',
+  rewardedInterstitialShowFail: 'rewardedi.showfail',
 }
+_.forEach(AdEvents, (v, k) => {
+  assert.strictEqual(v, v.toLowerCase())
+})
 
 function buildJava(): string {
   const linesEvents = renderJavaContants(AdEvents)
