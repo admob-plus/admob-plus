@@ -1,4 +1,4 @@
-class AMBBanner: AMBAdBase, GADBannerViewDelegate {
+class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
     static var stackView = UIStackView()
 
     var bannerView: GADBannerView!
@@ -87,6 +87,7 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate {
         if bannerView == nil {
             bannerView = GADBannerView(adSize: self.adSize)
             bannerView.delegate = self
+            bannerView.adSizeDelegate = self
             bannerView.rootViewController = plugin.viewController
         } else {
             bannerView.isHidden = false
@@ -132,5 +133,9 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate {
 
     func bannerViewDidDismissScreen(_ bannerView: GADBannerView) {
         self.emit(AMBEvents.bannerClose)
+    }
+
+    func adView(_ bannerView: GADBannerView, willChangeAdSizeTo size: GADAdSize) {
+        self.emit(AMBEvents.bannerSizeChange, size)
     }
 }

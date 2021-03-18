@@ -38,6 +38,15 @@ class AMBAdBase: NSObject {
         ])
     }
 
+    func emit(_ eventType: String, _ adSize: GADAdSize) {
+        self.emit(eventType, [
+            "size": [
+                "width": adSize.size.width,
+                "height": adSize.size.height
+            ]
+        ])
+    }
+
     func emit(_ eventType: String, _ data: [String: Any]) {
         var d: [String: Any] = ["adId": self.id]
         d.merge(data) { (current, _) in current }

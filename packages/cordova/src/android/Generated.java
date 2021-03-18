@@ -25,12 +25,12 @@ public final class Generated {
     }
 
     public final class Events {
-        public static final String BANNER_CLICK = "admob.banner.click";
         public static final String BANNER_CLOSE = "admob.banner.close";
         public static final String BANNER_IMPRESSION = "admob.banner.impression";
         public static final String BANNER_LOAD = "admob.banner.load";
         public static final String BANNER_LOAD_FAIL = "admob.banner.loadfail";
         public static final String BANNER_OPEN = "admob.banner.open";
+        public static final String BANNER_SIZE_CHANGE = "admob.banner.sizechange";
         public static final String INTERSTITIAL_DISMISS = "admob.interstitial.dismiss";
         public static final String INTERSTITIAL_IMPRESSION = "admob.interstitial.impression";
         public static final String INTERSTITIAL_LOAD = "admob.interstitial.load";

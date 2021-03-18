@@ -16,7 +16,7 @@ export const AdEvents = {
   bannerOpen: 'banner.open',
   bannerClose: 'banner.close',
   bannerImpression: 'banner.impression',
-  bannerClick: 'banner.click',
+  bannerSizeChange: 'banner.sizechange',
   // InterstitialAd
   interstitialDismiss: 'interstitial.dismiss',
   interstitialImpression: 'interstitial.impression',
