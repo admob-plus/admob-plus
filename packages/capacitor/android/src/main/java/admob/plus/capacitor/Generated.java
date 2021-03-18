@@ -3,6 +3,7 @@ package admob.plus.capacitor;
 
 public final class Generated {
     public final class Events {
+        public static final String BANNER_CLICK = "banner.click";
         public static final String BANNER_CLOSE = "banner.close";
         public static final String BANNER_IMPRESSION = "banner.impression";
         public static final String BANNER_LOAD = "banner.load";

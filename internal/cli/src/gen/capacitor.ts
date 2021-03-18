@@ -11,11 +11,12 @@ import {
 
 export const AdEvents = {
   // BannerAd
+  bannerClick: 'banner.click',
+  bannerClose: 'banner.close',
+  bannerImpression: 'banner.impression',
   bannerLoad: 'banner.load',
   bannerLoadFail: 'banner.loadfail',
   bannerOpen: 'banner.open',
-  bannerClose: 'banner.close',
-  bannerImpression: 'banner.impression',
   bannerSizeChange: 'banner.sizechange',
   // InterstitialAd
   interstitialDismiss: 'interstitial.dismiss',
