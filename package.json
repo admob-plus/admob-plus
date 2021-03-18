@@ -23,7 +23,7 @@
     "@commitlint/config-lerna-scopes": "^12.0.1",
     "@commitlint/prompt-cli": "^12.0.1",
     "@types/cordova": "^0.0.34",
-    "@types/jest": "^26.0.20",
+    "@types/jest": "^26.0.21",
     "@types/node": "^14.14.35",
     "@types/xml2js": "^0.4.8",
     "cordova": "10.0.0",
@@ -55,7 +55,7 @@
     "remark-preset-lint-markdown-style-guide": "^4.0.0",
     "remark-preset-lint-recommended": "^5.0.0",
     "swiftlint": "^1.0.1",
-    "ts-jest": "^26.5.3",
+    "ts-jest": "^26.5.4",
     "typescript": "^4.2.3"
   },
   "repository": "admob-plus/admob-plus",
