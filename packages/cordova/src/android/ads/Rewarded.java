@@ -71,6 +71,11 @@ public class Rewarded extends AdBase {
                         mAd = null;
                         emit(ctx, Events.REWARDED_SHOW);
                     }
+
+                    @Override
+                    public void onAdImpression() {
+                        emit(ctx, Events.REWARDED_IMPRESSION);
+                    }
                 });
 
                 emit(ctx, Events.REWARDED_LOAD);

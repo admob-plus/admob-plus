@@ -71,6 +71,11 @@ public class RewardedInterstitial extends AdBase {
                         mAd = null;
                         emit(ctx, Events.REWARDED_INTERSTITIAL_SHOW);
                     }
+
+                    @Override
+                    public void onAdImpression() {
+                        emit(ctx, Events.REWARDED_INTERSTITIAL_IMPRESSION);
+                    }
                 });
 
                 emit(ctx, Events.REWARDED_INTERSTITIAL_LOAD);

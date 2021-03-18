@@ -131,7 +131,7 @@ public class ExecuteContext {
 
     @Nullable
     public ServerSideVerificationOptions optServerSideVerificationOptions() {
-        String param = "serverSideVerification";
+        final String param = "serverSideVerification";
         if (!this.opts.has(param)) {
             return null;
         }

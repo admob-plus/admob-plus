@@ -60,6 +60,11 @@ public class Interstitial extends AdBase {
                         mInterstitialAd = null;
                         emit(ctx, Events.INTERSTITIAL_SHOW);
                     }
+
+                    @Override
+                    public void onAdImpression() {
+                        emit(ctx, Events.INTERSTITIAL_IMPRESSION);
+                    }
                 });
 
                 emit(ctx, Events.INTERSTITIAL_LOAD);
