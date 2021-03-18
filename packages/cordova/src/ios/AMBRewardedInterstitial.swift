@@ -38,6 +38,10 @@ class AMBRewardedInterstitial: AMBAdBase, GADFullScreenContentDelegate {
         ctx.success()
     }
 
+    func adDidRecordImpression(_ ad: GADFullScreenPresentingAd) {
+        self.emit(AMBEvents.rewardedInterstitialImpression)
+    }
+
     func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
         self.emit(AMBEvents.rewardedInterstitialShowFail, error)
     }

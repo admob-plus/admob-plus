@@ -60,6 +60,10 @@ class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
         ctx.success()
     }
 
+    func adDidRecordImpression(_ ad: GADFullScreenPresentingAd) {
+        self.emit(AMBEvents.rewardedImpression)
+    }
+
     func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
         self.emit(AMBEvents.rewardedShowFail, error)
     }
