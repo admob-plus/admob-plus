@@ -6,7 +6,9 @@ export class AdMobPlusWeb extends WebPlugin implements AdMobPlusPlugin {
     console.log('start')
   }
 
-  async bannerShow(opts: { id: number; adUnitId: string }): Promise<void> {
+  async bannerShow(
+    ...opts: Parameters<AdMobPlusPlugin['bannerShow']>
+  ): Promise<void> {
     console.log('bannerShow', opts)
   }
 
@@ -31,5 +33,17 @@ export class AdMobPlusWeb extends WebPlugin implements AdMobPlusPlugin {
 
   async rewardedShow(opts: { id: number }): Promise<void> {
     console.log('rewardedShow', opts)
+  }
+
+  async rewardedInterstitialLoad(
+    ...opts: Parameters<AdMobPlusPlugin['rewardedInterstitialLoad']>
+  ): Promise<void> {
+    console.log('rewardedInterstitialLoad', opts)
+  }
+
+  async rewardedInterstitialShow(
+    ...opts: Parameters<AdMobPlusPlugin['rewardedInterstitialShow']>
+  ): Promise<void> {
+    console.log('rewardedInterstitialShow', opts)
   }
 }

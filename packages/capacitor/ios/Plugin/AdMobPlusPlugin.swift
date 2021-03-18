@@ -86,6 +86,31 @@ public class AdMobPlusPlugin: CAPPlugin {
         }
     }
 
+    @objc func rewardedInterstitialLoad(_ call: CAPPluginCall) {
+        guard let id = call.getInt("id"),
+              let adUnitId = call.getString("adUnitId")
+        else {
+            call.reject("Invalid options")
+            return
+        }
+        var rewarded = AMBAdBase.ads[id] as? AMBRewardedInterstitial
+        if rewarded == nil {
+            rewarded = AMBRewardedInterstitial(id: id, adUnitId: adUnitId)
+        }
+        rewarded!.load(call, request: self.createGADRequest(call))
+    }
+
+    @objc func rewardedInterstitialShow(_ call: CAPPluginCall) {
+        let ctx = AMBContext(call)
+
+        if let rewarded = ctx.optAdOrNotFound() as? AMBRewardedInterstitial {
+            DispatchQueue.main.async {
+                rewarded.show()
+                call.resolve()
+            }
+        }
+    }
+
     func createGADRequest(_ call: CAPPluginCall) -> GADRequest {
         let request = GADRequest()
         if let testDevices = call.getArray("testDevices", String.self) {

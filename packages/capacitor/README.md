@@ -20,6 +20,8 @@ npx cap sync
 * [`interstitialShow(...)`](#interstitialshow)
 * [`rewardedLoad(...)`](#rewardedload)
 * [`rewardedShow(...)`](#rewardedshow)
+* [`rewardedInterstitialLoad(...)`](#rewardedinterstitialload)
+* [`rewardedInterstitialShow(...)`](#rewardedinterstitialshow)
 
 </docgen-index>
 
@@ -116,6 +118,36 @@ rewardedLoad(opts: { id: number; adUnitId: string; }) => any
 
 ```typescript
 rewardedShow(opts: { id: number; }) => any
+```
+
+| Param      | Type                         |
+| ---------- | ---------------------------- |
+| **`opts`** | <code>{ id: number; }</code> |
+
+**Returns:** <code>any</code>
+
+--------------------
+
+
+### rewardedInterstitialLoad(...)
+
+```typescript
+rewardedInterstitialLoad(opts: { id: number; adUnitId: string; }) => any
+```
+
+| Param      | Type                                           |
+| ---------- | ---------------------------------------------- |
+| **`opts`** | <code>{ id: number; adUnitId: string; }</code> |
+
+**Returns:** <code>any</code>
+
+--------------------
+
+
+### rewardedInterstitialShow(...)
+
+```typescript
+rewardedInterstitialShow(opts: { id: number; }) => any
 ```
 
 | Param      | Type                         |

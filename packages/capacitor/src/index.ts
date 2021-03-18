@@ -64,5 +64,28 @@ class RewardedAd extends MobileAd {
   }
 }
 
+class RewardedInterstitialAd extends MobileAd {
+  constructor({ adUnitId }: MobileAdOptions) {
+    super({ adUnitId })
+  }
+
+  public load() {
+    return AdMobPlus.rewardedInterstitialLoad({
+      id: this.id,
+      adUnitId: this.adUnitId,
+    })
+  }
+
+  public show() {
+    return AdMobPlus.rewardedInterstitialShow({ id: this.id })
+  }
+}
+
 export * from './definitions'
-export { AdMobPlus, BannerAd, InterstitialAd, RewardedAd }
+export {
+  AdMobPlus,
+  BannerAd,
+  InterstitialAd,
+  RewardedAd,
+  RewardedInterstitialAd,
+}

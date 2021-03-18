@@ -3,6 +3,7 @@ import {
   BannerAd,
   InterstitialAd,
   RewardedAd,
+  RewardedInterstitialAd,
 } from '@admob-plus/capacitor'
 
 const initBanner = async () => {
@@ -53,10 +54,27 @@ const initRewarded = async () => {
   })
 }
 
+const initRewardedInterstitial = async () => {
+  const rewarded = new RewardedInterstitialAd({
+    adUnitId: 'ca-app-pub-3940256099942544/6978759866',
+  })
+
+  const btn = document.getElementById('show-rewarded-interstitial-btn')
+  btn.addEventListener('click', async () => {
+    await rewarded.load()
+    await rewarded.show()
+  })
+}
+
 const main = async () => {
   await AdMobPlus.start()
 
-  await Promise.all([initBanner(), initInterstitial(), initRewarded()])
+  await Promise.all([
+    initBanner(),
+    initInterstitial(),
+    initRewarded(),
+    initRewardedInterstitial(),
+  ]).catch(console.error)
 }
 
 main().catch(console.error)

@@ -13,4 +13,10 @@ export interface AdMobPlusPlugin {
 
   rewardedLoad(opts: { id: number; adUnitId: string }): Promise<void>
   rewardedShow(opts: { id: number }): Promise<void>
+
+  rewardedInterstitialLoad(opts: {
+    id: number
+    adUnitId: string
+  }): Promise<void>
+  rewardedInterstitialShow(opts: { id: number }): Promise<void>
 }

@@ -5,7 +5,7 @@ class AMBInterstitial: AMBAdBase, GADFullScreenContentDelegate {
     var interstitial: GADInterstitialAd?
 
     deinit {
-        interstitial = nil
+        interstitial?.fullScreenContentDelegate = nil
     }
 
     func isLoaded() -> Bool {
