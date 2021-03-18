@@ -29,15 +29,11 @@ class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
         })
     }
 
-    func show(_ call: CAPPluginCall) {
-        DispatchQueue.main.async {
-            if self.isReady() {
-                self.rewardedAd?.present(fromRootViewController: self.rootViewController, userDidEarnRewardHandler: {
-                    self.emit(AMBEvents.rewardedReward, self.rewardedAd!.adReward)
-                })
-            }
-
-            call.resolve()
+    func show() {
+        if self.isReady() {
+            self.rewardedAd?.present(fromRootViewController: self.rootViewController, userDidEarnRewardHandler: {
+                self.emit(AMBEvents.rewardedReward, self.rewardedAd!.adReward)
+            })
         }
     }
 

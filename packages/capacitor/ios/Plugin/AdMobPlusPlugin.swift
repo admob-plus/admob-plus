@@ -28,16 +28,14 @@ public class AdMobPlusPlugin: CAPPlugin {
     @objc func bannerHide(_ call: CAPPluginCall) {
         let ctx = AMBContext(call)
 
-        if let banner = ctx.optAd() as? AMBBanner {
+        if let banner = ctx.optAdOrNotFound() as? AMBBanner {
             DispatchQueue.main.async {
                 banner.hide()
                 call.resolve()
             }
-        } else {
-            call.reject("Ad not found")
         }
     }
-    
+
     @objc func interstitialLoad(_ call: CAPPluginCall) {
         guard let id = call.getInt("id"),
               let adUnitId = call.getString("adUnitId")
@@ -51,17 +49,18 @@ public class AdMobPlusPlugin: CAPPlugin {
         }
         interstitial!.load(call, request: self.createGADRequest(call))
     }
-    
+
     @objc func interstitialShow(_ call: CAPPluginCall) {
-        guard let id = call.getInt("id"),
-              let interstitial = AMBAdBase.ads[id] as? AMBInterstitial
-        else {
-            call.reject("Invalid options")
-            return
+        let ctx = AMBContext(call)
+
+        if let interstitial = ctx.optAdOrNotFound() as? AMBInterstitial {
+            DispatchQueue.main.async {
+                interstitial.show()
+                call.resolve()
+            }
         }
-        interstitial.show(call)
     }
-    
+
     @objc func rewardedLoad(_ call: CAPPluginCall) {
         guard let id = call.getInt("id"),
               let adUnitId = call.getString("adUnitId")
@@ -75,17 +74,18 @@ public class AdMobPlusPlugin: CAPPlugin {
         }
         rewarded!.load(call, request: self.createGADRequest(call))
     }
-    
+
     @objc func rewardedShow(_ call: CAPPluginCall) {
-        guard let id = call.getInt("id"),
-              let rewarded = AMBAdBase.ads[id] as? AMBRewarded
-        else {
-            call.reject("Invalid options")
-            return
+        let ctx = AMBContext(call)
+
+        if let rewarded = ctx.optAdOrNotFound() as? AMBRewarded {
+            DispatchQueue.main.async {
+                rewarded.show()
+                call.resolve()
+            }
         }
-        rewarded.show(call)
     }
-    
+
     func createGADRequest(_ call: CAPPluginCall) -> GADRequest {
         let request = GADRequest()
         if let testDevices = call.getArray("testDevices", String.self) {

@@ -22,4 +22,13 @@ class AMBContext {
         }
         return ad
     }
+
+    func optAdOrNotFound() -> AMBAdBase? {
+        if let ad = optAd() {
+            return ad
+        } else {
+            call.reject("Ad not found")
+            return nil
+        }
+    }
 }

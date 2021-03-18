@@ -29,13 +29,9 @@ class AMBInterstitial: AMBAdBase, GADFullScreenContentDelegate {
          })
     }
 
-    func show(_ call: CAPPluginCall) {
-        DispatchQueue.main.async {
-            if self.isLoaded() {
-                self.interstitial?.present(fromRootViewController: self.rootViewController)
-            }
-
-            call.resolve()
+    func show() {
+        if self.isLoaded() {
+            self.interstitial?.present(fromRootViewController: self.rootViewController)
         }
     }
 
