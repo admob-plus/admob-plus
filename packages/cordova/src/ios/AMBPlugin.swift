@@ -126,30 +126,19 @@ class AMBPlugin: CDVPlugin {
     func bannerHide(command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(command)
 
-        guard let opts = command.argument(at: 0) as? NSDictionary,
-              let id = opts.value(forKey: "id") as? Int,
-              let banner = AMBAdBase.ads[id] as? AMBBanner
-        else {
-            ctx.error()
-            return
+        if let banner = ctx.optAdOrError() as? AMBBanner {
+            banner.hide()
+            ctx.success()
         }
-        banner.hide()
-
-        ctx.success()
     }
 
     @objc(interstitialIsLoaded:)
     func interstitialIsLoaded(command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(command)
 
-        guard let opts = command.argument(at: 0) as? NSDictionary,
-              let id = opts.value(forKey: "id") as? Int,
-              let interstitial = AMBAdBase.ads[id] as? AMBInterstitial
-        else {
-            ctx.error()
-            return
+        if let interstitial = ctx.optAdOrError() as? AMBInterstitial {
+            ctx.success(interstitial.isLoaded())
         }
-        ctx.success(interstitial.isLoaded())
     }
 
     @objc(interstitialLoad:)
@@ -174,28 +163,18 @@ class AMBPlugin: CDVPlugin {
     func interstitialShow(command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(command)
 
-        guard let opts = command.argument(at: 0) as? NSDictionary,
-              let id = opts.value(forKey: "id") as? Int,
-              let interstitial = AMBAdBase.ads[id] as? AMBInterstitial
-        else {
-            ctx.error()
-            return
+        if let interstitial = ctx.optAdOrError() as? AMBInterstitial {
+            interstitial.show(ctx)
         }
-        interstitial.show(ctx)
     }
 
     @objc(rewardedIsLoaded:)
     func rewardedIsLoaded(command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(command)
 
-        guard let opts = command.argument(at: 0) as? NSDictionary,
-              let id = opts.value(forKey: "id") as? Int,
-              let rewarded = AMBAdBase.ads[id] as? AMBRewarded
-        else {
-            ctx.error()
-            return
+        if let rewarded = ctx.optAdOrError() as? AMBRewarded {
+            ctx.success(rewarded.isReady())
         }
-        ctx.success(rewarded.isReady())
     }
 
     @objc(rewardedLoad:)
@@ -220,28 +199,18 @@ class AMBPlugin: CDVPlugin {
     func rewardedShow(command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(command)
 
-        guard let opts = command.argument(at: 0) as? NSDictionary,
-              let id = opts.value(forKey: "id") as? Int,
-              let rewarded = AMBAdBase.ads[id] as? AMBRewarded
-        else {
-            ctx.error()
-            return
+        if let rewarded = ctx.optAdOrError() as? AMBRewarded {
+            rewarded.show(ctx)
         }
-        rewarded.show(ctx)
     }
 
     @objc(rewardedInterstitialIsLoaded:)
     func rewardedInterstitialIsLoaded(command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(command)
 
-        guard let opts = command.argument(at: 0) as? NSDictionary,
-              let id = opts.value(forKey: "id") as? Int,
-              let rewardedInterstitial = AMBAdBase.ads[id] as? AMBRewardedInterstitial
-        else {
-            ctx.error()
-            return
+        if let rewardedInterstitial = ctx.optAdOrError() as? AMBRewardedInterstitial {
+            ctx.success(rewardedInterstitial.isReady())
         }
-        ctx.success(rewardedInterstitial.isReady())
     }
 
     @objc(rewardedInterstitialLoad:)
@@ -266,14 +235,9 @@ class AMBPlugin: CDVPlugin {
     func rewardedInterstitialShow(command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(command)
 
-        guard let opts = command.argument(at: 0) as? NSDictionary,
-              let id = opts.value(forKey: "id") as? Int,
-              let rewardedInterstitial = AMBAdBase.ads[id] as? AMBRewardedInterstitial
-        else {
-            ctx.error()
-            return
+        if let rewardedInterstitial = ctx.optAdOrError() as? AMBRewardedInterstitial {
+            rewardedInterstitial.show(ctx)
         }
-        rewardedInterstitial.show(ctx)
     }
 
     func createGADRequest(_ opts: NSDictionary) -> GADRequest {

@@ -23,6 +23,24 @@ class AMBContext {
         return opts?.value(forKey: key) as? String
     }
 
+    func optAd() -> AMBAdBase? {
+        guard let id = opts?.value(forKey: "id") as? Int,
+              let ad = AMBAdBase.ads[id]
+        else {
+            return nil
+        }
+        return ad
+    }
+
+    func optAdOrError() -> AMBAdBase? {
+        if let ad = optAd() {
+            return ad
+        } else {
+            error()
+            return nil
+        }
+    }
+
     func optMaxAdContentRating() -> GADMaxAdContentRating? {
         switch optString("maxAdContentRating") {
         case "G":
