@@ -35,7 +35,7 @@ public class Interstitial extends AdBase {
     }
 
     public void load(ExecuteContext ctx) {
-        AdRequest adRequest = ctx.buildAdRequest();
+        AdRequest adRequest = ctx.optAdRequest();
         String adUnitId = ctx.optAdUnitID();
 
         clear();

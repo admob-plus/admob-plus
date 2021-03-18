@@ -36,7 +36,7 @@ public class Rewarded extends AdBase {
     }
 
     public void load(ExecuteContext ctx) {
-        AdRequest adRequest = ctx.buildAdRequest();
+        AdRequest adRequest = ctx.optAdRequest();
 
         clear();
 

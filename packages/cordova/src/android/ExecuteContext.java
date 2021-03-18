@@ -150,7 +150,7 @@ public class ExecuteContext {
         return builder.build();
     }
 
-    public AdRequest buildAdRequest() {
+    public AdRequest optAdRequest() {
         Bundle extras = new Bundle();
         AdRequest.Builder builder = new AdRequest.Builder();
         if (this.opts.has("npa")) {

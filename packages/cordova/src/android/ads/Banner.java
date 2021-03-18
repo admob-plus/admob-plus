@@ -60,7 +60,7 @@ public class Banner extends AdBase {
     }
 
     public void show(ExecuteContext ctx) {
-        AdRequest adRequest = ctx.buildAdRequest();
+        AdRequest adRequest = ctx.optAdRequest();
 
         if (adView == null) {
             adView = new AdView(ctx.getActivity());
