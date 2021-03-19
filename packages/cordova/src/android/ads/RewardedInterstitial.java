@@ -45,7 +45,7 @@ public class RewardedInterstitial extends AdBase implements IAdIsLoaded, IAdLoad
             public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                 mAd = null;
                 emit(Events.REWARDED_INTERSTITIAL_LOAD_FAIL, loadAdError);
-                ctx.callbackContext.error(loadAdError.toString());
+                ctx.error(loadAdError.toString());
             }
 
             @Override
@@ -95,7 +95,7 @@ public class RewardedInterstitial extends AdBase implements IAdIsLoaded, IAdLoad
             });
             ctx.success();
         } else {
-            ctx.callbackContext.error("Ad is not loaded");
+            ctx.error("Ad is not loaded");
         }
     }
 

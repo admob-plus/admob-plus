@@ -45,7 +45,7 @@ public class Rewarded extends AdBase implements IAdIsLoaded, IAdLoad, IAdShow {
             public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                 mAd = null;
                 emit(Events.REWARDED_LOAD_FAIL, loadAdError);
-                ctx.callbackContext.error(loadAdError.toString());
+                ctx.error(loadAdError.toString());
             }
 
             @Override
@@ -95,7 +95,7 @@ public class Rewarded extends AdBase implements IAdIsLoaded, IAdLoad, IAdShow {
             });
             ctx.success();
         } else {
-            ctx.callbackContext.error("Ad is not loaded");
+            ctx.error("Ad is not loaded");
         }
     }
 

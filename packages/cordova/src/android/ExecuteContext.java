@@ -56,7 +56,7 @@ public class ExecuteContext {
     public AdBase optAdOrError() {
         AdBase ad = optAd();
         if (ad == null) {
-            callbackContext.error("Ad not found");
+            this.error("Ad not found");
         }
         return ad;
     }
@@ -174,5 +174,9 @@ public class ExecuteContext {
     public void success(boolean data) {
         PluginResult result = new PluginResult(PluginResult.Status.OK, data);
         sendResult(result);
+    }
+
+    public void error(String message) {
+        callbackContext.error(message);
     }
 }

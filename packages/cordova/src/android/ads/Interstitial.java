@@ -75,7 +75,7 @@ public class Interstitial extends AdBase implements IAdIsLoaded, IAdLoad, IAdSho
             public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                 mAd = null;
                 emit(Events.INTERSTITIAL_LOAD_FAIL, loadAdError);
-                ctx.callbackContext.error(loadAdError.toString());
+                ctx.error(loadAdError.toString());
             }
         });
     }
@@ -89,7 +89,7 @@ public class Interstitial extends AdBase implements IAdIsLoaded, IAdLoad, IAdSho
             mAd.show(ctx.getActivity());
             ctx.success();
         } else {
-            ctx.callbackContext.error("Ad is not loaded");
+            ctx.error("Ad is not loaded");
         }
     }
 
