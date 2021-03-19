@@ -167,6 +167,10 @@ public class ExecuteContext {
         callbackContext.sendPluginResult(result);
     }
 
+    public void success() {
+        callbackContext.success();
+    }
+
     public void success(boolean data) {
         PluginResult result = new PluginResult(PluginResult.Status.OK, data);
         sendResult(result);

@@ -68,7 +68,7 @@ public class Interstitial extends AdBase implements IAdIsLoaded, IAdLoad, IAdSho
                 });
 
                 emit(Events.INTERSTITIAL_LOAD);
-                ctx.callbackContext.success();
+                ctx.success();
             }
 
             @Override
@@ -87,7 +87,7 @@ public class Interstitial extends AdBase implements IAdIsLoaded, IAdLoad, IAdSho
     public void show(ExecuteContext ctx) {
         if (isLoaded()) {
             mAd.show(ctx.getActivity());
-            ctx.callbackContext.success();
+            ctx.success();
         } else {
             ctx.callbackContext.error("Ad is not loaded");
         }

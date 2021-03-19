@@ -79,7 +79,7 @@ public class RewardedInterstitial extends AdBase implements IAdIsLoaded, IAdLoad
                 });
 
                 emit(Events.REWARDED_INTERSTITIAL_LOAD);
-                ctx.callbackContext.success();
+                ctx.success();
             }
         });
     }
@@ -93,7 +93,7 @@ public class RewardedInterstitial extends AdBase implements IAdIsLoaded, IAdLoad
             mAd.show(ctx.getActivity(), rewardItem -> {
                 emit(Events.REWARDED_INTERSTITIAL_REWARD, rewardItem);
             });
-            ctx.callbackContext.success();
+            ctx.success();
         } else {
             ctx.callbackContext.error("Ad is not loaded");
         }

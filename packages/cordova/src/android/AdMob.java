@@ -120,7 +120,7 @@ public class AdMob extends CordovaPlugin {
             Banner banner = (Banner) ctx.optAdOrError();
             if (banner != null) {
                 banner.hide();
-                ctx.callbackContext.success();
+                ctx.success();
             }
         });
         return true;

@@ -117,7 +117,7 @@ public class Banner extends AdBase implements IAdShow {
         }
 
         adView.loadAd(adRequest);
-        ctx.callbackContext.success();
+        ctx.success();
     }
 
     public void hide() {

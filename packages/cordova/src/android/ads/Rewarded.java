@@ -79,7 +79,7 @@ public class Rewarded extends AdBase implements IAdIsLoaded, IAdLoad, IAdShow {
                 });
 
                 emit(Events.REWARDED_LOAD);
-                ctx.callbackContext.success();
+                ctx.success();
             }
         });
     }
@@ -93,7 +93,7 @@ public class Rewarded extends AdBase implements IAdIsLoaded, IAdLoad, IAdShow {
             mAd.show(ctx.getActivity(), rewardItem -> {
                 emit(Events.REWARDED_REWARD, rewardItem);
             });
-            ctx.callbackContext.success();
+            ctx.success();
         } else {
             ctx.callbackContext.error("Ad is not loaded");
         }
