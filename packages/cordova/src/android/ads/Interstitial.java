@@ -12,7 +12,7 @@ import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 import admob.plugin.ExecuteContext;
 import admob.plugin.Generated.Events;
 
-public class Interstitial extends AdBase {
+public class Interstitial extends AdBase implements IAdIsLoaded {
     private InterstitialAd mAd = null;
 
     Interstitial(int id, String adUnitId) {
