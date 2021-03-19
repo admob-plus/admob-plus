@@ -52,7 +52,7 @@ public class ExecuteContext {
     }
 
     @Nullable
-    public AdBase getAdOrError() {
+    public AdBase optAdOrError() {
         AdBase ad = optAd();
         if (ad == null) {
             callbackContext.error("Ad not found");

@@ -119,7 +119,7 @@ public class AdMob extends CordovaPlugin {
 
     private boolean executeBannerHide(ExecuteContext ctx) {
         cordova.getActivity().runOnUiThread(() -> {
-            Banner banner = (Banner) ctx.getAdOrError();
+            Banner banner = (Banner) ctx.optAdOrError();
             if (banner != null) {
                 banner.hide();
                 ctx.callbackContext.success();
@@ -147,7 +147,7 @@ public class AdMob extends CordovaPlugin {
 
     private boolean executeInterstitialShow(ExecuteContext ctx) {
         cordova.getActivity().runOnUiThread(() -> {
-            Interstitial interstitial = (Interstitial) ctx.getAdOrError();
+            Interstitial interstitial = (Interstitial) ctx.optAdOrError();
             if (interstitial != null) {
                 interstitial.show(ctx);
             }
@@ -174,7 +174,7 @@ public class AdMob extends CordovaPlugin {
 
     private boolean executeRewardedShow(ExecuteContext ctx) {
         cordova.getActivity().runOnUiThread(() -> {
-            Rewarded rewarded = (Rewarded) ctx.getAdOrError();
+            Rewarded rewarded = (Rewarded) ctx.optAdOrError();
             if (rewarded != null) {
                 rewarded.show(ctx);
             }
@@ -201,7 +201,7 @@ public class AdMob extends CordovaPlugin {
 
     private boolean executeRewardedInterstitialShow(ExecuteContext ctx) {
         cordova.getActivity().runOnUiThread(() -> {
-            RewardedInterstitial ad = (RewardedInterstitial) ctx.getAdOrError();
+            RewardedInterstitial ad = (RewardedInterstitial) ctx.optAdOrError();
             if (ad != null) {
                 ad.show(ctx);
             }
