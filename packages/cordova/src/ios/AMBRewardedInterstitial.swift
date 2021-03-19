@@ -5,7 +5,7 @@ class AMBRewardedInterstitial: AMBAdBase, GADFullScreenContentDelegate {
         rewardedInterstitial?.fullScreenContentDelegate = nil
         rewardedInterstitial = nil
     }
-    func isReady() -> Bool {
+    func isLoaded() -> Bool {
         return self.rewardedInterstitial != nil
     }
 
@@ -29,14 +29,15 @@ class AMBRewardedInterstitial: AMBAdBase, GADFullScreenContentDelegate {
     }
 
     func show(_ ctx: AMBContext) {
-        if isReady() {
+        if isLoaded() {
             rewardedInterstitial?.present(fromRootViewController: plugin.viewController, userDidEarnRewardHandler: {
                 let reward = self.rewardedInterstitial!.adReward
                 self.emit(AMBEvents.rewardedInterstitialReward, reward)
             })
+            ctx.success()
+        } else {
+            ctx.error("Ad is not loaded")
         }
-
-        ctx.success()
     }
 
     func adDidRecordImpression(_ ad: GADFullScreenPresentingAd) {

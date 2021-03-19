@@ -108,7 +108,11 @@ class AMBContext {
         self.sendResult(CDVPluginResult(status: CDVCommandStatus_ERROR))
     }
 
+    func error(_ message: String?) {
+        self.sendResult(CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: message))
+    }
+
     func error(_ message: Error?) {
-        self.sendResult(CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: message?.localizedDescription))
+        self.error(message?.localizedDescription)
     }
 }

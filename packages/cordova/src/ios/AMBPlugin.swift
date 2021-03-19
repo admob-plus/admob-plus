@@ -173,7 +173,7 @@ class AMBPlugin: CDVPlugin {
         let ctx = AMBContext(command)
 
         if let rewarded = ctx.optAdOrError() as? AMBRewarded {
-            ctx.success(rewarded.isReady())
+            ctx.success(rewarded.isLoaded())
         }
     }
 
@@ -209,7 +209,7 @@ class AMBPlugin: CDVPlugin {
         let ctx = AMBContext(command)
 
         if let rewardedInterstitial = ctx.optAdOrError() as? AMBRewardedInterstitial {
-            ctx.success(rewardedInterstitial.isReady())
+            ctx.success(rewardedInterstitial.isLoaded())
         }
     }
 

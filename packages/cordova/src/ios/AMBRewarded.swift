@@ -27,7 +27,7 @@ class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
         return options
     }
 
-    func isReady() -> Bool {
+    func isLoaded() -> Bool {
         return self.rewardedAd != nil
     }
 
@@ -51,14 +51,15 @@ class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
     }
 
     func show(_ ctx: AMBContext) {
-        if isReady() {
+        if isLoaded() {
             rewardedAd?.present(fromRootViewController: plugin.viewController, userDidEarnRewardHandler: {
                 let reward = self.rewardedAd!.adReward
                 self.emit(AMBEvents.rewardedReward, reward)
             })
+            ctx.success()
+        } else {
+            ctx.error("Ad is not loaded")
         }
-
-        ctx.success()
     }
 
     func adDidRecordImpression(_ ad: GADFullScreenPresentingAd) {

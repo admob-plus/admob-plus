@@ -33,9 +33,10 @@ class AMBInterstitial: AMBAdBase, GADFullScreenContentDelegate {
     func show(_ ctx: AMBContext) {
         if isLoaded() {
             interstitial?.present(fromRootViewController: plugin.viewController)
+            ctx.success()
+        } else {
+            ctx.error("Ad is not loaded")
         }
-
-        ctx.success()
     }
 
     func adDidRecordImpression(_ ad: GADFullScreenPresentingAd) {
