@@ -1,6 +1,6 @@
-import { AdMobPlusWeb } from '@admob-plus/capacitor/src/web'
 import assert from 'assert'
 import _ from 'lodash'
+import ts from 'typescript'
 import { pkgsDirJoin } from '../utils'
 import {
   indent4,
@@ -60,26 +60,32 @@ ${linesEvents}
 `
 }
 
-const buildIosMacro = () => {
-  const methods = Object.getOwnPropertyNames(AdMobPlusWeb.prototype).filter(
-    (x) => x !== 'constructor',
+const pluginMethods = (() => {
+  const definitionsPath = require.resolve(
+    '@admob-plus/capacitor/src/definitions.ts',
   )
+  const program = ts.createProgram([definitionsPath], {})
+  const checker = program.getTypeChecker()
+  const source = program.getSourceFile(definitionsPath)
+  // eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
+  const type = checker.getTypeAtLocation(source?.getChildAt(0)?.getChildAt(0)!)
+  return checker.getPropertiesOfType(type).map((x) => x.getName())
+})()
 
-  return `// ${warnMessage}
+const buildIosMacro = () => `// ${warnMessage}
 #import <Foundation/Foundation.h>
 #import <Capacitor/Capacitor.h>
 
 // Define the plugin using the CAP_PLUGIN Macro, and
 // each method the plugin supports using the CAP_PLUGIN_METHOD macro.
 CAP_PLUGIN(AdMobPlusPlugin, "AdMobPlus",
-${methods
+${pluginMethods
     .map(
       (x) => `${indent4(2)}   CAP_PLUGIN_METHOD(${x}, CAPPluginReturnPromise);`,
     )
     .join('\n')}
 )
 `
-}
 
 function buildSwift(): string {
   const linesEvents = renderSwiftContants(AdEvents)
@@ -90,6 +96,23 @@ ${linesEvents}
 }
 `
 }
+
+const buildWeb = () => `// ${warnMessage}
+import { WebPlugin } from '@capacitor/core'
+import type { AdMobPlusPlugin } from './definitions'
+
+export class AdMobPlusWeb extends WebPlugin implements AdMobPlusPlugin {
+${pluginMethods
+    .map(
+      (x) => `  async ${x}(
+    ...opts: Parameters<AdMobPlusPlugin['${x}']>
+  ): ReturnType<AdMobPlusPlugin['${x}']> {
+    console.log('${x}', opts)
+  }`,
+    )
+    .join('\n\n')}
+}
+`
 
 export default async () => ({
   files: [
@@ -105,6 +128,10 @@ export default async () => ({
     {
       path: 'capacitor/ios/Plugin/AMBGenerated.swift',
       f: buildSwift,
+    },
+    {
+      path: 'capacitor/src/web.ts',
+      f: buildWeb,
     },
   ],
   pkgDir: pkgsDirJoin('capacitor'),
