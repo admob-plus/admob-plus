@@ -11,6 +11,7 @@ import com.google.android.gms.ads.RequestConfiguration;
 import com.google.android.gms.ads.rewarded.ServerSideVerificationOptions;
 
 import org.apache.cordova.CallbackContext;
+import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -160,5 +161,14 @@ public class ExecuteContext {
 
     public Activity getActivity() {
         return plugin.cordova.getActivity();
+    }
+
+    public void sendResult(PluginResult result) {
+        callbackContext.sendPluginResult(result);
+    }
+
+    public void success(boolean data) {
+        PluginResult result = new PluginResult(PluginResult.Status.OK, data);
+        sendResult(result);
     }
 }
