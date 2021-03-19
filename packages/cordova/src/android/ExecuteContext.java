@@ -151,8 +151,11 @@ public class ExecuteContext {
     }
 
     public AdRequest optAdRequest() {
-        Bundle extras = new Bundle();
         AdRequest.Builder builder = new AdRequest.Builder();
+        if (this.opts.has("contentUrl")) {
+            builder.setContentUrl(opts.optString("contentUrl"));
+        }
+        Bundle extras = new Bundle();
         if (this.opts.has("npa")) {
             extras.putString("npa", opts.optString("npa"));
         }

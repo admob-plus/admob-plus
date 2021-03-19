@@ -73,14 +73,14 @@ class AMBContext {
 
     func optGADRequest() -> GADRequest {
         let request = GADRequest()
-        if let contentURL = opts?["contentURL"] as? String {
+        if let contentURL = opts?["contentUrl"] as? String {
             request.contentURL = contentURL
         }
-        if let additionalParameters = opts?["additionalParameters"] as? [AnyHashable: Any] {
-            let extras = GADExtras()
-            extras.additionalParameters = additionalParameters
-            request.register(extras)
+        let extras = GADExtras()
+        if let npa = opts?["npa"] as? String {
+            extras.additionalParameters = ["npa": npa]
         }
+        request.register(extras)
         return request
     }
 
