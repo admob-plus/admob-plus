@@ -21,6 +21,7 @@ import java.util.Map;
 import admob.plugin.Generated.Actions;
 import admob.plugin.ads.Banner;
 import admob.plugin.ads.IAdIsLoaded;
+import admob.plugin.ads.IAdShow;
 import admob.plugin.ads.Interstitial;
 import admob.plugin.ads.Rewarded;
 import admob.plugin.ads.RewardedInterstitial;
@@ -59,16 +60,10 @@ public class AdMob extends CordovaPlugin {
                 return executeBannerHide(ctx);
             case Actions.INTERSTITIAL_LOAD:
                 return executeInterstitialLoad(ctx);
-            case Actions.INTERSTITIAL_SHOW:
-                return executeInterstitialShow(ctx);
             case Actions.REWARDED_LOAD:
                 return executeRewardedLoad(ctx);
-            case Actions.REWARDED_SHOW:
-                return executeRewardedShow(ctx);
             case Actions.REWARDED_INTERSTITIAL_LOAD:
                 return executeRewardedInterstitialLoad(ctx);
-            case Actions.REWARDED_INTERSTITIAL_SHOW:
-                return executeRewardedInterstitialShow(ctx);
             case Actions.SET_APP_MUTED: {
                 boolean value = args.optBoolean(0);
                 MobileAds.setAppMuted(value);
@@ -85,6 +80,10 @@ public class AdMob extends CordovaPlugin {
             case Actions.REWARDED_IS_LOADED:
             case Actions.REWARDED_INTERSTITIAL_IS_LOADED:
                 return executeAdIsLoaded(ctx);
+            case Actions.INTERSTITIAL_SHOW:
+            case Actions.REWARDED_SHOW:
+            case Actions.REWARDED_INTERSTITIAL_SHOW:
+                return executeAdShow(ctx);
             default:
                 return false;
         }
@@ -145,11 +144,11 @@ public class AdMob extends CordovaPlugin {
         return true;
     }
 
-    private boolean executeInterstitialShow(ExecuteContext ctx) {
+    private boolean executeAdShow(ExecuteContext ctx) {
         cordova.getActivity().runOnUiThread(() -> {
-            Interstitial interstitial = (Interstitial) ctx.optAdOrError();
-            if (interstitial != null) {
-                interstitial.show(ctx);
+            IAdShow ad = (IAdShow) ctx.optAdOrError();
+            if (ad != null) {
+                ad.show(ctx);
             }
         });
         return true;
@@ -163,30 +162,10 @@ public class AdMob extends CordovaPlugin {
         return true;
     }
 
-    private boolean executeRewardedShow(ExecuteContext ctx) {
-        cordova.getActivity().runOnUiThread(() -> {
-            Rewarded rewarded = (Rewarded) ctx.optAdOrError();
-            if (rewarded != null) {
-                rewarded.show(ctx);
-            }
-        });
-        return true;
-    }
-
     private boolean executeRewardedInterstitialLoad(ExecuteContext ctx) {
         cordova.getActivity().runOnUiThread(() -> {
             RewardedInterstitial ad = RewardedInterstitial.getOrCreate(ctx);
             ad.load(ctx);
-        });
-        return true;
-    }
-
-    private boolean executeRewardedInterstitialShow(ExecuteContext ctx) {
-        cordova.getActivity().runOnUiThread(() -> {
-            RewardedInterstitial ad = (RewardedInterstitial) ctx.optAdOrError();
-            if (ad != null) {
-                ad.show(ctx);
-            }
         });
         return true;
     }

@@ -18,7 +18,7 @@ import admob.plugin.ExecuteContext;
 import admob.plugin.Generated;
 import admob.plugin.Generated.Events;
 
-public class Banner extends AdBase {
+public class Banner extends AdBase implements IAdShow {
     @SuppressLint("StaticFieldLeak")
     private static ViewGroup parentView;
     private final AdSize adSize;

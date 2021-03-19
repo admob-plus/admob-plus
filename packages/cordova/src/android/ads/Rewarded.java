@@ -13,7 +13,7 @@ import com.google.android.gms.ads.rewarded.ServerSideVerificationOptions;
 import admob.plugin.ExecuteContext;
 import admob.plugin.Generated.Events;
 
-public class Rewarded extends AdBase implements IAdIsLoaded {
+public class Rewarded extends AdBase implements IAdIsLoaded, IAdShow {
     private RewardedAd mAd = null;
 
     Rewarded(int id, String adUnitId) {
