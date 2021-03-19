@@ -44,7 +44,7 @@ public class RewardedInterstitial extends AdBase {
             @Override
             public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                 mAd = null;
-                emit(ctx, Events.REWARDED_INTERSTITIAL_LOAD_FAIL, loadAdError);
+                emit(Events.REWARDED_INTERSTITIAL_LOAD_FAIL, loadAdError);
                 ctx.callbackContext.error(loadAdError.toString());
             }
 
@@ -58,27 +58,27 @@ public class RewardedInterstitial extends AdBase {
                 mAd.setFullScreenContentCallback(new FullScreenContentCallback() {
                     @Override
                     public void onAdDismissedFullScreenContent() {
-                        emit(ctx, Events.REWARDED_INTERSTITIAL_DISMISS);
+                        emit(Events.REWARDED_INTERSTITIAL_DISMISS);
                     }
 
                     @Override
                     public void onAdFailedToShowFullScreenContent(AdError adError) {
-                        emit(ctx, Events.REWARDED_INTERSTITIAL_SHOW_FAIL, adError);
+                        emit(Events.REWARDED_INTERSTITIAL_SHOW_FAIL, adError);
                     }
 
                     @Override
                     public void onAdShowedFullScreenContent() {
                         mAd = null;
-                        emit(ctx, Events.REWARDED_INTERSTITIAL_SHOW);
+                        emit(Events.REWARDED_INTERSTITIAL_SHOW);
                     }
 
                     @Override
                     public void onAdImpression() {
-                        emit(ctx, Events.REWARDED_INTERSTITIAL_IMPRESSION);
+                        emit(Events.REWARDED_INTERSTITIAL_IMPRESSION);
                     }
                 });
 
-                emit(ctx, Events.REWARDED_INTERSTITIAL_LOAD);
+                emit(Events.REWARDED_INTERSTITIAL_LOAD);
                 ctx.callbackContext.success();
             }
         });
@@ -91,7 +91,7 @@ public class RewardedInterstitial extends AdBase {
     public void show(ExecuteContext ctx) {
         if (isLoaded()) {
             mAd.show(ctx.getActivity(), rewardItem -> {
-                emit(ctx, Events.REWARDED_INTERSTITIAL_REWARD, rewardItem);
+                emit(Events.REWARDED_INTERSTITIAL_REWARD, rewardItem);
             });
             ctx.callbackContext.success();
         } else {

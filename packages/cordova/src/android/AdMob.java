@@ -6,7 +6,9 @@ import android.util.Log;
 import com.google.android.gms.ads.MobileAds;
 
 import org.apache.cordova.CallbackContext;
+import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.CordovaWebView;
 import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -28,8 +30,15 @@ public class AdMob extends CordovaPlugin {
     private CallbackContext readyCallbackContext = null;
 
     @Override
+    public void initialize(CordovaInterface cordova, CordovaWebView webView) {
+        super.initialize(cordova, webView);
+
+        ExecuteContext.plugin = this;
+    }
+
+    @Override
     public boolean execute(String actionKey, JSONArray args, CallbackContext callbackContext) {
-        ExecuteContext ctx = new ExecuteContext(this, actionKey, args, callbackContext);
+        ExecuteContext ctx = new ExecuteContext(actionKey, args, callbackContext);
 
         switch (actionKey) {
             case Actions.READY:
@@ -207,13 +216,13 @@ public class AdMob extends CordovaPlugin {
         super.onDestroy();
     }
 
-    public void emit(String eventType) {
-        emit(eventType, null);
+    public void emit(String eventName) {
+        emit(eventName, null);
     }
 
-    public void emit(String eventType, Map<String, Object> data) {
+    public void emit(String eventName, Map<String, Object> data) {
         JSONObject event = new JSONObject(new HashMap<String, Object>() {{
-            put("type", eventType);
+            put("type", eventName);
             put("data", data);
         }});
 

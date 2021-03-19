@@ -1,5 +1,6 @@
 package admob.plugin.ads;
 
+import android.annotation.SuppressLint;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,7 @@ import admob.plugin.Generated;
 import admob.plugin.Generated.Events;
 
 public class Banner extends AdBase {
+    @SuppressLint("StaticFieldLeak")
     private static ViewGroup parentView;
     private final AdSize adSize;
     private final int gravity;
@@ -69,32 +71,32 @@ public class Banner extends AdBase {
             adView.setAdListener(new AdListener() {
                 @Override
                 public void onAdClicked() {
-                    emit(ctx, Events.BANNER_CLICK);
+                    emit(Events.BANNER_CLICK);
                 }
 
                 @Override
                 public void onAdClosed() {
-                    emit(ctx, Events.BANNER_CLOSE);
+                    emit(Events.BANNER_CLOSE);
                 }
 
                 @Override
                 public void onAdFailedToLoad(LoadAdError error) {
-                    emit(ctx, Events.BANNER_LOAD_FAIL, error);
+                    emit(Events.BANNER_LOAD_FAIL, error);
                 }
 
                 @Override
                 public void onAdImpression() {
-                    emit(ctx, Events.BANNER_IMPRESSION);
+                    emit(Events.BANNER_IMPRESSION);
                 }
 
                 @Override
                 public void onAdLoaded() {
-                    emit(ctx, Events.BANNER_LOAD);
+                    emit(Events.BANNER_LOAD);
                 }
 
                 @Override
                 public void onAdOpened() {
-                    emit(ctx, Events.BANNER_OPEN);
+                    emit(Events.BANNER_OPEN);
                 }
             });
 
@@ -103,7 +105,7 @@ public class Banner extends AdBase {
             adView.resume();
             adView.setVisibility(View.VISIBLE);
         } else {
-            View view = ctx.plugin.webView.getView();
+            View view = ExecuteContext.plugin.webView.getView();
             ViewGroup wvParentView = (ViewGroup) view.getParent();
             if (parentView != wvParentView) {
                 parentView.removeAllViews();
@@ -136,10 +138,10 @@ public class Banner extends AdBase {
     }
 
     private void addBannerView(ExecuteContext ctx, AdView adView) {
-        View view = ctx.plugin.webView.getView();
+        View view = ExecuteContext.plugin.webView.getView();
         ViewGroup wvParentView = (ViewGroup) view.getParent();
         if (parentView == null) {
-            parentView = new LinearLayout(ctx.plugin.webView.getContext());
+            parentView = new LinearLayout(ExecuteContext.plugin.webView.getContext());
         }
 
         if (wvParentView != null && wvParentView != parentView) {

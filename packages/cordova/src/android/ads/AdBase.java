@@ -13,7 +13,7 @@ import admob.plugin.ExecuteContext;
 public abstract class AdBase {
     private static final SparseArray<AdBase> ads = new SparseArray<AdBase>();
     final int id;
-    String adUnitId;
+    final String adUnitId;
 
     AdBase(int id, String adUnitId) {
         this.id = id;
@@ -29,20 +29,20 @@ public abstract class AdBase {
         ads.remove(id);
     }
 
-    public void emit(ExecuteContext ctx, String eventType) {
-        this.emit(ctx, eventType, new HashMap<String, Object>());
+    public void emit(String eventName) {
+        this.emit(eventName, new HashMap<String, Object>());
     }
 
-    public void emit(ExecuteContext ctx, String eventType, AdError error) {
-        this.emit(ctx, eventType, new HashMap<String, Object>() {{
+    public void emit(String eventName, AdError error) {
+        this.emit(eventName, new HashMap<String, Object>() {{
             put("code", error.getCode());
             put("message", error.getMessage());
             put("cause", error.getCause());
         }});
     }
 
-    public void emit(ExecuteContext ctx, String eventType, RewardItem rewardItem) {
-        this.emit(ctx, eventType, new HashMap<String, Object>() {{
+    public void emit(String eventName, RewardItem rewardItem) {
+        this.emit(eventName, new HashMap<String, Object>() {{
             put("reward", new HashMap<String, Object>() {{
                 put("amount", rewardItem.getAmount());
                 put("type", rewardItem.getType());
@@ -50,8 +50,8 @@ public abstract class AdBase {
         }});
     }
 
-    public void emit(ExecuteContext ctx, String eventType, Map<String, Object> data) {
-        ctx.plugin.emit(eventType, new HashMap<String, Object>(data) {{
+    public void emit(String eventType, Map<String, Object> data) {
+        ExecuteContext.plugin.emit(eventType, new HashMap<String, Object>(data) {{
             put("adId", id);
         }});
     }

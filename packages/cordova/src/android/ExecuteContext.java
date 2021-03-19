@@ -20,14 +20,13 @@ import java.util.List;
 import admob.plugin.ads.AdBase;
 
 public class ExecuteContext {
-    public final AdMob plugin;
+    public static AdMob plugin;
     public final String actionKey;
     public final JSONArray args;
     public final CallbackContext callbackContext;
     public final JSONObject opts;
 
-    ExecuteContext(AdMob plugin, String actionKey, JSONArray args, CallbackContext callbackContext) {
-        this.plugin = plugin;
+    ExecuteContext(String actionKey, JSONArray args, CallbackContext callbackContext) {
         this.actionKey = actionKey;
         this.args = args;
         this.callbackContext = callbackContext;
