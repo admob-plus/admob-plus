@@ -1,5 +1,22 @@
+export enum MaxAdContentRating {
+  G = 'G',
+  MA = 'MA',
+  PG = 'PG',
+  T = 'T',
+  UNSPECIFIED = '',
+}
+
+export type RequestConfig = {
+  maxAdContentRating?: MaxAdContentRating
+  tagForChildDirectedTreatment?: boolean | null
+  tagForUnderAgeOfConsent?: boolean | null
+  testDeviceIds?: string[]
+}
+
 export interface AdMobPlusPlugin {
   start(): Promise<void>
+
+  configRequest(requestConfig: RequestConfig): Promise<void>
 
   bannerShow(opts: {
     id: number

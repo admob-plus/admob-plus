@@ -40,6 +40,36 @@ class AMBContext {
         }
     }
 
+    func optMaxAdContentRating() -> GADMaxAdContentRating? {
+        switch call.getString("maxAdContentRating") {
+        case "G":
+            return GADMaxAdContentRating.general
+        case "MA":
+            return GADMaxAdContentRating.matureAudience
+        case "PG":
+            return GADMaxAdContentRating.parentalGuidance
+        case "T":
+            return GADMaxAdContentRating.teen
+        default:
+            return nil
+        }
+    }
+
+    func optChildDirectedTreatmentTag() -> Bool? {
+        return call.getBool("tagForChildDirectedTreatment")
+    }
+
+    func optUnderAgeOfConsentTag() -> Bool? {
+        return call.getBool("tagForUnderAgeOfConsent")
+    }
+
+    func optTestDeviceIds() -> [String]? {
+        if let testDeviceIds = call.getArray("testDeviceIds", String.self) {
+            return testDeviceIds
+        }
+        return nil
+    }
+
     func optGADRequest() -> GADRequest {
         let request = GADRequest()
         return request

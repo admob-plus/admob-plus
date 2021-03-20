@@ -69,6 +69,10 @@ const initRewardedInterstitial = async () => {
 const main = async () => {
   await AdMobPlus.start()
 
+  await AdMobPlus.configRequest({
+    tagForChildDirectedTreatment: false,
+  })
+
   await Promise.all([
     initBanner(),
     initInterstitial(),

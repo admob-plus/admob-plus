@@ -14,6 +14,29 @@ public class AdMobPlusPlugin: CAPPlugin {
         })
     }
 
+    @objc func configRequest(_ call: CAPPluginCall) {
+        let ctx = AMBContext(call)
+        let requestConfiguration = GADMobileAds.sharedInstance().requestConfiguration
+
+        if let maxAdContentRating = ctx.optMaxAdContentRating() {
+            requestConfiguration.maxAdContentRating = maxAdContentRating
+        }
+
+        if let tag = ctx.optChildDirectedTreatmentTag() {
+            requestConfiguration.tag(forChildDirectedTreatment: tag)
+        }
+
+        if let tag = ctx.optUnderAgeOfConsentTag() {
+            requestConfiguration.tagForUnderAge(ofConsent: tag)
+        }
+
+        if let testDevices = ctx.optTestDeviceIds() {
+            requestConfiguration.testDeviceIdentifiers = testDevices
+        }
+
+        ctx.success()
+    }
+
     @objc func bannerShow(_ call: CAPPluginCall) {
         let ctx = AMBContext(call)
 
