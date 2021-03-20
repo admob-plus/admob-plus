@@ -6,6 +6,7 @@ module.exports = {
         'capacitor/installation',
         {
           'Ad Formats': [
+            'capacitor/ads/banner',
             'capacitor/ads/interstitial',
             'capacitor/ads/rewarded',
           ],
