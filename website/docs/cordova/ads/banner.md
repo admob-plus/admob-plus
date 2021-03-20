@@ -50,4 +50,4 @@ An ad request has been failed.
 
 ### `admob.banner.impression`
 
-An ad has been disaplayed.
+An ad has been displayed.
