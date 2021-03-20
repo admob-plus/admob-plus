@@ -12,26 +12,29 @@ class AMBInterstitial: AMBAdBase, GADFullScreenContentDelegate {
         return self.interstitial != nil
     }
 
-    func load(_ call: CAPPluginCall, request: GADRequest) {
+    func load(_ ctx: AMBContext) {
         GADInterstitialAd.load(
             withAdUnitID: adUnitId,
-            request: request,
+            request: ctx.optGADRequest(),
             completionHandler: { ad, error in
                 if error != nil {
-                    call.reject(error!.localizedDescription)
+                    ctx.error(error!)
                     return
                 }
 
                 self.interstitial = ad
                 ad?.fullScreenContentDelegate = self
 
-                call.resolve()
+                ctx.success()
          })
     }
 
-    func show() {
+    func show(_ ctx: AMBContext) {
         if self.isLoaded() {
             self.interstitial?.present(fromRootViewController: self.rootViewController)
+            ctx.success()
+        } else {
+            ctx.error("Ad is not loaded")
         }
     }
 

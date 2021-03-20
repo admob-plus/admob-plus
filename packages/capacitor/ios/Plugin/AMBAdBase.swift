@@ -27,6 +27,15 @@ class AMBAdBase: NSObject {
         AMBAdBase.ads[id] = self
     }
 
+    convenience init?(_ ctx: AMBContext) {
+        guard let id = ctx.optId(),
+              let adUnitId = ctx.optAdUnitID()
+        else {
+            return nil
+        }
+        self.init(id: id, adUnitId: adUnitId)
+    }
+
     deinit {
         AMBAdBase.ads.removeValue(forKey: self.id)
     }

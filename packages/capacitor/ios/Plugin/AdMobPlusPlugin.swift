@@ -18,107 +18,69 @@ public class AdMobPlusPlugin: CAPPlugin {
         let ctx = AMBContext(call)
 
         DispatchQueue.main.async {
-            if let banner = AMBBanner.getOrCreate(ctx) {
-                banner.show(request: self.createGADRequest(call))
-                call.resolve()
-            }
+            let banner = ctx.optAd() as? AMBBanner ?? AMBBanner(ctx)
+            banner?.show(ctx) ?? ctx.error()
         }
     }
 
     @objc func bannerHide(_ call: CAPPluginCall) {
         let ctx = AMBContext(call)
 
-        if let banner = ctx.optAdOrNotFound() as? AMBBanner {
-            DispatchQueue.main.async {
-                banner.hide()
-                call.resolve()
+        DispatchQueue.main.async {
+            if let banner = ctx.optAdOrError() as? AMBBanner {
+                banner.hide(ctx)
             }
         }
     }
 
     @objc func interstitialLoad(_ call: CAPPluginCall) {
-        guard let id = call.getInt("id"),
-              let adUnitId = call.getString("adUnitId")
-        else {
-            call.reject("Invalid options")
-            return
-        }
-        var interstitial = AMBAdBase.ads[id] as? AMBInterstitial
-        if interstitial == nil {
-            interstitial = AMBInterstitial(id: id, adUnitId: adUnitId)
-        }
-        interstitial!.load(call, request: self.createGADRequest(call))
+        let ctx = AMBContext(call)
+
+        let ad = ctx.optAd() as? AMBInterstitial ?? AMBInterstitial(ctx)
+        ad?.load(ctx) ?? ctx.error()
     }
 
     @objc func interstitialShow(_ call: CAPPluginCall) {
         let ctx = AMBContext(call)
 
-        if let interstitial = ctx.optAdOrNotFound() as? AMBInterstitial {
+        if let interstitial = ctx.optAdOrError() as? AMBInterstitial {
             DispatchQueue.main.async {
-                interstitial.show()
-                call.resolve()
+                interstitial.show(ctx)
             }
         }
     }
 
     @objc func rewardedLoad(_ call: CAPPluginCall) {
-        guard let id = call.getInt("id"),
-              let adUnitId = call.getString("adUnitId")
-        else {
-            call.reject("Invalid options")
-            return
-        }
-        var rewarded = AMBAdBase.ads[id] as? AMBRewarded
-        if rewarded == nil {
-            rewarded = AMBRewarded(id: id, adUnitId: adUnitId)
-        }
-        rewarded!.load(call, request: self.createGADRequest(call))
+        let ctx = AMBContext(call)
+
+        let ad = ctx.optAd() as? AMBRewarded ?? AMBRewarded(ctx)
+        ad?.load(ctx) ?? ctx.error()
     }
 
     @objc func rewardedShow(_ call: CAPPluginCall) {
         let ctx = AMBContext(call)
 
-        if let rewarded = ctx.optAdOrNotFound() as? AMBRewarded {
-            DispatchQueue.main.async {
-                rewarded.show()
-                call.resolve()
+        DispatchQueue.main.async {
+            if let rewarded = ctx.optAdOrError() as? AMBRewarded {
+                rewarded.show(ctx)
             }
         }
     }
 
     @objc func rewardedInterstitialLoad(_ call: CAPPluginCall) {
-        guard let id = call.getInt("id"),
-              let adUnitId = call.getString("adUnitId")
-        else {
-            call.reject("Invalid options")
-            return
-        }
-        var rewarded = AMBAdBase.ads[id] as? AMBRewardedInterstitial
-        if rewarded == nil {
-            rewarded = AMBRewardedInterstitial(id: id, adUnitId: adUnitId)
-        }
-        rewarded!.load(call, request: self.createGADRequest(call))
+        let ctx = AMBContext(call)
+
+        let ad = ctx.optAd() as? AMBRewardedInterstitial ?? AMBRewardedInterstitial(ctx)
+        ad?.load(ctx) ?? ctx.error()
     }
 
     @objc func rewardedInterstitialShow(_ call: CAPPluginCall) {
         let ctx = AMBContext(call)
 
-        if let rewarded = ctx.optAdOrNotFound() as? AMBRewardedInterstitial {
-            DispatchQueue.main.async {
-                rewarded.show()
-                call.resolve()
+        DispatchQueue.main.async {
+            if let rewarded = ctx.optAdOrError() as? AMBRewardedInterstitial {
+                rewarded.show(ctx)
             }
         }
-    }
-
-    func createGADRequest(_ call: CAPPluginCall) -> GADRequest {
-        let request = GADRequest()
-        if let testDevices = call.getArray("testDevices", String.self) {
-            GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = testDevices
-        }
-        if let childDirected = call.getBool("childDirected") {
-            GADMobileAds.sharedInstance().requestConfiguration.tag(forChildDirectedTreatment: childDirected)
-        }
-        return request
     }
 }

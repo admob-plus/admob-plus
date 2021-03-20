@@ -10,30 +10,35 @@ class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
 
     deinit {
         rewardedAd?.fullScreenContentDelegate = nil
+        rewardedAd = nil
     }
 
-    func isReady() -> Bool {
+    func isLoaded() -> Bool {
         return self.rewardedAd != nil
     }
 
-    func load(_ call: CAPPluginCall, request: GADRequest) {
-        GADRewardedAd.load(withAdUnitID: adUnitId, request: request, completionHandler: { ad, error in
+    func load(_ ctx: AMBContext) {
+        GADRewardedAd.load(withAdUnitID: adUnitId, request: ctx.optGADRequest(), completionHandler: { ad, error in
             if error != nil {
-                call.reject(error!.localizedDescription)
+                ctx.error(error!)
                 return
             }
 
             self.rewardedAd = ad
+            ad?.fullScreenContentDelegate = self
 
-            call.resolve()
+            ctx.success()
         })
     }
 
-    func show() {
-        if self.isReady() {
+    func show(_ ctx: AMBContext) {
+        if self.isLoaded() {
             self.rewardedAd?.present(fromRootViewController: self.rootViewController, userDidEarnRewardHandler: {
                 self.emit(AMBEvents.rewardedReward, self.rewardedAd!.adReward)
             })
+            ctx.success()
+        } else {
+            ctx.error("Ad is not loaded")
         }
     }
 

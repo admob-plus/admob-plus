@@ -4,9 +4,9 @@ import GoogleMobileAds
 class AMBBanner: AMBAdBase, GADAdSizeDelegate, GADBannerViewDelegate {
     static var stackView = UIStackView()
 
+    let adSize: GADAdSize!
+    let position: String!
     var bannerView: GADBannerView!
-    var adSize: GADAdSize!
-    var position: String!
 
     var stackView: UIStackView {
         return AMBBanner.stackView
@@ -21,10 +21,10 @@ class AMBBanner: AMBAdBase, GADAdSizeDelegate, GADBannerViewDelegate {
     }
 
     init(id: Int, adUnitId: String, adSize: GADAdSize, position: String) {
-        super.init(id: id, adUnitId: adUnitId)
-
         self.adSize = adSize
         self.position = position
+
+        super.init(id: id, adUnitId: adUnitId)
 
         if stackView.arrangedSubviews.isEmpty {
             stackView.axis = .vertical
@@ -55,27 +55,21 @@ class AMBBanner: AMBAdBase, GADAdSizeDelegate, GADBannerViewDelegate {
         }
     }
 
-    static func getOrCreate(_ ctx: AMBContext) -> AMBBanner? {
-        if let banner = ctx.optAd() as? AMBBanner {
-            return banner
-        }
-
-        guard let id = ctx.call.getInt("id"),
-              let adUnitId = ctx.call.getString("adUnitId")
+    convenience init?(_ ctx: AMBContext) {
+        guard let id = ctx.optId(),
+              let adUnitId = ctx.optAdUnitID()
         else {
-            ctx.call.reject("Invalid options")
             return nil
         }
 
         let adSize = kGADAdSizeBanner
-        return AMBBanner(
-            id: id,
-            adUnitId: adUnitId,
-            adSize: adSize,
-            position: ctx.call.getString("position", "bottom"))
+        self.init(id: id,
+                  adUnitId: adUnitId,
+                  adSize: adSize,
+                  position: ctx.call.getString("position", "bottom"))
     }
 
-    func show(request: GADRequest) {
+    func show(_ ctx: AMBContext) {
         if bannerView == nil {
             bannerView = GADBannerView(adSize: self.adSize)
             bannerView.adSizeDelegate = self
@@ -93,14 +87,16 @@ class AMBBanner: AMBAdBase, GADAdSizeDelegate, GADBannerViewDelegate {
         }
 
         bannerView.adUnitID = adUnitId
-        bannerView.load(request)
+        bannerView.load(ctx.optGADRequest())
+        ctx.success()
     }
 
-    func hide() {
+    func hide(_ ctx: AMBContext) {
         if bannerView != nil {
             bannerView.isHidden = true
             stackView.removeArrangedSubview(bannerView)
         }
+        ctx.success()
     }
 
     func adView(_ bannerView: GADBannerView, willChangeAdSizeTo adSize: GADAdSize) {
