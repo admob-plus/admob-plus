@@ -114,7 +114,7 @@ Defined in: ionic/src/index.ts:177
 
 ### admob
 
-• get **admob**(): *AdMob*
+• `Private`get **admob**(): *AdMob*
 
 **Returns:** *AdMob*
 
