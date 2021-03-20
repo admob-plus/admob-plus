@@ -7,6 +7,7 @@ import androidx.annotation.Nullable;
 
 import com.google.ads.mediation.admob.AdMobAdapter;
 import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.RequestConfiguration;
 import com.google.android.gms.ads.rewarded.ServerSideVerificationOptions;
 
@@ -39,6 +40,11 @@ public class ExecuteContext {
         return opts.optInt("id");
     }
 
+    @Nullable
+    public String optAdUnitID() {
+        return this.opts.optString("adUnitId");
+    }
+
     public String optPosition() {
         return opts.optString("position");
     }
@@ -69,11 +75,6 @@ public class ExecuteContext {
             this.error("Ad not found");
         }
         return ad;
-    }
-
-    @Nullable
-    public String optAdUnitID() {
-        return this.opts.optString("adUnitId");
     }
 
     public RequestConfiguration optRequestConfiguration() {
@@ -170,6 +171,22 @@ public class ExecuteContext {
             extras.putString("npa", opts.optString("npa"));
         }
         return builder.addNetworkExtrasBundle(AdMobAdapter.class, extras).build();
+    }
+
+    public AdSize optAdSize() {
+        final String name = "size";
+        if (!opts.has(name)) {
+            return AdSize.SMART_BANNER;
+        }
+        AdSize adSize = Generated.AdSizeType.getAdSize(opts.opt(name));
+        if (adSize != null) {
+            return adSize;
+        }
+        JSONObject adSizeObj = opts.optJSONObject(name);
+        if (adSizeObj == null) {
+            return AdSize.SMART_BANNER;
+        }
+        return new AdSize(adSizeObj.optInt("width"), adSizeObj.optInt("height"));
     }
 
     public Activity getActivity() {

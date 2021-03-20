@@ -121,8 +121,7 @@ public class AdMob extends CordovaPlugin {
         cordova.getActivity().runOnUiThread(() -> {
             Banner banner = (Banner) ctx.optAdOrError();
             if (banner != null) {
-                banner.hide();
-                ctx.success();
+                banner.hide(ctx);
             }
         });
         return true;
@@ -183,10 +182,6 @@ public class AdMob extends CordovaPlugin {
         readyCallbackContext = null;
 
         super.onDestroy();
-    }
-
-    public void emit(String eventName) {
-        emit(eventName, null);
     }
 
     public void emit(String eventName, Map<String, Object> data) {

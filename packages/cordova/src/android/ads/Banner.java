@@ -28,24 +28,8 @@ public class Banner extends AdBase implements IAdShow {
     public Banner(ExecuteContext ctx) {
         super(ctx);
 
-        this.adSize = getAdSize(ctx);
+        this.adSize = ctx.optAdSize();
         this.gravity = "top".equals(ctx.optPosition()) ? Gravity.TOP : Gravity.BOTTOM;
-    }
-
-    private static AdSize getAdSize(ExecuteContext ctx) {
-        final String name = "size";
-        if (!ctx.opts.has(name)) {
-            return AdSize.SMART_BANNER;
-        }
-        AdSize adSize = Generated.AdSizeType.getAdSize(ctx.opts.opt(name));
-        if (adSize != null) {
-            return adSize;
-        }
-        JSONObject adSizeObj = ctx.opts.optJSONObject(name);
-        if (adSizeObj == null) {
-            return AdSize.SMART_BANNER;
-        }
-        return new AdSize(adSizeObj.optInt("width"), adSizeObj.optInt("height"));
     }
 
     public void show(ExecuteContext ctx) {
@@ -107,11 +91,12 @@ public class Banner extends AdBase implements IAdShow {
         ctx.success();
     }
 
-    public void hide() {
+    public void hide(ExecuteContext ctx) {
         if (adView != null) {
             adView.pause();
             adView.setVisibility(View.GONE);
         }
+        ctx.success();
     }
 
     @Override
