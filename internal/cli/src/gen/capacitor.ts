@@ -67,12 +67,14 @@ const pluginMethods = (() => {
   const program = ts.createProgram([definitionsPath], {})
   const checker = program.getTypeChecker()
   const source = program.getSourceFile(definitionsPath)
+  /* eslint-disable @typescript-eslint/no-non-null-asserted-optional-chain */
   const type = checker.getTypeAtLocation(
     source
       ?.getChildAt(0)
       ?.getChildren()
-      .find((x) => x.name.escapedText === 'AdMobPlusPlugin'),
+      .find((x) => _.get(x, 'name.escapedText') === 'AdMobPlusPlugin')!,
   )
+  /* eslint-enable @typescript-eslint/no-non-null-asserted-optional-chain */
   return checker.getPropertiesOfType(type).map((x) => x.getName())
 })()
 
