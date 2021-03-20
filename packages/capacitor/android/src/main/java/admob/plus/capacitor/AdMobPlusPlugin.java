@@ -26,6 +26,13 @@ public class AdMobPlusPlugin extends Plugin {
     }
 
     @PluginMethod
+    public void configRequest(PluginCall call) {
+        final ExecuteContext ctx = new ExecuteContext(call);
+        MobileAds.setRequestConfiguration(ctx.optRequestConfiguration());
+        ctx.success();
+    }
+
+    @PluginMethod
     public void bannerShow(PluginCall call) {
         final ExecuteContext ctx = new ExecuteContext(call);
 
