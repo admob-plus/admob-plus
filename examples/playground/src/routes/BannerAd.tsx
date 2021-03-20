@@ -27,6 +27,22 @@ export interface BannerProps {}
 const BannerAd: React.FC<BannerProps> = () => {
   const [banners, setBanners] = useRecoilState(bannersState)
 
+  React.useEffect(() => {
+    setBanners((prevState) =>
+      prevState.length === 0
+        ? [
+            new admob.BannerAd({
+              adUnitId: 'ca-app-pub-3940256099942544/6300978111',
+            }),
+            new admob.BannerAd({
+              adUnitId: 'ca-app-pub-3940256099942544/6300978111',
+              position: 'top',
+            }),
+          ]
+        : prevState,
+    )
+  }, [])
+
   return (
     <div>
       <form
