@@ -44,7 +44,7 @@ new admob.BannerAd({
 
 An ad is received and is ready for display.
 
-### `admob.banner.loadFail`
+### `admob.banner.loadfail`
 
 An ad request has been failed.
 

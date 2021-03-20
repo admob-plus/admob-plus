@@ -32,11 +32,11 @@ document.addEventListener('admob.rewarded.dismiss', async () => {
 
 ### `admob.rewarded.load`
 
-### `admob.rewarded.loadFail`
+### `admob.rewarded.loadfail`
 
 ### `admob.rewarded.show`
 
-### `admob.rewarded.showFail`
+### `admob.rewarded.showfail`
 
 ### `admob.rewarded.reward`
 

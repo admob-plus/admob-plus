@@ -32,10 +32,10 @@ document.addEventListener('admob.interstitial.dismiss', async () => {
 
 ### `admob.interstitial.load`
 
-### `admob.interstitial.loadFail`
+### `admob.interstitial.loadfail`
 
 ### `admob.interstitial.show`
 
-### `admob.interstitial.showFail`
+### `admob.interstitial.showfail`
 
 ### `admob.interstitial.dismiss`

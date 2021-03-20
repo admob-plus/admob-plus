@@ -28,15 +28,15 @@ document.addEventListener('admob.rewardedInterstitial.dismiss', async () => {
 
 ## Events
 
-### `admob.rewardedInterstitial.load`
+### `admob.rewardedi.load`
 
-### `admob.rewardedInterstitial.loadFail`
+### `admob.rewardedi.loadfail`
 
-### `admob.rewardedInterstitial.show`
+### `admob.rewardedi.show`
 
-### `admob.rewardedInterstitial.showFail`
+### `admob.rewardedi.showfail`
 
-### `admob.rewardedInterstitial.reward`
+### `admob.rewardedi.reward`
 
 User has earned reward.
 

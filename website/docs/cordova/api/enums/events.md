@@ -44,7 +44,7 @@ ___
 
 ### bannerLoadFail
 
-• **bannerLoadFail**: = "admob.banner.loadFail"
+• **bannerLoadFail**: = "admob.banner.loadfail"
 
 Defined in: generated.ts:27
 
@@ -58,11 +58,27 @@ Defined in: generated.ts:28
 
 ___
 
+### bannerSizeChange
+
+• **bannerSizeChange**: = "admob.banner.sizechange"
+
+Defined in: generated.ts:29
+
+___
+
 ### interstitialDismiss
 
 • **interstitialDismiss**: = "admob.interstitial.dismiss"
 
-Defined in: generated.ts:29
+Defined in: generated.ts:30
+
+___
+
+### interstitialImpression
+
+• **interstitialImpression**: = "admob.interstitial.impression"
+
+Defined in: generated.ts:31
 
 ___
 
@@ -70,15 +86,15 @@ ___
 
 • **interstitialLoad**: = "admob.interstitial.load"
 
-Defined in: generated.ts:30
+Defined in: generated.ts:32
 
 ___
 
 ### interstitialLoadFail
 
-• **interstitialLoadFail**: = "admob.interstitial.loadFail"
+• **interstitialLoadFail**: = "admob.interstitial.loadfail"
 
-Defined in: generated.ts:31
+Defined in: generated.ts:33
 
 ___
 
@@ -86,15 +102,15 @@ ___
 
 • **interstitialShow**: = "admob.interstitial.show"
 
-Defined in: generated.ts:32
+Defined in: generated.ts:34
 
 ___
 
 ### interstitialShowFail
 
-• **interstitialShowFail**: = "admob.interstitial.showFail"
+• **interstitialShowFail**: = "admob.interstitial.showfail"
 
-Defined in: generated.ts:33
+Defined in: generated.ts:35
 
 ___
 
@@ -102,7 +118,7 @@ ___
 
 • **ready**: = "admob.ready"
 
-Defined in: generated.ts:34
+Defined in: generated.ts:36
 
 ___
 
@@ -110,55 +126,71 @@ ___
 
 • **rewardedDismiss**: = "admob.rewarded.dismiss"
 
-Defined in: generated.ts:35
-
-___
-
-### rewardedInterstitialDismiss
-
-• **rewardedInterstitialDismiss**: = "admob.rewardedInterstitial.dismiss"
-
-Defined in: generated.ts:36
-
-___
-
-### rewardedInterstitialLoad
-
-• **rewardedInterstitialLoad**: = "admob.rewardedInterstitial.load"
-
 Defined in: generated.ts:37
 
 ___
 
-### rewardedInterstitialLoadFail
+### rewardedImpression
 
-• **rewardedInterstitialLoadFail**: = "admob.rewardedInterstitial.loadFail"
+• **rewardedImpression**: = "admob.rewarded.impression"
 
 Defined in: generated.ts:38
 
 ___
 
-### rewardedInterstitialReward
+### rewardedInterstitialDismiss
 
-• **rewardedInterstitialReward**: = "admob.rewardedInterstitial.reward"
+• **rewardedInterstitialDismiss**: = "admob.rewardedi.dismiss"
 
 Defined in: generated.ts:39
 
 ___
 
-### rewardedInterstitialShow
+### rewardedInterstitialImpression
 
-• **rewardedInterstitialShow**: = "admob.rewardedInterstitial.show"
+• **rewardedInterstitialImpression**: = "admob.rewardedi.impression"
 
 Defined in: generated.ts:40
 
 ___
 
-### rewardedInterstitialShowFail
+### rewardedInterstitialLoad
 
-• **rewardedInterstitialShowFail**: = "admob.rewardedInterstitial.showFail"
+• **rewardedInterstitialLoad**: = "admob.rewardedi.load"
 
 Defined in: generated.ts:41
+
+___
+
+### rewardedInterstitialLoadFail
+
+• **rewardedInterstitialLoadFail**: = "admob.rewardedi.loadfail"
+
+Defined in: generated.ts:42
+
+___
+
+### rewardedInterstitialReward
+
+• **rewardedInterstitialReward**: = "admob.rewardedi.reward"
+
+Defined in: generated.ts:43
+
+___
+
+### rewardedInterstitialShow
+
+• **rewardedInterstitialShow**: = "admob.rewardedi.show"
+
+Defined in: generated.ts:44
+
+___
+
+### rewardedInterstitialShowFail
+
+• **rewardedInterstitialShowFail**: = "admob.rewardedi.showfail"
+
+Defined in: generated.ts:45
 
 ___
 
@@ -166,15 +198,15 @@ ___
 
 • **rewardedLoad**: = "admob.rewarded.load"
 
-Defined in: generated.ts:42
+Defined in: generated.ts:46
 
 ___
 
 ### rewardedLoadFail
 
-• **rewardedLoadFail**: = "admob.rewarded.loadFail"
+• **rewardedLoadFail**: = "admob.rewarded.loadfail"
 
-Defined in: generated.ts:43
+Defined in: generated.ts:47
 
 ___
 
@@ -182,7 +214,7 @@ ___
 
 • **rewardedReward**: = "admob.rewarded.reward"
 
-Defined in: generated.ts:44
+Defined in: generated.ts:48
 
 ___
 
@@ -190,12 +222,12 @@ ___
 
 • **rewardedShow**: = "admob.rewarded.show"
 
-Defined in: generated.ts:45
+Defined in: generated.ts:49
 
 ___
 
 ### rewardedShowFail
 
-• **rewardedShowFail**: = "admob.rewarded.showFail"
+• **rewardedShowFail**: = "admob.rewarded.showfail"
 
-Defined in: generated.ts:46
+Defined in: generated.ts:50
