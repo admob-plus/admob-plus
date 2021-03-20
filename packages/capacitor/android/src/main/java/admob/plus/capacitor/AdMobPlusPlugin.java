@@ -9,6 +9,7 @@ import com.google.android.gms.ads.MobileAds;
 import admob.plus.capacitor.ads.Banner;
 import admob.plus.capacitor.ads.Interstitial;
 import admob.plus.capacitor.ads.Rewarded;
+import admob.plus.capacitor.ads.RewardedInterstitial;
 
 @CapacitorPlugin(name = "AdMobPlus")
 public class AdMobPlusPlugin extends Plugin {
@@ -96,6 +97,26 @@ public class AdMobPlusPlugin extends Plugin {
 
         getBridge().executeOnMainThread(() -> {
             Rewarded ad = (Rewarded) ctx.optAd();
+            ad.show(ctx);
+        });
+    }
+
+    @PluginMethod
+    public void rewardedInterstitialLoad(PluginCall call) {
+        final ExecuteContext ctx = new ExecuteContext(call);
+
+        getBridge().executeOnMainThread(() -> {
+            RewardedInterstitial ad = ctx.optAdOrCreate(RewardedInterstitial.class);
+            ad.load(ctx);
+        });
+    }
+
+    @PluginMethod
+    public void rewardedInterstitialShow(PluginCall call) {
+        final ExecuteContext ctx = new ExecuteContext(call);
+
+        getBridge().executeOnMainThread(() -> {
+            RewardedInterstitial ad = (RewardedInterstitial) ctx.optAd();
             ad.show(ctx);
         });
     }

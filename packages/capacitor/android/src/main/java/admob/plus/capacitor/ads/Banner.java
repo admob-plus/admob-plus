@@ -14,6 +14,7 @@ import com.google.android.gms.ads.LoadAdError;
 
 import admob.plus.capacitor.AdMobPlusPlugin;
 import admob.plus.capacitor.ExecuteContext;
+import admob.plus.capacitor.Generated.Events;
 
 import static admob.plus.capacitor.ExecuteContext.plugin;
 
@@ -35,38 +36,38 @@ public class Banner extends AdBase {
         WebView webView = plugin.getBridge().getWebView();
 
         if (adView == null) {
-            adView = new AdView(plugin.getActivity());
+            adView = new AdView(ctx.getActivity());
             adView.setAdUnitId(adUnitId);
             adView.setAdSize(adSize);
             adView.setAdListener(new AdListener() {
                 @Override
                 public void onAdClicked() {
-
+                    emit(Events.BANNER_CLICK);
                 }
 
                 @Override
                 public void onAdClosed() {
-
+                    emit(Events.BANNER_CLOSE);
                 }
 
                 @Override
                 public void onAdFailedToLoad(LoadAdError error) {
-
+                    emit(Events.BANNER_LOAD_FAIL, error);
                 }
 
                 @Override
                 public void onAdImpression() {
-
+                    emit(Events.BANNER_IMPRESSION);
                 }
 
                 @Override
                 public void onAdLoaded() {
-
+                    emit(Events.BANNER_LOAD);
                 }
 
                 @Override
                 public void onAdOpened() {
-
+                    emit(Events.BANNER_OPEN);
                 }
             });
 

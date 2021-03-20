@@ -5,16 +5,20 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 
+import com.getcapacitor.JSArray;
 import com.getcapacitor.PluginCall;
 import com.google.ads.mediation.admob.AdMobAdapter;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.RequestConfiguration;
+import com.google.android.gms.ads.rewarded.ServerSideVerificationOptions;
 
-import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import admob.plus.capacitor.ads.AdBase;
 
@@ -24,6 +28,10 @@ public class ExecuteContext {
 
     ExecuteContext(PluginCall call) {
         this.call = call;
+    }
+
+    public static void emit(String eventName, Map<String, Object> data) {
+        plugin.getBridge().triggerDocumentJSEvent(eventName, new JSONObject(data).toString());
     }
 
     public int optId() {
@@ -79,6 +87,27 @@ public class ExecuteContext {
         return builder.addNetworkExtrasBundle(AdMobAdapter.class, extras).build();
     }
 
+    @Nullable
+    public ServerSideVerificationOptions optServerSideVerificationOptions() {
+        final String param = "serverSideVerification";
+        if (!call.hasOption(param)) {
+            return null;
+        }
+        JSONObject serverSideVerification = call.getObject(param);
+        if (serverSideVerification == null) {
+            return null;
+        }
+
+        ServerSideVerificationOptions.Builder builder = new ServerSideVerificationOptions.Builder();
+        if (serverSideVerification.has("customData")) {
+            builder.setCustomData(serverSideVerification.optString("customData"));
+        }
+        if (serverSideVerification.has("userId")) {
+            builder.setUserId(serverSideVerification.optString("userId"));
+        }
+        return builder.build();
+    }
+
     public RequestConfiguration optRequestConfiguration() {
         RequestConfiguration.Builder builder = new RequestConfiguration.Builder();
         if (call.hasOption("maxAdContentRating")) {
@@ -93,13 +122,11 @@ public class ExecuteContext {
             builder.setTagForUnderAgeOfConsent(tagForChildDirectedTreatment);
         }
         if (call.hasOption("testDeviceIds")) {
-            List<String> testDeviceIds = new ArrayList<String>();
-            JSONArray ids = call.getArray("testDeviceIds");
-            for (int i = 0; i < ids.length(); i++) {
-                String testDeviceId = ids.optString(i);
-                if (testDeviceId != null) {
-                    testDeviceIds.add(testDeviceId);
-                }
+            JSArray testDeviceIdsArray = call.getArray("testDeviceIds");
+            List<String> testDeviceIds = new ArrayList<String>(testDeviceIdsArray.length());
+            try {
+                testDeviceIds = testDeviceIdsArray.toList();
+            } catch (JSONException ignored) {
             }
             builder.setTestDeviceIds(testDeviceIds);
         }

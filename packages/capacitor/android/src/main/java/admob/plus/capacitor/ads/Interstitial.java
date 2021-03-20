@@ -9,6 +9,7 @@ import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 
 import admob.plus.capacitor.ExecuteContext;
+import admob.plus.capacitor.Generated.Events;
 
 public class Interstitial extends AdBase {
     private InterstitialAd mAd = null;
@@ -35,29 +36,34 @@ public class Interstitial extends AdBase {
                 mAd.setFullScreenContentCallback(new FullScreenContentCallback() {
                     @Override
                     public void onAdDismissedFullScreenContent() {
-                        // Called when fullscreen content is dismissed.
+                        emit(Events.INTERSTITIAL_DISMISS);
                     }
 
                     @Override
                     public void onAdFailedToShowFullScreenContent(AdError adError) {
-                        // Called when fullscreen content failed to show.
+                        emit(Events.INTERSTITIAL_SHOW_FAIL, adError);
                     }
 
                     @Override
                     public void onAdShowedFullScreenContent() {
-                        // Called when fullscreen content is shown.
-                        // Make sure to set your reference to null so you don't
-                        // show it a second time.
                         mAd = null;
+                        emit(Events.INTERSTITIAL_SHOW);
+                    }
+
+                    @Override
+                    public void onAdImpression() {
+                        emit(Events.INTERSTITIAL_IMPRESSION);
                     }
                 });
 
+                emit(Events.INTERSTITIAL_LOAD);
                 ctx.success();
             }
 
             @Override
             public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                 mAd = null;
+                emit(Events.INTERSTITIAL_LOAD_FAIL, loadAdError);
                 ctx.error(loadAdError.getMessage());
             }
         });
