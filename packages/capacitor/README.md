@@ -14,6 +14,7 @@ npx cap sync
 <docgen-index>
 
 * [`start()`](#start)
+* [`configRequest(...)`](#configrequest)
 * [`bannerShow(...)`](#bannershow)
 * [`bannerHide(...)`](#bannerhide)
 * [`interstitialLoad(...)`](#interstitialload)
@@ -22,6 +23,8 @@ npx cap sync
 * [`rewardedShow(...)`](#rewardedshow)
 * [`rewardedInterstitialLoad(...)`](#rewardedinterstitialload)
 * [`rewardedInterstitialShow(...)`](#rewardedinterstitialshow)
+* [Type Aliases](#type-aliases)
+* [Enums](#enums)
 
 </docgen-index>
 
@@ -33,6 +36,21 @@ npx cap sync
 ```typescript
 start() => any
 ```
+
+**Returns:** <code>any</code>
+
+--------------------
+
+
+### configRequest(...)
+
+```typescript
+configRequest(requestConfig: RequestConfig) => any
+```
+
+| Param               | Type                                                    |
+| ------------------- | ------------------------------------------------------- |
+| **`requestConfig`** | <code><a href="#requestconfig">RequestConfig</a></code> |
 
 **Returns:** <code>any</code>
 
@@ -157,5 +175,27 @@ rewardedInterstitialShow(opts: { id: number; }) => any
 **Returns:** <code>any</code>
 
 --------------------
+
+
+### Type Aliases
+
+
+#### RequestConfig
+
+<code>{ maxAdContentRating?: <a href="#maxadcontentrating">MaxAdContentRating</a> tagForChildDirectedTreatment?: boolean | null tagForUnderAgeOfConsent?: boolean | null testDeviceIds?: string[] }</code>
+
+
+### Enums
+
+
+#### MaxAdContentRating
+
+| Members           | Value             |
+| ----------------- | ----------------- |
+| **`G`**           | <code>'G'</code>  |
+| **`MA`**          | <code>'MA'</code> |
+| **`PG`**          | <code>'PG'</code> |
+| **`T`**           | <code>'T'</code>  |
+| **`UNSPECIFIED`** | <code>''</code>   |
 
 </docgen-api>
