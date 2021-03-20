@@ -59,7 +59,7 @@ jobs:
       - name: Build
         run: |
           pushd packages/cli
-          yarn prepack
+          yarn build
           popd
 
       - name: Test
