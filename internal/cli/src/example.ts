@@ -76,7 +76,7 @@ const prepare = async (opts: { cwd: string }) => {
 
   const linkTasks = await Promise.all(
     pluginPkgs.map(async (pkg) => {
-      await execa('yarn', ['prepack'], {
+      await execa('yarn', ['build'], {
         cwd: pkg.dir,
         stdio: 'inherit',
       })
