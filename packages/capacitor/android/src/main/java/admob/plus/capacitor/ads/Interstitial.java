@@ -1,30 +1,20 @@
-package admob.plugin.ads;
+package admob.plus.capacitor.ads;
 
 import androidx.annotation.NonNull;
 
 import com.google.android.gms.ads.AdError;
-import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.FullScreenContentCallback;
 import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 
-import admob.plugin.ExecuteContext;
-import admob.plugin.Generated.Events;
+import admob.plus.capacitor.ExecuteContext;
 
-public class Interstitial extends AdBase implements IAdIsLoaded, IAdLoad, IAdShow {
+public class Interstitial extends AdBase {
     private InterstitialAd mAd = null;
 
-    Interstitial(int id, String adUnitId) {
-        super(id, adUnitId);
-    }
-
-    public static Interstitial getOrCreate(ExecuteContext ctx) {
-        Interstitial interstitial = (Interstitial) ctx.optAd();
-        if (interstitial == null) {
-            interstitial = new Interstitial(ctx.optId(), ctx.optAdUnitID());
-        }
-        return interstitial;
+    public Interstitial(ExecuteContext ctx) {
+        super(ctx);
     }
 
     @Override
@@ -35,46 +25,40 @@ public class Interstitial extends AdBase implements IAdIsLoaded, IAdLoad, IAdSho
     }
 
     public void load(ExecuteContext ctx) {
-        AdRequest adRequest = ctx.optAdRequest();
-
         clear();
 
-        InterstitialAd.load(ctx.getActivity(), adUnitId, adRequest, new InterstitialAdLoadCallback() {
+        InterstitialAd.load(ctx.getActivity(), adUnitId, ctx.optAdRequest(), new InterstitialAdLoadCallback() {
             @Override
             public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
                 mAd = interstitialAd;
+
                 mAd.setFullScreenContentCallback(new FullScreenContentCallback() {
                     @Override
                     public void onAdDismissedFullScreenContent() {
-                        emit(Events.INTERSTITIAL_DISMISS);
+                        // Called when fullscreen content is dismissed.
                     }
 
                     @Override
                     public void onAdFailedToShowFullScreenContent(AdError adError) {
-                        emit(Events.INTERSTITIAL_SHOW_FAIL, adError);
+                        // Called when fullscreen content failed to show.
                     }
 
                     @Override
                     public void onAdShowedFullScreenContent() {
+                        // Called when fullscreen content is shown.
+                        // Make sure to set your reference to null so you don't
+                        // show it a second time.
                         mAd = null;
-                        emit(Events.INTERSTITIAL_SHOW);
-                    }
-
-                    @Override
-                    public void onAdImpression() {
-                        emit(Events.INTERSTITIAL_IMPRESSION);
                     }
                 });
 
-                emit(Events.INTERSTITIAL_LOAD);
                 ctx.success();
             }
 
             @Override
             public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                 mAd = null;
-                emit(Events.INTERSTITIAL_LOAD_FAIL, loadAdError);
-                ctx.error(loadAdError.toString());
+                ctx.error(loadAdError.getMessage());
             }
         });
     }

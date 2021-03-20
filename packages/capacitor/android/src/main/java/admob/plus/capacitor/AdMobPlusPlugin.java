@@ -4,86 +4,92 @@ import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
-import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
-import admob.plus.capacitor.ads.AdBase;
-import admob.plus.capacitor.ads.BannerAd;
-import admob.plus.capacitor.ads.InterstitialAd;
-import admob.plus.capacitor.ads.RewardedAd;
+import admob.plus.capacitor.ads.Banner;
+import admob.plus.capacitor.ads.Interstitial;
+import admob.plus.capacitor.ads.Rewarded;
 
 @CapacitorPlugin(name = "AdMobPlus")
 public class AdMobPlusPlugin extends Plugin {
 
+    @Override
+    public void load() {
+        super.load();
+
+        ExecuteContext.plugin = this;
+    }
+
     @PluginMethod
     public void start(PluginCall call) {
-        MobileAds.initialize(getContext(), new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus status) {
-                call.resolve();
+        MobileAds.initialize(getContext(), status -> call.resolve());
+    }
+
+    @PluginMethod
+    public void bannerShow(PluginCall call) {
+        final ExecuteContext ctx = new ExecuteContext(call);
+
+        getBridge().executeOnMainThread(() -> {
+            Banner ad = ctx.optAdOrCreate(Banner.class);
+            if (ad != null) {
+                ad.show(ctx);
             }
         });
     }
 
     @PluginMethod
-    public void bannerShow(PluginCall call) {
-        final BannerAd bannerAd = BannerAd.getOrCreate(call);
-        final AdRequest adRequest = new AdRequest.Builder().build();
-
-        getBridge().executeOnMainThread(() -> {
-            bannerAd.show(this, call, adRequest);
-        });
-    }
-
-    @PluginMethod
     public void bannerHide(PluginCall call) {
-        Integer id = call.getInt("id");
-        final BannerAd bannerAd = (BannerAd) AdBase.getAd(id);
-        if (bannerAd == null) {
-            call.reject("Invalid options");
-            return;
-        }
+        final ExecuteContext ctx = new ExecuteContext(call);
 
         getBridge().executeOnMainThread(() -> {
-            bannerAd.hide(this, call);
+            final Banner ad = (Banner) ctx.optAdOrError();
+            if (ad != null) {
+                ad.hide(ctx);
+            }
         });
     }
 
     @PluginMethod
     public void interstitialLoad(PluginCall call) {
-        final InterstitialAd interstitialAd = InterstitialAd.getOrCreate(call);
-        final AdRequest adRequest = new AdRequest.Builder().build();
+        final ExecuteContext ctx = new ExecuteContext(call);
 
         getBridge().executeOnMainThread(() -> {
-            interstitialAd.load(this, call, adRequest);
+            Interstitial ad = ctx.optAdOrCreate(Interstitial.class);
+            if (ad != null) {
+                ad.load(ctx);
+            }
         });
     }
 
     @PluginMethod
     public void interstitialShow(PluginCall call) {
-        InterstitialAd interstitialAd = InterstitialAd.getOrCreate(call);
+        final ExecuteContext ctx = new ExecuteContext(call);
+
         getBridge().executeOnMainThread(() -> {
-            interstitialAd.show(this, call);
+            Interstitial ad = (Interstitial) ctx.optAdOrError();
+            if (ad != null) {
+                ad.show(ctx);
+            }
         });
     }
 
     @PluginMethod
     public void rewardedLoad(PluginCall call) {
-        final RewardedAd rewardedAd = RewardedAd.getOrCreate(call);
-        final AdRequest adRequest = new AdRequest.Builder().build();
+        final ExecuteContext ctx = new ExecuteContext(call);
 
         getBridge().executeOnMainThread(() -> {
-            rewardedAd.load(this, call, adRequest);
+            Rewarded ad = ctx.optAdOrCreate(Rewarded.class);
+            ad.load(ctx);
         });
     }
 
     @PluginMethod
     public void rewardedShow(PluginCall call) {
-        RewardedAd rewardedAd = RewardedAd.getOrCreate(call);
+        final ExecuteContext ctx = new ExecuteContext(call);
+
         getBridge().executeOnMainThread(() -> {
-            rewardedAd.show(this, call);
+            Rewarded ad = (Rewarded) ctx.optAd();
+            ad.show(ctx);
         });
     }
 }

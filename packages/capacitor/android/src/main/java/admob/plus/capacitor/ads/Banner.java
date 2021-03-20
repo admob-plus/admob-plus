@@ -1,48 +1,37 @@
 package admob.plus.capacitor.ads;
 
+import android.annotation.SuppressLint;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.widget.LinearLayout;
 
-import com.getcapacitor.PluginCall;
 import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.LoadAdError;
 
 import admob.plus.capacitor.AdMobPlusPlugin;
+import admob.plus.capacitor.ExecuteContext;
 
-public class BannerAd extends AdBase {
+import static admob.plus.capacitor.ExecuteContext.plugin;
+
+public class Banner extends AdBase {
+    @SuppressLint("StaticFieldLeak")
     private static ViewGroup parentView;
     private final AdSize adSize;
     private final int gravity;
     private AdView adView;
 
-    BannerAd(int id, String adUnitId, AdSize adSize, int gravity) {
-        super(id, adUnitId);
+    public Banner(ExecuteContext ctx) {
+        super(ctx);
 
-        this.adSize = adSize;
-        this.gravity = gravity;
+        this.adSize = AdSize.SMART_BANNER;
+        this.gravity = "top".equals(ctx.optPosition()) ? Gravity.TOP : Gravity.BOTTOM;
     }
 
-    public static BannerAd getOrCreate(PluginCall call) {
-        Integer id = call.getInt("id");
-        BannerAd bannerAd = (BannerAd) AdBase.getAd(id);
-        if (bannerAd != null) {
-            return bannerAd;
-        }
-        return new BannerAd(
-                id,
-                call.getString("adUnitId"),
-                AdSize.SMART_BANNER,
-                "top".equals(call.getString("position")) ? Gravity.TOP : Gravity.BOTTOM
-        );
-    }
-
-    public void show(AdMobPlusPlugin plugin, PluginCall call, AdRequest adRequest) {
+    public void show(ExecuteContext ctx) {
         WebView webView = plugin.getBridge().getWebView();
 
         if (adView == null) {
@@ -96,18 +85,17 @@ public class BannerAd extends AdBase {
             }
         }
 
-        adView.loadAd(adRequest);
+        adView.loadAd(ctx.optAdRequest());
 
-        call.resolve();
+        ctx.success();
     }
 
-    public void hide(AdMobPlusPlugin plugin, PluginCall call) {
+    public void hide(ExecuteContext ctx) {
         if (adView != null) {
             adView.pause();
             adView.setVisibility(View.GONE);
         }
-
-        call.resolve();
+        ctx.success();
     }
 
     @Override
