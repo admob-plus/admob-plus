@@ -39,3 +39,5 @@ document.addEventListener('admob.interstitial.dismiss', async () => {
 ### `admob.interstitial.showfail`
 
 ### `admob.interstitial.dismiss`
+
+### `admob.interstitial.impression`

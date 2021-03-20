@@ -53,6 +53,8 @@ User has earned reward.
 
 ### `admob.rewarded.dismiss`
 
-## Related
+### `admob.rewarded.impression`
 
-* [Rewarded Ads Server-side Verification](../rewarded-ads-ssv.md)
+## Server-side Verification
+
+- [Rewarded Ads Server-side Verification](../rewarded-ads-ssv.md)
