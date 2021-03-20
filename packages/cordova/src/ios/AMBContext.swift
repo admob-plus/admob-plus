@@ -15,9 +15,9 @@ class AMBContext {
         return plugin.commandDelegate
     }
 
-    var opts: NSDictionary? {
+    lazy var opts: NSDictionary? = {
         return command.argument(at: 0) as? NSDictionary
-    }
+    }()
 
     func optString(_ key: String) -> String? {
         return opts?.value(forKey: key) as? String

@@ -104,20 +104,8 @@ class AMBPlugin: CDVPlugin {
     func bannerShow(command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(command)
 
-        guard let id = ctx.optId(),
-              let adUnitId = ctx.optAdUnitID(),
-              let position = ctx.optString("position"),
-              var banner = AMBAdBase.ads[id] as? AMBBanner?
-        else {
-            ctx.error()
-            return
-        }
-        if banner == nil {
-            banner = AMBBanner(id: id, adUnitId: adUnitId, adSize: ctx.optAdSize(), position: position)
-        }
-        banner!.show(request: ctx.optGADRequest())
-
-        ctx.success()
+        let ad = ctx.optAd() as? AMBBanner ?? AMBBanner(ctx)
+        ad?.show(ctx) ?? ctx.error()
     }
 
     @objc(bannerHide:)
@@ -125,8 +113,7 @@ class AMBPlugin: CDVPlugin {
         let ctx = AMBContext(command)
 
         if let banner = ctx.optAdOrError() as? AMBBanner {
-            banner.hide()
-            ctx.success()
+            banner.hide(ctx)
         }
     }
 
@@ -143,17 +130,8 @@ class AMBPlugin: CDVPlugin {
     func interstitialLoad(command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(command)
 
-        guard let id = ctx.optId(),
-              let adUnitId = ctx.optAdUnitID(),
-              var interstitial = AMBAdBase.ads[id] as? AMBInterstitial?
-        else {
-            ctx.error()
-            return
-        }
-        if interstitial == nil {
-            interstitial = AMBInterstitial(id: id, adUnitId: adUnitId)
-        }
-        interstitial!.load(ctx)
+        let ad = ctx.optAd() as? AMBInterstitial ?? AMBInterstitial(ctx)
+        ad?.load(ctx) ?? ctx.error()
     }
 
     @objc(interstitialShow:)
@@ -178,17 +156,8 @@ class AMBPlugin: CDVPlugin {
     func rewardedLoad(command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(command)
 
-        guard let id = ctx.optId(),
-              let adUnitId = ctx.optAdUnitID(),
-              var rewarded = AMBAdBase.ads[id] as? AMBRewarded?
-        else {
-            ctx.error()
-            return
-        }
-        if rewarded == nil {
-            rewarded = AMBRewarded(id: id, adUnitId: adUnitId)
-        }
-        rewarded!.load(ctx)
+        let ad = ctx.optAd() as? AMBRewarded ?? AMBRewarded(ctx)
+        ad?.load(ctx) ?? ctx.error()
     }
 
     @objc(rewardedShow:)
@@ -213,17 +182,8 @@ class AMBPlugin: CDVPlugin {
     func rewardedInterstitialLoad(command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(command)
 
-        guard let id = ctx.optId(),
-              let adUnitId = ctx.optAdUnitID(),
-              var rewardedInterstitial = AMBAdBase.ads[id] as? AMBRewardedInterstitial?
-        else {
-            ctx.error()
-            return
-        }
-        if rewardedInterstitial == nil {
-            rewardedInterstitial = AMBRewardedInterstitial(id: id, adUnitId: adUnitId)
-        }
-        rewardedInterstitial!.load(ctx)
+        let ad = ctx.optAd() as? AMBRewardedInterstitial ?? AMBRewardedInterstitial(ctx)
+        ad?.load(ctx) ?? ctx.error()
     }
 
     @objc(rewardedInterstitialShow:)

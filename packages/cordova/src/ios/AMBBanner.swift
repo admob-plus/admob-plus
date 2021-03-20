@@ -52,6 +52,16 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
         }
     }
 
+    convenience init?(_ ctx: AMBContext) {
+        guard let id = ctx.optId(),
+              let adUnitId = ctx.optAdUnitID(),
+              let position = ctx.optString("position")
+        else {
+            return nil
+        }
+        self.init(id: id, adUnitId: adUnitId, adSize: ctx.optAdSize(), position: position)
+    }
+
     deinit {
         if bannerView != nil {
             bannerView.delegate = nil
@@ -62,7 +72,8 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
         }
     }
 
-    func show(request: GADRequest) {
+    func show(_ ctx: AMBContext) {
+        let request = ctx.optGADRequest()
         if bannerView == nil {
             bannerView = GADBannerView(adSize: self.adSize)
             bannerView.delegate = self
@@ -81,13 +92,16 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
 
         bannerView.adUnitID = adUnitId
         bannerView.load(request)
+
+        ctx.success()
     }
 
-    func hide() {
+    func hide(_ ctx: AMBContext) {
         if bannerView != nil {
             bannerView.isHidden = true
             stackView.removeArrangedSubview(bannerView)
         }
+        ctx.success()
     }
 
     func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
