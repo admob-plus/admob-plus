@@ -6,7 +6,8 @@
   "module": "lib/index.js",
   "typings": "lib/index.d.ts",
   "scripts": {
-    "prepublishOnly": "yarn ts-node -TH --skip-project scripts/build"
+    "prepublishOnly": "yarn build",
+    "build": "ts-node -TH --skip-project scripts/build"
   },
   "peerDependencies": {
     "@ionic-native/core": "^5.31.1",

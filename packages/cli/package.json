@@ -38,7 +38,8 @@
   "homepage": "https://admob-plus.github.io",
   "main": "lib/index.js",
   "scripts": {
-    "prepack": "rm -rf lib && tsc -b"
+    "prepublishOnly": "yarn build",
+    "build": "rm -rf lib && tsc -b"
   },
   "types": "lib/index.d.ts"
 }

@@ -5,7 +5,8 @@
   "main": "www/consent.js",
   "typings": "www/consent.d.ts",
   "scripts": {
-    "prepack": "yarn rollup -c"
+    "prepublishOnly": "yarn build",
+    "build": "rollup -c"
   },
   "devDependencies": {
     "@admob-plus-internal/rollup-config": "file:../../internal/rollup-config",

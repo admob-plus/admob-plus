@@ -5,7 +5,8 @@
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "scripts": {
-    "prepack": "yarn rollup -c && tsc -b"
+    "prepublishOnly": "yarn build",
+    "build": "rollup -c && tsc -b"
   },
   "devDependencies": {
     "@admob-plus-internal/rollup-config": "file:../../internal/rollup-config",
