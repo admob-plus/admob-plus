@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-rc.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.0.0-beta.2...admob-plus-cordova@1.0.0-rc.0) (2021-03-20)
+
+
+### Features
+
+* **cordova:** add disableSDKCrashReporting preference ([b04acf2](https://github.com/admob-plus/admob-plus/commit/b04acf2df59c92c3897b7f2fbe02bbb7d898de00))
+* **cordova/android:** emit impression events ([08f9559](https://github.com/admob-plus/admob-plus/commit/08f9559157b71ceb8b869cc8fb12bddae2c5e2a2))
+* **cordova/ios:** emit banner ad size change event ([4582cdd](https://github.com/admob-plus/admob-plus/commit/4582cdd2d609823cc1fd5994a0340abfc909027e))
+* **cordova/ios:** emit impression events ([759bdc6](https://github.com/admob-plus/admob-plus/commit/759bdc6453f2d9aa0d69d294d1b5862e1e2e90fc))
+* generate impression events ([527e2dd](https://github.com/admob-plus/admob-plus/commit/527e2dda0233d95152d47ec40fa8e55457c9b4d7))
+* use lower case for event names ([a4213e5](https://github.com/admob-plus/admob-plus/commit/a4213e57c3687574c9d273b76fa19e3a25b8cf11))
+* **cordova/android:** update PLAY_SERVICES_VERSION to 19.8.0 ([522b725](https://github.com/admob-plus/admob-plus/commit/522b7254713a262003108090a12fe9fb45ce23b9))
+
+
+
+
+
 # [1.0.0-beta.2](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.0.0-beta.1...admob-plus-cordova@1.0.0-beta.2) (2021-03-15)
 
 

@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-rc.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.0.0-beta.2...@admob-plus/capacitor@1.0.0-rc.0) (2021-03-20)
+
+
+### Features
+
+* **capacitor:** generate Events constant ([1fbb5a5](https://github.com/admob-plus/admob-plus/commit/1fbb5a5a4849571787ac7a762dcb5373f80b1e50))
+* **capacitor/android:** implement configRequest() ([33a426a](https://github.com/admob-plus/admob-plus/commit/33a426a77d945f1064629755545a1d3bc31a5ae2))
+* **capacitor/android:** implement RewardedInterstitialAd ([219f856](https://github.com/admob-plus/admob-plus/commit/219f8569d6d9cdc3b216c008f476ea7c80823865))
+* **capacitor/ios:** add RewardedInterstitialAd ([bc6c3a4](https://github.com/admob-plus/admob-plus/commit/bc6c3a479932bc5900c4163f5b8763f74fe6b3c2))
+* **capacitor/ios:** emit ad events ([09676db](https://github.com/admob-plus/admob-plus/commit/09676db5d154e520a48f742d69a2b1beb8a7141f))
+* **capacitor/ios:** emit banner.load event ([90c0bc4](https://github.com/admob-plus/admob-plus/commit/90c0bc4e46b49f3111af4de8bcb06911b2471994))
+* **capacitor/ios:** implement configRequest() ([bc6887f](https://github.com/admob-plus/admob-plus/commit/bc6887f9483dd6cb83bf2c7f293fa8131a0ea161))
+* **cordova/ios:** emit banner ad size change event ([4582cdd](https://github.com/admob-plus/admob-plus/commit/4582cdd2d609823cc1fd5994a0340abfc909027e))
+* generate impression events ([527e2dd](https://github.com/admob-plus/admob-plus/commit/527e2dda0233d95152d47ec40fa8e55457c9b4d7))
+* use lower case for event names ([a4213e5](https://github.com/admob-plus/admob-plus/commit/a4213e57c3687574c9d273b76fa19e3a25b8cf11))
+* **capacitor/ios:** manage banner view with UIStackView ([a55cbfe](https://github.com/admob-plus/admob-plus/commit/a55cbfeb8bc7975982ad9a420313af492d4e51d7))
+* **internal/cli:** generate capacitor ios marco ([9c71195](https://github.com/admob-plus/admob-plus/commit/9c71195c8d536661a7ac00a77eb0dff0dd838154))
+
+
+
+
+
 # [1.0.0-beta.2](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.0.0-beta.1...@admob-plus/capacitor@1.0.0-beta.2) (2021-03-14)
 
 
