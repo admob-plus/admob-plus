@@ -16,16 +16,8 @@ import admob.plugin.Generated.Events;
 public class RewardedInterstitial extends AdBase implements IAdIsLoaded, IAdLoad, IAdShow {
     private RewardedInterstitialAd mAd = null;
 
-    RewardedInterstitial(int id, String adUnitId) {
-        super(id, adUnitId);
-    }
-
-    public static RewardedInterstitial getOrCreate(ExecuteContext ctx) {
-        RewardedInterstitial rewarded = (RewardedInterstitial) ctx.optAd();
-        if (rewarded == null) {
-            rewarded = new RewardedInterstitial(ctx.optId(), ctx.optAdUnitID());
-        }
-        return rewarded;
+    public RewardedInterstitial(ExecuteContext ctx) {
+        super(ctx);
     }
 
     @Override

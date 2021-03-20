@@ -21,6 +21,10 @@ public abstract class AdBase {
         ads.put(id, this);
     }
 
+    public AdBase(ExecuteContext ctx) {
+        this(ctx.optId(), ctx.optAdUnitID());
+    }
+
     public static AdBase getAd(Integer id) {
         return ads.get(id);
     }

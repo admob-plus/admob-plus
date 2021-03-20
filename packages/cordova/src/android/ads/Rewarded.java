@@ -16,16 +16,8 @@ import admob.plugin.Generated.Events;
 public class Rewarded extends AdBase implements IAdIsLoaded, IAdLoad, IAdShow {
     private RewardedAd mAd = null;
 
-    Rewarded(int id, String adUnitId) {
-        super(id, adUnitId);
-    }
-
-    public static Rewarded getOrCreate(ExecuteContext ctx) {
-        Rewarded rewarded = (Rewarded) ctx.optAd();
-        if (rewarded == null) {
-            rewarded = new Rewarded(ctx.optId(), ctx.optAdUnitID());
-        }
-        return rewarded;
+    public Rewarded(ExecuteContext ctx) {
+        super(ctx);
     }
 
     @Override

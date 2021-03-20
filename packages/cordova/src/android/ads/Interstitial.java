@@ -15,16 +15,8 @@ import admob.plugin.Generated.Events;
 public class Interstitial extends AdBase implements IAdIsLoaded, IAdLoad, IAdShow {
     private InterstitialAd mAd = null;
 
-    Interstitial(int id, String adUnitId) {
-        super(id, adUnitId);
-    }
-
-    public static Interstitial getOrCreate(ExecuteContext ctx) {
-        Interstitial interstitial = (Interstitial) ctx.optAd();
-        if (interstitial == null) {
-            interstitial = new Interstitial(ctx.optId(), ctx.optAdUnitID());
-        }
-        return interstitial;
+    public Interstitial(ExecuteContext ctx) {
+        super(ctx);
     }
 
     @Override

@@ -25,24 +25,11 @@ public class Banner extends AdBase implements IAdShow {
     private final int gravity;
     private AdView adView;
 
-    Banner(int id, String adUnitId, AdSize adSize, int gravity) {
-        super(id, adUnitId);
+    public Banner(ExecuteContext ctx) {
+        super(ctx);
 
-        this.adSize = adSize;
-        this.gravity = gravity;
-    }
-
-    public static Banner getOrCreate(ExecuteContext ctx) {
-        Banner banner = (Banner) ctx.optAd();
-        if (banner != null) {
-            return banner;
-        }
-        return new Banner(
-                ctx.optId(),
-                ctx.optAdUnitID(),
-                getAdSize(ctx),
-                "top".equals(ctx.optPosition()) ? Gravity.TOP : Gravity.BOTTOM
-        );
+        this.adSize = getAdSize(ctx);
+        this.gravity = "top".equals(ctx.optPosition()) ? Gravity.TOP : Gravity.BOTTOM;
     }
 
     private static AdSize getAdSize(ExecuteContext ctx) {

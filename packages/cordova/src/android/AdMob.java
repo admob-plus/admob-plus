@@ -109,8 +109,10 @@ public class AdMob extends CordovaPlugin {
 
     private boolean executeBannerShow(ExecuteContext ctx) {
         cordova.getActivity().runOnUiThread(() -> {
-            Banner banner = Banner.getOrCreate(ctx);
-            banner.show(ctx);
+            Banner banner = ctx.optAdOrCreate(Banner.class);
+            if (banner != null) {
+                banner.show(ctx);
+            }
         });
         return true;
     }
@@ -138,8 +140,10 @@ public class AdMob extends CordovaPlugin {
 
     private boolean executeInterstitialLoad(ExecuteContext ctx) {
         cordova.getActivity().runOnUiThread(() -> {
-            Interstitial ad = Interstitial.getOrCreate(ctx);
-            ad.load(ctx);
+            Interstitial ad = ctx.optAdOrCreate(Interstitial.class);
+            if (ad != null) {
+                ad.load(ctx);
+            }
         });
         return true;
     }
@@ -156,16 +160,20 @@ public class AdMob extends CordovaPlugin {
 
     private boolean executeRewardedLoad(ExecuteContext ctx) {
         cordova.getActivity().runOnUiThread(() -> {
-            Rewarded ad = Rewarded.getOrCreate(ctx);
-            ad.load(ctx);
+            Rewarded ad = ctx.optAdOrCreate(Rewarded.class);
+            if (ad != null) {
+                ad.load(ctx);
+            }
         });
         return true;
     }
 
     private boolean executeRewardedInterstitialLoad(ExecuteContext ctx) {
         cordova.getActivity().runOnUiThread(() -> {
-            RewardedInterstitial ad = RewardedInterstitial.getOrCreate(ctx);
-            ad.load(ctx);
+            RewardedInterstitial ad = ctx.optAdOrCreate(RewardedInterstitial.class);
+            if (ad != null) {
+                ad.load(ctx);
+            }
         });
         return true;
     }

@@ -15,6 +15,7 @@ import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,8 +49,17 @@ public class ExecuteContext {
     }
 
     @Nullable
-    public <T extends AdBase> T optAd(Class<T> type) {
-        return type.cast(optAd());
+    public <T extends AdBase> T optAdOrCreate(Class<T> type) {
+        T ad = type.cast(optAd());
+        if (ad == null) {
+            try {
+                ad = type.getDeclaredConstructor(ExecuteContext.class).newInstance(this);
+            } catch (IllegalAccessException | InstantiationException | InvocationTargetException | NoSuchMethodException e) {
+                e.printStackTrace();
+                this.error("Fail to create ad");
+            }
+        }
+        return ad;
     }
 
     @Nullable
