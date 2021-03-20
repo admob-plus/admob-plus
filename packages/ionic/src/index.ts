@@ -181,7 +181,7 @@ export class AdMob
   public readonly RewardedAd = RewardedAd
   public readonly RewardedInterstitialAd = RewardedInterstitialAd
 
-  get admob(): IAdMob {
+  private get admob(): IAdMob {
     return AdMob.getPlugin()
   }
 
