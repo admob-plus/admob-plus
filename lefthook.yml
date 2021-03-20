@@ -1,0 +1,30 @@
+commit-msg:
+  commands:
+    commitlint:
+      run: yarn commitlint -e $1
+
+pre-commit:
+  parallel: true
+  commands:
+    fixer:
+      run: >
+        lefthook run fixer &&
+        git add {staged_files}
+    remark:
+      glob: "*.md"
+      run: yarn remark --no-stdout {staged_files}
+    swiftlint:
+      glob: "*.swift"
+      run: yarn node-swiftlint lint --strict --path {staged_files}
+
+fixer:
+  parallel: true
+  commands:
+    js-fixer:
+      glob: "*.{js,jsx,ts,tsx}"
+      run: >
+        yarn prettier-eslint --write {staged_files} &&
+        yarn eslint --ext .js,.jsx,.ts,tsx --fix {staged_files}
+    pkg-json-fixed:
+      glob: examples/*/package.json
+      run: yarn prettier --write {staged_files}
