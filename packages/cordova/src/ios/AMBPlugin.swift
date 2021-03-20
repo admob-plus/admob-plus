@@ -104,18 +104,16 @@ class AMBPlugin: CDVPlugin {
     func bannerShow(command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(command)
 
-        guard let opts = command.argument(at: 0) as? NSDictionary,
-              let id = opts.value(forKey: "id") as? Int,
-              let adUnitId = opts.value(forKey: "adUnitId") as? String,
-              let position = opts.value(forKey: "position") as? String,
+        guard let id = ctx.optId(),
+              let adUnitId = ctx.optAdUnitID(),
+              let position = ctx.optString("position"),
               var banner = AMBAdBase.ads[id] as? AMBBanner?
         else {
             ctx.error()
             return
         }
         if banner == nil {
-            let adSize = AMBBanner.getAdSize(opts)
-            banner = AMBBanner(id: id, adUnitId: adUnitId, adSize: adSize, position: position)
+            banner = AMBBanner(id: id, adUnitId: adUnitId, adSize: ctx.optAdSize(), position: position)
         }
         banner!.show(request: ctx.optGADRequest())
 
@@ -145,9 +143,8 @@ class AMBPlugin: CDVPlugin {
     func interstitialLoad(command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(command)
 
-        guard let opts = command.argument(at: 0) as? NSDictionary,
-              let id = opts.value(forKey: "id") as? Int,
-              let adUnitId = opts.value(forKey: "adUnitId") as? String,
+        guard let id = ctx.optId(),
+              let adUnitId = ctx.optAdUnitID(),
               var interstitial = AMBAdBase.ads[id] as? AMBInterstitial?
         else {
             ctx.error()
@@ -181,9 +178,8 @@ class AMBPlugin: CDVPlugin {
     func rewardedLoad(command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(command)
 
-        guard let opts = command.argument(at: 0) as? NSDictionary,
-              let id = opts.value(forKey: "id") as? Int,
-              let adUnitId = opts.value(forKey: "adUnitId") as? String,
+        guard let id = ctx.optId(),
+              let adUnitId = ctx.optAdUnitID(),
               var rewarded = AMBAdBase.ads[id] as? AMBRewarded?
         else {
             ctx.error()
@@ -217,9 +213,8 @@ class AMBPlugin: CDVPlugin {
     func rewardedInterstitialLoad(command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(command)
 
-        guard let opts = command.argument(at: 0) as? NSDictionary,
-              let id = opts.value(forKey: "id") as? Int,
-              let adUnitId = opts.value(forKey: "adUnitId") as? String,
+        guard let id = ctx.optId(),
+              let adUnitId = ctx.optAdUnitID(),
               var rewardedInterstitial = AMBAdBase.ads[id] as? AMBRewardedInterstitial?
         else {
             ctx.error()

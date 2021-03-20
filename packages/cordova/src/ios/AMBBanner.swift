@@ -1,9 +1,9 @@
 class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
     static var stackView = UIStackView()
 
+    let adSize: GADAdSize!
+    let position: String!
     var bannerView: GADBannerView!
-    var adSize: GADAdSize!
-    var position: String!
 
     var stackView: UIStackView {
         return AMBBanner.stackView
@@ -18,10 +18,10 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
     }
 
     init(id: Int, adUnitId: String, adSize: GADAdSize, position: String) {
-        super.init(id: id, adUnitId: adUnitId)
-
         self.adSize = adSize
         self.position = position
+
+        super.init(id: id, adUnitId: adUnitId)
 
         if stackView.arrangedSubviews.isEmpty {
             stackView.axis = .vertical
@@ -56,36 +56,10 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
         if bannerView != nil {
             bannerView.delegate = nil
             bannerView.adSizeDelegate = nil
+            stackView.removeArrangedSubview(bannerView)
             bannerView.removeFromSuperview()
             bannerView = nil
         }
-        adSize = nil
-        position = nil
-    }
-
-    static func getAdSize(_ opts: NSDictionary) -> GADAdSize {
-        if let adSizeType = opts.value(forKey: "size") as? Int {
-            switch adSizeType {
-            case 0:
-                return kGADAdSizeBanner
-            case 1:
-                return kGADAdSizeLargeBanner
-            case 2:
-                return kGADAdSizeMediumRectangle
-            case 3:
-                return kGADAdSizeFullBanner
-            case 4:
-                return kGADAdSizeLeaderboard
-            default: break
-            }
-        }
-        guard let adSizeDict = opts.value(forKey: "size") as? NSDictionary,
-              let width = adSizeDict.value(forKey: "width") as? Int,
-              let height = adSizeDict.value(forKey: "height") as? Int
-        else {
-            return kGADAdSizeBanner
-        }
-        return GADAdSizeFromCGSize(CGSize(width: width, height: height))
     }
 
     func show(request: GADRequest) {

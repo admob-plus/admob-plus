@@ -23,6 +23,14 @@ class AMBContext {
         return opts?.value(forKey: key) as? String
     }
 
+    func optId() -> Int? {
+        return opts?.value(forKey: "id") as? Int
+    }
+
+    func optAdUnitID() -> String? {
+        return optString("adUnitId")
+    }
+
     func optAd() -> AMBAdBase? {
         guard let id = opts?.value(forKey: "id") as? Int,
               let ad = AMBAdBase.ads[id]
@@ -36,7 +44,7 @@ class AMBContext {
         if let ad = optAd() {
             return ad
         } else {
-            error()
+            error("Ad not found")
             return nil
         }
     }
@@ -73,15 +81,40 @@ class AMBContext {
 
     func optGADRequest() -> GADRequest {
         let request = GADRequest()
-        if let contentURL = opts?["contentUrl"] as? String {
+        if let contentURL = optString("contentUrl") {
             request.contentURL = contentURL
         }
         let extras = GADExtras()
-        if let npa = opts?["npa"] as? String {
+        if let npa = optString("npa") {
             extras.additionalParameters = ["npa": npa]
         }
         request.register(extras)
         return request
+    }
+
+    func optAdSize() -> GADAdSize {
+        if let adSizeType = opts?.value(forKey: "size") as? Int {
+            switch adSizeType {
+            case 0:
+                return kGADAdSizeBanner
+            case 1:
+                return kGADAdSizeLargeBanner
+            case 2:
+                return kGADAdSizeMediumRectangle
+            case 3:
+                return kGADAdSizeFullBanner
+            case 4:
+                return kGADAdSizeLeaderboard
+            default: break
+            }
+        }
+        guard let adSizeDict = opts?.value(forKey: "size") as? NSDictionary,
+              let width = adSizeDict.value(forKey: "width") as? Int,
+              let height = adSizeDict.value(forKey: "height") as? Int
+        else {
+            return kGADAdSizeBanner
+        }
+        return GADAdSizeFromCGSize(CGSize(width: width, height: height))
     }
 
     func sendResult(_ message: CDVPluginResult?) {
