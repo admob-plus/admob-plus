@@ -20,7 +20,7 @@ class AMBRewardedInterstitial: AMBAdBase, GADFullScreenContentDelegate {
 
             self.rewardedInterstitial = ad
             ad?.fullScreenContentDelegate = self
-            ad?.serverSideVerificationOptions = AMBRewarded.getGADServerSideVerificationOptions(ctx.command)
+            ad?.serverSideVerificationOptions = ctx.optGADServerSideVerificationOptions()
 
             self.emit(AMBEvents.rewardedInterstitialLoad)
 

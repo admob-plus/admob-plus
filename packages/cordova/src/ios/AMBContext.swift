@@ -117,6 +117,22 @@ class AMBContext {
         return GADAdSizeFromCGSize(CGSize(width: width, height: height))
     }
 
+    func optGADServerSideVerificationOptions() -> GADServerSideVerificationOptions? {
+        guard let ssv = opts?.value(forKey: "serverSideVerification") as? NSDictionary
+        else {
+            return nil
+        }
+
+        let options = GADServerSideVerificationOptions.init()
+        if let customData = ssv.value(forKey: "customData") as? String {
+            options.customRewardString = customData
+        }
+        if let userId = ssv.value(forKey: "userId") as? String {
+            options.userIdentifier = userId
+        }
+        return options
+    }
+
     func sendResult(_ message: CDVPluginResult?) {
         self.commandDelegate.send(message, callbackId: command.callbackId)
     }
