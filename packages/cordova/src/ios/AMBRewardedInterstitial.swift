@@ -5,6 +5,7 @@ class AMBRewardedInterstitial: AMBAdBase, GADFullScreenContentDelegate {
         rewardedInterstitial?.fullScreenContentDelegate = nil
         rewardedInterstitial = nil
     }
+
     func isLoaded() -> Bool {
         return self.rewardedInterstitial != nil
     }

@@ -11,6 +11,10 @@ class AMBPlugin: CDVPlugin {
         super.pluginInitialize()
 
         AMBContext.plugin = self
+
+        if let x = self.commandDelegate.settings["disableSDKCrashReporting".lowercased()] as? String, x == "true" {
+            GADMobileAds.sharedInstance().disableSDKCrashReporting()
+        }
     }
 
     deinit {

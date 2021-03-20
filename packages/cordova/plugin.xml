@@ -57,6 +57,7 @@
     <platform name="ios">
         <preference name="APP_ID_IOS" default="ca-app-pub-xxx~yyy" />
         <preference name="USAGE" default="This identifier will be used to deliver personalized ads to you." />
+        <preference name="disableSDKCrashReporting" default="false" />
 
         <config-file target="config.xml" parent="/*">
             <feature name="AdMob">
