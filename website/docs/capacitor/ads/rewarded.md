@@ -18,3 +18,30 @@ import { AdMobPlus, RewardedAd } from '@admob-plus/capacitor'
   await rewarded.show()
 })()
 ```
+
+## Events
+
+### `rewarded.load`
+
+### `rewarded.loadfail`
+
+### `rewarded.show`
+
+### `rewarded.showfail`
+
+### `rewarded.reward`
+
+User has earned reward.
+
+```js
+{
+  reward: {
+    amount: 10,
+    type: "coins"
+  }
+}
+```
+
+### `rewarded.dismiss`
+
+### `rewarded.impression`

@@ -18,3 +18,17 @@ import { AdMobPlus, InterstitialAd } from '@admob-plus/capacitor'
   await interstitial.show()
 })()
 ```
+
+## Events
+
+### `interstitial.load`
+
+### `interstitial.loadfail`
+
+### `interstitial.show`
+
+### `interstitial.showfail`
+
+### `interstitial.dismiss`
+
+### `interstitial.impression`
