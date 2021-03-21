@@ -81,28 +81,24 @@ class AMBPlugin: CDVPlugin {
     func setAppMuted(command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(command)
 
-        guard let applicationMuted = command.argument(at: 0) as? Bool
-        else {
+        if let muted = ctx.opt0() as? Bool {
+            GADMobileAds.sharedInstance().applicationMuted = muted
+            ctx.success()
+        } else {
             ctx.error()
-            return
         }
-        GADMobileAds.sharedInstance().applicationMuted = applicationMuted
-
-        ctx.success()
     }
 
     @objc(setAppVolume:)
     func setAppVolume(command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(command)
 
-        guard let applicationVolume = command.argument(at: 0) as? Float
-        else {
+        if let volume = ctx.opt0() as? Float {
+            GADMobileAds.sharedInstance().applicationVolume = volume
+            ctx.success()
+        } else {
             ctx.error()
-            return
         }
-        GADMobileAds.sharedInstance().applicationVolume = applicationVolume
-
-        ctx.success()
     }
 
     @objc(bannerShow:)

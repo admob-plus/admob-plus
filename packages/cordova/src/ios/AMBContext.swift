@@ -15,8 +15,12 @@ class AMBContext {
         return plugin.commandDelegate
     }
 
+    func opt0() -> Any? {
+        return command.argument(at: 0)
+    }
+
     lazy var opts: NSDictionary? = {
-        return command.argument(at: 0) as? NSDictionary
+        return opt0() as? NSDictionary
     }()
 
     func opt(_ key: String) -> Any? {
