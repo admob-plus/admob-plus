@@ -23,6 +23,10 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
 
         super.init(id: id, adUnitId: adUnitId)
 
+        initStackView()
+    }
+
+    fileprivate func initStackView() {
         if stackView.arrangedSubviews.isEmpty {
             stackView.axis = .vertical
             stackView.distribution = .fill
