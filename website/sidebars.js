@@ -9,6 +9,7 @@ module.exports = {
             'capacitor/ads/banner',
             'capacitor/ads/interstitial',
             'capacitor/ads/rewarded',
+            'capacitor/ads/rewarded-interstitial',
           ],
         },
         {
