@@ -11,6 +11,7 @@ module.exports = {
             'capacitor/ads/rewarded',
             'capacitor/ads/rewarded-interstitial',
           ],
+          API: require('./sidebar/typedoc-capacitor.js'),
         },
         {
           type: 'link',

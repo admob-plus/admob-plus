@@ -95,6 +95,19 @@ module.exports = {
     [
       'docusaurus-plugin-typedoc',
       {
+        id: 'typedoc-capacitor',
+        entryPoints: ['../packages/capacitor/src/index.ts'],
+        tsconfig: '../packages/capacitor/src/tsconfig.json',
+        out: 'capacitor/api',
+        readme: 'none',
+        sidebar: {
+          sidebarFile: 'sidebar/typedoc-capacitor.js',
+        },
+      },
+    ],
+    [
+      'docusaurus-plugin-typedoc',
+      {
         id: 'typedoc-cordova',
         entryPoints: ['../packages/cordova/ts/index.ts'],
         tsconfig: '../packages/cordova/tsconfig.json',
