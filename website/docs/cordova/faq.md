@@ -26,6 +26,9 @@ It is receommended to track the impressions via event API instead of just the AP
 
 `Event.isTrusted` is [a part of the Web API](https://developer.mozilla.org/en-US/docs/Web/API/Event/isTrusted), `false` indicates that the event was created or modified by a script or dispatched via `dispatchEvent()`.
 
+### How to handle "Add or update app-ads.txt" in AdMob console?
+
+It does not relate to the plugin, see ["Set up an app-ads.txt file for your app"](https://support.google.com/admob/answer/9363762?hl=en).
 
 ## Android
 
