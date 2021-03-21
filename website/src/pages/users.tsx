@@ -29,7 +29,7 @@ const Users = () => {
           <p>Is your project using AdMob Plus?</p>
           <p>
             Edit this page with a&nbsp;
-            <a href="https://github.com/admob-plus/admob-plus/edit/master/website/src/data/users.js">
+            <a href="https://github.com/admob-plus/admob-plus/edit/master/website/src/data/users.ts">
               Pull Request
             </a>
             &nbsp;to add your logo.
