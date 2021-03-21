@@ -3,7 +3,7 @@ title: Getting Started
 slug: /ionic
 ---
 
-`@admob-plus/ionic` is a wrapper of [`admob-plus-cordova`](./cordova), and shares similar APIs.
+`@admob-plus/ionic` is a wrapper of [`admob-plus-cordova`](./cordova) Cordova plugin providing similar APIs.
 
 It is recommended to first understand how the Cordova plugin works before installing this package.
 
