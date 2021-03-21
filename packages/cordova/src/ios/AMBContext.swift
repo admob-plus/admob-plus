@@ -101,7 +101,7 @@ class AMBContext {
     }
 
     func optAdSize() -> GADAdSize {
-        if let adSizeType = opts?.value(forKey: "size") as? Int {
+        if let adSizeType = opt("size") as? Int {
             switch adSizeType {
             case 0:
                 return kGADAdSizeBanner
