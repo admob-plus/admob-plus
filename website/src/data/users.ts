@@ -40,11 +40,6 @@ const users: { caption: string; image: string; infoLink: string }[] = [
       'https://sonid.app/',
   },
   {
-    caption: 'Ludum',
-    image: 'https://ludum.app/assets/images/logo-sliced.png',
-    infoLink: 'https://ludum.app/',
-  },
-  {
     caption: 'Pirate Duck',
     image:
       'https://lh3.googleusercontent.com/lqwyOWVJjsp65-5Tl3ZhVxggcJcZyg1NauxbgKyzam5hfSzHizLUpNZQ-aMdJj0flg=s180-rw',
