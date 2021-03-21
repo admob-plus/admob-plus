@@ -19,12 +19,16 @@ class AMBContext {
         return command.argument(at: 0) as? NSDictionary
     }()
 
+    func opt(_ key: String) -> Any? {
+        return opts?.value(forKey: key)
+    }
+
     func optString(_ key: String) -> String? {
-        return opts?.value(forKey: key) as? String
+        return opt(key) as? String
     }
 
     func optId() -> Int? {
-        return opts?.value(forKey: "id") as? Int
+        return opt("id") as? Int
     }
 
     func optAdUnitID() -> String? {
@@ -32,7 +36,7 @@ class AMBContext {
     }
 
     func optAd() -> AMBAdBase? {
-        guard let id = opts?.value(forKey: "id") as? Int,
+        guard let id = optId(),
               let ad = AMBAdBase.ads[id]
         else {
             return nil
@@ -65,15 +69,15 @@ class AMBContext {
     }
 
     func optChildDirectedTreatmentTag() -> Bool? {
-        return opts?["tagForChildDirectedTreatment"] as? Bool
+        return opt("tagForChildDirectedTreatment") as? Bool
     }
 
     func optUnderAgeOfConsentTag() -> Bool? {
-        return opts?["tagForUnderAgeOfConsent"] as? Bool
+        return opt("tagForUnderAgeOfConsent") as? Bool
     }
 
     func optTestDeviceIds() -> [String]? {
-        if let testDeviceIds = opts?["testDeviceIds"] as? [String] {
+        if let testDeviceIds = opt("testDeviceIds") as? [String] {
             return testDeviceIds
         }
         return nil
@@ -108,7 +112,7 @@ class AMBContext {
             default: break
             }
         }
-        guard let adSizeDict = opts?.value(forKey: "size") as? NSDictionary,
+        guard let adSizeDict = opt("size") as? NSDictionary,
               let width = adSizeDict.value(forKey: "width") as? Int,
               let height = adSizeDict.value(forKey: "height") as? Int
         else {
@@ -118,7 +122,7 @@ class AMBContext {
     }
 
     func optGADServerSideVerificationOptions() -> GADServerSideVerificationOptions? {
-        guard let ssv = opts?.value(forKey: "serverSideVerification") as? NSDictionary
+        guard let ssv = opt("serverSideVerification") as? NSDictionary
         else {
             return nil
         }
