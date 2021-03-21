@@ -7,18 +7,19 @@ import AdSupport
 class AMBPlugin: CDVPlugin {
     var readyCallbackId: String!
 
+    deinit {
+        readyCallbackId = nil
+    }
+
     override func pluginInitialize() {
         super.pluginInitialize()
 
         AMBContext.plugin = self
 
-        if let x = self.commandDelegate.settings["disableSDKCrashReporting".lowercased()] as? String, x == "true" {
+        if let x = self.commandDelegate.settings["disableSDKCrashReporting".lowercased()] as? String,
+           x == "true" {
             GADMobileAds.sharedInstance().disableSDKCrashReporting()
         }
-    }
-
-    deinit {
-        readyCallbackId = nil
     }
 
     @objc(ready:)
@@ -108,16 +109,20 @@ class AMBPlugin: CDVPlugin {
     func bannerShow(command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(command)
 
-        let ad = ctx.optAd() as? AMBBanner ?? AMBBanner(ctx)
-        ad?.show(ctx) ?? ctx.error()
+        DispatchQueue.main.async {
+            let ad = ctx.optAd() as? AMBBanner ?? AMBBanner(ctx)
+            ad?.show(ctx) ?? ctx.error()
+        }
     }
 
     @objc(bannerHide:)
     func bannerHide(command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(command)
 
-        if let banner = ctx.optAdOrError() as? AMBBanner {
-            banner.hide(ctx)
+        DispatchQueue.main.async {
+            if let ad = ctx.optAdOrError() as? AMBBanner {
+                ad.hide(ctx)
+            }
         }
     }
 
@@ -125,8 +130,8 @@ class AMBPlugin: CDVPlugin {
     func interstitialIsLoaded(command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(command)
 
-        if let interstitial = ctx.optAdOrError() as? AMBInterstitial {
-            ctx.success(interstitial.isLoaded())
+        if let ad = ctx.optAdOrError() as? AMBInterstitial {
+            ctx.success(ad.isLoaded())
         }
     }
 
@@ -142,8 +147,10 @@ class AMBPlugin: CDVPlugin {
     func interstitialShow(command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(command)
 
-        if let interstitial = ctx.optAdOrError() as? AMBInterstitial {
-            interstitial.show(ctx)
+        DispatchQueue.main.async {
+            if let ad = ctx.optAdOrError() as? AMBInterstitial {
+                ad.show(ctx)
+            }
         }
     }
 
@@ -151,8 +158,8 @@ class AMBPlugin: CDVPlugin {
     func rewardedIsLoaded(command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(command)
 
-        if let rewarded = ctx.optAdOrError() as? AMBRewarded {
-            ctx.success(rewarded.isLoaded())
+        if let ad = ctx.optAdOrError() as? AMBRewarded {
+            ctx.success(ad.isLoaded())
         }
     }
 
@@ -168,8 +175,10 @@ class AMBPlugin: CDVPlugin {
     func rewardedShow(command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(command)
 
-        if let rewarded = ctx.optAdOrError() as? AMBRewarded {
-            rewarded.show(ctx)
+        DispatchQueue.main.async {
+            if let ad = ctx.optAdOrError() as? AMBRewarded {
+                ad.show(ctx)
+            }
         }
     }
 
@@ -177,8 +186,8 @@ class AMBPlugin: CDVPlugin {
     func rewardedInterstitialIsLoaded(command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(command)
 
-        if let rewardedInterstitial = ctx.optAdOrError() as? AMBRewardedInterstitial {
-            ctx.success(rewardedInterstitial.isLoaded())
+        if let ad = ctx.optAdOrError() as? AMBRewardedInterstitial {
+            ctx.success(ad.isLoaded())
         }
     }
 
@@ -194,8 +203,10 @@ class AMBPlugin: CDVPlugin {
     func rewardedInterstitialShow(command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(command)
 
-        if let rewardedInterstitial = ctx.optAdOrError() as? AMBRewardedInterstitial {
-            rewardedInterstitial.show(ctx)
+        DispatchQueue.main.async {
+            if let ad = ctx.optAdOrError() as? AMBRewardedInterstitial {
+                ad.show(ctx)
+            }
         }
     }
 
