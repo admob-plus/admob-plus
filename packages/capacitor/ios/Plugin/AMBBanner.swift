@@ -66,7 +66,7 @@ class AMBBanner: AMBAdBase, GADAdSizeDelegate, GADBannerViewDelegate {
         self.init(id: id,
                   adUnitId: adUnitId,
                   adSize: adSize,
-                  position: ctx.call.getString("position", "bottom"))
+                  position: ctx.optPosition())
     }
 
     func show(_ ctx: AMBContext) {

@@ -22,6 +22,10 @@ class AMBContext {
         return call.getString("adUnitId")
     }
 
+    func optPosition() -> String {
+        return call.getString("position", "bottom")
+    }
+
     func optAd() -> AMBAdBase? {
         guard let id = optId(),
               let ad = AMBAdBase.ads[id]
