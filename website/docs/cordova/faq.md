@@ -7,7 +7,7 @@ sidebar_label: FAQ
 
 ### Why are ads not showing?
 
-Beside programming error, a common report is [no fill error](https://developers.google.com/android/reference/com/google/android/gms/ads/AdRequest#ERROR_CODE_NO_FILL),
+Beside programming error, a common report is [no fill error](https://developers.google.com/android/reference/com/google/android/gms/ads/AdRequest#ERROR_CODE_NO_FILL) ([explanation post](https://support.google.com/admob/thread/3494603)),
 which many users think it is the problem of the library.
 
 It is common that for the first time requesting newly created ad unit, there is a delay to have available ads start serving.
