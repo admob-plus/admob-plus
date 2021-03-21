@@ -72,3 +72,13 @@ This is likely caused by CocoaPods is not installing the dependencies correctly.
 Run `pod repo update` and `cd platforms/ios && pod install --repo-update` to ensure latest SDK is ready.
 
 A clean build / remove then re-add the plugin may be necessary.
+
+### Shoud I use Apple’s ATT prompt?
+
+As part of iOS 14, you may choose to employ the new [AppTrackingTransparency (ATT) framework](https://developer.apple.com/documentation/apptrackingtransparency) by calling `admob.requestTrackingAuthorization()`.
+
+If your app is not using ATT, you need to state that during submission or your app [may be rejected](https://github.com/admob-plus/admob-plus/issues/241).
+
+> If your app integrates AppTrackingTransparency, please indicate where in your app we can find the AppTrackingTransparency permission request.
+>
+> If your app does not integrate AppTrackingTransparency, please indicate this information in the Review Notes section for each version of your app in App Store Connect when submitting for review.
