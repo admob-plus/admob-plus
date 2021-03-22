@@ -58,7 +58,7 @@ ___
 
 ### allAds
 
-▪ `Private` `Static` **allAds**: *object*
+▪ `Static` `Private` **allAds**: *object*
 
 #### Type declaration:
 
@@ -68,7 +68,7 @@ ___
 
 ### idCounter
 
-▪ `Private` `Static` **idCounter**: *number*= 0
+▪ `Static` `Private` **idCounter**: *number*= 0
 
 Defined in: api.ts:9
 
@@ -76,7 +76,7 @@ Defined in: api.ts:9
 
 ### nextId
 
-▸ `Private` `Static`**nextId**(): *number*
+▸ `Static` `Private`**nextId**(): *number*
 
 **Returns:** *number*
 
