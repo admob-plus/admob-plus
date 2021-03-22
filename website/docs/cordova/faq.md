@@ -42,7 +42,7 @@ Edit `pacakge.json` to fix:
   "cordova": {
     "plugins": {
       "cordova-android-play-services-gradle-release": {
-        "play-services-ads": "19.7.0"
+        "PLAY-SERVICES-ADS": "19.8.0"
       }
     }
   }
