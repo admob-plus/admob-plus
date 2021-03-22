@@ -125,7 +125,7 @@ class AMBBanner: AMBAdBase, GADAdSizeDelegate, GADBannerViewDelegate {
             NSLayoutConstraint.activate([
                 stackView.leadingAnchor.constraint(equalTo: rootView.leadingAnchor),
                 stackView.trailingAnchor.constraint(equalTo: rootView.trailingAnchor),
-                stackView.bottomAnchor.constraint(equalTo: rootView.bottomAnchor),
+                stackView.bottomAnchor.constraint(equalTo: guide.bottomAnchor),
                 stackView.topAnchor.constraint(equalTo: guide.topAnchor)
             ])
         }
