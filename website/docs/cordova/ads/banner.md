@@ -51,3 +51,7 @@ An ad request has been failed.
 ### `admob.banner.impression`
 
 An ad has been displayed.
+
+### `admob.banner.close`
+
+An ad has been clicked (return from browser).
