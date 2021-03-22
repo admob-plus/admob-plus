@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.0.0...admob-plus-cordova@1.0.1) (2021-03-22)
+
+
+### Bug Fixes
+
+* **cordova/ios:** respect bottom safe area ([a1cc516](https://github.com/admob-plus/admob-plus/commit/a1cc5160f2b72cf0b1bbca9f9d6ba038bd2386da))
+
+
+
+
+
 # [1.0.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.0.0-rc.1...admob-plus-cordova@1.0.0) (2021-03-21)
 
 **Note:** Version bump only for package admob-plus-cordova

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.0.0...@admob-plus/capacitor@1.0.1) (2021-03-22)
+
+
+### Bug Fixes
+
+* **capacitor/ios:** respect bottom safe area ([75a769d](https://github.com/admob-plus/admob-plus/commit/75a769d19f17a8d821fee41d216322de7c2799eb))
+
+
+
+
+
 # [1.0.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.0.0-rc.1...@admob-plus/capacitor@1.0.0) (2021-03-21)
 
 **Note:** Version bump only for package @admob-plus/capacitor
