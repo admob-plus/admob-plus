@@ -29,7 +29,7 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
     convenience init?(_ ctx: AMBContext) {
         guard let id = ctx.optId(),
               let adUnitId = ctx.optAdUnitID(),
-              let position = ctx.optString("position")
+              let position = ctx.optPosition()
         else {
             return nil
         }
