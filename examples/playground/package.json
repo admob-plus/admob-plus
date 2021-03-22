@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@chakra-ui/react": "^1.4.0",
+    "@chakra-ui/react": "^1.4.1",
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.1.5",
     "admob-plus-cordova": "file:../../packages/cordova",
@@ -20,7 +20,7 @@
     "@admob-plus-internal/cli": "file:../../internal/cli",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
-    "@testing-library/user-event": "^13.0.6",
+    "@testing-library/user-event": "^13.0.7",
     "@types/cordova": "^0.0.34",
     "@types/fs-extra": "^9.0.8",
     "@types/jest": "^26.0.21",
