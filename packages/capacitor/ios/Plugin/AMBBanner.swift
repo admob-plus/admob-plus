@@ -26,33 +26,7 @@ class AMBBanner: AMBAdBase, GADAdSizeDelegate, GADBannerViewDelegate {
 
         super.init(id: id, adUnitId: adUnitId)
 
-        if stackView.arrangedSubviews.isEmpty {
-            stackView.axis = .vertical
-            stackView.distribution = .fill
-            stackView.alignment = .fill
-            rootView.addSubview(stackView)
-            stackView.addArrangedSubview(mainView)
-
-            let backgroundView = UIView()
-            backgroundView.backgroundColor = .black
-            backgroundView.translatesAutoresizingMaskIntoConstraints = false
-            stackView.insertSubview(backgroundView, at: 0)
-            NSLayoutConstraint.activate([
-                backgroundView.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
-                backgroundView.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
-                backgroundView.topAnchor.constraint(equalTo: stackView.topAnchor),
-                backgroundView.bottomAnchor.constraint(equalTo: rootView.bottomAnchor)
-            ])
-
-            let guide = rootView.safeAreaLayoutGuide
-            stackView.translatesAutoresizingMaskIntoConstraints = false
-            NSLayoutConstraint.activate([
-                stackView.leadingAnchor.constraint(equalTo: rootView.leadingAnchor),
-                stackView.trailingAnchor.constraint(equalTo: rootView.trailingAnchor),
-                stackView.bottomAnchor.constraint(equalTo: rootView.bottomAnchor),
-                stackView.topAnchor.constraint(equalTo: guide.topAnchor)
-            ])
-        }
+        prepareStackView()
     }
 
     convenience init?(_ ctx: AMBContext) {
@@ -125,5 +99,35 @@ class AMBBanner: AMBAdBase, GADAdSizeDelegate, GADBannerViewDelegate {
 
     func bannerViewDidDismissScreen(_ bannerView: GADBannerView) {
         self.emit(AMBEvents.bannerClose)
+    }
+
+    private func prepareStackView() {
+        if stackView.arrangedSubviews.isEmpty {
+            stackView.axis = .vertical
+            stackView.distribution = .fill
+            stackView.alignment = .fill
+            rootView.addSubview(stackView)
+            stackView.addArrangedSubview(mainView)
+
+            let backgroundView = UIView()
+            backgroundView.backgroundColor = .black
+            backgroundView.translatesAutoresizingMaskIntoConstraints = false
+            stackView.insertSubview(backgroundView, at: 0)
+            NSLayoutConstraint.activate([
+                backgroundView.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
+                backgroundView.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
+                backgroundView.topAnchor.constraint(equalTo: stackView.topAnchor),
+                backgroundView.bottomAnchor.constraint(equalTo: rootView.bottomAnchor)
+            ])
+
+            let guide = rootView.safeAreaLayoutGuide
+            stackView.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                stackView.leadingAnchor.constraint(equalTo: rootView.leadingAnchor),
+                stackView.trailingAnchor.constraint(equalTo: rootView.trailingAnchor),
+                stackView.bottomAnchor.constraint(equalTo: rootView.bottomAnchor),
+                stackView.topAnchor.constraint(equalTo: guide.topAnchor)
+            ])
+        }
     }
 }
