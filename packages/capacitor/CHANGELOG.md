@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.2](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.0.1...@admob-plus/capacitor@1.0.2) (2021-03-23)
+
+
+### Bug Fixes
+
+* **capacitor/ios:** make status bar text visible ([7e31718](https://github.com/admob-plus/admob-plus/commit/7e3171833914155f1d3a21ce63496e457cc2f6d4))
+
+
+
+
+
 ## [1.0.1](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.0.0...@admob-plus/capacitor@1.0.1) (2021-03-22)
 
 
