@@ -1,3 +1,5 @@
+[![NPM version](https://img.shields.io/npm/v/admob-plus.svg)](https://npmjs.org/package/admob-plus)
+
 admob-plus
 ==========
 

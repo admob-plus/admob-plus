@@ -1,3 +1,5 @@
+[![NPM version](https://img.shields.io/npm/v/@admob-plus/capacitor.svg)](https://npmjs.org/package/@admob-plus/capacitor)
+
 # @admob-plus/capacitor
 
 AdMob Plus Capacitor Plugin
