@@ -32,7 +32,7 @@ public class Banner extends AdBase implements IAdShow {
         this.gravity = "top".equals(ctx.optPosition()) ? Gravity.TOP : Gravity.BOTTOM;
     }
 
-    public void show(ExecuteContext ctx) {
+    public void load(ExecuteContext ctx) {
         AdRequest adRequest = ctx.optAdRequest();
 
         if (adView == null) {
@@ -70,7 +70,15 @@ public class Banner extends AdBase implements IAdShow {
                     emit(Events.BANNER_OPEN);
                 }
             });
+        }
 
+        adView.loadAd(adRequest);
+    }
+
+    public void show(ExecuteContext ctx) {
+        load(ctx);
+
+        if (adView.getParent() == null) {
             addBannerView(ctx, adView);
         } else if (adView.getVisibility() == View.GONE) {
             adView.resume();
@@ -87,7 +95,6 @@ public class Banner extends AdBase implements IAdShow {
             }
         }
 
-        adView.loadAd(adRequest);
         ctx.success();
     }
 
