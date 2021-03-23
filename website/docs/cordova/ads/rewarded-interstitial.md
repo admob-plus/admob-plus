@@ -21,7 +21,7 @@ document.addEventListener('deviceready', async () => {
   await rewarded.show()
 }, false)
 
-document.addEventListener('admob.rewardedInterstitial.dismiss', async () => {
+document.addEventListener('admob.rewardedi.dismiss', async () => {
   await rewarded.load()
 })
 ```
