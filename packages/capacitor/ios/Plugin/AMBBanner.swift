@@ -109,16 +109,14 @@ class AMBBanner: AMBAdBase, GADAdSizeDelegate, GADBannerViewDelegate {
             rootView.addSubview(stackView)
             stackView.addArrangedSubview(mainView)
 
-            let backgroundView = UIView()
-            backgroundView.backgroundColor = .black
-            backgroundView.translatesAutoresizingMaskIntoConstraints = false
-            stackView.insertSubview(backgroundView, at: 0)
-            NSLayoutConstraint.activate([
-                backgroundView.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
-                backgroundView.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
-                backgroundView.topAnchor.constraint(equalTo: stackView.topAnchor),
-                backgroundView.bottomAnchor.constraint(equalTo: rootView.bottomAnchor)
-            ])
+            if #available(iOS 14.0, *) {
+                stackView.backgroundColor = .black
+            } else {
+                let backgroundView = UIView()
+                backgroundView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+                backgroundView.backgroundColor = .black
+                stackView.insertSubview(backgroundView, at: 0)
+            }
 
             let guide = rootView.safeAreaLayoutGuide
             stackView.translatesAutoresizingMaskIntoConstraints = false
