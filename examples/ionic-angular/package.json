@@ -22,7 +22,7 @@
     "@angular/platform-browser-dynamic": "~11.2.6",
     "@angular/router": "~11.2.6",
     "@ionic-native/core": "^5.31.1",
-    "@ionic/angular": "^5.6.1",
+    "@ionic/angular": "^5.6.2",
     "cordova-ios": "6.3.0-nightly.2021.2.10.a3a3936a",
     "tslib": "^2.1.0",
     "zone.js": "~0.11.4"
