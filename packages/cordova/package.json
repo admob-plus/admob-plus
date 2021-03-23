@@ -19,7 +19,7 @@
   "author": "Ratson",
   "license": "MIT",
   "repository": "admob-plus/admob-plus",
-  "homepage": "https://admob-plus.github.io",
+  "homepage": "https://admob-plus.github.io/docs/cordova",
   "files": [
     "*.ts",
     "*.md",

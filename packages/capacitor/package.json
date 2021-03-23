@@ -60,7 +60,7 @@
   "peerDependencies": {
     "@capacitor/core": "^3.0.0-rc.0"
   },
-  "homepage": "https://admob-plus.github.io",
+  "homepage": "https://admob-plus.github.io/docs/capacitor",
   "publishConfig": {
     "access": "public"
   },
