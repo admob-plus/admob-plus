@@ -17,7 +17,7 @@ class AMBBanner: AMBAdBase, GADAdSizeDelegate, GADBannerViewDelegate {
     }
 
     var mainView: UIView {
-        return window.subviews[0]
+        return AMBContext.plugin.webView!
     }
 
     init(id: Int, adUnitId: String, adSize: GADAdSize, position: String) {
