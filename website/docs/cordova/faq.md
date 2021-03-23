@@ -30,6 +30,18 @@ It is receommended to track the impressions via event API instead of just the AP
 
 It does not relate to the plugin, see ["Set up an app-ads.txt file for your app"](https://support.google.com/admob/answer/9363762?hl=en).
 
+### Why does the "close button" on my interstitial not work?
+
+Sometimes you can't close an interstitial by using the "close button" and this can be caused by several both serverside and clientside issues.
+
+One of the most common reasons for this unwanted behaviour is a setting in your `config.xml` [preferences file](https://cordova.apache.org/docs/en/10.x/config_ref/index.html).
+
+Be sure to have the `KeepRunning` preference set to `true` (default), becausing turning this off (`false`) can freeze an interstitial when viewed.
+
+The reason for this is that those type of ads are layered "above" the main app and can't be "reached" (interacted with) when the app stops running after leaving it's view.
+
+Setting `KeepRunning` to `true` resolves the issue, but can have some negative inpact on battery usage and ofcourse all the existing (java-)scripts keep running in the background when the app is tombstoned.
+
 ## Android
 
 ### How to use with `cordova-android-play-services-gradle-release`?
