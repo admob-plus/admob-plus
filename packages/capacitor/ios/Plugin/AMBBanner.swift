@@ -17,7 +17,7 @@ class AMBBanner: AMBAdBase, GADAdSizeDelegate, GADBannerViewDelegate {
     }
 
     var mainView: UIView {
-        return AMBContext.plugin.webView!
+        return plugin.webView!
     }
 
     init(id: Int, adUnitId: String, adSize: GADAdSize, position: String) {
@@ -130,6 +130,8 @@ class AMBBanner: AMBAdBase, GADAdSizeDelegate, GADBannerViewDelegate {
                 stackView.bottomAnchor.constraint(equalTo: guide.bottomAnchor),
                 stackView.topAnchor.constraint(equalTo: guide.topAnchor)
             ])
+
+            plugin.bridge?.statusBarStyle = .lightContent
         }
     }
 }
