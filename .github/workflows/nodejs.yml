@@ -194,12 +194,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: lycheeverse/lychee-action@v1.0.4
+      - uses: lycheeverse/lychee-action@v1.0.6
         with:
           args: --version
       - name: lychee Link Checker
         id: lc
-        uses: lycheeverse/lychee-action@master
+        uses: lycheeverse/lychee-action@v1.0.6
         with:
           args: >
             README.md
@@ -207,8 +207,7 @@ jobs:
             website/**/*.md
             --config lychee.toml
       - name: Fail if there were link errors
-        # FIXME when --exclude is working
-        run: exit 0 || exit ${{ steps.lc.outputs.exit_code }}
+        run: exit ${{ steps.lc.outputs.exit_code }}
 
   deploy-docs:
     name: Deploy website
