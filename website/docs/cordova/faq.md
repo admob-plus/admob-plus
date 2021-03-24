@@ -42,6 +42,16 @@ The reason for this is that those type of ads are layered "above" the main app a
 
 Setting `KeepRunning` to `true` resolves the issue, but can have some negative inpact on battery usage and ofcourse all the existing (java-)scripts keep running in the background when the app is tombstoned.
 
+### Why do old browsers / devices throw an "Uncaught SyntaxError"?
+
+The examples for this plug-in are using a syntax introduced in ES6 ([ECMAScript version 6](https://en.wikipedia.org/wiki/ECMAScript)).
+
+Some of those ES6 features are `async`, `promise` and `await` which makes development a lot easier and result in a more stable product. Almost every browser or device since 2015 [does support ES6](https://caniuse.com/async-functions), but older versions don't.
+
+So if you are targetting devices like `Android 4.x` or even `Android 5.x` a syntax error in the script can occur and [throw messages](https://stackoverflow.com/questions/40492609) in the console like `Uncaught SyntaxError: Unexpected token function (async)`.
+
+If you need to support those older devices, you can savely rewrite the example code to basic Javascript, without any of those asynchronous functions.
+
 ## Android
 
 ### How to use with `cordova-android-play-services-gradle-release`?
