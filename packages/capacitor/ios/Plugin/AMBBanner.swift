@@ -58,10 +58,13 @@ class AMBBanner: AMBAdBase, GADAdSizeDelegate, GADBannerViewDelegate {
 
         prepareStackView()
 
+        let guide = rootView.safeAreaLayoutGuide
         switch position {
         case "top":
+            stackView.topAnchor.constraint(equalTo: guide.topAnchor).isActive = true
             stackView.insertArrangedSubview(bannerView, at: 0)
         default:
+            stackView.bottomAnchor.constraint(equalTo: guide.bottomAnchor).isActive = true
             stackView.addArrangedSubview(bannerView)
         }
 
@@ -122,16 +125,17 @@ class AMBBanner: AMBAdBase, GADAdSizeDelegate, GADBannerViewDelegate {
                 stackView.insertSubview(backgroundView, at: 0)
             }
 
-            let guide = rootView.safeAreaLayoutGuide
+            let constraintTop = stackView.topAnchor.constraint(equalTo: rootView.topAnchor)
+            let constraintBottom = stackView.bottomAnchor.constraint(equalTo: rootView.bottomAnchor)
+            constraintTop.priority = UILayoutPriority(10)
+            constraintBottom.priority = UILayoutPriority(10)
             stackView.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
                 stackView.leadingAnchor.constraint(equalTo: rootView.leadingAnchor),
                 stackView.trailingAnchor.constraint(equalTo: rootView.trailingAnchor),
-                stackView.bottomAnchor.constraint(equalTo: guide.bottomAnchor),
-                stackView.topAnchor.constraint(equalTo: guide.topAnchor)
+                constraintBottom,
+                constraintTop
             ])
-
-            plugin.bridge?.statusBarStyle = .lightContent
         }
     }
 }
