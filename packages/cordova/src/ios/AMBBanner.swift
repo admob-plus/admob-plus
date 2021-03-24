@@ -1,6 +1,16 @@
 class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
     static var stackView = UIStackView()
 
+    static var topConstraint = {
+        return AMBBanner.stackView.topAnchor.constraint(
+            equalTo: AMBContext.plugin.viewController.view.safeAreaLayoutGuide.topAnchor)
+    }()
+
+    static var bottomConstraint = {
+        return AMBBanner.stackView.bottomAnchor.constraint(
+            equalTo: AMBContext.plugin.viewController.view.safeAreaLayoutGuide.bottomAnchor)
+    }()
+
     let adSize: GADAdSize!
     let position: String!
     var bannerView: GADBannerView!
@@ -15,6 +25,14 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
 
     var mainView: UIView {
         return self.plugin.webView
+    }
+
+    var topConstraint: NSLayoutConstraint {
+        return AMBBanner.topConstraint
+    }
+
+    var bottomConstraint: NSLayoutConstraint {
+        return AMBBanner.bottomConstraint
     }
 
     init(id: Int, adUnitId: String, adSize: GADAdSize, position: String) {
@@ -67,6 +85,7 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
         bannerView.adUnitID = adUnitId
         bannerView.load(request)
 
+        updateLayout()
         ctx.success()
     }
 
@@ -74,6 +93,7 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
         if bannerView != nil {
             bannerView.isHidden = true
             stackView.removeArrangedSubview(bannerView)
+            updateLayout()
         }
         ctx.success()
     }
@@ -114,25 +134,36 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
             rootView.addSubview(stackView)
             stackView.addArrangedSubview(mainView)
 
-            let backgroundView = UIView()
-            backgroundView.backgroundColor = .black
-            backgroundView.translatesAutoresizingMaskIntoConstraints = false
-            stackView.insertSubview(backgroundView, at: 0)
-            NSLayoutConstraint.activate([
-                backgroundView.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
-                backgroundView.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
-                backgroundView.topAnchor.constraint(equalTo: stackView.topAnchor),
-                backgroundView.bottomAnchor.constraint(equalTo: rootView.bottomAnchor)
-            ])
-
-            let guide = rootView.safeAreaLayoutGuide
+            let constraintTop = stackView.topAnchor.constraint(equalTo: rootView.topAnchor)
+            let constraintBottom = stackView.bottomAnchor.constraint(equalTo: rootView.bottomAnchor)
+            constraintTop.priority = UILayoutPriority(10)
+            constraintBottom.priority = UILayoutPriority(10)
             stackView.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
                 stackView.leadingAnchor.constraint(equalTo: rootView.leadingAnchor),
                 stackView.trailingAnchor.constraint(equalTo: rootView.trailingAnchor),
-                stackView.bottomAnchor.constraint(equalTo: guide.bottomAnchor),
-                stackView.topAnchor.constraint(equalTo: guide.topAnchor)
+                constraintBottom,
+                constraintTop
             ])
         }
     }
+
+    private func updateLayout() {
+        if stackView.arrangedSubviews.first is GADBannerView {
+            topConstraint.isActive = true
+
+            if plugin.viewController.traitCollection.userInterfaceStyle == .dark {
+                rootView.backgroundColor = .clear
+            }
+        } else {
+            topConstraint.isActive = false
+        }
+
+        if stackView.arrangedSubviews.last is GADBannerView {
+            bottomConstraint.isActive = true
+        } else {
+            bottomConstraint.isActive = false
+        }
+    }
+
 }
