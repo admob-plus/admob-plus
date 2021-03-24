@@ -2,6 +2,7 @@
     import AppTrackingTransparency
 #endif
 import AdSupport
+import GoogleMobileAds
 
 @objc(AMBPlugin)
 class AMBPlugin: CDVPlugin {

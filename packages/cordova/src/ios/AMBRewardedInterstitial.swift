@@ -1,3 +1,5 @@
+import GoogleMobileAds
+
 class AMBRewardedInterstitial: AMBAdBase, GADFullScreenContentDelegate {
     var rewardedInterstitial: GADRewardedInterstitialAd?
 

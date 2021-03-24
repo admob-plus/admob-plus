@@ -1,3 +1,5 @@
+import GoogleMobileAds
+
 class AMBAdBase: NSObject {
     static var ads = [Int: AMBAdBase]()
 

@@ -1,3 +1,5 @@
+import GoogleMobileAds
+
 class AMBContext {
     static weak var plugin: AMBPlugin!
 

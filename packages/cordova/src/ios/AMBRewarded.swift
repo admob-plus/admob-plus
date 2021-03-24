@@ -1,3 +1,5 @@
+import GoogleMobileAds
+
 class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
     var rewardedAd: GADRewardedAd?
 

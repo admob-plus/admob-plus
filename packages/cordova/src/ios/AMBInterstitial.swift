@@ -1,3 +1,5 @@
+import GoogleMobileAds
+
 class AMBInterstitial: AMBAdBase, GADFullScreenContentDelegate {
     var interstitial: GADInterstitialAd?
 

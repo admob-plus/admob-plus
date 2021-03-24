@@ -1,3 +1,5 @@
+import GoogleMobileAds
+
 class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
     static var stackView = UIStackView()
 
@@ -152,8 +154,10 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
         if stackView.arrangedSubviews.first is GADBannerView {
             topConstraint.isActive = true
 
-            if plugin.viewController.traitCollection.userInterfaceStyle == .dark {
-                rootView.backgroundColor = .clear
+            if #available(iOS 12.0, *) {
+                if plugin.viewController.traitCollection.userInterfaceStyle == .dark {
+                    rootView.backgroundColor = .clear
+                }
             }
         } else {
             topConstraint.isActive = false
