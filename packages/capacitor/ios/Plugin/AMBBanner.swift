@@ -4,6 +4,16 @@ import GoogleMobileAds
 class AMBBanner: AMBAdBase, GADAdSizeDelegate, GADBannerViewDelegate {
     static var stackView = UIStackView()
 
+    static var topConstraint = {
+        return AMBBanner.stackView.topAnchor.constraint(
+            equalTo: UIApplication.shared.keyWindow!.safeAreaLayoutGuide.topAnchor)
+    }()
+
+    static var bottomConstraint = {
+        return AMBBanner.stackView.bottomAnchor.constraint(
+            equalTo: UIApplication.shared.keyWindow!.safeAreaLayoutGuide.bottomAnchor)
+    }()
+
     let adSize: GADAdSize!
     let position: String!
     var bannerView: GADBannerView!
@@ -20,13 +30,13 @@ class AMBBanner: AMBAdBase, GADAdSizeDelegate, GADBannerViewDelegate {
         return plugin.webView!
     }
 
-    lazy var topConstraint = {
-        return stackView.topAnchor.constraint(equalTo: rootView.safeAreaLayoutGuide.topAnchor)
-    }()
+    var topConstraint: NSLayoutConstraint {
+        return AMBBanner.topConstraint
+    }
 
-    lazy var bottomConstraint = {
-        return stackView.bottomAnchor.constraint(equalTo: rootView.safeAreaLayoutGuide.bottomAnchor)
-    }()
+    var bottomConstraint: NSLayoutConstraint {
+        return AMBBanner.bottomConstraint
+    }
 
     init(id: Int, adUnitId: String, adSize: GADAdSize, position: String) {
         self.adSize = adSize
