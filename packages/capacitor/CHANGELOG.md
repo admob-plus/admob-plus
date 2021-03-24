@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.0.2...@admob-plus/capacitor@1.1.0) (2021-03-24)
+
+
+### Features
+
+* **capacitor/ios:** do not reserve safe area when there is no banner ([bc6c5ea](https://github.com/admob-plus/admob-plus/commit/bc6c5ea1e41424a3d26b2a713cdf402ef93c0d8e))
+* **capacitor/ios:** set status bar to use light content for top banner ([b1cec3a](https://github.com/admob-plus/admob-plus/commit/b1cec3a4b7be773551a06bc4c0a9c804c974dce7))
+
+
+
+
+
 ## [1.0.2](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.0.1...@admob-plus/capacitor@1.0.2) (2021-03-23)
 
 

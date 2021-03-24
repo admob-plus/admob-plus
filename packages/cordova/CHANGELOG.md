@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.0.2...admob-plus-cordova@1.1.0) (2021-03-24)
+
+
+### Features
+
+* **cordova/ios:** reserve safe area only when banner displays, fix [#264](https://github.com/admob-plus/admob-plus/issues/264) ([f33ef3e](https://github.com/admob-plus/admob-plus/commit/f33ef3e0a4cac3e839d8112ca525e5b9b57ebe03))
+
+
+
+
+
 ## [1.0.2](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.0.1...admob-plus-cordova@1.0.2) (2021-03-23)
 
 **Note:** Version bump only for package admob-plus-cordova
