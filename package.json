@@ -74,6 +74,9 @@
     ]
   },
   "dependenciesMeta": {
+    "@angular/compiler-cli": {
+      "unplugged": true
+    },
     "native-run": {
       "unplugged": true
     }
