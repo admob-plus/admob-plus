@@ -63,6 +63,7 @@ class AMBBanner: AMBAdBase, GADAdSizeDelegate, GADBannerViewDelegate {
         case "top":
             stackView.topAnchor.constraint(equalTo: guide.topAnchor).isActive = true
             stackView.insertArrangedSubview(bannerView, at: 0)
+            updateStatusBarStyle()
         default:
             stackView.bottomAnchor.constraint(equalTo: guide.bottomAnchor).isActive = true
             stackView.addArrangedSubview(bannerView)
@@ -136,6 +137,12 @@ class AMBBanner: AMBAdBase, GADAdSizeDelegate, GADBannerViewDelegate {
                 constraintBottom,
                 constraintTop
             ])
+        }
+    }
+
+    private func updateStatusBarStyle() {
+        if stackView.arrangedSubviews[0] is GADBannerView {
+            plugin.bridge?.statusBarStyle = .lightContent
         }
     }
 }
