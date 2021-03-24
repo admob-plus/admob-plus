@@ -20,6 +20,14 @@ class AMBBanner: AMBAdBase, GADAdSizeDelegate, GADBannerViewDelegate {
         return plugin.webView!
     }
 
+    lazy var topConstraint = {
+        return stackView.topAnchor.constraint(equalTo: rootView.safeAreaLayoutGuide.topAnchor)
+    }()
+
+    lazy var bottomConstraint = {
+        return stackView.bottomAnchor.constraint(equalTo: rootView.safeAreaLayoutGuide.bottomAnchor)
+    }()
+
     init(id: Int, adUnitId: String, adSize: GADAdSize, position: String) {
         self.adSize = adSize
         self.position = position
@@ -58,18 +66,15 @@ class AMBBanner: AMBAdBase, GADAdSizeDelegate, GADBannerViewDelegate {
 
         prepareStackView()
 
-        let guide = rootView.safeAreaLayoutGuide
         switch position {
         case "top":
-            stackView.topAnchor.constraint(equalTo: guide.topAnchor).isActive = true
             stackView.insertArrangedSubview(bannerView, at: 0)
-            updateStatusBarStyle()
         default:
-            stackView.bottomAnchor.constraint(equalTo: guide.bottomAnchor).isActive = true
             stackView.addArrangedSubview(bannerView)
         }
 
         bannerView.isHidden = false
+        updateLayout()
         ctx.success()
     }
 
@@ -77,6 +82,7 @@ class AMBBanner: AMBAdBase, GADAdSizeDelegate, GADBannerViewDelegate {
         if bannerView != nil {
             bannerView.isHidden = true
             stackView.removeArrangedSubview(bannerView)
+            updateLayout()
         }
         ctx.success()
     }
@@ -140,9 +146,18 @@ class AMBBanner: AMBAdBase, GADAdSizeDelegate, GADBannerViewDelegate {
         }
     }
 
-    private func updateStatusBarStyle() {
-        if stackView.arrangedSubviews[0] is GADBannerView {
+    private func updateLayout() {
+        if stackView.arrangedSubviews.first is GADBannerView {
             plugin.bridge?.statusBarStyle = .lightContent
+            topConstraint.isActive = true
+        } else {
+            topConstraint.isActive = false
+        }
+
+        if stackView.arrangedSubviews.last is GADBannerView {
+            bottomConstraint.isActive = true
+        } else {
+            bottomConstraint.isActive = false
         }
     }
 }
