@@ -3,12 +3,9 @@ package cordova.plugin.consent;
 import android.util.Log;
 import android.util.SparseArray;
 
-import androidx.annotation.Nullable;
-
 import com.google.android.ump.ConsentForm;
 import com.google.android.ump.ConsentInformation;
 import com.google.android.ump.ConsentRequestParameters;
-import com.google.android.ump.FormError;
 import com.google.android.ump.UserMessagingPlatform;
 
 import org.apache.cordova.CallbackContext;
@@ -83,18 +80,8 @@ public class Consent extends CordovaPlugin {
         consentInformation.requestConsentInfoUpdate(
                 cordova.getActivity(),
                 params,
-                new ConsentInformation.OnConsentInfoUpdateSuccessListener() {
-                    @Override
-                    public void onConsentInfoUpdateSuccess() {
-                        callbackContext.success();
-                    }
-                },
-                new ConsentInformation.OnConsentInfoUpdateFailureListener() {
-                    @Override
-                    public void onConsentInfoUpdateFailure(FormError formError) {
-                        callbackContext.error(formError.getMessage());
-                    }
-                });
+                callbackContext::success,
+                formError -> callbackContext.error(formError.getMessage()));
 
         return true;
     }
@@ -102,19 +89,11 @@ public class Consent extends CordovaPlugin {
     private boolean executeLoadForm(Action action, CallbackContext callbackContext) {
         UserMessagingPlatform.loadConsentForm(
                 cordova.getActivity(),
-                new UserMessagingPlatform.OnConsentFormLoadSuccessListener() {
-                    @Override
-                    public void onConsentFormLoadSuccess(ConsentForm consentForm) {
-                        forms.put(consentForm.hashCode(), consentForm);
-                        callbackContext.success(consentForm.hashCode());
-                    }
+                consentForm -> {
+                    forms.put(consentForm.hashCode(), consentForm);
+                    callbackContext.success(consentForm.hashCode());
                 },
-                new UserMessagingPlatform.OnConsentFormLoadFailureListener() {
-                    @Override
-                    public void onConsentFormLoadFailure(FormError formError) {
-                        callbackContext.error(formError.getMessage());
-                    }
-                }
+                formError -> callbackContext.error(formError.getMessage())
         );
         return true;
     }
@@ -123,14 +102,11 @@ public class Consent extends CordovaPlugin {
         ConsentForm consentForm = forms.get(action.optId());
         consentForm.show(
                 cordova.getActivity(),
-                new ConsentForm.OnConsentFormDismissedListener() {
-                    @Override
-                    public void onConsentFormDismissed(@Nullable FormError formError) {
-                        if (formError == null) {
-                            callbackContext.success();
-                        } else {
-                            callbackContext.error(formError.getMessage());
-                        }
+                formError -> {
+                    if (formError == null) {
+                        callbackContext.success();
+                    } else {
+                        callbackContext.error(formError.getMessage());
                     }
                 });
         return true;
