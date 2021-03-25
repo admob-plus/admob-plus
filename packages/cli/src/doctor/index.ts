@@ -56,7 +56,10 @@ export default class Doctor {
         const configPath = `cordova.plugins.admob-plus-cordova.${k}`
         const appId = _.get(pkg.packageJson, configPath)
         if (testAppIds.has(appId)) {
-          this.logIssue(`${configPath} is using test ID`)
+          this.logIssue(configPath)
+          this.indented(() => {
+            spinner.info(`Replace ${appId} with real publisher ID`)
+          })
         } else {
           spinner.succeed(configPath)
         }
@@ -79,9 +82,12 @@ export default class Doctor {
     this.logPath(filename)
     this.indented(async () => {
       if (semver.lt(pkgCordova.version!, pkgLatest.version!)) {
-        this.logIssue(`${pkgCordova.version} < ${pkgLatest.version}`)
+        this.logIssue(`${pkgCordova.name}: ${pkgCordova.version}`)
+        this.indented(() => {
+          spinner.info(`Update to latest version: ${pkgLatest.version}`)
+        })
       } else {
-        spinner.succeed(pkgCordova.version)
+        spinner.succeed(`${pkgCordova.name}: ${pkgCordova.version}`)
       }
     })
   }
@@ -95,22 +101,21 @@ export default class Doctor {
     spinner.fail(text)
   }
 
-  async indented(f: () => Promise<any>) {
-    this.indent()
-    await f()
-    this.indentReset()
-  }
-
-  indent() {
+  indented(f: () => any) {
     if (spinner.prefixText) {
       spinner.prefixText += ' '
     } else {
       spinner.prefixText = ' '
     }
-  }
 
-  indentReset() {
-    // @ts-expect-error wrong type
-    spinner.prefixText = undefined
+    f()
+
+    if (spinner.prefixText) {
+      spinner.prefixText = spinner.prefixText.toString().slice(0, -1)
+    }
+    if (!spinner.prefixText) {
+      // @ts-expect-error wrong type
+      spinner.prefixText = undefined
+    }
   }
 }
