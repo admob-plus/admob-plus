@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3](https://github.com/admob-plus/admob-plus/compare/admob-plus@1.1.2...admob-plus@1.1.3) (2021-03-25)
+
+
+### Bug Fixes
+
+* **cli:** add missing tslib dependency ([b6ed7c0](https://github.com/admob-plus/admob-plus/commit/b6ed7c08a565dfd8ee3fdbcd63fb67846a4d03d5))
+
+
+
+
+
 ## [1.1.2](https://github.com/admob-plus/admob-plus/compare/admob-plus@1.1.1...admob-plus@1.1.2) (2021-03-25)
 
 **Note:** Version bump only for package admob-plus
