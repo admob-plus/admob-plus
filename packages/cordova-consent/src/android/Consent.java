@@ -30,11 +30,13 @@ public class Consent extends CordovaPlugin {
     @Override
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
+
+        ExecuteContext.plugin = this;
     }
 
     @Override
     public boolean execute(String actionKey, JSONArray args, final CallbackContext callbackContext) {
-        Action action = new Action(args);
+        ExecuteContext ctx = new ExecuteContext(actionKey, args, callbackContext);
         Log.d(TAG, actionKey);
 
         switch (actionKey) {
@@ -44,11 +46,11 @@ public class Consent extends CordovaPlugin {
                 callbackContext.success(getConsentInformation().getConsentStatus());
                 break;
             case Actions.REQUEST_INFO_UPDATE:
-                return executeRequestInfoUpdate(action, callbackContext);
+                return executeRequestInfoUpdate(ctx);
             case Actions.LOAD_FORM:
-                return executeLoadForm(action, callbackContext);
+                return executeLoadForm(ctx);
             case Actions.SHOW_FORM:
-                return executeShowForm(action, callbackContext);
+                return executeShowForm(ctx);
             case Actions.RESET:
                 getConsentInformation().reset();
                 callbackContext.success();
@@ -74,39 +76,39 @@ public class Consent extends CordovaPlugin {
         return true;
     }
 
-    private boolean executeRequestInfoUpdate(Action action, CallbackContext callbackContext) {
-        ConsentRequestParameters params = action.getConsentRequestParameters(cordova.getActivity());
+    private boolean executeRequestInfoUpdate(ExecuteContext ctx) {
+        ConsentRequestParameters params = ctx.optConsentRequestParameters();
         ConsentInformation consentInformation = getConsentInformation();
         consentInformation.requestConsentInfoUpdate(
                 cordova.getActivity(),
                 params,
-                callbackContext::success,
-                formError -> callbackContext.error(formError.getMessage()));
+                ctx.callbackContext::success,
+                formError -> ctx.callbackContext.error(formError.getMessage()));
 
         return true;
     }
 
-    private boolean executeLoadForm(Action action, CallbackContext callbackContext) {
+    private boolean executeLoadForm(ExecuteContext ctx) {
         UserMessagingPlatform.loadConsentForm(
                 cordova.getActivity(),
                 consentForm -> {
                     forms.put(consentForm.hashCode(), consentForm);
-                    callbackContext.success(consentForm.hashCode());
+                    ctx.callbackContext.success(consentForm.hashCode());
                 },
-                formError -> callbackContext.error(formError.getMessage())
+                formError -> ctx.callbackContext.error(formError.getMessage())
         );
         return true;
     }
 
-    private boolean executeShowForm(Action action, CallbackContext callbackContext) {
-        ConsentForm consentForm = forms.get(action.optId());
+    private boolean executeShowForm(ExecuteContext ctx) {
+        ConsentForm consentForm = forms.get(ctx.optId());
         consentForm.show(
                 cordova.getActivity(),
                 formError -> {
                     if (formError == null) {
-                        callbackContext.success();
+                        ctx.callbackContext.success();
                     } else {
-                        callbackContext.error(formError.getMessage());
+                        ctx.callbackContext.error(formError.getMessage());
                     }
                 });
         return true;

@@ -1,17 +1,27 @@
 package cordova.plugin.consent;
 
-import android.content.Context;
+import android.app.Activity;
 
 import com.google.android.ump.ConsentDebugSettings;
 import com.google.android.ump.ConsentRequestParameters;
 
+import org.apache.cordova.CallbackContext;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-public class Action {
-    private final JSONObject opts;
+import java.util.Objects;
 
-    Action(JSONArray args) {
+public class ExecuteContext {
+    public static Consent plugin;
+    public final String actionKey;
+    public final JSONArray args;
+    public final CallbackContext callbackContext;
+    public final JSONObject opts;
+
+    ExecuteContext(String actionKey, JSONArray args, CallbackContext callbackContext) {
+        this.actionKey = actionKey;
+        this.args = args;
+        this.callbackContext = callbackContext;
         this.opts = args.optJSONObject(0);
     }
 
@@ -19,7 +29,7 @@ public class Action {
         return opts.optInt("id");
     }
 
-    public ConsentRequestParameters getConsentRequestParameters(Context context) {
+    public ConsentRequestParameters optConsentRequestParameters() {
         ConsentRequestParameters.Builder builder = new ConsentRequestParameters.Builder();
         if (this.opts == null) {
             return builder.build();
@@ -29,13 +39,17 @@ public class Action {
             builder.setTagForUnderAgeOfConsent(this.opts.optBoolean("tagForUnderAgeOfConsent"));
         }
 
-        builder.setConsentDebugSettings(getConsentDebugSettings(context, this.opts.optJSONObject("debugSettings")));
+        builder.setConsentDebugSettings(optConsentDebugSettings());
 
         return builder.build();
     }
 
-    private ConsentDebugSettings getConsentDebugSettings(Context context, JSONObject debugSettings) {
-        ConsentDebugSettings.Builder builder = new ConsentDebugSettings.Builder(context);
+    public ConsentDebugSettings optConsentDebugSettings() {
+        ConsentDebugSettings.Builder builder = new ConsentDebugSettings.Builder(getActivity());
+        JSONObject debugSettings = this.opts.optJSONObject("debugSettings");
+        if (debugSettings == null) {
+            return builder.build();
+        }
 
         if (debugSettings.has("debugGeography")) {
             builder.setDebugGeography(debugSettings.optInt("debugGeography"));
@@ -43,7 +57,7 @@ public class Action {
 
         if (debugSettings.has("testDeviceIds")) {
             JSONArray ids = debugSettings.optJSONArray("testDeviceIds");
-            for (int i = 0; i < ids.length(); i++) {
+            for (int i = 0; i < Objects.requireNonNull(ids).length(); i++) {
                 String testDeviceId = ids.optString(i);
                 if (testDeviceId != null) {
                     builder.addTestDeviceHashedId(testDeviceId);
@@ -52,5 +66,9 @@ public class Action {
         }
 
         return builder.build();
+    }
+
+    private Activity getActivity() {
+        return plugin.cordova.getActivity();
     }
 }
