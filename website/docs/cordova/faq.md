@@ -14,6 +14,8 @@ It is common that for the first time requesting newly created ad unit, there is 
 
 Also, some country or targeted deivce could have less ads to serve due to publisher / user settings.
 
+Check [common reasons for ads not showing](https://support.google.com/admob/answer/9469204).
+
 ### Why Google report shows less impressions than the number of Ad request calls?
 
 First of all, make sure your Ad request and display code are correct.
