@@ -56,12 +56,6 @@ class CSNConsent: CDVPlugin {
         ctx.success(UMPConsentInformation.sharedInstance.consentStatus.rawValue)
     }
 
-    @objc(getConsentType:)
-    func getConsentType(command: CDVInvokedUrlCommand) {
-        let ctx = CSNContext(command)
-        ctx.success(UMPConsentInformation.sharedInstance.consentType.rawValue)
-    }
-
     @objc(loadForm:)
     func loadForm(command: CDVInvokedUrlCommand) {
         let ctx = CSNContext(command)

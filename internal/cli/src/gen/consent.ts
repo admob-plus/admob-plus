@@ -12,7 +12,6 @@ const Actions = _.mapValues(
   {
     ready: null,
     getConsentStatus: null,
-    getConsentType: null,
     requestInfoUpdate: null,
     loadForm: null,
     getFormStatus: null,

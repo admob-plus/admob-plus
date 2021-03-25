@@ -4,7 +4,6 @@ package cordova.plugin.consent;
 public final class Generated {
     public final class Actions {
         public static final String GET_CONSENT_STATUS = "getConsentStatus";
-        public static final String GET_CONSENT_TYPE = "getConsentType";
         public static final String GET_FORM_STATUS = "getFormStatus";
         public static final String LOAD_FORM = "loadForm";
         public static final String READY = "ready";

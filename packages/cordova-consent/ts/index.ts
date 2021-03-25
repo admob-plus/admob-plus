@@ -11,12 +11,6 @@ export enum ConsentStatus {
   Obtained = 3,
 }
 
-export enum ConsentType {
-  Unknown = 0,
-  Personalized = 1,
-  NonPersonalized = 2,
-}
-
 export enum FormStatus {
   Unknown = 0,
   Available = 1,
@@ -37,7 +31,6 @@ export class ConsentForm {
 
 export class Consent {
   public readonly ConsentStatus = ConsentStatus
-  public readonly ConsentType = ConsentType
   public readonly FormStatus = FormStatus
 
   constructor() {
@@ -47,11 +40,6 @@ export class Consent {
   public async getConsentStatus(): Promise<ConsentStatus> {
     const n = await execAsync(NativeActions.getConsentStatus)
     return ConsentStatus[ConsentStatus[n as number]]
-  }
-
-  public async getConsentType(): Promise<ConsentType> {
-    const n = await execAsync(NativeActions.getConsentType)
-    return ConsentType[ConsentType[n as number]]
   }
 
   public async getFormStatus(): Promise<FormStatus> {
