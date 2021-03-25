@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/admob-plus/admob-plus/compare/cordova-plugin-consent@1.0.3...cordova-plugin-consent@2.0.0) (2021-03-25)
+
+
+### Features
+
+* **cordova-consent:** remove getConsentType(), fix [#267](https://github.com/admob-plus/admob-plus/issues/267) ([722462c](https://github.com/admob-plus/admob-plus/commit/722462ce583c1010303adfb9f1cffea9ac40c066))
+* **cordova-consent/ios:** pin to use GoogleUserMessagingPlatform 2.0.0 ([78c9c29](https://github.com/admob-plus/admob-plus/commit/78c9c2941a803b47bd2a54c4480bedced6090edd))
+
+
+### BREAKING CHANGES
+
+* **cordova-consent:** Consent type has been removed from latest SDK
+
+
+
+
+
 ## [1.0.3](https://github.com/admob-plus/admob-plus/compare/cordova-plugin-consent@1.0.2...cordova-plugin-consent@1.0.3) (2021-03-24)
 
 **Note:** Version bump only for package cordova-plugin-consent

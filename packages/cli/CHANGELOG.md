@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/admob-plus/admob-plus/compare/admob-plus@1.0.1...admob-plus@1.1.0) (2021-03-25)
+
+
+### Features
+
+* **cli:** add doctor command ([b3b0bf5](https://github.com/admob-plus/admob-plus/commit/b3b0bf5259ae9ac6d0f4947bf3a1c112ef442288))
+
+
+
+
+
 ## [1.0.1](https://github.com/admob-plus/admob-plus/compare/admob-plus@1.0.0...admob-plus@1.0.1) (2021-03-22)
 
 **Note:** Version bump only for package admob-plus

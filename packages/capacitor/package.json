@@ -1,6 +1,6 @@
 {
   "name": "@admob-plus/capacitor",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "AdMob Plus Capacitor Plugin",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",

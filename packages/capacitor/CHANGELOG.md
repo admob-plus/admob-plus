@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.1.0...@admob-plus/capacitor@1.2.0) (2021-03-25)
+
+
+### Features
+
+* **cordova/ios:** emit banner size change event ([cbda37b](https://github.com/admob-plus/admob-plus/commit/cbda37b32b2f9a0a4af643b86333be258a25a34d))
+
+
+
+
+
 # [1.1.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.0.2...@admob-plus/capacitor@1.1.0) (2021-03-24)
 
 
