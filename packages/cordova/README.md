@@ -1,4 +1,8 @@
 [![NPM version](https://img.shields.io/npm/v/admob-plus-cordova.svg)](https://npmjs.org/package/admob-plus-cordova)
+[![GitHub last commit](https://img.shields.io/github/last-commit/admob-plus/admob-plus)](https://github.com/admob-plus/admob-plus)
+![Dependency status](https://img.shields.io/librariesio/release/npm/admob-plus-cordova)
+![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/npm/admob-plus-cordova)
+![NPM license](https://img.shields.io/npm/l/admob-plus-cordova)
 
 # [AdMob Plus Cordova](https://admob-plus.github.io)
 

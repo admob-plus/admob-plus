@@ -1,4 +1,8 @@
 [![NPM version](https://img.shields.io/npm/v/admob-plus.svg)](https://npmjs.org/package/admob-plus)
+[![GitHub last commit](https://img.shields.io/github/last-commit/admob-plus/admob-plus)](https://github.com/admob-plus/admob-plus)
+![Dependency status](https://img.shields.io/librariesio/release/npm/admob-plus)
+![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/npm/admob-plus)
+![NPM license](https://img.shields.io/npm/l/admob-plus)
 
 admob-plus
 ==========
