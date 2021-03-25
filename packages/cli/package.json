@@ -44,7 +44,7 @@
   "main": "lib/index.js",
   "scripts": {
     "prepublishOnly": "yarn build",
-    "build": "rm -rf lib && tsc -b"
+    "build": "tsc -b"
   },
   "types": "lib/index.d.ts"
 }

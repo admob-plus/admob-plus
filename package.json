@@ -5,6 +5,7 @@
   "scripts": {
     "postinstall": "is-ci || lefthook install",
     "prepare": "lerna run prepare",
+    "prepublishOnly": "del '*.tsbuildinfo' 'packages/*/*.tsbuildinfo'",
     "test": "run-s 'test:*'",
     "test:pkgs": "lerna run test",
     "test:jest": "jest",
@@ -29,6 +30,7 @@
     "@types/xml2js": "^0.4.8",
     "cordova": "10.0.0",
     "cordova-testbed": "^0.8.0",
+    "del-cli": "^3.0.1",
     "eslint": "^7.22.0",
     "eslint-config-concise": "^0.40.1",
     "eslint-config-concise-browser": "^0.40.1",
