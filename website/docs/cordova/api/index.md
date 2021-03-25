@@ -3,6 +3,7 @@ id: "index"
 title: "admob-plus-cordova"
 slug: "/cordova/api"
 sidebar_label: "Table of contents"
+hide_table_of_contents: true
 custom_edit_url: null
 hide_title: true
 ---

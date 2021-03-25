@@ -3,6 +3,7 @@ id: "index"
 title: "cordova-plugin-consent"
 slug: "/cordova/consent/api"
 sidebar_label: "Table of contents"
+hide_table_of_contents: true
 custom_edit_url: null
 hide_title: true
 ---
@@ -14,7 +15,6 @@ hide_title: true
 ### Enumerations
 
 - [ConsentStatus](enums/consentstatus.md)
-- [ConsentType](enums/consenttype.md)
 - [FormStatus](enums/formstatus.md)
 
 ### Classes

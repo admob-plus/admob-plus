@@ -16,7 +16,7 @@ hide_title: true
 
 **Returns:** [*Consent*](consent.md)
 
-Defined in: index.ts:41
+Defined in: index.ts:34
 
 ## Properties
 
@@ -24,15 +24,7 @@ Defined in: index.ts:41
 
 • `Readonly` **ConsentStatus**: *typeof* [*ConsentStatus*](../enums/consentstatus.md)
 
-Defined in: index.ts:39
-
-___
-
-### ConsentType
-
-• `Readonly` **ConsentType**: *typeof* [*ConsentType*](../enums/consenttype.md)
-
-Defined in: index.ts:40
+Defined in: index.ts:33
 
 ___
 
@@ -40,7 +32,7 @@ ___
 
 • `Readonly` **FormStatus**: *typeof* [*FormStatus*](../enums/formstatus.md)
 
-Defined in: index.ts:41
+Defined in: index.ts:34
 
 ## Methods
 
@@ -50,17 +42,7 @@ Defined in: index.ts:41
 
 **Returns:** *Promise*<[*ConsentStatus*](../enums/consentstatus.md)\>
 
-Defined in: index.ts:47
-
-___
-
-### getConsentType
-
-▸ **getConsentType**(): *Promise*<[*ConsentType*](../enums/consenttype.md)\>
-
-**Returns:** *Promise*<[*ConsentType*](../enums/consenttype.md)\>
-
-Defined in: index.ts:52
+Defined in: index.ts:40
 
 ___
 
@@ -70,7 +52,7 @@ ___
 
 **Returns:** *Promise*<[*FormStatus*](../enums/formstatus.md)\>
 
-Defined in: index.ts:57
+Defined in: index.ts:45
 
 ___
 
@@ -80,7 +62,7 @@ ___
 
 **Returns:** *Promise*<[*ConsentForm*](consentform.md)\>
 
-Defined in: index.ts:66
+Defined in: index.ts:54
 
 ___
 
@@ -96,7 +78,7 @@ Name | Type |
 
 **Returns:** *Promise*<unknown\>
 
-Defined in: index.ts:62
+Defined in: index.ts:50
 
 ___
 
@@ -106,4 +88,4 @@ ___
 
 **Returns:** *Promise*<unknown\>
 
-Defined in: index.ts:71
+Defined in: index.ts:59
