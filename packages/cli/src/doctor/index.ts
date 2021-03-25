@@ -50,20 +50,19 @@ export default class Doctor {
     }
 
     this.logPath(pkg.path)
-    this.indent()
-
-    const appIdKeys = ['APP_ID_ANDROID', 'APP_ID_IOS']
-    appIdKeys.forEach((k) => {
-      const configPath = `cordova.plugins.admob-plus-cordova.${k}`
-      const appId = _.get(pkg.packageJson, configPath)
-      if (testAppIds.has(appId)) {
-        this.logIssue(`${configPath} is using test ID`)
-      } else {
-        spinner.succeed(configPath)
-      }
+    this.indented(async () => {
+      const appIdKeys = ['APP_ID_ANDROID', 'APP_ID_IOS']
+      appIdKeys.forEach((k) => {
+        const configPath = `cordova.plugins.admob-plus-cordova.${k}`
+        const appId = _.get(pkg.packageJson, configPath)
+        if (testAppIds.has(appId)) {
+          this.logIssue(`${configPath} is using test ID`)
+        } else {
+          spinner.succeed(configPath)
+        }
+      })
     })
 
-    this.indentReset()
     return pkg.packageJson
   }
 
@@ -78,15 +77,13 @@ export default class Doctor {
     }
 
     this.logPath(filename)
-    this.indent()
-
-    if (semver.lt(pkgCordova.version, pkgLatest.version)) {
-      this.logIssue(`${pkgCordova.version} < ${pkgLatest.version}`)
-    } else {
-      spinner.succeed(pkgCordova.version)
-    }
-
-    this.indentReset()
+    this.indented(async () => {
+      if (semver.lt(pkgCordova.version!, pkgLatest.version!)) {
+        this.logIssue(`${pkgCordova.version} < ${pkgLatest.version}`)
+      } else {
+        spinner.succeed(pkgCordova.version)
+      }
+    })
   }
 
   logPath(p: string) {
@@ -96,6 +93,12 @@ export default class Doctor {
   logIssue(text: string) {
     this.issueCount += 1
     spinner.fail(text)
+  }
+
+  async indented(f: () => Promise<any>) {
+    this.indent()
+    await f()
+    this.indentReset()
   }
 
   indent() {
