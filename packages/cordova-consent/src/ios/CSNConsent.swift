@@ -1,3 +1,5 @@
+import UserMessagingPlatform
+
 @objc(CSNConsent)
 class CSNConsent: CDVPlugin {
     static var forms = [Int: UMPConsentForm]()
