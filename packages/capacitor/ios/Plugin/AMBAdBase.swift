@@ -57,6 +57,15 @@ class AMBAdBase: NSObject {
         ])
     }
 
+    func emit(_ eventName: String, _ adSize: GADAdSize) {
+        self.emit(eventName, [
+            "size": [
+                "width": adSize.size.width,
+                "height": adSize.size.height
+            ]
+        ])
+    }
+
     func emit(_ eventName: String, _ data: [String: Any]?) {
         var d: [String: Any] = ["adId": self.id]
         if data != nil {

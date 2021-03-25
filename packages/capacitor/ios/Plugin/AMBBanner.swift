@@ -98,7 +98,7 @@ class AMBBanner: AMBAdBase, GADAdSizeDelegate, GADBannerViewDelegate {
     }
 
     func adView(_ bannerView: GADBannerView, willChangeAdSizeTo adSize: GADAdSize) {
-        // NOTE not working as expected
+        self.emit(AMBEvents.bannerSizeChange, adSize)
     }
 
     func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
