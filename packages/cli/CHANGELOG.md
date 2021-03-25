@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.4](https://github.com/admob-plus/admob-plus/compare/admob-plus@1.1.3...admob-plus@1.1.4) (2021-03-25)
+
+
+### Bug Fixes
+
+* **cli:** add missing ora dependency ([6ffd93b](https://github.com/admob-plus/admob-plus/commit/6ffd93b0036ffaea064fc078127f143eb02078e4))
+
+
+
+
+
 ## [1.1.3](https://github.com/admob-plus/admob-plus/compare/admob-plus@1.1.2...admob-plus@1.1.3) (2021-03-25)
 
 
