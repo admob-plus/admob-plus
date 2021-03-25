@@ -1,10 +1,10 @@
-import * as clipboardy from 'clipboardy'
-import * as elementtree from 'elementtree'
-import * as envinfo from '@frat/envinfo'
-import * as execa from 'execa'
-import * as fse from 'fs-extra'
-import * as _ from 'lodash'
-import * as readPkgUp from 'read-pkg-up'
+import envinfo from '@frat/envinfo'
+import clipboardy from 'clipboardy'
+import elementtree from 'elementtree'
+import execa from 'execa'
+import fse from 'fs-extra'
+import _ from 'lodash'
+import readPkgUp from 'read-pkg-up'
 import { Argv } from 'yargs'
 
 const collectionAndroidManifestInfo = async () => {
