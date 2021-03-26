@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1](https://github.com/admob-plus/admob-plus/compare/cordova-plugin-consent@2.0.0...cordova-plugin-consent@2.0.1) (2021-03-26)
+
+
+### Bug Fixes
+
+* **cordova/android:** implement missing GET_CONSENT_STATUS action ([959066e](https://github.com/admob-plus/admob-plus/commit/959066e58df021b210f0dc1fbb2d6f64f1c5f719)), closes [#261](https://github.com/admob-plus/admob-plus/issues/261) [#268](https://github.com/admob-plus/admob-plus/issues/268)
+
+
+
+
+
 # [2.0.0](https://github.com/admob-plus/admob-plus/compare/cordova-plugin-consent@1.0.3...cordova-plugin-consent@2.0.0) (2021-03-25)
 
 
