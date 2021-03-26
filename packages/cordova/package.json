@@ -31,10 +31,12 @@
     "www"
   ],
   "keywords": [
-    "admob",
     "cordova",
+    "admob",
     "plugin",
     "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
     "free",
     "admobpro",
     "google",
