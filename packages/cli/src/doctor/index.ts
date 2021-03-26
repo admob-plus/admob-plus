@@ -61,7 +61,7 @@ export default class Doctor {
           this.indented(() => {
             spinner.info(`Replace ${appId} with real publisher ID`)
           })
-        } else {
+        } else if (appId) {
           spinner.succeed(configPath)
         }
       })
