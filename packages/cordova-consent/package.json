@@ -6,12 +6,13 @@
   "typings": "www/consent.d.ts",
   "scripts": {
     "prepublishOnly": "yarn build",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "test": "tsc --noEmit"
   },
   "devDependencies": {
     "@admob-plus-internal/rollup-config": "file:../../internal/rollup-config",
     "@types/cordova": "^0.0.34",
-    "@types/node": "^14.14.35",
+    "@types/node": "^14.14.36",
     "cordova": "^10.0.0",
     "rollup": "^2.42.4",
     "ts-node": "^9.1.1",

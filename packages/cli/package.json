@@ -48,7 +48,8 @@
   "main": "lib/index.js",
   "scripts": {
     "prepublishOnly": "yarn build",
-    "build": "tsc -b"
+    "build": "tsc -b",
+    "test": "tsc --noEmit"
   },
   "types": "lib/index.d.ts"
 }

@@ -43,7 +43,8 @@
     "build": "yarn clean && yarn docgen && tsc && rollup -c rollup.config.js",
     "clean": "rimraf ./dist",
     "watch": "tsc --watch",
-    "prepublishOnly": "yarn build && yarn rimraf dist/*.tsbuildinfo"
+    "prepublishOnly": "yarn build && yarn rimraf dist/*.tsbuildinfo",
+    "test": "tsc --noEmit"
   },
   "devDependencies": {
     "@capacitor/android": "^3.0.0-rc.0",

@@ -6,7 +6,8 @@
   "typings": "lib/index.d.ts",
   "scripts": {
     "prepublishOnly": "yarn build",
-    "build": "rollup -c && tsc -b"
+    "build": "rollup -c && tsc -b",
+    "test": "tsc --noEmit"
   },
   "devDependencies": {
     "@admob-plus-internal/rollup-config": "file:../../internal/rollup-config",
