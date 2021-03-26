@@ -1,7 +1,7 @@
 commit-msg:
   commands:
     commitlint:
-      run: yarn commitlint -e $1
+      run: yarn commitlint -e
 
 pre-commit:
   parallel: true
@@ -16,6 +16,12 @@ pre-commit:
     swiftlint:
       glob: "*.swift"
       run: yarn node-swiftlint lint --strict --path {staged_files}
+
+pre-push:
+  parallel: true
+  commands:
+    jest:
+      run: yarn jest
 
 fixer:
   parallel: true
