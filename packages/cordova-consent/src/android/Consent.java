@@ -42,8 +42,11 @@ public class Consent extends CordovaPlugin {
         switch (actionKey) {
             case Actions.READY:
                 return executeReady(callbackContext);
-            case Actions.GET_FORM_STATUS:
+            case Actions.GET_CONSENT_STATUS:
                 callbackContext.success(getConsentInformation().getConsentStatus());
+                break;
+            case Actions.GET_FORM_STATUS:
+                callbackContext.success(getConsentInformation().isConsentFormAvailable() ? 1 : 2);
                 break;
             case Actions.REQUEST_INFO_UPDATE:
                 return executeRequestInfoUpdate(ctx);
