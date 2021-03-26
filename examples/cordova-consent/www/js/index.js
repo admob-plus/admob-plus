@@ -1,5 +1,72 @@
 'use strict'
 
+const initConsentStatus = async () => {
+  /**
+   * @type {HTMLButtonElement}
+   */
+  const btn = document.getElementById('consent-status-btn')
+  btn.addEventListener('click', async () => {
+    btn.disabled = true
+    try {
+      btn.innerHTML = `${await consent.getConsentStatus()}`
+    } catch (err) {
+      alert(`getConsentStatus() error: ${err}`)
+    } finally {
+      btn.disabled = false
+    }
+  })
+  btn.click()
+}
+
+const initRequestTrackingAuthorization = async () => {
+  /**
+   * @type {HTMLButtonElement}
+   */
+  const btn = document.getElementById('request-btn')
+  btn.addEventListener('click', async () => {
+    try {
+      btn.innerHTML = `${await admob.requestTrackingAuthorization()}`
+    } catch (err) {
+      alert(`requestTrackingAuthorization() error: ${err}`)
+    } finally {
+      btn.disabled = false
+    }
+  })
+}
+const initRequestInfoUpdate = async () => {
+  /**
+   * @type {HTMLButtonElement}
+   */
+  const btn = document.getElementById('request-info-btn')
+  btn.addEventListener('click', async () => {
+    try {
+      btn.innerHTML = `${await consent.requestInfoUpdate()}`
+    } catch (err) {
+      alert(`requestInfoUpdate() error: ${err}`)
+    } finally {
+      btn.disabled = false
+    }
+  })
+}
+
+const initFormStatus = async () => {
+  /**
+   * @type {HTMLButtonElement}
+   */
+  const btn = document.getElementById('form-status-btn')
+  btn.addEventListener('click', async () => {
+    btn.disabled = true
+    try {
+      btn.innerHTML = `${await consent.getFormStatus()}`
+    } catch (err) {
+      alert(`getFormStatus() error: ${err}`)
+    } finally {
+      btn.disabled = false
+    }
+  })
+  btn.click()
+}
+
 const app = {
   initialize() {
     document.addEventListener(
@@ -9,36 +76,12 @@ const app = {
     )
   },
   async onDeviceReady() {
+    await initConsentStatus()
+    await initRequestTrackingAuthorization()
+    await initRequestInfoUpdate()
+    await initFormStatus()
+
     this.receivedEvent('deviceready')
-
-    const consentStatus = await consent.getConsentStatus()
-    console.log('consentStatus:', consentStatus)
-    if (consentStatus === consent.ConsentStatus.Required) {
-      if (cordova.platformId === 'ios') {
-        await admob.requestTrackingAuthorization()
-      }
-      await consent.requestInfoUpdate()
-
-      if ((await consent.getFormStatus()) === consent.FormStatus.Available) {
-        const form = await consent.loadForm()
-        form.show()
-      }
-
-      if (
-        [
-          consent.ConsentStatus.NotRequired,
-          consent.ConsentStatus.Obtained,
-        ].includes(await consent.getConsentStatus())
-      ) {
-        await admob.start()
-
-        const interstitial = new admob.InterstitialAd({
-          adUnitId: 'ca-app-pub-3940256099942544/1033173712',
-        })
-        await interstitial.load()
-        await interstitial.show()
-      }
-    }
   },
   receivedEvent(id) {
     const parentElement = document.getElementById(id)
