@@ -1,7 +1,5 @@
 import yargs from 'yargs'
-// @ts-expect-error missing type
 import { hideBin } from 'yargs/helpers'
-
 import * as doctorCmd from './cmds/doctor'
 import * as infoCmd from './cmds/info'
 

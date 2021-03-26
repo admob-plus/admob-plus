@@ -16,17 +16,19 @@
     "semver": "^7.3.5",
     "tslib": "^2.1.0",
     "type-fest": "^1.0.1",
+    "update-notifier": "^5.1.0",
     "yargs": "^16.2.0"
   },
   "devDependencies": {
     "@admob-plus-internal/tsconfig": "file:../../internal/tsconfig",
     "@types/clipboardy": "^2.0.1",
     "@types/elementtree": "^0.1.0",
-    "@types/fs-extra": "^9.0.8",
+    "@types/fs-extra": "^9.0.9",
     "@types/lodash": "^4.14.168",
     "@types/node": "^14.14.36",
     "@types/semver": "^7.3.4",
-    "@types/yargs": "^16.0.0",
+    "@types/update-notifier": "^5.0.0",
+    "@types/yargs": "^16.0.1",
     "globby": "^11.0.3",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.3"

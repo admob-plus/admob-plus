@@ -1,6 +1,9 @@
 #!/usr/bin/env node
 'use strict'
 
+const updateNotifier = require('update-notifier')
 const { default: main } = require('../lib')
+
+updateNotifier({ pkg: require('../package.json') }).notify()
 
 main()
