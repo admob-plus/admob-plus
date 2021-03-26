@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.1.1...admob-plus-cordova@1.2.0) (2021-03-26)
+
+
+### Features
+
+* **cordova/ios:** emit reward event with error object ([2ffa176](https://github.com/admob-plus/admob-plus/commit/2ffa1766bd2ffc9ed518b58da0f9f6e921d6339d))
+* **cordova/ios:** update Google-Mobile-Ads-SDK to 8.3.0 ([c30605c](https://github.com/admob-plus/admob-plus/commit/c30605cf93a2bde09a3fe9ffc86df709c95f0356))
+
+
+
+
+
 ## [1.1.1](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.1.0...admob-plus-cordova@1.1.1) (2021-03-25)
 
 **Note:** Version bump only for package admob-plus-cordova

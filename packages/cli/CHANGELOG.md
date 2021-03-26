@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/admob-plus/admob-plus/compare/admob-plus@1.1.4...admob-plus@1.2.0) (2021-03-26)
+
+
+### Bug Fixes
+
+* **cli:** prevent spinner loading forever ([86fff3e](https://github.com/admob-plus/admob-plus/commit/86fff3e1e17f2cc218c1c5a6adbc62fabc7df3e2))
+
+
+### Features
+
+* **cli:** notify update ([d7a506d](https://github.com/admob-plus/admob-plus/commit/d7a506daf36c963e648b10b1f06107922c71ea16))
+
+
+
+
+
 ## [1.1.4](https://github.com/admob-plus/admob-plus/compare/admob-plus@1.1.3...admob-plus@1.1.4) (2021-03-25)
 
 
