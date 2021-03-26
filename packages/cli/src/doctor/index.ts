@@ -32,6 +32,7 @@ export default class Doctor {
   async run() {
     await this.checkPackageJson()
     await this.checkCordovaPluginPackageJson()
+    spinner.stop()
 
     if (this.issueCount > 0) {
       spinner.fail(
