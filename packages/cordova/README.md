@@ -3,6 +3,11 @@
 ![Dependency status](https://img.shields.io/librariesio/release/npm/admob-plus-cordova)
 ![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/npm/admob-plus-cordova)
 ![NPM license](https://img.shields.io/npm/l/admob-plus-cordova)
+<!--
+![NPM downloads per month](https://img.shields.io/npm/dm/admob-plus-cordova.svg)
+![NPM downloads total](https://img.shields.io/npm/dt/admob-plus-cordova.svg)
+![](https://nodei.co/npm/admob-plus-cordova.svg)
+-->
 
 # [AdMob Plus Cordova](https://admob-plus.github.io)
 
