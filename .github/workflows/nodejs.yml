@@ -246,3 +246,12 @@ jobs:
         with:
           name: yarn.lock
           path: yarn.lock
+
+      - uses: hkusu/status-create-action@v1
+        id: status-create
+        with:
+          sha: ${{ github.sha }}
+          state: success
+      - name: Status creation result
+        if: always()
+        run: echo '${{ steps.status-create.outputs.result }}'
