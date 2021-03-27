@@ -66,16 +66,21 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
         }
     }
 
-    func show(_ ctx: AMBContext) {
+    func load(_ ctx: AMBContext) {
         let request = ctx.optGADRequest()
         if bannerView == nil {
             bannerView = GADBannerView(adSize: self.adSize)
             bannerView.delegate = self
             bannerView.adSizeDelegate = self
             bannerView.rootViewController = plugin.viewController
-        } else {
-            bannerView.isHidden = false
         }
+
+        bannerView.adUnitID = adUnitId
+        bannerView.load(request)
+    }
+
+    func show(_ ctx: AMBContext) {
+        load(ctx)
 
         switch position {
         case AMBBannerPosition.top:
@@ -84,9 +89,7 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
             stackView.addArrangedSubview(bannerView)
         }
 
-        bannerView.adUnitID = adUnitId
-        bannerView.load(request)
-
+        bannerView.isHidden = false
         updateLayout()
         ctx.success()
     }
