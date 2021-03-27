@@ -7,8 +7,9 @@
     "gen": "./lib/gen/index.js"
   },
   "scripts": {
-    "postinstall": "yarn prepack",
-    "prepack": "tsc -b",
+    "postinstall": "yarn build",
+    "prepack": "yarn build",
+    "build": "tsc -b",
     "gen": "ts-node -TH src/gen/index.ts"
   },
   "dependencies": {
