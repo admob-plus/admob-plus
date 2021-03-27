@@ -42,8 +42,6 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
         self.position = position
 
         super.init(id: id, adUnitId: adUnitId)
-
-        prepareStackView()
     }
 
     convenience init?(_ ctx: AMBContext) {
@@ -81,6 +79,8 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
 
     func show(_ ctx: AMBContext) {
         load(ctx)
+
+        prepareStackView()
 
         switch position {
         case AMBBannerPosition.top:
