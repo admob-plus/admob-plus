@@ -8,15 +8,12 @@ export class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
   private static allAds: { [s: number]: MobileAd } = {}
   private static idCounter = 0
 
-  public readonly adUnitId: string
   public readonly id: number
 
   protected readonly opts: T
 
   constructor(opts: T) {
     this.opts = opts
-    const { adUnitId } = opts
-    this.adUnitId = adUnitId
 
     this.id = MobileAd.nextId()
     MobileAd.allAds[this.id] = this
@@ -25,6 +22,10 @@ export class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
   private static nextId() {
     MobileAd.idCounter += 1
     return MobileAd.idCounter
+  }
+
+  public get adUnitId() {
+    return this.opts.adUnitId
   }
 }
 
