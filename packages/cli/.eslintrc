@@ -4,6 +4,7 @@
     "@typescript-eslint/no-var-requires": "warn",
     "consistent-return": "warn",
     "no-param-reassign": "warn",
+    "no-restricted-syntax": "warn",
     "unicorn/prevent-abbreviations": "off"
   }
 }

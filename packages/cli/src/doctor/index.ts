@@ -3,6 +3,7 @@ import _ from 'lodash'
 import readPkgUp from 'read-pkg-up'
 import semver from 'semver'
 import { PackageJson } from 'type-fest'
+import { collectDependencies } from './android'
 import Context, { spinner } from './context'
 
 const ctx = new Context()
@@ -26,6 +27,7 @@ export default class Doctor {
   async run() {
     await this.checkPackageJson()
     await this.checkCordovaPluginPackageJson()
+    await this.checkCordovaAndroidDependencies()
     ctx.logSummary()
 
     if (ctx.issueCount > 0) {
@@ -72,7 +74,7 @@ export default class Doctor {
     }
 
     ctx.logPath(filename)
-    ctx.indented(async () => {
+    ctx.indented(() => {
       if (semver.lt(pkgCordova.version!, pkgLatest.version!)) {
         ctx.logIssue(`${pkgCordova.name}: ${pkgCordova.version}`)
         ctx.indented(() => {
@@ -80,6 +82,26 @@ export default class Doctor {
         })
       } else {
         spinner.succeed(`${pkgCordova.name}: ${pkgCordova.version}`)
+      }
+    })
+  }
+
+  async checkCordovaAndroidDependencies() {
+    spinner.start('Checking Android dependencies')
+    const deps = await collectDependencies({ cwd: 'platforms/android' })
+    if (!deps) {
+      return
+    }
+
+    ctx.logPath('platforms/android')
+    ctx.indented(() => {
+      const k = 'com.google.android.gms:play-services-ads'
+      const versions = deps[k]
+      const s = `${k}: ${[...versions].join(', ')}`
+      if (versions.has('19.8.0')) {
+        spinner.succeed(s)
+      } else {
+        spinner.fail(s)
       }
     })
   }
