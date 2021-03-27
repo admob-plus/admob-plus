@@ -15,13 +15,17 @@
     "@admob-plus-internal/tsconfig": "file:../tsconfig",
     "@admob-plus/capacitor": "file:../../../../packages/capacitor",
     "@frat/sane": "^4.2.1",
+    "admob-plus": "file:../../../../packages/cli",
     "cordova": "^10.0.0",
     "cpy": "^8.1.2",
     "del": "^6.0.0",
     "escalade": "^3.1.1",
     "execa": "^5.0.0",
     "fast-glob": "^3.2.5",
+    "fs-extra": "^9.1.0",
+    "handlebars": "^4.7.7",
     "lodash": "^4.17.21",
+    "markdown-magic": "^2.0.0",
     "read-pkg": "^5.2.0",
     "replace-in-file": "^6.2.0",
     "typescript": "^4.2.3",
@@ -29,9 +33,11 @@
     "yargs": "^16.2.0"
   },
   "devDependencies": {
+    "@types/fs-extra": "^9.0.9",
     "@types/lodash": "^4.14.168",
+    "@types/markdown-magic": "^1.0.0",
     "@types/xml2js": "^0.4.8",
-    "@types/yargs": "^16.0.0",
+    "@types/yargs": "^16.0.1",
     "ts-node": "^9.1.1"
   }
 }

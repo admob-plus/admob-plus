@@ -7,31 +7,48 @@
 admob-plus
 ==========
 
-<!-- toc -->
-* [Usage](#usage)
-* [Commands](#commands)
-<!-- tocstop -->
-# Usage
+<!-- AUTO-GENERATED-CONTENT:START (TOC) -->
+- [Usage](#usage)
+- [Commands](#commands)
+  * [`admob-plus doctor`](#admob-plus-doctor)
+  * [`admob-plus info`](#admob-plus-info)
+<!-- AUTO-GENERATED-CONTENT:END -->
 
-```sh-session
-$ npx admob-plus COMMAND
+<!-- AUTO-GENERATED-CONTENT:START (CLI) -->
+## Usage
+
+```
+admob-plus <command>
+
+Commands:
+  admob-plus doctor  Check your project setup for potential problems
+  admob-plus info    Get relevant version info about OS, toolchain and libraries
+
+Options:
+  --version  Show version number                                       [boolean]
+  --help     Show help                                                 [boolean]
 ```
 
-# Commands
+## Commands
 
-## `admob-plus info`
+### `admob-plus doctor`
+
+Check your project setup for potential problems
+
+```
+Options:
+  --version  Show version number                                       [boolean]
+  --help     Show help                                                 [boolean]
+```
+
+### `admob-plus info`
 
 Get relevant version info about OS, toolchain and libraries
 
 ```
-USAGE
-  $ admob-plus info
-
-OPTIONS
-  -h, --help   show CLI help
-  --clipboard  copy the environment report output to the clipboard
-
-EXAMPLE
-  $ admob-plus info
+Options:
+  --version    Show version number                                     [boolean]
+  --help       Show help                                               [boolean]
+  --clipboard  Copy the environment report output to the clipboard     [boolean]
 ```
-
+<!-- AUTO-GENERATED-CONTENT:END -->
