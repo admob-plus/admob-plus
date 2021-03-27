@@ -5,6 +5,7 @@ import semver from 'semver'
 import { PackageJson } from 'type-fest'
 import { collectDependencies } from './android'
 import Context, { spinner } from './context'
+import { getPodSpec } from './ios'
 
 const ctx = new Context()
 
@@ -28,6 +29,7 @@ export default class Doctor {
     await this.checkPackageJson()
     await this.checkCordovaPluginPackageJson()
     await this.checkCordovaAndroidDependencies()
+    await this.checkSDKPodSpec()
     ctx.logSummary()
 
     if (ctx.issueCount > 0) {
@@ -102,6 +104,30 @@ export default class Doctor {
         spinner.succeed(s)
       } else {
         spinner.fail(s)
+      }
+    })
+  }
+
+  async checkSDKPodSpec() {
+    const specName = 'Google-Mobile-Ads-SDK'
+    spinner.start(`Checking ${specName}`)
+    const spec = await getPodSpec(specName)
+    if (!spec) {
+      return
+    }
+
+    ctx.logTitle(specName)
+    ctx.indented(() => {
+      const expectedVersion = '8.3.0'
+      if (spec.version === expectedVersion) {
+        spinner.succeed(spec.version)
+      } else {
+        spinner.fail(spec.version)
+        ctx.indented(() => {
+          spinner.info(
+            `Update to "${expectedVersion}" with \`pod repo update\``,
+          )
+        })
       }
     })
   }
