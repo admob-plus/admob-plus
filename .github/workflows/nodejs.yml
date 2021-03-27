@@ -58,10 +58,10 @@ jobs:
 
       - name: Build
         run: |
-          yarn lerna run prepublishOnly
-          pushd packages/cli
+          pushd internal/rollup-config
           yarn build
           popd
+          yarn lerna run prepublishOnly
 
       - name: Test
         run: |
