@@ -1,4 +1,5 @@
 import fse from 'fs-extra'
+import kleur from 'kleur'
 import _ from 'lodash'
 import ora from 'ora'
 import path from 'path'
@@ -94,7 +95,7 @@ export default class Doctor {
   }
 
   logPath(p: string) {
-    spinner.info(relativePath(p))
+    spinner.info(kleur.bold(relativePath(p)))
   }
 
   logIssue(text: string) {
