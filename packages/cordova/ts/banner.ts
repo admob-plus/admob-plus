@@ -13,17 +13,13 @@ export interface BannerAdOptions extends MobileAdOptions {
   size?: AdSizeType
 }
 
-export default class BannerAd extends MobileAd {
-  private opts: BannerAdOptions
-
+export default class BannerAd extends MobileAd<BannerAdOptions> {
   constructor(opts: BannerAdOptions) {
-    super({ adUnitId: opts.adUnitId })
-
-    this.opts = {
+    super({
       position: 'bottom',
       size: AdSizeType.SMART_BANNER,
       ...opts,
-    }
+    })
   }
 
   public show() {

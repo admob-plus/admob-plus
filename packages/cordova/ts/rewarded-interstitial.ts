@@ -3,15 +3,7 @@ import { execAsync, MobileAd, NativeActions } from './shared'
 
 export interface RewardedInterstitialAdOptions extends RewardedAdOptions {}
 
-export default class RewardedInterstitialAd extends MobileAd {
-  private opts: RewardedAdOptions
-
-  constructor(opts: RewardedInterstitialAdOptions) {
-    super({ adUnitId: opts.adUnitId })
-
-    this.opts = opts
-  }
-
+export default class RewardedInterstitialAd extends MobileAd<RewardedInterstitialAdOptions> {
   public isLoaded() {
     return execAsync(NativeActions.rewardedInterstitialIsLoaded, [
       { id: this.id },

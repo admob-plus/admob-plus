@@ -4,14 +4,18 @@ export { AdSizeType, Events, NativeActions } from './generated'
 export type MobileAdOptions = { adUnitId: string }
 
 /** @internal */
-export class MobileAd {
+export class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
   private static allAds: { [s: number]: MobileAd } = {}
   private static idCounter = 0
 
   public readonly adUnitId: string
   public readonly id: number
 
-  constructor({ adUnitId }: MobileAdOptions) {
+  protected readonly opts: T
+
+  constructor(opts: T) {
+    this.opts = opts
+    const { adUnitId } = opts
     this.adUnitId = adUnitId
 
     this.id = MobileAd.nextId()
