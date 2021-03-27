@@ -1,16 +1,11 @@
 import fse from 'fs-extra'
-import kleur from 'kleur'
 import _ from 'lodash'
-import ora from 'ora'
-import path from 'path'
 import readPkgUp from 'read-pkg-up'
 import semver from 'semver'
 import { PackageJson } from 'type-fest'
+import Context, { spinner } from './context'
 
-const spinner = ora()
-
-const cwd = process.cwd()
-const relativePath = (p: string) => path.relative(cwd, p)
+const ctx = new Context()
 
 const testAppIds = new Set([
   'ca-app-pub-3940256099942544~3347511713',
@@ -28,17 +23,12 @@ const readPackageJson = async (filename: string) => {
 }
 
 export default class Doctor {
-  issueCount = 0
-
   async run() {
     await this.checkPackageJson()
     await this.checkCordovaPluginPackageJson()
-    spinner.stop()
+    ctx.logSummary()
 
-    if (this.issueCount > 0) {
-      spinner.fail(
-        `Found ${this.issueCount} issue${this.issueCount === 1 ? '' : 's'}.`,
-      )
+    if (ctx.issueCount > 0) {
       // eslint-disable-next-line unicorn/no-process-exit
       process.exit(1)
     }
@@ -51,15 +41,15 @@ export default class Doctor {
       return
     }
 
-    this.logPath(pkg.path)
-    this.indented(async () => {
+    ctx.logPath(pkg.path)
+    ctx.indented(async () => {
       const appIdKeys = ['APP_ID_ANDROID', 'APP_ID_IOS']
       appIdKeys.forEach((k) => {
         const configPath = `cordova.plugins.admob-plus-cordova.${k}`
         const appId = _.get(pkg.packageJson, configPath)
         if (testAppIds.has(appId)) {
-          this.logIssue(configPath)
-          this.indented(() => {
+          ctx.logIssue(configPath)
+          ctx.indented(() => {
             spinner.info(`Replace ${appId} with real publisher ID`)
           })
         } else if (appId) {
@@ -81,43 +71,16 @@ export default class Doctor {
       return
     }
 
-    this.logPath(filename)
-    this.indented(async () => {
+    ctx.logPath(filename)
+    ctx.indented(async () => {
       if (semver.lt(pkgCordova.version!, pkgLatest.version!)) {
-        this.logIssue(`${pkgCordova.name}: ${pkgCordova.version}`)
-        this.indented(() => {
+        ctx.logIssue(`${pkgCordova.name}: ${pkgCordova.version}`)
+        ctx.indented(() => {
           spinner.info(`Update to latest version: ${pkgLatest.version}`)
         })
       } else {
         spinner.succeed(`${pkgCordova.name}: ${pkgCordova.version}`)
       }
     })
-  }
-
-  logPath(p: string) {
-    spinner.info(kleur.bold(relativePath(p)))
-  }
-
-  logIssue(text: string) {
-    this.issueCount += 1
-    spinner.fail(text)
-  }
-
-  indented(f: () => any) {
-    if (spinner.prefixText) {
-      spinner.prefixText += ' '
-    } else {
-      spinner.prefixText = ' '
-    }
-
-    f()
-
-    if (spinner.prefixText) {
-      spinner.prefixText = spinner.prefixText.toString().slice(0, -1)
-    }
-    if (!spinner.prefixText) {
-      // @ts-expect-error wrong type
-      spinner.prefixText = undefined
-    }
   }
 }
