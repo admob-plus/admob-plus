@@ -22,7 +22,6 @@
   },
   "devDependencies": {
     "@admob-plus-internal/tsconfig": "file:../../internal/tsconfig",
-    "@types/clipboardy": "^2.0.1",
     "@types/elementtree": "^0.1.0",
     "@types/fs-extra": "^9.0.9",
     "@types/lodash": "^4.14.168",
