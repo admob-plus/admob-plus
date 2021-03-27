@@ -10,8 +10,12 @@ export const spinner = ora()
 export default class Context {
   issueCount = 0
 
+  logTitle(s: string) {
+    spinner.info(kleur.bold(s))
+  }
+
   logPath(p: string) {
-    spinner.info(kleur.bold(relativePath(p)))
+    this.logTitle(relativePath(p))
   }
 
   logIssue(text: string) {
