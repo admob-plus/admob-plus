@@ -1,9 +1,9 @@
-'use strict'
+import type { Config } from '@jest/types'
+import { defaults } from 'jest-config'
 
-const { defaults } = require('jest-config')
-
-module.exports = {
+export default async (): Promise<Config.InitialOptions> => ({
   transform: {
+    // @ts-expect-error wrong type
     ...defaults.transform,
     '^.+\\.tsx?$': 'ts-jest',
   },
@@ -16,4 +16,4 @@ module.exports = {
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$',
   testURL: 'http://localhost/',
   moduleFileExtensions: ['ts', 'tsx', ...defaults.moduleFileExtensions],
-}
+})
