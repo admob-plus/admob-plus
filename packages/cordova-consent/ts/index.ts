@@ -1,7 +1,15 @@
 import { initPlugin, execAsync, NativeActions } from './generated'
 
+export enum DebugGeography {
+  Disabled = 0,
+  EEA = 1,
+  NotEEA = 2,
+}
+
 type RequestInfoUpdateOptions = {
+  debugGeography?: DebugGeography
   tagForUnderAgeOfConsent?: boolean
+  testDeviceIds?: string[]
 }
 
 export enum ConsentStatus {
@@ -31,6 +39,7 @@ export class ConsentForm {
 
 export class Consent {
   public readonly ConsentStatus = ConsentStatus
+  public readonly DebugGeography = DebugGeography
   public readonly FormStatus = FormStatus
 
   constructor() {

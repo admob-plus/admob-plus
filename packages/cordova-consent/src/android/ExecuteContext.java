@@ -46,17 +46,13 @@ public class ExecuteContext {
 
     public ConsentDebugSettings optConsentDebugSettings() {
         ConsentDebugSettings.Builder builder = new ConsentDebugSettings.Builder(getActivity());
-        JSONObject debugSettings = this.opts.optJSONObject("debugSettings");
-        if (debugSettings == null) {
-            return builder.build();
+
+        if (opts.has("debugGeography")) {
+            builder.setDebugGeography(opts.optInt("debugGeography"));
         }
 
-        if (debugSettings.has("debugGeography")) {
-            builder.setDebugGeography(debugSettings.optInt("debugGeography"));
-        }
-
-        if (debugSettings.has("testDeviceIds")) {
-            JSONArray ids = debugSettings.optJSONArray("testDeviceIds");
+        if (opts.has("testDeviceIds")) {
+            JSONArray ids = opts.optJSONArray("testDeviceIds");
             for (int i = 0; i < Objects.requireNonNull(ids).length(); i++) {
                 String testDeviceId = ids.optString(i);
                 if (testDeviceId != null) {

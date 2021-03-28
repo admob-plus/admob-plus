@@ -40,7 +40,11 @@ const initRequestInfoUpdate = async () => {
   const btn = document.getElementById('request-info-btn')
   btn.addEventListener('click', async () => {
     try {
-      btn.innerHTML = `${await consent.requestInfoUpdate()}`
+      btn.innerHTML = `${await consent.requestInfoUpdate({
+        debugGeography: consent.DebugGeography.EEA,
+        // NOTE put your test device id herer
+        testDeviceIds: ["TEST-DEVICE-HASHED-ID"],
+      })}`
     } catch (err) {
       alert(`requestInfoUpdate() error: ${err}`)
     } finally {

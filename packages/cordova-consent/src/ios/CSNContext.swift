@@ -41,12 +41,42 @@ class CSNContext {
         return nil
     }
 
+    func optDebugGeography() -> UMPDebugGeography? {
+        if let value = opt("debugGeography") as? Int {
+            return UMPDebugGeography(rawValue: value)
+        }
+        return nil
+    }
+
+    func optTestDeviceIds() -> [String]? {
+        if let testDeviceIds = opt("testDeviceIds") as? [String] {
+            return testDeviceIds
+        }
+        return nil
+    }
+
+    func optUMPDebugSettings() -> UMPDebugSettings {
+        let debugSettings = UMPDebugSettings()
+
+        if let debugGeography = optDebugGeography() {
+            debugSettings.geography = debugGeography
+        }
+
+        if let testDeviceIds = optTestDeviceIds() {
+            debugSettings.testDeviceIdentifiers = testDeviceIds
+        }
+
+        return debugSettings
+    }
+
     func optUMPRequestParameters() -> UMPRequestParameters {
         let parameters = UMPRequestParameters()
 
         if let tagForUnderAgeOfConsent = opt("tagForUnderAgeOfConsent") as? Bool {
             parameters.tagForUnderAgeOfConsent = tagForUnderAgeOfConsent
         }
+
+        parameters.debugSettings = optUMPDebugSettings()
 
         return parameters
     }
