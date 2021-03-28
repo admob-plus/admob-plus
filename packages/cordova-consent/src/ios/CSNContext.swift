@@ -1,6 +1,7 @@
 import UserMessagingPlatform
 
 class CSNContext {
+    static var forms = [Int: UMPConsentForm]()
     static weak var plugin: CSNConsent!
 
     let command: CDVInvokedUrlCommand
@@ -31,6 +32,13 @@ class CSNContext {
 
     func optId() -> Int? {
         return opt("id") as? Int
+    }
+
+    func optForm() -> UMPConsentForm? {
+        if let id = optId() {
+            return CSNContext.forms[id]
+        }
+        return nil
     }
 
     func optUMPRequestParameters() -> UMPRequestParameters {

@@ -2,8 +2,6 @@ import UserMessagingPlatform
 
 @objc(CSNConsent)
 class CSNConsent: CDVPlugin {
-    static var forms = [Int: UMPConsentForm]()
-
     var readyCallbackId: String!
 
     override func pluginInitialize() {
@@ -60,8 +58,9 @@ class CSNConsent: CDVPlugin {
               if loadError != nil {
                 ctx.error(loadError!)
               } else {
-                CSNConsent.forms[form.hashValue] = form
-                ctx.success(form.hashValue)
+                let id = form.hashValue % (2 << 30)
+                CSNContext.forms[id] = form
+                ctx.success(id)
               }
             })
     }
@@ -70,22 +69,19 @@ class CSNConsent: CDVPlugin {
     func showForm(command: CDVInvokedUrlCommand) {
         let ctx = CSNContext(command)
 
-        guard let id = ctx.optId(),
-              let form = CSNConsent.forms[id]
-        else {
-            ctx.error()
-            return
+        if let form = ctx.optForm() {
+            form.present(
+                from: self.viewController,
+                completionHandler: { dismissError in
+                    if dismissError != nil {
+                        ctx.error(dismissError!)
+                    } else {
+                        ctx.success()
+                    }
+                })
+        } else {
+            ctx.error("Form not found")
         }
-
-        form.present(
-            from: self.viewController,
-            completionHandler: { dismissError in
-                if dismissError != nil {
-                    ctx.error(dismissError!)
-                } else {
-                    ctx.success()
-                }
-           })
     }
 
     @objc(reset:)
