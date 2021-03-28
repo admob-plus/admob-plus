@@ -30,3 +30,8 @@ document.addEventListener('deviceready', async () => {
   }
 }, false)
 ```
+
+## References
+
+- [UMP SDK for Android](https://developers.google.com/admob/ump/android/quick-start)
+- [UMP SDK for iOS](https://developers.google.com/admob/ump/ios/quick-start)
