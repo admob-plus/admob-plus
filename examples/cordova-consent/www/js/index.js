@@ -67,6 +67,44 @@ const initFormStatus = async () => {
   btn.click()
 }
 
+let form
+
+const initLoadForm = async () => {
+  /**
+   * @type {HTMLButtonElement}
+   */
+  const btn = document.getElementById('load-form-btn')
+  btn.addEventListener('click', async () => {
+    btn.disabled = true
+    try {
+      form = await consent.loadForm()
+      btn.innerHTML = `${form}`
+    } catch (err) {
+      alert(`loadForm() error: ${err}`)
+    } finally {
+      btn.disabled = false
+    }
+  })
+}
+
+const initShowForm = async () => {
+  btn.disabled = !form
+
+  /**
+   * @type {HTMLButtonElement}
+   */
+  const btn = document.getElementById('show-form-btn')
+  btn.addEventListener('click', async () => {
+    try {
+      btn.innerHTML = `${await form.show()}`
+    } catch (err) {
+      alert(`form.show() error: ${err}`)
+    }
+
+    btn.disabled = !form
+  })
+}
+
 const app = {
   initialize() {
     document.addEventListener(
@@ -80,6 +118,8 @@ const app = {
     await initRequestTrackingAuthorization()
     await initRequestInfoUpdate()
     await initFormStatus()
+    await initLoadForm()
+    await initShowForm()
 
     this.receivedEvent('deviceready')
   },
