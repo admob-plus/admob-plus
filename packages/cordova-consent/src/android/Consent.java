@@ -92,28 +92,32 @@ public class Consent extends CordovaPlugin {
     }
 
     private boolean executeLoadForm(ExecuteContext ctx) {
-        UserMessagingPlatform.loadConsentForm(
-                cordova.getActivity(),
-                consentForm -> {
-                    forms.put(consentForm.hashCode(), consentForm);
-                    ctx.callbackContext.success(consentForm.hashCode());
-                },
-                formError -> ctx.callbackContext.error(formError.getMessage())
-        );
+        cordova.getActivity().runOnUiThread(() -> {
+            UserMessagingPlatform.loadConsentForm(
+                    cordova.getActivity(),
+                    consentForm -> {
+                        forms.put(consentForm.hashCode(), consentForm);
+                        ctx.callbackContext.success(consentForm.hashCode());
+                    },
+                    formError -> ctx.callbackContext.error(formError.getMessage())
+            );
+        });
         return true;
     }
 
     private boolean executeShowForm(ExecuteContext ctx) {
-        ConsentForm consentForm = forms.get(ctx.optId());
-        consentForm.show(
-                cordova.getActivity(),
-                formError -> {
-                    if (formError == null) {
-                        ctx.callbackContext.success();
-                    } else {
-                        ctx.callbackContext.error(formError.getMessage());
-                    }
-                });
+        final ConsentForm consentForm = forms.get(ctx.optId());
+        cordova.getActivity().runOnUiThread(() -> {
+            consentForm.show(
+                    cordova.getActivity(),
+                    formError -> {
+                        if (formError == null) {
+                            ctx.callbackContext.success();
+                        } else {
+                            ctx.callbackContext.error(formError.getMessage());
+                        }
+                    });
+        });
         return true;
     }
 
