@@ -67,9 +67,19 @@ const initFormStatus = async () => {
   btn.click()
 }
 
-let form
+const initFormButtons = async () => {
+  let form
 
-const initLoadForm = async () => {
+  const btnShow = document.getElementById('show-form-btn')
+  btnShow.addEventListener('click', async () => {
+    try {
+      btnShow.innerHTML = `${await form.show()}`
+    } catch (err) {
+      alert(`form.show() error: ${err}`)
+    }
+  })
+  btnShow.disabled = !form
+
   /**
    * @type {HTMLButtonElement}
    */
@@ -78,30 +88,13 @@ const initLoadForm = async () => {
     btn.disabled = true
     try {
       form = await consent.loadForm()
-      btn.innerHTML = `${form}`
+      btn.innerHTML = `${form.id}`
     } catch (err) {
       alert(`loadForm() error: ${err}`)
     } finally {
       btn.disabled = false
+      btnShow.disabled = !form
     }
-  })
-}
-
-const initShowForm = async () => {
-  btn.disabled = !form
-
-  /**
-   * @type {HTMLButtonElement}
-   */
-  const btn = document.getElementById('show-form-btn')
-  btn.addEventListener('click', async () => {
-    try {
-      btn.innerHTML = `${await form.show()}`
-    } catch (err) {
-      alert(`form.show() error: ${err}`)
-    }
-
-    btn.disabled = !form
   })
 }
 
@@ -118,8 +111,7 @@ const app = {
     await initRequestTrackingAuthorization()
     await initRequestInfoUpdate()
     await initFormStatus()
-    await initLoadForm()
-    await initShowForm()
+    await initFormButtons()
 
     this.receivedEvent('deviceready')
   },
