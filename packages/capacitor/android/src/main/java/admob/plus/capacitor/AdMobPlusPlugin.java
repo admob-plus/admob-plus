@@ -27,6 +27,21 @@ public class AdMobPlusPlugin extends Plugin {
     }
 
     @PluginMethod
+    public void configure(PluginCall call) {
+        final ExecuteContext ctx = new ExecuteContext(call);
+
+        if (ctx.optAppMuted() != null) {
+            MobileAds.setAppMuted(ctx.optAppMuted());
+        }
+
+        if (ctx.optAppVolume() != null) {
+            MobileAds.setAppVolume(ctx.optAppVolume());
+        }
+
+        ctx.success();
+    }
+
+    @PluginMethod
     public void configRequest(PluginCall call) {
         final ExecuteContext ctx = new ExecuteContext(call);
         MobileAds.setRequestConfiguration(ctx.optRequestConfiguration());

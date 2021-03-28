@@ -6,6 +6,11 @@ export enum MaxAdContentRating {
   UNSPECIFIED = '',
 }
 
+export type AdMobConfig = {
+  appMuted?: boolean
+  appVolume?: number
+}
+
 export type RequestConfig = {
   maxAdContentRating?: MaxAdContentRating
   tagForChildDirectedTreatment?: boolean | null
@@ -15,7 +20,7 @@ export type RequestConfig = {
 
 export interface AdMobPlusPlugin {
   start(): Promise<void>
-
+  configure(config: AdMobConfig): Promise<void>
   configRequest(requestConfig: RequestConfig): Promise<void>
 
   bannerShow(opts: {

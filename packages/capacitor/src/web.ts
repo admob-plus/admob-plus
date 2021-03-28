@@ -9,6 +9,12 @@ export class AdMobPlusWeb extends WebPlugin implements AdMobPlusPlugin {
     console.log('start', opts)
   }
 
+  async configure(
+    ...opts: Parameters<AdMobPlusPlugin['configure']>
+  ): ReturnType<AdMobPlusPlugin['configure']> {
+    console.log('configure', opts)
+  }
+
   async configRequest(
     ...opts: Parameters<AdMobPlusPlugin['configRequest']>
   ): ReturnType<AdMobPlusPlugin['configRequest']> {

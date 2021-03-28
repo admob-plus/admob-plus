@@ -14,6 +14,20 @@ public class AdMobPlusPlugin: CAPPlugin {
         })
     }
 
+    @objc func configure(_ call: CAPPluginCall) {
+        let ctx = AMBContext(call)
+
+        if let muted = ctx.optAppMuted() {
+            GADMobileAds.sharedInstance().applicationMuted = muted
+        }
+
+        if let volume = ctx.optAppVolume() {
+            GADMobileAds.sharedInstance().applicationVolume = volume
+        }
+
+        ctx.success()
+    }
+
     @objc func configRequest(_ call: CAPPluginCall) {
         let ctx = AMBContext(call)
         let requestConfiguration = GADMobileAds.sharedInstance().requestConfiguration

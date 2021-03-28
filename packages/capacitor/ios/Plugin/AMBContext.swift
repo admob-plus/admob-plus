@@ -14,6 +14,14 @@ class AMBContext {
         self.call = call
     }
 
+    func optAppMuted() -> Bool? {
+        return call.getBool("appMuted")
+    }
+
+    func optAppVolume() -> Float? {
+        return call.getFloat("appVolume")
+    }
+
     func optId() -> Int? {
         return call.getInt("id")
     }

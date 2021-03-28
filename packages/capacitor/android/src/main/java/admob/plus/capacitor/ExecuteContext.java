@@ -34,7 +34,15 @@ public class ExecuteContext {
         plugin.getBridge().triggerDocumentJSEvent(eventName, new JSONObject(data).toString());
     }
 
-    public int optId() {
+    public Boolean optAppMuted() {
+        return call.getBoolean("appMuted");
+    }
+
+    public Float optAppVolume() {
+        return call.getFloat("appVolume");
+    }
+
+    public Integer optId() {
         return call.getInt("id");
     }
 
