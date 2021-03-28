@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/admob-plus/admob-plus/compare/admob-plus@1.2.1...admob-plus@1.3.0) (2021-03-28)
+
+
+### Features
+
+* **cli:** check cordova android dependencies ([4e6283d](https://github.com/admob-plus/admob-plus/commit/4e6283db16b5ffe87b4aafb560741f7d7445a6db))
+* **cli/doctor:** check SDK pod spec version ([b8dc4ca](https://github.com/admob-plus/admob-plus/commit/b8dc4ca7ff67b71b28dd962c0189fd56984ffdd9))
+* **internal/cli:** generate cli README ([5df6434](https://github.com/admob-plus/admob-plus/commit/5df64344a8c57f3ed29872d85ebedc2182139a90))
+
+
+
+
+
 ## [1.2.1](https://github.com/admob-plus/admob-plus/compare/admob-plus@1.2.0...admob-plus@1.2.1) (2021-03-26)
 
 

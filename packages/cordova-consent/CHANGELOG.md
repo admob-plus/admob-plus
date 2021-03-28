@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/admob-plus/admob-plus/compare/cordova-plugin-consent@2.0.1...cordova-plugin-consent@2.1.0) (2021-03-28)
+
+
+### Bug Fixes
+
+* **cordova-consent:** run form code in main thread, fix [#273](https://github.com/admob-plus/admob-plus/issues/273) ([23d5966](https://github.com/admob-plus/admob-plus/commit/23d5966742ed187cee5588c02bbde60575dedad1))
+* **cordova-consent/ios:** prevent id overflow ([ccb4086](https://github.com/admob-plus/admob-plus/commit/ccb4086c8974ad025bc410f76d24608e1df60f2f))
+
+
+### Features
+
+* **cordova-consent:** allow config debugGeography, testDeviceIds ([5a57057](https://github.com/admob-plus/admob-plus/commit/5a5705764b81b2ac682e4a8bd7e65636d914a544))
+
+
+
+
+
 ## [2.0.1](https://github.com/admob-plus/admob-plus/compare/cordova-plugin-consent@2.0.0...cordova-plugin-consent@2.0.1) (2021-03-26)
 
 
