@@ -20,6 +20,7 @@ npx cap sync
 <docgen-index>
 
 * [`start()`](#start)
+* [`configure(...)`](#configure)
 * [`configRequest(...)`](#configrequest)
 * [`bannerShow(...)`](#bannershow)
 * [`bannerHide(...)`](#bannerhide)
@@ -42,6 +43,21 @@ npx cap sync
 ```typescript
 start() => any
 ```
+
+**Returns:** <code>any</code>
+
+--------------------
+
+
+### configure(...)
+
+```typescript
+configure(config: AdMobConfig) => any
+```
+
+| Param        | Type                                                |
+| ------------ | --------------------------------------------------- |
+| **`config`** | <code><a href="#admobconfig">AdMobConfig</a></code> |
 
 **Returns:** <code>any</code>
 
@@ -184,6 +200,11 @@ rewardedInterstitialShow(opts: { id: number; }) => any
 
 
 ### Type Aliases
+
+
+#### AdMobConfig
+
+<code>{ appMuted?: boolean appVolume?: number }</code>
 
 
 #### RequestConfig
