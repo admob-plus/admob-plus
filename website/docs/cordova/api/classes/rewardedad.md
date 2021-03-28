@@ -10,7 +10,7 @@ hide_title: true
 
 ## Hierarchy
 
-* [*MobileAd*](mobilead.md)
+* [*MobileAd*](mobilead.md)<[*RewardedAdOptions*](../interfaces/rewardedadoptions.md)\>
 
   ↳ **RewardedAd**
 
@@ -28,21 +28,11 @@ Name | Type |
 
 **Returns:** [*RewardedAd*](rewardedad.md)
 
-Overrides: [MobileAd](mobilead.md)
+Inherited from: [MobileAd](mobilead.md)
 
-Defined in: rewarded.ts:18
+Defined in: api.ts:13
 
 ## Properties
-
-### adUnitId
-
-• `Readonly` **adUnitId**: *string*
-
-Inherited from: [MobileAd](mobilead.md).[adUnitId](mobilead.md#adunitid)
-
-Defined in: api.ts:11
-
-___
 
 ### id
 
@@ -50,15 +40,27 @@ ___
 
 Inherited from: [MobileAd](mobilead.md).[id](mobilead.md#id)
 
-Defined in: api.ts:12
+Defined in: api.ts:11
 
 ___
 
 ### opts
 
-• `Private` **opts**: [*RewardedAdOptions*](../interfaces/rewardedadoptions.md)
+• `Protected` `Readonly` **opts**: [*RewardedAdOptions*](../interfaces/rewardedadoptions.md)
 
-Defined in: rewarded.ts:18
+Inherited from: [MobileAd](mobilead.md).[opts](mobilead.md#opts)
+
+Defined in: api.ts:13
+
+## Accessors
+
+### adUnitId
+
+• get **adUnitId**(): *string*
+
+**Returns:** *string*
+
+Defined in: api.ts:27
 
 ## Methods
 
@@ -68,7 +70,7 @@ Defined in: rewarded.ts:18
 
 **Returns:** *Promise*<unknown\>
 
-Defined in: rewarded.ts:26
+Defined in: rewarded.ts:13
 
 ___
 
@@ -78,7 +80,7 @@ ___
 
 **Returns:** *Promise*<unknown\>
 
-Defined in: rewarded.ts:30
+Defined in: rewarded.ts:17
 
 ___
 
@@ -88,4 +90,4 @@ ___
 
 **Returns:** *Promise*<unknown\>
 
-Defined in: rewarded.ts:36
+Defined in: rewarded.ts:23

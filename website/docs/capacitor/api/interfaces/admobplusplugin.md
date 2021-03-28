@@ -23,7 +23,7 @@ Name | Type |
 
 **Returns:** *Promise*<void\>
 
-Defined in: definitions.ts:26
+Defined in: definitions.ts:31
 
 ___
 
@@ -42,7 +42,7 @@ Name | Type |
 
 **Returns:** *Promise*<void\>
 
-Defined in: definitions.ts:21
+Defined in: definitions.ts:26
 
 ___
 
@@ -58,7 +58,23 @@ Name | Type |
 
 **Returns:** *Promise*<void\>
 
-Defined in: definitions.ts:19
+Defined in: definitions.ts:24
+
+___
+
+### configure
+
+▸ **configure**(`config`: [*AdMobConfig*](../index.md#admobconfig)): *Promise*<void\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`config` | [*AdMobConfig*](../index.md#admobconfig) |
+
+**Returns:** *Promise*<void\>
+
+Defined in: definitions.ts:23
 
 ___
 
@@ -76,7 +92,7 @@ Name | Type |
 
 **Returns:** *Promise*<void\>
 
-Defined in: definitions.ts:28
+Defined in: definitions.ts:33
 
 ___
 
@@ -93,7 +109,7 @@ Name | Type |
 
 **Returns:** *Promise*<void\>
 
-Defined in: definitions.ts:29
+Defined in: definitions.ts:34
 
 ___
 
@@ -111,7 +127,7 @@ Name | Type |
 
 **Returns:** *Promise*<void\>
 
-Defined in: definitions.ts:34
+Defined in: definitions.ts:39
 
 ___
 
@@ -128,7 +144,7 @@ Name | Type |
 
 **Returns:** *Promise*<void\>
 
-Defined in: definitions.ts:38
+Defined in: definitions.ts:43
 
 ___
 
@@ -146,7 +162,7 @@ Name | Type |
 
 **Returns:** *Promise*<void\>
 
-Defined in: definitions.ts:31
+Defined in: definitions.ts:36
 
 ___
 
@@ -163,7 +179,7 @@ Name | Type |
 
 **Returns:** *Promise*<void\>
 
-Defined in: definitions.ts:32
+Defined in: definitions.ts:37
 
 ___
 
@@ -173,4 +189,4 @@ ___
 
 **Returns:** *Promise*<void\>
 
-Defined in: definitions.ts:17
+Defined in: definitions.ts:22

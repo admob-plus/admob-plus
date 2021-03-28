@@ -14,7 +14,7 @@ hide_title: true
 
 • **G**: = "G"
 
-Defined in: api.ts:28
+Defined in: api.ts:33
 
 ___
 
@@ -22,7 +22,7 @@ ___
 
 • **MA**: = "MA"
 
-Defined in: api.ts:29
+Defined in: api.ts:34
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 • **PG**: = "PG"
 
-Defined in: api.ts:30
+Defined in: api.ts:35
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 • **T**: = "T"
 
-Defined in: api.ts:31
+Defined in: api.ts:36
 
 ___
 
@@ -46,4 +46,4 @@ ___
 
 • **UNSPECIFIED**: = ""
 
-Defined in: api.ts:32
+Defined in: api.ts:37

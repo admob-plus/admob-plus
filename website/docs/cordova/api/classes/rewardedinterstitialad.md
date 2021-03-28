@@ -10,7 +10,7 @@ hide_title: true
 
 ## Hierarchy
 
-* [*MobileAd*](mobilead.md)
+* [*MobileAd*](mobilead.md)<[*RewardedInterstitialAdOptions*](../interfaces/rewardedinterstitialadoptions.md)\>
 
   ↳ **RewardedInterstitialAd**
 
@@ -28,21 +28,11 @@ Name | Type |
 
 **Returns:** [*RewardedInterstitialAd*](rewardedinterstitialad.md)
 
-Overrides: [MobileAd](mobilead.md)
+Inherited from: [MobileAd](mobilead.md)
 
-Defined in: rewarded-interstitial.ts:7
+Defined in: api.ts:13
 
 ## Properties
-
-### adUnitId
-
-• `Readonly` **adUnitId**: *string*
-
-Inherited from: [MobileAd](mobilead.md).[adUnitId](mobilead.md#adunitid)
-
-Defined in: api.ts:11
-
-___
 
 ### id
 
@@ -50,15 +40,27 @@ ___
 
 Inherited from: [MobileAd](mobilead.md).[id](mobilead.md#id)
 
-Defined in: api.ts:12
+Defined in: api.ts:11
 
 ___
 
 ### opts
 
-• `Private` **opts**: [*RewardedAdOptions*](../interfaces/rewardedadoptions.md)
+• `Protected` `Readonly` **opts**: [*RewardedInterstitialAdOptions*](../interfaces/rewardedinterstitialadoptions.md)
 
-Defined in: rewarded-interstitial.ts:7
+Inherited from: [MobileAd](mobilead.md).[opts](mobilead.md#opts)
+
+Defined in: api.ts:13
+
+## Accessors
+
+### adUnitId
+
+• get **adUnitId**(): *string*
+
+**Returns:** *string*
+
+Defined in: api.ts:27
 
 ## Methods
 
@@ -68,7 +70,7 @@ Defined in: rewarded-interstitial.ts:7
 
 **Returns:** *Promise*<unknown\>
 
-Defined in: rewarded-interstitial.ts:15
+Defined in: rewarded-interstitial.ts:7
 
 ___
 
@@ -78,7 +80,7 @@ ___
 
 **Returns:** *Promise*<unknown\>
 
-Defined in: rewarded-interstitial.ts:21
+Defined in: rewarded-interstitial.ts:13
 
 ___
 
@@ -88,4 +90,4 @@ ___
 
 **Returns:** *Promise*<unknown\>
 
-Defined in: rewarded-interstitial.ts:27
+Defined in: rewarded-interstitial.ts:19

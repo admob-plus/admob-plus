@@ -18,31 +18,21 @@ hide_title: true
 
 ### constructor
 
-\+ **new InterstitialAd**(`__namedParameters`: [*MobileAdOptions*](../index.md#mobileadoptions)): [*InterstitialAd*](interstitialad.md)
+\+ **new InterstitialAd**(`opts`: [*MobileAdOptions*](../index.md#mobileadoptions)): [*InterstitialAd*](interstitialad.md)
 
 #### Parameters:
 
 Name | Type |
 :------ | :------ |
-`__namedParameters` | [*MobileAdOptions*](../index.md#mobileadoptions) |
+`opts` | [*MobileAdOptions*](../index.md#mobileadoptions) |
 
 **Returns:** [*InterstitialAd*](interstitialad.md)
 
-Overrides: [MobileAd](mobilead.md)
+Inherited from: [MobileAd](mobilead.md)
 
-Defined in: interstitial.ts:3
+Defined in: api.ts:13
 
 ## Properties
-
-### adUnitId
-
-• `Readonly` **adUnitId**: *string*
-
-Inherited from: [MobileAd](mobilead.md).[adUnitId](mobilead.md#adunitid)
-
-Defined in: api.ts:11
-
-___
 
 ### id
 
@@ -50,7 +40,27 @@ ___
 
 Inherited from: [MobileAd](mobilead.md).[id](mobilead.md#id)
 
-Defined in: api.ts:12
+Defined in: api.ts:11
+
+___
+
+### opts
+
+• `Protected` `Readonly` **opts**: [*MobileAdOptions*](../index.md#mobileadoptions)
+
+Inherited from: [MobileAd](mobilead.md).[opts](mobilead.md#opts)
+
+Defined in: api.ts:13
+
+## Accessors
+
+### adUnitId
+
+• get **adUnitId**(): *string*
+
+**Returns:** *string*
+
+Defined in: api.ts:27
 
 ## Methods
 
@@ -60,7 +70,7 @@ Defined in: api.ts:12
 
 **Returns:** *Promise*<boolean\>
 
-Defined in: interstitial.ts:8
+Defined in: interstitial.ts:4
 
 ___
 
@@ -70,7 +80,7 @@ ___
 
 **Returns:** *Promise*<void\>
 
-Defined in: interstitial.ts:14
+Defined in: interstitial.ts:10
 
 ___
 
@@ -80,4 +90,4 @@ ___
 
 **Returns:** *Promise*<void\>
 
-Defined in: interstitial.ts:20
+Defined in: interstitial.ts:16

@@ -29,6 +29,21 @@ hide_title: true
 
 ## Type aliases
 
+### AdMobConfig
+
+Ƭ **AdMobConfig**: *object*
+
+#### Type declaration:
+
+Name | Type |
+:------ | :------ |
+`appMuted`? | *boolean* |
+`appVolume`? | *number* |
+
+Defined in: definitions.ts:9
+
+___
+
 ### RequestConfig
 
 Ƭ **RequestConfig**: *object*
@@ -42,7 +57,7 @@ Name | Type |
 `tagForUnderAgeOfConsent`? | *boolean* \| *null* |
 `testDeviceIds`? | *string*[] |
 
-Defined in: definitions.ts:9
+Defined in: definitions.ts:14
 
 ## Variables
 

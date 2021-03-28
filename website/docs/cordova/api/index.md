@@ -74,4 +74,4 @@ Name | Type |
 `tagForUnderAgeOfConsent`? | *boolean* \| *null* |
 `testDeviceIds`? | *string*[] |
 
-Defined in: api.ts:35
+Defined in: api.ts:40

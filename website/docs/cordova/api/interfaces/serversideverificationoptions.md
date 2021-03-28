@@ -14,7 +14,7 @@ hide_title: true
 
 • `Optional` **customData**: *string*
 
-Defined in: rewarded.ts:9
+Defined in: rewarded.ts:4
 
 ___
 
@@ -22,4 +22,4 @@ ___
 
 • `Optional` **userId**: *string*
 
-Defined in: rewarded.ts:10
+Defined in: rewarded.ts:5

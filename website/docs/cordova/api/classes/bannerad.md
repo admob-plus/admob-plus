@@ -10,7 +10,7 @@ hide_title: true
 
 ## Hierarchy
 
-* [*MobileAd*](mobilead.md)
+* [*MobileAd*](mobilead.md)<[*BannerAdOptions*](../interfaces/banneradoptions.md)\>
 
   ↳ **BannerAd**
 
@@ -30,19 +30,9 @@ Name | Type |
 
 Overrides: [MobileAd](mobilead.md)
 
-Defined in: banner.ts:17
+Defined in: banner.ts:16
 
 ## Properties
-
-### adUnitId
-
-• `Readonly` **adUnitId**: *string*
-
-Inherited from: [MobileAd](mobilead.md).[adUnitId](mobilead.md#adunitid)
-
-Defined in: api.ts:11
-
-___
 
 ### id
 
@@ -50,15 +40,27 @@ ___
 
 Inherited from: [MobileAd](mobilead.md).[id](mobilead.md#id)
 
-Defined in: api.ts:12
+Defined in: api.ts:11
 
 ___
 
 ### opts
 
-• `Private` **opts**: [*BannerAdOptions*](../interfaces/banneradoptions.md)
+• `Protected` `Readonly` **opts**: [*BannerAdOptions*](../interfaces/banneradoptions.md)
 
-Defined in: banner.ts:17
+Inherited from: [MobileAd](mobilead.md).[opts](mobilead.md#opts)
+
+Defined in: api.ts:13
+
+## Accessors
+
+### adUnitId
+
+• get **adUnitId**(): *string*
+
+**Returns:** *string*
+
+Defined in: api.ts:27
 
 ## Methods
 
@@ -68,7 +70,7 @@ Defined in: banner.ts:17
 
 **Returns:** *Promise*<unknown\>
 
-Defined in: banner.ts:33
+Defined in: banner.ts:29
 
 ___
 
@@ -78,4 +80,4 @@ ___
 
 **Returns:** *Promise*<unknown\>
 
-Defined in: banner.ts:29
+Defined in: banner.ts:25

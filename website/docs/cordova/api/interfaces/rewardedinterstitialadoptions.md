@@ -32,4 +32,4 @@ ___
 
 Inherited from: [RewardedAdOptions](rewardedadoptions.md).[serverSideVerification](rewardedadoptions.md#serversideverification)
 
-Defined in: rewarded.ts:14
+Defined in: rewarded.ts:9
