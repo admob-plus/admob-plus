@@ -22,7 +22,7 @@ Name | Type |
 
 **Returns:** [*ConsentForm*](consentform.md)
 
-Defined in: index.ts:21
+Defined in: index.ts:29
 
 ## Properties
 
@@ -30,7 +30,7 @@ Defined in: index.ts:21
 
 • `Readonly` **id**: *number*
 
-Defined in: index.ts:21
+Defined in: index.ts:29
 
 ## Methods
 
@@ -40,4 +40,4 @@ Defined in: index.ts:21
 
 **Returns:** *Promise*<unknown\>
 
-Defined in: index.ts:27
+Defined in: index.ts:35

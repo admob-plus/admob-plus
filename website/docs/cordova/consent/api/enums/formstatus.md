@@ -14,7 +14,7 @@ hide_title: true
 
 • **Available**: = 1
 
-Defined in: index.ts:16
+Defined in: index.ts:24
 
 ___
 
@@ -22,7 +22,7 @@ ___
 
 • **Unavailable**: = 2
 
-Defined in: index.ts:17
+Defined in: index.ts:25
 
 ___
 
@@ -30,4 +30,4 @@ ___
 
 • **Unknown**: = 0
 
-Defined in: index.ts:15
+Defined in: index.ts:23

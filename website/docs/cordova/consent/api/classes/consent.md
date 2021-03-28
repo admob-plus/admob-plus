@@ -16,7 +16,7 @@ hide_title: true
 
 **Returns:** [*Consent*](consent.md)
 
-Defined in: index.ts:34
+Defined in: index.ts:43
 
 ## Properties
 
@@ -24,7 +24,15 @@ Defined in: index.ts:34
 
 • `Readonly` **ConsentStatus**: *typeof* [*ConsentStatus*](../enums/consentstatus.md)
 
-Defined in: index.ts:33
+Defined in: index.ts:41
+
+___
+
+### DebugGeography
+
+• `Readonly` **DebugGeography**: *typeof* [*DebugGeography*](../enums/debuggeography.md)
+
+Defined in: index.ts:42
 
 ___
 
@@ -32,7 +40,7 @@ ___
 
 • `Readonly` **FormStatus**: *typeof* [*FormStatus*](../enums/formstatus.md)
 
-Defined in: index.ts:34
+Defined in: index.ts:43
 
 ## Methods
 
@@ -42,7 +50,7 @@ Defined in: index.ts:34
 
 **Returns:** *Promise*<[*ConsentStatus*](../enums/consentstatus.md)\>
 
-Defined in: index.ts:40
+Defined in: index.ts:49
 
 ___
 
@@ -52,7 +60,7 @@ ___
 
 **Returns:** *Promise*<[*FormStatus*](../enums/formstatus.md)\>
 
-Defined in: index.ts:45
+Defined in: index.ts:54
 
 ___
 
@@ -62,7 +70,7 @@ ___
 
 **Returns:** *Promise*<[*ConsentForm*](consentform.md)\>
 
-Defined in: index.ts:54
+Defined in: index.ts:63
 
 ___
 
@@ -78,7 +86,7 @@ Name | Type |
 
 **Returns:** *Promise*<unknown\>
 
-Defined in: index.ts:50
+Defined in: index.ts:59
 
 ___
 
@@ -88,4 +96,4 @@ ___
 
 **Returns:** *Promise*<unknown\>
 
-Defined in: index.ts:59
+Defined in: index.ts:68

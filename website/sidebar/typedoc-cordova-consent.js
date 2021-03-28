@@ -5,6 +5,7 @@ module.exports = [
     "label": "Enumerations",
     "items": [
       "cordova/consent/api/enums/consentstatus",
+      "cordova/consent/api/enums/debuggeography",
       "cordova/consent/api/enums/formstatus"
     ]
   },

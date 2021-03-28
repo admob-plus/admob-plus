@@ -15,6 +15,7 @@ hide_title: true
 ### Enumerations
 
 - [ConsentStatus](enums/consentstatus.md)
+- [DebugGeography](enums/debuggeography.md)
 - [FormStatus](enums/formstatus.md)
 
 ### Classes
