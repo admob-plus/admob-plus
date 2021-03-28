@@ -33,6 +33,7 @@ const initRequestTrackingAuthorization = async () => {
     }
   })
 }
+
 const initRequestInfoUpdate = async () => {
   /**
    * @type {HTMLButtonElement}
@@ -102,6 +103,22 @@ const initFormButtons = async () => {
   })
 }
 
+const initReset = async () => {
+  /**
+   * @type {HTMLButtonElement}
+   */
+  const btn = document.getElementById('reset-btn')
+  btn.addEventListener('click', async () => {
+    try {
+      btn.innerHTML = `${await consent.reset()}`
+    } catch (err) {
+      alert(`reset() error: ${err}`)
+    } finally {
+      btn.disabled = false
+    }
+  })
+}
+
 const app = {
   initialize() {
     document.addEventListener(
@@ -116,6 +133,7 @@ const app = {
     await initRequestInfoUpdate()
     await initFormStatus()
     await initFormButtons()
+    await initReset()
 
     this.receivedEvent('deviceready')
   },
