@@ -1,3 +1,5 @@
+import UserMessagingPlatform
+
 class CSNContext {
     static weak var plugin: CSNConsent!
 
@@ -29,6 +31,16 @@ class CSNContext {
 
     func optId() -> Int? {
         return opt("id") as? Int
+    }
+
+    func optUMPRequestParameters() -> UMPRequestParameters {
+        let parameters = UMPRequestParameters()
+
+        if let tagForUnderAgeOfConsent = opt("tagForUnderAgeOfConsent") as? Bool {
+            parameters.tagForUnderAgeOfConsent = tagForUnderAgeOfConsent
+        }
+
+        return parameters
     }
 
     func sendResult(_ message: CDVPluginResult?) {

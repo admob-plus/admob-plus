@@ -27,14 +27,9 @@ class CSNConsent: CDVPlugin {
     @objc(requestInfoUpdate:)
     func requestInfoUpdate(command: CDVInvokedUrlCommand) {
         let ctx = CSNContext(command)
-        let parameters = UMPRequestParameters()
-
-        if let tagForUnderAgeOfConsent = ctx.opt("tagForUnderAgeOfConsent") as? Bool {
-            parameters.tagForUnderAgeOfConsent = tagForUnderAgeOfConsent
-        }
 
         UMPConsentInformation.sharedInstance.requestConsentInfoUpdate(
-            with: parameters,
+            with: ctx.optUMPRequestParameters(),
             completionHandler: { error in
               if error != nil {
                 ctx.error(error!)
