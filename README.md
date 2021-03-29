@@ -1,6 +1,8 @@
 # [AdMob Plus](https://admob-plus.github.io)
 
-AdMob Plus is the successor of [cordova-plugin-admob-free](https://github.com/ratson/cordova-plugin-admob-free), which provides a cleaner API and build with modern tools.
+![AdMob Plus logotype](https://admob-plus.github.io/img/logo.png "AdMob Plus logotype")
+
+[**AdMob Plus**](https://admob-plus.github.io) is the successor of [cordova-plugin-admob-free](https://github.com/ratson/cordova-plugin-admob-free), provides a cleaner API and is build with modern tools.
 
 ## Features
 
