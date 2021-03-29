@@ -16,18 +16,13 @@ const app = {
       admob.requestTrackingAuthorization().then(console.log)
     }
 
-    admob
-      .start()
-      .then(() =>
-        Promise.all([
-          this.showBannerAd(),
-          this.showBannerAdTop(),
-          this.showInterstitialAd(),
-          this.showRewardedAd(),
-          this.showRewardedInterstitialAd(),
-        ]),
-      )
-      .catch(alert)
+    admob.start().catch(alert)
+
+    this.initButton('show-banner-btn', this.showBannerAd)
+    this.initButton('show-top-banner-btn', this.showBannerAdTop)
+    this.initButton('show-interstitial-btn', this.showInterstitialAd)
+    this.initButton('show-rewarded-btn', this.showRewardedAd)
+    this.initButton('show-rewardedi-btn', this.showRewardedInterstitialAd)
   },
 
   showBannerAd() {
@@ -75,6 +70,22 @@ const app = {
     receivedElement.setAttribute('style', 'display:block;')
 
     console.log(`Received Event: ${id}`)
+  },
+
+  initButton(id, displayAd) {
+    /**
+     * @type {HTMLButtonElement}
+     */
+    const btn = document.getElementById(id)
+    btn.addEventListener('click', function () {
+      btn.disabled = true
+
+      displayAd()
+        .catch(alert)
+        .then(function () {
+          btn.disabled = false
+        })
+    })
   },
 }
 
