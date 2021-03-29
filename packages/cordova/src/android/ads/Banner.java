@@ -79,7 +79,7 @@ public class Banner extends AdBase implements IAdShow {
         load(ctx);
 
         if (adView.getParent() == null) {
-            addBannerView(ctx, adView);
+            addBannerView();
         } else if (adView.getVisibility() == View.GONE) {
             adView.resume();
             adView.setVisibility(View.VISIBLE);
@@ -91,7 +91,7 @@ public class Banner extends AdBase implements IAdShow {
                 if (parentView.getParent() != null) {
                     ((ViewGroup) parentView.getParent()).removeView(parentView);
                 }
-                addBannerView(ctx, adView);
+                addBannerView();
             }
         }
 
@@ -116,7 +116,7 @@ public class Banner extends AdBase implements IAdShow {
         super.destroy();
     }
 
-    private void addBannerView(ExecuteContext ctx, AdView adView) {
+    private void addBannerView() {
         View view = ExecuteContext.plugin.webView.getView();
         ViewGroup wvParentView = (ViewGroup) view.getParent();
         if (parentView == null) {
