@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/admob-plus/admob-plus/compare/admob-plus@1.3.0...admob-plus@1.4.0) (2021-03-29)
+
+
+### Features
+
+* **cli/doctor:** check config.xml ([af79758](https://github.com/admob-plus/admob-plus/commit/af797584fff23be3792c07e7a3c309bea7d52eb8))
+
+
+
+
+
 # [1.3.0](https://github.com/admob-plus/admob-plus/compare/admob-plus@1.2.1...admob-plus@1.3.0) (2021-03-28)
 
 

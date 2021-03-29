@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.2.2...admob-plus-cordova@1.3.0) (2021-03-29)
+
+
+### Features
+
+* **cordova:** add offset option for banner ([550d63a](https://github.com/admob-plus/admob-plus/commit/550d63ac23255e5a7ea767eace72e260b1516330))
+* **cordova/android:** add offset option for banner ([c26908c](https://github.com/admob-plus/admob-plus/commit/c26908cd02c9e48e5ceaa700e36937b84df1a172))
+* **cordova/ios:** add offset option for banner ([d35a55b](https://github.com/admob-plus/admob-plus/commit/d35a55b1a898f681231798d94390768cd5fd015a))
+
+
+
+
+
 ## [1.2.2](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.2.1...admob-plus-cordova@1.2.2) (2021-03-28)
 
 **Note:** Version bump only for package admob-plus-cordova
