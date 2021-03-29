@@ -35,3 +35,4 @@ document.addEventListener('deviceready', async () => {
 
 - [UMP SDK for Android](https://developers.google.com/admob/ump/android/quick-start)
 - [UMP SDK for iOS](https://developers.google.com/admob/ump/ios/quick-start)
+- [AppTrackingTransparency Framework](https://developer.apple.com/documentation/apptrackingtransparency)
