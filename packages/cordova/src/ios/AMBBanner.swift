@@ -15,6 +15,7 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
 
     let adSize: GADAdSize!
     let position: String!
+    let offset: CGFloat?
     var bannerView: GADBannerView!
 
     var stackView: UIStackView {
@@ -37,9 +38,10 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
         return AMBBanner.bottomConstraint
     }
 
-    init(id: Int, adUnitId: String, adSize: GADAdSize, position: String) {
+    init(id: Int, adUnitId: String, adSize: GADAdSize, position: String, offset: CGFloat?) {
         self.adSize = adSize
         self.position = position
+        self.offset = offset
 
         super.init(id: id, adUnitId: adUnitId)
     }
@@ -51,7 +53,11 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
         else {
             return nil
         }
-        self.init(id: id, adUnitId: adUnitId, adSize: ctx.optAdSize(), position: position)
+        self.init(id: id,
+                  adUnitId: adUnitId,
+                  adSize: ctx.optAdSize(),
+                  position: position,
+                  offset: ctx.optOffset())
     }
 
     deinit {
@@ -82,11 +88,15 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
 
         prepareStackView()
 
-        switch position {
-        case AMBBannerPosition.top:
-            stackView.insertArrangedSubview(bannerView, at: 0)
-        default:
-            stackView.addArrangedSubview(bannerView)
+        if let offset = self.offset {
+            addBannerView(offset)
+        } else {
+            switch position {
+            case AMBBannerPosition.top:
+                stackView.insertArrangedSubview(bannerView, at: 0)
+            default:
+                stackView.addArrangedSubview(bannerView)
+            }
         }
 
         bannerView.isHidden = false
@@ -151,6 +161,28 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
                 constraintTop
             ])
         }
+    }
+
+    private func addBannerView(_ offset: CGFloat) {
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.addSubview(bannerView)
+        stackView.bringSubviewToFront(bannerView)
+        var constraints = [
+            bannerView.centerXAnchor.constraint(equalTo: stackView.centerXAnchor)
+        ]
+        switch position {
+        case AMBBannerPosition.top:
+            constraints += [
+                bannerView.topAnchor.constraint(equalTo: stackView.topAnchor,
+                                                constant: offset)
+            ]
+        default:
+            constraints += [
+                bannerView.bottomAnchor.constraint(equalTo: stackView.bottomAnchor,
+                                                   constant: offset * -1)
+            ]
+        }
+        NSLayoutConstraint.activate(constraints)
     }
 
     private func updateLayout() {
