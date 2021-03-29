@@ -30,7 +30,7 @@ Name | Type |
 
 Overrides: [MobileAd](mobilead.md)
 
-Defined in: banner.ts:16
+Defined in: banner.ts:17
 
 ## Properties
 
@@ -70,7 +70,7 @@ Defined in: api.ts:27
 
 **Returns:** *Promise*<unknown\>
 
-Defined in: banner.ts:29
+Defined in: banner.ts:30
 
 ___
 
@@ -80,4 +80,4 @@ ___
 
 **Returns:** *Promise*<unknown\>
 
-Defined in: banner.ts:25
+Defined in: banner.ts:26

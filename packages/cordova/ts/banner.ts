@@ -11,6 +11,7 @@ type Position = 'top' | 'bottom'
 export interface BannerAdOptions extends MobileAdOptions {
   position?: Position
   size?: AdSizeType
+  offset?: number
 }
 
 export default class BannerAd extends MobileAd<BannerAdOptions> {

@@ -26,6 +26,14 @@ Defined in: api.ts:4
 
 ___
 
+### offset
+
+• `Optional` **offset**: *number*
+
+Defined in: banner.ts:14
+
+___
+
 ### position
 
 • `Optional` **position**: Position
