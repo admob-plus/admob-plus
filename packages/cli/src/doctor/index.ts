@@ -1,10 +1,10 @@
 import fse from 'fs-extra'
 import _ from 'lodash'
-import readPkgUp from 'read-pkg-up'
 import semver from 'semver'
 import { PackageJson } from 'type-fest'
 import { collectDependencies } from './android'
 import Context, { spinner } from './context'
+import { PackageCordovaConfig, readConfigXml } from './cordova'
 import { getPodSpec } from './ios'
 
 const ctx = new Context()
@@ -26,7 +26,8 @@ const readPackageJson = async (filename: string) => {
 
 export default class Doctor {
   async run() {
-    await this.checkPackageJson()
+    const pkg = await this.checkPackageJson()
+    await this.checkCordovaConfigXml(pkg)
     await this.checkCordovaPluginPackageJson()
     await this.checkCordovaAndroidDependencies()
     await this.checkSDKPodSpec()
@@ -39,18 +40,17 @@ export default class Doctor {
   }
 
   async checkPackageJson() {
-    spinner.start('Looking for package.json')
-    const pkg = await readPkgUp()
-    if (!pkg?.path) {
-      return
-    }
+    const filename = 'package.json'
+    spinner.start(`Looking for ${filename}`)
 
-    ctx.logPath(pkg.path)
+    const pkg = await readPackageJson(filename)
+
+    ctx.logPath(filename)
     ctx.indented(async () => {
       const appIdKeys = ['APP_ID_ANDROID', 'APP_ID_IOS']
       appIdKeys.forEach((k) => {
         const configPath = `cordova.plugins.admob-plus-cordova.${k}`
-        const appId = _.get(pkg.packageJson, configPath)
+        const appId = _.get(pkg, configPath)
         if (testAppIds.has(appId)) {
           ctx.logIssue(configPath)
           ctx.indented(() => {
@@ -62,7 +62,38 @@ export default class Doctor {
       })
     })
 
-    return pkg.packageJson
+    return pkg
+  }
+
+  async checkCordovaConfigXml(pkg?: PackageJson & PackageCordovaConfig) {
+    const filename = 'config.xml'
+    spinner.start(`Looking for ${filename}`)
+
+    const config = await readConfigXml(filename)
+    if (!pkg || !config) {
+      return
+    }
+
+    ctx.logPath(filename)
+    ctx.indented(() => {
+      const plugins = _.get(pkg, 'cordova.plugins', {})
+      _.each(plugins, (vars, name) => {
+        const xmlVars = _.get(config.getPlugin(name), 'variables')
+        if (!xmlVars) {
+          return
+        }
+        _.each(vars, (v, k) => {
+          if (v === xmlVars[k]) {
+            spinner.succeed(k)
+          } else {
+            ctx.logIssue(k)
+            ctx.indented(() => {
+              spinner.info(`Replace ${xmlVars[k]} with ${v}`)
+            })
+          }
+        })
+      })
+    })
   }
 
   async checkCordovaPluginPackageJson() {

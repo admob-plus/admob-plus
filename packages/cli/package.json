@@ -7,6 +7,7 @@
     "@frat/envinfo": "^7.8.4",
     "admob-plus-cordova": "latest",
     "clipboardy": "^2.3.0",
+    "cordova-common": "^4.0.2",
     "elementtree": "^0.1.7",
     "execa": "^5.0.0",
     "fs-extra": "^9.1.0",
