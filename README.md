@@ -9,6 +9,7 @@
 - No Ad-Sharing
 - No Remote Control
 - Fully Open Source
+- Well maintained
 
 ## Documentation
 
