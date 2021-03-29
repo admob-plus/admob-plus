@@ -42,7 +42,7 @@ new admob.BannerAd({
 
 By setting `offset` to a positive integer, the banner will overlay on the webview with the offset number of pixels relative to its `position`.
 
-```js {3}
+```js {4}
 new admob.BannerAd({
   adUnitId: 'ca-app-pub-xxx/yyy',
   position: 'top',
