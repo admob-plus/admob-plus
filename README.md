@@ -2,6 +2,12 @@
 
 AdMob Plus is the successor of [cordova-plugin-admob-free](https://github.com/ratson/cordova-plugin-admob-free), which provides a cleaner API and build with modern tools.
 
+## Features
+
+- No Ad-Sharing
+- No Remote Control
+- Fully Open Source
+
 ## Documentation
 
 You can find the documentation [on the website](https://admob-plus.github.io/docs/).
