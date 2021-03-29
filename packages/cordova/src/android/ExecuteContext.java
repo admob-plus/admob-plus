@@ -51,6 +51,14 @@ public class ExecuteContext {
     }
 
     @Nullable
+    public Integer optOffset() {
+        if (opts.has("offset")) {
+            return opts.optInt("offset");
+        }
+        return null;
+    }
+
+    @Nullable
     public AdBase optAd() {
         return AdBase.getAd(optId());
     }
