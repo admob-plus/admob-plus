@@ -38,6 +38,27 @@ new admob.BannerAd({
 })
 ```
 
+## Offset
+
+By setting `offset` to a positive integer, the banner will overlay on the webview with the offset number of pixels relative to its `position`.
+
+```js {3}
+new admob.BannerAd({
+  adUnitId: 'ca-app-pub-xxx/yyy',
+  position: 'top',
+  offset: 100,
+})
+```
+
+It is possible to set `offset` to `0` for just overlapping the banner on top of the content.
+
+```js {3}
+new admob.BannerAd({
+  adUnitId: 'ca-app-pub-xxx/yyy',
+  offset: 0,  // overlap with content
+})
+```
+
 ## Events
 
 ### `admob.banner.load`
