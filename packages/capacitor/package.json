@@ -11,7 +11,8 @@
     "android/build.gradle",
     "dist/",
     "ios/Plugin/",
-    "AdmobPlusCapacitor.podspec"
+    "AdmobPlusCapacitor.podspec",
+    "!**/*.tsbuildinfo"
   ],
   "author": "Ratson",
   "license": "MIT",
@@ -43,7 +44,7 @@
     "build": "yarn clean && yarn docgen && tsc && rollup -c rollup.config.js",
     "clean": "rimraf ./dist",
     "watch": "tsc --watch",
-    "prepublishOnly": "yarn build && yarn rimraf dist/*.tsbuildinfo",
+    "prepublishOnly": "yarn build",
     "test": "tsc --noEmit"
   },
   "devDependencies": {
