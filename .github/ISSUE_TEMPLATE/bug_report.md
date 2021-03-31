@@ -7,6 +7,14 @@ assignees: ''
 
 ---
 
+<!--
+  Before proceeding,
+
+  1. Read the [Troubleshooting Guide](https://admob-plus.github.io/docs/troubleshooting)
+  2. Run `npx admob-plus doctor`
+  3. Don't ask question here, use [Discussions](https://github.com/admob-plus/admob-plus/discussions)
+-->
+
 **Describe the bug**
 A clear and concise description of what the bug is.
 
