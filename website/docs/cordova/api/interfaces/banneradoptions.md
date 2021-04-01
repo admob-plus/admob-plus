@@ -26,6 +26,16 @@ Defined in: api.ts:4
 
 ___
 
+### npa
+
+• `Optional` **npa**: *1*
+
+Inherited from: void
+
+Defined in: api.ts:4
+
+___
+
 ### offset
 
 • `Optional` **offset**: *number*

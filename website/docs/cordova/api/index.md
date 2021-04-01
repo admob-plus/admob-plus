@@ -56,6 +56,7 @@ Renames and exports: [AdMob](classes/admob.md)
 Name | Type |
 :------ | :------ |
 `adUnitId` | *string* |
+`npa`? | *1* |
 
 Defined in: api.ts:4
 

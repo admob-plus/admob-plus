@@ -1,7 +1,7 @@
 export { AdSizeType, Events, NativeActions } from './generated'
 
 /** @internal */
-export type MobileAdOptions = { adUnitId: string }
+export type MobileAdOptions = { adUnitId: string; npa?: '1' }
 
 /** @internal */
 export class MobileAd<T extends MobileAdOptions = MobileAdOptions> {

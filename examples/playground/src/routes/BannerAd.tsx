@@ -33,6 +33,7 @@ const BannerAd: React.FC<BannerProps> = () => {
         ? [
             new admob.BannerAd({
               adUnitId: 'ca-app-pub-3940256099942544/6300978111',
+              npa: '1',
             }),
             new admob.BannerAd({
               adUnitId: 'ca-app-pub-3940256099942544/6300978111',
