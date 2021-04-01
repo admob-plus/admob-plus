@@ -31,6 +31,17 @@ document.addEventListener('deviceready', async () => {
 }, false)
 ```
 
+## Forward consent
+
+If a user has consented to receive only non-personalized ads, pass `npa="1"` when creating the ad, e.g.
+
+```js {3}
+new admob.BannerAd({
+  adUnitId: 'ca-app-pub-xxx/yyy',
+  npa: '1',
+})
+```
+
 ## References
 
 - [UMP SDK for Android](https://developers.google.com/admob/ump/android/quick-start)
