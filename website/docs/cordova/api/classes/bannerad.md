@@ -30,9 +30,17 @@ Name | Type |
 
 Overrides: [MobileAd](mobilead.md)
 
-Defined in: banner.ts:17
+Defined in: banner.ts:18
 
 ## Properties
+
+### \_loaded
+
+• `Private` **\_loaded**: *boolean*= false
+
+Defined in: banner.ts:18
+
+___
 
 ### id
 
@@ -70,7 +78,17 @@ Defined in: api.ts:27
 
 **Returns:** *Promise*<unknown\>
 
-Defined in: banner.ts:30
+Defined in: banner.ts:44
+
+___
+
+### load
+
+▸ **load**(): *Promise*<unknown\>
+
+**Returns:** *Promise*<unknown\>
+
+Defined in: banner.ts:28
 
 ___
 
@@ -80,4 +98,4 @@ ___
 
 **Returns:** *Promise*<unknown\>
 
-Defined in: banner.ts:26
+Defined in: banner.ts:36

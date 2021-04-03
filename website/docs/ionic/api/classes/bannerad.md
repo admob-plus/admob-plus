@@ -104,7 +104,19 @@ Defined in: ionic/src/index.ts:39
 
 Implementation of: void
 
-Defined in: ionic/src/index.ts:47
+Defined in: ionic/src/index.ts:51
+
+___
+
+### load
+
+▸ **load**(): *Promise*<unknown\>
+
+**Returns:** *Promise*<unknown\>
+
+Implementation of: void
+
+Defined in: ionic/src/index.ts:43
 
 ___
 
@@ -116,4 +128,4 @@ ___
 
 Implementation of: void
 
-Defined in: ionic/src/index.ts:43
+Defined in: ionic/src/index.ts:47

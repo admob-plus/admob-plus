@@ -34,7 +34,7 @@ Name | Type |
 
 Overrides: void
 
-Defined in: ionic/src/index.ts:95
+Defined in: ionic/src/index.ts:99
 
 ## Properties
 
@@ -42,7 +42,7 @@ Defined in: ionic/src/index.ts:95
 
 • `Private` **\_objectInstance**: *default*
 
-Defined in: ionic/src/index.ts:95
+Defined in: ionic/src/index.ts:99
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 Overrides: void
 
-Defined in: ionic/src/index.ts:91
+Defined in: ionic/src/index.ts:95
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 Overrides: void
 
-Defined in: ionic/src/index.ts:92
+Defined in: ionic/src/index.ts:96
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 Overrides: void
 
-Defined in: ionic/src/index.ts:93
+Defined in: ionic/src/index.ts:97
 
 ## Accessors
 
@@ -82,7 +82,7 @@ Defined in: ionic/src/index.ts:93
 
 **Returns:** *string*
 
-Defined in: ionic/src/index.ts:103
+Defined in: ionic/src/index.ts:107
 
 ___
 
@@ -92,7 +92,7 @@ ___
 
 **Returns:** *number*
 
-Defined in: ionic/src/index.ts:107
+Defined in: ionic/src/index.ts:111
 
 ## Methods
 
@@ -104,7 +104,7 @@ Defined in: ionic/src/index.ts:107
 
 Implementation of: void
 
-Defined in: ionic/src/index.ts:111
+Defined in: ionic/src/index.ts:115
 
 ___
 
@@ -116,7 +116,7 @@ ___
 
 Implementation of: void
 
-Defined in: ionic/src/index.ts:115
+Defined in: ionic/src/index.ts:119
 
 ___
 
@@ -128,4 +128,4 @@ ___
 
 Implementation of: void
 
-Defined in: ionic/src/index.ts:119
+Defined in: ionic/src/index.ts:123

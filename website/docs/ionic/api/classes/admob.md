@@ -34,7 +34,7 @@ Inherited from: void
 
 • `Readonly` **BannerAd**: *typeof* [*BannerAd*](bannerad.md)
 
-Defined in: ionic/src/index.ts:179
+Defined in: ionic/src/index.ts:183
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 • `Readonly` **InterstitialAd**: *typeof* [*InterstitialAd*](interstitialad.md)
 
-Defined in: ionic/src/index.ts:180
+Defined in: ionic/src/index.ts:184
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 • `Readonly` **RewardedAd**: *typeof* [*RewardedAd*](rewardedad.md)
 
-Defined in: ionic/src/index.ts:181
+Defined in: ionic/src/index.ts:185
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 • `Readonly` **RewardedInterstitialAd**: *typeof* [*RewardedInterstitialAd*](rewardedinterstitialad.md)
 
-Defined in: ionic/src/index.ts:182
+Defined in: ionic/src/index.ts:186
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 Overrides: void
 
-Defined in: ionic/src/index.ts:173
+Defined in: ionic/src/index.ts:177
 
 ___
 
@@ -78,7 +78,7 @@ ___
 
 Overrides: void
 
-Defined in: ionic/src/index.ts:174
+Defined in: ionic/src/index.ts:178
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 Overrides: void
 
-Defined in: ionic/src/index.ts:175
+Defined in: ionic/src/index.ts:179
 
 ___
 
@@ -98,7 +98,7 @@ ___
 
 Overrides: void
 
-Defined in: ionic/src/index.ts:176
+Defined in: ionic/src/index.ts:180
 
 ___
 
@@ -108,7 +108,7 @@ ___
 
 Overrides: void
 
-Defined in: ionic/src/index.ts:177
+Defined in: ionic/src/index.ts:181
 
 ## Accessors
 
@@ -118,7 +118,7 @@ Defined in: ionic/src/index.ts:177
 
 **Returns:** *AdMob*
 
-Defined in: ionic/src/index.ts:184
+Defined in: ionic/src/index.ts:188
 
 ## Methods
 
@@ -136,7 +136,7 @@ Name | Type |
 
 Implementation of: void
 
-Defined in: ionic/src/index.ts:188
+Defined in: ionic/src/index.ts:192
 
 ___
 
@@ -152,7 +152,7 @@ Name | Type |
 
 **Returns:** *Observable*<any\>
 
-Defined in: ionic/src/index.ts:210
+Defined in: ionic/src/index.ts:214
 
 ___
 
@@ -164,7 +164,7 @@ ___
 
 Implementation of: void
 
-Defined in: ionic/src/index.ts:206
+Defined in: ionic/src/index.ts:210
 
 ___
 
@@ -182,7 +182,7 @@ Name | Type |
 
 Implementation of: void
 
-Defined in: ionic/src/index.ts:198
+Defined in: ionic/src/index.ts:202
 
 ___
 
@@ -200,7 +200,7 @@ Name | Type |
 
 Implementation of: void
 
-Defined in: ionic/src/index.ts:202
+Defined in: ionic/src/index.ts:206
 
 ___
 
@@ -212,4 +212,4 @@ ___
 
 Implementation of: void
 
-Defined in: ionic/src/index.ts:194
+Defined in: ionic/src/index.ts:198

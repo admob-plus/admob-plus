@@ -18,11 +18,19 @@ Defined in: generated.ts:3
 
 ___
 
+### bannerLoad
+
+• **bannerLoad**: = "bannerLoad"
+
+Defined in: generated.ts:4
+
+___
+
 ### bannerShow
 
 • **bannerShow**: = "bannerShow"
 
-Defined in: generated.ts:4
+Defined in: generated.ts:5
 
 ___
 
@@ -30,7 +38,7 @@ ___
 
 • **configRequest**: = "configRequest"
 
-Defined in: generated.ts:5
+Defined in: generated.ts:6
 
 ___
 
@@ -38,7 +46,7 @@ ___
 
 • **interstitialIsLoaded**: = "interstitialIsLoaded"
 
-Defined in: generated.ts:6
+Defined in: generated.ts:7
 
 ___
 
@@ -46,7 +54,7 @@ ___
 
 • **interstitialLoad**: = "interstitialLoad"
 
-Defined in: generated.ts:7
+Defined in: generated.ts:8
 
 ___
 
@@ -54,7 +62,7 @@ ___
 
 • **interstitialShow**: = "interstitialShow"
 
-Defined in: generated.ts:8
+Defined in: generated.ts:9
 
 ___
 
@@ -62,7 +70,7 @@ ___
 
 • **ready**: = "ready"
 
-Defined in: generated.ts:9
+Defined in: generated.ts:10
 
 ___
 
@@ -70,7 +78,7 @@ ___
 
 • **requestTrackingAuthorization**: = "requestTrackingAuthorization"
 
-Defined in: generated.ts:10
+Defined in: generated.ts:11
 
 ___
 
@@ -78,7 +86,7 @@ ___
 
 • **rewardedInterstitialIsLoaded**: = "rewardedInterstitialIsLoaded"
 
-Defined in: generated.ts:11
+Defined in: generated.ts:12
 
 ___
 
@@ -86,7 +94,7 @@ ___
 
 • **rewardedInterstitialLoad**: = "rewardedInterstitialLoad"
 
-Defined in: generated.ts:12
+Defined in: generated.ts:13
 
 ___
 
@@ -94,7 +102,7 @@ ___
 
 • **rewardedInterstitialShow**: = "rewardedInterstitialShow"
 
-Defined in: generated.ts:13
+Defined in: generated.ts:14
 
 ___
 
@@ -102,7 +110,7 @@ ___
 
 • **rewardedIsLoaded**: = "rewardedIsLoaded"
 
-Defined in: generated.ts:14
+Defined in: generated.ts:15
 
 ___
 
@@ -110,7 +118,7 @@ ___
 
 • **rewardedLoad**: = "rewardedLoad"
 
-Defined in: generated.ts:15
+Defined in: generated.ts:16
 
 ___
 
@@ -118,7 +126,7 @@ ___
 
 • **rewardedShow**: = "rewardedShow"
 
-Defined in: generated.ts:16
+Defined in: generated.ts:17
 
 ___
 
@@ -126,7 +134,7 @@ ___
 
 • **setAppMuted**: = "setAppMuted"
 
-Defined in: generated.ts:17
+Defined in: generated.ts:18
 
 ___
 
@@ -134,7 +142,7 @@ ___
 
 • **setAppVolume**: = "setAppVolume"
 
-Defined in: generated.ts:18
+Defined in: generated.ts:19
 
 ___
 
@@ -142,4 +150,4 @@ ___
 
 • **start**: = "start"
 
-Defined in: generated.ts:19
+Defined in: generated.ts:20
