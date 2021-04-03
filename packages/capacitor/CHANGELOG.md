@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.2](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.3.1...@admob-plus/capacitor@1.3.2) (2021-04-03)
+
+**Note:** Version bump only for package @admob-plus/capacitor
+
+
+
+
+
 ## [1.3.1](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.3.0...@admob-plus/capacitor@1.3.1) (2021-03-29)
 
 **Note:** Version bump only for package @admob-plus/capacitor

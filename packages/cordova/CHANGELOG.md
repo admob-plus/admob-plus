@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.3.0...admob-plus-cordova@1.4.0) (2021-04-03)
+
+
+### Features
+
+* **cordova:** add banner load method ([f65b411](https://github.com/admob-plus/admob-plus/commit/f65b4114b875e4926991662f6205f4784929a5c5))
+
+
+
+
+
 # [1.3.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.2.2...admob-plus-cordova@1.3.0) (2021-03-29)
 
 

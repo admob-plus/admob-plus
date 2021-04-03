@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/ionic@1.0.6...@admob-plus/ionic@1.1.0) (2021-04-03)
+
+
+### Features
+
+* **ionic:** implement banner load method ([5c44239](https://github.com/admob-plus/admob-plus/commit/5c442390bde3c04bd4de174a492c7995bc152968))
+
+
+
+
+
 ## [1.0.6](https://github.com/admob-plus/admob-plus/compare/@admob-plus/ionic@1.0.5...@admob-plus/ionic@1.0.6) (2021-03-29)
 
 **Note:** Version bump only for package @admob-plus/ionic

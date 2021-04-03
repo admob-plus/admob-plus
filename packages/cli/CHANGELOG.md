@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/admob-plus/admob-plus/compare/admob-plus@1.4.0...admob-plus@1.5.0) (2021-04-03)
+
+
+### Features
+
+* **cli/doctor:** check ad server connection ([2ed774b](https://github.com/admob-plus/admob-plus/commit/2ed774b6ef23da1b9a00eb202f6ce5559eceb85b))
+* **cli/doctor:** rework using listr2 ([b36fc10](https://github.com/admob-plus/admob-plus/commit/b36fc10d84354c941449aa9ba5c4ab54de661eaa))
+
+
+
+
+
 # [1.4.0](https://github.com/admob-plus/admob-plus/compare/admob-plus@1.3.0...admob-plus@1.4.0) (2021-03-29)
 
 
