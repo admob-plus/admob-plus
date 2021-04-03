@@ -54,6 +54,8 @@ public class AdMob extends CordovaPlugin {
                 MobileAds.setRequestConfiguration(ctx.optRequestConfiguration());
                 callbackContext.success();
                 break;
+            case Actions.BANNER_LOAD:
+                return executeBannerLoad(ctx);
             case Actions.BANNER_SHOW:
                 return executeBannerShow(ctx);
             case Actions.BANNER_HIDE:
@@ -107,9 +109,19 @@ public class AdMob extends CordovaPlugin {
         return true;
     }
 
-    private boolean executeBannerShow(ExecuteContext ctx) {
+    private boolean executeBannerLoad(ExecuteContext ctx) {
         cordova.getActivity().runOnUiThread(() -> {
             Banner banner = ctx.optAdOrCreate(Banner.class);
+            if (banner != null) {
+                banner.load(ctx);
+            }
+        });
+        return true;
+    }
+
+    private boolean executeBannerShow(ExecuteContext ctx) {
+        cordova.getActivity().runOnUiThread(() -> {
+            Banner banner = (Banner) ctx.optAdOrError();
             if (banner != null) {
                 banner.show(ctx);
             }

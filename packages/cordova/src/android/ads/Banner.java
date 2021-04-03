@@ -76,11 +76,10 @@ public class Banner extends AdBase implements IAdShow {
         }
 
         adView.loadAd(adRequest);
+        ctx.success();
     }
 
     public void show(ExecuteContext ctx) {
-        load(ctx);
-
         if (adView.getParent() == null) {
             addBannerView(ctx);
         } else if (adView.getVisibility() == View.GONE) {

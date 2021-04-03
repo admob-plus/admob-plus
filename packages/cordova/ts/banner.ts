@@ -15,6 +15,8 @@ export interface BannerAdOptions extends MobileAdOptions {
 }
 
 export default class BannerAd extends MobileAd<BannerAdOptions> {
+  private _loaded = false
+
   constructor(opts: BannerAdOptions) {
     super({
       position: 'bottom',
@@ -23,8 +25,20 @@ export default class BannerAd extends MobileAd<BannerAdOptions> {
     })
   }
 
-  public show() {
-    return execAsync(NativeActions.bannerShow, [{ ...this.opts, id: this.id }])
+  public async load() {
+    const result = await execAsync(NativeActions.bannerLoad, [
+      { ...this.opts, id: this.id },
+    ])
+    this._loaded = true
+    return result
+  }
+
+  public async show() {
+    if (!this._loaded) {
+      await this.load()
+    }
+
+    return execAsync(NativeActions.bannerShow, [{ id: this.id }])
   }
 
   public hide() {

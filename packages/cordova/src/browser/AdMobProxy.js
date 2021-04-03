@@ -3,6 +3,7 @@
 
 const AdMob = {
   bannerHide() {},
+  bannerLoad() {},
   bannerShow() {},
   configRequest() {},
   interstitialIsLoaded() {},

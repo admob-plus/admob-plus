@@ -81,11 +81,11 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
 
         bannerView.adUnitID = adUnitId
         bannerView.load(request)
+
+        ctx.success()
     }
 
     func show(_ ctx: AMBContext) {
-        load(ctx)
-
         prepareStackView()
 
         if let offset = self.offset {
@@ -99,7 +99,10 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
             }
         }
 
-        bannerView.isHidden = false
+        if bannerView.isHidden {
+            bannerView.isHidden = false
+        }
+
         updateLayout()
         ctx.success()
     }

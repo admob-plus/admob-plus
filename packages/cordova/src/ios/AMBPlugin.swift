@@ -102,13 +102,24 @@ class AMBPlugin: CDVPlugin {
         }
     }
 
+    @objc(bannerLoad:)
+    func bannerLoad(command: CDVInvokedUrlCommand) {
+        let ctx = AMBContext(command)
+
+        DispatchQueue.main.async {
+            let ad = ctx.optAd() as? AMBBanner ?? AMBBanner(ctx)
+            ad?.load(ctx) ?? ctx.error()
+        }
+    }
+
     @objc(bannerShow:)
     func bannerShow(command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(command)
 
         DispatchQueue.main.async {
-            let ad = ctx.optAd() as? AMBBanner ?? AMBBanner(ctx)
-            ad?.show(ctx) ?? ctx.error()
+            if let ad = ctx.optAdOrError() as? AMBBanner {
+                ad.show(ctx)
+            }
         }
     }
 
