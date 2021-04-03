@@ -40,6 +40,10 @@ export class BannerAd
     return this._objectInstance.id
   }
 
+  load(): Promise<unknown> {
+    return this._objectInstance.load()
+  }
+
   show(): Promise<unknown> {
     return this._objectInstance.show()
   }
