@@ -81,7 +81,7 @@ export default [
       }
 
       const tasksPrefs = _.map(
-        { SwiftVersion: '5.3', 'deployment-target': '11.0' },
+        { SwiftVersion: ctx.swiftVersion, 'deployment-target': '11.0' },
         (expectedVersion, prefName) => {
           const title = `platform[name="ios"]/preference[name="${prefName}"]`
           return {
@@ -139,7 +139,7 @@ export default [
   },
   {
     title: 'platforms/ios/*.xcodeproj',
-    async task(_ctx, task) {
+    async task(ctx, task) {
       const [filename] = await glob('platforms/ios/*.xcodeproj', {
         onlyDirectories: true,
       })
@@ -160,6 +160,7 @@ export default [
         {
           title,
           async task(_ctxSwift, taskSwift) {
+            const expectedVersion = ctx.swiftVersion
             const swiftVersion = _.get(
               o,
               'rootObject.buildConfigurationList.buildConfigurations[0].buildSettings.SWIFT_VERSION',
@@ -167,7 +168,6 @@ export default [
             if (!swiftVersion) {
               throw new Error(`${title}: missing`)
             }
-            const expectedVersion = '5.3'
             if (
               semver.gte(
                 semver.coerce(swiftVersion)!,

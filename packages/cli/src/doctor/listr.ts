@@ -3,6 +3,7 @@ import { PackageJson } from 'type-fest'
 
 export interface Ctx {
   pkg?: PackageJson
+  swiftVersion: string
 }
 
 export const options: ListrBaseClassOptions<any, any, 'verbose'> = {
