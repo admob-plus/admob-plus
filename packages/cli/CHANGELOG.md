@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/admob-plus/admob-plus/compare/admob-plus@1.5.0...admob-plus@1.6.0) (2021-04-04)
+
+
+### Features
+
+* **cli/doctor:** check Cordova iOS preferences ([0ebc963](https://github.com/admob-plus/admob-plus/commit/0ebc9631a851556b45b2f041e4135ecaa9cb0794))
+* **cli/doctor:** check Cordova iOS SWIFT_VERSION ([0724845](https://github.com/admob-plus/admob-plus/commit/07248457e9fd1df03601db8f1d4c3dc5716fea53))
+
+
+
+
+
 # [1.5.0](https://github.com/admob-plus/admob-plus/compare/admob-plus@1.4.0...admob-plus@1.5.0) (2021-04-03)
 
 
