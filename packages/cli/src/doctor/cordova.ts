@@ -1,3 +1,4 @@
+import assert from 'assert'
 // @ts-expect-error no types
 import { ConfigParser } from 'cordova-common'
 import { ListrTask } from 'listr2'
@@ -77,27 +78,60 @@ export default [
         return
       }
 
-      const plugins = _.get(pkg, 'cordova.plugins', {})
-      return task.newListr(
-        _.flatMap(plugins, (vars, name) => {
-          const xmlVars = _.get(config.getPlugin(name), 'variables')
-          if (!xmlVars) {
-            return []
-          }
-          return _.map(vars, (v, k) => ({
-            title: k,
-            async task(_ctx, taskVar) {
-              if (!xmlVars[k]) {
-                taskVar.skip()
-                return
-              }
-              if (v !== xmlVars[k]) {
-                throw new Error(`${k}: ${xmlVars[k]} != ${v}`)
+      const tasksPrefs = _.map(
+        { SwiftVersion: '5.3', 'deployment-target': '11.0' },
+        (v, prefName) => {
+          const title = `platform[name="ios"]/preference[name="${prefName}"]`
+          const expectedVersion = semver.coerce(v)
+          assert(expectedVersion)
+          return {
+            title,
+            async task(_ctx, taskPref) {
+              try {
+                const version = semver.coerce(
+                  config.getPreference(prefName, 'ios'),
+                )
+                if (!version) {
+                  throw new Error(`${title}: missing / invalid`)
+                }
+                if (semver.gte(version, expectedVersion)) {
+                  taskPref.title = `${title}: ${version}`
+                } else {
+                  throw new Error(`${title}: ${version} < ${expectedVersion}`)
+                }
+              } catch (err) {
+                throw new Error(`${title}: ${err}`)
               }
             },
-          }))
-        }),
+          } as ListrTask
+        },
       )
+
+      const plugins = _.get(pkg, 'cordova.plugins', {})
+      const tasksVars = _.flatMap(plugins, (vars, name) => {
+        const xmlVars = _.get(config.getPlugin(name), 'variables')
+        if (!xmlVars) {
+          return []
+        }
+        return _.map(
+          vars,
+          (v, k) =>
+            ({
+              title: k,
+              async task(_ctx, taskVar) {
+                if (!xmlVars[k]) {
+                  taskVar.skip()
+                  return
+                }
+                if (v !== xmlVars[k]) {
+                  throw new Error(`${k}: ${xmlVars[k]} != ${v}`)
+                }
+              },
+            } as ListrTask),
+        )
+      })
+
+      return task.newListr([...tasksPrefs, ...tasksVars], { concurrent: true })
     },
   },
   {
