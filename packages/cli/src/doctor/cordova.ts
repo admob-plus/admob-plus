@@ -1,6 +1,8 @@
-import assert from 'assert'
 // @ts-expect-error no types
 import { ConfigParser } from 'cordova-common'
+import execa from 'execa'
+import glob from 'fast-glob'
+import yaml from 'js-yaml'
 import { ListrTask } from 'listr2'
 import _ from 'lodash'
 import semver from 'semver'
@@ -80,21 +82,22 @@ export default [
 
       const tasksPrefs = _.map(
         { SwiftVersion: '5.3', 'deployment-target': '11.0' },
-        (v, prefName) => {
+        (expectedVersion, prefName) => {
           const title = `platform[name="ios"]/preference[name="${prefName}"]`
-          const expectedVersion = semver.coerce(v)
-          assert(expectedVersion)
           return {
             title,
             async task(_ctx, taskPref) {
               try {
-                const version = semver.coerce(
-                  config.getPreference(prefName, 'ios'),
-                )
+                const version = config.getPreference(prefName, 'ios')
                 if (!version) {
                   throw new Error(`${title}: missing / invalid`)
                 }
-                if (semver.gte(version, expectedVersion)) {
+                if (
+                  semver.gte(
+                    semver.coerce(version)!,
+                    semver.coerce(expectedVersion)!,
+                  )
+                ) {
                   taskPref.title = `${title}: ${version}`
                 } else {
                   throw new Error(`${title}: ${version} < ${expectedVersion}`)
@@ -132,6 +135,54 @@ export default [
       })
 
       return task.newListr([...tasksPrefs, ...tasksVars], { concurrent: true })
+    },
+  },
+  {
+    title: 'platforms/ios/*.xcodeproj',
+    async task(_ctx, task) {
+      const [filename] = await glob('platforms/ios/*.xcodeproj', {
+        onlyDirectories: true,
+      })
+      if (!filename) {
+        task.skip()
+        return
+      }
+      task.title = filename
+      const { stdout } = await execa('xcodeproj', [
+        'show',
+        '--format=tree_hash',
+        filename,
+      ])
+      const o = yaml.load(stdout)
+
+      const title = 'SWIFT_VERSION'
+      return task.newListr([
+        {
+          title,
+          async task(_ctxSwift, taskSwift) {
+            const swiftVersion = _.get(
+              o,
+              'rootObject.buildConfigurationList.buildConfigurations[0].buildSettings.SWIFT_VERSION',
+            )
+            if (!swiftVersion) {
+              throw new Error(`${title}: missing`)
+            }
+            const expectedVersion = '5.3'
+            if (
+              semver.gte(
+                semver.coerce(swiftVersion)!,
+                semver.coerce(expectedVersion)!,
+              )
+            ) {
+              taskSwift.title = `${title}: ${swiftVersion}`
+            } else {
+              taskSwift.output = `Set \`SwiftVersion\` preference in \`config.xml\` to \`${expectedVersion}\``
+              throw new Error(`${title}: ${swiftVersion} < ${expectedVersion}`)
+            }
+          },
+          options: { persistentOutput: true },
+        },
+      ])
     },
   },
   {
