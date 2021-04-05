@@ -1,6 +1,6 @@
 # Change Log
 
-Changes are generated inside each pacakge following [Conventional Commits](https://conventionalcommits.org) style.
+Changes are generated inside each package following [Conventional Commits](https://conventionalcommits.org) style.
 
 ## Packages
 
