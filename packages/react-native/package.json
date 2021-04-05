@@ -16,7 +16,8 @@
   ],
   "scripts": {
     "prepublishOnly": "yarn build",
-    "build": "tsc -b"
+    "build": "tsc -b",
+    "test": "tsc --noEmit --composite false"
   },
   "repository": {
     "type": "git",

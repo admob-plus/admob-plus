@@ -16,9 +16,9 @@ pre-commit:
     swiftlint:
       glob: "*.swift"
       run: yarn node-swiftlint lint --strict --path {staged_files}
-    ioinc-pkg:
-      files: packages/ionic/package.json
-      run: yarn jest packages/ionic/package.test.ts
+    pkg-deps:
+      glob: package.json
+      run: yarn jest __tests__/package-json.ts
 
 pre-push:
   parallel: true

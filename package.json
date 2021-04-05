@@ -24,6 +24,7 @@
     "@commitlint/config-conventional": "^12.0.1",
     "@commitlint/config-lerna-scopes": "^12.0.1",
     "@commitlint/prompt-cli": "^12.0.1",
+    "@ionic-native/admob-plus": "^5.31.1",
     "@jest/types": "^26.6.2",
     "@types/cordova": "^0.0.34",
     "@types/jest": "^26.0.22",
