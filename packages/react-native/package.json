@@ -1,34 +1,46 @@
 {
   "private": true,
   "name": "@admob-plus/react-native",
+  "title": "React Native AdMob Plus",
   "version": "1.0.0",
   "description": "AdMob Plus for React Native",
-  "main": "index.js",
-  "scripts": {
-    "prepack": "tsc"
-  },
-  "keywords": [
-    "react-native"
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "*.md",
+    "android",
+    "ios",
+    "*.podspec",
+    "*.ts",
+    "dist"
   ],
-  "peerDependencies": {
-    "react-native": "*"
+  "scripts": {
+    "prepublishOnly": "yarn build",
+    "build": "tsc -b"
   },
-  "devDependencies": {
-    "@types/react": "^16.9.2",
-    "@types/react-native": "^0.60.15",
-    "react": "^16.9.0",
-    "react-native": "^0.60.5",
-    "typescript": "^3.6.3"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/admob-plus/admob-plus.git"
   },
+  "homepage": "https://admob-plus.github.io/docs/react-native",
+  "keywords": [
+    "react-native",
+    "admob"
+  ],
   "author": "Ratson",
   "license": "MIT",
-  "repository": "admob-plus/admob-plus",
   "publishConfig": {
     "access": "public"
   },
-  "files": [
-    "*.ts",
-    "*.md",
-    "dist"
-  ]
+  "peerDependencies": {
+    "react": ">=16.8.1",
+    "react-native": ">=0.60.0-rc.0 <1.0.x"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.3",
+    "@types/react-native": "^0.64.2",
+    "react": "^17.0.2",
+    "react-native": "^0.64.0",
+    "typescript": "^4.2.3"
+  }
 }

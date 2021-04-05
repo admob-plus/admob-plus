@@ -2,12 +2,13 @@
   "extends": "@admob-plus-internal/tsconfig",
   "compilerOptions": {
     "jsx": "react-native",
-    "stripInternal": true,
+    "lib": ["es2017", "dom"],
+    "moduleResolution": "node",
     "noImplicitAny": true,
     "outDir": "dist",
-    "rootDir": ".",
-    "target": "es5",
+    "rootDir": "src",
     "skipLibCheck": true,
-    "lib": ["es2017", "dom"]
+    "stripInternal": true,
+    "target": "es5"
   }
 }

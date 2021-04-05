@@ -1,13 +1,8 @@
+#import <React/RCTBridgeModule.h>
 
-#import "RNAdMobPlus.h"
+@interface RCT_EXTERN_MODULE(RNAdMobPlus, NSObject)
 
-@implementation RNAdMobPlus
-
-- (dispatch_queue_t)methodQueue
-{
-    return dispatch_get_main_queue();
-}
-RCT_EXPORT_MODULE()
+RCT_EXTERN_METHOD(start:(RCTPromiseResolveBlock)resolve
+                  rejecter:(RCTPromiseRejectBlock)reject)
 
 @end
-  

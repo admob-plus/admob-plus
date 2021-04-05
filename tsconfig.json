@@ -11,6 +11,7 @@
     { "path": "packages/cordova" },
     { "path": "packages/ionic" },
     { "path": "packages/ionic/tsconfig.build.json" },
+    { "path": "packages/react-native" },
     { "path": "website" }
   ],
   "files": []
