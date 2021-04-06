@@ -28,7 +28,7 @@
     "plugin",
     "native",
     "admob",
-    "plus"
+    "monetization"
   ],
   "scripts": {
     "verify": "yarn verify:ios && yarn verify:android && yarn verify:web",

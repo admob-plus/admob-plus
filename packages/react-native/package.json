@@ -26,7 +26,8 @@
   "homepage": "https://admob-plus.github.io/docs/react-native",
   "keywords": [
     "react-native",
-    "admob"
+    "admob",
+    "monetization"
   ],
   "author": "Ratson",
   "license": "MIT",

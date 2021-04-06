@@ -38,10 +38,10 @@
     "ecosystem:cordova",
     "cordova-android",
     "cordova-ios",
+    "monetization",
     "free",
     "admobpro",
-    "google",
-    "plus"
+    "google"
   ],
   "cordova": {
     "id": "admob-plus-cordova",
