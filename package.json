@@ -10,6 +10,7 @@
     "test:pkgs": "lerna run test",
     "test:jest": "jest",
     "lint": "eslint --cache --ext .js,.jsx,.ts,tsx .",
+    "gen": "yarn workspace @admob-plus-internal/cli run gen",
     "test-android": "run-s 'test-android:*'",
     "//test-android:testbed": "cordova-testbed --platform android --plugin packages/cordova --build-only",
     "test-ios": "run-s 'test-ios:*'",
