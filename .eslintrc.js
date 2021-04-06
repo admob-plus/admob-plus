@@ -11,6 +11,13 @@ module.exports = {
       },
     },
     {
+      files: ['__tests__/**/*.ts'],
+      rules: {
+        '@typescript-eslint/no-var-requires': 'warn',
+        'node/no-missing-require': 'warn',
+      },
+    },
+    {
       files: ['packages/cordova/src/browser/AdMobProxy.js'],
       rules: {
         strict: 'off',
