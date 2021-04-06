@@ -1,5 +1,3 @@
-// RNAdMobPlusPackage.java
-
 package admob.plus.rn;
 
 import java.util.Arrays;

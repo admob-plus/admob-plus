@@ -1,5 +1,3 @@
-<!-- AndroidManifest.xml -->
-
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="admob.plus.rn">
 
