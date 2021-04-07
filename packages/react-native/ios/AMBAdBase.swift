@@ -38,6 +38,14 @@ class AMBAdBase: NSObject {
         AMBContext.ads.removeValue(forKey: self.id)
     }
 
+    func emit(_ event: AMBEvents) {
+        self.emit(event.rawValue, nil)
+    }
+
+    func emit(_ event: AMBEvents, _ error: Error) {
+        self.emit(event.rawValue, ["message": error.localizedDescription])
+    }
+
     func emit(_ eventName: String) {
         self.emit(eventName, nil)
     }

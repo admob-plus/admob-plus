@@ -21,6 +21,11 @@ export const renderSwiftContants = (m: { [key: string]: string }) =>
     .sort()
     .join('\n')
 
+export const renderSwiftEnumCases = (m: { [key: string]: string }) =>
+  _.map(m, (v, k) => `${indent4(1)}case ${_.camelCase(k)} = "${v}"`)
+    .sort()
+    .join('\n')
+
 export const renderTsContants = (m: { [key: string]: string }) =>
   _.map(m, (v, k) => `  ${k} = '${v}',`)
     .sort()

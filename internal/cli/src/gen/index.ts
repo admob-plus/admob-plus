@@ -9,6 +9,7 @@ import admob from './admob'
 import capacitor from './capacitor'
 import updateCliReadme from './cli'
 import consent from './consent'
+import rn from './rn'
 import { indent4 } from './shared'
 
 async function updateConfigXML({
@@ -48,7 +49,9 @@ async function updateConfigXML({
 }
 
 const generateFiles = async () => {
-  const specs = await Promise.all([admob, capacitor, consent].map((f) => f()))
+  const specs = await Promise.all(
+    [admob, capacitor, consent, rn].map((f) => f()),
+  )
 
   await Promise.all(
     _.flatMap(specs, ({ files }) => files).map((x) =>

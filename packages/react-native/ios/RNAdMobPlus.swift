@@ -9,14 +9,7 @@ class RNAdMobPlus: RCTEventEmitter {
     }
 
     override func supportedEvents() -> [String] {
-        return [
-            AMBEvents.interstitialLoad,
-            AMBEvents.interstitialShow,
-            AMBEvents.interstitialDismiss,
-            AMBEvents.interstitialLoadFail,
-            AMBEvents.interstitialShow,
-            AMBEvents.interstitialShowFail
-        ]
+        return AMBEvents.allCases.map { $0.rawValue }
     }
 
     @objc func start(_ resolve: @escaping RCTPromiseResolveBlock,
