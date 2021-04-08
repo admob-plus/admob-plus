@@ -26,5 +26,6 @@ module.exports = {
   ],
   rules: {
     'function-paren-newline': 'off',
+    'unicorn/prefer-spread': 'warn',
   },
 }
