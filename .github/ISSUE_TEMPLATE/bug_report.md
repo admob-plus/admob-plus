@@ -13,6 +13,8 @@ assignees: ''
   1. Read the [Troubleshooting Guide](https://admob-plus.github.io/docs/troubleshooting)
   2. Run `npx admob-plus doctor`
   3. Don't ask question here, use [Discussions](https://github.com/admob-plus/admob-plus/discussions)
+
+  Issues that not following the instructions may be delayed / closed.
 -->
 
 **Describe the bug**
@@ -24,6 +26,8 @@ Steps to reproduce the behavior:
 2. Click on '....'
 3. Scroll down to '....'
 4. See error
+
+<!-- Issues with reproducible repository will be prioritized. -->
 
 **Expected behavior**
 A clear and concise description of what you expected to happen.
