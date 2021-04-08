@@ -237,6 +237,7 @@ jobs:
           echo "machine github.com login ${GIT_USER} password ${{ secrets.GH_TOKEN }}" > ~/.netrc
           pushd website
           yarn
+          yarn workspace 'admob-plus-cordova' build
           yarn deploy
           popd
         env:
