@@ -60,22 +60,38 @@ ${linesEvents}
 `
 }
 
-const pluginMethods = (() => {
-  const definitionsPath = require.resolve(
-    '@admob-plus/capacitor/src/definitions.ts',
-  )
+export const extractClassInfo = (
+  definitionsPath: string,
+  className: string,
+) => {
   const program = ts.createProgram([definitionsPath], {})
   const checker = program.getTypeChecker()
   const source = program.getSourceFile(definitionsPath)
   /* eslint-disable @typescript-eslint/no-non-null-asserted-optional-chain */
-  const type = checker.getTypeAtLocation(
-    source
-      ?.getChildAt(0)
-      ?.getChildren()
-      .find((x) => _.get(x, 'name.escapedText') === 'AdMobPlusPlugin')!,
-  )
+  const node = source
+    ?.getChildAt(0)
+    ?.getChildren()
+    .find((x) => _.get(x, 'name.escapedText') === className)!
   /* eslint-enable @typescript-eslint/no-non-null-asserted-optional-chain */
-  return checker.getPropertiesOfType(type).map((x) => x.getName())
+  const cls = checker.getTypeAtLocation(node)
+  return {
+    checker,
+    cls,
+    properties: checker.getPropertiesOfType(cls),
+    methodSignatures: cls
+      .getProperties()
+      .filter((x) => x.valueDeclaration.kind === ts.SyntaxKind.MethodSignature),
+  }
+}
+
+const pluginMethods = (() => {
+  const definitionsPath = require.resolve(
+    '@admob-plus/capacitor/src/definitions.ts',
+  )
+  return extractClassInfo(
+    definitionsPath,
+    'AdMobPlusPlugin',
+  ).methodSignatures.map((x) => x.getName())
 })()
 
 const buildIosMacro = () => `// ${warnMessage}
