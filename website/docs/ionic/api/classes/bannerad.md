@@ -32,7 +32,7 @@ Name | Type |
 
 **Returns:** [*BannerAd*](bannerad.md)
 
-Overrides: void
+Overrides: IonicNativePlugin.constructor
 
 Defined in: ionic/src/index.ts:27
 
@@ -50,7 +50,7 @@ ___
 
 ▪ `Static` **plugin**: *string*
 
-Overrides: void
+Overrides: IonicNativePlugin.plugin
 
 Defined in: ionic/src/index.ts:23
 
@@ -60,7 +60,7 @@ ___
 
 ▪ `Static` **pluginName**: *string*
 
-Overrides: void
+Overrides: IonicNativePlugin.pluginName
 
 Defined in: ionic/src/index.ts:24
 
@@ -70,7 +70,7 @@ ___
 
 ▪ `Static` **pluginRef**: *string*= 'admob.BannerAd'
 
-Overrides: void
+Overrides: IonicNativePlugin.pluginRef
 
 Defined in: ionic/src/index.ts:25
 
@@ -102,7 +102,7 @@ Defined in: ionic/src/index.ts:39
 
 **Returns:** *Promise*<unknown\>
 
-Implementation of: void
+Implementation of: Omit.hide
 
 Defined in: ionic/src/index.ts:51
 
@@ -114,7 +114,7 @@ ___
 
 **Returns:** *Promise*<unknown\>
 
-Implementation of: void
+Implementation of: Omit.load
 
 Defined in: ionic/src/index.ts:43
 
@@ -126,6 +126,6 @@ ___
 
 **Returns:** *Promise*<unknown\>
 
-Implementation of: void
+Implementation of: Omit.show
 
 Defined in: ionic/src/index.ts:47

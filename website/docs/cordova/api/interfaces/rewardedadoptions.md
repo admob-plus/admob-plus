@@ -22,7 +22,7 @@ hide_title: true
 
 • **adUnitId**: *string*
 
-Inherited from: void
+Inherited from: MobileAdOptions.adUnitId
 
 Defined in: api.ts:4
 
@@ -32,7 +32,7 @@ ___
 
 • `Optional` **npa**: *1*
 
-Inherited from: void
+Inherited from: MobileAdOptions.npa
 
 Defined in: api.ts:4
 

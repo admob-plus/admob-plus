@@ -29,12 +29,12 @@
     "markdown-magic": "^2.0.0",
     "read-pkg": "^5.2.0",
     "replace-in-file": "^6.2.0",
-    "typescript": "^4.2.3",
+    "typescript": "^4.2.4",
     "xml2js": "^0.4.23",
     "yargs": "^16.2.0"
   },
   "devDependencies": {
-    "@types/fs-extra": "^9.0.9",
+    "@types/fs-extra": "^9.0.10",
     "@types/lodash": "^4.14.168",
     "@types/markdown-magic": "^1.0.0",
     "@types/xml2js": "^0.4.8",

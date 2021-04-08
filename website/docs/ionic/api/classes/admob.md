@@ -26,7 +26,7 @@ hide_title: true
 
 **Returns:** [*AdMob*](admob.md)
 
-Inherited from: void
+Inherited from: IonicNativePlugin.constructor
 
 ## Properties
 
@@ -66,7 +66,7 @@ ___
 
 ▪ `Static` **platforms**: *string*[]
 
-Overrides: void
+Overrides: IonicNativePlugin.platforms
 
 Defined in: ionic/src/index.ts:177
 
@@ -76,7 +76,7 @@ ___
 
 ▪ `Static` **plugin**: *string*
 
-Overrides: void
+Overrides: IonicNativePlugin.plugin
 
 Defined in: ionic/src/index.ts:178
 
@@ -86,7 +86,7 @@ ___
 
 ▪ `Static` **pluginName**: *string*
 
-Overrides: void
+Overrides: IonicNativePlugin.pluginName
 
 Defined in: ionic/src/index.ts:179
 
@@ -96,7 +96,7 @@ ___
 
 ▪ `Static` **pluginRef**: *string*= 'admob'
 
-Overrides: void
+Overrides: IonicNativePlugin.pluginRef
 
 Defined in: ionic/src/index.ts:180
 
@@ -106,7 +106,7 @@ ___
 
 ▪ `Static` **repo**: *string*= 'https://github.com/admob-plus/admob-plus'
 
-Overrides: void
+Overrides: IonicNativePlugin.repo
 
 Defined in: ionic/src/index.ts:181
 
@@ -134,7 +134,7 @@ Name | Type |
 
 **Returns:** *Promise*<unknown\>
 
-Implementation of: void
+Implementation of: Omit.configRequest
 
 Defined in: ionic/src/index.ts:192
 
@@ -162,7 +162,7 @@ ___
 
 **Returns:** *Promise*<*false* \| [*TrackingAuthorizationStatus*](../enums/trackingauthorizationstatus.md)\>
 
-Implementation of: void
+Implementation of: Omit.requestTrackingAuthorization
 
 Defined in: ionic/src/index.ts:210
 
@@ -180,7 +180,7 @@ Name | Type |
 
 **Returns:** *Promise*<unknown\>
 
-Implementation of: void
+Implementation of: Omit.setAppMuted
 
 Defined in: ionic/src/index.ts:202
 
@@ -198,7 +198,7 @@ Name | Type |
 
 **Returns:** *Promise*<unknown\>
 
-Implementation of: void
+Implementation of: Omit.setAppVolume
 
 Defined in: ionic/src/index.ts:206
 
@@ -210,6 +210,6 @@ ___
 
 **Returns:** *Promise*<{ `version`: *string*  }\>
 
-Implementation of: void
+Implementation of: Omit.start
 
 Defined in: ionic/src/index.ts:198

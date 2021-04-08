@@ -33,7 +33,7 @@ Name | Type |
 
 **Returns:** [*InterstitialAd*](interstitialad.md)
 
-Overrides: void
+Overrides: IonicNativePlugin.constructor
 
 Defined in: ionic/src/index.ts:63
 
@@ -51,7 +51,7 @@ ___
 
 ▪ `Static` **plugin**: *string*
 
-Overrides: void
+Overrides: IonicNativePlugin.plugin
 
 Defined in: ionic/src/index.ts:59
 
@@ -61,7 +61,7 @@ ___
 
 ▪ `Static` **pluginName**: *string*
 
-Overrides: void
+Overrides: IonicNativePlugin.pluginName
 
 Defined in: ionic/src/index.ts:60
 
@@ -71,7 +71,7 @@ ___
 
 ▪ `Static` **pluginRef**: *string*= 'admob.InterstitialAd'
 
-Overrides: void
+Overrides: IonicNativePlugin.pluginRef
 
 Defined in: ionic/src/index.ts:61
 
@@ -103,7 +103,7 @@ Defined in: ionic/src/index.ts:75
 
 **Returns:** *Promise*<boolean\>
 
-Implementation of: void
+Implementation of: Omit.isLoaded
 
 Defined in: ionic/src/index.ts:79
 
@@ -115,7 +115,7 @@ ___
 
 **Returns:** *Promise*<void\>
 
-Implementation of: void
+Implementation of: Omit.load
 
 Defined in: ionic/src/index.ts:83
 
@@ -127,6 +127,6 @@ ___
 
 **Returns:** *Promise*<void\>
 
-Implementation of: void
+Implementation of: Omit.show
 
 Defined in: ionic/src/index.ts:87

@@ -70,7 +70,7 @@ ___
 
 ### allAds
 
-▪ `Static` `Private` **allAds**: *object*
+▪ `Static` `Private` **allAds**: *object*= {}
 
 #### Type declaration:
 

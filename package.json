@@ -21,11 +21,11 @@
     "@admob-plus-internal/cli": "file:./internal/cli",
     "@admob-plus-internal/tsconfig": "file:./internal/tsconfig",
     "@arkweid/lefthook": "^0.7.2",
-    "@commitlint/cli": "^12.0.1",
-    "@commitlint/config-conventional": "^12.0.1",
-    "@commitlint/config-lerna-scopes": "^12.0.1",
-    "@commitlint/prompt-cli": "^12.0.1",
-    "@ionic-native/admob-plus": "^5.31.1",
+    "@commitlint/cli": "^12.1.1",
+    "@commitlint/config-conventional": "^12.1.1",
+    "@commitlint/config-lerna-scopes": "^12.1.1",
+    "@commitlint/prompt-cli": "^12.1.1",
+    "@ionic-native/admob-plus": "^5.32.0",
     "@jest/types": "^26.6.2",
     "@types/cordova": "^0.0.34",
     "@types/jest": "^26.0.22",
@@ -60,7 +60,7 @@
     "swiftlint": "^1.0.1",
     "ts-jest": "^26.5.4",
     "ts-node": "^9.1.1",
-    "typescript": "^4.2.3"
+    "typescript": "^4.2.4"
   },
   "repository": "admob-plus/admob-plus",
   "commitlint": {

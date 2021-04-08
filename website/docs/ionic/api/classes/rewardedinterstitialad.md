@@ -32,7 +32,7 @@ Name | Type |
 
 **Returns:** [*RewardedInterstitialAd*](rewardedinterstitialad.md)
 
-Overrides: void
+Overrides: IonicNativePlugin.constructor
 
 Defined in: ionic/src/index.ts:135
 
@@ -50,7 +50,7 @@ ___
 
 ▪ `Static` **plugin**: *string*
 
-Overrides: void
+Overrides: IonicNativePlugin.plugin
 
 Defined in: ionic/src/index.ts:131
 
@@ -60,7 +60,7 @@ ___
 
 ▪ `Static` **pluginName**: *string*
 
-Overrides: void
+Overrides: IonicNativePlugin.pluginName
 
 Defined in: ionic/src/index.ts:132
 
@@ -70,7 +70,7 @@ ___
 
 ▪ `Static` **pluginRef**: *string*= 'admob.RewardedInterstitialAd'
 
-Overrides: void
+Overrides: IonicNativePlugin.pluginRef
 
 Defined in: ionic/src/index.ts:133
 
@@ -102,7 +102,7 @@ Defined in: ionic/src/index.ts:147
 
 **Returns:** *Promise*<unknown\>
 
-Implementation of: void
+Implementation of: Omit.isLoaded
 
 Defined in: ionic/src/index.ts:151
 
@@ -114,7 +114,7 @@ ___
 
 **Returns:** *Promise*<unknown\>
 
-Implementation of: void
+Implementation of: Omit.load
 
 Defined in: ionic/src/index.ts:155
 
@@ -126,6 +126,6 @@ ___
 
 **Returns:** *Promise*<unknown\>
 
-Implementation of: void
+Implementation of: Omit.show
 
 Defined in: ionic/src/index.ts:159

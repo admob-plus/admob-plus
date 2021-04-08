@@ -80,9 +80,9 @@ ___
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`opts` | RequestInfoUpdateOptions |
+Name | Type | Default value |
+:------ | :------ | :------ |
+`opts` | RequestInfoUpdateOptions | {} |
 
 **Returns:** *Promise*<unknown\>
 

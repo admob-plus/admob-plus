@@ -28,7 +28,7 @@ Name | Type |
 
 **Returns:** [*InterstitialAd*](interstitialad.md)
 
-Overrides: void
+Overrides: MobileAd.constructor
 
 Defined in: index.ts:39
 
@@ -38,7 +38,7 @@ Defined in: index.ts:39
 
 • `Readonly` **adUnitId**: *string*
 
-Inherited from: void
+Inherited from: MobileAd.adUnitId
 
 Defined in: index.ts:14
 
@@ -48,7 +48,7 @@ ___
 
 • `Readonly` **id**: *number*
 
-Inherited from: void
+Inherited from: MobileAd.id
 
 Defined in: index.ts:15
 
