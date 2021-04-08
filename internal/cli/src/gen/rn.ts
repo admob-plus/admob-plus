@@ -14,7 +14,7 @@ const pluginMethods = (() => {
 })()
 
 const buildIosMacro = () => {
-  const methodsWithoutOpts = new Set(['start'])
+  const methodsWithoutOpts = ['start']
 
   return `// ${warnMessage}
 #import <React/RCTBridgeModule.h>
@@ -22,7 +22,7 @@ const buildIosMacro = () => {
 
 @interface RCT_EXTERN_MODULE(RNAdMobPlus, RCTEventEmitter)
 
-${[...methodsWithoutOpts]
+${methodsWithoutOpts
     .map(
       (x) => `RCT_EXTERN_METHOD(${x}:(RCTPromiseResolveBlock)resolve
 ${indent4(4)}  rejecter:(RCTPromiseRejectBlock)reject)
@@ -30,7 +30,7 @@ ${indent4(4)}  rejecter:(RCTPromiseRejectBlock)reject)
     )
     .join('\n')}
 ${pluginMethods
-    .filter((x) => !methodsWithoutOpts.has(x))
+    .filter((x) => !methodsWithoutOpts.includes(x))
     .map(
       (x) => `RCT_EXTERN_METHOD(${x}:(NSDictionary)opts
 ${indent4(4)}  resolver:(RCTPromiseResolveBlock)resolve
