@@ -1,6 +1,33 @@
 import Capacitor
 import GoogleMobileAds
 
+// Fix for https://github.com/admob-plus/admob-plus/issues/298
+private class AMBContainerView: UIView {
+    var subview: UIView?
+
+    override func didAddSubview(_ subview: UIView) {
+        if self.subview == nil {
+            self.subview = subview
+        }
+        subview.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            subview.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            subview.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            subview.topAnchor.constraint(equalTo: self.topAnchor),
+            subview.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+        ])
+    }
+
+    override func willRemoveSubview(_ subview: UIView) {
+        if self.subview != nil {
+            // TODO better way to re-add webview
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+                self.addSubview(self.subview!)
+            }
+        }
+    }
+}
+
 class AMBBanner: AMBAdBase, GADAdSizeDelegate, GADBannerViewDelegate {
     static var stackView = UIStackView()
 
@@ -18,6 +45,8 @@ class AMBBanner: AMBAdBase, GADAdSizeDelegate, GADBannerViewDelegate {
     let position: String!
     var bannerView: GADBannerView!
 
+    private let mainView = AMBContainerView()
+
     var stackView: UIStackView {
         return AMBBanner.stackView
     }
@@ -26,7 +55,7 @@ class AMBBanner: AMBAdBase, GADAdSizeDelegate, GADBannerViewDelegate {
         return window
     }
 
-    var mainView: UIView {
+    var webView: UIView {
         return plugin.webView!
     }
 
@@ -131,7 +160,9 @@ class AMBBanner: AMBAdBase, GADAdSizeDelegate, GADBannerViewDelegate {
             stackView.distribution = .fill
             stackView.alignment = .fill
             rootView.addSubview(stackView)
+
             stackView.addArrangedSubview(mainView)
+            mainView.addSubview(webView)
 
             if #available(iOS 14.0, *) {
                 stackView.backgroundColor = .black
