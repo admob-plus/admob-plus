@@ -46,6 +46,15 @@ class AMBAdBase: NSObject {
         self.emit(event.rawValue, ["message": error.localizedDescription])
     }
 
+    func emit(_ event: AMBEvents, _ reward: GADAdReward) {
+        self.emit(event.rawValue, [
+            "reward": [
+                "amount": reward.amount,
+                "type": reward.type
+            ]
+        ])
+    }
+
     func emit(_ eventName: String) {
         self.emit(eventName, nil)
     }

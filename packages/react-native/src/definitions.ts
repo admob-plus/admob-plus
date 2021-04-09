@@ -21,14 +21,6 @@ export interface AdMobPlusPlugin {
   start(): Promise<void>
   configure(config: AdMobConfig): Promise<void>
 
-  bannerShow(
-    opts: MobileAdOptions & {
-      id: number
-      position?: 'bottom' | 'top'
-    },
-  ): Promise<void>
-  bannerHide(opts: { id: number }): Promise<void>
-
   interstitialLoad(opts: MobileAdOptions & { id: number }): Promise<void>
   interstitialShow(opts: { id: number }): Promise<void>
 

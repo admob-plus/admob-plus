@@ -1,3 +1,4 @@
+import _ from 'lodash'
 import { pkgsDirJoin } from '../utils'
 import { AdEvents, extractClassInfo } from './capacitor'
 import { indent4, renderSwiftEnumCases, warnMessage } from './shared'
@@ -43,7 +44,9 @@ ${indent4(4)}  rejecter:(RCTPromiseRejectBlock)reject)
 }
 
 function buildSwift(): string {
-  const linesEvents = renderSwiftEnumCases(AdEvents)
+  const linesEvents = renderSwiftEnumCases(
+    _.omitBy(AdEvents, (v, k) => k.startsWith('banner')),
+  )
 
   return `// ${warnMessage}
 enum AMBEvents: String, CaseIterable {

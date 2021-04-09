@@ -101,6 +101,22 @@ class AMBContext {
         return request
     }
 
+    func optGADServerSideVerificationOptions() -> GADServerSideVerificationOptions? {
+        guard let ssv = opt("serverSideVerification") as? NSDictionary
+        else {
+            return nil
+        }
+
+        let options = GADServerSideVerificationOptions.init()
+        if let customData = ssv.value(forKey: "customData") as? String {
+            options.customRewardString = customData
+        }
+        if let userId = ssv.value(forKey: "userId") as? String {
+            options.userIdentifier = userId
+        }
+        return options
+    }
+
     func success() {
         resolve(nil)
     }
@@ -117,8 +133,12 @@ class AMBContext {
         reject("unknown", message, nil)
     }
 
-    func error(_ error: Error) {
-        reject("error", error.localizedDescription, error)
+    func error(_ error: Error?) {
+        if error != nil {
+            reject("error", error!.localizedDescription, error)
+        } else {
+            self.error()
+        }
     }
 
     func error(_ error: NSError) {

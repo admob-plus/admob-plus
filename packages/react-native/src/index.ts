@@ -30,7 +30,7 @@ class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
   }
 }
 
-export class InterstitialAd extends MobileAd {
+class InterstitialAd extends MobileAd {
   public load() {
     return AdMobPlus.interstitialLoad({ ...this.opts, id: this.id })
   }
@@ -40,5 +40,37 @@ export class InterstitialAd extends MobileAd {
   }
 }
 
+class RewardedAd extends MobileAd {
+  constructor({ adUnitId }: MobileAdOptions) {
+    super({ adUnitId })
+  }
+
+  public load() {
+    return AdMobPlus.rewardedLoad({ id: this.id, adUnitId: this.adUnitId })
+  }
+
+  public show() {
+    return AdMobPlus.rewardedShow({ id: this.id })
+  }
+}
+
+class RewardedInterstitialAd extends MobileAd {
+  constructor({ adUnitId }: MobileAdOptions) {
+    super({ adUnitId })
+  }
+
+  public load() {
+    return AdMobPlus.rewardedInterstitialLoad({
+      id: this.id,
+      adUnitId: this.adUnitId,
+    })
+  }
+
+  public show() {
+    return AdMobPlus.rewardedInterstitialShow({ id: this.id })
+  }
+}
+
 export * from './definitions'
+export { InterstitialAd, RewardedAd, RewardedInterstitialAd }
 export default AdMobPlus
