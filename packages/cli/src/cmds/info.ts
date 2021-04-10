@@ -110,6 +110,7 @@ export const handler = async (argv: ReturnType<typeof builder>['argv']) => {
           'cordova-ios',
           'cordova',
           'ionic*',
+          'typescript',
         ],
       },
       {
