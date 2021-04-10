@@ -21,10 +21,10 @@ public class Rewarded extends AdBase implements IAdIsLoaded, IAdLoad, IAdShow {
     }
 
     @Override
-    public void destroy() {
+    public void onDestroy() {
         clear();
 
-        super.destroy();
+        super.onDestroy();
     }
 
     public void load(ExecuteContext ctx) {

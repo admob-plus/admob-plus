@@ -21,10 +21,10 @@ public class RewardedInterstitial extends AdBase implements IAdIsLoaded, IAdLoad
     }
 
     @Override
-    public void destroy() {
+    public void onDestroy() {
         clear();
 
-        super.destroy();
+        super.onDestroy();
     }
 
     public void load(ExecuteContext ctx) {

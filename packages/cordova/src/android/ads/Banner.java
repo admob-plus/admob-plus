@@ -125,7 +125,7 @@ public class Banner extends AdBase implements IAdShow {
     }
 
     @Override
-    public void destroy() {
+    public void onDestroy() {
         if (adView != null) {
             final ViewGroup viewGroup = (ViewGroup) adView.getParent();
             if (viewGroup != null)
@@ -144,7 +144,7 @@ public class Banner extends AdBase implements IAdShow {
             mRelativeLayout = null;
         }
 
-        super.destroy();
+        super.onDestroy();
     }
 
     private void addBannerView(ExecuteContext ctx) {

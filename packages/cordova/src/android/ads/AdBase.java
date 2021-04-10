@@ -34,7 +34,7 @@ public abstract class AdBase {
     public void onResume(boolean multitasking) {
     }
 
-    public void destroy() {
+    public void onDestroy() {
         ads.remove(id);
     }
 

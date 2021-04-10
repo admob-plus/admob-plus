@@ -218,7 +218,7 @@ public class AdMob extends CordovaPlugin {
 
         for(int i = 0; i < ads.size(); i++) {
             AdBase ad = ads.valueAt(i);
-            ad.destroy();
+            ad.onDestroy();
         }
 
         super.onDestroy();
