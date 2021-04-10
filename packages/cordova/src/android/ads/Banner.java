@@ -109,8 +109,30 @@ public class Banner extends AdBase implements IAdShow {
     }
 
     @Override
+    public void onPause(boolean multitasking) {
+        if (adView != null) {
+            adView.pause();
+        }
+        super.onPause(multitasking);
+    }
+
+    @Override
+    public void onResume(boolean multitasking) {
+        super.onResume(multitasking);
+        if (adView != null) {
+            adView.resume();
+        }
+    }
+
+    @Override
     public void destroy() {
         if (adView != null) {
+            final ViewGroup viewGroup = (ViewGroup) adView.getParent();
+            if (viewGroup != null)
+            {
+                viewGroup.removeView(adView);
+            }
+            adView.removeAllViews();
             adView.destroy();
             adView = null;
         }

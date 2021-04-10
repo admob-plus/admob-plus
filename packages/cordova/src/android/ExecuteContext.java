@@ -2,7 +2,7 @@ package admob.plugin;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.View;
+import android.util.SparseArray;
 
 import androidx.annotation.Nullable;
 
@@ -24,6 +24,7 @@ import java.util.List;
 import admob.plugin.ads.AdBase;
 
 public class ExecuteContext {
+    public static final SparseArray<AdBase> ads = new SparseArray<AdBase>();
     public static AdMob plugin;
     public final String actionKey;
     public final JSONArray args;

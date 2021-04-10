@@ -1,7 +1,5 @@
 package admob.plugin.ads;
 
-import android.util.SparseArray;
-
 import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.rewarded.RewardItem;
 
@@ -10,8 +8,9 @@ import java.util.Map;
 
 import admob.plugin.ExecuteContext;
 
+import static admob.plugin.ExecuteContext.ads;
+
 public abstract class AdBase {
-    private static final SparseArray<AdBase> ads = new SparseArray<AdBase>();
     final int id;
     final String adUnitId;
 
@@ -27,6 +26,12 @@ public abstract class AdBase {
 
     public static AdBase getAd(Integer id) {
         return ads.get(id);
+    }
+
+    public void onPause(boolean multitasking) {
+    }
+
+    public void onResume(boolean multitasking) {
     }
 
     public void destroy() {

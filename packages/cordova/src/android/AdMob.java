@@ -19,6 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import admob.plugin.Generated.Actions;
+import admob.plugin.ads.AdBase;
 import admob.plugin.ads.Banner;
 import admob.plugin.ads.IAdIsLoaded;
 import admob.plugin.ads.IAdShow;
@@ -26,20 +27,24 @@ import admob.plugin.ads.Interstitial;
 import admob.plugin.ads.Rewarded;
 import admob.plugin.ads.RewardedInterstitial;
 
+import static admob.plugin.ExecuteContext.ads;
+
 public class AdMob extends CordovaPlugin {
-    private static final String TAG = "AdMob-Plus";
+    private static final String TAG = "AdMobPlus";
     private final ArrayList<PluginResult> eventQueue = new ArrayList<PluginResult>();
     private CallbackContext readyCallbackContext = null;
 
     @Override
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
+        Log.i(TAG, "Initialize plugin");
 
         ExecuteContext.plugin = this;
     }
 
     @Override
     public boolean execute(String actionKey, JSONArray args, CallbackContext callbackContext) {
+        Log.d(TAG, String.format("Execute %s", actionKey));
         ExecuteContext ctx = new ExecuteContext(actionKey, args, callbackContext);
 
         switch (actionKey) {
@@ -190,8 +195,31 @@ public class AdMob extends CordovaPlugin {
     }
 
     @Override
+    public void onPause(boolean multitasking) {
+        for(int i = 0; i < ads.size(); i++) {
+            AdBase ad = ads.valueAt(i);
+            ad.onPause(multitasking);
+        }
+        super.onPause(multitasking);
+    }
+
+    @Override
+    public void onResume(boolean multitasking) {
+        super.onResume(multitasking);
+        for(int i = 0; i < ads.size(); i++) {
+            AdBase ad = ads.valueAt(i);
+            ad.onResume(multitasking);
+        }
+    }
+
+    @Override
     public void onDestroy() {
         readyCallbackContext = null;
+
+        for(int i = 0; i < ads.size(); i++) {
+            AdBase ad = ads.valueAt(i);
+            ad.destroy();
+        }
 
         super.onDestroy();
     }
