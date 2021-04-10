@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
@@ -97,7 +98,7 @@ public class Banner extends AdBase implements IAdShow {
             }
         });
         adView.addOnLayoutChangeListener((view, i, i1, i2, i3, i4, i5, i6, i7) -> {
-            Log.d(TAG, "onLayoutChange");
+            Log.d(TAG, "onLayoutChange: " + this.id);
         });
         adView.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() {
             @Override
@@ -219,25 +220,25 @@ public class Banner extends AdBase implements IAdShow {
     }
 
     private void addBannerViewWithLinearLayout() {
-        View view = getWebView();
-        ViewGroup wvParentView = (ViewGroup) view.getParent();
+        View webView = getWebView();
+        ViewGroup wvParentView = (ViewGroup) webView.getParent();
         if (parentView == null) {
             parentView = new LinearLayout(getActivity());
         }
 
         if (wvParentView != null && wvParentView != parentView) {
-            wvParentView.removeView(view);
+            wvParentView.removeView(webView);
             LinearLayout content = (LinearLayout) parentView;
             content.setOrientation(LinearLayout.VERTICAL);
             parentView.setLayoutParams(new LinearLayout.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT,
                     ViewGroup.LayoutParams.MATCH_PARENT,
                     0.0F));
-            view.setLayoutParams(new LinearLayout.LayoutParams(
+            webView.setLayoutParams(new LinearLayout.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT,
                     ViewGroup.LayoutParams.MATCH_PARENT,
                     1.0F));
-            parentView.addView(view);
+            parentView.addView(webView);
             wvParentView.addView(parentView);
         }
 
@@ -246,9 +247,16 @@ public class Banner extends AdBase implements IAdShow {
         } else {
             parentView.addView(mAdView);
         }
-        parentView.bringToFront();
-        parentView.requestLayout();
-        parentView.requestFocus();
+
+        ViewGroup contentView = getContentView();
+        if (contentView != null) {
+            for (int i = 0; i < contentView.getChildCount(); i++) {
+                View view = contentView.getChildAt(i);
+                if (view instanceof RelativeLayout) {
+                    view.bringToFront();
+                }
+            }
+        }
     }
 
     private void addBannerViewWithRelativeLayout() {
@@ -267,18 +275,22 @@ public class Banner extends AdBase implements IAdShow {
             } else {
                 params.setMargins(0, 0, 0, this.offset);
             }
-            try {
-                ((ViewGroup) (((View) getCordovaWebView().getClass()
-                        .getMethod("getView")
-                        .invoke(getCordovaWebView())).getParent()))
-                        .addView(mRelativeLayout, params);
-            } catch (Exception e) {
-                ((ViewGroup) getCordovaWebView()).addView(mRelativeLayout, params);
+
+            ViewGroup contentView = getContentView();
+            if (contentView != null) {
+                contentView.addView(mRelativeLayout, params);
+            } else {
+                Log.e(TAG, "Unable to find content view");
             }
         }
 
         mRelativeLayout.addView(mAdView, paramsContent);
         mRelativeLayout.bringToFront();
+    }
+
+    @Nullable
+    private ViewGroup getContentView() {
+        return (ViewGroup) getWebView().getRootView().findViewById(android.R.id.content);
     }
 
     private CordovaWebView getCordovaWebView() {
