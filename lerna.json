@@ -8,7 +8,6 @@
   "ignoreChanges": [
     "examples/**",
     "internal/**",
-    "packages/react-native/**",
     "**/__fixtures__/**",
     "**/__tests__/**",
     "**/*.md"
