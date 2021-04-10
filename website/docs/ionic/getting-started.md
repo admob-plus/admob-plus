@@ -15,7 +15,20 @@ Follow the [installation guide](./ionic/installation) to add the plugin.
 
 ## Initialize AdMob SDK
 
-```js {6-8}
+<!--  -->
+```js title="src/app/app.module.ts" {1,6}
+import { AdMob } from '@admob-plus/ionic/ngx';
+import { NgModule } from '@angular/core';
+
+@NgModule({
+  providers: [
+    AdMob,
+  ],
+})
+export class AppModule {}
+```
+
+```js title="src/app/home/home.page.ts" {1,6-8}
 import { AdMob } from '@admob-plus/ionic/ngx';
 import { Platform } from '@ionic/angular';
 

@@ -3,6 +3,7 @@
   "name": "example.ionic-angular",
   "version": "0.0.1",
   "scripts": {
+    "postinstall": "ngcc",
     "prepare": "run-s 'prepare:*'",
     "prepare:node_modules": "mkdir -p node_modules",
     "prepare:android": "ionic cordova prepare android",
