@@ -6,6 +6,7 @@
   "dependencies": {
     "@frat/envinfo": "^7.8.4",
     "admob-plus-cordova": "latest",
+    "cli-table3": "^0.6.0",
     "clipboardy": "^2.3.0",
     "cordova-common": "^4.0.2",
     "elementtree": "^0.1.7",

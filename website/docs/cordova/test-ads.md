@@ -24,6 +24,10 @@ These ad units are **not** associated with your AdMob account, so there's no ris
 
 _\*) Please note that not all formats are (yet) supported by this plug-in and don't forget to use your own ID when in production._
 
+:::tip
+Run `npx admob-plus test-ids` will print the above table.
+:::
+
 ## Add your test device programmatically
 
 1. Load your ads-integrated app and make an ad request.

@@ -1,4 +1,3 @@
-export const testAppIds = new Set([
-  'ca-app-pub-3940256099942544~3347511713',
-  'ca-app-pub-3940256099942544~1458002511',
-])
+import { testAppIds as testAppIdsMap } from '../test-ids'
+
+export const testAppIds = new Set(Object.values(testAppIdsMap))
