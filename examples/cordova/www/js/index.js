@@ -19,6 +19,7 @@ const app = {
     admob.start().catch(alert)
 
     this.initButton('show-banner-btn', this.showBannerAd)
+    this.initButton('show-offset-banner-btn', this.showBannerAdOffset)
     this.initButton('show-top-banner-btn', this.showBannerAdTop)
     this.initButton('show-interstitial-btn', this.showInterstitialAd)
     this.initButton('show-rewarded-btn', this.showRewardedAd)
@@ -28,6 +29,14 @@ const app = {
   showBannerAd() {
     const banner = new admob.BannerAd({
       adUnitId: 'ca-app-pub-3940256099942544/6300978111',
+    })
+    return banner.show()
+  },
+
+  showBannerAdOffset() {
+    const banner = new admob.BannerAd({
+      adUnitId: 'ca-app-pub-3940256099942544/6300978111',
+      offset: 0,
     })
     return banner.show()
   },
