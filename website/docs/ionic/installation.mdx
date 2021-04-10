@@ -8,6 +8,21 @@ import TabItem from '@theme/TabItem'
 
 This package is a wrapper of [`admob-plus-cordova`](/docs/cordova), hence the Cordova plugin configuration is used.
 
+First, set your AdMob application information in `package.json`.
+
+```json title="package.json" {4-7}
+{
+  "cordova": {
+    "plugins": {
+      "admob-plus-cordova": {
+        "APP_ID_ANDROID": "ca-app-pub-xxx~yyy",
+        "APP_ID_IOS": "ca-app-pub-xxx~yyy"
+      }
+    }
+  }
+}
+```
+
 <Tabs
   defaultValue="cordova"
   values={[
@@ -24,8 +39,6 @@ npm install @admob-plus/ionic
 </TabItem>
   <TabItem value="capacitor">
 
-Consider using [`@admob-plus/capacitor`](/docs/capacitor) if your project does not require Cordova.
-
 ```shell
 npm install @admob-plus/ionic
 npm install admob-plus-cordova
@@ -35,15 +48,6 @@ ionic cap sync
   </TabItem>
 </Tabs>
 
-```json title="package.json" {4-7}
-{
-  "cordova": {
-    "plugins": {
-      "admob-plus-cordova": {
-        "APP_ID_ANDROID": "ca-app-pub-xxx~yyy",
-        "APP_ID_IOS": "ca-app-pub-xxx~yyy"
-      }
-    }
-  }
-}
-```
+:::tip
+Consider using [`@admob-plus/capacitor`](/docs/capacitor) if your project does not require Cordova.
+:::
