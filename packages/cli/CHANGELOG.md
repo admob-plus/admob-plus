@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://github.com/admob-plus/admob-plus/compare/admob-plus@1.6.0...admob-plus@1.7.0) (2021-04-10)
+
+
+### Features
+
+* **cli/info:** include typescript version ([df0fa65](https://github.com/admob-plus/admob-plus/commit/df0fa6545f07bfd03283e70af3f1286fcff1069b))
+
+
+
+
+
 # [1.6.0](https://github.com/admob-plus/admob-plus/compare/admob-plus@1.5.0...admob-plus@1.6.0) (2021-04-04)
 
 

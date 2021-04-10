@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.3.2...@admob-plus/capacitor@1.4.0) (2021-04-10)
+
+
+### Bug Fixes
+
+* **capacitor/ios:** keep webview inside stackview, fix [#298](https://github.com/admob-plus/admob-plus/issues/298) ([a94f30a](https://github.com/admob-plus/admob-plus/commit/a94f30a1215ed24e7ea58cf396aa9362a2abf144))
+
+
+### Features
+
+* update Google-Mobile-Ads-SDK to 8.3.0 ([6e47530](https://github.com/admob-plus/admob-plus/commit/6e47530d6cf1793443ab4a339f6b90f8b726cf6d))
+
+
+
+
+
 ## [1.3.2](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.3.1...@admob-plus/capacitor@1.3.2) (2021-04-03)
 
 **Note:** Version bump only for package @admob-plus/capacitor

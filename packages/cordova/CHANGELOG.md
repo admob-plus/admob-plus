@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.4.0...admob-plus-cordova@1.5.0) (2021-04-10)
+
+
+### Bug Fixes
+
+* **cordova/android:** make sure offset banner always on top ([f2df478](https://github.com/admob-plus/admob-plus/commit/f2df478c3a0d089d71bba8ff16ecef728b5ebf96))
+* **cordova/android:** recreate banner view on rotation, fix [#301](https://github.com/admob-plus/admob-plus/issues/301) ([8d2e485](https://github.com/admob-plus/admob-plus/commit/8d2e485e645dbc524b26ad32aa86d1daf3d8b6c9))
+
+
+### Features
+
+* **cordova/android:** handle banner view lifecycle ([989b700](https://github.com/admob-plus/admob-plus/commit/989b700ff1a458c5ff1ce979aabe2828134d615e))
+
+
+
+
+
 # [1.4.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.3.0...admob-plus-cordova@1.4.0) (2021-04-03)
 
 
