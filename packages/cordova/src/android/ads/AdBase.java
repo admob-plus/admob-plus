@@ -1,5 +1,8 @@
 package admob.plugin.ads;
 
+import android.app.Activity;
+import android.content.res.Configuration;
+
 import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.rewarded.RewardItem;
 
@@ -28,6 +31,9 @@ public abstract class AdBase {
         return ads.get(id);
     }
 
+    public void onConfigurationChanged(Configuration newConfig) {
+    }
+
     public void onPause(boolean multitasking) {
     }
 
@@ -36,6 +42,10 @@ public abstract class AdBase {
 
     public void onDestroy() {
         ads.remove(id);
+    }
+
+    public Activity getActivity() {
+        return ExecuteContext.plugin.cordova.getActivity();
     }
 
     public void emit(String eventName) {

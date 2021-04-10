@@ -1,11 +1,15 @@
 package admob.plugin.ads;
 
 import android.annotation.SuppressLint;
+import android.content.res.Configuration;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+
+import androidx.annotation.NonNull;
 
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
@@ -15,17 +19,23 @@ import com.google.android.gms.ads.LoadAdError;
 
 import org.apache.cordova.CordovaWebView;
 
+import java.util.Objects;
+
 import admob.plugin.ExecuteContext;
 import admob.plugin.Generated.Events;
 
 public class Banner extends AdBase implements IAdShow {
+    private static final String TAG = "AdMobPlus.Banner";
     @SuppressLint("StaticFieldLeak")
     private static ViewGroup parentView;
+
     private final AdSize adSize;
     private final int gravity;
     private final Integer offset;
-    private AdView adView;
+    private AdView mAdView;
     private RelativeLayout mRelativeLayout = null;
+    private AdRequest mAdRequest = null;
+    private AdView mAdViewOld = null;
 
     public Banner(ExecuteContext ctx) {
         super(ctx);
@@ -36,55 +46,79 @@ public class Banner extends AdBase implements IAdShow {
     }
 
     public void load(ExecuteContext ctx) {
-        AdRequest adRequest = ctx.optAdRequest();
+        final AdRequest adRequest = ctx.optAdRequest();
 
-        if (adView == null) {
-            adView = new AdView(ctx.getActivity());
-            adView.setAdUnitId(adUnitId);
-            adView.setAdSize(adSize);
-            adView.setAdListener(new AdListener() {
-                @Override
-                public void onAdClicked() {
-                    emit(Events.BANNER_CLICK);
-                }
-
-                @Override
-                public void onAdClosed() {
-                    emit(Events.BANNER_CLOSE);
-                }
-
-                @Override
-                public void onAdFailedToLoad(LoadAdError error) {
-                    emit(Events.BANNER_LOAD_FAIL, error);
-                }
-
-                @Override
-                public void onAdImpression() {
-                    emit(Events.BANNER_IMPRESSION);
-                }
-
-                @Override
-                public void onAdLoaded() {
-                    emit(Events.BANNER_LOAD);
-                }
-
-                @Override
-                public void onAdOpened() {
-                    emit(Events.BANNER_OPEN);
-                }
-            });
+        if (mAdView == null) {
+            mAdView = createBannerView();
         }
 
-        adView.loadAd(adRequest);
+        mAdView.loadAd(adRequest);
+        mAdRequest = adRequest;
         ctx.success();
     }
 
+    private AdView createBannerView() {
+        AdView adView = new AdView(getActivity());
+        adView.setAdUnitId(adUnitId);
+        adView.setAdSize(adSize);
+        adView.setAdListener(new AdListener() {
+            @Override
+            public void onAdClicked() {
+                emit(Events.BANNER_CLICK);
+            }
+
+            @Override
+            public void onAdClosed() {
+                emit(Events.BANNER_CLOSE);
+            }
+
+            @Override
+            public void onAdFailedToLoad(LoadAdError error) {
+                emit(Events.BANNER_LOAD_FAIL, error);
+            }
+
+            @Override
+            public void onAdImpression() {
+                emit(Events.BANNER_IMPRESSION);
+            }
+
+            @Override
+            public void onAdLoaded() {
+                if (mAdViewOld != null) {
+                    removeBannerView(mAdViewOld);
+                    mAdViewOld = null;
+                }
+                emit(Events.BANNER_LOAD);
+            }
+
+            @Override
+            public void onAdOpened() {
+                emit(Events.BANNER_OPEN);
+            }
+        });
+        adView.addOnLayoutChangeListener((view, i, i1, i2, i3, i4, i5, i6, i7) -> {
+            Log.d(TAG, "onLayoutChange");
+        });
+        adView.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() {
+            @Override
+            public void onViewAttachedToWindow(View view) {
+                Log.d(TAG, "onViewAttachedToWindow");
+            }
+
+            @Override
+            public void onViewDetachedFromWindow(View view) {
+                Log.d(TAG, "onViewDetachedFromWindow");
+            }
+        });
+        return adView;
+    }
+
     public void show(ExecuteContext ctx) {
-        if (adView.getParent() == null) {
-            addBannerView(ctx);
-        } else if (adView.getVisibility() == View.GONE) {
-            adView.resume();
-            adView.setVisibility(View.VISIBLE);
+        if (mAdView.getParent() == null) {
+            addBannerView();
+        } else if (mAdView.getVisibility() == View.GONE) {
+            mAdView.resume();
+            mAdView.setVisibility(View.VISIBLE);
         } else {
             View view = getWebView();
             ViewGroup wvParentView = (ViewGroup) view.getParent();
@@ -93,7 +127,7 @@ public class Banner extends AdBase implements IAdShow {
                 if (parentView.getParent() != null) {
                     ((ViewGroup) parentView.getParent()).removeView(parentView);
                 }
-                addBannerView(ctx);
+                addBannerView();
             }
         }
 
@@ -101,17 +135,42 @@ public class Banner extends AdBase implements IAdShow {
     }
 
     public void hide(ExecuteContext ctx) {
-        if (adView != null) {
-            adView.pause();
-            adView.setVisibility(View.GONE);
+        if (mAdView != null) {
+            mAdView.pause();
+            mAdView.setVisibility(View.GONE);
         }
         ctx.success();
     }
 
     @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+
+        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE || newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
+            reloadBannerView();
+        }
+    }
+
+    private void reloadBannerView() {
+        if (mAdRequest == null) return;
+
+        if (mAdViewOld != null) {
+            removeBannerView(mAdViewOld);
+        }
+        mAdViewOld = mAdView;
+        if (mAdViewOld != null) {
+            mAdViewOld.pause();
+        }
+
+        mAdView = createBannerView();
+        mAdView.loadAd(mAdRequest);
+        addBannerView();
+    }
+
+    @Override
     public void onPause(boolean multitasking) {
-        if (adView != null) {
-            adView.pause();
+        if (mAdView != null) {
+            mAdView.pause();
         }
         super.onPause(multitasking);
     }
@@ -119,22 +178,16 @@ public class Banner extends AdBase implements IAdShow {
     @Override
     public void onResume(boolean multitasking) {
         super.onResume(multitasking);
-        if (adView != null) {
-            adView.resume();
+        if (mAdView != null) {
+            mAdView.resume();
         }
     }
 
     @Override
     public void onDestroy() {
-        if (adView != null) {
-            final ViewGroup viewGroup = (ViewGroup) adView.getParent();
-            if (viewGroup != null)
-            {
-                viewGroup.removeView(adView);
-            }
-            adView.removeAllViews();
-            adView.destroy();
-            adView = null;
+        if (mAdView != null) {
+            removeBannerView(mAdView);
+            mAdView = null;
         }
         if (mRelativeLayout != null) {
             ViewGroup parentView = (ViewGroup) mRelativeLayout.getParent();
@@ -147,19 +200,29 @@ public class Banner extends AdBase implements IAdShow {
         super.onDestroy();
     }
 
-    private void addBannerView(ExecuteContext ctx) {
+    private void removeBannerView(@NonNull AdView adView) {
+        final ViewGroup viewGroup = (ViewGroup) adView.getParent();
+        if (viewGroup != null) {
+            viewGroup.removeView(adView);
+        }
+        adView.removeAllViews();
+        adView.destroy();
+    }
+
+    private void addBannerView() {
+        Objects.requireNonNull(mAdView);
         if (this.offset == null) {
-            addBannerViewWithLinearLayout(ctx);
+            addBannerViewWithLinearLayout();
         } else {
-            addBannerViewWithRelativeLayout(ctx);
+            addBannerViewWithRelativeLayout();
         }
     }
 
-    private void addBannerViewWithLinearLayout(ExecuteContext ctx) {
+    private void addBannerViewWithLinearLayout() {
         View view = getWebView();
         ViewGroup wvParentView = (ViewGroup) view.getParent();
         if (parentView == null) {
-            parentView = new LinearLayout(getCordovaWebView().getContext());
+            parentView = new LinearLayout(getActivity());
         }
 
         if (wvParentView != null && wvParentView != parentView) {
@@ -179,23 +242,23 @@ public class Banner extends AdBase implements IAdShow {
         }
 
         if (isPositionTop()) {
-            parentView.addView(adView, 0);
+            parentView.addView(mAdView, 0);
         } else {
-            parentView.addView(adView);
+            parentView.addView(mAdView);
         }
         parentView.bringToFront();
         parentView.requestLayout();
         parentView.requestFocus();
     }
 
-    private void addBannerViewWithRelativeLayout(ExecuteContext ctx) {
+    private void addBannerViewWithRelativeLayout() {
         RelativeLayout.LayoutParams paramsContent = new RelativeLayout.LayoutParams(
                 RelativeLayout.LayoutParams.MATCH_PARENT,
                 RelativeLayout.LayoutParams.WRAP_CONTENT);
         paramsContent.addRule(isPositionTop() ? RelativeLayout.ALIGN_PARENT_TOP : RelativeLayout.ALIGN_PARENT_BOTTOM);
 
         if (mRelativeLayout == null) {
-            mRelativeLayout = new RelativeLayout(ctx.getActivity());
+            mRelativeLayout = new RelativeLayout(getActivity());
             RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
                     RelativeLayout.LayoutParams.MATCH_PARENT,
                     RelativeLayout.LayoutParams.MATCH_PARENT);
@@ -214,7 +277,7 @@ public class Banner extends AdBase implements IAdShow {
             }
         }
 
-        mRelativeLayout.addView(adView, paramsContent);
+        mRelativeLayout.addView(mAdView, paramsContent);
         mRelativeLayout.bringToFront();
     }
 

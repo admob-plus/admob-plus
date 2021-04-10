@@ -1,5 +1,6 @@
 package admob.plugin;
 
+import android.content.res.Configuration;
 import android.provider.Settings;
 import android.util.Log;
 
@@ -195,8 +196,18 @@ public class AdMob extends CordovaPlugin {
     }
 
     @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+
+        for (int i = 0; i < ads.size(); i++) {
+            AdBase ad = ads.valueAt(i);
+            ad.onConfigurationChanged(newConfig);
+        }
+    }
+
+    @Override
     public void onPause(boolean multitasking) {
-        for(int i = 0; i < ads.size(); i++) {
+        for (int i = 0; i < ads.size(); i++) {
             AdBase ad = ads.valueAt(i);
             ad.onPause(multitasking);
         }
@@ -206,7 +217,7 @@ public class AdMob extends CordovaPlugin {
     @Override
     public void onResume(boolean multitasking) {
         super.onResume(multitasking);
-        for(int i = 0; i < ads.size(); i++) {
+        for (int i = 0; i < ads.size(); i++) {
             AdBase ad = ads.valueAt(i);
             ad.onResume(multitasking);
         }
@@ -216,7 +227,7 @@ public class AdMob extends CordovaPlugin {
     public void onDestroy() {
         readyCallbackContext = null;
 
-        for(int i = 0; i < ads.size(); i++) {
+        for (int i = 0; i < ads.size(); i++) {
             AdBase ad = ads.valueAt(i);
             ad.onDestroy();
         }
