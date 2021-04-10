@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "@capacitor/cli": "^3.0.0-rc.0",
-    "webpack": "^5.28.0",
+    "webpack": "^5.31.2",
     "webpack-cli": "^4.6.0"
   }
 }
