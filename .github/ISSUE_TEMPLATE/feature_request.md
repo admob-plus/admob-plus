@@ -1,7 +1,7 @@
 ---
 name: Feature request
 about: Suggest an idea for this project
-title: 'Post in Discussions'
+title: Post in Discussions
 labels: ''
 assignees: ''
 
