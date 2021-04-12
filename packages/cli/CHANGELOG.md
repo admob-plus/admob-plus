@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.8.0](https://github.com/admob-plus/admob-plus/compare/admob-plus@1.7.0...admob-plus@1.8.0) (2021-04-12)
+
+
+### Features
+
+* **cli:** add print test-ids command ([0f412f3](https://github.com/admob-plus/admob-plus/commit/0f412f3d71ada754e9030c8077d6cc2c95d63bcc))
+
+
+
+
+
 # [1.7.0](https://github.com/admob-plus/admob-plus/compare/admob-plus@1.6.0...admob-plus@1.7.0) (2021-04-10)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.1](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.5.0...admob-plus-cordova@1.5.1) (2021-04-12)
+
+
+### Bug Fixes
+
+* **cordova/ios:** keep webview superview unchanged, fix [#297](https://github.com/admob-plus/admob-plus/issues/297) ([0aee546](https://github.com/admob-plus/admob-plus/commit/0aee5460ad6aab232fbb862d9e1ee86f924539cc))
+
+
+
+
+
 # [1.5.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.4.0...admob-plus-cordova@1.5.0) (2021-04-10)
 
 
