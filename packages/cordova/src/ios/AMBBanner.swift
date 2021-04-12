@@ -1,6 +1,7 @@
 import GoogleMobileAds
 
 class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
+    static var placeholderView = UIView()
     static var stackView = UIStackView()
 
     static var topConstraint = {
@@ -20,6 +21,10 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
 
     var stackView: UIStackView {
         return AMBBanner.stackView
+    }
+
+    var placeholderView: UIView {
+        return AMBBanner.placeholderView
     }
 
     var rootView: UIView {
@@ -144,24 +149,39 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
         self.emit(AMBEvents.bannerSizeChange, size)
     }
 
-    private func prepareStackView() {
+    @objc private func prepareStackView() {
         if stackView.arrangedSubviews.isEmpty {
             stackView.axis = .vertical
             stackView.distribution = .fill
             stackView.alignment = .fill
             rootView.addSubview(stackView)
-            stackView.addArrangedSubview(mainView)
+            rootView.sendSubviewToBack(stackView)
+            rootView.backgroundColor = .clear
+
+            placeholderView.frame = mainView.frame
+            placeholderView.backgroundColor = .clear
+            let placeholderTop = placeholderView.topAnchor.constraint(equalTo: mainView.topAnchor)
+            let placeholderBottom = placeholderView.bottomAnchor.constraint(equalTo: mainView.bottomAnchor)
+            placeholderTop.priority = UILayoutPriority(10)
+            placeholderBottom.priority = UILayoutPriority(10)
+            stackView.addArrangedSubview(placeholderView)
 
             let constraintTop = stackView.topAnchor.constraint(equalTo: rootView.topAnchor)
             let constraintBottom = stackView.bottomAnchor.constraint(equalTo: rootView.bottomAnchor)
             constraintTop.priority = UILayoutPriority(10)
             constraintBottom.priority = UILayoutPriority(10)
+            mainView.translatesAutoresizingMaskIntoConstraints = false
+            placeholderView.translatesAutoresizingMaskIntoConstraints = false
             stackView.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
                 stackView.leadingAnchor.constraint(equalTo: rootView.leadingAnchor),
                 stackView.trailingAnchor.constraint(equalTo: rootView.trailingAnchor),
                 constraintBottom,
-                constraintTop
+                constraintTop,
+                mainView.leadingAnchor.constraint(equalTo: placeholderView.leadingAnchor),
+                mainView.trailingAnchor.constraint(equalTo: placeholderView.trailingAnchor),
+                placeholderTop,
+                placeholderBottom
             ])
         }
     }
@@ -190,7 +210,10 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
 
     private func updateLayout() {
         if stackView.arrangedSubviews.first is GADBannerView {
-            topConstraint.isActive = true
+            NSLayoutConstraint.activate([
+                topConstraint,
+                mainView.topAnchor.constraint(equalTo: placeholderView.topAnchor)
+            ])
 
             if #available(iOS 12.0, *) {
                 if plugin.viewController.traitCollection.userInterfaceStyle == .dark {
@@ -202,7 +225,10 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
         }
 
         if stackView.arrangedSubviews.last is GADBannerView {
-            bottomConstraint.isActive = true
+            NSLayoutConstraint.activate([
+                bottomConstraint,
+                mainView.bottomAnchor.constraint(equalTo: placeholderView.bottomAnchor)
+            ])
         } else {
             bottomConstraint.isActive = false
         }
