@@ -109,20 +109,6 @@ public class Banner extends AdBase implements IAdShow {
                 emit(Events.BANNER_OPEN);
             }
         });
-        adView.addOnLayoutChangeListener((view, i, i1, i2, i3, i4, i5, i6, i7) -> {
-            Log.d(TAG, "onLayoutChange: " + this.id);
-        });
-        adView.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() {
-            @Override
-            public void onViewAttachedToWindow(View view) {
-                Log.d(TAG, "onViewAttachedToWindow");
-            }
-
-            @Override
-            public void onViewDetachedFromWindow(View view) {
-                Log.d(TAG, "onViewDetachedFromWindow");
-            }
-        });
         return adView;
     }
 
