@@ -47,7 +47,7 @@ public class Banner extends AdBase implements IAdShow {
     }
 
     public static void destroyParentView() {
-        ViewGroup vg = parentViewWithout(rootLinearLayout);
+        ViewGroup vg = getParentView(rootLinearLayout);
         if (vg != null) {
             vg.removeAllViews();
         }
@@ -55,11 +55,13 @@ public class Banner extends AdBase implements IAdShow {
     }
 
     @Nullable
-    private static ViewGroup parentViewWithout(@Nullable ViewGroup view) {
-        if (view == null) return null;
+    private static ViewGroup getParentView(@Nullable View view) {
+        return view == null ? null : (ViewGroup) view.getParent();
+    }
 
-        view.removeAllViews();
-        ViewGroup viewParent = (ViewGroup) view.getParent();
+    @Nullable
+    private static ViewGroup getParentViewWithout(@Nullable View view) {
+        ViewGroup viewParent = getParentView(view);
         if (viewParent != null) {
             viewParent.removeView(view);
         }
@@ -127,10 +129,9 @@ public class Banner extends AdBase implements IAdShow {
             mAdView.resume();
             mAdView.setVisibility(View.VISIBLE);
         } else {
-            View view = getWebView();
-            ViewGroup wvParentView = (ViewGroup) view.getParent();
+            ViewGroup wvParentView = getParentView(getWebView());
             if (rootLinearLayout != wvParentView) {
-                parentViewWithout(rootLinearLayout);
+                getParentViewWithout(rootLinearLayout);
                 addBannerView();
             }
         }
@@ -209,7 +210,7 @@ public class Banner extends AdBase implements IAdShow {
             removeBannerView(mAdViewOld);
         }
         if (mRelativeLayout != null) {
-            parentViewWithout(mRelativeLayout);
+            getParentViewWithout(mRelativeLayout);
             mRelativeLayout = null;
         }
 
@@ -217,7 +218,7 @@ public class Banner extends AdBase implements IAdShow {
     }
 
     private void removeBannerView(@NonNull AdView adView) {
-        parentViewWithout(adView);
+        getParentViewWithout(adView);
         adView.removeAllViews();
         adView.destroy();
     }
@@ -233,7 +234,7 @@ public class Banner extends AdBase implements IAdShow {
 
     private void addBannerViewWithLinearLayout() {
         View webView = getWebView();
-        ViewGroup wvParentView = (ViewGroup) webView.getParent();
+        ViewGroup wvParentView = getParentView(webView);
         if (rootLinearLayout == null) {
             rootLinearLayout = new LinearLayout(getActivity());
         }
@@ -252,9 +253,9 @@ public class Banner extends AdBase implements IAdShow {
                     1.0F));
             rootLinearLayout.addView(webView);
 
-            ViewGroup view = (ViewGroup) rootLinearLayout.getParent();
+            ViewGroup view = getParentView(rootLinearLayout);
             if (view != wvParentView) {
-                parentViewWithout(rootLinearLayout);
+                getParentViewWithout(rootLinearLayout);
                 wvParentView.addView(rootLinearLayout);
             }
         }
