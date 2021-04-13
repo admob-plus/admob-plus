@@ -1,7 +1,7 @@
 <h1 align="center">
   <p align="center">AdMob Plus</p>
   <a href="https://admob-plus.github.io">
-    <img alt="AdMob Plus" src="https://admob-plus.github.io/img/logo.png" style="max-width: 320px !important;">
+    <img alt="AdMob Plus" src="https://admob-plus.github.io/img/logo.png" width="320px">
   </a>
 </h1>
 
