@@ -34,10 +34,8 @@ const users: { caption: string; image: string; infoLink: string }[] = [
   },
   {
     caption: 'Learn music theory with Sonid',
-    image:
-      'https://sonid.app/favicon.png',
-    infoLink:
-      'https://sonid.app/',
+    image: 'https://sonid.app/favicon.png',
+    infoLink: 'https://sonid.app/',
   },
   {
     caption: 'Pirate Duck',
@@ -70,6 +68,13 @@ const users: { caption: string; image: string; infoLink: string }[] = [
       'https://lh3.googleusercontent.com/DTBNT0n1GYSGDSmbfhw-fe4e0UAmnkzPJ28f3tK2PfNYODt872cqGXknomfKuY4DYTo=s180',
     infoLink:
       'https://play.google.com/store/apps/details?id=io.acerbastimur.talkawhile',
+  },
+  {
+    caption: 'Fantasy Sports Teams',
+    image:
+      'https://play-lh.googleusercontent.com/sBLKyNbx7n6HrcUEjXbrRdAXskM1A_TpaLEc6VFcT3VTZSvfcvQHbbTdt3xMZztpjZpO=s180',
+    infoLink:
+      'https://play.google.com/store/apps/details?id=com.fteams.analysis.teams',
   },
 ]
 
