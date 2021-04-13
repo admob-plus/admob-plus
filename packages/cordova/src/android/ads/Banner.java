@@ -28,7 +28,7 @@ import admob.plugin.Generated.Events;
 public class Banner extends AdBase implements IAdShow {
     private static final String TAG = "AdMobPlus.Banner";
     @SuppressLint("StaticFieldLeak")
-    private static ViewGroup parentView;
+    private static ViewGroup rootLinearLayout;
 
     private final AdSize adSize;
     private final int gravity;
@@ -47,8 +47,11 @@ public class Banner extends AdBase implements IAdShow {
     }
 
     public static void destroyParentView() {
-        parentViewWithout(parentView);
-        parentView = null;
+        ViewGroup vg = parentViewWithout(rootLinearLayout);
+        if (vg != null) {
+            vg.removeAllViews();
+        }
+        rootLinearLayout = null;
     }
 
     @Nullable
@@ -126,8 +129,8 @@ public class Banner extends AdBase implements IAdShow {
         } else {
             View view = getWebView();
             ViewGroup wvParentView = (ViewGroup) view.getParent();
-            if (parentView != wvParentView) {
-                parentViewWithout(parentView);
+            if (rootLinearLayout != wvParentView) {
+                parentViewWithout(rootLinearLayout);
                 addBannerView();
             }
         }
@@ -231,15 +234,15 @@ public class Banner extends AdBase implements IAdShow {
     private void addBannerViewWithLinearLayout() {
         View webView = getWebView();
         ViewGroup wvParentView = (ViewGroup) webView.getParent();
-        if (parentView == null) {
-            parentView = new LinearLayout(getActivity());
+        if (rootLinearLayout == null) {
+            rootLinearLayout = new LinearLayout(getActivity());
         }
 
-        if (wvParentView != null && wvParentView != parentView) {
+        if (wvParentView != null && wvParentView != rootLinearLayout) {
             wvParentView.removeView(webView);
-            LinearLayout content = (LinearLayout) parentView;
+            LinearLayout content = (LinearLayout) rootLinearLayout;
             content.setOrientation(LinearLayout.VERTICAL);
-            parentView.setLayoutParams(new LinearLayout.LayoutParams(
+            rootLinearLayout.setLayoutParams(new LinearLayout.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT,
                     ViewGroup.LayoutParams.MATCH_PARENT,
                     0.0F));
@@ -247,17 +250,19 @@ public class Banner extends AdBase implements IAdShow {
                     ViewGroup.LayoutParams.MATCH_PARENT,
                     ViewGroup.LayoutParams.MATCH_PARENT,
                     1.0F));
-            parentView.addView(webView);
+            rootLinearLayout.addView(webView);
 
-            if (parentViewWithout(parentView) != wvParentView) {
-                wvParentView.addView(parentView);
+            ViewGroup view = (ViewGroup) rootLinearLayout.getParent();
+            if (view != wvParentView) {
+                parentViewWithout(rootLinearLayout);
+                wvParentView.addView(rootLinearLayout);
             }
         }
 
         if (isPositionTop()) {
-            parentView.addView(mAdView, 0);
+            rootLinearLayout.addView(mAdView, 0);
         } else {
-            parentView.addView(mAdView);
+            rootLinearLayout.addView(mAdView);
         }
 
         ViewGroup contentView = getContentView();
