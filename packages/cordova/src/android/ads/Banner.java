@@ -155,13 +155,11 @@ public class Banner extends AdBase implements IAdShow {
     private void reloadBannerView() {
         if (mAdRequest == null) return;
 
+        pauseBannerViews();
         if (mAdViewOld != null) {
             removeBannerView(mAdViewOld);
         }
         mAdViewOld = mAdView;
-        if (mAdViewOld != null) {
-            mAdViewOld.pause();
-        }
 
         mAdView = createBannerView();
         mAdView.loadAd(mAdRequest);
@@ -170,17 +168,31 @@ public class Banner extends AdBase implements IAdShow {
 
     @Override
     public void onPause(boolean multitasking) {
+        pauseBannerViews();
+        super.onPause(multitasking);
+    }
+
+    private void pauseBannerViews() {
         if (mAdView != null) {
             mAdView.pause();
         }
-        super.onPause(multitasking);
+        if (mAdViewOld != null && mAdViewOld != mAdView) {
+            mAdViewOld.pause();
+        }
     }
 
     @Override
     public void onResume(boolean multitasking) {
         super.onResume(multitasking);
+        resumeBannerViews();
+    }
+
+    private void resumeBannerViews() {
         if (mAdView != null) {
             mAdView.resume();
+        }
+        if (mAdViewOld != null) {
+            mAdViewOld.resume();
         }
     }
 
