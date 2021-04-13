@@ -100,6 +100,7 @@
   },
   "workspaces": [
     "examples/*",
+    "!examples/react-native",
     "internal/*",
     "packages/*",
     "website"
