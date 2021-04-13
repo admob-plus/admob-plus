@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.2](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.5.1...admob-plus-cordova@1.5.2) (2021-04-13)
+
+
+### Bug Fixes
+
+* **cordova/android:** only add parentView when changed, fix [#304](https://github.com/admob-plus/admob-plus/issues/304) ([f542b10](https://github.com/admob-plus/admob-plus/commit/f542b109ccbe3aea4bd630f915a1f925ab4b7c31))
+
+
+
+
+
 ## [1.5.1](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.5.0...admob-plus-cordova@1.5.1) (2021-04-12)
 
 
