@@ -46,6 +46,18 @@ public class Banner extends AdBase implements IAdShow {
         this.offset = ctx.optOffset();
     }
 
+    public static void destroyParentView() {
+        if (parentView == null) {
+            return;
+        }
+
+        ViewGroup view = (ViewGroup) parentView.getParent();
+        if (view != null) {
+            view.removeAllViews();
+        }
+        parentView = null;
+    }
+
     public void load(ExecuteContext ctx) {
         final AdRequest adRequest = ctx.optAdRequest();
 
@@ -190,6 +202,9 @@ public class Banner extends AdBase implements IAdShow {
             removeBannerView(mAdView);
             mAdView = null;
         }
+        if (mAdViewOld != null) {
+            removeBannerView(mAdViewOld);
+        }
         if (mRelativeLayout != null) {
             ViewGroup parentView = (ViewGroup) mRelativeLayout.getParent();
             if (parentView != null) {
@@ -239,7 +254,14 @@ public class Banner extends AdBase implements IAdShow {
                     ViewGroup.LayoutParams.MATCH_PARENT,
                     1.0F));
             parentView.addView(webView);
-            wvParentView.addView(parentView);
+
+            ViewGroup view = (ViewGroup) parentView.getParent();
+            if (view != wvParentView) {
+                if (view != null) {
+                    view.removeView(parentView);
+                }
+                wvParentView.addView(parentView);
+            }
         }
 
         if (isPositionTop()) {
