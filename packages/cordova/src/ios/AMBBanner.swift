@@ -4,14 +4,22 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
     static var placeholderView = UIView()
     static var stackView = UIStackView()
 
+    static var rootView = {
+        return AMBContext.plugin.viewController.view!
+    }()
+
+    static var safeAreaLayoutGuide = {
+        return AMBBanner.rootView.safeAreaLayoutGuide
+    }()
+
     static var topConstraint = {
         return AMBBanner.stackView.topAnchor.constraint(
-            equalTo: AMBContext.plugin.viewController.view.safeAreaLayoutGuide.topAnchor)
+            equalTo: AMBBanner.safeAreaLayoutGuide.topAnchor)
     }()
 
     static var bottomConstraint = {
         return AMBBanner.stackView.bottomAnchor.constraint(
-            equalTo: AMBContext.plugin.viewController.view.safeAreaLayoutGuide.bottomAnchor)
+            equalTo: AMBBanner.safeAreaLayoutGuide.bottomAnchor)
     }()
 
     let adSize: GADAdSize!
@@ -28,7 +36,7 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
     }
 
     var rootView: UIView {
-        return self.plugin.viewController.view
+        return Self.rootView
     }
 
     var mainView: UIView {
