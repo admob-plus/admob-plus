@@ -149,7 +149,7 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
         self.emit(AMBEvents.bannerSizeChange, size)
     }
 
-    @objc private func prepareStackView() {
+    private func prepareStackView() {
         if stackView.arrangedSubviews.isEmpty {
             stackView.axis = .vertical
             stackView.distribution = .fill
@@ -188,20 +188,20 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
 
     private func addBannerView(_ offset: CGFloat) {
         bannerView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.addSubview(bannerView)
-        stackView.bringSubviewToFront(bannerView)
+        rootView.addSubview(bannerView)
+        rootView.bringSubviewToFront(bannerView)
         var constraints = [
-            bannerView.centerXAnchor.constraint(equalTo: stackView.centerXAnchor)
+            bannerView.centerXAnchor.constraint(equalTo: rootView.centerXAnchor)
         ]
         switch position {
         case AMBBannerPosition.top:
             constraints += [
-                bannerView.topAnchor.constraint(equalTo: stackView.topAnchor,
+                bannerView.topAnchor.constraint(equalTo: rootView.topAnchor,
                                                 constant: offset)
             ]
         default:
             constraints += [
-                bannerView.bottomAnchor.constraint(equalTo: stackView.bottomAnchor,
+                bannerView.bottomAnchor.constraint(equalTo: rootView.bottomAnchor,
                                                    constant: offset * -1)
             ]
         }
