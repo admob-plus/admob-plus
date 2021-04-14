@@ -85,7 +85,14 @@ const BannerAd: React.FC<BannerProps> = () => {
               <ButtonGroup>
                 <Button
                   onClick={() => {
-                    ad.show()
+                    ad.load().catch(alert)
+                  }}
+                >
+                  load
+                </Button>
+                <Button
+                  onClick={() => {
+                    ad.show().catch(alert)
                   }}
                 >
                   show
