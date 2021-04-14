@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.3](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.5.2...admob-plus-cordova@1.5.3) (2021-04-14)
+
+
+### Bug Fixes
+
+* **cordova/ios:** add offset banner view to root view, fix [#305](https://github.com/admob-plus/admob-plus/issues/305) ([3ea9e17](https://github.com/admob-plus/admob-plus/commit/3ea9e1756f1aff5706cac2cd26060812c78ec94b))
+
+
+
+
+
 ## [1.5.2](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.5.1...admob-plus-cordova@1.5.2) (2021-04-13)
 
 
