@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.4](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.5.3...admob-plus-cordova@1.5.4) (2021-04-15)
+
+
+### Bug Fixes
+
+* **cordova/android:** build AdSize correctly, fix [#307](https://github.com/admob-plus/admob-plus/issues/307) ([1ec8322](https://github.com/admob-plus/admob-plus/commit/1ec8322c4213c19cfa489a809344120acb5d0cd4))
+* **cordova/ios:** avoid stack view being covered, fix [#306](https://github.com/admob-plus/admob-plus/issues/306) ([19e11da](https://github.com/admob-plus/admob-plus/commit/19e11daa95b8feaa2bfbcbb31286af3ed83c6922))
+
+
+
+
+
 ## [1.5.3](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.5.2...admob-plus-cordova@1.5.3) (2021-04-14)
 
 
