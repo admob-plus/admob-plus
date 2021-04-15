@@ -21,8 +21,10 @@ admob-plus
 admob-plus <command>
 
 Commands:
-  admob-plus doctor  Check your project setup for potential problems
-  admob-plus info    Get relevant version info about OS, toolchain and libraries
+  admob-plus doctor    Check your project setup for potential problems
+  admob-plus info      Get relevant version info about OS, toolchain and
+                       libraries
+  admob-plus test-ids  Print test IDs
 
 Options:
   --version  Show version number                                       [boolean]

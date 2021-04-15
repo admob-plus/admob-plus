@@ -23,6 +23,7 @@ import org.apache.cordova.CordovaWebView;
 import java.util.Objects;
 
 import admob.plugin.ExecuteContext;
+import admob.plugin.Generated;
 import admob.plugin.Generated.Events;
 
 public class Banner extends AdBase implements IAdShow {
@@ -321,5 +322,29 @@ public class Banner extends AdBase implements IAdShow {
 
     private boolean isPositionTop() {
         return gravity == Gravity.TOP;
+    }
+
+    public enum AdSizeType {
+        BANNER, LARGE_BANNER, MEDIUM_RECTANGLE, FULL_BANNER, LEADERBOARD, SMART_BANNER;
+
+        @Nullable
+        public static AdSize getAdSize(int adSize) {
+            switch (AdSizeType.values()[adSize]) {
+                case BANNER:
+                    return AdSize.BANNER;
+                case LARGE_BANNER:
+                    return AdSize.LARGE_BANNER;
+                case MEDIUM_RECTANGLE:
+                    return AdSize.MEDIUM_RECTANGLE;
+                case FULL_BANNER:
+                    return AdSize.FULL_BANNER;
+                case LEADERBOARD:
+                    return AdSize.LEADERBOARD;
+                case SMART_BANNER:
+                    return AdSize.SMART_BANNER;
+                default:
+                    return null;
+            }
+        }
     }
 }

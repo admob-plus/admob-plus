@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import admob.plugin.ads.AdBase;
+import admob.plugin.ads.Banner.AdSizeType;
 
 public class ExecuteContext {
     public static final SparseArray<AdBase> ads = new SparseArray<AdBase>();
@@ -188,7 +189,7 @@ public class ExecuteContext {
         if (!opts.has(name)) {
             return AdSize.SMART_BANNER;
         }
-        AdSize adSize = Generated.AdSizeType.getAdSize(opts.opt(name));
+        AdSize adSize = AdSizeType.getAdSize(opts.optInt(name));
         if (adSize != null) {
             return adSize;
         }

@@ -59,35 +59,16 @@ function buildJava(): string {
   const linesActions = renderJavaContants(Actions)
   const linesEvents = renderJavaContants(Events)
 
-  const linesAdSizeType = [
-    `${indent4(2)}${AdSizeTypes.map((s) => `${s}`).join(', ')};`,
-    '',
-    `${indent4(2)}public static AdSize getAdSize(Object adSize) {`,
-    ..._.flatMap(AdSizeTypes, (s) => [
-      `${indent4(3)}if (AdSizeType.${s}.equals(adSize)) {`,
-      `${indent4(4)}return AdSize.${s};`,
-      `${indent4(3)}}`,
-    ]),
-    `${indent4(3)}return null;`,
-    `${indent4(2)}}`,
-  ].join('\n')
-
   return `// ${warnMessage}
 package admob.plugin;
 
-import com.google.android.gms.ads.AdSize;
-
 public final class Generated {
-    public final class Actions {
+    public static final class Actions {
 ${linesActions}
     }
 
-    public final class Events {
+    public static final class Events {
 ${linesEvents}
-    }
-
-    public enum AdSizeType {
-${linesAdSizeType}
     }
 }
 `
