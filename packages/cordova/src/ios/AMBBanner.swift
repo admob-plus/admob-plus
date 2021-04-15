@@ -4,22 +4,22 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
     static var placeholderView = UIView()
     static var stackView = UIStackView()
 
-    static var rootView = {
+    static var rootView: UIView {
         return AMBContext.plugin.viewController.view!
-    }()
+    }
 
     static var safeAreaLayoutGuide = {
-        return AMBBanner.rootView.safeAreaLayoutGuide
+        return rootView.safeAreaLayoutGuide
     }()
 
     static var topConstraint = {
-        return AMBBanner.stackView.topAnchor.constraint(
-            equalTo: AMBBanner.safeAreaLayoutGuide.topAnchor)
+        return stackView.topAnchor.constraint(
+            equalTo: safeAreaLayoutGuide.topAnchor)
     }()
 
     static var bottomConstraint = {
-        return AMBBanner.stackView.bottomAnchor.constraint(
-            equalTo: AMBBanner.safeAreaLayoutGuide.bottomAnchor)
+        return stackView.bottomAnchor.constraint(
+            equalTo: safeAreaLayoutGuide.bottomAnchor)
     }()
 
     let adSize: GADAdSize!
@@ -28,11 +28,11 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
     var bannerView: GADBannerView!
 
     var stackView: UIStackView {
-        return AMBBanner.stackView
+        return Self.stackView
     }
 
     var placeholderView: UIView {
-        return AMBBanner.placeholderView
+        return Self.placeholderView
     }
 
     var rootView: UIView {
@@ -41,14 +41,6 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
 
     var mainView: UIView {
         return self.plugin.webView
-    }
-
-    var topConstraint: NSLayoutConstraint {
-        return AMBBanner.topConstraint
-    }
-
-    var bottomConstraint: NSLayoutConstraint {
-        return AMBBanner.bottomConstraint
     }
 
     init(id: Int, adUnitId: String, adSize: GADAdSize, position: String, offset: CGFloat?) {
@@ -219,7 +211,7 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
     private func updateLayout() {
         if stackView.arrangedSubviews.first is GADBannerView {
             NSLayoutConstraint.activate([
-                topConstraint,
+                Self.topConstraint,
                 mainView.topAnchor.constraint(equalTo: placeholderView.topAnchor)
             ])
 
@@ -229,16 +221,16 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
                 }
             }
         } else {
-            topConstraint.isActive = false
+            Self.topConstraint.isActive = false
         }
 
         if stackView.arrangedSubviews.last is GADBannerView {
             NSLayoutConstraint.activate([
-                bottomConstraint,
+                Self.bottomConstraint,
                 mainView.bottomAnchor.constraint(equalTo: placeholderView.bottomAnchor)
             ])
         } else {
-            bottomConstraint.isActive = false
+            Self.bottomConstraint.isActive = false
         }
     }
 
