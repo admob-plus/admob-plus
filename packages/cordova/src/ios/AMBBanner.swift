@@ -8,18 +8,28 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
         return AMBContext.plugin.viewController.view!
     }
 
-    static var safeAreaLayoutGuide = {
-        return rootView.safeAreaLayoutGuide
+    static var topAnchor: NSLayoutYAxisAnchor {
+        if #available(iOS 11.0, *) {
+            return rootView.safeAreaLayoutGuide.topAnchor
+        } else {
+            return rootView.topAnchor
+        }
+    }
+
+    static var bottomAnchor: NSLayoutYAxisAnchor {
+        if #available(iOS 11.0, *) {
+            return rootView.safeAreaLayoutGuide.bottomAnchor
+        } else {
+            return rootView.bottomAnchor
+        }
+    }
+
+    static var topConstraint: NSLayoutConstraint = {
+        return stackView.topAnchor.constraint(equalTo: topAnchor)
     }()
 
-    static var topConstraint = {
-        return stackView.topAnchor.constraint(
-            equalTo: safeAreaLayoutGuide.topAnchor)
-    }()
-
-    static var bottomConstraint = {
-        return stackView.bottomAnchor.constraint(
-            equalTo: safeAreaLayoutGuide.bottomAnchor)
+    static var bottomConstraint: NSLayoutConstraint = {
+        return stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
     }()
 
     let adSize: GADAdSize!
