@@ -165,7 +165,7 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
             stackView.distribution = .fill
             stackView.alignment = .fill
             rootView.addSubview(stackView)
-            rootView.sendSubviewToBack(stackView)
+            rootView.bringSubviewToFront(mainView)
             rootView.backgroundColor = .clear
 
             placeholderView.frame = mainView.frame
