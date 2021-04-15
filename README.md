@@ -21,7 +21,8 @@ You can find the documentation [on the website](https://admob-plus.github.io/doc
 ## Contributing
 
 - Star this repository
-- Open issue for feature requests
+- Open issue for bug reports
+- Suggest features in [Discussions](https://github.com/admob-plus/admob-plus/discussions)
 
 ## Sponsors
 
