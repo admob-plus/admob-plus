@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.4.2...@admob-plus/capacitor@1.5.0) (2021-04-16)
+
+
+### Features
+
+* **capacitor:** enable banner position option, fix [#309](https://github.com/admob-plus/admob-plus/issues/309) ([722432b](https://github.com/admob-plus/admob-plus/commit/722432ba79f66ac7f5c7eb34c8d7c46da239890d))
+* **capacitor:** extract nextId() ([6d49548](https://github.com/admob-plus/admob-plus/commit/6d495485d9fcc574755a24e683b856d482b59792))
+
+
+
+
+
 ## [1.4.2](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.4.1...@admob-plus/capacitor@1.4.2) (2021-04-14)
 
 **Note:** Version bump only for package @admob-plus/capacitor

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.5.4...admob-plus-cordova@1.6.0) (2021-04-16)
+
+
+### Features
+
+* **cordova/ios:** add BannerAd.config() ([38e6c5a](https://github.com/admob-plus/admob-plus/commit/38e6c5a5d58f9f23cc5f2301c06de086e6c61f3a))
+
+
+
+
+
 ## [1.5.4](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.5.3...admob-plus-cordova@1.5.4) (2021-04-15)
 
 
