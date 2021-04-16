@@ -10,6 +10,10 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
         return AMBContext.plugin.viewController.view!
     }
 
+    static var mainView: UIView {
+        return AMBContext.plugin.webView
+    }
+
     static var topAnchor: NSLayoutYAxisAnchor {
         if #available(iOS 11.0, *) {
             return rootView.safeAreaLayoutGuide.topAnchor
@@ -40,26 +44,54 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
         ctx.success()
     }
 
+    private static func prepareStackView() {
+        if stackView.arrangedSubviews.isEmpty {
+            var constraints: [NSLayoutConstraint] = []
+
+            stackView.axis = .vertical
+            stackView.distribution = .fill
+            stackView.alignment = .fill
+            rootView.addSubview(stackView)
+            rootView.bringSubviewToFront(mainView)
+            rootView.backgroundColor = .clear
+            stackView.translatesAutoresizingMaskIntoConstraints = false
+            constraints += [
+                stackView.leadingAnchor.constraint(equalTo: rootView.leadingAnchor),
+                stackView.trailingAnchor.constraint(equalTo: rootView.trailingAnchor)
+            ]
+
+            placeholderView.frame = mainView.frame
+            placeholderView.backgroundColor = .clear
+            let placeholderTop = placeholderView.topAnchor.constraint(equalTo: mainView.topAnchor)
+            let placeholderBottom = placeholderView.bottomAnchor.constraint(equalTo: mainView.bottomAnchor)
+            placeholderTop.priority = Self.priortyLeast
+            placeholderBottom.priority = Self.priortyLeast
+            stackView.addArrangedSubview(placeholderView)
+            placeholderView.translatesAutoresizingMaskIntoConstraints = false
+            constraints += [
+                placeholderTop,
+                placeholderBottom,
+                mainView.leadingAnchor.constraint(equalTo: placeholderView.leadingAnchor),
+                mainView.trailingAnchor.constraint(equalTo: placeholderView.trailingAnchor)
+            ]
+
+            let constraintTop = stackView.topAnchor.constraint(equalTo: rootView.topAnchor)
+            let constraintBottom = stackView.bottomAnchor.constraint(equalTo: rootView.bottomAnchor)
+            constraintTop.priority = Self.priortyLeast
+            constraintBottom.priority = Self.priortyLeast
+            mainView.translatesAutoresizingMaskIntoConstraints = false
+            constraints += [
+                constraintBottom,
+                constraintTop
+            ]
+            NSLayoutConstraint.activate(constraints)
+        }
+    }
+
     let adSize: GADAdSize!
     let position: String!
     let offset: CGFloat?
     var bannerView: GADBannerView!
-
-    var stackView: UIStackView {
-        return Self.stackView
-    }
-
-    var placeholderView: UIView {
-        return Self.placeholderView
-    }
-
-    var rootView: UIView {
-        return Self.rootView
-    }
-
-    var mainView: UIView {
-        return self.plugin.webView
-    }
 
     init(id: Int, adUnitId: String, adSize: GADAdSize, position: String, offset: CGFloat?) {
         self.adSize = adSize
@@ -87,7 +119,7 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
         if bannerView != nil {
             bannerView.delegate = nil
             bannerView.adSizeDelegate = nil
-            stackView.removeArrangedSubview(bannerView)
+            Self.stackView.removeArrangedSubview(bannerView)
             bannerView.removeFromSuperview()
             bannerView = nil
         }
@@ -109,16 +141,16 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
     }
 
     func show(_ ctx: AMBContext) {
-        prepareStackView()
+        Self.prepareStackView()
 
         if let offset = self.offset {
             addBannerView(offset)
         } else {
             switch position {
             case AMBBannerPosition.top:
-                stackView.insertArrangedSubview(bannerView, at: 0)
+                Self.stackView.insertArrangedSubview(bannerView, at: 0)
             default:
-                stackView.addArrangedSubview(bannerView)
+                Self.stackView.addArrangedSubview(bannerView)
             }
         }
 
@@ -133,7 +165,7 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
     func hide(_ ctx: AMBContext) {
         if bannerView != nil {
             bannerView.isHidden = true
-            stackView.removeArrangedSubview(bannerView)
+            Self.stackView.removeArrangedSubview(bannerView)
             updateLayout()
         }
         ctx.success()
@@ -167,44 +199,8 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
         self.emit(AMBEvents.bannerSizeChange, size)
     }
 
-    private func prepareStackView() {
-        if stackView.arrangedSubviews.isEmpty {
-            stackView.axis = .vertical
-            stackView.distribution = .fill
-            stackView.alignment = .fill
-            rootView.addSubview(stackView)
-            rootView.bringSubviewToFront(mainView)
-            rootView.backgroundColor = .clear
-
-            placeholderView.frame = mainView.frame
-            placeholderView.backgroundColor = .clear
-            let placeholderTop = placeholderView.topAnchor.constraint(equalTo: mainView.topAnchor)
-            let placeholderBottom = placeholderView.bottomAnchor.constraint(equalTo: mainView.bottomAnchor)
-            placeholderTop.priority = Self.priortyLeast
-            placeholderBottom.priority = Self.priortyLeast
-            stackView.addArrangedSubview(placeholderView)
-
-            let constraintTop = stackView.topAnchor.constraint(equalTo: rootView.topAnchor)
-            let constraintBottom = stackView.bottomAnchor.constraint(equalTo: rootView.bottomAnchor)
-            constraintTop.priority = Self.priortyLeast
-            constraintBottom.priority = Self.priortyLeast
-            mainView.translatesAutoresizingMaskIntoConstraints = false
-            placeholderView.translatesAutoresizingMaskIntoConstraints = false
-            stackView.translatesAutoresizingMaskIntoConstraints = false
-            NSLayoutConstraint.activate([
-                stackView.leadingAnchor.constraint(equalTo: rootView.leadingAnchor),
-                stackView.trailingAnchor.constraint(equalTo: rootView.trailingAnchor),
-                constraintBottom,
-                constraintTop,
-                mainView.leadingAnchor.constraint(equalTo: placeholderView.leadingAnchor),
-                mainView.trailingAnchor.constraint(equalTo: placeholderView.trailingAnchor),
-                placeholderTop,
-                placeholderBottom
-            ])
-        }
-    }
-
     private func addBannerView(_ offset: CGFloat) {
+        let rootView = Self.rootView
         bannerView.translatesAutoresizingMaskIntoConstraints = false
         rootView.addSubview(bannerView)
         rootView.bringSubviewToFront(bannerView)
@@ -227,28 +223,24 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
     }
 
     private func updateLayout() {
-        if stackView.arrangedSubviews.first is GADBannerView {
+        if Self.stackView.arrangedSubviews.first is GADBannerView {
             NSLayoutConstraint.activate([
                 Self.topConstraint,
-                mainView.topAnchor.constraint(equalTo: placeholderView.topAnchor)
+                Self.mainView.topAnchor.constraint(equalTo: Self.placeholderView.topAnchor)
             ])
 
             if #available(iOS 12.0, *) {
                 if plugin.viewController.traitCollection.userInterfaceStyle == .dark {
-                    rootView.backgroundColor = .clear
+                    Self.rootView.backgroundColor = .clear
                 }
             }
-        } else {
-            Self.topConstraint.isActive = false
         }
 
-        if stackView.arrangedSubviews.last is GADBannerView {
+        if Self.stackView.arrangedSubviews.last is GADBannerView {
             NSLayoutConstraint.activate([
                 Self.bottomConstraint,
-                mainView.bottomAnchor.constraint(equalTo: placeholderView.bottomAnchor)
+                Self.mainView.bottomAnchor.constraint(equalTo: Self.placeholderView.bottomAnchor)
             ])
-        } else {
-            Self.bottomConstraint.isActive = false
         }
     }
 
