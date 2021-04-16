@@ -27,6 +27,10 @@ const app = {
   },
 
   showBannerAd() {
+    admob.BannerAd.config({
+      marginTop: 100,
+      marginBottom: 100,
+    })
     const banner = new admob.BannerAd({
       adUnitId: 'ca-app-pub-3940256099942544/6300978111',
     })

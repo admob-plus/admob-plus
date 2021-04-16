@@ -4,6 +4,8 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
     static var placeholderView = UIView()
     static var stackView = UIStackView()
 
+    static let priortyLeast = UILayoutPriority(10)
+
     static var rootView: UIView {
         return AMBContext.plugin.viewController.view!
     }
@@ -24,9 +26,9 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
         }
     }
 
-    static var topConstraint = stackView.topAnchor.constraint(equalTo: topAnchor)
+    static let topConstraint = stackView.topAnchor.constraint(equalTo: topAnchor, constant: 0)
 
-    static var bottomConstraint = stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
+    static let bottomConstraint = stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0)
 
     static func config(_ ctx: AMBContext) {
         if let marginTop = ctx.optMarginTop() {
@@ -178,14 +180,14 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
             placeholderView.backgroundColor = .clear
             let placeholderTop = placeholderView.topAnchor.constraint(equalTo: mainView.topAnchor)
             let placeholderBottom = placeholderView.bottomAnchor.constraint(equalTo: mainView.bottomAnchor)
-            placeholderTop.priority = UILayoutPriority(10)
-            placeholderBottom.priority = UILayoutPriority(10)
+            placeholderTop.priority = Self.priortyLeast
+            placeholderBottom.priority = Self.priortyLeast
             stackView.addArrangedSubview(placeholderView)
 
             let constraintTop = stackView.topAnchor.constraint(equalTo: rootView.topAnchor)
             let constraintBottom = stackView.bottomAnchor.constraint(equalTo: rootView.bottomAnchor)
-            constraintTop.priority = UILayoutPriority(10)
-            constraintBottom.priority = UILayoutPriority(10)
+            constraintTop.priority = Self.priortyLeast
+            constraintBottom.priority = Self.priortyLeast
             mainView.translatesAutoresizingMaskIntoConstraints = false
             placeholderView.translatesAutoresizingMaskIntoConstraints = false
             stackView.translatesAutoresizingMaskIntoConstraints = false
