@@ -49,6 +49,14 @@ class AMBContext {
         return opt("offset") as? CGFloat
     }
 
+    func optMarginTop() -> CGFloat? {
+        return opt("marginTop") as? CGFloat
+    }
+
+    func optMarginBottom() -> CGFloat? {
+        return opt("marginBottom") as? CGFloat
+    }
+
     func optAd() -> AMBAdBase? {
         guard let id = optId(),
               let ad = AMBAdBase.ads[id]

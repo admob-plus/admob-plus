@@ -2,6 +2,7 @@
 'use strict'
 
 const AdMob = {
+  bannerConfig() {},
   bannerHide() {},
   bannerLoad() {},
   bannerShow() {},

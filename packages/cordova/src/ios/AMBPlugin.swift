@@ -102,6 +102,15 @@ class AMBPlugin: CDVPlugin {
         }
     }
 
+    @objc(bannerConfig:)
+    func bannerConfig(command: CDVInvokedUrlCommand) {
+        let ctx = AMBContext(command)
+
+        DispatchQueue.main.async {
+            AMBBanner.config(ctx)
+        }
+    }
+
     @objc(bannerLoad:)
     func bannerLoad(command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(command)

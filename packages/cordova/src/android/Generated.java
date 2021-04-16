@@ -3,6 +3,7 @@ package admob.plugin;
 
 public final class Generated {
     public static final class Actions {
+        public static final String BANNER_CONFIG = "bannerConfig";
         public static final String BANNER_HIDE = "bannerHide";
         public static final String BANNER_LOAD = "bannerLoad";
         public static final String BANNER_SHOW = "bannerShow";

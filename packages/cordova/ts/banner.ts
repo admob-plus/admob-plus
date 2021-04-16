@@ -4,6 +4,7 @@ import {
   MobileAd,
   MobileAdOptions,
   NativeActions,
+  Platforms,
 } from './shared'
 
 type Position = 'top' | 'bottom'
@@ -23,6 +24,13 @@ export default class BannerAd extends MobileAd<BannerAdOptions> {
       size: AdSizeType.SMART_BANNER,
       ...opts,
     })
+  }
+
+  public static config(opts: { marginTop: number; marginBottom: number }) {
+    if (cordova.platformId === Platforms.ios) {
+      return execAsync(NativeActions.bannerConfig, [opts])
+    }
+    return false
   }
 
   public async load() {

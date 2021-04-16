@@ -24,13 +24,19 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
         }
     }
 
-    static var topConstraint: NSLayoutConstraint = {
-        return stackView.topAnchor.constraint(equalTo: topAnchor)
-    }()
+    static var topConstraint = stackView.topAnchor.constraint(equalTo: topAnchor)
 
-    static var bottomConstraint: NSLayoutConstraint = {
-        return stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
-    }()
+    static var bottomConstraint = stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
+
+    static func config(_ ctx: AMBContext) {
+        if let marginTop = ctx.optMarginTop() {
+            Self.topConstraint.constant = marginTop
+        }
+        if let marginBottom = ctx.optMarginBottom() {
+            Self.bottomConstraint.constant = marginBottom * -1
+        }
+        ctx.success()
+    }
 
     let adSize: GADAdSize!
     let position: String!

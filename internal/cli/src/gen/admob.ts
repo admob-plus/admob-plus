@@ -19,6 +19,7 @@ const Actions = _.mapValues(
     start: null,
     requestTrackingAuthorization: null,
     // BannerAd
+    bannerConfig: null,
     bannerLoad: null,
     bannerShow: null,
     bannerHide: null,
