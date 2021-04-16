@@ -7,15 +7,16 @@ const AdMobPlus = registerPlugin<AdMobPlusPlugin>('AdMobPlus', {
 
 type MobileAdOptions = { adUnitId: string }
 
-class MobileAd {
+class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
   private static allAds: { [s: number]: MobileAd } = {}
   private static idCounter = 0
 
-  public readonly adUnitId: string
   public readonly id: number
 
-  constructor({ adUnitId }: MobileAdOptions) {
-    this.adUnitId = adUnitId
+  protected readonly opts: T
+
+  constructor(opts: T) {
+    this.opts = opts
 
     this.id = MobileAd.nextId()
     MobileAd.allAds[this.id] = this
@@ -25,15 +26,28 @@ class MobileAd {
     MobileAd.idCounter += 1
     return MobileAd.idCounter
   }
+
+  public get adUnitId() {
+    return this.opts.adUnitId
+  }
 }
 
-class BannerAd extends MobileAd {
-  constructor({ adUnitId }: MobileAdOptions) {
-    super({ adUnitId })
+type Position = 'top' | 'bottom'
+
+export interface BannerAdOptions extends MobileAdOptions {
+  position?: Position
+}
+
+class BannerAd extends MobileAd<BannerAdOptions> {
+  constructor(opts: BannerAdOptions) {
+    super({
+      position: 'bottom',
+      ...opts,
+    })
   }
 
   public show() {
-    return AdMobPlus.bannerShow({ id: this.id, adUnitId: this.adUnitId })
+    return AdMobPlus.bannerShow({ ...this.opts, id: this.id })
   }
 
   public hide() {
