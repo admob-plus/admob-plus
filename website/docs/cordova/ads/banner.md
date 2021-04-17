@@ -59,6 +59,23 @@ new admob.BannerAd({
 })
 ```
 
+## Global Settings
+
+### `backgroundColor`
+
+```js
+admob.BannerAd.config({ backgroundColor: 'black' })
+```
+
+### Margins
+
+```js
+admob.BannerAd.config({
+  marginTop: 88,
+  marginBottom: 34
+})
+```
+
 ## Events
 
 ### `admob.banner.load`
