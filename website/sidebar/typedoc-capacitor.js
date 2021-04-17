@@ -21,7 +21,8 @@ module.exports = [
     "type": "category",
     "label": "Interfaces",
     "items": [
-      "capacitor/api/interfaces/admobplusplugin"
+      "capacitor/api/interfaces/admobplusplugin",
+      "capacitor/api/interfaces/banneradoptions"
     ]
   }
 ];

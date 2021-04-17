@@ -40,7 +40,7 @@ ___
 
 • `Optional` **offset**: *number*
 
-Defined in: banner.ts:14
+Defined in: banner.ts:42
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 • `Optional` **position**: Position
 
-Defined in: banner.ts:12
+Defined in: banner.ts:40
 
 ___
 
@@ -56,4 +56,4 @@ ___
 
 • `Optional` **size**: [*AdSizeType*](../enums/adsizetype.md)
 
-Defined in: banner.ts:13
+Defined in: banner.ts:41

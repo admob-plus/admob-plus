@@ -29,7 +29,7 @@ ___
 
 ### bannerShow
 
-▸ **bannerShow**(`opts`: { `adUnitId`: *string* ; `id`: *number* ; `position?`: *bottom* \| *top*  }): *Promise*<void\>
+▸ **bannerShow**(`opts`: { `adUnitId`: *string* ; `id`: *number* ; `position?`: *top* \| *bottom*  }): *Promise*<void\>
 
 #### Parameters:
 
@@ -38,7 +38,7 @@ Name | Type |
 `opts` | *object* |
 `opts.adUnitId` | *string* |
 `opts.id` | *number* |
-`opts.position?` | *bottom* \| *top* |
+`opts.position?` | *top* \| *bottom* |
 
 **Returns:** *Promise*<void\>
 

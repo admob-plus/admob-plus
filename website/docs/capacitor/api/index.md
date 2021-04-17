@@ -25,6 +25,7 @@ hide_title: true
 ### Interfaces
 
 - [AdMobPlusPlugin](interfaces/admobplusplugin.md)
+- [BannerAdOptions](interfaces/banneradoptions.md)
 
 ## Type aliases
 

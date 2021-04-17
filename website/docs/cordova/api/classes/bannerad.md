@@ -30,7 +30,7 @@ Name | Type |
 
 Overrides: [MobileAd](mobilead.md)
 
-Defined in: banner.ts:18
+Defined in: banner.ts:46
 
 ## Properties
 
@@ -38,7 +38,7 @@ Defined in: banner.ts:18
 
 • `Private` **\_loaded**: *boolean*= false
 
-Defined in: banner.ts:18
+Defined in: banner.ts:46
 
 ___
 
@@ -78,7 +78,7 @@ Defined in: api.ts:27
 
 **Returns:** *Promise*<unknown\>
 
-Defined in: banner.ts:44
+Defined in: banner.ts:86
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 **Returns:** *Promise*<unknown\>
 
-Defined in: banner.ts:28
+Defined in: banner.ts:70
 
 ___
 
@@ -98,4 +98,23 @@ ___
 
 **Returns:** *Promise*<unknown\>
 
-Defined in: banner.ts:36
+Defined in: banner.ts:78
+
+___
+
+### config
+
+▸ `Static`**config**(`opts`: { `backgroundColor?`: *string* ; `marginBottom?`: *number* ; `marginTop?`: *number*  }): *false* \| *Promise*<unknown\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`opts` | *object* |
+`opts.backgroundColor?` | *string* |
+`opts.marginBottom?` | *number* |
+`opts.marginTop?` | *number* |
+
+**Returns:** *false* \| *Promise*<unknown\>
+
+Defined in: banner.ts:56

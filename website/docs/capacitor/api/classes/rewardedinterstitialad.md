@@ -30,19 +30,9 @@ Name | Type |
 
 Overrides: MobileAd.constructor
 
-Defined in: index.ts:67
+Defined in: index.ts:86
 
 ## Properties
-
-### adUnitId
-
-• `Readonly` **adUnitId**: *string*
-
-Inherited from: MobileAd.adUnitId
-
-Defined in: index.ts:14
-
-___
 
 ### id
 
@@ -50,7 +40,27 @@ ___
 
 Inherited from: MobileAd.id
 
-Defined in: index.ts:15
+Defined in: index.ts:14
+
+___
+
+### opts
+
+• `Protected` `Readonly` **opts**: MobileAdOptions
+
+Inherited from: MobileAd.opts
+
+Defined in: index.ts:16
+
+## Accessors
+
+### adUnitId
+
+• get **adUnitId**(): *string*
+
+**Returns:** *string*
+
+Defined in: index.ts:30
 
 ## Methods
 
@@ -60,7 +70,7 @@ Defined in: index.ts:15
 
 **Returns:** *Promise*<void\>
 
-Defined in: index.ts:72
+Defined in: index.ts:91
 
 ___
 
@@ -70,4 +80,4 @@ ___
 
 **Returns:** *Promise*<void\>
 
-Defined in: index.ts:79
+Defined in: index.ts:98

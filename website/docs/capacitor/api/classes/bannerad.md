@@ -10,7 +10,7 @@ hide_title: true
 
 ## Hierarchy
 
-* *MobileAd*
+* *MobileAd*<[*BannerAdOptions*](../interfaces/banneradoptions.md)\>
 
   ↳ **BannerAd**
 
@@ -18,31 +18,21 @@ hide_title: true
 
 ### constructor
 
-\+ **new BannerAd**(`__namedParameters`: MobileAdOptions): [*BannerAd*](bannerad.md)
+\+ **new BannerAd**(`opts`: [*BannerAdOptions*](../interfaces/banneradoptions.md)): [*BannerAd*](bannerad.md)
 
 #### Parameters:
 
 Name | Type |
 :------ | :------ |
-`__namedParameters` | MobileAdOptions |
+`opts` | [*BannerAdOptions*](../interfaces/banneradoptions.md) |
 
 **Returns:** [*BannerAd*](bannerad.md)
 
-Overrides: MobileAd.constructor
+Overrides: MobileAd&lt;BannerAdOptions&gt;.constructor
 
-Defined in: index.ts:25
+Defined in: index.ts:41
 
 ## Properties
-
-### adUnitId
-
-• `Readonly` **adUnitId**: *string*
-
-Inherited from: MobileAd.adUnitId
-
-Defined in: index.ts:14
-
-___
 
 ### id
 
@@ -50,7 +40,27 @@ ___
 
 Inherited from: MobileAd.id
 
-Defined in: index.ts:15
+Defined in: index.ts:14
+
+___
+
+### opts
+
+• `Protected` `Readonly` **opts**: [*BannerAdOptions*](../interfaces/banneradoptions.md)
+
+Inherited from: MobileAd.opts
+
+Defined in: index.ts:16
+
+## Accessors
+
+### adUnitId
+
+• get **adUnitId**(): *string*
+
+**Returns:** *string*
+
+Defined in: index.ts:30
 
 ## Methods
 
@@ -60,7 +70,7 @@ Defined in: index.ts:15
 
 **Returns:** *Promise*<void\>
 
-Defined in: index.ts:34
+Defined in: index.ts:53
 
 ___
 
@@ -70,4 +80,4 @@ ___
 
 **Returns:** *Promise*<void\>
 
-Defined in: index.ts:30
+Defined in: index.ts:49
