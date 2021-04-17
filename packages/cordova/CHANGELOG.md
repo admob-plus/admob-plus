@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.6.0...admob-plus-cordova@1.7.0) (2021-04-17)
+
+
+### Bug Fixes
+
+* **cordova/ios:** do not prepare stack view for offset banner ([da23bbf](https://github.com/admob-plus/admob-plus/commit/da23bbf22b6c11e5abf3f4226737f793828f7679))
+
+
+### Features
+
+* **cordova/ios:** allow config backgroundColor ([5ae8cd9](https://github.com/admob-plus/admob-plus/commit/5ae8cd93ba1a688d3a9ce6f1775360037cf7600a))
+
+
+
+
+
 # [1.6.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.5.4...admob-plus-cordova@1.6.0) (2021-04-16)
 
 
