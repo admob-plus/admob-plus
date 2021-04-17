@@ -141,11 +141,11 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
     }
 
     func show(_ ctx: AMBContext) {
-        Self.prepareStackView()
-
         if let offset = self.offset {
             addBannerView(offset)
         } else {
+            Self.prepareStackView()
+
             switch position {
             case AMBBannerPosition.top:
                 Self.stackView.insertArrangedSubview(bannerView, at: 0)
