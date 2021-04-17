@@ -35,6 +35,9 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
     static let bottomConstraint = stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0)
 
     static func config(_ ctx: AMBContext) {
+        if let bgColor = ctx.optBackgroundColor() {
+            Self.rootView.backgroundColor = bgColor
+        }
         if let marginTop = ctx.optMarginTop() {
             Self.topConstraint.constant = marginTop
         }
@@ -53,7 +56,6 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
             stackView.alignment = .fill
             rootView.addSubview(stackView)
             rootView.bringSubviewToFront(mainView)
-            rootView.backgroundColor = .clear
             stackView.translatesAutoresizingMaskIntoConstraints = false
             constraints += [
                 stackView.leadingAnchor.constraint(equalTo: rootView.leadingAnchor),
@@ -61,7 +63,6 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
             ]
 
             placeholderView.frame = mainView.frame
-            placeholderView.backgroundColor = .clear
             let placeholderTop = placeholderView.topAnchor.constraint(equalTo: mainView.topAnchor)
             let placeholderBottom = placeholderView.bottomAnchor.constraint(equalTo: mainView.bottomAnchor)
             placeholderTop.priority = Self.priortyLeast
@@ -228,12 +229,6 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
                 Self.topConstraint,
                 Self.mainView.topAnchor.constraint(equalTo: Self.placeholderView.topAnchor)
             ])
-
-            if #available(iOS 12.0, *) {
-                if plugin.viewController.traitCollection.userInterfaceStyle == .dark {
-                    Self.rootView.backgroundColor = .clear
-                }
-            }
         }
 
         if Self.stackView.arrangedSubviews.last is GADBannerView {

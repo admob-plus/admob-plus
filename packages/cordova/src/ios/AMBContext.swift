@@ -49,6 +49,18 @@ class AMBContext {
         return opt("offset") as? CGFloat
     }
 
+    func optBackgroundColor() -> UIColor? {
+        if let bgColor = opt("backgroundColor") as? NSDictionary,
+           let r = bgColor["r"] as? CGFloat,
+           let g = bgColor["g"] as? CGFloat,
+           let b = bgColor["b"] as? CGFloat,
+           let a = bgColor["a"] as? CGFloat
+        {
+            return UIColor(red: r / 255, green: g / 255, blue: b / 255, alpha: a / 255)
+        }
+        return nil
+    }
+
     func optMarginTop() -> CGFloat? {
         return opt("marginTop") as? CGFloat
     }

@@ -16,7 +16,16 @@ const app = {
       admob.requestTrackingAuthorization().then(console.log)
     }
 
-    admob.start().catch(alert)
+    admob
+      .start()
+      .then(() =>
+        admob.BannerAd.config({
+          backgroundColor: '#A7A7A7',
+          marginTop: 10,
+          marginBottom: 10,
+        }),
+      )
+      .catch(alert)
 
     this.initButton('show-banner-btn', this.showBannerAd)
     this.initButton('show-offset-banner-btn', this.showBannerAdOffset)
@@ -27,10 +36,6 @@ const app = {
   },
 
   showBannerAd() {
-    admob.BannerAd.config({
-      marginTop: 100,
-      marginBottom: 100,
-    })
     const banner = new admob.BannerAd({
       adUnitId: 'ca-app-pub-3940256099942544/6300978111',
     })
