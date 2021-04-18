@@ -1,9 +1,9 @@
 import { NativeModules } from 'react-native'
 import { AdMobPlusPlugin, MobileAdOptions } from './definitions'
 
-const { RNAdMobPlus } = NativeModules
+const { AdMobPlusRN } = NativeModules
 
-export const AdMobPlus = RNAdMobPlus as AdMobPlusPlugin
+export const AdMobPlus = AdMobPlusRN as AdMobPlusPlugin
 
 class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
   private static allAds: { [s: number]: MobileAd } = {}

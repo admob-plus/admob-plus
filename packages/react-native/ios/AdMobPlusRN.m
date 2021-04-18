@@ -2,7 +2,7 @@
 #import <React/RCTBridgeModule.h>
 #import <React/RCTEventEmitter.h>
 
-@interface RCT_EXTERN_MODULE(RNAdMobPlus, RCTEventEmitter)
+@interface RCT_EXTERN_MODULE(AdMobPlusRN, RCTEventEmitter)
 
 RCT_EXTERN_METHOD(start:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject)

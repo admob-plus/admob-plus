@@ -4,7 +4,7 @@ class AMBAdBase: NSObject {
     let id: Int
     let adUnitId: String
 
-    var plugin: RNAdMobPlus {
+    var plugin: AdMobPlusRN {
         return AMBContext.plugin
     }
 

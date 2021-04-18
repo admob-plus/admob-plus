@@ -2,7 +2,7 @@ import GoogleMobileAds
 
 class AMBContext {
     static var ads = [Int: AMBAdBase]()
-    static weak var plugin: RNAdMobPlus!
+    static weak var plugin: AdMobPlusRN!
 
     let opts: NSDictionary?
     let resolve: RCTPromiseResolveBlock

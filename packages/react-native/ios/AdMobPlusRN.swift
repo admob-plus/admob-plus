@@ -1,7 +1,7 @@
 import GoogleMobileAds
 
-@objc(RNAdMobPlus)
-class RNAdMobPlus: RCTEventEmitter {
+@objc(AdMobPlusRN)
+class AdMobPlusRN: RCTEventEmitter {
     override init() {
         super.init()
 

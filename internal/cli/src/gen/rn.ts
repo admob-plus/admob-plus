@@ -21,7 +21,7 @@ const buildIosMacro = () => {
 #import <React/RCTBridgeModule.h>
 #import <React/RCTEventEmitter.h>
 
-@interface RCT_EXTERN_MODULE(RNAdMobPlus, RCTEventEmitter)
+@interface RCT_EXTERN_MODULE(AdMobPlusRN, RCTEventEmitter)
 
 ${methodsWithoutOpts
     .map(
@@ -58,7 +58,7 @@ ${linesEvents}
 export default () => ({
   files: [
     {
-      path: 'react-native/ios/RNAdMobPlus.m',
+      path: 'react-native/ios/AdMobPlusRN.m',
       f: buildIosMacro,
     },
     {
