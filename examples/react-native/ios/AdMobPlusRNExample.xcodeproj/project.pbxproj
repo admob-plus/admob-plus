@@ -14,6 +14,7 @@
 		3E177667723A921C11541A03 /* libPods-AdMobPlusRNExample-AdMobPlusRNExampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BE8E944422059D1A281B8E /* libPods-AdMobPlusRNExample-AdMobPlusRNExampleTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		999B68CCB781BE453CDF205E /* libPods-AdMobPlusRNExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B916C6E4212F834914879BBA /* libPods-AdMobPlusRNExample.a */; };
+		AE72CD06262DF87200FCC281 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE72CD05262DF87200FCC281 /* File.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,8 @@
 		8FA9763B812D059C9B19FF81 /* Pods-AdMobPlusRNExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdMobPlusRNExample.debug.xcconfig"; path = "Target Support Files/Pods-AdMobPlusRNExample/Pods-AdMobPlusRNExample.debug.xcconfig"; sourceTree = "<group>"; };
 		952793EBAE0762A3D42DAFF2 /* Pods-AdMobPlusRNExample-AdMobPlusRNExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdMobPlusRNExample-AdMobPlusRNExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-AdMobPlusRNExample-AdMobPlusRNExampleTests/Pods-AdMobPlusRNExample-AdMobPlusRNExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AC1771B4E97FD11521EEBFD5 /* Pods-AdMobPlusRNExample-AdMobPlusRNExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdMobPlusRNExample-AdMobPlusRNExampleTests.release.xcconfig"; path = "Target Support Files/Pods-AdMobPlusRNExample-AdMobPlusRNExampleTests/Pods-AdMobPlusRNExample-AdMobPlusRNExampleTests.release.xcconfig"; sourceTree = "<group>"; };
+		AE72CD04262DF87100FCC281 /* AdMobPlusRNExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AdMobPlusRNExample-Bridging-Header.h"; sourceTree = "<group>"; };
+		AE72CD05262DF87200FCC281 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = File.swift; path = AdMobPlusRNExample/File.swift; sourceTree = "<group>"; };
 		B916C6E4212F834914879BBA /* libPods-AdMobPlusRNExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AdMobPlusRNExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEDDDDC3A5177CADB6389A25 /* Pods-AdMobPlusRNExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdMobPlusRNExample.release.xcconfig"; path = "Target Support Files/Pods-AdMobPlusRNExample/Pods-AdMobPlusRNExample.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -92,6 +95,8 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				AE72CD05262DF87200FCC281 /* File.swift */,
+				AE72CD04262DF87100FCC281 /* AdMobPlusRNExample-Bridging-Header.h */,
 			);
 			name = AdMobPlusRNExample;
 			sourceTree = "<group>";
@@ -145,7 +150,6 @@
 				952793EBAE0762A3D42DAFF2 /* Pods-AdMobPlusRNExample-AdMobPlusRNExampleTests.debug.xcconfig */,
 				AC1771B4E97FD11521EEBFD5 /* Pods-AdMobPlusRNExample-AdMobPlusRNExampleTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -208,7 +212,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1240;
 					};
 				};
 			};
@@ -412,6 +416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				AE72CD06262DF87200FCC281 /* File.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,6 +436,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 952793EBAE0762A3D42DAFF2 /* Pods-AdMobPlusRNExample-AdMobPlusRNExampleTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -458,6 +464,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AC1771B4E97FD11521EEBFD5 /* Pods-AdMobPlusRNExample-AdMobPlusRNExampleTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = AdMobPlusRNExampleTests/Info.plist;
@@ -498,6 +505,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = AdMobPlusRNExample;
+				SWIFT_OBJC_BRIDGING_HEADER = "AdMobPlusRNExample-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -523,6 +531,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = AdMobPlusRNExample;
+				SWIFT_OBJC_BRIDGING_HEADER = "AdMobPlusRNExample-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
