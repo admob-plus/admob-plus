@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.7.1](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.7.0...admob-plus-cordova@1.7.1) (2021-04-21)
+
+
+### Bug Fixes
+
+* **cordova/ios:** reserve space for statusBarBackgroundView, fix [#310](https://github.com/admob-plus/admob-plus/issues/310) ([0a38db3](https://github.com/admob-plus/admob-plus/commit/0a38db3d59f71280c65438f31c10e36f4951f971))
+
+
+
+
+
 # [1.7.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.6.0...admob-plus-cordova@1.7.0) (2021-04-17)
 
 
