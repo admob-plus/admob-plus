@@ -82,7 +82,13 @@
     "@angular/compiler-cli": {
       "unplugged": true
     },
+    "metro-runtime": {
+      "unplugged": true
+    },
     "native-run": {
+      "unplugged": true
+    },
+    "react-native-codegen": {
       "unplugged": true
     }
   },
