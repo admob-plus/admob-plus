@@ -1,5 +1,6 @@
 import React from 'react'
 import {
+  Button,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -9,14 +10,12 @@ import {
   View,
 } from 'react-native'
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen'
-import AdMob, { InterstitialAd } from '@admob-plus/react-native'
+import { Colors, Header } from 'react-native/Libraries/NewAppScreen'
+import AdMob, {
+  InterstitialAd,
+  RewardedAd,
+  RewardedInterstitialAd,
+} from '@admob-plus/react-native'
 
 const Section: React.FC<{
   title: string
@@ -52,16 +51,7 @@ const App = () => {
   const isDarkMode = useColorScheme() === 'dark'
 
   React.useEffect(() => {
-    AdMob.start()
-      .then(async (x) => {
-        const ad = new InterstitialAd({
-          adUnitId: 'ca-app-pub-3940256099942544/4411468910',
-        })
-        await ad.load()
-        await ad.show()
-        console.log(x)
-      })
-      .catch((err) => console.error(err))
+    AdMob.start().catch((err) => console.error(err))
   }, [])
 
   const backgroundStyle = {
@@ -81,20 +71,36 @@ const App = () => {
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}
         >
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
+          <Button
+            onPress={async () => {
+              const ad = new InterstitialAd({
+                adUnitId: 'ca-app-pub-3940256099942544/4411468910',
+              })
+              await ad.load()
+              await ad.show()
+            }}
+            title="Interstitial Ad"
+          />
+          <Button
+            onPress={async () => {
+              const ad = new RewardedAd({
+                adUnitId: 'ca-app-pub-3940256099942544/5224354917',
+              })
+              await ad.load()
+              await ad.show()
+            }}
+            title="Rewarded Ad"
+          />
+          <Button
+            onPress={async () => {
+              const ad = new RewardedInterstitialAd({
+                adUnitId: 'ca-app-pub-3940256099942544/6978759866',
+              })
+              await ad.load()
+              await ad.show()
+            }}
+            title="Rewarded Interstitial Ad"
+          />
         </View>
       </ScrollView>
     </SafeAreaView>
