@@ -303,6 +303,7 @@ public class Banner extends AdBase implements IAdShow {
             }
         }
 
+        getParentViewWithout(mAdView);
         mRelativeLayout.addView(mAdView, paramsContent);
         mRelativeLayout.bringToFront();
     }
