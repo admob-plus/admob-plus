@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.5.0...@admob-plus/capacitor@1.6.0) (2021-04-29)
+
+
+### Features
+
+* **capacitor/android:** update com.google.android.gms:play-services-ads to 20.0.0 ([ec301d6](https://github.com/admob-plus/admob-plus/commit/ec301d6cb31a72be65b6a34785812e9762e46670))
+* **capacitor/ios:** update Google-Mobile-Ads-SDK to 8.4.0 ([4dbd9b2](https://github.com/admob-plus/admob-plus/commit/4dbd9b26500bfb33a8ec6c3b56d405be003acaac))
+
+
+
+
+
 # [1.5.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.4.2...@admob-plus/capacitor@1.5.0) (2021-04-16)
 
 

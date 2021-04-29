@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.8.1](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.8.0...admob-plus-cordova@1.8.1) (2021-04-29)
+
+
+### Bug Fixes
+
+* **cordova/android:** prevent crash on showing offset banner twice, fix [#319](https://github.com/admob-plus/admob-plus/issues/319) ([5f37940](https://github.com/admob-plus/admob-plus/commit/5f3794038c69b4ea69fec9c169cd101bef361ee5))
+
+
+
+
+
 # [1.8.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.7.1...admob-plus-cordova@1.8.0) (2021-04-23)
 
 
