@@ -7,7 +7,6 @@
     "gen": "./lib/gen/index.js"
   },
   "scripts": {
-    "postinstall": "yarn build",
     "prepack": "yarn build",
     "build": "tsc -b",
     "gen": "ts-node -TH src/gen/index.ts"
@@ -15,7 +14,7 @@
   "dependencies": {
     "@admob-plus-internal/tsconfig": "file:../tsconfig",
     "@admob-plus/capacitor": "file:../../packages/capacitor",
-    "@frat/sane": "^4.2.1",
+    "@frat/sane": "^4.2.2",
     "admob-plus": "file:../../packages/cli",
     "cordova": "^10.0.0",
     "cpy": "^8.1.2",

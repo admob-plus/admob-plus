@@ -4,6 +4,7 @@ import cpy from 'cpy'
 import del from 'del'
 import execa from 'execa'
 import fsp from 'fs/promises'
+import glob from 'fast-glob'
 import path from 'path'
 import readPkg from 'read-pkg'
 import { replaceInFile } from 'replace-in-file'
@@ -213,10 +214,52 @@ const iosOpen = async (opts: { cwd: string }) => {
   await Promise.all(watchTasks.map((f) => f()))
 }
 
+async function startDev(opts: any) {
+  const platform = opts.platform ?? 'ios'
+  const { cwd } = opts
+  const promises: Promise<any>[] = []
+  const openArgs = []
+  const syncDirs: { src: string; dest: string }[] = []
+
+  switch (path.basename(cwd)) {
+    case 'react-native':
+      syncDirs.push({
+        src: pkgsDirJoin('react-native'),
+        dest: path.join(cwd, 'node_modules/@admob-plus/react-native'),
+      })
+
+      promises.push(execa('yarn', ['start'], { stdio: 'inherit', cwd }))
+
+      if (platform === 'android') {
+        openArgs.push('-a', 'Android Studio', 'android')
+      } else {
+        const paths = await glob('ios/*.xcworkspace', {
+          onlyDirectories: true,
+          cwd,
+        })
+        openArgs.push(paths[0])
+      }
+      break
+    default:
+      openArgs.push('.')
+  }
+
+  promises.push(
+    execa('open', openArgs, { stdio: 'inherit', cwd }),
+    ...syncDirs.map(async (o) => {
+      await cpy('**/*', o.dest, { parents: true, cwd: o.src })
+      watchCopy(o.dest, o.src)
+    }),
+  )
+
+  await Promise.all(promises)
+}
+
 const main = () => {
   const cli = yargs
     .option('cwd', { default: process.cwd(), global: true })
     .command('clean', '', {}, clean as any)
+    .command('dev [platform]', '', {}, startDev)
     .command(
       'prepare',
       '',
