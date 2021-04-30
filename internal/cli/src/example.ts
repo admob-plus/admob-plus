@@ -222,6 +222,38 @@ async function startDev(opts: any) {
   const syncDirs: { src: string; dest: string }[] = []
 
   switch (path.basename(cwd)) {
+    case 'cordova': {
+      const name = 'AdmobBasicExample'
+      const pkgName = 'admob-plus-cordova'
+      syncDirs.push(
+        {
+          src: pkgsDirJoin('cordova/src/ios'),
+          dest: path.join(cwd, 'platforms/ios', name, 'Plugins', pkgName),
+        },
+        {
+          src: pkgsDirJoin('cordova/src/ios'),
+          dest: path.join(cwd, 'plugins', pkgName, 'src/ios'),
+        },
+        {
+          src: pkgsDirJoin('cordova/src/android'),
+          dest: path.join(
+            cwd,
+            'platforms/android/app/src/main/java/admob/plugin',
+          ),
+        },
+        {
+          src: pkgsDirJoin('cordova/src/android'),
+          dest: path.join(cwd, 'plugins', pkgName, 'src/android'),
+        },
+      )
+
+      if (platform === 'android') {
+        openArgs.push('-a', 'Android Studio', 'platforms/android')
+      } else {
+        openArgs.push(`platforms/ios/${name}.xcworkspace`)
+      }
+      break
+    }
     case 'react-native':
       syncDirs.push({
         src: pkgsDirJoin('react-native'),
