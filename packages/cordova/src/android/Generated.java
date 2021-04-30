@@ -31,6 +31,7 @@ public final class Generated {
         public static final String BANNER_LOAD = "admob.banner.load";
         public static final String BANNER_LOAD_FAIL = "admob.banner.loadfail";
         public static final String BANNER_OPEN = "admob.banner.open";
+        public static final String BANNER_SIZE = "admob.banner.size";
         public static final String BANNER_SIZE_CHANGE = "admob.banner.sizechange";
         public static final String INTERSTITIAL_DISMISS = "admob.interstitial.dismiss";
         public static final String INTERSTITIAL_IMPRESSION = "admob.interstitial.impression";

@@ -2,10 +2,13 @@ package admob.plugin.ads;
 
 import android.annotation.SuppressLint;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.util.Log;
+import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver.OnPreDrawListener;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
@@ -21,6 +24,7 @@ import com.google.android.gms.ads.LoadAdError;
 import org.apache.cordova.CordovaWebView;
 
 import java.util.Objects;
+import java.util.HashMap;
 
 import admob.plugin.ExecuteContext;
 import admob.plugin.Generated.Events;
@@ -80,6 +84,24 @@ public class Banner extends AdBase implements IAdShow {
         ctx.success();
     }
 
+    private static void runJustBeforeBeingDrawn(final View view, final Runnable runnable) {
+        final OnPreDrawListener preDrawListener = new OnPreDrawListener() {
+            @Override
+            public boolean onPreDraw() {
+                view.getViewTreeObserver().removeOnPreDrawListener(this);
+                runnable.run();
+                return true;
+            }
+        };
+        view.getViewTreeObserver().addOnPreDrawListener(preDrawListener);
+    }
+
+    private int pxToDp(int px) {
+        DisplayMetrics displayMetrics = Resources.getSystem().getDisplayMetrics();
+        int dp = Math.round(px / (displayMetrics.xdpi / DisplayMetrics.DENSITY_DEFAULT));
+        return dp;
+    }
+
     private AdView createBannerView() {
         AdView adView = new AdView(getActivity());
         adView.setAdUnitId(adUnitId);
@@ -111,6 +133,26 @@ public class Banner extends AdBase implements IAdShow {
                     removeBannerView(mAdViewOld);
                     mAdViewOld = null;
                 }
+
+                runJustBeforeBeingDrawn(adView, new Runnable() {
+                    @Override
+                    public void run() {
+
+                        int width = adView.getWidth();
+                        int height = adView.getHeight();
+
+                        emit(Events.BANNER_SIZE, new HashMap<String, Object>() {{
+                            put("size", new HashMap<String, Object>() {{
+                                put("width", pxToDp(width));
+                                put("height", pxToDp(height));
+                                put("widthInPixels", width);
+                                put("heightInPixels", height);
+                            }});
+                        }});
+
+                    }
+                });
+
                 emit(Events.BANNER_LOAD);
             }
 

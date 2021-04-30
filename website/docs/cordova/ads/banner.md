@@ -89,3 +89,22 @@ An ad request has been failed.
 ### `admob.banner.impression`
 
 An ad has been displayed.
+
+### `admob.banner.size`
+
+Event that return the ad size.
+
+```js
+document.addEventListener('admob.banner.size', async (event) => {
+  /* event:
+  {
+    adId: int,
+    size: {
+      width: int,
+      height: int,
+      widthInPixels: int,
+      heightInPixels: int
+    }
+  }*/
+})
+```
