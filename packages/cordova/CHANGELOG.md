@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.8.2](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.8.1...admob-plus-cordova@1.8.2) (2021-04-30)
+
+
+### Bug Fixes
+
+* **cordova/android:** prevent crash, fix [#320](https://github.com/admob-plus/admob-plus/issues/320) ([e5149e7](https://github.com/admob-plus/admob-plus/commit/e5149e7252aa6f66b8e9747839632b8707a79fc3))
+
+
+
+
+
 ## [1.8.1](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.8.0...admob-plus-cordova@1.8.1) (2021-04-29)
 
 

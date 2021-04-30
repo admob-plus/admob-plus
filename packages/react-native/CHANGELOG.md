@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/react-native@1.2.0...@admob-plus/react-native@1.3.0) (2021-04-30)
+
+
+### Features
+
+* **react-native/ios:** implement reward ads ([b40a67a](https://github.com/admob-plus/admob-plus/commit/b40a67a6be6ecb78becfbd895e3e62187b2b8b4f))
+
+
+
+
+
 # [1.2.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/react-native@1.1.1...@admob-plus/react-native@1.2.0) (2021-04-29)
 
 
