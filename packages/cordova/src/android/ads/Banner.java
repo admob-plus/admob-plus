@@ -23,7 +23,6 @@ import org.apache.cordova.CordovaWebView;
 import java.util.Objects;
 
 import admob.plugin.ExecuteContext;
-import admob.plugin.Generated;
 import admob.plugin.Generated.Events;
 
 public class Banner extends AdBase implements IAdShow {
@@ -261,6 +260,7 @@ public class Banner extends AdBase implements IAdShow {
             }
         }
 
+        getParentViewWithout(mAdView);
         if (isPositionTop()) {
             rootLinearLayout.addView(mAdView, 0);
         } else {
