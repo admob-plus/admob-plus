@@ -83,4 +83,46 @@ class AdMobPlusRN: RCTEventEmitter {
             }
         }
     }
+
+    @objc func rewardedLoad(_ opts: NSDictionary,
+                            resolver resolve: @escaping RCTPromiseResolveBlock,
+                            rejecter reject: @escaping RCTPromiseRejectBlock) {
+        let ctx = AMBContext(opts, resolve, reject)
+
+        let ad = ctx.optAd() as? AMBRewarded ?? AMBRewarded(ctx)
+        ad?.load(ctx) ?? ctx.error()
+    }
+
+    @objc func rewardedShow(_ opts: NSDictionary,
+                            resolver resolve: @escaping RCTPromiseResolveBlock,
+                            rejecter reject: @escaping RCTPromiseRejectBlock) {
+        let ctx = AMBContext(opts, resolve, reject)
+
+        DispatchQueue.main.async {
+            if let rewarded = ctx.optAdOrError() as? AMBRewarded {
+                rewarded.show(ctx)
+            }
+        }
+    }
+
+    @objc func rewardedInterstitialLoad(_ opts: NSDictionary,
+                                        resolver resolve: @escaping RCTPromiseResolveBlock,
+                                        rejecter reject: @escaping RCTPromiseRejectBlock) {
+        let ctx = AMBContext(opts, resolve, reject)
+
+        let ad = ctx.optAd() as? AMBRewardedInterstitial ?? AMBRewardedInterstitial(ctx)
+        ad?.load(ctx) ?? ctx.error()
+    }
+
+    @objc func rewardedInterstitialShow(_ opts: NSDictionary,
+                                        resolver resolve: @escaping RCTPromiseResolveBlock,
+                                        rejecter reject: @escaping RCTPromiseRejectBlock) {
+        let ctx = AMBContext(opts, resolve, reject)
+
+        DispatchQueue.main.async {
+            if let rewarded = ctx.optAdOrError() as? AMBRewardedInterstitial {
+                rewarded.show(ctx)
+            }
+        }
+    }
 }
