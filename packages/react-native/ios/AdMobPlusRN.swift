@@ -2,6 +2,8 @@ import GoogleMobileAds
 
 @objc(AdMobPlusRN)
 class AdMobPlusRN: RCTEventEmitter {
+    var hasListeners = false
+
     override init() {
         super.init()
 
@@ -10,6 +12,14 @@ class AdMobPlusRN: RCTEventEmitter {
 
     override func supportedEvents() -> [String] {
         return AMBEvents.allCases.map { $0.rawValue }
+    }
+
+    override func startObserving() {
+        hasListeners = true
+    }
+
+    override func stopObserving() {
+        hasListeners = false
     }
 
     @objc func start(_ resolve: @escaping RCTPromiseResolveBlock,

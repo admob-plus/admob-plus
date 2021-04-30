@@ -68,6 +68,8 @@ class AMBAdBase: NSObject {
         if data != nil {
             d.merge(data!) { (current, _) in current }
         }
-        plugin.sendEvent(withName: name, body: data)
+        if plugin.hasListeners {
+            plugin.sendEvent(withName: name, body: data)
+        }
     }
 }
