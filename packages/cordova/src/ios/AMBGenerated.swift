@@ -11,6 +11,7 @@ struct AMBEvents {
     static let bannerLoad = "admob.banner.load"
     static let bannerLoadFail = "admob.banner.loadfail"
     static let bannerOpen = "admob.banner.open"
+    static let bannerSize = "admob.banner.size"
     static let bannerSizeChange = "admob.banner.sizechange"
     static let interstitialDismiss = "admob.interstitial.dismiss"
     static let interstitialImpression = "admob.interstitial.impression"
