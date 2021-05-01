@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.8.3](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.8.2...admob-plus-cordova@1.8.3) (2021-05-01)
+
+
+### Bug Fixes
+
+* **cordova/ios:** activate constraint only when stack view is added, fix [#323](https://github.com/admob-plus/admob-plus/issues/323) ([d9e3320](https://github.com/admob-plus/admob-plus/commit/d9e3320b9ee8f9f003f2572e9bfeac184376c5d0))
+
+
+
+
+
 ## [1.8.2](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.8.1...admob-plus-cordova@1.8.2) (2021-04-30)
 
 
