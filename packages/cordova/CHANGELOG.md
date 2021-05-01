@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.9.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.8.3...admob-plus-cordova@1.9.0) (2021-05-01)
+
+
+### Bug Fixes
+
+* **cordova/android:** prevent crash, fix [#325](https://github.com/admob-plus/admob-plus/issues/325) ([59acf53](https://github.com/admob-plus/admob-plus/commit/59acf53e7c94519b00fce257ce6c522bf84fba04))
+
+
+### Features
+
+* **cordova/android:** add admob.banner.size event to get banner width/height ([#322](https://github.com/admob-plus/admob-plus/issues/322)) ([237b3ed](https://github.com/admob-plus/admob-plus/commit/237b3ed3e9158e0d0380079113f56277f0a547c9))
+
+
+
+
+
 ## [1.8.3](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.8.2...admob-plus-cordova@1.8.3) (2021-05-01)
 
 
