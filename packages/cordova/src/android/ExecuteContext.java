@@ -67,16 +67,22 @@ public class ExecuteContext {
 
     @Nullable
     public <T extends AdBase> T optAdOrCreate(Class<T> type) {
-        T ad = type.cast(optAd());
-        if (ad == null) {
+        AdBase adOrNull = optAd();
+        if (adOrNull != null) {
             try {
-                ad = type.getDeclaredConstructor(ExecuteContext.class).newInstance(this);
-            } catch (IllegalAccessException | InstantiationException | InvocationTargetException | NoSuchMethodException e) {
-                e.printStackTrace();
-                this.error("Fail to create ad");
+                return type.cast(adOrNull);
+            } catch (ClassCastException e) {
+                this.error("Wrong ad type");
+                return null;
             }
         }
-        return ad;
+        try {
+            return type.getDeclaredConstructor(ExecuteContext.class).newInstance(this);
+        } catch (IllegalAccessException | InstantiationException | InvocationTargetException | NoSuchMethodException e) {
+            e.printStackTrace();
+            this.error("Fail to create ad");
+        }
+        return null;
     }
 
     @Nullable
