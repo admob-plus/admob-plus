@@ -90,6 +90,7 @@ An ad request has been failed.
 
 An ad has been displayed.
 
+<!--
 ### `admob.banner.size`
 
 Event that return the ad size.
@@ -108,3 +109,4 @@ document.addEventListener('admob.banner.size', async (event) => {
   }*/
 })
 ```
+-->
