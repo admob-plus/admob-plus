@@ -4,7 +4,6 @@ title: "admob-plus-cordova"
 slug: "/cordova/api"
 sidebar_label: "Table of contents"
 custom_edit_url: null
-hide_title: true
 ---
 
 # admob-plus-cordova
@@ -52,10 +51,10 @@ Renames and exports: [AdMob](classes/admob.md)
 
 #### Type declaration:
 
-Name | Type |
-:------ | :------ |
-`adUnitId` | *string* |
-`npa`? | *1* |
+| Name | Type |
+| :------ | :------ |
+| `adUnitId` | *string* |
+| `npa?` | ``"1"`` |
 
 Defined in: api.ts:4
 
@@ -67,11 +66,11 @@ ___
 
 #### Type declaration:
 
-Name | Type |
-:------ | :------ |
-`maxAdContentRating`? | [*MaxAdContentRating*](enums/maxadcontentrating.md) |
-`tagForChildDirectedTreatment`? | *boolean* \| *null* |
-`tagForUnderAgeOfConsent`? | *boolean* \| *null* |
-`testDeviceIds`? | *string*[] |
+| Name | Type |
+| :------ | :------ |
+| `maxAdContentRating?` | [*MaxAdContentRating*](enums/maxadcontentrating.md) |
+| `tagForChildDirectedTreatment?` | *boolean* \| ``null`` |
+| `tagForUnderAgeOfConsent?` | *boolean* \| ``null`` |
+| `testDeviceIds?` | *string*[] |
 
 Defined in: api.ts:40

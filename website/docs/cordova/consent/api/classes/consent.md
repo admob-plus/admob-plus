@@ -3,7 +3,6 @@ id: "consent"
 title: "Class: Consent"
 sidebar_label: "Consent"
 custom_edit_url: null
-hide_title: true
 ---
 
 # Class: Consent
@@ -80,9 +79,9 @@ ___
 
 #### Parameters:
 
-Name | Type | Default value |
-:------ | :------ | :------ |
-`opts` | RequestInfoUpdateOptions | {} |
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `opts` | RequestInfoUpdateOptions | {} |
 
 **Returns:** *Promise*<unknown\>
 

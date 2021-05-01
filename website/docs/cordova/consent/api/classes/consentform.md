@@ -3,7 +3,6 @@ id: "consentform"
 title: "Class: ConsentForm"
 sidebar_label: "ConsentForm"
 custom_edit_url: null
-hide_title: true
 ---
 
 # Class: ConsentForm
@@ -16,9 +15,9 @@ hide_title: true
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`id` | *number* |
+| Name | Type |
+| :------ | :------ |
+| `id` | *number* |
 
 **Returns:** [*ConsentForm*](consentform.md)
 

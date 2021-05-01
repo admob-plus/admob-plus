@@ -3,7 +3,6 @@ id: "rewardedad"
 title: "Class: RewardedAd"
 sidebar_label: "RewardedAd"
 custom_edit_url: null
-hide_title: true
 ---
 
 # Class: RewardedAd
@@ -22,9 +21,9 @@ hide_title: true
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`opts` | [*RewardedAdOptions*](../interfaces/rewardedadoptions.md) |
+| Name | Type |
+| :------ | :------ |
+| `opts` | [*RewardedAdOptions*](../interfaces/rewardedadoptions.md) |
 
 **Returns:** [*RewardedAd*](rewardedad.md)
 

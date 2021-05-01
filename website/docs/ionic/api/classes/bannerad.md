@@ -3,7 +3,6 @@ id: "bannerad"
 title: "Class: BannerAd"
 sidebar_label: "BannerAd"
 custom_edit_url: null
-hide_title: true
 ---
 
 # Class: BannerAd
@@ -16,7 +15,7 @@ hide_title: true
 
 ## Implements
 
-* *Omit*<IBannerAd, *opts*\>
+* *Omit*<IBannerAd, ``"opts"``\>
 
 ## Constructors
 
@@ -26,9 +25,9 @@ hide_title: true
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`opts` | *BannerAdOptions* |
+| Name | Type |
+| :------ | :------ |
+| `opts` | *BannerAdOptions* |
 
 **Returns:** [*BannerAd*](bannerad.md)
 

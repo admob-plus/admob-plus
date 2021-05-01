@@ -3,7 +3,6 @@ id: "rewardedinterstitialad"
 title: "Class: RewardedInterstitialAd"
 sidebar_label: "RewardedInterstitialAd"
 custom_edit_url: null
-hide_title: true
 ---
 
 # Class: RewardedInterstitialAd
@@ -22,9 +21,9 @@ hide_title: true
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`__namedParameters` | MobileAdOptions |
+| Name | Type |
+| :------ | :------ |
+| `__namedParameters` | MobileAdOptions |
 
 **Returns:** [*RewardedInterstitialAd*](rewardedinterstitialad.md)
 

@@ -3,7 +3,6 @@ id: "rewardedadoptions"
 title: "Interface: RewardedAdOptions"
 sidebar_label: "RewardedAdOptions"
 custom_edit_url: null
-hide_title: true
 ---
 
 # Interface: RewardedAdOptions
@@ -30,7 +29,7 @@ ___
 
 ### npa
 
-• `Optional` **npa**: *1*
+• `Optional` **npa**: ``"1"``
 
 Inherited from: MobileAdOptions.npa
 

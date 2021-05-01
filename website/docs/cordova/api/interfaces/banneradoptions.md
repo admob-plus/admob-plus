@@ -3,7 +3,6 @@ id: "banneradoptions"
 title: "Interface: BannerAdOptions"
 sidebar_label: "BannerAdOptions"
 custom_edit_url: null
-hide_title: true
 ---
 
 # Interface: BannerAdOptions
@@ -28,7 +27,7 @@ ___
 
 ### npa
 
-• `Optional` **npa**: *1*
+• `Optional` **npa**: ``"1"``
 
 Inherited from: MobileAdOptions.npa
 

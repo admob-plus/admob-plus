@@ -3,7 +3,6 @@ id: "platforms"
 title: "Enumeration: Platforms"
 sidebar_label: "Platforms"
 custom_edit_url: null
-hide_title: true
 ---
 
 # Enumeration: Platforms

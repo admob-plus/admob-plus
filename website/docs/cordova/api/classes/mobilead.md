@@ -3,7 +3,6 @@ id: "mobilead"
 title: "Class: MobileAd<T>"
 sidebar_label: "MobileAd"
 custom_edit_url: null
-hide_title: true
 ---
 
 # Class: MobileAd<T\>
@@ -12,9 +11,9 @@ hide_title: true
 
 ## Type parameters
 
-Name | Type | Default |
-:------ | :------ | :------ |
-`T` | [*MobileAdOptions*](../index.md#mobileadoptions) | [*MobileAdOptions*](../index.md#mobileadoptions) |
+| Name | Type | Default |
+| :------ | :------ | :------ |
+| `T` | [*MobileAdOptions*](../index.md#mobileadoptions) | [*MobileAdOptions*](../index.md#mobileadoptions) |
 
 ## Hierarchy
 
@@ -36,15 +35,15 @@ Name | Type | Default |
 
 #### Type parameters:
 
-Name | Type | Default |
-:------ | :------ | :------ |
-`T` | [*MobileAdOptions*](../index.md#mobileadoptions) | [*MobileAdOptions*](../index.md#mobileadoptions) |
+| Name | Type | Default |
+| :------ | :------ | :------ |
+| `T` | [*MobileAdOptions*](../index.md#mobileadoptions) | [*MobileAdOptions*](../index.md#mobileadoptions) |
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`opts` | T |
+| Name | Type |
+| :------ | :------ |
+| `opts` | T |
 
 **Returns:** [*MobileAd*](mobilead.md)<T\>
 

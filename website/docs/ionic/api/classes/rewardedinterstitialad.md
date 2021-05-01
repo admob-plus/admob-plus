@@ -3,7 +3,6 @@ id: "rewardedinterstitialad"
 title: "Class: RewardedInterstitialAd"
 sidebar_label: "RewardedInterstitialAd"
 custom_edit_url: null
-hide_title: true
 ---
 
 # Class: RewardedInterstitialAd
@@ -16,7 +15,7 @@ hide_title: true
 
 ## Implements
 
-* *Omit*<IRewardedInterstitialAd, *opts*\>
+* *Omit*<IRewardedInterstitialAd, ``"opts"``\>
 
 ## Constructors
 
@@ -26,9 +25,9 @@ hide_title: true
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`opts` | *RewardedInterstitialAdOptions* |
+| Name | Type |
+| :------ | :------ |
+| `opts` | *RewardedInterstitialAdOptions* |
 
 **Returns:** [*RewardedInterstitialAd*](rewardedinterstitialad.md)
 

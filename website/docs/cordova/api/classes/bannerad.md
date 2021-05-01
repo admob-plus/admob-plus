@@ -3,7 +3,6 @@ id: "bannerad"
 title: "Class: BannerAd"
 sidebar_label: "BannerAd"
 custom_edit_url: null
-hide_title: true
 ---
 
 # Class: BannerAd
@@ -22,9 +21,9 @@ hide_title: true
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`opts` | [*BannerAdOptions*](../interfaces/banneradoptions.md) |
+| Name | Type |
+| :------ | :------ |
+| `opts` | [*BannerAdOptions*](../interfaces/banneradoptions.md) |
 
 **Returns:** [*BannerAd*](bannerad.md)
 
@@ -104,17 +103,17 @@ ___
 
 ### config
 
-▸ `Static`**config**(`opts`: { `backgroundColor?`: *string* ; `marginBottom?`: *number* ; `marginTop?`: *number*  }): *false* \| *Promise*<unknown\>
+▸ `Static`**config**(`opts`: { `backgroundColor?`: *string* ; `marginBottom?`: *number* ; `marginTop?`: *number*  }): ``false`` \| *Promise*<unknown\>
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`opts` | *object* |
-`opts.backgroundColor?` | *string* |
-`opts.marginBottom?` | *number* |
-`opts.marginTop?` | *number* |
+| Name | Type |
+| :------ | :------ |
+| `opts` | *object* |
+| `opts.backgroundColor?` | *string* |
+| `opts.marginBottom?` | *number* |
+| `opts.marginTop?` | *number* |
 
-**Returns:** *false* \| *Promise*<unknown\>
+**Returns:** ``false`` \| *Promise*<unknown\>
 
 Defined in: banner.ts:56

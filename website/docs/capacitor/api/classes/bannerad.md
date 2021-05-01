@@ -3,7 +3,6 @@ id: "bannerad"
 title: "Class: BannerAd"
 sidebar_label: "BannerAd"
 custom_edit_url: null
-hide_title: true
 ---
 
 # Class: BannerAd
@@ -22,13 +21,13 @@ hide_title: true
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`opts` | [*BannerAdOptions*](../interfaces/banneradoptions.md) |
+| Name | Type |
+| :------ | :------ |
+| `opts` | [*BannerAdOptions*](../interfaces/banneradoptions.md) |
 
 **Returns:** [*BannerAd*](bannerad.md)
 
-Overrides: MobileAd&lt;BannerAdOptions&gt;.constructor
+Overrides: MobileAd&lt;BannerAdOptions\&gt;.constructor
 
 Defined in: index.ts:41
 

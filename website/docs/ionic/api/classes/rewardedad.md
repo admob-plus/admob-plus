@@ -3,7 +3,6 @@ id: "rewardedad"
 title: "Class: RewardedAd"
 sidebar_label: "RewardedAd"
 custom_edit_url: null
-hide_title: true
 ---
 
 # Class: RewardedAd
@@ -16,7 +15,7 @@ hide_title: true
 
 ## Implements
 
-* *Omit*<IRewardedAd, *opts*\>
+* *Omit*<IRewardedAd, ``"opts"``\>
 
 ## Constructors
 
@@ -26,9 +25,9 @@ hide_title: true
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`opts` | *RewardedAdOptions* |
+| Name | Type |
+| :------ | :------ |
+| `opts` | *RewardedAdOptions* |
 
 **Returns:** [*RewardedAd*](rewardedad.md)
 

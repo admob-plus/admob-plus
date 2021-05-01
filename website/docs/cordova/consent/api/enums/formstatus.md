@@ -3,7 +3,6 @@ id: "formstatus"
 title: "Enumeration: FormStatus"
 sidebar_label: "FormStatus"
 custom_edit_url: null
-hide_title: true
 ---
 
 # Enumeration: FormStatus

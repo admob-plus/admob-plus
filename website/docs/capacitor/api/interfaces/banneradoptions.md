@@ -3,7 +3,6 @@ id: "banneradoptions"
 title: "Interface: BannerAdOptions"
 sidebar_label: "BannerAdOptions"
 custom_edit_url: null
-hide_title: true
 ---
 
 # Interface: BannerAdOptions

@@ -3,7 +3,6 @@ id: "serversideverificationoptions"
 title: "Interface: ServerSideVerificationOptions"
 sidebar_label: "ServerSideVerificationOptions"
 custom_edit_url: null
-hide_title: true
 ---
 
 # Interface: ServerSideVerificationOptions

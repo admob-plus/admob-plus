@@ -3,7 +3,6 @@ id: "admobplusplugin"
 title: "Interface: AdMobPlusPlugin"
 sidebar_label: "AdMobPlusPlugin"
 custom_edit_url: null
-hide_title: true
 ---
 
 # Interface: AdMobPlusPlugin
@@ -16,10 +15,10 @@ hide_title: true
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`opts` | *object* |
-`opts.id` | *number* |
+| Name | Type |
+| :------ | :------ |
+| `opts` | *object* |
+| `opts.id` | *number* |
 
 **Returns:** *Promise*<void\>
 
@@ -29,16 +28,16 @@ ___
 
 ### bannerShow
 
-▸ **bannerShow**(`opts`: { `adUnitId`: *string* ; `id`: *number* ; `position?`: *top* \| *bottom*  }): *Promise*<void\>
+▸ **bannerShow**(`opts`: { `adUnitId`: *string* ; `id`: *number* ; `position?`: ``"top"`` \| ``"bottom"``  }): *Promise*<void\>
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`opts` | *object* |
-`opts.adUnitId` | *string* |
-`opts.id` | *number* |
-`opts.position?` | *top* \| *bottom* |
+| Name | Type |
+| :------ | :------ |
+| `opts` | *object* |
+| `opts.adUnitId` | *string* |
+| `opts.id` | *number* |
+| `opts.position?` | ``"top"`` \| ``"bottom"`` |
 
 **Returns:** *Promise*<void\>
 
@@ -52,9 +51,9 @@ ___
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`requestConfig` | [*RequestConfig*](../index.md#requestconfig) |
+| Name | Type |
+| :------ | :------ |
+| `requestConfig` | [*RequestConfig*](../index.md#requestconfig) |
 
 **Returns:** *Promise*<void\>
 
@@ -68,9 +67,9 @@ ___
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`config` | [*AdMobConfig*](../index.md#admobconfig) |
+| Name | Type |
+| :------ | :------ |
+| `config` | [*AdMobConfig*](../index.md#admobconfig) |
 
 **Returns:** *Promise*<void\>
 
@@ -84,11 +83,11 @@ ___
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`opts` | *object* |
-`opts.adUnitId` | *string* |
-`opts.id` | *number* |
+| Name | Type |
+| :------ | :------ |
+| `opts` | *object* |
+| `opts.adUnitId` | *string* |
+| `opts.id` | *number* |
 
 **Returns:** *Promise*<void\>
 
@@ -102,10 +101,10 @@ ___
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`opts` | *object* |
-`opts.id` | *number* |
+| Name | Type |
+| :------ | :------ |
+| `opts` | *object* |
+| `opts.id` | *number* |
 
 **Returns:** *Promise*<void\>
 
@@ -119,11 +118,11 @@ ___
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`opts` | *object* |
-`opts.adUnitId` | *string* |
-`opts.id` | *number* |
+| Name | Type |
+| :------ | :------ |
+| `opts` | *object* |
+| `opts.adUnitId` | *string* |
+| `opts.id` | *number* |
 
 **Returns:** *Promise*<void\>
 
@@ -137,10 +136,10 @@ ___
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`opts` | *object* |
-`opts.id` | *number* |
+| Name | Type |
+| :------ | :------ |
+| `opts` | *object* |
+| `opts.id` | *number* |
 
 **Returns:** *Promise*<void\>
 
@@ -154,11 +153,11 @@ ___
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`opts` | *object* |
-`opts.adUnitId` | *string* |
-`opts.id` | *number* |
+| Name | Type |
+| :------ | :------ |
+| `opts` | *object* |
+| `opts.adUnitId` | *string* |
+| `opts.id` | *number* |
 
 **Returns:** *Promise*<void\>
 
@@ -172,10 +171,10 @@ ___
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`opts` | *object* |
-`opts.id` | *number* |
+| Name | Type |
+| :------ | :------ |
+| `opts` | *object* |
+| `opts.id` | *number* |
 
 **Returns:** *Promise*<void\>
 

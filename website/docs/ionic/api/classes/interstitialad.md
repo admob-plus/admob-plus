@@ -3,7 +3,6 @@ id: "interstitialad"
 title: "Class: InterstitialAd"
 sidebar_label: "InterstitialAd"
 custom_edit_url: null
-hide_title: true
 ---
 
 # Class: InterstitialAd
@@ -16,7 +15,7 @@ hide_title: true
 
 ## Implements
 
-* *Omit*<IInterstitialAd, *opts*\>
+* *Omit*<IInterstitialAd, ``"opts"``\>
 
 ## Constructors
 
@@ -26,10 +25,10 @@ hide_title: true
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`opts` | *object* |
-`opts.adUnitId` | *string* |
+| Name | Type |
+| :------ | :------ |
+| `opts` | *object* |
+| `opts.adUnitId` | *string* |
 
 **Returns:** [*InterstitialAd*](interstitialad.md)
 

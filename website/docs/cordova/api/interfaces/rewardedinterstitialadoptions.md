@@ -3,7 +3,6 @@ id: "rewardedinterstitialadoptions"
 title: "Interface: RewardedInterstitialAdOptions"
 sidebar_label: "RewardedInterstitialAdOptions"
 custom_edit_url: null
-hide_title: true
 ---
 
 # Interface: RewardedInterstitialAdOptions
@@ -28,7 +27,7 @@ ___
 
 ### npa
 
-• `Optional` **npa**: *1*
+• `Optional` **npa**: ``"1"``
 
 Inherited from: [RewardedAdOptions](rewardedadoptions.md).[npa](rewardedadoptions.md#npa)
 

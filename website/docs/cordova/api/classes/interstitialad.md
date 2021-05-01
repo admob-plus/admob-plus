@@ -3,7 +3,6 @@ id: "interstitialad"
 title: "Class: InterstitialAd"
 sidebar_label: "InterstitialAd"
 custom_edit_url: null
-hide_title: true
 ---
 
 # Class: InterstitialAd
@@ -22,9 +21,9 @@ hide_title: true
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`opts` | [*MobileAdOptions*](../index.md#mobileadoptions) |
+| Name | Type |
+| :------ | :------ |
+| `opts` | [*MobileAdOptions*](../index.md#mobileadoptions) |
 
 **Returns:** [*InterstitialAd*](interstitialad.md)
 

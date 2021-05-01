@@ -3,7 +3,6 @@ id: "admob"
 title: "Class: AdMob"
 sidebar_label: "AdMob"
 custom_edit_url: null
-hide_title: true
 ---
 
 # Class: AdMob
@@ -16,7 +15,7 @@ hide_title: true
 
 ## Implements
 
-* *Omit*<IAdMob, *BannerAd* \| *Events* \| *InterstitialAd* \| *RewardedAd* \| *RewardedInterstitialAd* \| *TrackingAuthorizationStatus*\>
+* *Omit*<IAdMob, ``"BannerAd"`` \| ``"Events"`` \| ``"InterstitialAd"`` \| ``"RewardedAd"`` \| ``"RewardedInterstitialAd"`` \| ``"TrackingAuthorizationStatus"``\>
 
 ## Constructors
 
@@ -128,9 +127,9 @@ Defined in: ionic/src/index.ts:188
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`...opts` | [requestConfig: RequestConfig] |
+| Name | Type |
+| :------ | :------ |
+| `...opts` | [requestConfig: RequestConfig] |
 
 **Returns:** *Promise*<unknown\>
 
@@ -146,9 +145,9 @@ ___
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`event` | *string* |
+| Name | Type |
+| :------ | :------ |
+| `event` | *string* |
 
 **Returns:** *Observable*<any\>
 
@@ -158,9 +157,9 @@ ___
 
 ### requestTrackingAuthorization
 
-▸ **requestTrackingAuthorization**(): *Promise*<*false* \| [*TrackingAuthorizationStatus*](../enums/trackingauthorizationstatus.md)\>
+▸ **requestTrackingAuthorization**(): *Promise*<``false`` \| [*TrackingAuthorizationStatus*](../enums/trackingauthorizationstatus.md)\>
 
-**Returns:** *Promise*<*false* \| [*TrackingAuthorizationStatus*](../enums/trackingauthorizationstatus.md)\>
+**Returns:** *Promise*<``false`` \| [*TrackingAuthorizationStatus*](../enums/trackingauthorizationstatus.md)\>
 
 Implementation of: Omit.requestTrackingAuthorization
 
@@ -174,9 +173,9 @@ ___
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`...opts` | [value: boolean] |
+| Name | Type |
+| :------ | :------ |
+| `...opts` | [value: boolean] |
 
 **Returns:** *Promise*<unknown\>
 
@@ -192,9 +191,9 @@ ___
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`...opts` | [value: number] |
+| Name | Type |
+| :------ | :------ |
+| `...opts` | [value: number] |
 
 **Returns:** *Promise*<unknown\>
 

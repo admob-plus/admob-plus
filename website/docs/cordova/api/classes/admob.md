@@ -3,7 +3,6 @@ id: "admob"
 title: "Class: AdMob"
 sidebar_label: "AdMob"
 custom_edit_url: null
-hide_title: true
 ---
 
 # Class: AdMob
@@ -74,9 +73,9 @@ Defined in: index.ts:39
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`requestConfig` | [*RequestConfig*](../index.md#requestconfig) |
+| Name | Type |
+| :------ | :------ |
+| `requestConfig` | [*RequestConfig*](../index.md#requestconfig) |
 
 **Returns:** *Promise*<unknown\>
 
@@ -86,9 +85,9 @@ ___
 
 ### requestTrackingAuthorization
 
-▸ **requestTrackingAuthorization**(): *Promise*<*false* \| [*TrackingAuthorizationStatus*](../enums/trackingauthorizationstatus.md)\>
+▸ **requestTrackingAuthorization**(): *Promise*<``false`` \| [*TrackingAuthorizationStatus*](../enums/trackingauthorizationstatus.md)\>
 
-**Returns:** *Promise*<*false* \| [*TrackingAuthorizationStatus*](../enums/trackingauthorizationstatus.md)\>
+**Returns:** *Promise*<``false`` \| [*TrackingAuthorizationStatus*](../enums/trackingauthorizationstatus.md)\>
 
 Defined in: index.ts:61
 
@@ -100,9 +99,9 @@ ___
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`value` | *boolean* |
+| Name | Type |
+| :------ | :------ |
+| `value` | *boolean* |
 
 **Returns:** *Promise*<unknown\>
 
@@ -116,9 +115,9 @@ ___
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`value` | *number* |
+| Name | Type |
+| :------ | :------ |
+| `value` | *number* |
 
 **Returns:** *Promise*<unknown\>
 

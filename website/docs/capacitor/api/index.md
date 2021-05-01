@@ -4,7 +4,6 @@ title: "@admob-plus/capacitor"
 slug: "/capacitor/api"
 sidebar_label: "Table of contents"
 custom_edit_url: null
-hide_title: true
 ---
 
 # @admob-plus/capacitor
@@ -35,10 +34,10 @@ hide_title: true
 
 #### Type declaration:
 
-Name | Type |
-:------ | :------ |
-`appMuted`? | *boolean* |
-`appVolume`? | *number* |
+| Name | Type |
+| :------ | :------ |
+| `appMuted?` | *boolean* |
+| `appVolume?` | *number* |
 
 Defined in: definitions.ts:9
 
@@ -50,12 +49,12 @@ ___
 
 #### Type declaration:
 
-Name | Type |
-:------ | :------ |
-`maxAdContentRating`? | [*MaxAdContentRating*](enums/maxadcontentrating.md) |
-`tagForChildDirectedTreatment`? | *boolean* \| *null* |
-`tagForUnderAgeOfConsent`? | *boolean* \| *null* |
-`testDeviceIds`? | *string*[] |
+| Name | Type |
+| :------ | :------ |
+| `maxAdContentRating?` | [*MaxAdContentRating*](enums/maxadcontentrating.md) |
+| `tagForChildDirectedTreatment?` | *boolean* \| ``null`` |
+| `tagForUnderAgeOfConsent?` | *boolean* \| ``null`` |
+| `testDeviceIds?` | *string*[] |
 
 Defined in: definitions.ts:14
 

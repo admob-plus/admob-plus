@@ -3,7 +3,6 @@ id: "events"
 title: "Enumeration: Events"
 sidebar_label: "Events"
 custom_edit_url: null
-hide_title: true
 ---
 
 # Enumeration: Events

@@ -3,7 +3,6 @@ id: "nativeactions"
 title: "Enumeration: NativeActions"
 sidebar_label: "NativeActions"
 custom_edit_url: null
-hide_title: true
 ---
 
 # Enumeration: NativeActions

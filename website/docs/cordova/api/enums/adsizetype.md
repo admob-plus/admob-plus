@@ -3,7 +3,6 @@ id: "adsizetype"
 title: "Enumeration: AdSizeType"
 sidebar_label: "AdSizeType"
 custom_edit_url: null
-hide_title: true
 ---
 
 # Enumeration: AdSizeType

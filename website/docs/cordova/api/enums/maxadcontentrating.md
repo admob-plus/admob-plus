@@ -3,7 +3,6 @@ id: "maxadcontentrating"
 title: "Enumeration: MaxAdContentRating"
 sidebar_label: "MaxAdContentRating"
 custom_edit_url: null
-hide_title: true
 ---
 
 # Enumeration: MaxAdContentRating
