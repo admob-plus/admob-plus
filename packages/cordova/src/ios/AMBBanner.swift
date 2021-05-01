@@ -99,7 +99,7 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
 
     private static func updateLayout() {
         if let barView = Self.statusBarBackgroundView,
-           !barView.isHidden {
+           !barView.isHidden && rootView.subviews.contains(stackView) {
             NSLayoutConstraint.activate([
                 stackView.topAnchor.constraint(equalTo: barView.bottomAnchor, constant: Self.marginTop ?? 0)
             ])
