@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "2.0.0-alpha.75",
+    "@types/node": "^15.0.1",
     "cordova-common": "^4.0.2",
     "docusaurus-plugin-typedoc": "^0.13.0",
     "eslint-config-concise-esnext": "^0.40.1",

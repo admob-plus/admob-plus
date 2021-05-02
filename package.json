@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "postinstall": "is-ci || lefthook install",
+    "postinstall": "run-s 'postinstall:*'",
+    "postinstall:lefthook": "is-ci || lefthook install",
+    "postinstall:ts": "is-ci && tsc -b --verbose",
     "prepare": "lerna run prepare",
     "prepublishOnly": "del '*.tsbuildinfo' 'packages/*/*.tsbuildinfo'",
     "test": "run-s 'test:*'",
