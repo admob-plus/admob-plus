@@ -124,6 +124,7 @@ jobs:
           echo "/usr/local/lib/android/sdk/platform-tools" >> $GITHUB_PATH
           echo "/usr/local/lib/android/sdk/tools" >> $GITHUB_PATH
           yarn
+          yarn workspace 'pkg-proxy' build
           yarn workspace '@admob-plus-internal/cli' prepack
           yarn workspace '@admob-plus-internal/rollup-config' prepack
           pushd examples/cordova
