@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.14](https://github.com/admob-plus/admob-plus/compare/@admob-plus/ionic@1.1.13...@admob-plus/ionic@1.1.14) (2021-05-02)
+
+**Note:** Version bump only for package @admob-plus/ionic
+
+
+
+
+
 ## [1.1.13](https://github.com/admob-plus/admob-plus/compare/@admob-plus/ionic@1.1.12...@admob-plus/ionic@1.1.13) (2021-05-01)
 
 **Note:** Version bump only for package @admob-plus/ionic
