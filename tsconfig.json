@@ -1,6 +1,7 @@
 {
   "extends": "@admob-plus-internal/tsconfig",
   "compilerOptions": {
+    "esModuleInterop": true,
     "suppressImplicitAnyIndexErrors": true
   },
   "references": [
@@ -11,6 +12,7 @@
     { "path": "packages/cordova" },
     { "path": "packages/ionic" },
     { "path": "packages/ionic/tsconfig.build.json" },
+    { "path": "packages/pkg-proxy" },
     { "path": "packages/react-native" },
     { "path": "website" }
   ],

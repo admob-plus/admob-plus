@@ -1,0 +1,33 @@
+{
+  "name": "pkg-proxy",
+  "description": "Query package.json without boilerplate",
+  "version": "0.0.0",
+  "dependencies": {
+    "escalade": "^3.1.1",
+    "fs-extra": "^9.1.0",
+    "types-package-json": "^2.0.39"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^9.0.11",
+    "@types/node": "^15.0.1",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "files": [
+    "/lib",
+    "/src"
+  ],
+  "author": "Ratson",
+  "license": "MIT",
+  "repository": "admob-plus/admob-plus",
+  "main": "lib/index.js",
+  "scripts": {
+    "prepublishOnly": "yarn build",
+    "build": "tsc -b",
+    "test": "tsc --noEmit"
+  },
+  "types": "lib/index.d.ts"
+}
