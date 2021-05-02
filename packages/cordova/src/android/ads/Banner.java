@@ -250,6 +250,7 @@ public class Banner extends AdBase implements IAdShow {
         }
         if (mAdViewOld != null) {
             removeBannerView(mAdViewOld);
+            mAdViewOld = null;
         }
         if (mRelativeLayout != null) {
             getParentViewWithout(mRelativeLayout);
