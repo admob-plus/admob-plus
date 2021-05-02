@@ -11,7 +11,6 @@
     { "path": "packages/cordova-consent" },
     { "path": "packages/cordova" },
     { "path": "packages/ionic" },
-    { "path": "packages/ionic/tsconfig.build.json" },
     { "path": "packages/pkg-proxy" },
     { "path": "packages/react-native" },
     { "path": "website" }

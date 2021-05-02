@@ -9,7 +9,7 @@
     "noImplicitAny": true,
     "module": "es2015",
     "moduleResolution": "node",
-    "outDir": "ngx",
+    "outDir": "build",
     "rootDir": "src",
     "target": "es5",
     "skipLibCheck": true,
