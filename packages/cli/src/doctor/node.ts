@@ -7,7 +7,7 @@ import { Ctx } from './listr'
 
 export { PackageJson }
 
-export const readPackageJson = async (filename: string) => {
+export const readPackageJson = async (filename = 'package.json') => {
   let pkg: PackageJson
   try {
     pkg = await fse.readJson(filename)

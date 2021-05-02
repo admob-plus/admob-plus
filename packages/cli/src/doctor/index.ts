@@ -20,7 +20,7 @@ const taskConnection: ListrTask = {
 }
 
 export default async () => {
-  const pkg = await readPackageJson('package.json')
+  const pkg = await readPackageJson()
   const ctx: Ctx = { pkg, swiftVersion: '5.3' }
 
   const tasks = new Listr<Ctx>(
