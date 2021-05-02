@@ -15,7 +15,14 @@ cordova plugin add cordova-plugin-consent
 ```js
 document.addEventListener('deviceready', async () => {
   if (cordova.platformId === 'ios') {
-    await admob.requestTrackingAuthorization()
+    const trackingAuthorizationStatus = await admob.requestTrackingAuthorization()
+    /*
+      trackingAuthorizationStatus:
+      0 = notDetermined
+      1 = restricted
+      2 = denied
+      3 = authorized
+    */
   }
 
   const consentStatus = await consent.getConsentStatus()
@@ -44,6 +51,7 @@ new admob.BannerAd({
 
 ## References
 
+- [TrackingAuthorizationStatus](../api/enums/trackingauthorizationstatus.md)
 - [UMP SDK for Android](https://developers.google.com/admob/ump/android/quick-start)
 - [UMP SDK for iOS](https://developers.google.com/admob/ump/ios/quick-start)
 - [AppTrackingTransparency Framework](https://developer.apple.com/documentation/apptrackingtransparency)
