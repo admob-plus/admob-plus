@@ -1,8 +1,8 @@
 import { ListrBaseClassOptions } from 'listr2'
-import { PackageJson } from 'type-fest'
+import { Pkg } from 'pkg-proxy'
 
 export interface Ctx {
-  pkg?: PackageJson
+  pkg?: Pkg
   swiftVersion: string
 }
 

@@ -1,9 +1,11 @@
+import assert from 'assert'
 import got from 'got'
 import { Listr, ListrTask } from 'listr2'
+import findPkg from 'pkg-proxy'
 import taskCocoapods from './cocoapods'
 import tasksCordova from './cordova'
 import { Ctx, options as listrOptions } from './listr'
-import tasksNode, { readPackageJson } from './node'
+import tasksNode from './node'
 
 const taskConnection: ListrTask = {
   async task(_ctx, task) {
@@ -20,7 +22,8 @@ const taskConnection: ListrTask = {
 }
 
 export default async () => {
-  const pkg = await readPackageJson()
+  const pkg = await findPkg()
+  assert(pkg)
   const ctx: Ctx = { pkg, swiftVersion: '5.3' }
 
   const tasks = new Listr<Ctx>(

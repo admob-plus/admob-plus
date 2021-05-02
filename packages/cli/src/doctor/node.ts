@@ -1,21 +1,7 @@
-import fse from 'fs-extra'
 import { ListrTask } from 'listr2'
 import _ from 'lodash'
-import { PackageJson } from 'type-fest'
 import { testAppIds } from './admob'
 import { Ctx } from './listr'
-
-export { PackageJson }
-
-export const readPackageJson = async (filename = 'package.json') => {
-  let pkg: PackageJson
-  try {
-    pkg = await fse.readJson(filename)
-  } catch {
-    return
-  }
-  return pkg
-}
 
 export default [
   {

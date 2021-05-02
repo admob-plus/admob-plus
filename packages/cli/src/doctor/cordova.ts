@@ -5,10 +5,10 @@ import glob from 'fast-glob'
 import yaml from 'js-yaml'
 import { ListrTask } from 'listr2'
 import _ from 'lodash'
+import findPkg, { PackageJson } from 'pkg-proxy'
 import semver from 'semver'
 import { collectDependencies } from './android'
 import { Ctx } from './listr'
-import { PackageJson, readPackageJson } from './node'
 
 export type PackageCordovaConfig = {
   cordova?: {
@@ -188,9 +188,7 @@ export default [
   {
     title: 'plugins/admob-plus-cordova/package.json',
     async task(_ctx, task) {
-      const filename = 'plugins/admob-plus-cordova/package.json'
-
-      const pkgCordova = await readPackageJson(filename)
+      const pkgCordova = await findPkg({ cwd: 'plugins/admob-plus-cordova' })
       const pkgLatest = require('admob-plus-cordova/package.json') as PackageJson
       if (!pkgCordova || !pkgCordova.version || !pkgLatest.version) {
         task.skip()
