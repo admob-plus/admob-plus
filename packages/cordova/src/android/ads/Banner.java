@@ -23,7 +23,6 @@ import com.google.android.gms.ads.LoadAdError;
 
 import org.apache.cordova.CordovaWebView;
 
-import java.util.Objects;
 import java.util.HashMap;
 
 import admob.plugin.ExecuteContext;
@@ -52,9 +51,7 @@ public class Banner extends AdBase implements IAdShow {
 
     public static void destroyParentView() {
         ViewGroup vg = getParentView(rootLinearLayout);
-        if (vg != null) {
-            vg.removeAllViews();
-        }
+        if (vg != null) vg.removeAllViews();
         rootLinearLayout = null;
     }
 
@@ -64,11 +61,9 @@ public class Banner extends AdBase implements IAdShow {
     }
 
     @Nullable
-    private static ViewGroup getParentViewWithout(@Nullable View view) {
+    private static ViewGroup removeFromParentView(@Nullable View view) {
         ViewGroup viewParent = getParentView(view);
-        if (viewParent != null) {
-            viewParent.removeView(view);
-        }
+        if (viewParent != null) viewParent.removeView(view);
         return viewParent;
     }
 
@@ -173,7 +168,7 @@ public class Banner extends AdBase implements IAdShow {
         } else {
             ViewGroup wvParentView = getParentView(getWebView());
             if (rootLinearLayout != wvParentView) {
-                getParentViewWithout(rootLinearLayout);
+                removeFromParentView(rootLinearLayout);
                 addBannerView();
             }
         }
@@ -202,9 +197,7 @@ public class Banner extends AdBase implements IAdShow {
         if (mAdRequest == null) return;
 
         pauseBannerViews();
-        if (mAdViewOld != null) {
-            removeBannerView(mAdViewOld);
-        }
+        if (mAdViewOld != null) removeBannerView(mAdViewOld);
         mAdViewOld = mAdView;
 
         mAdView = createBannerView();
@@ -219,9 +212,7 @@ public class Banner extends AdBase implements IAdShow {
     }
 
     private void pauseBannerViews() {
-        if (mAdView != null) {
-            mAdView.pause();
-        }
+        if (mAdView != null) mAdView.pause();
         if (mAdViewOld != null && mAdViewOld != mAdView) {
             mAdViewOld.pause();
         }
@@ -234,12 +225,8 @@ public class Banner extends AdBase implements IAdShow {
     }
 
     private void resumeBannerViews() {
-        if (mAdView != null) {
-            mAdView.resume();
-        }
-        if (mAdViewOld != null) {
-            mAdViewOld.resume();
-        }
+        if (mAdView != null) mAdView.resume();
+        if (mAdViewOld != null) mAdViewOld.resume();
     }
 
     @Override
@@ -253,7 +240,7 @@ public class Banner extends AdBase implements IAdShow {
             mAdViewOld = null;
         }
         if (mRelativeLayout != null) {
-            getParentViewWithout(mRelativeLayout);
+            removeFromParentView(mRelativeLayout);
             mRelativeLayout = null;
         }
 
@@ -261,7 +248,7 @@ public class Banner extends AdBase implements IAdShow {
     }
 
     private void removeBannerView(@NonNull AdView adView) {
-        getParentViewWithout(adView);
+        removeFromParentView(adView);
         adView.removeAllViews();
         adView.destroy();
     }
@@ -300,12 +287,12 @@ public class Banner extends AdBase implements IAdShow {
 
             ViewGroup view = getParentView(rootLinearLayout);
             if (view != wvParentView) {
-                getParentViewWithout(rootLinearLayout);
+                removeFromParentView(rootLinearLayout);
                 wvParentView.addView(rootLinearLayout);
             }
         }
 
-        getParentViewWithout(mAdView);
+        removeFromParentView(mAdView);
         if (isPositionTop()) {
             rootLinearLayout.addView(mAdView, 0);
         } else {
@@ -348,7 +335,7 @@ public class Banner extends AdBase implements IAdShow {
             }
         }
 
-        getParentViewWithout(mAdView);
+        removeFromParentView(mAdView);
         mRelativeLayout.addView(mAdView, paramsContent);
         mRelativeLayout.bringToFront();
     }
