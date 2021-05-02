@@ -1,4 +1,5 @@
 import GoogleMobileAds
+import UIKit
 
 class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
     static let stackView = UIStackView(frame: rootView.frame)
@@ -205,6 +206,14 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
 
     func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
         self.emit(AMBEvents.bannerLoad)
+        self.emit(AMBEvents.bannerSize, [
+            "size": [
+                "width": bannerView.frame.size.width,
+                "height": bannerView.frame.size.height,
+                "widthInPixels": round(bannerView.frame.size.width * UIScreen.main.scale),
+                "heightInPixels": round(bannerView.frame.size.height * UIScreen.main.scale)
+            ]
+        ])
     }
 
     func bannerView(_ bannerView: GADBannerView,

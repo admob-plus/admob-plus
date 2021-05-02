@@ -90,10 +90,9 @@ An ad request has been failed.
 
 An ad has been displayed.
 
-<!--
 ### `admob.banner.size`
 
-Event that return the ad size.
+Event that return the ad size, this event is also fired when the ad is resized, for example by rotating the device.
 
 ```js
 document.addEventListener('admob.banner.size', async (event) => {
@@ -109,4 +108,3 @@ document.addEventListener('admob.banner.size', async (event) => {
   }*/
 })
 ```
--->
