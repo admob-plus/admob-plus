@@ -189,7 +189,9 @@ public class Banner extends AdBase implements IAdShow {
         super.onConfigurationChanged(newConfig);
 
         if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE || newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
-            reloadBannerView();
+            getActivity().runOnUiThread(() -> {
+                reloadBannerView();
+            });
         }
     }
 
