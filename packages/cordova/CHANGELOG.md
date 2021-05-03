@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.10.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.9.2...admob-plus-cordova@1.10.0) (2021-05-03)
+
+
+### Features
+
+* **cordova/android:** update PLAY_SERVICES_VERSION to 20.1.0 ([4810143](https://github.com/admob-plus/admob-plus/commit/4810143eeb4854fd879977567c90b90040ffad66))
+* **cordova/ios:** admob.banner.size event also fires on iOS ([efeecb3](https://github.com/admob-plus/admob-plus/commit/efeecb3abc9cca446f9eecc802d7c3b828566968))
+
+
+
+
+
 ## [1.9.2](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.9.1...admob-plus-cordova@1.9.2) (2021-05-02)
 
 
