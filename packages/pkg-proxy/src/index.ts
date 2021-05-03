@@ -1,10 +1,13 @@
 import escalade from 'escalade'
 import fse from 'fs-extra'
 import path from 'path'
-import { PackageJson } from 'types-package-json'
+import { PackageJson as PackageJsonBase } from 'types-package-json'
 
 export type PackageJSONFileName = 'package.json'
-export type { PackageJson }
+
+export interface PackageJson extends PackageJsonBase {
+  [k: string]: any
+}
 
 export const fileName: PackageJSONFileName = 'package.json'
 
