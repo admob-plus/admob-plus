@@ -5,6 +5,7 @@
     "esModuleInterop": true,
     "importHelpers": true,
     "module": "commonjs",
+    "lib": ["ESNext"],
     "outDir": "lib",
     "rootDir": "src",
     "strict": true,

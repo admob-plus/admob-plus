@@ -23,7 +23,7 @@
     "semver": "^7.3.5",
     "tslib": "^2.2.0",
     "update-notifier": "^5.1.0",
-    "yargs": "^16.2.0"
+    "yargs": "^17.0.0"
   },
   "devDependencies": {
     "@admob-plus-internal/tsconfig": "file:../../internal/tsconfig",
