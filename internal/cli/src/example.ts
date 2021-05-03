@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import assert from 'assert'
 import sane from '@frat/sane'
 import cpy from 'cpy'
 import del from 'del'
@@ -6,7 +7,7 @@ import execa from 'execa'
 import fsp from 'fs/promises'
 import glob from 'fast-glob'
 import path from 'path'
-import readPkg from 'read-pkg'
+import findPkg, { PackageJson } from 'pkg-proxy'
 import { replaceInFile } from 'replace-in-file'
 import { parseStringPromise } from 'xml2js'
 import yargs from 'yargs'
@@ -63,7 +64,7 @@ const linkPlugin = async (
 const clean = (opts: { cwd: string }) =>
   del(['package-lock.json', 'platforms', 'plugins', 'node_modules'], opts)
 
-const collectPluginPkgs = async (pkg: readPkg.NormalizedPackageJson) => {
+const collectPluginPkgs = async (pkg: PackageJson) => {
   const pkgs = await collectPkgs()
   return Object.values(pkgs).filter(
     (x) => ({ ...pkg.dependencies, ...pkg.devDependencies }[x.name]),
@@ -72,7 +73,8 @@ const collectPluginPkgs = async (pkg: readPkg.NormalizedPackageJson) => {
 
 const prepare = async (opts: { cwd: string }) => {
   const { cwd } = opts
-  const pkgExample = await readPkg({ cwd })
+  const pkgExample = await findPkg({ cwd })
+  assert(pkgExample)
   const pluginPkgs = await collectPluginPkgs(pkgExample)
 
   const linkTasks = await Promise.all(
@@ -135,7 +137,8 @@ const resolveJavaPackagePath = (pkgName: string) => {
 
 const androidOpen = async (opts: { cwd: string }) => {
   const { cwd } = opts
-  const pkgExample = await readPkg({ cwd })
+  const pkgExample = await findPkg({ cwd })
+  assert(pkgExample)
   const pluginPkgs = await collectPluginPkgs(pkgExample)
 
   const watchTasks = await Promise.all(
@@ -174,7 +177,8 @@ const androidOpen = async (opts: { cwd: string }) => {
 
 const iosOpen = async (opts: { cwd: string }) => {
   const { cwd } = opts
-  const pkgExample = await readPkg({ cwd })
+  const pkgExample = await findPkg({ cwd })
+  assert(pkgExample)
   const pluginPkgs = await collectPluginPkgs(pkgExample)
 
   const configXML = await fsp.readFile(path.join(cwd, 'config.xml'), 'utf-8')
