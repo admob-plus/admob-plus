@@ -5,7 +5,7 @@
   "scripts": {
     "postinstall": "run-s 'postinstall:*'",
     "postinstall:lefthook": "is-ci || lefthook install",
-    "postinstall:ts": "is-ci && tsc -b --verbose",
+    "postinstall:ts": "is-ci && tsc -b --verbose || true",
     "prepare": "lerna run prepare",
     "prepublishOnly": "del '*.tsbuildinfo' 'packages/*/*.tsbuildinfo'",
     "test": "run-s 'test:*'",
