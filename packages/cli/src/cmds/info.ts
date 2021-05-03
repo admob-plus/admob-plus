@@ -4,7 +4,7 @@ import elementtree from 'elementtree'
 import execa from 'execa'
 import fse from 'fs-extra'
 import _ from 'lodash'
-import readPkgUp from 'read-pkg-up'
+import findPkg from 'pkg-proxy'
 import { Argv } from 'yargs'
 
 const collectionAndroidManifestInfo = async () => {
@@ -54,7 +54,7 @@ export const builder = (yargs: Argv<unknown>) =>
   })
 
 export const handler = async (argv: ReturnType<typeof builder>['argv']) => {
-  const pkg = { ...(await readPkgUp())?.packageJson }
+  const pkg = { ...(await findPkg({ searchParents: true })) }
   const extraInfo: { [x: string]: unknown } = {}
 
   const { stdout: cordovaVersion } = await execa('cordova', ['--version'], {
