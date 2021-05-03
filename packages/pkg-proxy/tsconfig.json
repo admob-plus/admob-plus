@@ -3,6 +3,7 @@
   "compilerOptions": {
     "esModuleInterop": true,
     "moduleResolution": "node",
+    "module": "commonjs",
     "outDir": "lib",
     "rootDir": "src",
     "target": "es2017"
