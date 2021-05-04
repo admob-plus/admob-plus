@@ -197,6 +197,7 @@ public class Banner extends AdBase implements IAdShow {
 
     private void reloadBannerView() {
         if (mAdRequest == null) return;
+        if (mAdView == null || mAdView.getVisibility() == View.GONE) return;
 
         pauseBannerViews();
         if (mAdViewOld != null) removeBannerView(mAdViewOld);
