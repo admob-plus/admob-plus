@@ -1,10 +1,12 @@
 // @ts-expect-error no types
-import { ConfigParser } from 'cordova-common'
+import { ConfigParser, PluginInfo } from 'cordova-common'
 import execa from 'execa'
 import glob from 'fast-glob'
 import yaml from 'js-yaml'
+import elementtree from 'elementtree'
 import { ListrTask } from 'listr2'
 import _ from 'lodash'
+import path from 'path'
 import findPkg, { PackageJson } from 'pkg-proxy'
 import semver from 'semver'
 import { collectDependencies } from './android'
@@ -42,6 +44,25 @@ export const readConfigXml = async (filename: string) => {
   }
 }
 
+interface IPluginInfo {
+  _et: elementtree.ElementTree
+}
+
+export async function readPluginInfo(pkgName: string) {
+  const cordovaPlugin = new PluginInfo(
+    path.dirname(require.resolve(`${pkgName}/plugin.xml`)),
+  ) as IPluginInfo
+  return cordovaPlugin
+}
+
+export function getPlayServicesVersion(pluginInfo: IPluginInfo) {
+  return pluginInfo._et
+    .find(
+      './platform/[@name="android"]/preference/[@name="PLAY_SERVICES_VERSION"]',
+    )
+    ?.get('default')
+}
+
 export default [
   {
     title: 'Cordova Android dependencies',
@@ -52,6 +73,10 @@ export default [
         return
       }
 
+      const expectedVersion = getPlayServicesVersion(
+        await readPluginInfo('admob-plus-cordova'),
+      )
+
       return task.newListr([
         {
           async task(_ctxAds, taskAds) {
@@ -59,7 +84,7 @@ export default [
             taskAds.title = k
             const versions = deps[k]
             const s = `${k}: ${[...versions].join(', ')}`
-            if (versions.has('19.8.0')) {
+            if (expectedVersion && versions.has(expectedVersion)) {
               taskAds.title = s
             } else {
               throw new Error(s)
