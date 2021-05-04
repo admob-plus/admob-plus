@@ -61,7 +61,7 @@ jobs:
           pushd internal/rollup-config
           yarn build
           popd
-          yarn lerna run prepublishOnly
+          yarn lerna run --stream prepublishOnly
 
       - name: Test
         run: |
