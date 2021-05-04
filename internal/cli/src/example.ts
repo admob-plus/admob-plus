@@ -291,7 +291,7 @@ async function startDev(opts: any) {
   await Promise.all(promises)
 }
 
-const main = () => {
+async function main() {
   const cli = yargs
     .option('cwd', { default: process.cwd(), global: true })
     .command('clean', '', {}, clean as any)
@@ -332,7 +332,8 @@ const main = () => {
     })
     .help()
 
-  if (cli.argv._.length === 0) {
+  const argv = await cli.argv
+  if (argv._.length === 0) {
     cli.showHelp()
   }
 }
