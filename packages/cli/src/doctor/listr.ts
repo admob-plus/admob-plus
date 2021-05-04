@@ -4,6 +4,7 @@ import { Pkg } from 'pkg-proxy'
 export interface Ctx {
   pkg?: Pkg
   swiftVersion: string
+  playServicesVersion: string
 }
 
 export const options: ListrBaseClassOptions<any, any, 'verbose'> = {

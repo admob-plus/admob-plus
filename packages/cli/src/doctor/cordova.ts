@@ -66,16 +66,12 @@ export function getPlayServicesVersion(pluginInfo: IPluginInfo) {
 export default [
   {
     title: 'Cordova Android dependencies',
-    async task(_ctx, task) {
+    async task(ctx, task) {
       const deps = await collectDependencies({ cwd: 'platforms/android' })
       if (!deps) {
         task.skip()
         return
       }
-
-      const expectedVersion = getPlayServicesVersion(
-        await readPluginInfo('admob-plus-cordova'),
-      )
 
       return task.newListr([
         {
@@ -84,7 +80,7 @@ export default [
             taskAds.title = k
             const versions = deps[k]
             const s = `${k}: ${[...versions].join(', ')}`
-            if (expectedVersion && versions.has(expectedVersion)) {
+            if (versions.has(ctx.playServicesVersion)) {
               taskAds.title = s
             } else {
               throw new Error(s)
