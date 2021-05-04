@@ -3,7 +3,7 @@ import got from 'got'
 import { Listr, ListrTask } from 'listr2'
 import findPkg from 'pkg-proxy'
 import taskCocoapods from './cocoapods'
-import tasksCordova, { getPlayServicesVersion, readPluginInfo } from './cordova'
+import tasksCordova, { readAdMobPlusPluginInfo } from './cordova'
 import { Ctx, options as listrOptions } from './listr'
 import tasksNode from './node'
 
@@ -25,11 +25,12 @@ export default async () => {
   const pkg = await findPkg()
   assert(pkg)
 
-  const pluginInfo = await readPluginInfo('admob-plus-cordova')
+  const pluginInfo = await readAdMobPlusPluginInfo()
   const ctx: Ctx = {
     pkg,
     swiftVersion: '5.3',
-    playServicesVersion: getPlayServicesVersion(pluginInfo)!,
+    playServicesVersion: pluginInfo.playServicesVersion,
+    iosSDKVersion: pluginInfo.iosSDKVersion,
   }
 
   const tasks = new Listr<Ctx>(

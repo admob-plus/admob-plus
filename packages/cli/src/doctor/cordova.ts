@@ -49,18 +49,31 @@ interface IPluginInfo {
 }
 
 export async function readPluginInfo(pkgName: string) {
-  const cordovaPlugin = new PluginInfo(
+  const plugin = new PluginInfo(
     path.dirname(require.resolve(`${pkgName}/plugin.xml`)),
   ) as IPluginInfo
-  return cordovaPlugin
+  return plugin
 }
 
-export function getPlayServicesVersion(pluginInfo: IPluginInfo) {
-  return pluginInfo._et
+export async function readAdMobPlusPluginInfo() {
+  const plugin = await readPluginInfo('admob-plus-cordova')
+  const playServicesVersion = plugin._et
     .find(
       './platform/[@name="android"]/preference/[@name="PLAY_SERVICES_VERSION"]',
-    )
-    ?.get('default')
+    )!
+    .get('default')!
+  const iosSDKVersion = plugin._et
+    .find(
+      './platform/[@name="ios"]/podspec/pods/pod/[@name="Google-Mobile-Ads-SDK"]',
+    )!
+    .get('spec')!
+    .replace('~>', '')
+    .trim()
+  return {
+    ...plugin,
+    playServicesVersion,
+    iosSDKVersion,
+  }
 }
 
 export default [

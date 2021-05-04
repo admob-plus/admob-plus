@@ -5,6 +5,7 @@ export interface Ctx {
   pkg?: Pkg
   swiftVersion: string
   playServicesVersion: string
+  iosSDKVersion: string
 }
 
 export const options: ListrBaseClassOptions<any, any, 'verbose'> = {

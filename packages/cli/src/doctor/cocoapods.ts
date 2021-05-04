@@ -17,7 +17,7 @@ const getPodSpec = async (name: string) => {
 export default {
   title: 'CocoaPods',
   enabled: process.platform === 'darwin',
-  task: async (_ctx, task) =>
+  task: async (ctx, task) =>
     task.newListr([
       {
         task: async (_ctxSDK, taskSDK) => {
@@ -31,7 +31,7 @@ export default {
             throw new Error(`${specName} not found`)
           }
 
-          const expectedVersion = '8.3.0'
+          const expectedVersion = ctx.iosSDKVersion
           if (spec.version !== expectedVersion) {
             taskSDK.output = hint
             throw new Error(
