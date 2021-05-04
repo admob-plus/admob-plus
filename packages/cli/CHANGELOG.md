@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.8.7](https://github.com/admob-plus/admob-plus/compare/admob-plus@1.8.6...admob-plus@1.8.7) (2021-05-04)
+
+
+### Bug Fixes
+
+* **cli/doctor:** read Google-Mobile-Ads-SDK version from plugin.xml ([37cdbde](https://github.com/admob-plus/admob-plus/commit/37cdbdeddcf941bcf0e793aeda5f7d4c0ae0542c))
+* **cli/doctor:** read PLAY_SERVICES_VERSION from plugin.xml ([f4ac8a6](https://github.com/admob-plus/admob-plus/commit/f4ac8a68cd6e2bfd8368e39e54ac32f770e0e0fc))
+
+
+
+
+
 ## [1.8.6](https://github.com/admob-plus/admob-plus/compare/admob-plus@1.8.5...admob-plus@1.8.6) (2021-05-03)
 
 **Note:** Version bump only for package admob-plus

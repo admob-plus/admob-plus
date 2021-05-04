@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.10.1](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.10.0...admob-plus-cordova@1.10.1) (2021-05-04)
+
+
+### Bug Fixes
+
+* **cordova/android:** do not reload hidden banner, fix [#332](https://github.com/admob-plus/admob-plus/issues/332) ([ccacdae](https://github.com/admob-plus/admob-plus/commit/ccacdaed78faff75b68cda8926715a25c5b8c44d))
+
+
+
+
+
 # [1.10.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.9.2...admob-plus-cordova@1.10.0) (2021-05-03)
 
 
