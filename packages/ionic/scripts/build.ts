@@ -14,8 +14,10 @@ const main = async () => {
   )
 
   await execa('tsc', { stdio: 'inherit' })
-  await fse.copy('build/lib', 'lib', { overwrite: true })
-  await fse.copy('build/ngx', 'ngx', { overwrite: true })
+  await Promise.all([
+    fse.copy('./build/lib', './lib', { overwrite: true }),
+    fse.copy('./build/ngx', './ngx', { overwrite: true }),
+  ])
 
   await fse.outputJSON('./ngx/package.json', {
     ...require('../package.json'),
