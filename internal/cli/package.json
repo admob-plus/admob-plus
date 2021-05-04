@@ -22,7 +22,7 @@
     "escalade": "^3.1.1",
     "execa": "^5.0.0",
     "fast-glob": "^3.2.5",
-    "fs-extra": "^9.1.0",
+    "fs-extra": "^10.0.0",
     "handlebars": "^4.7.7",
     "lodash": "^4.17.21",
     "markdown-magic": "^2.0.0",
@@ -30,7 +30,7 @@
     "replace-in-file": "^6.2.0",
     "typescript": "^4.2.4",
     "xml2js": "^0.4.23",
-    "yargs": "^16.2.0"
+    "yargs": "^17.0.1"
   },
   "devDependencies": {
     "@types/fs-extra": "^9.0.11",

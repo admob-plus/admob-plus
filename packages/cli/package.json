@@ -12,18 +12,18 @@
     "elementtree": "^0.1.7",
     "execa": "^5.0.0",
     "fast-glob": "^3.2.5",
-    "fs-extra": "^9.1.0",
+    "fs-extra": "^10.0.0",
     "got": "^11.8.2",
     "js-yaml": "^4.1.0",
     "kleur": "^4.1.4",
-    "listr2": "^3.8.1",
+    "listr2": "^3.8.2",
     "lodash": "^4.17.21",
     "ora": "^5.4.0",
     "pkg-proxy": "^0.1.1",
     "semver": "^7.3.5",
     "tslib": "^2.2.0",
     "update-notifier": "^5.1.0",
-    "yargs": "^17.0.0"
+    "yargs": "^17.0.1"
   },
   "devDependencies": {
     "@admob-plus-internal/tsconfig": "file:../../internal/tsconfig",

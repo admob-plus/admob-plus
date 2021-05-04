@@ -37,7 +37,7 @@
     "cra-build-watch": "^3.4.0",
     "dotenv": "^8.2.0",
     "execa": "^5.0.0",
-    "fs-extra": "^9.1.0",
+    "fs-extra": "^10.0.0",
     "internal-ip": "^6.2.0",
     "react-scripts": "4.0.3",
     "ts-node": "^9.1.1",

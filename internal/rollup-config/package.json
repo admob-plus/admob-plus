@@ -9,14 +9,14 @@
     "build": "tsc -b"
   },
   "dependencies": {
-    "@rollup/plugin-commonjs": "^18.0.0",
-    "@rollup/plugin-node-resolve": "^11.2.1",
+    "@rollup/plugin-commonjs": "^18.1.0",
+    "@rollup/plugin-node-resolve": "^13.0.0",
     "@rollup/plugin-typescript": "^8.2.1"
   },
   "devDependencies": {
     "@admob-plus-internal/tsconfig": "file:../tsconfig",
     "npm-run-all": "^4.1.5",
-    "rollup": "^2.46.0",
+    "rollup": "^2.47.0",
     "typescript": "^4.2.4"
   },
   "eslintConfig": {

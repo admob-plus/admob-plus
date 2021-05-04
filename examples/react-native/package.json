@@ -16,8 +16,8 @@
   },
   "devDependencies": {
     "@admob-plus-internal/cli": "file:../../internal/cli",
-    "@babel/core": "^7.13.16",
-    "@babel/runtime": "^7.13.17",
+    "@babel/core": "^7.14.0",
+    "@babel/runtime": "^7.14.0",
     "@react-native-community/eslint-config": "^2.0.0",
     "@types/jest": "^26.0.23",
     "@types/react-native": "^0.64.4",
