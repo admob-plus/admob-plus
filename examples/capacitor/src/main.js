@@ -67,6 +67,8 @@ const initRewardedInterstitial = async () => {
 }
 
 const main = async () => {
+  await AdMobPlus.requestTrackingAuthorization()
+
   await AdMobPlus.start()
 
   await AdMobPlus.configRequest({

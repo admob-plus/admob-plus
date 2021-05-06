@@ -12,6 +12,7 @@ custom_edit_url: null
 ## Enumerations
 
 - [MaxAdContentRating](enums/maxadcontentrating.md)
+- [TrackingAuthorizationStatus](enums/trackingauthorizationstatus.md)
 
 ## Classes
 

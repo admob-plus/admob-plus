@@ -1,3 +1,6 @@
+#if canImport(AppTrackingTransparency)
+    import AppTrackingTransparency
+#endif
 import Foundation
 import Capacitor
 import GoogleMobileAds
@@ -6,6 +9,18 @@ import GoogleMobileAds
 public class AdMobPlusPlugin: CAPPlugin {
     @objc override public func load() {
         AMBContext.plugin = self
+    }
+
+    @objc func requestTrackingAuthorization(_ call: CAPPluginCall) {
+        let ctx = AMBContext(call)
+
+        if #available(iOS 14, *) {
+            ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
+                ctx.success(["status": status.rawValue])
+            })
+        } else {
+            ctx.success(["status": false])
+        }
     }
 
     @objc func start(_ call: CAPPluginCall) {

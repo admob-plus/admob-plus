@@ -1,10 +1,13 @@
 package admob.plus.capacitor;
 
+import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
 import com.google.android.gms.ads.MobileAds;
+
+import org.json.JSONException;
 
 import admob.plus.capacitor.ads.Banner;
 import admob.plus.capacitor.ads.Interstitial;
@@ -19,6 +22,15 @@ public class AdMobPlusPlugin extends Plugin {
         super.load();
 
         ExecuteContext.plugin = this;
+    }
+
+    @PluginMethod
+    public void requestTrackingAuthorization(PluginCall call) {
+        try {
+            call.resolve(new JSObject("{\"status\": false}"));
+        } catch (JSONException ex) {
+            call.reject(ex.toString());
+        }
     }
 
     @PluginMethod

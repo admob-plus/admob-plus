@@ -23,7 +23,7 @@ custom_edit_url: null
 
 **Returns:** *Promise*<void\>
 
-Defined in: definitions.ts:31
+Defined in: definitions.ts:38
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 **Returns:** *Promise*<void\>
 
-Defined in: definitions.ts:26
+Defined in: definitions.ts:33
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 **Returns:** *Promise*<void\>
 
-Defined in: definitions.ts:24
+Defined in: definitions.ts:31
 
 ___
 
@@ -74,7 +74,7 @@ ___
 
 **Returns:** *Promise*<void\>
 
-Defined in: definitions.ts:23
+Defined in: definitions.ts:30
 
 ___
 
@@ -92,7 +92,7 @@ ___
 
 **Returns:** *Promise*<void\>
 
-Defined in: definitions.ts:33
+Defined in: definitions.ts:40
 
 ___
 
@@ -109,7 +109,17 @@ ___
 
 **Returns:** *Promise*<void\>
 
-Defined in: definitions.ts:34
+Defined in: definitions.ts:41
+
+___
+
+### requestTrackingAuthorization
+
+▸ **requestTrackingAuthorization**(): *Promise*<{ `status`: ``false`` \| [*TrackingAuthorizationStatus*](../enums/trackingauthorizationstatus.md)  }\>
+
+**Returns:** *Promise*<{ `status`: ``false`` \| [*TrackingAuthorizationStatus*](../enums/trackingauthorizationstatus.md)  }\>
+
+Defined in: definitions.ts:52
 
 ___
 
@@ -127,7 +137,7 @@ ___
 
 **Returns:** *Promise*<void\>
 
-Defined in: definitions.ts:39
+Defined in: definitions.ts:46
 
 ___
 
@@ -144,7 +154,7 @@ ___
 
 **Returns:** *Promise*<void\>
 
-Defined in: definitions.ts:43
+Defined in: definitions.ts:50
 
 ___
 
@@ -162,7 +172,7 @@ ___
 
 **Returns:** *Promise*<void\>
 
-Defined in: definitions.ts:36
+Defined in: definitions.ts:43
 
 ___
 
@@ -179,7 +189,7 @@ ___
 
 **Returns:** *Promise*<void\>
 
-Defined in: definitions.ts:37
+Defined in: definitions.ts:44
 
 ___
 
@@ -189,4 +199,4 @@ ___
 
 **Returns:** *Promise*<void\>
 
-Defined in: definitions.ts:22
+Defined in: definitions.ts:29

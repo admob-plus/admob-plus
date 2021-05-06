@@ -91,6 +91,10 @@ class AMBContext {
         call.resolve()
     }
 
+    func success(_ data: PluginCallResultData = [:]) {
+        call.resolve(data)
+    }
+
     func error() {
         self.error("Unknown error")
     }

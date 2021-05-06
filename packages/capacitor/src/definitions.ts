@@ -18,6 +18,13 @@ export type RequestConfig = {
   testDeviceIds?: string[]
 }
 
+export enum TrackingAuthorizationStatus {
+  notDetermined = 0,
+  restricted = 1,
+  denied = 2,
+  authorized = 3,
+}
+
 export interface AdMobPlusPlugin {
   start(): Promise<void>
   configure(config: AdMobConfig): Promise<void>
@@ -41,4 +48,8 @@ export interface AdMobPlusPlugin {
     adUnitId: string
   }): Promise<void>
   rewardedInterstitialShow(opts: { id: number }): Promise<void>
+
+  requestTrackingAuthorization(): Promise<{
+    status: TrackingAuthorizationStatus | false
+  }>
 }

@@ -119,6 +119,18 @@ ${linesEvents}
 `
 }
 
+const renderMethod = (method: string) => {
+  switch (method) {
+    case 'requestTrackingAuthorization':
+      return `
+    console.log('${method}', opts)
+    return { status: false }`
+    default:
+      return `
+    console.log('${method}', opts)`
+  }
+}
+
 const buildWeb = () => `// ${warnMessage}
 import { WebPlugin } from '@capacitor/core'
 import type { AdMobPlusPlugin } from './definitions'
@@ -128,8 +140,7 @@ ${pluginMethods
     .map(
       (x) => `  async ${x}(
     ...opts: Parameters<AdMobPlusPlugin['${x}']>
-  ): ReturnType<AdMobPlusPlugin['${x}']> {
-    console.log('${x}', opts)
+  ): ReturnType<AdMobPlusPlugin['${x}']> {${renderMethod(x)}
   }`,
     )
     .join('\n\n')}

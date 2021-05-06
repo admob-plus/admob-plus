@@ -3,7 +3,6 @@ import { pkgsDirJoin } from '../utils'
 import { AdEvents } from './capacitor'
 import {
   buildUtils,
-  indent4,
   renderJavaContants,
   renderSwiftContants,
   renderTsContants,

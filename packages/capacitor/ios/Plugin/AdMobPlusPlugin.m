@@ -16,4 +16,5 @@ CAP_PLUGIN(AdMobPlusPlugin, "AdMobPlus",
            CAP_PLUGIN_METHOD(rewardedShow, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(rewardedInterstitialLoad, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(rewardedInterstitialShow, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(requestTrackingAuthorization, CAPPluginReturnPromise);
 )
