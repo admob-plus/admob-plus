@@ -32,6 +32,7 @@ public class Banner extends AdBase implements IAdShow {
     private static final String TAG = "AdMobPlus.Banner";
     @SuppressLint("StaticFieldLeak")
     private static ViewGroup rootLinearLayout;
+    private static int screenWidth = 0;
 
     private final AdSize adSize;
     private final int gravity;
@@ -188,7 +189,9 @@ public class Banner extends AdBase implements IAdShow {
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
 
-        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE || newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
+        int w = getActivity().getResources().getDisplayMetrics().widthPixels;
+        if (w != screenWidth) {
+            screenWidth = w;
             getActivity().runOnUiThread(() -> {
                 reloadBannerView();
             });
