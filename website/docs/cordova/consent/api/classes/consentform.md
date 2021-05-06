@@ -2,6 +2,7 @@
 id: "consentform"
 title: "Class: ConsentForm"
 sidebar_label: "ConsentForm"
+sidebar_position: 0
 custom_edit_url: null
 ---
 
@@ -13,7 +14,7 @@ custom_edit_url: null
 
 \+ **new ConsentForm**(`id`: *number*): [*ConsentForm*](consentform.md)
 
-#### Parameters:
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |

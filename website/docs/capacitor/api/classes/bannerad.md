@@ -2,6 +2,7 @@
 id: "bannerad"
 title: "Class: BannerAd"
 sidebar_label: "BannerAd"
+sidebar_position: 0
 custom_edit_url: null
 ---
 
@@ -9,7 +10,7 @@ custom_edit_url: null
 
 ## Hierarchy
 
-* *MobileAd*<[*BannerAdOptions*](../interfaces/banneradoptions.md)\>
+- *MobileAd*<[*BannerAdOptions*](../interfaces/banneradoptions.md)\>
 
   ↳ **BannerAd**
 
@@ -19,7 +20,7 @@ custom_edit_url: null
 
 \+ **new BannerAd**(`opts`: [*BannerAdOptions*](../interfaces/banneradoptions.md)): [*BannerAd*](bannerad.md)
 
-#### Parameters:
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |

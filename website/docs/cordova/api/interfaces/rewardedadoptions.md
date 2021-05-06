@@ -2,6 +2,7 @@
 id: "rewardedadoptions"
 title: "Interface: RewardedAdOptions"
 sidebar_label: "RewardedAdOptions"
+sidebar_position: 0
 custom_edit_url: null
 ---
 
@@ -9,7 +10,7 @@ custom_edit_url: null
 
 ## Hierarchy
 
-* [*MobileAdOptions*](../index.md#mobileadoptions)
+- [*MobileAdOptions*](../index.md#mobileadoptions)
 
   ↳ **RewardedAdOptions**
 

@@ -2,6 +2,7 @@
 id: "consentstatus"
 title: "Enumeration: ConsentStatus"
 sidebar_label: "ConsentStatus"
+sidebar_position: 0
 custom_edit_url: null
 ---
 

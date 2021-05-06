@@ -2,6 +2,7 @@
 id: "consent"
 title: "Class: Consent"
 sidebar_label: "Consent"
+sidebar_position: 0
 custom_edit_url: null
 ---
 
@@ -77,7 +78,7 @@ ___
 
 ▸ **requestInfoUpdate**(`opts?`: RequestInfoUpdateOptions): *Promise*<unknown\>
 
-#### Parameters:
+#### Parameters
 
 | Name | Type | Default value |
 | :------ | :------ | :------ |

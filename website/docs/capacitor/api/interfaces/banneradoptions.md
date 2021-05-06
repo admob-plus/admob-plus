@@ -2,6 +2,7 @@
 id: "banneradoptions"
 title: "Interface: BannerAdOptions"
 sidebar_label: "BannerAdOptions"
+sidebar_position: 0
 custom_edit_url: null
 ---
 
@@ -9,7 +10,7 @@ custom_edit_url: null
 
 ## Hierarchy
 
-* *MobileAdOptions*
+- *MobileAdOptions*
 
   ↳ **BannerAdOptions**
 

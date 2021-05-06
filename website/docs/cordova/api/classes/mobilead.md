@@ -2,12 +2,13 @@
 id: "mobilead"
 title: "Class: MobileAd<T>"
 sidebar_label: "MobileAd"
+sidebar_position: 0
 custom_edit_url: null
 ---
 
 # Class: MobileAd<T\>
 
-**`internal`** 
+**`internal`**
 
 ## Type parameters
 
@@ -17,7 +18,7 @@ custom_edit_url: null
 
 ## Hierarchy
 
-* **MobileAd**
+- **MobileAd**
 
   ↳ [*BannerAd*](bannerad.md)
 
@@ -33,13 +34,13 @@ custom_edit_url: null
 
 \+ **new MobileAd**<T\>(`opts`: T): [*MobileAd*](mobilead.md)<T\>
 
-#### Type parameters:
+#### Type parameters
 
 | Name | Type | Default |
 | :------ | :------ | :------ |
 | `T` | [*MobileAdOptions*](../index.md#mobileadoptions) | [*MobileAdOptions*](../index.md#mobileadoptions) |
 
-#### Parameters:
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |
@@ -71,7 +72,7 @@ ___
 
 ▪ `Static` `Private` **allAds**: *object*= {}
 
-#### Type declaration:
+#### Type declaration
 
 Defined in: api.ts:8
 
@@ -97,7 +98,7 @@ Defined in: api.ts:27
 
 ### nextId
 
-▸ `Static` `Private`**nextId**(): *number*
+▸ `Static` `Private` **nextId**(): *number*
 
 **Returns:** *number*
 

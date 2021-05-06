@@ -2,6 +2,7 @@
 id: "admobplusplugin"
 title: "Interface: AdMobPlusPlugin"
 sidebar_label: "AdMobPlusPlugin"
+sidebar_position: 0
 custom_edit_url: null
 ---
 
@@ -13,7 +14,7 @@ custom_edit_url: null
 
 ▸ **bannerHide**(`opts`: { `id`: *number*  }): *Promise*<void\>
 
-#### Parameters:
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |
@@ -30,7 +31,7 @@ ___
 
 ▸ **bannerShow**(`opts`: { `adUnitId`: *string* ; `id`: *number* ; `position?`: ``"top"`` \| ``"bottom"``  }): *Promise*<void\>
 
-#### Parameters:
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |
@@ -49,7 +50,7 @@ ___
 
 ▸ **configRequest**(`requestConfig`: [*RequestConfig*](../index.md#requestconfig)): *Promise*<void\>
 
-#### Parameters:
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |
@@ -65,7 +66,7 @@ ___
 
 ▸ **configure**(`config`: [*AdMobConfig*](../index.md#admobconfig)): *Promise*<void\>
 
-#### Parameters:
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |
@@ -81,7 +82,7 @@ ___
 
 ▸ **interstitialLoad**(`opts`: { `adUnitId`: *string* ; `id`: *number*  }): *Promise*<void\>
 
-#### Parameters:
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |
@@ -99,7 +100,7 @@ ___
 
 ▸ **interstitialShow**(`opts`: { `id`: *number*  }): *Promise*<void\>
 
-#### Parameters:
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |
@@ -116,7 +117,7 @@ ___
 
 ▸ **rewardedInterstitialLoad**(`opts`: { `adUnitId`: *string* ; `id`: *number*  }): *Promise*<void\>
 
-#### Parameters:
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |
@@ -134,7 +135,7 @@ ___
 
 ▸ **rewardedInterstitialShow**(`opts`: { `id`: *number*  }): *Promise*<void\>
 
-#### Parameters:
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |
@@ -151,7 +152,7 @@ ___
 
 ▸ **rewardedLoad**(`opts`: { `adUnitId`: *string* ; `id`: *number*  }): *Promise*<void\>
 
-#### Parameters:
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |
@@ -169,7 +170,7 @@ ___
 
 ▸ **rewardedShow**(`opts`: { `id`: *number*  }): *Promise*<void\>
 
-#### Parameters:
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |

@@ -2,26 +2,25 @@
 id: "index"
 title: "@admob-plus/capacitor"
 slug: "/capacitor/api"
-sidebar_label: "Table of contents"
+sidebar_label: "Exports"
+sidebar_position: 0.5
 custom_edit_url: null
 ---
 
 # @admob-plus/capacitor
 
-## Table of contents
-
-### Enumerations
+## Enumerations
 
 - [MaxAdContentRating](enums/maxadcontentrating.md)
 
-### Classes
+## Classes
 
 - [BannerAd](classes/bannerad.md)
 - [InterstitialAd](classes/interstitialad.md)
 - [RewardedAd](classes/rewardedad.md)
 - [RewardedInterstitialAd](classes/rewardedinterstitialad.md)
 
-### Interfaces
+## Interfaces
 
 - [AdMobPlusPlugin](interfaces/admobplusplugin.md)
 - [BannerAdOptions](interfaces/banneradoptions.md)
@@ -32,7 +31,7 @@ custom_edit_url: null
 
 Ƭ **AdMobConfig**: *object*
 
-#### Type declaration:
+#### Type declaration
 
 | Name | Type |
 | :------ | :------ |
@@ -47,7 +46,7 @@ ___
 
 Ƭ **RequestConfig**: *object*
 
-#### Type declaration:
+#### Type declaration
 
 | Name | Type |
 | :------ | :------ |

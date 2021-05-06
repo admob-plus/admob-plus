@@ -2,15 +2,14 @@
 id: "index"
 title: "admob-plus-cordova"
 slug: "/cordova/api"
-sidebar_label: "Table of contents"
+sidebar_label: "Exports"
+sidebar_position: 0.5
 custom_edit_url: null
 ---
 
 # admob-plus-cordova
 
-## Table of contents
-
-### Enumerations
+## Enumerations
 
 - [AdSizeType](enums/adsizetype.md)
 - [Events](enums/events.md)
@@ -19,7 +18,7 @@ custom_edit_url: null
 - [Platforms](enums/platforms.md)
 - [TrackingAuthorizationStatus](enums/trackingauthorizationstatus.md)
 
-### Classes
+## Classes
 
 - [AdMob](classes/admob.md)
 - [BannerAd](classes/bannerad.md)
@@ -28,7 +27,7 @@ custom_edit_url: null
 - [RewardedAd](classes/rewardedad.md)
 - [RewardedInterstitialAd](classes/rewardedinterstitialad.md)
 
-### Interfaces
+## Interfaces
 
 - [BannerAdOptions](interfaces/banneradoptions.md)
 - [RewardedAdOptions](interfaces/rewardedadoptions.md)
@@ -47,9 +46,9 @@ Renames and exports: [AdMob](classes/admob.md)
 
 Ƭ **MobileAdOptions**: *object*
 
-**`internal`** 
+**`internal`**
 
-#### Type declaration:
+#### Type declaration
 
 | Name | Type |
 | :------ | :------ |
@@ -64,7 +63,7 @@ ___
 
 Ƭ **RequestConfig**: *object*
 
-#### Type declaration:
+#### Type declaration
 
 | Name | Type |
 | :------ | :------ |

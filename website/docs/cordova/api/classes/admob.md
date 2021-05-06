@@ -2,6 +2,7 @@
 id: "admob"
 title: "Class: AdMob"
 sidebar_label: "AdMob"
+sidebar_position: 0
 custom_edit_url: null
 ---
 
@@ -71,7 +72,7 @@ Defined in: index.ts:39
 
 ▸ **configRequest**(`requestConfig`: [*RequestConfig*](../index.md#requestconfig)): *Promise*<unknown\>
 
-#### Parameters:
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |
@@ -97,7 +98,7 @@ ___
 
 ▸ **setAppMuted**(`value`: *boolean*): *Promise*<unknown\>
 
-#### Parameters:
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |
@@ -113,7 +114,7 @@ ___
 
 ▸ **setAppVolume**(`value`: *number*): *Promise*<unknown\>
 
-#### Parameters:
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |

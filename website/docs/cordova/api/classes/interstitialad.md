@@ -2,6 +2,7 @@
 id: "interstitialad"
 title: "Class: InterstitialAd"
 sidebar_label: "InterstitialAd"
+sidebar_position: 0
 custom_edit_url: null
 ---
 
@@ -9,7 +10,7 @@ custom_edit_url: null
 
 ## Hierarchy
 
-* [*MobileAd*](mobilead.md)
+- [*MobileAd*](mobilead.md)
 
   ↳ **InterstitialAd**
 
@@ -19,7 +20,7 @@ custom_edit_url: null
 
 \+ **new InterstitialAd**(`opts`: [*MobileAdOptions*](../index.md#mobileadoptions)): [*InterstitialAd*](interstitialad.md)
 
-#### Parameters:
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |

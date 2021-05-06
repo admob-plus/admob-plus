@@ -2,6 +2,7 @@
 id: "events"
 title: "Enumeration: Events"
 sidebar_label: "Events"
+sidebar_position: 0
 custom_edit_url: null
 ---
 

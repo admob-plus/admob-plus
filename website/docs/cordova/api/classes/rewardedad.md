@@ -2,6 +2,7 @@
 id: "rewardedad"
 title: "Class: RewardedAd"
 sidebar_label: "RewardedAd"
+sidebar_position: 0
 custom_edit_url: null
 ---
 
@@ -9,7 +10,7 @@ custom_edit_url: null
 
 ## Hierarchy
 
-* [*MobileAd*](mobilead.md)<[*RewardedAdOptions*](../interfaces/rewardedadoptions.md)\>
+- [*MobileAd*](mobilead.md)<[*RewardedAdOptions*](../interfaces/rewardedadoptions.md)\>
 
   ↳ **RewardedAd**
 
@@ -19,7 +20,7 @@ custom_edit_url: null
 
 \+ **new RewardedAd**(`opts`: [*RewardedAdOptions*](../interfaces/rewardedadoptions.md)): [*RewardedAd*](rewardedad.md)
 
-#### Parameters:
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |

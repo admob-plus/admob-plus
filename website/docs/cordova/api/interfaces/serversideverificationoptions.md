@@ -2,6 +2,7 @@
 id: "serversideverificationoptions"
 title: "Interface: ServerSideVerificationOptions"
 sidebar_label: "ServerSideVerificationOptions"
+sidebar_position: 0
 custom_edit_url: null
 ---
 

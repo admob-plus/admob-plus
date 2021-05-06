@@ -2,6 +2,7 @@
 id: "rewardedinterstitialad"
 title: "Class: RewardedInterstitialAd"
 sidebar_label: "RewardedInterstitialAd"
+sidebar_position: 0
 custom_edit_url: null
 ---
 
@@ -9,7 +10,7 @@ custom_edit_url: null
 
 ## Hierarchy
 
-* [*MobileAd*](mobilead.md)<[*RewardedInterstitialAdOptions*](../interfaces/rewardedinterstitialadoptions.md)\>
+- [*MobileAd*](mobilead.md)<[*RewardedInterstitialAdOptions*](../interfaces/rewardedinterstitialadoptions.md)\>
 
   ↳ **RewardedInterstitialAd**
 
@@ -19,7 +20,7 @@ custom_edit_url: null
 
 \+ **new RewardedInterstitialAd**(`opts`: [*RewardedInterstitialAdOptions*](../interfaces/rewardedinterstitialadoptions.md)): [*RewardedInterstitialAd*](rewardedinterstitialad.md)
 
-#### Parameters:
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |
