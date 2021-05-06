@@ -41,6 +41,16 @@ cordova plugin add cordova-plugin-androidx
 cordova plugin add cordova-plugin-androidx-adapter
 ```
 
+### Proguard
+
+Add these rules to your proguard configuration:
+
+```
+-keep public class admob.plugin.ads.** {
+  public *;
+}
+```
+
   </TabItem>
   <TabItem value="ios">
 
