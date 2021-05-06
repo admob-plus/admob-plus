@@ -16,14 +16,14 @@
     "rxjs": "^5.5.0 || ^6.5.0"
   },
   "devDependencies": {
-    "@angular/core": "~11.2.12",
+    "@angular/core": "~11.2.13",
     "@ionic-native/core": "^5.32.1",
     "@types/fs-extra": "^9.0.11",
     "@types/node": "^15.0.2",
     "admob-plus-cordova": "file:../cordova",
     "del": "^6.0.0",
     "execa": "^5.0.0",
-    "fs-extra": "^10.0.0",
+    "fs-extra": "^9.1.0",
     "npm-run-all": "^4.1.5",
     "rxjs": "^6.6.7",
     "ts-node": "^9.1.1",
