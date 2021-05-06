@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.11.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.10.1...admob-plus-cordova@1.11.0) (2021-05-06)
+
+
+### Bug Fixes
+
+* **cordova/android:** reload hidden banner on size change, fix [#327](https://github.com/admob-plus/admob-plus/issues/327) ([3290dcd](https://github.com/admob-plus/admob-plus/commit/3290dcdf77510478507aab960c233ad94e771206))
+
+
+### Features
+
+* **internal/cli:** geneate cordova admob.banner.size event ([9c915c6](https://github.com/admob-plus/admob-plus/commit/9c915c647e906affacf6d86a0e6609554df748bd))
+
+
+
+
+
 ## [1.10.1](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.10.0...admob-plus-cordova@1.10.1) (2021-05-04)
 
 

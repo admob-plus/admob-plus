@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.8.8](https://github.com/admob-plus/admob-plus/compare/admob-plus@1.8.7...admob-plus@1.8.8) (2021-05-06)
+
+**Note:** Version bump only for package admob-plus
+
+
+
+
+
 ## [1.8.7](https://github.com/admob-plus/admob-plus/compare/admob-plus@1.8.6...admob-plus@1.8.7) (2021-05-04)
 
 
