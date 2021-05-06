@@ -28,6 +28,7 @@ export enum Events {
   bannerLoad = 'admob.banner.load',
   bannerLoadFail = 'admob.banner.loadfail',
   bannerOpen = 'admob.banner.open',
+  bannerSize = 'admob.banner.size',
   bannerSizeChange = 'admob.banner.sizechange',
   interstitialDismiss = 'admob.interstitial.dismiss',
   interstitialImpression = 'admob.interstitial.impression',

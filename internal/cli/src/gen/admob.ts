@@ -39,13 +39,23 @@ const Actions = _.mapValues(
   (v, k) => (v === null ? k : v) as string,
 )
 
-const Events = _.mapValues(
+const EventsUnsorted = _.mapValues(
   {
     ready: null,
     ...AdEvents,
+    bannerSize: 'banner.size',
   },
   (v, k) => `admob.${v === null ? k : v}`,
 )
+const Events = Object.keys(EventsUnsorted)
+  .sort()
+  .reduce(
+    (obj, key) => ({
+      ...obj,
+      [key]: EventsUnsorted[key as never],
+    }),
+    {},
+  )
 
 const AdSizeTypes = [
   'BANNER',
