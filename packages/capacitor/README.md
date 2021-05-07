@@ -30,6 +30,7 @@ npx cap sync
 * [`rewardedShow(...)`](#rewardedshow)
 * [`rewardedInterstitialLoad(...)`](#rewardedinterstitialload)
 * [`rewardedInterstitialShow(...)`](#rewardedinterstitialshow)
+* [`requestTrackingAuthorization()`](#requesttrackingauthorization)
 * [Type Aliases](#type-aliases)
 * [Enums](#enums)
 
@@ -199,6 +200,17 @@ rewardedInterstitialShow(opts: { id: number; }) => any
 --------------------
 
 
+### requestTrackingAuthorization()
+
+```typescript
+requestTrackingAuthorization() => any
+```
+
+**Returns:** <code>any</code>
+
+--------------------
+
+
 ### Type Aliases
 
 
@@ -224,5 +236,15 @@ rewardedInterstitialShow(opts: { id: number; }) => any
 | **`PG`**          | <code>'PG'</code> |
 | **`T`**           | <code>'T'</code>  |
 | **`UNSPECIFIED`** | <code>''</code>   |
+
+
+#### TrackingAuthorizationStatus
+
+| Members             | Value          |
+| ------------------- | -------------- |
+| **`notDetermined`** | <code>0</code> |
+| **`restricted`**    | <code>1</code> |
+| **`denied`**        | <code>2</code> |
+| **`authorized`**    | <code>3</code> |
 
 </docgen-api>
