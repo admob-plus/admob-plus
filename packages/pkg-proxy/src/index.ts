@@ -3,13 +3,13 @@ import fse from 'fs-extra'
 import path from 'path'
 import { PackageJson as PackageJsonBase } from 'types-package-json'
 
-export type PackageJSONFileName = 'package.json'
+export type PackageJsonFileName = 'package.json'
 
 export interface PackageJson extends PackageJsonBase {
   [k: string]: any
 }
 
-export const fileName: PackageJSONFileName = 'package.json'
+export const fileName: PackageJsonFileName = 'package.json'
 
 type Options = {
   cwd?: string
@@ -32,6 +32,8 @@ async function findPackageJson(opts?: Options) {
   }
 }
 
+export type PkgProxy = PackageJson & Pkg
+
 export class Pkg {
   static async createProxy(opts?: Options) {
     const pkg = await this.find(opts)
@@ -44,7 +46,7 @@ export class Pkg {
         }
         return Reflect.get(target, prop, receiver)
       },
-    }) as PackageJson & Pkg
+    }) as PkgProxy
   }
 
   static async find(opts?: Options) {
