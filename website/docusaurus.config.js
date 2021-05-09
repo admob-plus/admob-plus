@@ -135,7 +135,7 @@ module.exports = {
       'docusaurus-plugin-typedoc',
       {
         id: 'typedoc-ionic',
-        entryPoints: ['../packages/ionic/src/index.ts'],
+        entryPoints: ['../packages/ionic/src/ngx/index.ts'],
         tsconfig: '../packages/ionic/tsconfig.json',
         out: 'ionic/api',
         readme: 'none',
