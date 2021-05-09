@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.9.0](https://github.com/admob-plus/admob-plus/compare/admob-plus@1.8.8...admob-plus@1.9.0) (2021-05-09)
+
+
+### Features
+
+* **cli:** add install command ([63c1494](https://github.com/admob-plus/admob-plus/commit/63c1494988c431fced824358431f9fe6019d41e0))
+* **cli/install:** add --project option ([8d60362](https://github.com/admob-plus/admob-plus/commit/8d6036237309a0c468f0d006e710b25c617f79a9))
+* **cli/install:** add capacitor support ([a83a1c4](https://github.com/admob-plus/admob-plus/commit/a83a1c4c1fd1e55538309cd1baac34e830158b3f))
+* **cli/install:** handle react-native install ([b01a0ea](https://github.com/admob-plus/admob-plus/commit/b01a0ea8e1669386656a97c9f68f2da24d4ec5ac))
+
+
+
+
+
 ## [1.8.8](https://github.com/admob-plus/admob-plus/compare/admob-plus@1.8.7...admob-plus@1.8.8) (2021-05-06)
 
 **Note:** Version bump only for package admob-plus

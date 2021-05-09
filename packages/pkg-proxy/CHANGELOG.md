@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/admob-plus/admob-plus/compare/pkg-proxy@0.1.3...pkg-proxy@0.2.0) (2021-05-09)
+
+
+### Features
+
+* **pkg-proxy:** export PkgProxy ([5e25e65](https://github.com/admob-plus/admob-plus/commit/5e25e65dbf7e7c36b429822c88c88bac96133a10))
+
+
+
+
+
 ## [0.1.3](https://github.com/admob-plus/admob-plus/compare/pkg-proxy@0.1.2...pkg-proxy@0.1.3) (2021-05-06)
 
 **Note:** Version bump only for package pkg-proxy
