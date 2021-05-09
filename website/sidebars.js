@@ -71,9 +71,14 @@ module.exports = {
             'https://github.com/admob-plus/admob-plus/blob/master/packages/ionic/CHANGELOG.md',
         },
       ],
-      "React Native": [
+      'React Native': [
         'react-native/installation',
         {
+          'Ad Formats': [
+            'react-native/ads/interstitial',
+            'react-native/ads/rewarded',
+            'react-native/ads/rewarded-interstitial',
+          ],
           API: require('./sidebar/typedoc-react-native.js'),
         },
         {
