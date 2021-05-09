@@ -142,7 +142,20 @@ module.exports = {
         sidebar: {
           sidebarFile: 'sidebar/typedoc-ionic.js',
         },
-        excludeExternals:true
+        excludeExternals: true,
+      },
+    ],
+    [
+      'docusaurus-plugin-typedoc',
+      {
+        id: 'typedoc-react-native',
+        entryPoints: ['../packages/react-native/src/index.ts'],
+        tsconfig: '../packages/react-native/tsconfig.json',
+        out: 'react-native/api',
+        readme: 'none',
+        sidebar: {
+          sidebarFile: 'sidebar/typedoc-react-native.js',
+        },
       },
     ],
   ],
