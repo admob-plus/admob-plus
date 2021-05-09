@@ -137,20 +137,27 @@ class ReactNativeProject extends Project {
   }
 
   detect() {
-    return this.hasAnyDeps([
-      '@ionic-native/core',
-      '@ionic/angular',
-      '@ionic/react',
-      '@ionic/vue',
-    ])
+    return this.pkg.depends('react-native')
   }
 
-  install(): Promise<void> {
-    throw new Error('Method not implemented.')
+  async install() {
+    const { pkg } = this
+    if (!(await this.confirmRun('@admob-plus/react-native'))) {
+      return
+    }
+
+    await execa('npm', ['install', '@admob-plus/react-native'], {
+      cwd: pkg.rootDir(),
+    })
   }
 }
 
-const projects = [CapactiorProject, CordovaProject, IonicProject]
+const projects = [
+  CapactiorProject,
+  CordovaProject,
+  IonicProject,
+  ReactNativeProject,
+]
 
 export const command = 'install'
 
