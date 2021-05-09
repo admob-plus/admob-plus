@@ -32,7 +32,8 @@
   "resolutions": {
     "@admob-plus-internal/cli": "file:../../internal/cli",
     "@admob-plus/react-native": "file:../../packages/react-native",
-    "@types/react": "^17.0.0"
+    "@types/react": "^17.0.0",
+    "pkg-proxy": "file:../../packages/pkg-proxy"
   },
   "jest": {
     "preset": "react-native",

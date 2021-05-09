@@ -71,6 +71,18 @@ module.exports = {
             'https://github.com/admob-plus/admob-plus/blob/master/packages/ionic/CHANGELOG.md',
         },
       ],
+      "React Native": [
+        'react-native/installation',
+        {
+          API: require('./sidebar/typedoc-react-native.js'),
+        },
+        {
+          type: 'link',
+          label: 'CHANGELOG',
+          href:
+            'https://github.com/admob-plus/admob-plus/blob/master/packages/react-native/CHANGELOG.md',
+        },
+      ],
     },
     'troubleshooting',
   ],
