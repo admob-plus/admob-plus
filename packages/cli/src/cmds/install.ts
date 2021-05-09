@@ -1,7 +1,9 @@
 /* eslint-disable max-classes-per-file */
+import assert from 'assert'
 import { prompt } from 'enquirer'
 import execa from 'execa'
 import findPkg, { PkgProxy } from 'pkg-proxy'
+import { Argv } from 'yargs'
 
 abstract class Project {
   readonly pkg
@@ -51,7 +53,9 @@ class CapactiorProject extends Project {
     if (
       !(await this.confirmRun(`npm install @admob-plus/capacitor
 npx cap sync`))
-    ) return
+    ) {
+      return
+    }
 
     await execa('npm', ['install', '@admob-plus/capacitor'], {
       cwd: pkg.rootDir(),
@@ -127,40 +131,75 @@ class IonicProject extends Project {
   }
 }
 
+class ReactNativeProject extends Project {
+  get type() {
+    return 'react-native'
+  }
+
+  detect() {
+    return this.hasAnyDeps([
+      '@ionic-native/core',
+      '@ionic/angular',
+      '@ionic/react',
+      '@ionic/vue',
+    ])
+  }
+
+  install(): Promise<void> {
+    throw new Error('Method not implemented.')
+  }
+}
+
+const projects = [CapactiorProject, CordovaProject, IonicProject]
+
 export const command = 'install'
 
 export const desc = 'Install plugin'
 
-export const handler = async () => {
+export const builder = (yargs: Argv<unknown>) =>
+  yargs.options({
+    project: {
+      alias: 'p',
+      type: 'string',
+      desc: 'Project type',
+      choices: projects.map((P) => new P({} as any).type),
+    },
+  })
+
+export const handler = async (argv: ReturnType<typeof builder>['argv']) => {
   const pkg = await findPkg({ searchParents: true })
   if (!pkg) {
     console.log('Cannot find package.json')
     return
   }
 
-  const projectHandlers = [CapactiorProject, CordovaProject, IonicProject].map(
-    (P) => new P(pkg),
-  )
-  let initial = projectHandlers.findIndex((x) => x.detect())
-  if (projectHandlers[initial] instanceof CordovaProject) {
-    const i = projectHandlers
-      .filter((x) => !(x instanceof CordovaProject))
-      .findIndex((x) => x.detect())
-    if (i >= -1) {
-      initial = i
+  const projectHandlers = projects.map((P) => new P(pkg))
+  let project: Project | undefined
+  if (argv.project) {
+    project = projectHandlers.find((x) => x.type === argv.project)
+    assert(project)
+  } else {
+    let initial = projectHandlers.findIndex((x) => x.detect())
+    if (projectHandlers[initial] instanceof CordovaProject) {
+      const i = projectHandlers
+        .filter((x) => !(x instanceof CordovaProject))
+        .findIndex((x) => x.detect())
+      if (i >= -1) {
+        initial = i
+      }
     }
+    const response = await prompt<{ project: Project }>({
+      type: 'select',
+      name: 'project',
+      message: 'Project type?',
+      choices: projectHandlers.map((x) => x.type),
+      initial,
+      result(value) {
+        return projectHandlers.find((x) => x.type === value) as any
+      },
+    })
+    project = response.project
   }
-
-  const { project } = await prompt<{ project: Project }>({
-    type: 'select',
-    name: 'project',
-    message: 'Project type?',
-    choices: projectHandlers.map((x) => x.type),
-    initial,
-    result(value) {
-      return projectHandlers.find((x) => x.type === value) as any
-    },
-  })
 
   await project.install()
 }
