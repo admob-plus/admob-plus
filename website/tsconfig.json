@@ -1,14 +1,4 @@
 {
-  "extends": "@admob-plus-internal/tsconfig",
-  "compilerOptions": {
-    "allowJs": true,
-    "esModuleInterop": true,
-    "jsx": "react",
-    "lib": ["dom", "es2017"],
-    "outDir": "lib",
-    "rootDir": "src",
-    "noImplicitAny": false,
-    "skipLibCheck": true
-  },
-  "include": ["src/**/*.ts"]
+  "extends": "@tsconfig/docusaurus/tsconfig.json",
+  "include": ["src/"]
 }
