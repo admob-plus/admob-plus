@@ -197,16 +197,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: lycheeverse/lychee-action@v1.0.6
-        with:
-          args: --version
       - name: lychee Link Checker
         id: lc
-        uses: lycheeverse/lychee-action@v1.0.6
+        uses: lycheeverse/lychee-action@v1.0.8
         with:
           args: >
             README.md
-            packages/*/README.
+            packages/*/README.md
             website/**/*.md
             --config lychee.toml
       - name: Fail if there were link errors
