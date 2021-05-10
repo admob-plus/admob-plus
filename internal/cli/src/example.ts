@@ -218,6 +218,45 @@ const iosOpen = async (opts: { cwd: string }) => {
   await Promise.all(watchTasks.map((f) => f()))
 }
 
+function cordovaDev({
+  name,
+  cwd,
+  platform,
+}: {
+  name: string
+  cwd: string
+  platform: string
+}) {
+  const pkgName = 'admob-plus-cordova'
+  return {
+    syncDirs: [
+      {
+        src: pkgsDirJoin('cordova/src/ios'),
+        dest: path.join(cwd, 'platforms/ios', name, 'Plugins', pkgName),
+      },
+      {
+        src: pkgsDirJoin('cordova/src/ios'),
+        dest: path.join(cwd, 'plugins', pkgName, 'src/ios'),
+      },
+      {
+        src: pkgsDirJoin('cordova/src/android'),
+        dest: path.join(
+          cwd,
+          'platforms/android/app/src/main/java/admob/plugin',
+        ),
+      },
+      {
+        src: pkgsDirJoin('cordova/src/android'),
+        dest: path.join(cwd, 'plugins', pkgName, 'src/android'),
+      },
+    ],
+    openArgs:
+      platform === 'android'
+        ? ['-a', 'Android Studio', 'platforms/android']
+        : [`platforms/ios/${name}.xcworkspace`],
+  }
+}
+
 async function startDev(opts: any) {
   const platform = opts.platform ?? 'ios'
   const { cwd } = opts
@@ -228,34 +267,16 @@ async function startDev(opts: any) {
   switch (path.basename(cwd)) {
     case 'cordova': {
       const name = 'AdmobBasicExample'
-      const pkgName = 'admob-plus-cordova'
-      syncDirs.push(
-        {
-          src: pkgsDirJoin('cordova/src/ios'),
-          dest: path.join(cwd, 'platforms/ios', name, 'Plugins', pkgName),
-        },
-        {
-          src: pkgsDirJoin('cordova/src/ios'),
-          dest: path.join(cwd, 'plugins', pkgName, 'src/ios'),
-        },
-        {
-          src: pkgsDirJoin('cordova/src/android'),
-          dest: path.join(
-            cwd,
-            'platforms/android/app/src/main/java/admob/plugin',
-          ),
-        },
-        {
-          src: pkgsDirJoin('cordova/src/android'),
-          dest: path.join(cwd, 'plugins', pkgName, 'src/android'),
-        },
-      )
-
-      if (platform === 'android') {
-        openArgs.push('-a', 'Android Studio', 'platforms/android')
-      } else {
-        openArgs.push(`platforms/ios/${name}.xcworkspace`)
-      }
+      const o = cordovaDev({ name, cwd, platform })
+      syncDirs.push(...o.syncDirs)
+      openArgs.push(...o.openArgs)
+      break
+    }
+    case 'ionic-angular': {
+      const name = 'AdMob Plus Ionic'
+      const o = cordovaDev({ name, cwd, platform })
+      syncDirs.push(...o.syncDirs)
+      openArgs.push(...o.openArgs)
       break
     }
     case 'react-native':
