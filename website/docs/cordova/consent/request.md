@@ -49,6 +49,8 @@ new admob.BannerAd({
 })
 ```
 
+The `npa` parameter is applicable to [`BannerAd`](./api/classes/bannerad), [`InterstitialAd`](./api/classes/interstitialad), [`RewardedAd`](./api/classes/rewardedad), [`RewardedInterstitialAd`](./api/classes/rewardedinterstitialad).
+
 ## References
 
 - [TrackingAuthorizationStatus](../api/enums/trackingauthorizationstatus.md)
