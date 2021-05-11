@@ -268,6 +268,13 @@ public class Banner extends AdBase implements IAdShow {
             if (getParentView(mAdView) == mRelativeLayout && mRelativeLayout != null) return;
             addBannerViewWithRelativeLayout();
         }
+
+        ViewGroup contentView = getContentView();
+        if (contentView != null) {
+            contentView.bringToFront();
+            contentView.requestLayout();
+            contentView.requestFocus();
+        }
     }
 
     private void addBannerViewWithLinearLayout() {
