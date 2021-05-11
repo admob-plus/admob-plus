@@ -29,6 +29,7 @@
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
+    "@admob-plus-internal/cli": "file:../../internal/cli",
     "@angular-devkit/build-angular": "~0.1102.12",
     "@angular/cli": "~11.2.12",
     "@angular/compiler": "~11.2.13",
