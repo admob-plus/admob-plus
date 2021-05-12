@@ -5,7 +5,7 @@ import React from 'react'
 const RemoveTrailingSlashRedirect: React.FC = () => {
   const location = useLocation()
   if (location.pathname.endsWith('/')) {
-    // @ts-expect-error
+    // @ts-ignore
     return <Redirect to={location.pathname.slice(0, -1)} />
   }
   return null

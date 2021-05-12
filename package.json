@@ -103,6 +103,7 @@
     "@admob-plus/ionic": "workspace:*",
     "@admob-plus/react-native": "workspace:*",
     "@types/node": "^15.0.2",
+    "@types/react": "17.0.5",
     "admob-plus-cordova": "workspace:*",
     "admob-plus": "workspace:*",
     "cordova-plugin-consent": "workspace:*",
