@@ -265,6 +265,30 @@ async function startDev(opts: any) {
   const syncDirs: { src: string; dest: string }[] = []
 
   switch (path.basename(cwd)) {
+    case 'capacitor': {
+      const sourceDir = path.join(cwd, 'src')
+      const watcher = sane(sourceDir, { glob: ['**/*'] })
+      promises.push(
+        execa('yarn', ['prepare'], { stdio: 'inherit', cwd }),
+        new Promise(() => {
+          watcher.on('change', async (filepath: string) => {
+            console.log('file changed', filepath)
+            await execa('yarn', ['prepare'], { stdio: 'inherit', cwd })
+          })
+        }),
+      )
+
+      if (platform === 'android') {
+        openArgs.push('-a', 'Android Studio', 'android')
+      } else {
+        const paths = await glob('ios/App/*.xcworkspace', {
+          onlyDirectories: true,
+          cwd,
+        })
+        openArgs.push(paths[0])
+      }
+      break
+    }
     case 'cordova': {
       const name = 'AdmobBasicExample'
       const o = cordovaDev({ name, cwd, platform })

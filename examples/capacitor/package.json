@@ -7,6 +7,7 @@
     "prepare": "webpack --mode production && cap sync"
   },
   "dependencies": {
+    "@admob-plus-internal/cli": "file:../../internal/cli",
     "@admob-plus/capacitor": "file:../../packages/capacitor",
     "@capacitor/core": "^3.0.0-rc.0",
     "@capacitor/ios": "^3.0.0-rc.0"
