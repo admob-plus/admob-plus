@@ -4,6 +4,9 @@ import GoogleMobileAds
 class AMBContext {
     static weak var plugin: AdMobPlusPlugin!
 
+    static let rootViewController = plugin.bridge!.viewController!
+    static let window = UIApplication.shared.keyWindow!
+
     let call: CAPPluginCall
 
     var plugin: AdMobPlusPlugin {

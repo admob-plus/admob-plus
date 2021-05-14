@@ -52,7 +52,7 @@ class AMBBanner: AMBAdBase, GADAdSizeDelegate, GADBannerViewDelegate {
     }
 
     var rootView: UIView {
-        return window
+        return AMBContext.window
     }
 
     var webView: UIView {
@@ -93,7 +93,7 @@ class AMBBanner: AMBAdBase, GADAdSizeDelegate, GADBannerViewDelegate {
             bannerView = GADBannerView(adSize: self.adSize)
             bannerView.adSizeDelegate = self
             bannerView.delegate = self
-            bannerView.rootViewController = rootViewController
+            bannerView.rootViewController = AMBContext.rootViewController
         }
 
         bannerView.adUnitID = adUnitId

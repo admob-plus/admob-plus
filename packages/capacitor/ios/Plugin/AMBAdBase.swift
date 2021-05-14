@@ -10,14 +10,6 @@ class AMBAdBase: NSObject {
         return AMBContext.plugin
     }
 
-    var window: UIWindow {
-        return UIApplication.shared.keyWindow!
-    }
-
-    var rootViewController: UIViewController {
-        return window.rootViewController!
-    }
-
     init(id: Int, adUnitId: String) {
         self.id = id
         self.adUnitId = adUnitId

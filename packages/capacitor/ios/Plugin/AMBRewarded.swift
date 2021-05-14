@@ -33,7 +33,7 @@ class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
 
     func show(_ ctx: AMBContext) {
         if self.isLoaded() {
-            self.rewardedAd?.present(fromRootViewController: self.rootViewController, userDidEarnRewardHandler: {
+            self.rewardedAd?.present(fromRootViewController: AMBContext.rootViewController, userDidEarnRewardHandler: {
                 self.emit(AMBEvents.rewardedReward, self.rewardedAd!.adReward)
             })
             ctx.success()
