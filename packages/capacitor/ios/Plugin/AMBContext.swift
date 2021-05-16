@@ -9,9 +9,7 @@ class AMBContext {
 
     let call: CAPPluginCall
 
-    var plugin: AdMobPlusPlugin {
-        return AMBContext.plugin
-    }
+    let plugin = AMBContext.plugin
 
     init(_ call: CAPPluginCall) {
         self.call = call

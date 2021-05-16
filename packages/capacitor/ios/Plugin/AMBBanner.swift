@@ -29,7 +29,7 @@ private class AMBContainerView: UIView {
 }
 
 class AMBBanner: AMBAdBase, GADAdSizeDelegate, GADBannerViewDelegate {
-    static var stackView = UIStackView()
+    static let stackView = UIStackView()
 
     static var topConstraint = {
         return AMBBanner.stackView.topAnchor.constraint(
@@ -47,25 +47,12 @@ class AMBBanner: AMBAdBase, GADAdSizeDelegate, GADBannerViewDelegate {
 
     private let mainView = AMBContainerView()
 
-    var stackView: UIStackView {
-        return AMBBanner.stackView
-    }
+    let stackView = AMBBanner.stackView
+    let rootView = AMBContext.window
+    let webView = AMBContext.plugin.webView!
 
-    var rootView: UIView {
-        return AMBContext.window
-    }
-
-    var webView: UIView {
-        return plugin.webView!
-    }
-
-    var topConstraint: NSLayoutConstraint {
-        return AMBBanner.topConstraint
-    }
-
-    var bottomConstraint: NSLayoutConstraint {
-        return AMBBanner.bottomConstraint
-    }
+    let topConstraint = AMBBanner.topConstraint
+    let bottomConstraint = AMBBanner.bottomConstraint
 
     init(id: Int, adUnitId: String, adSize: GADAdSize, position: String) {
         self.adSize = adSize
@@ -189,7 +176,7 @@ class AMBBanner: AMBAdBase, GADAdSizeDelegate, GADBannerViewDelegate {
 
     private func updateLayout() {
         if stackView.arrangedSubviews.first is GADBannerView {
-            plugin.bridge?.statusBarStyle = .lightContent
+            AMBContext.plugin.bridge?.statusBarStyle = .lightContent
             topConstraint.isActive = true
         } else {
             topConstraint.isActive = false

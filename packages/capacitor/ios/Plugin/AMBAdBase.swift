@@ -6,10 +6,6 @@ class AMBAdBase: NSObject {
     let id: Int
     let adUnitId: String
 
-    var plugin: AdMobPlusPlugin {
-        return AMBContext.plugin
-    }
-
     init(id: Int, adUnitId: String) {
         self.id = id
         self.adUnitId = adUnitId
@@ -63,6 +59,6 @@ class AMBAdBase: NSObject {
         if data != nil {
             d.merge(data!) { (current, _) in current }
         }
-        plugin.notifyListeners(eventName, data: d)
+        AMBContext.plugin.notifyListeners(eventName, data: d)
     }
 }
