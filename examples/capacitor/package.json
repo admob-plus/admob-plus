@@ -9,8 +9,8 @@
   "dependencies": {
     "@admob-plus-internal/cli": "file:../../internal/cli",
     "@admob-plus/capacitor": "file:../../packages/capacitor",
-    "@capacitor/core": "^3.0.0-rc.0",
-    "@capacitor/ios": "^3.0.0-rc.0"
+    "@capacitor/core": "^3.0.0-rc.3",
+    "@capacitor/ios": "^3.0.0-rc.3"
   },
   "devDependencies": {
     "@capacitor/cli": "^3.0.0-rc.0",
