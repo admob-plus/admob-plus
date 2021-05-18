@@ -24,16 +24,25 @@ abstract class Project {
   }
 
   async confirmRun(cmd: string) {
-    const response = await prompt<{ run: boolean }>([
+    const { answer } = await prompt<{ answer: boolean }>([
       {
         type: 'confirm',
-        name: 'run',
+        name: 'answer',
         initial: true,
         hint: `\n${cmd}`,
         message: 'Run?',
       },
     ])
-    return response.run
+    return answer
+  }
+
+  async confirmThenRun(cmds: Array<string[]>) {
+    if (await this.confirmRun(cmds.map((args) => args.join(' ')).join('\n'))) {
+      for (const args of cmds) {
+        // eslint-disable-next-line no-await-in-loop
+        await execa(args[0], args.slice(1), { cwd: this.pkg.rootDir() })
+      }
+    }
   }
 }
 
@@ -49,20 +58,10 @@ class CapacitorProject extends Project {
   }
 
   async install() {
-    const { pkg } = this
-    if (
-      !(await this.confirmRun(`npm install @admob-plus/capacitor
-npx cap sync`))
-    ) {
-      return
-    }
-
-    await execa('npm', ['install', '@admob-plus/capacitor'], {
-      cwd: pkg.rootDir(),
-    })
-    await execa('npx', ['cap', 'sync'], {
-      cwd: pkg.rootDir(),
-    })
+    await this.confirmThenRun([
+      ['npm', 'install', '@admob-plus/capacitor'],
+      ['npx', 'cap', 'sync'],
+    ])
   }
 }
 
@@ -106,9 +105,7 @@ class CordovaProject extends Project {
       },
     ])
 
-    if (await this.confirmRun(args.join(' '))) {
-      await execa(args[0], args.slice(1), { cwd: this.pkg.rootDir() })
-    }
+    await this.confirmThenRun([args])
   }
 }
 
@@ -141,14 +138,7 @@ class ReactNativeProject extends Project {
   }
 
   async install() {
-    const { pkg } = this
-    if (!(await this.confirmRun('@admob-plus/react-native'))) {
-      return
-    }
-
-    await execa('npm', ['install', '@admob-plus/react-native'], {
-      cwd: pkg.rootDir(),
-    })
+    await this.confirmThenRun([['npm', 'install', '@admob-plus/react-native']])
   }
 }
 
