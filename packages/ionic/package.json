@@ -19,7 +19,7 @@
     "@angular/core": "~11.2.13",
     "@ionic-native/core": "^5.33.0",
     "@types/fs-extra": "^9.0.11",
-    "@types/node": "^15.0.2",
+    "@types/node": "^15.3.0",
     "admob-plus-cordova": "file:../cordova",
     "del": "^6.0.0",
     "execa": "^5.0.0",
