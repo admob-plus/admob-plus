@@ -37,7 +37,7 @@ abstract class Project {
   }
 }
 
-class CapactiorProject extends Project {
+class CapacitorProject extends Project {
   get type() {
     return 'capacitor'
   }
@@ -153,7 +153,7 @@ class ReactNativeProject extends Project {
 }
 
 const projects = [
-  CapactiorProject,
+  CapacitorProject,
   CordovaProject,
   IonicProject,
   ReactNativeProject,
