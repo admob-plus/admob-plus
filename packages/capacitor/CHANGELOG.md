@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.9.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.8.0...@admob-plus/capacitor@1.9.0) (2021-05-20)
+
+
+### Features
+
+* **capacitor/ios:** manage webview size by placeholder view ([135c1e0](https://github.com/admob-plus/admob-plus/commit/135c1e081b067b8ee2f1c4ba2a8fe2a4a222c0be))
+
+
+
+
+
 # [1.8.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.7.0...@admob-plus/capacitor@1.8.0) (2021-05-12)
 
 

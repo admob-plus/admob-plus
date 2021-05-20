@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.12.1](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.12.0...admob-plus-cordova@1.12.1) (2021-05-20)
+
+**Note:** Version bump only for package admob-plus-cordova
+
+
+
+
+
 # [1.12.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.11.1...admob-plus-cordova@1.12.0) (2021-05-12)
 
 

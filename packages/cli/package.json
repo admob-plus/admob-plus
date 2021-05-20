@@ -1,7 +1,7 @@
 {
   "name": "admob-plus",
   "description": "AdMob Plus CLI",
-  "version": "1.9.1",
+  "version": "1.9.2",
   "bin": "./bin/run",
   "dependencies": {
     "@frat/envinfo": "^7.9.0",
@@ -20,7 +20,7 @@
     "listr2": "^3.8.2",
     "lodash": "^4.17.21",
     "ora": "^5.4.0",
-    "pkg-proxy": "^0.2.0",
+    "pkg-proxy": "^0.2.1",
     "semver": "^7.3.5",
     "tslib": "^2.2.0",
     "update-notifier": "^5.1.0",
