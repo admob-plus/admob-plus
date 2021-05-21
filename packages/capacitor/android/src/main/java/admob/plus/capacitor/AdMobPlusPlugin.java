@@ -9,17 +9,21 @@ import com.google.android.gms.ads.MobileAds;
 
 import org.json.JSONException;
 
+import admob.plus.AdMobHelper;
 import admob.plus.capacitor.ads.Banner;
 import admob.plus.capacitor.ads.Interstitial;
 import admob.plus.capacitor.ads.Rewarded;
 import admob.plus.capacitor.ads.RewardedInterstitial;
 
 @CapacitorPlugin(name = "AdMobPlus")
-public class AdMobPlusPlugin extends Plugin {
+public class AdMobPlusPlugin extends Plugin implements AdMobHelper.Adapter {
+    public AdMobHelper helper;
 
     @Override
     public void load() {
         super.load();
+
+        this.helper = new AdMobHelper(this);
 
         ExecuteContext.plugin = this;
     }
@@ -56,7 +60,7 @@ public class AdMobPlusPlugin extends Plugin {
     @PluginMethod
     public void configRequest(PluginCall call) {
         final ExecuteContext ctx = new ExecuteContext(call);
-        MobileAds.setRequestConfiguration(ctx.optRequestConfiguration());
+        MobileAds.setRequestConfiguration(helper.buildRequestConfiguration(call.getData()));
         ctx.success();
     }
 

@@ -116,69 +116,6 @@ public class ExecuteContext {
         return builder.build();
     }
 
-    public RequestConfiguration optRequestConfiguration() {
-        RequestConfiguration.Builder builder = new RequestConfiguration.Builder();
-        if (call.hasOption("maxAdContentRating")) {
-            builder.setMaxAdContentRating(call.getString("maxAdContentRating"));
-        }
-        Integer tagForChildDirectedTreatment = optChildDirectedTreatmentTag();
-        if (tagForChildDirectedTreatment != null) {
-            builder.setTagForChildDirectedTreatment(tagForChildDirectedTreatment);
-        }
-        Integer tagForUnderAgeOfConsent = optUnderAgeOfConsentTag();
-        if (tagForUnderAgeOfConsent != null) {
-            builder.setTagForUnderAgeOfConsent(tagForChildDirectedTreatment);
-        }
-        if (call.hasOption("testDeviceIds")) {
-            JSArray testDeviceIdsArray = call.getArray("testDeviceIds");
-            List<String> testDeviceIds = new ArrayList<String>(testDeviceIdsArray.length());
-            try {
-                testDeviceIds = testDeviceIdsArray.toList();
-            } catch (JSONException ignored) {
-            }
-            builder.setTestDeviceIds(testDeviceIds);
-        }
-        return builder.build();
-    }
-
-    @Nullable
-    private Integer optChildDirectedTreatmentTag() {
-        String name = "tagForChildDirectedTreatment";
-        if (!call.hasOption(name)) {
-            return null;
-        }
-
-        Boolean value = call.getBoolean(name, null);
-        if (value == null) {
-            return RequestConfiguration.TAG_FOR_CHILD_DIRECTED_TREATMENT_UNSPECIFIED;
-        }
-
-        if (value) {
-            return RequestConfiguration.TAG_FOR_CHILD_DIRECTED_TREATMENT_TRUE;
-        }
-
-        return RequestConfiguration.TAG_FOR_CHILD_DIRECTED_TREATMENT_FALSE;
-    }
-
-    @Nullable
-    private Integer optUnderAgeOfConsentTag() {
-        String name = "tagForUnderAgeOfConsent";
-        if (!call.hasOption(name)) {
-            return null;
-        }
-
-        Boolean value = call.getBoolean(name, null);
-        if (value == null) {
-            return RequestConfiguration.TAG_FOR_UNDER_AGE_OF_CONSENT_UNSPECIFIED;
-        }
-
-        if (value) {
-            return RequestConfiguration.TAG_FOR_UNDER_AGE_OF_CONSENT_TRUE;
-        }
-
-        return RequestConfiguration.TAG_FOR_UNDER_AGE_OF_CONSENT_FALSE;
-    }
-
     public Activity getActivity() {
         return plugin.getActivity();
     }
