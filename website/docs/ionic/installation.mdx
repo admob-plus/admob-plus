@@ -36,6 +36,9 @@ ionic cordova plugin add admob-plus-cordova
 npm install @admob-plus/ionic
 ```
 
+:::tip
+Consider using [`@admob-plus/capacitor`](/docs/capacitor) if your project does not require Cordova.
+:::
 </TabItem>
   <TabItem value="capacitor">
 
@@ -44,10 +47,9 @@ npm install @admob-plus/ionic
 npm install admob-plus-cordova
 ionic cap sync
 ```
-
   </TabItem>
 </Tabs>
 
-:::tip
-Consider using [`@admob-plus/capacitor`](/docs/capacitor) if your project does not require Cordova.
+:::note
+`ionic-angular` user needs to update `typescript` to a recent version, or config `"skipLibCheck": true` in `tsconfig.json` to avoid type errors.
 :::
