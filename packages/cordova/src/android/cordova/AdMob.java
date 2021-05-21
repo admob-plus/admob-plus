@@ -1,4 +1,4 @@
-package admob.plugin;
+package admob.plus.cordova;
 
 import android.content.res.Configuration;
 import android.provider.Settings;
@@ -19,16 +19,16 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import admob.plugin.Generated.Actions;
-import admob.plugin.ads.AdBase;
-import admob.plugin.ads.Banner;
-import admob.plugin.ads.IAdIsLoaded;
-import admob.plugin.ads.IAdShow;
-import admob.plugin.ads.Interstitial;
-import admob.plugin.ads.Rewarded;
-import admob.plugin.ads.RewardedInterstitial;
+import admob.plus.cordova.Generated.Actions;
+import admob.plus.cordova.ads.AdBase;
+import admob.plus.cordova.ads.Banner;
+import admob.plus.cordova.ads.IAdIsLoaded;
+import admob.plus.cordova.ads.IAdShow;
+import admob.plus.cordova.ads.Interstitial;
+import admob.plus.cordova.ads.Rewarded;
+import admob.plus.cordova.ads.RewardedInterstitial;
 
-import static admob.plugin.ExecuteContext.ads;
+import static admob.plus.cordova.ExecuteContext.ads;
 
 public class AdMob extends CordovaPlugin {
     private static final String TAG = "AdMobPlus";

@@ -1,4 +1,4 @@
-package admob.plugin.ads;
+package admob.plus.cordova.ads;
 
 import android.annotation.SuppressLint;
 import android.content.res.Configuration;
@@ -25,8 +25,8 @@ import org.apache.cordova.CordovaWebView;
 
 import java.util.HashMap;
 
-import admob.plugin.ExecuteContext;
-import admob.plugin.Generated.Events;
+import admob.plus.cordova.ExecuteContext;
+import admob.plus.cordova.Generated.Events;
 
 public class Banner extends AdBase implements IAdShow {
     private static final String TAG = "AdMobPlus.Banner";

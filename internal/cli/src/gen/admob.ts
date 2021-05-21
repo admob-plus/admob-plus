@@ -70,7 +70,7 @@ function buildJava(): string {
   const linesEvents = renderJavaContants(Events)
 
   return `// ${warnMessage}
-package admob.plugin;
+package admob.plus.cordova;
 
 public final class Generated {
     public static final class Actions {
@@ -140,7 +140,7 @@ require('cordova/exec/proxy').add('AdMob', AdMob)
 
 export default async () => ({
   files: [
-    { path: 'cordova/src/android/Generated.java', f: buildJava },
+    { path: 'cordova/src/android/cordova/Generated.java', f: buildJava },
     {
       path: 'cordova/src/ios/AMBGenerated.swift',
       f: buildSwift,
@@ -149,5 +149,5 @@ export default async () => ({
     { path: 'cordova/src/browser/AdMobProxy.js', f: buildProxyJs },
   ],
   pkgDir: pkgsDirJoin('cordova'),
-  targetDir: 'src/admob/plugin',
+  targetDir: 'src/admob/plus',
 })

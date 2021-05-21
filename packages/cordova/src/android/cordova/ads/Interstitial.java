@@ -1,4 +1,4 @@
-package admob.plugin.ads;
+package admob.plus.cordova.ads;
 
 import androidx.annotation.NonNull;
 
@@ -9,8 +9,8 @@ import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 
-import admob.plugin.ExecuteContext;
-import admob.plugin.Generated.Events;
+import admob.plus.cordova.ExecuteContext;
+import admob.plus.cordova.Generated.Events;
 
 public class Interstitial extends AdBase implements IAdIsLoaded, IAdLoad, IAdShow {
     private InterstitialAd mAd = null;

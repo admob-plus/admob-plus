@@ -127,7 +127,7 @@ const androidRun = async (argv: {
 const resolveJavaPackagePath = (pkgName: string) => {
   switch (pkgName) {
     case 'admob-plus-cordova':
-      return 'admob/plugin'
+      return 'admob/plus'
     case 'cordova-plugin-consent':
       return 'cordova/plugin/consent'
     default:
@@ -240,10 +240,7 @@ function cordovaDev({
       },
       {
         src: pkgsDirJoin('cordova/src/android'),
-        dest: path.join(
-          cwd,
-          'platforms/android/app/src/main/java/admob/plugin',
-        ),
+        dest: path.join(cwd, 'platforms/android/app/src/main/java/admob/plus'),
       },
       {
         src: pkgsDirJoin('cordova/src/android'),

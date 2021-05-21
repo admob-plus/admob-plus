@@ -24,6 +24,7 @@ Commands:
   admob-plus doctor    Check your project setup for potential problems
   admob-plus info      Get relevant version info about OS, toolchain and
                        libraries
+  admob-plus install   Install plugin
   admob-plus test-ids  Print test IDs
 
 Options:

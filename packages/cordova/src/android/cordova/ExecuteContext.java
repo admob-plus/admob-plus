@@ -1,4 +1,4 @@
-package admob.plugin;
+package admob.plus.cordova;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -21,8 +21,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
-import admob.plugin.ads.AdBase;
-import admob.plugin.ads.Banner.AdSizeType;
+import admob.plus.cordova.ads.AdBase;
+import admob.plus.cordova.ads.Banner.AdSizeType;
 
 public class ExecuteContext {
     public static final SparseArray<AdBase> ads = new SparseArray<AdBase>();

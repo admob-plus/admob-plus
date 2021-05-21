@@ -1,4 +1,4 @@
-package admob.plugin.ads;
+package admob.plus.cordova.ads;
 
 import android.app.Activity;
 import android.content.res.Configuration;
@@ -9,9 +9,9 @@ import com.google.android.gms.ads.rewarded.RewardItem;
 import java.util.HashMap;
 import java.util.Map;
 
-import admob.plugin.ExecuteContext;
+import admob.plus.cordova.ExecuteContext;
 
-import static admob.plugin.ExecuteContext.ads;
+import static admob.plus.cordova.ExecuteContext.ads;
 
 public abstract class AdBase {
     final int id;
