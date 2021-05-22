@@ -94,69 +94,6 @@ public class ExecuteContext {
         return ad;
     }
 
-    public RequestConfiguration optRequestConfiguration() {
-        RequestConfiguration.Builder builder = new RequestConfiguration.Builder();
-        if (this.opts.has("maxAdContentRating")) {
-            builder.setMaxAdContentRating(this.opts.optString("maxAdContentRating"));
-        }
-        Integer tagForChildDirectedTreatment = optChildDirectedTreatmentTag();
-        if (tagForChildDirectedTreatment != null) {
-            builder.setTagForChildDirectedTreatment(tagForChildDirectedTreatment);
-        }
-        Integer tagForUnderAgeOfConsent = optUnderAgeOfConsentTag();
-        if (tagForUnderAgeOfConsent != null) {
-            builder.setTagForUnderAgeOfConsent(tagForChildDirectedTreatment);
-        }
-        if (this.opts.has("testDeviceIds")) {
-            List<String> testDeviceIds = new ArrayList<String>();
-            JSONArray ids = this.opts.optJSONArray("testDeviceIds");
-            for (int i = 0; i < ids.length(); i++) {
-                String testDeviceId = ids.optString(i);
-                if (testDeviceId != null) {
-                    testDeviceIds.add(testDeviceId);
-                }
-            }
-            builder.setTestDeviceIds(testDeviceIds);
-        }
-        return builder.build();
-    }
-
-    @Nullable
-    private Integer optChildDirectedTreatmentTag() {
-        String name = "tagForChildDirectedTreatment";
-        if (!this.opts.has(name)) {
-            return null;
-        }
-
-        if (this.opts.opt(name) == null) {
-            return RequestConfiguration.TAG_FOR_CHILD_DIRECTED_TREATMENT_UNSPECIFIED;
-        }
-
-        if (this.opts.optBoolean(name)) {
-            return RequestConfiguration.TAG_FOR_CHILD_DIRECTED_TREATMENT_TRUE;
-        }
-
-        return RequestConfiguration.TAG_FOR_CHILD_DIRECTED_TREATMENT_FALSE;
-    }
-
-    @Nullable
-    private Integer optUnderAgeOfConsentTag() {
-        String name = "tagForUnderAgeOfConsent";
-        if (!this.opts.has(name)) {
-            return null;
-        }
-
-        if (this.opts.opt(name) == null) {
-            return RequestConfiguration.TAG_FOR_UNDER_AGE_OF_CONSENT_UNSPECIFIED;
-        }
-
-        if (this.opts.optBoolean(name)) {
-            return RequestConfiguration.TAG_FOR_UNDER_AGE_OF_CONSENT_TRUE;
-        }
-
-        return RequestConfiguration.TAG_FOR_UNDER_AGE_OF_CONSENT_FALSE;
-    }
-
     @Nullable
     public ServerSideVerificationOptions optServerSideVerificationOptions() {
         final String param = "serverSideVerification";

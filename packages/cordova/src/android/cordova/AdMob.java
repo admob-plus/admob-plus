@@ -1,5 +1,6 @@
 package admob.plus.cordova;
 
+import android.app.Activity;
 import android.content.res.Configuration;
 import android.provider.Settings;
 import android.util.Log;
@@ -19,6 +20,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import admob.plus.AdMobHelper;
 import admob.plus.cordova.Generated.Actions;
 import admob.plus.cordova.ads.AdBase;
 import admob.plus.cordova.ads.Banner;
@@ -34,12 +36,19 @@ public class AdMob extends CordovaPlugin {
     private static final String TAG = "AdMobPlus";
     private final ArrayList<PluginResult> eventQueue = new ArrayList<PluginResult>();
     private CallbackContext readyCallbackContext = null;
+    public AdMobHelper helper;
 
     @Override
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
         Log.i(TAG, "Initialize plugin");
 
+        helper = new AdMobHelper(new AdMobHelper.Adapter() {
+            @Override
+            public Activity getActivity() {
+                return cordova.getActivity();
+            }
+        });
         ExecuteContext.plugin = this;
     }
 
@@ -57,7 +66,7 @@ public class AdMob extends CordovaPlugin {
                 }})));
                 break;
             case Actions.CONFIG_REQUEST:
-                MobileAds.setRequestConfiguration(ctx.optRequestConfiguration());
+                MobileAds.setRequestConfiguration(helper.buildRequestConfiguration(ctx.opts));
                 callbackContext.success();
                 break;
             case Actions.BANNER_LOAD:

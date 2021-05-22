@@ -1,3 +1,4 @@
+import fse from 'fs-extra'
 import _ from 'lodash'
 import { pkgsDirJoin } from '../utils'
 import { AdEvents } from './capacitor'
@@ -138,16 +139,30 @@ require('cordova/exec/proxy').add('AdMob', AdMob)
 `
 }
 
-export default async () => ({
-  files: [
-    { path: 'cordova/src/android/cordova/Generated.java', f: buildJava },
-    {
-      path: 'cordova/src/ios/AMBGenerated.swift',
-      f: buildSwift,
-    },
-    { path: 'cordova/ts/generated.ts', f: buildTypeScript },
-    { path: 'cordova/src/browser/AdMobProxy.js', f: buildProxyJs },
-  ],
-  pkgDir: pkgsDirJoin('cordova'),
-  targetDir: 'src/admob/plus',
-})
+async function copyAndroidHelper() {
+  const srcPath = pkgsDirJoin(
+    'capacitor/android/src/main/java/admob/plus/AdMobHelper.java',
+  )
+  const content = await fse.readFile(srcPath, 'utf-8')
+  await fse.outputFile(
+    pkgsDirJoin('cordova/src/android/AdMobHelper.java'),
+    `// ${warnMessage}\n${content}`,
+  )
+}
+
+export default async () => {
+  await copyAndroidHelper()
+  return {
+    files: [
+      { path: 'cordova/src/android/cordova/Generated.java', f: buildJava },
+      {
+        path: 'cordova/src/ios/AMBGenerated.swift',
+        f: buildSwift,
+      },
+      { path: 'cordova/ts/generated.ts', f: buildTypeScript },
+      { path: 'cordova/src/browser/AdMobProxy.js', f: buildProxyJs },
+    ],
+    pkgDir: pkgsDirJoin('cordova'),
+    targetDir: 'src/admob/plus',
+  }
+}
