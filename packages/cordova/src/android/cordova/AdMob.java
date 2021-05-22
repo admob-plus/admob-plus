@@ -39,8 +39,8 @@ public class AdMob extends CordovaPlugin {
     public AdMobHelper helper;
 
     @Override
-    public void initialize(CordovaInterface cordova, CordovaWebView webView) {
-        super.initialize(cordova, webView);
+    protected void pluginInitialize() {
+        super.pluginInitialize();
         Log.i(TAG, "Initialize plugin");
 
         helper = new AdMobHelper(new AdMobHelper.Adapter() {
