@@ -2,15 +2,12 @@ package admob.plus.cordova;
 
 import android.app.Activity;
 import android.content.res.Configuration;
-import android.provider.Settings;
 import android.util.Log;
 
 import com.google.android.gms.ads.MobileAds;
 
 import org.apache.cordova.CallbackContext;
-import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.CordovaPlugin;
-import org.apache.cordova.CordovaWebView;
 import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -35,8 +32,8 @@ import static admob.plus.cordova.ExecuteContext.ads;
 public class AdMob extends CordovaPlugin {
     private static final String TAG = "AdMobPlus";
     private final ArrayList<PluginResult> eventQueue = new ArrayList<PluginResult>();
-    private CallbackContext readyCallbackContext = null;
     public AdMobHelper helper;
+    private CallbackContext readyCallbackContext = null;
 
     @Override
     protected void pluginInitialize() {
@@ -119,7 +116,7 @@ public class AdMob extends CordovaPlugin {
         }
         readyCallbackContext = callbackContext;
         emit(Generated.Events.READY, new HashMap<String, Object>() {{
-            put("isRunningInTestLab", isRunningInTestLab());
+            put("isRunningInTestLab", helper.isRunningInTestLab());
         }});
         return true;
     }
@@ -259,11 +256,5 @@ public class AdMob extends CordovaPlugin {
         } else {
             readyCallbackContext.sendPluginResult(result);
         }
-    }
-
-    private boolean isRunningInTestLab() {
-        String testLabSetting = Settings.System.getString(cordova.getActivity().getContentResolver(),
-                "firebase.test.lab");
-        return "true".equals(testLabSetting);
     }
 }

@@ -9,7 +9,6 @@ import androidx.annotation.Nullable;
 import com.google.ads.mediation.admob.AdMobAdapter;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
-import com.google.android.gms.ads.RequestConfiguration;
 import com.google.android.gms.ads.rewarded.ServerSideVerificationOptions;
 
 import org.apache.cordova.CallbackContext;
@@ -18,8 +17,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.ArrayList;
-import java.util.List;
 
 import admob.plus.cordova.ads.AdBase;
 import admob.plus.cordova.ads.Banner.AdSizeType;
