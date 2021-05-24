@@ -104,6 +104,8 @@
     "@admob-plus/react-native": "workspace:*",
     "@types/node": "^15.3.0",
     "@types/react": "17.0.5",
+    "@typescript-eslint/parser": "^4.24.0",
+    "@typescript-eslint/eslint-plugin": "^4.24.0",
     "admob-plus-cordova": "workspace:*",
     "admob-plus": "workspace:*",
     "cordova-plugin-consent": "workspace:*",

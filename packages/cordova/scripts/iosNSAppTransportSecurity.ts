@@ -1,10 +1,10 @@
-const assert = require('assert')
-const fs = require('fs')
-const glob = require('glob')
-const path = require('path')
-const plist = require('plist')
+import assert from 'assert'
+import fs from 'fs'
+import glob from 'glob'
+import path from 'path'
+import plist, { PlistObject } from 'plist'
 
-const iosSetNSAppTransportSecurity = (ctx) => {
+const iosSetNSAppTransportSecurity = (ctx: any) => {
   const { projectRoot } = ctx.opts
 
   const plistFile = glob.sync(
@@ -12,7 +12,9 @@ const iosSetNSAppTransportSecurity = (ctx) => {
   )[0]
   assert(plistFile)
 
-  const plistObj = plist.parse(fs.readFileSync(plistFile, 'utf8'))
+  const plistObj = plist.parse(fs.readFileSync(plistFile, 'utf8')) as {
+    NSAppTransportSecurity: PlistObject
+  }
 
   Object.assign(plistObj, {
     NSAppTransportSecurity: {
@@ -25,7 +27,7 @@ const iosSetNSAppTransportSecurity = (ctx) => {
   fs.writeFileSync(plistFile, plist.build(plistObj))
 }
 
-module.exports = (ctx) => {
+export = (ctx: any) => {
   if (ctx.opts.cordova.platforms.includes('ios')) {
     iosSetNSAppTransportSecurity(ctx)
   }
