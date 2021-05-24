@@ -1,10 +1,11 @@
 import assert from 'assert'
+import type { Context } from 'cordova-ts-hook'
 import fs from 'fs'
 import glob from 'glob'
 import path from 'path'
 import plist, { PlistObject } from 'plist'
 
-const iosSetNSAppTransportSecurity = (ctx: any) => {
+const iosSetNSAppTransportSecurity = (ctx: Context) => {
   const { projectRoot } = ctx.opts
 
   const plistFile = glob.sync(
@@ -27,7 +28,7 @@ const iosSetNSAppTransportSecurity = (ctx: any) => {
   fs.writeFileSync(plistFile, plist.build(plistObj))
 }
 
-export = (ctx: any) => {
+export = (ctx: Context) => {
   if (ctx.opts.cordova.platforms.includes('ios')) {
     iosSetNSAppTransportSecurity(ctx)
   }
