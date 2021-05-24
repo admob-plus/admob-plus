@@ -1,2 +1,3 @@
-lib/
-www/
+/lib/
+/www/
+/scripts/*.js
