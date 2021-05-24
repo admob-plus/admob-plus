@@ -4,8 +4,7 @@ class AMBInterstitial: AMBAdBase, GADFullScreenContentDelegate {
     var interstitial: GADInterstitialAd?
 
     deinit {
-        interstitial?.fullScreenContentDelegate = nil
-        interstitial = nil
+        clear()
     }
 
     func isLoaded() -> Bool {
@@ -13,9 +12,8 @@ class AMBInterstitial: AMBAdBase, GADFullScreenContentDelegate {
     }
 
     func load(_ ctx: AMBContext) {
-        
-        self.clear();
-        
+        clear()
+
         GADInterstitialAd.load(
             withAdUnitID: adUnitId,
             request: ctx.optGADRequest(),
@@ -43,13 +41,6 @@ class AMBInterstitial: AMBAdBase, GADFullScreenContentDelegate {
             ctx.error("Ad is not loaded")
         }
     }
-    
-    func clear() {
-        if (interstitial != nil) {
-            interstitial?.fullScreenContentDelegate = nil
-            interstitial = nil;
-        }
-    }
 
     func adDidRecordImpression(_ ad: GADFullScreenPresentingAd) {
         self.emit(AMBEvents.interstitialImpression)
@@ -67,5 +58,10 @@ class AMBInterstitial: AMBAdBase, GADFullScreenContentDelegate {
 
     func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
         self.emit(AMBEvents.interstitialDismiss)
+    }
+
+    private func clear() {
+        interstitial?.fullScreenContentDelegate = nil
+        interstitial = nil
     }
 }

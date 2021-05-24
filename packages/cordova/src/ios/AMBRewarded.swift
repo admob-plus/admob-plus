@@ -4,8 +4,7 @@ class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
     var rewardedAd: GADRewardedAd?
 
     deinit {
-        rewardedAd?.fullScreenContentDelegate = nil
-        rewardedAd = nil
+        clear()
     }
 
     func isLoaded() -> Bool {
@@ -13,6 +12,8 @@ class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
     }
 
     func load(_ ctx: AMBContext) {
+        clear()
+
         GADRewardedAd.load(withAdUnitID: adUnitId, request: ctx.optGADRequest(), completionHandler: { ad, error in
             if error != nil {
                 self.emit(AMBEvents.rewardedLoadFail, error!)
@@ -48,14 +49,21 @@ class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
     }
 
     func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
+        clear()
         self.emit(AMBEvents.rewardedShowFail, error)
     }
 
     func adDidPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        clear()
         self.emit(AMBEvents.rewardedShow)
     }
 
     func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
         self.emit(AMBEvents.rewardedDismiss)
+    }
+
+    private func clear() {
+        rewardedAd?.fullScreenContentDelegate = nil
+        rewardedAd = nil
     }
 }

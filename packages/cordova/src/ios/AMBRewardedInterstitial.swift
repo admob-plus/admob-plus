@@ -4,8 +4,7 @@ class AMBRewardedInterstitial: AMBAdBase, GADFullScreenContentDelegate {
     var rewardedInterstitial: GADRewardedInterstitialAd?
 
     deinit {
-        rewardedInterstitial?.fullScreenContentDelegate = nil
-        rewardedInterstitial = nil
+        clear()
     }
 
     func isLoaded() -> Bool {
@@ -13,6 +12,8 @@ class AMBRewardedInterstitial: AMBAdBase, GADFullScreenContentDelegate {
     }
 
     func load(_ ctx: AMBContext) {
+        clear()
+
         GADRewardedInterstitialAd.load(withAdUnitID: adUnitId, request: ctx.optGADRequest(), completionHandler: { ad, error in
             if error != nil {
                 self.emit(AMBEvents.rewardedInterstitialLoadFail, error!)
@@ -48,14 +49,21 @@ class AMBRewardedInterstitial: AMBAdBase, GADFullScreenContentDelegate {
     }
 
     func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
+        clear()
         self.emit(AMBEvents.rewardedInterstitialShowFail, error)
     }
 
     func adDidPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        clear()
         self.emit(AMBEvents.rewardedInterstitialShow)
     }
 
     func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
         self.emit(AMBEvents.rewardedInterstitialDismiss)
+    }
+
+    private func clear() {
+        rewardedInterstitial?.fullScreenContentDelegate = nil
+        rewardedInterstitial = nil
     }
 }
