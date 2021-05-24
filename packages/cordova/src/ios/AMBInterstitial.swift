@@ -13,6 +13,9 @@ class AMBInterstitial: AMBAdBase, GADFullScreenContentDelegate {
     }
 
     func load(_ ctx: AMBContext) {
+        
+        self.clear();
+        
         GADInterstitialAd.load(
             withAdUnitID: adUnitId,
             request: ctx.optGADRequest(),
@@ -40,16 +43,25 @@ class AMBInterstitial: AMBAdBase, GADFullScreenContentDelegate {
             ctx.error("Ad is not loaded")
         }
     }
+    
+    func clear() {
+        if (interstitial != nil) {
+            interstitial?.fullScreenContentDelegate = nil
+            interstitial = nil;
+        }
+    }
 
     func adDidRecordImpression(_ ad: GADFullScreenPresentingAd) {
         self.emit(AMBEvents.interstitialImpression)
     }
 
     func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
+        self.clear()
         self.emit(AMBEvents.interstitialShowFail, error)
     }
 
     func adDidPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        self.clear()
         self.emit(AMBEvents.interstitialShow)
     }
 
