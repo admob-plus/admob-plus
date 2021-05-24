@@ -56,13 +56,13 @@ class AMBInterstitial: AMBAdBase, GADFullScreenContentDelegate {
     }
 
     func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
+        self.clear()
         self.emit(AMBEvents.interstitialShowFail, error)
-        self.clear();
     }
 
     func adDidPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        self.clear()
         self.emit(AMBEvents.interstitialShow)
-        self.clear();
     }
 
     func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
