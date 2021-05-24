@@ -6,7 +6,7 @@
   "typings": "lib/index.d.ts",
   "scripts": {
     "prepublishOnly": "yarn build",
-    "build": "rollup -c && tsc -b",
+    "build": "rollup -c && tsc -b && tsc -p scripts",
     "test": "tsc --noEmit"
   },
   "devDependencies": {
