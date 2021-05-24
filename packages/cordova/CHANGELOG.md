@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.12.2](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.12.1...admob-plus-cordova@1.12.2) (2021-05-24)
+
+
+### Bug Fixes
+
+* **cordova/ios:** add clear for full-screen ads ([d17fc81](https://github.com/admob-plus/admob-plus/commit/d17fc81189392e866fbbc90d86451425cf8d8018))
+* **cordova/ios:** add clear function ([#346](https://github.com/admob-plus/admob-plus/issues/346)) ([d30ca5a](https://github.com/admob-plus/admob-plus/commit/d30ca5adb7d98c0834abc4d0792b09f28d0939e3))
+
+
+
+
+
 ## [1.12.1](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.12.0...admob-plus-cordova@1.12.1) (2021-05-20)
 
 **Note:** Version bump only for package admob-plus-cordova

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.9.3](https://github.com/admob-plus/admob-plus/compare/admob-plus@1.9.2...admob-plus@1.9.3) (2021-05-24)
+
+
+### Bug Fixes
+
+* **cli:** fix type error ([cfd36d9](https://github.com/admob-plus/admob-plus/commit/cfd36d989769ae27665ee086b27aa74dd3cf2470))
+
+
+
+
+
 ## [1.9.2](https://github.com/admob-plus/admob-plus/compare/admob-plus@1.9.1...admob-plus@1.9.2) (2021-05-20)
 
 **Note:** Version bump only for package admob-plus

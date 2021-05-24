@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-consent",
-  "version": "2.1.8",
+  "version": "2.1.9",
   "description": "Google Consent SDK Cordova Plugin",
   "main": "www/consent.js",
   "typings": "www/consent.d.ts",
