@@ -5,7 +5,7 @@ import execa from 'execa'
 import fse from 'fs-extra'
 import _ from 'lodash'
 import findPkg from 'pkg-proxy'
-import { Argv } from 'yargs'
+import { Arguments, CommandBuilder } from 'yargs'
 
 const collectionAndroidManifestInfo = async () => {
   const content = await fse.readFile(
@@ -45,15 +45,16 @@ export const command = 'info'
 export const desc =
   'Get relevant version info about OS, toolchain and libraries'
 
-export const builder = (yargs: Argv<unknown>) =>
-  yargs.options({
-    clipboard: {
-      type: 'boolean',
-      desc: 'Copy the environment report output to the clipboard',
-    },
-  })
+type Options = { clipboard: boolean }
 
-export const handler = async (argv: ReturnType<typeof builder>['argv']) => {
+export const builder: CommandBuilder<unknown, Options> = {
+  clipboard: {
+    type: 'boolean',
+    desc: 'Copy the environment report output to the clipboard',
+  },
+}
+
+export const handler = async (argv: Arguments<Options>) => {
   const pkg = { ...(await findPkg({ searchParents: true })) }
   const extraInfo: { [x: string]: unknown } = {}
 

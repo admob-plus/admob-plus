@@ -3,7 +3,7 @@ import assert from 'assert'
 import { prompt } from 'enquirer'
 import execa from 'execa'
 import findPkg, { PkgProxy } from 'pkg-proxy'
-import { Argv } from 'yargs'
+import { Arguments, CommandBuilder } from 'yargs'
 
 abstract class Project {
   readonly pkg
@@ -153,17 +153,18 @@ export const command = 'install'
 
 export const desc = 'Install plugin'
 
-export const builder = (yargs: Argv<unknown>) =>
-  yargs.options({
-    project: {
-      alias: 'p',
-      type: 'string',
-      desc: 'Project type',
-      choices: projects.map((P) => new P({} as any).type),
-    },
-  })
+type Options = { project: string }
 
-export const handler = async (argv: ReturnType<typeof builder>['argv']) => {
+export const builder: CommandBuilder<unknown, Options> = {
+  project: {
+    alias: 'p',
+    type: 'string',
+    desc: 'Project type',
+    choices: projects.map((P) => new P({} as any).type),
+  },
+}
+
+export const handler = async (argv: Arguments<Options>) => {
   const pkg = await findPkg({ searchParents: true })
   if (!pkg) {
     console.log('Cannot find package.json')
