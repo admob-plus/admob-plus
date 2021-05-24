@@ -1,5 +1,5 @@
-import * as del from 'del'
-import * as execa from 'execa'
+import del from 'del'
+import execa from 'execa'
 import * as fse from 'fs-extra'
 
 const main = async () => {
