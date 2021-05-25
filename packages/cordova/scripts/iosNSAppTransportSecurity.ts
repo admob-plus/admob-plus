@@ -1,22 +1,12 @@
-import assert from 'assert'
 import type { Context } from 'cordova-ts-hook'
 import fse from 'fs-extra'
-import glob from 'fast-glob'
-import path from 'path'
 import plist, { PlistObject } from 'plist'
+import { enhanceContext, EnhancedContext } from './util'
 
-async function iosSetNSAppTransportSecurity(ctx: Context) {
-  const { projectRoot } = ctx.opts
+async function iosSetNSAppTransportSecurity(ctx: EnhancedContext) {
+  const { plistPath } = ctx.ios!
 
-  const plistFiles = await glob('*/*-Info.plist', {
-    cwd: path.join(projectRoot, 'platforms/ios'),
-    onlyFiles: true,
-    absolute: true,
-  })
-  const plistFile = plistFiles[0]
-  assert(plistFile)
-
-  const content = await fse.readFile(plistFile, 'utf8')
+  const content = await fse.readFile(plistPath, 'utf8')
   if (content.indexOf('NSAllowsArbitraryLoadsInWebContent') > -1) {
     return
   }
@@ -33,10 +23,11 @@ async function iosSetNSAppTransportSecurity(ctx: Context) {
       NSAllowsArbitraryLoadsInWebContent: true,
     },
   })
-  await fse.writeFile(plistFile, plist.build(plistObj))
+  await fse.writeFile(plistPath, plist.build(plistObj))
 }
 
-export = async (ctx: Context) => {
+export = async (context: Context) => {
+  const ctx = await enhanceContext(context)
   if (ctx.opts.cordova.platforms.includes('ios')) {
     await iosSetNSAppTransportSecurity(ctx)
   }
