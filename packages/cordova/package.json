@@ -9,6 +9,12 @@
     "build": "rollup -c && tsc -b && tsc -p scripts",
     "test": "tsc --noEmit"
   },
+  "dependencies": {
+    "fast-glob": "^3.2.5",
+    "fs-extra": "^10.0.0",
+    "plist": "^3.0.2",
+    "replace-in-file": "^6.2.0"
+  },
   "devDependencies": {
     "@admob-plus-internal/rollup-config": "file:../../internal/rollup-config",
     "@tsconfig/node10": "^1.0.7",
