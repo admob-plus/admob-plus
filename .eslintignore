@@ -13,4 +13,4 @@ packages/cli/lib
 packages/cordova/lib
 packages/cordova/www
 packages/cordova/ts
-packages/cordova/scripts/iosNSAppTransportSecurity.ts
+packages/cordova/scripts
