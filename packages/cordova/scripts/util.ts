@@ -1,6 +1,7 @@
 import path from 'path'
 import glob from 'fast-glob'
 import type { Context } from 'cordova-ts-hook'
+import fse from 'fs-extra'
 
 export interface EnhancedContext extends Context {
   ios?: {
@@ -9,7 +10,9 @@ export interface EnhancedContext extends Context {
   }
 }
 
-export async function enhanceContext(context: Context): Promise<EnhancedContext> {
+export async function enhanceContext(
+  context: Context,
+): Promise<EnhancedContext> {
   const ctx: EnhancedContext = context
   const { projectRoot } = context.opts
 
@@ -27,4 +30,15 @@ export async function enhanceContext(context: Context): Promise<EnhancedContext>
   }
 
   return ctx
+}
+
+export async function updateTextFile(
+  filename: string,
+  update: (context: string) => string | undefined,
+) {
+  const content = await fse.readFile(filename, 'utf8')
+  const contextUpdated = update(content)
+  if (contextUpdated === undefined || contextUpdated === content) return
+
+  await fse.writeFile(filename, contextUpdated)
 }
