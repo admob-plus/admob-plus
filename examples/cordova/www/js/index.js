@@ -18,13 +18,17 @@ const app = {
 
     admob
       .start()
-      .then(() =>
+      .then(() => {
+        new admob.AppOpenAd({
+          adUnitId: 'ca-app-pub-3940256099942544/5662855259',
+        })
+
         admob.BannerAd.config({
           backgroundColor: '#A7A7A7',
           marginTop: 10,
           marginBottom: 10,
-        }),
-      )
+        })
+      })
       .catch(alert)
 
     this.initButton('show-banner-btn', this.showBannerAd)

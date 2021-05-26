@@ -102,6 +102,35 @@ class AMBPlugin: CDVPlugin {
         }
     }
 
+    @objc func createAd(_ command: CDVInvokedUrlCommand) {
+        let ctx = AMBContext(command)
+
+        if let adType = ctx.optString("type") {
+            switch adType {
+            case "app-open":
+                _ = AMBAppOpenAd(ctx)
+            default:
+                break
+            }
+            ctx.success()
+        } else {
+            ctx.error()
+        }
+    }
+
+    @objc func appOpenTryToPresent(_ command: CDVInvokedUrlCommand) {
+        let ctx = AMBContext(command)
+
+        DispatchQueue.main.async {
+            if let ad = ctx.optAd() as? AMBAppOpenAd {
+                ad.tryToPresentAd()
+                ctx.success()
+            } else {
+                ctx.error()
+            }
+        }
+    }
+
     @objc(bannerConfig:)
     func bannerConfig(command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(command)

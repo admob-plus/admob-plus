@@ -18,6 +18,9 @@ const Actions = _.mapValues(
     setAppVolume: null,
     start: null,
     requestTrackingAuthorization: null,
+    createAd: null,
+    // AppOpenAd
+    appOpenTryToPresent: null,
     // BannerAd
     bannerConfig: null,
     bannerLoad: null,

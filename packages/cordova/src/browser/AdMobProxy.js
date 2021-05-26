@@ -2,11 +2,13 @@
 'use strict'
 
 const AdMob = {
+  appOpenTryToPresent() {},
   bannerConfig() {},
   bannerHide() {},
   bannerLoad() {},
   bannerShow() {},
   configRequest() {},
+  createAd() {},
   interstitialIsLoaded() {},
   interstitialLoad() {},
   interstitialShow() {},

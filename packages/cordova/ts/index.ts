@@ -1,11 +1,12 @@
+import AppOpenAd from './app-open'
 import BannerAd, { BannerAdOptions } from './banner'
 import InterstitialAd from './interstitial'
 import RewardedAd, {
   RewardedAdOptions,
-  ServerSideVerificationOptions,
+  ServerSideVerificationOptions
 } from './rewarded'
 import RewardedInterstitialAd, {
-  RewardedInterstitialAdOptions,
+  RewardedInterstitialAdOptions
 } from './rewarded-interstitial'
 import {
   Events,
@@ -14,11 +15,12 @@ import {
   NativeActions,
   Platforms,
   RequestConfig,
-  TrackingAuthorizationStatus,
+  TrackingAuthorizationStatus
 } from './shared'
 
 export * from './api'
 export {
+  AppOpenAd,
   BannerAd,
   BannerAdOptions,
   InterstitialAd,
@@ -30,6 +32,7 @@ export {
 }
 
 export class AdMob {
+  public readonly AppOpenAd = AppOpenAd
   public readonly BannerAd = BannerAd
   public readonly InterstitialAd = InterstitialAd
   public readonly RewardedAd = RewardedAd
