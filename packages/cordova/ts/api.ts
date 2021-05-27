@@ -19,6 +19,10 @@ export class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
     MobileAd.allAds[this.id] = this
   }
 
+  public static getAdById(id: number) {
+    return this.allAds[id]
+  }
+
   private static nextId() {
     MobileAd.idCounter += 1
     return MobileAd.idCounter

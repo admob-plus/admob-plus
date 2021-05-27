@@ -11,7 +11,8 @@ import RewardedInterstitialAd, {
 import {
   Events,
   execAsync,
-  initPlugin,
+  fireDocumentEvent,
+  MobileAd,
   NativeActions,
   Platforms,
   RequestConfig,
@@ -42,7 +43,24 @@ export class AdMob {
   public readonly TrackingAuthorizationStatus = TrackingAuthorizationStatus
 
   constructor() {
-    initPlugin()
+    document.addEventListener(
+      'deviceready',
+      () => {
+        cordova.exec(
+          (event) => {
+            const { data } = event
+            if (data && data.adId) {
+              data.ad = MobileAd.getAdById(data.adId)
+            }
+            fireDocumentEvent(event.type, data)
+          },
+          console.error,
+          'AdMob',
+          NativeActions.ready,
+        )
+      },
+      false,
+    )
   }
 
   public configRequest(requestConfig: RequestConfig) {
