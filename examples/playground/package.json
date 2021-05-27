@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@chakra-ui/react": "^1.6.2",
+    "@chakra-ui/react": "^1.6.3",
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",
     "admob-plus-cordova": "file:../../packages/cordova",
@@ -25,8 +25,8 @@
     "@types/fs-extra": "^9.0.11",
     "@types/jest": "^26.0.23",
     "@types/lodash": "^4.14.170",
-    "@types/node": "^15.6.0",
-    "@types/react": "^17.0.6",
+    "@types/node": "^15.6.1",
+    "@types/react": "^17.0.8",
     "@types/react-dom": "^17.0.5",
     "@types/recoil": "^0.0.1",
     "cordova": "^10.0.1-nightly.2021.2.10.189ac49b",
@@ -41,7 +41,7 @@
     "internal-ip": "^6.2.0",
     "react-scripts": "4.0.3",
     "ts-node": "^10.0.0",
-    "typescript": "^4.2.4"
+    "typescript": "^4.3.2"
   },
   "scripts": {
     "start": "ts-node -TH -P ../../internal/cli/tsconfig.json scripts/dev.ts",

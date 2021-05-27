@@ -16,8 +16,8 @@
   "devDependencies": {
     "@admob-plus-internal/tsconfig": "file:../tsconfig",
     "npm-run-all": "^4.1.5",
-    "rollup": "^2.49.0",
-    "typescript": "^4.2.4"
+    "rollup": "^2.50.2",
+    "typescript": "^4.3.2"
   },
   "eslintConfig": {
     "extends": [
