@@ -3,6 +3,12 @@ package admob.plus.capacitor;
 
 public final class Generated {
     public final class Events {
+        public static final String AD_DISMISS = "ad.dismiss";
+        public static final String AD_IMPRESSION = "ad.impression";
+        public static final String AD_LOAD = "ad.load";
+        public static final String AD_LOAD_FAIL = "ad.loadfail";
+        public static final String AD_SHOW = "ad.show";
+        public static final String AD_SHOW_FAIL = "ad.showfail";
         public static final String BANNER_CLICK = "banner.click";
         public static final String BANNER_CLOSE = "banner.close";
         public static final String BANNER_IMPRESSION = "banner.impression";

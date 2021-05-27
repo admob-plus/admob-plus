@@ -5,6 +5,8 @@ class AMBAppOpenAd: AMBAdBase, GADFullScreenContentDelegate {
     let request: GADRequest
     let orientation: UIInterfaceOrientation = .portrait
 
+    var appOpenAd: GADAppOpenAd?
+
     init(id: Int, adUnitId: String, request: GADRequest) {
         self.request = request
 
@@ -22,10 +24,12 @@ class AMBAppOpenAd: AMBAdBase, GADFullScreenContentDelegate {
                   request: ctx.optGADRequest())
     }
 
-    var appOpenAd: GADAppOpenAd?
+    deinit {
+        clear()
+    }
 
     func requestAppOpenAd() {
-        self.appOpenAd = nil
+        clear()
 
         GADAppOpenAd.load(
             withAdUnitID: self.adUnitId,
@@ -49,16 +53,26 @@ class AMBAppOpenAd: AMBAdBase, GADFullScreenContentDelegate {
     }
 
     func adDidRecordImpression(_ ad: GADFullScreenPresentingAd) {
+        self.emit(AMBEvents.adImpression)
     }
 
     func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
         self.requestAppOpenAd()
+        self.emit(AMBEvents.adShowFail, error)
     }
 
     func adDidPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        clear()
+        self.emit(AMBEvents.adShow)
     }
 
     func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
         self.requestAppOpenAd()
+        self.emit(AMBEvents.adDismiss)
+    }
+
+    private func clear() {
+        appOpenAd?.fullScreenContentDelegate = nil
+        appOpenAd = nil
     }
 }

@@ -24,6 +24,12 @@ export enum NativeActions {
 }
 
 export enum Events {
+  adDismiss = 'admob.ad.dismiss',
+  adImpression = 'admob.ad.impression',
+  adLoad = 'admob.ad.load',
+  adLoadFail = 'admob.ad.loadfail',
+  adShow = 'admob.ad.show',
+  adShowFail = 'admob.ad.showfail',
   bannerClick = 'admob.banner.click',
   bannerClose = 'admob.banner.close',
   bannerImpression = 'admob.banner.impression',

@@ -5,6 +5,12 @@ struct AMBBannerPosition {
 }
 
 struct AMBEvents {
+    static let adDismiss = "admob.ad.dismiss"
+    static let adImpression = "admob.ad.impression"
+    static let adLoad = "admob.ad.load"
+    static let adLoadFail = "admob.ad.loadfail"
+    static let adShow = "admob.ad.show"
+    static let adShowFail = "admob.ad.showfail"
     static let bannerClick = "admob.banner.click"
     static let bannerClose = "admob.banner.close"
     static let bannerImpression = "admob.banner.impression"

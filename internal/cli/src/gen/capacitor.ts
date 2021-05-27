@@ -10,6 +10,13 @@ import {
 } from './shared'
 
 export const AdEvents = {
+  // Ad
+  adDismiss: 'ad.dismiss',
+  adImpression: 'ad.impression',
+  adLoad: 'ad.load',
+  adLoadFail: 'ad.loadfail',
+  adShow: 'ad.show',
+  adShowFail: 'ad.showfail',
   // BannerAd
   bannerClick: 'banner.click',
   bannerClose: 'banner.close',
@@ -150,8 +157,7 @@ ${pluginMethods
 export default async () => ({
   files: [
     {
-      path:
-        'capacitor/android/src/main/java/admob/plus/capacitor/Generated.java',
+      path: 'capacitor/android/src/main/java/admob/plus/capacitor/Generated.java',
       f: buildJava,
     },
     {
