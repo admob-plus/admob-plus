@@ -84,7 +84,7 @@ public class AdMob extends CordovaPlugin {
                 cordova.getActivity().runOnUiThread(() -> {
                     AppOpen ad = (AppOpen) ctx.optAdOrError();
                     if (ad != null) {
-                        ad.showIfAvailable();
+                        ad.showOrLoad();
                         ctx.success();
                     } else {
                         ctx.error("cannot find ad");

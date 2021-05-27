@@ -60,7 +60,7 @@ public class Rewarded extends AdBase implements IAdIsLoaded, IAdLoad, IAdShow {
 
                     @Override
                     public void onAdShowedFullScreenContent() {
-                        mAd = null;
+                        clear();
                         emit(Events.REWARDED_SHOW);
                     }
 
