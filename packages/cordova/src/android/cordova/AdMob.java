@@ -20,6 +20,7 @@ import java.util.Map;
 import admob.plus.AdMobHelper;
 import admob.plus.cordova.Generated.Actions;
 import admob.plus.cordova.ads.AdBase;
+import admob.plus.cordova.ads.AppOpen;
 import admob.plus.cordova.ads.Banner;
 import admob.plus.cordova.ads.IAdIsLoaded;
 import admob.plus.cordova.ads.IAdShow;
@@ -65,6 +66,30 @@ public class AdMob extends CordovaPlugin {
             case Actions.CONFIG_REQUEST:
                 MobileAds.setRequestConfiguration(helper.buildRequestConfiguration(ctx.opts));
                 callbackContext.success();
+                break;
+            case Actions.CREATE_AD:
+                String adType = ctx.optString("type");
+                if (adType == null) {
+                    ctx.error("ad type is missing");
+                } else {
+                    switch (adType) {
+                        case "app-open":
+                            new AppOpen(ctx);
+                            break;
+                    }
+                    ctx.success();
+                }
+                break;
+            case Actions.APP_OPEN_TRY_TO_PRESENT:
+                cordova.getActivity().runOnUiThread(() -> {
+                    AppOpen ad = (AppOpen) ctx.optAdOrError();
+                    if (ad != null) {
+                        ad.showIfAvailable();
+                        ctx.success();
+                    } else {
+                        ctx.error("cannot find ad");
+                    }
+                });
                 break;
             case Actions.BANNER_LOAD:
                 return executeBannerLoad(ctx);

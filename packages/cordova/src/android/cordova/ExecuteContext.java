@@ -41,12 +41,17 @@ public class ExecuteContext {
     }
 
     @Nullable
+    public String optString(String name) {
+        return this.opts.optString(name);
+    }
+
+    @Nullable
     public String optAdUnitID() {
-        return this.opts.optString("adUnitId");
+        return optString("adUnitId");
     }
 
     public String optPosition() {
-        return opts.optString("position");
+        return optString("position");
     }
 
     @Nullable
