@@ -10,16 +10,16 @@ export default class AppOpenAd extends MobileAd {
       document.addEventListener(
         'resume',
         () => {
-          this.tryToPresent()
+          this.showOrLoad()
         },
         false,
       )
 
-      await this.tryToPresent()
+      await this.showOrLoad()
     })
   }
 
-  async tryToPresent() {
+  async showOrLoad() {
     await execAsync(NativeActions.appOpenTryToPresent, [{ id: this.id }])
   }
 }
