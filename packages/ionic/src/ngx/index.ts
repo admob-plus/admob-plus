@@ -10,7 +10,7 @@ import {
   RewardedAdOptions,
   RewardedInterstitialAd as IRewardedInterstitialAd,
   RewardedInterstitialAdOptions,
-  TrackingAuthorizationStatus
+  TrackingAuthorizationStatus,
 } from 'admob-plus-cordova'
 import { fromEvent, Observable } from 'rxjs'
 
@@ -19,7 +19,8 @@ const pluginName = 'AdMob'
 
 export class BannerAd
   extends IonicNativePlugin
-  implements Omit<IBannerAd, 'opts'> {
+  implements Omit<IBannerAd, 'opts'>
+{
   public static plugin = plugin
   public static pluginName = pluginName
   public static pluginRef = 'admob.BannerAd'
@@ -55,7 +56,8 @@ export class BannerAd
 
 export class InterstitialAd
   extends IonicNativePlugin
-  implements Omit<IInterstitialAd, 'opts'> {
+  implements Omit<IInterstitialAd, 'opts'>
+{
   public static plugin = plugin
   public static pluginName = pluginName
   public static pluginRef = 'admob.InterstitialAd'
@@ -91,7 +93,8 @@ export class InterstitialAd
 
 export class RewardedAd
   extends IonicNativePlugin
-  implements Omit<IRewardedAd, 'opts'> {
+  implements Omit<IRewardedAd, 'opts'>
+{
   public static plugin = plugin
   public static pluginName = pluginName
   public static pluginRef = 'admob.RewardedAd'
@@ -127,7 +130,8 @@ export class RewardedAd
 
 export class RewardedInterstitialAd
   extends IonicNativePlugin
-  implements Omit<IRewardedInterstitialAd, 'opts'> {
+  implements Omit<IRewardedInterstitialAd, 'opts'>
+{
   public static plugin = plugin
   public static pluginName = pluginName
   public static pluginRef = 'admob.RewardedInterstitialAd'
@@ -167,13 +171,15 @@ export class AdMob
   implements
     Omit<
       IAdMob,
+      | 'AppOpenAd'
       | 'BannerAd'
       | 'Events'
       | 'InterstitialAd'
       | 'RewardedAd'
       | 'RewardedInterstitialAd'
       | 'TrackingAuthorizationStatus'
-    > {
+    >
+{
   public static platforms = ['Android', 'iOS']
   public static plugin = plugin
   public static pluginName = pluginName
