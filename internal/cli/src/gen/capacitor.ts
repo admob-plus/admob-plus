@@ -87,7 +87,9 @@ export const extractClassInfo = (
     properties: checker.getPropertiesOfType(cls),
     methodSignatures: cls
       .getProperties()
-      .filter((x) => x.valueDeclaration.kind === ts.SyntaxKind.MethodSignature),
+      .filter(
+        (x) => x.valueDeclaration?.kind === ts.SyntaxKind.MethodSignature,
+      ),
   }
 }
 
