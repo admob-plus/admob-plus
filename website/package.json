@@ -23,8 +23,8 @@
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^2.0.0-beta.0",
     "@tsconfig/docusaurus": "^1.0.2",
-    "@types/node": "^15.3.0",
-    "@types/react": "^17.0.6",
+    "@types/node": "^15.6.1",
+    "@types/react": "^17.0.8",
     "@types/react-helmet": "^6.1.1",
     "@types/react-router-dom": "^5.1.7",
     "cordova-common": "^4.0.2",
@@ -33,10 +33,10 @@
     "eslint-config-concise-react": "^0.40.1",
     "markdown-magic": "^2.0.0",
     "replace-in-file": "^6.2.0",
-    "ts-node": "^9.1.1",
+    "ts-node": "^10.0.0",
     "typedoc": "^0.20.36",
-    "typedoc-plugin-markdown": "^3.8.1",
-    "typescript": "^4.2.4"
+    "typedoc-plugin-markdown": "^3.8.2",
+    "typescript": "~4.2.4"
   },
   "browserslist": {
     "production": [
