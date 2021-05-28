@@ -10,7 +10,8 @@
     "internal/**",
     "**/__fixtures__/**",
     "**/__tests__/**",
-    "**/*.md"
+    "**/*.md",
+    "**/package.json"
   ],
   "npmClient": "yarn",
   "version": "independent"
