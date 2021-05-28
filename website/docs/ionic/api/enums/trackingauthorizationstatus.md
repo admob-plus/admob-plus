@@ -14,7 +14,7 @@ custom_edit_url: null
 
 • **authorized**: = 3
 
-Defined in: cordova/lib/api.d.ts:38
+Defined in: cordova/lib/api.d.ts:39
 
 ___
 
@@ -22,7 +22,7 @@ ___
 
 • **denied**: = 2
 
-Defined in: cordova/lib/api.d.ts:37
+Defined in: cordova/lib/api.d.ts:38
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 • **notDetermined**: = 0
 
-Defined in: cordova/lib/api.d.ts:35
+Defined in: cordova/lib/api.d.ts:36
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 • **restricted**: = 1
 
-Defined in: cordova/lib/api.d.ts:36
+Defined in: cordova/lib/api.d.ts:37

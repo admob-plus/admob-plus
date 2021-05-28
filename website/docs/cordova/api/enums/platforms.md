@@ -14,7 +14,7 @@ custom_edit_url: null
 
 • **android**: = "android"
 
-Defined in: api.ts:48
+Defined in: api.ts:52
 
 ___
 
@@ -22,4 +22,4 @@ ___
 
 • **ios**: = "ios"
 
-Defined in: api.ts:49
+Defined in: api.ts:53

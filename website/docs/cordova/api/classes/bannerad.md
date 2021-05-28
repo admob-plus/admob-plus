@@ -68,7 +68,7 @@ Defined in: api.ts:13
 
 **Returns:** *string*
 
-Defined in: api.ts:27
+Defined in: api.ts:31
 
 ## Methods
 
@@ -118,3 +118,21 @@ ___
 **Returns:** ``false`` \| *Promise*<unknown\>
 
 Defined in: banner.ts:56
+
+___
+
+### getAdById
+
+▸ `Static` **getAdById**(`id`: *number*): [*MobileAd*](mobilead.md)<[*MobileAdOptions*](../index.md#mobileadoptions)\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `id` | *number* |
+
+**Returns:** [*MobileAd*](mobilead.md)<[*MobileAdOptions*](../index.md#mobileadoptions)\>
+
+Inherited from: [MobileAd](mobilead.md)
+
+Defined in: api.ts:22

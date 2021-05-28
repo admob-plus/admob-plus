@@ -16,15 +16,23 @@ custom_edit_url: null
 
 **Returns:** [*AdMob*](admob.md)
 
-Defined in: index.ts:39
+Defined in: index.ts:43
 
 ## Properties
+
+### AppOpenAd
+
+• `Readonly` **AppOpenAd**: *typeof* [*AppOpenAd*](appopenad.md)
+
+Defined in: index.ts:36
+
+___
 
 ### BannerAd
 
 • `Readonly` **BannerAd**: *typeof* [*BannerAd*](bannerad.md)
 
-Defined in: index.ts:33
+Defined in: index.ts:37
 
 ___
 
@@ -32,7 +40,7 @@ ___
 
 • `Readonly` **Events**: *typeof* [*Events*](../enums/events.md)
 
-Defined in: index.ts:38
+Defined in: index.ts:42
 
 ___
 
@@ -40,7 +48,7 @@ ___
 
 • `Readonly` **InterstitialAd**: *typeof* [*InterstitialAd*](interstitialad.md)
 
-Defined in: index.ts:34
+Defined in: index.ts:38
 
 ___
 
@@ -48,7 +56,7 @@ ___
 
 • `Readonly` **RewardedAd**: *typeof* [*RewardedAd*](rewardedad.md)
 
-Defined in: index.ts:35
+Defined in: index.ts:39
 
 ___
 
@@ -56,7 +64,7 @@ ___
 
 • `Readonly` **RewardedInterstitialAd**: *typeof* [*RewardedInterstitialAd*](rewardedinterstitialad.md)
 
-Defined in: index.ts:36
+Defined in: index.ts:40
 
 ___
 
@@ -64,7 +72,7 @@ ___
 
 • `Readonly` **TrackingAuthorizationStatus**: *typeof* [*TrackingAuthorizationStatus*](../enums/trackingauthorizationstatus.md)
 
-Defined in: index.ts:39
+Defined in: index.ts:43
 
 ## Methods
 
@@ -80,7 +88,7 @@ Defined in: index.ts:39
 
 **Returns:** *Promise*<unknown\>
 
-Defined in: index.ts:45
+Defined in: index.ts:66
 
 ___
 
@@ -90,7 +98,7 @@ ___
 
 **Returns:** *Promise*<``false`` \| [*TrackingAuthorizationStatus*](../enums/trackingauthorizationstatus.md)\>
 
-Defined in: index.ts:61
+Defined in: index.ts:82
 
 ___
 
@@ -106,7 +114,7 @@ ___
 
 **Returns:** *Promise*<unknown\>
 
-Defined in: index.ts:49
+Defined in: index.ts:70
 
 ___
 
@@ -122,7 +130,7 @@ ___
 
 **Returns:** *Promise*<unknown\>
 
-Defined in: index.ts:53
+Defined in: index.ts:74
 
 ___
 
@@ -132,4 +140,4 @@ ___
 
 **Returns:** *Promise*<{ `version`: *string*  }\>
 
-Defined in: index.ts:57
+Defined in: index.ts:78

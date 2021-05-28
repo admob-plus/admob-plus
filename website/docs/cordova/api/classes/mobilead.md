@@ -20,6 +20,8 @@ custom_edit_url: null
 
 - **MobileAd**
 
+  ↳ [*AppOpenAd*](appopenad.md)
+
   ↳ [*BannerAd*](bannerad.md)
 
   ↳ [*InterstitialAd*](interstitialad.md)
@@ -92,9 +94,25 @@ Defined in: api.ts:9
 
 **Returns:** *string*
 
-Defined in: api.ts:27
+Defined in: api.ts:31
 
 ## Methods
+
+### getAdById
+
+▸ `Static` **getAdById**(`id`: *number*): [*MobileAd*](mobilead.md)<[*MobileAdOptions*](../index.md#mobileadoptions)\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `id` | *number* |
+
+**Returns:** [*MobileAd*](mobilead.md)<[*MobileAdOptions*](../index.md#mobileadoptions)\>
+
+Defined in: api.ts:22
+
+___
 
 ### nextId
 
@@ -102,4 +120,4 @@ Defined in: api.ts:27
 
 **Returns:** *number*
 
-Defined in: api.ts:22
+Defined in: api.ts:26

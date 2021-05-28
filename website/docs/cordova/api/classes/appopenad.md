@@ -1,24 +1,24 @@
 ---
-id: "interstitialad"
-title: "Class: InterstitialAd"
-sidebar_label: "InterstitialAd"
+id: "appopenad"
+title: "Class: AppOpenAd"
+sidebar_label: "AppOpenAd"
 sidebar_position: 0
 custom_edit_url: null
 ---
 
-# Class: InterstitialAd
+# Class: AppOpenAd
 
 ## Hierarchy
 
 - [*MobileAd*](mobilead.md)
 
-  ↳ **InterstitialAd**
+  ↳ **AppOpenAd**
 
 ## Constructors
 
 ### constructor
 
-\+ **new InterstitialAd**(`opts`: [*MobileAdOptions*](../index.md#mobileadoptions)): [*InterstitialAd*](interstitialad.md)
+\+ **new AppOpenAd**(`opts`: [*MobileAdOptions*](../index.md#mobileadoptions)): [*AppOpenAd*](appopenad.md)
 
 #### Parameters
 
@@ -26,11 +26,11 @@ custom_edit_url: null
 | :------ | :------ |
 | `opts` | [*MobileAdOptions*](../index.md#mobileadoptions) |
 
-**Returns:** [*InterstitialAd*](interstitialad.md)
+**Returns:** [*AppOpenAd*](appopenad.md)
 
-Inherited from: [MobileAd](mobilead.md)
+Overrides: [MobileAd](mobilead.md)
 
-Defined in: api.ts:13
+Defined in: app-open.ts:3
 
 ## Properties
 
@@ -64,33 +64,13 @@ Defined in: api.ts:31
 
 ## Methods
 
-### isLoaded
+### showOrLoad
 
-▸ **isLoaded**(): *Promise*<boolean\>
-
-**Returns:** *Promise*<boolean\>
-
-Defined in: interstitial.ts:4
-
-___
-
-### load
-
-▸ **load**(): *Promise*<void\>
+▸ **showOrLoad**(): *Promise*<void\>
 
 **Returns:** *Promise*<void\>
 
-Defined in: interstitial.ts:10
-
-___
-
-### show
-
-▸ **show**(): *Promise*<void\>
-
-**Returns:** *Promise*<void\>
-
-Defined in: interstitial.ts:16
+Defined in: app-open.ts:22
 
 ___
 

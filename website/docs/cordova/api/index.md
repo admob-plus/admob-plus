@@ -21,6 +21,7 @@ custom_edit_url: null
 ## Classes
 
 - [AdMob](classes/admob.md)
+- [AppOpenAd](classes/appopenad.md)
 - [BannerAd](classes/bannerad.md)
 - [InterstitialAd](classes/interstitialad.md)
 - [MobileAd](classes/mobilead.md)
@@ -72,4 +73,4 @@ ___
 | `tagForUnderAgeOfConsent?` | *boolean* \| ``null`` |
 | `testDeviceIds?` | *string*[] |
 
-Defined in: api.ts:40
+Defined in: api.ts:44

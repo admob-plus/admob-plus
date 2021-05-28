@@ -34,7 +34,7 @@ custom_edit_url: null
 
 Overrides: IonicNativePlugin.constructor
 
-Defined in: ionic/src/ngx/index.ts:135
+Defined in: ionic/src/ngx/index.ts:139
 
 ## Properties
 
@@ -42,7 +42,7 @@ Defined in: ionic/src/ngx/index.ts:135
 
 • `Private` **\_objectInstance**: *default*
 
-Defined in: ionic/src/ngx/index.ts:135
+Defined in: ionic/src/ngx/index.ts:139
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 Overrides: IonicNativePlugin.plugin
 
-Defined in: ionic/src/ngx/index.ts:131
+Defined in: ionic/src/ngx/index.ts:135
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 Overrides: IonicNativePlugin.pluginName
 
-Defined in: ionic/src/ngx/index.ts:132
+Defined in: ionic/src/ngx/index.ts:136
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 Overrides: IonicNativePlugin.pluginRef
 
-Defined in: ionic/src/ngx/index.ts:133
+Defined in: ionic/src/ngx/index.ts:137
 
 ## Accessors
 
@@ -82,7 +82,7 @@ Defined in: ionic/src/ngx/index.ts:133
 
 **Returns:** *string*
 
-Defined in: ionic/src/ngx/index.ts:143
+Defined in: ionic/src/ngx/index.ts:147
 
 ___
 
@@ -92,7 +92,7 @@ ___
 
 **Returns:** *number*
 
-Defined in: ionic/src/ngx/index.ts:147
+Defined in: ionic/src/ngx/index.ts:151
 
 ## Methods
 
@@ -104,7 +104,7 @@ Defined in: ionic/src/ngx/index.ts:147
 
 Implementation of: Omit.isLoaded
 
-Defined in: ionic/src/ngx/index.ts:151
+Defined in: ionic/src/ngx/index.ts:155
 
 ___
 
@@ -116,7 +116,7 @@ ___
 
 Implementation of: Omit.load
 
-Defined in: ionic/src/ngx/index.ts:155
+Defined in: ionic/src/ngx/index.ts:159
 
 ___
 
@@ -128,4 +128,4 @@ ___
 
 Implementation of: Omit.show
 
-Defined in: ionic/src/ngx/index.ts:159
+Defined in: ionic/src/ngx/index.ts:163

@@ -14,7 +14,7 @@ custom_edit_url: null
 
 • **authorized**: = 3
 
-Defined in: api.ts:56
+Defined in: api.ts:60
 
 ___
 
@@ -22,7 +22,7 @@ ___
 
 • **denied**: = 2
 
-Defined in: api.ts:55
+Defined in: api.ts:59
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 • **notDetermined**: = 0
 
-Defined in: api.ts:53
+Defined in: api.ts:57
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 • **restricted**: = 1
 
-Defined in: api.ts:54
+Defined in: api.ts:58
