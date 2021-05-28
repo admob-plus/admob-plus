@@ -7,6 +7,13 @@ const app = {
       this.onDeviceReady.bind(this),
       false,
     )
+
+    document.addEventListener('admob.ad.load', (evt) => {
+      console.log('admob.ad.load', Object.keys(evt))
+    }, false)
+    document.addEventListener('admob.ad.show', (evt) => {
+      console.log('admob.ad.show', Object.keys(evt))
+    }, false)
   },
 
   onDeviceReady() {
@@ -23,7 +30,7 @@ const app = {
           adUnitId: 'ca-app-pub-3940256099942544/5662855259',
         })
 
-        admob.BannerAd.config({
+        return admob.BannerAd.config({
           backgroundColor: '#A7A7A7',
           marginTop: 10,
           marginBottom: 10,

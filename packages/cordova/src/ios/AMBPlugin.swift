@@ -123,7 +123,7 @@ class AMBPlugin: CDVPlugin {
 
         DispatchQueue.main.async {
             if let ad = ctx.optAd() as? AMBAppOpenAd {
-                ad.tryToPresentAd()
+                ad.showOrLoad()
                 ctx.success()
             } else {
                 ctx.error()

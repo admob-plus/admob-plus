@@ -37,14 +37,17 @@ class AMBAppOpenAd: AMBAdBase, GADFullScreenContentDelegate {
             orientation: self.orientation,
             completionHandler: { (appOpenAd, error) in
                 if error != nil {
+                    self.emit(AMBEvents.adLoadFail, error!)
                     return
                 }
                 appOpenAd?.fullScreenContentDelegate = self
                 self.appOpenAd = appOpenAd
+
+                self.emit(AMBEvents.adLoad)
             })
     }
 
-    func tryToPresentAd() {
+    func showOrLoad() {
         if self.appOpenAd != nil {
             self.appOpenAd?.present(fromRootViewController: AMBContext.plugin.viewController)
         } else {
