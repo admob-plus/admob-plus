@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.13.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.12.4...admob-plus-cordova@1.13.0) (2021-05-28)
+
+
+### Bug Fixes
+
+* **cordova/ios:** emit load events ([b07b7ca](https://github.com/admob-plus/admob-plus/commit/b07b7ca84c8911ac6c8479267ab00dbd44b1cfe2))
+
+
+### Features
+
+* **cordova:** pass ad instance in event.data ([d3cd5fb](https://github.com/admob-plus/admob-plus/commit/d3cd5fb80b189b6c5accc3a8686eaf2f8e2f244f))
+* **cordova:** rename AppOpenAd.tryToPresent() to showOrLoad() ([dd67e1c](https://github.com/admob-plus/admob-plus/commit/dd67e1cc8cfaafdbed1467f666a2e9d6af28bd60))
+* **cordova/android:** add AppOpenAd ([a9ba18c](https://github.com/admob-plus/admob-plus/commit/a9ba18c207a364e4df415064b059e479c3860a95))
+* **cordova/android:** emit AppOpenAd events ([39c9e53](https://github.com/admob-plus/admob-plus/commit/39c9e53f91c6fef07e4e61816c1a6dc5c3da152d))
+* **cordova/ios:** add AppOpenAd ([59a7061](https://github.com/admob-plus/admob-plus/commit/59a7061023be48836aa967b8953013b299a40855))
+* **cordova/ios:** emit AppOpenAd events ([8f4c74a](https://github.com/admob-plus/admob-plus/commit/8f4c74a67ee43034c3f20952599d589ac4b0ec03))
+
+
+
+
+
 ## [1.12.4](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.12.3...admob-plus-cordova@1.12.4) (2021-05-24)
 
 **Note:** Version bump only for package admob-plus-cordova

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/react-native@1.4.1...@admob-plus/react-native@1.5.0) (2021-05-28)
+
+
+### Features
+
+* **cordova/ios:** emit AppOpenAd events ([8f4c74a](https://github.com/admob-plus/admob-plus/commit/8f4c74a67ee43034c3f20952599d589ac4b0ec03))
+
+
+
+
+
 ## [1.4.1](https://github.com/admob-plus/admob-plus/compare/@admob-plus/react-native@1.4.0...@admob-plus/react-native@1.4.1) (2021-05-20)
 
 **Note:** Version bump only for package @admob-plus/react-native
