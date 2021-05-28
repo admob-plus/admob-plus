@@ -25,6 +25,7 @@ module.exports = {
         'cordova/installation',
         {
           'Ad Formats': [
+            'cordova/ads/app-open',
             'cordova/ads/banner',
             'cordova/ads/interstitial',
             'cordova/ads/rewarded',
