@@ -10,6 +10,23 @@ custom_edit_url: null
 
 ## Methods
 
+### addListener
+
+▸ **addListener**(`eventName`: *string*, `listenerFunc`: (`event`: *any*) => *void*): *Promise*<PluginListenerHandle\> & PluginListenerHandle
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `eventName` | *string* |
+| `listenerFunc` | (`event`: *any*) => *void* |
+
+**Returns:** *Promise*<PluginListenerHandle\> & PluginListenerHandle
+
+Defined in: definitions.ts:58
+
+___
+
 ### bannerHide
 
 ▸ **bannerHide**(`opts`: { `id`: *number*  }): *Promise*<void\>
@@ -23,7 +40,7 @@ custom_edit_url: null
 
 **Returns:** *Promise*<void\>
 
-Defined in: definitions.ts:38
+Defined in: definitions.ts:40
 
 ___
 
@@ -42,7 +59,7 @@ ___
 
 **Returns:** *Promise*<void\>
 
-Defined in: definitions.ts:33
+Defined in: definitions.ts:35
 
 ___
 
@@ -58,7 +75,7 @@ ___
 
 **Returns:** *Promise*<void\>
 
-Defined in: definitions.ts:31
+Defined in: definitions.ts:33
 
 ___
 
@@ -74,7 +91,7 @@ ___
 
 **Returns:** *Promise*<void\>
 
-Defined in: definitions.ts:30
+Defined in: definitions.ts:32
 
 ___
 
@@ -92,7 +109,7 @@ ___
 
 **Returns:** *Promise*<void\>
 
-Defined in: definitions.ts:40
+Defined in: definitions.ts:42
 
 ___
 
@@ -109,7 +126,7 @@ ___
 
 **Returns:** *Promise*<void\>
 
-Defined in: definitions.ts:41
+Defined in: definitions.ts:43
 
 ___
 
@@ -119,7 +136,7 @@ ___
 
 **Returns:** *Promise*<{ `status`: ``false`` \| [*TrackingAuthorizationStatus*](../enums/trackingauthorizationstatus.md)  }\>
 
-Defined in: definitions.ts:52
+Defined in: definitions.ts:54
 
 ___
 
@@ -137,7 +154,7 @@ ___
 
 **Returns:** *Promise*<void\>
 
-Defined in: definitions.ts:46
+Defined in: definitions.ts:48
 
 ___
 
@@ -154,7 +171,7 @@ ___
 
 **Returns:** *Promise*<void\>
 
-Defined in: definitions.ts:50
+Defined in: definitions.ts:52
 
 ___
 
@@ -172,7 +189,7 @@ ___
 
 **Returns:** *Promise*<void\>
 
-Defined in: definitions.ts:43
+Defined in: definitions.ts:45
 
 ___
 
@@ -189,7 +206,7 @@ ___
 
 **Returns:** *Promise*<void\>
 
-Defined in: definitions.ts:44
+Defined in: definitions.ts:46
 
 ___
 
@@ -199,4 +216,4 @@ ___
 
 **Returns:** *Promise*<void\>
 
-Defined in: definitions.ts:29
+Defined in: definitions.ts:31

@@ -14,7 +14,7 @@ custom_edit_url: null
 
 • **authorized**: = 3
 
-Defined in: definitions.ts:25
+Defined in: definitions.ts:27
 
 ___
 
@@ -22,7 +22,7 @@ ___
 
 • **denied**: = 2
 
-Defined in: definitions.ts:24
+Defined in: definitions.ts:26
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 • **notDetermined**: = 0
 
-Defined in: definitions.ts:22
+Defined in: definitions.ts:24
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 • **restricted**: = 1
 
-Defined in: definitions.ts:23
+Defined in: definitions.ts:25

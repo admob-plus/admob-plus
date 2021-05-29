@@ -39,7 +39,7 @@ custom_edit_url: null
 | `appMuted?` | *boolean* |
 | `appVolume?` | *number* |
 
-Defined in: definitions.ts:9
+Defined in: definitions.ts:11
 
 ___
 
@@ -56,7 +56,7 @@ ___
 | `tagForUnderAgeOfConsent?` | *boolean* \| ``null`` |
 | `testDeviceIds?` | *string*[] |
 
-Defined in: definitions.ts:14
+Defined in: definitions.ts:16
 
 ## Variables
 

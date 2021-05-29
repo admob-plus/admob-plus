@@ -31,6 +31,8 @@ npx cap sync
 * [`rewardedInterstitialLoad(...)`](#rewardedinterstitialload)
 * [`rewardedInterstitialShow(...)`](#rewardedinterstitialshow)
 * [`requestTrackingAuthorization()`](#requesttrackingauthorization)
+* [`addListener(string, ...)`](#addlistenerstring-)
+* [Interfaces](#interfaces)
 * [Type Aliases](#type-aliases)
 * [Enums](#enums)
 
@@ -209,6 +211,32 @@ requestTrackingAuthorization() => any
 **Returns:** <code>any</code>
 
 --------------------
+
+
+### addListener(string, ...)
+
+```typescript
+addListener(eventName: string, listenerFunc: (event: any) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+```
+
+| Param              | Type                                 |
+| ------------------ | ------------------------------------ |
+| **`eventName`**    | <code>string</code>                  |
+| **`listenerFunc`** | <code>(event: any) =&gt; void</code> |
+
+**Returns:** <code>any</code>
+
+--------------------
+
+
+### Interfaces
+
+
+#### PluginListenerHandle
+
+| Prop         | Type                      |
+| ------------ | ------------------------- |
+| **`remove`** | <code>() =&gt; any</code> |
 
 
 ### Type Aliases
