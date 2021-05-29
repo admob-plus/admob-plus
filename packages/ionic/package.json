@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "@angular/core": "~11.2.13",
-    "@ionic-native/core": "^5.33.0",
+    "@ionic-native/core": "^5.33.1",
     "@types/fs-extra": "^9.0.11",
     "@types/node": "^15.6.1",
     "admob-plus-cordova": "file:../cordova",
