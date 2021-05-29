@@ -18,6 +18,7 @@ class AMBInterstitial: AMBAdBase, GADFullScreenContentDelegate {
             request: ctx.optGADRequest(),
             completionHandler: { ad, error in
                 if error != nil {
+                    self.emit(AMBEvents.rewardedInterstitialLoadFail, error!)
                     ctx.error(error!)
                     return
                 }
@@ -25,6 +26,7 @@ class AMBInterstitial: AMBAdBase, GADFullScreenContentDelegate {
                 self.interstitial = ad
                 ad?.fullScreenContentDelegate = self
 
+                self.emit(AMBEvents.interstitialLoad)
                 ctx.success()
          })
     }
@@ -39,6 +41,7 @@ class AMBInterstitial: AMBAdBase, GADFullScreenContentDelegate {
     }
 
     func adDidRecordImpression(_ ad: GADFullScreenPresentingAd) {
+        self.emit(AMBEvents.interstitialImpression)
     }
 
     func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
