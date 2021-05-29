@@ -1,3 +1,5 @@
+import type { PluginListenerHandle } from '@capacitor/core'
+
 export enum MaxAdContentRating {
   G = 'G',
   MA = 'MA',
@@ -52,4 +54,9 @@ export interface AdMobPlusPlugin {
   requestTrackingAuthorization(): Promise<{
     status: TrackingAuthorizationStatus | false
   }>
+
+  addListener(
+    eventName: string,
+    listenerFunc: (event: any) => void,
+  ): Promise<PluginListenerHandle> & PluginListenerHandle
 }
