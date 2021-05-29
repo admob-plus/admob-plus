@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.13.1](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.13.0...admob-plus-cordova@1.13.1) (2021-05-29)
+
+
+### Bug Fixes
+
+* **cordova/android:** stop AdActivity on back, fix [#353](https://github.com/admob-plus/admob-plus/issues/353) ([65efc2a](https://github.com/admob-plus/admob-plus/commit/65efc2ae5c1f22db560d0a59f871b6bf907f5b62))
+* **cordova/ios:** set ad to nil on dismiss, fix [#356](https://github.com/admob-plus/admob-plus/issues/356) ([99235c7](https://github.com/admob-plus/admob-plus/commit/99235c7e2cc5409be70f735e37d29c989df68fe3))
+
+
+
+
+
 # [1.13.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.12.4...admob-plus-cordova@1.13.0) (2021-05-28)
 
 

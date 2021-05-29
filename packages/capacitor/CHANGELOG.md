@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.10.1](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.10.0...@admob-plus/capacitor@1.10.1) (2021-05-29)
+
+
+### Bug Fixes
+
+* **capacitor:** type addListener() method ([636a797](https://github.com/admob-plus/admob-plus/commit/636a797f8c871e4200329ca0940907f9f599ced3))
+* **capacitor/ios:** emit missed events ([147b6ea](https://github.com/admob-plus/admob-plus/commit/147b6eaf1482a773c5409672d1e21c65e366547e))
+
+
+
+
+
 # [1.10.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.9.1...@admob-plus/capacitor@1.10.0) (2021-05-28)
 
 
