@@ -32,7 +32,7 @@ public class Rewarded extends AdBase {
         RewardedAd.load(ctx.getActivity(), adUnitId, ctx.optAdRequest(), new RewardedAdLoadCallback() {
             @Override
             public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
-                mAd = null;
+                clear();
                 emit(Events.REWARDED_LOAD_FAIL, loadAdError);
                 ctx.error(loadAdError.getMessage());
             }
@@ -47,6 +47,7 @@ public class Rewarded extends AdBase {
                 mAd.setFullScreenContentCallback(new FullScreenContentCallback() {
                     @Override
                     public void onAdDismissedFullScreenContent() {
+                        clear();
                         emit(Events.REWARDED_DISMISS);
                     }
 
@@ -57,7 +58,6 @@ public class Rewarded extends AdBase {
 
                     @Override
                     public void onAdShowedFullScreenContent() {
-                        mAd = null;
                         emit(Events.REWARDED_SHOW);
                     }
 
@@ -90,6 +90,7 @@ public class Rewarded extends AdBase {
 
     private void clear() {
         if (mAd != null) {
+            mAd.setFullScreenContentCallback(null);
             mAd = null;
         }
     }

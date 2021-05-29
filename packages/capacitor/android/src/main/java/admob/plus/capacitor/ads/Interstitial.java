@@ -36,6 +36,7 @@ public class Interstitial extends AdBase {
                 mAd.setFullScreenContentCallback(new FullScreenContentCallback() {
                     @Override
                     public void onAdDismissedFullScreenContent() {
+                        clear();
                         emit(Events.INTERSTITIAL_DISMISS);
                     }
 
@@ -46,7 +47,6 @@ public class Interstitial extends AdBase {
 
                     @Override
                     public void onAdShowedFullScreenContent() {
-                        mAd = null;
                         emit(Events.INTERSTITIAL_SHOW);
                     }
 
@@ -62,7 +62,7 @@ public class Interstitial extends AdBase {
 
             @Override
             public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
-                mAd = null;
+                clear();
                 emit(Events.INTERSTITIAL_LOAD_FAIL, loadAdError);
                 ctx.error(loadAdError.getMessage());
             }

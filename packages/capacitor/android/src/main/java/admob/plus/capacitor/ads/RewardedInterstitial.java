@@ -32,7 +32,7 @@ public class RewardedInterstitial extends AdBase {
         RewardedInterstitialAd.load(ctx.getActivity(), adUnitId, ctx.optAdRequest(), new RewardedInterstitialAdLoadCallback() {
             @Override
             public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
-                mAd = null;
+                clear();
                 emit(Events.REWARDED_INTERSTITIAL_LOAD_FAIL, loadAdError);
                 ctx.error(loadAdError.getMessage());
             }
@@ -47,6 +47,7 @@ public class RewardedInterstitial extends AdBase {
                 mAd.setFullScreenContentCallback(new FullScreenContentCallback() {
                     @Override
                     public void onAdDismissedFullScreenContent() {
+                        clear();
                         emit(Events.REWARDED_INTERSTITIAL_DISMISS);
                     }
 
@@ -57,7 +58,6 @@ public class RewardedInterstitial extends AdBase {
 
                     @Override
                     public void onAdShowedFullScreenContent() {
-                        mAd = null;
                         emit(Events.REWARDED_INTERSTITIAL_SHOW);
                     }
 
@@ -90,6 +90,7 @@ public class RewardedInterstitial extends AdBase {
 
     private void clear() {
         if (mAd != null) {
+            mAd.setFullScreenContentCallback(null);
             mAd = null;
         }
     }
