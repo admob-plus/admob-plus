@@ -27,6 +27,7 @@ public final class Generated {
     }
 
     public static final class Events {
+        public static final String AD_CLICK = "admob.ad.click";
         public static final String AD_DISMISS = "admob.ad.dismiss";
         public static final String AD_IMPRESSION = "admob.ad.impression";
         public static final String AD_LOAD = "admob.ad.load";

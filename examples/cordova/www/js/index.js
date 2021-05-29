@@ -9,7 +9,7 @@ const app = {
     )
 
     document.addEventListener('admob.ad.load', (evt) => {
-      console.log('admob.ad.load', Object.keys(evt))
+      console.log('admob.ad.load', evt.ad.id)
     }, false)
     document.addEventListener('admob.ad.show', (evt) => {
       console.log('admob.ad.show', Object.keys(evt))
@@ -47,6 +47,7 @@ const app = {
     this.initButton('show-interstitial-btn', this.showInterstitialAd)
     this.initButton('show-rewarded-btn', this.showRewardedAd)
     this.initButton('show-rewardedi-btn', this.showRewardedInterstitialAd)
+    this.initButton('show-native-btn', this.showNativeAd)
   },
 
   showBannerAd() {
@@ -91,6 +92,13 @@ const app = {
       adUnitId: 'ca-app-pub-3940256099942544/6978759866',
     })
     return rewardedInterstitial.load().then(() => rewardedInterstitial.show())
+  },
+
+  showNativeAd() {
+    const ad = new admob.NativeAd({
+      adUnitId: 'ca-app-pub-3940256099942544/3986624511',
+    })
+    return ad.load()
   },
 
   receivedEvent(id) {

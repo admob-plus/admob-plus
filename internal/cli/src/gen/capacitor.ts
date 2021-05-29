@@ -11,6 +11,7 @@ import {
 
 export const AdEvents = {
   // Ad
+  adClick: 'ad.click',
   adDismiss: 'ad.dismiss',
   adImpression: 'ad.impression',
   adLoad: 'ad.load',
@@ -97,10 +98,9 @@ const pluginMethods = (() => {
   const definitionsPath = require.resolve(
     '@admob-plus/capacitor/src/definitions.ts',
   )
-  return extractClassInfo(
-    definitionsPath,
-    'AdMobPlusPlugin',
-  ).methodSignatures.map((x) => x.getName())
+  return extractClassInfo(definitionsPath, 'AdMobPlusPlugin')
+    .methodSignatures.map((x) => x.getName())
+    .filter((x) => !['addListener'].includes(x))
 })()
 
 const buildIosMacro = () => `// ${warnMessage}

@@ -19,11 +19,14 @@ async function updateConfigXML({
   pkgDir: string
   targetDir: string
 }) {
-  const [androidFiles, iosFiles] = await Promise.all([
+  const [androidFiles, iosFiles, ioResources] = await Promise.all([
     glob(['**/*.java'], {
       cwd: path.join(pkgDir, 'src/android'),
     }),
-    glob(['*.swift'], {
+    glob(['*.swift', '*.m'], {
+      cwd: path.join(pkgDir, 'src/ios'),
+    }),
+    glob(['*.xib'], {
       cwd: path.join(pkgDir, 'src/ios'),
     }),
   ])
@@ -38,6 +41,11 @@ async function updateConfigXML({
     .join('\n')
   const iosContent = iosFiles
     .map((s) => `${indent4(2)}<source-file src="src/ios/${s}" />`)
+    .concat(
+      ioResources.map(
+        (s) => `${indent4(2)}<resource-file src="src/ios/${s}" />`,
+      ),
+    )
     .sort()
     .join('\n')
 

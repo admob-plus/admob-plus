@@ -63,4 +63,8 @@ class AMBAdBase: NSObject {
         d.merge(data) { (current, _) in current }
         plugin.emit(eventName, data: d)
     }
+
+    func emit(_ eventName: String, _ nativeAd: GADNativeAd) {
+        plugin.emit(eventName, data: ["adId": nativeAd.hashValue])
+    }
 }

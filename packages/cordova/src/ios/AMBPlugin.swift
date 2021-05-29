@@ -109,6 +109,8 @@ class AMBPlugin: CDVPlugin {
             switch adType {
             case "app-open":
                 _ = AMBAppOpenAd(ctx)
+            case "native":
+                _ = AMBNativeAd(ctx)
             default:
                 break
             }
@@ -124,6 +126,19 @@ class AMBPlugin: CDVPlugin {
         DispatchQueue.main.async {
             if let ad = ctx.optAd() as? AMBAppOpenAd {
                 ad.showOrLoad()
+                ctx.success()
+            } else {
+                ctx.error()
+            }
+        }
+    }
+
+    @objc func nativeLoad(_ command: CDVInvokedUrlCommand) {
+        let ctx = AMBContext(command)
+
+        DispatchQueue.main.async {
+            if let ad = ctx.optAd() as? AMBNativeAd {
+                ad.load()
                 ctx.success()
             } else {
                 ctx.error()
