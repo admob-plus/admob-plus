@@ -1,14 +1,14 @@
 import GoogleMobileAds
 
 class AMBRewardedInterstitial: AMBAdBase, GADFullScreenContentDelegate {
-    var rewardedInterstitial: GADRewardedInterstitialAd?
+    var mAd: GADRewardedInterstitialAd?
 
     deinit {
         clear()
     }
 
     func isLoaded() -> Bool {
-        return self.rewardedInterstitial != nil
+        return self.mAd != nil
     }
 
     func load(_ ctx: AMBContext) {
@@ -22,7 +22,7 @@ class AMBRewardedInterstitial: AMBAdBase, GADFullScreenContentDelegate {
                 return
             }
 
-            self.rewardedInterstitial = ad
+            self.mAd = ad
             ad?.fullScreenContentDelegate = self
             ad?.serverSideVerificationOptions = ctx.optGADServerSideVerificationOptions()
 
@@ -34,8 +34,8 @@ class AMBRewardedInterstitial: AMBAdBase, GADFullScreenContentDelegate {
 
     func show(_ ctx: AMBContext) {
         if isLoaded() {
-            rewardedInterstitial?.present(fromRootViewController: plugin.viewController, userDidEarnRewardHandler: {
-                let reward = self.rewardedInterstitial!.adReward
+            mAd?.present(fromRootViewController: plugin.viewController, userDidEarnRewardHandler: {
+                let reward = self.mAd!.adReward
                 self.emit(AMBEvents.rewardedInterstitialReward, reward)
             })
             ctx.success()
@@ -54,16 +54,16 @@ class AMBRewardedInterstitial: AMBAdBase, GADFullScreenContentDelegate {
     }
 
     func adDidPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        clear()
         self.emit(AMBEvents.rewardedInterstitialShow)
     }
 
     func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        clear()
         self.emit(AMBEvents.rewardedInterstitialDismiss)
     }
 
     private func clear() {
-        rewardedInterstitial?.fullScreenContentDelegate = nil
-        rewardedInterstitial = nil
+        mAd?.fullScreenContentDelegate = nil
+        mAd = nil
     }
 }

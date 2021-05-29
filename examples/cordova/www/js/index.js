@@ -14,6 +14,9 @@ const app = {
     document.addEventListener('admob.ad.show', (evt) => {
       console.log('admob.ad.show', Object.keys(evt))
     }, false)
+    document.addEventListener('admob.interstitial.dismiss', (evt) => {
+      console.log('admob.interstitial.dismiss', Object.keys(evt))
+    }, false)
   },
 
   onDeviceReady() {
