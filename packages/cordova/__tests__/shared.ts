@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 import 'cordova-browser/cordova-lib/cordova'
 import { fireDocumentEvent, waitEvent } from '../ts/shared'
 
