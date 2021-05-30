@@ -10,7 +10,7 @@ import {
 export class ManagedNativeAd extends MobileAd {}
 
 export default class NativeAd extends MobileAd {
-  _init: Promise<any> | null
+  _init: Promise<void> | null
 
   constructor(opts: MobileAdOptions) {
     super(opts)

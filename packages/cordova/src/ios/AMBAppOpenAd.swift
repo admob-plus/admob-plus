@@ -1,7 +1,7 @@
 import Foundation
 import GoogleMobileAds
 
-class AMBAppOpenAd: AMBAdBase, GADFullScreenContentDelegate {
+class AMBAppOpenAd: AMBAdBase, AMBGenericAd, GADFullScreenContentDelegate {
     let request: GADRequest
     let orientation: UIInterfaceOrientation = .portrait
 
@@ -28,7 +28,7 @@ class AMBAppOpenAd: AMBAdBase, GADFullScreenContentDelegate {
         clear()
     }
 
-    func load() {
+    func load(_ ctx: AMBContext) {
         clear()
 
         GADAppOpenAd.load(
@@ -38,20 +38,23 @@ class AMBAppOpenAd: AMBAdBase, GADFullScreenContentDelegate {
             completionHandler: { (ad, error) in
                 if error != nil {
                     self.emit(AMBEvents.adLoadFail, error!)
+                    ctx.error(error)
                     return
                 }
                 ad?.fullScreenContentDelegate = self
                 self.mAd = ad
 
                 self.emit(AMBEvents.adLoad)
+                ctx.success()
             })
     }
 
-    func showOrLoad() {
-        if self.mAd != nil {
-            self.mAd?.present(fromRootViewController: AMBContext.plugin.viewController)
+    func show(_ ctx: AMBContext) {
+        if mAd != nil {
+            mAd?.present(fromRootViewController: AMBContext.plugin.viewController)
+            ctx.success(true)
         } else {
-            self.load()
+            ctx.success(false)
         }
     }
 
@@ -60,8 +63,8 @@ class AMBAppOpenAd: AMBAdBase, GADFullScreenContentDelegate {
     }
 
     func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
+        clear()
         self.emit(AMBEvents.adShowFail, error)
-        self.load()
     }
 
     func adDidPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
@@ -69,8 +72,8 @@ class AMBAppOpenAd: AMBAdBase, GADFullScreenContentDelegate {
     }
 
     func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        clear()
         self.emit(AMBEvents.adDismiss)
-        self.load()
     }
 
     private func clear() {

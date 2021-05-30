@@ -2,6 +2,8 @@
 'use strict'
 
 const AdMob = {
+  adLoad() {},
+  adShow() {},
   appOpenTryToPresent() {},
   bannerConfig() {},
   bannerHide() {},

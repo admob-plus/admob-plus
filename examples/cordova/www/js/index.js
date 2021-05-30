@@ -8,18 +8,34 @@ const app = {
       false,
     )
 
-    document.addEventListener('admob.ad.load', (evt) => {
-      console.log('admob.ad.load', evt.ad.id)
-    }, false)
-    document.addEventListener('admob.ad.dismiss', (evt) => {
-      console.log('admob.ad.dismiss', evt.ad.id)
-    }, false)
-    document.addEventListener('admob.ad.show', (evt) => {
-      console.log('admob.ad.show', Object.keys(evt))
-    }, false)
-    document.addEventListener('admob.interstitial.dismiss', (evt) => {
-      console.log('admob.interstitial.dismiss', Object.keys(evt))
-    }, false)
+    document.addEventListener(
+      'admob.ad.load',
+      (evt) => {
+        console.log('admob.ad.load', evt.ad.id)
+      },
+      false,
+    )
+    document.addEventListener(
+      'admob.ad.dismiss',
+      (evt) => {
+        console.log('admob.ad.dismiss', evt.ad.id)
+      },
+      false,
+    )
+    document.addEventListener(
+      'admob.ad.show',
+      (evt) => {
+        console.log('admob.ad.show', Object.keys(evt))
+      },
+      false,
+    )
+    document.addEventListener(
+      'admob.interstitial.dismiss',
+      (evt) => {
+        console.log('admob.interstitial.dismiss', Object.keys(evt))
+      },
+      false,
+    )
   },
 
   onDeviceReady() {
@@ -31,17 +47,14 @@ const app = {
 
     admob
       .start()
-      .then(() => {
-        new admob.AppOpenAd({
-          adUnitId: 'ca-app-pub-3940256099942544/5662855259',
-        })
-
-        return admob.BannerAd.config({
+      .then(() => this.initAppOpenAd())
+      .then(() =>
+        admob.BannerAd.config({
           backgroundColor: '#A7A7A7',
           marginTop: 10,
           marginBottom: 10,
-        })
-      })
+        }),
+      )
       .catch(alert)
 
     this.initButton('show-banner-btn', this.showBannerAd)
@@ -51,6 +64,24 @@ const app = {
     this.initButton('show-rewarded-btn', this.showRewardedAd)
     this.initButton('show-rewardedi-btn', this.showRewardedInterstitialAd)
     this.initButton('show-native-btn', this.showNativeAd)
+  },
+
+  initAppOpenAd() {
+    const ad = new admob.AppOpenAd({
+      adUnitId: 'ca-app-pub-3940256099942544/5662855259',
+    })
+
+    document.addEventListener(
+      'resume',
+      () => {
+        ad.show().then((shown) => {
+          if (!shown) {
+            return ad.load()
+          }
+        })
+      },
+      false,
+    )
   },
 
   showBannerAd() {

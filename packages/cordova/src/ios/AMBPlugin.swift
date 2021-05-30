@@ -120,13 +120,24 @@ class AMBPlugin: CDVPlugin {
         }
     }
 
-    @objc func appOpenTryToPresent(_ command: CDVInvokedUrlCommand) {
+    @objc func adLoad(_ command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(command)
 
         DispatchQueue.main.async {
-            if let ad = ctx.optAd() as? AMBAppOpenAd {
-                ad.showOrLoad()
-                ctx.success()
+            if let ad = ctx.optAd() as? AMBGenericAd {
+                ad.load(ctx)
+            } else {
+                ctx.error()
+            }
+        }
+    }
+
+    @objc func adShow(_ command: CDVInvokedUrlCommand) {
+        let ctx = AMBContext(command)
+
+        DispatchQueue.main.async {
+            if let ad = ctx.optAd() as? AMBGenericAd {
+                ad.show(ctx)
             } else {
                 ctx.error()
             }

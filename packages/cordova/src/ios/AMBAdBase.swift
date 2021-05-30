@@ -1,5 +1,10 @@
 import GoogleMobileAds
 
+protocol AMBGenericAd {
+    func load(_ ctx: AMBContext)
+    func show(_ ctx: AMBContext)
+}
+
 class AMBAdBase: NSObject {
     static var ads = [Int: AMBAdBase]()
 
