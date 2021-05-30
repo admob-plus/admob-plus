@@ -1,24 +1,24 @@
 ---
-id: "appopenad"
-title: "Class: AppOpenAd"
-sidebar_label: "AppOpenAd"
+id: "managednativead"
+title: "Class: ManagedNativeAd"
+sidebar_label: "ManagedNativeAd"
 sidebar_position: 0
 custom_edit_url: null
 ---
 
-# Class: AppOpenAd
+# Class: ManagedNativeAd
 
 ## Hierarchy
 
-- *GenericAd*
+- [*MobileAd*](mobilead.md)
 
-  ↳ **AppOpenAd**
+  ↳ **ManagedNativeAd**
 
 ## Constructors
 
 ### constructor
 
-\+ **new AppOpenAd**(`opts`: [*MobileAdOptions*](../index.md#mobileadoptions)): [*AppOpenAd*](appopenad.md)
+\+ **new ManagedNativeAd**(`opts`: [*MobileAdOptions*](../index.md#mobileadoptions)): [*ManagedNativeAd*](managednativead.md)
 
 #### Parameters
 
@@ -26,11 +26,11 @@ custom_edit_url: null
 | :------ | :------ |
 | `opts` | [*MobileAdOptions*](../index.md#mobileadoptions) |
 
-**Returns:** [*AppOpenAd*](appopenad.md)
+**Returns:** [*ManagedNativeAd*](managednativead.md)
 
-Overrides: GenericAd.constructor
+Inherited from: [MobileAd](mobilead.md)
 
-Defined in: app-open.ts:36
+Defined in: api.ts:13
 
 ## Properties
 
@@ -38,7 +38,7 @@ Defined in: app-open.ts:36
 
 • `Readonly` **id**: *number*
 
-Inherited from: GenericAd.id
+Inherited from: [MobileAd](mobilead.md).[id](mobilead.md#id)
 
 Defined in: api.ts:11
 
@@ -48,7 +48,7 @@ ___
 
 • `Protected` `Readonly` **opts**: [*MobileAdOptions*](../index.md#mobileadoptions)
 
-Inherited from: GenericAd.opts
+Inherited from: [MobileAd](mobilead.md).[opts](mobilead.md#opts)
 
 Defined in: api.ts:13
 
@@ -64,42 +64,6 @@ Defined in: api.ts:31
 
 ## Methods
 
-### isLoaded
-
-▸ **isLoaded**(): *Promise*<boolean\>
-
-**Returns:** *Promise*<boolean\>
-
-Inherited from: GenericAd.isLoaded
-
-Defined in: app-open.ts:16
-
-___
-
-### load
-
-▸ **load**(): *Promise*<void\>
-
-**Returns:** *Promise*<void\>
-
-Inherited from: GenericAd.load
-
-Defined in: app-open.ts:23
-
-___
-
-### show
-
-▸ **show**(): *Promise*<boolean\>
-
-**Returns:** *Promise*<boolean\>
-
-Inherited from: GenericAd.show
-
-Defined in: app-open.ts:28
-
-___
-
 ### getAdById
 
 ▸ `Static` **getAdById**(`id`: *number*): [*MobileAd*](mobilead.md)<[*MobileAdOptions*](../index.md#mobileadoptions)\>
@@ -112,6 +76,6 @@ ___
 
 **Returns:** [*MobileAd*](mobilead.md)<[*MobileAdOptions*](../index.md#mobileadoptions)\>
 
-Inherited from: GenericAd.getAdById
+Inherited from: [MobileAd](mobilead.md)
 
 Defined in: api.ts:22

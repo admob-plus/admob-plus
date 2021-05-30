@@ -20,11 +20,13 @@ custom_edit_url: null
 
 - **MobileAd**
 
-  ↳ [*AppOpenAd*](appopenad.md)
-
   ↳ [*BannerAd*](bannerad.md)
 
   ↳ [*InterstitialAd*](interstitialad.md)
+
+  ↳ [*ManagedNativeAd*](managednativead.md)
+
+  ↳ [*NativeAd*](nativead.md)
 
   ↳ [*RewardedAd*](rewardedad.md)
 

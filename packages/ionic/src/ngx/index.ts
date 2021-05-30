@@ -175,6 +175,8 @@ export class AdMob
       | 'BannerAd'
       | 'Events'
       | 'InterstitialAd'
+      | 'ManagedNativeAd'
+      | 'NativeAd'
       | 'RewardedAd'
       | 'RewardedInterstitialAd'
       | 'TrackingAuthorizationStatus'

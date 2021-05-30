@@ -26,6 +26,16 @@ Defined in: api.ts:4
 
 ___
 
+### id
+
+• `Optional` **id**: *number*
+
+Inherited from: [RewardedAdOptions](rewardedadoptions.md).[id](rewardedadoptions.md#id)
+
+Defined in: api.ts:4
+
+___
+
 ### npa
 
 • `Optional` **npa**: ``"1"``

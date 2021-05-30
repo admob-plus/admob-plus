@@ -26,6 +26,16 @@ Defined in: api.ts:4
 
 ___
 
+### id
+
+• `Optional` **id**: *number*
+
+Inherited from: MobileAdOptions.id
+
+Defined in: api.ts:4
+
+___
+
 ### npa
 
 • `Optional` **npa**: ``"1"``

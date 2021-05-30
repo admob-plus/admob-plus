@@ -24,7 +24,9 @@ custom_edit_url: null
 - [AppOpenAd](classes/appopenad.md)
 - [BannerAd](classes/bannerad.md)
 - [InterstitialAd](classes/interstitialad.md)
+- [ManagedNativeAd](classes/managednativead.md)
 - [MobileAd](classes/mobilead.md)
+- [NativeAd](classes/nativead.md)
 - [RewardedAd](classes/rewardedad.md)
 - [RewardedInterstitialAd](classes/rewardedinterstitialad.md)
 
@@ -54,6 +56,7 @@ Renames and exports: [AdMob](classes/admob.md)
 | Name | Type |
 | :------ | :------ |
 | `adUnitId` | *string* |
+| `id?` | *number* |
 | `npa?` | ``"1"`` |
 
 Defined in: api.ts:4

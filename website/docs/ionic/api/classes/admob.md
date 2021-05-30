@@ -16,7 +16,7 @@ custom_edit_url: null
 
 ## Implements
 
-- *Omit*<IAdMob, ``"AppOpenAd"`` \| ``"BannerAd"`` \| ``"Events"`` \| ``"InterstitialAd"`` \| ``"RewardedAd"`` \| ``"RewardedInterstitialAd"`` \| ``"TrackingAuthorizationStatus"``\>
+- *Omit*<IAdMob, ``"AppOpenAd"`` \| ``"BannerAd"`` \| ``"Events"`` \| ``"InterstitialAd"`` \| ``"ManagedNativeAd"`` \| ``"NativeAd"`` \| ``"RewardedAd"`` \| ``"RewardedInterstitialAd"`` \| ``"TrackingAuthorizationStatus"``\>
 
 ## Constructors
 
@@ -34,7 +34,7 @@ Inherited from: IonicNativePlugin.constructor
 
 • `Readonly` **BannerAd**: *typeof* [*BannerAd*](bannerad.md)
 
-Defined in: ionic/src/ngx/index.ts:189
+Defined in: ionic/src/ngx/index.ts:191
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 • `Readonly` **InterstitialAd**: *typeof* [*InterstitialAd*](interstitialad.md)
 
-Defined in: ionic/src/ngx/index.ts:190
+Defined in: ionic/src/ngx/index.ts:192
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 • `Readonly` **RewardedAd**: *typeof* [*RewardedAd*](rewardedad.md)
 
-Defined in: ionic/src/ngx/index.ts:191
+Defined in: ionic/src/ngx/index.ts:193
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 • `Readonly` **RewardedInterstitialAd**: *typeof* [*RewardedInterstitialAd*](rewardedinterstitialad.md)
 
-Defined in: ionic/src/ngx/index.ts:192
+Defined in: ionic/src/ngx/index.ts:194
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 Overrides: IonicNativePlugin.platforms
 
-Defined in: ionic/src/ngx/index.ts:183
+Defined in: ionic/src/ngx/index.ts:185
 
 ___
 
@@ -78,7 +78,7 @@ ___
 
 Overrides: IonicNativePlugin.plugin
 
-Defined in: ionic/src/ngx/index.ts:184
+Defined in: ionic/src/ngx/index.ts:186
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 Overrides: IonicNativePlugin.pluginName
 
-Defined in: ionic/src/ngx/index.ts:185
+Defined in: ionic/src/ngx/index.ts:187
 
 ___
 
@@ -98,7 +98,7 @@ ___
 
 Overrides: IonicNativePlugin.pluginRef
 
-Defined in: ionic/src/ngx/index.ts:186
+Defined in: ionic/src/ngx/index.ts:188
 
 ___
 
@@ -108,7 +108,7 @@ ___
 
 Overrides: IonicNativePlugin.repo
 
-Defined in: ionic/src/ngx/index.ts:187
+Defined in: ionic/src/ngx/index.ts:189
 
 ## Accessors
 
@@ -118,7 +118,7 @@ Defined in: ionic/src/ngx/index.ts:187
 
 **Returns:** *AdMob*
 
-Defined in: ionic/src/ngx/index.ts:194
+Defined in: ionic/src/ngx/index.ts:196
 
 ## Methods
 
@@ -136,7 +136,7 @@ Defined in: ionic/src/ngx/index.ts:194
 
 Implementation of: Omit.configRequest
 
-Defined in: ionic/src/ngx/index.ts:198
+Defined in: ionic/src/ngx/index.ts:200
 
 ___
 
@@ -152,7 +152,7 @@ ___
 
 **Returns:** *Observable*<any\>
 
-Defined in: ionic/src/ngx/index.ts:220
+Defined in: ionic/src/ngx/index.ts:222
 
 ___
 
@@ -164,7 +164,7 @@ ___
 
 Implementation of: Omit.requestTrackingAuthorization
 
-Defined in: ionic/src/ngx/index.ts:216
+Defined in: ionic/src/ngx/index.ts:218
 
 ___
 
@@ -182,7 +182,7 @@ ___
 
 Implementation of: Omit.setAppMuted
 
-Defined in: ionic/src/ngx/index.ts:208
+Defined in: ionic/src/ngx/index.ts:210
 
 ___
 
@@ -200,7 +200,7 @@ ___
 
 Implementation of: Omit.setAppVolume
 
-Defined in: ionic/src/ngx/index.ts:212
+Defined in: ionic/src/ngx/index.ts:214
 
 ___
 
@@ -212,4 +212,4 @@ ___
 
 Implementation of: Omit.start
 
-Defined in: ionic/src/ngx/index.ts:204
+Defined in: ionic/src/ngx/index.ts:206

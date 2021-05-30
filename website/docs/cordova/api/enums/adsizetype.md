@@ -14,7 +14,7 @@ custom_edit_url: null
 
 • **BANNER**: = 0
 
-Defined in: generated.ts:65
+Defined in: generated.ts:68
 
 ___
 
@@ -22,7 +22,7 @@ ___
 
 • **FULL\_BANNER**: = 3
 
-Defined in: generated.ts:68
+Defined in: generated.ts:71
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 • **LARGE\_BANNER**: = 1
 
-Defined in: generated.ts:66
+Defined in: generated.ts:69
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 • **LEADERBOARD**: = 4
 
-Defined in: generated.ts:69
+Defined in: generated.ts:72
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 • **MEDIUM\_RECTANGLE**: = 2
 
-Defined in: generated.ts:67
+Defined in: generated.ts:70
 
 ___
 
@@ -54,4 +54,4 @@ ___
 
 • **SMART\_BANNER**: = 5
 
-Defined in: generated.ts:70
+Defined in: generated.ts:73
