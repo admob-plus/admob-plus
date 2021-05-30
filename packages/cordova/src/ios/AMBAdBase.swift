@@ -29,7 +29,10 @@ class AMBAdBase: NSObject {
     }
 
     deinit {
-        AMBAdBase.ads.removeValue(forKey: self.id)
+        let key = self.id
+        DispatchQueue.main.async {
+            AMBAdBase.ads.removeValue(forKey: key)
+        }
     }
 
     func emit(_ eventName: String) {
