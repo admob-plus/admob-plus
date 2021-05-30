@@ -28,7 +28,7 @@ class AMBAppOpenAd: AMBAdBase, GADFullScreenContentDelegate {
         clear()
     }
 
-    func requestAppOpenAd() {
+    func load() {
         clear()
 
         GADAppOpenAd.load(
@@ -51,7 +51,7 @@ class AMBAppOpenAd: AMBAdBase, GADFullScreenContentDelegate {
         if self.mAd != nil {
             self.mAd?.present(fromRootViewController: AMBContext.plugin.viewController)
         } else {
-            self.requestAppOpenAd()
+            self.load()
         }
     }
 
@@ -60,7 +60,7 @@ class AMBAppOpenAd: AMBAdBase, GADFullScreenContentDelegate {
     }
 
     func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
-        self.requestAppOpenAd()
+        self.load()
         self.emit(AMBEvents.adShowFail, error)
     }
 
@@ -70,7 +70,7 @@ class AMBAppOpenAd: AMBAdBase, GADFullScreenContentDelegate {
     }
 
     func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        self.requestAppOpenAd()
+        self.load()
         self.emit(AMBEvents.adDismiss)
     }
 
