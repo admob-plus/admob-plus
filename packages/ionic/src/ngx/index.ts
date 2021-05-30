@@ -10,7 +10,7 @@ import {
   RewardedAdOptions,
   RewardedInterstitialAd as IRewardedInterstitialAd,
   RewardedInterstitialAdOptions,
-  TrackingAuthorizationStatus,
+  TrackingAuthorizationStatus
 } from 'admob-plus-cordova'
 import { fromEvent, Observable } from 'rxjs'
 
@@ -173,6 +173,7 @@ export class AdMob
       IAdMob,
       | 'AppOpenAd'
       | 'BannerAd'
+      | 'createAd'
       | 'Events'
       | 'InterstitialAd'
       | 'ManagedNativeAd'

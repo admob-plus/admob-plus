@@ -1,8 +1,7 @@
 import { GenericAd } from './app-open'
-import { Events, fireDocumentEvent, MobileAd, MobileAdOptions } from './shared'
+import { Events, fireDocumentEvent, MobileAdOptions } from './shared'
 
-export class ManagedNativeAd extends GenericAd {
-}
+export class ManagedNativeAd extends GenericAd {}
 
 export default class NativeAd extends GenericAd {
   public static readonly type = 'native'

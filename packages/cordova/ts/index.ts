@@ -1,16 +1,16 @@
-import { createAd } from './actions'
 import AppOpenAd from './app-open'
 import BannerAd, { BannerAdOptions } from './banner'
 import InterstitialAd from './interstitial'
 import NativeAd, { ManagedNativeAd } from './native'
 import RewardedAd, {
   RewardedAdOptions,
-  ServerSideVerificationOptions
+  ServerSideVerificationOptions,
 } from './rewarded'
 import RewardedInterstitialAd, {
-  RewardedInterstitialAdOptions
+  RewardedInterstitialAdOptions,
 } from './rewarded-interstitial'
 import {
+  createAd,
   Events,
   execAsync,
   fireDocumentEvent,
@@ -18,7 +18,7 @@ import {
   NativeActions,
   Platforms,
   RequestConfig,
-  TrackingAuthorizationStatus
+  TrackingAuthorizationStatus,
 } from './shared'
 
 export * from './api'
