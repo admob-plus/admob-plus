@@ -1,6 +1,6 @@
 import { execAsync, MobileAd, NativeActions, MobileAdOptions } from './shared'
 
-class GenericAd extends MobileAd {
+export class GenericAd extends MobileAd {
   private _init: Promise<void> | null
 
   constructor(opts: MobileAdOptions & { type: string }) {
@@ -14,22 +14,26 @@ class GenericAd extends MobileAd {
   }
 
   async isLoaded() {
-    if (this._init !== null) await this._init
+    await this.init()
     return execAsync(NativeActions.adIsLoaded, [
       { id: this.id },
     ]) as Promise<boolean>
   }
 
   async load() {
-    if (this._init !== null) await this._init
+    await this.init()
     await execAsync(NativeActions.adLoad, [{ id: this.id }])
   }
 
   async show() {
-    if (this._init !== null) await this._init
+    await this.init()
     return execAsync(NativeActions.adShow, [
       { id: this.id },
     ]) as Promise<boolean>
+  }
+
+  protected async init() {
+    if (this._init !== null) await this._init
   }
 }
 

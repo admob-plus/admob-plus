@@ -153,19 +153,6 @@ class AMBPlugin: CDVPlugin {
         }
     }
 
-    @objc func nativeLoad(_ command: CDVInvokedUrlCommand) {
-        let ctx = AMBContext(command)
-
-        DispatchQueue.main.async {
-            if let ad = ctx.optAd() as? AMBNativeAd {
-                ad.load()
-                ctx.success()
-            } else {
-                ctx.error()
-            }
-        }
-    }
-
     @objc(bannerConfig:)
     func bannerConfig(command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(command)

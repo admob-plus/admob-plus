@@ -1,19 +1,13 @@
+import { GenericAd } from './app-open'
 import {
-  execAsync,
-  Events,
-  MobileAd,
-  NativeActions,
-  MobileAdOptions,
-  fireDocumentEvent,
+  Events, fireDocumentEvent, MobileAd, MobileAdOptions
 } from './shared'
 
 export class ManagedNativeAd extends MobileAd {}
 
-export default class NativeAd extends MobileAd {
-  _init: Promise<void> | null
-
+export default class NativeAd extends GenericAd {
   constructor(opts: MobileAdOptions) {
-    super(opts)
+    super({ ...opts, type: 'native' })
 
     document.addEventListener(
       Events.adLoad,
@@ -32,16 +26,10 @@ export default class NativeAd extends MobileAd {
       },
       false,
     )
-
-    this._init = execAsync(NativeActions.adCreate, [
-      { ...opts, id: this.id, type: 'native' },
-    ]).then(() => {
-      this._init = null
-    })
   }
 
-  async load() {
-    if (this._init !== null) await this._init
-    await execAsync('nativeLoad' as NativeActions, [{ id: this.id }])
+  async show() {
+    throw new Error("Not implemented")
+    return false
   }
 }
