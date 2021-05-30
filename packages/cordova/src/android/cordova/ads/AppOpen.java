@@ -9,7 +9,7 @@ import com.google.android.gms.ads.appopen.AppOpenAd;
 import admob.plus.cordova.ExecuteContext;
 import admob.plus.cordova.Generated.Events;
 
-public class AppOpen extends AdBase {
+public class AppOpen extends AdBase implements GenericAd {
     private final AdRequest mAdRequest;
     private final int mOrientation = AppOpenAd.APP_OPEN_AD_ORIENTATION_PORTRAIT;
     private AppOpenAd mAd = null;
@@ -27,10 +27,11 @@ public class AppOpen extends AdBase {
         super.onDestroy();
     }
 
-    public void load() {
+    @Override
+    public void load(ExecuteContext ctx) {
         clear();
 
-        AppOpenAd.load(ExecuteContext.plugin.cordova.getActivity(),
+        AppOpenAd.load(getActivity(),
                 adUnitId,
                 mAdRequest,
                 mOrientation, new AppOpenAd.AppOpenAdLoadCallback() {
@@ -40,14 +41,14 @@ public class AppOpen extends AdBase {
                         ad.setFullScreenContentCallback(new FullScreenContentCallback() {
                             @Override
                             public void onAdDismissedFullScreenContent() {
+                                clear();
                                 emit(Events.AD_DISMISS);
-                                load();
                             }
 
                             @Override
                             public void onAdFailedToShowFullScreenContent(AdError adError) {
+                                clear();
                                 emit(Events.AD_SHOW_FAIL, adError);
-                                load();
                             }
 
                             @Override
@@ -62,18 +63,30 @@ public class AppOpen extends AdBase {
                         });
 
                         emit(Events.AD_LOAD);
+                        ctx.success();
                     }
 
                     @Override
                     public void onAdFailedToLoad(LoadAdError loadAdError) {
+                        clear();
                         emit(Events.AD_LOAD_FAIL, loadAdError);
+                        ctx.error(loadAdError.toString());
                     }
                 });
     }
 
+    @Override
+    public boolean isLoaded() {
+        return mAd != null;
+    }
+
+    @Override
+    public void show() {
+        mAd.show(getActivity());
+    }
+
     public void showOrLoad() {
         if (mAd == null) {
-            load();
         } else {
             mAd.show(ExecuteContext.plugin.cordova.getActivity());
         }

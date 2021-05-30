@@ -22,6 +22,7 @@ import admob.plus.cordova.Generated.Actions;
 import admob.plus.cordova.ads.AdBase;
 import admob.plus.cordova.ads.AppOpen;
 import admob.plus.cordova.ads.Banner;
+import admob.plus.cordova.ads.GenericAd;
 import admob.plus.cordova.ads.IAdIsLoaded;
 import admob.plus.cordova.ads.IAdShow;
 import admob.plus.cordova.ads.Interstitial;
@@ -80,6 +81,12 @@ public class AdMob extends CordovaPlugin {
                     ctx.success();
                 }
                 break;
+            case Actions.AD_IS_LOADED:
+                return executeAdIsLoaded_(ctx);
+            case Actions.AD_LOAD:
+                return executeAdLoad(ctx);
+            case Actions.AD_SHOW:
+                return executeAdShow_(ctx);
             case Actions.APP_OPEN_TRY_TO_PRESENT:
                 cordova.getActivity().runOnUiThread(() -> {
                     AppOpen ad = (AppOpen) ctx.optAdOrError();
@@ -143,6 +150,39 @@ public class AdMob extends CordovaPlugin {
         emit(Generated.Events.READY, new HashMap<String, Object>() {{
             put("isRunningInTestLab", helper.isRunningInTestLab());
         }});
+        return true;
+    }
+
+    private boolean executeAdIsLoaded_(ExecuteContext ctx) {
+        cordova.getActivity().runOnUiThread(() -> {
+            GenericAd ad = (GenericAd) ctx.optAdOrError();
+            if (ad != null) {
+                ctx.success(ad.isLoaded());
+            }
+        });
+        return true;
+    }
+
+    private boolean executeAdLoad(ExecuteContext ctx) {
+        cordova.getActivity().runOnUiThread(() -> {
+            GenericAd ad = (GenericAd) ctx.optAdOrError();
+            if (ad != null) {
+                ad.load(ctx);
+            }
+        });
+        return true;
+    }
+
+    private boolean executeAdShow_(ExecuteContext ctx) {
+        cordova.getActivity().runOnUiThread(() -> {
+            GenericAd ad = (GenericAd) ctx.optAdOrError();
+            if (ad != null && ad.isLoaded()) {
+                ad.show();
+                ctx.success();
+            } else {
+                ctx.error("Ad is not loaded");
+            }
+        });
         return true;
     }
 
