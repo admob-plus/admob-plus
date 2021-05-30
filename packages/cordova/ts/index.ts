@@ -1,3 +1,4 @@
+import { createAd } from './actions'
 import AppOpenAd from './app-open'
 import BannerAd, { BannerAdOptions } from './banner'
 import InterstitialAd from './interstitial'
@@ -13,7 +14,8 @@ import {
   Events,
   execAsync,
   fireDocumentEvent,
-  MobileAd, NativeActions,
+  MobileAd,
+  NativeActions,
   Platforms,
   RequestConfig,
   TrackingAuthorizationStatus
@@ -46,6 +48,8 @@ export class AdMob {
   public readonly Events = Events
   public readonly TrackingAuthorizationStatus = TrackingAuthorizationStatus
 
+  public readonly createAd = createAd
+
   constructor() {
     document.addEventListener(
       'deviceready',
@@ -69,24 +73,6 @@ export class AdMob {
 
   public configRequest(requestConfig: RequestConfig) {
     return execAsync(NativeActions.configRequest, [requestConfig])
-  }
-
-  public async createAd<
-    Ad extends MobileAd,
-    O = ConstructorParameters<typeof Ad>[0],
-  >(
-    cls: { new (opts: O): Ad; type: string },
-    opts: O,
-  ): Promise<InstanceType<typeof MobileAd>> {
-    const Ad = cls
-    if (Ad.type === '') {
-      throw new Error('Not implemented')
-    }
-    const ad = new Ad({ ...opts, _noinit: true })
-    await execAsync(NativeActions.adCreate, [
-      { ...opts, id: ad.id, type: Ad.type },
-    ])
-    return ad
   }
 
   public setAppMuted(value: boolean) {

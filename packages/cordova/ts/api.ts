@@ -1,11 +1,11 @@
-export { AdSizeType, Events, NativeActions } from './generated'
+export { execAsync, AdSizeType, Events, NativeActions } from './generated'
 
 /** @internal */
 export type MobileAdOptions = { id?: number; adUnitId: string; npa?: '1' }
 
 /** @internal */
 export class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
-  public static readonly type: string = ""
+  public static readonly type: string = ''
 
   private static allAds: { [s: number]: MobileAd } = {}
   private static idCounter = 0
