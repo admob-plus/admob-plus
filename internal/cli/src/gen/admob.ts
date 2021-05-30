@@ -20,6 +20,7 @@ const Actions = _.mapValues(
     requestTrackingAuthorization: null,
     // Ad
     createAd: null,
+    adIsLoaded: null,
     adLoad: null,
     adShow: null,
     // AppOpenAd

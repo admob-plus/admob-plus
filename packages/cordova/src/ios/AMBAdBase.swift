@@ -1,8 +1,9 @@
 import GoogleMobileAds
 
 protocol AMBGenericAd {
+    func isLoaded() -> Bool
     func load(_ ctx: AMBContext)
-    func show(_ ctx: AMBContext)
+    func show()
 }
 
 class AMBAdBase: NSObject {

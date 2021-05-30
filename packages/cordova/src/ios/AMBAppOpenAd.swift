@@ -2,6 +2,7 @@ import Foundation
 import GoogleMobileAds
 
 class AMBAppOpenAd: AMBAdBase, AMBGenericAd, GADFullScreenContentDelegate {
+
     let request: GADRequest
     let orientation: UIInterfaceOrientation = .portrait
 
@@ -28,6 +29,10 @@ class AMBAppOpenAd: AMBAdBase, AMBGenericAd, GADFullScreenContentDelegate {
         clear()
     }
 
+    func isLoaded() -> Bool {
+        return mAd != nil
+    }
+
     func load(_ ctx: AMBContext) {
         clear()
 
@@ -49,13 +54,8 @@ class AMBAppOpenAd: AMBAdBase, AMBGenericAd, GADFullScreenContentDelegate {
             })
     }
 
-    func show(_ ctx: AMBContext) {
-        if mAd != nil {
-            mAd?.present(fromRootViewController: AMBContext.plugin.viewController)
-            ctx.success(true)
-        } else {
-            ctx.success(false)
-        }
+    func show() {
+        mAd?.present(fromRootViewController: AMBContext.plugin.viewController)
     }
 
     func adDidRecordImpression(_ ad: GADFullScreenPresentingAd) {

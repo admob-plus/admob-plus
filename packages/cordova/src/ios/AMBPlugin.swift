@@ -120,14 +120,20 @@ class AMBPlugin: CDVPlugin {
         }
     }
 
+    @objc func adIsLoaded(_ command: CDVInvokedUrlCommand) {
+        let ctx = AMBContext(command)
+
+        if let ad = ctx.optAdOrError() as? AMBGenericAd {
+            ctx.success(ad.isLoaded())
+        }
+    }
+
     @objc func adLoad(_ command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(command)
 
         DispatchQueue.main.async {
-            if let ad = ctx.optAd() as? AMBGenericAd {
+            if let ad = ctx.optAdOrError() as? AMBGenericAd {
                 ad.load(ctx)
-            } else {
-                ctx.error()
             }
         }
     }
@@ -136,10 +142,13 @@ class AMBPlugin: CDVPlugin {
         let ctx = AMBContext(command)
 
         DispatchQueue.main.async {
-            if let ad = ctx.optAd() as? AMBGenericAd {
-                ad.show(ctx)
-            } else {
-                ctx.error()
+            if let ad = ctx.optAdOrError() as? AMBGenericAd {
+                if ad.isLoaded() {
+                    ad.show()
+                    ctx.success(true)
+                } else {
+                    ctx.success(false)
+                }
             }
         }
     }

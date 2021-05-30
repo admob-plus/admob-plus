@@ -13,13 +13,23 @@ class GenericAd extends MobileAd {
     })
   }
 
+  async isLoaded() {
+    if (this._init !== null) await this._init
+    return execAsync(NativeActions.adIsLoaded, [
+      { id: this.id },
+    ]) as Promise<boolean>
+  }
+
   async load() {
     if (this._init !== null) await this._init
     await execAsync(NativeActions.adLoad, [{ id: this.id }])
   }
 
   async show() {
-    await execAsync(NativeActions.adShow, [{ id: this.id }])
+    if (this._init !== null) await this._init
+    return execAsync(NativeActions.adShow, [
+      { id: this.id },
+    ]) as Promise<boolean>
   }
 }
 
