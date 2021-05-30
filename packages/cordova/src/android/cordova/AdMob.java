@@ -167,9 +167,9 @@ public class AdMob extends CordovaPlugin {
             GenericAd ad = (GenericAd) ctx.optAdOrError();
             if (ad != null && ad.isLoaded()) {
                 ad.show();
-                ctx.success();
+                ctx.success(true);
             } else {
-                ctx.error("Ad is not loaded");
+                ctx.success(false);
             }
         });
         return true;
