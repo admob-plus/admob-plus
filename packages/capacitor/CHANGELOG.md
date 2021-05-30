@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.11.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.10.1...@admob-plus/capacitor@1.11.0) (2021-05-30)
+
+
+### Bug Fixes
+
+* **capacitor/android:** clear ad on dismiss ([631e820](https://github.com/admob-plus/admob-plus/commit/631e82060f4a93a4591a12c603e7b3986494eff3))
+* **capacitor/android:** emit event to plugin listeners, fix [#350](https://github.com/admob-plus/admob-plus/issues/350) ([69c4980](https://github.com/admob-plus/admob-plus/commit/69c4980807a2c45af5601bac78c68e1b07c0daa1))
+
+
+### Features
+
+* **cordova/ios:** add NativeAd ([20f9827](https://github.com/admob-plus/admob-plus/commit/20f9827ce2858c956a62e0e97f3e83ff9ff7b859))
+
+
+
+
+
 ## [1.10.1](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.10.0...@admob-plus/capacitor@1.10.1) (2021-05-29)
 
 

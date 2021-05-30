@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/react-native@1.5.0...@admob-plus/react-native@1.6.0) (2021-05-30)
+
+
+### Features
+
+* **cordova/ios:** add NativeAd ([20f9827](https://github.com/admob-plus/admob-plus/commit/20f9827ce2858c956a62e0e97f3e83ff9ff7b859))
+
+
+
+
+
 # [1.5.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/react-native@1.4.1...@admob-plus/react-native@1.5.0) (2021-05-28)
 
 

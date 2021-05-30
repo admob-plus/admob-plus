@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.14.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.13.1...admob-plus-cordova@1.14.0) (2021-05-30)
+
+
+### Bug Fixes
+
+* **capacitor/ios:** do not clear ad on present, fix [#358](https://github.com/admob-plus/admob-plus/issues/358) ([93d181a](https://github.com/admob-plus/admob-plus/commit/93d181a30f085d314aa7c4d5ffcd59254fb01fb9))
+* **cordova/android:** return boolean from AppOpenAd.show() ([3ed61e4](https://github.com/admob-plus/admob-plus/commit/3ed61e439d07dd7747368a3d94bfe950d2cf9da5))
+* **cordova/ios:** remove ad on main thread, fix [#359](https://github.com/admob-plus/admob-plus/issues/359) ([4f55aa4](https://github.com/admob-plus/admob-plus/commit/4f55aa4c051c6f1461559de5c2dc293a19d38e13))
+
+
+### Features
+
+* **cordova/android:** implement GenericAd for AppOpenAd ([2a4c16b](https://github.com/admob-plus/admob-plus/commit/2a4c16bab87f1fe25c22beed8bdade8c1dadd1a1))
+* **cordova/ios:** add NativeAd ([20f9827](https://github.com/admob-plus/admob-plus/commit/20f9827ce2858c956a62e0e97f3e83ff9ff7b859))
+* **cordova/ios:** export AppOpenAd.isLoaded() ([cbf3486](https://github.com/admob-plus/admob-plus/commit/cbf3486edcb8727e3c816741429b2b30a5bd7a26))
+* **cordova/ios:** export load(), show() for app open ad ([aee4635](https://github.com/admob-plus/admob-plus/commit/aee46356243e9ac4d07eaa9cf9e723f8db053ca8))
+
+
+
+
+
 ## [1.13.1](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.13.0...admob-plus-cordova@1.13.1) (2021-05-29)
 
 
