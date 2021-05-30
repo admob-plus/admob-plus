@@ -1,49 +1,19 @@
 import Foundation
 import GoogleMobileAds
 
-class AMBNativeAd: AMBAdBase, GADNativeAdLoaderDelegate, GADNativeAdDelegate {
-    var mLoader: GADAdLoader!
-    var mRequest: GADRequest
-    var nativeAdPlaceholder = UIView()
+class AMBManagedNativeAd: AMBAdBase, GADNativeAdDelegate {
+    let mAd: GADNativeAd
 
-    init(id: Int, adUnitId: String, request: GADRequest) {
-        mRequest = request
+    init(id: Int, adUnitId: String, nativeAd: GADNativeAd) {
+        mAd = nativeAd
 
         super.init(id: id, adUnitId: adUnitId)
 
-        let multipleAdsOptions = GADMultipleAdsAdLoaderOptions()
-        multipleAdsOptions.numberOfAds = 5
+        mAd.delegate = self
 
-        mLoader = GADAdLoader(adUnitID: adUnitId, rootViewController: plugin.viewController,
-                              adTypes: [.native],
-                              options: [multipleAdsOptions])
-        mLoader.delegate = self
-    }
-
-    convenience init?(_ ctx: AMBContext) {
-        guard let id = ctx.optId(),
-              let adUnitId = ctx.optAdUnitID()
-        else {
-            return nil
+        DispatchQueue.main.async {
+            self.addNativeAdView()
         }
-        self.init(id: id,
-                  adUnitId: adUnitId,
-                  request: ctx.optGADRequest())
-    }
-
-    func load() {
-        mLoader.load(mRequest)
-    }
-
-    func adLoader(_ adLoader: GADAdLoader, didReceive nativeAd: GADNativeAd) {
-        nativeAd.delegate = self
-        self.emit(AMBEvents.adLoad, ["nativeAdId": nativeAd.hashValue])
-
-        addNativeAdView(nativeAd)
-    }
-
-    func adLoader(_ adLoader: GADAdLoader, didFailToReceiveAdWithError error: Error) {
-        self.emit(AMBEvents.adLoadFail, error)
     }
 
     func nativeAdDidRecordImpression(_ nativeAd: GADNativeAd) {
@@ -71,7 +41,9 @@ class AMBNativeAd: AMBAdBase, GADNativeAdLoaderDelegate, GADNativeAdDelegate {
         // open a new application.
     }
 
-    private func addNativeAdView(_ nativeAd: GADNativeAd) {
+    private func addNativeAdView() {
+        let nativeAd = self.mAd
+
         let nibView = Bundle.main.loadNibNamed("NativeAdView", owner: nil, options: nil)?.first
         guard let nativeAdView = nibView as? GADNativeAdView else {
             return
@@ -124,5 +96,56 @@ class AMBNativeAd: AMBAdBase, GADNativeAdLoaderDelegate, GADNativeAdDelegate {
         // required to make the ad clickable.
         // Note: this should always be done after populating the ad views.
         nativeAdView.nativeAd = nativeAd
+    }
+}
+
+class AMBNativeAd: AMBAdBase, AMBGenericAd, GADNativeAdLoaderDelegate {
+    var mLoader: GADAdLoader!
+    var mRequest: GADRequest
+
+    init(id: Int, adUnitId: String, request: GADRequest) {
+        mRequest = request
+
+        super.init(id: id, adUnitId: adUnitId)
+
+        let multipleAdsOptions = GADMultipleAdsAdLoaderOptions()
+        multipleAdsOptions.numberOfAds = 1
+
+        mLoader = GADAdLoader(adUnitID: adUnitId, rootViewController: plugin.viewController,
+                              adTypes: [.native],
+                              options: [multipleAdsOptions])
+        mLoader.delegate = self
+    }
+
+    convenience init?(_ ctx: AMBContext) {
+        guard let id = ctx.optId(),
+              let adUnitId = ctx.optAdUnitID()
+        else {
+            return nil
+        }
+        self.init(id: id,
+                  adUnitId: adUnitId,
+                  request: ctx.optGADRequest())
+    }
+
+    func load(_ ctx: AMBContext) {
+        mLoader.load(mRequest)
+        ctx.success()
+    }
+
+    func isLoaded() -> Bool {
+        return true
+    }
+
+    func show() {
+    }
+
+    func adLoader(_ adLoader: GADAdLoader, didReceive nativeAd: GADNativeAd) {
+        let ad = AMBManagedNativeAd(id: nativeAd.hashValue, adUnitId: adUnitId, nativeAd: nativeAd)
+        self.emit(AMBEvents.adLoad, ["nativeAdId": ad.id])
+    }
+
+    func adLoader(_ adLoader: GADAdLoader, didFailToReceiveAdWithError error: Error) {
+        self.emit(AMBEvents.adLoadFail, error)
     }
 }

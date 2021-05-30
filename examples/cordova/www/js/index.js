@@ -129,10 +129,9 @@ const app = {
   },
 
   showNativeAd() {
-    const ad = new admob.NativeAd({
+    return admob.createAd(admob.NativeAd, {
       adUnitId: 'ca-app-pub-3940256099942544/3986624511',
-    })
-    return ad.load()
+    }).then((ad) => ad.load())
   },
 
   receivedEvent(id) {
