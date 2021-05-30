@@ -11,6 +11,9 @@ const app = {
     document.addEventListener('admob.ad.load', (evt) => {
       console.log('admob.ad.load', evt.ad.id)
     }, false)
+    document.addEventListener('admob.ad.dismiss', (evt) => {
+      console.log('admob.ad.dismiss', evt.ad.id)
+    }, false)
     document.addEventListener('admob.ad.show', (evt) => {
       console.log('admob.ad.show', Object.keys(evt))
     }, false)

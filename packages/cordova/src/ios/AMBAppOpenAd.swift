@@ -60,18 +60,17 @@ class AMBAppOpenAd: AMBAdBase, GADFullScreenContentDelegate {
     }
 
     func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
-        self.load()
         self.emit(AMBEvents.adShowFail, error)
+        self.load()
     }
 
     func adDidPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        clear()
         self.emit(AMBEvents.adShow)
     }
 
     func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        self.load()
         self.emit(AMBEvents.adDismiss)
+        self.load()
     }
 
     private func clear() {
