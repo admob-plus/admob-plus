@@ -5,7 +5,7 @@ class AMBAppOpenAd: AMBAdBase, GADFullScreenContentDelegate {
     let request: GADRequest
     let orientation: UIInterfaceOrientation = .portrait
 
-    var appOpenAd: GADAppOpenAd?
+    var mAd: GADAppOpenAd?
 
     init(id: Int, adUnitId: String, request: GADRequest) {
         self.request = request
@@ -35,21 +35,21 @@ class AMBAppOpenAd: AMBAdBase, GADFullScreenContentDelegate {
             withAdUnitID: self.adUnitId,
             request: self.request,
             orientation: self.orientation,
-            completionHandler: { (appOpenAd, error) in
+            completionHandler: { (ad, error) in
                 if error != nil {
                     self.emit(AMBEvents.adLoadFail, error!)
                     return
                 }
-                appOpenAd?.fullScreenContentDelegate = self
-                self.appOpenAd = appOpenAd
+                ad?.fullScreenContentDelegate = self
+                self.mAd = ad
 
                 self.emit(AMBEvents.adLoad)
             })
     }
 
     func showOrLoad() {
-        if self.appOpenAd != nil {
-            self.appOpenAd?.present(fromRootViewController: AMBContext.plugin.viewController)
+        if self.mAd != nil {
+            self.mAd?.present(fromRootViewController: AMBContext.plugin.viewController)
         } else {
             self.requestAppOpenAd()
         }
@@ -75,7 +75,7 @@ class AMBAppOpenAd: AMBAdBase, GADFullScreenContentDelegate {
     }
 
     private func clear() {
-        appOpenAd?.fullScreenContentDelegate = nil
-        appOpenAd = nil
+        mAd?.fullScreenContentDelegate = nil
+        mAd = nil
     }
 }
