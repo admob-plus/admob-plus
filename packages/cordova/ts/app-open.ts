@@ -3,14 +3,19 @@ import { execAsync, MobileAd, NativeActions, MobileAdOptions } from './shared'
 export class GenericAd extends MobileAd {
   private _init: Promise<void> | null
 
-  constructor(opts: MobileAdOptions & { type: string }) {
+  constructor(opts: MobileAdOptions & { type: string; _noinit?: boolean }) {
     super(opts)
 
-    this._init = execAsync(NativeActions.adCreate, [
-      { ...opts, id: this.id, type: opts.type },
-    ]).then(() => {
+    if (opts._noinit) {
       this._init = null
-    })
+    } else {
+      // TODO utilize `createAd`
+      this._init = execAsync(NativeActions.adCreate, [
+        { ...opts, id: this.id, type: opts.type },
+      ]).then(() => {
+        this._init = null
+      })
+    }
   }
 
   async isLoaded() {
@@ -38,7 +43,9 @@ export class GenericAd extends MobileAd {
 }
 
 export default class AppOpenAd extends GenericAd {
+  public static readonly type = 'app-open'
+
   constructor(opts: MobileAdOptions) {
-    super({ ...opts, type: 'app-open' })
+    super({ ...opts, type: AppOpenAd.type })
   }
 }

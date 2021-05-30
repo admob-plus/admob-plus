@@ -1,13 +1,13 @@
 import { GenericAd } from './app-open'
-import {
-  Events, fireDocumentEvent, MobileAd, MobileAdOptions
-} from './shared'
+import { Events, fireDocumentEvent, MobileAd, MobileAdOptions } from './shared'
 
 export class ManagedNativeAd extends MobileAd {}
 
 export default class NativeAd extends GenericAd {
+  public static readonly type = 'native'
+
   constructor(opts: MobileAdOptions) {
-    super({ ...opts, type: 'native' })
+    super({ ...opts, type: NativeAd.type })
 
     document.addEventListener(
       Events.adLoad,
@@ -29,7 +29,7 @@ export default class NativeAd extends GenericAd {
   }
 
   async show() {
-    throw new Error("Not implemented")
+    throw new Error('Not implemented')
     return false
   }
 }
