@@ -44,6 +44,10 @@ const initInterstitial = async () => {
 }
 
 const initRewarded = async () => {
+  AdMobPlus.addListener('rewarded.reward', (info) => {
+    console.log('rewarded.reward', info)
+  })
+
   const rewarded = new RewardedAd({
     adUnitId: 'ca-app-pub-3940256099942544/5224354917',
   })

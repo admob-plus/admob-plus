@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 
 import com.getcapacitor.JSArray;
+import com.getcapacitor.JSObject;
 import com.getcapacitor.PluginCall;
 import com.google.ads.mediation.admob.AdMobAdapter;
 import com.google.android.gms.ads.AdRequest;
@@ -31,7 +32,11 @@ public class ExecuteContext {
     }
 
     public static void emit(String eventName, Map<String, Object> data) {
-        plugin.getBridge().triggerDocumentJSEvent(eventName, new JSONObject(data).toString());
+        try {
+            plugin.emit(eventName, JSObject.fromJSONObject(new JSONObject(data)));
+        } catch (JSONException e) {
+            e   .printStackTrace();
+        }
     }
 
     public Boolean optAppMuted() {

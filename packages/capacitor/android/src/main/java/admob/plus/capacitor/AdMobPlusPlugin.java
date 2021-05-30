@@ -151,4 +151,8 @@ public class AdMobPlusPlugin extends Plugin implements AdMobHelper.Adapter {
             ad.show(ctx);
         });
     }
+
+    public void emit(String eventName, JSObject data) {
+        notifyListeners(eventName, data);
+    }
 }
