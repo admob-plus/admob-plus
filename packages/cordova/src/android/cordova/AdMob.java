@@ -87,17 +87,6 @@ public class AdMob extends CordovaPlugin {
                 return executeAdLoad(ctx);
             case Actions.AD_SHOW:
                 return executeAdShow_(ctx);
-            case Actions.APP_OPEN_TRY_TO_PRESENT:
-                cordova.getActivity().runOnUiThread(() -> {
-                    AppOpen ad = (AppOpen) ctx.optAdOrError();
-                    if (ad != null) {
-                        ad.showOrLoad();
-                        ctx.success();
-                    } else {
-                        ctx.error("cannot find ad");
-                    }
-                });
-                break;
             case Actions.BANNER_LOAD:
                 return executeBannerLoad(ctx);
             case Actions.BANNER_SHOW:

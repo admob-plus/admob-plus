@@ -85,13 +85,6 @@ public class AppOpen extends AdBase implements GenericAd {
         mAd.show(getActivity());
     }
 
-    public void showOrLoad() {
-        if (mAd == null) {
-        } else {
-            mAd.show(ExecuteContext.plugin.cordova.getActivity());
-        }
-    }
-
     private void clear() {
         if (mAd != null) {
             mAd = null;

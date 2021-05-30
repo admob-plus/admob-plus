@@ -3,7 +3,6 @@ export enum NativeActions {
   adIsLoaded = 'adIsLoaded',
   adLoad = 'adLoad',
   adShow = 'adShow',
-  appOpenTryToPresent = 'appOpenTryToPresent',
   bannerConfig = 'bannerConfig',
   bannerHide = 'bannerHide',
   bannerLoad = 'bannerLoad',

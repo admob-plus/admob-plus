@@ -6,7 +6,6 @@ public final class Generated {
         public static final String AD_IS_LOADED = "adIsLoaded";
         public static final String AD_LOAD = "adLoad";
         public static final String AD_SHOW = "adShow";
-        public static final String APP_OPEN_TRY_TO_PRESENT = "appOpenTryToPresent";
         public static final String BANNER_CONFIG = "bannerConfig";
         public static final String BANNER_HIDE = "bannerHide";
         public static final String BANNER_LOAD = "bannerLoad";

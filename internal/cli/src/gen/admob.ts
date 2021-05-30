@@ -23,8 +23,6 @@ const Actions = _.mapValues(
     adIsLoaded: null,
     adLoad: null,
     adShow: null,
-    // AppOpenAd
-    appOpenTryToPresent: null,
     // BannerAd
     bannerConfig: null,
     bannerLoad: null,

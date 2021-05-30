@@ -5,7 +5,6 @@ const AdMob = {
   adIsLoaded() {},
   adLoad() {},
   adShow() {},
-  appOpenTryToPresent() {},
   bannerConfig() {},
   bannerHide() {},
   bannerLoad() {},

@@ -37,8 +37,4 @@ export default class AppOpenAd extends GenericAd {
   constructor(opts: MobileAdOptions) {
     super({ ...opts, type: 'app-open' })
   }
-
-  async showOrLoad() {
-    await execAsync(NativeActions.appOpenTryToPresent, [{ id: this.id }])
-  }
 }
