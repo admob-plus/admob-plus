@@ -11,7 +11,12 @@ const app = {
     document.addEventListener(
       'admob.ad.load',
       (evt) => {
-        console.log('admob.ad.load', evt.ad.id)
+        const { ad } = evt
+        console.log('admob.ad.load', ad.id)
+
+        if (ad instanceof admob.ManagedNativeAd) {
+          ad.show()
+        }
       },
       false,
     )
@@ -129,9 +134,11 @@ const app = {
   },
 
   showNativeAd() {
-    return admob.createAd(admob.NativeAd, {
-      adUnitId: 'ca-app-pub-3940256099942544/3986624511',
-    }).then((ad) => ad.load())
+    return admob
+      .createAd(admob.NativeAd, {
+        adUnitId: 'ca-app-pub-3940256099942544/3986624511',
+      })
+      .then((ad) => ad.load())
   },
 
   receivedEvent(id) {

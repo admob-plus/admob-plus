@@ -1,7 +1,7 @@
 import Foundation
 import GoogleMobileAds
 
-class AMBManagedNativeAd: AMBAdBase, GADNativeAdDelegate {
+class AMBManagedNativeAd: AMBAdBase, AMBGenericAd, GADNativeAdDelegate {
     let mAd: GADNativeAd
 
     init(id: Int, adUnitId: String, nativeAd: GADNativeAd) {
@@ -10,10 +10,18 @@ class AMBManagedNativeAd: AMBAdBase, GADNativeAdDelegate {
         super.init(id: id, adUnitId: adUnitId)
 
         mAd.delegate = self
+    }
 
-        DispatchQueue.main.async {
-            self.addNativeAdView()
-        }
+    func isLoaded() -> Bool {
+        return true
+    }
+
+    func load(_ ctx: AMBContext) {
+        ctx.success()
+    }
+
+    func show() {
+        self.addNativeAdView()
     }
 
     func nativeAdDidRecordImpression(_ nativeAd: GADNativeAd) {
