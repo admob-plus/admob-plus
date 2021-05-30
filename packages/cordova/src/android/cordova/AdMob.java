@@ -68,7 +68,7 @@ public class AdMob extends CordovaPlugin {
                 MobileAds.setRequestConfiguration(helper.buildRequestConfiguration(ctx.opts));
                 callbackContext.success();
                 break;
-            case Actions.CREATE_AD:
+            case Actions.AD_CREATE:
                 String adType = ctx.optString("type");
                 if (adType == null) {
                     ctx.error("ad type is missing");

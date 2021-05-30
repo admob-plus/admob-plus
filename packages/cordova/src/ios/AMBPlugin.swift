@@ -102,7 +102,7 @@ class AMBPlugin: CDVPlugin {
         }
     }
 
-    @objc func createAd(_ command: CDVInvokedUrlCommand) {
+    @objc func adCreate(_ command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(command)
 
         if let adType = ctx.optString("type") {

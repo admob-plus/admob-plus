@@ -6,7 +6,7 @@ class GenericAd extends MobileAd {
   constructor(opts: MobileAdOptions & { type: string }) {
     super(opts)
 
-    this._init = execAsync(NativeActions.createAd, [
+    this._init = execAsync(NativeActions.adCreate, [
       { ...opts, id: this.id, type: opts.type },
     ]).then(() => {
       this._init = null

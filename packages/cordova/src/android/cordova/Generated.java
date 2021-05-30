@@ -3,6 +3,7 @@ package admob.plus.cordova;
 
 public final class Generated {
     public static final class Actions {
+        public static final String AD_CREATE = "adCreate";
         public static final String AD_IS_LOADED = "adIsLoaded";
         public static final String AD_LOAD = "adLoad";
         public static final String AD_SHOW = "adShow";
@@ -11,7 +12,6 @@ public final class Generated {
         public static final String BANNER_LOAD = "bannerLoad";
         public static final String BANNER_SHOW = "bannerShow";
         public static final String CONFIG_REQUEST = "configRequest";
-        public static final String CREATE_AD = "createAd";
         public static final String INTERSTITIAL_IS_LOADED = "interstitialIsLoaded";
         public static final String INTERSTITIAL_LOAD = "interstitialLoad";
         public static final String INTERSTITIAL_SHOW = "interstitialShow";

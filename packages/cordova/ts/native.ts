@@ -33,7 +33,7 @@ export default class NativeAd extends MobileAd {
       false,
     )
 
-    this._init = execAsync(NativeActions.createAd, [
+    this._init = execAsync(NativeActions.adCreate, [
       { ...opts, id: this.id, type: 'native' },
     ]).then(() => {
       this._init = null

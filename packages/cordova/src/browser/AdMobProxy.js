@@ -2,6 +2,7 @@
 'use strict'
 
 const AdMob = {
+  adCreate() {},
   adIsLoaded() {},
   adLoad() {},
   adShow() {},
@@ -10,7 +11,6 @@ const AdMob = {
   bannerLoad() {},
   bannerShow() {},
   configRequest() {},
-  createAd() {},
   interstitialIsLoaded() {},
   interstitialLoad() {},
   interstitialShow() {},
