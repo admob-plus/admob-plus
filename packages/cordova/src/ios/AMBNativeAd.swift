@@ -14,11 +14,17 @@ extension AMBNativeAdViewProvider {
 }
 
 class AMBManagedNativeAd: AMBAdBase, AMBGenericAd, GADNativeAdDelegate {
+    static var providers = [String: AMBNativeAdViewProvider]()
+
+    let mManager: AMBNativeAd
     let mAd: GADNativeAd
-    let mProvider: AMBNativeAdViewProvider
+
+    lazy var viewProvider: AMBNativeAdViewProvider = {
+        return mManager.viewProvider
+    }()
 
     lazy var view: GADNativeAdView = {
-        let nativeAdView = mProvider.createView(mAd)
+        let nativeAdView = viewProvider.createView(mAd)
 
         // Associate the native ad view with the native ad object. This is
         // required to make the ad clickable.
@@ -28,11 +34,11 @@ class AMBManagedNativeAd: AMBAdBase, AMBGenericAd, GADNativeAdDelegate {
         return nativeAdView
     }()
 
-    init(id: Int, adUnitId: String, nativeAd: GADNativeAd, provider: AMBNativeAdViewProvider) {
+    init(nativeAd: GADNativeAd, manager: AMBNativeAd) {
         mAd = nativeAd
-        mProvider = provider
+        mManager = manager
 
-        super.init(id: id, adUnitId: adUnitId)
+        super.init(id: nativeAd.hashValue, adUnitId: manager.adUnitId)
 
         mAd.delegate = self
     }
@@ -54,12 +60,12 @@ class AMBManagedNativeAd: AMBAdBase, AMBGenericAd, GADNativeAdDelegate {
         }
 
         view.isHidden = false
-        mProvider.didShow(self)
+        viewProvider.didShow(self)
     }
 
     func hide(_ ctx: AMBContext) {
         view.isHidden = true
-        mProvider.didHide(self)
+        viewProvider.didHide(self)
         ctx.success()
     }
 
@@ -91,12 +97,15 @@ class AMBManagedNativeAd: AMBAdBase, AMBGenericAd, GADNativeAdDelegate {
 
 class AMBNativeAd: AMBAdBase, AMBGenericAd, GADNativeAdLoaderDelegate, AMBNativeAdViewProvider {
     var mLoader: GADAdLoader!
-    var mRequest: GADRequest
+    var viewProvider: AMBNativeAdViewProvider!
+    let mRequest: GADRequest
 
     init(id: Int, adUnitId: String, request: GADRequest) {
         mRequest = request
 
         super.init(id: id, adUnitId: adUnitId)
+
+        viewProvider = self
 
         let multipleAdsOptions = GADMultipleAdsAdLoaderOptions()
         multipleAdsOptions.numberOfAds = 1
@@ -131,7 +140,7 @@ class AMBNativeAd: AMBAdBase, AMBGenericAd, GADNativeAdLoaderDelegate, AMBNative
     }
 
     func adLoader(_ adLoader: GADAdLoader, didReceive nativeAd: GADNativeAd) {
-        let ad = AMBManagedNativeAd(id: nativeAd.hashValue, adUnitId: adUnitId, nativeAd: nativeAd, provider: self)
+        let ad = AMBManagedNativeAd(nativeAd: nativeAd, manager: self)
         self.emit(AMBEvents.adLoad, ["nativeAdId": ad.id])
     }
 
