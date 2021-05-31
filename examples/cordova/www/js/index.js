@@ -21,6 +21,25 @@ const app = {
             width: window.screen.width,
             height: 300,
           })
+            .then(
+              () =>
+                new Promise((resolve) =>
+                  setTimeout(() => {
+                    ad.show({
+                      x: 0,
+                      y: 30,
+                      width: window.screen.width,
+                      height: 350,
+                    })
+                    resolve()
+                  }, 5000),
+                ),
+            )
+            .then(() => {
+              setTimeout(() => {
+                ad.hide()
+              }, 5000)
+            })
         }
       },
       false,

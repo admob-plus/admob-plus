@@ -4,6 +4,13 @@ protocol AMBGenericAd {
     func isLoaded() -> Bool
     func load(_ ctx: AMBContext)
     func show(_ ctx: AMBContext)
+    func hide(_ ctx: AMBContext)
+}
+
+extension AMBGenericAd {
+    func hide(_ ctx: AMBContext) {
+        ctx.success()
+    }
 }
 
 class AMBAdBase: NSObject {

@@ -1,12 +1,18 @@
 import { GenericAd } from './app-open'
-import { Events, fireDocumentEvent, MobileAdOptions } from './shared'
+import { Events, execAsync, fireDocumentEvent, MobileAdOptions, NativeActions } from './shared'
 
 export class ManagedNativeAd extends GenericAd<{
   x: number
   y: number
   width: number
   height: number
-}> {}
+}> {
+  async hide() {
+    return execAsync("adHide" as NativeActions, [
+      { id: this.id },
+    ])
+  }
+}
 
 export default class NativeAd extends GenericAd {
   public static readonly type = 'native'

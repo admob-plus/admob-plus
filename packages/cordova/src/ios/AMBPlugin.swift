@@ -153,6 +153,16 @@ class AMBPlugin: CDVPlugin {
         }
     }
 
+    @objc func adHide(_ command: CDVInvokedUrlCommand) {
+        let ctx = AMBContext(command)
+
+        DispatchQueue.main.async {
+            if let ad = ctx.optAdOrError() as? AMBGenericAd {
+                ad.hide(ctx)
+            }
+        }
+    }
+
     @objc(bannerConfig:)
     func bannerConfig(command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(command)
