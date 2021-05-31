@@ -54,7 +54,7 @@ class AMBAppOpenAd: AMBAdBase, AMBGenericAd, GADFullScreenContentDelegate {
             })
     }
 
-    func show() {
+    func show(_ ctx: AMBContext) {
         mAd?.present(fromRootViewController: AMBContext.plugin.viewController)
     }
 

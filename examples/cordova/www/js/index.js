@@ -15,7 +15,12 @@ const app = {
         console.log('admob.ad.load', ad.id)
 
         if (ad instanceof admob.ManagedNativeAd) {
-          ad.show()
+          ad.show({
+            x: 0,
+            y: 50,
+            width: window.screen.width,
+            height: 300,
+          })
         }
       },
       false,

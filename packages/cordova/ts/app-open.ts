@@ -1,6 +1,6 @@
 import { execAsync, MobileAd, NativeActions, MobileAdOptions } from './shared'
 
-export class GenericAd extends MobileAd {
+export class GenericAd<S = Record<string, any>> extends MobileAd {
   private _init: Promise<void> | null
 
   constructor(opts: MobileAdOptions & { type: string; _noinit?: boolean }) {
@@ -30,10 +30,10 @@ export class GenericAd extends MobileAd {
     await execAsync(NativeActions.adLoad, [{ id: this.id }])
   }
 
-  async show() {
+  async show(opts?: S) {
     await this.init()
     return execAsync(NativeActions.adShow, [
-      { id: this.id },
+      { ...opts, id: this.id },
     ]) as Promise<boolean>
   }
 

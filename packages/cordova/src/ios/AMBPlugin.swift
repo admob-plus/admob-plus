@@ -144,7 +144,7 @@ class AMBPlugin: CDVPlugin {
         DispatchQueue.main.async {
             if let ad = ctx.optAdOrError() as? AMBGenericAd {
                 if ad.isLoaded() {
-                    ad.show()
+                    ad.show(ctx)
                     ctx.success(true)
                 } else {
                     ctx.success(false)

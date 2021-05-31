@@ -3,6 +3,8 @@ import GoogleMobileAds
 
 class AMBManagedNativeAd: AMBAdBase, AMBGenericAd, GADNativeAdDelegate {
     let mAd: GADNativeAd
+    let mView = UIView()
+    var nativeAdView: GADNativeAdView?
 
     init(id: Int, adUnitId: String, nativeAd: GADNativeAd) {
         mAd = nativeAd
@@ -20,8 +22,17 @@ class AMBManagedNativeAd: AMBAdBase, AMBGenericAd, GADNativeAdDelegate {
         ctx.success()
     }
 
-    func show() {
-        self.addNativeAdView()
+    func show(_ ctx: AMBContext) {
+        if nativeAdView == nil {
+            self.addNativeAdView()
+        }
+        if let v = nativeAdView,
+           let x = ctx.opt("x") as? Double,
+           let y = ctx.opt("y") as? Double,
+           let w = ctx.opt("width") as? Double,
+           let h = ctx.opt("height") as? Double {
+            v.frame = CGRect(x: x, y: y, width: w, height: h)
+        }
     }
 
     func nativeAdDidRecordImpression(_ nativeAd: GADNativeAd) {
@@ -57,6 +68,7 @@ class AMBManagedNativeAd: AMBAdBase, AMBGenericAd, GADNativeAdDelegate {
             return
         }
         plugin.viewController.view.superview?.addSubview(nativeAdView)
+        self.nativeAdView = nativeAdView
 
         (nativeAdView.headlineView as? UILabel)?.text = nativeAd.headline
         nativeAdView.mediaView?.mediaContent = nativeAd.mediaContent
@@ -145,7 +157,7 @@ class AMBNativeAd: AMBAdBase, AMBGenericAd, GADNativeAdLoaderDelegate {
         return true
     }
 
-    func show() {
+    func show(_ ctx: AMBContext) {
     }
 
     func adLoader(_ adLoader: GADAdLoader, didReceive nativeAd: GADNativeAd) {
