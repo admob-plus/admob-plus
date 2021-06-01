@@ -11,7 +11,7 @@
     "cordova-common": "^4.0.2",
     "elementtree": "^0.1.7",
     "enquirer": "^2.3.6",
-    "execa": "^5.0.0",
+    "execa": "^5.0.1",
     "fast-glob": "^3.2.5",
     "fs-extra": "^10.0.0",
     "got": "^11.8.2",
