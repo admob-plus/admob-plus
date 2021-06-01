@@ -176,7 +176,6 @@ export class AdMob
       | 'createAd'
       | 'Events'
       | 'InterstitialAd'
-      | 'ManagedNativeAd'
       | 'NativeAd'
       | 'RewardedAd'
       | 'RewardedInterstitialAd'

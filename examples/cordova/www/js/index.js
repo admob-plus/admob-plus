@@ -14,7 +14,7 @@ const app = {
         const { ad } = evt
         console.log('admob.ad.load', ad.id)
 
-        if (ad instanceof admob.ManagedNativeAd) {
+        if (ad instanceof admob.NativeAd) {
           ad.show({
             x: 0,
             y: 50,

@@ -1,7 +1,7 @@
 import AppOpenAd from './app-open'
 import BannerAd, { BannerAdOptions } from './banner'
 import InterstitialAd from './interstitial'
-import NativeAd, { ManagedNativeAd } from './native'
+import NativeAd from './native'
 import RewardedAd, {
   RewardedAdOptions,
   ServerSideVerificationOptions,
@@ -27,7 +27,6 @@ export {
   BannerAd,
   BannerAdOptions,
   InterstitialAd,
-  ManagedNativeAd,
   NativeAd,
   RewardedAd,
   RewardedAdOptions,
@@ -40,7 +39,6 @@ export class AdMob {
   public readonly AppOpenAd = AppOpenAd
   public readonly BannerAd = BannerAd
   public readonly InterstitialAd = InterstitialAd
-  public readonly ManagedNativeAd = ManagedNativeAd
   public readonly NativeAd = NativeAd
   public readonly RewardedAd = RewardedAd
   public readonly RewardedInterstitialAd = RewardedInterstitialAd
