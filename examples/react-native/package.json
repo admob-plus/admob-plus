@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "preinstall": "touch yarn.lock",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
@@ -48,8 +49,9 @@
     ]
   },
   "workspaces": [
-    ".",
     "../../internal/*",
-    "../../packages/*"
+    "../../packages/cli",
+    "../../packages/pkg-proxy",
+    "../../packages/react-native"
   ]
 }
