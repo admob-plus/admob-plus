@@ -14,8 +14,6 @@ extension AMBNativeAdViewProvider {
 }
 
 class AMBManagedNativeAd: AMBAdBase, AMBGenericAd, GADNativeAdDelegate {
-    static var providers = [String: AMBNativeAdViewProvider]()
-
     let mManager: AMBNativeAd
     let mAd: GADNativeAd
 
@@ -59,7 +57,11 @@ class AMBManagedNativeAd: AMBAdBase, AMBGenericAd, GADNativeAdDelegate {
             view.frame = CGRect(x: x, y: y, width: w, height: h)
         }
 
+        if let rootView = plugin.viewController.view.superview, view.superview != rootView {
+            rootView.addSubview(view)
+        }
         view.isHidden = false
+
         viewProvider.didShow(self)
     }
 
@@ -95,17 +97,18 @@ class AMBManagedNativeAd: AMBAdBase, AMBGenericAd, GADNativeAdDelegate {
     }
 }
 
-class AMBNativeAd: AMBAdBase, AMBGenericAd, GADNativeAdLoaderDelegate, AMBNativeAdViewProvider {
+class AMBNativeAd: AMBAdBase, AMBGenericAd, GADNativeAdLoaderDelegate {
+    static var providers = [String: AMBNativeAdViewProvider]()
+
     var mLoader: GADAdLoader!
-    var viewProvider: AMBNativeAdViewProvider!
+    let viewProvider: AMBNativeAdViewProvider
     let mRequest: GADRequest
 
-    init(id: Int, adUnitId: String, request: GADRequest) {
+    init(id: Int, adUnitId: String, request: GADRequest, viewProvider: AMBNativeAdViewProvider) {
         mRequest = request
+        self.viewProvider = viewProvider
 
         super.init(id: id, adUnitId: adUnitId)
-
-        viewProvider = self
 
         let multipleAdsOptions = GADMultipleAdsAdLoaderOptions()
         multipleAdsOptions.numberOfAds = 1
@@ -118,13 +121,15 @@ class AMBNativeAd: AMBAdBase, AMBGenericAd, GADNativeAdLoaderDelegate, AMBNative
 
     convenience init?(_ ctx: AMBContext) {
         guard let id = ctx.optId(),
-              let adUnitId = ctx.optAdUnitID()
+              let adUnitId = ctx.optAdUnitID(),
+              let viewProvider = Self.providers["default"]
         else {
             return nil
         }
         self.init(id: id,
                   adUnitId: adUnitId,
-                  request: ctx.optGADRequest())
+                  request: ctx.optGADRequest(),
+                  viewProvider: viewProvider)
     }
 
     func load(_ ctx: AMBContext) {
@@ -146,58 +151,5 @@ class AMBNativeAd: AMBAdBase, AMBGenericAd, GADNativeAdLoaderDelegate, AMBNative
 
     func adLoader(_ adLoader: GADAdLoader, didFailToReceiveAdWithError error: Error) {
         self.emit(AMBEvents.adLoadFail, error)
-    }
-
-    func createView(_ ad: GADNativeAd) -> GADNativeAdView {
-        let nativeAd = ad
-        let nibView = Bundle.main.loadNibNamed("NativeAdView", owner: nil, options: nil)?.first
-        guard let nativeAdView = nibView as? GADNativeAdView else {
-            fatalError("cannot load NativeAdView")
-        }
-        plugin.viewController.view.superview?.addSubview(nativeAdView)
-
-        (nativeAdView.headlineView as? UILabel)?.text = nativeAd.headline
-        nativeAdView.mediaView?.mediaContent = nativeAd.mediaContent
-
-        if let mediaView = nativeAdView.mediaView, nativeAd.mediaContent.aspectRatio > 0 {
-            let heightConstraint = NSLayoutConstraint(
-                item: mediaView,
-                attribute: .height,
-                relatedBy: .equal,
-                toItem: mediaView,
-                attribute: .width,
-                multiplier: CGFloat(1 / nativeAd.mediaContent.aspectRatio),
-                constant: 0)
-            heightConstraint.isActive = true
-        }
-
-        // These assets are not guaranteed to be present. Check that they are before
-        // showing or hiding them.
-        (nativeAdView.bodyView as? UILabel)?.text = nativeAd.body
-        nativeAdView.bodyView?.isHidden = nativeAd.body == nil
-
-        (nativeAdView.callToActionView as? UIButton)?.setTitle(nativeAd.callToAction, for: .normal)
-        nativeAdView.callToActionView?.isHidden = nativeAd.callToAction == nil
-
-        (nativeAdView.iconView as? UIImageView)?.image = nativeAd.icon?.image
-        nativeAdView.iconView?.isHidden = nativeAd.icon == nil
-
-        //        (nativeAdView.starRatingView as? UIImageView)?.image = imageOfStars(
-        //            fromStarRating: nativeAd.starRating)
-        //        nativeAdView.starRatingView?.isHidden = nativeAd.starRating == nil
-
-        (nativeAdView.storeView as? UILabel)?.text = nativeAd.store
-        nativeAdView.storeView?.isHidden = nativeAd.store == nil
-
-        (nativeAdView.priceView as? UILabel)?.text = nativeAd.price
-        nativeAdView.priceView?.isHidden = nativeAd.price == nil
-
-        (nativeAdView.advertiserView as? UILabel)?.text = nativeAd.advertiser
-        nativeAdView.advertiserView?.isHidden = nativeAd.advertiser == nil
-
-        // In order for the SDK to process touch events properly, user interaction should be disabled.
-        nativeAdView.callToActionView?.isUserInteractionEnabled = false
-
-        return nativeAdView
     }
 }
