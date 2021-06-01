@@ -1,0 +1,7 @@
+contact_links:
+  - name: 💡 Feature Requests and Ideas
+    url: https://github.com/admob-plus/admob-plus/discussions
+    about: This issue tracker is not for feature requests. Please use `Discussions`.
+  - name: 🤔 Questions and Help
+    url: https://github.com/admob-plus/admob-plus/discussions
+    about: This issue tracker is not for support questions. Please use `Discussions`.
