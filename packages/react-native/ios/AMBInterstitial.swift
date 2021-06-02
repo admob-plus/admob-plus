@@ -1,6 +1,6 @@
 import GoogleMobileAds
 
-class AMBInterstitial: AMBAdBase, GADFullScreenContentDelegate {
+class AMBInterstitial: AMBAdBase, AMBGenericAd, GADFullScreenContentDelegate {
     var interstitial: GADInterstitialAd?
 
     deinit {
@@ -18,7 +18,7 @@ class AMBInterstitial: AMBAdBase, GADFullScreenContentDelegate {
             request: ctx.optGADRequest(),
             completionHandler: { ad, error in
                 if error != nil {
-                    self.emit(AMBEvents.interstitialLoadFail, error!)
+                    self.emit(AMBEvents.adLoadFail, error!)
                     ctx.error(error!)
                     return
                 }
@@ -26,34 +26,30 @@ class AMBInterstitial: AMBAdBase, GADFullScreenContentDelegate {
                 self.interstitial = ad
                 ad?.fullScreenContentDelegate = self
 
-                self.emit(AMBEvents.interstitialLoad)
+                self.emit(AMBEvents.adLoad)
 
                 ctx.success()
             })
     }
 
     func show(_ ctx: AMBContext) {
-        if isLoaded() {
-            interstitial?.present(fromRootViewController: self.rootViewController)
-            ctx.success()
-        } else {
-            ctx.error("Ad is not loaded")
-        }
+        interstitial?.present(fromRootViewController: self.rootViewController)
+        ctx.success()
     }
 
     func adDidRecordImpression(_ ad: GADFullScreenPresentingAd) {
-        self.emit(AMBEvents.interstitialImpression)
+        self.emit(AMBEvents.adImpression)
     }
 
     func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
-        self.emit(AMBEvents.interstitialShowFail, error)
+        self.emit(AMBEvents.adShowFail, error)
     }
 
     func adDidPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        self.emit(AMBEvents.interstitialShow)
+        self.emit(AMBEvents.adShow)
     }
 
     func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        self.emit(AMBEvents.interstitialDismiss)
+        self.emit(AMBEvents.adDismiss)
     }
 }

@@ -63,75 +63,61 @@ class AdMobPlusRN: RCTEventEmitter {
         resolve(nil)
     }
 
-    @objc func interstitialIsLoaded(_ opts: NSDictionary,
-                                    resolver resolve: @escaping RCTPromiseResolveBlock,
-                                    rejecter reject: @escaping RCTPromiseRejectBlock) {
+    @objc func adCreate(_ opts: NSDictionary,
+                        resolver resolve: @escaping RCTPromiseResolveBlock,
+                        rejecter reject: @escaping RCTPromiseRejectBlock) {
         let ctx = AMBContext(opts, resolve, reject)
 
-        if let ad = ctx.optAdOrError() as? AMBInterstitial {
+        if let adClass = ctx.optString("cls") {
+            switch adClass {
+            case "InterstitialAd":
+                _ = AMBInterstitial(ctx)
+            case "RewardedAd":
+                _ = AMBRewarded(ctx)
+            case "RewardedInterstitialAd":
+                _ = AMBRewardedInterstitial(ctx)
+            default:
+                ctx.error("unknown ad class: \(adClass)")
+                return
+            }
+            ctx.success()
+        } else {
+            ctx.error()
+        }
+    }
+
+    @objc func adIsLoaded(_ opts: NSDictionary,
+                          resolver resolve: @escaping RCTPromiseResolveBlock,
+                          rejecter reject: @escaping RCTPromiseRejectBlock) {
+        let ctx = AMBContext(opts, resolve, reject)
+
+        if let ad = ctx.optAdOrError() as? AMBGenericAd {
             ctx.success(ad.isLoaded())
         }
     }
 
-    @objc func interstitialLoad(_ opts: NSDictionary,
-                                resolver resolve: @escaping RCTPromiseResolveBlock,
-                                rejecter reject: @escaping RCTPromiseRejectBlock) {
+    @objc func adLoad(_ opts: NSDictionary,
+                      resolver resolve: @escaping RCTPromiseResolveBlock,
+                      rejecter reject: @escaping RCTPromiseRejectBlock) {
         let ctx = AMBContext(opts, resolve, reject)
 
-        let ad = ctx.optAd() as? AMBInterstitial ?? AMBInterstitial(ctx)
-        ad?.load(ctx) ?? ctx.error()
-    }
-
-    @objc func interstitialShow(_ opts: NSDictionary,
-                                resolver resolve: @escaping RCTPromiseResolveBlock,
-                                rejecter reject: @escaping RCTPromiseRejectBlock) {
-        let ctx = AMBContext(opts, resolve, reject)
-
-        DispatchQueue.main.async {
-            if let ad = ctx.optAdOrError() as? AMBInterstitial {
-                ad.show(ctx)
-            }
+        if let ad = ctx.optAdOrError() as? AMBGenericAd {
+            ad.load(ctx)
         }
     }
 
-    @objc func rewardedLoad(_ opts: NSDictionary,
-                            resolver resolve: @escaping RCTPromiseResolveBlock,
-                            rejecter reject: @escaping RCTPromiseRejectBlock) {
-        let ctx = AMBContext(opts, resolve, reject)
-
-        let ad = ctx.optAd() as? AMBRewarded ?? AMBRewarded(ctx)
-        ad?.load(ctx) ?? ctx.error()
-    }
-
-    @objc func rewardedShow(_ opts: NSDictionary,
-                            resolver resolve: @escaping RCTPromiseResolveBlock,
-                            rejecter reject: @escaping RCTPromiseRejectBlock) {
+    @objc func adShow(_ opts: NSDictionary,
+                      resolver resolve: @escaping RCTPromiseResolveBlock,
+                      rejecter reject: @escaping RCTPromiseRejectBlock) {
         let ctx = AMBContext(opts, resolve, reject)
 
         DispatchQueue.main.async {
-            if let rewarded = ctx.optAdOrError() as? AMBRewarded {
-                rewarded.show(ctx)
-            }
-        }
-    }
-
-    @objc func rewardedInterstitialLoad(_ opts: NSDictionary,
-                                        resolver resolve: @escaping RCTPromiseResolveBlock,
-                                        rejecter reject: @escaping RCTPromiseRejectBlock) {
-        let ctx = AMBContext(opts, resolve, reject)
-
-        let ad = ctx.optAd() as? AMBRewardedInterstitial ?? AMBRewardedInterstitial(ctx)
-        ad?.load(ctx) ?? ctx.error()
-    }
-
-    @objc func rewardedInterstitialShow(_ opts: NSDictionary,
-                                        resolver resolve: @escaping RCTPromiseResolveBlock,
-                                        rejecter reject: @escaping RCTPromiseRejectBlock) {
-        let ctx = AMBContext(opts, resolve, reject)
-
-        DispatchQueue.main.async {
-            if let rewarded = ctx.optAdOrError() as? AMBRewardedInterstitial {
-                rewarded.show(ctx)
+            if let ad = ctx.optAdOrError() as? AMBGenericAd {
+                if ad.isLoaded() {
+                    ad.show(ctx)
+                } else {
+                    ctx.error("Ad is not loaded: \(ctx.optId() ?? -1)")
+                }
             }
         }
     }

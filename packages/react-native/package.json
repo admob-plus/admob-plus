@@ -42,6 +42,7 @@
     "react-native": ">=0.60.0-rc.0 <1.0.x"
   },
   "devDependencies": {
+    "@admob-plus-internal/tsconfig": "file:../../internal/tsconfig",
     "@types/react": "^17.0.9",
     "@types/react-native": "^0.64.8",
     "react": "^17.0.2",

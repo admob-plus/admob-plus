@@ -83,7 +83,7 @@ class AMBContext {
         if let ad = optAd() {
             return ad
         } else {
-            error("Ad not found")
+            error("Ad not found \(optId() ?? -1)")
             return nil
         }
     }

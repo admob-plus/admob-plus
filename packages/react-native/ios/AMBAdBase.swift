@@ -1,5 +1,30 @@
 import GoogleMobileAds
 
+protocol AMBGenericAd {
+    func isLoaded() -> Bool
+    func load(_ ctx: AMBContext)
+    func show(_ ctx: AMBContext)
+    func hide(_ ctx: AMBContext)
+}
+
+extension AMBGenericAd {
+    func isLoaded() -> Bool {
+        return false
+    }
+
+    func load(_ ctx: AMBContext) {
+        ctx.error("Not implemented")
+    }
+
+    func show(_ ctx: AMBContext) {
+        ctx.error("Not implemented")
+    }
+
+    func hide(_ ctx: AMBContext) {
+        ctx.error("Not implemented")
+    }
+}
+
 class AMBAdBase: NSObject {
     let id: Int
     let adUnitId: String

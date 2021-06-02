@@ -7,6 +7,7 @@ export const AdMobPlus = AdMobPlusRN as AdMobPlusPlugin
 
 class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
   private static allAds: { [s: number]: MobileAd } = {}
+
   private static idCounter = 0
 
   public readonly id: number
@@ -30,46 +31,46 @@ class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
   }
 }
 
-class InterstitialAd extends MobileAd {
-  public load() {
-    return AdMobPlus.interstitialLoad({ ...this.opts, id: this.id })
-  }
+class GenericAd extends MobileAd {
+  private _init: Promise<void> | null
 
-  public show() {
-    return AdMobPlus.interstitialShow({ id: this.id })
-  }
-}
+  constructor(opts: MobileAdOptions) {
+    super(opts)
 
-class RewardedAd extends MobileAd {
-  constructor({ adUnitId }: MobileAdOptions) {
-    super({ adUnitId })
-  }
-
-  public load() {
-    return AdMobPlus.rewardedLoad({ id: this.id, adUnitId: this.adUnitId })
-  }
-
-  public show() {
-    return AdMobPlus.rewardedShow({ id: this.id })
-  }
-}
-
-class RewardedInterstitialAd extends MobileAd {
-  constructor({ adUnitId }: MobileAdOptions) {
-    super({ adUnitId })
-  }
-
-  public load() {
-    return AdMobPlus.rewardedInterstitialLoad({
+    this._init = AdMobPlus.adCreate({
+      ...this.opts,
       id: this.id,
-      adUnitId: this.adUnitId,
+      cls: this.constructor.name,
+    }).then(() => {
+      this._init = null
     })
   }
 
-  public show() {
-    return AdMobPlus.rewardedInterstitialShow({ id: this.id })
+  async isLoaded() {
+    await this.init()
+    return AdMobPlus.adIsLoaded({ id: this.id })
+  }
+
+  async load() {
+    await this.init()
+    return AdMobPlus.adLoad({ id: this.id })
+  }
+
+  async show() {
+    await this.init()
+    return AdMobPlus.adShow({ id: this.id })
+  }
+
+  protected async init() {
+    if (this._init !== null) await this._init
   }
 }
+
+class InterstitialAd extends GenericAd {}
+
+class RewardedAd extends GenericAd {}
+
+class RewardedInterstitialAd extends GenericAd {}
 
 export * from './definitions'
 export { InterstitialAd, RewardedAd, RewardedInterstitialAd }

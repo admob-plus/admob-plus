@@ -26,6 +26,7 @@ module.exports = {
   ],
   rules: {
     'function-paren-newline': 'off',
+    'max-classes-per-file': 'off',
     'unicorn/prefer-spread': 'warn',
   },
 }

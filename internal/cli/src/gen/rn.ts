@@ -1,3 +1,4 @@
+import { K } from 'handlebars'
 import _ from 'lodash'
 import { pkgsDirJoin } from '../utils'
 import { AdEvents, extractClassInfo } from './capacitor'
@@ -45,7 +46,13 @@ ${indent4(4)}  rejecter:(RCTPromiseRejectBlock)reject)
 
 function buildSwift(): string {
   const linesEvents = renderSwiftEnumCases(
-    _.omitBy(AdEvents, (v, k) => k.startsWith('banner')),
+    _.omitBy(
+      AdEvents,
+      (v, k) =>
+        k.startsWith('banner') ||
+        k.startsWith('interstitial') ||
+        k.startsWith('rewarded'),
+    ),
   )
 
   return `// ${warnMessage}

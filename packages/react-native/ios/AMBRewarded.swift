@@ -15,7 +15,7 @@ class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
     func load(_ ctx: AMBContext) {
         GADRewardedAd.load(withAdUnitID: adUnitId, request: ctx.optGADRequest(), completionHandler: { ad, error in
             if error != nil {
-                self.emit(AMBEvents.rewardedLoadFail, error!)
+                self.emit(AMBEvents.adLoadFail, error!)
 
                 ctx.error(error)
                 return
@@ -25,22 +25,18 @@ class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
             ad?.fullScreenContentDelegate = self
             ad?.serverSideVerificationOptions = ctx.optGADServerSideVerificationOptions()
 
-            self.emit(AMBEvents.rewardedLoad)
+            self.emit(AMBEvents.adLoad)
 
             ctx.success()
         })
     }
 
     func show(_ ctx: AMBContext) {
-        if isLoaded() {
-            rewardedAd?.present(fromRootViewController: rootViewController, userDidEarnRewardHandler: {
-                let reward = self.rewardedAd!.adReward
-                self.emit(AMBEvents.rewardedReward, reward)
-            })
-            ctx.success()
-        } else {
-            ctx.error("Ad is not loaded")
-        }
+        rewardedAd?.present(fromRootViewController: rootViewController, userDidEarnRewardHandler: {
+            let reward = self.rewardedAd!.adReward
+            self.emit(AMBEvents.rewardedReward, reward)
+        })
+        ctx.success()
     }
 
     func adDidRecordImpression(_ ad: GADFullScreenPresentingAd) {
@@ -48,14 +44,14 @@ class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
     }
 
     func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
-        self.emit(AMBEvents.rewardedShowFail, error)
+        self.emit(AMBEvents.adShowFail, error)
     }
 
     func adDidPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        self.emit(AMBEvents.rewardedShow)
+        self.emit(AMBEvents.adShow)
     }
 
     func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        self.emit(AMBEvents.rewardedDismiss)
+        self.emit(AMBEvents.adDismiss)
     }
 }

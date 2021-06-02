@@ -11,27 +11,19 @@ RCT_EXTERN_METHOD(configure:(NSDictionary)opts
                   resolver:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject)
 
-RCT_EXTERN_METHOD(interstitialLoad:(NSDictionary)opts
+RCT_EXTERN_METHOD(adCreate:(NSDictionary)opts
                   resolver:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject)
 
-RCT_EXTERN_METHOD(interstitialShow:(NSDictionary)opts
+RCT_EXTERN_METHOD(adIsLoaded:(NSDictionary)opts
                   resolver:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject)
 
-RCT_EXTERN_METHOD(rewardedLoad:(NSDictionary)opts
+RCT_EXTERN_METHOD(adLoad:(NSDictionary)opts
                   resolver:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject)
 
-RCT_EXTERN_METHOD(rewardedShow:(NSDictionary)opts
-                  resolver:(RCTPromiseResolveBlock)resolve
-                  rejecter:(RCTPromiseRejectBlock)reject)
-
-RCT_EXTERN_METHOD(rewardedInterstitialLoad:(NSDictionary)opts
-                  resolver:(RCTPromiseResolveBlock)resolve
-                  rejecter:(RCTPromiseRejectBlock)reject)
-
-RCT_EXTERN_METHOD(rewardedInterstitialShow:(NSDictionary)opts
+RCT_EXTERN_METHOD(adShow:(NSDictionary)opts
                   resolver:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject)
 
