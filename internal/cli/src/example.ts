@@ -23,7 +23,7 @@ const cordovaBin = (args: string[], opts: execa.Options<string>) =>
 const watchCopy = async (sourceDir: string, targetDir: string) => {
   console.log(sourceDir, '->', targetDir)
 
-  const watcher = sane(sourceDir, { glob: ['**/*'] })
+  const watcher = sane(sourceDir, { glob: ['**/*'], watchman: true })
 
   return new Promise(() => {
     watcher.on('change', async (filepath: string, root: string) => {
@@ -73,6 +73,20 @@ const collectPluginPkgs = async (pkg: PackageJson) => {
 
 const prepare = async (opts: { cwd: string }) => {
   const { cwd } = opts
+
+  switch (path.basename(cwd)) {
+    case 'react-native': {
+      await execa('yarn', ['build'], {
+        stdio: 'inherit',
+        cwd: pkgsDirJoin('react-native'),
+      })
+      await execa('yarn', { stdio: 'inherit', cwd })
+      await execa('yarn', ['pod-install'], { stdio: 'inherit', cwd })
+      return
+    }
+    default:
+  }
+
   const pkgExample = await findPkg({ cwd })
   assert(pkgExample)
   const pluginPkgs = await collectPluginPkgs(pkgExample)
@@ -264,7 +278,7 @@ async function startDev(opts: any) {
   switch (path.basename(cwd)) {
     case 'capacitor': {
       const sourceDir = path.join(cwd, 'src')
-      const watcher = sane(sourceDir, { glob: ['**/*'] })
+      const watcher = sane(sourceDir, { glob: ['**/*'], watchman: true })
       promises.push(
         execa('yarn', ['prepare'], { stdio: 'inherit', cwd }),
         new Promise(() => {
