@@ -12,7 +12,7 @@ import com.google.android.gms.ads.rewarded.ServerSideVerificationOptions;
 import admob.plus.rn.ExecuteContext;
 import admob.plus.rn.Generated.Events;
 
-public class Rewarded extends AdBase {
+public class Rewarded extends AdBase implements GenericAd {
     private RewardedAd mAd = null;
 
     public Rewarded(ExecuteContext ctx) {

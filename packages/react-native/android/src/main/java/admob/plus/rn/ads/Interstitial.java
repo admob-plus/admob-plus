@@ -11,7 +11,7 @@ import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 import admob.plus.rn.ExecuteContext;
 import admob.plus.rn.Generated.Events;
 
-public class Interstitial extends AdBase {
+public class Interstitial extends AdBase implements GenericAd {
     private InterstitialAd mAd = null;
 
     public Interstitial(ExecuteContext ctx) {

@@ -12,7 +12,7 @@ import com.google.android.gms.ads.rewardedinterstitial.RewardedInterstitialAdLoa
 import admob.plus.rn.ExecuteContext;
 import admob.plus.rn.Generated.Events;
 
-public class RewardedInterstitial extends AdBase {
+public class RewardedInterstitial extends AdBase implements GenericAd {
     private RewardedInterstitialAd mAd = null;
 
     public RewardedInterstitial(ExecuteContext ctx) {
