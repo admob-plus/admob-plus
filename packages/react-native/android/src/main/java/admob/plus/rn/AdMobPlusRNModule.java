@@ -20,11 +20,11 @@ import admob.plus.rn.ads.Interstitial;
 import admob.plus.rn.ads.Rewarded;
 import admob.plus.rn.ads.RewardedInterstitial;
 
-public class RNAdMobPlusModule extends ReactContextBaseJavaModule {
+public class AdMobPlusRNModule extends ReactContextBaseJavaModule {
 
     public final ReactApplicationContext reactContext;
 
-    public RNAdMobPlusModule(ReactApplicationContext reactContext) {
+    public AdMobPlusRNModule(ReactApplicationContext reactContext) {
         super(reactContext);
         this.reactContext = reactContext;
         ExecuteContext.plugin = this;
@@ -32,7 +32,7 @@ public class RNAdMobPlusModule extends ReactContextBaseJavaModule {
 
     @Override
     public String getName() {
-        return "RNAdMobPlus";
+        return "AdMobPlusRN";
     }
 
     @ReactMethod

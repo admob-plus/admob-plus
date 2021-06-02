@@ -9,10 +9,10 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class RNAdMobPlusPackage implements ReactPackage {
+public class AdMobPlusRNPackage implements ReactPackage {
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
-        return Arrays.asList(new RNAdMobPlusModule(reactContext));
+        return Arrays.asList(new AdMobPlusRNModule(reactContext));
     }
 
     @Override

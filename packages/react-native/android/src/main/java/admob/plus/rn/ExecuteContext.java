@@ -24,7 +24,7 @@ import admob.plus.rn.ads.AdBase;
 
 public class ExecuteContext {
     public static final SparseArray<AdBase> ads = new SparseArray<AdBase>();
-    public static RNAdMobPlusModule plugin;
+    public static AdMobPlusRNModule plugin;
     public final ReadableMap opts;
     public final Promise promise;
 
