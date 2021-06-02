@@ -10,6 +10,7 @@ struct AMBEvents {
     static let adImpression = "admob.ad.impression"
     static let adLoad = "admob.ad.load"
     static let adLoadFail = "admob.ad.loadfail"
+    static let adReward = "admob.ad.reward"
     static let adShow = "admob.ad.show"
     static let adShowFail = "admob.ad.showfail"
     static let bannerClick = "admob.banner.click"

@@ -34,13 +34,13 @@ class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
     func show(_ ctx: AMBContext) {
         rewardedAd?.present(fromRootViewController: rootViewController, userDidEarnRewardHandler: {
             let reward = self.rewardedAd!.adReward
-            self.emit(AMBEvents.rewardedReward, reward)
+            self.emit(AMBEvents.adReward, reward)
         })
         ctx.success()
     }
 
     func adDidRecordImpression(_ ad: GADFullScreenPresentingAd) {
-        self.emit(AMBEvents.rewardedImpression)
+        self.emit(AMBEvents.adImpression)
     }
 
     func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {

@@ -34,6 +34,7 @@ public final class Generated {
         public static final String AD_IMPRESSION = "admob.ad.impression";
         public static final String AD_LOAD = "admob.ad.load";
         public static final String AD_LOAD_FAIL = "admob.ad.loadfail";
+        public static final String AD_REWARD = "admob.ad.reward";
         public static final String AD_SHOW = "admob.ad.show";
         public static final String AD_SHOW_FAIL = "admob.ad.showfail";
         public static final String BANNER_CLICK = "admob.banner.click";

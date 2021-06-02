@@ -8,6 +8,7 @@ public final class Generated {
         public static final String AD_IMPRESSION = "ad.impression";
         public static final String AD_LOAD = "ad.load";
         public static final String AD_LOAD_FAIL = "ad.loadfail";
+        public static final String AD_REWARD = "ad.reward";
         public static final String AD_SHOW = "ad.show";
         public static final String AD_SHOW_FAIL = "ad.showfail";
         public static final String BANNER_CLICK = "banner.click";

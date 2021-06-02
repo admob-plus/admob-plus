@@ -5,6 +5,7 @@ struct AMBEvents {
     static let adImpression = "ad.impression"
     static let adLoad = "ad.load"
     static let adLoadFail = "ad.loadfail"
+    static let adReward = "ad.reward"
     static let adShow = "ad.show"
     static let adShowFail = "ad.showfail"
     static let bannerClick = "banner.click"

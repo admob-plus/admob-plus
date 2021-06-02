@@ -16,6 +16,7 @@ export const AdEvents = {
   adImpression: 'ad.impression',
   adLoad: 'ad.load',
   adLoadFail: 'ad.loadfail',
+  adReward: 'ad.reward',
   adShow: 'ad.show',
   adShowFail: 'ad.showfail',
   // BannerAd

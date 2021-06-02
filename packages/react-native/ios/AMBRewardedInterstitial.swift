@@ -34,7 +34,7 @@ class AMBRewardedInterstitial: AMBAdBase, GADFullScreenContentDelegate {
     func show(_ ctx: AMBContext) {
         rewardedInterstitial?.present(fromRootViewController: rootViewController, userDidEarnRewardHandler: {
             let reward = self.rewardedInterstitial!.adReward
-            self.emit(AMBEvents.rewardedInterstitialReward, reward)
+            self.emit(AMBEvents.adReward, reward)
         })
         ctx.success()
     }
@@ -52,6 +52,6 @@ class AMBRewardedInterstitial: AMBAdBase, GADFullScreenContentDelegate {
     }
 
     func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        self.emit(AMBEvents.rewardedInterstitialDismiss)
+        self.emit(AMBEvents.adDismiss)
     }
 }

@@ -31,6 +31,7 @@ export enum Events {
   adImpression = 'admob.ad.impression',
   adLoad = 'admob.ad.load',
   adLoadFail = 'admob.ad.loadfail',
+  adReward = 'admob.ad.reward',
   adShow = 'admob.ad.show',
   adShowFail = 'admob.ad.showfail',
   bannerClick = 'admob.banner.click',

@@ -5,6 +5,7 @@ enum AMBEvents: String, CaseIterable {
     case adImpression = "ad.impression"
     case adLoad = "ad.load"
     case adLoadFail = "ad.loadfail"
+    case adReward = "ad.reward"
     case adShow = "ad.show"
     case adShowFail = "ad.showfail"
 }
