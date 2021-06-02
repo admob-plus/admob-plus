@@ -36,34 +36,35 @@ public class Interstitial extends AdBase {
                 mAd.setFullScreenContentCallback(new FullScreenContentCallback() {
                     @Override
                     public void onAdDismissedFullScreenContent() {
-                        emit(Events.INTERSTITIAL_DISMISS);
+                        clear();
+                        emit(Events.AD_DISMISS);
                     }
 
                     @Override
                     public void onAdFailedToShowFullScreenContent(AdError adError) {
-                        emit(Events.INTERSTITIAL_SHOW_FAIL, adError);
+                        clear();
+                        emit(Events.AD_SHOW_FAIL, adError);
                     }
 
                     @Override
                     public void onAdShowedFullScreenContent() {
-                        mAd = null;
-                        emit(Events.INTERSTITIAL_SHOW);
+                        emit(Events.AD_SHOW);
                     }
 
                     @Override
                     public void onAdImpression() {
-                        emit(Events.INTERSTITIAL_IMPRESSION);
+                        emit(Events.AD_IMPRESSION);
                     }
                 });
 
-                emit(Events.INTERSTITIAL_LOAD);
+                emit(Events.AD_LOAD);
                 ctx.success();
             }
 
             @Override
             public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                 mAd = null;
-                emit(Events.INTERSTITIAL_LOAD_FAIL, loadAdError);
+                emit(Events.AD_LOAD_FAIL, loadAdError);
                 ctx.error(loadAdError.getMessage());
             }
         });

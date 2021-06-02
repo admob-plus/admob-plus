@@ -1,8 +1,20 @@
-import { K } from 'handlebars'
 import _ from 'lodash'
 import { pkgsDirJoin } from '../utils'
 import { AdEvents, extractClassInfo } from './capacitor'
-import { indent4, renderSwiftEnumCases, warnMessage } from './shared'
+import {
+  indent4,
+  renderSwiftEnumCases,
+  renderJavaContants,
+  warnMessage,
+} from './shared'
+
+const Events = _.omitBy(
+  AdEvents,
+  (v, k) =>
+    k.startsWith('banner') ||
+    k.startsWith('interstitial') ||
+    k.startsWith('rewarded'),
+)
 
 const pluginMethods = (() => {
   const definitionsPath = require.resolve(
@@ -14,6 +26,20 @@ const pluginMethods = (() => {
   )
   return methodSignatures.map((x) => x.getName())
 })()
+
+function buildJava(): string {
+  const linesEvents = renderJavaContants(Events)
+
+  return `// ${warnMessage}
+package admob.plus.rn;
+
+public final class Generated {
+    public final class Events {
+${linesEvents}
+    }
+}
+`
+}
 
 const buildIosMacro = () => {
   const methodsWithoutOpts = ['start']
@@ -45,15 +71,7 @@ ${indent4(4)}  rejecter:(RCTPromiseRejectBlock)reject)
 }
 
 function buildSwift(): string {
-  const linesEvents = renderSwiftEnumCases(
-    _.omitBy(
-      AdEvents,
-      (v, k) =>
-        k.startsWith('banner') ||
-        k.startsWith('interstitial') ||
-        k.startsWith('rewarded'),
-    ),
-  )
+  const linesEvents = renderSwiftEnumCases(Events)
 
   return `// ${warnMessage}
 enum AMBEvents: String, CaseIterable {
@@ -64,6 +82,10 @@ ${linesEvents}
 
 export default () => ({
   files: [
+    {
+      path: 'react-native/android/src/main/java/admob/plus/rn/Generated.java',
+      f: buildJava,
+    },
     {
       path: 'react-native/ios/AdMobPlusRN.m',
       f: buildIosMacro,

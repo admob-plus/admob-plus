@@ -32,8 +32,7 @@ public class Rewarded extends AdBase {
         RewardedAd.load(ctx.getActivity(), adUnitId, ctx.optAdRequest(), new RewardedAdLoadCallback() {
             @Override
             public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
-                mAd = null;
-                emit(Events.REWARDED_LOAD_FAIL, loadAdError);
+                emit(Events.AD_LOAD_FAIL, loadAdError);
                 ctx.error(loadAdError.getMessage());
             }
 
@@ -47,27 +46,28 @@ public class Rewarded extends AdBase {
                 mAd.setFullScreenContentCallback(new FullScreenContentCallback() {
                     @Override
                     public void onAdDismissedFullScreenContent() {
-                        emit(Events.REWARDED_DISMISS);
+                        clear();
+                        emit(Events.AD_DISMISS);
                     }
 
                     @Override
                     public void onAdFailedToShowFullScreenContent(AdError adError) {
-                        emit(Events.REWARDED_SHOW_FAIL, adError);
+                        clear();
+                        emit(Events.AD_SHOW_FAIL, adError);
                     }
 
                     @Override
                     public void onAdShowedFullScreenContent() {
-                        mAd = null;
-                        emit(Events.REWARDED_SHOW);
+                        emit(Events.AD_SHOW);
                     }
 
                     @Override
                     public void onAdImpression() {
-                        emit(Events.REWARDED_IMPRESSION);
+                        emit(Events.AD_IMPRESSION);
                     }
                 });
 
-                emit(Events.REWARDED_LOAD);
+                emit(Events.AD_LOAD);
                 ctx.success();
             }
         });
@@ -80,7 +80,7 @@ public class Rewarded extends AdBase {
     public void show(ExecuteContext ctx) {
         if (isLoaded()) {
             mAd.show(ctx.getActivity(), rewardItem -> {
-                emit(Events.REWARDED_REWARD, rewardItem);
+                emit(Events.AD_REWARD, rewardItem);
             });
             ctx.success();
         } else {

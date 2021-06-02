@@ -12,7 +12,6 @@ import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.bridge.ReadableMap;
 import com.google.ads.mediation.admob.AdMobAdapter;
 import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.RequestConfiguration;
 import com.google.android.gms.ads.rewarded.ServerSideVerificationOptions;
 
@@ -177,28 +176,16 @@ public class ExecuteContext {
         return builder.addNetworkExtrasBundle(AdMobAdapter.class, extras).build();
     }
 
-    public AdSize optAdSize() {
-        final String name = "size";
-        if (!opts.hasKey(name)) {
-            return AdSize.SMART_BANNER;
-        }
-        AdSize adSize = Generated.AdSizeType.getAdSize(opts.getDynamic(name));
-        if (adSize != null) {
-            return adSize;
-        }
-        ReadableMap adSizeObj = opts.getMap(name);
-        if (adSizeObj == null) {
-            return AdSize.SMART_BANNER;
-        }
-        return new AdSize(adSizeObj.getInt("width"), adSizeObj.getInt("height"));
-    }
-
     public Activity getActivity() {
         return plugin.reactContext.getCurrentActivity();
     }
 
     public void success() {
         promise.resolve(null);
+    }
+
+    public void success(boolean data) {
+        promise.resolve(data);
     }
 
     public void error(String message) {

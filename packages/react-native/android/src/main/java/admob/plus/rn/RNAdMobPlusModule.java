@@ -15,6 +15,7 @@ import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
 import com.google.android.gms.ads.MobileAds;
 
+import admob.plus.rn.ads.GenericAd;
 import admob.plus.rn.ads.Interstitial;
 import admob.plus.rn.ads.Rewarded;
 import admob.plus.rn.ads.RewardedInterstitial;
@@ -44,11 +45,56 @@ public class RNAdMobPlusModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void interstitialLoad(ReadableMap opts, Promise promise) {
+    public void configure(ReadableMap opts, Promise promise) {
+        final ExecuteContext ctx = new ExecuteContext(opts, promise);
+        ctx.error("not implemented");
+    }
+
+    @ReactMethod
+    public void adCreate(ReadableMap opts, Promise promise) {
         final ExecuteContext ctx = new ExecuteContext(opts, promise);
 
         new Handler(Looper.getMainLooper()).post(() -> {
-            Interstitial ad = ctx.optAdOrCreate(Interstitial.class);
+            String adClass = ctx.opts.getString("cls");
+            if (adClass == null) {
+                ctx.error("ad cls is missing");
+            } else {
+                switch (adClass) {
+                    case "InterstitialAd":
+                        new Interstitial(ctx);
+                        break;
+                    case "RewardedAd":
+                        new Rewarded(ctx);
+                        break;
+                    case "RewardedInterstitialAd":
+                        new RewardedInterstitial(ctx);
+                        break;
+                    default:
+                        ctx.error("ad cls is not supported: " + adClass);
+                }
+                ctx.success();
+            }
+        });
+    }
+
+    @ReactMethod
+    public void adIsLoaded(ReadableMap opts, Promise promise) {
+        final ExecuteContext ctx = new ExecuteContext(opts, promise);
+
+        new Handler(Looper.getMainLooper()).post(() -> {
+            GenericAd ad = (GenericAd) ctx.optAdOrError();
+            if (ad != null) {
+                ctx.success(ad.isLoaded());
+            }
+        });
+    }
+
+    @ReactMethod
+    public void adLoad(ReadableMap opts, Promise promise) {
+        final ExecuteContext ctx = new ExecuteContext(opts, promise);
+
+        new Handler(Looper.getMainLooper()).post(() -> {
+            GenericAd ad = (GenericAd) ctx.optAdOrError();
             if (ad != null) {
                 ad.load(ctx);
             }
@@ -56,61 +102,17 @@ public class RNAdMobPlusModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void interstitialShow(ReadableMap opts, Promise promise) {
+    public void adShow(ReadableMap opts, Promise promise) {
         final ExecuteContext ctx = new ExecuteContext(opts, promise);
 
         new Handler(Looper.getMainLooper()).post(() -> {
-            Interstitial ad = (Interstitial) ctx.optAdOrError();
+            GenericAd ad = (GenericAd) ctx.optAdOrError();
             if (ad != null) {
-                ad.show(ctx);
-            }
-        });
-    }
-
-    @ReactMethod
-    public void rewardedLoad(ReadableMap opts, Promise promise) {
-        final ExecuteContext ctx = new ExecuteContext(opts, promise);
-
-        new Handler(Looper.getMainLooper()).post(() -> {
-            Rewarded ad = ctx.optAdOrCreate(Rewarded.class);
-            if (ad != null) {
-                ad.load(ctx);
-            }
-        });
-    }
-
-    @ReactMethod
-    public void rewardedShow(ReadableMap opts, Promise promise) {
-        final ExecuteContext ctx = new ExecuteContext(opts, promise);
-
-        new Handler(Looper.getMainLooper()).post(() -> {
-            Rewarded ad = (Rewarded) ctx.optAdOrError();
-            if (ad != null) {
-                ad.show(ctx);
-            }
-        });
-    }
-
-    @ReactMethod
-    public void rewardedInterstitialLoad(ReadableMap opts, Promise promise) {
-        final ExecuteContext ctx = new ExecuteContext(opts, promise);
-
-        new Handler(Looper.getMainLooper()).post(() -> {
-            RewardedInterstitial ad = ctx.optAdOrCreate(RewardedInterstitial.class);
-            if (ad != null) {
-                ad.load(ctx);
-            }
-        });
-    }
-
-    @ReactMethod
-    public void rewardedInterstitialShow(ReadableMap opts, Promise promise) {
-        final ExecuteContext ctx = new ExecuteContext(opts, promise);
-
-        new Handler(Looper.getMainLooper()).post(() -> {
-            RewardedInterstitial ad = (RewardedInterstitial) ctx.optAdOrError();
-            if (ad != null) {
-                ad.show(ctx);
+                if (ad.isLoaded()) {
+                    ad.show(ctx);
+                } else {
+                    ctx.error("ad is not loaded");
+                }
             }
         });
     }

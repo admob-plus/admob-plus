@@ -12,6 +12,7 @@ import {
 
 import { Colors, Header } from 'react-native/Libraries/NewAppScreen'
 import AdMob, {
+  AdMobPlus,
   InterstitialAd,
   RewardedAd,
   RewardedInterstitialAd,
