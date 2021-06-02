@@ -1,27 +1,27 @@
 import GoogleMobileAds
 
-class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
-    var rewardedAd: GADRewardedAd?
+class AMBRewarded: AMBAdBase, AMBGenericAd, GADFullScreenContentDelegate {
+    var ad: GADRewardedAd?
 
     deinit {
-        rewardedAd?.fullScreenContentDelegate = nil
-        rewardedAd = nil
+        clear()
     }
 
     func isLoaded() -> Bool {
-        return self.rewardedAd != nil
+        return self.ad != nil
     }
 
     func load(_ ctx: AMBContext) {
+        clear()
+
         GADRewardedAd.load(withAdUnitID: adUnitId, request: ctx.optGADRequest(), completionHandler: { ad, error in
             if error != nil {
                 self.emit(AMBEvents.adLoadFail, error!)
-
                 ctx.error(error)
                 return
             }
 
-            self.rewardedAd = ad
+            self.ad = ad
             ad?.fullScreenContentDelegate = self
             ad?.serverSideVerificationOptions = ctx.optGADServerSideVerificationOptions()
 
@@ -32,8 +32,8 @@ class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
     }
 
     func show(_ ctx: AMBContext) {
-        rewardedAd?.present(fromRootViewController: rootViewController, userDidEarnRewardHandler: {
-            let reward = self.rewardedAd!.adReward
+        ad?.present(fromRootViewController: rootViewController, userDidEarnRewardHandler: {
+            let reward = self.ad!.adReward
             self.emit(AMBEvents.adReward, reward)
         })
         ctx.success()
@@ -44,6 +44,7 @@ class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
     }
 
     func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
+        clear()
         self.emit(AMBEvents.adShowFail, error)
     }
 
@@ -52,6 +53,12 @@ class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
     }
 
     func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        clear()
         self.emit(AMBEvents.adDismiss)
+    }
+
+    private func clear() {
+        ad?.fullScreenContentDelegate = nil
+        ad = nil
     }
 }

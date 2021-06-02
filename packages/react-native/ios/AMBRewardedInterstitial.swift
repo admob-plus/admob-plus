@@ -1,27 +1,27 @@
 import GoogleMobileAds
 
-class AMBRewardedInterstitial: AMBAdBase, GADFullScreenContentDelegate {
-    var rewardedInterstitial: GADRewardedInterstitialAd?
+class AMBRewardedInterstitial: AMBAdBase, AMBGenericAd, GADFullScreenContentDelegate {
+    var ad: GADRewardedInterstitialAd?
 
     deinit {
-        rewardedInterstitial?.fullScreenContentDelegate = nil
-        rewardedInterstitial = nil
+        clear()
     }
 
     func isLoaded() -> Bool {
-        return self.rewardedInterstitial != nil
+        return self.ad != nil
     }
 
     func load(_ ctx: AMBContext) {
+        clear()
+
         GADRewardedInterstitialAd.load(withAdUnitID: adUnitId, request: ctx.optGADRequest(), completionHandler: { ad, error in
             if error != nil {
                 self.emit(AMBEvents.adLoadFail, error!)
-
                 ctx.error(error)
                 return
             }
 
-            self.rewardedInterstitial = ad
+            self.ad = ad
             ad?.fullScreenContentDelegate = self
             ad?.serverSideVerificationOptions = ctx.optGADServerSideVerificationOptions()
 
@@ -32,8 +32,8 @@ class AMBRewardedInterstitial: AMBAdBase, GADFullScreenContentDelegate {
     }
 
     func show(_ ctx: AMBContext) {
-        rewardedInterstitial?.present(fromRootViewController: rootViewController, userDidEarnRewardHandler: {
-            let reward = self.rewardedInterstitial!.adReward
+        ad?.present(fromRootViewController: rootViewController, userDidEarnRewardHandler: {
+            let reward = self.ad!.adReward
             self.emit(AMBEvents.adReward, reward)
         })
         ctx.success()
@@ -44,6 +44,7 @@ class AMBRewardedInterstitial: AMBAdBase, GADFullScreenContentDelegate {
     }
 
     func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
+        clear()
         self.emit(AMBEvents.adShowFail, error)
     }
 
@@ -52,6 +53,12 @@ class AMBRewardedInterstitial: AMBAdBase, GADFullScreenContentDelegate {
     }
 
     func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        clear()
         self.emit(AMBEvents.adDismiss)
+    }
+
+    private func clear() {
+        ad?.fullScreenContentDelegate = nil
+        ad = nil
     }
 }

@@ -1,18 +1,19 @@
 import GoogleMobileAds
 
 class AMBInterstitial: AMBAdBase, AMBGenericAd, GADFullScreenContentDelegate {
-    var interstitial: GADInterstitialAd?
+    var ad: GADInterstitialAd?
 
     deinit {
-        interstitial?.fullScreenContentDelegate = nil
-        interstitial = nil
+        clear()
     }
 
     func isLoaded() -> Bool {
-        return self.interstitial != nil
+        return self.ad != nil
     }
 
     func load(_ ctx: AMBContext) {
+        clear()
+
         GADInterstitialAd.load(
             withAdUnitID: adUnitId,
             request: ctx.optGADRequest(),
@@ -23,7 +24,7 @@ class AMBInterstitial: AMBAdBase, AMBGenericAd, GADFullScreenContentDelegate {
                     return
                 }
 
-                self.interstitial = ad
+                self.ad = ad
                 ad?.fullScreenContentDelegate = self
 
                 self.emit(AMBEvents.adLoad)
@@ -33,7 +34,7 @@ class AMBInterstitial: AMBAdBase, AMBGenericAd, GADFullScreenContentDelegate {
     }
 
     func show(_ ctx: AMBContext) {
-        interstitial?.present(fromRootViewController: self.rootViewController)
+        ad?.present(fromRootViewController: self.rootViewController)
         ctx.success()
     }
 
@@ -42,6 +43,7 @@ class AMBInterstitial: AMBAdBase, AMBGenericAd, GADFullScreenContentDelegate {
     }
 
     func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
+        clear()
         self.emit(AMBEvents.adShowFail, error)
     }
 
@@ -50,6 +52,12 @@ class AMBInterstitial: AMBAdBase, AMBGenericAd, GADFullScreenContentDelegate {
     }
 
     func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        clear()
         self.emit(AMBEvents.adDismiss)
+    }
+
+    private func clear() {
+        ad?.fullScreenContentDelegate = nil
+        ad = nil
     }
 }
