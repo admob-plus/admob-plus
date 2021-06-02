@@ -6,131 +6,161 @@ sidebar_position: 0
 custom_edit_url: null
 ---
 
-# Interface: AdMobPlusPlugin
-
 ## Methods
 
 ### configure
 
-▸ **configure**(`config`: [*AdMobConfig*](../index.md#admobconfig)): *Promise*<void\>
+▸ **configure**(`config`): `Promise`<void\>
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `config` | [*AdMobConfig*](../index.md#admobconfig) |
+| `config` | [AdMobConfig](../index.md#admobconfig) |
 
-**Returns:** *Promise*<void\>
+#### Returns
 
-Defined in: definitions.ts:22
+`Promise`<void\>
+
+#### Defined in
+
+definitions.ts:22
 
 ___
 
 ### interstitialLoad
 
-▸ **interstitialLoad**(`opts`: [*MobileAdOptions*](../index.md#mobileadoptions) & { `id`: *number*  }): *Promise*<void\>
+▸ **interstitialLoad**(`opts`): `Promise`<void\>
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `opts` | [*MobileAdOptions*](../index.md#mobileadoptions) & { `id`: *number*  } |
+| `opts` | [MobileAdOptions](../index.md#mobileadoptions) & { `id`: `number`  } |
 
-**Returns:** *Promise*<void\>
+#### Returns
 
-Defined in: definitions.ts:24
+`Promise`<void\>
+
+#### Defined in
+
+definitions.ts:24
 
 ___
 
 ### interstitialShow
 
-▸ **interstitialShow**(`opts`: { `id`: *number*  }): *Promise*<void\>
+▸ **interstitialShow**(`opts`): `Promise`<void\>
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `opts` | *object* |
-| `opts.id` | *number* |
+| `opts` | `Object` |
+| `opts.id` | `number` |
 
-**Returns:** *Promise*<void\>
+#### Returns
 
-Defined in: definitions.ts:25
+`Promise`<void\>
+
+#### Defined in
+
+definitions.ts:25
 
 ___
 
 ### rewardedInterstitialLoad
 
-▸ **rewardedInterstitialLoad**(`opts`: [*MobileAdOptions*](../index.md#mobileadoptions) & { `id`: *number*  }): *Promise*<void\>
+▸ **rewardedInterstitialLoad**(`opts`): `Promise`<void\>
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `opts` | [*MobileAdOptions*](../index.md#mobileadoptions) & { `id`: *number*  } |
+| `opts` | [MobileAdOptions](../index.md#mobileadoptions) & { `id`: `number`  } |
 
-**Returns:** *Promise*<void\>
+#### Returns
 
-Defined in: definitions.ts:30
+`Promise`<void\>
+
+#### Defined in
+
+definitions.ts:30
 
 ___
 
 ### rewardedInterstitialShow
 
-▸ **rewardedInterstitialShow**(`opts`: { `id`: *number*  }): *Promise*<void\>
+▸ **rewardedInterstitialShow**(`opts`): `Promise`<void\>
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `opts` | *object* |
-| `opts.id` | *number* |
+| `opts` | `Object` |
+| `opts.id` | `number` |
 
-**Returns:** *Promise*<void\>
+#### Returns
 
-Defined in: definitions.ts:33
+`Promise`<void\>
+
+#### Defined in
+
+definitions.ts:33
 
 ___
 
 ### rewardedLoad
 
-▸ **rewardedLoad**(`opts`: { `adUnitId`: *string* ; `id`: *number*  }): *Promise*<void\>
+▸ **rewardedLoad**(`opts`): `Promise`<void\>
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `opts` | *object* |
-| `opts.adUnitId` | *string* |
-| `opts.id` | *number* |
+| `opts` | `Object` |
+| `opts.adUnitId` | `string` |
+| `opts.id` | `number` |
 
-**Returns:** *Promise*<void\>
+#### Returns
 
-Defined in: definitions.ts:27
+`Promise`<void\>
+
+#### Defined in
+
+definitions.ts:27
 
 ___
 
 ### rewardedShow
 
-▸ **rewardedShow**(`opts`: { `id`: *number*  }): *Promise*<void\>
+▸ **rewardedShow**(`opts`): `Promise`<void\>
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `opts` | *object* |
-| `opts.id` | *number* |
+| `opts` | `Object` |
+| `opts.id` | `number` |
 
-**Returns:** *Promise*<void\>
+#### Returns
 
-Defined in: definitions.ts:28
+`Promise`<void\>
+
+#### Defined in
+
+definitions.ts:28
 
 ___
 
 ### start
 
-▸ **start**(): *Promise*<void\>
+▸ **start**(): `Promise`<void\>
 
-**Returns:** *Promise*<void\>
+#### Returns
 
-Defined in: definitions.ts:21
+`Promise`<void\>
+
+#### Defined in
+
+definitions.ts:21

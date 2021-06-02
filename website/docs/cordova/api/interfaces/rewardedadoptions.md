@@ -6,35 +6,41 @@ sidebar_position: 0
 custom_edit_url: null
 ---
 
-# Interface: RewardedAdOptions
-
 ## Hierarchy
 
-- [*MobileAdOptions*](../index.md#mobileadoptions)
+- [MobileAdOptions](../index.md#mobileadoptions)
 
   ↳ **RewardedAdOptions**
 
-  ↳↳ [*RewardedInterstitialAdOptions*](rewardedinterstitialadoptions.md)
+  ↳↳ [RewardedInterstitialAdOptions](rewardedinterstitialadoptions.md)
 
 ## Properties
 
 ### adUnitId
 
-• **adUnitId**: *string*
+• **adUnitId**: `string`
 
-Inherited from: MobileAdOptions.adUnitId
+#### Inherited from
 
-Defined in: api.ts:4
+MobileAdOptions.adUnitId
+
+#### Defined in
+
+api.ts:4
 
 ___
 
 ### id
 
-• `Optional` **id**: *number*
+• `Optional` **id**: `number`
 
-Inherited from: MobileAdOptions.id
+#### Inherited from
 
-Defined in: api.ts:4
+MobileAdOptions.id
+
+#### Defined in
+
+api.ts:4
 
 ___
 
@@ -42,14 +48,20 @@ ___
 
 • `Optional` **npa**: ``"1"``
 
-Inherited from: MobileAdOptions.npa
+#### Inherited from
 
-Defined in: api.ts:4
+MobileAdOptions.npa
+
+#### Defined in
+
+api.ts:4
 
 ___
 
 ### serverSideVerification
 
-• `Optional` **serverSideVerification**: [*ServerSideVerificationOptions*](serversideverificationoptions.md)
+• `Optional` **serverSideVerification**: [ServerSideVerificationOptions](serversideverificationoptions.md)
 
-Defined in: rewarded.ts:9
+#### Defined in
+
+rewarded.ts:9

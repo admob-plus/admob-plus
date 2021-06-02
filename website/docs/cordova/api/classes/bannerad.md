@@ -6,11 +6,9 @@ sidebar_position: 0
 custom_edit_url: null
 ---
 
-# Class: BannerAd
-
 ## Hierarchy
 
-- [*MobileAd*](mobilead.md)<[*BannerAdOptions*](../interfaces/banneradoptions.md)\>
+- [MobileAd](mobilead.md)<[BannerAdOptions](../interfaces/banneradoptions.md)\>
 
   ↳ **BannerAd**
 
@@ -18,121 +16,173 @@ custom_edit_url: null
 
 ### constructor
 
-\+ **new BannerAd**(`opts`: [*BannerAdOptions*](../interfaces/banneradoptions.md)): [*BannerAd*](bannerad.md)
+• **new BannerAd**(`opts`)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `opts` | [*BannerAdOptions*](../interfaces/banneradoptions.md) |
+| `opts` | [BannerAdOptions](../interfaces/banneradoptions.md) |
 
-**Returns:** [*BannerAd*](bannerad.md)
+#### Overrides
 
-Overrides: [MobileAd](mobilead.md)
+[MobileAd](mobilead.md).[constructor](mobilead.md#constructor)
 
-Defined in: banner.ts:46
+#### Defined in
+
+banner.ts:46
 
 ## Properties
 
 ### \_loaded
 
-• `Private` **\_loaded**: *boolean*= false
+• `Private` **\_loaded**: `boolean` = false
 
-Defined in: banner.ts:46
+#### Defined in
+
+banner.ts:46
 
 ___
 
 ### id
 
-• `Readonly` **id**: *number*
+• `Readonly` **id**: `number`
 
-Inherited from: [MobileAd](mobilead.md).[id](mobilead.md#id)
+#### Inherited from
 
-Defined in: api.ts:11
+[MobileAd](mobilead.md).[id](mobilead.md#id)
+
+#### Defined in
+
+api.ts:13
 
 ___
 
 ### opts
 
-• `Protected` `Readonly` **opts**: [*BannerAdOptions*](../interfaces/banneradoptions.md)
+• `Protected` `Readonly` **opts**: [BannerAdOptions](../interfaces/banneradoptions.md)
 
-Inherited from: [MobileAd](mobilead.md).[opts](mobilead.md#opts)
+#### Inherited from
 
-Defined in: api.ts:13
+[MobileAd](mobilead.md).[opts](mobilead.md#opts)
+
+#### Defined in
+
+api.ts:15
+
+___
+
+### type
+
+▪ `Static` `Readonly` **type**: `string` = ''
+
+#### Inherited from
+
+[MobileAd](mobilead.md).[type](mobilead.md#type)
+
+#### Defined in
+
+api.ts:8
 
 ## Accessors
 
 ### adUnitId
 
-• get **adUnitId**(): *string*
+• `get` **adUnitId**(): `string`
 
-**Returns:** *string*
+#### Returns
 
-Defined in: api.ts:31
+`string`
+
+#### Defined in
+
+api.ts:33
 
 ## Methods
 
 ### hide
 
-▸ **hide**(): *Promise*<unknown\>
+▸ **hide**(): `Promise`<unknown\>
 
-**Returns:** *Promise*<unknown\>
+#### Returns
 
-Defined in: banner.ts:86
+`Promise`<unknown\>
+
+#### Defined in
+
+banner.ts:86
 
 ___
 
 ### load
 
-▸ **load**(): *Promise*<unknown\>
+▸ **load**(): `Promise`<unknown\>
 
-**Returns:** *Promise*<unknown\>
+#### Returns
 
-Defined in: banner.ts:70
+`Promise`<unknown\>
+
+#### Defined in
+
+banner.ts:70
 
 ___
 
 ### show
 
-▸ **show**(): *Promise*<unknown\>
+▸ **show**(): `Promise`<unknown\>
 
-**Returns:** *Promise*<unknown\>
+#### Returns
 
-Defined in: banner.ts:78
+`Promise`<unknown\>
+
+#### Defined in
+
+banner.ts:78
 
 ___
 
 ### config
 
-▸ `Static` **config**(`opts`: { `backgroundColor?`: *string* ; `marginBottom?`: *number* ; `marginTop?`: *number*  }): ``false`` \| *Promise*<unknown\>
+▸ `Static` **config**(`opts`): ``false`` \| `Promise`<unknown\>
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `opts` | *object* |
-| `opts.backgroundColor?` | *string* |
-| `opts.marginBottom?` | *number* |
-| `opts.marginTop?` | *number* |
+| `opts` | `Object` |
+| `opts.backgroundColor?` | `string` |
+| `opts.marginBottom?` | `number` |
+| `opts.marginTop?` | `number` |
 
-**Returns:** ``false`` \| *Promise*<unknown\>
+#### Returns
 
-Defined in: banner.ts:56
+``false`` \| `Promise`<unknown\>
+
+#### Defined in
+
+banner.ts:56
 
 ___
 
 ### getAdById
 
-▸ `Static` **getAdById**(`id`: *number*): [*MobileAd*](mobilead.md)<[*MobileAdOptions*](../index.md#mobileadoptions)\>
+▸ `Static` **getAdById**(`id`): [MobileAd](mobilead.md)<[MobileAdOptions](../index.md#mobileadoptions)\>
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `id` | *number* |
+| `id` | `number` |
 
-**Returns:** [*MobileAd*](mobilead.md)<[*MobileAdOptions*](../index.md#mobileadoptions)\>
+#### Returns
 
-Inherited from: [MobileAd](mobilead.md)
+[MobileAd](mobilead.md)<[MobileAdOptions](../index.md#mobileadoptions)\>
 
-Defined in: api.ts:22
+#### Inherited from
+
+[MobileAd](mobilead.md).[getAdById](mobilead.md#getadbyid)
+
+#### Defined in
+
+api.ts:24

@@ -6,126 +6,166 @@ sidebar_position: 0
 custom_edit_url: null
 ---
 
-# Class: BannerAd
-
 ## Hierarchy
 
-- *IonicNativePlugin*
+- `IonicNativePlugin`
 
   ↳ **BannerAd**
 
 ## Implements
 
-- *Omit*<IBannerAd, ``"opts"``\>
+- `Omit`<IBannerAd, ``"opts"``\>
 
 ## Constructors
 
 ### constructor
 
-\+ **new BannerAd**(`opts`: *BannerAdOptions*): [*BannerAd*](bannerad.md)
+• **new BannerAd**(`opts`)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `opts` | *BannerAdOptions* |
+| `opts` | `BannerAdOptions` |
 
-**Returns:** [*BannerAd*](bannerad.md)
+#### Overrides
 
-Overrides: IonicNativePlugin.constructor
+IonicNativePlugin.constructor
 
-Defined in: ionic/src/ngx/index.ts:28
+#### Defined in
+
+ionic/src/ngx/index.ts:28
 
 ## Properties
 
 ### \_objectInstance
 
-• `Private` **\_objectInstance**: *default*
+• `Private` **\_objectInstance**: `default`
 
-Defined in: ionic/src/ngx/index.ts:28
+#### Defined in
+
+ionic/src/ngx/index.ts:28
 
 ___
 
 ### plugin
 
-▪ `Static` **plugin**: *string*
+▪ `Static` **plugin**: `string`
 
-Overrides: IonicNativePlugin.plugin
+#### Overrides
 
-Defined in: ionic/src/ngx/index.ts:24
+IonicNativePlugin.plugin
+
+#### Defined in
+
+ionic/src/ngx/index.ts:24
 
 ___
 
 ### pluginName
 
-▪ `Static` **pluginName**: *string*
+▪ `Static` **pluginName**: `string`
 
-Overrides: IonicNativePlugin.pluginName
+#### Overrides
 
-Defined in: ionic/src/ngx/index.ts:25
+IonicNativePlugin.pluginName
+
+#### Defined in
+
+ionic/src/ngx/index.ts:25
 
 ___
 
 ### pluginRef
 
-▪ `Static` **pluginRef**: *string*= 'admob.BannerAd'
+▪ `Static` **pluginRef**: `string` = 'admob.BannerAd'
 
-Overrides: IonicNativePlugin.pluginRef
+#### Overrides
 
-Defined in: ionic/src/ngx/index.ts:26
+IonicNativePlugin.pluginRef
+
+#### Defined in
+
+ionic/src/ngx/index.ts:26
 
 ## Accessors
 
 ### adUnitId
 
-• get **adUnitId**(): *string*
+• `get` **adUnitId**(): `string`
 
-**Returns:** *string*
+#### Returns
 
-Defined in: ionic/src/ngx/index.ts:36
+`string`
+
+#### Defined in
+
+ionic/src/ngx/index.ts:36
 
 ___
 
 ### id
 
-• get **id**(): *number*
+• `get` **id**(): `number`
 
-**Returns:** *number*
+#### Returns
 
-Defined in: ionic/src/ngx/index.ts:40
+`number`
+
+#### Defined in
+
+ionic/src/ngx/index.ts:40
 
 ## Methods
 
 ### hide
 
-▸ **hide**(): *Promise*<unknown\>
+▸ **hide**(): `Promise`<unknown\>
 
-**Returns:** *Promise*<unknown\>
+#### Returns
 
-Implementation of: Omit.hide
+`Promise`<unknown\>
 
-Defined in: ionic/src/ngx/index.ts:52
+#### Implementation of
+
+Omit.hide
+
+#### Defined in
+
+ionic/src/ngx/index.ts:52
 
 ___
 
 ### load
 
-▸ **load**(): *Promise*<unknown\>
+▸ **load**(): `Promise`<unknown\>
 
-**Returns:** *Promise*<unknown\>
+#### Returns
 
-Implementation of: Omit.load
+`Promise`<unknown\>
 
-Defined in: ionic/src/ngx/index.ts:44
+#### Implementation of
+
+Omit.load
+
+#### Defined in
+
+ionic/src/ngx/index.ts:44
 
 ___
 
 ### show
 
-▸ **show**(): *Promise*<unknown\>
+▸ **show**(): `Promise`<unknown\>
 
-**Returns:** *Promise*<unknown\>
+#### Returns
 
-Implementation of: Omit.show
+`Promise`<unknown\>
 
-Defined in: ionic/src/ngx/index.ts:48
+#### Implementation of
+
+Omit.show
+
+#### Defined in
+
+ionic/src/ngx/index.ts:48

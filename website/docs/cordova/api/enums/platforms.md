@@ -6,20 +6,22 @@ sidebar_position: 0
 custom_edit_url: null
 ---
 
-# Enumeration: Platforms
-
 ## Enumeration members
 
 ### android
 
-• **android**: = "android"
+• **android** = "android"
 
-Defined in: api.ts:52
+#### Defined in
+
+api.ts:54
 
 ___
 
 ### ios
 
-• **ios**: = "ios"
+• **ios** = "ios"
 
-Defined in: api.ts:53
+#### Defined in
+
+api.ts:55

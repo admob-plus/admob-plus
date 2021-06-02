@@ -6,188 +6,232 @@ sidebar_position: 0
 custom_edit_url: null
 ---
 
-# Enumeration: NativeActions
-
 ## Enumeration members
 
 ### adCreate
 
-• **adCreate**: = "adCreate"
+• **adCreate** = "adCreate"
 
-Defined in: generated.ts:3
+#### Defined in
+
+generated.ts:3
 
 ___
 
 ### adIsLoaded
 
-• **adIsLoaded**: = "adIsLoaded"
+• **adIsLoaded** = "adIsLoaded"
 
-Defined in: generated.ts:4
+#### Defined in
+
+generated.ts:4
 
 ___
 
 ### adLoad
 
-• **adLoad**: = "adLoad"
+• **adLoad** = "adLoad"
 
-Defined in: generated.ts:5
+#### Defined in
+
+generated.ts:5
 
 ___
 
 ### adShow
 
-• **adShow**: = "adShow"
+• **adShow** = "adShow"
 
-Defined in: generated.ts:6
+#### Defined in
+
+generated.ts:6
 
 ___
 
 ### bannerConfig
 
-• **bannerConfig**: = "bannerConfig"
+• **bannerConfig** = "bannerConfig"
 
-Defined in: generated.ts:7
+#### Defined in
+
+generated.ts:7
 
 ___
 
 ### bannerHide
 
-• **bannerHide**: = "bannerHide"
+• **bannerHide** = "bannerHide"
 
-Defined in: generated.ts:8
+#### Defined in
+
+generated.ts:8
 
 ___
 
 ### bannerLoad
 
-• **bannerLoad**: = "bannerLoad"
+• **bannerLoad** = "bannerLoad"
 
-Defined in: generated.ts:9
+#### Defined in
+
+generated.ts:9
 
 ___
 
 ### bannerShow
 
-• **bannerShow**: = "bannerShow"
+• **bannerShow** = "bannerShow"
 
-Defined in: generated.ts:10
+#### Defined in
+
+generated.ts:10
 
 ___
 
 ### configRequest
 
-• **configRequest**: = "configRequest"
+• **configRequest** = "configRequest"
 
-Defined in: generated.ts:11
+#### Defined in
+
+generated.ts:11
 
 ___
 
 ### interstitialIsLoaded
 
-• **interstitialIsLoaded**: = "interstitialIsLoaded"
+• **interstitialIsLoaded** = "interstitialIsLoaded"
 
-Defined in: generated.ts:12
+#### Defined in
+
+generated.ts:12
 
 ___
 
 ### interstitialLoad
 
-• **interstitialLoad**: = "interstitialLoad"
+• **interstitialLoad** = "interstitialLoad"
 
-Defined in: generated.ts:13
+#### Defined in
+
+generated.ts:13
 
 ___
 
 ### interstitialShow
 
-• **interstitialShow**: = "interstitialShow"
+• **interstitialShow** = "interstitialShow"
 
-Defined in: generated.ts:14
+#### Defined in
+
+generated.ts:14
 
 ___
 
 ### ready
 
-• **ready**: = "ready"
+• **ready** = "ready"
 
-Defined in: generated.ts:15
+#### Defined in
+
+generated.ts:15
 
 ___
 
 ### requestTrackingAuthorization
 
-• **requestTrackingAuthorization**: = "requestTrackingAuthorization"
+• **requestTrackingAuthorization** = "requestTrackingAuthorization"
 
-Defined in: generated.ts:16
+#### Defined in
+
+generated.ts:16
 
 ___
 
 ### rewardedInterstitialIsLoaded
 
-• **rewardedInterstitialIsLoaded**: = "rewardedInterstitialIsLoaded"
+• **rewardedInterstitialIsLoaded** = "rewardedInterstitialIsLoaded"
 
-Defined in: generated.ts:17
+#### Defined in
+
+generated.ts:17
 
 ___
 
 ### rewardedInterstitialLoad
 
-• **rewardedInterstitialLoad**: = "rewardedInterstitialLoad"
+• **rewardedInterstitialLoad** = "rewardedInterstitialLoad"
 
-Defined in: generated.ts:18
+#### Defined in
+
+generated.ts:18
 
 ___
 
 ### rewardedInterstitialShow
 
-• **rewardedInterstitialShow**: = "rewardedInterstitialShow"
+• **rewardedInterstitialShow** = "rewardedInterstitialShow"
 
-Defined in: generated.ts:19
+#### Defined in
+
+generated.ts:19
 
 ___
 
 ### rewardedIsLoaded
 
-• **rewardedIsLoaded**: = "rewardedIsLoaded"
+• **rewardedIsLoaded** = "rewardedIsLoaded"
 
-Defined in: generated.ts:20
+#### Defined in
+
+generated.ts:20
 
 ___
 
 ### rewardedLoad
 
-• **rewardedLoad**: = "rewardedLoad"
+• **rewardedLoad** = "rewardedLoad"
 
-Defined in: generated.ts:21
+#### Defined in
+
+generated.ts:21
 
 ___
 
 ### rewardedShow
 
-• **rewardedShow**: = "rewardedShow"
+• **rewardedShow** = "rewardedShow"
 
-Defined in: generated.ts:22
+#### Defined in
+
+generated.ts:22
 
 ___
 
 ### setAppMuted
 
-• **setAppMuted**: = "setAppMuted"
+• **setAppMuted** = "setAppMuted"
 
-Defined in: generated.ts:23
+#### Defined in
+
+generated.ts:23
 
 ___
 
 ### setAppVolume
 
-• **setAppVolume**: = "setAppVolume"
+• **setAppVolume** = "setAppVolume"
 
-Defined in: generated.ts:24
+#### Defined in
+
+generated.ts:24
 
 ___
 
 ### start
 
-• **start**: = "start"
+• **start** = "start"
 
-Defined in: generated.ts:25
+#### Defined in
+
+generated.ts:25

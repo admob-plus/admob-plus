@@ -7,8 +7,6 @@ sidebar_position: 0.5
 custom_edit_url: null
 ---
 
-# admob-plus-cordova
-
 ## Enumerations
 
 - [AdSizeType](enums/adsizetype.md)
@@ -24,7 +22,6 @@ custom_edit_url: null
 - [AppOpenAd](classes/appopenad.md)
 - [BannerAd](classes/bannerad.md)
 - [InterstitialAd](classes/interstitialad.md)
-- [ManagedNativeAd](classes/managednativead.md)
 - [MobileAd](classes/mobilead.md)
 - [NativeAd](classes/nativead.md)
 - [RewardedAd](classes/rewardedad.md)
@@ -47,7 +44,7 @@ Renames and exports: [AdMob](classes/admob.md)
 
 ### MobileAdOptions
 
-Ƭ **MobileAdOptions**: *object*
+Ƭ **MobileAdOptions**: `Object`
 
 **`internal`**
 
@@ -55,25 +52,50 @@ Renames and exports: [AdMob](classes/admob.md)
 
 | Name | Type |
 | :------ | :------ |
-| `adUnitId` | *string* |
-| `id?` | *number* |
+| `adUnitId` | `string` |
+| `id?` | `number` |
 | `npa?` | ``"1"`` |
 
-Defined in: api.ts:4
+#### Defined in
+
+api.ts:4
 
 ___
 
 ### RequestConfig
 
-Ƭ **RequestConfig**: *object*
+Ƭ **RequestConfig**: `Object`
 
 #### Type declaration
 
 | Name | Type |
 | :------ | :------ |
-| `maxAdContentRating?` | [*MaxAdContentRating*](enums/maxadcontentrating.md) |
-| `tagForChildDirectedTreatment?` | *boolean* \| ``null`` |
-| `tagForUnderAgeOfConsent?` | *boolean* \| ``null`` |
-| `testDeviceIds?` | *string*[] |
+| `maxAdContentRating?` | [MaxAdContentRating](enums/maxadcontentrating.md) |
+| `tagForChildDirectedTreatment?` | `boolean` \| ``null`` |
+| `tagForUnderAgeOfConsent?` | `boolean` \| ``null`` |
+| `testDeviceIds?` | `string`[] |
 
-Defined in: api.ts:44
+#### Defined in
+
+api.ts:46
+
+## Functions
+
+### execAsync
+
+▸ `Const` **execAsync**(`action`, `args?`): `Promise`<unknown\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `action` | [NativeActions](enums/nativeactions.md) |
+| `args?` | `any`[] |
+
+#### Returns
+
+`Promise`<unknown\>
+
+#### Defined in
+
+generated.ts:76

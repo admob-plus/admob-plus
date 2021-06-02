@@ -6,11 +6,9 @@ sidebar_position: 0
 custom_edit_url: null
 ---
 
-# Class: RewardedInterstitialAd
-
 ## Hierarchy
 
-- *MobileAd*
+- `MobileAd`
 
   ↳ **RewardedInterstitialAd**
 
@@ -18,66 +16,88 @@ custom_edit_url: null
 
 ### constructor
 
-\+ **new RewardedInterstitialAd**(`__namedParameters`: MobileAdOptions): [*RewardedInterstitialAd*](rewardedinterstitialad.md)
+• **new RewardedInterstitialAd**(`__namedParameters`)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `__namedParameters` | MobileAdOptions |
+| `__namedParameters` | `MobileAdOptions` |
 
-**Returns:** [*RewardedInterstitialAd*](rewardedinterstitialad.md)
+#### Overrides
 
-Overrides: MobileAd.constructor
+MobileAd.constructor
 
-Defined in: index.ts:86
+#### Defined in
+
+index.ts:86
 
 ## Properties
 
 ### id
 
-• `Readonly` **id**: *number*
+• `Readonly` **id**: `number`
 
-Inherited from: MobileAd.id
+#### Inherited from
 
-Defined in: index.ts:14
+MobileAd.id
+
+#### Defined in
+
+index.ts:14
 
 ___
 
 ### opts
 
-• `Protected` `Readonly` **opts**: MobileAdOptions
+• `Protected` `Readonly` **opts**: `MobileAdOptions`
 
-Inherited from: MobileAd.opts
+#### Inherited from
 
-Defined in: index.ts:16
+MobileAd.opts
+
+#### Defined in
+
+index.ts:16
 
 ## Accessors
 
 ### adUnitId
 
-• get **adUnitId**(): *string*
+• `get` **adUnitId**(): `string`
 
-**Returns:** *string*
+#### Returns
 
-Defined in: index.ts:30
+`string`
+
+#### Defined in
+
+index.ts:30
 
 ## Methods
 
 ### load
 
-▸ **load**(): *Promise*<void\>
+▸ **load**(): `Promise`<void\>
 
-**Returns:** *Promise*<void\>
+#### Returns
 
-Defined in: index.ts:91
+`Promise`<void\>
+
+#### Defined in
+
+index.ts:91
 
 ___
 
 ### show
 
-▸ **show**(): *Promise*<void\>
+▸ **show**(): `Promise`<void\>
 
-**Returns:** *Promise*<void\>
+#### Returns
 
-Defined in: index.ts:98
+`Promise`<void\>
+
+#### Defined in
+
+index.ts:98

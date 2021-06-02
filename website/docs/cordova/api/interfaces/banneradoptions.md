@@ -6,11 +6,9 @@ sidebar_position: 0
 custom_edit_url: null
 ---
 
-# Interface: BannerAdOptions
-
 ## Hierarchy
 
-- [*MobileAdOptions*](../index.md#mobileadoptions)
+- [MobileAdOptions](../index.md#mobileadoptions)
 
   ↳ **BannerAdOptions**
 
@@ -18,21 +16,29 @@ custom_edit_url: null
 
 ### adUnitId
 
-• **adUnitId**: *string*
+• **adUnitId**: `string`
 
-Inherited from: MobileAdOptions.adUnitId
+#### Inherited from
 
-Defined in: api.ts:4
+MobileAdOptions.adUnitId
+
+#### Defined in
+
+api.ts:4
 
 ___
 
 ### id
 
-• `Optional` **id**: *number*
+• `Optional` **id**: `number`
 
-Inherited from: MobileAdOptions.id
+#### Inherited from
 
-Defined in: api.ts:4
+MobileAdOptions.id
+
+#### Defined in
+
+api.ts:4
 
 ___
 
@@ -40,30 +46,40 @@ ___
 
 • `Optional` **npa**: ``"1"``
 
-Inherited from: MobileAdOptions.npa
+#### Inherited from
 
-Defined in: api.ts:4
+MobileAdOptions.npa
+
+#### Defined in
+
+api.ts:4
 
 ___
 
 ### offset
 
-• `Optional` **offset**: *number*
+• `Optional` **offset**: `number`
 
-Defined in: banner.ts:42
+#### Defined in
+
+banner.ts:42
 
 ___
 
 ### position
 
-• `Optional` **position**: Position
+• `Optional` **position**: `Position`
 
-Defined in: banner.ts:40
+#### Defined in
+
+banner.ts:40
 
 ___
 
 ### size
 
-• `Optional` **size**: [*AdSizeType*](../enums/adsizetype.md)
+• `Optional` **size**: [AdSizeType](../enums/adsizetype.md)
 
-Defined in: banner.ts:41
+#### Defined in
+
+banner.ts:41

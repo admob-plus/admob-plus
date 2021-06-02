@@ -7,8 +7,6 @@ sidebar_position: 0.5
 custom_edit_url: null
 ---
 
-# @admob-plus/capacitor
-
 ## Enumerations
 
 - [MaxAdContentRating](enums/maxadcontentrating.md)
@@ -30,38 +28,44 @@ custom_edit_url: null
 
 ### AdMobConfig
 
-Ƭ **AdMobConfig**: *object*
+Ƭ **AdMobConfig**: `Object`
 
 #### Type declaration
 
 | Name | Type |
 | :------ | :------ |
-| `appMuted?` | *boolean* |
-| `appVolume?` | *number* |
+| `appMuted?` | `boolean` |
+| `appVolume?` | `number` |
 
-Defined in: definitions.ts:11
+#### Defined in
+
+definitions.ts:11
 
 ___
 
 ### RequestConfig
 
-Ƭ **RequestConfig**: *object*
+Ƭ **RequestConfig**: `Object`
 
 #### Type declaration
 
 | Name | Type |
 | :------ | :------ |
-| `maxAdContentRating?` | [*MaxAdContentRating*](enums/maxadcontentrating.md) |
-| `tagForChildDirectedTreatment?` | *boolean* \| ``null`` |
-| `tagForUnderAgeOfConsent?` | *boolean* \| ``null`` |
-| `testDeviceIds?` | *string*[] |
+| `maxAdContentRating?` | [MaxAdContentRating](enums/maxadcontentrating.md) |
+| `tagForChildDirectedTreatment?` | `boolean` \| ``null`` |
+| `tagForUnderAgeOfConsent?` | `boolean` \| ``null`` |
+| `testDeviceIds?` | `string`[] |
 
-Defined in: definitions.ts:16
+#### Defined in
+
+definitions.ts:16
 
 ## Variables
 
 ### AdMobPlus
 
-• `Const` **AdMobPlus**: [*AdMobPlusPlugin*](interfaces/admobplusplugin.md)
+• `Const` **AdMobPlus**: [AdMobPlusPlugin](interfaces/admobplusplugin.md)
 
-Defined in: index.ts:4
+#### Defined in
+
+index.ts:4

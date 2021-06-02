@@ -7,8 +7,6 @@ sidebar_position: 0.5
 custom_edit_url: null
 ---
 
-# cordova-plugin-consent
-
 ## Enumerations
 
 - [ConsentStatus](enums/consentstatus.md)

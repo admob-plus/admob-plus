@@ -6,20 +6,22 @@ sidebar_position: 0
 custom_edit_url: null
 ---
 
-# Interface: ServerSideVerificationOptions
-
 ## Properties
 
 ### customData
 
-• `Optional` **customData**: *string*
+• `Optional` **customData**: `string`
 
-Defined in: rewarded.ts:4
+#### Defined in
+
+rewarded.ts:4
 
 ___
 
 ### userId
 
-• `Optional` **userId**: *string*
+• `Optional` **userId**: `string`
 
-Defined in: rewarded.ts:5
+#### Defined in
+
+rewarded.ts:5

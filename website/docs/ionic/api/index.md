@@ -7,8 +7,6 @@ sidebar_position: 0.5
 custom_edit_url: null
 ---
 
-# @admob-plus/ionic
-
 ## Enumerations
 
 - [TrackingAuthorizationStatus](enums/trackingauthorizationstatus.md)

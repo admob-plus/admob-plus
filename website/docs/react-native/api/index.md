@@ -7,8 +7,6 @@ sidebar_position: 0.5
 custom_edit_url: null
 ---
 
-# @admob-plus/react-native
-
 ## Enumerations
 
 - [MaxAdContentRating](enums/maxadcontentrating.md)
@@ -33,39 +31,45 @@ Renames and exports: [AdMobPlus](index.md#admobplus)
 
 ### AdMobConfig
 
-Ƭ **AdMobConfig**: *object*
+Ƭ **AdMobConfig**: `Object`
 
 #### Type declaration
 
 | Name | Type |
 | :------ | :------ |
-| `appMuted?` | *boolean* |
-| `appVolume?` | *number* |
-| `maxAdContentRating?` | [*MaxAdContentRating*](enums/maxadcontentrating.md) |
-| `tagForChildDirectedTreatment?` | *boolean* \| ``null`` |
-| `tagForUnderAgeOfConsent?` | *boolean* \| ``null`` |
-| `testDeviceIds?` | *string*[] |
+| `appMuted?` | `boolean` |
+| `appVolume?` | `number` |
+| `maxAdContentRating?` | [MaxAdContentRating](enums/maxadcontentrating.md) |
+| `tagForChildDirectedTreatment?` | `boolean` \| ``null`` |
+| `tagForUnderAgeOfConsent?` | `boolean` \| ``null`` |
+| `testDeviceIds?` | `string`[] |
 
-Defined in: definitions.ts:9
+#### Defined in
+
+definitions.ts:9
 
 ___
 
 ### MobileAdOptions
 
-Ƭ **MobileAdOptions**: *object*
+Ƭ **MobileAdOptions**: `Object`
 
 #### Type declaration
 
 | Name | Type |
 | :------ | :------ |
-| `adUnitId` | *string* |
+| `adUnitId` | `string` |
 
-Defined in: definitions.ts:18
+#### Defined in
+
+definitions.ts:18
 
 ## Variables
 
 ### AdMobPlus
 
-• `Const` **AdMobPlus**: [*AdMobPlusPlugin*](interfaces/admobplusplugin.md)
+• `Const` **AdMobPlus**: [AdMobPlusPlugin](interfaces/admobplusplugin.md)
 
-Defined in: index.ts:6
+#### Defined in
+
+index.ts:6

@@ -6,11 +6,9 @@ sidebar_position: 0
 custom_edit_url: null
 ---
 
-# Interface: RewardedInterstitialAdOptions
-
 ## Hierarchy
 
-- [*RewardedAdOptions*](rewardedadoptions.md)
+- [RewardedAdOptions](rewardedadoptions.md)
 
   ↳ **RewardedInterstitialAdOptions**
 
@@ -18,21 +16,29 @@ custom_edit_url: null
 
 ### adUnitId
 
-• **adUnitId**: *string*
+• **adUnitId**: `string`
 
-Inherited from: [RewardedAdOptions](rewardedadoptions.md).[adUnitId](rewardedadoptions.md#adunitid)
+#### Inherited from
 
-Defined in: api.ts:4
+[RewardedAdOptions](rewardedadoptions.md).[adUnitId](rewardedadoptions.md#adunitid)
+
+#### Defined in
+
+api.ts:4
 
 ___
 
 ### id
 
-• `Optional` **id**: *number*
+• `Optional` **id**: `number`
 
-Inherited from: [RewardedAdOptions](rewardedadoptions.md).[id](rewardedadoptions.md#id)
+#### Inherited from
 
-Defined in: api.ts:4
+[RewardedAdOptions](rewardedadoptions.md).[id](rewardedadoptions.md#id)
+
+#### Defined in
+
+api.ts:4
 
 ___
 
@@ -40,16 +46,24 @@ ___
 
 • `Optional` **npa**: ``"1"``
 
-Inherited from: [RewardedAdOptions](rewardedadoptions.md).[npa](rewardedadoptions.md#npa)
+#### Inherited from
 
-Defined in: api.ts:4
+[RewardedAdOptions](rewardedadoptions.md).[npa](rewardedadoptions.md#npa)
+
+#### Defined in
+
+api.ts:4
 
 ___
 
 ### serverSideVerification
 
-• `Optional` **serverSideVerification**: [*ServerSideVerificationOptions*](serversideverificationoptions.md)
+• `Optional` **serverSideVerification**: [ServerSideVerificationOptions](serversideverificationoptions.md)
 
-Inherited from: [RewardedAdOptions](rewardedadoptions.md).[serverSideVerification](rewardedadoptions.md#serversideverification)
+#### Inherited from
 
-Defined in: rewarded.ts:9
+[RewardedAdOptions](rewardedadoptions.md).[serverSideVerification](rewardedadoptions.md#serversideverification)
+
+#### Defined in
+
+rewarded.ts:9

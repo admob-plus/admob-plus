@@ -6,28 +6,32 @@ sidebar_position: 0
 custom_edit_url: null
 ---
 
-# Enumeration: DebugGeography
-
 ## Enumeration members
 
 ### Disabled
 
-• **Disabled**: = 0
+• **Disabled** = 0
 
-Defined in: index.ts:4
+#### Defined in
+
+index.ts:4
 
 ___
 
 ### EEA
 
-• **EEA**: = 1
+• **EEA** = 1
 
-Defined in: index.ts:5
+#### Defined in
+
+index.ts:5
 
 ___
 
 ### NotEEA
 
-• **NotEEA**: = 2
+• **NotEEA** = 2
 
-Defined in: index.ts:6
+#### Defined in
+
+index.ts:6

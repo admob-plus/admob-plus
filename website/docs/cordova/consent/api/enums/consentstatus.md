@@ -6,36 +6,42 @@ sidebar_position: 0
 custom_edit_url: null
 ---
 
-# Enumeration: ConsentStatus
-
 ## Enumeration members
 
 ### NotRequired
 
-• **NotRequired**: = 2
+• **NotRequired** = 2
 
-Defined in: index.ts:18
+#### Defined in
+
+index.ts:18
 
 ___
 
 ### Obtained
 
-• **Obtained**: = 3
+• **Obtained** = 3
 
-Defined in: index.ts:19
+#### Defined in
+
+index.ts:19
 
 ___
 
 ### Required
 
-• **Required**: = 1
+• **Required** = 1
 
-Defined in: index.ts:17
+#### Defined in
+
+index.ts:17
 
 ___
 
 ### Unknown
 
-• **Unknown**: = 0
+• **Unknown** = 0
 
-Defined in: index.ts:16
+#### Defined in
+
+index.ts:16

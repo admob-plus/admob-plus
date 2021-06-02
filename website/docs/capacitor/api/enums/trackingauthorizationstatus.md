@@ -6,36 +6,42 @@ sidebar_position: 0
 custom_edit_url: null
 ---
 
-# Enumeration: TrackingAuthorizationStatus
-
 ## Enumeration members
 
 ### authorized
 
-• **authorized**: = 3
+• **authorized** = 3
 
-Defined in: definitions.ts:27
+#### Defined in
+
+definitions.ts:27
 
 ___
 
 ### denied
 
-• **denied**: = 2
+• **denied** = 2
 
-Defined in: definitions.ts:26
+#### Defined in
+
+definitions.ts:26
 
 ___
 
 ### notDetermined
 
-• **notDetermined**: = 0
+• **notDetermined** = 0
 
-Defined in: definitions.ts:24
+#### Defined in
+
+definitions.ts:24
 
 ___
 
 ### restricted
 
-• **restricted**: = 1
+• **restricted** = 1
 
-Defined in: definitions.ts:25
+#### Defined in
+
+definitions.ts:25

@@ -6,11 +6,9 @@ sidebar_position: 0
 custom_edit_url: null
 ---
 
-# Class: BannerAd
-
 ## Hierarchy
 
-- *MobileAd*<[*BannerAdOptions*](../interfaces/banneradoptions.md)\>
+- `MobileAd`<[BannerAdOptions](../interfaces/banneradoptions.md)\>
 
   ↳ **BannerAd**
 
@@ -18,66 +16,88 @@ custom_edit_url: null
 
 ### constructor
 
-\+ **new BannerAd**(`opts`: [*BannerAdOptions*](../interfaces/banneradoptions.md)): [*BannerAd*](bannerad.md)
+• **new BannerAd**(`opts`)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `opts` | [*BannerAdOptions*](../interfaces/banneradoptions.md) |
+| `opts` | [BannerAdOptions](../interfaces/banneradoptions.md) |
 
-**Returns:** [*BannerAd*](bannerad.md)
+#### Overrides
 
-Overrides: MobileAd&lt;BannerAdOptions\&gt;.constructor
+MobileAd&lt;BannerAdOptions\&gt;.constructor
 
-Defined in: index.ts:41
+#### Defined in
+
+index.ts:41
 
 ## Properties
 
 ### id
 
-• `Readonly` **id**: *number*
+• `Readonly` **id**: `number`
 
-Inherited from: MobileAd.id
+#### Inherited from
 
-Defined in: index.ts:14
+MobileAd.id
+
+#### Defined in
+
+index.ts:14
 
 ___
 
 ### opts
 
-• `Protected` `Readonly` **opts**: [*BannerAdOptions*](../interfaces/banneradoptions.md)
+• `Protected` `Readonly` **opts**: [BannerAdOptions](../interfaces/banneradoptions.md)
 
-Inherited from: MobileAd.opts
+#### Inherited from
 
-Defined in: index.ts:16
+MobileAd.opts
+
+#### Defined in
+
+index.ts:16
 
 ## Accessors
 
 ### adUnitId
 
-• get **adUnitId**(): *string*
+• `get` **adUnitId**(): `string`
 
-**Returns:** *string*
+#### Returns
 
-Defined in: index.ts:30
+`string`
+
+#### Defined in
+
+index.ts:30
 
 ## Methods
 
 ### hide
 
-▸ **hide**(): *Promise*<void\>
+▸ **hide**(): `Promise`<void\>
 
-**Returns:** *Promise*<void\>
+#### Returns
 
-Defined in: index.ts:53
+`Promise`<void\>
+
+#### Defined in
+
+index.ts:53
 
 ___
 
 ### show
 
-▸ **show**(): *Promise*<void\>
+▸ **show**(): `Promise`<void\>
 
-**Returns:** *Promise*<void\>
+#### Returns
 
-Defined in: index.ts:49
+`Promise`<void\>
+
+#### Defined in
+
+index.ts:49

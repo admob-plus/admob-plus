@@ -6,11 +6,9 @@ sidebar_position: 0
 custom_edit_url: null
 ---
 
-# Class: InterstitialAd
-
 ## Hierarchy
 
-- *MobileAd*
+- `MobileAd`
 
   ↳ **InterstitialAd**
 
@@ -18,66 +16,88 @@ custom_edit_url: null
 
 ### constructor
 
-\+ **new InterstitialAd**(`opts`: [*MobileAdOptions*](../index.md#mobileadoptions)): [*InterstitialAd*](interstitialad.md)
+• **new InterstitialAd**(`opts`)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `opts` | [*MobileAdOptions*](../index.md#mobileadoptions) |
+| `opts` | [MobileAdOptions](../index.md#mobileadoptions) |
 
-**Returns:** [*InterstitialAd*](interstitialad.md)
+#### Inherited from
 
-Inherited from: MobileAd.constructor
+MobileAd.constructor
 
-Defined in: index.ts:14
+#### Defined in
+
+index.ts:14
 
 ## Properties
 
 ### id
 
-• `Readonly` **id**: *number*
+• `Readonly` **id**: `number`
 
-Inherited from: MobileAd.id
+#### Inherited from
 
-Defined in: index.ts:12
+MobileAd.id
+
+#### Defined in
+
+index.ts:12
 
 ___
 
 ### opts
 
-• `Protected` `Readonly` **opts**: [*MobileAdOptions*](../index.md#mobileadoptions)
+• `Protected` `Readonly` **opts**: [MobileAdOptions](../index.md#mobileadoptions)
 
-Inherited from: MobileAd.opts
+#### Inherited from
 
-Defined in: index.ts:14
+MobileAd.opts
+
+#### Defined in
+
+index.ts:14
 
 ## Accessors
 
 ### adUnitId
 
-• get **adUnitId**(): *string*
+• `get` **adUnitId**(): `string`
 
-**Returns:** *string*
+#### Returns
 
-Defined in: index.ts:28
+`string`
+
+#### Defined in
+
+index.ts:28
 
 ## Methods
 
 ### load
 
-▸ **load**(): *Promise*<void\>
+▸ **load**(): `Promise`<void\>
 
-**Returns:** *Promise*<void\>
+#### Returns
 
-Defined in: index.ts:34
+`Promise`<void\>
+
+#### Defined in
+
+index.ts:34
 
 ___
 
 ### show
 
-▸ **show**(): *Promise*<void\>
+▸ **show**(): `Promise`<void\>
 
-**Returns:** *Promise*<void\>
+#### Returns
 
-Defined in: index.ts:38
+`Promise`<void\>
+
+#### Defined in
+
+index.ts:38

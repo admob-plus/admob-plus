@@ -6,11 +6,9 @@ sidebar_position: 0
 custom_edit_url: null
 ---
 
-# Class: RewardedInterstitialAd
-
 ## Hierarchy
 
-- *MobileAd*
+- `MobileAd`
 
   ↳ **RewardedInterstitialAd**
 
@@ -18,66 +16,88 @@ custom_edit_url: null
 
 ### constructor
 
-\+ **new RewardedInterstitialAd**(`__namedParameters`: [*MobileAdOptions*](../index.md#mobileadoptions)): [*RewardedInterstitialAd*](rewardedinterstitialad.md)
+• **new RewardedInterstitialAd**(`__namedParameters`)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `__namedParameters` | [*MobileAdOptions*](../index.md#mobileadoptions) |
+| `__namedParameters` | [MobileAdOptions](../index.md#mobileadoptions) |
 
-**Returns:** [*RewardedInterstitialAd*](rewardedinterstitialad.md)
+#### Overrides
 
-Overrides: MobileAd.constructor
+MobileAd.constructor
 
-Defined in: index.ts:57
+#### Defined in
+
+index.ts:57
 
 ## Properties
 
 ### id
 
-• `Readonly` **id**: *number*
+• `Readonly` **id**: `number`
 
-Inherited from: MobileAd.id
+#### Inherited from
 
-Defined in: index.ts:12
+MobileAd.id
+
+#### Defined in
+
+index.ts:12
 
 ___
 
 ### opts
 
-• `Protected` `Readonly` **opts**: [*MobileAdOptions*](../index.md#mobileadoptions)
+• `Protected` `Readonly` **opts**: [MobileAdOptions](../index.md#mobileadoptions)
 
-Inherited from: MobileAd.opts
+#### Inherited from
 
-Defined in: index.ts:14
+MobileAd.opts
+
+#### Defined in
+
+index.ts:14
 
 ## Accessors
 
 ### adUnitId
 
-• get **adUnitId**(): *string*
+• `get` **adUnitId**(): `string`
 
-**Returns:** *string*
+#### Returns
 
-Defined in: index.ts:28
+`string`
+
+#### Defined in
+
+index.ts:28
 
 ## Methods
 
 ### load
 
-▸ **load**(): *Promise*<void\>
+▸ **load**(): `Promise`<void\>
 
-**Returns:** *Promise*<void\>
+#### Returns
 
-Defined in: index.ts:62
+`Promise`<void\>
+
+#### Defined in
+
+index.ts:62
 
 ___
 
 ### show
 
-▸ **show**(): *Promise*<void\>
+▸ **show**(): `Promise`<void\>
 
-**Returns:** *Promise*<void\>
+#### Returns
 
-Defined in: index.ts:69
+`Promise`<void\>
+
+#### Defined in
+
+index.ts:69

@@ -6,38 +6,42 @@ sidebar_position: 0
 custom_edit_url: null
 ---
 
-# Class: ConsentForm
-
 ## Constructors
 
 ### constructor
 
-\+ **new ConsentForm**(`id`: *number*): [*ConsentForm*](consentform.md)
+• **new ConsentForm**(`id`)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `id` | *number* |
+| `id` | `number` |
 
-**Returns:** [*ConsentForm*](consentform.md)
+#### Defined in
 
-Defined in: index.ts:29
+index.ts:29
 
 ## Properties
 
 ### id
 
-• `Readonly` **id**: *number*
+• `Readonly` **id**: `number`
 
-Defined in: index.ts:29
+#### Defined in
+
+index.ts:29
 
 ## Methods
 
 ### show
 
-▸ **show**(): *Promise*<unknown\>
+▸ **show**(): `Promise`<unknown\>
 
-**Returns:** *Promise*<unknown\>
+#### Returns
 
-Defined in: index.ts:35
+`Promise`<unknown\>
+
+#### Defined in
+
+index.ts:35

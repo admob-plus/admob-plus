@@ -6,126 +6,166 @@ sidebar_position: 0
 custom_edit_url: null
 ---
 
-# Class: RewardedInterstitialAd
-
 ## Hierarchy
 
-- *IonicNativePlugin*
+- `IonicNativePlugin`
 
   ↳ **RewardedInterstitialAd**
 
 ## Implements
 
-- *Omit*<IRewardedInterstitialAd, ``"opts"``\>
+- `Omit`<IRewardedInterstitialAd, ``"opts"``\>
 
 ## Constructors
 
 ### constructor
 
-\+ **new RewardedInterstitialAd**(`opts`: *RewardedInterstitialAdOptions*): [*RewardedInterstitialAd*](rewardedinterstitialad.md)
+• **new RewardedInterstitialAd**(`opts`)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `opts` | *RewardedInterstitialAdOptions* |
+| `opts` | `RewardedInterstitialAdOptions` |
 
-**Returns:** [*RewardedInterstitialAd*](rewardedinterstitialad.md)
+#### Overrides
 
-Overrides: IonicNativePlugin.constructor
+IonicNativePlugin.constructor
 
-Defined in: ionic/src/ngx/index.ts:139
+#### Defined in
+
+ionic/src/ngx/index.ts:139
 
 ## Properties
 
 ### \_objectInstance
 
-• `Private` **\_objectInstance**: *default*
+• `Private` **\_objectInstance**: `default`
 
-Defined in: ionic/src/ngx/index.ts:139
+#### Defined in
+
+ionic/src/ngx/index.ts:139
 
 ___
 
 ### plugin
 
-▪ `Static` **plugin**: *string*
+▪ `Static` **plugin**: `string`
 
-Overrides: IonicNativePlugin.plugin
+#### Overrides
 
-Defined in: ionic/src/ngx/index.ts:135
+IonicNativePlugin.plugin
+
+#### Defined in
+
+ionic/src/ngx/index.ts:135
 
 ___
 
 ### pluginName
 
-▪ `Static` **pluginName**: *string*
+▪ `Static` **pluginName**: `string`
 
-Overrides: IonicNativePlugin.pluginName
+#### Overrides
 
-Defined in: ionic/src/ngx/index.ts:136
+IonicNativePlugin.pluginName
+
+#### Defined in
+
+ionic/src/ngx/index.ts:136
 
 ___
 
 ### pluginRef
 
-▪ `Static` **pluginRef**: *string*= 'admob.RewardedInterstitialAd'
+▪ `Static` **pluginRef**: `string` = 'admob.RewardedInterstitialAd'
 
-Overrides: IonicNativePlugin.pluginRef
+#### Overrides
 
-Defined in: ionic/src/ngx/index.ts:137
+IonicNativePlugin.pluginRef
+
+#### Defined in
+
+ionic/src/ngx/index.ts:137
 
 ## Accessors
 
 ### adUnitId
 
-• get **adUnitId**(): *string*
+• `get` **adUnitId**(): `string`
 
-**Returns:** *string*
+#### Returns
 
-Defined in: ionic/src/ngx/index.ts:147
+`string`
+
+#### Defined in
+
+ionic/src/ngx/index.ts:147
 
 ___
 
 ### id
 
-• get **id**(): *number*
+• `get` **id**(): `number`
 
-**Returns:** *number*
+#### Returns
 
-Defined in: ionic/src/ngx/index.ts:151
+`number`
+
+#### Defined in
+
+ionic/src/ngx/index.ts:151
 
 ## Methods
 
 ### isLoaded
 
-▸ **isLoaded**(): *Promise*<unknown\>
+▸ **isLoaded**(): `Promise`<unknown\>
 
-**Returns:** *Promise*<unknown\>
+#### Returns
 
-Implementation of: Omit.isLoaded
+`Promise`<unknown\>
 
-Defined in: ionic/src/ngx/index.ts:155
+#### Implementation of
+
+Omit.isLoaded
+
+#### Defined in
+
+ionic/src/ngx/index.ts:155
 
 ___
 
 ### load
 
-▸ **load**(): *Promise*<unknown\>
+▸ **load**(): `Promise`<unknown\>
 
-**Returns:** *Promise*<unknown\>
+#### Returns
 
-Implementation of: Omit.load
+`Promise`<unknown\>
 
-Defined in: ionic/src/ngx/index.ts:159
+#### Implementation of
+
+Omit.load
+
+#### Defined in
+
+ionic/src/ngx/index.ts:159
 
 ___
 
 ### show
 
-▸ **show**(): *Promise*<unknown\>
+▸ **show**(): `Promise`<unknown\>
 
-**Returns:** *Promise*<unknown\>
+#### Returns
 
-Implementation of: Omit.show
+`Promise`<unknown\>
 
-Defined in: ionic/src/ngx/index.ts:163
+#### Implementation of
+
+Omit.show
+
+#### Defined in
+
+ionic/src/ngx/index.ts:163

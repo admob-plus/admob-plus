@@ -6,11 +6,9 @@ sidebar_position: 0
 custom_edit_url: null
 ---
 
-# Interface: BannerAdOptions
-
 ## Hierarchy
 
-- *MobileAdOptions*
+- `MobileAdOptions`
 
   ↳ **BannerAdOptions**
 
@@ -18,16 +16,22 @@ custom_edit_url: null
 
 ### adUnitId
 
-• **adUnitId**: *string*
+• **adUnitId**: `string`
 
-Inherited from: MobileAdOptions.adUnitId
+#### Inherited from
 
-Defined in: index.ts:8
+MobileAdOptions.adUnitId
+
+#### Defined in
+
+index.ts:8
 
 ___
 
 ### position
 
-• `Optional` **position**: Position
+• `Optional` **position**: `Position`
 
-Defined in: index.ts:38
+#### Defined in
+
+index.ts:38

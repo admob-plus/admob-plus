@@ -6,120 +6,146 @@ sidebar_position: 0
 custom_edit_url: null
 ---
 
-# Class: MobileAd<T\>
-
 **`internal`**
 
 ## Type parameters
 
-| Name | Type | Default |
-| :------ | :------ | :------ |
-| `T` | [*MobileAdOptions*](../index.md#mobileadoptions) | [*MobileAdOptions*](../index.md#mobileadoptions) |
+| Name | Type |
+| :------ | :------ |
+| `T` | `T`: [MobileAdOptions](../index.md#mobileadoptions) = [MobileAdOptions](../index.md#mobileadoptions) |
 
 ## Hierarchy
 
 - **MobileAd**
 
-  ↳ [*BannerAd*](bannerad.md)
+  ↳ [BannerAd](bannerad.md)
 
-  ↳ [*InterstitialAd*](interstitialad.md)
+  ↳ [InterstitialAd](interstitialad.md)
 
-  ↳ [*ManagedNativeAd*](managednativead.md)
+  ↳ [RewardedAd](rewardedad.md)
 
-  ↳ [*NativeAd*](nativead.md)
-
-  ↳ [*RewardedAd*](rewardedad.md)
-
-  ↳ [*RewardedInterstitialAd*](rewardedinterstitialad.md)
+  ↳ [RewardedInterstitialAd](rewardedinterstitialad.md)
 
 ## Constructors
 
 ### constructor
 
-\+ **new MobileAd**<T\>(`opts`: T): [*MobileAd*](mobilead.md)<T\>
+• **new MobileAd**<T\>(`opts`)
 
 #### Type parameters
 
-| Name | Type | Default |
-| :------ | :------ | :------ |
-| `T` | [*MobileAdOptions*](../index.md#mobileadoptions) | [*MobileAdOptions*](../index.md#mobileadoptions) |
+| Name | Type |
+| :------ | :------ |
+| `T` | `T`: [MobileAdOptions](../index.md#mobileadoptions) = [MobileAdOptions](../index.md#mobileadoptions) |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `opts` | T |
+| `opts` | `T` |
 
-**Returns:** [*MobileAd*](mobilead.md)<T\>
+#### Defined in
 
-Defined in: api.ts:13
+api.ts:15
 
 ## Properties
 
 ### id
 
-• `Readonly` **id**: *number*
+• `Readonly` **id**: `number`
 
-Defined in: api.ts:11
+#### Defined in
+
+api.ts:13
 
 ___
 
 ### opts
 
-• `Protected` `Readonly` **opts**: T
+• `Protected` `Readonly` **opts**: `T`
 
-Defined in: api.ts:13
+#### Defined in
+
+api.ts:15
 
 ___
 
 ### allAds
 
-▪ `Static` `Private` **allAds**: *object*= {}
+▪ `Static` `Private` **allAds**: `Object` = {}
 
-#### Type declaration
+#### Index signature
 
-Defined in: api.ts:8
+▪ [s: `number`]: [MobileAd](mobilead.md)
+
+#### Defined in
+
+api.ts:10
 
 ___
 
 ### idCounter
 
-▪ `Static` `Private` **idCounter**: *number*= 0
+▪ `Static` `Private` **idCounter**: `number` = 0
 
-Defined in: api.ts:9
+#### Defined in
+
+api.ts:11
+
+___
+
+### type
+
+▪ `Static` `Readonly` **type**: `string` = ''
+
+#### Defined in
+
+api.ts:8
 
 ## Accessors
 
 ### adUnitId
 
-• get **adUnitId**(): *string*
+• `get` **adUnitId**(): `string`
 
-**Returns:** *string*
+#### Returns
 
-Defined in: api.ts:31
+`string`
+
+#### Defined in
+
+api.ts:33
 
 ## Methods
 
 ### getAdById
 
-▸ `Static` **getAdById**(`id`: *number*): [*MobileAd*](mobilead.md)<[*MobileAdOptions*](../index.md#mobileadoptions)\>
+▸ `Static` **getAdById**(`id`): [MobileAd](mobilead.md)<[MobileAdOptions](../index.md#mobileadoptions)\>
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `id` | *number* |
+| `id` | `number` |
 
-**Returns:** [*MobileAd*](mobilead.md)<[*MobileAdOptions*](../index.md#mobileadoptions)\>
+#### Returns
 
-Defined in: api.ts:22
+[MobileAd](mobilead.md)<[MobileAdOptions](../index.md#mobileadoptions)\>
+
+#### Defined in
+
+api.ts:24
 
 ___
 
 ### nextId
 
-▸ `Static` `Private` **nextId**(): *number*
+▸ `Static` `Private` **nextId**(): `number`
 
-**Returns:** *number*
+#### Returns
 
-Defined in: api.ts:26
+`number`
+
+#### Defined in
+
+api.ts:28

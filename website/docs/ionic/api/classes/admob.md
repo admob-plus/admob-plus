@@ -6,125 +6,155 @@ sidebar_position: 0
 custom_edit_url: null
 ---
 
-# Class: AdMob
-
 ## Hierarchy
 
-- *IonicNativePlugin*
+- `IonicNativePlugin`
 
   ↳ **AdMob**
 
 ## Implements
 
-- *Omit*<IAdMob, ``"AppOpenAd"`` \| ``"BannerAd"`` \| ``"Events"`` \| ``"InterstitialAd"`` \| ``"ManagedNativeAd"`` \| ``"NativeAd"`` \| ``"RewardedAd"`` \| ``"RewardedInterstitialAd"`` \| ``"TrackingAuthorizationStatus"``\>
+- `Omit`<IAdMob, ``"AppOpenAd"`` \| ``"BannerAd"`` \| ``"createAd"`` \| ``"Events"`` \| ``"InterstitialAd"`` \| ``"NativeAd"`` \| ``"RewardedAd"`` \| ``"RewardedInterstitialAd"`` \| ``"TrackingAuthorizationStatus"``\>
 
 ## Constructors
 
 ### constructor
 
-\+ **new AdMob**(): [*AdMob*](admob.md)
+• **new AdMob**()
 
-**Returns:** [*AdMob*](admob.md)
+#### Inherited from
 
-Inherited from: IonicNativePlugin.constructor
+IonicNativePlugin.constructor
 
 ## Properties
 
 ### BannerAd
 
-• `Readonly` **BannerAd**: *typeof* [*BannerAd*](bannerad.md)
+• `Readonly` **BannerAd**: typeof [BannerAd](bannerad.md)
 
-Defined in: ionic/src/ngx/index.ts:191
+#### Defined in
+
+ionic/src/ngx/index.ts:191
 
 ___
 
 ### InterstitialAd
 
-• `Readonly` **InterstitialAd**: *typeof* [*InterstitialAd*](interstitialad.md)
+• `Readonly` **InterstitialAd**: typeof [InterstitialAd](interstitialad.md)
 
-Defined in: ionic/src/ngx/index.ts:192
+#### Defined in
+
+ionic/src/ngx/index.ts:192
 
 ___
 
 ### RewardedAd
 
-• `Readonly` **RewardedAd**: *typeof* [*RewardedAd*](rewardedad.md)
+• `Readonly` **RewardedAd**: typeof [RewardedAd](rewardedad.md)
 
-Defined in: ionic/src/ngx/index.ts:193
+#### Defined in
+
+ionic/src/ngx/index.ts:193
 
 ___
 
 ### RewardedInterstitialAd
 
-• `Readonly` **RewardedInterstitialAd**: *typeof* [*RewardedInterstitialAd*](rewardedinterstitialad.md)
+• `Readonly` **RewardedInterstitialAd**: typeof [RewardedInterstitialAd](rewardedinterstitialad.md)
 
-Defined in: ionic/src/ngx/index.ts:194
+#### Defined in
+
+ionic/src/ngx/index.ts:194
 
 ___
 
 ### platforms
 
-▪ `Static` **platforms**: *string*[]
+▪ `Static` **platforms**: `string`[]
 
-Overrides: IonicNativePlugin.platforms
+#### Overrides
 
-Defined in: ionic/src/ngx/index.ts:185
+IonicNativePlugin.platforms
+
+#### Defined in
+
+ionic/src/ngx/index.ts:185
 
 ___
 
 ### plugin
 
-▪ `Static` **plugin**: *string*
+▪ `Static` **plugin**: `string`
 
-Overrides: IonicNativePlugin.plugin
+#### Overrides
 
-Defined in: ionic/src/ngx/index.ts:186
+IonicNativePlugin.plugin
+
+#### Defined in
+
+ionic/src/ngx/index.ts:186
 
 ___
 
 ### pluginName
 
-▪ `Static` **pluginName**: *string*
+▪ `Static` **pluginName**: `string`
 
-Overrides: IonicNativePlugin.pluginName
+#### Overrides
 
-Defined in: ionic/src/ngx/index.ts:187
+IonicNativePlugin.pluginName
+
+#### Defined in
+
+ionic/src/ngx/index.ts:187
 
 ___
 
 ### pluginRef
 
-▪ `Static` **pluginRef**: *string*= 'admob'
+▪ `Static` **pluginRef**: `string` = 'admob'
 
-Overrides: IonicNativePlugin.pluginRef
+#### Overrides
 
-Defined in: ionic/src/ngx/index.ts:188
+IonicNativePlugin.pluginRef
+
+#### Defined in
+
+ionic/src/ngx/index.ts:188
 
 ___
 
 ### repo
 
-▪ `Static` **repo**: *string*= 'https://github.com/admob-plus/admob-plus'
+▪ `Static` **repo**: `string` = 'https://github.com/admob-plus/admob-plus'
 
-Overrides: IonicNativePlugin.repo
+#### Overrides
 
-Defined in: ionic/src/ngx/index.ts:189
+IonicNativePlugin.repo
+
+#### Defined in
+
+ionic/src/ngx/index.ts:189
 
 ## Accessors
 
 ### admob
 
-• `Private` get **admob**(): *AdMob*
+• `Private` `get` **admob**(): `AdMob`
 
-**Returns:** *AdMob*
+#### Returns
 
-Defined in: ionic/src/ngx/index.ts:196
+`AdMob`
+
+#### Defined in
+
+ionic/src/ngx/index.ts:196
 
 ## Methods
 
 ### configRequest
 
-▸ **configRequest**(...`opts`: [requestConfig: RequestConfig]): *Promise*<unknown\>
+▸ **configRequest**(...`opts`): `Promise`<unknown\>
 
 #### Parameters
 
@@ -132,45 +162,61 @@ Defined in: ionic/src/ngx/index.ts:196
 | :------ | :------ |
 | `...opts` | [requestConfig: RequestConfig] |
 
-**Returns:** *Promise*<unknown\>
+#### Returns
 
-Implementation of: Omit.configRequest
+`Promise`<unknown\>
 
-Defined in: ionic/src/ngx/index.ts:200
+#### Implementation of
+
+Omit.configRequest
+
+#### Defined in
+
+ionic/src/ngx/index.ts:200
 
 ___
 
 ### on
 
-▸ **on**(`event`: *string*): *Observable*<any\>
+▸ **on**(`event`): `Observable`<any\>
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `event` | *string* |
+| `event` | `string` |
 
-**Returns:** *Observable*<any\>
+#### Returns
 
-Defined in: ionic/src/ngx/index.ts:222
+`Observable`<any\>
+
+#### Defined in
+
+ionic/src/ngx/index.ts:222
 
 ___
 
 ### requestTrackingAuthorization
 
-▸ **requestTrackingAuthorization**(): *Promise*<``false`` \| [*TrackingAuthorizationStatus*](../enums/trackingauthorizationstatus.md)\>
+▸ **requestTrackingAuthorization**(): `Promise`<``false`` \| [TrackingAuthorizationStatus](../enums/trackingauthorizationstatus.md)\>
 
-**Returns:** *Promise*<``false`` \| [*TrackingAuthorizationStatus*](../enums/trackingauthorizationstatus.md)\>
+#### Returns
 
-Implementation of: Omit.requestTrackingAuthorization
+`Promise`<``false`` \| [TrackingAuthorizationStatus](../enums/trackingauthorizationstatus.md)\>
 
-Defined in: ionic/src/ngx/index.ts:218
+#### Implementation of
+
+Omit.requestTrackingAuthorization
+
+#### Defined in
+
+ionic/src/ngx/index.ts:218
 
 ___
 
 ### setAppMuted
 
-▸ **setAppMuted**(...`opts`: [value: boolean]): *Promise*<unknown\>
+▸ **setAppMuted**(...`opts`): `Promise`<unknown\>
 
 #### Parameters
 
@@ -178,17 +224,23 @@ ___
 | :------ | :------ |
 | `...opts` | [value: boolean] |
 
-**Returns:** *Promise*<unknown\>
+#### Returns
 
-Implementation of: Omit.setAppMuted
+`Promise`<unknown\>
 
-Defined in: ionic/src/ngx/index.ts:210
+#### Implementation of
+
+Omit.setAppMuted
+
+#### Defined in
+
+ionic/src/ngx/index.ts:210
 
 ___
 
 ### setAppVolume
 
-▸ **setAppVolume**(...`opts`: [value: number]): *Promise*<unknown\>
+▸ **setAppVolume**(...`opts`): `Promise`<unknown\>
 
 #### Parameters
 
@@ -196,20 +248,32 @@ ___
 | :------ | :------ |
 | `...opts` | [value: number] |
 
-**Returns:** *Promise*<unknown\>
+#### Returns
 
-Implementation of: Omit.setAppVolume
+`Promise`<unknown\>
 
-Defined in: ionic/src/ngx/index.ts:214
+#### Implementation of
+
+Omit.setAppVolume
+
+#### Defined in
+
+ionic/src/ngx/index.ts:214
 
 ___
 
 ### start
 
-▸ **start**(): *Promise*<{ `version`: *string*  }\>
+▸ **start**(): `Promise`<`Object`\>
 
-**Returns:** *Promise*<{ `version`: *string*  }\>
+#### Returns
 
-Implementation of: Omit.start
+`Promise`<`Object`\>
 
-Defined in: ionic/src/ngx/index.ts:206
+#### Implementation of
+
+Omit.start
+
+#### Defined in
+
+ionic/src/ngx/index.ts:206

@@ -6,11 +6,9 @@ sidebar_position: 0
 custom_edit_url: null
 ---
 
-# Class: RewardedInterstitialAd
-
 ## Hierarchy
 
-- [*MobileAd*](mobilead.md)<[*RewardedInterstitialAdOptions*](../interfaces/rewardedinterstitialadoptions.md)\>
+- [MobileAd](mobilead.md)<[RewardedInterstitialAdOptions](../interfaces/rewardedinterstitialadoptions.md)\>
 
   ↳ **RewardedInterstitialAd**
 
@@ -18,94 +16,140 @@ custom_edit_url: null
 
 ### constructor
 
-\+ **new RewardedInterstitialAd**(`opts`: [*RewardedInterstitialAdOptions*](../interfaces/rewardedinterstitialadoptions.md)): [*RewardedInterstitialAd*](rewardedinterstitialad.md)
+• **new RewardedInterstitialAd**(`opts`)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `opts` | [*RewardedInterstitialAdOptions*](../interfaces/rewardedinterstitialadoptions.md) |
+| `opts` | [RewardedInterstitialAdOptions](../interfaces/rewardedinterstitialadoptions.md) |
 
-**Returns:** [*RewardedInterstitialAd*](rewardedinterstitialad.md)
+#### Inherited from
 
-Inherited from: [MobileAd](mobilead.md)
+[MobileAd](mobilead.md).[constructor](mobilead.md#constructor)
 
-Defined in: api.ts:13
+#### Defined in
+
+api.ts:15
 
 ## Properties
 
 ### id
 
-• `Readonly` **id**: *number*
+• `Readonly` **id**: `number`
 
-Inherited from: [MobileAd](mobilead.md).[id](mobilead.md#id)
+#### Inherited from
 
-Defined in: api.ts:11
+[MobileAd](mobilead.md).[id](mobilead.md#id)
+
+#### Defined in
+
+api.ts:13
 
 ___
 
 ### opts
 
-• `Protected` `Readonly` **opts**: [*RewardedInterstitialAdOptions*](../interfaces/rewardedinterstitialadoptions.md)
+• `Protected` `Readonly` **opts**: [RewardedInterstitialAdOptions](../interfaces/rewardedinterstitialadoptions.md)
 
-Inherited from: [MobileAd](mobilead.md).[opts](mobilead.md#opts)
+#### Inherited from
 
-Defined in: api.ts:13
+[MobileAd](mobilead.md).[opts](mobilead.md#opts)
+
+#### Defined in
+
+api.ts:15
+
+___
+
+### type
+
+▪ `Static` `Readonly` **type**: `string` = ''
+
+#### Inherited from
+
+[MobileAd](mobilead.md).[type](mobilead.md#type)
+
+#### Defined in
+
+api.ts:8
 
 ## Accessors
 
 ### adUnitId
 
-• get **adUnitId**(): *string*
+• `get` **adUnitId**(): `string`
 
-**Returns:** *string*
+#### Returns
 
-Defined in: api.ts:31
+`string`
+
+#### Defined in
+
+api.ts:33
 
 ## Methods
 
 ### isLoaded
 
-▸ **isLoaded**(): *Promise*<unknown\>
+▸ **isLoaded**(): `Promise`<unknown\>
 
-**Returns:** *Promise*<unknown\>
+#### Returns
 
-Defined in: rewarded-interstitial.ts:7
+`Promise`<unknown\>
+
+#### Defined in
+
+rewarded-interstitial.ts:7
 
 ___
 
 ### load
 
-▸ **load**(): *Promise*<unknown\>
+▸ **load**(): `Promise`<unknown\>
 
-**Returns:** *Promise*<unknown\>
+#### Returns
 
-Defined in: rewarded-interstitial.ts:13
+`Promise`<unknown\>
+
+#### Defined in
+
+rewarded-interstitial.ts:13
 
 ___
 
 ### show
 
-▸ **show**(): *Promise*<unknown\>
+▸ **show**(): `Promise`<unknown\>
 
-**Returns:** *Promise*<unknown\>
+#### Returns
 
-Defined in: rewarded-interstitial.ts:19
+`Promise`<unknown\>
+
+#### Defined in
+
+rewarded-interstitial.ts:19
 
 ___
 
 ### getAdById
 
-▸ `Static` **getAdById**(`id`: *number*): [*MobileAd*](mobilead.md)<[*MobileAdOptions*](../index.md#mobileadoptions)\>
+▸ `Static` **getAdById**(`id`): [MobileAd](mobilead.md)<[MobileAdOptions](../index.md#mobileadoptions)\>
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `id` | *number* |
+| `id` | `number` |
 
-**Returns:** [*MobileAd*](mobilead.md)<[*MobileAdOptions*](../index.md#mobileadoptions)\>
+#### Returns
 
-Inherited from: [MobileAd](mobilead.md)
+[MobileAd](mobilead.md)<[MobileAdOptions](../index.md#mobileadoptions)\>
 
-Defined in: api.ts:22
+#### Inherited from
+
+[MobileAd](mobilead.md).[getAdById](mobilead.md#getadbyid)
+
+#### Defined in
+
+api.ts:24
