@@ -13,7 +13,7 @@
     "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",
     "recoil": "^0.3.1",
-    "web-vitals": "^1.1.2",
+    "web-vitals": "^2.0.0",
     "wouter": "^2.7.4"
   },
   "devDependencies": {
@@ -25,9 +25,9 @@
     "@types/fs-extra": "^9.0.11",
     "@types/jest": "^26.0.23",
     "@types/lodash": "^4.14.170",
-    "@types/node": "^15.6.1",
-    "@types/react": "^17.0.8",
-    "@types/react-dom": "^17.0.5",
+    "@types/node": "^15.6.2",
+    "@types/react": "^17.0.9",
+    "@types/react-dom": "^17.0.6",
     "@types/recoil": "^0.0.1",
     "cordova": "^10.0.1-nightly.2021.2.10.189ac49b",
     "cordova-android": "9.1.0",
