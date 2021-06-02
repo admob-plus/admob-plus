@@ -81,7 +81,7 @@ public class AppOpen extends AdBase implements GenericAd {
     }
 
     @Override
-    public void show() {
+    public void show(ExecuteContext ctx) {
         mAd.show(getActivity());
     }
 

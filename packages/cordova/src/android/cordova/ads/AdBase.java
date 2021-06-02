@@ -2,9 +2,13 @@ package admob.plus.cordova.ads;
 
 import android.app.Activity;
 import android.content.res.Configuration;
+import android.view.View;
+import android.view.ViewGroup;
 
 import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.rewarded.RewardItem;
+
+import org.apache.cordova.CordovaWebView;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -73,5 +77,17 @@ public abstract class AdBase {
         ExecuteContext.plugin.emit(eventType, new HashMap<String, Object>(data) {{
             put("adId", id);
         }});
+    }
+
+    protected CordovaWebView getCordovaWebView() {
+        return ExecuteContext.plugin.webView;
+    }
+
+    protected View getWebView() {
+        return getCordovaWebView().getView();
+    }
+
+    protected ViewGroup getWebViewParent() {
+        return (ViewGroup) getWebView().getParent();
     }
 }

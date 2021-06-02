@@ -358,14 +358,6 @@ public class Banner extends AdBase implements IAdShow {
         return (ViewGroup) getWebView().getRootView().findViewById(android.R.id.content);
     }
 
-    private CordovaWebView getCordovaWebView() {
-        return ExecuteContext.plugin.webView;
-    }
-
-    private View getWebView() {
-        return getCordovaWebView().getView();
-    }
-
     private boolean isPositionTop() {
         return gravity == Gravity.TOP;
     }

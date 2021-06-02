@@ -26,6 +26,7 @@ import admob.plus.cordova.ads.GenericAd;
 import admob.plus.cordova.ads.IAdIsLoaded;
 import admob.plus.cordova.ads.IAdShow;
 import admob.plus.cordova.ads.Interstitial;
+import admob.plus.cordova.ads.Native;
 import admob.plus.cordova.ads.Rewarded;
 import admob.plus.cordova.ads.RewardedInterstitial;
 
@@ -36,6 +37,10 @@ public class AdMob extends CordovaPlugin {
     private final ArrayList<PluginResult> eventQueue = new ArrayList<PluginResult>();
     public AdMobHelper helper;
     private CallbackContext readyCallbackContext = null;
+
+    public static void registerNativeAdViewProviders(Map<String, Native.ViewProvider> providers) {
+        Native.providers.putAll(providers);
+    }
 
     @Override
     protected void pluginInitialize() {
@@ -49,6 +54,10 @@ public class AdMob extends CordovaPlugin {
             }
         });
         ExecuteContext.plugin = this;
+
+        registerNativeAdViewProviders(new HashMap<String, Native.ViewProvider>() {{
+            put("default", new AdViewProvider());
+        }});
     }
 
     @Override
@@ -77,6 +86,9 @@ public class AdMob extends CordovaPlugin {
                         case "app-open":
                             new AppOpen(ctx);
                             break;
+                        case "native":
+                            new Native(ctx);
+                            break;
                     }
                     ctx.success();
                 }
@@ -87,6 +99,8 @@ public class AdMob extends CordovaPlugin {
                 return executeAdLoad(ctx);
             case Actions.AD_SHOW:
                 return executeAdShow_(ctx);
+            case "adHide":
+                return executeAdHide(ctx);
             case Actions.BANNER_LOAD:
                 return executeBannerLoad(ctx);
             case Actions.BANNER_SHOW:
@@ -166,7 +180,20 @@ public class AdMob extends CordovaPlugin {
         cordova.getActivity().runOnUiThread(() -> {
             GenericAd ad = (GenericAd) ctx.optAdOrError();
             if (ad != null && ad.isLoaded()) {
-                ad.show();
+                ad.show(ctx);
+                ctx.success(true);
+            } else {
+                ctx.success(false);
+            }
+        });
+        return true;
+    }
+
+    private boolean executeAdHide(ExecuteContext ctx) {
+        cordova.getActivity().runOnUiThread(() -> {
+            GenericAd ad = (GenericAd) ctx.optAdOrError();
+            if (ad != null && ad.isLoaded()) {
+                ad.show(ctx);
                 ctx.success(true);
             } else {
                 ctx.success(false);
