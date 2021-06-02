@@ -1,0 +1,79 @@
+---
+title: Installation
+sidebar_label: Installation
+---
+
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+
+```shell
+npx admob-plus install -p cordova
+```
+
+Or via [Cordova CLI](https://www.npmjs.com/package/cordova):
+
+```shell
+cordova plugin add admob-plus-cordova --save --variable APP_ID_ANDROID=ca-app-pub-xxx~xxx --variable APP_ID_IOS=ca-app-pub-xxx~xxx
+```
+
+<Tabs
+  defaultValue="android"
+  values={[
+    {label: 'Android', value: 'android'},
+    {label: 'iOS', value: 'ios'},
+  ]}>
+  <TabItem value="android">
+
+`com.google.android.gms:play-services-ads:$PLAY_SERVICES_VERSION` is available for configuration,
+the default is `--PLAY_SERVICES_VERSION=20.1.0`.
+
+When using with other plugins and encountering errors, set `AndroidXEnabled` to `true`.
+
+
+```xml title="config.xml" {3}
+<widget>
+    <platform name="android">
+        <preference name="AndroidXEnabled" value="true" />
+    </platform>
+</widget>
+```
+
+Or add the following plugins for `Cordova<9`,
+
+```sh
+cordova plugin add cordova-plugin-androidx
+cordova plugin add cordova-plugin-androidx-adapter
+```
+
+### Proguard
+
+Add these rules to your proguard configuration:
+
+```
+-keep public class admob.plugin.ads.** {
+  public *;
+}
+```
+
+  </TabItem>
+  <TabItem value="ios">
+
+Set `deployment-target` and `SwiftVersion`,
+
+```xml title="config.xml" {3-4}
+<widget>
+    <platform name="ios">
+        <preference name="deployment-target" value="12.0" />
+        <preference name="SwiftVersion" value="5.3" />
+    </platform>
+</widget>
+```
+
+Run `cordova platform remove ios` then `cordova platform add ios` to take effect.
+
+Run `pod repo update` or `cd platforms/ios && pod install --repo-update` to ensure latest SDK is ready.
+
+  </TabItem>
+</Tabs>
+
+

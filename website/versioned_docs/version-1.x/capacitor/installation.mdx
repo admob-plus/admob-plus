@@ -1,0 +1,66 @@
+---
+title: Installation
+sidebar_label: Installation
+slug: /capacitor
+---
+
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+
+```shell
+npm install @admob-plus/capacitor
+npx cap sync
+```
+
+:::info
+Capacitor 3 is required, [here is the upgrade guide](https://capacitorjs.com/docs/v3/updating/3-0).
+:::
+
+<Tabs
+  defaultValue="android"
+  values={[
+    {label: 'Android', value: 'android'},
+    {label: 'iOS', value: 'ios'},
+  ]}>
+  <TabItem value="android">
+
+```xml title="android/app/src/main/AndroidManifest.xml" {3-9}
+<manifest>
+    <application>
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-xxx~yyy" />
+
+        <meta-data
+            android:name="com.google.android.gms.ads.DELAY_APP_MEASUREMENT_INIT"
+            android:value="true" />
+  </application>
+</manifest>
+```
+
+  </TabItem>
+  <TabItem value="ios">
+
+```xml title="ios/App/App/Info.plist" {5-13}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>GADApplicationIdentifier</key>
+    <string>ca-app-pub-xxx~yyy</string>
+    <key>SKAdNetworkItems</key>
+    <array>
+        <dict>
+            <key>SKAdNetworkIdentifier</key>
+            <string>cstr6suwn9.skadnetwork</string>
+        </dict>
+    </array>
+    <!-- Add this if your are using requestTrackingAuthorization() -->
+    <key>NSUserTrackingUsageDescription</key>
+    <string>This identifier will be used to deliver personalized ads to you.</string>
+</dict>
+</plist>
+```
+
+  </TabItem>
+</Tabs>
