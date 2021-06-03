@@ -236,28 +236,33 @@ function cordovaDev({
   name,
   cwd,
   platform,
+  pkgName = 'admob-plus-cordova',
+  pkgDir = 'cordova',
+  javaPath = 'admob/plus',
 }: {
   name: string
   cwd: string
   platform: string
+  pkgName?: string
+  pkgDir?: string
+  javaPath?: string
 }) {
-  const pkgName = 'admob-plus-cordova'
   return {
     syncDirs: [
       {
-        src: pkgsDirJoin('cordova/src/ios'),
+        src: pkgsDirJoin(pkgDir, 'src/ios'),
         dest: path.join(cwd, 'platforms/ios', name, 'Plugins', pkgName),
       },
       {
-        src: pkgsDirJoin('cordova/src/ios'),
+        src: pkgsDirJoin(pkgDir, 'src/ios'),
         dest: path.join(cwd, 'plugins', pkgName, 'src/ios'),
       },
       {
-        src: pkgsDirJoin('cordova/src/android'),
-        dest: path.join(cwd, 'platforms/android/app/src/main/java/admob/plus'),
+        src: pkgsDirJoin(pkgDir, 'src/android'),
+        dest: path.join(cwd, 'platforms/android/app/src/main/java', javaPath),
       },
       {
-        src: pkgsDirJoin('cordova/src/android'),
+        src: pkgsDirJoin(pkgDir, 'src/android'),
         dest: path.join(cwd, 'plugins', pkgName, 'src/android'),
       },
     ],
@@ -304,6 +309,23 @@ async function startDev(opts: any) {
       const name = 'AdmobBasicExample'
       const o = cordovaDev({ name, cwd, platform })
       syncDirs.push(...o.syncDirs)
+      openArgs.push(...o.openArgs)
+      break
+    }
+    case 'cordova-consent': {
+      const name = 'ConsentExample'
+      const o = cordovaDev({
+        name,
+        cwd,
+        platform,
+        pkgName: 'cordova-plugin-consent',
+        pkgDir: 'cordova-consent',
+        javaPath: 'cordova/plugin/consent',
+      })
+      syncDirs.push(
+        ...cordovaDev({ name, cwd, platform }).syncDirs,
+        ...o.syncDirs,
+      )
       openArgs.push(...o.openArgs)
       break
     }
