@@ -47,7 +47,9 @@ class AMBAdBase: NSObject {
 
         super.init()
 
-        AMBContext.ads[id] = self
+        DispatchQueue.main.sync {
+            AMBContext.ads[id] = self
+        }
     }
 
     convenience init?(_ ctx: AMBContext) {
@@ -60,7 +62,10 @@ class AMBAdBase: NSObject {
     }
 
     deinit {
-        AMBContext.ads.removeValue(forKey: self.id)
+        let id = self.id
+        DispatchQueue.main.async {
+            AMBContext.ads.removeValue(forKey: id)
+        }
     }
 
     func emit(_ event: AMBEvents) {
@@ -93,8 +98,6 @@ class AMBAdBase: NSObject {
         if data != nil {
             d.merge(data!) { (current, _) in current }
         }
-        if plugin.hasListeners {
-            plugin.sendEvent(withName: name, body: data)
-        }
+        plugin.emit(name, d)
     }
 }

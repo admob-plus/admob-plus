@@ -1,7 +1,17 @@
-import { NativeModules } from 'react-native'
+import {
+  DeviceEventEmitter,
+  NativeEventEmitter,
+  NativeModules,
+  Platform,
+} from 'react-native'
 import { AdMobPlusPlugin, MobileAdOptions } from './definitions'
 
 const { AdMobPlusRN } = NativeModules
+
+export const eventEmitter = Platform.select({
+  ios: new NativeEventEmitter(AdMobPlusRN),
+  android: DeviceEventEmitter,
+})!
 
 export const AdMobPlus = AdMobPlusRN as AdMobPlusPlugin
 
@@ -28,6 +38,22 @@ class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
 
   public get adUnitId() {
     return this.opts.adUnitId
+  }
+
+  public on(
+    eventType: string,
+    listener: (event: any) => void,
+    context?: Record<string, unknown> | undefined,
+  ) {
+    return eventEmitter.addListener(
+      `ad.${eventType}`,
+      (event) => {
+        if (event && event.adId === this.id) {
+          listener(event)
+        }
+      },
+      context,
+    )
   }
 }
 

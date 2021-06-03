@@ -12,7 +12,6 @@ import {
 
 import { Colors, Header } from 'react-native/Libraries/NewAppScreen'
 import AdMob, {
-  AdMobPlus,
   InterstitialAd,
   RewardedAd,
   RewardedInterstitialAd,
@@ -76,6 +75,9 @@ const App: React.FC = () => {
             onPress={async () => {
               const ad = new InterstitialAd({
                 adUnitId: 'ca-app-pub-3940256099942544/4411468910',
+              })
+              ad.on('load', (evt) => {
+                console.log('InterstitialAd loaded', evt)
               })
               await ad.load()
               await ad.show()

@@ -121,4 +121,10 @@ class AdMobPlusRN: RCTEventEmitter {
             }
         }
     }
+
+    func emit(_ name: String, _ data: [String: Any]) {
+        if self.hasListeners {
+            self.sendEvent(withName: name, body: data)
+        }
+    }
 }
