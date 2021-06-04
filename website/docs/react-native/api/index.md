@@ -46,7 +46,7 @@ Renames and exports: [AdMobPlus](index.md#admobplus)
 
 #### Defined in
 
-definitions.ts:9
+definitions.ts:10
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 #### Defined in
 
-definitions.ts:18
+definitions.ts:19
 
 ## Variables
 
@@ -72,4 +72,14 @@ definitions.ts:18
 
 #### Defined in
 
-index.ts:6
+index.ts:16
+
+___
+
+### eventEmitter
+
+• `Const` **eventEmitter**: `NativeEventEmitter`
+
+#### Defined in
+
+index.ts:11

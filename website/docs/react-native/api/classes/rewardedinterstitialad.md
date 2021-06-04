@@ -8,7 +8,7 @@ custom_edit_url: null
 
 ## Hierarchy
 
-- `MobileAd`
+- `GenericAd`
 
   ↳ **RewardedInterstitialAd**
 
@@ -16,21 +16,21 @@ custom_edit_url: null
 
 ### constructor
 
-• **new RewardedInterstitialAd**(`__namedParameters`)
+• **new RewardedInterstitialAd**(`opts`)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `__namedParameters` | [MobileAdOptions](../index.md#mobileadoptions) |
+| `opts` | [MobileAdOptions](../index.md#mobileadoptions) |
 
-#### Overrides
+#### Inherited from
 
-MobileAd.constructor
+GenericAd.constructor
 
 #### Defined in
 
-index.ts:57
+index.ts:61
 
 ## Properties
 
@@ -40,11 +40,11 @@ index.ts:57
 
 #### Inherited from
 
-MobileAd.id
+GenericAd.id
 
 #### Defined in
 
-index.ts:12
+index.ts:23
 
 ___
 
@@ -54,11 +54,11 @@ ___
 
 #### Inherited from
 
-MobileAd.opts
+GenericAd.opts
 
 #### Defined in
 
-index.ts:14
+index.ts:25
 
 ## Accessors
 
@@ -72,9 +72,45 @@ index.ts:14
 
 #### Defined in
 
-index.ts:28
+index.ts:39
 
 ## Methods
+
+### init
+
+▸ `Protected` **init**(): `Promise`<void\>
+
+#### Returns
+
+`Promise`<void\>
+
+#### Inherited from
+
+GenericAd.init
+
+#### Defined in
+
+index.ts:90
+
+___
+
+### isLoaded
+
+▸ **isLoaded**(): `Promise`<boolean\>
+
+#### Returns
+
+`Promise`<boolean\>
+
+#### Inherited from
+
+GenericAd.isLoaded
+
+#### Defined in
+
+index.ts:75
+
+___
 
 ### load
 
@@ -84,9 +120,39 @@ index.ts:28
 
 `Promise`<void\>
 
+#### Inherited from
+
+GenericAd.load
+
 #### Defined in
 
-index.ts:62
+index.ts:80
+
+___
+
+### on
+
+▸ **on**(`eventType`, `listener`, `context?`): `EmitterSubscription`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `eventType` | `string` |
+| `listener` | (`event`: `any`) => `void` |
+| `context?` | `Record`<string, unknown\> |
+
+#### Returns
+
+`EmitterSubscription`
+
+#### Inherited from
+
+GenericAd.on
+
+#### Defined in
+
+index.ts:43
 
 ___
 
@@ -98,6 +164,10 @@ ___
 
 `Promise`<void\>
 
+#### Inherited from
+
+GenericAd.show
+
 #### Defined in
 
-index.ts:69
+index.ts:85

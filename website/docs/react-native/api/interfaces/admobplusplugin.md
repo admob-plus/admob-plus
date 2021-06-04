@@ -8,56 +8,21 @@ custom_edit_url: null
 
 ## Methods
 
-### configure
+### adCreate
 
-▸ **configure**(`config`): `Promise`<void\>
+▸ **adCreate**<O\>(`opts`): `Promise`<void\>
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `O` | `O`: [MobileAdOptions](../index.md#mobileadoptions) |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `config` | [AdMobConfig](../index.md#admobconfig) |
-
-#### Returns
-
-`Promise`<void\>
-
-#### Defined in
-
-definitions.ts:22
-
-___
-
-### interstitialLoad
-
-▸ **interstitialLoad**(`opts`): `Promise`<void\>
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `opts` | [MobileAdOptions](../index.md#mobileadoptions) & { `id`: `number`  } |
-
-#### Returns
-
-`Promise`<void\>
-
-#### Defined in
-
-definitions.ts:24
-
-___
-
-### interstitialShow
-
-▸ **interstitialShow**(`opts`): `Promise`<void\>
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `opts` | `Object` |
-| `opts.id` | `number` |
+| `opts` | `O` |
 
 #### Returns
 
@@ -69,29 +34,9 @@ definitions.ts:25
 
 ___
 
-### rewardedInterstitialLoad
+### adIsLoaded
 
-▸ **rewardedInterstitialLoad**(`opts`): `Promise`<void\>
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `opts` | [MobileAdOptions](../index.md#mobileadoptions) & { `id`: `number`  } |
-
-#### Returns
-
-`Promise`<void\>
-
-#### Defined in
-
-definitions.ts:30
-
-___
-
-### rewardedInterstitialShow
-
-▸ **rewardedInterstitialShow**(`opts`): `Promise`<void\>
+▸ **adIsLoaded**(`opts`): `Promise`<boolean\>
 
 #### Parameters
 
@@ -102,24 +47,23 @@ ___
 
 #### Returns
 
-`Promise`<void\>
+`Promise`<boolean\>
 
 #### Defined in
 
-definitions.ts:33
+definitions.ts:26
 
 ___
 
-### rewardedLoad
+### adLoad
 
-▸ **rewardedLoad**(`opts`): `Promise`<void\>
+▸ **adLoad**(`opts`): `Promise`<void\>
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
 | `opts` | `Object` |
-| `opts.adUnitId` | `string` |
 | `opts.id` | `number` |
 
 #### Returns
@@ -132,9 +76,9 @@ definitions.ts:27
 
 ___
 
-### rewardedShow
+### adShow
 
-▸ **rewardedShow**(`opts`): `Promise`<void\>
+▸ **adShow**(`opts`): `Promise`<void\>
 
 #### Parameters
 
@@ -153,6 +97,26 @@ definitions.ts:28
 
 ___
 
+### configure
+
+▸ **configure**(`config`): `Promise`<void\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `config` | [AdMobConfig](../index.md#admobconfig) |
+
+#### Returns
+
+`Promise`<void\>
+
+#### Defined in
+
+definitions.ts:23
+
+___
+
 ### start
 
 ▸ **start**(): `Promise`<void\>
@@ -163,4 +127,4 @@ ___
 
 #### Defined in
 
-definitions.ts:21
+definitions.ts:22
