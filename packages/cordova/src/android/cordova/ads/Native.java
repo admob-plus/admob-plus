@@ -16,8 +16,11 @@ import com.google.android.gms.ads.nativead.NativeAd;
 import java.util.HashMap;
 import java.util.Map;
 
+import admob.plus.AdMobHelper;
 import admob.plus.cordova.ExecuteContext;
 import admob.plus.cordova.Generated.Events;
+
+import static admob.plus.AdMobHelper.dpToPx;
 
 public class Native extends AdBase implements GenericAd {
     public static final Map<String, ViewProvider> providers = new HashMap<String, ViewProvider>();
@@ -98,7 +101,7 @@ public class Native extends AdBase implements GenericAd {
     @Override
     public void show(ExecuteContext ctx) {
         if (view == null) {
-            view = viewProvider.createView(getActivity(), mAd);
+            view = viewProvider.createView(mAd);
             ViewGroup vg = getWebViewParent();
             vg.addView(view);
 
@@ -106,11 +109,11 @@ public class Native extends AdBase implements GenericAd {
         }
 
         view.setVisibility(View.VISIBLE);
-        view.setX((float) ctx.opts.optDouble("x"));
-        view.setY((float) ctx.opts.optDouble("y"));
+        view.setX((float) dpToPx(ctx.opts.optDouble("x")));
+        view.setY((float) dpToPx(ctx.opts.optDouble("y")));
         ViewGroup.LayoutParams params = view.getLayoutParams();
-        params.width = (int) ctx.opts.optDouble("width");
-        params.height = (int) ctx.opts.optDouble("height");
+        params.width = (int) dpToPx(ctx.opts.optDouble("width"));
+        params.height = (int) dpToPx(ctx.opts.optDouble("height"));
         view.setLayoutParams(params);
 
         viewProvider.didShow(this);
@@ -138,7 +141,7 @@ public class Native extends AdBase implements GenericAd {
 
     public interface ViewProvider {
         @NonNull
-        View createView(Context context, NativeAd nativeAd);
+        View createView(NativeAd nativeAd);
 
         default void didShow(@NonNull Native ad) {
         }

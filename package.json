@@ -107,6 +107,7 @@
     "@typescript-eslint/parser": "^4.24.0",
     "@typescript-eslint/eslint-plugin": "^4.24.0",
     "admob-plus-cordova": "workspace:*",
+    "admob-plus-cordova-native": "workspace:*",
     "admob-plus": "workspace:*",
     "cordova-plugin-consent": "workspace:*",
     "pkg-proxy": "workspace:*"

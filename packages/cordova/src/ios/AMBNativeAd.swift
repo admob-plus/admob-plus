@@ -2,7 +2,7 @@ import Foundation
 import GoogleMobileAds
 
 protocol AMBNativeAdViewProvider: NSObjectProtocol {
-    func createView(_ nativeAd: GADNativeAd) -> GADNativeAdView
+    func createView(_ nativeAd: GADNativeAd) -> UIView
     // delegate
     func didShow(_ ad: AMBNativeAd)
     func didHide(_ ad: AMBNativeAd)
@@ -22,15 +22,8 @@ class AMBNativeAd: AMBAdBase, AMBGenericAd, GADNativeAdLoaderDelegate, GADNative
     var mAd: GADNativeAd?
     var ctxLoad: AMBContext?
 
-    lazy var view: GADNativeAdView = {
-        let nativeAdView = viewProvider.createView(mAd!)
-
-        // Associate the native ad view with the native ad object. This is
-        // required to make the ad clickable.
-        // Note: this should always be done after populating the ad views.
-        nativeAdView.nativeAd = mAd
-
-        return nativeAdView
+    lazy var view: UIView = {
+        return viewProvider.createView(mAd!)
     }()
 
     init(id: Int, adUnitId: String, request: GADRequest, viewProvider: AMBNativeAdViewProvider) {

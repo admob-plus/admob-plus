@@ -3,7 +3,9 @@ package admob.plus;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.res.Resources;
 import android.provider.Settings;
+import android.util.DisplayMetrics;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -25,6 +27,16 @@ public class AdMobHelper {
 
     public AdMobHelper(Adapter adapter) {
         mAdapter = adapter;
+    }
+
+    public static double dpToPx(double dp) {
+        return dp * Resources.getSystem().getDisplayMetrics().density;
+    }
+
+    public static int pxToDp(int px) {
+        DisplayMetrics displayMetrics = Resources.getSystem().getDisplayMetrics();
+        int dp = Math.round(px / (displayMetrics.xdpi / DisplayMetrics.DENSITY_DEFAULT));
+        return dp;
     }
 
     private static String md5(String s) {

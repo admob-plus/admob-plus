@@ -2,9 +2,7 @@ package admob.plus.cordova.ads;
 
 import android.annotation.SuppressLint;
 import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.util.Log;
-import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,12 +19,12 @@ import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.LoadAdError;
 
-import org.apache.cordova.CordovaWebView;
-
 import java.util.HashMap;
 
 import admob.plus.cordova.ExecuteContext;
 import admob.plus.cordova.Generated.Events;
+
+import static admob.plus.AdMobHelper.pxToDp;
 
 public class Banner extends AdBase implements IAdShow {
     private static final String TAG = "AdMobPlus.Banner";
@@ -68,18 +66,6 @@ public class Banner extends AdBase implements IAdShow {
         return viewParent;
     }
 
-    public void load(ExecuteContext ctx) {
-        final AdRequest adRequest = ctx.optAdRequest();
-
-        if (mAdView == null) {
-            mAdView = createBannerView();
-        }
-
-        mAdView.loadAd(adRequest);
-        mAdRequest = adRequest;
-        ctx.success();
-    }
-
     private static void runJustBeforeBeingDrawn(final View view, final Runnable runnable) {
         final OnPreDrawListener preDrawListener = new OnPreDrawListener() {
             @Override
@@ -92,10 +78,16 @@ public class Banner extends AdBase implements IAdShow {
         view.getViewTreeObserver().addOnPreDrawListener(preDrawListener);
     }
 
-    private int pxToDp(int px) {
-        DisplayMetrics displayMetrics = Resources.getSystem().getDisplayMetrics();
-        int dp = Math.round(px / (displayMetrics.xdpi / DisplayMetrics.DENSITY_DEFAULT));
-        return dp;
+    public void load(ExecuteContext ctx) {
+        final AdRequest adRequest = ctx.optAdRequest();
+
+        if (mAdView == null) {
+            mAdView = createBannerView();
+        }
+
+        mAdView.loadAd(adRequest);
+        mAdRequest = adRequest;
+        ctx.success();
     }
 
     private AdView createBannerView() {

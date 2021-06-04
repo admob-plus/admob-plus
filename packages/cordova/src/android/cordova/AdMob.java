@@ -54,10 +54,6 @@ public class AdMob extends CordovaPlugin {
             }
         });
         ExecuteContext.plugin = this;
-
-        registerNativeAdViewProviders(new HashMap<String, Native.ViewProvider>() {{
-            put("default", new AdViewProvider());
-        }});
     }
 
     @Override

@@ -9,6 +9,7 @@ import admob from './admob'
 import capacitor from './capacitor'
 import updateCliReadme from './cli'
 import consent from './consent'
+import cordovaNative from './cordova-native'
 import rn from './rn'
 import { indent4 } from './shared'
 
@@ -19,17 +20,21 @@ async function updateConfigXML({
   pkgDir: string
   targetDir: string
 }) {
-  const [androidFiles, iosFiles, ioResources] = await Promise.all([
-    glob(['**/*.java'], {
-      cwd: path.join(pkgDir, 'src/android'),
-    }),
-    glob(['*.swift', '*.m'], {
-      cwd: path.join(pkgDir, 'src/ios'),
-    }),
-    glob(['*.xib'], {
-      cwd: path.join(pkgDir, 'src/ios'),
-    }),
-  ])
+  const [androidFiles, androidResources, iosFiles, ioResources] =
+    await Promise.all([
+      glob(['**/*.java'], {
+        cwd: path.join(pkgDir, 'src/android'),
+      }),
+      glob(['**/*.xml'], {
+        cwd: path.join(pkgDir, 'src/android'),
+      }),
+      glob(['*.swift', '*.m'], {
+        cwd: path.join(pkgDir, 'src/ios'),
+      }),
+      glob(['*.xib'], {
+        cwd: path.join(pkgDir, 'src/ios'),
+      }),
+    ])
   const androidContent = androidFiles
     .map((s) => {
       const d = path.join(targetDir, path.dirname(s.toString()))
@@ -37,6 +42,12 @@ async function updateConfigXML({
         2,
       )}<source-file src="src/android/${s}" target-dir="${d}" />`
     })
+    .concat(
+      androidResources.map(
+        (s) =>
+          `${indent4(2)}<resource-file src="src/android/${s}" target="${s}" />`,
+      ),
+    )
     .sort()
     .join('\n')
   const iosContent = iosFiles
@@ -58,7 +69,7 @@ async function updateConfigXML({
 
 const generateFiles = async () => {
   const specs = await Promise.all(
-    [admob, capacitor, consent, rn].map((f) => f()),
+    [admob, capacitor, consent, cordovaNative, rn].map((f) => f()),
   )
 
   await Promise.all(

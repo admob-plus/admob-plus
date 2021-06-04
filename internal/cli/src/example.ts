@@ -7,6 +7,7 @@ import execa from 'execa'
 import fsp from 'fs/promises'
 import glob from 'fast-glob'
 import path from 'path'
+import PQueue from 'p-queue'
 import findPkg, { PackageJson } from 'pkg-proxy'
 import { replaceInFile } from 'replace-in-file'
 import { parseStringPromise } from 'xml2js'
@@ -28,6 +29,12 @@ const watchCopy = async (sourceDir: string, targetDir: string) => {
   return new Promise(() => {
     watcher.on('change', async (filepath: string, root: string) => {
       console.log('file changed', filepath)
+      if (
+        filepath.startsWith('cordova/native') &&
+        targetDir.includes('packages/cordova/')
+      ) {
+        return
+      }
 
       await cpy(filepath, targetDir, {
         parents: true,
@@ -91,27 +98,27 @@ const prepare = async (opts: { cwd: string }) => {
   assert(pkgExample)
   const pluginPkgs = await collectPluginPkgs(pkgExample)
 
-  const linkTasks = await Promise.all(
+  const linkTasks = new PQueue({ autoStart: false })
+  await Promise.all(
     pluginPkgs.map(async (pkg) => {
       await execa('yarn', ['build'], {
         cwd: pkg.dir,
         stdio: 'inherit',
       })
 
-      return async () => {
-        const pluginVars = pkgExample.cordova.plugins[pkg.name]
-        const addOpts = Object.keys(pluginVars)
-          .map((k) => ['--variable', `${k}=${pluginVars[k]}`])
-          .flat()
-        await Promise.all([
-          replaceInFile({
-            files: path.join(cwd, 'platforms/android/app/build.gradle'),
-            from: 'abortOnError false;',
-            to: 'abortOnError true;',
-          }),
-          linkPlugin(pkg.name, addOpts, { cwd }),
-        ])
-      }
+      const pluginVars = pkgExample.cordova.plugins[pkg.name]
+      const addOpts = Object.keys(pluginVars)
+        .map((k) => ['--variable', `${k}=${pluginVars[k]}`])
+        .flat()
+
+      linkTasks.add(() =>
+        replaceInFile({
+          files: path.join(cwd, 'platforms/android/app/build.gradle'),
+          from: 'abortOnError false;',
+          to: 'abortOnError true;',
+        }),
+      )
+      linkTasks.add(() => linkPlugin(pkg.name, addOpts, { cwd }))
     }),
   )
 
@@ -119,7 +126,8 @@ const prepare = async (opts: { cwd: string }) => {
     cwd,
   })
 
-  await Promise.all(linkTasks.map((f) => f()))
+  linkTasks.start()
+  await linkTasks.onIdle()
 }
 
 const androidRun = async (argv: {
@@ -308,7 +316,17 @@ async function startDev(opts: any) {
     case 'cordova': {
       const name = 'AdmobBasicExample'
       const o = cordovaDev({ name, cwd, platform })
-      syncDirs.push(...o.syncDirs)
+      syncDirs.push(
+        ...cordovaDev({
+          name,
+          cwd,
+          platform,
+          pkgName: 'admob-plus-cordova-native',
+          pkgDir: 'cordova-native',
+          javaPath: 'admob/plus/cordova/nativead',
+        }).syncDirs,
+        ...o.syncDirs,
+      )
       openArgs.push(...o.openArgs)
       break
     }

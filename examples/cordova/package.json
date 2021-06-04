@@ -12,7 +12,7 @@
     "test:ios": "test -d platforms/ios && swift --version && cordova build ios"
   },
   "dependencies": {
-    "admob-plus-cordova": "file:../../packages/cordova",
+    "admob-plus-cordova": "../../packages/cordova",
     "cordova-android": "9.1.0",
     "cordova-browser": "6.0.0",
     "cordova-ios": "6.2.0",
@@ -22,6 +22,7 @@
   "devDependencies": {
     "@admob-plus-internal/cli": "file:../../internal/cli",
     "@types/cordova": "^0.0.34",
+    "admob-plus-cordova-native": "file:../../packages/cordova-native",
     "cordova": "^10.0.0",
     "npm-run-all": "^4.1.5"
   },
@@ -31,7 +32,8 @@
       "admob-plus-cordova": {
         "APP_ID_ANDROID": "ca-app-pub-3940256099942544~3347511713",
         "APP_ID_IOS": "ca-app-pub-3940256099942544~1458002511"
-      }
+      },
+      "admob-plus-cordova-native": {}
     },
     "platforms": [
       "ios",
