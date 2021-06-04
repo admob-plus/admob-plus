@@ -3,11 +3,11 @@ import { execAsync, MobileAd, NativeActions, MobileAdOptions } from './shared'
 export class GenericAd<S = Record<string, any>> extends MobileAd {
   private _init: Promise<void> | null
 
-  constructor(opts: MobileAdOptions & { type: string }) {
+  constructor(opts: MobileAdOptions) {
     super(opts)
 
     this._init = execAsync(NativeActions.adCreate, [
-      { ...opts, id: this.id, type: opts.type },
+      { ...opts, id: this.id, cls: this.constructor.name },
     ]).then(() => {
       this._init = null
     })
@@ -37,10 +37,4 @@ export class GenericAd<S = Record<string, any>> extends MobileAd {
   }
 }
 
-export default class AppOpenAd extends GenericAd {
-  public static readonly type = 'app-open'
-
-  constructor(opts: MobileAdOptions) {
-    super({ ...opts, type: AppOpenAd.type })
-  }
-}
+export default class AppOpenAd extends GenericAd {}

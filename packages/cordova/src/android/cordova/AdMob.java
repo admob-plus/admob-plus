@@ -74,15 +74,15 @@ public class AdMob extends CordovaPlugin {
                 callbackContext.success();
                 break;
             case Actions.AD_CREATE:
-                String adType = ctx.optString("type");
-                if (adType == null) {
-                    ctx.error("ad type is missing");
+                String adClass = ctx.optString("cls");
+                if (adClass == null) {
+                    ctx.error("ad cls is missing");
                 } else {
-                    switch (adType) {
-                        case "app-open":
+                    switch (adClass) {
+                        case "AppOpenAd":
                             new AppOpen(ctx);
                             break;
-                        case "native":
+                        case "NativeAd":
                             new Native(ctx);
                             break;
                     }

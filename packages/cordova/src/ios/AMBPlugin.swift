@@ -7,7 +7,7 @@ import GoogleMobileAds
 @objc(AMBPlugin)
 class AMBPlugin: CDVPlugin {
     static func registerNativeAdViewProviders(_ providers: [String: AMBNativeAdViewProvider]) {
-        AMBNativeAd.providers.merge(providers) {(_,new) in new}
+        AMBNativeAd.providers.merge(providers) {(_, new) in new}
     }
 
     var readyCallbackId: String!
@@ -109,12 +109,12 @@ class AMBPlugin: CDVPlugin {
     @objc func adCreate(_ command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(command)
 
-        if let adType = ctx.optString("type") {
-            var ad: AMBGenericAd? = nil
-            switch adType {
-            case "app-open":
+        if let adClass = ctx.optString("cls") {
+            var ad: AMBGenericAd?
+            switch adClass {
+            case "AppOpenAd":
                 ad = AMBAppOpenAd(ctx)
-            case "native":
+            case "NativeAd":
                 ad = AMBNativeAd(ctx)
             default:
                 break

@@ -7,8 +7,6 @@ export default class NativeAd extends GenericAd<{
   width: number
   height: number
 }> {
-  public static readonly type = 'native'
-
   async hide() {
     return execAsync("adHide" as NativeActions, [
       { id: this.id },
