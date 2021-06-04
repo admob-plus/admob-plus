@@ -14,7 +14,7 @@
   "dependencies": {
     "@admob-plus/react-native": "*",
     "react": "17.0.2",
-    "react-native": "0.64.1"
+    "react-native": "0.64.2"
   },
   "devDependencies": {
     "@admob-plus-internal/cli": "file:../../internal/cli",
@@ -22,12 +22,12 @@
     "@babel/runtime": "^7.14.0",
     "@react-native-community/eslint-config": "^2.0.0",
     "@types/jest": "^26.0.23",
-    "@types/react-native": "^0.64.8",
+    "@types/react-native": "^0.64.10",
     "@types/react-test-renderer": "^17.0.1",
     "admob-plus": "file:../../packages/cli",
     "babel-jest": "^27.0.2",
     "eslint": "^7.27.0",
-    "jest": "^27.0.3",
+    "jest": "^27.0.4",
     "metro-react-native-babel-preset": "^0.66.0",
     "pod-install": "^0.1.23",
     "react-native-clean-project": "^3.6.4",
