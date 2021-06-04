@@ -17,7 +17,7 @@ cordova plugin add admob-plus-cordova-native --save
 
 ```js
 document.addEventListener('deviceready', async () => {
-  const ad = admob.NativeAd({
+  const ad = new admob.NativeAd({
     adUnitId: 'ca-app-pub-xxx/yyy',
   })
   await ad.load()
