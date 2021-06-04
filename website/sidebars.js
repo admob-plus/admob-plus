@@ -28,6 +28,7 @@ module.exports = {
             'cordova/ads/app-open',
             'cordova/ads/banner',
             'cordova/ads/interstitial',
+            'cordova/ads/native',
             'cordova/ads/rewarded',
             'cordova/ads/rewarded-interstitial',
           ],
