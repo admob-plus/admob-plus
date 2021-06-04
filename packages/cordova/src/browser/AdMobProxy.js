@@ -3,6 +3,7 @@
 
 const AdMob = {
   adCreate() {},
+  adHide() {},
   adIsLoaded() {},
   adLoad() {},
   adShow() {},

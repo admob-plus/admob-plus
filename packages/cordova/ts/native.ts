@@ -8,8 +8,6 @@ export default class NativeAd extends GenericAd<{
   height: number
 }> {
   async hide() {
-    return execAsync("adHide" as NativeActions, [
-      { id: this.id },
-    ])
+    return execAsync(NativeActions.adHide, [{ id: this.id }])
   }
 }

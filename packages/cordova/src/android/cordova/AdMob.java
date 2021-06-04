@@ -95,7 +95,7 @@ public class AdMob extends CordovaPlugin {
                 return executeAdLoad(ctx);
             case Actions.AD_SHOW:
                 return executeAdShow_(ctx);
-            case "adHide":
+            case Actions.AD_HIDE:
                 return executeAdHide(ctx);
             case Actions.BANNER_LOAD:
                 return executeBannerLoad(ctx);

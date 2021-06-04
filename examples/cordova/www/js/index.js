@@ -135,21 +135,12 @@ const app = {
     })
     return ad
       .load()
-      .then(() => ad.show())
-      .then(
-        () =>
-          new Promise((resolve) =>
-            setTimeout(() => {
-              ad.show({
-                x: 0,
-                y: 30,
-                width: window.screen.width,
-                height: 350,
-              })
-              resolve()
-            }, 5000),
-          ),
-      )
+      .then(() => ad.show({
+        x: 0,
+        y: 30,
+        width: window.screen.width,
+        height: 300,
+      }))
       .then(
         () =>
           new Promise((resolve) =>

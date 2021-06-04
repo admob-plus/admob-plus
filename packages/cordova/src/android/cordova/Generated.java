@@ -4,6 +4,7 @@ package admob.plus.cordova;
 public final class Generated {
     public static final class Actions {
         public static final String AD_CREATE = "adCreate";
+        public static final String AD_HIDE = "adHide";
         public static final String AD_IS_LOADED = "adIsLoaded";
         public static final String AD_LOAD = "adLoad";
         public static final String AD_SHOW = "adShow";
