@@ -13,34 +13,6 @@ const app = {
       (evt) => {
         const { ad } = evt
         console.log('admob.ad.load', ad.id)
-
-        if (ad instanceof admob.NativeAd) {
-          ad.show({
-            x: 0,
-            y: 50,
-            width: window.screen.width,
-            height: 300,
-          })
-            .then(
-              () =>
-                new Promise((resolve) =>
-                  setTimeout(() => {
-                    ad.show({
-                      x: 0,
-                      y: 30,
-                      width: window.screen.width,
-                      height: 350,
-                    })
-                    resolve()
-                  }, 5000),
-                ),
-            )
-            .then(() => {
-              setTimeout(() => {
-                ad.hide()
-              }, 5000)
-            })
-        }
       },
       false,
     )
@@ -158,11 +130,35 @@ const app = {
   },
 
   showNativeAd() {
-    return admob
-      .createAd(admob.NativeAd, {
-        adUnitId: 'ca-app-pub-3940256099942544/3986624511',
-      })
-      .then((ad) => ad.load())
+    const ad = new admob.NativeAd({
+      adUnitId: 'ca-app-pub-3940256099942544/3986624511',
+    })
+    return ad
+      .load()
+      .then(() => ad.show())
+      .then(
+        () =>
+          new Promise((resolve) =>
+            setTimeout(() => {
+              ad.show({
+                x: 0,
+                y: 30,
+                width: window.screen.width,
+                height: 350,
+              })
+              resolve()
+            }, 5000),
+          ),
+      )
+      .then(
+        () =>
+          new Promise((resolve) =>
+            setTimeout(() => {
+              ad.hide()
+              resolve()
+            }, 5000),
+          ),
+      )
   },
 
   receivedEvent(id) {

@@ -3,19 +3,14 @@ import { execAsync, MobileAd, NativeActions, MobileAdOptions } from './shared'
 export class GenericAd<S = Record<string, any>> extends MobileAd {
   private _init: Promise<void> | null
 
-  constructor(opts: MobileAdOptions & { type: string; _noinit?: boolean }) {
+  constructor(opts: MobileAdOptions & { type: string }) {
     super(opts)
 
-    if (opts._noinit) {
+    this._init = execAsync(NativeActions.adCreate, [
+      { ...opts, id: this.id, type: opts.type },
+    ]).then(() => {
       this._init = null
-    } else {
-      // TODO utilize `createAd`
-      this._init = execAsync(NativeActions.adCreate, [
-        { ...opts, id: this.id, type: opts.type },
-      ]).then(() => {
-        this._init = null
-      })
-    }
+    })
   }
 
   async isLoaded() {

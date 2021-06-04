@@ -173,7 +173,6 @@ export class AdMob
       IAdMob,
       | 'AppOpenAd'
       | 'BannerAd'
-      | 'createAd'
       | 'Events'
       | 'InterstitialAd'
       | 'NativeAd'

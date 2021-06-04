@@ -10,7 +10,6 @@ import RewardedInterstitialAd, {
   RewardedInterstitialAdOptions,
 } from './rewarded-interstitial'
 import {
-  createAd,
   Events,
   execAsync,
   fireDocumentEvent,
@@ -45,8 +44,6 @@ export class AdMob {
 
   public readonly Events = Events
   public readonly TrackingAuthorizationStatus = TrackingAuthorizationStatus
-
-  public readonly createAd = createAd
 
   constructor() {
     document.addEventListener(
