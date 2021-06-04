@@ -1,6 +1,6 @@
 {
   "name": "admob-plus-cordova-native",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Cordova Plugin for AdMob Plus Native Ad",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -10,7 +10,7 @@
     "test": "tsc --noEmit"
   },
   "dependencies": {
-    "admob-plus-cordova": "*"
+    "admob-plus-cordova": "^1.15.0"
   },
   "devDependencies": {
     "@admob-plus-internal/rollup-config": "file:../../internal/rollup-config",

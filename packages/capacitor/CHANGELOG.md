@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.12.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.11.0...@admob-plus/capacitor@1.12.0) (2021-06-04)
+
+
+### Features
+
+* **cordova-native:** move native ad view code to its own package ([9986603](https://github.com/admob-plus/admob-plus/commit/998660305295fcf1601515fc8f8f5486d894bfe3))
+* **react-native/ios:** emit ad.reward event ([0cad1c9](https://github.com/admob-plus/admob-plus/commit/0cad1c98f88c07c9be1fbedb727aab8544fe4ebf))
+
+
+
+
+
 # [1.11.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.10.1...@admob-plus/capacitor@1.11.0) (2021-05-30)
 
 

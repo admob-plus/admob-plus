@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.15.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.14.0...admob-plus-cordova@1.15.0) (2021-06-04)
+
+
+### Features
+
+* **cordova:** add frame options to ManagedNativeAd.show() ([54323ff](https://github.com/admob-plus/admob-plus/commit/54323ffb2cf6636adeaf27e564b55cf79689b83f))
+* **cordova:** add ManagedNativeAd.hide() ([5ebf61b](https://github.com/admob-plus/admob-plus/commit/5ebf61be4cece836a2e3bb2b79c2390e4875eb6d))
+* **cordova:** introduce createAd() ([95c1deb](https://github.com/admob-plus/admob-plus/commit/95c1debbbfb4bd1e0b898135be6ccd014c84d8b5))
+* **cordova:** remove admob.createAd() ([4401272](https://github.com/admob-plus/admob-plus/commit/4401272b853c617490d5087f3781bd6a4eb30aaa))
+* **cordova:** remove ManagedNativeAd ([95555e8](https://github.com/admob-plus/admob-plus/commit/95555e8101366a524c6042c35efae8864e716389))
+* **cordova-native:** move native ad view code to its own package ([9986603](https://github.com/admob-plus/admob-plus/commit/998660305295fcf1601515fc8f8f5486d894bfe3))
+* **cordova/android:** implement Native ad ([26651ea](https://github.com/admob-plus/admob-plus/commit/26651ea849dd858e46dad0f30ad9d4599830c9d5))
+* **cordova/ios:** add AMBPlugin.registerNativeAdViewProviders() ([1477334](https://github.com/admob-plus/admob-plus/commit/147733423d7c7aec9cc6042aba5a98e7767ea059))
+* **react-native/ios:** emit ad.reward event ([0cad1c9](https://github.com/admob-plus/admob-plus/commit/0cad1c98f88c07c9be1fbedb727aab8544fe4ebf))
+
+
+
+
+
 # [1.14.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.13.1...admob-plus-cordova@1.14.0) (2021-05-30)
 
 

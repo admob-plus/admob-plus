@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/ionic@1.1.27...@admob-plus/ionic@1.2.0) (2021-06-04)
+
+
+### Features
+
+* **cordova:** remove admob.createAd() ([4401272](https://github.com/admob-plus/admob-plus/commit/4401272b853c617490d5087f3781bd6a4eb30aaa))
+* **cordova:** remove ManagedNativeAd ([95555e8](https://github.com/admob-plus/admob-plus/commit/95555e8101366a524c6042c35efae8864e716389))
+
+
+
+
+
 ## [1.1.27](https://github.com/admob-plus/admob-plus/compare/@admob-plus/ionic@1.1.26...@admob-plus/ionic@1.1.27) (2021-05-30)
 
 **Note:** Version bump only for package @admob-plus/ionic

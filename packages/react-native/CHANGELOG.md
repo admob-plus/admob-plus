@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/react-native@1.6.0...@admob-plus/react-native@1.7.0) (2021-06-04)
+
+
+### Bug Fixes
+
+* **react-native/android:** implements GenericAd ([ea8aa11](https://github.com/admob-plus/admob-plus/commit/ea8aa11943b45f12605d04301a284ea4fc8a7417))
+* **react-native/ios:** update AMBContext.ads in main thread ([cf55806](https://github.com/admob-plus/admob-plus/commit/cf558064caaeae88c63490f508544e4d22907bf3))
+
+
+### Features
+
+* **react-native/android:** rename package from RNAdMobPlusPackage to AdMobPlusRNPackage ([2b7d0c1](https://github.com/admob-plus/admob-plus/commit/2b7d0c1c4194326a9f0447ece9b203000b93d222))
+* **react-native/ios:** clear ads after show ([1ff24e3](https://github.com/admob-plus/admob-plus/commit/1ff24e3af562dcf7ed4512d3171678870e44dd05))
+* **react-native/ios:** emit ad.reward event ([0cad1c9](https://github.com/admob-plus/admob-plus/commit/0cad1c98f88c07c9be1fbedb727aab8544fe4ebf))
+
+
+
+
+
 # [1.6.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/react-native@1.5.0...@admob-plus/react-native@1.6.0) (2021-05-30)
 
 
