@@ -49,6 +49,7 @@
     "admob",
     "monetization",
     "cordova",
-    "phonegap"
+    "phonegap",
+    "typescript"
   ]
 }

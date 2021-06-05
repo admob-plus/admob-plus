@@ -43,7 +43,8 @@
     "ecosystem:cordova",
     "cordova-android",
     "cordova-ios",
-    "monetization"
+    "monetization",
+    "typescript"
   ],
   "cordova": {
     "id": "admob-plus-cordova-native",

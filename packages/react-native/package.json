@@ -30,7 +30,8 @@
     "react-native",
     "admob",
     "monetization",
-    "ads"
+    "ads",
+    "typescript"
   ],
   "author": "Ratson",
   "license": "MIT",

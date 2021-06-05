@@ -27,7 +27,8 @@
     "plugin",
     "google",
     "consent",
-    "ecosystem:cordova"
+    "ecosystem:cordova",
+    "typescript"
   ],
   "cordova": {
     "id": "cordova-plugin-consent",
