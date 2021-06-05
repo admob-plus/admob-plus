@@ -14,7 +14,7 @@ custom_edit_url: null
 
 #### Defined in
 
-index.ts:49
+index.ts:46
 
 ## Properties
 
@@ -24,7 +24,7 @@ index.ts:49
 
 #### Defined in
 
-index.ts:39
+index.ts:38
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 #### Defined in
 
-index.ts:40
+index.ts:39
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 #### Defined in
 
-index.ts:46
+index.ts:45
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 #### Defined in
 
-index.ts:41
+index.ts:40
 
 ___
 
@@ -64,7 +64,7 @@ ___
 
 #### Defined in
 
-index.ts:42
+index.ts:41
 
 ___
 
@@ -74,7 +74,7 @@ ___
 
 #### Defined in
 
-index.ts:43
+index.ts:42
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 #### Defined in
 
-index.ts:44
+index.ts:43
 
 ___
 
@@ -94,40 +94,7 @@ ___
 
 #### Defined in
 
-index.ts:47
-
-___
-
-### createAd
-
-• `Readonly` **createAd**: <Ad, O\>(`cls`: { `type`: `string`  }, `opts`: `O`) => `Promise`<InstanceType<typeof [MobileAd](mobilead.md)\>\>
-
-#### Type declaration
-
-▸ <Ad, O\>(`cls`, `opts`): `Promise`<InstanceType<typeof [MobileAd](mobilead.md)\>\>
-
-##### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `Ad` | `Ad`: [MobileAd](mobilead.md)<[MobileAdOptions](../index.md#mobileadoptions), Ad\> |
-| `O` | `O` = `O` |
-
-##### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `cls` | `Object` |
-| `cls.type` | `string` |
-| `opts` | `O` |
-
-##### Returns
-
-`Promise`<InstanceType<typeof [MobileAd](mobilead.md)\>\>
-
-#### Defined in
-
-index.ts:49
+index.ts:46
 
 ## Methods
 
@@ -147,7 +114,7 @@ index.ts:49
 
 #### Defined in
 
-index.ts:72
+index.ts:69
 
 ___
 
@@ -161,7 +128,7 @@ ___
 
 #### Defined in
 
-index.ts:88
+index.ts:85
 
 ___
 
@@ -181,7 +148,7 @@ ___
 
 #### Defined in
 
-index.ts:76
+index.ts:73
 
 ___
 
@@ -201,7 +168,7 @@ ___
 
 #### Defined in
 
-index.ts:80
+index.ts:77
 
 ___
 
@@ -215,4 +182,4 @@ ___
 
 #### Defined in
 
-index.ts:84
+index.ts:81

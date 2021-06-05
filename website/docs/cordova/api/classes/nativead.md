@@ -8,7 +8,7 @@ custom_edit_url: null
 
 ## Hierarchy
 
-- `GenericAd`<`Object`\>
+- `GenericAd`<[MobileAdOptions](../index.md#mobileadoptions) & { `view?`: `string`  }, `Object`\>
 
   ↳ **NativeAd**
 
@@ -22,20 +22,18 @@ custom_edit_url: null
 
 | Name | Type |
 | :------ | :------ |
-| `opts` | [MobileAdOptions](../index.md#mobileadoptions) & { `_noinit?`: `boolean` ; `type`: `string`  } |
+| `opts` | [MobileAdOptions](../index.md#mobileadoptions) & { `view?`: `string`  } |
 
 #### Inherited from
 
-GenericAd<{
-  x: number
-  y: number
-  width: number
-  height: number
-}\>.constructor
+GenericAd<
+  MobileAdOptions & { view?: string },
+  { x: number; y: number; width: number; height: number }
+\>.constructor
 
 #### Defined in
 
-app-open.ts:4
+app-open.ts:7
 
 ## Properties
 
@@ -55,7 +53,7 @@ ___
 
 ### opts
 
-• `Protected` `Readonly` **opts**: [MobileAdOptions](../index.md#mobileadoptions)
+• `Protected` `Readonly` **opts**: [MobileAdOptions](../index.md#mobileadoptions) & { `view?`: `string`  }
 
 #### Inherited from
 
@@ -69,15 +67,15 @@ ___
 
 ### type
 
-▪ `Static` `Readonly` **type**: ``"native"``
+▪ `Static` `Readonly` **type**: `string` = ''
 
-#### Overrides
+#### Inherited from
 
 GenericAd.type
 
 #### Defined in
 
-native.ts:10
+api.ts:8
 
 ## Accessors
 
@@ -105,7 +103,7 @@ api.ts:33
 
 #### Defined in
 
-native.ts:12
+native.ts:8
 
 ___
 
@@ -123,7 +121,7 @@ GenericAd.init
 
 #### Defined in
 
-app-open.ts:40
+app-open.ts:38
 
 ___
 
@@ -141,7 +139,7 @@ GenericAd.isLoaded
 
 #### Defined in
 
-app-open.ts:21
+app-open.ts:19
 
 ___
 
@@ -159,7 +157,7 @@ GenericAd.load
 
 #### Defined in
 
-app-open.ts:28
+app-open.ts:26
 
 ___
 
@@ -187,7 +185,7 @@ GenericAd.show
 
 #### Defined in
 
-app-open.ts:33
+app-open.ts:31
 
 ___
 

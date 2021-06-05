@@ -18,13 +18,23 @@ generated.ts:3
 
 ___
 
+### adHide
+
+• **adHide** = "adHide"
+
+#### Defined in
+
+generated.ts:4
+
+___
+
 ### adIsLoaded
 
 • **adIsLoaded** = "adIsLoaded"
 
 #### Defined in
 
-generated.ts:4
+generated.ts:5
 
 ___
 
@@ -34,7 +44,7 @@ ___
 
 #### Defined in
 
-generated.ts:5
+generated.ts:6
 
 ___
 
@@ -44,7 +54,7 @@ ___
 
 #### Defined in
 
-generated.ts:6
+generated.ts:7
 
 ___
 
@@ -54,7 +64,7 @@ ___
 
 #### Defined in
 
-generated.ts:7
+generated.ts:8
 
 ___
 
@@ -64,7 +74,7 @@ ___
 
 #### Defined in
 
-generated.ts:8
+generated.ts:9
 
 ___
 
@@ -74,7 +84,7 @@ ___
 
 #### Defined in
 
-generated.ts:9
+generated.ts:10
 
 ___
 
@@ -84,7 +94,7 @@ ___
 
 #### Defined in
 
-generated.ts:10
+generated.ts:11
 
 ___
 
@@ -94,7 +104,7 @@ ___
 
 #### Defined in
 
-generated.ts:11
+generated.ts:12
 
 ___
 
@@ -104,7 +114,7 @@ ___
 
 #### Defined in
 
-generated.ts:12
+generated.ts:13
 
 ___
 
@@ -114,7 +124,7 @@ ___
 
 #### Defined in
 
-generated.ts:13
+generated.ts:14
 
 ___
 
@@ -124,7 +134,7 @@ ___
 
 #### Defined in
 
-generated.ts:14
+generated.ts:15
 
 ___
 
@@ -134,7 +144,7 @@ ___
 
 #### Defined in
 
-generated.ts:15
+generated.ts:16
 
 ___
 
@@ -144,7 +154,7 @@ ___
 
 #### Defined in
 
-generated.ts:16
+generated.ts:17
 
 ___
 
@@ -154,7 +164,7 @@ ___
 
 #### Defined in
 
-generated.ts:17
+generated.ts:18
 
 ___
 
@@ -164,7 +174,7 @@ ___
 
 #### Defined in
 
-generated.ts:18
+generated.ts:19
 
 ___
 
@@ -174,7 +184,7 @@ ___
 
 #### Defined in
 
-generated.ts:19
+generated.ts:20
 
 ___
 
@@ -184,7 +194,7 @@ ___
 
 #### Defined in
 
-generated.ts:20
+generated.ts:21
 
 ___
 
@@ -194,7 +204,7 @@ ___
 
 #### Defined in
 
-generated.ts:21
+generated.ts:22
 
 ___
 
@@ -204,7 +214,7 @@ ___
 
 #### Defined in
 
-generated.ts:22
+generated.ts:23
 
 ___
 
@@ -214,7 +224,7 @@ ___
 
 #### Defined in
 
-generated.ts:23
+generated.ts:24
 
 ___
 
@@ -224,7 +234,7 @@ ___
 
 #### Defined in
 
-generated.ts:24
+generated.ts:25
 
 ___
 
@@ -234,4 +244,4 @@ ___
 
 #### Defined in
 
-generated.ts:25
+generated.ts:26

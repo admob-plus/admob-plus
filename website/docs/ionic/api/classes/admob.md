@@ -14,7 +14,7 @@ custom_edit_url: null
 
 ## Implements
 
-- `Omit`<IAdMob, ``"AppOpenAd"`` \| ``"BannerAd"`` \| ``"createAd"`` \| ``"Events"`` \| ``"InterstitialAd"`` \| ``"NativeAd"`` \| ``"RewardedAd"`` \| ``"RewardedInterstitialAd"`` \| ``"TrackingAuthorizationStatus"``\>
+- `Omit`<IAdMob, ``"AppOpenAd"`` \| ``"BannerAd"`` \| ``"Events"`` \| ``"InterstitialAd"`` \| ``"NativeAd"`` \| ``"RewardedAd"`` \| ``"RewardedInterstitialAd"`` \| ``"TrackingAuthorizationStatus"``\>
 
 ## Constructors
 
@@ -34,7 +34,7 @@ IonicNativePlugin.constructor
 
 #### Defined in
 
-ionic/src/ngx/index.ts:191
+ionic/src/ngx/index.ts:190
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 #### Defined in
 
-ionic/src/ngx/index.ts:192
+ionic/src/ngx/index.ts:191
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 #### Defined in
 
-ionic/src/ngx/index.ts:193
+ionic/src/ngx/index.ts:192
 
 ___
 
@@ -64,7 +64,7 @@ ___
 
 #### Defined in
 
-ionic/src/ngx/index.ts:194
+ionic/src/ngx/index.ts:193
 
 ___
 
@@ -78,7 +78,7 @@ IonicNativePlugin.platforms
 
 #### Defined in
 
-ionic/src/ngx/index.ts:185
+ionic/src/ngx/index.ts:184
 
 ___
 
@@ -92,7 +92,7 @@ IonicNativePlugin.plugin
 
 #### Defined in
 
-ionic/src/ngx/index.ts:186
+ionic/src/ngx/index.ts:185
 
 ___
 
@@ -106,7 +106,7 @@ IonicNativePlugin.pluginName
 
 #### Defined in
 
-ionic/src/ngx/index.ts:187
+ionic/src/ngx/index.ts:186
 
 ___
 
@@ -120,7 +120,7 @@ IonicNativePlugin.pluginRef
 
 #### Defined in
 
-ionic/src/ngx/index.ts:188
+ionic/src/ngx/index.ts:187
 
 ___
 
@@ -134,7 +134,7 @@ IonicNativePlugin.repo
 
 #### Defined in
 
-ionic/src/ngx/index.ts:189
+ionic/src/ngx/index.ts:188
 
 ## Accessors
 
@@ -148,7 +148,7 @@ ionic/src/ngx/index.ts:189
 
 #### Defined in
 
-ionic/src/ngx/index.ts:196
+ionic/src/ngx/index.ts:195
 
 ## Methods
 
@@ -172,7 +172,7 @@ Omit.configRequest
 
 #### Defined in
 
-ionic/src/ngx/index.ts:200
+ionic/src/ngx/index.ts:199
 
 ___
 
@@ -192,7 +192,7 @@ ___
 
 #### Defined in
 
-ionic/src/ngx/index.ts:222
+ionic/src/ngx/index.ts:221
 
 ___
 
@@ -210,7 +210,7 @@ Omit.requestTrackingAuthorization
 
 #### Defined in
 
-ionic/src/ngx/index.ts:218
+ionic/src/ngx/index.ts:217
 
 ___
 
@@ -234,7 +234,7 @@ Omit.setAppMuted
 
 #### Defined in
 
-ionic/src/ngx/index.ts:210
+ionic/src/ngx/index.ts:209
 
 ___
 
@@ -258,7 +258,7 @@ Omit.setAppVolume
 
 #### Defined in
 
-ionic/src/ngx/index.ts:214
+ionic/src/ngx/index.ts:213
 
 ___
 
@@ -276,4 +276,4 @@ Omit.start
 
 #### Defined in
 
-ionic/src/ngx/index.ts:206
+ionic/src/ngx/index.ts:205

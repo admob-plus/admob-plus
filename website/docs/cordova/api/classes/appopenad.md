@@ -24,13 +24,13 @@ custom_edit_url: null
 | :------ | :------ |
 | `opts` | [MobileAdOptions](../index.md#mobileadoptions) |
 
-#### Overrides
+#### Inherited from
 
 GenericAd.constructor
 
 #### Defined in
 
-app-open.ts:46
+app-open.ts:7
 
 ## Properties
 
@@ -64,15 +64,15 @@ ___
 
 ### type
 
-▪ `Static` `Readonly` **type**: ``"app-open"``
+▪ `Static` `Readonly` **type**: `string` = ''
 
-#### Overrides
+#### Inherited from
 
 GenericAd.type
 
 #### Defined in
 
-app-open.ts:46
+api.ts:8
 
 ## Accessors
 
@@ -104,7 +104,7 @@ GenericAd.init
 
 #### Defined in
 
-app-open.ts:40
+app-open.ts:38
 
 ___
 
@@ -122,7 +122,7 @@ GenericAd.isLoaded
 
 #### Defined in
 
-app-open.ts:21
+app-open.ts:19
 
 ___
 
@@ -140,7 +140,7 @@ GenericAd.load
 
 #### Defined in
 
-app-open.ts:28
+app-open.ts:26
 
 ___
 
@@ -164,7 +164,7 @@ GenericAd.show
 
 #### Defined in
 
-app-open.ts:33
+app-open.ts:31
 
 ___
 

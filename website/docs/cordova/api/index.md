@@ -98,4 +98,4 @@ api.ts:46
 
 #### Defined in
 
-generated.ts:77
+generated.ts:78
