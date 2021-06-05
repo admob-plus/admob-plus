@@ -29,8 +29,18 @@ document.addEventListener('deviceready', async () => {
   })
 
   setTimeout(() => {
-    ad.hide()
+    // change ad size and poistion
+    ad.show({
+      x: 0,
+      y: 150,
+      width: window.screen.width,
+      height: 350,
+    })
   }, 5000)
+
+  setTimeout(() => {
+    ad.hide()
+  }, 10000)
 })
 
 document.addEventListener('admob.ad.load', async (evt) => {
