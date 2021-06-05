@@ -1,6 +1,5 @@
 package admob.plus.cordova.ads;
 
-import android.content.Context;
 import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,13 +15,13 @@ import com.google.android.gms.ads.nativead.NativeAd;
 import java.util.HashMap;
 import java.util.Map;
 
-import admob.plus.AdMobHelper;
 import admob.plus.cordova.ExecuteContext;
 import admob.plus.cordova.Generated.Events;
 
 import static admob.plus.AdMobHelper.dpToPx;
 
 public class Native extends AdBase implements GenericAd {
+    public static final String VIEW_DEFAULT_KEY = "default";
     public static final Map<String, ViewProvider> providers = new HashMap<String, ViewProvider>();
 
     private final AdRequest mAdRequest;
@@ -35,7 +34,10 @@ public class Native extends AdBase implements GenericAd {
         super(ctx);
 
         mAdRequest = ctx.optAdRequest();
-        String key = "default";
+        String key = ctx.optString("view");
+        if (key == null || "".equals(key)) {
+            key = VIEW_DEFAULT_KEY;
+        }
         viewProvider = providers.get(key);
         if (viewProvider == null) {
             throw new RuntimeException("cannot find viewProvider: " + key);

@@ -1,9 +1,12 @@
 import { execAsync, MobileAd, NativeActions, MobileAdOptions } from './shared'
 
-export class GenericAd<S = Record<string, any>> extends MobileAd {
+export class GenericAd<
+  T extends MobileAdOptions = MobileAdOptions,
+  S = Record<string, any>,
+> extends MobileAd<T> {
   private _init: Promise<void> | null
 
-  constructor(opts: MobileAdOptions) {
+  constructor(opts: T) {
     super(opts)
 
     this._init = execAsync(NativeActions.adCreate, [

@@ -18,7 +18,7 @@ public class Plugin extends CordovaPlugin {
         Log.i(TAG, "Initialize plugin");
 
         AdMob.registerNativeAdViewProviders(new HashMap<String, Native.ViewProvider>() {{
-            put("default", new AdViewProvider(cordova));
+            put(AdMob.NATIVE_VIEW_DEFAULT, new AdViewProvider(cordova));
         }});
     }
 }

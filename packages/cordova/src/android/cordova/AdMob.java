@@ -33,6 +33,7 @@ import admob.plus.cordova.ads.RewardedInterstitial;
 import static admob.plus.cordova.ExecuteContext.ads;
 
 public class AdMob extends CordovaPlugin {
+    public static final String NATIVE_VIEW_DEFAULT = Native.VIEW_DEFAULT_KEY;
     private static final String TAG = "AdMobPlus";
     private final ArrayList<PluginResult> eventQueue = new ArrayList<PluginResult>();
     public AdMobHelper helper;

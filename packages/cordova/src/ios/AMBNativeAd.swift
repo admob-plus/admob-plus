@@ -38,9 +38,10 @@ class AMBNativeAd: AMBAdBase, AMBGenericAd, GADNativeAdLoaderDelegate, GADNative
     }
 
     convenience init?(_ ctx: AMBContext) {
+        let view = ctx.optString("view") ?? "default"
         guard let id = ctx.optId(),
               let adUnitId = ctx.optAdUnitID(),
-              let viewProvider = Self.providers["default"]
+              let viewProvider = Self.providers[view]
         else {
             return nil
         }
