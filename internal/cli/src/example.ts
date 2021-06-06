@@ -347,6 +347,23 @@ async function startDev(opts: any) {
       openArgs.push(...o.openArgs)
       break
     }
+    case 'cordova-consent': {
+      const name = 'ConsentExample'
+      const o = cordovaDev({
+        name,
+        cwd,
+        platform,
+        pkgName: 'cordova-plugin-consent',
+        pkgDir: 'cordova-consent',
+        javaPath: 'cordova/plugin/consent',
+      })
+      syncDirs.push(...o.syncDirs)
+      openArgs.push(...o.openArgs)
+      const ob = cordovaDev({ name, cwd, platform })
+      syncDirs.push(...ob.syncDirs)
+      openArgs.push(...ob.openArgs)
+      break
+    }
     case 'ionic-angular': {
       const name = 'AdMob Plus Ionic'
       const o = cordovaDev({ name, cwd, platform })
