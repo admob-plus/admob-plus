@@ -19,6 +19,9 @@ module.exports = {
     colorMode: {
       respectPrefersColorScheme: true,
     },
+    prism: {
+      additionalLanguages: ['java', 'swift'],
+    },
     navbar: {
       title: 'AdMob Plus',
       logo: {

@@ -1,0 +1,201 @@
+---
+title: Native Ad
+sidebar_label: Native
+---
+
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+
+Native ads are ad assets that are presented to users via UI components that are native to the platform.
+
+In addtion to installing `admob-plus-cordova`, you will need to install `admob-plus-cordova-native` for displaying native ads.
+
+## Installation
+
+```sh-session
+cordova plugin add admob-plus-cordova-native --save
+```
+
+Or use a local version with [customized views](#customize-views),
+
+## Usage
+
+```js
+document.addEventListener('deviceready', async () => {
+  const ad = new admob.NativeAd({
+    adUnitId: 'ca-app-pub-xxx/yyy',
+  })
+  await ad.load()
+  await ad.show({
+    x: 0,
+    y: 50,
+    width: window.screen.width,
+    height: 300,
+  })
+
+  setTimeout(() => {
+    // change ad size and poistion
+    ad.show({
+      x: 0,
+      y: 150,
+      width: window.screen.width,
+      height: 350,
+    })
+  }, 5000)
+
+  setTimeout(() => {
+    ad.hide()
+  }, 10000)
+})
+
+document.addEventListener('admob.ad.load', async (evt) => {
+  if (evt.ad instanceof admob.NativeAd) {
+    // handle event here
+  }
+})
+```
+
+## Customize Views
+
+You will need to create a plugin to provide the native ad view implementation.
+
+It is recommended to fork `admob-plus-cordova-native` and starting there.
+
+```sh-session
+git clone https://github.com/admob-plus/admob-plus.git
+cordova plugin rm admob-plus-cordova-native
+cordova plugin add ./admob-plus/packages/cordova-native --link --save
+cd admob-plus/packages/cordova-native
+```
+
+:::note
+Review the [Native ads policies and guidelines](https://support.google.com/admob/answer/6329638) for guidance on how to render your native ads.
+:::
+
+The `default` view is registered in
+
+<Tabs
+  defaultValue="android"
+  values={[
+    {label: 'Android', value: 'android'},
+    {label: 'iOS', value: 'ios'},
+  ]}>
+  <TabItem value="android">
+
+```java {6} title=src/android/Plugin.java
+package admob.plus.cordova.nativead;
+
+public class Plugin extends CordovaPlugin {
+    protected void pluginInitialize() {
+        AdMob.registerNativeAdViewProviders(new HashMap<String, Native.ViewProvider>() {{
+            put(AdMob.NATIVE_VIEW_DEFAULT, new AdViewProvider(cordova));
+        }});
+    }
+}
+```
+
+By changing `src/android/AdViewProvider.java` and `src/android/res/layout/ad_unified.xml`,
+you could customize the look and feel of the native ad view.
+
+  </TabItem>
+  <TabItem value="ios">
+
+```swift {3} title=src/ios/AdMobNativePlugin.swift
+class AdMobNativePlugin: CDVPlugin {
+    override func pluginInitialize() {
+        AMBPlugin.registerNativeAdViewProviders(["default": AMNAdViewProvider()])
+    }
+}
+```
+
+By changing `src/ios/AMNAdViewProvider.swift` and `src/ios/AMNAdView.xib`,
+you could customize the look and feel of the native ad view.
+
+  </TabItem>
+</Tabs>
+
+### Multiple Views
+
+If your native ads need more than one views, you could register them using `registerNativeAdViewProviders()`.
+
+<Tabs
+  defaultValue="android"
+  values={[
+    {label: 'Android', value: 'android'},
+    {label: 'iOS', value: 'ios'},
+  ]}>
+  <TabItem value="android">
+
+```java {7-8} title=src/android/Plugin.java
+package admob.plus.cordova.nativead;
+
+public class Plugin extends CordovaPlugin {
+    protected void pluginInitialize() {
+        AdMob.registerNativeAdViewProviders(new HashMap<String, Native.ViewProvider>() {{
+            put(AdMob.NATIVE_VIEW_DEFAULT, new AdViewProvider(cordova));
+            // register extra views
+            put("myview", new MyAdViewProvider(cordova));
+        }});
+    }
+}
+```
+
+  </TabItem>
+  <TabItem value="ios">
+
+```swift {5-6} title=src/ios/AdMobNativePlugin.swift
+class AdMobNativePlugin: CDVPlugin {
+    override func pluginInitialize() {
+        AMBPlugin.registerNativeAdViewProviders([
+          "default": AMNAdViewProvider(),
+          // register extra views
+          "myview": MyAdViewProvider(),
+        ])
+    }
+}
+```
+
+  </TabItem>
+</Tabs>
+
+Then specify it when createing the ad,
+
+```js {3}
+const ad = new admob.NativeAd({
+  adUnitId: 'ca-app-pub-xxx/yyy',
+  view: 'myview',
+})
+```
+
+Remeber to update `plugin.xml` for the newly added files,
+
+```xml {3,7} title=plugin.xml
+<plugin id="admob-plus-cordova-native">
+  <platform name="android">
+    <source-file src="src/android/MyAdViewProvider.java" target-dir="src/admob/plus/cordova/nativead" />
+  </platform>
+
+  <platform name="ios">
+    <source-file src="src/ios/MyAdViewProvider.swift" />
+  </platform>
+</plugin>
+```
+
+## Events
+
+### `admob.ad.load`
+
+### `admob.ad.loadfail`
+
+### `admob.ad.show`
+
+### `admob.ad.showfail`
+
+### `admob.ad.dismiss`
+
+### `admob.ad.impression`
+
+## References
+
+- [Native Ads - Mobile Ads SDK (Android)](https://developers.google.com/admob/android/native/start)
+- [Native Ads - Mobile Ads SDK (iOS)](https://developers.google.com/admob/ios/native/start)
