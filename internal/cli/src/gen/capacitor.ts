@@ -131,6 +131,7 @@ ${linesEvents}
 
 const renderMethod = (method: string) => {
   switch (method) {
+    case 'trackingAuthorizationStatus':
     case 'requestTrackingAuthorization':
       return `
     console.log('${method}', opts)

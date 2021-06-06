@@ -11,6 +11,16 @@ public class AdMobPlusPlugin: CAPPlugin {
         AMBContext.plugin = self
     }
 
+    @objc func trackingAuthorizationStatus(_ call: CAPPluginCall) {
+        let ctx = AMBContext(call)
+
+        if #available(iOS 14, *) {
+            ctx.success(["status": ATTrackingManager.trackingAuthorizationStatus.rawValue])
+        } else {
+            ctx.success(["status": false])
+        }
+    }
+
     @objc func requestTrackingAuthorization(_ call: CAPPluginCall) {
         let ctx = AMBContext(call)
 
@@ -24,7 +34,7 @@ public class AdMobPlusPlugin: CAPPlugin {
     }
 
     @objc func start(_ call: CAPPluginCall) {
-        GADMobileAds.sharedInstance().start(completionHandler: { status in
+        GADMobileAds.sharedInstance().start(completionHandler: { _ in
             call.resolve()
         })
     }

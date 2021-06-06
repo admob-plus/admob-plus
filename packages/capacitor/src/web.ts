@@ -69,6 +69,13 @@ export class AdMobPlusWeb extends WebPlugin implements AdMobPlusPlugin {
     console.log('rewardedInterstitialShow', opts)
   }
 
+  async trackingAuthorizationStatus(
+    ...opts: Parameters<AdMobPlusPlugin['trackingAuthorizationStatus']>
+  ): ReturnType<AdMobPlusPlugin['trackingAuthorizationStatus']> {
+    console.log('trackingAuthorizationStatus', opts)
+    return { status: false }
+  }
+
   async requestTrackingAuthorization(
     ...opts: Parameters<AdMobPlusPlugin['requestTrackingAuthorization']>
   ): ReturnType<AdMobPlusPlugin['requestTrackingAuthorization']> {

@@ -51,6 +51,9 @@ export interface AdMobPlusPlugin {
   }): Promise<void>
   rewardedInterstitialShow(opts: { id: number }): Promise<void>
 
+  trackingAuthorizationStatus(): Promise<{
+    status: TrackingAuthorizationStatus | false
+  }>
   requestTrackingAuthorization(): Promise<{
     status: TrackingAuthorizationStatus | false
   }>

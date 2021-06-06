@@ -29,6 +29,15 @@ public class AdMobPlusPlugin extends Plugin implements AdMobHelper.Adapter {
     }
 
     @PluginMethod
+    public void trackingAuthorizationStatus(PluginCall call) {
+        try {
+            call.resolve(new JSObject("{\"status\": false}"));
+        } catch (JSONException ex) {
+            call.reject(ex.toString());
+        }
+    }
+
+    @PluginMethod
     public void requestTrackingAuthorization(PluginCall call) {
         try {
             call.resolve(new JSObject("{\"status\": false}"));
