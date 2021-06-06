@@ -49,24 +49,31 @@ public class AdMobHelper {
         return "";
     }
 
-    @NonNull
-    public String getDeviceId() {
-        // This will request test ads on the emulator and device by passing this hashed device ID.
-        @SuppressLint("HardwareIds") String ANDROID_ID = Settings.Secure.getString(mAdapter.getActivity().getContentResolver(), Settings.Secure.ANDROID_ID);
-        return md5(ANDROID_ID).toUpperCase();
-    }
-
     public boolean isRunningInTestLab() {
         String testLabSetting = Settings.System.getString(mAdapter.getActivity().getContentResolver(), "firebase.test.lab");
         return "true".equals(testLabSetting);
     }
 
-    public RequestConfiguration buildRequestConfiguration(JSONObject cfg) {
-        return buildRequestConfiguration(cfg, false);
+    public void configForTestLab() {
+        if (!isRunningInTestLab()) {
+            return;
+        }
+        RequestConfiguration config = MobileAds.getRequestConfiguration();
+        List<String> testDeviceIds = config.getTestDeviceIds();
+
+        final String deviceId = getDeviceId();
+        if (testDeviceIds.contains(deviceId)) {
+            return;
+        }
+        testDeviceIds.add(deviceId);
+
+        RequestConfiguration.Builder builder = config.toBuilder();
+        builder.setTestDeviceIds(testDeviceIds);
+        MobileAds.setRequestConfiguration(builder.build());
     }
 
-    public RequestConfiguration buildRequestConfiguration(JSONObject cfg, boolean fromExisting) {
-        RequestConfiguration.Builder builder = fromExisting ? MobileAds.getRequestConfiguration().toBuilder() : new RequestConfiguration.Builder();
+    public RequestConfiguration buildRequestConfiguration(JSONObject cfg) {
+        RequestConfiguration.Builder builder = new RequestConfiguration.Builder();
         if (cfg.has("maxAdContentRating")) {
             builder.setMaxAdContentRating(cfg.optString("maxAdContentRating"));
         }
@@ -96,7 +103,13 @@ public class AdMobHelper {
             builder.setTestDeviceIds(testDeviceIds);
         }
         return builder.build();
+    }
 
+    @NonNull
+    private String getDeviceId() {
+        // This will request test ads on the emulator and device by passing this hashed device ID.
+        @SuppressLint("HardwareIds") String ANDROID_ID = Settings.Secure.getString(mAdapter.getActivity().getContentResolver(), Settings.Secure.ANDROID_ID);
+        return md5(ANDROID_ID).toUpperCase();
     }
 
     @Nullable

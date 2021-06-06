@@ -39,7 +39,10 @@ public class AdMobPlusPlugin extends Plugin implements AdMobHelper.Adapter {
 
     @PluginMethod
     public void start(PluginCall call) {
-        MobileAds.initialize(getContext(), status -> call.resolve());
+        MobileAds.initialize(getContext(), status -> {
+            helper.configForTestLab();
+            call.resolve();
+        });
     }
 
     @PluginMethod
@@ -61,6 +64,7 @@ public class AdMobPlusPlugin extends Plugin implements AdMobHelper.Adapter {
     public void configRequest(PluginCall call) {
         final ExecuteContext ctx = new ExecuteContext(call);
         MobileAds.setRequestConfiguration(helper.buildRequestConfiguration(call.getData()));
+        helper.configForTestLab();
         ctx.success();
     }
 

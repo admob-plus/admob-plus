@@ -66,12 +66,16 @@ public class AdMob extends CordovaPlugin {
             case Actions.READY:
                 return executeReady(callbackContext);
             case Actions.START:
-                MobileAds.initialize(cordova.getActivity(), status -> callbackContext.success(new JSONObject(new HashMap<String, Object>() {{
-                    put("version", MobileAds.getVersionString());
-                }})));
+                MobileAds.initialize(cordova.getActivity(), status -> {
+                    helper.configForTestLab();
+                    callbackContext.success(new JSONObject(new HashMap<String, Object>() {{
+                        put("version", MobileAds.getVersionString());
+                    }}));
+                });
                 break;
             case Actions.CONFIG_REQUEST:
                 MobileAds.setRequestConfiguration(helper.buildRequestConfiguration(ctx.opts));
+                helper.configForTestLab();
                 callbackContext.success();
                 break;
             case Actions.AD_CREATE:
