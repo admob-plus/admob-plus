@@ -1,21 +1,21 @@
+import AdMob, {
+  InterstitialAd,
+  RewardedAd,
+  RewardedInterstitialAd
+} from '@admob-plus/react-native'
 import React from 'react'
 import {
-  Button,
+  Alert, Button,
   SafeAreaView,
   ScrollView,
   StatusBar,
   StyleSheet,
   Text,
   useColorScheme,
-  View,
+  View
 } from 'react-native'
-
 import { Colors, Header } from 'react-native/Libraries/NewAppScreen'
-import AdMob, {
-  InterstitialAd,
-  RewardedAd,
-  RewardedInterstitialAd,
-} from '@admob-plus/react-native'
+
 
 const Section: React.FC<{
   title: string
@@ -47,6 +47,45 @@ const Section: React.FC<{
   )
 }
 
+const showInterstitialAd = async () => {
+  try {
+    const ad = new InterstitialAd({
+      adUnitId: 'ca-app-pub-3940256099942544/4411468910',
+    })
+    ad.on('load', (evt) => {
+      console.log('InterstitialAd loaded', evt)
+    })
+    await ad.load()
+    await ad.show()
+  } catch (err) {
+    Alert.alert('Error in ad', JSON.stringify(err))
+  }
+}
+
+const showRewardedAd = async () => {
+  try {
+    const ad = new RewardedAd({
+      adUnitId: 'ca-app-pub-3940256099942544/5224354917',
+    })
+    await ad.load()
+    await ad.show()
+  } catch (err) {
+    Alert.alert('Error in ad', JSON.stringify(err))
+  }
+}
+
+const showRewardedInterstitialAd = async () => {
+  try {
+    const ad = new RewardedInterstitialAd({
+      adUnitId: 'ca-app-pub-3940256099942544/6978759866',
+    })
+    await ad.load()
+    await ad.show()
+  } catch (err) {
+    Alert.alert('Error in ad', JSON.stringify(err))
+  }
+}
+
 const App: React.FC = () => {
   const isDarkMode = useColorScheme() === 'dark'
 
@@ -71,37 +110,10 @@ const App: React.FC = () => {
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}
         >
+          <Button onPress={showInterstitialAd} title="Interstitial Ad" />
+          <Button onPress={showRewardedAd} title="Rewarded Ad" />
           <Button
-            onPress={async () => {
-              const ad = new InterstitialAd({
-                adUnitId: 'ca-app-pub-3940256099942544/4411468910',
-              })
-              ad.on('load', (evt) => {
-                console.log('InterstitialAd loaded', evt)
-              })
-              await ad.load()
-              await ad.show()
-            }}
-            title="Interstitial Ad"
-          />
-          <Button
-            onPress={async () => {
-              const ad = new RewardedAd({
-                adUnitId: 'ca-app-pub-3940256099942544/5224354917',
-              })
-              await ad.load()
-              await ad.show()
-            }}
-            title="Rewarded Ad"
-          />
-          <Button
-            onPress={async () => {
-              const ad = new RewardedInterstitialAd({
-                adUnitId: 'ca-app-pub-3940256099942544/6978759866',
-              })
-              await ad.load()
-              await ad.show()
-            }}
+            onPress={showRewardedInterstitialAd}
             title="Rewarded Interstitial Ad"
           />
         </View>
