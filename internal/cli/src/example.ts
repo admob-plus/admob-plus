@@ -82,6 +82,17 @@ const prepare = async (opts: { cwd: string }) => {
   const { cwd } = opts
 
   switch (path.basename(cwd)) {
+    case 'capacitor': {
+      await execa('yarn', ['webpack', '--mode', 'production'], {
+        stdio: 'inherit',
+        cwd,
+      })
+      await execa('yarn', ['cap', 'sync'], {
+        stdio: 'inherit',
+        cwd,
+      })
+      return
+    }
     case 'react-native': {
       await execa('yarn', ['build'], {
         stdio: 'inherit',
@@ -293,11 +304,14 @@ async function startDev(opts: any) {
       const sourceDir = path.join(cwd, 'src')
       const watcher = sane(sourceDir, { glob: ['**/*'], watchman: true })
       promises.push(
-        execa('yarn', ['prepare'], { stdio: 'inherit', cwd }),
+        execa('yarn', ['webpack', '--mode', 'development', '--watch'], {
+          stdio: 'inherit',
+          cwd,
+        }),
         new Promise(() => {
           watcher.on('change', async (filepath: string) => {
             console.log('file changed', filepath)
-            await execa('yarn', ['prepare'], { stdio: 'inherit', cwd })
+            await execa('yarn', ['cap'], { stdio: 'inherit', cwd })
           })
         }),
       )
@@ -345,23 +359,6 @@ async function startDev(opts: any) {
         ...o.syncDirs,
       )
       openArgs.push(...o.openArgs)
-      break
-    }
-    case 'cordova-consent': {
-      const name = 'ConsentExample'
-      const o = cordovaDev({
-        name,
-        cwd,
-        platform,
-        pkgName: 'cordova-plugin-consent',
-        pkgDir: 'cordova-consent',
-        javaPath: 'cordova/plugin/consent',
-      })
-      syncDirs.push(...o.syncDirs)
-      openArgs.push(...o.openArgs)
-      const ob = cordovaDev({ name, cwd, platform })
-      syncDirs.push(...ob.syncDirs)
-      openArgs.push(...ob.openArgs)
       break
     }
     case 'ionic-angular': {
