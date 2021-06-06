@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import glob from 'fast-glob'
+import fse from 'fs-extra'
 import fsp from 'fs/promises'
 import _ from 'lodash'
 import path from 'path'
@@ -11,7 +12,29 @@ import updateCliReadme from './cli'
 import consent from './consent'
 import cordovaNative from './cordova-native'
 import rn from './rn'
-import { indent4 } from './shared'
+import { indent4, warnMessage } from './shared'
+
+async function copyAndroidHelper() {
+  const srcPath = pkgsDirJoin(
+    'capacitor/android/src/main/java/admob/plus/AdMobHelper.java',
+  )
+  const content = await fse
+    .readFile(srcPath, 'utf-8')
+    .then((x) => `// ${warnMessage}\n${x}`)
+
+  await Promise.all([
+    fse.outputFile(
+      pkgsDirJoin('cordova/src/android/AdMobHelper.java'),
+      content,
+    ),
+    fse.outputFile(
+      pkgsDirJoin(
+        'react-native/android/src/main/java/admob/plus/AdMobHelper.java',
+      ),
+      content,
+    ),
+  ])
+}
 
 async function updateConfigXML({
   pkgDir,
@@ -68,6 +91,8 @@ async function updateConfigXML({
 }
 
 const generateFiles = async () => {
+  await copyAndroidHelper()
+
   const specs = await Promise.all(
     [admob, capacitor, consent, cordovaNative, rn].map((f) => f()),
   )
