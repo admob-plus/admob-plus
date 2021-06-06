@@ -1,5 +1,6 @@
 package admob.plus.rn;
 
+import android.app.Activity;
 import android.os.Handler;
 import android.os.Looper;
 
@@ -15,19 +16,26 @@ import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
 import com.google.android.gms.ads.MobileAds;
 
+import admob.plus.AdMobHelper;
 import admob.plus.rn.ads.GenericAd;
 import admob.plus.rn.ads.Interstitial;
 import admob.plus.rn.ads.Rewarded;
 import admob.plus.rn.ads.RewardedInterstitial;
 
 public class AdMobPlusRNModule extends ReactContextBaseJavaModule {
-
     public final ReactApplicationContext reactContext;
+    public AdMobHelper helper;
 
     public AdMobPlusRNModule(ReactApplicationContext reactContext) {
         super(reactContext);
         this.reactContext = reactContext;
         ExecuteContext.plugin = this;
+        helper = new AdMobHelper(new AdMobHelper.Adapter() {
+            @Override
+            public Activity getActivity() {
+                return getCurrentActivity();
+            }
+        });
     }
 
     @Override
@@ -38,6 +46,7 @@ public class AdMobPlusRNModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void start(Promise promise) {
         MobileAds.initialize(reactContext, status -> {
+            helper.configForTestLab();
             WritableMap result = Arguments.createMap();
             result.putString("version", MobileAds.getVersionString());
             promise.resolve(result);
@@ -47,6 +56,7 @@ public class AdMobPlusRNModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void configure(ReadableMap opts, Promise promise) {
         final ExecuteContext ctx = new ExecuteContext(opts, promise);
+        helper.configForTestLab();
         ctx.error("not implemented");
     }
 
