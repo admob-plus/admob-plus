@@ -8,22 +8,25 @@ import com.getcapacitor.annotation.CapacitorPlugin;
 import com.google.android.gms.ads.MobileAds;
 
 import org.json.JSONException;
+import org.json.JSONObject;
 
-import admob.plus.AdMobHelper;
+import java.util.Map;
+
+import admob.plus.core.Helper;
 import admob.plus.capacitor.ads.Banner;
 import admob.plus.capacitor.ads.Interstitial;
 import admob.plus.capacitor.ads.Rewarded;
 import admob.plus.capacitor.ads.RewardedInterstitial;
 
 @CapacitorPlugin(name = "AdMobPlus")
-public class AdMobPlusPlugin extends Plugin implements AdMobHelper.Adapter {
-    public AdMobHelper helper;
+public class AdMobPlusPlugin extends Plugin implements Helper.Adapter {
+    public Helper helper;
 
     @Override
     public void load() {
         super.load();
 
-        this.helper = new AdMobHelper(this);
+        this.helper = new Helper(this);
 
         ExecuteContext.plugin = this;
     }
@@ -66,15 +69,15 @@ public class AdMobPlusPlugin extends Plugin implements AdMobHelper.Adapter {
             MobileAds.setAppVolume(ctx.optAppVolume());
         }
 
-        ctx.success();
+        ctx.resolve();
     }
 
     @PluginMethod
     public void configRequest(PluginCall call) {
         final ExecuteContext ctx = new ExecuteContext(call);
-        MobileAds.setRequestConfiguration(helper.buildRequestConfiguration(call.getData()));
+        MobileAds.setRequestConfiguration(ctx.optRequestConfiguration());
         helper.configForTestLab();
-        ctx.success();
+        ctx.resolve();
     }
 
     @PluginMethod
@@ -116,6 +119,7 @@ public class AdMobPlusPlugin extends Plugin implements AdMobHelper.Adapter {
     @PluginMethod
     public void interstitialShow(PluginCall call) {
         final ExecuteContext ctx = new ExecuteContext(call);
+        ctx.opt("");
 
         getBridge().executeOnMainThread(() -> {
             Interstitial ad = (Interstitial) ctx.optAdOrError();
@@ -167,5 +171,14 @@ public class AdMobPlusPlugin extends Plugin implements AdMobHelper.Adapter {
 
     public void emit(String eventName, JSObject data) {
         notifyListeners(eventName, data);
+    }
+
+    @Override
+    public void emit(String eventName, Map<String, Object> data) {
+        try {
+            emit(eventName, JSObject.fromJSONObject(new JSONObject(data)));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 }

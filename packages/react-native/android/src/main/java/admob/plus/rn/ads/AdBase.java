@@ -8,39 +8,31 @@ import com.facebook.react.bridge.WritableMap;
 import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.rewarded.RewardItem;
 
-import java.util.Objects;
+import java.util.Map;
 
+import admob.plus.core.Ad;
+import admob.plus.core.Helper;
 import admob.plus.rn.ExecuteContext;
 
-import static admob.plus.rn.ExecuteContext.ads;
+import static admob.plus.core.Helper.NOT_IMPLEMENTED;
 import static admob.plus.rn.ExecuteContext.plugin;
 
-public abstract class AdBase {
-    final int id;
-    final String adUnitId;
-
-    AdBase(int id, @NonNull String adUnitId) {
-        this.id = id;
-        this.adUnitId = adUnitId;
-        ads.put(id, this);
-    }
-
+public abstract class AdBase extends Ad {
     public AdBase(ExecuteContext ctx) {
-        this(ctx.optId(), Objects.requireNonNull(ctx.optAdUnitID()));
+        super(ctx);
     }
 
-    public static AdBase getAd(Integer id) {
-        return ads.get(id);
+    @Override
+    protected Helper.Adapter getAdapter() {
+        return plugin;
     }
 
-    public void destroy() {
-        ads.remove(id);
-    }
-
+    @Override
     public void emit(String eventName) {
         this.emit(eventName, Arguments.createMap());
     }
 
+    @Override
     public void emit(String eventName, AdError error) {
         WritableMap map = Arguments.createMap();
         map.putInt("code", error.getCode());
@@ -48,6 +40,7 @@ public abstract class AdBase {
         this.emit(eventName, map);
     }
 
+    @Override
     public void emit(String eventName, @NonNull RewardItem rewardItem) {
         WritableMap map = Arguments.createMap();
         WritableMap reward = Arguments.createMap();
@@ -55,6 +48,11 @@ public abstract class AdBase {
         reward.putString("type", rewardItem.getType());
         map.putMap("reward", reward);
         this.emit(eventName, map);
+    }
+
+    @Override
+    protected void emit(String eventName, Map<String, Object> data) {
+        NOT_IMPLEMENTED();
     }
 
     public void emit(String eventName, @Nullable WritableMap data) {

@@ -34,7 +34,7 @@ public class Rewarded extends AdBase {
             public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                 clear();
                 emit(Events.REWARDED_LOAD_FAIL, loadAdError);
-                ctx.error(loadAdError.getMessage());
+                ctx.reject(loadAdError);
             }
 
             @Override
@@ -68,7 +68,7 @@ public class Rewarded extends AdBase {
                 });
 
                 emit(Events.REWARDED_LOAD);
-                ctx.success();
+                ctx.resolve();
             }
         });
     }
@@ -82,9 +82,9 @@ public class Rewarded extends AdBase {
             mAd.show(ctx.getActivity(), rewardItem -> {
                 emit(Events.REWARDED_REWARD, rewardItem);
             });
-            ctx.success();
+            ctx.resolve();
         } else {
-            ctx.error("Ad is not loaded");
+            ctx.reject("Ad is not loaded");
         }
     }
 

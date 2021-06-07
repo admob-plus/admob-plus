@@ -12,8 +12,9 @@ import com.google.android.gms.ads.rewardedinterstitial.RewardedInterstitialAdLoa
 
 import admob.plus.cordova.ExecuteContext;
 import admob.plus.cordova.Generated.Events;
+import admob.plus.core.Context;
 
-public class RewardedInterstitial extends AdBase implements IAdIsLoaded, IAdLoad, IAdShow {
+public class RewardedInterstitial extends AdBase {
     private RewardedInterstitialAd mAd = null;
 
     public RewardedInterstitial(ExecuteContext ctx) {
@@ -27,17 +28,18 @@ public class RewardedInterstitial extends AdBase implements IAdIsLoaded, IAdLoad
         super.onDestroy();
     }
 
-    public void load(ExecuteContext ctx) {
+    @Override
+    public void load(Context ctx) {
         AdRequest adRequest = ctx.optAdRequest();
 
         clear();
 
-        RewardedInterstitialAd.load(ctx.getActivity(), adUnitId, adRequest, new RewardedInterstitialAdLoadCallback() {
+        RewardedInterstitialAd.load(getActivity(), adUnitId, adRequest, new RewardedInterstitialAdLoadCallback() {
             @Override
             public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                 mAd = null;
                 emit(Events.REWARDED_INTERSTITIAL_LOAD_FAIL, loadAdError);
-                ctx.error(loadAdError.toString());
+                ctx.reject(loadAdError.toString());
             }
 
             @Override
@@ -71,23 +73,25 @@ public class RewardedInterstitial extends AdBase implements IAdIsLoaded, IAdLoad
                 });
 
                 emit(Events.REWARDED_INTERSTITIAL_LOAD);
-                ctx.success();
+                ctx.resolve();
             }
         });
     }
 
+    @Override
     public boolean isLoaded() {
         return mAd != null;
     }
 
-    public void show(ExecuteContext ctx) {
+    @Override
+    public void show(Context ctx) {
         if (isLoaded()) {
-            mAd.show(ctx.getActivity(), rewardItem -> {
+            mAd.show(getActivity(), rewardItem -> {
                 emit(Events.REWARDED_INTERSTITIAL_REWARD, rewardItem);
             });
-            ctx.success();
+            ctx.resolve();
         } else {
-            ctx.error("Ad is not loaded");
+            ctx.reject("Ad is not loaded");
         }
     }
 

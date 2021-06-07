@@ -10,6 +10,6 @@ public interface GenericAd {
     void show(ExecuteContext ctx);
 
     default void hide(ExecuteContext ctx) {
-        ctx.error("Not implemented");
+        ctx.reject("Not implemented");
     }
 }

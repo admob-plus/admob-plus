@@ -57,14 +57,14 @@ public class Interstitial extends AdBase {
                 });
 
                 emit(Events.INTERSTITIAL_LOAD);
-                ctx.success();
+                ctx.resolve();
             }
 
             @Override
             public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                 clear();
                 emit(Events.INTERSTITIAL_LOAD_FAIL, loadAdError);
-                ctx.error(loadAdError.getMessage());
+                ctx.reject(loadAdError.getMessage());
             }
         });
     }
@@ -76,9 +76,9 @@ public class Interstitial extends AdBase {
     public void show(ExecuteContext ctx) {
         if (isLoaded()) {
             mAd.show(ctx.getActivity());
-            ctx.success();
+            ctx.resolve();
         } else {
-            ctx.error("Ad is not loaded");
+            ctx.reject("Ad is not loaded");
         }
     }
 

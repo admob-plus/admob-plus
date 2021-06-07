@@ -8,6 +8,8 @@ import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 
+import admob.plus.core.Context;
+import admob.plus.core.GenericAd;
 import admob.plus.rn.ExecuteContext;
 import admob.plus.rn.Generated.Events;
 
@@ -25,10 +27,11 @@ public class Interstitial extends AdBase implements GenericAd {
         super.destroy();
     }
 
-    public void load(ExecuteContext ctx) {
+    @Override
+    public void load(Context ctx) {
         clear();
 
-        InterstitialAd.load(ctx.getActivity(), adUnitId, ctx.optAdRequest(), new InterstitialAdLoadCallback() {
+        InterstitialAd.load(getAdapter().getActivity(), adUnitId, ctx.optAdRequest(), new InterstitialAdLoadCallback() {
             @Override
             public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
                 mAd = interstitialAd;
@@ -58,29 +61,27 @@ public class Interstitial extends AdBase implements GenericAd {
                 });
 
                 emit(Events.AD_LOAD);
-                ctx.success();
+                ctx.resolve();
             }
 
             @Override
             public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                 mAd = null;
                 emit(Events.AD_LOAD_FAIL, loadAdError);
-                ctx.error(loadAdError.getMessage());
+                ctx.reject(loadAdError);
             }
         });
     }
 
+    @Override
     public boolean isLoaded() {
         return mAd != null;
     }
 
-    public void show(ExecuteContext ctx) {
-        if (isLoaded()) {
-            mAd.show(ctx.getActivity());
-            ctx.success();
-        } else {
-            ctx.error("Ad is not loaded");
-        }
+    @Override
+    public void show(Context ctx) {
+        mAd.show(getAdapter().getActivity());
+        ctx.resolve();
     }
 
     private void clear() {

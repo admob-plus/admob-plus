@@ -17,26 +17,25 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import admob.plus.AdMobHelper;
 import admob.plus.cordova.Generated.Actions;
 import admob.plus.cordova.ads.AdBase;
 import admob.plus.cordova.ads.AppOpen;
 import admob.plus.cordova.ads.Banner;
-import admob.plus.cordova.ads.GenericAd;
-import admob.plus.cordova.ads.IAdIsLoaded;
-import admob.plus.cordova.ads.IAdShow;
 import admob.plus.cordova.ads.Interstitial;
 import admob.plus.cordova.ads.Native;
 import admob.plus.cordova.ads.Rewarded;
 import admob.plus.cordova.ads.RewardedInterstitial;
+import admob.plus.core.GenericAd;
+import admob.plus.core.Helper;
 
-import static admob.plus.cordova.ExecuteContext.ads;
+import static admob.plus.core.Helper.ads;
 
-public class AdMob extends CordovaPlugin {
+
+public class AdMob extends CordovaPlugin implements Helper.Adapter {
     public static final String NATIVE_VIEW_DEFAULT = Native.VIEW_DEFAULT_KEY;
     private static final String TAG = "AdMobPlus";
     private final ArrayList<PluginResult> eventQueue = new ArrayList<PluginResult>();
-    public AdMobHelper helper;
+    public Helper helper;
     private CallbackContext readyCallbackContext = null;
 
     public static void registerNativeAdViewProviders(Map<String, Native.ViewProvider> providers) {
@@ -48,12 +47,7 @@ public class AdMob extends CordovaPlugin {
         super.pluginInitialize();
         Log.i(TAG, "Initialize plugin");
 
-        helper = new AdMobHelper(new AdMobHelper.Adapter() {
-            @Override
-            public Activity getActivity() {
-                return cordova.getActivity();
-            }
-        });
+        helper = new Helper(this);
         ExecuteContext.plugin = this;
     }
 
@@ -74,14 +68,14 @@ public class AdMob extends CordovaPlugin {
                 });
                 break;
             case Actions.CONFIG_REQUEST:
-                MobileAds.setRequestConfiguration(helper.buildRequestConfiguration(ctx.opts));
+                MobileAds.setRequestConfiguration(ctx.optRequestConfiguration());
                 helper.configForTestLab();
                 callbackContext.success();
                 break;
             case Actions.AD_CREATE:
                 String adClass = ctx.optString("cls");
                 if (adClass == null) {
-                    ctx.error("ad cls is missing");
+                    ctx.reject("ad cls is missing");
                 } else {
                     switch (adClass) {
                         case "AppOpenAd":
@@ -91,7 +85,7 @@ public class AdMob extends CordovaPlugin {
                             new Native(ctx);
                             break;
                     }
-                    ctx.success();
+                    ctx.resolve();
                 }
                 break;
             case Actions.AD_IS_LOADED:
@@ -161,7 +155,7 @@ public class AdMob extends CordovaPlugin {
         cordova.getActivity().runOnUiThread(() -> {
             GenericAd ad = (GenericAd) ctx.optAdOrError();
             if (ad != null) {
-                ctx.success(ad.isLoaded());
+                ctx.resolve(ad.isLoaded());
             }
         });
         return true;
@@ -180,11 +174,12 @@ public class AdMob extends CordovaPlugin {
     private boolean executeAdShow_(ExecuteContext ctx) {
         cordova.getActivity().runOnUiThread(() -> {
             GenericAd ad = (GenericAd) ctx.optAdOrError();
-            if (ad != null && ad.isLoaded()) {
-                ad.show(ctx);
-                ctx.success(true);
-            } else {
-                ctx.success(false);
+            if (ad != null) {
+                if (ad.isLoaded()) {
+                    ad.show(ctx);
+                } else {
+                    ctx.resolve(false);
+                }
             }
         });
         return true;
@@ -193,11 +188,8 @@ public class AdMob extends CordovaPlugin {
     private boolean executeAdHide(ExecuteContext ctx) {
         cordova.getActivity().runOnUiThread(() -> {
             GenericAd ad = (GenericAd) ctx.optAdOrError();
-            if (ad != null && ad.isLoaded()) {
-                ad.show(ctx);
-                ctx.success(true);
-            } else {
-                ctx.success(false);
+            if (ad != null) {
+                ad.hide(ctx);
             }
         });
         return true;
@@ -235,9 +227,9 @@ public class AdMob extends CordovaPlugin {
 
     private boolean executeAdIsLoaded(ExecuteContext ctx) {
         cordova.getActivity().runOnUiThread(() -> {
-            IAdIsLoaded ad = (IAdIsLoaded) ctx.optAdOrError();
+            GenericAd ad = (GenericAd) ctx.optAdOrError();
             if (ad != null) {
-                ctx.success(ad.isLoaded());
+                ctx.resolve(ad.isLoaded());
             }
         });
         return true;
@@ -255,7 +247,7 @@ public class AdMob extends CordovaPlugin {
 
     private boolean executeAdShow(ExecuteContext ctx) {
         cordova.getActivity().runOnUiThread(() -> {
-            IAdShow ad = (IAdShow) ctx.optAdOrError();
+            GenericAd ad = (GenericAd) ctx.optAdOrError();
             if (ad != null) {
                 ad.show(ctx);
             }
@@ -288,7 +280,7 @@ public class AdMob extends CordovaPlugin {
         super.onConfigurationChanged(newConfig);
 
         for (int i = 0; i < ads.size(); i++) {
-            AdBase ad = ads.valueAt(i);
+            AdBase ad = (AdBase) ads.valueAt(i);
             ad.onConfigurationChanged(newConfig);
         }
     }
@@ -296,7 +288,7 @@ public class AdMob extends CordovaPlugin {
     @Override
     public void onPause(boolean multitasking) {
         for (int i = 0; i < ads.size(); i++) {
-            AdBase ad = ads.valueAt(i);
+            AdBase ad = (AdBase) ads.valueAt(i);
             ad.onPause(multitasking);
         }
         super.onPause(multitasking);
@@ -306,7 +298,7 @@ public class AdMob extends CordovaPlugin {
     public void onResume(boolean multitasking) {
         super.onResume(multitasking);
         for (int i = 0; i < ads.size(); i++) {
-            AdBase ad = ads.valueAt(i);
+            AdBase ad = (AdBase) ads.valueAt(i);
             ad.onResume(multitasking);
         }
     }
@@ -316,7 +308,7 @@ public class AdMob extends CordovaPlugin {
         readyCallbackContext = null;
 
         for (int i = 0; i < ads.size(); i++) {
-            AdBase ad = ads.valueAt(i);
+            AdBase ad = (AdBase) ads.valueAt(i);
             ad.onDestroy();
         }
 
@@ -325,6 +317,12 @@ public class AdMob extends CordovaPlugin {
         super.onDestroy();
     }
 
+    @Override
+    public Activity getActivity() {
+        return cordova.getActivity();
+    }
+
+    @Override
     public void emit(String eventName, Map<String, Object> data) {
         JSONObject event = new JSONObject(new HashMap<String, Object>() {{
             put("type", eventName);

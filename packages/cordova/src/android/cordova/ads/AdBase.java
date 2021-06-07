@@ -5,34 +5,16 @@ import android.content.res.Configuration;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.google.android.gms.ads.AdError;
-import com.google.android.gms.ads.rewarded.RewardItem;
-
 import org.apache.cordova.CordovaWebView;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import admob.plus.cordova.ExecuteContext;
+import admob.plus.core.Ad;
+import admob.plus.core.GenericAd;
+import admob.plus.core.Helper;
 
-import static admob.plus.cordova.ExecuteContext.ads;
-
-public abstract class AdBase {
-    final int id;
-    final String adUnitId;
-
-    AdBase(int id, String adUnitId) {
-        this.id = id;
-        this.adUnitId = adUnitId;
-        ads.put(id, this);
-    }
-
+public abstract class AdBase extends Ad implements GenericAd  {
     public AdBase(ExecuteContext ctx) {
-        this(ctx.optId(), ctx.optAdUnitID());
-    }
-
-    public static AdBase getAd(Integer id) {
-        return ads.get(id);
+        super(ctx);
     }
 
     public void onConfigurationChanged(Configuration newConfig) {
@@ -45,38 +27,11 @@ public abstract class AdBase {
     }
 
     public void onDestroy() {
-        ads.remove(id);
+        super.destroy();
     }
 
     public Activity getActivity() {
         return ExecuteContext.plugin.cordova.getActivity();
-    }
-
-    public void emit(String eventName) {
-        this.emit(eventName, new HashMap<String, Object>());
-    }
-
-    public void emit(String eventName, AdError error) {
-        this.emit(eventName, new HashMap<String, Object>() {{
-            put("code", error.getCode());
-            put("message", error.getMessage());
-            put("cause", error.getCause());
-        }});
-    }
-
-    public void emit(String eventName, RewardItem rewardItem) {
-        this.emit(eventName, new HashMap<String, Object>() {{
-            put("reward", new HashMap<String, Object>() {{
-                put("amount", rewardItem.getAmount());
-                put("type", rewardItem.getType());
-            }});
-        }});
-    }
-
-    public void emit(String eventType, Map<String, Object> data) {
-        ExecuteContext.plugin.emit(eventType, new HashMap<String, Object>(data) {{
-            put("adId", id);
-        }});
     }
 
     protected CordovaWebView getCordovaWebView() {
@@ -89,5 +44,10 @@ public abstract class AdBase {
 
     protected ViewGroup getWebViewParent() {
         return (ViewGroup) getWebView().getParent();
+    }
+
+    @Override
+    protected Helper.Adapter getAdapter() {
+        return ExecuteContext.plugin;
     }
 }

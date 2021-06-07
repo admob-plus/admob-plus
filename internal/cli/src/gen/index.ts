@@ -15,23 +15,13 @@ import rn from './rn'
 import { indent4, warnMessage } from './shared'
 
 async function copyAndroidHelper() {
-  const srcPath = pkgsDirJoin(
-    'capacitor/android/src/main/java/admob/plus/AdMobHelper.java',
-  )
-  const content = await fse
-    .readFile(srcPath, 'utf-8')
-    .then((x) => `// ${warnMessage}\n${x}`)
+  const srcPath = pkgsDirJoin('capacitor/android/src/main/java/admob/plus/core')
 
   await Promise.all([
-    fse.outputFile(
-      pkgsDirJoin('cordova/src/android/AdMobHelper.java'),
-      content,
-    ),
-    fse.outputFile(
-      pkgsDirJoin(
-        'react-native/android/src/main/java/admob/plus/AdMobHelper.java',
-      ),
-      content,
+    fse.copy(srcPath, pkgsDirJoin('cordova/src/android/core')),
+    fse.copy(
+      srcPath,
+      pkgsDirJoin('react-native/android/src/main/java/admob/plus/core'),
     ),
   ])
 }

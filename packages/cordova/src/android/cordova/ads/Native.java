@@ -14,13 +14,15 @@ import com.google.android.gms.ads.nativead.NativeAd;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 import admob.plus.cordova.ExecuteContext;
 import admob.plus.cordova.Generated.Events;
+import admob.plus.core.Context;
 
-import static admob.plus.AdMobHelper.dpToPx;
+import static admob.plus.core.Helper.dpToPx;
 
-public class Native extends AdBase implements GenericAd {
+public class Native extends AdBase {
     public static final String VIEW_DEFAULT_KEY = "default";
     public static final Map<String, ViewProvider> providers = new HashMap<String, ViewProvider>();
 
@@ -57,7 +59,7 @@ public class Native extends AdBase implements GenericAd {
     }
 
     @Override
-    public void load(ExecuteContext ctx) {
+    public void load(Context ctx) {
         clear();
 
         mLoader = new AdLoader.Builder(getActivity(), adUnitId)
@@ -69,7 +71,7 @@ public class Native extends AdBase implements GenericAd {
                     public void onAdFailedToLoad(LoadAdError adError) {
                         emit(Events.AD_LOAD_FAIL, adError);
                         if (isLoaded()) {
-                            ctx.error(adError.toString());
+                            ctx.reject(adError.toString());
                         }
                     }
 
@@ -84,7 +86,7 @@ public class Native extends AdBase implements GenericAd {
                     public void onAdLoaded() {
                         emit(Events.AD_LOAD);
                         if (isLoaded()) {
-                            ctx.success();
+                            ctx.resolve();
                         }
                     }
 
@@ -101,7 +103,7 @@ public class Native extends AdBase implements GenericAd {
     }
 
     @Override
-    public void show(ExecuteContext ctx) {
+    public void show(Context ctx) {
         if (view == null) {
             view = viewProvider.createView(mAd);
             ViewGroup vg = getWebViewParent();
@@ -111,26 +113,27 @@ public class Native extends AdBase implements GenericAd {
         }
 
         view.setVisibility(View.VISIBLE);
-        view.setX((float) dpToPx(ctx.opts.optDouble("x")));
-        view.setY((float) dpToPx(ctx.opts.optDouble("y")));
+        view.setX((float) dpToPx(Objects.requireNonNull(ctx.optDouble("x"))));
+        view.setY((float) dpToPx(Objects.requireNonNull(ctx.optDouble("y"))));
         ViewGroup.LayoutParams params = view.getLayoutParams();
-        params.width = (int) dpToPx(ctx.opts.optDouble("width"));
-        params.height = (int) dpToPx(ctx.opts.optDouble("height"));
+        params.width = (int) dpToPx(Objects.requireNonNull(ctx.optDouble("width")));
+        params.height = (int) dpToPx(Objects.requireNonNull(ctx.optDouble("height")));
         view.setLayoutParams(params);
 
         viewProvider.didShow(this);
 
         view.requestLayout();
+        ctx.resolve(true);
     }
 
     @Override
-    public void hide(ExecuteContext ctx) {
+    public void hide(Context ctx) {
         if (view != null) {
             view.setVisibility(View.GONE);
         }
 
         viewProvider.didHide(this);
-        ctx.success();
+        ctx.resolve();
     }
 
     private void clear() {

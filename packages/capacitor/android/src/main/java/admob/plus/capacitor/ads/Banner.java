@@ -88,7 +88,7 @@ public class Banner extends AdBase {
 
         adView.loadAd(ctx.optAdRequest());
 
-        ctx.success();
+        ctx.resolve();
     }
 
     public void hide(ExecuteContext ctx) {
@@ -96,7 +96,7 @@ public class Banner extends AdBase {
             adView.pause();
             adView.setVisibility(View.GONE);
         }
-        ctx.success();
+        ctx.resolve();
     }
 
     @Override

@@ -9,6 +9,8 @@ import com.google.android.gms.ads.rewarded.ServerSideVerificationOptions;
 import com.google.android.gms.ads.rewardedinterstitial.RewardedInterstitialAd;
 import com.google.android.gms.ads.rewardedinterstitial.RewardedInterstitialAdLoadCallback;
 
+import admob.plus.core.Context;
+import admob.plus.core.GenericAd;
 import admob.plus.rn.ExecuteContext;
 import admob.plus.rn.Generated.Events;
 
@@ -26,14 +28,15 @@ public class RewardedInterstitial extends AdBase implements GenericAd {
         super.destroy();
     }
 
-    public void load(ExecuteContext ctx) {
+    @Override
+    public void load(Context ctx) {
         clear();
 
-        RewardedInterstitialAd.load(ctx.getActivity(), adUnitId, ctx.optAdRequest(), new RewardedInterstitialAdLoadCallback() {
+        RewardedInterstitialAd.load(getAdapter().getActivity(), adUnitId, ctx.optAdRequest(), new RewardedInterstitialAdLoadCallback() {
             @Override
             public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                 emit(Events.AD_LOAD_FAIL, loadAdError);
-                ctx.error(loadAdError.getMessage());
+                ctx.reject(loadAdError);
             }
 
             @Override
@@ -68,24 +71,22 @@ public class RewardedInterstitial extends AdBase implements GenericAd {
                 });
 
                 emit(Events.AD_LOAD);
-                ctx.success();
+                ctx.resolve();
             }
         });
     }
 
+    @Override
     public boolean isLoaded() {
         return mAd != null;
     }
 
-    public void show(ExecuteContext ctx) {
-        if (isLoaded()) {
-            mAd.show(ctx.getActivity(), rewardItem -> {
-                emit(Events.AD_REWARD, rewardItem);
-            });
-            ctx.success();
-        } else {
-            ctx.error("Ad is not loaded");
-        }
+    @Override
+    public void show(Context ctx) {
+        mAd.show(getAdapter().getActivity(), rewardItem -> {
+            emit(Events.AD_REWARD, rewardItem);
+        });
+        ctx.resolve();
     }
 
     private void clear() {

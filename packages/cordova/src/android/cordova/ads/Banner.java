@@ -23,10 +23,11 @@ import java.util.HashMap;
 
 import admob.plus.cordova.ExecuteContext;
 import admob.plus.cordova.Generated.Events;
+import admob.plus.core.Context;
 
-import static admob.plus.AdMobHelper.pxToDp;
+import static admob.plus.core.Helper.pxToDp;
 
-public class Banner extends AdBase implements IAdShow {
+public class Banner extends AdBase {
     private static final String TAG = "AdMobPlus.Banner";
     @SuppressLint("StaticFieldLeak")
     private static ViewGroup rootLinearLayout;
@@ -78,7 +79,8 @@ public class Banner extends AdBase implements IAdShow {
         view.getViewTreeObserver().addOnPreDrawListener(preDrawListener);
     }
 
-    public void load(ExecuteContext ctx) {
+    @Override
+    public void load(Context ctx) {
         final AdRequest adRequest = ctx.optAdRequest();
 
         if (mAdView == null) {
@@ -87,7 +89,7 @@ public class Banner extends AdBase implements IAdShow {
 
         mAdView.loadAd(adRequest);
         mAdRequest = adRequest;
-        ctx.success();
+        ctx.resolve();
     }
 
     private AdView createBannerView() {
@@ -152,7 +154,8 @@ public class Banner extends AdBase implements IAdShow {
         return adView;
     }
 
-    public void show(ExecuteContext ctx) {
+    @Override
+    public void show(Context ctx) {
         if (mAdView.getParent() == null) {
             addBannerView();
         } else if (mAdView.getVisibility() == View.GONE) {
@@ -166,15 +169,16 @@ public class Banner extends AdBase implements IAdShow {
             }
         }
 
-        ctx.success();
+        ctx.resolve();
     }
 
-    public void hide(ExecuteContext ctx) {
+    @Override
+    public void hide(Context ctx) {
         if (mAdView != null) {
             mAdView.pause();
             mAdView.setVisibility(View.GONE);
         }
-        ctx.success();
+        ctx.resolve();
     }
 
     @Override
@@ -184,9 +188,7 @@ public class Banner extends AdBase implements IAdShow {
         int w = getActivity().getResources().getDisplayMetrics().widthPixels;
         if (w != screenWidth) {
             screenWidth = w;
-            getActivity().runOnUiThread(() -> {
-                reloadBannerView();
-            });
+            getActivity().runOnUiThread(this::reloadBannerView);
         }
     }
 

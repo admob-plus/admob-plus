@@ -12,8 +12,9 @@ import com.google.android.gms.ads.rewarded.ServerSideVerificationOptions;
 
 import admob.plus.cordova.ExecuteContext;
 import admob.plus.cordova.Generated.Events;
+import admob.plus.core.Context;
 
-public class Rewarded extends AdBase implements IAdIsLoaded, IAdLoad, IAdShow {
+public class Rewarded extends AdBase {
     private RewardedAd mAd = null;
 
     public Rewarded(ExecuteContext ctx) {
@@ -27,17 +28,18 @@ public class Rewarded extends AdBase implements IAdIsLoaded, IAdLoad, IAdShow {
         super.onDestroy();
     }
 
-    public void load(ExecuteContext ctx) {
+    @Override
+    public void load(Context ctx) {
         AdRequest adRequest = ctx.optAdRequest();
 
         clear();
 
-        RewardedAd.load(ctx.getActivity(), adUnitId, adRequest, new RewardedAdLoadCallback() {
+        RewardedAd.load(getActivity(), adUnitId, adRequest, new RewardedAdLoadCallback() {
             @Override
             public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                 mAd = null;
                 emit(Events.REWARDED_LOAD_FAIL, loadAdError);
-                ctx.error(loadAdError.toString());
+                ctx.reject(loadAdError.toString());
             }
 
             @Override
@@ -71,23 +73,25 @@ public class Rewarded extends AdBase implements IAdIsLoaded, IAdLoad, IAdShow {
                 });
 
                 emit(Events.REWARDED_LOAD);
-                ctx.success();
+                ctx.resolve();
             }
         });
     }
 
+    @Override
     public boolean isLoaded() {
         return mAd != null;
     }
 
-    public void show(ExecuteContext ctx) {
+    @Override
+    public void show(Context ctx) {
         if (isLoaded()) {
-            mAd.show(ctx.getActivity(), rewardItem -> {
+            mAd.show(getActivity(), rewardItem -> {
                 emit(Events.REWARDED_REWARD, rewardItem);
             });
-            ctx.success();
+            ctx.resolve();
         } else {
-            ctx.error("Ad is not loaded");
+            ctx.reject("Ad is not loaded");
         }
     }
 

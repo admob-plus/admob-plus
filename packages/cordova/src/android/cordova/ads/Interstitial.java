@@ -11,8 +11,9 @@ import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 
 import admob.plus.cordova.ExecuteContext;
 import admob.plus.cordova.Generated.Events;
+import admob.plus.core.Context;
 
-public class Interstitial extends AdBase implements IAdIsLoaded, IAdLoad, IAdShow {
+public class Interstitial extends AdBase {
     private InterstitialAd mAd = null;
 
     public Interstitial(ExecuteContext ctx) {
@@ -26,12 +27,13 @@ public class Interstitial extends AdBase implements IAdIsLoaded, IAdLoad, IAdSho
         super.onDestroy();
     }
 
-    public void load(ExecuteContext ctx) {
+    @Override
+    public void load(Context ctx) {
         AdRequest adRequest = ctx.optAdRequest();
 
         clear();
 
-        InterstitialAd.load(ctx.getActivity(), adUnitId, adRequest, new InterstitialAdLoadCallback() {
+        InterstitialAd.load(getActivity(), adUnitId, adRequest, new InterstitialAdLoadCallback() {
             @Override
             public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
                 mAd = interstitialAd;
@@ -59,28 +61,30 @@ public class Interstitial extends AdBase implements IAdIsLoaded, IAdLoad, IAdSho
                 });
 
                 emit(Events.INTERSTITIAL_LOAD);
-                ctx.success();
+                ctx.resolve();
             }
 
             @Override
             public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                 mAd = null;
                 emit(Events.INTERSTITIAL_LOAD_FAIL, loadAdError);
-                ctx.error(loadAdError.toString());
+                ctx.reject(loadAdError.toString());
             }
         });
     }
 
+    @Override
     public boolean isLoaded() {
         return mAd != null;
     }
 
-    public void show(ExecuteContext ctx) {
+    @Override
+    public void show(Context ctx) {
         if (isLoaded()) {
-            mAd.show(ctx.getActivity());
-            ctx.success();
+            mAd.show(getActivity());
+            ctx.resolve();
         } else {
-            ctx.error("Ad is not loaded");
+            ctx.reject("Ad is not loaded");
         }
     }
 

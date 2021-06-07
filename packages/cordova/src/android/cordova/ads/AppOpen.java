@@ -8,8 +8,9 @@ import com.google.android.gms.ads.appopen.AppOpenAd;
 
 import admob.plus.cordova.ExecuteContext;
 import admob.plus.cordova.Generated.Events;
+import admob.plus.core.Context;
 
-public class AppOpen extends AdBase implements GenericAd {
+public class AppOpen extends AdBase {
     private final AdRequest mAdRequest;
     private final int mOrientation = AppOpenAd.APP_OPEN_AD_ORIENTATION_PORTRAIT;
     private AppOpenAd mAd = null;
@@ -28,7 +29,7 @@ public class AppOpen extends AdBase implements GenericAd {
     }
 
     @Override
-    public void load(ExecuteContext ctx) {
+    public void load(Context ctx) {
         clear();
 
         AppOpenAd.load(getActivity(),
@@ -63,14 +64,14 @@ public class AppOpen extends AdBase implements GenericAd {
                         });
 
                         emit(Events.AD_LOAD);
-                        ctx.success();
+                        ctx.resolve();
                     }
 
                     @Override
                     public void onAdFailedToLoad(LoadAdError loadAdError) {
                         clear();
                         emit(Events.AD_LOAD_FAIL, loadAdError);
-                        ctx.error(loadAdError.toString());
+                        ctx.reject(loadAdError.toString());
                     }
                 });
     }
@@ -81,8 +82,9 @@ public class AppOpen extends AdBase implements GenericAd {
     }
 
     @Override
-    public void show(ExecuteContext ctx) {
+    public void show(Context ctx) {
         mAd.show(getActivity());
+        ctx.resolve(true);
     }
 
     private void clear() {
