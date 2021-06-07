@@ -24,7 +24,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Helper {
-    static final SparseArray<Ad> ads = new SparseArray<Ad>();
+    public static final SparseArray<Ad> ads = new SparseArray<Ad>();
     private final Adapter adapter;
 
     public Helper(Adapter adapter) {
