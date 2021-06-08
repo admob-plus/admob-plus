@@ -30,10 +30,6 @@ public abstract class AdBase extends Ad implements GenericAd  {
         super.destroy();
     }
 
-    public Activity getActivity() {
-        return ExecuteContext.plugin.cordova.getActivity();
-    }
-
     protected CordovaWebView getCordovaWebView() {
         return ExecuteContext.plugin.webView;
     }

@@ -1,6 +1,10 @@
 package admob.plus.core;
 
+import android.app.Activity;
+import android.view.ViewGroup;
+
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.rewarded.RewardItem;
@@ -30,6 +34,15 @@ public abstract class Ad {
     }
 
     protected abstract Helper.Adapter getAdapter();
+
+    public Activity getActivity() {
+        return getAdapter().getActivity();
+    }
+
+    @Nullable
+    public ViewGroup getContentView() {
+        return getActivity().findViewById(android.R.id.content);
+    }
 
     protected void emit(String eventName) {
         this.emit(eventName, new HashMap<String, Object>());

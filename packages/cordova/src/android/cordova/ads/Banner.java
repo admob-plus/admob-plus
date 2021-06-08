@@ -347,11 +347,6 @@ public class Banner extends AdBase {
         mRelativeLayout.bringToFront();
     }
 
-    @Nullable
-    private ViewGroup getContentView() {
-        return (ViewGroup) getWebView().getRootView().findViewById(android.R.id.content);
-    }
-
     private boolean isPositionTop() {
         return gravity == Gravity.TOP;
     }

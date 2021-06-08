@@ -109,7 +109,7 @@ const prepare = async (opts: { cwd: string }) => {
   assert(pkgExample)
   const pluginPkgs = await collectPluginPkgs(pkgExample)
 
-  const linkTasks = new PQueue({ autoStart: false })
+  const linkTasks = new PQueue({ concurrency: 1, autoStart: false })
   await Promise.all(
     pluginPkgs.map(async (pkg) => {
       await execa('yarn', ['build'], {

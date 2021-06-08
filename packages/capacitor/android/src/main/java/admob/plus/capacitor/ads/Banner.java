@@ -36,7 +36,7 @@ public class Banner extends AdBase {
         WebView webView = plugin.getBridge().getWebView();
 
         if (adView == null) {
-            adView = new AdView(ctx.getActivity());
+            adView = new AdView(getActivity());
             adView.setAdUnitId(adUnitId);
             adView.setAdSize(adSize);
             adView.setAdListener(new AdListener() {

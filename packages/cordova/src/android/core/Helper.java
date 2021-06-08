@@ -74,8 +74,12 @@ public class Helper {
         return "";
     }
 
+    public Activity getActivity() {
+        return adapter.getActivity();
+    }
+
     public boolean isRunningInTestLab() {
-        String testLabSetting = Settings.System.getString(adapter.getActivity().getContentResolver(), "firebase.test.lab");
+        String testLabSetting = Settings.System.getString(getActivity().getContentResolver(), "firebase.test.lab");
         return "true".equals(testLabSetting);
     }
 
@@ -100,7 +104,7 @@ public class Helper {
     @NonNull
     private String getDeviceId() {
         // This will request test ads on the emulator and device by passing this hashed device ID.
-        @SuppressLint("HardwareIds") String ANDROID_ID = Settings.Secure.getString(adapter.getActivity().getContentResolver(), Settings.Secure.ANDROID_ID);
+        @SuppressLint("HardwareIds") String ANDROID_ID = Settings.Secure.getString(getActivity().getContentResolver(), Settings.Secure.ANDROID_ID);
         return md5(ANDROID_ID).toUpperCase();
     }
 
