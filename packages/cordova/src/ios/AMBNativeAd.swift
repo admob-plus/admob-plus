@@ -71,7 +71,7 @@ class AMBNativeAd: AMBAdBase, AMBGenericAd, GADNativeAdLoaderDelegate, GADNative
             view.frame = CGRect(x: x, y: y, width: w, height: h)
         }
 
-        if let rootView = plugin.viewController.view.superview, view.superview != rootView {
+        if let rootView = plugin.viewController.view, view.superview != rootView {
             rootView.addSubview(view)
         }
         view.isHidden = false
