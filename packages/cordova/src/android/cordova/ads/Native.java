@@ -106,10 +106,7 @@ public class Native extends AdBase {
     public void show(Context ctx) {
         if (view == null) {
             view = viewProvider.createView(mAd);
-            ViewGroup vg = getWebViewParent();
-            vg.addView(view);
-
-            view.setBackgroundColor(Color.parseColor("#ffffff"));
+            Objects.requireNonNull(getContentView()).addView(view);
         }
 
         view.setVisibility(View.VISIBLE);
