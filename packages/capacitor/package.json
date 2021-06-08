@@ -57,7 +57,7 @@
     "@ionic/prettier-config": "^1.0.1",
     "@ionic/swiftlint-config": "^1.1.2",
     "rimraf": "^3.0.2",
-    "rollup": "^2.51.0",
+    "rollup": "^2.51.1",
     "typescript": "~4.3.2"
   },
   "peerDependencies": {
