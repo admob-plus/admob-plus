@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova-native@0.1.0...admob-plus-cordova-native@0.2.0) (2021-06-08)
+
+
+### Features
+
+* **cordova:** add view option to NativeAd ([1a011c1](https://github.com/admob-plus/admob-plus/commit/1a011c1f38b77272f959724ce7f6c69c44aa8759))
+
+
+
+
+
 # 0.1.0 (2021-06-04)
 
 

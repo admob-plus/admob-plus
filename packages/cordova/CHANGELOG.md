@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.16.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.15.0...admob-plus-cordova@1.16.0) (2021-06-08)
+
+
+### Bug Fixes
+
+* **cordova/android:** add native view to content view, fix [#371](https://github.com/admob-plus/admob-plus/issues/371) ([78138b3](https://github.com/admob-plus/admob-plus/commit/78138b3b1021291016de7045f010f30762bc2e4e))
+* **cordova/android:** expose Helper.ads ([9a92f43](https://github.com/admob-plus/admob-plus/commit/9a92f4333553dd60a4cbd7b2d7adc27b32add13e))
+* **cordova/ios:** add native ad view sibling to webview, fix [#373](https://github.com/admob-plus/admob-plus/issues/373) ([031db9b](https://github.com/admob-plus/admob-plus/commit/031db9bb2c91578feb2a8f505bdc76aaf5e55d44))
+
+
+### Features
+
+* config deivce for firebase test lab ([61f20b7](https://github.com/admob-plus/admob-plus/commit/61f20b74df9e930668db0739b1be7ea9eb9e25ca))
+* extract common code to admob.plus.core ([1cd2d50](https://github.com/admob-plus/admob-plus/commit/1cd2d500a7270558cb2caeb5381dba1923ce5040))
+* **cordova:** add view option to NativeAd ([1a011c1](https://github.com/admob-plus/admob-plus/commit/1a011c1f38b77272f959724ce7f6c69c44aa8759))
+
+
+
+
+
 # [1.15.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.14.0...admob-plus-cordova@1.15.0) (2021-06-04)
 
 

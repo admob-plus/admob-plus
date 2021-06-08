@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.13.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.12.0...@admob-plus/capacitor@1.13.0) (2021-06-08)
+
+
+### Bug Fixes
+
+* **cordova/android:** expose Helper.ads ([9a92f43](https://github.com/admob-plus/admob-plus/commit/9a92f4333553dd60a4cbd7b2d7adc27b32add13e))
+
+
+### Features
+
+* extract common code to admob.plus.core ([1cd2d50](https://github.com/admob-plus/admob-plus/commit/1cd2d500a7270558cb2caeb5381dba1923ce5040))
+* **capacitor:** add trackingAuthorizationStatus() ([a67ca56](https://github.com/admob-plus/admob-plus/commit/a67ca56be12b21bebe931520962960cbb8a181e3))
+* config deivce for firebase test lab ([61f20b7](https://github.com/admob-plus/admob-plus/commit/61f20b74df9e930668db0739b1be7ea9eb9e25ca))
+
+
+
+
+
 # [1.12.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.11.0...@admob-plus/capacitor@1.12.0) (2021-06-04)
 
 

@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.8.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/react-native@1.7.0...@admob-plus/react-native@1.8.0) (2021-06-08)
+
+
+### Bug Fixes
+
+* **cordova/android:** expose Helper.ads ([9a92f43](https://github.com/admob-plus/admob-plus/commit/9a92f4333553dd60a4cbd7b2d7adc27b32add13e))
+
+
+### Features
+
+* extract common code to admob.plus.core ([1cd2d50](https://github.com/admob-plus/admob-plus/commit/1cd2d500a7270558cb2caeb5381dba1923ce5040))
+* **react-native:** config deivce for firebase test lab ([23ac3a9](https://github.com/admob-plus/admob-plus/commit/23ac3a97a19b4740625d7ffb629d346667a939a9))
+
+
+
+
+
 # [1.7.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/react-native@1.6.0...@admob-plus/react-native@1.7.0) (2021-06-04)
 
 
