@@ -6,8 +6,11 @@ import Capacitor
 import GoogleMobileAds
 
 @objc(AdMobPlusPlugin)
-public class AdMobPlusPlugin: CAPPlugin {
+public class AdMobPlusPlugin: CAPPlugin, AMBHelperAdapter {
+    var helper: AMBHelper!
+
     @objc override public func load() {
+        helper = AMBHelper(self)
         AMBContext.plugin = self
     }
 

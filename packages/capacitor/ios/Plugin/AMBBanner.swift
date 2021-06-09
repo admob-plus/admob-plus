@@ -27,15 +27,15 @@ class AMBBanner: AMBAdBase, GADAdSizeDelegate, GADBannerViewDelegate {
 
     static let priortyLeast = UILayoutPriority(10)
 
-    static let rootView = AMBContext.window
+    static let rootView = AMBHelper.window
     static let mainView = AMBContext.plugin.webView!
     static var mainViewConstraints: [NSLayoutConstraint] = []
 
     static let topConstraint = stackView.topAnchor.constraint(
-            equalTo: rootView.safeAreaLayoutGuide.topAnchor)
+        equalTo: AMBHelper.topAnchor)
 
     static let bottomConstraint = stackView.bottomAnchor.constraint(
-            equalTo: rootView.safeAreaLayoutGuide.bottomAnchor)
+            equalTo: AMBHelper.bottomAnchor)
 
     let adSize: GADAdSize!
     let position: String!
