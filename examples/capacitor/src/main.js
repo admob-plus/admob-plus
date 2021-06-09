@@ -29,6 +29,14 @@ const initBanner = async () => {
     shown = !shown
     btn.innerHTML = shown ? 'Hide Banner' : 'Show Banner'
   })
+
+  const btnAdd = document.getElementById('add-banner-btn')
+  btnAdd.addEventListener('click', async () => {
+    const ad = new BannerAd({
+      adUnitId: 'ca-app-pub-3940256099942544/6300978111',
+    })
+    await ad.show()
+  })
 }
 
 const initInterstitial = async () => {
