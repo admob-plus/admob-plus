@@ -161,13 +161,17 @@ class AMBBanner: AMBAdBase, AMBGenericAd, GADAdSizeDelegate, GADBannerViewDelega
 
             placeholderView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             stackView.addArrangedSubview(placeholderView)
-            mainView.translatesAutoresizingMaskIntoConstraints = false
-            mainViewConstraints += [
-                mainView.leadingAnchor.constraint(equalTo: placeholderView.leadingAnchor),
-                mainView.trailingAnchor.constraint(equalTo: placeholderView.trailingAnchor),
-                mainView.topAnchor.constraint(equalTo: placeholderView.topAnchor),
-                mainView.bottomAnchor.constraint(equalTo: placeholderView.bottomAnchor)
-            ]
+            var v: UIView = mainView
+            while v != rootView {
+                v.translatesAutoresizingMaskIntoConstraints = false
+                mainViewConstraints += [
+                    v.leadingAnchor.constraint(equalTo: placeholderView.leadingAnchor),
+                    v.trailingAnchor.constraint(equalTo: placeholderView.trailingAnchor),
+                    v.topAnchor.constraint(equalTo: placeholderView.topAnchor),
+                    v.bottomAnchor.constraint(equalTo: placeholderView.bottomAnchor)
+                ]
+                v = v.superview!
+            }
             constraints += mainViewConstraints
 
             let constraintTop = stackView.topAnchor.constraint(equalTo: rootView.topAnchor)
