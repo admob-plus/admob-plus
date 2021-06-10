@@ -1,7 +1,7 @@
 import Capacitor
 import GoogleMobileAds
 
-class AMBRewardedInterstitial: AMBAdBase, GADFullScreenContentDelegate {
+class AMBRewardedInterstitial: AMBAdBase, AMBGenericAd, GADFullScreenContentDelegate {
     var rewardedAd: GADRewardedInterstitialAd?
 
     override init(id: Int, adUnitId: String) {
@@ -17,11 +17,19 @@ class AMBRewardedInterstitial: AMBAdBase, GADFullScreenContentDelegate {
         return self.rewardedAd != nil
     }
 
+    func load(_ ctx: AMBCoreContext) {
+        load(ctx as! AMBContext)
+    }
+
+    func show(_ ctx: AMBCoreContext) {
+        show(ctx as! AMBContext)
+    }
+
     func load(_ ctx: AMBContext) {
         GADRewardedInterstitialAd.load(withAdUnitID: adUnitId, request: ctx.optGADRequest(), completionHandler: { ad, error in
             if error != nil {
                 self.emit(AMBEvents.rewardedInterstitialLoadFail, error!)
-                ctx.error(error!)
+                ctx.reject(error!)
                 return
             }
 
@@ -29,19 +37,15 @@ class AMBRewardedInterstitial: AMBAdBase, GADFullScreenContentDelegate {
             ad?.fullScreenContentDelegate = self
 
             self.emit(AMBEvents.rewardedInterstitialLoad)
-            ctx.success()
+            ctx.resolve()
         })
     }
 
     func show(_ ctx: AMBContext) {
-        if self.isLoaded() {
-            self.rewardedAd?.present(fromRootViewController: AMBContext.rootViewController, userDidEarnRewardHandler: {
-                self.emit(AMBEvents.rewardedInterstitialReward, self.rewardedAd!.adReward)
-            })
-            ctx.success()
-        } else {
-            ctx.error("Ad is not loaded")
-        }
+        self.rewardedAd?.present(fromRootViewController: AMBContext.rootViewController, userDidEarnRewardHandler: {
+            self.emit(AMBEvents.rewardedInterstitialReward, self.rewardedAd!.adReward)
+        })
+        ctx.resolve()
     }
 
     func adDidRecordImpression(_ ad: GADFullScreenPresentingAd) {

@@ -93,7 +93,10 @@ const main = async () => {
     initInterstitial(),
     initRewarded(),
     initRewardedInterstitial(),
-  ]).catch(console.error)
+  ]).catch(err => {
+    console.error(err)
+    alert(`init error: ${err}`)
+  })
 }
 
 main().catch(console.error)

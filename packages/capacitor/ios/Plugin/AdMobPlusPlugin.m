@@ -8,14 +8,11 @@ CAP_PLUGIN(AdMobPlusPlugin, "AdMobPlus",
            CAP_PLUGIN_METHOD(start, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(configure, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(configRequest, CAPPluginReturnPromise);
-           CAP_PLUGIN_METHOD(bannerShow, CAPPluginReturnPromise);
-           CAP_PLUGIN_METHOD(bannerHide, CAPPluginReturnPromise);
-           CAP_PLUGIN_METHOD(interstitialLoad, CAPPluginReturnPromise);
-           CAP_PLUGIN_METHOD(interstitialShow, CAPPluginReturnPromise);
-           CAP_PLUGIN_METHOD(rewardedLoad, CAPPluginReturnPromise);
-           CAP_PLUGIN_METHOD(rewardedShow, CAPPluginReturnPromise);
-           CAP_PLUGIN_METHOD(rewardedInterstitialLoad, CAPPluginReturnPromise);
-           CAP_PLUGIN_METHOD(rewardedInterstitialShow, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(adCreate, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(adIsLoaded, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(adLoad, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(adShow, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(adHide, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(trackingAuthorizationStatus, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(requestTrackingAuthorization, CAPPluginReturnPromise);
 )

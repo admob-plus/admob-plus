@@ -27,29 +27,18 @@ export enum TrackingAuthorizationStatus {
   authorized = 3,
 }
 
+export type MobileAdOptions = { adUnitId: string }
+
 export interface AdMobPlusPlugin {
   start(): Promise<void>
   configure(config: AdMobConfig): Promise<void>
   configRequest(requestConfig: RequestConfig): Promise<void>
 
-  bannerShow(opts: {
-    id: number
-    adUnitId: string
-    position?: 'bottom' | 'top'
-  }): Promise<void>
-  bannerHide(opts: { id: number }): Promise<void>
-
-  interstitialLoad(opts: { id: number; adUnitId: string }): Promise<void>
-  interstitialShow(opts: { id: number }): Promise<void>
-
-  rewardedLoad(opts: { id: number; adUnitId: string }): Promise<void>
-  rewardedShow(opts: { id: number }): Promise<void>
-
-  rewardedInterstitialLoad(opts: {
-    id: number
-    adUnitId: string
-  }): Promise<void>
-  rewardedInterstitialShow(opts: { id: number }): Promise<void>
+  adCreate<O extends MobileAdOptions>(opts: O): Promise<void>
+  adIsLoaded(opts: { id: number }): Promise<boolean>
+  adLoad(opts: { id: number }): Promise<void>
+  adShow(opts: { id: number }): Promise<void>
+  adHide(opts: { id: number }): Promise<void>
 
   trackingAuthorizationStatus(): Promise<{
     status: TrackingAuthorizationStatus | false

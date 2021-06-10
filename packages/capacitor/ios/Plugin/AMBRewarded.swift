@@ -1,7 +1,7 @@
 import Capacitor
 import GoogleMobileAds
 
-class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
+class AMBRewarded: AMBAdBase, AMBGenericAd, GADFullScreenContentDelegate {
     var rewardedAd: GADRewardedAd?
 
     override init(id: Int, adUnitId: String) {
@@ -17,11 +17,19 @@ class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
         return self.rewardedAd != nil
     }
 
+    func load(_ ctx: AMBCoreContext) {
+        load(ctx as! AMBContext)
+    }
+
+    func show(_ ctx: AMBCoreContext) {
+        show(ctx as! AMBContext)
+    }
+
     func load(_ ctx: AMBContext) {
         GADRewardedAd.load(withAdUnitID: adUnitId, request: ctx.optGADRequest(), completionHandler: { ad, error in
             if error != nil {
                 self.emit(AMBEvents.rewardedLoadFail, error!)
-                ctx.error(error!)
+                ctx.reject(error!)
                 return
             }
 
@@ -29,7 +37,7 @@ class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
             ad?.fullScreenContentDelegate = self
 
             self.emit(AMBEvents.rewardedLoad)
-            ctx.success()
+            ctx.resolve()
         })
     }
 
@@ -38,9 +46,9 @@ class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
             self.rewardedAd?.present(fromRootViewController: AMBContext.rootViewController, userDidEarnRewardHandler: {
                 self.emit(AMBEvents.rewardedReward, self.rewardedAd!.adReward)
             })
-            ctx.success()
+            ctx.resolve()
         } else {
-            ctx.error("Ad is not loaded")
+            ctx.reject("Ad is not loaded")
         }
     }
 

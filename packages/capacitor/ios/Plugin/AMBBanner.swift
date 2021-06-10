@@ -21,7 +21,7 @@ extension CAPBridgeViewController {
     }
 }
 
-class AMBBanner: AMBAdBase, GADAdSizeDelegate, GADBannerViewDelegate {
+class AMBBanner: AMBAdBase, AMBGenericAd, GADAdSizeDelegate, GADBannerViewDelegate {
     static let stackView = UIStackView(frame: rootView.frame)
     static let placeholderView = UIView(frame: stackView.frame)
 
@@ -62,6 +62,22 @@ class AMBBanner: AMBAdBase, GADAdSizeDelegate, GADBannerViewDelegate {
                   position: ctx.optPosition())
     }
 
+    func isLoaded() -> Bool {
+        return bannerView != nil
+    }
+
+    func load(_ ctx: AMBCoreContext) {
+        load(ctx as! AMBContext)
+    }
+
+    func show(_ ctx: AMBCoreContext) {
+        show(ctx as! AMBContext)
+    }
+
+    func hide(_ ctx: AMBCoreContext) {
+        hide(ctx as! AMBContext)
+    }
+
     func load(_ ctx: AMBContext) {
         if bannerView == nil {
             bannerView = GADBannerView(adSize: self.adSize)
@@ -72,11 +88,10 @@ class AMBBanner: AMBAdBase, GADAdSizeDelegate, GADBannerViewDelegate {
 
         bannerView.adUnitID = adUnitId
         bannerView.load(ctx.optGADRequest())
+        ctx.resolve()
     }
 
     func show(_ ctx: AMBContext) {
-        load(ctx)
-
         Self.prepareStackView()
 
         switch position {
@@ -88,7 +103,7 @@ class AMBBanner: AMBAdBase, GADAdSizeDelegate, GADBannerViewDelegate {
 
         bannerView.isHidden = false
         Self.updateLayout()
-        ctx.success()
+        ctx.resolve()
     }
 
     func hide(_ ctx: AMBContext) {
@@ -97,7 +112,7 @@ class AMBBanner: AMBAdBase, GADAdSizeDelegate, GADBannerViewDelegate {
             Self.stackView.removeArrangedSubview(bannerView)
             Self.updateLayout()
         }
-        ctx.success()
+        ctx.resolve()
     }
 
     func adView(_ bannerView: GADBannerView, willChangeAdSizeTo adSize: GADAdSize) {

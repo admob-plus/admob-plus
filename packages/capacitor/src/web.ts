@@ -21,52 +21,35 @@ export class AdMobPlusWeb extends WebPlugin implements AdMobPlusPlugin {
     console.log('configRequest', opts)
   }
 
-  async bannerShow(
-    ...opts: Parameters<AdMobPlusPlugin['bannerShow']>
-  ): ReturnType<AdMobPlusPlugin['bannerShow']> {
-    console.log('bannerShow', opts)
+  async adCreate(
+    ...opts: Parameters<AdMobPlusPlugin['adCreate']>
+  ): ReturnType<AdMobPlusPlugin['adCreate']> {
+    console.log('adCreate', opts)
   }
 
-  async bannerHide(
-    ...opts: Parameters<AdMobPlusPlugin['bannerHide']>
-  ): ReturnType<AdMobPlusPlugin['bannerHide']> {
-    console.log('bannerHide', opts)
+  async adIsLoaded(
+    ...opts: Parameters<AdMobPlusPlugin['adIsLoaded']>
+  ): ReturnType<AdMobPlusPlugin['adIsLoaded']> {
+    console.log('adIsLoaded', opts)
+    return false
   }
 
-  async interstitialLoad(
-    ...opts: Parameters<AdMobPlusPlugin['interstitialLoad']>
-  ): ReturnType<AdMobPlusPlugin['interstitialLoad']> {
-    console.log('interstitialLoad', opts)
+  async adLoad(
+    ...opts: Parameters<AdMobPlusPlugin['adLoad']>
+  ): ReturnType<AdMobPlusPlugin['adLoad']> {
+    console.log('adLoad', opts)
   }
 
-  async interstitialShow(
-    ...opts: Parameters<AdMobPlusPlugin['interstitialShow']>
-  ): ReturnType<AdMobPlusPlugin['interstitialShow']> {
-    console.log('interstitialShow', opts)
+  async adShow(
+    ...opts: Parameters<AdMobPlusPlugin['adShow']>
+  ): ReturnType<AdMobPlusPlugin['adShow']> {
+    console.log('adShow', opts)
   }
 
-  async rewardedLoad(
-    ...opts: Parameters<AdMobPlusPlugin['rewardedLoad']>
-  ): ReturnType<AdMobPlusPlugin['rewardedLoad']> {
-    console.log('rewardedLoad', opts)
-  }
-
-  async rewardedShow(
-    ...opts: Parameters<AdMobPlusPlugin['rewardedShow']>
-  ): ReturnType<AdMobPlusPlugin['rewardedShow']> {
-    console.log('rewardedShow', opts)
-  }
-
-  async rewardedInterstitialLoad(
-    ...opts: Parameters<AdMobPlusPlugin['rewardedInterstitialLoad']>
-  ): ReturnType<AdMobPlusPlugin['rewardedInterstitialLoad']> {
-    console.log('rewardedInterstitialLoad', opts)
-  }
-
-  async rewardedInterstitialShow(
-    ...opts: Parameters<AdMobPlusPlugin['rewardedInterstitialShow']>
-  ): ReturnType<AdMobPlusPlugin['rewardedInterstitialShow']> {
-    console.log('rewardedInterstitialShow', opts)
+  async adHide(
+    ...opts: Parameters<AdMobPlusPlugin['adHide']>
+  ): ReturnType<AdMobPlusPlugin['adHide']> {
+    console.log('adHide', opts)
   }
 
   async trackingAuthorizationStatus(
