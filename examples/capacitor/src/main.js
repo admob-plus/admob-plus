@@ -1,4 +1,4 @@
-
+import { Capacitor } from '@capacitor/core'
 import {
   AdMobPlus,
   BannerAd,
@@ -69,7 +69,10 @@ const initRewarded = async () => {
 
 const initRewardedInterstitial = async () => {
   const rewarded = new RewardedInterstitialAd({
-    adUnitId: 'ca-app-pub-3940256099942544/6978759866',
+    adUnitId:
+      Capacitor.getPlatform() === 'android'
+        ? 'ca-app-pub-3940256099942544/5354046379'
+        : 'ca-app-pub-3940256099942544/6978759866',
   })
 
   const btn = document.getElementById('show-rewarded-interstitial-btn')
@@ -93,7 +96,7 @@ const main = async () => {
     initInterstitial(),
     initRewarded(),
     initRewardedInterstitial(),
-  ]).catch(err => {
+  ]).catch((err) => {
     console.error(err)
     alert(`init error: ${err}`)
   })

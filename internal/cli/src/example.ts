@@ -305,7 +305,7 @@ async function startDev(opts: any) {
       const sourceDir = path.join(cwd, 'src')
       const watcher = sane(sourceDir, { glob: ['**/*'], watchman: true })
       promises.push(
-        execa('yarn', ['webpack', '--mode', 'development', '--watch'], {
+        execa('yarn', ['webpack', '--mode', 'production', '--watch'], {
           stdio: 'inherit',
           cwd,
         }),
@@ -315,7 +315,7 @@ async function startDev(opts: any) {
             debounce(async (filepath: string) => {
               console.log('file changed', filepath)
               await execa('yarn', ['cap', 'sync'], { stdio: 'inherit', cwd })
-            }, 100),
+            }, 1000),
           )
         }),
       )

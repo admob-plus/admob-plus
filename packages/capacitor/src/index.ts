@@ -35,17 +35,18 @@ class GenericAd extends MobileAd {
   constructor(opts: MobileAdOptions) {
     super(opts)
 
+    // NOTE `this.constructor.name` could be changed after minify
+    const cls =
+      (this.constructor as unknown as { cls?: string }).cls ??
+      this.constructor.name
+
     this._init = AdMobPlus.adCreate({
       ...this.opts,
       id: this.id,
-      cls: this.constructor.name,
+      cls,
+    }).then(() => {
+      this._init = null
     })
-      .then(() => {
-        this._init = null
-      })
-      .catch((err) => {
-        console.error(err)
-      })
   }
 
   async isLoaded() {
@@ -80,6 +81,7 @@ export interface BannerAdOptions extends MobileAdOptions {
 }
 
 class BannerAd extends GenericAd {
+  static cls = 'BannerAd'
   _loaded = false
 
   constructor(opts: BannerAdOptions) {
@@ -100,11 +102,17 @@ class BannerAd extends GenericAd {
   }
 }
 
-class InterstitialAd extends GenericAd {}
+class InterstitialAd extends GenericAd {
+  static cls = 'InterstitialAd'
+}
 
-class RewardedAd extends GenericAd {}
+class RewardedAd extends GenericAd {
+  static cls = 'RewardedAd'
+}
 
-class RewardedInterstitialAd extends GenericAd {}
+class RewardedInterstitialAd extends GenericAd {
+  static cls = 'RewardedInterstitialAd'
+}
 
 export * from './definitions'
 export {

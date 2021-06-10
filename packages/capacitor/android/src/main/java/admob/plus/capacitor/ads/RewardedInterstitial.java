@@ -11,8 +11,10 @@ import com.google.android.gms.ads.rewardedinterstitial.RewardedInterstitialAdLoa
 
 import admob.plus.capacitor.ExecuteContext;
 import admob.plus.capacitor.Generated.Events;
+import admob.plus.core.Context;
+import admob.plus.core.GenericAd;
 
-public class RewardedInterstitial extends AdBase {
+public class RewardedInterstitial extends AdBase implements GenericAd {
     private RewardedInterstitialAd mAd = null;
 
     public RewardedInterstitial(ExecuteContext ctx) {
@@ -26,10 +28,10 @@ public class RewardedInterstitial extends AdBase {
         super.destroy();
     }
 
-    public void load(ExecuteContext ctx) {
+    public void load(Context ctx) {
         clear();
 
-        RewardedInterstitialAd.load(ctx.getActivity(), adUnitId, ctx.optAdRequest(), new RewardedInterstitialAdLoadCallback() {
+        RewardedInterstitialAd.load(getActivity(), adUnitId, ctx.optAdRequest(), new RewardedInterstitialAdLoadCallback() {
             @Override
             public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                 clear();
@@ -77,15 +79,11 @@ public class RewardedInterstitial extends AdBase {
         return mAd != null;
     }
 
-    public void show(ExecuteContext ctx) {
-        if (isLoaded()) {
-            mAd.show(ctx.getActivity(), rewardItem -> {
-                emit(Events.REWARDED_INTERSTITIAL_REWARD, rewardItem);
-            });
-            ctx.resolve();
-        } else {
-            ctx.reject("Ad is not loaded");
-        }
+    public void show(Context ctx) {
+        mAd.show(getActivity(), rewardItem -> {
+            emit(Events.REWARDED_INTERSTITIAL_REWARD, rewardItem);
+        });
+        ctx.resolve();
     }
 
     private void clear() {

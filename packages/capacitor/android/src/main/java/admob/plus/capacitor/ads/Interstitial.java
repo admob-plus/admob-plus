@@ -10,8 +10,10 @@ import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 
 import admob.plus.capacitor.ExecuteContext;
 import admob.plus.capacitor.Generated.Events;
+import admob.plus.core.Context;
+import admob.plus.core.GenericAd;
 
-public class Interstitial extends AdBase {
+public class Interstitial extends AdBase implements GenericAd {
     private InterstitialAd mAd = null;
 
     public Interstitial(ExecuteContext ctx) {
@@ -25,10 +27,10 @@ public class Interstitial extends AdBase {
         super.destroy();
     }
 
-    public void load(ExecuteContext ctx) {
+    public void load(Context ctx) {
         clear();
 
-        InterstitialAd.load(ctx.getActivity(), adUnitId, ctx.optAdRequest(), new InterstitialAdLoadCallback() {
+        InterstitialAd.load(getActivity(), adUnitId, ctx.optAdRequest(), new InterstitialAdLoadCallback() {
             @Override
             public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
                 mAd = interstitialAd;
@@ -73,14 +75,10 @@ public class Interstitial extends AdBase {
         return mAd != null;
     }
 
-    public void show(ExecuteContext ctx) {
-        if (isLoaded()) {
-            mAd.show(ctx.getActivity());
-            ctx.resolve();
-        } else {
-            ctx.reject("Ad is not loaded");
-        }
-    }
+    public void show(Context ctx) {
+        mAd.show(getActivity());
+        ctx.resolve();
+   }
 
     private void clear() {
         if (mAd != null) {
