@@ -7,8 +7,8 @@ use_frameworks!
 install! 'cocoapods', :disable_input_output_paths => true
 
 def capacitor_pods
-  pod 'Capacitor', :path => '../../../../.yarn/unplugged/@capacitor-ios-virtual-c41d3742e0/node_modules/@capacitor/ios'
-  pod 'CapacitorCordova', :path => '../../../../.yarn/unplugged/@capacitor-ios-virtual-c41d3742e0/node_modules/@capacitor/ios'
+  pod 'Capacitor', :path => '../../../../.yarn/unplugged/@capacitor-ios-virtual-96f20147a7/node_modules/@capacitor/ios'
+  pod 'CapacitorCordova', :path => '../../../../.yarn/unplugged/@capacitor-ios-virtual-96f20147a7/node_modules/@capacitor/ios'
   pod 'AdmobPlusCapacitor', :path => '../../../../packages/capacitor'
 end
 
