@@ -102,6 +102,12 @@ public class AdMob extends CordovaPlugin implements Helper.Adapter {
                 return executeBannerShow(ctx);
             case Actions.BANNER_HIDE:
                 return executeBannerHide(ctx);
+            case Actions.BANNER_DESTROY:
+                return executeBannerDestroy(ctx);
+            case Actions.BANNER_GET_AD_VIEW_IMAGE:
+                return executeBannerGetAdViewImage(ctx);
+            case Actions.BANNER_SIMULATE_CLICK_EVENT:
+                return executeBannerSimulateClickEvent(ctx);
             case Actions.INTERSTITIAL_LOAD:
                 return executeInterstitialLoad(ctx);
             case Actions.REWARDED_LOAD:
@@ -220,6 +226,36 @@ public class AdMob extends CordovaPlugin implements Helper.Adapter {
             Banner banner = (Banner) ctx.optAdOrError();
             if (banner != null) {
                 banner.hide(ctx);
+            }
+        });
+        return true;
+    }
+
+    private boolean executeBannerDestroy(ExecuteContext ctx) {
+        cordova.getActivity().runOnUiThread(() -> {
+            Banner banner = (Banner) ctx.optAdOrError();
+            if (banner != null) {
+                banner.destroy(ctx);
+            }
+        });
+        return true;
+    }
+
+    private boolean executeBannerGetAdViewImage(ExecuteContext ctx) {
+        cordova.getActivity().runOnUiThread(() -> {
+            Banner banner = (Banner) ctx.optAdOrError();
+            if (banner != null) {
+                banner.getAdViewImage(ctx);
+            }
+        });
+        return true;
+    }
+
+    private boolean executeBannerSimulateClickEvent(ExecuteContext ctx) {
+        cordova.getActivity().runOnUiThread(() -> {
+            Banner banner = (Banner) ctx.optAdOrError();
+            if (banner != null) {
+                banner.simulateClickEvent(ctx);
             }
         });
         return true;

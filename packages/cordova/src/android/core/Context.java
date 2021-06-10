@@ -59,6 +59,10 @@ public interface Context {
 
     void resolve(boolean data);
 
+    void resolveString();
+
+    void resolveString(String data);
+
     void reject(String msg);
 
     default void reject() {

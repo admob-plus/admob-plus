@@ -2,13 +2,19 @@ package admob.plus.cordova.ads;
 
 import android.annotation.SuppressLint;
 import android.content.res.Configuration;
+import android.graphics.Bitmap;
+import android.graphics.Bitmap.CompressFormat;
+import android.graphics.Canvas;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver.OnPreDrawListener;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.os.Trace;
+import android.os.SystemClock;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,13 +25,20 @@ import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.LoadAdError;
 
+import java.lang.Math;
 import java.util.HashMap;
+import java.util.Base64;
+import java.util.Objects;
+import java.util.Timer;
+import java.util.TimerTask;
+import java.io.ByteArrayOutputStream;
 
 import admob.plus.cordova.ExecuteContext;
 import admob.plus.cordova.Generated.Events;
 import admob.plus.core.Context;
 
 import static admob.plus.core.Helper.pxToDp;
+import static admob.plus.core.Helper.dpToPx;
 
 public class Banner extends AdBase {
     private static final String TAG = "AdMobPlus.Banner";
@@ -36,6 +49,12 @@ public class Banner extends AdBase {
     private final AdSize adSize;
     private final int gravity;
     private final Integer offset;
+    private final Boolean canvas;
+    private final Float x;
+    private final Float y;
+    private Float width;
+    private Float height;
+    private Bitmap prevBitmap;
     private AdView mAdView;
     private RelativeLayout mRelativeLayout = null;
     private AdRequest mAdRequest = null;
@@ -47,6 +66,12 @@ public class Banner extends AdBase {
         this.adSize = ctx.optAdSize();
         this.gravity = "top".equals(ctx.optPosition()) ? Gravity.TOP : Gravity.BOTTOM;
         this.offset = ctx.optOffset();
+        this.canvas = ctx.optBoolean("canvas");
+        this.x = ctx.optFloat("x");
+        this.y = ctx.optFloat("y");
+        this.width = ctx.optFloat("width");
+        this.height = ctx.optFloat("height");
+        this.prevBitmap = null;
     }
 
     public static void destroyParentView() {
@@ -92,10 +117,22 @@ public class Banner extends AdBase {
         ctx.resolve();
     }
 
+    private Bitmap getBitmapFromView(View view) {
+        Bitmap bitmap = Bitmap.createBitmap(view.getWidth(), view.getHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap);
+        view.draw(canvas);
+        return bitmap;
+    }
+
     private AdView createBannerView() {
         AdView adView = new AdView(getActivity());
         adView.setAdUnitId(adUnitId);
-        adView.setAdSize(adSize);
+        if(this.canvas != null) {
+            AdSize customAdSize = new AdSize(Math.round(this.width), Math.round(this.height));
+            adView.setAdSize(customAdSize);
+        } else {
+            adView.setAdSize(adSize);
+        }
         adView.setAdListener(new AdListener() {
             @Override
             public void onAdClicked() {
@@ -169,6 +206,26 @@ public class Banner extends AdBase {
             }
         }
 
+        if(mAdView.getParent() != null)
+        {
+            Integer x = ctx.optInt("x");
+            Integer y = ctx.optInt("y");
+
+            if (x != null && y != null)  {
+                mAdView.setX((float) dpToPx(x));
+                mAdView.setY((float) dpToPx(y));
+            }
+
+            Float width = ctx.optFloat("width");
+            Float height = ctx.optFloat("height");
+
+            if (this.canvas != null && width != null && width > 0 && height != null && height > 0 && (Float.compare(width, this.width) != 0 || Float.compare(height, this.height) != 0)) {
+                this.width = width;
+                this.height = height;
+                reloadBannerView();
+            }
+        }
+
         ctx.resolve();
     }
 
@@ -178,6 +235,69 @@ public class Banner extends AdBase {
             mAdView.pause();
             mAdView.setVisibility(View.GONE);
         }
+        ctx.resolve();
+    }
+
+    public void destroy(Context ctx) {
+        if (mAdView != null) {
+            removeBannerView(mAdView);
+        }
+        ctx.resolve();
+    }
+
+    public void getAdViewImage(Context ctx) {
+        if (mAdView != null && mAdView.getWidth() > 0 && mAdView.getHeight() > 0) {
+            Bitmap bitmap = getBitmapFromView(mAdView);
+            if(this.prevBitmap == null || !bitmap.sameAs(this.prevBitmap)) { // Check if bitmap is different from prev
+                this.prevBitmap = bitmap;
+                ByteArrayOutputStream bos = new ByteArrayOutputStream();
+                bitmap.compress(CompressFormat.JPEG, 80, bos); 
+                byte[] bb = bos.toByteArray();
+                String image = Base64.getEncoder().encodeToString(bb);
+
+                int width = mAdView.getWidth();
+                int height = mAdView.getHeight();
+
+                ctx.resolveString(image);
+            }
+            else {
+                ctx.resolveString("");
+            }
+        } else {
+            ctx.resolveString("");
+        }
+    }
+
+    public void simulateClickEvent(Context ctx) {
+
+        Float x = ctx.optFloat("x");
+        Float y = ctx.optFloat("y");
+
+        long downTime = SystemClock.uptimeMillis();
+        long eventTime = SystemClock.uptimeMillis() + 30;
+
+        MotionEvent motionEvent1 = MotionEvent.obtain(
+            downTime, 
+            eventTime, 
+            MotionEvent.ACTION_DOWN,
+            (float) dpToPx(x),
+            (float) dpToPx(y),
+            0
+        );
+
+        MotionEvent motionEvent2 = MotionEvent.obtain(
+            downTime + 60, 
+            eventTime + 90, 
+            MotionEvent.ACTION_UP,
+            (float) dpToPx(x),
+            (float) dpToPx(y),
+            0
+        );
+
+        // Dispatch touch event to view
+        mAdView.dispatchTouchEvent(motionEvent1);
+        mAdView.dispatchTouchEvent(motionEvent2);
+
         ctx.resolve();
     }
 
@@ -243,7 +363,6 @@ public class Banner extends AdBase {
             removeFromParentView(mRelativeLayout);
             mRelativeLayout = null;
         }
-
         super.onDestroy();
     }
 
@@ -255,7 +374,7 @@ public class Banner extends AdBase {
 
     private void addBannerView() {
         if (mAdView == null) return;
-        if (this.offset == null) {
+        if (this.offset == null && this.canvas == null) {
             if (getParentView(mAdView) == rootLinearLayout && rootLinearLayout != null) return;
             addBannerViewWithLinearLayout();
         } else {
@@ -265,7 +384,11 @@ public class Banner extends AdBase {
 
         ViewGroup contentView = getContentView();
         if (contentView != null) {
-            contentView.bringToFront();
+            if(this.canvas == null) {
+                contentView.bringToFront();
+            } else {
+                contentView.setZ(-10);
+            }
             contentView.requestLayout();
             contentView.requestFocus();
         }
@@ -318,16 +441,32 @@ public class Banner extends AdBase {
     }
 
     private void addBannerViewWithRelativeLayout() {
-        RelativeLayout.LayoutParams paramsContent = new RelativeLayout.LayoutParams(
-                RelativeLayout.LayoutParams.MATCH_PARENT,
-                RelativeLayout.LayoutParams.WRAP_CONTENT);
-        paramsContent.addRule(isPositionTop() ? RelativeLayout.ALIGN_PARENT_TOP : RelativeLayout.ALIGN_PARENT_BOTTOM);
+
+        RelativeLayout.LayoutParams paramsContent;
+
+        if(this.canvas == null) {
+            paramsContent = new RelativeLayout.LayoutParams(
+                    RelativeLayout.LayoutParams.MATCH_PARENT,
+                    RelativeLayout.LayoutParams.WRAP_CONTENT);
+            paramsContent.addRule(isPositionTop() ? RelativeLayout.ALIGN_PARENT_TOP : RelativeLayout.ALIGN_PARENT_BOTTOM);
+        } else {
+            paramsContent = new RelativeLayout.LayoutParams(
+                    (int) dpToPx(this.width),
+                    (int) dpToPx(this.height));
+        }
 
         if (mRelativeLayout == null) {
             mRelativeLayout = new RelativeLayout(getActivity());
-            RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
-                    RelativeLayout.LayoutParams.MATCH_PARENT,
-                    RelativeLayout.LayoutParams.MATCH_PARENT);
+            RelativeLayout.LayoutParams params;
+            if(this.canvas == null || true) {
+                params = new RelativeLayout.LayoutParams(
+                       RelativeLayout.LayoutParams.MATCH_PARENT,
+                       RelativeLayout.LayoutParams.MATCH_PARENT);
+            } else {
+                params = new RelativeLayout.LayoutParams(
+                        (int) dpToPx(this.width),
+                        (int) dpToPx(this.height));
+            }
             if (isPositionTop()) {
                 params.setMargins(0, this.offset, 0, 0);
             } else {
@@ -344,7 +483,14 @@ public class Banner extends AdBase {
 
         removeFromParentView(mAdView);
         mRelativeLayout.addView(mAdView, paramsContent);
-        mRelativeLayout.bringToFront();
+
+        if(this.canvas == null) {
+            mRelativeLayout.bringToFront();
+        } else {
+            mRelativeLayout.setZ(-10);
+            mAdView.setX((float) dpToPx(Objects.requireNonNull(this.x)));
+            mAdView.setY((float) dpToPx(Objects.requireNonNull(this.y)));
+        }
     }
 
     private boolean isPositionTop() {
