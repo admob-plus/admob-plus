@@ -1,13 +1,14 @@
 #!/usr/bin/env node
-import assert from 'assert'
 import sane from '@frat/sane'
+import assert from 'assert'
 import cpy from 'cpy'
+import debounce from 'debounce-promise'
 import del from 'del'
 import execa from 'execa'
-import fsp from 'fs/promises'
 import glob from 'fast-glob'
-import path from 'path'
+import fsp from 'fs/promises'
 import PQueue from 'p-queue'
+import path from 'path'
 import findPkg, { PackageJson } from 'pkg-proxy'
 import { replaceInFile } from 'replace-in-file'
 import { parseStringPromise } from 'xml2js'
@@ -309,10 +310,13 @@ async function startDev(opts: any) {
           cwd,
         }),
         new Promise(() => {
-          watcher.on('change', async (filepath: string) => {
-            console.log('file changed', filepath)
-            await execa('yarn', ['cap'], { stdio: 'inherit', cwd })
-          })
+          watcher.on(
+            'change',
+            debounce(async (filepath: string) => {
+              console.log('file changed', filepath)
+              await execa('yarn', ['cap', 'sync'], { stdio: 'inherit', cwd })
+            }, 100),
+          )
         }),
       )
 
