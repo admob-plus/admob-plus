@@ -331,6 +331,7 @@ export default class BannerAd extends MobileAd<BannerAdOptions> {
         if(canvas.id == this.id) {
           adViewImage = canvas.adViewImage;
           canvas.element = newCanvas;
+          canvas.ctx = <CanvasRenderingContext2D> newCanvas.getContext('2d');
           break;
         }
       }
