@@ -1,11 +1,9 @@
 import { registerPlugin } from '@capacitor/core'
-import type { AdMobPlusPlugin } from './definitions'
+import type { AdMobPlusPlugin, MobileAdOptions } from './definitions'
 
 const AdMobPlus = registerPlugin<AdMobPlusPlugin>('AdMobPlus', {
   web: () => import('./web').then((m) => new m.AdMobPlusWeb()),
 })
-
-type MobileAdOptions = { adUnitId: string }
 
 class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
   private static allAds: { [s: number]: MobileAd } = {}
@@ -31,6 +29,50 @@ class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
     return this.opts.adUnitId
   }
 }
+class GenericAd extends MobileAd {
+  private _init: Promise<void> | null
+
+  constructor(opts: MobileAdOptions) {
+    super(opts)
+
+    // NOTE `this.constructor.name` could be changed after minify
+    const cls =
+      (this.constructor as unknown as { cls?: string }).cls ??
+      this.constructor.name
+
+    this._init = AdMobPlus.adCreate({
+      ...this.opts,
+      id: this.id,
+      cls,
+    }).then(() => {
+      this._init = null
+    })
+  }
+
+  async isLoaded() {
+    await this.init()
+    return AdMobPlus.adIsLoaded({ id: this.id })
+  }
+
+  async load() {
+    await this.init()
+    return AdMobPlus.adLoad({ id: this.id })
+  }
+
+  async show() {
+    await this.init()
+    return AdMobPlus.adShow({ id: this.id })
+  }
+
+  async hide() {
+    await this.init()
+    return AdMobPlus.adHide({ id: this.id })
+  }
+
+  protected async init() {
+    if (this._init !== null) await this._init
+  }
+}
 
 type Position = 'top' | 'bottom'
 
@@ -38,7 +80,10 @@ export interface BannerAdOptions extends MobileAdOptions {
   position?: Position
 }
 
-class BannerAd extends MobileAd<BannerAdOptions> {
+class BannerAd extends GenericAd {
+  static cls = 'BannerAd'
+  _loaded = false
+
   constructor(opts: BannerAdOptions) {
     super({
       position: 'bottom',
@@ -46,58 +91,27 @@ class BannerAd extends MobileAd<BannerAdOptions> {
     })
   }
 
-  public show() {
-    return AdMobPlus.bannerShow({ ...this.opts, id: this.id })
+  async load() {
+    await super.load()
+    this._loaded = true
   }
 
-  public hide() {
-    return AdMobPlus.bannerHide({ id: this.id })
+  async show() {
+    if (!this._loaded) await this.load()
+    await super.show()
   }
 }
 
-class InterstitialAd extends MobileAd {
-  constructor({ adUnitId }: MobileAdOptions) {
-    super({ adUnitId })
-  }
-
-  public load() {
-    return AdMobPlus.interstitialLoad({ id: this.id, adUnitId: this.adUnitId })
-  }
-
-  public show() {
-    return AdMobPlus.interstitialShow({ id: this.id })
-  }
+class InterstitialAd extends GenericAd {
+  static cls = 'InterstitialAd'
 }
 
-class RewardedAd extends MobileAd {
-  constructor({ adUnitId }: MobileAdOptions) {
-    super({ adUnitId })
-  }
-
-  public load() {
-    return AdMobPlus.rewardedLoad({ id: this.id, adUnitId: this.adUnitId })
-  }
-
-  public show() {
-    return AdMobPlus.rewardedShow({ id: this.id })
-  }
+class RewardedAd extends GenericAd {
+  static cls = 'RewardedAd'
 }
 
-class RewardedInterstitialAd extends MobileAd {
-  constructor({ adUnitId }: MobileAdOptions) {
-    super({ adUnitId })
-  }
-
-  public load() {
-    return AdMobPlus.rewardedInterstitialLoad({
-      id: this.id,
-      adUnitId: this.adUnitId,
-    })
-  }
-
-  public show() {
-    return AdMobPlus.rewardedInterstitialShow({ id: this.id })
-  }
+class RewardedInterstitialAd extends GenericAd {
+  static cls = 'RewardedInterstitialAd'
 }
 
 export * from './definitions'

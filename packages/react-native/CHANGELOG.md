@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.9.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/react-native@1.8.0...@admob-plus/react-native@1.9.0) (2021-06-11)
+
+
+### Features
+
+* **capacitor/andorid:** use GenericAd ([4b2e52c](https://github.com/admob-plus/admob-plus/commit/4b2e52c66aeb40df8d8b6275e69a8353e2396fc7))
+
+
+
+
+
 # [1.8.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/react-native@1.7.0...@admob-plus/react-native@1.8.0) (2021-06-08)
 
 

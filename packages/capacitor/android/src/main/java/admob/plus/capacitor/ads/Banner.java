@@ -12,13 +12,19 @@ import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.LoadAdError;
 
+import java.util.Objects;
+
 import admob.plus.capacitor.AdMobPlusPlugin;
 import admob.plus.capacitor.ExecuteContext;
 import admob.plus.capacitor.Generated.Events;
+import admob.plus.core.Context;
+import admob.plus.core.GenericAd;
 
 import static admob.plus.capacitor.ExecuteContext.plugin;
+import static admob.plus.core.Helper.getParentView;
+import static admob.plus.core.Helper.removeFromParentView;
 
-public class Banner extends AdBase {
+public class Banner extends AdBase implements GenericAd {
     @SuppressLint("StaticFieldLeak")
     private static ViewGroup parentView;
     private final AdSize adSize;
@@ -32,9 +38,11 @@ public class Banner extends AdBase {
         this.gravity = "top".equals(ctx.optPosition()) ? Gravity.TOP : Gravity.BOTTOM;
     }
 
-    public void show(ExecuteContext ctx) {
-        WebView webView = plugin.getBridge().getWebView();
+    public boolean isLoaded() {
+        return adView != null;
+    }
 
+    public void load(Context ctx) {
         if (adView == null) {
             adView = new AdView(getActivity());
             adView.setAdUnitId(adUnitId);
@@ -70,28 +78,35 @@ public class Banner extends AdBase {
                     emit(Events.BANNER_OPEN);
                 }
             });
+        }
 
+        adView.loadAd(ctx.optAdRequest());
+        ctx.resolve();
+    }
+
+    public void show(Context ctx) {
+        Objects.requireNonNull(adView);
+
+        WebView webView = plugin.getBridge().getWebView();
+
+        if (getParentView(adView) == null) {
             addBannerView(plugin, adView);
         } else if (adView.getVisibility() == View.GONE) {
             adView.resume();
             adView.setVisibility(View.VISIBLE);
         } else {
-            ViewGroup wvParentView = (ViewGroup) webView.getParent();
+            ViewGroup wvParentView = getParentView(webView);
             if (parentView != wvParentView) {
                 parentView.removeAllViews();
-                if (parentView.getParent() != null) {
-                    ((ViewGroup) parentView.getParent()).removeView(parentView);
-                }
+                removeFromParentView(parentView);
                 addBannerView(plugin, adView);
             }
         }
 
-        adView.loadAd(ctx.optAdRequest());
-
         ctx.resolve();
     }
 
-    public void hide(ExecuteContext ctx) {
+    public void hide(Context ctx) {
         if (adView != null) {
             adView.pause();
             adView.setVisibility(View.GONE);

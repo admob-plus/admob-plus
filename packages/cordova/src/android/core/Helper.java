@@ -6,6 +6,8 @@ import android.content.res.Resources;
 import android.provider.Settings;
 import android.util.DisplayMetrics;
 import android.util.SparseArray;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -57,6 +59,18 @@ public class Helper {
             }
         }
         return result;
+    }
+
+    @Nullable
+    public static ViewGroup getParentView(@Nullable View view) {
+        return view == null ? null : (ViewGroup) view.getParent();
+    }
+
+    @Nullable
+    public static ViewGroup removeFromParentView(@Nullable View view) {
+        ViewGroup viewParent = getParentView(view);
+        if (viewParent != null) viewParent.removeView(view);
+        return viewParent;
     }
 
     public static void NOT_IMPLEMENTED() {

@@ -12,11 +12,12 @@ import org.json.JSONObject;
 
 import java.util.Map;
 
-import admob.plus.core.Helper;
 import admob.plus.capacitor.ads.Banner;
 import admob.plus.capacitor.ads.Interstitial;
 import admob.plus.capacitor.ads.Rewarded;
 import admob.plus.capacitor.ads.RewardedInterstitial;
+import admob.plus.core.GenericAd;
+import admob.plus.core.Helper;
 
 @CapacitorPlugin(name = "AdMobPlus")
 public class AdMobPlusPlugin extends Plugin implements Helper.Adapter {
@@ -27,7 +28,6 @@ public class AdMobPlusPlugin extends Plugin implements Helper.Adapter {
         super.load();
 
         this.helper = new Helper(this);
-
         ExecuteContext.plugin = this;
     }
 
@@ -81,35 +81,53 @@ public class AdMobPlusPlugin extends Plugin implements Helper.Adapter {
     }
 
     @PluginMethod
-    public void bannerShow(PluginCall call) {
+    public void adCreate(PluginCall call) {
         final ExecuteContext ctx = new ExecuteContext(call);
 
         getBridge().executeOnMainThread(() -> {
-            Banner ad = ctx.optAdOrCreate(Banner.class);
-            if (ad != null) {
-                ad.show(ctx);
+            String adClass = ctx.optString("cls");
+            if (adClass == null) {
+                ctx.reject("ad cls is missing");
+            } else {
+                switch (adClass) {
+                    case "BannerAd":
+                        new Banner(ctx);
+                        break;
+                    case "InterstitialAd":
+                        new Interstitial(ctx);
+                        break;
+                    case "RewardedAd":
+                        new Rewarded(ctx);
+                        break;
+                    case "RewardedInterstitialAd":
+                        new RewardedInterstitial(ctx);
+                        break;
+                    default:
+                        ctx.reject("ad cls is not supported: " + adClass);
+                }
+                ctx.resolve();
             }
         });
     }
 
     @PluginMethod
-    public void bannerHide(PluginCall call) {
+    public void adIsLoaded(PluginCall call) {
         final ExecuteContext ctx = new ExecuteContext(call);
 
         getBridge().executeOnMainThread(() -> {
-            final Banner ad = (Banner) ctx.optAdOrError();
+            GenericAd ad = (GenericAd) ctx.optAdOrError();
             if (ad != null) {
-                ad.hide(ctx);
+                ctx.resolve(ad.isLoaded());
             }
         });
     }
 
     @PluginMethod
-    public void interstitialLoad(PluginCall call) {
+    public void adLoad(PluginCall call) {
         final ExecuteContext ctx = new ExecuteContext(call);
 
         getBridge().executeOnMainThread(() -> {
-            Interstitial ad = ctx.optAdOrCreate(Interstitial.class);
+            GenericAd ad = (GenericAd) ctx.optAdOrError();
             if (ad != null) {
                 ad.load(ctx);
             }
@@ -117,55 +135,30 @@ public class AdMobPlusPlugin extends Plugin implements Helper.Adapter {
     }
 
     @PluginMethod
-    public void interstitialShow(PluginCall call) {
+    public void adShow(PluginCall call) {
         final ExecuteContext ctx = new ExecuteContext(call);
-        ctx.opt("");
 
         getBridge().executeOnMainThread(() -> {
-            Interstitial ad = (Interstitial) ctx.optAdOrError();
+            GenericAd ad = (GenericAd) ctx.optAdOrError();
             if (ad != null) {
-                ad.show(ctx);
+                if (ad.isLoaded()) {
+                    ad.show(ctx);
+                } else {
+                    ctx.reject("ad is not loaded");
+                }
             }
         });
     }
 
     @PluginMethod
-    public void rewardedLoad(PluginCall call) {
+    public void adHide(PluginCall call) {
         final ExecuteContext ctx = new ExecuteContext(call);
 
         getBridge().executeOnMainThread(() -> {
-            Rewarded ad = ctx.optAdOrCreate(Rewarded.class);
-            ad.load(ctx);
-        });
-    }
-
-    @PluginMethod
-    public void rewardedShow(PluginCall call) {
-        final ExecuteContext ctx = new ExecuteContext(call);
-
-        getBridge().executeOnMainThread(() -> {
-            Rewarded ad = (Rewarded) ctx.optAd();
-            ad.show(ctx);
-        });
-    }
-
-    @PluginMethod
-    public void rewardedInterstitialLoad(PluginCall call) {
-        final ExecuteContext ctx = new ExecuteContext(call);
-
-        getBridge().executeOnMainThread(() -> {
-            RewardedInterstitial ad = ctx.optAdOrCreate(RewardedInterstitial.class);
-            ad.load(ctx);
-        });
-    }
-
-    @PluginMethod
-    public void rewardedInterstitialShow(PluginCall call) {
-        final ExecuteContext ctx = new ExecuteContext(call);
-
-        getBridge().executeOnMainThread(() -> {
-            RewardedInterstitial ad = (RewardedInterstitial) ctx.optAd();
-            ad.show(ctx);
+            GenericAd ad = (GenericAd) ctx.optAdOrError();
+            if (ad != null) {
+                ad.hide(ctx);
+            }
         });
     }
 

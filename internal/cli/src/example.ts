@@ -1,13 +1,14 @@
 #!/usr/bin/env node
-import assert from 'assert'
 import sane from '@frat/sane'
+import assert from 'assert'
 import cpy from 'cpy'
+import debounce from 'debounce-promise'
 import del from 'del'
 import execa from 'execa'
-import fsp from 'fs/promises'
 import glob from 'fast-glob'
-import path from 'path'
+import fsp from 'fs/promises'
 import PQueue from 'p-queue'
+import path from 'path'
 import findPkg, { PackageJson } from 'pkg-proxy'
 import { replaceInFile } from 'replace-in-file'
 import { parseStringPromise } from 'xml2js'
@@ -304,15 +305,18 @@ async function startDev(opts: any) {
       const sourceDir = path.join(cwd, 'src')
       const watcher = sane(sourceDir, { glob: ['**/*'], watchman: true })
       promises.push(
-        execa('yarn', ['webpack', '--mode', 'development', '--watch'], {
+        execa('yarn', ['webpack', '--mode', 'production', '--watch'], {
           stdio: 'inherit',
           cwd,
         }),
         new Promise(() => {
-          watcher.on('change', async (filepath: string) => {
-            console.log('file changed', filepath)
-            await execa('yarn', ['cap'], { stdio: 'inherit', cwd })
-          })
+          watcher.on(
+            'change',
+            debounce(async (filepath: string) => {
+              console.log('file changed', filepath)
+              await execa('yarn', ['cap', 'sync'], { stdio: 'inherit', cwd })
+            }, 1000),
+          )
         }),
       )
 
@@ -342,6 +346,16 @@ async function startDev(opts: any) {
         ...o.syncDirs,
       )
       openArgs.push(...o.openArgs)
+      sane(path.join(cwd, 'www'), { glob: ['**/*'], watchman: true }).on(
+        'change',
+        debounce(async (filepath: string) => {
+          console.log('file changed', filepath)
+          await execa('yarn', ['cordova', 'prepare', platform], {
+            stdio: 'inherit',
+            cwd,
+          })
+        }, 1000),
+      )
       break
     }
     case 'cordova-consent': {

@@ -22,14 +22,12 @@ npx cap sync
 * [`start()`](#start)
 * [`configure(...)`](#configure)
 * [`configRequest(...)`](#configrequest)
-* [`bannerShow(...)`](#bannershow)
-* [`bannerHide(...)`](#bannerhide)
-* [`interstitialLoad(...)`](#interstitialload)
-* [`interstitialShow(...)`](#interstitialshow)
-* [`rewardedLoad(...)`](#rewardedload)
-* [`rewardedShow(...)`](#rewardedshow)
-* [`rewardedInterstitialLoad(...)`](#rewardedinterstitialload)
-* [`rewardedInterstitialShow(...)`](#rewardedinterstitialshow)
+* [`adCreate(...)`](#adcreate)
+* [`adIsLoaded(...)`](#adisloaded)
+* [`adLoad(...)`](#adload)
+* [`adShow(...)`](#adshow)
+* [`adHide(...)`](#adhide)
+* [`trackingAuthorizationStatus()`](#trackingauthorizationstatus)
 * [`requestTrackingAuthorization()`](#requesttrackingauthorization)
 * [`addListener(string, ...)`](#addlistenerstring-)
 * [Interfaces](#interfaces)
@@ -82,25 +80,25 @@ configRequest(requestConfig: RequestConfig) => any
 --------------------
 
 
-### bannerShow(...)
+### adCreate(...)
 
 ```typescript
-bannerShow(opts: { id: number; adUnitId: string; position?: 'bottom' | 'top'; }) => any
+adCreate<O extends MobileAdOptions>(opts: O) => any
 ```
 
-| Param      | Type                                                                         |
-| ---------- | ---------------------------------------------------------------------------- |
-| **`opts`** | <code>{ id: number; adUnitId: string; position?: 'bottom' \| 'top'; }</code> |
+| Param      | Type           |
+| ---------- | -------------- |
+| **`opts`** | <code>O</code> |
 
 **Returns:** <code>any</code>
 
 --------------------
 
 
-### bannerHide(...)
+### adIsLoaded(...)
 
 ```typescript
-bannerHide(opts: { id: number; }) => any
+adIsLoaded(opts: { id: number; }) => any
 ```
 
 | Param      | Type                         |
@@ -112,25 +110,10 @@ bannerHide(opts: { id: number; }) => any
 --------------------
 
 
-### interstitialLoad(...)
+### adLoad(...)
 
 ```typescript
-interstitialLoad(opts: { id: number; adUnitId: string; }) => any
-```
-
-| Param      | Type                                           |
-| ---------- | ---------------------------------------------- |
-| **`opts`** | <code>{ id: number; adUnitId: string; }</code> |
-
-**Returns:** <code>any</code>
-
---------------------
-
-
-### interstitialShow(...)
-
-```typescript
-interstitialShow(opts: { id: number; }) => any
+adLoad(opts: { id: number; }) => any
 ```
 
 | Param      | Type                         |
@@ -142,25 +125,10 @@ interstitialShow(opts: { id: number; }) => any
 --------------------
 
 
-### rewardedLoad(...)
+### adShow(...)
 
 ```typescript
-rewardedLoad(opts: { id: number; adUnitId: string; }) => any
-```
-
-| Param      | Type                                           |
-| ---------- | ---------------------------------------------- |
-| **`opts`** | <code>{ id: number; adUnitId: string; }</code> |
-
-**Returns:** <code>any</code>
-
---------------------
-
-
-### rewardedShow(...)
-
-```typescript
-rewardedShow(opts: { id: number; }) => any
+adShow(opts: { id: number; }) => any
 ```
 
 | Param      | Type                         |
@@ -172,30 +140,26 @@ rewardedShow(opts: { id: number; }) => any
 --------------------
 
 
-### rewardedInterstitialLoad(...)
+### adHide(...)
 
 ```typescript
-rewardedInterstitialLoad(opts: { id: number; adUnitId: string; }) => any
+adHide(opts: { id: number; }) => any
 ```
 
-| Param      | Type                                           |
-| ---------- | ---------------------------------------------- |
-| **`opts`** | <code>{ id: number; adUnitId: string; }</code> |
+| Param      | Type                         |
+| ---------- | ---------------------------- |
+| **`opts`** | <code>{ id: number; }</code> |
 
 **Returns:** <code>any</code>
 
 --------------------
 
 
-### rewardedInterstitialShow(...)
+### trackingAuthorizationStatus()
 
 ```typescript
-rewardedInterstitialShow(opts: { id: number; }) => any
+trackingAuthorizationStatus() => any
 ```
-
-| Param      | Type                         |
-| ---------- | ---------------------------- |
-| **`opts`** | <code>{ id: number; }</code> |
 
 **Returns:** <code>any</code>
 
@@ -250,6 +214,11 @@ addListener(eventName: string, listenerFunc: (event: any) => void) => Promise<Pl
 #### RequestConfig
 
 <code>{ maxAdContentRating?: <a href="#maxadcontentrating">MaxAdContentRating</a> tagForChildDirectedTreatment?: boolean | null tagForUnderAgeOfConsent?: boolean | null testDeviceIds?: string[] }</code>
+
+
+#### MobileAdOptions
+
+<code>{ adUnitId: string }</code>
 
 
 ### Enums

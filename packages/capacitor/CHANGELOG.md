@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.14.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.13.0...@admob-plus/capacitor@1.14.0) (2021-06-11)
+
+
+### Bug Fixes
+
+* **capacitor/ios:** apply constraints to webview parents, fix [#374](https://github.com/admob-plus/admob-plus/issues/374) ([86b0983](https://github.com/admob-plus/admob-plus/commit/86b09836b61aaf3d9aa7d36fe9b497a6b63d056e))
+
+
+### Features
+
+* **capacitor/andorid:** use GenericAd ([4b2e52c](https://github.com/admob-plus/admob-plus/commit/4b2e52c66aeb40df8d8b6275e69a8353e2396fc7))
+* **capacitor/ios:** use GenericAd ([c436e10](https://github.com/admob-plus/admob-plus/commit/c436e10baff0127db3f573c8a1eec756634e073e))
+
+
+
+
+
 # [1.13.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.12.0...@admob-plus/capacitor@1.13.0) (2021-06-08)
 
 

@@ -1,4 +1,4 @@
-
+import { Capacitor } from '@capacitor/core'
 import {
   AdMobPlus,
   BannerAd,
@@ -28,6 +28,14 @@ const initBanner = async () => {
     }
     shown = !shown
     btn.innerHTML = shown ? 'Hide Banner' : 'Show Banner'
+  })
+
+  const btnAdd = document.getElementById('add-banner-btn')
+  btnAdd.addEventListener('click', async () => {
+    const ad = new BannerAd({
+      adUnitId: 'ca-app-pub-3940256099942544/6300978111',
+    })
+    await ad.show()
   })
 }
 
@@ -61,7 +69,10 @@ const initRewarded = async () => {
 
 const initRewardedInterstitial = async () => {
   const rewarded = new RewardedInterstitialAd({
-    adUnitId: 'ca-app-pub-3940256099942544/6978759866',
+    adUnitId:
+      Capacitor.getPlatform() === 'android'
+        ? 'ca-app-pub-3940256099942544/5354046379'
+        : 'ca-app-pub-3940256099942544/6978759866',
   })
 
   const btn = document.getElementById('show-rewarded-interstitial-btn')
@@ -85,7 +96,10 @@ const main = async () => {
     initInterstitial(),
     initRewarded(),
     initRewardedInterstitial(),
-  ]).catch(console.error)
+  ]).catch((err) => {
+    console.error(err)
+    alert(`init error: ${err}`)
+  })
 }
 
 main().catch(console.error)

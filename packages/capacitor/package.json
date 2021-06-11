@@ -1,6 +1,6 @@
 {
   "name": "@admob-plus/capacitor",
-  "version": "1.13.0",
+  "version": "1.14.0",
   "description": "AdMob Plus Capacitor Plugin",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -49,10 +49,10 @@
     "test": "tsc --noEmit"
   },
   "devDependencies": {
-    "@capacitor/android": "^3.0.0",
-    "@capacitor/core": "^3.0.0",
+    "@capacitor/android": "^3.0.1",
+    "@capacitor/core": "^3.0.1",
     "@capacitor/docgen": "^0.0.16",
-    "@capacitor/ios": "^3.0.0",
+    "@capacitor/ios": "^3.0.1",
     "@ionic/eslint-config": "^0.3.0",
     "@ionic/prettier-config": "^1.0.1",
     "@ionic/swiftlint-config": "^1.1.2",
@@ -61,7 +61,7 @@
     "typescript": "~4.3.2"
   },
   "peerDependencies": {
-    "@capacitor/core": "^3.0.0"
+    "@capacitor/core": "^3.0.1"
   },
   "homepage": "https://admob-plus.github.io/docs/capacitor",
   "publishConfig": {

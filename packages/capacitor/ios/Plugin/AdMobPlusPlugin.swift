@@ -6,8 +6,11 @@ import Capacitor
 import GoogleMobileAds
 
 @objc(AdMobPlusPlugin)
-public class AdMobPlusPlugin: CAPPlugin {
+public class AdMobPlusPlugin: CAPPlugin, AMBHelperAdapter {
+    var helper: AMBHelper!
+
     @objc override public func load() {
+        helper = AMBHelper(self)
         AMBContext.plugin = self
     }
 
@@ -15,9 +18,9 @@ public class AdMobPlusPlugin: CAPPlugin {
         let ctx = AMBContext(call)
 
         if #available(iOS 14, *) {
-            ctx.success(["status": ATTrackingManager.trackingAuthorizationStatus.rawValue])
+            ctx.resolve(["status": ATTrackingManager.trackingAuthorizationStatus.rawValue])
         } else {
-            ctx.success(["status": false])
+            ctx.resolve(["status": false])
         }
     }
 
@@ -26,10 +29,10 @@ public class AdMobPlusPlugin: CAPPlugin {
 
         if #available(iOS 14, *) {
             ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
-                ctx.success(["status": status.rawValue])
+                ctx.resolve(["status": status.rawValue])
             })
         } else {
-            ctx.success(["status": false])
+            ctx.resolve(["status": false])
         }
     }
 
@@ -50,7 +53,7 @@ public class AdMobPlusPlugin: CAPPlugin {
             GADMobileAds.sharedInstance().applicationVolume = volume
         }
 
-        ctx.success()
+        ctx.resolve()
     }
 
     @objc func configRequest(_ call: CAPPluginCall) {
@@ -73,75 +76,76 @@ public class AdMobPlusPlugin: CAPPlugin {
             requestConfiguration.testDeviceIdentifiers = testDevices
         }
 
-        ctx.success()
+        ctx.resolve()
     }
 
-    @objc func bannerShow(_ call: CAPPluginCall) {
+    @objc func adCreate(_ call: CAPPluginCall) {
         let ctx = AMBContext(call)
 
-        DispatchQueue.main.async {
-            let banner = ctx.optAd() as? AMBBanner ?? AMBBanner(ctx)
-            banner?.show(ctx) ?? ctx.error()
+        if let adClass = ctx.optString("cls") {
+            var ad: AMBGenericAd?
+            switch adClass {
+            case "BannerAd":
+                ad = AMBBanner(ctx)
+            case "InterstitialAd":
+                ad = AMBInterstitial(ctx)
+            case "RewardedAd":
+                ad = AMBRewarded(ctx)
+            case "RewardedInterstitialAd":
+                ad = AMBRewardedInterstitial(ctx)
+            default:
+                break
+            }
+            if ad != nil {
+                ctx.resolve()
+            } else {
+                ctx.reject("fail to create ad: \(adClass), \(ctx.optId() ?? -1)")
+            }
+        } else {
+            ctx.reject()
         }
     }
 
-    @objc func bannerHide(_ call: CAPPluginCall) {
+    @objc func adIsLoaded(_ call: CAPPluginCall) {
         let ctx = AMBContext(call)
 
         DispatchQueue.main.async {
-            if let banner = ctx.optAdOrError() as? AMBBanner {
-                banner.hide(ctx)
+            if let ad = ctx.optAdOrError() as? AMBGenericAd {
+                ctx.resolve(ad.isLoaded())
             }
         }
     }
 
-    @objc func interstitialLoad(_ call: CAPPluginCall) {
+    @objc func adLoad(_ call: CAPPluginCall) {
         let ctx = AMBContext(call)
 
-        let ad = ctx.optAd() as? AMBInterstitial ?? AMBInterstitial(ctx)
-        ad?.load(ctx) ?? ctx.error()
-    }
-
-    @objc func interstitialShow(_ call: CAPPluginCall) {
-        let ctx = AMBContext(call)
-
-        if let interstitial = ctx.optAdOrError() as? AMBInterstitial {
-            DispatchQueue.main.async {
-                interstitial.show(ctx)
+        DispatchQueue.main.async {
+            if let ad = ctx.optAdOrError() as? AMBGenericAd {
+                ad.load(ctx)
             }
         }
     }
 
-    @objc func rewardedLoad(_ call: CAPPluginCall) {
-        let ctx = AMBContext(call)
-
-        let ad = ctx.optAd() as? AMBRewarded ?? AMBRewarded(ctx)
-        ad?.load(ctx) ?? ctx.error()
-    }
-
-    @objc func rewardedShow(_ call: CAPPluginCall) {
+    @objc func adShow(_ call: CAPPluginCall) {
         let ctx = AMBContext(call)
 
         DispatchQueue.main.async {
-            if let rewarded = ctx.optAdOrError() as? AMBRewarded {
-                rewarded.show(ctx)
+            if let ad = ctx.optAdOrError() as? AMBGenericAd {
+                if ad.isLoaded() {
+                    ad.show(ctx)
+                } else {
+                    ctx.reject("Ad is not loaded: \(ctx.optId() ?? -1)")
+                }
             }
         }
     }
 
-    @objc func rewardedInterstitialLoad(_ call: CAPPluginCall) {
-        let ctx = AMBContext(call)
-
-        let ad = ctx.optAd() as? AMBRewardedInterstitial ?? AMBRewardedInterstitial(ctx)
-        ad?.load(ctx) ?? ctx.error()
-    }
-
-    @objc func rewardedInterstitialShow(_ call: CAPPluginCall) {
+    @objc func adHide(_ call: CAPPluginCall) {
         let ctx = AMBContext(call)
 
         DispatchQueue.main.async {
-            if let rewarded = ctx.optAdOrError() as? AMBRewardedInterstitial {
-                rewarded.show(ctx)
+            if let ad = ctx.optAdOrError() as? AMBGenericAd {
+                ad.hide(ctx)
             }
         }
     }

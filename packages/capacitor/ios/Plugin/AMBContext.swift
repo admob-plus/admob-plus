@@ -1,11 +1,26 @@
 import Capacitor
 import GoogleMobileAds
 
-class AMBContext {
+class AMBContext: AMBCoreContext {
+    func optString(_ name: String) -> String? {
+        return call.getString(name)
+    }
+
+    func resolve() {
+        call.resolve()
+    }
+
+    func resolve(_ data: PluginCallResultData = [:]) {
+        call.resolve(data)
+    }
+
+    func reject(_ msg: String) {
+        call.reject(msg)
+    }
+
     static weak var plugin: AdMobPlusPlugin!
 
     static let rootViewController = plugin.bridge!.viewController!
-    static let window = UIApplication.shared.keyWindow!
 
     let call: CAPPluginCall
 
@@ -86,25 +101,5 @@ class AMBContext {
     func optGADRequest() -> GADRequest {
         let request = GADRequest()
         return request
-    }
-
-    func success() {
-        call.resolve()
-    }
-
-    func success(_ data: PluginCallResultData = [:]) {
-        call.resolve(data)
-    }
-
-    func error() {
-        self.error("Unknown error")
-    }
-
-    func error(_ message: String) {
-        call.reject(message)
-    }
-
-    func error(_ error: Error) {
-        self.error(error.localizedDescription)
     }
 }
