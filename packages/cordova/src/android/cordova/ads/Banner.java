@@ -25,7 +25,9 @@ import admob.plus.cordova.ExecuteContext;
 import admob.plus.cordova.Generated.Events;
 import admob.plus.core.Context;
 
+import static admob.plus.core.Helper.getParentView;
 import static admob.plus.core.Helper.pxToDp;
+import static admob.plus.core.Helper.removeFromParentView;
 
 public class Banner extends AdBase {
     private static final String TAG = "AdMobPlus.Banner";
@@ -53,18 +55,6 @@ public class Banner extends AdBase {
         ViewGroup vg = getParentView(rootLinearLayout);
         if (vg != null) vg.removeAllViews();
         rootLinearLayout = null;
-    }
-
-    @Nullable
-    private static ViewGroup getParentView(@Nullable View view) {
-        return view == null ? null : (ViewGroup) view.getParent();
-    }
-
-    @Nullable
-    private static ViewGroup removeFromParentView(@Nullable View view) {
-        ViewGroup viewParent = getParentView(view);
-        if (viewParent != null) viewParent.removeView(view);
-        return viewParent;
     }
 
     private static void runJustBeforeBeingDrawn(final View view, final Runnable runnable) {
