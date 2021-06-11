@@ -12,6 +12,7 @@ type Position = 'top' | 'bottom'
 const canvasBanners: { id: number, this: BannerAd, element: HTMLCanvasElement, adViewImage: string, autoDestroy: boolean | undefined }[] = [];
 var canvasSetInterval: NodeJS.Timeout | null = null;
 var currentDrawInterval = 250;//500;
+var preciseDrawInterval = false;
 
 function loadImage(url) {
   return new Promise<HTMLImageElement>(r => { let i: HTMLImageElement = new Image(); i.onload = (() => r(i)); i.src = url; });
@@ -64,6 +65,8 @@ async function canvasClick(e) {
 
 async function updateCanvas() {
 
+  const startTime = performance.now();
+
   const width = window.screen.width;
   const height = window.screen.height;
 
@@ -103,7 +106,9 @@ async function updateCanvas() {
     }
   }
 
-  canvasSetInterval = setTimeout(updateCanvas, currentDrawInterval);
+  const elapsed = performance.now() - startTime;
+
+  canvasSetInterval = setTimeout(updateCanvas, preciseDrawInterval ? (elapsed < currentDrawInterval ? currentDrawInterval - elapsed : 0) : currentDrawInterval);
 }
 
 async function setCanvasInterval(drawInterval) {
@@ -185,6 +190,7 @@ export default class BannerAd extends MobileAd<BannerAdOptions> {
     marginTop?: number
     marginBottom?: number
     canvasDrawInterval?: number
+    preciseDrawInterval?: boolean
   }) {
     if (cordova.platformId === Platforms.ios) {
       const { backgroundColor: bgColor } = opts
@@ -195,6 +201,9 @@ export default class BannerAd extends MobileAd<BannerAdOptions> {
 
     if(opts.canvasDrawInterval)
       setCanvasInterval(opts.canvasDrawInterval);
+
+    if(opts.preciseDrawInterval !== undefined)
+      preciseDrawInterval = opts.preciseDrawInterval;
 
     return false
   }
