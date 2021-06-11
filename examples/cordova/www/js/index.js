@@ -12,7 +12,7 @@ const app = {
       'admob.ad.load',
       (evt) => {
         const { ad } = evt
-        console.log('admob.ad.load', ad.id)
+        console.log('admob.ad.load', ad.id, ad instanceof admob.AppOpenAd)
       },
       false,
     )
@@ -70,16 +70,14 @@ const app = {
   initAppOpenAd() {
     const ad = new admob.AppOpenAd({
       adUnitId: 'ca-app-pub-3940256099942544/5662855259',
+      orientation: admob.AppOpenAd.Orientation.Portrait,
+      // orientation: admob.AppOpenAd.Orientation.LandscapeLeft,
     })
 
     document.addEventListener(
       'resume',
       () => {
-        ad.show().then((shown) => {
-          if (!shown) {
-            return ad.load()
-          }
-        })
+        ad.isLoaded().then((loaded) => (loaded ? ad.show() : ad.load()))
       },
       false,
     )
