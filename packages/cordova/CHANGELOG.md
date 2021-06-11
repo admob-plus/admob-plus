@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.17.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.16.0...admob-plus-cordova@1.17.0) (2021-06-11)
+
+
+### Features
+
+* **capacitor/andorid:** use GenericAd ([4b2e52c](https://github.com/admob-plus/admob-plus/commit/4b2e52c66aeb40df8d8b6275e69a8353e2396fc7))
+* **cordova:** add AppOpenAd orientation option, close [#377](https://github.com/admob-plus/admob-plus/issues/377) ([f9d2110](https://github.com/admob-plus/admob-plus/commit/f9d2110c3754685db2c538116ec46e76455029c4))
+* **cordova:** add NativeAd.showWith() ([8b136cd](https://github.com/admob-plus/admob-plus/commit/8b136cd4f72d99431dfa79f613cb191f04b7e0ab))
+
+
+
+
+
 # [1.16.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.15.0...admob-plus-cordova@1.16.0) (2021-06-08)
 
 
