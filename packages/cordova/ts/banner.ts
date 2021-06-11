@@ -121,8 +121,7 @@ function drawCanvasQueue() {
 
   if(len > 0) {
     const dpr = window.devicePixelRatio || 1;
-
-    for(let i = 0, len = canvasToDraw.length; i < len; i++) {
+    for(let i = 0; i < len; i++) {
 
       let canvas = canvasToDraw[i];
 
@@ -138,7 +137,6 @@ function drawCanvasQueue() {
   }
 
   requestAnimationFrame(drawCanvasQueue);
-
 }
 
 async function setCanvasInterval(drawInterval) {
