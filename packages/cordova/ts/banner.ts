@@ -9,7 +9,8 @@ import {
 
 type Position = 'top' | 'bottom'
 
-const canvasBanners: { id: number, this: BannerAd, element: HTMLCanvasElement, adViewImage: string, autoDestroy: boolean | undefined }[] = [];
+const canvasBanners: { id: number, this: BannerAd, element: HTMLCanvasElement, ctx: CanvasRenderingContext2D, adViewImage: string, autoDestroy: boolean | undefined }[] = [];
+const canvasToDraw: { element: HTMLCanvasElement, image: HTMLImageElement , ctx: CanvasRenderingContext2D, width: number, height: number }[] = [];
 var canvasSetInterval: NodeJS.Timeout | null = null;
 var currentDrawInterval = 250;//500;
 var preciseDrawInterval = false;
@@ -77,6 +78,7 @@ async function updateCanvas() {
     if(!canvas.element.isConnected && canvas.autoDestroy) { // The canvas element is no longer in the dom
       canvas.this.destroy();
       i--;
+      len--;
     } else {
       let rect = canvas.element.getBoundingClientRect();
       if(rect.width === 0 && rect.height === 0) { // The canvas is not current visible (display: none), hide adView
@@ -94,12 +96,14 @@ async function updateCanvas() {
           let adViewImage = await canvas.this.getAdViewImage();
           if(adViewImage) {
             canvas.adViewImage = String(adViewImage);
-            let dpr = window.devicePixelRatio || 1;
-            canvas.element.width = rect.width * dpr;
-            canvas.element.height = rect.height * dpr;
             let image: HTMLImageElement = await loadImage('data:image/jpeg;base64,'+adViewImage);
-            let ctx = <CanvasRenderingContext2D> canvas.element.getContext('2d');
-            ctx.drawImage(image, 0, 0, image.width, image.height);
+            canvasToDraw.push({
+              element: canvas.element,
+              ctx: canvas.ctx,
+              image: image,
+              width: rect.width,
+              height: rect.height,
+            });
           }
         }
       }
@@ -111,6 +115,32 @@ async function updateCanvas() {
   canvasSetInterval = setTimeout(updateCanvas, preciseDrawInterval ? (elapsed < currentDrawInterval ? currentDrawInterval - elapsed : 0) : currentDrawInterval);
 }
 
+function drawCanvasQueue() {
+
+  let len = canvasToDraw.length;
+
+  if(len > 0) {
+    const dpr = window.devicePixelRatio || 1;
+
+    for(let i = 0, len = canvasToDraw.length; i < len; i++) {
+
+      let canvas = canvasToDraw[i];
+
+      canvas.element.width = canvas.width * dpr;
+      canvas.element.height = canvas.height * dpr;
+      let ctx = <CanvasRenderingContext2D> canvas.element.getContext('2d');
+      canvas.ctx.drawImage(canvas.image, 0, 0, canvas.image.width, canvas.image.height);
+
+      canvasToDraw.splice(i, 1);
+      i--;
+      len--;
+    }
+  }
+
+  requestAnimationFrame(drawCanvasQueue);
+
+}
+
 async function setCanvasInterval(drawInterval) {
   
   if(drawInterval) {
@@ -119,6 +149,7 @@ async function setCanvasInterval(drawInterval) {
 
   if(canvasSetInterval === null) {
     canvasSetInterval = setTimeout(updateCanvas, currentDrawInterval);
+    requestAnimationFrame(drawCanvasQueue);
   }
 }
 
@@ -240,6 +271,7 @@ export default class BannerAd extends MobileAd<BannerAdOptions> {
           id: this.id,
           this: this,
           element: this.opts.canvas,
+          ctx: <CanvasRenderingContext2D> this.opts.canvas.getContext('2d'),
           adViewImage: '',
           autoDestroy: this.opts.autoDestroy,
         });
