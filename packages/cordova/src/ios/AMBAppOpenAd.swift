@@ -4,12 +4,13 @@ import GoogleMobileAds
 class AMBAppOpenAd: AMBAdBase, AMBGenericAd, GADFullScreenContentDelegate {
 
     let request: GADRequest
-    let orientation: UIInterfaceOrientation = .portrait
+    let orientation: UIInterfaceOrientation
 
     var mAd: GADAppOpenAd?
 
-    init(id: Int, adUnitId: String, request: GADRequest) {
+    init(id: Int, adUnitId: String, request: GADRequest, orientation: UIInterfaceOrientation) {
         self.request = request
+        self.orientation = orientation
 
         super.init(id: id, adUnitId: adUnitId)
     }
@@ -20,9 +21,14 @@ class AMBAppOpenAd: AMBAdBase, AMBGenericAd, GADFullScreenContentDelegate {
         else {
             return nil
         }
+        var orientation = UIInterfaceOrientation.portrait
+        if let v = ctx.opts?.value(forKey: "orientation") as? Int {
+            orientation = UIInterfaceOrientation(rawValue: v)!
+        }
         self.init(id: id,
                   adUnitId: adUnitId,
-                  request: ctx.optGADRequest())
+                  request: ctx.optGADRequest(),
+                  orientation: orientation)
     }
 
     deinit {
