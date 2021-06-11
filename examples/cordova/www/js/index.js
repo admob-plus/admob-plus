@@ -133,14 +133,17 @@ const app = {
     const ad = new admob.NativeAd({
       adUnitId: 'ca-app-pub-3940256099942544/3986624511',
     })
+
     return ad
       .load()
-      .then(() => ad.show({
-        x: 0,
-        y: 30,
-        width: window.screen.width,
-        height: 300,
-      }))
+      .then(() =>
+        ad.show({
+          x: 0,
+          y: 30,
+          width: window.screen.width,
+          height: 300,
+        }),
+      )
       .then(
         () =>
           new Promise((resolve) =>
@@ -150,6 +153,7 @@ const app = {
             }, 5000),
           ),
       )
+      .then(() => ad.showWith(document.getElementById('native-ad')))
   },
 
   receivedEvent(id) {

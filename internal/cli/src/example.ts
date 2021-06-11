@@ -346,6 +346,16 @@ async function startDev(opts: any) {
         ...o.syncDirs,
       )
       openArgs.push(...o.openArgs)
+      sane(path.join(cwd, 'www'), { glob: ['**/*'], watchman: true }).on(
+        'change',
+        debounce(async (filepath: string) => {
+          console.log('file changed', filepath)
+          await execa('yarn', ['cordova', 'prepare', platform], {
+            stdio: 'inherit',
+            cwd,
+          })
+        }, 1000),
+      )
       break
     }
     case 'cordova-consent': {
