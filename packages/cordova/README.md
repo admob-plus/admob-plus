@@ -6,7 +6,6 @@
 <!--
 ![NPM downloads per month](https://img.shields.io/npm/dm/admob-plus-cordova.svg)
 ![NPM downloads total](https://img.shields.io/npm/dt/admob-plus-cordova.svg)
-![](https://nodei.co/npm/admob-plus-cordova.svg)
 -->
 
 # [AdMob Plus Cordova](https://admob-plus.github.io)
