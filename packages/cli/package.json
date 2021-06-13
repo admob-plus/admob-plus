@@ -22,7 +22,7 @@
     "ora": "^5.4.1",
     "pkg-proxy": "^0.2.3",
     "semver": "^7.3.5",
-    "tslib": "^2.2.0",
+    "tslib": "^2.3.0",
     "update-notifier": "^5.1.0",
     "yargs": "^17.0.1"
   },

@@ -14,7 +14,7 @@
     "@types/cordova": "^0.0.34",
     "@types/node": "^15.12.2",
     "cordova": "^10.0.0",
-    "rollup": "^2.51.1",
+    "rollup": "^2.51.2",
     "ts-node": "^10.0.0",
     "typescript": "^4.3.2"
   },
