@@ -12,8 +12,9 @@ type Position = 'top' | 'bottom'
 const canvasBanners: { id: number, this: CanvasBannerAd, element: HTMLCanvasElement, ctx: CanvasRenderingContext2D, adViewImage: string, autoDestroy: boolean | undefined }[] = [];
 const canvasToDraw: { element: HTMLCanvasElement, image: HTMLImageElement , ctx: CanvasRenderingContext2D, width: number, height: number }[] = [];
 var canvasSetInterval: NodeJS.Timeout | null = null;
-var currentDrawInterval = 250;//500;
+var currentDrawInterval = 100;
 var preciseDrawInterval = false;
+var requestAnimationFrameDraw = false;
 
 function loadImage(url) {
   return new Promise<HTMLImageElement>(r => { let i: HTMLImageElement = new Image(); i.onload = (() => r(i)); i.src = url; });
@@ -112,7 +113,11 @@ async function updateCanvas() {
 
   const elapsed = performance.now() - startTime;
 
-  canvasSetInterval = setTimeout(updateCanvas, preciseDrawInterval ? (elapsed < currentDrawInterval ? currentDrawInterval - elapsed : 0) : currentDrawInterval);
+  if(requestAnimationFrameDraw) {
+    requestAnimationFrame(updateCanvas);
+  } else {
+    canvasSetInterval = setTimeout(updateCanvas, preciseDrawInterval ? (elapsed < currentDrawInterval ? currentDrawInterval - elapsed : 0) : currentDrawInterval);
+  }
 }
 
 function drawCanvasQueue() {
@@ -179,13 +184,11 @@ const colorToRGBA = (function () {
 })()
 
 export interface CanvasBannerAdOptions extends MobileAdOptions {
-  position?: Position
-  size?: AdSizeType
-  offset?: number
   canvas?: HTMLCanvasElement
   canvasDrawInterval?: number
   adViewImage?: string
   autoDestroy?: boolean
+  cleanPrevCanvas?: boolean
   x?: number
   y?: number
   height?: number
@@ -197,16 +200,11 @@ export default class CanvasBannerAd extends MobileAd<CanvasBannerAdOptions> {
 
   constructor(opts: CanvasBannerAdOptions) {
     super({
-      position: 'bottom',
-      size: AdSizeType.SMART_BANNER,
       ...opts,
-      ...opts.canvas ? {
-        x: getBoundingClientRect(opts.canvas).left,
-        y: getBoundingClientRect(opts.canvas).right,
-        width: opts.width ? opts.width : getBoundingClientRect(opts.canvas).width,
-        height: opts.height ? opts.height : getBoundingClientRect(opts.canvas).height,
-        offset: opts.offset ? opts.offset : 0,
-      } : {},
+      x: getBoundingClientRect(opts.canvas).left,
+      y: getBoundingClientRect(opts.canvas).right,
+      width: opts.width ? opts.width : getBoundingClientRect(opts.canvas).width,
+      height: opts.height ? opts.height : getBoundingClientRect(opts.canvas).height,
     })
 
     if(opts.autoDestroy === undefined) {
@@ -216,10 +214,9 @@ export default class CanvasBannerAd extends MobileAd<CanvasBannerAdOptions> {
 
   public static config(opts: {
     backgroundColor?: string
-    marginTop?: number
-    marginBottom?: number
     canvasDrawInterval?: number
     preciseDrawInterval?: boolean
+    requestAnimationFrameDraw?: boolean
   }) {
     if (cordova.platformId === Platforms.ios) {
       const { backgroundColor: bgColor } = opts
@@ -233,6 +230,9 @@ export default class CanvasBannerAd extends MobileAd<CanvasBannerAdOptions> {
 
     if(opts.preciseDrawInterval !== undefined)
       preciseDrawInterval = opts.preciseDrawInterval;
+
+    if(opts.requestAnimationFrameDraw !== undefined)
+      requestAnimationFrameDraw = opts.requestAnimationFrameDraw;
 
     return false
   }
@@ -315,7 +315,7 @@ export default class CanvasBannerAd extends MobileAd<CanvasBannerAdOptions> {
 
     if(this.opts.canvas) {
 
-      if(this.opts.canvas.isConnected) {
+      if(this.opts.canvas.isConnected && this.opts.cleanPrevCanvas) {
         let ctx = <CanvasRenderingContext2D> this.opts.canvas.getContext('2d');
         ctx.clearRect(0, 0, this.opts.canvas.width, this.opts.canvas.height);
       }
@@ -338,12 +338,15 @@ export default class CanvasBannerAd extends MobileAd<CanvasBannerAdOptions> {
 
       if(adViewImage) {
         let rect = newCanvas.getBoundingClientRect();
-        let dpr = window.devicePixelRatio || 1;
-        newCanvas.width = rect.width * dpr;
-        newCanvas.height = rect.height * dpr;
         let image: HTMLImageElement = await loadImage('data:image/jpeg;base64,'+adViewImage);
         let ctx = <CanvasRenderingContext2D> newCanvas.getContext('2d');
-        ctx.drawImage(image, 0, 0, image.width, image.height);
+        canvasToDraw.push({
+          element: newCanvas,
+          ctx: ctx,
+          image: image,
+          width: rect.width,
+          height: rect.height,
+        });
       }
     }
 
