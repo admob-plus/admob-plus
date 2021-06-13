@@ -13,7 +13,9 @@ The `CanvasBannerAd` is only available in Android.
 
 ## Usage
 
-The Banner created will be the current size of the canvas, make sure it is a normal size.
+The Banner created will be the current size of the canvas, make sure it is a normal size, and do not use `padding` or `border` on the canvas, this causes the canvas size to be measured incorrectly, you can add the canvas inside a `div` and apply the styles to it.
+
+It is recommended to disable video ads to avoid potential performance issues.
 
 ```js
 let canvasBanner
@@ -92,7 +94,7 @@ admob.BannerAd.config({ preciseDrawInterval: true }) // Default false
 
 ### `requestAnimationFrameDraw`
 
-This uses the `requestAnimationFrame` to update canvas, this disable `canvasDrawInterval` and `preciseDrawInterval`.
+This uses the `requestAnimationFrame` to update canvas, this disable `canvasDrawInterval` and `preciseDrawInterval`, this is recommended if you plan to use video banner ads.
 
 ```js
 admob.BannerAd.config({ requestAnimationFrameDraw: true }) // Default false
