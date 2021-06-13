@@ -21,6 +21,7 @@ import admob.plus.cordova.Generated.Actions;
 import admob.plus.cordova.ads.AdBase;
 import admob.plus.cordova.ads.AppOpen;
 import admob.plus.cordova.ads.Banner;
+import admob.plus.cordova.ads.CanvasBanner;
 import admob.plus.cordova.ads.Interstitial;
 import admob.plus.cordova.ads.Native;
 import admob.plus.cordova.ads.Rewarded;
@@ -104,10 +105,18 @@ public class AdMob extends CordovaPlugin implements Helper.Adapter {
                 return executeBannerHide(ctx);
             case Actions.BANNER_DESTROY:
                 return executeBannerDestroy(ctx);
-            case Actions.BANNER_GET_AD_VIEW_IMAGE:
-                return executeBannerGetAdViewImage(ctx);
-            case Actions.BANNER_SIMULATE_CLICK_EVENT:
-                return executeBannerSimulateClickEvent(ctx);
+            case Actions.CANVAS_BANNER_LOAD:
+                return executeCanvasBannerLoad(ctx);
+            case Actions.CANVAS_BANNER_SHOW:
+                return executeCanvasBannerShow(ctx);
+            case Actions.CANVAS_BANNER_HIDE:
+                return executeCanvasBannerHide(ctx);
+            case Actions.CANVAS_BANNER_DESTROY:
+                return executeCanvasBannerDestroy(ctx);
+            case Actions.CANVAS_BANNER_GET_AD_VIEW_IMAGE:
+                return executeCanvasBannerGetAdViewImage(ctx);
+            case Actions.CANVAS_BANNER_SIMULATE_CLICK_EVENT:
+                return executeCanvasBannerSimulateClickEvent(ctx);
             case Actions.INTERSTITIAL_LOAD:
                 return executeInterstitialLoad(ctx);
             case Actions.REWARDED_LOAD:
@@ -241,21 +250,61 @@ public class AdMob extends CordovaPlugin implements Helper.Adapter {
         return true;
     }
 
-    private boolean executeBannerGetAdViewImage(ExecuteContext ctx) {
+    private boolean executeCanvasBannerLoad(ExecuteContext ctx) {
         cordova.getActivity().runOnUiThread(() -> {
-            Banner banner = (Banner) ctx.optAdOrError();
-            if (banner != null) {
-                banner.getAdViewImage(ctx);
+            CanvasBanner canvasBanner = ctx.optAdOrCreate(CanvasBanner.class);
+            if (canvasBanner != null) {
+                canvasBanner.load(ctx);
             }
         });
         return true;
     }
 
-    private boolean executeBannerSimulateClickEvent(ExecuteContext ctx) {
+    private boolean executeCanvasBannerShow(ExecuteContext ctx) {
         cordova.getActivity().runOnUiThread(() -> {
-            Banner banner = (Banner) ctx.optAdOrError();
-            if (banner != null) {
-                banner.simulateClickEvent(ctx);
+            CanvasBanner canvasBanner = (CanvasBanner) ctx.optAdOrError();
+            if (canvasBanner != null) {
+                canvasBanner.show(ctx);
+            }
+        });
+        return true;
+    }
+
+    private boolean executeCanvasBannerHide(ExecuteContext ctx) {
+        cordova.getActivity().runOnUiThread(() -> {
+            CanvasBanner canvasBanner = (CanvasBanner) ctx.optAdOrError();
+            if (canvasBanner != null) {
+                canvasBanner.hide(ctx);
+            }
+        });
+        return true;
+    }
+
+    private boolean executeCanvasBannerDestroy(ExecuteContext ctx) {
+        cordova.getActivity().runOnUiThread(() -> {
+            CanvasBanner canvasBanner = (CanvasBanner) ctx.optAdOrError();
+            if (canvasBanner != null) {
+                canvasBanner.destroy(ctx);
+            }
+        });
+        return true;
+    }
+
+    private boolean executeCanvasBannerGetAdViewImage(ExecuteContext ctx) {
+        cordova.getActivity().runOnUiThread(() -> {
+            CanvasBanner canvasBanner = (CanvasBanner) ctx.optAdOrError();
+            if (canvasBanner != null) {
+                canvasBanner.getAdViewImage(ctx);
+            }
+        });
+        return true;
+    }
+
+    private boolean executeCanvasBannerSimulateClickEvent(ExecuteContext ctx) {
+        cordova.getActivity().runOnUiThread(() -> {
+            CanvasBanner canvasBanner = (CanvasBanner) ctx.optAdOrError();
+            if (canvasBanner != null) {
+                canvasBanner.simulateClickEvent(ctx);
             }
         });
         return true;

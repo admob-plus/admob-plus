@@ -51,6 +51,7 @@
         <source-file src="src/android/cordova/ads/AdBase.java" target-dir="src/admob/plus/cordova/ads" />
         <source-file src="src/android/cordova/ads/AppOpen.java" target-dir="src/admob/plus/cordova/ads" />
         <source-file src="src/android/cordova/ads/Banner.java" target-dir="src/admob/plus/cordova/ads" />
+        <source-file src="src/android/cordova/ads/CanvasBanner.java" target-dir="src/admob/plus/cordova/ads" />
         <source-file src="src/android/cordova/ads/Interstitial.java" target-dir="src/admob/plus/cordova/ads" />
         <source-file src="src/android/cordova/ads/Native.java" target-dir="src/admob/plus/cordova/ads" />
         <source-file src="src/android/cordova/ads/Rewarded.java" target-dir="src/admob/plus/cordova/ads" />

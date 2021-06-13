@@ -1,5 +1,6 @@
 import AppOpenAd from './app-open'
 import BannerAd, { BannerAdOptions } from './banner'
+import CanvasBannerAd, { CanvasBannerAdOptions } from './canvas-banner'
 import InterstitialAd from './interstitial'
 import NativeAd from './native'
 import RewardedAd, {
@@ -25,6 +26,8 @@ export {
   AppOpenAd,
   BannerAd,
   BannerAdOptions,
+  CanvasBannerAd,
+  CanvasBannerAdOptions,
   InterstitialAd,
   NativeAd,
   RewardedAd,
@@ -37,6 +40,7 @@ export {
 export class AdMob {
   public readonly AppOpenAd = AppOpenAd
   public readonly BannerAd = BannerAd
+  public readonly CanvasBannerAd = CanvasBannerAd
   public readonly InterstitialAd = InterstitialAd
   public readonly NativeAd = NativeAd
   public readonly RewardedAd = RewardedAd
