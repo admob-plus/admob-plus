@@ -8,30 +8,98 @@ custom_edit_url: null
 
 ## Methods
 
-### addListener
+### adCreate
 
-▸ **addListener**(`eventName`, `listenerFunc`): `Promise`<PluginListenerHandle\> & `PluginListenerHandle`
+▸ **adCreate**<O\>(`opts`): `Promise`<void\>
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `O` | `O`: [MobileAdOptions](../index.md#mobileadoptions) |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `eventName` | `string` |
-| `listenerFunc` | (`event`: `any`) => `void` |
+| `opts` | `O` |
 
 #### Returns
 
-`Promise`<PluginListenerHandle\> & `PluginListenerHandle`
+`Promise`<void\>
 
 #### Defined in
 
-definitions.ts:58
+definitions.ts:37
 
 ___
 
-### bannerHide
+### adHide
 
-▸ **bannerHide**(`opts`): `Promise`<void\>
+▸ **adHide**(`opts`): `Promise`<void\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `opts` | `Object` |
+| `opts.id` | `number` |
+
+#### Returns
+
+`Promise`<void\>
+
+#### Defined in
+
+definitions.ts:41
+
+___
+
+### adIsLoaded
+
+▸ **adIsLoaded**(`opts`): `Promise`<boolean\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `opts` | `Object` |
+| `opts.id` | `number` |
+
+#### Returns
+
+`Promise`<boolean\>
+
+#### Defined in
+
+definitions.ts:38
+
+___
+
+### adLoad
+
+▸ **adLoad**(`opts`): `Promise`<void\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `opts` | `Object` |
+| `opts.id` | `number` |
+
+#### Returns
+
+`Promise`<void\>
+
+#### Defined in
+
+definitions.ts:39
+
+___
+
+### adShow
+
+▸ **adShow**(`opts`): `Promise`<void\>
 
 #### Parameters
 
@@ -50,26 +118,24 @@ definitions.ts:40
 
 ___
 
-### bannerShow
+### addListener
 
-▸ **bannerShow**(`opts`): `Promise`<void\>
+▸ **addListener**(`eventName`, `listenerFunc`): `Promise`<PluginListenerHandle\> & `PluginListenerHandle`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `opts` | `Object` |
-| `opts.adUnitId` | `string` |
-| `opts.id` | `number` |
-| `opts.position?` | ``"top"`` \| ``"bottom"`` |
+| `eventName` | `string` |
+| `listenerFunc` | (`event`: `any`) => `void` |
 
 #### Returns
 
-`Promise`<void\>
+`Promise`<PluginListenerHandle\> & `PluginListenerHandle`
 
 #### Defined in
 
-definitions.ts:35
+definitions.ts:50
 
 ___
 
@@ -89,7 +155,7 @@ ___
 
 #### Defined in
 
-definitions.ts:33
+definitions.ts:35
 
 ___
 
@@ -109,50 +175,7 @@ ___
 
 #### Defined in
 
-definitions.ts:32
-
-___
-
-### interstitialLoad
-
-▸ **interstitialLoad**(`opts`): `Promise`<void\>
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `opts` | `Object` |
-| `opts.adUnitId` | `string` |
-| `opts.id` | `number` |
-
-#### Returns
-
-`Promise`<void\>
-
-#### Defined in
-
-definitions.ts:42
-
-___
-
-### interstitialShow
-
-▸ **interstitialShow**(`opts`): `Promise`<void\>
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `opts` | `Object` |
-| `opts.id` | `number` |
-
-#### Returns
-
-`Promise`<void\>
-
-#### Defined in
-
-definitions.ts:43
+definitions.ts:34
 
 ___
 
@@ -163,92 +186,6 @@ ___
 #### Returns
 
 `Promise`<`Object`\>
-
-#### Defined in
-
-definitions.ts:54
-
-___
-
-### rewardedInterstitialLoad
-
-▸ **rewardedInterstitialLoad**(`opts`): `Promise`<void\>
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `opts` | `Object` |
-| `opts.adUnitId` | `string` |
-| `opts.id` | `number` |
-
-#### Returns
-
-`Promise`<void\>
-
-#### Defined in
-
-definitions.ts:48
-
-___
-
-### rewardedInterstitialShow
-
-▸ **rewardedInterstitialShow**(`opts`): `Promise`<void\>
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `opts` | `Object` |
-| `opts.id` | `number` |
-
-#### Returns
-
-`Promise`<void\>
-
-#### Defined in
-
-definitions.ts:52
-
-___
-
-### rewardedLoad
-
-▸ **rewardedLoad**(`opts`): `Promise`<void\>
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `opts` | `Object` |
-| `opts.adUnitId` | `string` |
-| `opts.id` | `number` |
-
-#### Returns
-
-`Promise`<void\>
-
-#### Defined in
-
-definitions.ts:45
-
-___
-
-### rewardedShow
-
-▸ **rewardedShow**(`opts`): `Promise`<void\>
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `opts` | `Object` |
-| `opts.id` | `number` |
-
-#### Returns
-
-`Promise`<void\>
 
 #### Defined in
 
@@ -266,4 +203,18 @@ ___
 
 #### Defined in
 
-definitions.ts:31
+definitions.ts:33
+
+___
+
+### trackingAuthorizationStatus
+
+▸ **trackingAuthorizationStatus**(): `Promise`<`Object`\>
+
+#### Returns
+
+`Promise`<`Object`\>
+
+#### Defined in
+
+definitions.ts:43

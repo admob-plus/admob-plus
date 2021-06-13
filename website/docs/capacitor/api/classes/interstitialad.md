@@ -8,7 +8,7 @@ custom_edit_url: null
 
 ## Hierarchy
 
-- `MobileAd`
+- `GenericAd`
 
   ↳ **InterstitialAd**
 
@@ -16,21 +16,21 @@ custom_edit_url: null
 
 ### constructor
 
-• **new InterstitialAd**(`__namedParameters`)
+• **new InterstitialAd**(`opts`)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `__namedParameters` | `MobileAdOptions` |
+| `opts` | [MobileAdOptions](../index.md#mobileadoptions) |
 
-#### Overrides
+#### Inherited from
 
-MobileAd.constructor
+GenericAd.constructor
 
 #### Defined in
 
-index.ts:58
+index.ts:33
 
 ## Properties
 
@@ -40,7 +40,21 @@ index.ts:58
 
 #### Inherited from
 
-MobileAd.id
+GenericAd.id
+
+#### Defined in
+
+index.ts:12
+
+___
+
+### opts
+
+• `Protected` `Readonly` **opts**: [MobileAdOptions](../index.md#mobileadoptions)
+
+#### Inherited from
+
+GenericAd.opts
 
 #### Defined in
 
@@ -48,17 +62,13 @@ index.ts:14
 
 ___
 
-### opts
+### cls
 
-• `Protected` `Readonly` **opts**: `MobileAdOptions`
-
-#### Inherited from
-
-MobileAd.opts
+▪ `Static` **cls**: `string` = 'InterstitialAd'
 
 #### Defined in
 
-index.ts:16
+index.ts:106
 
 ## Accessors
 
@@ -72,9 +82,63 @@ index.ts:16
 
 #### Defined in
 
-index.ts:30
+index.ts:28
 
 ## Methods
+
+### hide
+
+▸ **hide**(): `Promise`<void\>
+
+#### Returns
+
+`Promise`<void\>
+
+#### Inherited from
+
+GenericAd.hide
+
+#### Defined in
+
+index.ts:67
+
+___
+
+### init
+
+▸ `Protected` **init**(): `Promise`<void\>
+
+#### Returns
+
+`Promise`<void\>
+
+#### Inherited from
+
+GenericAd.init
+
+#### Defined in
+
+index.ts:72
+
+___
+
+### isLoaded
+
+▸ **isLoaded**(): `Promise`<boolean\>
+
+#### Returns
+
+`Promise`<boolean\>
+
+#### Inherited from
+
+GenericAd.isLoaded
+
+#### Defined in
+
+index.ts:52
+
+___
 
 ### load
 
@@ -84,9 +148,13 @@ index.ts:30
 
 `Promise`<void\>
 
+#### Inherited from
+
+GenericAd.load
+
 #### Defined in
 
-index.ts:63
+index.ts:57
 
 ___
 
@@ -98,6 +166,10 @@ ___
 
 `Promise`<void\>
 
+#### Inherited from
+
+GenericAd.show
+
 #### Defined in
 
-index.ts:67
+index.ts:62

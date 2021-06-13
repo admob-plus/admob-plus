@@ -43,6 +43,22 @@ definitions.ts:11
 
 ___
 
+### MobileAdOptions
+
+Ƭ **MobileAdOptions**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `adUnitId` | `string` |
+
+#### Defined in
+
+definitions.ts:30
+
+___
+
 ### RequestConfig
 
 Ƭ **RequestConfig**: `Object`

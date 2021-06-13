@@ -8,7 +8,7 @@ custom_edit_url: null
 
 ## Hierarchy
 
-- `GenericAd`
+- `GenericAd`<[MobileAdOptions](../index.md#mobileadoptions) & { `orientation`: `AppOpenAdOrientation`  }\>
 
   ↳ **AppOpenAd**
 
@@ -22,11 +22,13 @@ custom_edit_url: null
 
 | Name | Type |
 | :------ | :------ |
-| `opts` | [MobileAdOptions](../index.md#mobileadoptions) |
+| `opts` | [MobileAdOptions](../index.md#mobileadoptions) & { `orientation`: `AppOpenAdOrientation`  } |
 
 #### Inherited from
 
-GenericAd.constructor
+GenericAd<
+  MobileAdOptions & { orientation: AppOpenAdOrientation }
+\>.constructor
 
 #### Defined in
 
@@ -50,7 +52,7 @@ ___
 
 ### opts
 
-• `Protected` `Readonly` **opts**: [MobileAdOptions](../index.md#mobileadoptions)
+• `Protected` `Readonly` **opts**: [MobileAdOptions](../index.md#mobileadoptions) & { `orientation`: `AppOpenAdOrientation`  }
 
 #### Inherited from
 
@@ -59,6 +61,16 @@ GenericAd.opts
 #### Defined in
 
 api.ts:15
+
+___
+
+### Orientation
+
+▪ `Static` `Readonly` **Orientation**: typeof `AppOpenAdOrientation`
+
+#### Defined in
+
+app-open.ts:53
 
 ___
 
