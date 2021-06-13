@@ -188,7 +188,6 @@ export interface CanvasBannerAdOptions extends MobileAdOptions {
   canvasDrawInterval?: number
   adViewImage?: string
   autoDestroy?: boolean
-  cleanPrevCanvas?: boolean
   x?: number
   y?: number
   height?: number
@@ -311,11 +310,11 @@ export default class CanvasBannerAd extends MobileAd<CanvasBannerAdOptions> {
     return execAsync(NativeActions.canvasBannerSimulateClickEvent, [{ ...opts, id: this.id }])
   }
 
-  public async changeCanvas(newCanvas: HTMLCanvasElement) {
+  public async changeCanvas(newCanvas: HTMLCanvasElement, cleanPrevCanvas: boolean) {
 
     if(this.opts.canvas) {
 
-      if(this.opts.canvas.isConnected && this.opts.cleanPrevCanvas) {
+      if(this.opts.canvas.isConnected && cleanPrevCanvas) {
         let ctx = <CanvasRenderingContext2D> this.opts.canvas.getContext('2d');
         ctx.clearRect(0, 0, this.opts.canvas.width, this.opts.canvas.height);
       }
