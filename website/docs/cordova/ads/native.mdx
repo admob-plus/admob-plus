@@ -55,6 +55,18 @@ document.addEventListener('admob.ad.load', async (evt) => {
 })
 ```
 
+## Attach to HTML element
+
+```js
+ad.showWith(document.getElementById('native-ad'))
+```
+
+`native-ad` is the HTML element for the ad view should attach to, which will update the size and position of ad view as the DOM element.
+
+Note that this is an native ad view overlay on top of the webview, so scrolling will see some delay.
+It is the limitation for mixing native view and webview for hybrid app.
+
+
 ## Customize Views
 
 You will need to create a plugin to provide the native ad view implementation.
