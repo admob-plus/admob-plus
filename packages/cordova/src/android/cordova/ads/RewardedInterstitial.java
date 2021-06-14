@@ -30,8 +30,6 @@ public class RewardedInterstitial extends AdBase {
 
     @Override
     public void load(Context ctx) {
-        AdRequest adRequest = ctx.optAdRequest();
-
         clear();
 
         RewardedInterstitialAd.load(getActivity(), adUnitId, adRequest, new RewardedInterstitialAdLoadCallback() {

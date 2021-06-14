@@ -14,7 +14,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.LoadAdError;
@@ -40,7 +39,6 @@ public class Banner extends AdBase {
     private final Integer offset;
     private AdView mAdView;
     private RelativeLayout mRelativeLayout = null;
-    private AdRequest mAdRequest = null;
     private AdView mAdViewOld = null;
 
     public Banner(ExecuteContext ctx) {
@@ -70,15 +68,17 @@ public class Banner extends AdBase {
     }
 
     @Override
-    public void load(Context ctx) {
-        final AdRequest adRequest = ctx.optAdRequest();
+    public boolean isLoaded() {
+        return mAdView != null;
+    }
 
+    @Override
+    public void load(Context ctx) {
         if (mAdView == null) {
             mAdView = createBannerView();
         }
 
         mAdView.loadAd(adRequest);
-        mAdRequest = adRequest;
         ctx.resolve();
     }
 
@@ -183,7 +183,6 @@ public class Banner extends AdBase {
     }
 
     private void reloadBannerView() {
-        if (mAdRequest == null) return;
         if (mAdView == null || mAdView.getVisibility() == View.GONE) return;
 
         pauseBannerViews();
@@ -191,7 +190,7 @@ public class Banner extends AdBase {
         mAdViewOld = mAdView;
 
         mAdView = createBannerView();
-        mAdView.loadAd(mAdRequest);
+        mAdView.loadAd(adRequest);
         addBannerView();
     }
 

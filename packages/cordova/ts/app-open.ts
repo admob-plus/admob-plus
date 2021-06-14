@@ -11,4 +11,8 @@ export default class AppOpenAd extends GenericAd<
   MobileAdOptions & { orientation: AppOpenAdOrientation }
 > {
   static readonly Orientation = AppOpenAdOrientation
+
+  async show() {
+    return super.show() as Promise<boolean>
+  }
 }

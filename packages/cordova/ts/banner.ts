@@ -1,10 +1,7 @@
 import {
   AdSizeType,
-  execAsync,
-  MobileAd,
-  MobileAdOptions,
-  NativeActions,
-  Platforms,
+  execAsync, GenericAd, MobileAdOptions, NativeActions,
+  Platforms
 } from './shared'
 
 type Position = 'top' | 'bottom'
@@ -42,7 +39,7 @@ export interface BannerAdOptions extends MobileAdOptions {
   offset?: number
 }
 
-export default class BannerAd extends MobileAd<BannerAdOptions> {
+export default class BannerAd extends GenericAd<BannerAdOptions> {
   private _loaded = false
 
   constructor(opts: BannerAdOptions) {
@@ -68,11 +65,8 @@ export default class BannerAd extends MobileAd<BannerAdOptions> {
   }
 
   public async load() {
-    const result = await execAsync(NativeActions.bannerLoad, [
-      { ...this.opts, id: this.id },
-    ])
+    await super.load()
     this._loaded = true
-    return result
   }
 
   public async show() {
@@ -80,10 +74,6 @@ export default class BannerAd extends MobileAd<BannerAdOptions> {
       await this.load()
     }
 
-    return execAsync(NativeActions.bannerShow, [{ id: this.id }])
-  }
-
-  public hide() {
-    return execAsync(NativeActions.bannerHide, [{ id: this.id }])
+    return super.show()
   }
 }

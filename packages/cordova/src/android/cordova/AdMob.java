@@ -77,15 +77,32 @@ public class AdMob extends CordovaPlugin implements Helper.Adapter {
                 if (adClass == null) {
                     ctx.reject("ad cls is missing");
                 } else {
+                    GenericAd ad = null;
                     switch (adClass) {
                         case "AppOpenAd":
-                            new AppOpen(ctx);
+                            ad = new AppOpen(ctx);
+                            break;
+                        case "BannerAd":
+                            ad = new Banner(ctx);
+                            break;
+                        case "InterstitialAd":
+                            ad = new Interstitial(ctx);
                             break;
                         case "NativeAd":
-                            new Native(ctx);
+                            ad = new Native(ctx);
+                            break;
+                        case "RewardedAd":
+                            ad = new Rewarded(ctx);
+                            break;
+                        case "RewardedInterstitialAd":
+                            ad = new RewardedInterstitial(ctx);
                             break;
                     }
-                    ctx.resolve();
+                    if (ad != null) {
+                        ctx.resolve();
+                    } else {
+                        ctx.reject("ad cls is not supported");
+                    }
                 }
                 break;
             case Actions.AD_IS_LOADED:
@@ -93,21 +110,9 @@ public class AdMob extends CordovaPlugin implements Helper.Adapter {
             case Actions.AD_LOAD:
                 return executeAdLoad(ctx);
             case Actions.AD_SHOW:
-                return executeAdShow_(ctx);
+                return executeAdShow(ctx);
             case Actions.AD_HIDE:
                 return executeAdHide(ctx);
-            case Actions.BANNER_LOAD:
-                return executeBannerLoad(ctx);
-            case Actions.BANNER_SHOW:
-                return executeBannerShow(ctx);
-            case Actions.BANNER_HIDE:
-                return executeBannerHide(ctx);
-            case Actions.INTERSTITIAL_LOAD:
-                return executeInterstitialLoad(ctx);
-            case Actions.REWARDED_LOAD:
-                return executeRewardedLoad(ctx);
-            case Actions.REWARDED_INTERSTITIAL_LOAD:
-                return executeRewardedInterstitialLoad(ctx);
             case Actions.SET_APP_MUTED: {
                 boolean value = args.optBoolean(0);
                 MobileAds.setAppMuted(value);
@@ -120,14 +125,6 @@ public class AdMob extends CordovaPlugin implements Helper.Adapter {
                 callbackContext.success();
                 break;
             }
-            case Actions.INTERSTITIAL_IS_LOADED:
-            case Actions.REWARDED_IS_LOADED:
-            case Actions.REWARDED_INTERSTITIAL_IS_LOADED:
-                return executeAdIsLoaded(ctx);
-            case Actions.INTERSTITIAL_SHOW:
-            case Actions.REWARDED_SHOW:
-            case Actions.REWARDED_INTERSTITIAL_SHOW:
-                return executeAdShow(ctx);
             default:
                 return false;
         }
@@ -171,7 +168,7 @@ public class AdMob extends CordovaPlugin implements Helper.Adapter {
         return true;
     }
 
-    private boolean executeAdShow_(ExecuteContext ctx) {
+    private boolean executeAdShow(ExecuteContext ctx) {
         cordova.getActivity().runOnUiThread(() -> {
             GenericAd ad = (GenericAd) ctx.optAdOrError();
             if (ad != null) {
@@ -190,86 +187,6 @@ public class AdMob extends CordovaPlugin implements Helper.Adapter {
             GenericAd ad = (GenericAd) ctx.optAdOrError();
             if (ad != null) {
                 ad.hide(ctx);
-            }
-        });
-        return true;
-    }
-
-    private boolean executeBannerLoad(ExecuteContext ctx) {
-        cordova.getActivity().runOnUiThread(() -> {
-            Banner banner = ctx.optAdOrCreate(Banner.class);
-            if (banner != null) {
-                banner.load(ctx);
-            }
-        });
-        return true;
-    }
-
-    private boolean executeBannerShow(ExecuteContext ctx) {
-        cordova.getActivity().runOnUiThread(() -> {
-            Banner banner = (Banner) ctx.optAdOrError();
-            if (banner != null) {
-                banner.show(ctx);
-            }
-        });
-        return true;
-    }
-
-    private boolean executeBannerHide(ExecuteContext ctx) {
-        cordova.getActivity().runOnUiThread(() -> {
-            Banner banner = (Banner) ctx.optAdOrError();
-            if (banner != null) {
-                banner.hide(ctx);
-            }
-        });
-        return true;
-    }
-
-    private boolean executeAdIsLoaded(ExecuteContext ctx) {
-        cordova.getActivity().runOnUiThread(() -> {
-            GenericAd ad = (GenericAd) ctx.optAdOrError();
-            if (ad != null) {
-                ctx.resolve(ad.isLoaded());
-            }
-        });
-        return true;
-    }
-
-    private boolean executeInterstitialLoad(ExecuteContext ctx) {
-        cordova.getActivity().runOnUiThread(() -> {
-            Interstitial ad = ctx.optAdOrCreate(Interstitial.class);
-            if (ad != null) {
-                ad.load(ctx);
-            }
-        });
-        return true;
-    }
-
-    private boolean executeAdShow(ExecuteContext ctx) {
-        cordova.getActivity().runOnUiThread(() -> {
-            GenericAd ad = (GenericAd) ctx.optAdOrError();
-            if (ad != null) {
-                ad.show(ctx);
-            }
-        });
-        return true;
-    }
-
-    private boolean executeRewardedLoad(ExecuteContext ctx) {
-        cordova.getActivity().runOnUiThread(() -> {
-            Rewarded ad = ctx.optAdOrCreate(Rewarded.class);
-            if (ad != null) {
-                ad.load(ctx);
-            }
-        });
-        return true;
-    }
-
-    private boolean executeRewardedInterstitialLoad(ExecuteContext ctx) {
-        cordova.getActivity().runOnUiThread(() -> {
-            RewardedInterstitial ad = ctx.optAdOrCreate(RewardedInterstitial.class);
-            if (ad != null) {
-                ad.load(ctx);
             }
         });
         return true;

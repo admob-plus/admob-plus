@@ -33,9 +33,7 @@ export class GenericAd<
 
   async show(opts?: S) {
     await this.init()
-    return execAsync(NativeActions.adShow, [
-      { ...opts, id: this.id },
-    ]) as Promise<boolean>
+    return execAsync(NativeActions.adShow, [{ ...opts, id: this.id }])
   }
 
   protected async init() {

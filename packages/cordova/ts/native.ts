@@ -1,5 +1,4 @@
-import { GenericAd } from './app-open'
-import { execAsync, NativeActions, MobileAdOptions } from './shared'
+import { GenericAd, execAsync, NativeActions, MobileAdOptions } from './shared'
 
 export default class NativeAd extends GenericAd<
   MobileAdOptions & { view?: string },
