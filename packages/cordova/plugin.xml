@@ -110,6 +110,7 @@
         <source-file src="src/ios/AMBAppOpenAd.swift" />
         <source-file src="src/ios/AMBBanner.swift" />
         <source-file src="src/ios/AMBContext.swift" />
+        <source-file src="src/ios/AMBCore.swift" />
         <source-file src="src/ios/AMBGenerated.swift" />
         <source-file src="src/ios/AMBInterstitial.swift" />
         <source-file src="src/ios/AMBNativeAd.swift" />
