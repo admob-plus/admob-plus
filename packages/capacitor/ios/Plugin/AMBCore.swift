@@ -2,6 +2,11 @@ import Foundation
 import UIKit
 import GoogleMobileAds
 
+enum AMBCoreError: Error {
+    case notImplemented
+    case unknown
+}
+
 protocol AMBHelperAdapter {
 }
 
@@ -53,7 +58,7 @@ extension AMBCoreContext {
     }
 
     func reject() {
-        return reject("unknown error")
+        return reject(AMBCoreError.unknown)
     }
 
     func reject(_ error: Error) {
@@ -70,18 +75,31 @@ protocol AMBGenericAd {
 
 extension AMBGenericAd {
     func isLoaded() -> Bool {
+        #if targetEnvironment(simulator)
+        fatalError(AMBCoreError.notImplemented.localizedDescription)
+        #else
         return false
+        #endif
     }
 
     func load(_ ctx: AMBCoreContext) {
-        ctx.reject("Not implemented")
+        ctx.reject(AMBCoreError.notImplemented)
+        #if targetEnvironment(simulator)
+        fatalError(AMBCoreError.notImplemented.localizedDescription)
+        #endif
     }
 
     func show(_ ctx: AMBCoreContext) {
-        ctx.reject("Not implemented")
+        ctx.reject(AMBCoreError.notImplemented)
+        #if targetEnvironment(simulator)
+        fatalError(AMBCoreError.notImplemented.localizedDescription)
+        #endif
     }
 
     func hide(_ ctx: AMBCoreContext) {
-        ctx.reject("Not implemented")
+        ctx.reject(AMBCoreError.notImplemented)
+        #if targetEnvironment(simulator)
+        fatalError(AMBCoreError.notImplemented.localizedDescription)
+        #endif
     }
 }
