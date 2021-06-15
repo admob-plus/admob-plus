@@ -4,10 +4,6 @@ import GoogleMobileAds
 class AMBRewarded: AMBAdBase, AMBGenericAd, GADFullScreenContentDelegate {
     var rewardedAd: GADRewardedAd?
 
-    override init(id: Int, adUnitId: String) {
-        super.init(id: id, adUnitId: adUnitId)
-    }
-
     deinit {
         rewardedAd?.fullScreenContentDelegate = nil
         rewardedAd = nil
@@ -26,7 +22,7 @@ class AMBRewarded: AMBAdBase, AMBGenericAd, GADFullScreenContentDelegate {
     }
 
     func load(_ ctx: AMBContext) {
-        GADRewardedAd.load(withAdUnitID: adUnitId, request: ctx.optGADRequest(), completionHandler: { ad, error in
+        GADRewardedAd.load(withAdUnitID: adUnitId, request: adRequest, completionHandler: { ad, error in
             if error != nil {
                 self.emit(AMBEvents.rewardedLoadFail, error!)
                 ctx.reject(error!)

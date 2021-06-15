@@ -23,7 +23,7 @@ class AMBInterstitial: AMBAdBase, AMBGenericAd, GADFullScreenContentDelegate {
     func load(_ ctx: AMBContext) {
         GADInterstitialAd.load(
             withAdUnitID: adUnitId,
-            request: ctx.optGADRequest(),
+            request: adRequest,
             completionHandler: { ad, error in
                 if error != nil {
                     self.emit(AMBEvents.rewardedInterstitialLoadFail, error!)

@@ -52,11 +52,11 @@ class AMBContext: AMBCoreContext {
 
     func optAd() -> AMBAdBase? {
         guard let id = optId(),
-              let ad = AMBAdBase.ads[id]
+              let ad = AMBCoreAd.ads[id]
         else {
             return nil
         }
-        return ad
+        return ad as? AMBAdBase
     }
 
     func optAdOrError() -> AMBAdBase? {

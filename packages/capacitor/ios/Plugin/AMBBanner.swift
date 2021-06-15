@@ -41,11 +41,11 @@ class AMBBanner: AMBAdBase, AMBGenericAd, GADAdSizeDelegate, GADBannerViewDelega
     let position: String!
     var bannerView: GADBannerView!
 
-    init(id: Int, adUnitId: String, adSize: GADAdSize, position: String) {
+    init(id: Int, adUnitId: String, adRequest: GADRequest, adSize: GADAdSize, position: String) {
         self.adSize = adSize
         self.position = position
 
-        super.init(id: id, adUnitId: adUnitId)
+        super.init(id: id, adUnitId: adUnitId, adRequest: adRequest)
     }
 
     convenience init?(_ ctx: AMBContext) {
@@ -58,6 +58,7 @@ class AMBBanner: AMBAdBase, AMBGenericAd, GADAdSizeDelegate, GADBannerViewDelega
         let adSize = kGADAdSizeBanner
         self.init(id: id,
                   adUnitId: adUnitId,
+                  adRequest: ctx.optGADRequest(),
                   adSize: adSize,
                   position: ctx.optPosition())
     }
@@ -87,7 +88,7 @@ class AMBBanner: AMBAdBase, AMBGenericAd, GADAdSizeDelegate, GADBannerViewDelega
         }
 
         bannerView.adUnitID = adUnitId
-        bannerView.load(ctx.optGADRequest())
+        bannerView.load(adRequest)
         ctx.resolve()
     }
 
