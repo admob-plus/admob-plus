@@ -11,6 +11,7 @@ type Position = 'top' | 'bottom'
 
 const canvasBanners: { id: number, this: CanvasBannerAd, element: HTMLCanvasElement, ctx: CanvasRenderingContext2D, adViewImage: string, autoDestroy: boolean | undefined }[] = [];
 const canvasToDraw: { element: HTMLCanvasElement, image: HTMLImageElement , ctx: CanvasRenderingContext2D, width: number, height: number }[] = [];
+const toDrawPrevCanvasImage = {};
 var canvasSetInterval: NodeJS.Timeout | null = null;
 var currentDrawInterval = 100;
 var preciseDrawInterval = false;
@@ -85,6 +86,9 @@ async function updateCanvas() {
       if(rect.width === 0 && rect.height === 0) { // The canvas is not current visible (display: none), hide adView
         canvas.this.hide();
       } else {
+        if(toDrawPrevCanvasImage[canvas.id]) {
+          await canvas.this.drawPrevCanvasImage();
+        }
         canvas.this.show({
           x: rect.x,
           y: rect.y,
@@ -92,7 +96,6 @@ async function updateCanvas() {
           height: rect.height,
           canvas: null,
         });
-
         if((rect.y + rect.height > 0 && rect.y < height) && (rect.x + rect.width > 0 && rect.x < width)) { // Check if canvas is inside of screen
           let adViewImage = await canvas.this.getAdViewImage();
           if(adViewImage) {
@@ -322,23 +325,42 @@ export default class CanvasBannerAd extends MobileAd<CanvasBannerAdOptions> {
       this.opts.canvas = newCanvas;
       this.opts.canvas.addEventListener('click', canvasClick);
 
-      let adViewImage;
-
       for(let i = 0, len = canvasBanners.length; i < len; i++) {
         let canvas = canvasBanners[i];
 
         if(canvas.id == this.id) {
-          adViewImage = canvas.adViewImage;
           canvas.element = newCanvas;
           canvas.ctx = <CanvasRenderingContext2D> newCanvas.getContext('2d');
           break;
         }
       }
 
-      if(adViewImage) {
-        let rect = newCanvas.getBoundingClientRect();
-        let image: HTMLImageElement = await loadImage('data:image/jpeg;base64,'+adViewImage);
-        let ctx = <CanvasRenderingContext2D> newCanvas.getContext('2d');
+      await this.drawPrevCanvasImage();
+    }
+
+    return true;
+  }
+
+  public async drawPrevCanvasImage() {
+    let adViewImage, newCanvas;
+
+    for(let i = 0, len = canvasBanners.length; i < len; i++) {
+      let canvas = canvasBanners[i];
+
+      if(canvas.id == this.id) {
+        adViewImage = canvas.adViewImage;
+        newCanvas = canvas.element;
+      }
+    }
+
+    if(adViewImage) {
+      let rect = newCanvas.getBoundingClientRect();
+      let image: HTMLImageElement = await loadImage('data:image/jpeg;base64,'+adViewImage);
+      let ctx = <CanvasRenderingContext2D> newCanvas.getContext('2d');
+      if(rect.width === 0 && rect.height === 0) {
+        toDrawPrevCanvasImage[this.id] = true;
+      } else {
+        toDrawPrevCanvasImage[this.id] = false;
         canvasToDraw.push({
           element: newCanvas,
           ctx: ctx,
@@ -348,7 +370,6 @@ export default class CanvasBannerAd extends MobileAd<CanvasBannerAdOptions> {
         });
       }
     }
-
-    return true;
   }
+
 }
