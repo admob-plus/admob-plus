@@ -369,6 +369,8 @@ export default class CanvasBannerAd extends MobileAd<CanvasBannerAdOptions> {
           height: rect.height,
         });
       }
+    } else {
+      toDrawPrevCanvasImage[this.id] = false;
     }
   }
 
