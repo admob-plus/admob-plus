@@ -135,7 +135,9 @@ function drawCanvasQueue() {
 
       canvas.element.width = canvas.width * dpr;
       canvas.element.height = canvas.height * dpr;
-      let ctx = <CanvasRenderingContext2D> canvas.element.getContext('2d');
+      if(canvas.element.width != canvas.image.width || canvas.element.height != canvas.image.width) {
+        canvas.ctx.clearRect(0, 0, canvas.element.width, canvas.element.height);
+      }
       canvas.ctx.drawImage(canvas.image, 0, 0, canvas.image.width, canvas.image.height);
 
       canvasToDraw.splice(i, 1);
