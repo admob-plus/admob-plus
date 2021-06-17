@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.Bitmap.CompressFormat;
 import android.graphics.Canvas;
 import android.util.Log;
+import android.util.Base64;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
@@ -27,7 +28,6 @@ import com.google.android.gms.ads.LoadAdError;
 
 import java.lang.Math;
 import java.util.HashMap;
-import java.util.Base64;
 import java.util.Objects;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -230,7 +230,7 @@ public class CanvasBanner extends AdBase {
                 ByteArrayOutputStream bos = new ByteArrayOutputStream();
                 bitmap.compress(CompressFormat.JPEG, 80, bos); 
                 byte[] bb = bos.toByteArray();
-                String image = Base64.getEncoder().encodeToString(bb);
+                String image = Base64.encodeToString(bb, Base64.DEFAULT);
 
                 int width = mAdView.getWidth();
                 int height = mAdView.getHeight();
