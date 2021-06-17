@@ -35,6 +35,26 @@ So if you are targetting devices like `Android 4.x` or even `Android 5.x` a synt
 
 If you need to support those older devices, you can savely rewrite the example code to basic Javascript, without any of those asynchronous functions.
 
+### How to use different `adUitId` for Android and iOS?
+
+It is best to replace `adUitId` during build time for different platforms, to avoid putting both `adUitId`s in the final app binary.
+
+However, if that is not a concern, `cordova.platformId` can be used to determine which platform is running on.
+
+Here is a simple example function to get `adUnitId` depends on the current platform,
+
+```js
+function getAdUidId(android, ios) {
+  switch (cordova.platformId) {
+    case 'android':
+      return android
+    case 'ios':
+    default:
+      return ios
+  }
+}
+```
+
 ## Android
 
 ### How to use with `cordova-android-play-services-gradle-release`?
