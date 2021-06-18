@@ -53,6 +53,24 @@ protocol AMBCoreContext {
 }
 
 extension AMBCoreContext {
+    func optAd() -> AMBCoreAd? {
+        guard let id = optId(),
+              let ad = AMBCoreAd.ads[id]
+        else {
+            return nil
+        }
+        return ad
+    }
+
+    func optAdOrError() -> AMBCoreAd? {
+        if let ad = optAd() {
+            return ad
+        } else {
+            reject("Ad not found")
+            return nil
+        }
+    }
+
     func resolve() {
         resolve([:])
     }
@@ -102,43 +120,5 @@ class AMBCoreAd: NSObject {
         DispatchQueue.main.async {
             AMBCoreAd.ads.removeValue(forKey: self.id)
         }
-    }
-}
-
-protocol AMBGenericAd {
-    func isLoaded() -> Bool
-    func load(_ ctx: AMBCoreContext)
-    func show(_ ctx: AMBCoreContext)
-    func hide(_ ctx: AMBCoreContext)
-}
-
-extension AMBGenericAd {
-    func isLoaded() -> Bool {
-        #if targetEnvironment(simulator)
-        fatalError(AMBCoreError.notImplemented.localizedDescription)
-        #else
-        return false
-        #endif
-    }
-
-    func load(_ ctx: AMBCoreContext) {
-        ctx.reject(AMBCoreError.notImplemented)
-        #if targetEnvironment(simulator)
-        fatalError(AMBCoreError.notImplemented.localizedDescription)
-        #endif
-    }
-
-    func show(_ ctx: AMBCoreContext) {
-        ctx.reject(AMBCoreError.notImplemented)
-        #if targetEnvironment(simulator)
-        fatalError(AMBCoreError.notImplemented.localizedDescription)
-        #endif
-    }
-
-    func hide(_ ctx: AMBCoreContext) {
-        ctx.reject(AMBCoreError.notImplemented)
-        #if targetEnvironment(simulator)
-        fatalError(AMBCoreError.notImplemented.localizedDescription)
-        #endif
     }
 }

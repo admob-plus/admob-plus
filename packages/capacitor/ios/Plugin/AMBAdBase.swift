@@ -1,6 +1,35 @@
 import GoogleMobileAds
 
 class AMBAdBase: AMBCoreAd {
+    func isLoaded() -> Bool {
+        #if targetEnvironment(simulator)
+        fatalError(AMBCoreError.notImplemented.localizedDescription)
+        #else
+        return false
+        #endif
+    }
+
+    func load(_ ctx: AMBContext) {
+        ctx.reject(AMBCoreError.notImplemented)
+        #if targetEnvironment(simulator)
+        fatalError(AMBCoreError.notImplemented.localizedDescription)
+        #endif
+    }
+
+    func show(_ ctx: AMBContext) {
+        ctx.reject(AMBCoreError.notImplemented)
+        #if targetEnvironment(simulator)
+        fatalError(AMBCoreError.notImplemented.localizedDescription)
+        #endif
+    }
+
+    func hide(_ ctx: AMBContext) {
+        ctx.reject(AMBCoreError.notImplemented)
+        #if targetEnvironment(simulator)
+        fatalError(AMBCoreError.notImplemented.localizedDescription)
+        #endif
+    }
+
     func emit(_ eventName: String) {
         self.emit(eventName, nil)
     }

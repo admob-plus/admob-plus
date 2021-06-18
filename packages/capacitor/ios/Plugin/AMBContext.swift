@@ -50,24 +50,6 @@ class AMBContext: AMBCoreContext {
         return call.getString("position", "bottom")
     }
 
-    func optAd() -> AMBAdBase? {
-        guard let id = optId(),
-              let ad = AMBCoreAd.ads[id]
-        else {
-            return nil
-        }
-        return ad as? AMBAdBase
-    }
-
-    func optAdOrError() -> AMBAdBase? {
-        if let ad = optAd() {
-            return ad
-        } else {
-            call.reject("Ad not found")
-            return nil
-        }
-    }
-
     func optMaxAdContentRating() -> GADMaxAdContentRating? {
         switch call.getString("maxAdContentRating") {
         case "G":

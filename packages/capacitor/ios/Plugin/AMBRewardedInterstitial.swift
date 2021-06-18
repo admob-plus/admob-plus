@@ -1,7 +1,7 @@
 import Capacitor
 import GoogleMobileAds
 
-class AMBRewardedInterstitial: AMBAdBase, AMBGenericAd, GADFullScreenContentDelegate {
+class AMBRewardedInterstitial: AMBAdBase, GADFullScreenContentDelegate {
     var rewardedAd: GADRewardedInterstitialAd?
 
     deinit {
@@ -9,19 +9,11 @@ class AMBRewardedInterstitial: AMBAdBase, AMBGenericAd, GADFullScreenContentDele
         rewardedAd = nil
     }
 
-    func isLoaded() -> Bool {
+    override func isLoaded() -> Bool {
         return self.rewardedAd != nil
     }
 
-    func load(_ ctx: AMBCoreContext) {
-        load(ctx as! AMBContext)
-    }
-
-    func show(_ ctx: AMBCoreContext) {
-        show(ctx as! AMBContext)
-    }
-
-    func load(_ ctx: AMBContext) {
+    override func load(_ ctx: AMBContext) {
         GADRewardedInterstitialAd.load(withAdUnitID: adUnitId, request: adRequest, completionHandler: { ad, error in
             if error != nil {
                 self.emit(AMBEvents.rewardedInterstitialLoadFail, error!)
@@ -37,7 +29,7 @@ class AMBRewardedInterstitial: AMBAdBase, AMBGenericAd, GADFullScreenContentDele
         })
     }
 
-    func show(_ ctx: AMBContext) {
+    override func show(_ ctx: AMBContext) {
         self.rewardedAd?.present(fromRootViewController: AMBContext.rootViewController, userDidEarnRewardHandler: {
             self.emit(AMBEvents.rewardedInterstitialReward, self.rewardedAd!.adReward)
         })
