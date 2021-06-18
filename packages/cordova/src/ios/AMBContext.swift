@@ -1,6 +1,14 @@
 import GoogleMobileAds
 
-class AMBContext {
+class AMBContext: AMBCoreContext {
+    func resolve(_ data: [String : Any]) {
+        self.sendResult(CDVPluginResult(status: CDVCommandStatus_OK, messageAs: data))
+    }
+
+    func reject(_ msg: String) {
+        self.sendResult(CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: msg))
+    }
+
     static weak var plugin: AMBPlugin!
 
     let command: CDVInvokedUrlCommand
@@ -67,24 +75,6 @@ class AMBContext {
 
     func optMarginBottom() -> CGFloat? {
         return opt("marginBottom") as? CGFloat
-    }
-
-    func optAd() -> AMBAdBase? {
-        guard let id = optId(),
-              let ad = AMBAdBase.ads[id]
-        else {
-            return nil
-        }
-        return ad
-    }
-
-    func optAdOrError() -> AMBAdBase? {
-        if let ad = optAd() {
-            return ad
-        } else {
-            error("Ad not found")
-            return nil
-        }
     }
 
     func optMaxAdContentRating() -> GADMaxAdContentRating? {

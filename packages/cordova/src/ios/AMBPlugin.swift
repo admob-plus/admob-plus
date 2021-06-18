@@ -110,12 +110,20 @@ class AMBPlugin: CDVPlugin {
         let ctx = AMBContext(command)
 
         if let adClass = ctx.optString("cls") {
-            var ad: AMBGenericAd?
+            var ad: AMBCoreAd?
             switch adClass {
             case "AppOpenAd":
                 ad = AMBAppOpenAd(ctx)
+            case "BannerAd":
+                ad = AMBBanner(ctx)
+            case "InterstitialAd":
+                ad = AMBInterstitial(ctx)
             case "NativeAd":
                 ad = AMBNativeAd(ctx)
+            case "RewardedAd":
+                ad = AMBRewarded(ctx)
+            case "RewardedInterstitialAd":
+                ad = AMBRewardedInterstitial(ctx)
             default:
                 break
             }
@@ -132,7 +140,7 @@ class AMBPlugin: CDVPlugin {
     @objc func adIsLoaded(_ command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(command)
 
-        if let ad = ctx.optAdOrError() as? AMBGenericAd {
+        if let ad = ctx.optAdOrError() as? AMBAdBase {
             ctx.success(ad.isLoaded())
         }
     }
@@ -141,7 +149,7 @@ class AMBPlugin: CDVPlugin {
         let ctx = AMBContext(command)
 
         DispatchQueue.main.async {
-            if let ad = ctx.optAdOrError() as? AMBGenericAd {
+            if let ad = ctx.optAdOrError() as? AMBAdBase {
                 ad.load(ctx)
             }
         }
@@ -151,7 +159,7 @@ class AMBPlugin: CDVPlugin {
         let ctx = AMBContext(command)
 
         DispatchQueue.main.async {
-            if let ad = ctx.optAdOrError() as? AMBGenericAd {
+            if let ad = ctx.optAdOrError() as? AMBAdBase {
                 if ad.isLoaded() {
                     ad.show(ctx)
                     ctx.success(true)
@@ -166,134 +174,17 @@ class AMBPlugin: CDVPlugin {
         let ctx = AMBContext(command)
 
         DispatchQueue.main.async {
-            if let ad = ctx.optAdOrError() as? AMBGenericAd {
+            if let ad = ctx.optAdOrError() as? AMBAdBase {
                 ad.hide(ctx)
             }
         }
     }
 
-    @objc(bannerConfig:)
-    func bannerConfig(command: CDVInvokedUrlCommand) {
+    @objc func bannerConfig(_ command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(command)
 
         DispatchQueue.main.async {
             AMBBanner.config(ctx)
-        }
-    }
-
-    @objc(bannerLoad:)
-    func bannerLoad(command: CDVInvokedUrlCommand) {
-        let ctx = AMBContext(command)
-
-        DispatchQueue.main.async {
-            let ad = ctx.optAd() as? AMBBanner ?? AMBBanner(ctx)
-            ad?.load(ctx) ?? ctx.error()
-        }
-    }
-
-    @objc(bannerShow:)
-    func bannerShow(command: CDVInvokedUrlCommand) {
-        let ctx = AMBContext(command)
-
-        DispatchQueue.main.async {
-            if let ad = ctx.optAdOrError() as? AMBBanner {
-                ad.show(ctx)
-            }
-        }
-    }
-
-    @objc(bannerHide:)
-    func bannerHide(command: CDVInvokedUrlCommand) {
-        let ctx = AMBContext(command)
-
-        DispatchQueue.main.async {
-            if let ad = ctx.optAdOrError() as? AMBBanner {
-                ad.hide(ctx)
-            }
-        }
-    }
-
-    @objc(interstitialIsLoaded:)
-    func interstitialIsLoaded(command: CDVInvokedUrlCommand) {
-        let ctx = AMBContext(command)
-
-        if let ad = ctx.optAdOrError() as? AMBInterstitial {
-            ctx.success(ad.isLoaded())
-        }
-    }
-
-    @objc(interstitialLoad:)
-    func interstitialLoad(command: CDVInvokedUrlCommand) {
-        let ctx = AMBContext(command)
-
-        let ad = ctx.optAd() as? AMBInterstitial ?? AMBInterstitial(ctx)
-        ad?.load(ctx) ?? ctx.error()
-    }
-
-    @objc(interstitialShow:)
-    func interstitialShow(command: CDVInvokedUrlCommand) {
-        let ctx = AMBContext(command)
-
-        DispatchQueue.main.async {
-            if let ad = ctx.optAdOrError() as? AMBInterstitial {
-                ad.show(ctx)
-            }
-        }
-    }
-
-    @objc(rewardedIsLoaded:)
-    func rewardedIsLoaded(command: CDVInvokedUrlCommand) {
-        let ctx = AMBContext(command)
-
-        if let ad = ctx.optAdOrError() as? AMBRewarded {
-            ctx.success(ad.isLoaded())
-        }
-    }
-
-    @objc(rewardedLoad:)
-    func rewardedLoad(command: CDVInvokedUrlCommand) {
-        let ctx = AMBContext(command)
-
-        let ad = ctx.optAd() as? AMBRewarded ?? AMBRewarded(ctx)
-        ad?.load(ctx) ?? ctx.error()
-    }
-
-    @objc(rewardedShow:)
-    func rewardedShow(command: CDVInvokedUrlCommand) {
-        let ctx = AMBContext(command)
-
-        DispatchQueue.main.async {
-            if let ad = ctx.optAdOrError() as? AMBRewarded {
-                ad.show(ctx)
-            }
-        }
-    }
-
-    @objc(rewardedInterstitialIsLoaded:)
-    func rewardedInterstitialIsLoaded(command: CDVInvokedUrlCommand) {
-        let ctx = AMBContext(command)
-
-        if let ad = ctx.optAdOrError() as? AMBRewardedInterstitial {
-            ctx.success(ad.isLoaded())
-        }
-    }
-
-    @objc(rewardedInterstitialLoad:)
-    func rewardedInterstitialLoad(command: CDVInvokedUrlCommand) {
-        let ctx = AMBContext(command)
-
-        let ad = ctx.optAd() as? AMBRewardedInterstitial ?? AMBRewardedInterstitial(ctx)
-        ad?.load(ctx) ?? ctx.error()
-    }
-
-    @objc(rewardedInterstitialShow:)
-    func rewardedInterstitialShow(command: CDVInvokedUrlCommand) {
-        let ctx = AMBContext(command)
-
-        DispatchQueue.main.async {
-            if let ad = ctx.optAdOrError() as? AMBRewardedInterstitial {
-                ad.show(ctx)
-            }
         }
     }
 

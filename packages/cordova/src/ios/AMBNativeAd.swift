@@ -13,12 +13,11 @@ extension AMBNativeAdViewProvider {
     func didHide(_ ad: AMBNativeAd) {}
 }
 
-class AMBNativeAd: AMBAdBase, AMBGenericAd, GADNativeAdLoaderDelegate, GADNativeAdDelegate {
+class AMBNativeAd: AMBAdBase, GADNativeAdLoaderDelegate, GADNativeAdDelegate {
     static var providers = [String: AMBNativeAdViewProvider]()
 
     var mLoader: GADAdLoader!
     let viewProvider: AMBNativeAdViewProvider
-    let mRequest: GADRequest
     var mAd: GADNativeAd?
     var ctxLoad: AMBContext?
 
@@ -26,11 +25,10 @@ class AMBNativeAd: AMBAdBase, AMBGenericAd, GADNativeAdLoaderDelegate, GADNative
         return viewProvider.createView(mAd!)
     }()
 
-    init(id: Int, adUnitId: String, request: GADRequest, viewProvider: AMBNativeAdViewProvider) {
-        mRequest = request
+    init(id: Int, adUnitId: String, adRequest: GADRequest, viewProvider: AMBNativeAdViewProvider) {
         self.viewProvider = viewProvider
 
-        super.init(id: id, adUnitId: adUnitId)
+        super.init(id: id, adUnitId: adUnitId, adRequest: adRequest)
 
         mLoader = GADAdLoader(adUnitID: adUnitId, rootViewController: plugin.viewController,
                               adTypes: [.native], options: nil)
@@ -47,23 +45,23 @@ class AMBNativeAd: AMBAdBase, AMBGenericAd, GADNativeAdLoaderDelegate, GADNative
         }
         self.init(id: id,
                   adUnitId: adUnitId,
-                  request: ctx.optGADRequest(),
+                  adRequest: ctx.optGADRequest(),
                   viewProvider: viewProvider)
     }
 
-    func load(_ ctx: AMBContext) {
+    override func load(_ ctx: AMBContext) {
         ctxLoad = ctx
-        mLoader.load(mRequest)
+        mLoader.load(adRequest)
     }
 
-    func isLoaded() -> Bool {
+    override func isLoaded() -> Bool {
         if mLoader == nil {
             return false
         }
         return !mLoader.isLoading
     }
 
-    func show(_ ctx: AMBContext) {
+    override func show(_ ctx: AMBContext) {
         if let x = ctx.opt("x") as? Double,
            let y = ctx.opt("y") as? Double,
            let w = ctx.opt("width") as? Double,
@@ -79,7 +77,7 @@ class AMBNativeAd: AMBAdBase, AMBGenericAd, GADNativeAdLoaderDelegate, GADNative
         viewProvider.didShow(self)
     }
 
-    func hide(_ ctx: AMBContext) {
+    override func hide(_ ctx: AMBContext) {
         view.isHidden = true
         viewProvider.didHide(self)
         ctx.success()
