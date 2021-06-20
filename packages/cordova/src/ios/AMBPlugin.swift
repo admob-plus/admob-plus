@@ -27,8 +27,7 @@ class AMBPlugin: CDVPlugin {
         }
     }
 
-    @objc(ready:)
-    func ready(command: CDVInvokedUrlCommand) {
+    @objc func ready(_ command: CDVInvokedUrlCommand) {
         readyCallbackId = command.callbackId
 
         DispatchQueue.global(qos: .background).async {
@@ -36,8 +35,7 @@ class AMBPlugin: CDVPlugin {
         }
     }
 
-    @objc(configRequest:)
-    func configRequest(command: CDVInvokedUrlCommand) {
+    @objc func configRequest(_ command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(command)
         let requestConfiguration = GADMobileAds.sharedInstance().requestConfiguration
 
@@ -60,8 +58,7 @@ class AMBPlugin: CDVPlugin {
         ctx.success()
     }
 
-    @objc(requestTrackingAuthorization:)
-    func requestTrackingAuthorization(command: CDVInvokedUrlCommand) {
+    @objc func requestTrackingAuthorization(_ command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(command)
 
         if #available(iOS 14, *) {
@@ -73,8 +70,7 @@ class AMBPlugin: CDVPlugin {
         }
     }
 
-    @objc(start:)
-    func start(command: CDVInvokedUrlCommand) {
+    @objc func start(_ command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(command)
 
         GADMobileAds.sharedInstance().start(completionHandler: { _ in
@@ -82,8 +78,7 @@ class AMBPlugin: CDVPlugin {
         })
     }
 
-    @objc(setAppMuted:)
-    func setAppMuted(command: CDVInvokedUrlCommand) {
+    @objc func setAppMuted(_ command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(command)
 
         if let muted = ctx.opt0() as? Bool {
@@ -94,8 +89,7 @@ class AMBPlugin: CDVPlugin {
         }
     }
 
-    @objc(setAppVolume:)
-    func setAppVolume(command: CDVInvokedUrlCommand) {
+    @objc func setAppVolume(_ command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(command)
 
         if let volume = ctx.opt0() as? Float {
