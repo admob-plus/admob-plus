@@ -39,7 +39,7 @@ document.addEventListener('deviceready', async () => {
 
 By default, the CanvasBannerAd is destroyed if the canvas is removed from the dom.
 
-If you want to keep the ad (for example to use in another canvas), you can use `autoDestroy`,
+If you want to keep the ad (for example to use in another canvas), you can use `autoDestroy`.
 
 ```js {3}
 var canvasBanner = new admob.CanvasBannerAd({
@@ -52,6 +52,20 @@ You can destroy the `Banner` as follows.
 
 ```js {3}
 canvasBanner.destroy();
+```
+
+## Background Color
+
+By default, the color of AdView is Black, you can change this passing the property `backgroundColor` on create the ad.
+
+The background color is only shown while the ad is loading, depending on the size of the ad, it is also applied on the border (1px black line).
+
+```js {3}
+var canvasBanner = new admob.CanvasBannerAd({
+  adUnitId: 'ca-app-pub-xxx/yyy',
+  canvas: document.querySelector('canvas'),
+  backgroundColor: '#ffffff',
+})
 ```
 
 ## Change Banner Canvas

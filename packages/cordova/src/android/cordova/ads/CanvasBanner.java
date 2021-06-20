@@ -5,6 +5,7 @@ import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.CompressFormat;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.util.Log;
 import android.util.Base64;
 import android.view.Gravity;
@@ -52,6 +53,7 @@ public class CanvasBanner extends AdBase {
     private final Float y;
     private Float width;
     private Float height;
+    private String backgroundColor;
     private Bitmap prevBitmap;
     private AdView mAdView;
     private RelativeLayout mRelativeLayout = null;
@@ -64,6 +66,7 @@ public class CanvasBanner extends AdBase {
         this.y = ctx.optFloat("y");
         this.width = ctx.optFloat("width");
         this.height = ctx.optFloat("height");
+        this.backgroundColor = ctx.optString("backgroundColor");
         this.prevBitmap = null;
     }
 
@@ -83,6 +86,17 @@ public class CanvasBanner extends AdBase {
             }
         };
         view.getViewTreeObserver().addOnPreDrawListener(preDrawListener);
+    }
+
+    public void backgroundColor(Context ctx) {
+        String backgroundColor = ctx.optString("backgroundColor");
+        if (backgroundColor != null) {
+            this.backgroundColor = backgroundColor;
+            if(mAdView != null) {
+                mAdView.setBackgroundColor(Color.parseColor(backgroundColor));
+            }
+        }
+        ctx.resolve();
     }
 
     @Override
@@ -110,6 +124,9 @@ public class CanvasBanner extends AdBase {
         adView.setAdUnitId(adUnitId);
         AdSize customAdSize = new AdSize(Math.round(this.width), Math.round(this.height));
         adView.setAdSize(customAdSize);
+        if(this.backgroundColor != null) {
+            adView.setBackgroundColor(Color.parseColor(this.backgroundColor));
+        }
         adView.setAdListener(new AdListener() {
             @Override
             public void onAdClicked() {

@@ -197,6 +197,7 @@ export interface CanvasBannerAdOptions extends MobileAdOptions {
   y?: number
   height?: number
   width?: number
+  backgroundColor?: string
 }
 
 export default class CanvasBannerAd extends MobileAd<CanvasBannerAdOptions> {
