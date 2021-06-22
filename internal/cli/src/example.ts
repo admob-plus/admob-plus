@@ -368,23 +368,6 @@ async function startDev(opts: any) {
         pkgDir: 'cordova-consent',
         javaPath: 'cordova/plugin/consent',
       })
-      syncDirs.push(
-        ...cordovaDev({ name, cwd, platform }).syncDirs,
-        ...o.syncDirs,
-      )
-      openArgs.push(...o.openArgs)
-      break
-    }
-    case 'cordova-consent': {
-      const name = 'ConsentExample'
-      const o = cordovaDev({
-        name,
-        cwd,
-        platform,
-        pkgName: 'cordova-plugin-consent',
-        pkgDir: 'cordova-consent',
-        javaPath: 'cordova/plugin/consent',
-      })
       syncDirs.push(...o.syncDirs)
       openArgs.push(...o.openArgs)
       const ob = cordovaDev({ name, cwd, platform })
