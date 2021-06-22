@@ -1,6 +1,6 @@
 import {
   AdSizeType,
-  execAsync, GenericAd, MobileAdOptions, NativeActions,
+  execAsync, MobileAd, MobileAdOptions, NativeActions,
   Platforms
 } from './shared'
 
@@ -39,7 +39,7 @@ export interface BannerAdOptions extends MobileAdOptions {
   offset?: number
 }
 
-export default class BannerAd extends GenericAd<BannerAdOptions> {
+export default class BannerAd extends MobileAd<BannerAdOptions> {
   private _loaded = false
 
   constructor(opts: BannerAdOptions) {
@@ -75,5 +75,9 @@ export default class BannerAd extends GenericAd<BannerAdOptions> {
     }
 
     return super.show()
+  }
+
+  public async hide() {
+    return super.hide()
   }
 }

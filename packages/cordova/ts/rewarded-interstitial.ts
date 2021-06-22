@@ -3,4 +3,16 @@ import { MobileAd } from './shared'
 
 export interface RewardedInterstitialAdOptions extends RewardedAdOptions {}
 
-export default class RewardedInterstitialAd extends MobileAd<RewardedInterstitialAdOptions> {}
+export default class RewardedInterstitialAd extends MobileAd<RewardedInterstitialAdOptions> {
+  public isLoaded() {
+    return super.isLoaded()
+  }
+
+  public load() {
+    return super.load()
+  }
+
+  public show() {
+    return super.show()
+  }
+}

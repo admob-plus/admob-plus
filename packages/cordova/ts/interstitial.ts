@@ -1,6 +1,15 @@
-import { GenericAd, MobileAdOptions } from './shared'
+import { MobileAd, MobileAdOptions } from './shared'
 
-export default class InterstitialAd extends GenericAd<
-  MobileAdOptions,
-  undefined
-> {}
+export default class InterstitialAd extends MobileAd<MobileAdOptions> {
+  public isLoaded() {
+    return super.isLoaded()
+  }
+
+  public load() {
+    return super.load()
+  }
+
+  public show() {
+    return super.show()
+  }
+}

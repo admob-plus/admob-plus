@@ -1,16 +1,19 @@
-import { GenericAd, execAsync, NativeActions, MobileAdOptions } from './shared'
+import { MobileAd, execAsync, NativeActions, MobileAdOptions } from './shared'
 
 type ShowOptions = { x: number; y: number; width: number; height: number }
 
-export default class NativeAd extends GenericAd<
-  MobileAdOptions & { view?: string },
-  ShowOptions
+export default class NativeAd extends MobileAd<
+  MobileAdOptions & { view?: string }
 > {
-  async hide() {
-    return execAsync(NativeActions.adHide, [{ id: this.id }])
+  public isLoaded() {
+    return super.isLoaded()
   }
 
-  async show(opts: ShowOptions) {
+  async hide() {
+    return super.hide()
+  }
+
+  async show(opts?: ShowOptions) {
     return super.show({
       x: 0,
       y: 0,

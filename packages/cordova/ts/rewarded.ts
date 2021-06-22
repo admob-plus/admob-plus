@@ -1,4 +1,4 @@
-import { GenericAd, MobileAdOptions } from './shared'
+import { MobileAd, MobileAdOptions } from './shared'
 
 export interface ServerSideVerificationOptions {
   customData?: string
@@ -9,7 +9,16 @@ export interface RewardedAdOptions extends MobileAdOptions {
   serverSideVerification?: ServerSideVerificationOptions
 }
 
-export default class RewardedAd extends GenericAd<
-  RewardedAdOptions,
-  undefined
-> {}
+export default class RewardedAd extends MobileAd<RewardedAdOptions> {
+  public isLoaded() {
+    return super.isLoaded()
+  }
+
+  public load() {
+    return super.load()
+  }
+
+  public show() {
+    return super.show()
+  }
+}
