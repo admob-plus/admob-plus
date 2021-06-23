@@ -7,11 +7,11 @@ class AMBRewardedInterstitial: AMBAdBase, GADFullScreenContentDelegate {
         clear()
     }
 
-    func isLoaded() -> Bool {
+    override func isLoaded() -> Bool {
         return self.mAd != nil
     }
 
-    func load(_ ctx: AMBContext) {
+    override func load(_ ctx: AMBContext) {
         clear()
 
         GADRewardedInterstitialAd.load(withAdUnitID: adUnitId, request: ctx.optGADRequest(), completionHandler: { ad, error in
@@ -32,7 +32,7 @@ class AMBRewardedInterstitial: AMBAdBase, GADFullScreenContentDelegate {
         })
     }
 
-    func show(_ ctx: AMBContext) {
+    override func show(_ ctx: AMBContext) {
         if isLoaded() {
             mAd?.present(fromRootViewController: plugin.viewController, userDidEarnRewardHandler: {
                 let reward = self.mAd!.adReward

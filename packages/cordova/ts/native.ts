@@ -1,12 +1,26 @@
-import { GenericAd } from './app-open'
-import { execAsync, NativeActions, MobileAdOptions } from './shared'
+import { MobileAd, execAsync, NativeActions, MobileAdOptions } from './shared'
 
-export default class NativeAd extends GenericAd<
-  MobileAdOptions & { view?: string },
-  { x: number; y: number; width: number; height: number }
+type ShowOptions = { x: number; y: number; width: number; height: number }
+
+export default class NativeAd extends MobileAd<
+  MobileAdOptions & { view?: string }
 > {
+  public isLoaded() {
+    return super.isLoaded()
+  }
+
   async hide() {
-    return execAsync(NativeActions.adHide, [{ id: this.id }])
+    return super.hide()
+  }
+
+  async show(opts?: ShowOptions) {
+    return super.show({
+      x: 0,
+      y: 0,
+      width: 0,
+      height: 0,
+      ...opts,
+    })
   }
 
   async showWith(elm: HTMLElement) {

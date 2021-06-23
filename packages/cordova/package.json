@@ -6,6 +6,7 @@
   "typings": "lib/index.d.ts",
   "scripts": {
     "prepublishOnly": "yarn build",
+    "version": "sync-pkg-version --cordova-plugin",
     "build": "rollup -c && tsc -b && tsc -p scripts",
     "test": "tsc --noEmit"
   },
@@ -23,8 +24,9 @@
     "cordova": "10.0.0",
     "cordova-ts-hook": "^0.0.3",
     "npm-run-all": "^4.1.5",
-    "rollup": "^2.51.1",
-    "typescript": "^4.3.2"
+    "rollup": "^2.52.2",
+    "sync-package-version": "^0.1.0",
+    "typescript": "^4.3.4"
   },
   "author": "Ratson",
   "license": "MIT",

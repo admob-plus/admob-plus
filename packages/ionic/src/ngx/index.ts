@@ -41,15 +41,15 @@ export class BannerAd
     return this._objectInstance.id
   }
 
-  load(): Promise<unknown> {
+  load() {
     return this._objectInstance.load()
   }
 
-  show(): Promise<unknown> {
+  show() {
     return this._objectInstance.show()
   }
 
-  hide(): Promise<unknown> {
+  hide() {
     return this._objectInstance.hide()
   }
 }

@@ -368,11 +368,11 @@ async function startDev(opts: any) {
         pkgDir: 'cordova-consent',
         javaPath: 'cordova/plugin/consent',
       })
-      syncDirs.push(
-        ...cordovaDev({ name, cwd, platform }).syncDirs,
-        ...o.syncDirs,
-      )
+      syncDirs.push(...o.syncDirs)
       openArgs.push(...o.openArgs)
+      const ob = cordovaDev({ name, cwd, platform })
+      syncDirs.push(...ob.syncDirs)
+      openArgs.push(...ob.openArgs)
       break
     }
     case 'ionic-angular': {

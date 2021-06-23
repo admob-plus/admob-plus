@@ -8,7 +8,7 @@ custom_edit_url: null
 
 ## Hierarchy
 
-- `MobileAd`<[BannerAdOptions](../interfaces/banneradoptions.md)\>
+- `GenericAd`
 
   ↳ **BannerAd**
 
@@ -26,13 +26,23 @@ custom_edit_url: null
 
 #### Overrides
 
-MobileAd&lt;BannerAdOptions\&gt;.constructor
+GenericAd.constructor
 
 #### Defined in
 
-index.ts:41
+index.ts:85
 
 ## Properties
+
+### \_loaded
+
+• **\_loaded**: `boolean` = false
+
+#### Defined in
+
+index.ts:85
+
+___
 
 ### id
 
@@ -40,7 +50,21 @@ index.ts:41
 
 #### Inherited from
 
-MobileAd.id
+GenericAd.id
+
+#### Defined in
+
+index.ts:12
+
+___
+
+### opts
+
+• `Protected` `Readonly` **opts**: [MobileAdOptions](../index.md#mobileadoptions)
+
+#### Inherited from
+
+GenericAd.opts
 
 #### Defined in
 
@@ -48,17 +72,13 @@ index.ts:14
 
 ___
 
-### opts
+### cls
 
-• `Protected` `Readonly` **opts**: [BannerAdOptions](../interfaces/banneradoptions.md)
-
-#### Inherited from
-
-MobileAd.opts
+▪ `Static` **cls**: `string` = 'BannerAd'
 
 #### Defined in
 
-index.ts:16
+index.ts:84
 
 ## Accessors
 
@@ -72,7 +92,7 @@ index.ts:16
 
 #### Defined in
 
-index.ts:30
+index.ts:28
 
 ## Methods
 
@@ -84,9 +104,67 @@ index.ts:30
 
 `Promise`<void\>
 
+#### Inherited from
+
+GenericAd.hide
+
 #### Defined in
 
-index.ts:53
+index.ts:67
+
+___
+
+### init
+
+▸ `Protected` **init**(): `Promise`<void\>
+
+#### Returns
+
+`Promise`<void\>
+
+#### Inherited from
+
+GenericAd.init
+
+#### Defined in
+
+index.ts:72
+
+___
+
+### isLoaded
+
+▸ **isLoaded**(): `Promise`<boolean\>
+
+#### Returns
+
+`Promise`<boolean\>
+
+#### Inherited from
+
+GenericAd.isLoaded
+
+#### Defined in
+
+index.ts:52
+
+___
+
+### load
+
+▸ **load**(): `Promise`<void\>
+
+#### Returns
+
+`Promise`<void\>
+
+#### Overrides
+
+GenericAd.load
+
+#### Defined in
+
+index.ts:94
 
 ___
 
@@ -98,6 +176,10 @@ ___
 
 `Promise`<void\>
 
+#### Overrides
+
+GenericAd.show
+
 #### Defined in
 
-index.ts:49
+index.ts:99

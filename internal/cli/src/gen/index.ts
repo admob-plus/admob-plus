@@ -14,15 +14,20 @@ import cordovaNative from './cordova-native'
 import rn from './rn'
 import { indent4, warnMessage } from './shared'
 
-async function copyAndroidHelper() {
-  const srcPath = pkgsDirJoin('capacitor/android/src/main/java/admob/plus/core')
+async function copyCore() {
+  const srcPathAndroid = pkgsDirJoin(
+    'capacitor/android/src/main/java/admob/plus/core',
+  )
+  const srcPathIos = pkgsDirJoin('capacitor/ios/Plugin/AMBCore.swift')
 
   await Promise.all([
-    fse.copy(srcPath, pkgsDirJoin('cordova/src/android/core')),
+    fse.copy(srcPathAndroid, pkgsDirJoin('cordova/src/android/core')),
+    fse.copy(srcPathIos, pkgsDirJoin('cordova/src/ios/AMBCore.swift')),
     fse.copy(
-      srcPath,
+      srcPathAndroid,
       pkgsDirJoin('react-native/android/src/main/java/admob/plus/core'),
     ),
+    // fse.copy(srcPathIos, pkgsDirJoin('react-native/ios/AMBCore.swift')),
   ])
 }
 
@@ -81,7 +86,7 @@ async function updateConfigXML({
 }
 
 const generateFiles = async () => {
-  await copyAndroidHelper()
+  await copyCore()
 
   const specs = await Promise.all(
     [admob, capacitor, consent, cordovaNative, rn].map((f) => f()),

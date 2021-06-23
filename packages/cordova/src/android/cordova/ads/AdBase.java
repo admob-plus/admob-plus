@@ -5,6 +5,8 @@ import android.content.res.Configuration;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.gms.ads.AdRequest;
+
 import org.apache.cordova.CordovaWebView;
 
 import admob.plus.cordova.ExecuteContext;
@@ -13,8 +15,11 @@ import admob.plus.core.GenericAd;
 import admob.plus.core.Helper;
 
 public abstract class AdBase extends Ad implements GenericAd  {
+    protected AdRequest adRequest;
+
     public AdBase(ExecuteContext ctx) {
         super(ctx);
+        adRequest = ctx.optAdRequest();
     }
 
     public void onConfigurationChanged(Configuration newConfig) {

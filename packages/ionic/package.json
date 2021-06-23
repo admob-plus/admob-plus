@@ -19,7 +19,7 @@
     "@angular/core": "~11.2.13",
     "@ionic-native/core": "^5.33.1",
     "@types/fs-extra": "^9.0.11",
-    "@types/node": "^15.12.2",
+    "@types/node": "^15.12.4",
     "admob-plus-cordova": "file:../cordova",
     "del": "^6.0.0",
     "execa": "^5.1.1",
@@ -27,7 +27,7 @@
     "npm-run-all": "^4.1.5",
     "rxjs": "^6.6.7",
     "ts-node": "^10.0.0",
-    "typescript": "4.3.2"
+    "typescript": "4.3.4"
   },
   "author": "Ratson",
   "license": "MIT",

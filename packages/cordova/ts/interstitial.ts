@@ -1,21 +1,15 @@
-import { execAsync, MobileAd, NativeActions } from './shared'
+import { MobileAd, MobileAdOptions } from './shared'
 
-export default class InterstitialAd extends MobileAd {
+export default class InterstitialAd extends MobileAd<MobileAdOptions> {
   public isLoaded() {
-    return execAsync(NativeActions.interstitialIsLoaded, [
-      { id: this.id },
-    ]) as Promise<boolean>
+    return super.isLoaded()
   }
 
   public load() {
-    return execAsync(NativeActions.interstitialLoad, [
-      { ...this.opts, id: this.id },
-    ]) as Promise<void>
+    return super.load()
   }
 
   public show() {
-    return execAsync(NativeActions.interstitialShow, [
-      { id: this.id },
-    ]) as Promise<void>
+    return super.show()
   }
 }

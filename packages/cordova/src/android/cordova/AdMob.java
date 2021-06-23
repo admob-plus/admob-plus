@@ -78,15 +78,32 @@ public class AdMob extends CordovaPlugin implements Helper.Adapter {
                 if (adClass == null) {
                     ctx.reject("ad cls is missing");
                 } else {
+                    GenericAd ad = null;
                     switch (adClass) {
                         case "AppOpenAd":
-                            new AppOpen(ctx);
+                            ad = new AppOpen(ctx);
+                            break;
+                        case "BannerAd":
+                            ad = new Banner(ctx);
+                            break;
+                        case "InterstitialAd":
+                            ad = new Interstitial(ctx);
                             break;
                         case "NativeAd":
-                            new Native(ctx);
+                            ad = new Native(ctx);
+                            break;
+                        case "RewardedAd":
+                            ad = new Rewarded(ctx);
+                            break;
+                        case "RewardedInterstitialAd":
+                            ad = new RewardedInterstitial(ctx);
                             break;
                     }
-                    ctx.resolve();
+                    if (ad != null) {
+                        ctx.resolve();
+                    } else {
+                        ctx.reject("ad cls is not supported");
+                    }
                 }
                 break;
             case Actions.AD_IS_LOADED:
@@ -94,7 +111,7 @@ public class AdMob extends CordovaPlugin implements Helper.Adapter {
             case Actions.AD_LOAD:
                 return executeAdLoad(ctx);
             case Actions.AD_SHOW:
-                return executeAdShow_(ctx);
+                return executeAdShow(ctx);
             case Actions.AD_HIDE:
                 return executeAdHide(ctx);
             case Actions.BANNER_LOAD:
@@ -135,14 +152,6 @@ public class AdMob extends CordovaPlugin implements Helper.Adapter {
                 callbackContext.success();
                 break;
             }
-            case Actions.INTERSTITIAL_IS_LOADED:
-            case Actions.REWARDED_IS_LOADED:
-            case Actions.REWARDED_INTERSTITIAL_IS_LOADED:
-                return executeAdIsLoaded(ctx);
-            case Actions.INTERSTITIAL_SHOW:
-            case Actions.REWARDED_SHOW:
-            case Actions.REWARDED_INTERSTITIAL_SHOW:
-                return executeAdShow(ctx);
             default:
                 return false;
         }
@@ -186,7 +195,7 @@ public class AdMob extends CordovaPlugin implements Helper.Adapter {
         return true;
     }
 
-    private boolean executeAdShow_(ExecuteContext ctx) {
+    private boolean executeAdShow(ExecuteContext ctx) {
         cordova.getActivity().runOnUiThread(() -> {
             GenericAd ad = (GenericAd) ctx.optAdOrError();
             if (ad != null) {
