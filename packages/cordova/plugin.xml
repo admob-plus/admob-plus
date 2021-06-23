@@ -20,7 +20,7 @@
 
     <platform name="android">
         <preference name="APP_ID_ANDROID" default="ca-app-pub-xxx~yyy" />
-        <preference name="PLAY_SERVICES_VERSION" default="20.1.0" />
+        <preference name="PLAY_SERVICES_VERSION" default="20.2.0" />
 
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
             <activity
