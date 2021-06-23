@@ -1,6 +1,5 @@
 package admob.plus.cordova.ads;
 
-import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -11,6 +10,7 @@ import com.google.android.gms.ads.AdLoader;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.nativead.NativeAd;
+import com.google.android.gms.ads.nativead.NativeAdView;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -137,6 +137,14 @@ public class Native extends AdBase {
         if (mAd != null) {
             mAd.destroy();
             mAd = null;
+        }
+        if (view != null) {
+            if (view instanceof NativeAdView) {
+                NativeAdView v = (NativeAdView) view;
+                v.removeAllViews();
+                v.destroy();
+            }
+            view = null;
         }
         mLoader = null;
     }

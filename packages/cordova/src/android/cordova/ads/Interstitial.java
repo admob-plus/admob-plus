@@ -29,8 +29,6 @@ public class Interstitial extends AdBase {
 
     @Override
     public void load(Context ctx) {
-        AdRequest adRequest = ctx.optAdRequest();
-
         clear();
 
         InterstitialAd.load(getActivity(), adUnitId, adRequest, new InterstitialAdLoadCallback() {

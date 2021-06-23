@@ -8,7 +8,7 @@ custom_edit_url: null
 
 ## Hierarchy
 
-- `MobileAdOptions`
+- [MobileAdOptions](../index.md#mobileadoptions)
 
   ↳ **BannerAdOptions**
 
@@ -24,7 +24,7 @@ MobileAdOptions.adUnitId
 
 #### Defined in
 
-index.ts:8
+definitions.ts:30
 
 ___
 
@@ -34,4 +34,4 @@ ___
 
 #### Defined in
 
-index.ts:38
+index.ts:80

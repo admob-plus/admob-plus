@@ -1,4 +1,4 @@
-import { execAsync, MobileAd, MobileAdOptions, NativeActions } from './shared'
+import { MobileAd, MobileAdOptions } from './shared'
 
 export interface ServerSideVerificationOptions {
   customData?: string
@@ -11,16 +11,14 @@ export interface RewardedAdOptions extends MobileAdOptions {
 
 export default class RewardedAd extends MobileAd<RewardedAdOptions> {
   public isLoaded() {
-    return execAsync(NativeActions.rewardedIsLoaded, [{ id: this.id }])
+    return super.isLoaded()
   }
 
   public load() {
-    return execAsync(NativeActions.rewardedLoad, [
-      { ...this.opts, id: this.id },
-    ])
+    return super.load()
   }
 
   public show() {
-    return execAsync(NativeActions.rewardedShow, [{ id: this.id }])
+    return super.show()
   }
 }

@@ -30,8 +30,6 @@ public class Rewarded extends AdBase {
 
     @Override
     public void load(Context ctx) {
-        AdRequest adRequest = ctx.optAdRequest();
-
         clear();
 
         RewardedAd.load(getActivity(), adUnitId, adRequest, new RewardedAdLoadCallback() {

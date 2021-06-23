@@ -1,31 +1,33 @@
 import GoogleMobileAds
 
-class AMBAdBase: NSObject {
-    static var ads = [Int: AMBAdBase]()
-
-    let id: Int
-    let adUnitId: String
-
-    init(id: Int, adUnitId: String) {
-        self.id = id
-        self.adUnitId = adUnitId
-
-        super.init()
-
-        AMBAdBase.ads[id] = self
+class AMBAdBase: AMBCoreAd {
+    func isLoaded() -> Bool {
+        #if targetEnvironment(simulator)
+        fatalError(AMBCoreError.notImplemented.localizedDescription)
+        #else
+        return false
+        #endif
     }
 
-    convenience init?(_ ctx: AMBContext) {
-        guard let id = ctx.optId(),
-              let adUnitId = ctx.optAdUnitID()
-        else {
-            return nil
-        }
-        self.init(id: id, adUnitId: adUnitId)
+    func load(_ ctx: AMBContext) {
+        ctx.reject(AMBCoreError.notImplemented)
+        #if targetEnvironment(simulator)
+        fatalError(AMBCoreError.notImplemented.localizedDescription)
+        #endif
     }
 
-    deinit {
-        AMBAdBase.ads.removeValue(forKey: self.id)
+    func show(_ ctx: AMBContext) {
+        ctx.reject(AMBCoreError.notImplemented)
+        #if targetEnvironment(simulator)
+        fatalError(AMBCoreError.notImplemented.localizedDescription)
+        #endif
+    }
+
+    func hide(_ ctx: AMBContext) {
+        ctx.reject(AMBCoreError.notImplemented)
+        #if targetEnvironment(simulator)
+        fatalError(AMBCoreError.notImplemented.localizedDescription)
+        #endif
     }
 
     func emit(_ eventName: String) {

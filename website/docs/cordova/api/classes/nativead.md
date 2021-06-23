@@ -189,6 +189,26 @@ app-open.ts:31
 
 ___
 
+### showWith
+
+▸ **showWith**(`elm`): `Promise`<void\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `elm` | `HTMLElement` |
+
+#### Returns
+
+`Promise`<void\>
+
+#### Defined in
+
+native.ts:12
+
+___
+
 ### getAdById
 
 ▸ `Static` **getAdById**(`id`): [MobileAd](mobilead.md)<[MobileAdOptions](../index.md#mobileadoptions)\>

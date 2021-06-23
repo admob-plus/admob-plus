@@ -21,7 +21,7 @@ extension CAPBridgeViewController {
     }
 }
 
-class AMBBanner: AMBAdBase, AMBGenericAd, GADAdSizeDelegate, GADBannerViewDelegate {
+class AMBBanner: AMBAdBase, GADAdSizeDelegate, GADBannerViewDelegate {
     static let stackView = UIStackView(frame: rootView.frame)
     static let placeholderView = UIView(frame: stackView.frame)
 
@@ -41,11 +41,11 @@ class AMBBanner: AMBAdBase, AMBGenericAd, GADAdSizeDelegate, GADBannerViewDelega
     let position: String!
     var bannerView: GADBannerView!
 
-    init(id: Int, adUnitId: String, adSize: GADAdSize, position: String) {
+    init(id: Int, adUnitId: String, adRequest: GADRequest, adSize: GADAdSize, position: String) {
         self.adSize = adSize
         self.position = position
 
-        super.init(id: id, adUnitId: adUnitId)
+        super.init(id: id, adUnitId: adUnitId, adRequest: adRequest)
     }
 
     convenience init?(_ ctx: AMBContext) {
@@ -58,27 +58,16 @@ class AMBBanner: AMBAdBase, AMBGenericAd, GADAdSizeDelegate, GADBannerViewDelega
         let adSize = kGADAdSizeBanner
         self.init(id: id,
                   adUnitId: adUnitId,
+                  adRequest: ctx.optGADRequest(),
                   adSize: adSize,
                   position: ctx.optPosition())
     }
 
-    func isLoaded() -> Bool {
+    override func isLoaded() -> Bool {
         return bannerView != nil
     }
 
-    func load(_ ctx: AMBCoreContext) {
-        load(ctx as! AMBContext)
-    }
-
-    func show(_ ctx: AMBCoreContext) {
-        show(ctx as! AMBContext)
-    }
-
-    func hide(_ ctx: AMBCoreContext) {
-        hide(ctx as! AMBContext)
-    }
-
-    func load(_ ctx: AMBContext) {
+    override func load(_ ctx: AMBContext) {
         if bannerView == nil {
             bannerView = GADBannerView(adSize: self.adSize)
             bannerView.adSizeDelegate = self
@@ -87,11 +76,11 @@ class AMBBanner: AMBAdBase, AMBGenericAd, GADAdSizeDelegate, GADBannerViewDelega
         }
 
         bannerView.adUnitID = adUnitId
-        bannerView.load(ctx.optGADRequest())
+        bannerView.load(adRequest)
         ctx.resolve()
     }
 
-    func show(_ ctx: AMBContext) {
+    override func show(_ ctx: AMBContext) {
         Self.prepareStackView()
 
         switch position {
@@ -106,7 +95,7 @@ class AMBBanner: AMBAdBase, AMBGenericAd, GADAdSizeDelegate, GADBannerViewDelega
         ctx.resolve()
     }
 
-    func hide(_ ctx: AMBContext) {
+    override func hide(_ ctx: AMBContext) {
         if bannerView != nil {
             bannerView.isHidden = true
             Self.stackView.removeArrangedSubview(bannerView)

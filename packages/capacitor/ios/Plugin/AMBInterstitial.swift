@@ -1,29 +1,21 @@
 import Capacitor
 import GoogleMobileAds
 
-class AMBInterstitial: AMBAdBase, AMBGenericAd, GADFullScreenContentDelegate {
+class AMBInterstitial: AMBAdBase, GADFullScreenContentDelegate {
     var interstitial: GADInterstitialAd?
 
     deinit {
         interstitial?.fullScreenContentDelegate = nil
     }
 
-    func isLoaded() -> Bool {
+    override func isLoaded() -> Bool {
         return self.interstitial != nil
     }
 
-    func load(_ ctx: AMBCoreContext) {
-        load(ctx as! AMBContext)
-    }
-
-    func show(_ ctx: AMBCoreContext) {
-        show(ctx as! AMBContext)
-    }
-
-    func load(_ ctx: AMBContext) {
+    override func load(_ ctx: AMBContext) {
         GADInterstitialAd.load(
             withAdUnitID: adUnitId,
-            request: ctx.optGADRequest(),
+            request: adRequest,
             completionHandler: { ad, error in
                 if error != nil {
                     self.emit(AMBEvents.rewardedInterstitialLoadFail, error!)
@@ -39,7 +31,7 @@ class AMBInterstitial: AMBAdBase, AMBGenericAd, GADFullScreenContentDelegate {
          })
     }
 
-    func show(_ ctx: AMBContext) {
+    override func show(_ ctx: AMBContext) {
         self.interstitial?.present(fromRootViewController: AMBContext.rootViewController)
         ctx.resolve()
     }

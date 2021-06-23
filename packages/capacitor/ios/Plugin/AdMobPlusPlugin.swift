@@ -83,7 +83,7 @@ public class AdMobPlusPlugin: CAPPlugin, AMBHelperAdapter {
         let ctx = AMBContext(call)
 
         if let adClass = ctx.optString("cls") {
-            var ad: AMBGenericAd?
+            var ad: AMBCoreAd?
             switch adClass {
             case "BannerAd":
                 ad = AMBBanner(ctx)
@@ -110,7 +110,7 @@ public class AdMobPlusPlugin: CAPPlugin, AMBHelperAdapter {
         let ctx = AMBContext(call)
 
         DispatchQueue.main.async {
-            if let ad = ctx.optAdOrError() as? AMBGenericAd {
+            if let ad = ctx.optAdOrError() as? AMBAdBase {
                 ctx.resolve(ad.isLoaded())
             }
         }
@@ -120,7 +120,7 @@ public class AdMobPlusPlugin: CAPPlugin, AMBHelperAdapter {
         let ctx = AMBContext(call)
 
         DispatchQueue.main.async {
-            if let ad = ctx.optAdOrError() as? AMBGenericAd {
+            if let ad = ctx.optAdOrError() as? AMBAdBase {
                 ad.load(ctx)
             }
         }
@@ -130,7 +130,7 @@ public class AdMobPlusPlugin: CAPPlugin, AMBHelperAdapter {
         let ctx = AMBContext(call)
 
         DispatchQueue.main.async {
-            if let ad = ctx.optAdOrError() as? AMBGenericAd {
+            if let ad = ctx.optAdOrError() as? AMBAdBase {
                 if ad.isLoaded() {
                     ad.show(ctx)
                 } else {
@@ -144,7 +144,7 @@ public class AdMobPlusPlugin: CAPPlugin, AMBHelperAdapter {
         let ctx = AMBContext(call)
 
         DispatchQueue.main.async {
-            if let ad = ctx.optAdOrError() as? AMBGenericAd {
+            if let ad = ctx.optAdOrError() as? AMBAdBase {
                 ad.hide(ctx)
             }
         }

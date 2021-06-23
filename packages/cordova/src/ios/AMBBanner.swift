@@ -126,12 +126,12 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
     let offset: CGFloat?
     var bannerView: GADBannerView!
 
-    init(id: Int, adUnitId: String, adSize: GADAdSize, position: String, offset: CGFloat?) {
+    init(id: Int, adUnitId: String, adSize: GADAdSize, adRequest: GADRequest, position: String, offset: CGFloat?) {
         self.adSize = adSize
         self.position = position
         self.offset = offset
 
-        super.init(id: id, adUnitId: adUnitId)
+        super.init(id: id, adUnitId: adUnitId, adRequest: adRequest)
     }
 
     convenience init?(_ ctx: AMBContext) {
@@ -144,6 +144,7 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
         self.init(id: id,
                   adUnitId: adUnitId,
                   adSize: ctx.optAdSize(),
+                  adRequest: ctx.optGADRequest(),
                   position: position,
                   offset: ctx.optOffset())
     }
@@ -158,7 +159,11 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
         }
     }
 
-    func load(_ ctx: AMBContext) {
+    override func isLoaded() -> Bool {
+        return bannerView != nil
+    }
+
+    override func load(_ ctx: AMBContext) {
         let request = ctx.optGADRequest()
         if bannerView == nil {
             bannerView = GADBannerView(adSize: self.adSize)
@@ -173,7 +178,7 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
         ctx.success()
     }
 
-    func show(_ ctx: AMBContext) {
+    override func show(_ ctx: AMBContext) {
         if let offset = self.offset {
             addBannerView(offset)
         } else {
@@ -195,7 +200,7 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
         ctx.success()
     }
 
-    func hide(_ ctx: AMBContext) {
+    override func hide(_ ctx: AMBContext) {
         if bannerView != nil {
             bannerView.isHidden = true
             Self.stackView.removeArrangedSubview(bannerView)
