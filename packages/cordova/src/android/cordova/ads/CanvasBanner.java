@@ -22,7 +22,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.LoadAdError;
@@ -57,7 +56,6 @@ public class CanvasBanner extends AdBase {
     private Bitmap prevBitmap;
     private AdView mAdView;
     private RelativeLayout mRelativeLayout = null;
-    private AdRequest mAdRequest = null;
     private AdView mAdViewOld = null;
 
     public CanvasBanner(ExecuteContext ctx) {
@@ -100,15 +98,17 @@ public class CanvasBanner extends AdBase {
     }
 
     @Override
-    public void load(Context ctx) {
-        final AdRequest adRequest = ctx.optAdRequest();
+    public boolean isLoaded() {
+        return mAdView != null;
+    }
 
+    @Override
+    public void load(Context ctx) {
         if (mAdView == null) {
             mAdView = createCanvasBannerView();
         }
 
         mAdView.loadAd(adRequest);
-        mAdRequest = adRequest;
         ctx.resolve();
     }
 
@@ -307,7 +307,6 @@ public class CanvasBanner extends AdBase {
     }
 
     private void reloadCanvasBannerView() {
-        if (mAdRequest == null) return;
         if (mAdView == null || mAdView.getVisibility() == View.GONE) return;
 
         pauseCanvasBannerViews();
@@ -315,7 +314,7 @@ public class CanvasBanner extends AdBase {
         mAdViewOld = mAdView;
 
         mAdView = createCanvasBannerView();
-        mAdView.loadAd(mAdRequest);
+        mAdView.loadAd(adRequest);
         addCanvasBannerView();
     }
 

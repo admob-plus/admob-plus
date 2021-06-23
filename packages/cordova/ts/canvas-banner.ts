@@ -1,10 +1,7 @@
 import {
   AdSizeType,
-  execAsync,
-  MobileAd,
-  MobileAdOptions,
-  NativeActions,
-  Platforms,
+  execAsync, MobileAd, MobileAdOptions, NativeActions,
+  Platforms
 } from './shared'
 
 type Position = 'top' | 'bottom'
@@ -243,11 +240,8 @@ export default class CanvasBannerAd extends MobileAd<CanvasBannerAdOptions> {
   }
 
   public async load() {
-    const result = await execAsync(NativeActions.canvasBannerLoad, [
-      { ...this.opts, id: this.id },
-    ])
+    await super.load()
     this._loaded = true
-    return result
   }
 
   public async show(opts = {}) {
@@ -286,11 +280,11 @@ export default class CanvasBannerAd extends MobileAd<CanvasBannerAdOptions> {
       }
     }
 
-    return execAsync(NativeActions.canvasBannerShow, [{ ...opts, id: this.id }])
+    return super.show()
   }
 
   public hide() {
-    return execAsync(NativeActions.canvasBannerHide, [{ id: this.id }])
+    return super.hide()
   }
 
   public destroy() {

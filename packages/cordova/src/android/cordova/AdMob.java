@@ -86,6 +86,9 @@ public class AdMob extends CordovaPlugin implements Helper.Adapter {
                         case "BannerAd":
                             ad = new Banner(ctx);
                             break;
+                        case "CanvasBannerAd":
+                            ad = new CanvasBanner(ctx);
+                            break;
                         case "InterstitialAd":
                             ad = new Interstitial(ctx);
                             break;
