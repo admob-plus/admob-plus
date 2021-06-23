@@ -63,10 +63,14 @@ class GenericAd extends MobileAd {
   constructor(opts: MobileAdOptions) {
     super(opts)
 
+    const cls =
+      (this.constructor as unknown as { cls?: string }).cls ??
+      this.constructor.name
+
     this._init = AdMobPlus.adCreate({
       ...this.opts,
       id: this.id,
-      cls: this.constructor.name,
+      cls,
     }).then(() => {
       this._init = null
     })
@@ -92,11 +96,17 @@ class GenericAd extends MobileAd {
   }
 }
 
-class InterstitialAd extends GenericAd {}
+class InterstitialAd extends GenericAd {
+  static cls = 'InterstitialAd'
+}
 
-class RewardedAd extends GenericAd {}
+class RewardedAd extends GenericAd {
+  static cls = 'RewardedAd'
+}
 
-class RewardedInterstitialAd extends GenericAd {}
+class RewardedInterstitialAd extends GenericAd {
+  static cls = 'RewardedInterstitialAd'
+}
 
 export * from './definitions'
 export { InterstitialAd, RewardedAd, RewardedInterstitialAd }
