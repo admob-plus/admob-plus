@@ -280,7 +280,7 @@ export default class CanvasBannerAd extends MobileAd<CanvasBannerAdOptions> {
       }
     }
 
-    return super.show()
+    return execAsync(NativeActions.canvasBannerShow, [{ ...opts, id: this.id }])
   }
 
   public hide() {
