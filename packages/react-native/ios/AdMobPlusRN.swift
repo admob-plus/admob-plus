@@ -69,20 +69,24 @@ class AdMobPlusRN: RCTEventEmitter {
         let ctx = AMBContext(opts, resolve, reject)
 
         if let adClass = ctx.optString("cls") {
+            var ad: AMBCoreAd?
             switch adClass {
             case "InterstitialAd":
-                _ = AMBInterstitial(ctx)
+                ad = AMBInterstitial(ctx)
             case "RewardedAd":
-                _ = AMBRewarded(ctx)
+                ad = AMBRewarded(ctx)
             case "RewardedInterstitialAd":
-                _ = AMBRewardedInterstitial(ctx)
+                ad = AMBRewardedInterstitial(ctx)
             default:
-                ctx.error("unknown ad class: \(adClass)")
-                return
+                break
             }
-            ctx.success()
+            if ad != nil {
+                ctx.resolve()
+            } else {
+                ctx.reject("fail to create ad: \(ctx.optId() ?? -1)")
+            }
         } else {
-            ctx.error()
+            ctx.reject()
         }
     }
 
@@ -91,8 +95,8 @@ class AdMobPlusRN: RCTEventEmitter {
                           rejecter reject: @escaping RCTPromiseRejectBlock) {
         let ctx = AMBContext(opts, resolve, reject)
 
-        if let ad = ctx.optAdOrError() as? AMBGenericAd {
-            ctx.success(ad.isLoaded())
+        if let ad = ctx.optAdOrError() as? AMBAdBase {
+            ctx.resolve(ad.isLoaded())
         }
     }
 
@@ -101,7 +105,7 @@ class AdMobPlusRN: RCTEventEmitter {
                       rejecter reject: @escaping RCTPromiseRejectBlock) {
         let ctx = AMBContext(opts, resolve, reject)
 
-        if let ad = ctx.optAdOrError() as? AMBGenericAd {
+        if let ad = ctx.optAdOrError() as? AMBAdBase {
             ad.load(ctx)
         }
     }
@@ -112,11 +116,11 @@ class AdMobPlusRN: RCTEventEmitter {
         let ctx = AMBContext(opts, resolve, reject)
 
         DispatchQueue.main.async {
-            if let ad = ctx.optAdOrError() as? AMBGenericAd {
+            if let ad = ctx.optAdOrError() as? AMBAdBase {
                 if ad.isLoaded() {
                     ad.show(ctx)
                 } else {
-                    ctx.error("Ad is not loaded: \(ctx.optId() ?? -1)")
+                    ctx.reject("Ad is not loaded: \(ctx.optId() ?? -1)")
                 }
             }
         }

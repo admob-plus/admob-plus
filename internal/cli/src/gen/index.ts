@@ -12,7 +12,7 @@ import updateCliReadme from './cli'
 import consent from './consent'
 import cordovaNative from './cordova-native'
 import rn from './rn'
-import { indent4, warnMessage } from './shared'
+import { indent4 } from './shared'
 
 async function copyCore() {
   const srcPathAndroid = pkgsDirJoin(
@@ -27,7 +27,7 @@ async function copyCore() {
       srcPathAndroid,
       pkgsDirJoin('react-native/android/src/main/java/admob/plus/core'),
     ),
-    // fse.copy(srcPathIos, pkgsDirJoin('react-native/ios/AMBCore.swift')),
+    fse.copy(srcPathIos, pkgsDirJoin('react-native/ios/AMBCore.swift')),
   ])
 }
 

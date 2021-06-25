@@ -1,19 +1,38 @@
 import GoogleMobileAds
 
-class AMBContext {
-    static var ads = [Int: AMBAdBase]()
+class AMBContext: AMBCoreContext {
+    func resolve(_ data: [String : Any]) {
+        promiseReolve(data)
+    }
+
+    func reject(_ msg: String) {
+        promiseReject("unknown", msg, nil)
+    }
+
+    func reject(_ error: NSError) {
+        promiseReject(error.code.description, error.localizedDescription, error)
+    }
+
+    func reject(_ error: Error?) {
+        if error != nil {
+            promiseReject("error", error!.localizedDescription, error)
+        } else {
+            reject()
+        }
+    }
+
     static weak var plugin: AdMobPlusRN!
 
     let opts: NSDictionary?
-    let resolve: RCTPromiseResolveBlock
-    let reject: RCTPromiseRejectBlock
+    let promiseReolve: RCTPromiseResolveBlock
+    let promiseReject: RCTPromiseRejectBlock
 
     init(_ opts: NSDictionary?,
          _ resolve: @escaping RCTPromiseResolveBlock,
          _ reject: @escaping RCTPromiseRejectBlock) {
         self.opts = opts
-        self.resolve = resolve
-        self.reject = reject
+        self.promiseReolve = resolve
+        self.promiseReject = reject
     }
 
     func opt(_ key: String) -> Any? {
@@ -70,24 +89,6 @@ class AMBContext {
         return nil
     }
 
-    func optAd() -> AMBAdBase? {
-        guard let id = optId(),
-              let ad = AMBContext.ads[id]
-        else {
-            return nil
-        }
-        return ad
-    }
-
-    func optAdOrError() -> AMBAdBase? {
-        if let ad = optAd() {
-            return ad
-        } else {
-            error("Ad not found \(optId() ?? -1)")
-            return nil
-        }
-    }
-
     func optGADRequest() -> GADRequest {
         let request = GADRequest()
         if let contentURL = optString("contentUrl") {
@@ -115,33 +116,5 @@ class AMBContext {
             options.userIdentifier = userId
         }
         return options
-    }
-
-    func success() {
-        resolve(nil)
-    }
-
-    func success(_ message: Any) {
-        resolve(message)
-    }
-
-    func error() {
-        self.error("Unknown error")
-    }
-
-    func error(_ message: String) {
-        reject("unknown", message, nil)
-    }
-
-    func error(_ error: Error?) {
-        if error != nil {
-            reject("error", error!.localizedDescription, error)
-        } else {
-            self.error()
-        }
-    }
-
-    func error(_ error: NSError) {
-        reject(error.code.description, error.localizedDescription, error)
     }
 }

@@ -1,23 +1,23 @@
 import GoogleMobileAds
 
-class AMBRewarded: AMBAdBase, AMBGenericAd, GADFullScreenContentDelegate {
+class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
     var ad: GADRewardedAd?
 
     deinit {
         clear()
     }
 
-    func isLoaded() -> Bool {
+    override func isLoaded() -> Bool {
         return self.ad != nil
     }
 
-    func load(_ ctx: AMBContext) {
+    override func load(_ ctx: AMBContext) {
         clear()
 
-        GADRewardedAd.load(withAdUnitID: adUnitId, request: ctx.optGADRequest(), completionHandler: { ad, error in
+        GADRewardedAd.load(withAdUnitID: adUnitId, request: adRequest, completionHandler: { ad, error in
             if error != nil {
                 self.emit(AMBEvents.adLoadFail, error!)
-                ctx.error(error)
+                ctx.reject(error!)
                 return
             }
 
@@ -27,16 +27,16 @@ class AMBRewarded: AMBAdBase, AMBGenericAd, GADFullScreenContentDelegate {
 
             self.emit(AMBEvents.adLoad)
 
-            ctx.success()
+            ctx.resolve()
         })
     }
 
-    func show(_ ctx: AMBContext) {
+    override func show(_ ctx: AMBContext) {
         ad?.present(fromRootViewController: rootViewController, userDidEarnRewardHandler: {
             let reward = self.ad!.adReward
             self.emit(AMBEvents.adReward, reward)
         })
-        ctx.success()
+        ctx.resolve()
     }
 
     func adDidRecordImpression(_ ad: GADFullScreenPresentingAd) {

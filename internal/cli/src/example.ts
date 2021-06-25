@@ -95,6 +95,10 @@ const prepare = async (opts: { cwd: string }) => {
       return
     }
     case 'react-native': {
+      await execa('yarn', {
+        stdio: 'inherit',
+        cwd: pkgsDirJoin('react-native'),
+      })
       await execa('yarn', ['build'], {
         stdio: 'inherit',
         cwd: pkgsDirJoin('react-native'),

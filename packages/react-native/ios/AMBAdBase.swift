@@ -1,34 +1,6 @@
 import GoogleMobileAds
 
-protocol AMBGenericAd {
-    func isLoaded() -> Bool
-    func load(_ ctx: AMBContext)
-    func show(_ ctx: AMBContext)
-    func hide(_ ctx: AMBContext)
-}
-
-extension AMBGenericAd {
-    func isLoaded() -> Bool {
-        return false
-    }
-
-    func load(_ ctx: AMBContext) {
-        ctx.error("Not implemented")
-    }
-
-    func show(_ ctx: AMBContext) {
-        ctx.error("Not implemented")
-    }
-
-    func hide(_ ctx: AMBContext) {
-        ctx.error("Not implemented")
-    }
-}
-
-class AMBAdBase: NSObject {
-    let id: Int
-    let adUnitId: String
-
+class AMBAdBase: AMBCoreAd {
     var plugin: AdMobPlusRN {
         return AMBContext.plugin
     }
@@ -41,31 +13,33 @@ class AMBAdBase: NSObject {
         return window.rootViewController!
     }
 
-    init(id: Int, adUnitId: String) {
-        self.id = id
-        self.adUnitId = adUnitId
-
-        super.init()
-
-        DispatchQueue.main.sync {
-            AMBContext.ads[id] = self
-        }
+    func isLoaded() -> Bool {
+        #if targetEnvironment(simulator)
+        fatalError(AMBCoreError.notImplemented.localizedDescription)
+        #else
+        return false
+        #endif
     }
 
-    convenience init?(_ ctx: AMBContext) {
-        guard let id = ctx.optId(),
-              let adUnitId = ctx.optAdUnitID()
-        else {
-            return nil
-        }
-        self.init(id: id, adUnitId: adUnitId)
+    func load(_ ctx: AMBContext) {
+        ctx.reject(AMBCoreError.notImplemented)
+        #if targetEnvironment(simulator)
+        fatalError(AMBCoreError.notImplemented.localizedDescription)
+        #endif
     }
 
-    deinit {
-        let id = self.id
-        DispatchQueue.main.async {
-            AMBContext.ads.removeValue(forKey: id)
-        }
+    func show(_ ctx: AMBContext) {
+        ctx.reject(AMBCoreError.notImplemented)
+        #if targetEnvironment(simulator)
+        fatalError(AMBCoreError.notImplemented.localizedDescription)
+        #endif
+    }
+
+    func hide(_ ctx: AMBContext) {
+        ctx.reject(AMBCoreError.notImplemented)
+        #if targetEnvironment(simulator)
+        fatalError(AMBCoreError.notImplemented.localizedDescription)
+        #endif
     }
 
     func emit(_ event: AMBEvents) {

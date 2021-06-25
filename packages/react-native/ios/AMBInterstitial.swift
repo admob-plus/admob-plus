@@ -1,26 +1,26 @@
 import GoogleMobileAds
 
-class AMBInterstitial: AMBAdBase, AMBGenericAd, GADFullScreenContentDelegate {
+class AMBInterstitial: AMBAdBase, GADFullScreenContentDelegate {
     var ad: GADInterstitialAd?
 
     deinit {
         clear()
     }
 
-    func isLoaded() -> Bool {
+    override func isLoaded() -> Bool {
         return self.ad != nil
     }
 
-    func load(_ ctx: AMBContext) {
+    override func load(_ ctx: AMBContext) {
         clear()
 
         GADInterstitialAd.load(
             withAdUnitID: adUnitId,
-            request: ctx.optGADRequest(),
+            request: adRequest,
             completionHandler: { ad, error in
                 if error != nil {
                     self.emit(AMBEvents.adLoadFail, error!)
-                    ctx.error(error!)
+                    ctx.reject(error!)
                     return
                 }
 
@@ -29,13 +29,13 @@ class AMBInterstitial: AMBAdBase, AMBGenericAd, GADFullScreenContentDelegate {
 
                 self.emit(AMBEvents.adLoad)
 
-                ctx.success()
+                ctx.resolve()
             })
     }
 
-    func show(_ ctx: AMBContext) {
+    override func show(_ ctx: AMBContext) {
         ad?.present(fromRootViewController: self.rootViewController)
-        ctx.success()
+        ctx.resolve()
     }
 
     func adDidRecordImpression(_ ad: GADFullScreenPresentingAd) {
