@@ -104,7 +104,7 @@ module.exports = {
         out: 'capacitor/api',
         readme: 'none',
         sidebar: {
-          sidebarFile: 'sidebar/typedoc-capacitor.js',
+          sidebarFile: null,
         },
       },
     ],
@@ -117,7 +117,7 @@ module.exports = {
         out: 'cordova/api',
         readme: 'none',
         sidebar: {
-          sidebarFile: 'sidebar/typedoc-cordova.js',
+          sidebarFile: null,
         },
       },
     ],
@@ -130,7 +130,7 @@ module.exports = {
         out: 'cordova/consent/api',
         readme: 'none',
         sidebar: {
-          sidebarFile: 'sidebar/typedoc-cordova-consent.js',
+          sidebarFile: null,
         },
       },
     ],
@@ -143,7 +143,7 @@ module.exports = {
         out: 'ionic/api',
         readme: 'none',
         sidebar: {
-          sidebarFile: 'sidebar/typedoc-ionic.js',
+          sidebarFile: null,
         },
         excludeExternals: true,
       },
@@ -157,7 +157,7 @@ module.exports = {
         out: 'react-native/api',
         readme: 'none',
         sidebar: {
-          sidebarFile: 'sidebar/typedoc-react-native.js',
+          sidebarFile: null,
         },
       },
     ],
