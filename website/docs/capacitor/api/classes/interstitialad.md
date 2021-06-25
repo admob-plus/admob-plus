@@ -10,7 +10,7 @@ custom_edit_url: null
 
 - `GenericAd`
 
-  ↳ **InterstitialAd**
+  ↳ **`InterstitialAd`**
 
 ## Constructors
 
@@ -22,7 +22,7 @@ custom_edit_url: null
 
 | Name | Type |
 | :------ | :------ |
-| `opts` | [MobileAdOptions](../index.md#mobileadoptions) |
+| `opts` | [`MobileAdOptions`](../index.md#mobileadoptions) |
 
 #### Inherited from
 
@@ -50,7 +50,7 @@ ___
 
 ### opts
 
-• `Protected` `Readonly` **opts**: [MobileAdOptions](../index.md#mobileadoptions)
+• `Protected` `Readonly` **opts**: [`MobileAdOptions`](../index.md#mobileadoptions)
 
 #### Inherited from
 
@@ -64,7 +64,7 @@ ___
 
 ### cls
 
-▪ `Static` **cls**: `string` = 'InterstitialAd'
+▪ `Static` **cls**: `string` = `'InterstitialAd'`
 
 #### Defined in
 
@@ -88,11 +88,11 @@ index.ts:28
 
 ### hide
 
-▸ **hide**(): `Promise`<void\>
+▸ **hide**(): `Promise`<`void`\>
 
 #### Returns
 
-`Promise`<void\>
+`Promise`<`void`\>
 
 #### Inherited from
 
@@ -106,11 +106,11 @@ ___
 
 ### init
 
-▸ `Protected` **init**(): `Promise`<void\>
+▸ `Protected` **init**(): `Promise`<`void`\>
 
 #### Returns
 
-`Promise`<void\>
+`Promise`<`void`\>
 
 #### Inherited from
 
@@ -124,11 +124,11 @@ ___
 
 ### isLoaded
 
-▸ **isLoaded**(): `Promise`<boolean\>
+▸ **isLoaded**(): `Promise`<`boolean`\>
 
 #### Returns
 
-`Promise`<boolean\>
+`Promise`<`boolean`\>
 
 #### Inherited from
 
@@ -142,11 +142,11 @@ ___
 
 ### load
 
-▸ **load**(): `Promise`<void\>
+▸ **load**(): `Promise`<`void`\>
 
 #### Returns
 
-`Promise`<void\>
+`Promise`<`void`\>
 
 #### Inherited from
 
@@ -160,11 +160,11 @@ ___
 
 ### show
 
-▸ **show**(): `Promise`<void\>
+▸ **show**(): `Promise`<`void`\>
 
 #### Returns
 
-`Promise`<void\>
+`Promise`<`void`\>
 
 #### Inherited from
 

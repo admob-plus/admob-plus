@@ -39,7 +39,7 @@ Renames and exports: [AdMobPlus](index.md#admobplus)
 | :------ | :------ |
 | `appMuted?` | `boolean` |
 | `appVolume?` | `number` |
-| `maxAdContentRating?` | [MaxAdContentRating](enums/maxadcontentrating.md) |
+| `maxAdContentRating?` | [`MaxAdContentRating`](enums/maxadcontentrating.md) |
 | `tagForChildDirectedTreatment?` | `boolean` \| ``null`` |
 | `tagForUnderAgeOfConsent?` | `boolean` \| ``null`` |
 | `testDeviceIds?` | `string`[] |
@@ -68,7 +68,7 @@ definitions.ts:19
 
 ### AdMobPlus
 
-• `Const` **AdMobPlus**: [AdMobPlusPlugin](interfaces/admobplusplugin.md)
+• `Const` **AdMobPlus**: [`AdMobPlusPlugin`](interfaces/admobplusplugin.md)
 
 #### Defined in
 

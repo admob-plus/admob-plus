@@ -10,7 +10,7 @@ custom_edit_url: null
 
 ### Disabled
 
-• **Disabled** = 0
+• **Disabled** = `0`
 
 #### Defined in
 
@@ -20,7 +20,7 @@ ___
 
 ### EEA
 
-• **EEA** = 1
+• **EEA** = `1`
 
 #### Defined in
 
@@ -30,7 +30,7 @@ ___
 
 ### NotEEA
 
-• **NotEEA** = 2
+• **NotEEA** = `2`
 
 #### Defined in
 

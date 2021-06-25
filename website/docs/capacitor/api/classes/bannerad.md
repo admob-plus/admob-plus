@@ -10,7 +10,7 @@ custom_edit_url: null
 
 - `GenericAd`
 
-  ↳ **BannerAd**
+  ↳ **`BannerAd`**
 
 ## Constructors
 
@@ -22,7 +22,7 @@ custom_edit_url: null
 
 | Name | Type |
 | :------ | :------ |
-| `opts` | [BannerAdOptions](../interfaces/banneradoptions.md) |
+| `opts` | [`BannerAdOptions`](../interfaces/banneradoptions.md) |
 
 #### Overrides
 
@@ -36,7 +36,7 @@ index.ts:85
 
 ### \_loaded
 
-• **\_loaded**: `boolean` = false
+• **\_loaded**: `boolean` = `false`
 
 #### Defined in
 
@@ -60,7 +60,7 @@ ___
 
 ### opts
 
-• `Protected` `Readonly` **opts**: [MobileAdOptions](../index.md#mobileadoptions)
+• `Protected` `Readonly` **opts**: [`MobileAdOptions`](../index.md#mobileadoptions)
 
 #### Inherited from
 
@@ -74,7 +74,7 @@ ___
 
 ### cls
 
-▪ `Static` **cls**: `string` = 'BannerAd'
+▪ `Static` **cls**: `string` = `'BannerAd'`
 
 #### Defined in
 
@@ -98,11 +98,11 @@ index.ts:28
 
 ### hide
 
-▸ **hide**(): `Promise`<void\>
+▸ **hide**(): `Promise`<`void`\>
 
 #### Returns
 
-`Promise`<void\>
+`Promise`<`void`\>
 
 #### Inherited from
 
@@ -116,11 +116,11 @@ ___
 
 ### init
 
-▸ `Protected` **init**(): `Promise`<void\>
+▸ `Protected` **init**(): `Promise`<`void`\>
 
 #### Returns
 
-`Promise`<void\>
+`Promise`<`void`\>
 
 #### Inherited from
 
@@ -134,11 +134,11 @@ ___
 
 ### isLoaded
 
-▸ **isLoaded**(): `Promise`<boolean\>
+▸ **isLoaded**(): `Promise`<`boolean`\>
 
 #### Returns
 
-`Promise`<boolean\>
+`Promise`<`boolean`\>
 
 #### Inherited from
 
@@ -152,11 +152,11 @@ ___
 
 ### load
 
-▸ **load**(): `Promise`<void\>
+▸ **load**(): `Promise`<`void`\>
 
 #### Returns
 
-`Promise`<void\>
+`Promise`<`void`\>
 
 #### Overrides
 
@@ -170,11 +170,11 @@ ___
 
 ### show
 
-▸ **show**(): `Promise`<void\>
+▸ **show**(): `Promise`<`void`\>
 
 #### Returns
 
-`Promise`<void\>
+`Promise`<`void`\>
 
 #### Overrides
 

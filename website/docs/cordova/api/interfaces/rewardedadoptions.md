@@ -8,11 +8,11 @@ custom_edit_url: null
 
 ## Hierarchy
 
-- [MobileAdOptions](../index.md#mobileadoptions)
+- [`MobileAdOptions`](../index.md#mobileadoptions)
 
-  ↳ **RewardedAdOptions**
+  ↳ **`RewardedAdOptions`**
 
-  ↳↳ [RewardedInterstitialAdOptions](rewardedinterstitialadoptions.md)
+  ↳↳ [`RewardedInterstitialAdOptions`](rewardedinterstitialadoptions.md)
 
 ## Properties
 
@@ -26,7 +26,7 @@ MobileAdOptions.adUnitId
 
 #### Defined in
 
-api.ts:4
+api.ts:6
 
 ___
 
@@ -40,7 +40,7 @@ MobileAdOptions.id
 
 #### Defined in
 
-api.ts:4
+api.ts:6
 
 ___
 
@@ -54,13 +54,13 @@ MobileAdOptions.npa
 
 #### Defined in
 
-api.ts:4
+api.ts:6
 
 ___
 
 ### serverSideVerification
 
-• `Optional` **serverSideVerification**: [ServerSideVerificationOptions](serversideverificationoptions.md)
+• `Optional` **serverSideVerification**: [`ServerSideVerificationOptions`](serversideverificationoptions.md)
 
 #### Defined in
 

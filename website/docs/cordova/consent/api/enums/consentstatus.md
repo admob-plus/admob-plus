@@ -10,7 +10,7 @@ custom_edit_url: null
 
 ### NotRequired
 
-• **NotRequired** = 2
+• **NotRequired** = `2`
 
 #### Defined in
 
@@ -20,7 +20,7 @@ ___
 
 ### Obtained
 
-• **Obtained** = 3
+• **Obtained** = `3`
 
 #### Defined in
 
@@ -30,7 +30,7 @@ ___
 
 ### Required
 
-• **Required** = 1
+• **Required** = `1`
 
 #### Defined in
 
@@ -40,7 +40,7 @@ ___
 
 ### Unknown
 
-• **Unknown** = 0
+• **Unknown** = `0`
 
 #### Defined in
 

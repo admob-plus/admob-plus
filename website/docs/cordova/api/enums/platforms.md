@@ -10,18 +10,18 @@ custom_edit_url: null
 
 ### android
 
-• **android** = "android"
+• **android** = `"android"`
 
 #### Defined in
 
-api.ts:54
+api.ts:88
 
 ___
 
 ### ios
 
-• **ios** = "ios"
+• **ios** = `"ios"`
 
 #### Defined in
 
-api.ts:55
+api.ts:89

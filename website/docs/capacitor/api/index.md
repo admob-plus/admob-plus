@@ -67,7 +67,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `maxAdContentRating?` | [MaxAdContentRating](enums/maxadcontentrating.md) |
+| `maxAdContentRating?` | [`MaxAdContentRating`](enums/maxadcontentrating.md) |
 | `tagForChildDirectedTreatment?` | `boolean` \| ``null`` |
 | `tagForUnderAgeOfConsent?` | `boolean` \| ``null`` |
 | `testDeviceIds?` | `string`[] |
@@ -80,7 +80,7 @@ definitions.ts:16
 
 ### AdMobPlus
 
-• `Const` **AdMobPlus**: [AdMobPlusPlugin](interfaces/admobplusplugin.md)
+• `Const` **AdMobPlus**: [`AdMobPlusPlugin`](interfaces/admobplusplugin.md)
 
 #### Defined in
 

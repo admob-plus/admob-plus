@@ -10,7 +10,7 @@ custom_edit_url: null
 
 - `GenericAd`
 
-  ↳ **RewardedInterstitialAd**
+  ↳ **`RewardedInterstitialAd`**
 
 ## Constructors
 
@@ -22,7 +22,7 @@ custom_edit_url: null
 
 | Name | Type |
 | :------ | :------ |
-| `opts` | [MobileAdOptions](../index.md#mobileadoptions) |
+| `opts` | [`MobileAdOptions`](../index.md#mobileadoptions) |
 
 #### Inherited from
 
@@ -50,7 +50,7 @@ ___
 
 ### opts
 
-• `Protected` `Readonly` **opts**: [MobileAdOptions](../index.md#mobileadoptions)
+• `Protected` `Readonly` **opts**: [`MobileAdOptions`](../index.md#mobileadoptions)
 
 #### Inherited from
 
@@ -59,6 +59,16 @@ GenericAd.opts
 #### Defined in
 
 index.ts:25
+
+___
+
+### cls
+
+▪ `Static` **cls**: `string` = `'RewardedInterstitialAd'`
+
+#### Defined in
+
+index.ts:108
 
 ## Accessors
 
@@ -78,11 +88,11 @@ index.ts:39
 
 ### init
 
-▸ `Protected` **init**(): `Promise`<void\>
+▸ `Protected` **init**(): `Promise`<`void`\>
 
 #### Returns
 
-`Promise`<void\>
+`Promise`<`void`\>
 
 #### Inherited from
 
@@ -90,17 +100,17 @@ GenericAd.init
 
 #### Defined in
 
-index.ts:90
+index.ts:94
 
 ___
 
 ### isLoaded
 
-▸ **isLoaded**(): `Promise`<boolean\>
+▸ **isLoaded**(): `Promise`<`boolean`\>
 
 #### Returns
 
-`Promise`<boolean\>
+`Promise`<`boolean`\>
 
 #### Inherited from
 
@@ -108,17 +118,17 @@ GenericAd.isLoaded
 
 #### Defined in
 
-index.ts:75
+index.ts:79
 
 ___
 
 ### load
 
-▸ **load**(): `Promise`<void\>
+▸ **load**(): `Promise`<`void`\>
 
 #### Returns
 
-`Promise`<void\>
+`Promise`<`void`\>
 
 #### Inherited from
 
@@ -126,7 +136,7 @@ GenericAd.load
 
 #### Defined in
 
-index.ts:80
+index.ts:84
 
 ___
 
@@ -140,7 +150,7 @@ ___
 | :------ | :------ |
 | `eventType` | `string` |
 | `listener` | (`event`: `any`) => `void` |
-| `context?` | `Record`<string, unknown\> |
+| `context?` | `Record`<`string`, `unknown`\> |
 
 #### Returns
 
@@ -158,11 +168,11 @@ ___
 
 ### show
 
-▸ **show**(): `Promise`<void\>
+▸ **show**(): `Promise`<`void`\>
 
 #### Returns
 
-`Promise`<void\>
+`Promise`<`void`\>
 
 #### Inherited from
 
@@ -170,4 +180,4 @@ GenericAd.show
 
 #### Defined in
 
-index.ts:85
+index.ts:89

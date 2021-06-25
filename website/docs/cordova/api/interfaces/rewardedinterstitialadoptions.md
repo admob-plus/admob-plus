@@ -8,9 +8,9 @@ custom_edit_url: null
 
 ## Hierarchy
 
-- [RewardedAdOptions](rewardedadoptions.md)
+- [`RewardedAdOptions`](rewardedadoptions.md)
 
-  ↳ **RewardedInterstitialAdOptions**
+  ↳ **`RewardedInterstitialAdOptions`**
 
 ## Properties
 
@@ -24,7 +24,7 @@ custom_edit_url: null
 
 #### Defined in
 
-api.ts:4
+api.ts:6
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 #### Defined in
 
-api.ts:4
+api.ts:6
 
 ___
 
@@ -52,13 +52,13 @@ ___
 
 #### Defined in
 
-api.ts:4
+api.ts:6
 
 ___
 
 ### serverSideVerification
 
-• `Optional` **serverSideVerification**: [ServerSideVerificationOptions](serversideverificationoptions.md)
+• `Optional` **serverSideVerification**: [`ServerSideVerificationOptions`](serversideverificationoptions.md)
 
 #### Inherited from
 

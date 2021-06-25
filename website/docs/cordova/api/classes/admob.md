@@ -20,7 +20,7 @@ index.ts:46
 
 ### AppOpenAd
 
-• `Readonly` **AppOpenAd**: typeof [AppOpenAd](appopenad.md)
+• `Readonly` **AppOpenAd**: typeof [`AppOpenAd`](appopenad.md)
 
 #### Defined in
 
@@ -30,7 +30,7 @@ ___
 
 ### BannerAd
 
-• `Readonly` **BannerAd**: typeof [BannerAd](bannerad.md)
+• `Readonly` **BannerAd**: typeof [`BannerAd`](bannerad.md)
 
 #### Defined in
 
@@ -40,7 +40,7 @@ ___
 
 ### Events
 
-• `Readonly` **Events**: typeof [Events](../enums/events.md)
+• `Readonly` **Events**: typeof [`Events`](../enums/events.md)
 
 #### Defined in
 
@@ -50,7 +50,7 @@ ___
 
 ### InterstitialAd
 
-• `Readonly` **InterstitialAd**: typeof [InterstitialAd](interstitialad.md)
+• `Readonly` **InterstitialAd**: typeof [`InterstitialAd`](interstitialad.md)
 
 #### Defined in
 
@@ -60,7 +60,7 @@ ___
 
 ### NativeAd
 
-• `Readonly` **NativeAd**: typeof [NativeAd](nativead.md)
+• `Readonly` **NativeAd**: typeof [`NativeAd`](nativead.md)
 
 #### Defined in
 
@@ -70,7 +70,7 @@ ___
 
 ### RewardedAd
 
-• `Readonly` **RewardedAd**: typeof [RewardedAd](rewardedad.md)
+• `Readonly` **RewardedAd**: typeof [`RewardedAd`](rewardedad.md)
 
 #### Defined in
 
@@ -80,7 +80,7 @@ ___
 
 ### RewardedInterstitialAd
 
-• `Readonly` **RewardedInterstitialAd**: typeof [RewardedInterstitialAd](rewardedinterstitialad.md)
+• `Readonly` **RewardedInterstitialAd**: typeof [`RewardedInterstitialAd`](rewardedinterstitialad.md)
 
 #### Defined in
 
@@ -90,7 +90,7 @@ ___
 
 ### TrackingAuthorizationStatus
 
-• `Readonly` **TrackingAuthorizationStatus**: typeof [TrackingAuthorizationStatus](../enums/trackingauthorizationstatus.md)
+• `Readonly` **TrackingAuthorizationStatus**: typeof [`TrackingAuthorizationStatus`](../enums/trackingauthorizationstatus.md)
 
 #### Defined in
 
@@ -100,17 +100,17 @@ index.ts:46
 
 ### configRequest
 
-▸ **configRequest**(`requestConfig`): `Promise`<unknown\>
+▸ **configRequest**(`requestConfig`): `Promise`<`unknown`\>
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `requestConfig` | [RequestConfig](../index.md#requestconfig) |
+| `requestConfig` | [`RequestConfig`](../index.md#requestconfig) |
 
 #### Returns
 
-`Promise`<unknown\>
+`Promise`<`unknown`\>
 
 #### Defined in
 
@@ -120,11 +120,11 @@ ___
 
 ### requestTrackingAuthorization
 
-▸ **requestTrackingAuthorization**(): `Promise`<``false`` \| [TrackingAuthorizationStatus](../enums/trackingauthorizationstatus.md)\>
+▸ **requestTrackingAuthorization**(): `Promise`<``false`` \| [`TrackingAuthorizationStatus`](../enums/trackingauthorizationstatus.md)\>
 
 #### Returns
 
-`Promise`<``false`` \| [TrackingAuthorizationStatus](../enums/trackingauthorizationstatus.md)\>
+`Promise`<``false`` \| [`TrackingAuthorizationStatus`](../enums/trackingauthorizationstatus.md)\>
 
 #### Defined in
 
@@ -134,7 +134,7 @@ ___
 
 ### setAppMuted
 
-▸ **setAppMuted**(`value`): `Promise`<unknown\>
+▸ **setAppMuted**(`value`): `Promise`<`unknown`\>
 
 #### Parameters
 
@@ -144,7 +144,7 @@ ___
 
 #### Returns
 
-`Promise`<unknown\>
+`Promise`<`unknown`\>
 
 #### Defined in
 
@@ -154,7 +154,7 @@ ___
 
 ### setAppVolume
 
-▸ **setAppVolume**(`value`): `Promise`<unknown\>
+▸ **setAppVolume**(`value`): `Promise`<`unknown`\>
 
 #### Parameters
 
@@ -164,7 +164,7 @@ ___
 
 #### Returns
 
-`Promise`<unknown\>
+`Promise`<`unknown`\>
 
 #### Defined in
 

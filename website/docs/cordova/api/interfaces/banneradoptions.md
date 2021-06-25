@@ -8,9 +8,9 @@ custom_edit_url: null
 
 ## Hierarchy
 
-- [MobileAdOptions](../index.md#mobileadoptions)
+- [`MobileAdOptions`](../index.md#mobileadoptions)
 
-  ↳ **BannerAdOptions**
+  ↳ **`BannerAdOptions`**
 
 ## Properties
 
@@ -24,7 +24,7 @@ MobileAdOptions.adUnitId
 
 #### Defined in
 
-api.ts:4
+api.ts:6
 
 ___
 
@@ -38,7 +38,7 @@ MobileAdOptions.id
 
 #### Defined in
 
-api.ts:4
+api.ts:6
 
 ___
 
@@ -52,7 +52,7 @@ MobileAdOptions.npa
 
 #### Defined in
 
-api.ts:4
+api.ts:6
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 #### Defined in
 
-banner.ts:42
+banner.ts:39
 
 ___
 
@@ -72,14 +72,14 @@ ___
 
 #### Defined in
 
-banner.ts:40
+banner.ts:37
 
 ___
 
 ### size
 
-• `Optional` **size**: [AdSizeType](../enums/adsizetype.md)
+• `Optional` **size**: [`AdSizeType`](../enums/adsizetype.md)
 
 #### Defined in
 
-banner.ts:41
+banner.ts:38

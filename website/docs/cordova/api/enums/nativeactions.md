@@ -10,7 +10,7 @@ custom_edit_url: null
 
 ### adCreate
 
-• **adCreate** = "adCreate"
+• **adCreate** = `"adCreate"`
 
 #### Defined in
 
@@ -20,7 +20,7 @@ ___
 
 ### adHide
 
-• **adHide** = "adHide"
+• **adHide** = `"adHide"`
 
 #### Defined in
 
@@ -30,7 +30,7 @@ ___
 
 ### adIsLoaded
 
-• **adIsLoaded** = "adIsLoaded"
+• **adIsLoaded** = `"adIsLoaded"`
 
 #### Defined in
 
@@ -40,7 +40,7 @@ ___
 
 ### adLoad
 
-• **adLoad** = "adLoad"
+• **adLoad** = `"adLoad"`
 
 #### Defined in
 
@@ -50,7 +50,7 @@ ___
 
 ### adShow
 
-• **adShow** = "adShow"
+• **adShow** = `"adShow"`
 
 #### Defined in
 
@@ -60,7 +60,7 @@ ___
 
 ### bannerConfig
 
-• **bannerConfig** = "bannerConfig"
+• **bannerConfig** = `"bannerConfig"`
 
 #### Defined in
 
@@ -70,7 +70,7 @@ ___
 
 ### bannerHide
 
-• **bannerHide** = "bannerHide"
+• **bannerHide** = `"bannerHide"`
 
 #### Defined in
 
@@ -80,7 +80,7 @@ ___
 
 ### bannerLoad
 
-• **bannerLoad** = "bannerLoad"
+• **bannerLoad** = `"bannerLoad"`
 
 #### Defined in
 
@@ -90,7 +90,7 @@ ___
 
 ### bannerShow
 
-• **bannerShow** = "bannerShow"
+• **bannerShow** = `"bannerShow"`
 
 #### Defined in
 
@@ -100,7 +100,7 @@ ___
 
 ### configRequest
 
-• **configRequest** = "configRequest"
+• **configRequest** = `"configRequest"`
 
 #### Defined in
 
@@ -110,7 +110,7 @@ ___
 
 ### interstitialIsLoaded
 
-• **interstitialIsLoaded** = "interstitialIsLoaded"
+• **interstitialIsLoaded** = `"interstitialIsLoaded"`
 
 #### Defined in
 
@@ -120,7 +120,7 @@ ___
 
 ### interstitialLoad
 
-• **interstitialLoad** = "interstitialLoad"
+• **interstitialLoad** = `"interstitialLoad"`
 
 #### Defined in
 
@@ -130,7 +130,7 @@ ___
 
 ### interstitialShow
 
-• **interstitialShow** = "interstitialShow"
+• **interstitialShow** = `"interstitialShow"`
 
 #### Defined in
 
@@ -140,7 +140,7 @@ ___
 
 ### ready
 
-• **ready** = "ready"
+• **ready** = `"ready"`
 
 #### Defined in
 
@@ -150,7 +150,7 @@ ___
 
 ### requestTrackingAuthorization
 
-• **requestTrackingAuthorization** = "requestTrackingAuthorization"
+• **requestTrackingAuthorization** = `"requestTrackingAuthorization"`
 
 #### Defined in
 
@@ -160,7 +160,7 @@ ___
 
 ### rewardedInterstitialIsLoaded
 
-• **rewardedInterstitialIsLoaded** = "rewardedInterstitialIsLoaded"
+• **rewardedInterstitialIsLoaded** = `"rewardedInterstitialIsLoaded"`
 
 #### Defined in
 
@@ -170,7 +170,7 @@ ___
 
 ### rewardedInterstitialLoad
 
-• **rewardedInterstitialLoad** = "rewardedInterstitialLoad"
+• **rewardedInterstitialLoad** = `"rewardedInterstitialLoad"`
 
 #### Defined in
 
@@ -180,7 +180,7 @@ ___
 
 ### rewardedInterstitialShow
 
-• **rewardedInterstitialShow** = "rewardedInterstitialShow"
+• **rewardedInterstitialShow** = `"rewardedInterstitialShow"`
 
 #### Defined in
 
@@ -190,7 +190,7 @@ ___
 
 ### rewardedIsLoaded
 
-• **rewardedIsLoaded** = "rewardedIsLoaded"
+• **rewardedIsLoaded** = `"rewardedIsLoaded"`
 
 #### Defined in
 
@@ -200,7 +200,7 @@ ___
 
 ### rewardedLoad
 
-• **rewardedLoad** = "rewardedLoad"
+• **rewardedLoad** = `"rewardedLoad"`
 
 #### Defined in
 
@@ -210,7 +210,7 @@ ___
 
 ### rewardedShow
 
-• **rewardedShow** = "rewardedShow"
+• **rewardedShow** = `"rewardedShow"`
 
 #### Defined in
 
@@ -220,7 +220,7 @@ ___
 
 ### setAppMuted
 
-• **setAppMuted** = "setAppMuted"
+• **setAppMuted** = `"setAppMuted"`
 
 #### Defined in
 
@@ -230,7 +230,7 @@ ___
 
 ### setAppVolume
 
-• **setAppVolume** = "setAppVolume"
+• **setAppVolume** = `"setAppVolume"`
 
 #### Defined in
 
@@ -240,7 +240,7 @@ ___
 
 ### start
 
-• **start** = "start"
+• **start** = `"start"`
 
 #### Defined in
 

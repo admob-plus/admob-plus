@@ -10,11 +10,11 @@ custom_edit_url: null
 
 - `IonicNativePlugin`
 
-  ↳ **RewardedAd**
+  ↳ **`RewardedAd`**
 
 ## Implements
 
-- `Omit`<IRewardedAd, ``"opts"``\>
+- `Omit`<`IRewardedAd`, ``"opts"``\>
 
 ## Constructors
 
@@ -78,7 +78,7 @@ ___
 
 ### pluginRef
 
-▪ `Static` **pluginRef**: `string` = 'admob.RewardedAd'
+▪ `Static` **pluginRef**: `string` = `'admob.RewardedAd'`
 
 #### Overrides
 
@@ -120,11 +120,11 @@ ionic/src/ngx/index.ts:114
 
 ### isLoaded
 
-▸ **isLoaded**(): `Promise`<unknown\>
+▸ **isLoaded**(): `Promise`<`boolean`\>
 
 #### Returns
 
-`Promise`<unknown\>
+`Promise`<`boolean`\>
 
 #### Implementation of
 
@@ -138,11 +138,11 @@ ___
 
 ### load
 
-▸ **load**(): `Promise`<unknown\>
+▸ **load**(): `Promise`<`void`\>
 
 #### Returns
 
-`Promise`<unknown\>
+`Promise`<`void`\>
 
 #### Implementation of
 
@@ -156,11 +156,11 @@ ___
 
 ### show
 
-▸ **show**(): `Promise`<unknown\>
+▸ **show**(): `Promise`<`unknown`\>
 
 #### Returns
 
-`Promise`<unknown\>
+`Promise`<`unknown`\>
 
 #### Implementation of
 

@@ -10,11 +10,11 @@ custom_edit_url: null
 
 - `IonicNativePlugin`
 
-  ↳ **AdMob**
+  ↳ **`AdMob`**
 
 ## Implements
 
-- `Omit`<IAdMob, ``"AppOpenAd"`` \| ``"BannerAd"`` \| ``"Events"`` \| ``"InterstitialAd"`` \| ``"NativeAd"`` \| ``"RewardedAd"`` \| ``"RewardedInterstitialAd"`` \| ``"TrackingAuthorizationStatus"``\>
+- `Omit`<`IAdMob`, ``"AppOpenAd"`` \| ``"BannerAd"`` \| ``"Events"`` \| ``"InterstitialAd"`` \| ``"NativeAd"`` \| ``"RewardedAd"`` \| ``"RewardedInterstitialAd"`` \| ``"TrackingAuthorizationStatus"``\>
 
 ## Constructors
 
@@ -30,7 +30,7 @@ IonicNativePlugin.constructor
 
 ### BannerAd
 
-• `Readonly` **BannerAd**: typeof [BannerAd](bannerad.md)
+• `Readonly` **BannerAd**: typeof [`BannerAd`](bannerad.md)
 
 #### Defined in
 
@@ -40,7 +40,7 @@ ___
 
 ### InterstitialAd
 
-• `Readonly` **InterstitialAd**: typeof [InterstitialAd](interstitialad.md)
+• `Readonly` **InterstitialAd**: typeof [`InterstitialAd`](interstitialad.md)
 
 #### Defined in
 
@@ -50,7 +50,7 @@ ___
 
 ### RewardedAd
 
-• `Readonly` **RewardedAd**: typeof [RewardedAd](rewardedad.md)
+• `Readonly` **RewardedAd**: typeof [`RewardedAd`](rewardedad.md)
 
 #### Defined in
 
@@ -60,7 +60,7 @@ ___
 
 ### RewardedInterstitialAd
 
-• `Readonly` **RewardedInterstitialAd**: typeof [RewardedInterstitialAd](rewardedinterstitialad.md)
+• `Readonly` **RewardedInterstitialAd**: typeof [`RewardedInterstitialAd`](rewardedinterstitialad.md)
 
 #### Defined in
 
@@ -112,7 +112,7 @@ ___
 
 ### pluginRef
 
-▪ `Static` **pluginRef**: `string` = 'admob'
+▪ `Static` **pluginRef**: `string` = `'admob'`
 
 #### Overrides
 
@@ -126,7 +126,7 @@ ___
 
 ### repo
 
-▪ `Static` **repo**: `string` = 'https://github.com/admob-plus/admob-plus'
+▪ `Static` **repo**: `string` = `'https://github.com/admob-plus/admob-plus'`
 
 #### Overrides
 
@@ -154,7 +154,7 @@ ionic/src/ngx/index.ts:195
 
 ### configRequest
 
-▸ **configRequest**(...`opts`): `Promise`<unknown\>
+▸ **configRequest**(...`opts`): `Promise`<`unknown`\>
 
 #### Parameters
 
@@ -164,7 +164,7 @@ ionic/src/ngx/index.ts:195
 
 #### Returns
 
-`Promise`<unknown\>
+`Promise`<`unknown`\>
 
 #### Implementation of
 
@@ -178,7 +178,7 @@ ___
 
 ### on
 
-▸ **on**(`event`): `Observable`<any\>
+▸ **on**(`event`): `Observable`<`any`\>
 
 #### Parameters
 
@@ -188,7 +188,7 @@ ___
 
 #### Returns
 
-`Observable`<any\>
+`Observable`<`any`\>
 
 #### Defined in
 
@@ -198,11 +198,11 @@ ___
 
 ### requestTrackingAuthorization
 
-▸ **requestTrackingAuthorization**(): `Promise`<``false`` \| [TrackingAuthorizationStatus](../enums/trackingauthorizationstatus.md)\>
+▸ **requestTrackingAuthorization**(): `Promise`<``false`` \| [`TrackingAuthorizationStatus`](../enums/trackingauthorizationstatus.md)\>
 
 #### Returns
 
-`Promise`<``false`` \| [TrackingAuthorizationStatus](../enums/trackingauthorizationstatus.md)\>
+`Promise`<``false`` \| [`TrackingAuthorizationStatus`](../enums/trackingauthorizationstatus.md)\>
 
 #### Implementation of
 
@@ -216,7 +216,7 @@ ___
 
 ### setAppMuted
 
-▸ **setAppMuted**(...`opts`): `Promise`<unknown\>
+▸ **setAppMuted**(...`opts`): `Promise`<`unknown`\>
 
 #### Parameters
 
@@ -226,7 +226,7 @@ ___
 
 #### Returns
 
-`Promise`<unknown\>
+`Promise`<`unknown`\>
 
 #### Implementation of
 
@@ -240,7 +240,7 @@ ___
 
 ### setAppVolume
 
-▸ **setAppVolume**(...`opts`): `Promise`<unknown\>
+▸ **setAppVolume**(...`opts`): `Promise`<`unknown`\>
 
 #### Parameters
 
@@ -250,7 +250,7 @@ ___
 
 #### Returns
 
-`Promise`<unknown\>
+`Promise`<`unknown`\>
 
 #### Implementation of
 

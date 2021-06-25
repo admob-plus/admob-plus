@@ -12,31 +12,35 @@ custom_edit_url: null
 
 | Name | Type |
 | :------ | :------ |
-| `T` | `T`: [MobileAdOptions](../index.md#mobileadoptions) = [MobileAdOptions](../index.md#mobileadoptions) |
+| `T` | extends [`MobileAdOptions`](../index.md#mobileadoptions)[`MobileAdOptions`](../index.md#mobileadoptions) |
 
 ## Hierarchy
 
-- **MobileAd**
+- **`MobileAd`**
 
-  ↳ [BannerAd](bannerad.md)
+  ↳ [`AppOpenAd`](appopenad.md)
 
-  ↳ [InterstitialAd](interstitialad.md)
+  ↳ [`BannerAd`](bannerad.md)
 
-  ↳ [RewardedAd](rewardedad.md)
+  ↳ [`InterstitialAd`](interstitialad.md)
 
-  ↳ [RewardedInterstitialAd](rewardedinterstitialad.md)
+  ↳ [`NativeAd`](nativead.md)
+
+  ↳ [`RewardedAd`](rewardedad.md)
+
+  ↳ [`RewardedInterstitialAd`](rewardedinterstitialad.md)
 
 ## Constructors
 
 ### constructor
 
-• **new MobileAd**<T\>(`opts`)
+• **new MobileAd**<`T`\>(`opts`)
 
 #### Type parameters
 
 | Name | Type |
 | :------ | :------ |
-| `T` | `T`: [MobileAdOptions](../index.md#mobileadoptions) = [MobileAdOptions](../index.md#mobileadoptions) |
+| `T` | extends [`MobileAdOptions`](../index.md#mobileadoptions)[`MobileAdOptions`](../index.md#mobileadoptions) |
 
 #### Parameters
 
@@ -46,9 +50,19 @@ custom_edit_url: null
 
 #### Defined in
 
-api.ts:15
+api.ts:18
 
 ## Properties
+
+### \_init
+
+• `Private` **\_init**: ``null`` \| `Promise`<`void`\>
+
+#### Defined in
+
+api.ts:18
+
+___
 
 ### id
 
@@ -56,7 +70,7 @@ api.ts:15
 
 #### Defined in
 
-api.ts:13
+api.ts:15
 
 ___
 
@@ -66,41 +80,41 @@ ___
 
 #### Defined in
 
-api.ts:15
+api.ts:17
 
 ___
 
 ### allAds
 
-▪ `Static` `Private` **allAds**: `Object` = {}
+▪ `Static` `Private` **allAds**: `Object` = `{}`
 
 #### Index signature
 
-▪ [s: `number`]: [MobileAd](mobilead.md)
+▪ [s: `number`]: [`MobileAd`](mobilead.md)
 
 #### Defined in
 
-api.ts:10
+api.ts:12
 
 ___
 
 ### idCounter
 
-▪ `Static` `Private` **idCounter**: `number` = 0
+▪ `Static` `Private` **idCounter**: `number` = `0`
 
 #### Defined in
 
-api.ts:11
+api.ts:13
 
 ___
 
 ### type
 
-▪ `Static` `Readonly` **type**: `string` = ''
+▪ `Static` `Readonly` **type**: `string` = `''`
 
 #### Defined in
 
-api.ts:8
+api.ts:10
 
 ## Accessors
 
@@ -114,13 +128,89 @@ api.ts:8
 
 #### Defined in
 
-api.ts:33
+api.ts:42
 
 ## Methods
 
+### hide
+
+▸ `Protected` **hide**(): `Promise`<`unknown`\>
+
+#### Returns
+
+`Promise`<`unknown`\>
+
+#### Defined in
+
+api.ts:63
+
+___
+
+### init
+
+▸ `Protected` **init**(): `Promise`<`void`\>
+
+#### Returns
+
+`Promise`<`void`\>
+
+#### Defined in
+
+api.ts:67
+
+___
+
+### isLoaded
+
+▸ `Protected` **isLoaded**(): `Promise`<`boolean`\>
+
+#### Returns
+
+`Promise`<`boolean`\>
+
+#### Defined in
+
+api.ts:46
+
+___
+
+### load
+
+▸ `Protected` **load**(): `Promise`<`void`\>
+
+#### Returns
+
+`Promise`<`void`\>
+
+#### Defined in
+
+api.ts:53
+
+___
+
+### show
+
+▸ `Protected` **show**(`opts?`): `Promise`<`unknown`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `opts?` | `Record`<`string`, `any`\> |
+
+#### Returns
+
+`Promise`<`unknown`\>
+
+#### Defined in
+
+api.ts:58
+
+___
+
 ### getAdById
 
-▸ `Static` **getAdById**(`id`): [MobileAd](mobilead.md)<[MobileAdOptions](../index.md#mobileadoptions)\>
+▸ `Static` **getAdById**(`id`): [`MobileAd`](mobilead.md)<[`MobileAdOptions`](../index.md#mobileadoptions)\>
 
 #### Parameters
 
@@ -130,11 +220,11 @@ api.ts:33
 
 #### Returns
 
-[MobileAd](mobilead.md)<[MobileAdOptions](../index.md#mobileadoptions)\>
+[`MobileAd`](mobilead.md)<[`MobileAdOptions`](../index.md#mobileadoptions)\>
 
 #### Defined in
 
-api.ts:24
+api.ts:33
 
 ___
 
@@ -148,4 +238,4 @@ ___
 
 #### Defined in
 
-api.ts:28
+api.ts:37

@@ -8,9 +8,9 @@ custom_edit_url: null
 
 ## Hierarchy
 
-- `GenericAd`<[MobileAdOptions](../index.md#mobileadoptions) & { `view?`: `string`  }, `Object`\>
+- [`MobileAd`](mobilead.md)<[`MobileAdOptions`](../index.md#mobileadoptions) & { `view?`: `string`  }\>
 
-  ↳ **NativeAd**
+  ↳ **`NativeAd`**
 
 ## Constructors
 
@@ -22,18 +22,15 @@ custom_edit_url: null
 
 | Name | Type |
 | :------ | :------ |
-| `opts` | [MobileAdOptions](../index.md#mobileadoptions) & { `view?`: `string`  } |
+| `opts` | [`MobileAdOptions`](../index.md#mobileadoptions) & { `view?`: `string`  } |
 
 #### Inherited from
 
-GenericAd<
-  MobileAdOptions & { view?: string },
-  { x: number; y: number; width: number; height: number }
-\>.constructor
+[MobileAd](mobilead.md).[constructor](mobilead.md#constructor)
 
 #### Defined in
 
-app-open.ts:7
+api.ts:18
 
 ## Properties
 
@@ -43,21 +40,7 @@ app-open.ts:7
 
 #### Inherited from
 
-GenericAd.id
-
-#### Defined in
-
-api.ts:13
-
-___
-
-### opts
-
-• `Protected` `Readonly` **opts**: [MobileAdOptions](../index.md#mobileadoptions) & { `view?`: `string`  }
-
-#### Inherited from
-
-GenericAd.opts
+[MobileAd](mobilead.md).[id](mobilead.md#id)
 
 #### Defined in
 
@@ -65,17 +48,31 @@ api.ts:15
 
 ___
 
-### type
+### opts
 
-▪ `Static` `Readonly` **type**: `string` = ''
+• `Protected` `Readonly` **opts**: [`MobileAdOptions`](../index.md#mobileadoptions) & { `view?`: `string`  }
 
 #### Inherited from
 
-GenericAd.type
+[MobileAd](mobilead.md).[opts](mobilead.md#opts)
 
 #### Defined in
 
-api.ts:8
+api.ts:17
+
+___
+
+### type
+
+▪ `Static` `Readonly` **type**: `string` = `''`
+
+#### Inherited from
+
+[MobileAd](mobilead.md).[type](mobilead.md#type)
+
+#### Defined in
+
+api.ts:10
 
 ## Accessors
 
@@ -89,17 +86,57 @@ api.ts:8
 
 #### Defined in
 
-api.ts:33
+api.ts:42
 
 ## Methods
 
 ### hide
 
-▸ **hide**(): `Promise`<unknown\>
+▸ **hide**(): `Promise`<`unknown`\>
 
 #### Returns
 
-`Promise`<unknown\>
+`Promise`<`unknown`\>
+
+#### Overrides
+
+[MobileAd](mobilead.md).[hide](mobilead.md#hide)
+
+#### Defined in
+
+native.ts:12
+
+___
+
+### init
+
+▸ `Protected` **init**(): `Promise`<`void`\>
+
+#### Returns
+
+`Promise`<`void`\>
+
+#### Inherited from
+
+[MobileAd](mobilead.md).[init](mobilead.md#init)
+
+#### Defined in
+
+api.ts:67
+
+___
+
+### isLoaded
+
+▸ **isLoaded**(): `Promise`<`boolean`\>
+
+#### Returns
+
+`Promise`<`boolean`\>
+
+#### Overrides
+
+[MobileAd](mobilead.md).[isLoaded](mobilead.md#isloaded)
 
 #### Defined in
 
@@ -107,91 +144,51 @@ native.ts:8
 
 ___
 
-### init
-
-▸ `Protected` **init**(): `Promise`<void\>
-
-#### Returns
-
-`Promise`<void\>
-
-#### Inherited from
-
-GenericAd.init
-
-#### Defined in
-
-app-open.ts:38
-
-___
-
-### isLoaded
-
-▸ **isLoaded**(): `Promise`<boolean\>
-
-#### Returns
-
-`Promise`<boolean\>
-
-#### Inherited from
-
-GenericAd.isLoaded
-
-#### Defined in
-
-app-open.ts:19
-
-___
-
 ### load
 
-▸ **load**(): `Promise`<void\>
+▸ `Protected` **load**(): `Promise`<`void`\>
 
 #### Returns
 
-`Promise`<void\>
+`Promise`<`void`\>
 
 #### Inherited from
 
-GenericAd.load
+[MobileAd](mobilead.md).[load](mobilead.md#load)
 
 #### Defined in
 
-app-open.ts:26
+api.ts:53
 
 ___
 
 ### show
 
-▸ **show**(`opts?`): `Promise`<boolean\>
+▸ **show**(`opts?`): `Promise`<`unknown`\>
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `opts?` | `Object` |
-| `opts.height` | `number` |
-| `opts.width` | `number` |
-| `opts.x` | `number` |
-| `opts.y` | `number` |
+| `opts?` | `ShowOptions` |
 
 #### Returns
 
-`Promise`<boolean\>
+`Promise`<`unknown`\>
 
-#### Inherited from
+#### Overrides
 
-GenericAd.show
+[MobileAd](mobilead.md).[show](mobilead.md#show)
 
 #### Defined in
 
-app-open.ts:31
+native.ts:16
 
 ___
 
 ### showWith
 
-▸ **showWith**(`elm`): `Promise`<void\>
+▸ **showWith**(`elm`): `Promise`<`void`\>
 
 #### Parameters
 
@@ -201,17 +198,17 @@ ___
 
 #### Returns
 
-`Promise`<void\>
+`Promise`<`void`\>
 
 #### Defined in
 
-native.ts:12
+native.ts:26
 
 ___
 
 ### getAdById
 
-▸ `Static` **getAdById**(`id`): [MobileAd](mobilead.md)<[MobileAdOptions](../index.md#mobileadoptions)\>
+▸ `Static` **getAdById**(`id`): [`MobileAd`](mobilead.md)<[`MobileAdOptions`](../index.md#mobileadoptions)\>
 
 #### Parameters
 
@@ -221,12 +218,12 @@ ___
 
 #### Returns
 
-[MobileAd](mobilead.md)<[MobileAdOptions](../index.md#mobileadoptions)\>
+[`MobileAd`](mobilead.md)<[`MobileAdOptions`](../index.md#mobileadoptions)\>
 
 #### Inherited from
 
-GenericAd.getAdById
+[MobileAd](mobilead.md).[getAdById](mobilead.md#getadbyid)
 
 #### Defined in
 
-api.ts:24
+api.ts:33

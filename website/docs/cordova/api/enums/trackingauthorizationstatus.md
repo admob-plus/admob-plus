@@ -10,38 +10,38 @@ custom_edit_url: null
 
 ### authorized
 
-• **authorized** = 3
+• **authorized** = `3`
 
 #### Defined in
 
-api.ts:62
+api.ts:96
 
 ___
 
 ### denied
 
-• **denied** = 2
+• **denied** = `2`
 
 #### Defined in
 
-api.ts:61
+api.ts:95
 
 ___
 
 ### notDetermined
 
-• **notDetermined** = 0
+• **notDetermined** = `0`
 
 #### Defined in
 
-api.ts:59
+api.ts:93
 
 ___
 
 ### restricted
 
-• **restricted** = 1
+• **restricted** = `1`
 
 #### Defined in
 
-api.ts:60
+api.ts:94

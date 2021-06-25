@@ -8,9 +8,9 @@ custom_edit_url: null
 
 ## Hierarchy
 
-- [MobileAd](mobilead.md)<[RewardedInterstitialAdOptions](../interfaces/rewardedinterstitialadoptions.md)\>
+- [`MobileAd`](mobilead.md)<[`RewardedInterstitialAdOptions`](../interfaces/rewardedinterstitialadoptions.md)\>
 
-  ↳ **RewardedInterstitialAd**
+  ↳ **`RewardedInterstitialAd`**
 
 ## Constructors
 
@@ -22,7 +22,7 @@ custom_edit_url: null
 
 | Name | Type |
 | :------ | :------ |
-| `opts` | [RewardedInterstitialAdOptions](../interfaces/rewardedinterstitialadoptions.md) |
+| `opts` | [`RewardedInterstitialAdOptions`](../interfaces/rewardedinterstitialadoptions.md) |
 
 #### Inherited from
 
@@ -30,7 +30,7 @@ custom_edit_url: null
 
 #### Defined in
 
-api.ts:15
+api.ts:18
 
 ## Properties
 
@@ -44,13 +44,13 @@ api.ts:15
 
 #### Defined in
 
-api.ts:13
+api.ts:15
 
 ___
 
 ### opts
 
-• `Protected` `Readonly` **opts**: [RewardedInterstitialAdOptions](../interfaces/rewardedinterstitialadoptions.md)
+• `Protected` `Readonly` **opts**: [`RewardedInterstitialAdOptions`](../interfaces/rewardedinterstitialadoptions.md)
 
 #### Inherited from
 
@@ -58,13 +58,13 @@ ___
 
 #### Defined in
 
-api.ts:15
+api.ts:17
 
 ___
 
 ### type
 
-▪ `Static` `Readonly` **type**: `string` = ''
+▪ `Static` `Readonly` **type**: `string` = `''`
 
 #### Inherited from
 
@@ -72,7 +72,7 @@ ___
 
 #### Defined in
 
-api.ts:8
+api.ts:10
 
 ## Accessors
 
@@ -86,17 +86,57 @@ api.ts:8
 
 #### Defined in
 
-api.ts:33
+api.ts:42
 
 ## Methods
 
-### isLoaded
+### hide
 
-▸ **isLoaded**(): `Promise`<unknown\>
+▸ `Protected` **hide**(): `Promise`<`unknown`\>
 
 #### Returns
 
-`Promise`<unknown\>
+`Promise`<`unknown`\>
+
+#### Inherited from
+
+[MobileAd](mobilead.md).[hide](mobilead.md#hide)
+
+#### Defined in
+
+api.ts:63
+
+___
+
+### init
+
+▸ `Protected` **init**(): `Promise`<`void`\>
+
+#### Returns
+
+`Promise`<`void`\>
+
+#### Inherited from
+
+[MobileAd](mobilead.md).[init](mobilead.md#init)
+
+#### Defined in
+
+api.ts:67
+
+___
+
+### isLoaded
+
+▸ **isLoaded**(): `Promise`<`boolean`\>
+
+#### Returns
+
+`Promise`<`boolean`\>
+
+#### Overrides
+
+[MobileAd](mobilead.md).[isLoaded](mobilead.md#isloaded)
 
 #### Defined in
 
@@ -106,35 +146,43 @@ ___
 
 ### load
 
-▸ **load**(): `Promise`<unknown\>
+▸ **load**(): `Promise`<`void`\>
 
 #### Returns
 
-`Promise`<unknown\>
+`Promise`<`void`\>
+
+#### Overrides
+
+[MobileAd](mobilead.md).[load](mobilead.md#load)
 
 #### Defined in
 
-rewarded-interstitial.ts:13
+rewarded-interstitial.ts:11
 
 ___
 
 ### show
 
-▸ **show**(): `Promise`<unknown\>
+▸ **show**(): `Promise`<`unknown`\>
 
 #### Returns
 
-`Promise`<unknown\>
+`Promise`<`unknown`\>
+
+#### Overrides
+
+[MobileAd](mobilead.md).[show](mobilead.md#show)
 
 #### Defined in
 
-rewarded-interstitial.ts:19
+rewarded-interstitial.ts:15
 
 ___
 
 ### getAdById
 
-▸ `Static` **getAdById**(`id`): [MobileAd](mobilead.md)<[MobileAdOptions](../index.md#mobileadoptions)\>
+▸ `Static` **getAdById**(`id`): [`MobileAd`](mobilead.md)<[`MobileAdOptions`](../index.md#mobileadoptions)\>
 
 #### Parameters
 
@@ -144,7 +192,7 @@ ___
 
 #### Returns
 
-[MobileAd](mobilead.md)<[MobileAdOptions](../index.md#mobileadoptions)\>
+[`MobileAd`](mobilead.md)<[`MobileAdOptions`](../index.md#mobileadoptions)\>
 
 #### Inherited from
 
@@ -152,4 +200,4 @@ ___
 
 #### Defined in
 
-api.ts:24
+api.ts:33

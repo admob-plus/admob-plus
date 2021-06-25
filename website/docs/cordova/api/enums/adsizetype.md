@@ -10,7 +10,7 @@ custom_edit_url: null
 
 ### BANNER
 
-• **BANNER** = 0
+• **BANNER** = `0`
 
 #### Defined in
 
@@ -20,7 +20,7 @@ ___
 
 ### FULL\_BANNER
 
-• **FULL\_BANNER** = 3
+• **FULL\_BANNER** = `3`
 
 #### Defined in
 
@@ -30,7 +30,7 @@ ___
 
 ### LARGE\_BANNER
 
-• **LARGE\_BANNER** = 1
+• **LARGE\_BANNER** = `1`
 
 #### Defined in
 
@@ -40,7 +40,7 @@ ___
 
 ### LEADERBOARD
 
-• **LEADERBOARD** = 4
+• **LEADERBOARD** = `4`
 
 #### Defined in
 
@@ -50,7 +50,7 @@ ___
 
 ### MEDIUM\_RECTANGLE
 
-• **MEDIUM\_RECTANGLE** = 2
+• **MEDIUM\_RECTANGLE** = `2`
 
 #### Defined in
 
@@ -60,7 +60,7 @@ ___
 
 ### SMART\_BANNER
 
-• **SMART\_BANNER** = 5
+• **SMART\_BANNER** = `5`
 
 #### Defined in
 

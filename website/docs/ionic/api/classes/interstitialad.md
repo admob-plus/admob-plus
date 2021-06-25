@@ -10,11 +10,11 @@ custom_edit_url: null
 
 - `IonicNativePlugin`
 
-  ↳ **InterstitialAd**
+  ↳ **`InterstitialAd`**
 
 ## Implements
 
-- `Omit`<IInterstitialAd, ``"opts"``\>
+- `Omit`<`IInterstitialAd`, ``"opts"``\>
 
 ## Constructors
 
@@ -79,7 +79,7 @@ ___
 
 ### pluginRef
 
-▪ `Static` **pluginRef**: `string` = 'admob.InterstitialAd'
+▪ `Static` **pluginRef**: `string` = `'admob.InterstitialAd'`
 
 #### Overrides
 
@@ -121,11 +121,11 @@ ionic/src/ngx/index.ts:77
 
 ### isLoaded
 
-▸ **isLoaded**(): `Promise`<boolean\>
+▸ **isLoaded**(): `Promise`<`boolean`\>
 
 #### Returns
 
-`Promise`<boolean\>
+`Promise`<`boolean`\>
 
 #### Implementation of
 
@@ -139,11 +139,11 @@ ___
 
 ### load
 
-▸ **load**(): `Promise`<void\>
+▸ **load**(): `Promise`<`void`\>
 
 #### Returns
 
-`Promise`<void\>
+`Promise`<`void`\>
 
 #### Implementation of
 
@@ -157,11 +157,11 @@ ___
 
 ### show
 
-▸ **show**(): `Promise`<void\>
+▸ **show**(): `Promise`<`unknown`\>
 
 #### Returns
 
-`Promise`<void\>
+`Promise`<`unknown`\>
 
 #### Implementation of
 

@@ -58,7 +58,7 @@ Renames and exports: [AdMob](classes/admob.md)
 
 #### Defined in
 
-api.ts:4
+api.ts:6
 
 ___
 
@@ -70,31 +70,31 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `maxAdContentRating?` | [MaxAdContentRating](enums/maxadcontentrating.md) |
+| `maxAdContentRating?` | [`MaxAdContentRating`](enums/maxadcontentrating.md) |
 | `tagForChildDirectedTreatment?` | `boolean` \| ``null`` |
 | `tagForUnderAgeOfConsent?` | `boolean` \| ``null`` |
 | `testDeviceIds?` | `string`[] |
 
 #### Defined in
 
-api.ts:46
+api.ts:80
 
 ## Functions
 
 ### execAsync
 
-▸ `Const` **execAsync**(`action`, `args?`): `Promise`<unknown\>
+▸ `Const` **execAsync**(`action`, `args?`): `Promise`<`unknown`\>
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `action` | [NativeActions](enums/nativeactions.md) |
+| `action` | [`NativeActions`](enums/nativeactions.md) |
 | `args?` | `any`[] |
 
 #### Returns
 
-`Promise`<unknown\>
+`Promise`<`unknown`\>
 
 #### Defined in
 
