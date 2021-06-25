@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.15.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.14.0...@admob-plus/capacitor@1.15.0) (2021-06-25)
+
+
+### Features
+
+* update com.google.android.gms:play-services-ads to 20.2.0 ([5dc36a4](https://github.com/admob-plus/admob-plus/commit/5dc36a48c7184755a43ac20315c224d62704e95c))
+* update Google-Mobile-Ads-SDK to 8.6.0 ([acd4cbb](https://github.com/admob-plus/admob-plus/commit/acd4cbb62aa114621c85bb367ec4462f279fdf9d))
+* **internal/cli:** copy AMBCore.swift ([a47fe59](https://github.com/admob-plus/admob-plus/commit/a47fe59626727b4e85df061df48a48326f62b694))
+
+
+
+
+
 # [1.14.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.13.0...@admob-plus/capacitor@1.14.0) (2021-06-11)
 
 

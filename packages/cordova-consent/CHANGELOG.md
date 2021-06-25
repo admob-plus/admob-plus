@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.11](https://github.com/admob-plus/admob-plus/compare/cordova-plugin-consent@2.1.10...cordova-plugin-consent@2.1.11) (2021-06-25)
+
+**Note:** Version bump only for package cordova-plugin-consent
+
+
+
+
+
 ## [2.1.10](https://github.com/admob-plus/admob-plus/compare/cordova-plugin-consent@2.1.9...cordova-plugin-consent@2.1.10) (2021-05-28)
 
 **Note:** Version bump only for package cordova-plugin-consent

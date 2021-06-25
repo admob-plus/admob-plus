@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.18.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.17.0...admob-plus-cordova@1.18.0) (2021-06-25)
+
+
+### Bug Fixes
+
+* **cordova/android:** clear NativeAdView, fix [#390](https://github.com/admob-plus/admob-plus/issues/390) ([82ccfd7](https://github.com/admob-plus/admob-plus/commit/82ccfd723120d85a1b185ce74266a60d8149224c))
+
+
+### Features
+
+* update com.google.android.gms:play-services-ads to 20.2.0 ([5dc36a4](https://github.com/admob-plus/admob-plus/commit/5dc36a48c7184755a43ac20315c224d62704e95c))
+* update Google-Mobile-Ads-SDK to 8.6.0 ([acd4cbb](https://github.com/admob-plus/admob-plus/commit/acd4cbb62aa114621c85bb367ec4462f279fdf9d))
+* **cordova/andorid:** use GenericAd ([cc5ecfd](https://github.com/admob-plus/admob-plus/commit/cc5ecfd4f5175da88f1b11ce8b56dfc854d36f13))
+* **cordova/ios:** use AMBCoreAd ([ac59ab4](https://github.com/admob-plus/admob-plus/commit/ac59ab4e5793dc1e588cadab6d10040bf351027e))
+* **internal/cli:** copy AMBCore.swift ([a47fe59](https://github.com/admob-plus/admob-plus/commit/a47fe59626727b4e85df061df48a48326f62b694))
+
+
+
+
+
 # [1.17.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.16.0...admob-plus-cordova@1.17.0) (2021-06-11)
 
 
