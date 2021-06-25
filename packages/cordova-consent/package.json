@@ -6,7 +6,7 @@
   "typings": "www/consent.d.ts",
   "scripts": {
     "prepublishOnly": "yarn build",
-    "version": "sync-pkg-version --cordova-plugin",
+    "version": "yarn sync-pkg-version --cordova-plugin",
     "build": "rollup -c",
     "test": "tsc --noEmit"
   },
