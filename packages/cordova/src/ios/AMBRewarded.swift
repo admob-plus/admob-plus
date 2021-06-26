@@ -16,6 +16,7 @@ class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
 
         GADRewardedAd.load(withAdUnitID: adUnitId, request: ctx.optGADRequest(), completionHandler: { ad, error in
             if error != nil {
+                self.emit(AMBEvents.adLoadFail, error!)
                 self.emit(AMBEvents.rewardedLoadFail, error!)
 
                 ctx.error(error)
@@ -26,6 +27,7 @@ class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
             ad?.fullScreenContentDelegate = self
             ad?.serverSideVerificationOptions = ctx.optGADServerSideVerificationOptions()
 
+            self.emit(AMBEvents.adLoad)
             self.emit(AMBEvents.rewardedLoad)
 
             ctx.success()
@@ -36,6 +38,7 @@ class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
         if isLoaded() {
             mAd?.present(fromRootViewController: plugin.viewController, userDidEarnRewardHandler: {
                 let reward = self.mAd!.adReward
+                self.emit(AMBEvents.adReward, reward)
                 self.emit(AMBEvents.rewardedReward, reward)
             })
             ctx.success()
@@ -45,20 +48,24 @@ class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
     }
 
     func adDidRecordImpression(_ ad: GADFullScreenPresentingAd) {
+        self.emit(AMBEvents.adImpression)
         self.emit(AMBEvents.rewardedImpression)
     }
 
     func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
         clear()
+        self.emit(AMBEvents.adShowFail, error)
         self.emit(AMBEvents.rewardedShowFail, error)
     }
 
     func adDidPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        self.emit(AMBEvents.adShow)
         self.emit(AMBEvents.rewardedShow)
     }
 
     func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
         clear()
+        self.emit(AMBEvents.adDismiss)
         self.emit(AMBEvents.rewardedDismiss)
     }
 

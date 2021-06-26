@@ -16,6 +16,7 @@ class AMBRewardedInterstitial: AMBAdBase, GADFullScreenContentDelegate {
 
         GADRewardedInterstitialAd.load(withAdUnitID: adUnitId, request: ctx.optGADRequest(), completionHandler: { ad, error in
             if error != nil {
+                self.emit(AMBEvents.adLoadFail, error!)
                 self.emit(AMBEvents.rewardedInterstitialLoadFail, error!)
 
                 ctx.error(error)
@@ -26,6 +27,7 @@ class AMBRewardedInterstitial: AMBAdBase, GADFullScreenContentDelegate {
             ad?.fullScreenContentDelegate = self
             ad?.serverSideVerificationOptions = ctx.optGADServerSideVerificationOptions()
 
+            self.emit(AMBEvents.adLoad)
             self.emit(AMBEvents.rewardedInterstitialLoad)
 
             ctx.success()
@@ -36,6 +38,7 @@ class AMBRewardedInterstitial: AMBAdBase, GADFullScreenContentDelegate {
         if isLoaded() {
             mAd?.present(fromRootViewController: plugin.viewController, userDidEarnRewardHandler: {
                 let reward = self.mAd!.adReward
+                self.emit(AMBEvents.adReward, reward)
                 self.emit(AMBEvents.rewardedInterstitialReward, reward)
             })
             ctx.success()
@@ -45,20 +48,24 @@ class AMBRewardedInterstitial: AMBAdBase, GADFullScreenContentDelegate {
     }
 
     func adDidRecordImpression(_ ad: GADFullScreenPresentingAd) {
+        self.emit(AMBEvents.adImpression)
         self.emit(AMBEvents.rewardedInterstitialImpression)
     }
 
     func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
         clear()
+        self.emit(AMBEvents.adShowFail, error)
         self.emit(AMBEvents.rewardedInterstitialShowFail, error)
     }
 
     func adDidPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        self.emit(AMBEvents.adShow)
         self.emit(AMBEvents.rewardedInterstitialShow)
     }
 
     func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
         clear()
+        self.emit(AMBEvents.adDismiss)
         self.emit(AMBEvents.rewardedInterstitialDismiss)
     }
 
