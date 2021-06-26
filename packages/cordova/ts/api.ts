@@ -43,6 +43,21 @@ export class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
     return this.opts.adUnitId
   }
 
+  public on(...args: Parameters<typeof document.addEventListener>): () => void {
+    const [eventName, cb, ...rest] = args
+    const type = `admob.ad.${eventName.toLowerCase()}`
+    const listener = (evt: any) => {
+      if (evt.ad === this) {
+        cb(evt)
+      }
+    }
+    document.addEventListener(type, listener, ...rest)
+
+    return () => {
+      document.removeEventListener(type, listener, ...rest)
+    }
+  }
+
   protected async isLoaded() {
     await this.init()
     return execAsync(NativeActions.adIsLoaded, [
