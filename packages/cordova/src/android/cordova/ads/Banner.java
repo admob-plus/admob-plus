@@ -89,21 +89,25 @@ public class Banner extends AdBase {
         adView.setAdListener(new AdListener() {
             @Override
             public void onAdClicked() {
+                emit(Events.AD_CLICK);
                 emit(Events.BANNER_CLICK);
             }
 
             @Override
             public void onAdClosed() {
+                emit(Events.AD_DISMISS);
                 emit(Events.BANNER_CLOSE);
             }
 
             @Override
             public void onAdFailedToLoad(LoadAdError error) {
+                emit(Events.AD_LOAD_FAIL, error);
                 emit(Events.BANNER_LOAD_FAIL, error);
             }
 
             @Override
             public void onAdImpression() {
+                emit(Events.AD_IMPRESSION);
                 emit(Events.BANNER_IMPRESSION);
             }
 
@@ -114,34 +118,34 @@ public class Banner extends AdBase {
                     mAdViewOld = null;
                 }
 
-                runJustBeforeBeingDrawn(adView, new Runnable() {
-                    @Override
-                    public void run() {
+                runJustBeforeBeingDrawn(adView, () -> emit(Events.BANNER_SIZE, computeAdSize()));
 
-                        int width = adView.getWidth();
-                        int height = adView.getHeight();
-
-                        emit(Events.BANNER_SIZE, new HashMap<String, Object>() {{
-                            put("size", new HashMap<String, Object>() {{
-                                put("width", pxToDp(width));
-                                put("height", pxToDp(height));
-                                put("widthInPixels", width);
-                                put("heightInPixels", height);
-                            }});
-                        }});
-
-                    }
-                });
-
+                emit(Events.AD_LOAD, computeAdSize());
                 emit(Events.BANNER_LOAD);
             }
 
             @Override
             public void onAdOpened() {
+                emit(Events.AD_SHOW);
                 emit(Events.BANNER_OPEN);
             }
         });
         return adView;
+    }
+
+    @NonNull
+    private HashMap<String, Object> computeAdSize() {
+        int width = mAdView.getWidth();
+        int height = mAdView.getHeight();
+
+        return new HashMap<String, Object>() {{
+            put("size", new HashMap<String, Object>() {{
+                put("width", pxToDp(width));
+                put("height", pxToDp(height));
+                put("widthInPixels", width);
+                put("heightInPixels", height);
+            }});
+        }};
     }
 
     @Override

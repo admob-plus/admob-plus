@@ -87,6 +87,13 @@ const app = {
     const banner = new admob.BannerAd({
       adUnitId: 'ca-app-pub-3940256099942544/6300978111',
     })
+    const unsubscribe = banner.on('load', ({ ad }) => {
+      console.log('banner loaded', ad.id)
+    })
+    setTimeout(() => {
+      console.log("unsubscribe banner event")
+      unsubscribe()
+    }, 60 * 1000)
     return banner.show()
   },
 

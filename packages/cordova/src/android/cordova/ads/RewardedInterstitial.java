@@ -36,6 +36,7 @@ public class RewardedInterstitial extends AdBase {
             @Override
             public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                 mAd = null;
+                emit(Events.AD_LOAD_FAIL, loadAdError);
                 emit(Events.REWARDED_INTERSTITIAL_LOAD_FAIL, loadAdError);
                 ctx.reject(loadAdError.toString());
             }
@@ -50,26 +51,31 @@ public class RewardedInterstitial extends AdBase {
                 mAd.setFullScreenContentCallback(new FullScreenContentCallback() {
                     @Override
                     public void onAdDismissedFullScreenContent() {
+                        emit(Events.AD_DISMISS);
                         emit(Events.REWARDED_INTERSTITIAL_DISMISS);
                     }
 
                     @Override
                     public void onAdFailedToShowFullScreenContent(AdError adError) {
+                        emit(Events.AD_SHOW_FAIL, adError);
                         emit(Events.REWARDED_INTERSTITIAL_SHOW_FAIL, adError);
                     }
 
                     @Override
                     public void onAdShowedFullScreenContent() {
                         mAd = null;
+                        emit(Events.AD_SHOW);
                         emit(Events.REWARDED_INTERSTITIAL_SHOW);
                     }
 
                     @Override
                     public void onAdImpression() {
+                        emit(Events.AD_IMPRESSION);
                         emit(Events.REWARDED_INTERSTITIAL_IMPRESSION);
                     }
                 });
 
+                emit(Events.AD_LOAD);
                 emit(Events.REWARDED_INTERSTITIAL_LOAD);
                 ctx.resolve();
             }
@@ -85,6 +91,7 @@ public class RewardedInterstitial extends AdBase {
     public void show(Context ctx) {
         if (isLoaded()) {
             mAd.show(getActivity(), rewardItem -> {
+                emit(Events.AD_REWARD, rewardItem);
                 emit(Events.REWARDED_INTERSTITIAL_REWARD, rewardItem);
             });
             ctx.resolve();
