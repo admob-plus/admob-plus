@@ -30,13 +30,6 @@ const app = {
       },
       false,
     )
-    document.addEventListener(
-      'admob.interstitial.dismiss',
-      (evt) => {
-        console.log('admob.interstitial.dismiss', Object.keys(evt))
-      },
-      false,
-    )
   },
 
   onDeviceReady() {
