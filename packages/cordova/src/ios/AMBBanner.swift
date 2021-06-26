@@ -210,7 +210,14 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
     }
 
     func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
-        self.emit(AMBEvents.adLoad)
+        self.emit(AMBEvents.adLoad, [
+            "size": [
+                "width": bannerView.frame.size.width,
+                "height": bannerView.frame.size.height,
+                "widthInPixels": round(bannerView.frame.size.width * UIScreen.main.scale),
+                "heightInPixels": round(bannerView.frame.size.height * UIScreen.main.scale)
+            ]
+        ])
         self.emit(AMBEvents.bannerLoad)
         self.emit(AMBEvents.bannerSize, [
             "size": [
