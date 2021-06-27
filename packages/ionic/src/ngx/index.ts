@@ -5,6 +5,7 @@ import {
   BannerAd as IBannerAd,
   BannerAdOptions,
   InterstitialAd as IInterstitialAd,
+  MobileAd,
   NativeActions,
   RewardedAd as IRewardedAd,
   RewardedAdOptions,
@@ -52,6 +53,10 @@ export class BannerAd
   hide() {
     return this._objectInstance.hide()
   }
+
+  on(...opts: Parameters<MobileAd["on"]>) {
+    return this._objectInstance.on(...opts)
+  }
 }
 
 export class InterstitialAd
@@ -88,6 +93,10 @@ export class InterstitialAd
 
   public show() {
     return this._objectInstance.show()
+  }
+
+  on(...opts: Parameters<MobileAd["on"]>) {
+    return this._objectInstance.on(...opts)
   }
 }
 
@@ -126,6 +135,10 @@ export class RewardedAd
   public show() {
     return this._objectInstance.show()
   }
+
+  on(...opts: Parameters<MobileAd["on"]>) {
+    return this._objectInstance.on(...opts)
+  }
 }
 
 export class RewardedInterstitialAd
@@ -162,6 +175,10 @@ export class RewardedInterstitialAd
 
   public show() {
     return this._objectInstance.show()
+  }
+
+  on(...opts: Parameters<MobileAd["on"]>) {
+    return this._objectInstance.on(...opts)
   }
 }
 
