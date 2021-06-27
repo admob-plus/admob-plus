@@ -8,6 +8,7 @@ import { AdMobPlusPlugin, MobileAdOptions } from './definitions'
 
 const { AdMobPlusRN } = NativeModules
 
+// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 export const eventEmitter = Platform.select({
   ios: new NativeEventEmitter(AdMobPlusRN),
   android: DeviceEventEmitter,
@@ -24,11 +25,25 @@ class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
 
   protected readonly opts: T
 
+  private _init: Promise<void> | null
+
   constructor(opts: T) {
     this.opts = opts
 
     this.id = MobileAd.nextId()
     MobileAd.allAds[this.id] = this
+
+    const cls =
+      (this.constructor as unknown as { cls?: string }).cls ??
+      this.constructor.name
+
+    this._init = AdMobPlus.adCreate({
+      ...this.opts,
+      id: this.id,
+      cls,
+    }).then(() => {
+      this._init = null
+    })
   }
 
   private static nextId() {
@@ -55,38 +70,18 @@ class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
       context,
     )
   }
-}
 
-class GenericAd extends MobileAd {
-  private _init: Promise<void> | null
-
-  constructor(opts: MobileAdOptions) {
-    super(opts)
-
-    const cls =
-      (this.constructor as unknown as { cls?: string }).cls ??
-      this.constructor.name
-
-    this._init = AdMobPlus.adCreate({
-      ...this.opts,
-      id: this.id,
-      cls,
-    }).then(() => {
-      this._init = null
-    })
-  }
-
-  async isLoaded() {
+  protected async isLoaded() {
     await this.init()
     return AdMobPlus.adIsLoaded({ id: this.id })
   }
 
-  async load() {
+  protected async load() {
     await this.init()
     return AdMobPlus.adLoad({ id: this.id })
   }
 
-  async show() {
+  protected async show() {
     await this.init()
     return AdMobPlus.adShow({ id: this.id })
   }
@@ -96,16 +91,52 @@ class GenericAd extends MobileAd {
   }
 }
 
-class InterstitialAd extends GenericAd {
+class InterstitialAd extends MobileAd {
   static cls = 'InterstitialAd'
+
+  public isLoaded() {
+    return super.isLoaded()
+  }
+
+  public load() {
+    return super.load()
+  }
+
+  public show() {
+    return super.show()
+  }
 }
 
-class RewardedAd extends GenericAd {
+class RewardedAd extends MobileAd {
   static cls = 'RewardedAd'
+
+  public isLoaded() {
+    return super.isLoaded()
+  }
+
+  public load() {
+    return super.load()
+  }
+
+  public show() {
+    return super.show()
+  }
 }
 
-class RewardedInterstitialAd extends GenericAd {
+class RewardedInterstitialAd extends MobileAd {
   static cls = 'RewardedInterstitialAd'
+
+  public isLoaded() {
+    return super.isLoaded()
+  }
+
+  public load() {
+    return super.load()
+  }
+
+  public show() {
+    return super.show()
+  }
 }
 
 export * from './definitions'
