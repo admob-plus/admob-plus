@@ -18,31 +18,27 @@ document.addEventListener('deviceready', async () => {
   })
 
   rewarded.on('load', (evt) => {
-    // evt.ad
+    // Once a rewarded ad is shown, it cannot be shown again.
+    // Starts loading the next rewarded ad as soon as it is dismissed.
+    await rewarded.load()
   })
 
   await rewarded.load()
   await rewarded.show()
 }, false)
-
-document.addEventListener('admob.rewarded.dismiss', async () => {
-  // Once a rewarded ad is shown, it cannot be shown again.
-  // Starts loading the next rewarded ad as soon as it is dismissed.
-  await rewarded.load()
-})
 ```
 
 ## Events
 
-### `admob.rewarded.load`
+### `load`
 
-### `admob.rewarded.loadfail`
+### `loadfail`
 
-### `admob.rewarded.show`
+### `show`
 
-### `admob.rewarded.showfail`
+### `showfail`
 
-### `admob.rewarded.reward`
+### `reward`
 
 User has earned reward.
 
@@ -55,9 +51,9 @@ User has earned reward.
 }
 ```
 
-### `admob.rewarded.dismiss`
+### `dismiss`
 
-### `admob.rewarded.impression`
+### `impression`
 
 ## Server-side Verification
 

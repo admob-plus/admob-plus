@@ -25,22 +25,17 @@ document.addEventListener('deviceready', async () => {
   await rewarded.show()
 }, false)
 
-document.addEventListener('admob.rewardedi.dismiss', async () => {
-  await rewarded.load()
-})
-```
-
 ## Events
 
-### `admob.rewardedi.load`
+### `load`
 
-### `admob.rewardedi.loadfail`
+### `loadfail`
 
-### `admob.rewardedi.show`
+### `show`
 
-### `admob.rewardedi.showfail`
+### `showfail`
 
-### `admob.rewardedi.reward`
+### `reward`
 
 User has earned reward.
 
@@ -53,9 +48,9 @@ User has earned reward.
 }
 ```
 
-### `admob.rewardedi.dismiss`
+### `dismiss`
 
-### `admob.rewardedi.impression`
+### `impression`
 
 ## Server-side Verification
 

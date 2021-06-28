@@ -17,16 +17,12 @@ document.addEventListener('deviceready', async () => {
     adUnitId: 'ca-app-pub-xxx/yyy',
   })
 
-  banner.on('load', (evt) => {
-    // evt.ad
+  banner.on('impression', (evt) => {
+    await banner.hide()
   })
 
   await banner.show()
 }, false)
-
-document.addEventListener('admob.banner.impression', async () => {
-  await banner.hide()
-})
 ```
 
 ## Display Position
@@ -82,15 +78,15 @@ admob.BannerAd.config({
 
 ## Events
 
-### `admob.banner.load`
+### `load`
 
 An ad is received and is ready for display.
 
-### `admob.banner.loadfail`
+### `loadfail`
 
 An ad request has been failed.
 
-### `admob.banner.impression`
+### `impression`
 
 An ad has been displayed.
 

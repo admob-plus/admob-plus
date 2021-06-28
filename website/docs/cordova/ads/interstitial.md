@@ -25,7 +25,7 @@ document.addEventListener('deviceready', async () => {
   await interstitial.show()
 }, false)
 
-document.addEventListener('admob.interstitial.dismiss', async () => {
+document.addEventListener('admob.ad.dismiss', async () => {
   // Once a interstitial ad is shown, it cannot be shown again.
   // Starts loading the next interstitial ad as soon as it is dismissed.
   await interstitial.load()
@@ -34,14 +34,14 @@ document.addEventListener('admob.interstitial.dismiss', async () => {
 
 ## Events
 
-### `admob.interstitial.load`
+### `load`
 
-### `admob.interstitial.loadfail`
+### `loadfail`
 
-### `admob.interstitial.show`
+### `show`
 
-### `admob.interstitial.showfail`
+### `showfail`
 
-### `admob.interstitial.dismiss`
+### `dismiss`
 
-### `admob.interstitial.impression`
+### `impression`
