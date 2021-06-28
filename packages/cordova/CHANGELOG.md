@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.19.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.18.0...admob-plus-cordova@1.19.0) (2021-06-28)
+
+
+### Features
+
+* **cordova:** add MobileAd.on() ([6edb40a](https://github.com/admob-plus/admob-plus/commit/6edb40a9110ceede680c74c7037084c2d1ea5906))
+* **cordova:** emit banner size with load event ([802b58e](https://github.com/admob-plus/admob-plus/commit/802b58e59b3b4ff446a43f97577b627f1b103a63))
+* **cordova/android:** emit generic events ([87c01ef](https://github.com/admob-plus/admob-plus/commit/87c01efc7190b53463b8e907e1df250d1fba0e72))
+* **cordova/ios:** emit generic ad events ([ccd1787](https://github.com/admob-plus/admob-plus/commit/ccd1787549dc01665cda154fb829dd5889976d07))
+
+
+
+
+
 # [1.18.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.17.0...admob-plus-cordova@1.18.0) (2021-06-25)
 
 

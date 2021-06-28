@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/ionic@1.2.3...@admob-plus/ionic@1.3.0) (2021-06-28)
+
+
+### Features
+
+* **ionic:** expose MobileAd.on() ([ac3db31](https://github.com/admob-plus/admob-plus/commit/ac3db312f73ffed24baf3473b3e1957b110cf199))
+
+
+
+
+
 ## [1.2.3](https://github.com/admob-plus/admob-plus/compare/@admob-plus/ionic@1.2.2...@admob-plus/ionic@1.2.3) (2021-06-25)
 
 **Note:** Version bump only for package @admob-plus/ionic
