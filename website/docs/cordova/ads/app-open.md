@@ -15,6 +15,10 @@ document.addEventListener('deviceready', async () => {
     adUnitId: 'ca-app-pub-xxx/yyy',
   })
 
+  ad.on('load', (evt) => {
+    // evt.ad
+  })
+
   document.addEventListener(
     'resume',
     async () => {

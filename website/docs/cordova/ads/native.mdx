@@ -25,6 +25,11 @@ document.addEventListener('deviceready', async () => {
   const ad = new admob.NativeAd({
     adUnitId: 'ca-app-pub-xxx/yyy',
   })
+
+  ad.on('load', (evt) => {
+    // evt.ad
+  })
+
   await ad.load()
   await ad.show({
     x: 0,

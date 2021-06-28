@@ -17,6 +17,10 @@ document.addEventListener('deviceready', async () => {
     adUnitId: 'ca-app-pub-xxx/yyy',
   })
 
+  rewarded.on('load', (evt) => {
+    // evt.ad
+  })
+
   await rewarded.load()
   await rewarded.show()
 }, false)

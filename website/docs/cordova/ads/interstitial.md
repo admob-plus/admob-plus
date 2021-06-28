@@ -17,6 +17,10 @@ document.addEventListener('deviceready', async () => {
     adUnitId: 'ca-app-pub-xxx/yyy',
   })
 
+  interstitial.on('load', (evt) => {
+    // evt.ad
+  })
+
   await interstitial.load()
   await interstitial.show()
 }, false)

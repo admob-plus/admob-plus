@@ -17,6 +17,10 @@ document.addEventListener('deviceready', async () => {
     adUnitId: 'ca-app-pub-xxx/yyy',
   })
 
+  banner.on('load', (evt) => {
+    // evt.ad
+  })
+
   await banner.show()
 }, false)
 
