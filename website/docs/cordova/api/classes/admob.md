@@ -14,7 +14,7 @@ custom_edit_url: null
 
 #### Defined in
 
-index.ts:46
+code/github/admob-plus/packages/cordova/ts/index.ts:46
 
 ## Properties
 
@@ -24,7 +24,7 @@ index.ts:46
 
 #### Defined in
 
-index.ts:38
+code/github/admob-plus/packages/cordova/ts/index.ts:38
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 #### Defined in
 
-index.ts:39
+code/github/admob-plus/packages/cordova/ts/index.ts:39
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 #### Defined in
 
-index.ts:45
+code/github/admob-plus/packages/cordova/ts/index.ts:45
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 #### Defined in
 
-index.ts:40
+code/github/admob-plus/packages/cordova/ts/index.ts:40
 
 ___
 
@@ -64,7 +64,7 @@ ___
 
 #### Defined in
 
-index.ts:41
+code/github/admob-plus/packages/cordova/ts/index.ts:41
 
 ___
 
@@ -74,7 +74,7 @@ ___
 
 #### Defined in
 
-index.ts:42
+code/github/admob-plus/packages/cordova/ts/index.ts:42
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 #### Defined in
 
-index.ts:43
+code/github/admob-plus/packages/cordova/ts/index.ts:43
 
 ___
 
@@ -94,7 +94,7 @@ ___
 
 #### Defined in
 
-index.ts:46
+code/github/admob-plus/packages/cordova/ts/index.ts:46
 
 ## Methods
 
@@ -114,7 +114,7 @@ index.ts:46
 
 #### Defined in
 
-index.ts:69
+code/github/admob-plus/packages/cordova/ts/index.ts:69
 
 ___
 
@@ -128,7 +128,7 @@ ___
 
 #### Defined in
 
-index.ts:85
+code/github/admob-plus/packages/cordova/ts/index.ts:85
 
 ___
 
@@ -148,7 +148,7 @@ ___
 
 #### Defined in
 
-index.ts:73
+code/github/admob-plus/packages/cordova/ts/index.ts:73
 
 ___
 
@@ -168,7 +168,7 @@ ___
 
 #### Defined in
 
-index.ts:77
+code/github/admob-plus/packages/cordova/ts/index.ts:77
 
 ___
 
@@ -182,4 +182,4 @@ ___
 
 #### Defined in
 
-index.ts:81
+code/github/admob-plus/packages/cordova/ts/index.ts:81

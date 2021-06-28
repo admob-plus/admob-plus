@@ -24,7 +24,7 @@ MobileAdOptions.adUnitId
 
 #### Defined in
 
-api.ts:6
+code/github/admob-plus/packages/cordova/ts/api.ts:6
 
 ___
 
@@ -38,7 +38,7 @@ MobileAdOptions.id
 
 #### Defined in
 
-api.ts:6
+code/github/admob-plus/packages/cordova/ts/api.ts:6
 
 ___
 
@@ -52,7 +52,7 @@ MobileAdOptions.npa
 
 #### Defined in
 
-api.ts:6
+code/github/admob-plus/packages/cordova/ts/api.ts:6
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 #### Defined in
 
-banner.ts:39
+code/github/admob-plus/packages/cordova/ts/banner.ts:39
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 #### Defined in
 
-banner.ts:37
+code/github/admob-plus/packages/cordova/ts/banner.ts:37
 
 ___
 
@@ -82,4 +82,4 @@ ___
 
 #### Defined in
 
-banner.ts:38
+code/github/admob-plus/packages/cordova/ts/banner.ts:38

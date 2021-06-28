@@ -72,7 +72,7 @@ definitions.ts:19
 
 #### Defined in
 
-index.ts:16
+index.ts:17
 
 ___
 
@@ -82,4 +82,4 @@ ___
 
 #### Defined in
 
-index.ts:11
+index.ts:12

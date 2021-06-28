@@ -14,7 +14,7 @@ custom_edit_url: null
 
 #### Defined in
 
-rewarded.ts:4
+code/github/admob-plus/packages/cordova/ts/rewarded.ts:4
 
 ___
 
@@ -24,4 +24,4 @@ ___
 
 #### Defined in
 
-rewarded.ts:5
+code/github/admob-plus/packages/cordova/ts/rewarded.ts:5

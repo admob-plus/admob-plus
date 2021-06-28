@@ -30,7 +30,7 @@ custom_edit_url: null
 
 #### Defined in
 
-api.ts:18
+code/github/admob-plus/packages/cordova/ts/api.ts:18
 
 ## Properties
 
@@ -44,7 +44,7 @@ api.ts:18
 
 #### Defined in
 
-api.ts:15
+code/github/admob-plus/packages/cordova/ts/api.ts:15
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 #### Defined in
 
-api.ts:17
+code/github/admob-plus/packages/cordova/ts/api.ts:17
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 #### Defined in
 
-api.ts:10
+code/github/admob-plus/packages/cordova/ts/api.ts:10
 
 ## Accessors
 
@@ -86,7 +86,7 @@ api.ts:10
 
 #### Defined in
 
-api.ts:42
+code/github/admob-plus/packages/cordova/ts/api.ts:42
 
 ## Methods
 
@@ -104,7 +104,7 @@ api.ts:42
 
 #### Defined in
 
-native.ts:12
+code/github/admob-plus/packages/cordova/ts/native.ts:12
 
 ___
 
@@ -122,7 +122,7 @@ ___
 
 #### Defined in
 
-api.ts:67
+code/github/admob-plus/packages/cordova/ts/api.ts:82
 
 ___
 
@@ -140,7 +140,7 @@ ___
 
 #### Defined in
 
-native.ts:8
+code/github/admob-plus/packages/cordova/ts/native.ts:8
 
 ___
 
@@ -158,7 +158,37 @@ ___
 
 #### Defined in
 
-api.ts:53
+code/github/admob-plus/packages/cordova/ts/api.ts:68
+
+___
+
+### on
+
+▸ **on**(...`args`): () => `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...args` | [type: string, listener: function, useCapture?: boolean] |
+
+#### Returns
+
+`fn`
+
+▸ (): `void`
+
+##### Returns
+
+`void`
+
+#### Inherited from
+
+[MobileAd](mobilead.md).[on](mobilead.md#on)
+
+#### Defined in
+
+code/github/admob-plus/packages/cordova/ts/api.ts:46
 
 ___
 
@@ -182,7 +212,7 @@ ___
 
 #### Defined in
 
-native.ts:16
+code/github/admob-plus/packages/cordova/ts/native.ts:16
 
 ___
 
@@ -202,7 +232,7 @@ ___
 
 #### Defined in
 
-native.ts:26
+code/github/admob-plus/packages/cordova/ts/native.ts:26
 
 ___
 
@@ -226,4 +256,4 @@ ___
 
 #### Defined in
 
-api.ts:33
+code/github/admob-plus/packages/cordova/ts/api.ts:33

@@ -50,7 +50,7 @@ custom_edit_url: null
 
 #### Defined in
 
-api.ts:18
+code/github/admob-plus/packages/cordova/ts/api.ts:18
 
 ## Properties
 
@@ -60,7 +60,7 @@ api.ts:18
 
 #### Defined in
 
-api.ts:18
+code/github/admob-plus/packages/cordova/ts/api.ts:18
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 #### Defined in
 
-api.ts:15
+code/github/admob-plus/packages/cordova/ts/api.ts:15
 
 ___
 
@@ -80,7 +80,7 @@ ___
 
 #### Defined in
 
-api.ts:17
+code/github/admob-plus/packages/cordova/ts/api.ts:17
 
 ___
 
@@ -94,7 +94,7 @@ ___
 
 #### Defined in
 
-api.ts:12
+code/github/admob-plus/packages/cordova/ts/api.ts:12
 
 ___
 
@@ -104,7 +104,7 @@ ___
 
 #### Defined in
 
-api.ts:13
+code/github/admob-plus/packages/cordova/ts/api.ts:13
 
 ___
 
@@ -114,7 +114,7 @@ ___
 
 #### Defined in
 
-api.ts:10
+code/github/admob-plus/packages/cordova/ts/api.ts:10
 
 ## Accessors
 
@@ -128,7 +128,7 @@ api.ts:10
 
 #### Defined in
 
-api.ts:42
+code/github/admob-plus/packages/cordova/ts/api.ts:42
 
 ## Methods
 
@@ -142,7 +142,7 @@ api.ts:42
 
 #### Defined in
 
-api.ts:63
+code/github/admob-plus/packages/cordova/ts/api.ts:78
 
 ___
 
@@ -156,7 +156,7 @@ ___
 
 #### Defined in
 
-api.ts:67
+code/github/admob-plus/packages/cordova/ts/api.ts:82
 
 ___
 
@@ -170,7 +170,7 @@ ___
 
 #### Defined in
 
-api.ts:46
+code/github/admob-plus/packages/cordova/ts/api.ts:61
 
 ___
 
@@ -184,7 +184,33 @@ ___
 
 #### Defined in
 
-api.ts:53
+code/github/admob-plus/packages/cordova/ts/api.ts:68
+
+___
+
+### on
+
+▸ **on**(...`args`): () => `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...args` | [type: string, listener: function, useCapture?: boolean] |
+
+#### Returns
+
+`fn`
+
+▸ (): `void`
+
+##### Returns
+
+`void`
+
+#### Defined in
+
+code/github/admob-plus/packages/cordova/ts/api.ts:46
 
 ___
 
@@ -204,7 +230,7 @@ ___
 
 #### Defined in
 
-api.ts:58
+code/github/admob-plus/packages/cordova/ts/api.ts:73
 
 ___
 
@@ -224,7 +250,7 @@ ___
 
 #### Defined in
 
-api.ts:33
+code/github/admob-plus/packages/cordova/ts/api.ts:33
 
 ___
 
@@ -238,4 +264,4 @@ ___
 
 #### Defined in
 
-api.ts:37
+code/github/admob-plus/packages/cordova/ts/api.ts:37

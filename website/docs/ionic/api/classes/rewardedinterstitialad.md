@@ -34,7 +34,7 @@ IonicNativePlugin.constructor
 
 #### Defined in
 
-ionic/src/ngx/index.ts:139
+ionic/src/ngx/index.ts:152
 
 ## Properties
 
@@ -44,7 +44,7 @@ ionic/src/ngx/index.ts:139
 
 #### Defined in
 
-ionic/src/ngx/index.ts:139
+ionic/src/ngx/index.ts:152
 
 ___
 
@@ -58,7 +58,7 @@ IonicNativePlugin.plugin
 
 #### Defined in
 
-ionic/src/ngx/index.ts:135
+ionic/src/ngx/index.ts:148
 
 ___
 
@@ -72,7 +72,7 @@ IonicNativePlugin.pluginName
 
 #### Defined in
 
-ionic/src/ngx/index.ts:136
+ionic/src/ngx/index.ts:149
 
 ___
 
@@ -86,7 +86,7 @@ IonicNativePlugin.pluginRef
 
 #### Defined in
 
-ionic/src/ngx/index.ts:137
+ionic/src/ngx/index.ts:150
 
 ## Accessors
 
@@ -100,7 +100,7 @@ ionic/src/ngx/index.ts:137
 
 #### Defined in
 
-ionic/src/ngx/index.ts:147
+ionic/src/ngx/index.ts:160
 
 ___
 
@@ -114,7 +114,7 @@ ___
 
 #### Defined in
 
-ionic/src/ngx/index.ts:151
+ionic/src/ngx/index.ts:164
 
 ## Methods
 
@@ -132,7 +132,7 @@ Omit.isLoaded
 
 #### Defined in
 
-ionic/src/ngx/index.ts:155
+ionic/src/ngx/index.ts:168
 
 ___
 
@@ -150,7 +150,37 @@ Omit.load
 
 #### Defined in
 
-ionic/src/ngx/index.ts:159
+ionic/src/ngx/index.ts:172
+
+___
+
+### on
+
+▸ **on**(...`opts`): () => `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...opts` | [type: string, listener: EventListenerOrEventListenerObject, options?: boolean \| AddEventListenerOptions] |
+
+#### Returns
+
+`fn`
+
+▸ (): `void`
+
+##### Returns
+
+`void`
+
+#### Implementation of
+
+Omit.on
+
+#### Defined in
+
+ionic/src/ngx/index.ts:180
 
 ___
 
@@ -168,4 +198,4 @@ Omit.show
 
 #### Defined in
 
-ionic/src/ngx/index.ts:163
+ionic/src/ngx/index.ts:176
