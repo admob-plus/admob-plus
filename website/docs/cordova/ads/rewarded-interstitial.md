@@ -54,4 +54,4 @@ User has earned reward.
 
 ## Server-side Verification
 
-- [Rewarded Ads Server-side Verification](../rewarded-ads-ssv.md)
+- [Rewarded Ads Server-side Verification](../rewarded-ads-ssv)
