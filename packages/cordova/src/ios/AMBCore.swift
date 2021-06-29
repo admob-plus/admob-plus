@@ -66,7 +66,7 @@ extension AMBCoreContext {
         if let ad = optAd() {
             return ad
         } else {
-            reject("Ad not found")
+            reject("Ad not found: \(optId() ?? -1)")
             return nil
         }
     }
@@ -102,7 +102,7 @@ class AMBCoreAd: NSObject {
 
         super.init()
 
-        DispatchQueue.main.async {
+        DispatchQueue.main.sync {
             AMBCoreAd.ads[id] = self
         }
     }
