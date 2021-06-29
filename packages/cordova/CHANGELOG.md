@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.19.1](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.19.0...admob-plus-cordova@1.19.1) (2021-06-29)
+
+
+### Bug Fixes
+
+* set ads with main.sync ([8d5c8ec](https://github.com/admob-plus/admob-plus/commit/8d5c8ec5c89c3c506bf00415df081dd3fc158dc2))
+
+
+
+
+
 # [1.19.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.18.0...admob-plus-cordova@1.19.0) (2021-06-28)
 
 

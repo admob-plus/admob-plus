@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.10.2](https://github.com/admob-plus/admob-plus/compare/@admob-plus/react-native@1.10.1...@admob-plus/react-native@1.10.2) (2021-06-29)
+
+
+### Bug Fixes
+
+* set ads with main.sync ([8d5c8ec](https://github.com/admob-plus/admob-plus/commit/8d5c8ec5c89c3c506bf00415df081dd3fc158dc2))
+
+
+
+
+
 ## [1.10.1](https://github.com/admob-plus/admob-plus/compare/@admob-plus/react-native@1.10.0...@admob-plus/react-native@1.10.1) (2021-06-28)
 
 **Note:** Version bump only for package @admob-plus/react-native
