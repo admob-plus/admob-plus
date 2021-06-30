@@ -102,7 +102,7 @@ class AMBCoreAd: NSObject {
 
         super.init()
 
-        DispatchQueue.main.sync {
+        DispatchQueue.main.async {
             AMBCoreAd.ads[id] = self
         }
     }
