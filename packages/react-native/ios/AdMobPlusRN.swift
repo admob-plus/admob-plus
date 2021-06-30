@@ -95,8 +95,10 @@ class AdMobPlusRN: RCTEventEmitter {
                           rejecter reject: @escaping RCTPromiseRejectBlock) {
         let ctx = AMBContext(opts, resolve, reject)
 
-        if let ad = ctx.optAdOrError() as? AMBAdBase {
-            ctx.resolve(ad.isLoaded())
+        DispatchQueue.main.async {
+            if let ad = ctx.optAdOrError() as? AMBAdBase {
+                ctx.resolve(ad.isLoaded())
+            }
         }
     }
 
@@ -105,8 +107,10 @@ class AdMobPlusRN: RCTEventEmitter {
                       rejecter reject: @escaping RCTPromiseRejectBlock) {
         let ctx = AMBContext(opts, resolve, reject)
 
-        if let ad = ctx.optAdOrError() as? AMBAdBase {
-            ad.load(ctx)
+        DispatchQueue.main.async {
+            if let ad = ctx.optAdOrError() as? AMBAdBase {
+                ad.load(ctx)
+            }
         }
     }
 
