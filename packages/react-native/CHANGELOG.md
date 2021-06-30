@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.10.3](https://github.com/admob-plus/admob-plus/compare/@admob-plus/react-native@1.10.2...@admob-plus/react-native@1.10.3) (2021-06-30)
+
+
+### Bug Fixes
+
+* **react-native/ios:** access AMBContext.ads in main thread ([99b5568](https://github.com/admob-plus/admob-plus/commit/99b55682ee4749ae54c20028261c9425d5629c9b))
+
+
+### Reverts
+
+* Revert "fix: set ads with main.sync" ([68fe79e](https://github.com/admob-plus/admob-plus/commit/68fe79ebc5502b373397cd9d402e5ba2e54559ba))
+
+
+
+
+
 ## [1.10.2](https://github.com/admob-plus/admob-plus/compare/@admob-plus/react-native@1.10.1...@admob-plus/react-native@1.10.2) (2021-06-29)
 
 

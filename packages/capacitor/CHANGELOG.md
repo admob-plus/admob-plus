@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.15.2](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.15.1...@admob-plus/capacitor@1.15.2) (2021-06-30)
+
+
+### Reverts
+
+* Revert "fix: set ads with main.sync" ([68fe79e](https://github.com/admob-plus/admob-plus/commit/68fe79ebc5502b373397cd9d402e5ba2e54559ba))
+
+
+
+
+
 ## [1.15.1](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.15.0...@admob-plus/capacitor@1.15.1) (2021-06-29)
 
 
