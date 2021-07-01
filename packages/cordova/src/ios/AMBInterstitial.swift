@@ -16,12 +16,12 @@ class AMBInterstitial: AMBAdBase, GADFullScreenContentDelegate {
 
         GADInterstitialAd.load(
             withAdUnitID: adUnitId,
-            request: ctx.optGADRequest(),
+            request: adRequest,
             completionHandler: { ad, error in
                 if error != nil {
                     self.emit(AMBEvents.adLoadFail, error!)
                     self.emit(AMBEvents.interstitialLoadFail, error!)
-                    ctx.error(error)
+                    ctx.reject(error!)
                     return
                 }
 
@@ -31,17 +31,13 @@ class AMBInterstitial: AMBAdBase, GADFullScreenContentDelegate {
                 self.emit(AMBEvents.adLoad)
                 self.emit(AMBEvents.interstitialLoad)
 
-                ctx.success()
+                ctx.resolve()
          })
     }
 
     override func show(_ ctx: AMBContext) {
-        if isLoaded() {
-            mAd?.present(fromRootViewController: plugin.viewController)
-            ctx.success()
-        } else {
-            ctx.error("Ad is not loaded")
-        }
+        mAd?.present(fromRootViewController: plugin.viewController)
+        ctx.resolve()
     }
 
     func adDidRecordImpression(_ ad: GADFullScreenPresentingAd) {

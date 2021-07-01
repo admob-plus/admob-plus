@@ -54,7 +54,7 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
         if let marginBottom = ctx.optMarginBottom() {
             Self.bottomConstraint.constant = marginBottom * -1
         }
-        ctx.success()
+        ctx.resolve()
     }
 
     private static func prepareStackView() {
@@ -164,7 +164,6 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
     }
 
     override func load(_ ctx: AMBContext) {
-        let request = ctx.optGADRequest()
         if bannerView == nil {
             bannerView = GADBannerView(adSize: self.adSize)
             bannerView.delegate = self
@@ -173,9 +172,9 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
         }
 
         bannerView.adUnitID = adUnitId
-        bannerView.load(request)
+        bannerView.load(adRequest)
 
-        ctx.success()
+        ctx.resolve()
     }
 
     override func show(_ ctx: AMBContext) {
@@ -197,7 +196,7 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
         }
 
         Self.updateLayout()
-        ctx.success()
+        ctx.resolve()
     }
 
     override func hide(_ ctx: AMBContext) {
@@ -206,7 +205,7 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
             Self.stackView.removeArrangedSubview(bannerView)
             Self.updateLayout()
         }
-        ctx.success()
+        ctx.resolve()
     }
 
     func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {

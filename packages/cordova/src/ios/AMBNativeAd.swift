@@ -80,7 +80,7 @@ class AMBNativeAd: AMBAdBase, GADNativeAdLoaderDelegate, GADNativeAdDelegate {
     override func hide(_ ctx: AMBContext) {
         view.isHidden = true
         viewProvider.didHide(self)
-        ctx.success()
+        ctx.resolve()
     }
 
     func adLoader(_ adLoader: GADAdLoader, didReceive nativeAd: GADNativeAd) {
@@ -88,7 +88,7 @@ class AMBNativeAd: AMBAdBase, GADNativeAdLoaderDelegate, GADNativeAdDelegate {
         nativeAd.delegate = self
         self.emit(AMBEvents.adLoad)
         if !adLoader.isLoading {
-            ctxLoad?.success()
+            ctxLoad?.resolve()
             ctxLoad = nil
         }
     }
@@ -96,7 +96,7 @@ class AMBNativeAd: AMBAdBase, GADNativeAdLoaderDelegate, GADNativeAdDelegate {
     func adLoader(_ adLoader: GADAdLoader, didFailToReceiveAdWithError error: Error) {
         self.emit(AMBEvents.adLoadFail, error)
         if !adLoader.isLoading {
-            ctxLoad?.error(error)
+            ctxLoad?.reject(error)
             ctxLoad = nil
         }
     }

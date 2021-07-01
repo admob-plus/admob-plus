@@ -14,12 +14,12 @@ class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
     override func load(_ ctx: AMBContext) {
         clear()
 
-        GADRewardedAd.load(withAdUnitID: adUnitId, request: ctx.optGADRequest(), completionHandler: { ad, error in
+        GADRewardedAd.load(withAdUnitID: adUnitId, request: adRequest, completionHandler: { ad, error in
             if error != nil {
                 self.emit(AMBEvents.adLoadFail, error!)
                 self.emit(AMBEvents.rewardedLoadFail, error!)
 
-                ctx.error(error)
+                ctx.reject(error!)
                 return
             }
 
@@ -30,21 +30,17 @@ class AMBRewarded: AMBAdBase, GADFullScreenContentDelegate {
             self.emit(AMBEvents.adLoad)
             self.emit(AMBEvents.rewardedLoad)
 
-            ctx.success()
+            ctx.resolve()
         })
     }
 
     override func show(_ ctx: AMBContext) {
-        if isLoaded() {
-            mAd?.present(fromRootViewController: plugin.viewController, userDidEarnRewardHandler: {
-                let reward = self.mAd!.adReward
-                self.emit(AMBEvents.adReward, reward)
-                self.emit(AMBEvents.rewardedReward, reward)
-            })
-            ctx.success()
-        } else {
-            ctx.error("Ad is not loaded")
-        }
+        mAd?.present(fromRootViewController: plugin.viewController, userDidEarnRewardHandler: {
+            let reward = self.mAd!.adReward
+            self.emit(AMBEvents.adReward, reward)
+            self.emit(AMBEvents.rewardedReward, reward)
+        })
+        ctx.resolve()
     }
 
     func adDidRecordImpression(_ ad: GADFullScreenPresentingAd) {

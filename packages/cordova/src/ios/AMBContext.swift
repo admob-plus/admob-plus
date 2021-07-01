@@ -1,7 +1,19 @@
 import GoogleMobileAds
 
 class AMBContext: AMBCoreContext {
-    func resolve(_ data: [String : Any]) {
+    func resolve() {
+        self.sendResult(CDVPluginResult(status: CDVCommandStatus_OK))
+    }
+
+    func resolve(_ msg: Bool) {
+        self.sendResult(CDVPluginResult(status: CDVCommandStatus_OK, messageAs: msg))
+    }
+
+    func resolve(_ msg: UInt) {
+        self.sendResult(CDVPluginResult(status: CDVCommandStatus_OK, messageAs: msg))
+    }
+
+    func resolve(_ data: [String: Any]) {
         self.sendResult(CDVPluginResult(status: CDVCommandStatus_OK, messageAs: data))
     }
 
@@ -62,8 +74,7 @@ class AMBContext: AMBCoreContext {
            let r = bgColor["r"] as? CGFloat,
            let g = bgColor["g"] as? CGFloat,
            let b = bgColor["b"] as? CGFloat,
-           let a = bgColor["a"] as? CGFloat
-        {
+           let a = bgColor["a"] as? CGFloat {
             return UIColor(red: r / 255, green: g / 255, blue: b / 255, alpha: a / 255)
         }
         return nil
@@ -163,33 +174,5 @@ class AMBContext: AMBCoreContext {
 
     func sendResult(_ message: CDVPluginResult?) {
         self.commandDelegate.send(message, callbackId: command.callbackId)
-    }
-
-    func success() {
-        self.sendResult(CDVPluginResult(status: CDVCommandStatus_OK))
-    }
-
-    func success(_ message: Bool) {
-        self.sendResult(CDVPluginResult(status: CDVCommandStatus_OK, messageAs: message))
-    }
-
-    func success(_ message: UInt) {
-        self.sendResult(CDVPluginResult(status: CDVCommandStatus_OK, messageAs: message))
-    }
-
-    func success(_ message: [String: Any]) {
-        self.sendResult(CDVPluginResult(status: CDVCommandStatus_OK, messageAs: message))
-    }
-
-    func error() {
-        self.sendResult(CDVPluginResult(status: CDVCommandStatus_ERROR))
-    }
-
-    func error(_ message: String?) {
-        self.sendResult(CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: message))
-    }
-
-    func error(_ message: Error?) {
-        self.error(message?.localizedDescription)
     }
 }

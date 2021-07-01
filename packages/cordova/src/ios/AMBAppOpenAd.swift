@@ -47,14 +47,14 @@ class AMBAppOpenAd: AMBAdBase, GADFullScreenContentDelegate {
             completionHandler: { (ad, error) in
                 if error != nil {
                     self.emit(AMBEvents.adLoadFail, error!)
-                    ctx.error(error)
+                    ctx.reject(error!)
                     return
                 }
                 ad?.fullScreenContentDelegate = self
                 self.mAd = ad
 
                 self.emit(AMBEvents.adLoad)
-                ctx.success()
+                ctx.resolve()
             })
     }
 

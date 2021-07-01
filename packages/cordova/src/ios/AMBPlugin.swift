@@ -55,7 +55,7 @@ class AMBPlugin: CDVPlugin {
             requestConfiguration.testDeviceIdentifiers = testDevices
         }
 
-        ctx.success()
+        ctx.resolve()
     }
 
     @objc func requestTrackingAuthorization(_ command: CDVInvokedUrlCommand) {
@@ -63,10 +63,10 @@ class AMBPlugin: CDVPlugin {
 
         if #available(iOS 14, *) {
             ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
-                ctx.success(status.rawValue)
+                ctx.resolve(status.rawValue)
             })
         } else {
-            ctx.success(false)
+            ctx.resolve(false)
         }
     }
 
@@ -74,7 +74,7 @@ class AMBPlugin: CDVPlugin {
         let ctx = AMBContext(command)
 
         GADMobileAds.sharedInstance().start(completionHandler: { _ in
-            ctx.success(["version": GADMobileAds.sharedInstance().sdkVersion])
+            ctx.resolve(["version": GADMobileAds.sharedInstance().sdkVersion])
         })
     }
 
@@ -83,9 +83,9 @@ class AMBPlugin: CDVPlugin {
 
         if let muted = ctx.opt0() as? Bool {
             GADMobileAds.sharedInstance().applicationMuted = muted
-            ctx.success()
+            ctx.resolve()
         } else {
-            ctx.error()
+            ctx.reject()
         }
     }
 
@@ -94,9 +94,9 @@ class AMBPlugin: CDVPlugin {
 
         if let volume = ctx.opt0() as? Float {
             GADMobileAds.sharedInstance().applicationVolume = volume
-            ctx.success()
+            ctx.resolve()
         } else {
-            ctx.error()
+            ctx.reject()
         }
     }
 
@@ -122,12 +122,12 @@ class AMBPlugin: CDVPlugin {
                 break
             }
             if ad != nil {
-                ctx.success()
+                ctx.resolve()
             } else {
-                ctx.error("fail to create ad: \(ctx.optId() ?? -1)")
+                ctx.reject("fail to create ad: \(ctx.optId() ?? -1)")
             }
         } else {
-            ctx.error()
+            ctx.reject()
         }
     }
 
@@ -135,7 +135,7 @@ class AMBPlugin: CDVPlugin {
         let ctx = AMBContext(command)
 
         if let ad = ctx.optAdOrError() as? AMBAdBase {
-            ctx.success(ad.isLoaded())
+            ctx.resolve(ad.isLoaded())
         }
     }
 
@@ -156,9 +156,9 @@ class AMBPlugin: CDVPlugin {
             if let ad = ctx.optAdOrError() as? AMBAdBase {
                 if ad.isLoaded() {
                     ad.show(ctx)
-                    ctx.success(true)
+                    ctx.resolve(true)
                 } else {
-                    ctx.success(false)
+                    ctx.resolve(false)
                 }
             }
         }
