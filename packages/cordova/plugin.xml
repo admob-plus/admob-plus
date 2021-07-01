@@ -126,7 +126,7 @@
                 <source url="https://cdn.cocoapods.org/" />
             </config>
             <pods use-frameworks="true">
-                <pod name="Google-Mobile-Ads-SDK" spec="~> 8.6.0" />
+                <pod name="Google-Mobile-Ads-SDK" spec="~> 8.7.0" />
             </pods>
         </podspec>
     </platform>
