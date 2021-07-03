@@ -136,8 +136,7 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
 
     convenience init?(_ ctx: AMBContext) {
         guard let id = ctx.optId(),
-              let adUnitId = ctx.optAdUnitID(),
-              let position = ctx.optPosition()
+              let adUnitId = ctx.optAdUnitID()
         else {
             return nil
         }
@@ -145,7 +144,7 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
                   adUnitId: adUnitId,
                   adSize: ctx.optAdSize(),
                   adRequest: ctx.optGADRequest(),
-                  position: position,
+                  position: ctx.optPosition(),
                   offset: ctx.optOffset())
     }
 

@@ -1,6 +1,33 @@
 import GoogleMobileAds
 
 class AMBContext: AMBCoreContext {
+    func has(_ name: String) -> Bool {
+        return opts?.value(forKey: name) != nil
+    }
+
+    func optBool(_ name: String) -> Bool? {
+        return opt(name) as? Bool
+    }
+
+    func optFloat(_ name: String) -> Float? {
+        return opt(name) as? Float
+    }
+
+    func optInt(_ name: String) -> Int? {
+        return opt(name) as? Int
+    }
+
+    func optString(_ name: String, _ defaultValue: String) -> String {
+        if let v = opt(name) as? String {
+            return v
+        }
+        return defaultValue
+    }
+
+    func optStringArray(_ name: String) -> [String]? {
+        return opt(name) as? [String]
+    }
+
     func resolve() {
         self.sendResult(CDVPluginResult(status: CDVCommandStatus_OK))
     }
@@ -49,22 +76,6 @@ class AMBContext: AMBCoreContext {
         return opts?.value(forKey: key)
     }
 
-    func optString(_ key: String) -> String? {
-        return opt(key) as? String
-    }
-
-    func optId() -> Int? {
-        return opt("id") as? Int
-    }
-
-    func optAdUnitID() -> String? {
-        return optString("adUnitId")
-    }
-
-    func optPosition() -> String? {
-        return optString("position")
-    }
-
     func optOffset() -> CGFloat? {
         return opt("offset") as? CGFloat
     }
@@ -86,49 +97,6 @@ class AMBContext: AMBCoreContext {
 
     func optMarginBottom() -> CGFloat? {
         return opt("marginBottom") as? CGFloat
-    }
-
-    func optMaxAdContentRating() -> GADMaxAdContentRating? {
-        switch optString("maxAdContentRating") {
-        case "G":
-            return GADMaxAdContentRating.general
-        case "MA":
-            return GADMaxAdContentRating.matureAudience
-        case "PG":
-            return GADMaxAdContentRating.parentalGuidance
-        case "T":
-            return GADMaxAdContentRating.teen
-        default:
-            return nil
-        }
-    }
-
-    func optChildDirectedTreatmentTag() -> Bool? {
-        return opt("tagForChildDirectedTreatment") as? Bool
-    }
-
-    func optUnderAgeOfConsentTag() -> Bool? {
-        return opt("tagForUnderAgeOfConsent") as? Bool
-    }
-
-    func optTestDeviceIds() -> [String]? {
-        if let testDeviceIds = opt("testDeviceIds") as? [String] {
-            return testDeviceIds
-        }
-        return nil
-    }
-
-    func optGADRequest() -> GADRequest {
-        let request = GADRequest()
-        if let contentURL = optString("contentUrl") {
-            request.contentURL = contentURL
-        }
-        let extras = GADExtras()
-        if let npa = optString("npa") {
-            extras.additionalParameters = ["npa": npa]
-        }
-        request.register(extras)
-        return request
     }
 
     func optAdSize() -> GADAdSize {
