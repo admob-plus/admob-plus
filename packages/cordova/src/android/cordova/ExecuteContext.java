@@ -98,6 +98,17 @@ public class ExecuteContext implements Context {
     }
 
     @Override
+    public void resolveString() {
+        callbackContext.success();
+    }
+
+    @Override
+    public void resolveString(String data) {
+        PluginResult result = new PluginResult(PluginResult.Status.OK, data);
+        sendResult(result);
+    }
+
+    @Override
     public void reject(String msg) {
         callbackContext.error(msg);
     }

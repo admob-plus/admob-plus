@@ -175,6 +175,13 @@ public class Banner extends AdBase {
         ctx.resolve();
     }
 
+    public void destroy(Context ctx) {
+        if (mAdView != null) {
+            removeBannerView(mAdView);
+        }
+        ctx.resolve();
+    }
+
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);

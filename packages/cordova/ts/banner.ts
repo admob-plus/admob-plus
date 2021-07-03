@@ -80,4 +80,8 @@ export default class BannerAd extends MobileAd<BannerAdOptions> {
   public async hide() {
     return super.hide()
   }
+
+  public destroy() {
+    return execAsync(NativeActions.bannerDestroy, [{ id: this.id }])
+  }
 }

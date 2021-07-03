@@ -21,6 +21,7 @@ import admob.plus.cordova.Generated.Actions;
 import admob.plus.cordova.ads.AdBase;
 import admob.plus.cordova.ads.AppOpen;
 import admob.plus.cordova.ads.Banner;
+import admob.plus.cordova.ads.CanvasBanner;
 import admob.plus.cordova.ads.Interstitial;
 import admob.plus.cordova.ads.Native;
 import admob.plus.cordova.ads.Rewarded;
@@ -85,6 +86,9 @@ public class AdMob extends CordovaPlugin implements Helper.Adapter {
                         case "BannerAd":
                             ad = new Banner(ctx);
                             break;
+                        case "CanvasBannerAd":
+                            ad = new CanvasBanner(ctx);
+                            break;
                         case "InterstitialAd":
                             ad = new Interstitial(ctx);
                             break;
@@ -125,6 +129,14 @@ public class AdMob extends CordovaPlugin implements Helper.Adapter {
                 callbackContext.success();
                 break;
             }
+            case Actions.CANVAS_BANNER_SHOW:
+                return executeCanvasBannerShow(ctx);
+            case Actions.CANVAS_BANNER_DESTROY:
+                return executeCanvasBannerDestroy(ctx);
+            case Actions.CANVAS_BANNER_GET_AD_VIEW_IMAGE:
+                return executeCanvasBannerGetAdViewImage(ctx);
+            case Actions.CANVAS_BANNER_SIMULATE_CLICK_EVENT:
+                return executeCanvasBannerSimulateClickEvent(ctx);
             default:
                 return false;
         }
@@ -187,6 +199,46 @@ public class AdMob extends CordovaPlugin implements Helper.Adapter {
             GenericAd ad = (GenericAd) ctx.optAdOrError();
             if (ad != null) {
                 ad.hide(ctx);
+            }
+        });
+        return true;
+    }
+
+    private boolean executeCanvasBannerShow(ExecuteContext ctx) {
+        cordova.getActivity().runOnUiThread(() -> {
+            CanvasBanner canvasBanner = (CanvasBanner) ctx.optAdOrError();
+            if (canvasBanner != null) {
+                canvasBanner.show(ctx);
+            }
+        });
+        return true;
+    }
+
+    private boolean executeCanvasBannerDestroy(ExecuteContext ctx) {
+        cordova.getActivity().runOnUiThread(() -> {
+            CanvasBanner canvasBanner = (CanvasBanner) ctx.optAdOrError();
+            if (canvasBanner != null) {
+                canvasBanner.destroy(ctx);
+            }
+        });
+        return true;
+    }
+
+    private boolean executeCanvasBannerGetAdViewImage(ExecuteContext ctx) {
+        cordova.getActivity().runOnUiThread(() -> {
+            CanvasBanner canvasBanner = (CanvasBanner) ctx.optAdOrError();
+            if (canvasBanner != null) {
+                canvasBanner.getAdViewImage(ctx);
+            }
+        });
+        return true;
+    }
+
+    private boolean executeCanvasBannerSimulateClickEvent(ExecuteContext ctx) {
+        cordova.getActivity().runOnUiThread(() -> {
+            CanvasBanner canvasBanner = (CanvasBanner) ctx.optAdOrError();
+            if (canvasBanner != null) {
+                canvasBanner.simulateClickEvent(ctx);
             }
         });
         return true;
