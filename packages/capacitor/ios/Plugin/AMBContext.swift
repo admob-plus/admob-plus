@@ -2,8 +2,28 @@ import Capacitor
 import GoogleMobileAds
 
 class AMBContext: AMBCoreContext {
-    func optString(_ name: String) -> String? {
-        return call.getString(name)
+    func has(_ name: String) -> Bool {
+        return call.options.keys.contains(name)
+    }
+
+    func optBool(_ name: String) -> Bool? {
+        return call.getBool(name)
+    }
+
+    func optFloat(_ name: String) -> Float? {
+        return call.getFloat(name)
+    }
+
+    func optInt(_ name: String) -> Int? {
+        return call.getInt(name)
+    }
+
+    func optString(_ name: String, _ defaultValue: String) -> String {
+        return call.getString(name, defaultValue)
+    }
+
+    func optStringArray(_ name: String) -> [String]? {
+        return call.getArray(name, String.self)
     }
 
     func resolve() {
@@ -28,60 +48,5 @@ class AMBContext: AMBCoreContext {
 
     init(_ call: CAPPluginCall) {
         self.call = call
-    }
-
-    func optAppMuted() -> Bool? {
-        return call.getBool("appMuted")
-    }
-
-    func optAppVolume() -> Float? {
-        return call.getFloat("appVolume")
-    }
-
-    func optId() -> Int? {
-        return call.getInt("id")
-    }
-
-    func optAdUnitID() -> String? {
-        return call.getString("adUnitId")
-    }
-
-    func optPosition() -> String {
-        return call.getString("position", "bottom")
-    }
-
-    func optMaxAdContentRating() -> GADMaxAdContentRating? {
-        switch call.getString("maxAdContentRating") {
-        case "G":
-            return GADMaxAdContentRating.general
-        case "MA":
-            return GADMaxAdContentRating.matureAudience
-        case "PG":
-            return GADMaxAdContentRating.parentalGuidance
-        case "T":
-            return GADMaxAdContentRating.teen
-        default:
-            return nil
-        }
-    }
-
-    func optChildDirectedTreatmentTag() -> Bool? {
-        return call.getBool("tagForChildDirectedTreatment")
-    }
-
-    func optUnderAgeOfConsentTag() -> Bool? {
-        return call.getBool("tagForUnderAgeOfConsent")
-    }
-
-    func optTestDeviceIds() -> [String]? {
-        if let testDeviceIds = call.getArray("testDeviceIds", String.self) {
-            return testDeviceIds
-        }
-        return nil
-    }
-
-    func optGADRequest() -> GADRequest {
-        let request = GADRequest()
-        return request
     }
 }
