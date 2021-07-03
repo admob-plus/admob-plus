@@ -13,27 +13,13 @@ class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
 
   protected readonly opts: T
 
+  private _init: Promise<void> | null
+
   constructor(opts: T) {
     this.opts = opts
 
     this.id = MobileAd.nextId()
     MobileAd.allAds[this.id] = this
-  }
-
-  private static nextId() {
-    MobileAd.idCounter += 1
-    return MobileAd.idCounter
-  }
-
-  public get adUnitId() {
-    return this.opts.adUnitId
-  }
-}
-class GenericAd extends MobileAd {
-  private _init: Promise<void> | null
-
-  constructor(opts: MobileAdOptions) {
-    super(opts)
 
     // NOTE `this.constructor.name` could be changed after minify
     const cls =
@@ -49,22 +35,31 @@ class GenericAd extends MobileAd {
     })
   }
 
-  async isLoaded() {
+  private static nextId() {
+    MobileAd.idCounter += 1
+    return MobileAd.idCounter
+  }
+
+  public get adUnitId() {
+    return this.opts.adUnitId
+  }
+
+  protected async isLoaded() {
     await this.init()
     return AdMobPlus.adIsLoaded({ id: this.id })
   }
 
-  async load() {
+  protected async load() {
     await this.init()
     return AdMobPlus.adLoad({ id: this.id })
   }
 
-  async show() {
+  protected async show() {
     await this.init()
     return AdMobPlus.adShow({ id: this.id })
   }
 
-  async hide() {
+  protected async hide() {
     await this.init()
     return AdMobPlus.adHide({ id: this.id })
   }
@@ -80,7 +75,7 @@ export interface BannerAdOptions extends MobileAdOptions {
   position?: Position
 }
 
-class BannerAd extends GenericAd {
+class BannerAd extends MobileAd {
   static cls = 'BannerAd'
   _loaded = false
 
@@ -89,6 +84,10 @@ class BannerAd extends GenericAd {
       position: 'bottom',
       ...opts,
     })
+  }
+
+  isLoaded() {
+    return super.isLoaded()
   }
 
   async load() {
@@ -100,18 +99,58 @@ class BannerAd extends GenericAd {
     if (!this._loaded) await this.load()
     await super.show()
   }
+
+  hide() {
+    return super.load()
+  }
 }
 
-class InterstitialAd extends GenericAd {
+class InterstitialAd extends MobileAd {
   static cls = 'InterstitialAd'
+
+  isLoaded() {
+    return super.isLoaded()
+  }
+
+  async load() {
+    return super.load()
+  }
+
+  async show() {
+    return super.show()
+  }
 }
 
-class RewardedAd extends GenericAd {
+class RewardedAd extends MobileAd {
   static cls = 'RewardedAd'
+
+  isLoaded() {
+    return super.isLoaded()
+  }
+
+  async load() {
+    return super.load()
+  }
+
+  async show() {
+    return super.show()
+  }
 }
 
-class RewardedInterstitialAd extends GenericAd {
+class RewardedInterstitialAd extends MobileAd {
   static cls = 'RewardedInterstitialAd'
+
+  isLoaded() {
+    return super.isLoaded()
+  }
+
+  async load() {
+    return super.load()
+  }
+
+  async show() {
+    return super.show()
+  }
 }
 
 export * from './definitions'
