@@ -17,6 +17,8 @@ const Actions = _.mapValues(
     getFormStatus: null,
     showForm: null,
     reset: null,
+    trackingAuthorizationStatus: null,
+    requestTrackingAuthorization: null,
   },
   (v, k) => (v === null ? k : v) as string,
 )

@@ -97,6 +97,10 @@ class CSNContext {
         self.sendResult(CDVPluginResult(status: CDVCommandStatus_OK, messageAs: message))
     }
 
+    func success(_ message: UInt) {
+        self.sendResult(CDVPluginResult(status: CDVCommandStatus_OK, messageAs: message))
+    }
+
     func success(_ message: [String: Any]) {
         self.sendResult(CDVPluginResult(status: CDVCommandStatus_OK, messageAs: message))
     }

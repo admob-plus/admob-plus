@@ -19,13 +19,15 @@ const initConsentStatus = async () => {
 }
 
 const initRequestTrackingAuthorization = async () => {
+  console.log("trackingAuthorizationStatus()", await consent.trackingAuthorizationStatus())
+
   /**
    * @type {HTMLButtonElement}
    */
   const btn = document.getElementById('request-btn')
   btn.addEventListener('click', async () => {
     try {
-      btn.innerHTML = `${await admob.requestTrackingAuthorization()}`
+      btn.innerHTML = `${await consent.requestTrackingAuthorization()}`
     } catch (err) {
       alert(`requestTrackingAuthorization() error: ${err}`)
     } finally {

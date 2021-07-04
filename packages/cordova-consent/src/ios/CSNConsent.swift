@@ -1,3 +1,6 @@
+#if canImport(AppTrackingTransparency)
+    import AppTrackingTransparency
+#endif
 import UserMessagingPlatform
 
 @objc(CSNConsent)
@@ -20,6 +23,28 @@ class CSNConsent: CDVPlugin {
         readyCallbackId = command.callbackId
 
         self.emit(eventType: CSNEvents.ready)
+    }
+
+    @objc func trackingAuthorizationStatus(_ command: CDVInvokedUrlCommand) {
+        let ctx = CSNContext(command)
+
+        if #available(iOS 14, *) {
+            ctx.success(ATTrackingManager.trackingAuthorizationStatus.rawValue)
+        } else {
+            ctx.success(false)
+        }
+    }
+
+    @objc func requestTrackingAuthorization(_ command: CDVInvokedUrlCommand) {
+        let ctx = CSNContext(command)
+
+        if #available(iOS 14, *) {
+            ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
+                ctx.success(status.rawValue)
+            })
+        } else {
+            ctx.success(false)
+        }
     }
 
     @objc(requestInfoUpdate:)
