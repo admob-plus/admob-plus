@@ -238,6 +238,10 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
         self.emit(AMBEvents.bannerImpression)
     }
 
+    func bannerViewDidRecordClick(_ bannerView: GADBannerView) {
+        self.emit(AMBEvents.adClick)
+    }
+
     func bannerViewWillPresentScreen(_ bannerView: GADBannerView) {
         self.emit(AMBEvents.adShow)
         self.emit(AMBEvents.bannerOpen)
