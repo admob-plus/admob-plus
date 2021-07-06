@@ -110,3 +110,8 @@ export enum TrackingAuthorizationStatus {
   denied = 2,
   authorized = 3,
 }
+
+export type AdMobConfig = {
+  appMuted?: boolean
+  appVolume?: number
+} & RequestConfig

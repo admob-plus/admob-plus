@@ -12,6 +12,7 @@ const AdMob = {
   bannerLoad() {},
   bannerShow() {},
   configRequest() {},
+  configure() {},
   interstitialIsLoaded() {},
   interstitialLoad() {},
   interstitialShow() {},

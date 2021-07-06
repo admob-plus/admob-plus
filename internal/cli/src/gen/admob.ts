@@ -1,4 +1,3 @@
-import fse from 'fs-extra'
 import _ from 'lodash'
 import { pkgsDirJoin } from '../utils'
 import { AdEvents } from './capacitor'
@@ -13,6 +12,7 @@ import {
 const Actions = _.mapValues(
   {
     ready: null,
+    configure: null,
     configRequest: null,
     setAppMuted: null,
     setAppVolume: null,

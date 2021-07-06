@@ -10,6 +10,7 @@ import RewardedInterstitialAd, {
   RewardedInterstitialAdOptions,
 } from './rewarded-interstitial'
 import {
+  AdMobConfig,
   Events,
   execAsync,
   fireDocumentEvent,
@@ -64,6 +65,10 @@ export class AdMob {
       },
       false,
     )
+  }
+
+  configure(config: AdMobConfig) {
+    return execAsync(NativeActions.configure, [config])
   }
 
   public configRequest(requestConfig: RequestConfig) {

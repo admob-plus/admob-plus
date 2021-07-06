@@ -12,6 +12,7 @@ public final class Generated {
         public static final String BANNER_HIDE = "bannerHide";
         public static final String BANNER_LOAD = "bannerLoad";
         public static final String BANNER_SHOW = "bannerShow";
+        public static final String CONFIGURE = "configure";
         public static final String CONFIG_REQUEST = "configRequest";
         public static final String INTERSTITIAL_IS_LOADED = "interstitialIsLoaded";
         public static final String INTERSTITIAL_LOAD = "interstitialLoad";

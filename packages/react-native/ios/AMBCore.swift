@@ -154,6 +154,31 @@ extension AMBCoreContext {
     func reject(_ error: Error) {
         reject(error.localizedDescription)
     }
+
+    func configure() {
+        if let muted = optAppMuted() {
+            GADMobileAds.sharedInstance().applicationMuted = muted
+        }
+        if let volume = optAppVolume() {
+            GADMobileAds.sharedInstance().applicationVolume = volume
+        }
+
+        let requestConfiguration = GADMobileAds.sharedInstance().requestConfiguration
+        if let maxAdContentRating = optMaxAdContentRating() {
+            requestConfiguration.maxAdContentRating = maxAdContentRating
+        }
+        if let tag = optChildDirectedTreatmentTag() {
+            requestConfiguration.tag(forChildDirectedTreatment: tag)
+        }
+        if let tag = optUnderAgeOfConsentTag() {
+            requestConfiguration.tagForUnderAge(ofConsent: tag)
+        }
+        if let testDevices = optTestDeviceIds() {
+            requestConfiguration.testDeviceIdentifiers = testDevices
+        }
+
+        resolve()
+    }
 }
 
 class AMBCoreAd: NSObject {

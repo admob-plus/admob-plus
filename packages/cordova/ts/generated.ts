@@ -10,6 +10,7 @@ export enum NativeActions {
   bannerLoad = 'bannerLoad',
   bannerShow = 'bannerShow',
   configRequest = 'configRequest',
+  configure = 'configure',
   interstitialIsLoaded = 'interstitialIsLoaded',
   interstitialLoad = 'interstitialLoad',
   interstitialShow = 'interstitialShow',

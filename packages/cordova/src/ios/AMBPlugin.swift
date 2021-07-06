@@ -35,6 +35,11 @@ class AMBPlugin: CDVPlugin {
         }
     }
 
+    @objc func configure(_ command: CDVInvokedUrlCommand) {
+        let ctx = AMBContext(command)
+        ctx.configure()
+    }
+
     @objc func configRequest(_ command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(command)
         let requestConfiguration = GADMobileAds.sharedInstance().requestConfiguration
