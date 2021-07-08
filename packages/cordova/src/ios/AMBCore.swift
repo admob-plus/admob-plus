@@ -131,6 +131,9 @@ extension AMBCoreContext {
         if let contentURL = optString("contentUrl") {
             request.contentURL = contentURL
         }
+        if let keywords = optStringArray("keywords") {
+            request.keywords = keywords
+        }
         let extras = GADExtras()
         if let npa = optString("npa") {
             extras.additionalParameters = ["npa": npa]

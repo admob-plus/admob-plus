@@ -3,7 +3,13 @@ import { execAsync, NativeActions } from './generated'
 export { execAsync, AdSizeType, Events, NativeActions } from './generated'
 
 /** @internal */
-export type MobileAdOptions = { id?: number; adUnitId: string; npa?: '1' }
+export type MobileAdOptions = {
+  id?: number
+  adUnitId: string
+  contentUrl?: string
+  keywords?: string[]
+  npa?: '1'
+}
 
 /** @internal */
 export class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
