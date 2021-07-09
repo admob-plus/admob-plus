@@ -67,10 +67,9 @@ public class AdMob extends CordovaPlugin implements Helper.Adapter {
                     }}));
                 });
                 break;
+            case Actions.CONFIGURE:
             case Actions.CONFIG_REQUEST:
-                MobileAds.setRequestConfiguration(ctx.optRequestConfiguration());
-                helper.configForTestLab();
-                callbackContext.success();
+                ctx.configure(helper);
                 break;
             case Actions.AD_CREATE:
                 String adClass = ctx.optString("cls");
