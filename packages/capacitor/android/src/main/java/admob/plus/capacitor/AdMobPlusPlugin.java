@@ -61,15 +61,7 @@ public class AdMobPlusPlugin extends Plugin implements Helper.Adapter {
     public void configure(PluginCall call) {
         final ExecuteContext ctx = new ExecuteContext(call);
 
-        if (ctx.optAppMuted() != null) {
-            MobileAds.setAppMuted(ctx.optAppMuted());
-        }
-
-        if (ctx.optAppVolume() != null) {
-            MobileAds.setAppVolume(ctx.optAppVolume());
-        }
-
-        ctx.resolve();
+        ctx.configure(helper);
     }
 
     @PluginMethod
