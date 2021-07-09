@@ -55,8 +55,7 @@ public class AdMobPlusRNModule extends ReactContextBaseJavaModule implements Hel
     @ReactMethod
     public void configure(ReadableMap opts, Promise promise) {
         final ExecuteContext ctx = new ExecuteContext(opts, promise);
-        helper.configForTestLab();
-        ctx.reject("not implemented");
+        ctx.configure(helper);
     }
 
     @ReactMethod
