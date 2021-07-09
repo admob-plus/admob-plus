@@ -15,6 +15,13 @@ export enum Events {
   ready = 'consent.ready',
 }
 
+export enum ConsentStatus {
+  Unknown = 0,
+  Required = 1,
+  NotRequired = 2,
+  Obtained = 3,
+}
+
 export const execAsync = (action: string, args?: any[]) => {
   return new Promise((resolve, reject) => {
     cordova.exec(resolve, reject, 'Consent', action, args)

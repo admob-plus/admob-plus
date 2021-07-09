@@ -20,6 +20,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 import cordova.plugin.consent.Generated.Actions;
+import cordova.plugin.consent.Generated.ConsentStatus;
 
 public class Consent extends CordovaPlugin {
     private static final SparseArray<ConsentForm> forms = new SparseArray<ConsentForm>();
@@ -43,7 +44,7 @@ public class Consent extends CordovaPlugin {
             case Actions.READY:
                 return executeReady(callbackContext);
             case Actions.GET_CONSENT_STATUS:
-                callbackContext.success(getConsentInformation().getConsentStatus());
+                callbackContext.success(getConsentStatus());
                 break;
             case Actions.GET_FORM_STATUS:
                 callbackContext.success(getConsentInformation().isConsentFormAvailable() ? 1 : 2);
@@ -63,6 +64,18 @@ public class Consent extends CordovaPlugin {
         }
 
         return true;
+    }
+
+    private int getConsentStatus() {
+        int status = getConsentInformation().getConsentStatus();
+        switch (status) {
+            case 1:
+                return ConsentStatus.NOT_REQUIRED;
+            case 2:
+                return ConsentStatus.REQUIRED;
+            default:
+                return status;
+        }
     }
 
     private boolean executeReady(CallbackContext callbackContext) {

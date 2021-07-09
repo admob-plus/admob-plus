@@ -17,4 +17,11 @@ public final class Generated {
     public final class Events {
         public static final String READY = "consent.ready";
     }
+
+    public final class ConsentStatus {
+        public static final int UNKNOWN = 0;
+        public static final int REQUIRED = 1;
+        public static final int NOT_REQUIRED = 2;
+        public static final int OBTAINED = 3;
+    }
 }

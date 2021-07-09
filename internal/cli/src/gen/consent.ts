@@ -2,6 +2,7 @@ import _ from 'lodash'
 import { pkgsDirJoin } from '../utils'
 import {
   buildUtils,
+  indent4,
   renderJavaContants,
   renderSwiftContants,
   renderTsContants,
@@ -28,9 +29,23 @@ const Events = _.mapValues(
   (v, k) => `consent.${v === null ? k : v}`,
 )
 
+const ConsentStatus: Record<string, number> = {
+  Unknown: 0,
+  Required: 1,
+  NotRequired: 2,
+  Obtained: 3,
+}
+
 function buildJava(): string {
   const linesActions = renderJavaContants(Actions)
   const linesEvents = renderJavaContants(Events)
+  const linesConsentStatus = _.map(
+    ConsentStatus,
+    (v, k) =>
+      `${indent4(2)}public static final int ${_.snakeCase(
+        k,
+      ).toUpperCase()} = ${v};`,
+  ).join('\n')
 
   return `// ${warnMessage}
 package cordova.plugin.consent;
@@ -42,6 +57,10 @@ ${linesActions}
 
     public final class Events {
 ${linesEvents}
+    }
+
+    public final class ConsentStatus {
+${linesConsentStatus}
     }
 }
 `
@@ -65,6 +84,10 @@ ${renderTsContants(Actions)}
 
 export enum Events {
 ${renderTsContants(Events)}
+}
+
+export enum ConsentStatus {
+${_.map(ConsentStatus, (v, k) => `  ${k} = ${v},`).join('\n')}
 }
 ${buildUtils('Consent')}
 `
