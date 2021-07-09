@@ -18,8 +18,7 @@ class CSNConsent: CDVPlugin {
         CSNContext.plugin = nil
     }
 
-    @objc(ready:)
-    func ready(command: CDVInvokedUrlCommand) {
+    @objc func ready(_ command: CDVInvokedUrlCommand) {
         readyCallbackId = command.callbackId
 
         self.emit(eventType: CSNEvents.ready)
@@ -47,8 +46,7 @@ class CSNConsent: CDVPlugin {
         }
     }
 
-    @objc(requestInfoUpdate:)
-    func requestInfoUpdate(command: CDVInvokedUrlCommand) {
+    @objc func requestInfoUpdate(_ command: CDVInvokedUrlCommand) {
         let ctx = CSNContext(command)
 
         UMPConsentInformation.sharedInstance.requestConsentInfoUpdate(
@@ -62,20 +60,17 @@ class CSNConsent: CDVPlugin {
             })
     }
 
-    @objc(getFormStatus:)
-    func getFormStatus(command: CDVInvokedUrlCommand) {
+    @objc func getFormStatus(_ command: CDVInvokedUrlCommand) {
         let ctx = CSNContext(command)
         ctx.success(UMPConsentInformation.sharedInstance.formStatus.rawValue)
     }
 
-    @objc(getConsentStatus:)
-    func getConsentStatus(command: CDVInvokedUrlCommand) {
+    @objc func getConsentStatus(_ command: CDVInvokedUrlCommand) {
         let ctx = CSNContext(command)
         ctx.success(UMPConsentInformation.sharedInstance.consentStatus.rawValue)
     }
 
-    @objc(loadForm:)
-    func loadForm(command: CDVInvokedUrlCommand) {
+    @objc func loadForm(_ command: CDVInvokedUrlCommand) {
         let ctx = CSNContext(command)
 
         UMPConsentForm.load(
@@ -90,8 +85,7 @@ class CSNConsent: CDVPlugin {
             })
     }
 
-    @objc(showForm:)
-    func showForm(command: CDVInvokedUrlCommand) {
+    @objc func showForm(_ command: CDVInvokedUrlCommand) {
         let ctx = CSNContext(command)
 
         if let form = ctx.optForm() {
@@ -109,8 +103,7 @@ class CSNConsent: CDVPlugin {
         }
     }
 
-    @objc(reset:)
-    func reset(command: CDVInvokedUrlCommand) {
+    @objc func reset(_ command: CDVInvokedUrlCommand) {
         let ctx = CSNContext(command)
         UMPConsentInformation.sharedInstance.reset()
         ctx.success()
