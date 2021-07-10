@@ -13,12 +13,12 @@
   "devDependencies": {
     "@admob-plus-internal/rollup-config": "file:../../internal/rollup-config",
     "@types/cordova": "^0.0.34",
-    "@types/node": "^15.12.5",
+    "@types/node": "^16.3.1",
     "cordova": "^10.0.0",
-    "rollup": "^2.52.3",
+    "rollup": "^2.53.0",
     "sync-package-version": "^0.1.0",
-    "ts-node": "^10.0.0",
-    "typescript": "^4.3.4"
+    "ts-node": "^10.1.0",
+    "typescript": "^4.3.5"
   },
   "author": "Ratson",
   "license": "MIT",

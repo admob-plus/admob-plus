@@ -12,7 +12,7 @@
     "elementtree": "^0.1.7",
     "enquirer": "^2.3.6",
     "execa": "^5.1.1",
-    "fast-glob": "^3.2.5",
+    "fast-glob": "^3.2.7",
     "fs-extra": "^10.0.0",
     "got": "^11.8.2",
     "js-yaml": "^4.1.0",
@@ -28,16 +28,16 @@
   },
   "devDependencies": {
     "@admob-plus-internal/tsconfig": "file:../../internal/tsconfig",
-    "@types/elementtree": "^0.1.0",
-    "@types/fs-extra": "^9.0.11",
-    "@types/js-yaml": "^4.0.1",
-    "@types/lodash": "^4.14.170",
-    "@types/node": "^15.12.5",
-    "@types/semver": "^7.3.6",
-    "@types/update-notifier": "^5.0.0",
-    "@types/yargs": "^17.0.0",
-    "ts-node": "^10.0.0",
-    "typescript": "^4.3.4"
+    "@types/elementtree": "^0.1.1",
+    "@types/fs-extra": "^9.0.12",
+    "@types/js-yaml": "^4.0.2",
+    "@types/lodash": "^4.14.171",
+    "@types/node": "^16.3.1",
+    "@types/semver": "^7.3.7",
+    "@types/update-notifier": "^5.0.1",
+    "@types/yargs": "^17.0.2",
+    "ts-node": "^10.1.0",
+    "typescript": "^4.3.5"
   },
   "engines": {
     "node": ">=12.0.0"

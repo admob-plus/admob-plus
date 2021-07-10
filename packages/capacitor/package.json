@@ -49,19 +49,19 @@
     "test": "tsc --noEmit"
   },
   "devDependencies": {
-    "@capacitor/android": "^3.0.2",
-    "@capacitor/core": "^3.0.2",
+    "@capacitor/android": "^3.1.1",
+    "@capacitor/core": "^3.1.1",
     "@capacitor/docgen": "^0.0.17",
-    "@capacitor/ios": "^3.0.2",
+    "@capacitor/ios": "^3.1.1",
     "@ionic/eslint-config": "^0.3.0",
     "@ionic/prettier-config": "^1.0.1",
     "@ionic/swiftlint-config": "^1.1.2",
     "rimraf": "^3.0.2",
-    "rollup": "^2.52.3",
-    "typescript": "~4.3.4"
+    "rollup": "^2.53.0",
+    "typescript": "~4.3.5"
   },
   "peerDependencies": {
-    "@capacitor/core": "^3.0.2"
+    "@capacitor/core": "^3.1.1"
   },
   "homepage": "https://admob-plus.github.io/docs/capacitor",
   "publishConfig": {

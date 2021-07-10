@@ -11,7 +11,7 @@
     "test": "tsc --noEmit"
   },
   "dependencies": {
-    "fast-glob": "^3.2.5",
+    "fast-glob": "^3.2.7",
     "fs-extra": "^10.0.0",
     "plist": "^3.0.2",
     "replace-in-file": "^6.2.0"
@@ -24,9 +24,9 @@
     "cordova": "10.0.0",
     "cordova-ts-hook": "^0.0.3",
     "npm-run-all": "^4.1.5",
-    "rollup": "^2.52.3",
+    "rollup": "^2.53.0",
     "sync-package-version": "^0.1.0",
-    "typescript": "^4.3.4"
+    "typescript": "^4.3.5"
   },
   "author": "Ratson",
   "license": "MIT",

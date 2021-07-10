@@ -22,25 +22,25 @@
     "del": "^6.0.0",
     "escalade": "^3.1.1",
     "execa": "^5.1.1",
-    "fast-glob": "^3.2.5",
+    "fast-glob": "^3.2.7",
     "fs-extra": "^10.0.0",
     "handlebars": "^4.7.7",
     "lodash": "^4.17.21",
-    "markdown-magic": "^2.2.0",
+    "markdown-magic": "^2.3.2",
     "p-queue": "^6.6.2",
     "pkg-proxy": "file:../../packages/pkg-proxy",
     "replace-in-file": "^6.2.0",
-    "typescript": "^4.3.4",
+    "typescript": "^4.3.5",
     "xml2js": "^0.4.23",
     "yargs": "^17.0.1"
   },
   "devDependencies": {
-    "@types/debounce-promise": "^3.1.3",
-    "@types/fs-extra": "^9.0.11",
-    "@types/lodash": "^4.14.170",
-    "@types/markdown-magic": "^1.0.0",
-    "@types/xml2js": "^0.4.8",
-    "@types/yargs": "^17.0.0",
-    "ts-node": "^10.0.0"
+    "@types/debounce-promise": "^3.1.4",
+    "@types/fs-extra": "^9.0.12",
+    "@types/lodash": "^4.14.171",
+    "@types/markdown-magic": "^1.0.1",
+    "@types/xml2js": "^0.4.9",
+    "@types/yargs": "^17.0.2",
+    "ts-node": "^10.1.0"
   }
 }
