@@ -69,9 +69,9 @@ public class Consent extends CordovaPlugin {
     private int getConsentStatus() {
         int status = getConsentInformation().getConsentStatus();
         switch (status) {
-            case 1:
+            case ConsentInformation.ConsentStatus.NOT_REQUIRED:
                 return ConsentStatus.NOT_REQUIRED;
-            case 2:
+            case ConsentInformation.ConsentStatus.REQUIRED:
                 return ConsentStatus.REQUIRED;
             default:
                 return status;
