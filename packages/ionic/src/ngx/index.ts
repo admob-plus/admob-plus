@@ -223,6 +223,10 @@ export class AdMob
     return this.admob.start()
   }
 
+  public configure(...opts: Parameters<IAdMob[NativeActions.configure]>) {
+    return this.admob.configure(...opts)
+  }
+
   public setAppMuted(...opts: Parameters<IAdMob[NativeActions.setAppMuted]>) {
     return this.admob.setAppMuted(...opts)
   }
