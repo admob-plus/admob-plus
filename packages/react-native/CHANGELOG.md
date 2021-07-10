@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.11.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/react-native@1.10.3...@admob-plus/react-native@1.11.0) (2021-07-10)
+
+
+### Features
+
+* **cordova/ios:** add admob.configure() ([19a06d7](https://github.com/admob-plus/admob-plus/commit/19a06d7822821a7353902cf23c735e20b728bd18))
+* **cordova/ios:** add contentUrl, keywords ad options ([08a1d3f](https://github.com/admob-plus/admob-plus/commit/08a1d3f04c73121fe6c0ccd2f06175771a9beb0d))
+* **react-native:** utilize AMBCoreContext ([a0a49de](https://github.com/admob-plus/admob-plus/commit/a0a49decb0b327e4695f53a192252a496fd4d8f6))
+* **react-native/android:** implement configure() ([c90a700](https://github.com/admob-plus/admob-plus/commit/c90a7007344423863b423268749b88ed7d373d81))
+* update Google-Mobile-Ads-SDK to 8.7.0 ([a66c614](https://github.com/admob-plus/admob-plus/commit/a66c614bc56088393370805144aaa4e5c5a688f4))
+
+
+
+
+
 ## [1.10.3](https://github.com/admob-plus/admob-plus/compare/@admob-plus/react-native@1.10.2...@admob-plus/react-native@1.10.3) (2021-06-30)
 
 

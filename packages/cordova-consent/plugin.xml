@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="cordova-plugin-consent" version="2.1.11"
+<plugin id="cordova-plugin-consent" version="2.2.0"
     xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <name>@admob-plus/cordova-consent</name>

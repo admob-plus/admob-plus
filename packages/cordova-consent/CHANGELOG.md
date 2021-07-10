@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](https://github.com/admob-plus/admob-plus/compare/cordova-plugin-consent@2.1.11...cordova-plugin-consent@2.2.0) (2021-07-10)
+
+
+### Bug Fixes
+
+* **cordova-consent/android:** convert consent status value, fix [#401](https://github.com/admob-plus/admob-plus/issues/401) ([fc1fdf5](https://github.com/admob-plus/admob-plus/commit/fc1fdf5f6b58c4b88a0454513126ae92e8240f3e))
+
+
+### Features
+
+* **cordova-consent:** add requestTrackingAuthorization() and trackingAuthorizationStatus() ([054f3d5](https://github.com/admob-plus/admob-plus/commit/054f3d52277d2ee616df31483a027ca6900e5f4e))
+
+
+
+
+
 ## [2.1.11](https://github.com/admob-plus/admob-plus/compare/cordova-plugin-consent@2.1.10...cordova-plugin-consent@2.1.11) (2021-06-25)
 
 **Note:** Version bump only for package cordova-plugin-consent

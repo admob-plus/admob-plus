@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.20.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.19.2...admob-plus-cordova@1.20.0) (2021-07-10)
+
+
+### Features
+
+* **cordova/android:** implement configure() ([234d73b](https://github.com/admob-plus/admob-plus/commit/234d73b8a849a555d8e994b8837af21e64bf540a))
+* **cordova/ios:** add admob.configure() ([19a06d7](https://github.com/admob-plus/admob-plus/commit/19a06d7822821a7353902cf23c735e20b728bd18))
+* **cordova/ios:** add contentUrl, keywords ad options ([08a1d3f](https://github.com/admob-plus/admob-plus/commit/08a1d3f04c73121fe6c0ccd2f06175771a9beb0d))
+* **cordova/ios:** emit ad.click event ([c2bb6f1](https://github.com/admob-plus/admob-plus/commit/c2bb6f1df0a469492ec798a5e2cd262c9617f622))
+* update Google-Mobile-Ads-SDK to 8.7.0 ([a66c614](https://github.com/admob-plus/admob-plus/commit/a66c614bc56088393370805144aaa4e5c5a688f4))
+
+
+
+
+
 ## [1.19.2](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.19.1...admob-plus-cordova@1.19.2) (2021-06-30)
 
 

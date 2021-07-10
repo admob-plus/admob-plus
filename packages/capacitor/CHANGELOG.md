@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.16.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.15.2...@admob-plus/capacitor@1.16.0) (2021-07-10)
+
+
+### Features
+
+* **capacitor/andorid:** utilize Context.configure() ([20c43ec](https://github.com/admob-plus/admob-plus/commit/20c43ecd17a1945591be0ce2c969645128dc982c))
+* **cordova/ios:** add admob.configure() ([19a06d7](https://github.com/admob-plus/admob-plus/commit/19a06d7822821a7353902cf23c735e20b728bd18))
+* **cordova/ios:** add contentUrl, keywords ad options ([08a1d3f](https://github.com/admob-plus/admob-plus/commit/08a1d3f04c73121fe6c0ccd2f06175771a9beb0d))
+* update Google-Mobile-Ads-SDK to 8.7.0 ([a66c614](https://github.com/admob-plus/admob-plus/commit/a66c614bc56088393370805144aaa4e5c5a688f4))
+
+
+
+
+
 ## [1.15.2](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.15.1...@admob-plus/capacitor@1.15.2) (2021-06-30)
 
 
