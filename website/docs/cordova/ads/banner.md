@@ -17,7 +17,7 @@ document.addEventListener('deviceready', async () => {
     adUnitId: 'ca-app-pub-xxx/yyy',
   })
 
-  banner.on('impression', (evt) => {
+  banner.on('impression', async (evt) => {
     await banner.hide()
   })
 
