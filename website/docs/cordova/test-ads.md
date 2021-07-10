@@ -32,10 +32,10 @@ Run `npx admob-plus test-ids` will print the above table.
 
 1. Load your ads-integrated app and make an ad request.
 2. Copy your test device ID from console / logcat output to your clipboard.
-3. Modify your code to call `admob.configRequest({testDeviceIds})` and pass in a list of your test device IDs.
+3. Modify your code to call `admob.configure({testDeviceIds})` and pass in a list of your test device IDs.
 
 ```js
-admob.configRequest({
+admob.configure({
   testDeviceIds: ['33BE2250B43518CCDA7DE426D04EE231'],
 })
 ```

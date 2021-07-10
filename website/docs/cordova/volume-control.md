@@ -12,11 +12,11 @@ Valid ad volume values range from 0.0 (silent) to 1.0 (current device volume).
 By default, the app volume is set to 1 (the current device volume).
 
 ```js
-admob.setAppVolume(0.5)
+admob.configure({ appVolume: 0.5 })
 ```
 
 ## Mute App Volume
 
 ```js
-admob.setAppMuted(true)
+admob.configure({ appMuted: true })
 ```
