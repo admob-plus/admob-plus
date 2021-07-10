@@ -15,7 +15,7 @@ cordova plugin add cordova-plugin-consent
 ```js
 document.addEventListener('deviceready', async () => {
   if (cordova.platformId === 'ios') {
-    const trackingAuthorizationStatus = await admob.requestTrackingAuthorization()
+    const status = await consent.trackingAuthorizationStatus()
     /*
       trackingAuthorizationStatus:
       0 = notDetermined
@@ -23,6 +23,7 @@ document.addEventListener('deviceready', async () => {
       2 = denied
       3 = authorized
     */
+    const statusNew = await consent.requestTrackingAuthorization()
   }
 
   const consentStatus = await consent.getConsentStatus()
@@ -53,7 +54,7 @@ The `npa` parameter is applicable to [`BannerAd`](./api/classes/bannerad), [`Int
 
 ## References
 
-- [TrackingAuthorizationStatus](../api/enums/trackingauthorizationstatus.md)
+- [TrackingAuthorizationStatus](./api/enums/trackingauthorizationstatus.md)
 - [UMP SDK for Android](https://developers.google.com/admob/ump/android/quick-start)
 - [UMP SDK for iOS](https://developers.google.com/admob/ump/ios/quick-start)
 - [AppTrackingTransparency Framework](https://developer.apple.com/documentation/apptrackingtransparency)
