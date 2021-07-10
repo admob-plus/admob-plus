@@ -176,6 +176,30 @@ ionic/src/ngx/index.ts:216
 
 ___
 
+### configure
+
+▸ **configure**(...`opts`): `Promise`<`unknown`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...opts` | [config: AdMobConfig] |
+
+#### Returns
+
+`Promise`<`unknown`\>
+
+#### Implementation of
+
+Omit.configure
+
+#### Defined in
+
+ionic/src/ngx/index.ts:226
+
+___
+
 ### on
 
 ▸ **on**(`event`): `Observable`<`any`\>
@@ -192,7 +216,7 @@ ___
 
 #### Defined in
 
-ionic/src/ngx/index.ts:238
+ionic/src/ngx/index.ts:242
 
 ___
 
@@ -210,7 +234,7 @@ Omit.requestTrackingAuthorization
 
 #### Defined in
 
-ionic/src/ngx/index.ts:234
+ionic/src/ngx/index.ts:238
 
 ___
 
@@ -234,7 +258,7 @@ Omit.setAppMuted
 
 #### Defined in
 
-ionic/src/ngx/index.ts:226
+ionic/src/ngx/index.ts:230
 
 ___
 
@@ -258,7 +282,7 @@ Omit.setAppVolume
 
 #### Defined in
 
-ionic/src/ngx/index.ts:230
+ionic/src/ngx/index.ts:234
 
 ___
 

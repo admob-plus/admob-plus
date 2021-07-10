@@ -42,6 +42,16 @@ Renames and exports: [AdMob](classes/admob.md)
 
 ## Type aliases
 
+### AdMobConfig
+
+Ƭ **AdMobConfig**: { `appMuted?`: `boolean` ; `appVolume?`: `number`  } & [`RequestConfig`](index.md#requestconfig)
+
+#### Defined in
+
+code/github/admob-plus/packages/cordova/ts/api.ts:120
+
+___
+
 ### MobileAdOptions
 
 Ƭ **MobileAdOptions**: `Object`
@@ -53,7 +63,9 @@ Renames and exports: [AdMob](classes/admob.md)
 | Name | Type |
 | :------ | :------ |
 | `adUnitId` | `string` |
+| `contentUrl?` | `string` |
 | `id?` | `number` |
+| `keywords?` | `string`[] |
 | `npa?` | ``"1"`` |
 
 #### Defined in
@@ -77,7 +89,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:95
+code/github/admob-plus/packages/cordova/ts/api.ts:101
 
 ## Functions
 
@@ -98,4 +110,4 @@ code/github/admob-plus/packages/cordova/ts/api.ts:95
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/generated.ts:78
+code/github/admob-plus/packages/cordova/ts/generated.ts:79

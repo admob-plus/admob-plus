@@ -26,7 +26,21 @@ MobileAdOptions.adUnitId
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:6
+code/github/admob-plus/packages/cordova/ts/api.ts:8
+
+___
+
+### contentUrl
+
+• `Optional` **contentUrl**: `string`
+
+#### Inherited from
+
+MobileAdOptions.contentUrl
+
+#### Defined in
+
+code/github/admob-plus/packages/cordova/ts/api.ts:9
 
 ___
 
@@ -40,7 +54,21 @@ MobileAdOptions.id
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:6
+code/github/admob-plus/packages/cordova/ts/api.ts:7
+
+___
+
+### keywords
+
+• `Optional` **keywords**: `string`[]
+
+#### Inherited from
+
+MobileAdOptions.keywords
+
+#### Defined in
+
+code/github/admob-plus/packages/cordova/ts/api.ts:10
 
 ___
 
@@ -54,7 +82,7 @@ MobileAdOptions.npa
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:6
+code/github/admob-plus/packages/cordova/ts/api.ts:11
 
 ___
 

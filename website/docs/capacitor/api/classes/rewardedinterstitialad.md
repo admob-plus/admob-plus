@@ -8,7 +8,7 @@ custom_edit_url: null
 
 ## Hierarchy
 
-- `GenericAd`
+- `MobileAd`
 
   ↳ **`RewardedInterstitialAd`**
 
@@ -26,11 +26,11 @@ custom_edit_url: null
 
 #### Inherited from
 
-GenericAd.constructor
+MobileAd.constructor
 
 #### Defined in
 
-index.ts:33
+index.ts:16
 
 ## Properties
 
@@ -40,7 +40,7 @@ index.ts:33
 
 #### Inherited from
 
-GenericAd.id
+MobileAd.id
 
 #### Defined in
 
@@ -54,7 +54,7 @@ ___
 
 #### Inherited from
 
-GenericAd.opts
+MobileAd.opts
 
 #### Defined in
 
@@ -68,7 +68,7 @@ ___
 
 #### Defined in
 
-index.ts:114
+index.ts:141
 
 ## Accessors
 
@@ -82,13 +82,13 @@ index.ts:114
 
 #### Defined in
 
-index.ts:28
+index.ts:43
 
 ## Methods
 
 ### hide
 
-▸ **hide**(): `Promise`<`void`\>
+▸ `Protected` **hide**(): `Promise`<`void`\>
 
 #### Returns
 
@@ -96,11 +96,11 @@ index.ts:28
 
 #### Inherited from
 
-GenericAd.hide
+MobileAd.hide
 
 #### Defined in
 
-index.ts:67
+index.ts:62
 
 ___
 
@@ -114,11 +114,11 @@ ___
 
 #### Inherited from
 
-GenericAd.init
+MobileAd.init
 
 #### Defined in
 
-index.ts:72
+index.ts:67
 
 ___
 
@@ -130,13 +130,13 @@ ___
 
 `Promise`<`boolean`\>
 
-#### Inherited from
+#### Overrides
 
-GenericAd.isLoaded
+MobileAd.isLoaded
 
 #### Defined in
 
-index.ts:52
+index.ts:143
 
 ___
 
@@ -148,13 +148,13 @@ ___
 
 `Promise`<`void`\>
 
-#### Inherited from
+#### Overrides
 
-GenericAd.load
+MobileAd.load
 
 #### Defined in
 
-index.ts:57
+index.ts:147
 
 ___
 
@@ -166,10 +166,10 @@ ___
 
 `Promise`<`void`\>
 
-#### Inherited from
+#### Overrides
 
-GenericAd.show
+MobileAd.show
 
 #### Defined in
 
-index.ts:62
+index.ts:151

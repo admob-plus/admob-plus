@@ -24,7 +24,21 @@ custom_edit_url: null
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:6
+code/github/admob-plus/packages/cordova/ts/api.ts:8
+
+___
+
+### contentUrl
+
+• `Optional` **contentUrl**: `string`
+
+#### Inherited from
+
+[RewardedAdOptions](rewardedadoptions.md).[contentUrl](rewardedadoptions.md#contenturl)
+
+#### Defined in
+
+code/github/admob-plus/packages/cordova/ts/api.ts:9
 
 ___
 
@@ -38,7 +52,21 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:6
+code/github/admob-plus/packages/cordova/ts/api.ts:7
+
+___
+
+### keywords
+
+• `Optional` **keywords**: `string`[]
+
+#### Inherited from
+
+[RewardedAdOptions](rewardedadoptions.md).[keywords](rewardedadoptions.md#keywords)
+
+#### Defined in
+
+code/github/admob-plus/packages/cordova/ts/api.ts:10
 
 ___
 
@@ -52,7 +80,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:6
+code/github/admob-plus/packages/cordova/ts/api.ts:11
 
 ___
 

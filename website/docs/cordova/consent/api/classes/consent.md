@@ -20,7 +20,7 @@ index.ts:43
 
 ### ConsentStatus
 
-• `Readonly` **ConsentStatus**: typeof [`ConsentStatus`](../enums/consentstatus.md)
+• `Readonly` **ConsentStatus**: typeof `ConsentStatus`
 
 #### Defined in
 
@@ -50,15 +50,15 @@ index.ts:43
 
 ### getConsentStatus
 
-▸ **getConsentStatus**(): `Promise`<[`ConsentStatus`](../enums/consentstatus.md)\>
+▸ **getConsentStatus**(): `Promise`<`ConsentStatus`\>
 
 #### Returns
 
-`Promise`<[`ConsentStatus`](../enums/consentstatus.md)\>
+`Promise`<`ConsentStatus`\>
 
 #### Defined in
 
-index.ts:49
+index.ts:77
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 #### Defined in
 
-index.ts:54
+index.ts:82
 
 ___
 
@@ -86,7 +86,7 @@ ___
 
 #### Defined in
 
-index.ts:63
+index.ts:91
 
 ___
 
@@ -106,7 +106,21 @@ ___
 
 #### Defined in
 
-index.ts:59
+index.ts:87
+
+___
+
+### requestTrackingAuthorization
+
+▸ **requestTrackingAuthorization**(): `Promise`<``false`` \| [`TrackingAuthorizationStatus`](../enums/trackingauthorizationstatus.md)\>
+
+#### Returns
+
+`Promise`<``false`` \| [`TrackingAuthorizationStatus`](../enums/trackingauthorizationstatus.md)\>
+
+#### Defined in
+
+index.ts:63
 
 ___
 
@@ -120,4 +134,18 @@ ___
 
 #### Defined in
 
-index.ts:68
+index.ts:96
+
+___
+
+### trackingAuthorizationStatus
+
+▸ **trackingAuthorizationStatus**(): `Promise`<``false`` \| [`TrackingAuthorizationStatus`](../enums/trackingauthorizationstatus.md)\>
+
+#### Returns
+
+`Promise`<``false`` \| [`TrackingAuthorizationStatus`](../enums/trackingauthorizationstatus.md)\>
+
+#### Defined in
+
+index.ts:49

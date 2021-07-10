@@ -9,9 +9,9 @@ custom_edit_url: null
 
 ## Enumerations
 
-- [ConsentStatus](enums/consentstatus.md)
 - [DebugGeography](enums/debuggeography.md)
 - [FormStatus](enums/formstatus.md)
+- [TrackingAuthorizationStatus](enums/trackingauthorizationstatus.md)
 
 ## Classes
 

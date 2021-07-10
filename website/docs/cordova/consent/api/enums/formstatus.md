@@ -14,7 +14,7 @@ custom_edit_url: null
 
 #### Defined in
 
-index.ts:24
+index.ts:17
 
 ___
 
@@ -24,7 +24,7 @@ ___
 
 #### Defined in
 
-index.ts:25
+index.ts:18
 
 ___
 
@@ -34,4 +34,4 @@ ___
 
 #### Defined in
 
-index.ts:23
+index.ts:16
