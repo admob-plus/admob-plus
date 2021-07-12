@@ -108,39 +108,43 @@ class AMBPlugin: CDVPlugin {
     @objc func adCreate(_ command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(command)
 
-        if let adClass = ctx.optString("cls") {
-            var ad: AMBCoreAd?
-            switch adClass {
-            case "AppOpenAd":
-                ad = AMBAppOpenAd(ctx)
-            case "BannerAd":
-                ad = AMBBanner(ctx)
-            case "InterstitialAd":
-                ad = AMBInterstitial(ctx)
-            case "NativeAd":
-                ad = AMBNativeAd(ctx)
-            case "RewardedAd":
-                ad = AMBRewarded(ctx)
-            case "RewardedInterstitialAd":
-                ad = AMBRewardedInterstitial(ctx)
-            default:
-                break
-            }
-            if ad != nil {
-                ctx.resolve()
+        DispatchQueue.main.async {
+            if let adClass = ctx.optString("cls") {
+                var ad: AMBCoreAd?
+                switch adClass {
+                case "AppOpenAd":
+                    ad = AMBAppOpenAd(ctx)
+                case "BannerAd":
+                    ad = AMBBanner(ctx)
+                case "InterstitialAd":
+                    ad = AMBInterstitial(ctx)
+                case "NativeAd":
+                    ad = AMBNativeAd(ctx)
+                case "RewardedAd":
+                    ad = AMBRewarded(ctx)
+                case "RewardedInterstitialAd":
+                    ad = AMBRewardedInterstitial(ctx)
+                default:
+                    break
+                }
+                if ad != nil {
+                    ctx.resolve()
+                } else {
+                    ctx.reject("fail to create ad: \(ctx.optId() ?? -1)")
+                }
             } else {
-                ctx.reject("fail to create ad: \(ctx.optId() ?? -1)")
+                ctx.reject()
             }
-        } else {
-            ctx.reject()
         }
     }
 
     @objc func adIsLoaded(_ command: CDVInvokedUrlCommand) {
         let ctx = AMBContext(command)
 
-        if let ad = ctx.optAdOrError() as? AMBAdBase {
-            ctx.resolve(ad.isLoaded())
+        DispatchQueue.main.async {
+            if let ad = ctx.optAdOrError() as? AMBAdBase {
+                ctx.resolve(ad.isLoaded())
+            }
         }
     }
 
