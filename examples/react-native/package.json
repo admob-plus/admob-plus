@@ -22,7 +22,7 @@
     "@babel/runtime": "^7.14.6",
     "@react-native-community/eslint-config": "^3.0.0",
     "@types/jest": "^26.0.24",
-    "@types/react-native": "^0.64.11",
+    "@types/react-native": "^0.64.12",
     "@types/react-test-renderer": "^17.0.1",
     "admob-plus": "file:../../packages/cli",
     "babel-jest": "^27.0.6",
