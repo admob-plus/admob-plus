@@ -198,9 +198,7 @@ class AMBCoreAd: NSObject {
 
         super.init()
 
-        DispatchQueue.main.async {
-            AMBCoreAd.ads[id] = self
-        }
+        AMBCoreAd.ads[id] = self
     }
 
     convenience init?(_ ctx: AMBCoreContext) {
@@ -213,8 +211,9 @@ class AMBCoreAd: NSObject {
     }
 
     deinit {
+        let key = self.id
         DispatchQueue.main.async {
-            AMBCoreAd.ads.removeValue(forKey: self.id)
+            AMBCoreAd.ads.removeValue(forKey: key)
         }
     }
 }
