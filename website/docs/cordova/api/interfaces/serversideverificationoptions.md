@@ -1,5 +1,5 @@
 ---
-id: "serversideverificationoptions"
+id: "ServerSideVerificationOptions"
 title: "Interface: ServerSideVerificationOptions"
 sidebar_label: "ServerSideVerificationOptions"
 sidebar_position: 0

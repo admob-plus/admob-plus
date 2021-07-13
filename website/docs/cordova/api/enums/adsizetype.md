@@ -1,5 +1,5 @@
 ---
-id: "adsizetype"
+id: "AdSizeType"
 title: "Enumeration: AdSizeType"
 sidebar_label: "AdSizeType"
 sidebar_position: 0

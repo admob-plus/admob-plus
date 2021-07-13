@@ -1,5 +1,5 @@
 ---
-id: "consent"
+id: "Consent"
 title: "Class: Consent"
 sidebar_label: "Consent"
 sidebar_position: 0
@@ -14,7 +14,7 @@ custom_edit_url: null
 
 #### Defined in
 
-index.ts:43
+index.ts:45
 
 ## Properties
 
@@ -30,7 +30,7 @@ ___
 
 ### DebugGeography
 
-• `Readonly` **DebugGeography**: typeof [`DebugGeography`](../enums/debuggeography.md)
+• `Readonly` **DebugGeography**: typeof [`DebugGeography`](../enums/DebugGeography.md)
 
 #### Defined in
 
@@ -40,7 +40,7 @@ ___
 
 ### FormStatus
 
-• `Readonly` **FormStatus**: typeof [`FormStatus`](../enums/formstatus.md)
+• `Readonly` **FormStatus**: typeof [`FormStatus`](../enums/FormStatus.md)
 
 #### Defined in
 
@@ -64,11 +64,11 @@ ___
 
 ### getFormStatus
 
-▸ **getFormStatus**(): `Promise`<[`FormStatus`](../enums/formstatus.md)\>
+▸ **getFormStatus**(): `Promise`<[`FormStatus`](../enums/FormStatus.md)\>
 
 #### Returns
 
-`Promise`<[`FormStatus`](../enums/formstatus.md)\>
+`Promise`<[`FormStatus`](../enums/FormStatus.md)\>
 
 #### Defined in
 
@@ -78,11 +78,11 @@ ___
 
 ### loadForm
 
-▸ **loadForm**(): `Promise`<[`ConsentForm`](consentform.md)\>
+▸ **loadForm**(): `Promise`<[`ConsentForm`](ConsentForm.md)\>
 
 #### Returns
 
-`Promise`<[`ConsentForm`](consentform.md)\>
+`Promise`<[`ConsentForm`](ConsentForm.md)\>
 
 #### Defined in
 
@@ -112,11 +112,11 @@ ___
 
 ### requestTrackingAuthorization
 
-▸ **requestTrackingAuthorization**(): `Promise`<``false`` \| [`TrackingAuthorizationStatus`](../enums/trackingauthorizationstatus.md)\>
+▸ **requestTrackingAuthorization**(): `Promise`<``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)\>
 
 #### Returns
 
-`Promise`<``false`` \| [`TrackingAuthorizationStatus`](../enums/trackingauthorizationstatus.md)\>
+`Promise`<``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)\>
 
 #### Defined in
 
@@ -140,11 +140,11 @@ ___
 
 ### trackingAuthorizationStatus
 
-▸ **trackingAuthorizationStatus**(): `Promise`<``false`` \| [`TrackingAuthorizationStatus`](../enums/trackingauthorizationstatus.md)\>
+▸ **trackingAuthorizationStatus**(): `Promise`<``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)\>
 
 #### Returns
 
-`Promise`<``false`` \| [`TrackingAuthorizationStatus`](../enums/trackingauthorizationstatus.md)\>
+`Promise`<``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)\>
 
 #### Defined in
 

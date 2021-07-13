@@ -1,5 +1,5 @@
 ---
-id: "debuggeography"
+id: "DebugGeography"
 title: "Enumeration: DebugGeography"
 sidebar_label: "DebugGeography"
 sidebar_position: 0

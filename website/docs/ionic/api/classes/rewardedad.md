@@ -1,5 +1,5 @@
 ---
-id: "rewardedad"
+id: "RewardedAd"
 title: "Class: RewardedAd"
 sidebar_label: "RewardedAd"
 sidebar_position: 0
@@ -34,7 +34,7 @@ IonicNativePlugin.constructor
 
 #### Defined in
 
-ionic/src/ngx/index.ts:111
+ionic/src/ngx/index.ts:113
 
 ## Properties
 

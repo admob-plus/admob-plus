@@ -1,5 +1,5 @@
 ---
-id: "mobilead"
+id: "MobileAd"
 title: "Class: MobileAd<T>"
 sidebar_label: "MobileAd"
 sidebar_position: 0
@@ -18,17 +18,17 @@ custom_edit_url: null
 
 - **`MobileAd`**
 
-  ↳ [`AppOpenAd`](appopenad.md)
+  ↳ [`AppOpenAd`](AppOpenAd.md)
 
-  ↳ [`BannerAd`](bannerad.md)
+  ↳ [`BannerAd`](BannerAd.md)
 
-  ↳ [`InterstitialAd`](interstitialad.md)
+  ↳ [`InterstitialAd`](InterstitialAd.md)
 
-  ↳ [`NativeAd`](nativead.md)
+  ↳ [`NativeAd`](NativeAd.md)
 
-  ↳ [`RewardedAd`](rewardedad.md)
+  ↳ [`RewardedAd`](RewardedAd.md)
 
-  ↳ [`RewardedInterstitialAd`](rewardedinterstitialad.md)
+  ↳ [`RewardedInterstitialAd`](RewardedInterstitialAd.md)
 
 ## Constructors
 
@@ -50,7 +50,7 @@ custom_edit_url: null
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:24
+code/github/admob-plus/packages/cordova/ts/api.ts:26
 
 ## Properties
 
@@ -90,7 +90,7 @@ ___
 
 #### Index signature
 
-▪ [s: `number`]: [`MobileAd`](mobilead.md)
+▪ [s: `number`]: [`MobileAd`](MobileAd.md)
 
 #### Defined in
 
@@ -236,7 +236,7 @@ ___
 
 ### getAdById
 
-▸ `Static` **getAdById**(`id`): [`MobileAd`](mobilead.md)<[`MobileAdOptions`](../index.md#mobileadoptions)\>
+▸ `Static` **getAdById**(`id`): [`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../index.md#mobileadoptions)\>
 
 #### Parameters
 
@@ -246,7 +246,7 @@ ___
 
 #### Returns
 
-[`MobileAd`](mobilead.md)<[`MobileAdOptions`](../index.md#mobileadoptions)\>
+[`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../index.md#mobileadoptions)\>
 
 #### Defined in
 

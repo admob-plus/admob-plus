@@ -1,5 +1,5 @@
 ---
-id: "admobplusplugin"
+id: "AdMobPlusPlugin"
 title: "Interface: AdMobPlusPlugin"
 sidebar_label: "AdMobPlusPlugin"
 sidebar_position: 0

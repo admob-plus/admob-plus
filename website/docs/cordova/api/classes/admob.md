@@ -1,5 +1,5 @@
 ---
-id: "admob"
+id: "AdMob"
 title: "Class: AdMob"
 sidebar_label: "AdMob"
 sidebar_position: 0
@@ -14,13 +14,13 @@ custom_edit_url: null
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/index.ts:47
+code/github/admob-plus/packages/cordova/ts/index.ts:49
 
 ## Properties
 
 ### AppOpenAd
 
-• `Readonly` **AppOpenAd**: typeof [`AppOpenAd`](appopenad.md)
+• `Readonly` **AppOpenAd**: typeof [`AppOpenAd`](AppOpenAd.md)
 
 #### Defined in
 
@@ -30,7 +30,7 @@ ___
 
 ### BannerAd
 
-• `Readonly` **BannerAd**: typeof [`BannerAd`](bannerad.md)
+• `Readonly` **BannerAd**: typeof [`BannerAd`](BannerAd.md)
 
 #### Defined in
 
@@ -40,7 +40,7 @@ ___
 
 ### Events
 
-• `Readonly` **Events**: typeof [`Events`](../enums/events.md)
+• `Readonly` **Events**: typeof [`Events`](../enums/Events.md)
 
 #### Defined in
 
@@ -50,7 +50,7 @@ ___
 
 ### InterstitialAd
 
-• `Readonly` **InterstitialAd**: typeof [`InterstitialAd`](interstitialad.md)
+• `Readonly` **InterstitialAd**: typeof [`InterstitialAd`](InterstitialAd.md)
 
 #### Defined in
 
@@ -60,7 +60,7 @@ ___
 
 ### NativeAd
 
-• `Readonly` **NativeAd**: typeof [`NativeAd`](nativead.md)
+• `Readonly` **NativeAd**: typeof [`NativeAd`](NativeAd.md)
 
 #### Defined in
 
@@ -70,7 +70,7 @@ ___
 
 ### RewardedAd
 
-• `Readonly` **RewardedAd**: typeof [`RewardedAd`](rewardedad.md)
+• `Readonly` **RewardedAd**: typeof [`RewardedAd`](RewardedAd.md)
 
 #### Defined in
 
@@ -80,7 +80,7 @@ ___
 
 ### RewardedInterstitialAd
 
-• `Readonly` **RewardedInterstitialAd**: typeof [`RewardedInterstitialAd`](rewardedinterstitialad.md)
+• `Readonly` **RewardedInterstitialAd**: typeof [`RewardedInterstitialAd`](RewardedInterstitialAd.md)
 
 #### Defined in
 
@@ -90,7 +90,7 @@ ___
 
 ### TrackingAuthorizationStatus
 
-• `Readonly` **TrackingAuthorizationStatus**: typeof [`TrackingAuthorizationStatus`](../enums/trackingauthorizationstatus.md)
+• `Readonly` **TrackingAuthorizationStatus**: typeof [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)
 
 #### Defined in
 
@@ -140,11 +140,11 @@ ___
 
 ### requestTrackingAuthorization
 
-▸ **requestTrackingAuthorization**(): `Promise`<``false`` \| [`TrackingAuthorizationStatus`](../enums/trackingauthorizationstatus.md)\>
+▸ **requestTrackingAuthorization**(): `Promise`<``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)\>
 
 #### Returns
 
-`Promise`<``false`` \| [`TrackingAuthorizationStatus`](../enums/trackingauthorizationstatus.md)\>
+`Promise`<``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)\>
 
 #### Defined in
 

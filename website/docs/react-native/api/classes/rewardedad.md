@@ -1,5 +1,5 @@
 ---
-id: "rewardedad"
+id: "RewardedAd"
 title: "Class: RewardedAd"
 sidebar_label: "RewardedAd"
 sidebar_position: 0
@@ -30,7 +30,7 @@ MobileAd.constructor
 
 #### Defined in
 
-index.ts:28
+index.ts:30
 
 ## Properties
 

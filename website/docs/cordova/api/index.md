@@ -9,36 +9,36 @@ custom_edit_url: null
 
 ## Enumerations
 
-- [AdSizeType](enums/adsizetype.md)
-- [Events](enums/events.md)
-- [MaxAdContentRating](enums/maxadcontentrating.md)
-- [NativeActions](enums/nativeactions.md)
-- [Platforms](enums/platforms.md)
-- [TrackingAuthorizationStatus](enums/trackingauthorizationstatus.md)
+- [AdSizeType](enums/AdSizeType.md)
+- [Events](enums/Events.md)
+- [MaxAdContentRating](enums/MaxAdContentRating.md)
+- [NativeActions](enums/NativeActions.md)
+- [Platforms](enums/Platforms.md)
+- [TrackingAuthorizationStatus](enums/TrackingAuthorizationStatus.md)
 
 ## Classes
 
-- [AdMob](classes/admob.md)
-- [AppOpenAd](classes/appopenad.md)
-- [BannerAd](classes/bannerad.md)
-- [InterstitialAd](classes/interstitialad.md)
-- [MobileAd](classes/mobilead.md)
-- [NativeAd](classes/nativead.md)
-- [RewardedAd](classes/rewardedad.md)
-- [RewardedInterstitialAd](classes/rewardedinterstitialad.md)
+- [AdMob](classes/AdMob.md)
+- [AppOpenAd](classes/AppOpenAd.md)
+- [BannerAd](classes/BannerAd.md)
+- [InterstitialAd](classes/InterstitialAd.md)
+- [MobileAd](classes/MobileAd.md)
+- [NativeAd](classes/NativeAd.md)
+- [RewardedAd](classes/RewardedAd.md)
+- [RewardedInterstitialAd](classes/RewardedInterstitialAd.md)
 
 ## Interfaces
 
-- [BannerAdOptions](interfaces/banneradoptions.md)
-- [RewardedAdOptions](interfaces/rewardedadoptions.md)
-- [RewardedInterstitialAdOptions](interfaces/rewardedinterstitialadoptions.md)
-- [ServerSideVerificationOptions](interfaces/serversideverificationoptions.md)
+- [BannerAdOptions](interfaces/BannerAdOptions.md)
+- [RewardedAdOptions](interfaces/RewardedAdOptions.md)
+- [RewardedInterstitialAdOptions](interfaces/RewardedInterstitialAdOptions.md)
+- [ServerSideVerificationOptions](interfaces/ServerSideVerificationOptions.md)
 
 ## References
 
 ### default
 
-Renames and exports: [AdMob](classes/admob.md)
+Renames and exports: [AdMob](classes/AdMob.md)
 
 ## Type aliases
 
@@ -82,7 +82,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `maxAdContentRating?` | [`MaxAdContentRating`](enums/maxadcontentrating.md) |
+| `maxAdContentRating?` | [`MaxAdContentRating`](enums/MaxAdContentRating.md) |
 | `tagForChildDirectedTreatment?` | `boolean` \| ``null`` |
 | `tagForUnderAgeOfConsent?` | `boolean` \| ``null`` |
 | `testDeviceIds?` | `string`[] |
@@ -101,7 +101,7 @@ code/github/admob-plus/packages/cordova/ts/api.ts:101
 
 | Name | Type |
 | :------ | :------ |
-| `action` | [`NativeActions`](enums/nativeactions.md) |
+| `action` | [`NativeActions`](enums/NativeActions.md) |
 | `args?` | `any`[] |
 
 #### Returns

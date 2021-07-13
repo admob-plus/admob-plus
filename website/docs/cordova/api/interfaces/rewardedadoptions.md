@@ -1,5 +1,5 @@
 ---
-id: "rewardedadoptions"
+id: "RewardedAdOptions"
 title: "Interface: RewardedAdOptions"
 sidebar_label: "RewardedAdOptions"
 sidebar_position: 0
@@ -12,7 +12,7 @@ custom_edit_url: null
 
   ↳ **`RewardedAdOptions`**
 
-  ↳↳ [`RewardedInterstitialAdOptions`](rewardedinterstitialadoptions.md)
+  ↳↳ [`RewardedInterstitialAdOptions`](RewardedInterstitialAdOptions.md)
 
 ## Properties
 
@@ -88,7 +88,7 @@ ___
 
 ### serverSideVerification
 
-• `Optional` **serverSideVerification**: [`ServerSideVerificationOptions`](serversideverificationoptions.md)
+• `Optional` **serverSideVerification**: [`ServerSideVerificationOptions`](ServerSideVerificationOptions.md)
 
 #### Defined in
 

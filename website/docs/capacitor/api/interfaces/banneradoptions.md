@@ -1,5 +1,5 @@
 ---
-id: "banneradoptions"
+id: "BannerAdOptions"
 title: "Interface: BannerAdOptions"
 sidebar_label: "BannerAdOptions"
 sidebar_position: 0

@@ -1,5 +1,5 @@
 ---
-id: "maxadcontentrating"
+id: "MaxAdContentRating"
 title: "Enumeration: MaxAdContentRating"
 sidebar_label: "MaxAdContentRating"
 sidebar_position: 0

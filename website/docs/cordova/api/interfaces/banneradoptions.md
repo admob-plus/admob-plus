@@ -1,5 +1,5 @@
 ---
-id: "banneradoptions"
+id: "BannerAdOptions"
 title: "Interface: BannerAdOptions"
 sidebar_label: "BannerAdOptions"
 sidebar_position: 0
@@ -106,7 +106,7 @@ ___
 
 ### size
 
-• `Optional` **size**: [`AdSizeType`](../enums/adsizetype.md)
+• `Optional` **size**: [`AdSizeType`](../enums/AdSizeType.md)
 
 #### Defined in
 

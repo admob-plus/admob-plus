@@ -1,5 +1,5 @@
 ---
-id: "nativeactions"
+id: "NativeActions"
 title: "Enumeration: NativeActions"
 sidebar_label: "NativeActions"
 sidebar_position: 0

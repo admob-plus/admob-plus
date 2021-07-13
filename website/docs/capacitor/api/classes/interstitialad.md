@@ -1,5 +1,5 @@
 ---
-id: "interstitialad"
+id: "InterstitialAd"
 title: "Class: InterstitialAd"
 sidebar_label: "InterstitialAd"
 sidebar_position: 0
@@ -30,7 +30,7 @@ MobileAd.constructor
 
 #### Defined in
 
-index.ts:16
+index.ts:18
 
 ## Properties
 

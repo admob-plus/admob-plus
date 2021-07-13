@@ -1,5 +1,5 @@
 ---
-id: "bannerad"
+id: "BannerAd"
 title: "Class: BannerAd"
 sidebar_label: "BannerAd"
 sidebar_position: 0
@@ -34,7 +34,7 @@ IonicNativePlugin.constructor
 
 #### Defined in
 
-ionic/src/ngx/index.ts:29
+ionic/src/ngx/index.ts:31
 
 ## Properties
 

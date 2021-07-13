@@ -1,5 +1,5 @@
 ---
-id: "platforms"
+id: "Platforms"
 title: "Enumeration: Platforms"
 sidebar_label: "Platforms"
 sidebar_position: 0

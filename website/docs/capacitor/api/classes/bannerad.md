@@ -1,5 +1,5 @@
 ---
-id: "bannerad"
+id: "BannerAd"
 title: "Class: BannerAd"
 sidebar_label: "BannerAd"
 sidebar_position: 0
@@ -22,7 +22,7 @@ custom_edit_url: null
 
 | Name | Type |
 | :------ | :------ |
-| `opts` | [`BannerAdOptions`](../interfaces/banneradoptions.md) |
+| `opts` | [`BannerAdOptions`](../interfaces/BannerAdOptions.md) |
 
 #### Overrides
 
@@ -30,7 +30,7 @@ MobileAd.constructor
 
 #### Defined in
 
-index.ts:80
+index.ts:82
 
 ## Properties
 

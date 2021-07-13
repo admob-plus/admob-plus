@@ -9,17 +9,17 @@ custom_edit_url: null
 
 ## Enumerations
 
-- [MaxAdContentRating](enums/maxadcontentrating.md)
+- [MaxAdContentRating](enums/MaxAdContentRating.md)
 
 ## Classes
 
-- [InterstitialAd](classes/interstitialad.md)
-- [RewardedAd](classes/rewardedad.md)
-- [RewardedInterstitialAd](classes/rewardedinterstitialad.md)
+- [InterstitialAd](classes/InterstitialAd.md)
+- [RewardedAd](classes/RewardedAd.md)
+- [RewardedInterstitialAd](classes/RewardedInterstitialAd.md)
 
 ## Interfaces
 
-- [AdMobPlusPlugin](interfaces/admobplusplugin.md)
+- [AdMobPlusPlugin](interfaces/AdMobPlusPlugin.md)
 
 ## References
 
@@ -39,7 +39,7 @@ Renames and exports: [AdMobPlus](index.md#admobplus)
 | :------ | :------ |
 | `appMuted?` | `boolean` |
 | `appVolume?` | `number` |
-| `maxAdContentRating?` | [`MaxAdContentRating`](enums/maxadcontentrating.md) |
+| `maxAdContentRating?` | [`MaxAdContentRating`](enums/MaxAdContentRating.md) |
 | `tagForChildDirectedTreatment?` | `boolean` \| ``null`` |
 | `tagForUnderAgeOfConsent?` | `boolean` \| ``null`` |
 | `testDeviceIds?` | `string`[] |
@@ -68,7 +68,7 @@ definitions.ts:19
 
 ### AdMobPlus
 
-• `Const` **AdMobPlus**: [`AdMobPlusPlugin`](interfaces/admobplusplugin.md)
+• `Const` **AdMobPlus**: [`AdMobPlusPlugin`](interfaces/AdMobPlusPlugin.md)
 
 #### Defined in
 

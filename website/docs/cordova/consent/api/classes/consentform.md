@@ -1,5 +1,5 @@
 ---
-id: "consentform"
+id: "ConsentForm"
 title: "Class: ConsentForm"
 sidebar_label: "ConsentForm"
 sidebar_position: 0
@@ -20,7 +20,7 @@ custom_edit_url: null
 
 #### Defined in
 
-index.ts:29
+index.ts:31
 
 ## Properties
 

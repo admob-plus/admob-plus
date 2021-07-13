@@ -1,5 +1,5 @@
 ---
-id: "rewardedinterstitialad"
+id: "RewardedInterstitialAd"
 title: "Class: RewardedInterstitialAd"
 sidebar_label: "RewardedInterstitialAd"
 sidebar_position: 0
@@ -8,7 +8,7 @@ custom_edit_url: null
 
 ## Hierarchy
 
-- [`MobileAd`](mobilead.md)<[`RewardedInterstitialAdOptions`](../interfaces/rewardedinterstitialadoptions.md)\>
+- [`MobileAd`](MobileAd.md)<[`RewardedInterstitialAdOptions`](../interfaces/RewardedInterstitialAdOptions.md)\>
 
   ↳ **`RewardedInterstitialAd`**
 
@@ -22,15 +22,15 @@ custom_edit_url: null
 
 | Name | Type |
 | :------ | :------ |
-| `opts` | [`RewardedInterstitialAdOptions`](../interfaces/rewardedinterstitialadoptions.md) |
+| `opts` | [`RewardedInterstitialAdOptions`](../interfaces/RewardedInterstitialAdOptions.md) |
 
 #### Inherited from
 
-[MobileAd](mobilead.md).[constructor](mobilead.md#constructor)
+[MobileAd](MobileAd.md).[constructor](MobileAd.md#constructor)
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:24
+code/github/admob-plus/packages/cordova/ts/api.ts:26
 
 ## Properties
 
@@ -40,7 +40,7 @@ code/github/admob-plus/packages/cordova/ts/api.ts:24
 
 #### Inherited from
 
-[MobileAd](mobilead.md).[id](mobilead.md#id)
+[MobileAd](MobileAd.md).[id](MobileAd.md#id)
 
 #### Defined in
 
@@ -50,11 +50,11 @@ ___
 
 ### opts
 
-• `Protected` `Readonly` **opts**: [`RewardedInterstitialAdOptions`](../interfaces/rewardedinterstitialadoptions.md)
+• `Protected` `Readonly` **opts**: [`RewardedInterstitialAdOptions`](../interfaces/RewardedInterstitialAdOptions.md)
 
 #### Inherited from
 
-[MobileAd](mobilead.md).[opts](mobilead.md#opts)
+[MobileAd](MobileAd.md).[opts](MobileAd.md#opts)
 
 #### Defined in
 
@@ -68,7 +68,7 @@ ___
 
 #### Inherited from
 
-[MobileAd](mobilead.md).[type](mobilead.md#type)
+[MobileAd](MobileAd.md).[type](MobileAd.md#type)
 
 #### Defined in
 
@@ -100,7 +100,7 @@ code/github/admob-plus/packages/cordova/ts/api.ts:48
 
 #### Inherited from
 
-[MobileAd](mobilead.md).[hide](mobilead.md#hide)
+[MobileAd](MobileAd.md).[hide](MobileAd.md#hide)
 
 #### Defined in
 
@@ -118,7 +118,7 @@ ___
 
 #### Inherited from
 
-[MobileAd](mobilead.md).[init](mobilead.md#init)
+[MobileAd](MobileAd.md).[init](MobileAd.md#init)
 
 #### Defined in
 
@@ -136,7 +136,7 @@ ___
 
 #### Overrides
 
-[MobileAd](mobilead.md).[isLoaded](mobilead.md#isloaded)
+[MobileAd](MobileAd.md).[isLoaded](MobileAd.md#isloaded)
 
 #### Defined in
 
@@ -154,7 +154,7 @@ ___
 
 #### Overrides
 
-[MobileAd](mobilead.md).[load](mobilead.md#load)
+[MobileAd](MobileAd.md).[load](MobileAd.md#load)
 
 #### Defined in
 
@@ -184,7 +184,7 @@ ___
 
 #### Inherited from
 
-[MobileAd](mobilead.md).[on](mobilead.md#on)
+[MobileAd](MobileAd.md).[on](MobileAd.md#on)
 
 #### Defined in
 
@@ -202,7 +202,7 @@ ___
 
 #### Overrides
 
-[MobileAd](mobilead.md).[show](mobilead.md#show)
+[MobileAd](MobileAd.md).[show](MobileAd.md#show)
 
 #### Defined in
 
@@ -212,7 +212,7 @@ ___
 
 ### getAdById
 
-▸ `Static` **getAdById**(`id`): [`MobileAd`](mobilead.md)<[`MobileAdOptions`](../index.md#mobileadoptions)\>
+▸ `Static` **getAdById**(`id`): [`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../index.md#mobileadoptions)\>
 
 #### Parameters
 
@@ -222,11 +222,11 @@ ___
 
 #### Returns
 
-[`MobileAd`](mobilead.md)<[`MobileAdOptions`](../index.md#mobileadoptions)\>
+[`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../index.md#mobileadoptions)\>
 
 #### Inherited from
 
-[MobileAd](mobilead.md).[getAdById](mobilead.md#getadbyid)
+[MobileAd](MobileAd.md).[getAdById](MobileAd.md#getadbyid)
 
 #### Defined in
 

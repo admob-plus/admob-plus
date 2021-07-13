@@ -1,5 +1,5 @@
 ---
-id: "events"
+id: "Events"
 title: "Enumeration: Events"
 sidebar_label: "Events"
 sidebar_position: 0

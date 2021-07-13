@@ -9,20 +9,20 @@ custom_edit_url: null
 
 ## Enumerations
 
-- [MaxAdContentRating](enums/maxadcontentrating.md)
-- [TrackingAuthorizationStatus](enums/trackingauthorizationstatus.md)
+- [MaxAdContentRating](enums/MaxAdContentRating.md)
+- [TrackingAuthorizationStatus](enums/TrackingAuthorizationStatus.md)
 
 ## Classes
 
-- [BannerAd](classes/bannerad.md)
-- [InterstitialAd](classes/interstitialad.md)
-- [RewardedAd](classes/rewardedad.md)
-- [RewardedInterstitialAd](classes/rewardedinterstitialad.md)
+- [BannerAd](classes/BannerAd.md)
+- [InterstitialAd](classes/InterstitialAd.md)
+- [RewardedAd](classes/RewardedAd.md)
+- [RewardedInterstitialAd](classes/RewardedInterstitialAd.md)
 
 ## Interfaces
 
-- [AdMobPlusPlugin](interfaces/admobplusplugin.md)
-- [BannerAdOptions](interfaces/banneradoptions.md)
+- [AdMobPlusPlugin](interfaces/AdMobPlusPlugin.md)
+- [BannerAdOptions](interfaces/BannerAdOptions.md)
 
 ## Type aliases
 
@@ -67,7 +67,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `maxAdContentRating?` | [`MaxAdContentRating`](enums/maxadcontentrating.md) |
+| `maxAdContentRating?` | [`MaxAdContentRating`](enums/MaxAdContentRating.md) |
 | `tagForChildDirectedTreatment?` | `boolean` \| ``null`` |
 | `tagForUnderAgeOfConsent?` | `boolean` \| ``null`` |
 | `testDeviceIds?` | `string`[] |
@@ -80,7 +80,7 @@ definitions.ts:16
 
 ### AdMobPlus
 
-• `Const` **AdMobPlus**: [`AdMobPlusPlugin`](interfaces/admobplusplugin.md)
+• `Const` **AdMobPlus**: [`AdMobPlusPlugin`](interfaces/AdMobPlusPlugin.md)
 
 #### Defined in
 

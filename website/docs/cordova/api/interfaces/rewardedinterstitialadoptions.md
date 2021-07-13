@@ -1,5 +1,5 @@
 ---
-id: "rewardedinterstitialadoptions"
+id: "RewardedInterstitialAdOptions"
 title: "Interface: RewardedInterstitialAdOptions"
 sidebar_label: "RewardedInterstitialAdOptions"
 sidebar_position: 0
@@ -8,7 +8,7 @@ custom_edit_url: null
 
 ## Hierarchy
 
-- [`RewardedAdOptions`](rewardedadoptions.md)
+- [`RewardedAdOptions`](RewardedAdOptions.md)
 
   ↳ **`RewardedInterstitialAdOptions`**
 
@@ -20,7 +20,7 @@ custom_edit_url: null
 
 #### Inherited from
 
-[RewardedAdOptions](rewardedadoptions.md).[adUnitId](rewardedadoptions.md#adunitid)
+[RewardedAdOptions](RewardedAdOptions.md).[adUnitId](RewardedAdOptions.md#adunitid)
 
 #### Defined in
 
@@ -34,7 +34,7 @@ ___
 
 #### Inherited from
 
-[RewardedAdOptions](rewardedadoptions.md).[contentUrl](rewardedadoptions.md#contenturl)
+[RewardedAdOptions](RewardedAdOptions.md).[contentUrl](RewardedAdOptions.md#contenturl)
 
 #### Defined in
 
@@ -48,7 +48,7 @@ ___
 
 #### Inherited from
 
-[RewardedAdOptions](rewardedadoptions.md).[id](rewardedadoptions.md#id)
+[RewardedAdOptions](RewardedAdOptions.md).[id](RewardedAdOptions.md#id)
 
 #### Defined in
 
@@ -62,7 +62,7 @@ ___
 
 #### Inherited from
 
-[RewardedAdOptions](rewardedadoptions.md).[keywords](rewardedadoptions.md#keywords)
+[RewardedAdOptions](RewardedAdOptions.md).[keywords](RewardedAdOptions.md#keywords)
 
 #### Defined in
 
@@ -76,7 +76,7 @@ ___
 
 #### Inherited from
 
-[RewardedAdOptions](rewardedadoptions.md).[npa](rewardedadoptions.md#npa)
+[RewardedAdOptions](RewardedAdOptions.md).[npa](RewardedAdOptions.md#npa)
 
 #### Defined in
 
@@ -86,11 +86,11 @@ ___
 
 ### serverSideVerification
 
-• `Optional` **serverSideVerification**: [`ServerSideVerificationOptions`](serversideverificationoptions.md)
+• `Optional` **serverSideVerification**: [`ServerSideVerificationOptions`](ServerSideVerificationOptions.md)
 
 #### Inherited from
 
-[RewardedAdOptions](rewardedadoptions.md).[serverSideVerification](rewardedadoptions.md#serversideverification)
+[RewardedAdOptions](RewardedAdOptions.md).[serverSideVerification](RewardedAdOptions.md#serversideverification)
 
 #### Defined in
 
