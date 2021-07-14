@@ -5,7 +5,7 @@
   </a>
 </h1>
 
-[**AdMob Plus**](https://admob-plus.github.io) is the successor of [cordova-plugin-admob-free](https://github.com/ratson/cordova-plugin-admob-free), provides a clean API and is build with modern tools.
+[**AdMob Plus**](https://admob-plus.github.io) is the successor of [cordova-plugin-admob-free](https://github.com/ratson/cordova-plugin-admob-free), provides a clean API and is built with modern tools.
 
 ## Other features
 
