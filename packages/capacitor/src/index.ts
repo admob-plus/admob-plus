@@ -101,7 +101,7 @@ class BannerAd extends MobileAd {
   }
 
   hide() {
-    return super.load()
+    return super.hide()
   }
 }
 
