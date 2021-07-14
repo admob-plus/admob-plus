@@ -60,6 +60,12 @@ public class ExecuteContext implements Context {
         return opts.optDouble(name);
     }
 
+    @Override
+    public double optDouble(@Nullable String name, double defaultValue) {
+        if (!opts.has(name)) return defaultValue;
+        return opts.optDouble(name);
+    }
+
     @Nullable
     @Override
     public Integer optInt(@Nullable String name) {

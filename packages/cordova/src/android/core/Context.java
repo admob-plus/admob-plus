@@ -37,6 +37,8 @@ public interface Context {
     @Nullable
     Double optDouble(@NonNull String name);
 
+    double optDouble(@Nullable String name, double defaultValue);
+
     @Nullable
     default Float optFloat(@NonNull String name) {
         final Double v = optDouble(name);

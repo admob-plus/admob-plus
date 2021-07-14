@@ -110,11 +110,11 @@ public class Native extends AdBase {
         }
 
         view.setVisibility(View.VISIBLE);
-        view.setX((float) dpToPx(Objects.requireNonNull(ctx.optDouble("x"))));
-        view.setY((float) dpToPx(Objects.requireNonNull(ctx.optDouble("y"))));
+        view.setX((float) dpToPx(ctx.optDouble("x", 0.0)));
+        view.setY((float) dpToPx(ctx.optDouble("y", 0.0)));
         ViewGroup.LayoutParams params = view.getLayoutParams();
-        params.width = (int) dpToPx(Objects.requireNonNull(ctx.optDouble("width")));
-        params.height = (int) dpToPx(Objects.requireNonNull(ctx.optDouble("height")));
+        params.width = (int) dpToPx(ctx.optDouble("width", 0.0));
+        params.height = (int) dpToPx(ctx.optDouble("height", 0.0));
         view.setLayoutParams(params);
 
         viewProvider.didShow(this);
