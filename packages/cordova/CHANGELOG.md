@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.20.1](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.20.0...admob-plus-cordova@1.20.1) (2021-07-14)
+
+
+### Bug Fixes
+
+* **cordova:** use explicit cls name ([6828d99](https://github.com/admob-plus/admob-plus/commit/6828d99bb21e55182897d68481667ac835756ee7))
+
+
+
+
+
 # [1.20.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.19.2...admob-plus-cordova@1.20.0) (2021-07-10)
 
 
