@@ -18,6 +18,8 @@ This will scan for common errors and provide suggestions how to fix them.
 
 ### Why are ads not showing?
 
+Make sure you have listen to error event and log the fail reason, ads may fail to load for various reasons.
+
 Beside programming error, a common report is [no fill error](https://developers.google.com/android/reference/com/google/android/gms/ads/AdRequest#ERROR_CODE_NO_FILL) ([explanation post](https://support.google.com/admob/thread/3494603)),
 which many users think it is the problem of the library.
 
