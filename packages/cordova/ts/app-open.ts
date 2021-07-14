@@ -10,6 +10,7 @@ enum AppOpenAdOrientation {
 export default class AppOpenAd extends MobileAd<
   MobileAdOptions & { orientation: AppOpenAdOrientation }
 > {
+  static cls = 'AppOpenAd'
   static readonly Orientation = AppOpenAdOrientation
 
   public isLoaded() {

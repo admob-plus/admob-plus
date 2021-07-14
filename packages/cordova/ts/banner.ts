@@ -40,6 +40,8 @@ export interface BannerAdOptions extends MobileAdOptions {
 }
 
 export default class BannerAd extends MobileAd<BannerAdOptions> {
+  static cls = 'BannerAd'
+
   private _loaded = false
 
   constructor(opts: BannerAdOptions) {

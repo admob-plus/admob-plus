@@ -10,6 +10,8 @@ export interface RewardedAdOptions extends MobileAdOptions {
 }
 
 export default class RewardedAd extends MobileAd<RewardedAdOptions> {
+  static cls = 'RewardedAd'
+
   public isLoaded() {
     return super.isLoaded()
   }

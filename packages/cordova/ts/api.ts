@@ -29,8 +29,12 @@ export class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
     this.id = opts.id ?? MobileAd.nextId()
     MobileAd.allAds[this.id] = this
 
+    const cls =
+      (this.constructor as unknown as { cls?: string }).cls ??
+      this.constructor.name
+
     this._init = execAsync(NativeActions.adCreate, [
-      { ...opts, id: this.id, cls: this.constructor.name },
+      { ...opts, id: this.id, cls },
     ]).then(() => {
       this._init = null
     })

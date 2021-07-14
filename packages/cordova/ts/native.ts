@@ -1,10 +1,12 @@
-import { MobileAd, execAsync, NativeActions, MobileAdOptions } from './shared'
+import { MobileAd, MobileAdOptions } from './shared'
 
 type ShowOptions = { x: number; y: number; width: number; height: number }
 
 export default class NativeAd extends MobileAd<
   MobileAdOptions & { view?: string }
 > {
+  static cls = 'NativeAd'
+
   public isLoaded() {
     return super.isLoaded()
   }
