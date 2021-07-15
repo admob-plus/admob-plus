@@ -1,5 +1,7 @@
 'use strict'
 
+let lastAdTime = 0
+
 const app = {
   initialize() {
     document.addEventListener(
@@ -70,6 +72,9 @@ const app = {
     document.addEventListener(
       'resume',
       () => {
+        const shouldSkip = Date.now() - lastAdTime <= 1000 * 5
+        console.log('app resumed', lastAdTime, shouldSkip)
+        if (shouldSkip) return;
         ad.isLoaded().then((loaded) => (loaded ? ad.show() : ad.load()))
       },
       false,
@@ -110,12 +115,23 @@ const app = {
     const interstitial = new admob.InterstitialAd({
       adUnitId: 'ca-app-pub-3940256099942544/1033173712',
     })
-    return interstitial.load().then(() => interstitial.show())
+    interstitial.on('dismiss', () => {
+      console.log("interstitial dismissed")
+      lastAdTime = Date.now()
+    })
+    return interstitial.load().then(() => interstitial.show()).then(() => {
+      setTimeout(() => {
+        interstitial.load().then(() => interstitial.show())
+      }, 5000)
+    })
   },
 
   showRewardedAd() {
     const rewarded = new admob.RewardedAd({
       adUnitId: 'ca-app-pub-3940256099942544/5224354917',
+    })
+    rewarded.on('dismiss', () => {
+      lastAdTime = Date.now()
     })
     return rewarded.load().then(() => rewarded.show())
   },
@@ -123,6 +139,9 @@ const app = {
   showRewardedInterstitialAd() {
     const rewardedInterstitial = new admob.RewardedInterstitialAd({
       adUnitId: 'ca-app-pub-3940256099942544/6978759866',
+    })
+    rewardedInterstitial.on('dismiss', () => {
+      lastAdTime = Date.now()
     })
     return rewardedInterstitial.load().then(() => rewardedInterstitial.show())
   },
