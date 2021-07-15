@@ -6,6 +6,16 @@ def safeExtGet(prop, fallback) {
 
 def googlePlayServicesAdsVersion = safeExtGet('googlePlayServicesAdsVersion', '19.8.0')
 
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath('com.android.tools.build:gradle:4.2.2')
+    }
+}
+
 android {
     compileSdkVersion safeExtGet('compileSdkVersion', 28)
     buildToolsVersion safeExtGet('buildToolsVersion', '28.0.3')
