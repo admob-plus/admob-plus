@@ -68,6 +68,16 @@ ___
 
 #### Defined in
 
+code/github/admob-plus/packages/cordova/ts/app-open.ts:14
+
+___
+
+### cls
+
+▪ `Static` **cls**: `string` = `'AppOpenAd'`
+
+#### Defined in
+
 code/github/admob-plus/packages/cordova/ts/app-open.ts:13
 
 ___
@@ -96,7 +106,7 @@ code/github/admob-plus/packages/cordova/ts/api.ts:16
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:48
+code/github/admob-plus/packages/cordova/ts/api.ts:52
 
 ## Methods
 
@@ -114,7 +124,7 @@ code/github/admob-plus/packages/cordova/ts/api.ts:48
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:84
+code/github/admob-plus/packages/cordova/ts/api.ts:88
 
 ___
 
@@ -132,7 +142,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:88
+code/github/admob-plus/packages/cordova/ts/api.ts:92
 
 ___
 
@@ -150,7 +160,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/app-open.ts:15
+code/github/admob-plus/packages/cordova/ts/app-open.ts:16
 
 ___
 
@@ -168,7 +178,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/app-open.ts:19
+code/github/admob-plus/packages/cordova/ts/app-open.ts:20
 
 ___
 
@@ -198,7 +208,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:52
+code/github/admob-plus/packages/cordova/ts/api.ts:56
 
 ___
 
@@ -216,7 +226,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/app-open.ts:23
+code/github/admob-plus/packages/cordova/ts/app-open.ts:24
 
 ___
 
@@ -240,4 +250,4 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:39
+code/github/admob-plus/packages/cordova/ts/api.ts:43

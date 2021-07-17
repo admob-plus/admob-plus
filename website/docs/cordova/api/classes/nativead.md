@@ -62,6 +62,16 @@ code/github/admob-plus/packages/cordova/ts/api.ts:23
 
 ___
 
+### cls
+
+▪ `Static` **cls**: `string` = `'NativeAd'`
+
+#### Defined in
+
+code/github/admob-plus/packages/cordova/ts/native.ts:8
+
+___
+
 ### type
 
 ▪ `Static` `Readonly` **type**: `string` = `''`
@@ -86,7 +96,7 @@ code/github/admob-plus/packages/cordova/ts/api.ts:16
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:48
+code/github/admob-plus/packages/cordova/ts/api.ts:52
 
 ## Methods
 
@@ -104,7 +114,7 @@ code/github/admob-plus/packages/cordova/ts/api.ts:48
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/native.ts:12
+code/github/admob-plus/packages/cordova/ts/native.ts:14
 
 ___
 
@@ -122,7 +132,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:88
+code/github/admob-plus/packages/cordova/ts/api.ts:92
 
 ___
 
@@ -140,7 +150,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/native.ts:8
+code/github/admob-plus/packages/cordova/ts/native.ts:10
 
 ___
 
@@ -158,7 +168,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:74
+code/github/admob-plus/packages/cordova/ts/api.ts:78
 
 ___
 
@@ -188,7 +198,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:52
+code/github/admob-plus/packages/cordova/ts/api.ts:56
 
 ___
 
@@ -212,7 +222,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/native.ts:16
+code/github/admob-plus/packages/cordova/ts/native.ts:18
 
 ___
 
@@ -232,7 +242,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/native.ts:26
+code/github/admob-plus/packages/cordova/ts/native.ts:28
 
 ___
 
@@ -256,4 +266,4 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:39
+code/github/admob-plus/packages/cordova/ts/api.ts:43

@@ -62,6 +62,16 @@ code/github/admob-plus/packages/cordova/ts/api.ts:23
 
 ___
 
+### cls
+
+▪ `Static` **cls**: `string` = `'RewardedAd'`
+
+#### Defined in
+
+code/github/admob-plus/packages/cordova/ts/rewarded.ts:13
+
+___
+
 ### type
 
 ▪ `Static` `Readonly` **type**: `string` = `''`
@@ -86,7 +96,7 @@ code/github/admob-plus/packages/cordova/ts/api.ts:16
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:48
+code/github/admob-plus/packages/cordova/ts/api.ts:52
 
 ## Methods
 
@@ -104,7 +114,7 @@ code/github/admob-plus/packages/cordova/ts/api.ts:48
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:84
+code/github/admob-plus/packages/cordova/ts/api.ts:88
 
 ___
 
@@ -122,7 +132,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:88
+code/github/admob-plus/packages/cordova/ts/api.ts:92
 
 ___
 
@@ -140,7 +150,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/rewarded.ts:13
+code/github/admob-plus/packages/cordova/ts/rewarded.ts:15
 
 ___
 
@@ -158,7 +168,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/rewarded.ts:17
+code/github/admob-plus/packages/cordova/ts/rewarded.ts:19
 
 ___
 
@@ -188,7 +198,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:52
+code/github/admob-plus/packages/cordova/ts/api.ts:56
 
 ___
 
@@ -206,7 +216,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/rewarded.ts:21
+code/github/admob-plus/packages/cordova/ts/rewarded.ts:23
 
 ___
 
@@ -230,4 +240,4 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:39
+code/github/admob-plus/packages/cordova/ts/api.ts:43

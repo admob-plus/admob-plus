@@ -30,7 +30,7 @@ custom_edit_url: null
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/banner.ts:45
+code/github/admob-plus/packages/cordova/ts/banner.ts:47
 
 ## Properties
 
@@ -40,7 +40,7 @@ code/github/admob-plus/packages/cordova/ts/banner.ts:45
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/banner.ts:43
+code/github/admob-plus/packages/cordova/ts/banner.ts:45
 
 ___
 
@@ -72,6 +72,16 @@ code/github/admob-plus/packages/cordova/ts/api.ts:23
 
 ___
 
+### cls
+
+▪ `Static` **cls**: `string` = `'BannerAd'`
+
+#### Defined in
+
+code/github/admob-plus/packages/cordova/ts/banner.ts:43
+
+___
+
 ### type
 
 ▪ `Static` `Readonly` **type**: `string` = `''`
@@ -96,7 +106,7 @@ code/github/admob-plus/packages/cordova/ts/api.ts:16
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:48
+code/github/admob-plus/packages/cordova/ts/api.ts:52
 
 ## Methods
 
@@ -114,7 +124,7 @@ code/github/admob-plus/packages/cordova/ts/api.ts:48
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/banner.ts:80
+code/github/admob-plus/packages/cordova/ts/banner.ts:82
 
 ___
 
@@ -132,7 +142,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:88
+code/github/admob-plus/packages/cordova/ts/api.ts:92
 
 ___
 
@@ -150,7 +160,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:67
+code/github/admob-plus/packages/cordova/ts/api.ts:71
 
 ___
 
@@ -168,7 +178,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/banner.ts:67
+code/github/admob-plus/packages/cordova/ts/banner.ts:69
 
 ___
 
@@ -198,7 +208,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:52
+code/github/admob-plus/packages/cordova/ts/api.ts:56
 
 ___
 
@@ -216,7 +226,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/banner.ts:72
+code/github/admob-plus/packages/cordova/ts/banner.ts:74
 
 ___
 
@@ -239,7 +249,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/banner.ts:53
+code/github/admob-plus/packages/cordova/ts/banner.ts:55
 
 ___
 
@@ -263,4 +273,4 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:39
+code/github/admob-plus/packages/cordova/ts/api.ts:43

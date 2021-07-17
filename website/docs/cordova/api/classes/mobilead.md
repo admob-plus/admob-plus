@@ -128,7 +128,7 @@ code/github/admob-plus/packages/cordova/ts/api.ts:16
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:48
+code/github/admob-plus/packages/cordova/ts/api.ts:52
 
 ## Methods
 
@@ -142,7 +142,7 @@ code/github/admob-plus/packages/cordova/ts/api.ts:48
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:84
+code/github/admob-plus/packages/cordova/ts/api.ts:88
 
 ___
 
@@ -156,7 +156,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:88
+code/github/admob-plus/packages/cordova/ts/api.ts:92
 
 ___
 
@@ -170,7 +170,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:67
+code/github/admob-plus/packages/cordova/ts/api.ts:71
 
 ___
 
@@ -184,7 +184,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:74
+code/github/admob-plus/packages/cordova/ts/api.ts:78
 
 ___
 
@@ -210,7 +210,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:52
+code/github/admob-plus/packages/cordova/ts/api.ts:56
 
 ___
 
@@ -230,7 +230,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:79
+code/github/admob-plus/packages/cordova/ts/api.ts:83
 
 ___
 
@@ -250,7 +250,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:39
+code/github/admob-plus/packages/cordova/ts/api.ts:43
 
 ___
 
@@ -264,4 +264,4 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:43
+code/github/admob-plus/packages/cordova/ts/api.ts:47
