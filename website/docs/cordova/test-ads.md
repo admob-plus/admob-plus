@@ -48,5 +48,6 @@ Android emulators / iOS simulators are automatically configured as test devices.
 
 ## References
 
+- [How to test your ads](https://support.google.com/admob/answer/9388275)
 - [Enabling test ads - Mobile Ads SDK (Android)](https://developers.google.com/admob/android/test-ads)
 - [Enabling test ads - Mobile Ads SDK (iOS)](https://developers.google.com/admob/ios/test-ads)
