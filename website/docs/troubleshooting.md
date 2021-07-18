@@ -29,6 +29,12 @@ Also, some country or targeted deivce could have less ads to serve due to publis
 
 Check [common reasons for ads not showing](https://support.google.com/admob/answer/9469204).
 
+|                         Problem                          |                                                                                                                       Answer                                                                                                                        |
+| -------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Did you recently create your AdMob account?              | Wait up to 24 hours after you create your account.                                                                                                                                                                                                  |
+| Is your app or ad unit new?                              | Wait up to one hour after you create an app or ad unit.<br/><br/>In some cases, it can take a few days for ads to appear in new apps or ad units.<br/><br/>Note: New iOS apps will not show Google ads until they’re listed in the Apple App Store. |
+| Have you integrated the Google Mobile Ads SDK correctly? | Take a look at [the examples](https://github.com/admob-plus/admob-plus/tree/master/examples).                                                                                                                                                        |
+
 ### Why Google report shows less impressions than the number of Ad request calls?
 
 First of all, make sure your Ad request and display code are correct.
