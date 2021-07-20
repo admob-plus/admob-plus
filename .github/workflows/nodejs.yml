@@ -183,6 +183,7 @@ jobs:
           yarn workspace '@admob-plus-internal/rollup-config' prepack
           pushd examples/cordova
           yarn prepare
+          yarn example cordova platform rm android
           popd
 
       - name: Test
