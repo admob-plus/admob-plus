@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.11.2](https://github.com/admob-plus/admob-plus/compare/@admob-plus/react-native@1.11.1...@admob-plus/react-native@1.11.2) (2021-07-20)
+
+**Note:** Version bump only for package @admob-plus/react-native
+
+
+
+
+
 ## [1.11.1](https://github.com/admob-plus/admob-plus/compare/@admob-plus/react-native@1.11.0...@admob-plus/react-native@1.11.1) (2021-07-14)
 
 **Note:** Version bump only for package @admob-plus/react-native
