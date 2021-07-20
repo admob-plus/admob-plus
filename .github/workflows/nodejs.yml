@@ -190,7 +190,7 @@ jobs:
         run: |
           yarn test-ios
           pushd examples/cordova
-          yarn test
+          yarn test:ios
           popd
 
   link-checker:
