@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@rollup/plugin-commonjs": "^19.0.1",
-    "@rollup/plugin-node-resolve": "^13.0.1",
+    "@rollup/plugin-node-resolve": "^13.0.2",
     "@rollup/plugin-typescript": "^8.2.3"
   },
   "devDependencies": {
