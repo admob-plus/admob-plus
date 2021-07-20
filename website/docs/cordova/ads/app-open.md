@@ -22,6 +22,8 @@ document.addEventListener('deviceready', async () => {
   document.addEventListener(
     'resume',
     async () => {
+      // NOTE `resume` event is triggered when dismissing interstitial ads or by other reasons,
+      // make sure to add logic to control when to display the ad.
       if (!await ad.show()) {
         await ad.load()
       })
