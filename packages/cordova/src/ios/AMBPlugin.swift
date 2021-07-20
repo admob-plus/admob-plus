@@ -1,7 +1,6 @@
 #if canImport(AppTrackingTransparency)
     import AppTrackingTransparency
 #endif
-import AdSupport
 import GoogleMobileAds
 
 @objc(AMBPlugin)
