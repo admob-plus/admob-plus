@@ -10,6 +10,12 @@ slug: /cordova/consent
 cordova plugin add cordova-plugin-consent
 ```
 
+## Prerequisites
+
+You must have a [Funding Choices](https://support.google.com/fundingchoices/answer/9180084) account linked to your AdMob account.
+
+To create a Funding Choices account, go to **Privacy & messaging** in the AdMob UI and select **Go to Funding Choices**. The Funding Choices account is then created automatically in the background.
+
 ## Usage
 
 ```js
@@ -50,7 +56,7 @@ new admob.BannerAd({
 })
 ```
 
-The `npa` parameter is applicable to [`BannerAd`](./api/classes/bannerad), [`InterstitialAd`](./api/classes/interstitialad), [`RewardedAd`](./api/classes/rewardedad), [`RewardedInterstitialAd`](./api/classes/rewardedinterstitialad).
+The `npa` parameter is applicable to all ad formats, e.g. [`BannerAd`](./api/classes/bannerad), [`InterstitialAd`](./api/classes/interstitialad), [`RewardedAd`](./api/classes/rewardedad), [`RewardedInterstitialAd`](./api/classes/rewardedinterstitialad).
 
 ## References
 
