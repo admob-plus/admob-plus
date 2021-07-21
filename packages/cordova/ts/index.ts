@@ -18,6 +18,7 @@ import {
   NativeActions,
   Platforms,
   RequestConfig,
+  start,
   TrackingAuthorizationStatus,
 } from './shared'
 
@@ -84,7 +85,7 @@ export class AdMob {
   }
 
   public start() {
-    return execAsync(NativeActions.start) as Promise<{ version: string }>
+    return start()
   }
 
   public async requestTrackingAuthorization(): Promise<

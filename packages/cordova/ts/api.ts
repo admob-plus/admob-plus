@@ -11,6 +11,16 @@ export type MobileAdOptions = {
   npa?: '1'
 }
 
+let started = false
+let startPromise: Promise<{ version: string }> | null = null
+
+export async function start() {
+  startPromise = execAsync(NativeActions.start) as Promise<{ version: string }>
+  const result = await startPromise
+  started = true
+  return result
+}
+
 /** @internal */
 export class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
   public static readonly type: string = ''
@@ -33,11 +43,7 @@ export class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
       (this.constructor as unknown as { cls?: string }).cls ??
       this.constructor.name
 
-    this._init = execAsync(NativeActions.adCreate, [
-      { ...opts, id: this.id, cls },
-    ]).then(() => {
-      this._init = null
-    })
+    this._init = this.create(cls)
   }
 
   public static getAdById(id: number) {
@@ -87,6 +93,18 @@ export class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
 
   protected async hide() {
     return execAsync(NativeActions.adHide, [{ id: this.id }])
+  }
+
+  private async create(cls: string) {
+    if (!started) {
+      if (startPromise === null) start()
+      await startPromise
+    }
+
+    await execAsync(NativeActions.adCreate, [
+      { ...this.opts, id: this.id, cls },
+    ])
+    this._init = null
   }
 
   protected async init() {
