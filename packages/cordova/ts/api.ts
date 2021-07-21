@@ -31,19 +31,14 @@ export class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
   public readonly id: number
 
   protected readonly opts: T
-  private _init: Promise<void> | null
+  private _created = false
+  private _init: Promise<any> | null = null
 
   constructor(opts: T) {
     this.opts = opts
 
     this.id = opts.id ?? MobileAd.nextId()
     MobileAd.allAds[this.id] = this
-
-    const cls =
-      (this.constructor as unknown as { cls?: string }).cls ??
-      this.constructor.name
-
-    this._init = this.create(cls)
   }
 
   public static getAdById(id: number) {
@@ -95,20 +90,26 @@ export class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
     return execAsync(NativeActions.adHide, [{ id: this.id }])
   }
 
-  private async create(cls: string) {
+  protected async init() {
+    if (this._created) return
+
     if (!started) {
       if (startPromise === null) start()
       await startPromise
     }
 
-    await execAsync(NativeActions.adCreate, [
-      { ...this.opts, id: this.id, cls },
-    ])
-    this._init = null
-  }
+    if (this._init === null) {
+      const cls =
+        (this.constructor as unknown as { cls?: string }).cls ??
+        this.constructor.name
 
-  protected async init() {
-    if (this._init !== null) await this._init
+      this._init = execAsync(NativeActions.adCreate, [
+        { ...this.opts, id: this.id, cls },
+      ])
+    }
+
+    await this._init
+    this._created = true
   }
 }
 
