@@ -9,10 +9,10 @@ end
 
 target 'Plugin' do
   capacitor_pods
-  pod 'Google-Mobile-Ads-SDK', '>= 8.7.0'
+  pod 'Google-Mobile-Ads-SDK', '>= 8.8.0'
 end
 
 target 'PluginTests' do
   capacitor_pods
-  pod 'Google-Mobile-Ads-SDK', '>= 8.7.0'
+  pod 'Google-Mobile-Ads-SDK', '>= 8.8.0'
 end
