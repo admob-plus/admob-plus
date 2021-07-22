@@ -48,7 +48,7 @@ Renames and exports: [AdMob](classes/AdMob.md)
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:124
+code/github/admob-plus/packages/cordova/ts/api.ts:144
 
 ___
 
@@ -89,7 +89,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:105
+code/github/admob-plus/packages/cordova/ts/api.ts:125
 
 ## Functions
 
@@ -111,3 +111,19 @@ code/github/admob-plus/packages/cordova/ts/api.ts:105
 #### Defined in
 
 code/github/admob-plus/packages/cordova/ts/generated.ts:79
+
+___
+
+### start
+
+▸ **start**(): `Promise`<`Object`\>
+
+**`internal`**
+
+#### Returns
+
+`Promise`<`Object`\>
+
+#### Defined in
+
+code/github/admob-plus/packages/cordova/ts/api.ts:18

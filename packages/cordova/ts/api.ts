@@ -14,6 +14,7 @@ export type MobileAdOptions = {
 let started = false
 let startPromise: Promise<{ version: string }> | null = null
 
+/** @internal */
 export async function start() {
   startPromise = execAsync(NativeActions.start) as Promise<{ version: string }>
   const result = await startPromise
