@@ -23,7 +23,7 @@
     "@angular/platform-browser-dynamic": "~11.2.13",
     "@angular/router": "~11.2.13",
     "@ionic-native/core": "^5.34.0",
-    "@ionic/angular": "^5.6.11",
+    "@ionic/angular": "^5.6.12",
     "cordova-ios": "6.3.0-nightly.2021.2.10.a3a3936a",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
@@ -39,7 +39,7 @@
     "@ionic/cli": "^6.16.3",
     "@types/jasmine": "~3.8.1",
     "@types/jasminewd2": "~2.0.10",
-    "@types/node": "^16.3.3",
+    "@types/node": "^16.4.0",
     "admob-plus-cordova": "file:../../packages/cordova",
     "codelyzer": "^6.0.2",
     "cordova": "^10.0.1-nightly.2021.2.10.189ac49b",
