@@ -1,3 +1,5 @@
+/// <reference types="jest" />
+
 test('@admob-plus/ionic peerDependencies', () => {
   const pkg = require('../packages/ionic/package.json')
   const pkgRef = require('@ionic-native/admob-plus//package.json')
@@ -18,6 +20,6 @@ test('@admob-plus/react-native peerDependencies', () => {
 test('ionic example dependencies', () => {
   const pkg = require('../examples/ionic-angular/package.json')
   expect(pkg.devDependencies).toMatchObject({
-    typescript: '~4.1.5',
+    typescript: '~4.3.5',
   })
 })
