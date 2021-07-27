@@ -11,8 +11,6 @@ Rewarded interstitial is a type of incentivized ad format that allows you offer 
 let rewarded
 
 document.addEventListener('deviceready', async () => {
-  await admob.start()
-
   rewarded = new admob.RewardedInterstitialAd({
     adUnitId: 'ca-app-pub-xxx/yyy',
   })

@@ -11,8 +11,6 @@ Rewarded ads are ads that users have the option of interacting with in exchange 
 let rewarded
 
 document.addEventListener('deviceready', async () => {
-  await admob.start()
-
   rewarded = new admob.RewardedAd({
     adUnitId: 'ca-app-pub-xxx/yyy',
   })

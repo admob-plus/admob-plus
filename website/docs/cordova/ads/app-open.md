@@ -9,8 +9,6 @@ App open ads are a special ad format intended for publishers wishing to monetize
 
 ```js
 document.addEventListener('deviceready', async () => {
-  await admob.start()
-
   const ad = new admob.AppOpenAd({
     adUnitId: 'ca-app-pub-xxx/yyy',
   })

@@ -11,8 +11,6 @@ Banner ads are rectangular image or text ads that occupy a spot within an app's 
 let banner
 
 document.addEventListener('deviceready', async () => {
-  await admob.start()
-
   banner = new admob.BannerAd({
     adUnitId: 'ca-app-pub-xxx/yyy',
   })
