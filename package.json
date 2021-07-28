@@ -83,6 +83,15 @@
     "@angular/compiler-cli": {
       "unplugged": true
     },
+    "core-js": {
+      "built": false
+    },
+    "core-js-pure": {
+      "built": false
+    },
+    "fsevents": {
+      "built": false
+    },
     "metro-runtime": {
       "unplugged": true
     },
