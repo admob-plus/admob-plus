@@ -6,6 +6,13 @@ const allDocHomesPaths = [
   ...versions.slice(1).map((version) => `/docs/${version}/`),
 ]
 
+const typedocConfig = {
+  readme: 'none',
+  sidebar: {
+    sidebarFile: null,
+  },
+}
+
 module.exports = {
   title: 'AdMob Plus',
   tagline: 'Trustable AdMob Plugin for Cordova, Capacitor, Ionic',
@@ -98,67 +105,52 @@ module.exports = {
     [
       'docusaurus-plugin-typedoc',
       {
+        ...typedocConfig,
         id: 'typedoc-capacitor',
         entryPoints: ['../packages/capacitor/src/index.ts'],
         tsconfig: '../packages/capacitor/src/tsconfig.json',
         out: 'capacitor/api',
-        readme: 'none',
-        sidebar: {
-          sidebarFile: null,
-        },
       },
     ],
     [
       'docusaurus-plugin-typedoc',
       {
+        ...typedocConfig,
         id: 'typedoc-cordova',
         entryPoints: ['../packages/cordova/ts/index.ts'],
         tsconfig: '../packages/cordova/tsconfig.json',
         out: 'cordova/api',
-        readme: 'none',
-        sidebar: {
-          sidebarFile: null,
-        },
       },
     ],
     [
       'docusaurus-plugin-typedoc',
       {
+        ...typedocConfig,
         id: 'typedoc-cordova-consent',
         entryPoints: ['../packages/cordova-consent/ts/index.ts'],
         tsconfig: '../packages/cordova-consent/tsconfig.json',
         out: 'cordova/consent/api',
-        readme: 'none',
-        sidebar: {
-          sidebarFile: null,
-        },
       },
     ],
     [
       'docusaurus-plugin-typedoc',
       {
+        ...typedocConfig,
         id: 'typedoc-ionic',
         entryPoints: ['../packages/ionic/src/ngx/index.ts'],
         tsconfig: '../packages/ionic/tsconfig.json',
         out: 'ionic/api',
-        readme: 'none',
-        sidebar: {
-          sidebarFile: null,
-        },
         excludeExternals: true,
       },
     ],
     [
       'docusaurus-plugin-typedoc',
       {
+        ...typedocConfig,
         id: 'typedoc-react-native',
         entryPoints: ['../packages/react-native/src/index.ts'],
         tsconfig: '../packages/react-native/tsconfig.json',
         out: 'react-native/api',
-        readme: 'none',
-        sidebar: {
-          sidebarFile: null,
-        },
       },
     ],
   ],
