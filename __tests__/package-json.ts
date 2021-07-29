@@ -1,4 +1,4 @@
-/// <reference types="jest" />
+/// <reference types="@types/jest" />
 
 test('@admob-plus/ionic peerDependencies', () => {
   const pkg = require('../packages/ionic/package.json')
