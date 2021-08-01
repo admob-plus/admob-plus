@@ -5,6 +5,17 @@ const AdMobPlus = registerPlugin<AdMobPlusPlugin>('AdMobPlus', {
   web: () => import('./web').then((m) => new m.AdMobPlusWeb()),
 })
 
+let started = false
+let startPromise: ReturnType<typeof AdMobPlus.start> | null = null
+
+/** @internal */
+export async function start() {
+  startPromise = AdMobPlus.start()
+  const result = await startPromise
+  started = true
+  return result
+}
+
 class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
   private static allAds: { [s: number]: MobileAd } = {}
   private static idCounter = 0
@@ -13,26 +24,14 @@ class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
 
   protected readonly opts: T
 
-  private _init: Promise<void> | null
+  private _created = false
+  private _init: Promise<any> | null = null
 
   constructor(opts: T) {
     this.opts = opts
 
     this.id = MobileAd.nextId()
     MobileAd.allAds[this.id] = this
-
-    // NOTE `this.constructor.name` could be changed after minify
-    const cls =
-      (this.constructor as unknown as { cls?: string }).cls ??
-      this.constructor.name
-
-    this._init = AdMobPlus.adCreate({
-      ...this.opts,
-      id: this.id,
-      cls,
-    }).then(() => {
-      this._init = null
-    })
   }
 
   private static nextId() {
@@ -65,7 +64,27 @@ class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
   }
 
   protected async init() {
-    if (this._init !== null) await this._init
+    if (this._created) return
+
+    if (!started) {
+      if (startPromise === null) start()
+      await startPromise
+    }
+
+    if (this._init === null) {
+      const cls =
+        (this.constructor as unknown as { cls?: string }).cls ??
+        this.constructor.name
+
+      this._init = AdMobPlus.adCreate({
+        ...this.opts,
+        id: this.id,
+        cls,
+      })
+    }
+
+    await this._init
+    this._created = true
   }
 }
 
