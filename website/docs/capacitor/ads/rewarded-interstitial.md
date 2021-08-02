@@ -9,8 +9,6 @@ sidebar_label: Rewarded Interstitial
 import { AdMobPlus, RewardedInterstitialAd } from '@admob-plus/capacitor'
 
 (async () => {
-  await AdMobPlus.start()
-
   const rewarded = new RewardedInterstitialAd({
     adUnitId: 'ca-app-pub-3940256099942544/6978759866',
   })

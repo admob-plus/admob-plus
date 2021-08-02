@@ -9,8 +9,6 @@ sidebar_label: Banner
 import { AdMobPlus, BannerAd } from '@admob-plus/capacitor'
 
 (async () => {
-  await AdMobPlus.start()
-
   const banner = new BannerAd({
     adUnitId: 'ca-app-pub-3940256099942544/6300978111',
   })
