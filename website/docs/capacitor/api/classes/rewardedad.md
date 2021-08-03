@@ -30,7 +30,7 @@ MobileAd.constructor
 
 #### Defined in
 
-index.ts:18
+index.ts:30
 
 ## Properties
 
@@ -44,7 +44,7 @@ MobileAd.id
 
 #### Defined in
 
-index.ts:12
+index.ts:23
 
 ___
 
@@ -58,7 +58,7 @@ MobileAd.opts
 
 #### Defined in
 
-index.ts:14
+index.ts:25
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 #### Defined in
 
-index.ts:125
+index.ts:144
 
 ## Accessors
 
@@ -82,7 +82,7 @@ index.ts:125
 
 #### Defined in
 
-index.ts:43
+index.ts:42
 
 ## Methods
 
@@ -100,7 +100,7 @@ MobileAd.hide
 
 #### Defined in
 
-index.ts:62
+index.ts:61
 
 ___
 
@@ -118,7 +118,7 @@ MobileAd.init
 
 #### Defined in
 
-index.ts:67
+index.ts:66
 
 ___
 
@@ -136,7 +136,7 @@ MobileAd.isLoaded
 
 #### Defined in
 
-index.ts:127
+index.ts:146
 
 ___
 
@@ -154,7 +154,7 @@ MobileAd.load
 
 #### Defined in
 
-index.ts:131
+index.ts:150
 
 ___
 
@@ -172,4 +172,4 @@ MobileAd.show
 
 #### Defined in
 
-index.ts:135
+index.ts:154
