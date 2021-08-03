@@ -8,8 +8,9 @@ const AdMobPlus = registerPlugin<AdMobPlusPlugin>('AdMobPlus', {
 let started = false
 let startPromise: ReturnType<typeof AdMobPlus.start> | null = null
 
-async function start() {
-  startPromise = AdMobPlus.start()
+const start = AdMobPlus.start
+AdMobPlus.start = async () => {
+  startPromise = start()
   const result = await startPromise
   started = true
   return result
