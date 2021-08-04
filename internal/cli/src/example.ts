@@ -6,6 +6,7 @@ import debounce from 'debounce-promise'
 import del from 'del'
 import execa from 'execa'
 import glob from 'fast-glob'
+import fse from 'fs-extra'
 import fsp from 'fs/promises'
 import PQueue from 'p-queue'
 import path from 'path'
@@ -89,6 +90,19 @@ const prepare = async (opts: { cwd: string }) => {
         cwd,
       })
       await execa('yarn', ['cap', 'sync'], {
+        stdio: 'inherit',
+        cwd,
+      })
+      return
+    }
+    case 'ionic-angular': {
+      await fse.ensureDir(path.join(cwd, 'node_modules'))
+      await execa('ngcc', { stdio: 'inherit', cwd })
+      await execa('ionic', ['cordova', 'prepare', 'android'], {
+        stdio: 'inherit',
+        cwd,
+      })
+      await execa('ionic', ['cordova', 'prepare', 'ios'], {
         stdio: 'inherit',
         cwd,
       })
