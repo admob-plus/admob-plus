@@ -64,7 +64,7 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
             stackView.axis = .vertical
             stackView.distribution = .fill
             stackView.alignment = .fill
-            rootView.addSubview(stackView)
+            rootView.insertSubview(stackView, belowSubview: mainView)
             stackView.translatesAutoresizingMaskIntoConstraints = false
             constraints += [
                 stackView.leadingAnchor.constraint(equalTo: rootView.leadingAnchor),
@@ -72,6 +72,7 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
             ]
 
             placeholderView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            placeholderView.isUserInteractionEnabled = false
             stackView.addArrangedSubview(placeholderView)
             mainView.translatesAutoresizingMaskIntoConstraints = false
             constraints += [
@@ -91,7 +92,6 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
             ]
             NSLayoutConstraint.activate(constraints)
 
-            rootView.sendSubviewToBack(stackView)
             rootObservation = rootView.observe(\.subviews, options: [.old, .new]) { (_, _) in
                 updateLayout()
             }
