@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.21.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.20.1...admob-plus-cordova@1.21.0) (2021-08-05)
+
+
+### Bug Fixes
+
+* **cordova/ios:** insert stack view just above webview, [#417](https://github.com/admob-plus/admob-plus/issues/417) ([c116498](https://github.com/admob-plus/admob-plus/commit/c1164984f854e558cdc2a58b44b16128de49708d))
+* **cordova/ios:** remove unused AdSupport import ([98d6fcf](https://github.com/admob-plus/admob-plus/commit/98d6fcf8c9ffa45a2be74d044d1990c78fc3e134))
+
+
+### Features
+
+* **cordova/ios:** update SKAdNetworkItems value ([0645389](https://github.com/admob-plus/admob-plus/commit/06453891b67accb551e2faa071b4e261c3e49ce0))
+* **cordova:** delay ad creation until it needed ([b9057a7](https://github.com/admob-plus/admob-plus/commit/b9057a77497c4eecc5cc84b39c6268ea6f3412a3))
+* **cordova:** start on ad creation ([8e54065](https://github.com/admob-plus/admob-plus/commit/8e54065456dfc0400220aa144c8e55423c7f5853))
+* update Google-Mobile-Ads-SDK to 8.8.0 ([afdc1fc](https://github.com/admob-plus/admob-plus/commit/afdc1fce5927f5f275caa39545af32214b987632))
+
+
+
+
+
 ## [1.20.1](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.20.0...admob-plus-cordova@1.20.1) (2021-07-14)
 
 
