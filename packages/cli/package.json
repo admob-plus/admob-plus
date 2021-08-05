@@ -24,7 +24,7 @@
     "semver": "^7.3.5",
     "tslib": "^2.3.0",
     "update-notifier": "^5.1.0",
-    "yargs": "^17.0.1"
+    "yargs": "^17.1.0"
   },
   "devDependencies": {
     "@admob-plus-internal/tsconfig": "file:../../internal/tsconfig",
@@ -32,7 +32,7 @@
     "@types/fs-extra": "^9.0.12",
     "@types/js-yaml": "^4.0.2",
     "@types/lodash": "^4.14.172",
-    "@types/node": "^16.4.10",
+    "@types/node": "^16.4.12",
     "@types/semver": "^7.3.8",
     "@types/update-notifier": "^5.1.0",
     "@types/yargs": "^17.0.2",

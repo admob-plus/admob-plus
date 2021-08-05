@@ -13,9 +13,9 @@
   "devDependencies": {
     "@admob-plus-internal/rollup-config": "file:../../internal/rollup-config",
     "@types/cordova": "^0.0.34",
-    "@types/node": "^16.4.10",
+    "@types/node": "^16.4.12",
     "cordova": "^10.0.0",
-    "rollup": "^2.55.1",
+    "rollup": "^2.56.0",
     "sync-package-version": "^0.1.0",
     "ts-node": "^10.1.0",
     "typescript": "^4.3.5"
