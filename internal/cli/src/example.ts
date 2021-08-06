@@ -108,6 +108,14 @@ const prepare = async (opts: { cwd: string }) => {
       })
       return
     }
+    case 'ionic-angular-capacitor': {
+      await fse.ensureDir(path.join(cwd, 'node_modules'))
+      await execa('ionic', ['cap', 'sync'], {
+        stdio: 'inherit',
+        cwd,
+      })
+      return
+    }
     case 'react-native': {
       await execa('yarn', {
         stdio: 'inherit',
@@ -400,6 +408,12 @@ async function startDev(opts: any) {
       openArgs.push(...o.openArgs)
       break
     }
+    case 'ionic-angular-capacitor': {
+      promises.push(
+        execa('ionic', ['cap', 'open', platform], { stdio: 'inherit', cwd }),
+      )
+      break
+    }
     case 'react-native':
       syncDirs.push({
         src: pkgsDirJoin('react-native'),
@@ -422,8 +436,10 @@ async function startDev(opts: any) {
       openArgs.push('.')
   }
 
+  if (openArgs.length > 0) {
+    promises.push(execa('open', openArgs, { stdio: 'inherit', cwd }))
+  }
   promises.push(
-    execa('open', openArgs, { stdio: 'inherit', cwd }),
     ...syncDirs.map(async (o) => {
       await cpy('**/*', o.dest, { parents: true, cwd: o.src })
       watchCopy(o.dest, o.src)
