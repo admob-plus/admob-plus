@@ -34,6 +34,7 @@
   },
   "devDependencies": {
     "@admob-plus-internal/cli": "file:../../internal/cli",
+    "@admob-plus/capacitor": "file:../../packages/capacitor",
     "@angular-devkit/build-angular": "~12.2.0",
     "@angular-eslint/builder": "~12.3.1",
     "@angular-eslint/eslint-plugin": "~12.3.1",

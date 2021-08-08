@@ -13,3 +13,6 @@ project(':capacitor-keyboard').projectDir = new File('../../../.yarn/unplugged/@
 
 include ':capacitor-status-bar'
 project(':capacitor-status-bar').projectDir = new File('../../../.yarn/unplugged/@capacitor-status-bar-virtual-4ccdb7503f/node_modules/@capacitor/status-bar/android')
+
+include ':admob-plus-capacitor'
+project(':admob-plus-capacitor').projectDir = new File('../../../packages/capacitor/android')

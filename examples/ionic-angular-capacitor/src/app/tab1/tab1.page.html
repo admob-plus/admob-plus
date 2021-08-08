@@ -9,9 +9,24 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large">Example</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <div id="container">
+    <ion-list>
+      <div>
+        <ion-button (click)="showBannerAd()">Banner Ad</ion-button>
+      </div>
+      <div>
+        <ion-button (click)="showInterstitialAd()">Interstitial Ad</ion-button>
+      </div>
+      <div>
+        <ion-button (click)="showRewardedAd()">Rewarded Ad</ion-button>
+      </div>
+      <div>
+        <ion-button (click)="showRewardedInterstitialAd()">Rewarded Interstitial Ad</ion-button>
+      </div>
+    </ion-list>
+  </div>
 </ion-content>

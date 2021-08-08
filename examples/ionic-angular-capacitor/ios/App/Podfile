@@ -13,6 +13,7 @@ def capacitor_pods
   pod 'CapacitorHaptics', :path => '../../../../.yarn/unplugged/@capacitor-haptics-virtual-2007ad061c/node_modules/@capacitor/haptics'
   pod 'CapacitorKeyboard', :path => '../../../../.yarn/unplugged/@capacitor-keyboard-virtual-825d2827bf/node_modules/@capacitor/keyboard'
   pod 'CapacitorStatusBar', :path => '../../../../.yarn/unplugged/@capacitor-status-bar-virtual-4ccdb7503f/node_modules/@capacitor/status-bar'
+  pod 'AdmobPlusCapacitor', :path => '../../../../packages/capacitor'
 end
 
 target 'App' do
