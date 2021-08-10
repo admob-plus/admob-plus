@@ -47,7 +47,14 @@ export class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
   }
 
   private static nextId() {
+    const storage = window.localStorage;
+    const key = "admob-ad-id-counter"
+    const value = storage.getItem(key)
+    if (value !== null) {
+      MobileAd.idCounter = Number(value)
+    }
     MobileAd.idCounter += 1
+    storage.setItem(key, `${MobileAd.idCounter}`)
     return MobileAd.idCounter
   }
 
