@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@chakra-ui/react": "^1.6.5",
-    "@emotion/react": "^11.4.0",
+    "@chakra-ui/react": "^1.6.6",
+    "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
     "admob-plus-cordova": "file:../../packages/cordova",
     "framer-motion": "^4.1.17",
@@ -25,8 +25,8 @@
     "@types/fs-extra": "^9.0.12",
     "@types/jest": "^26.0.24",
     "@types/lodash": "^4.14.172",
-    "@types/node": "^16.4.12",
-    "@types/react": "^17.0.15",
+    "@types/node": "^16.4.13",
+    "@types/react": "^17.0.16",
     "@types/react-dom": "^17.0.9",
     "@types/recoil": "^0.0.1",
     "cordova": "^10.0.1-nightly.2021.2.10.189ac49b",
@@ -40,7 +40,7 @@
     "fs-extra": "^10.0.0",
     "internal-ip": "^6.2.0",
     "react-scripts": "4.0.3",
-    "ts-node": "^10.1.0",
+    "ts-node": "^10.2.0",
     "typescript": "^4.3.5"
   },
   "scripts": {

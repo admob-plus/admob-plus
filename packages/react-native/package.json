@@ -44,7 +44,7 @@
   },
   "devDependencies": {
     "@admob-plus-internal/tsconfig": "file:../../internal/tsconfig",
-    "@types/react": "^17.0.15",
+    "@types/react": "^17.0.16",
     "@types/react-native": "^0.64.12",
     "react": "^17.0.2",
     "react-native": "^0.64.2",

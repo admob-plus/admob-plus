@@ -41,6 +41,6 @@
     "@types/markdown-magic": "^1.0.1",
     "@types/xml2js": "^0.4.9",
     "@types/yargs": "^17.0.2",
-    "ts-node": "^10.1.0"
+    "ts-node": "^10.2.0"
   }
 }
