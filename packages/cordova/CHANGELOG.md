@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.21.1](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.21.0...admob-plus-cordova@1.21.1) (2021-08-10)
+
+
+### Bug Fixes
+
+* **cordova:** persist ad id counter to avoid id reuse between pages, [#419](https://github.com/admob-plus/admob-plus/issues/419) ([b5e1a1f](https://github.com/admob-plus/admob-plus/commit/b5e1a1f2720a1b323e7262ee7f653f12b331481f))
+
+
+
+
+
 # [1.21.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.20.1...admob-plus-cordova@1.21.0) (2021-08-05)
 
 
