@@ -7,6 +7,11 @@ slug: /ionic
 
 It is recommended to first understand how the Cordova plugin works before installing this package.
 
+:::caution
+This plugin is for Ionic Cordova integration,
+use [`@admob-plus/capacitor`](./capacitor) if your project is using Capacitor.
+:::
+
 ## Installation
 
 Read the [Getting Started](./cordova) guide of `admob-plus-cordova` for how to obtain the Application ID.
