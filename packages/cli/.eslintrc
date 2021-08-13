@@ -2,8 +2,8 @@
   "extends": ["concise"],
   "rules": {
     "@typescript-eslint/no-var-requires": "warn",
-    "consistent-return": "warn",
-    "no-param-reassign": "warn",
+    "consistent-return": "off",
+    "no-param-reassign": "off",
     "no-restricted-syntax": "warn",
     "unicorn/prevent-abbreviations": "off"
   }
