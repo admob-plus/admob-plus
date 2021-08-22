@@ -47,8 +47,8 @@ export class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
   }
 
   private static nextId() {
-    const storage = window.localStorage;
-    const key = "admob-ad-id-counter"
+    const storage = window.localStorage
+    const key = 'admob-ad-id-counter'
     const value = storage.getItem(key)
     if (value !== null) {
       MobileAd.idCounter = Number(value)
@@ -86,7 +86,8 @@ export class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
 
   protected async load() {
     await this.init()
-    await execAsync(NativeActions.adLoad, [{ id: this.id }])
+    // TODO read `opts` in native code?
+    await execAsync(NativeActions.adLoad, [{ ...this.opts, id: this.id }])
   }
 
   protected async show(opts?: Record<string, any>) {
