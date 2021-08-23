@@ -1,18 +1,5 @@
-import execa from 'execa'
 import { ListrTask } from 'listr2'
-
-const getPodSpec = async (name: string) => {
-  const p = await execa('pod', ['spec', 'cat', name], {
-    reject: false,
-  })
-  if (p.failed) {
-    return null
-  }
-  try {
-    return JSON.parse(p.stdout) as { version: string }
-  } catch {}
-  return null
-}
+import { getPodSpec } from './ios'
 
 export default {
   title: 'CocoaPods',
