@@ -41,6 +41,7 @@ export default {
 
           taskSDK.title = `${specName} v${spec.version}`
         },
+        options: { persistentOutput: true },
       },
     ]),
 } as ListrTask
