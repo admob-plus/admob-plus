@@ -16,9 +16,12 @@ import admob.plus.rn.Generated.Events;
 
 public class Rewarded extends AdBase implements GenericAd {
     private RewardedAd mAd = null;
+    private ServerSideVerificationOptions ssv = null;
 
     public Rewarded(ExecuteContext ctx) {
         super(ctx);
+
+        this.ssv = ctx.optServerSideVerificationOptions();
     }
 
     @Override
@@ -42,7 +45,6 @@ public class Rewarded extends AdBase implements GenericAd {
             @Override
             public void onAdLoaded(@NonNull RewardedAd rewardedAd) {
                 mAd = rewardedAd;
-                ServerSideVerificationOptions ssv = ctx.optServerSideVerificationOptions();
                 if (ssv != null) {
                     mAd.setServerSideVerificationOptions(ssv);
                 }

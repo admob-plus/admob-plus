@@ -16,9 +16,12 @@ import admob.plus.core.GenericAd;
 
 public class RewardedInterstitial extends AdBase implements GenericAd {
     private RewardedInterstitialAd mAd = null;
+    private ServerSideVerificationOptions ssv = null;
 
     public RewardedInterstitial(ExecuteContext ctx) {
         super(ctx);
+
+        this.ssv = ctx.optServerSideVerificationOptions();
     }
 
     @Override
@@ -42,7 +45,6 @@ public class RewardedInterstitial extends AdBase implements GenericAd {
             @Override
             public void onAdLoaded(@NonNull RewardedInterstitialAd rewardedAd) {
                 mAd = rewardedAd;
-                ServerSideVerificationOptions ssv = ctx.optServerSideVerificationOptions();
                 if (ssv != null) {
                     mAd.setServerSideVerificationOptions(ssv);
                 }
