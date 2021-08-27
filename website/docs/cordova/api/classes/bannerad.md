@@ -142,7 +142,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:101
+code/github/admob-plus/packages/cordova/ts/api.ts:102
 
 ___
 

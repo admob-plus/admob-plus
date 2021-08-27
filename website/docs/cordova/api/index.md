@@ -48,7 +48,7 @@ Renames and exports: [AdMob](classes/AdMob.md)
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:151
+code/github/admob-plus/packages/cordova/ts/api.ts:152
 
 ___
 
@@ -89,7 +89,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:132
+code/github/admob-plus/packages/cordova/ts/api.ts:133
 
 ## Functions
 
