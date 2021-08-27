@@ -11,6 +11,7 @@ export default async (): Promise<Config.InitialOptions> => ({
     ...defaults.testPathIgnorePatterns,
     '/examples/.*/plugins/',
     '/examples/ionic-angular/',
+    '/examples/ionic-angular-capacitor',
     '/examples/playground/',
   ],
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$',
