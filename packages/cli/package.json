@@ -22,22 +22,22 @@
     "ora": "^5.4.1",
     "pkg-proxy": "^0.2.3",
     "semver": "^7.3.5",
-    "tslib": "^2.3.0",
+    "tslib": "^2.3.1",
     "update-notifier": "^5.1.0",
-    "yargs": "^17.1.0"
+    "yargs": "^17.1.1"
   },
   "devDependencies": {
     "@admob-plus-internal/tsconfig": "file:../../internal/tsconfig",
     "@types/elementtree": "^0.1.1",
     "@types/fs-extra": "^9.0.12",
-    "@types/js-yaml": "^4.0.2",
+    "@types/js-yaml": "^4.0.3",
     "@types/lodash": "^4.14.172",
-    "@types/node": "^16.4.13",
+    "@types/node": "^16.7.3",
     "@types/semver": "^7.3.8",
     "@types/update-notifier": "^5.1.0",
     "@types/yargs": "^17.0.2",
-    "ts-node": "^10.2.0",
-    "typescript": "^4.3.5"
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.2"
   },
   "engines": {
     "node": ">=12.0.0"
