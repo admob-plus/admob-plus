@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.22.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.21.1...admob-plus-cordova@1.22.0) (2021-08-27)
+
+
+### Bug Fixes
+
+* **cordova:** pass options during load(), [#420](https://github.com/admob-plus/admob-plus/issues/420) ([671a0ec](https://github.com/admob-plus/admob-plus/commit/671a0ecfce42bc0a563b4df65cf21401bd5565e7))
+
+
+### Features
+
+* update com.google.android.gms:play-services-ads to 20.3.0 ([c1ed590](https://github.com/admob-plus/admob-plus/commit/c1ed590f6e7d5e1d76615ae99f724f582210f6a0))
+* update Google-Mobile-Ads-SDK to 8.9.0 ([be155c3](https://github.com/admob-plus/admob-plus/commit/be155c3ff6a9e30c685e87c801dc1551729eb2e4))
+
+
+
+
+
 ## [1.21.1](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.21.0...admob-plus-cordova@1.21.1) (2021-08-10)
 
 

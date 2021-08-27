@@ -1,7 +1,7 @@
 {
   "name": "admob-plus",
   "description": "AdMob Plus CLI",
-  "version": "1.9.4",
+  "version": "1.10.0",
   "bin": "./bin/run",
   "dependencies": {
     "@frat/envinfo": "^7.9.0",

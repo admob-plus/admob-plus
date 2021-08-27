@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.10.0](https://github.com/admob-plus/admob-plus/compare/admob-plus@1.9.4...admob-plus@1.10.0) (2021-08-27)
+
+
+### Bug Fixes
+
+* **cli:** print CocoaPods hint ([1e76bd4](https://github.com/admob-plus/admob-plus/commit/1e76bd462820b0f8af081fa05807aeff14a20750))
+
+
+### Features
+
+* **cli:** check Ionic Capacitor project using Cordova packages ([678fe3f](https://github.com/admob-plus/admob-plus/commit/678fe3fd9551aeba76bdd398120e21ca0468b202))
+
+
+
+
+
 ## [1.9.4](https://github.com/admob-plus/admob-plus/compare/admob-plus@1.9.3...admob-plus@1.9.4) (2021-05-28)
 
 **Note:** Version bump only for package admob-plus
