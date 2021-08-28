@@ -13,7 +13,7 @@
   "dependencies": {
     "fast-glob": "^3.2.7",
     "fs-extra": "^10.0.0",
-    "plist": "^3.0.3",
+    "plist": "^3.0.4",
     "replace-in-file": "^6.2.0"
   },
   "devDependencies": {
