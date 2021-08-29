@@ -1,6 +1,8 @@
 import GoogleMobileAds
 import UIKit
 
+class AMBBannerPlaceholer: UIView {}
+
 class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
     static let stackView = UIStackView(frame: rootView.frame)
     static let placeholderView = UIView(frame: stackView.frame)
@@ -61,6 +63,7 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
         if stackView.arrangedSubviews.isEmpty {
             var constraints: [NSLayoutConstraint] = []
 
+            stackView.isUserInteractionEnabled = false
             stackView.axis = .vertical
             stackView.distribution = .fill
             stackView.alignment = .fill
@@ -104,7 +107,7 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
             NSLayoutConstraint.activate([
                 stackView.topAnchor.constraint(equalTo: barView.bottomAnchor, constant: Self.marginTop ?? 0)
             ])
-        } else if stackView.arrangedSubviews.first is GADBannerView {
+        } else if stackView.arrangedSubviews.first is AMBBannerPlaceholer {
             NSLayoutConstraint.activate([
                 topConstraint
             ])
@@ -112,7 +115,7 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
             topConstraint.isActive = false
         }
 
-        if stackView.arrangedSubviews.last is GADBannerView {
+        if stackView.arrangedSubviews.last is AMBBannerPlaceholer {
             NSLayoutConstraint.activate([
                 bottomConstraint
             ])
@@ -125,6 +128,7 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
     let position: String!
     let offset: CGFloat?
     var bannerView: GADBannerView!
+    let placeholder = AMBBannerPlaceholer()
 
     init(id: Int, adUnitId: String, adSize: GADAdSize, adRequest: GADRequest, position: String, offset: CGFloat?) {
         self.adSize = adSize
@@ -156,6 +160,7 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
             bannerView.removeFromSuperview()
             bannerView = nil
         }
+        Self.stackView.removeArrangedSubview(placeholder)
     }
 
     override func isLoaded() -> Bool {
@@ -184,10 +189,19 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
 
             switch position {
             case AMBBannerPosition.top:
-                Self.stackView.insertArrangedSubview(bannerView, at: 0)
+                Self.stackView.insertArrangedSubview(placeholder, at: 0)
             default:
-                Self.stackView.addArrangedSubview(bannerView)
+                Self.stackView.addArrangedSubview(placeholder)
             }
+            Self.rootView.addSubview(bannerView)
+
+            bannerView.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                placeholder.heightAnchor.constraint(equalTo: bannerView.heightAnchor),
+                bannerView.centerXAnchor.constraint(equalTo: placeholder.centerXAnchor),
+                bannerView.topAnchor.constraint(equalTo: placeholder.topAnchor),
+                bannerView.widthAnchor.constraint(equalTo: placeholder.widthAnchor)
+            ])
         }
 
         if bannerView.isHidden {
