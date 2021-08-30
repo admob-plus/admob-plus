@@ -156,11 +156,10 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
         if bannerView != nil {
             bannerView.delegate = nil
             bannerView.adSizeDelegate = nil
-            Self.stackView.removeArrangedSubview(bannerView)
+            Self.stackView.removeArrangedSubview(placeholder)
             bannerView.removeFromSuperview()
             bannerView = nil
         }
-        Self.stackView.removeArrangedSubview(placeholder)
     }
 
     override func isLoaded() -> Bool {
@@ -215,7 +214,7 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
     override func hide(_ ctx: AMBContext) {
         if bannerView != nil {
             bannerView.isHidden = true
-            Self.stackView.removeArrangedSubview(bannerView)
+            Self.stackView.removeArrangedSubview(placeholder)
             Self.updateLayout()
         }
         ctx.resolve()
