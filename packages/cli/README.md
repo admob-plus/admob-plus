@@ -8,11 +8,10 @@ admob-plus
 ==========
 
 <!-- AUTO-GENERATED-CONTENT:START (TOC) -->
-- [admob-plus](#admob-plus)
-  - [Usage](#usage)
-  - [Commands](#commands)
-    - [`admob-plus doctor`](#admob-plus-doctor)
-    - [`admob-plus info`](#admob-plus-info)
+- [Usage](#usage)
+- [Commands](#commands)
+  - [`admob-plus doctor`](#admob-plus-doctor)
+  - [`admob-plus info`](#admob-plus-info)
 <!-- AUTO-GENERATED-CONTENT:END -->
 
 <!-- AUTO-GENERATED-CONTENT:START (CLI) -->
