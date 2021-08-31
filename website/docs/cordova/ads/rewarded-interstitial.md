@@ -22,6 +22,7 @@ document.addEventListener('deviceready', async () => {
   await rewarded.load()
   await rewarded.show()
 }, false)
+```
 
 ## Events
 
