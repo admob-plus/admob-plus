@@ -7,12 +7,10 @@ import del from 'del'
 import execa from 'execa'
 import glob from 'fast-glob'
 import fse from 'fs-extra'
-import fsp from 'fs/promises'
 import PQueue from 'p-queue'
 import path from 'path'
 import findPkg, { PackageJson } from 'pkg-proxy'
 import { replaceInFile } from 'replace-in-file'
-import { parseStringPromise } from 'xml2js'
 import yargs from 'yargs'
 import { collectPkgs, pkgsDirJoin } from './utils'
 
@@ -182,100 +180,6 @@ const androidRun = async (argv: {
     ['run', 'android', '--verbose', ...(argv.device ? ['--device'] : [])],
     { cwd },
   )
-}
-
-const resolveJavaPackagePath = (pkgName: string) => {
-  switch (pkgName) {
-    case 'admob-plus-cordova':
-      return 'admob/plus'
-    case 'cordova-plugin-consent':
-      return 'cordova/plugin/consent'
-    default:
-      return ''
-  }
-}
-
-const androidOpen = async (opts: { cwd: string }) => {
-  const { cwd } = opts
-  const pkgExample = await findPkg({ cwd })
-  assert(pkgExample)
-  const pluginPkgs = await collectPluginPkgs(pkgExample)
-
-  const watchTasks = await Promise.all(
-    pluginPkgs.map(async (pkg) => {
-      const javaPackagePath = resolveJavaPackagePath(pkg.name)
-      const targetDirs = [
-        path.join(cwd, 'platforms/android/app/src/main/java', javaPackagePath),
-        path.join(cwd, 'plugins', pkg.name, 'src/android'),
-      ]
-
-      await Promise.all(
-        targetDirs.map((targetDir) =>
-          cpy('**/*', targetDir, {
-            parents: true,
-            cwd: path.join(pkg.dir, 'src/android'),
-          }),
-        ),
-      )
-
-      return () =>
-        Promise.all(
-          targetDirs.map((targetDir) =>
-            watchCopy(targetDir, path.join(pkg.dir, 'src/android')),
-          ),
-        )
-    }),
-  )
-
-  await execa('open', ['-a', 'Android Studio', 'platforms/android'], {
-    stdio: 'inherit',
-    cwd,
-  })
-
-  await Promise.all(watchTasks.map((f) => f()))
-}
-
-const iosOpen = async (opts: { cwd: string }) => {
-  const { cwd } = opts
-  const pkgExample = await findPkg({ cwd })
-  assert(pkgExample)
-  const pluginPkgs = await collectPluginPkgs(pkgExample)
-
-  const configXML = await fsp.readFile(path.join(cwd, 'config.xml'), 'utf-8')
-  const config = await parseStringPromise(configXML)
-  const name = config.widget.name[0]
-
-  const watchTasks = await Promise.all(
-    pluginPkgs.map(async (pkg) => {
-      const targetDirs = [
-        path.join(cwd, 'platforms/ios', name, 'Plugins', pkg.name),
-        path.join(cwd, 'plugins', pkg.name, 'src/ios'),
-      ]
-
-      await Promise.all(
-        targetDirs.map((targetDir) =>
-          cpy('**/*', targetDir, {
-            parents: true,
-            cwd: path.join(pkg.dir, 'src/ios'),
-          }),
-        ),
-      )
-
-      return () =>
-        Promise.all(
-          targetDirs.map((targetDir) =>
-            watchCopy(targetDir, path.join(pkg.dir, 'src/ios')),
-          ),
-        )
-    }),
-  )
-
-  await execa('open', [`platforms/ios/${name}.xcworkspace`], {
-    stdio: 'inherit',
-    cwd,
-  })
-
-  await Promise.all(watchTasks.map((f) => f()))
 }
 
 function cordovaDev({
@@ -478,13 +382,6 @@ async function main() {
       },
       androidRun as any,
     )
-    .command(
-      'open-android',
-      'open Android Studio for development',
-      {},
-      androidOpen as any,
-    )
-    .command('open-ios', 'open Xcode for development', {}, iosOpen as any)
     .command('cordova', 'run cordova command', {}, async (opts: any) => {
       await cordovaBin(process.argv.slice(3), { cwd: opts.cwd })
     })

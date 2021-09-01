@@ -5,8 +5,6 @@
   "version": "0.16.15",
   "scripts": {
     "prepare": "example prepare",
-    "dev-android": "example open-android",
-    "dev-ios": "example open-ios",
     "test": "run-s 'test:*'",
     "test:android": "test -d platforms/android && adb --version && cordova build android",
     "test:ios": "test -d platforms/ios && swift --version && cordova build ios"

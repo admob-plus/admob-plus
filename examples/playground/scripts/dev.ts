@@ -47,7 +47,7 @@ const main = async () => {
       break
     case Platform.ios:
       await Promise.all([
-        execa('example', ['open-ios'], { stdio: 'inherit' }),
+        execa('example', ['dev', 'ios'], { stdio: 'inherit' }),
         execa(
           'cra-build-watch',
           [
