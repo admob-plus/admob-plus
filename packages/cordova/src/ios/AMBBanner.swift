@@ -1,8 +1,6 @@
 import GoogleMobileAds
 import UIKit
 
-class AMBBannerPlaceholer: UIView {}
-
 class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
     static let stackView = UIStackView(frame: rootView.frame)
     static let placeholderView = UIView(frame: stackView.frame)
@@ -107,7 +105,7 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
             NSLayoutConstraint.activate([
                 stackView.topAnchor.constraint(equalTo: barView.bottomAnchor, constant: Self.marginTop ?? 0)
             ])
-        } else if stackView.arrangedSubviews.first is AMBBannerPlaceholer {
+        } else if stackView.arrangedSubviews.first is AMBBannerPlaceholder {
             NSLayoutConstraint.activate([
                 topConstraint
             ])
@@ -115,7 +113,7 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
             topConstraint.isActive = false
         }
 
-        if stackView.arrangedSubviews.last is AMBBannerPlaceholer {
+        if stackView.arrangedSubviews.last is AMBBannerPlaceholder {
             NSLayoutConstraint.activate([
                 bottomConstraint
             ])
@@ -128,7 +126,7 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
     let position: String!
     let offset: CGFloat?
     var bannerView: GADBannerView!
-    let placeholder = AMBBannerPlaceholer()
+    let placeholder = AMBBannerPlaceholder()
 
     init(id: Int, adUnitId: String, adSize: GADAdSize, adRequest: GADRequest, position: String, offset: CGFloat?) {
         self.adSize = adSize

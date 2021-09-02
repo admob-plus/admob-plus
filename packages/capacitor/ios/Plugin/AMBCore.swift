@@ -217,3 +217,5 @@ class AMBCoreAd: NSObject {
         }
     }
 }
+
+class AMBBannerPlaceholder: UIView {}
