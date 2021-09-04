@@ -1,9 +1,29 @@
 import GoogleMobileAds
 import UIKit
 
+class AMBBannerStackView: UIStackView {
+    public let contentView = UIView()
+
+    func prepare() {
+        if !self.arrangedSubviews.isEmpty {
+            return
+        }
+
+        self.isUserInteractionEnabled = false
+        self.axis = .vertical
+        self.distribution = .fill
+        self.alignment = .fill
+        self.translatesAutoresizingMaskIntoConstraints = false
+
+        self.contentView.frame = self.frame
+        self.contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.contentView.isUserInteractionEnabled = false
+        self.addArrangedSubview(self.contentView)
+    }
+}
+
 class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
-    static let stackView = UIStackView(frame: rootView.frame)
-    static let placeholderView = UIView(frame: stackView.frame)
+    static let stackView = AMBBannerStackView(frame: rootView.frame)
 
     static let priortyLeast = UILayoutPriority(10)
 
@@ -61,21 +81,15 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
         if stackView.arrangedSubviews.isEmpty {
             var constraints: [NSLayoutConstraint] = []
 
-            stackView.isUserInteractionEnabled = false
-            stackView.axis = .vertical
-            stackView.distribution = .fill
-            stackView.alignment = .fill
+            stackView.prepare()
             rootView.insertSubview(stackView, belowSubview: mainView)
-            stackView.translatesAutoresizingMaskIntoConstraints = false
             constraints += [
                 stackView.leadingAnchor.constraint(equalTo: rootView.leadingAnchor),
                 stackView.trailingAnchor.constraint(equalTo: rootView.trailingAnchor)
             ]
 
-            placeholderView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-            placeholderView.isUserInteractionEnabled = false
-            stackView.addArrangedSubview(placeholderView)
             mainView.translatesAutoresizingMaskIntoConstraints = false
+            let placeholderView = stackView.contentView
             constraints += [
                 mainView.leadingAnchor.constraint(equalTo: placeholderView.leadingAnchor),
                 mainView.trailingAnchor.constraint(equalTo: placeholderView.trailingAnchor),
