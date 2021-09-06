@@ -2,7 +2,12 @@ import GoogleMobileAds
 import UIKit
 
 class AMBBannerStackView: UIStackView {
-    public let contentView = UIView()
+    lazy var contentView: UIView = {
+        let v = UIView(frame: self.frame)
+        v.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        v.isUserInteractionEnabled = false
+        return v
+    }()
 
     func prepare() {
         if !self.arrangedSubviews.isEmpty {
@@ -15,10 +20,7 @@ class AMBBannerStackView: UIStackView {
         self.alignment = .fill
         self.translatesAutoresizingMaskIntoConstraints = false
 
-        self.contentView.frame = self.frame
-        self.contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        self.contentView.isUserInteractionEnabled = false
-        self.addArrangedSubview(self.contentView)
+        self.addArrangedSubview(contentView)
     }
 }
 
