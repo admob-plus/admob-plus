@@ -7,7 +7,6 @@ import { pkgsDirJoin } from '../utils'
 
 const updateCliReadme = async () => {
   const markdownPath = pkgsDirJoin('cli/README.md')
-  // eslint-disable-next-line node/no-missing-require
   const templatePath = require.resolve('../../templates/cli-readme.md.hbs')
   const template = handlebars.compile(await fse.readFile(templatePath, 'utf8'))
 
