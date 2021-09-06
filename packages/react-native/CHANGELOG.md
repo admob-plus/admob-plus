@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.14.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/react-native@1.13.0...@admob-plus/react-native@1.14.0) (2021-09-06)
+
+
+### Features
+
+* update Google-Mobile-Ads-SDK to 8.10.0 ([5c4e304](https://github.com/admob-plus/admob-plus/commit/5c4e30400063c5696a9616a20f37605f7f1255b7))
+
+
+
+
+
 # [1.13.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/react-native@1.12.0...@admob-plus/react-native@1.13.0) (2021-08-27)
 
 

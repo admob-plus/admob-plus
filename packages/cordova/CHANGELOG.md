@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.23.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.22.0...admob-plus-cordova@1.23.0) (2021-09-06)
+
+
+### Bug Fixes
+
+* **cordova/ios:** remove placeholder from stack view on banner hide ([5819e68](https://github.com/admob-plus/admob-plus/commit/5819e68add6741cc21dbda8ded731bca16c3aabb))
+
+
+### Features
+
+* **cordova/ios:** use banner placeholder to avoid layer issue, [#424](https://github.com/admob-plus/admob-plus/issues/424) ([b97be99](https://github.com/admob-plus/admob-plus/commit/b97be9978d6c5db0e7609ce60a882b63ddf27d09))
+* update Google-Mobile-Ads-SDK to 8.10.0 ([5c4e304](https://github.com/admob-plus/admob-plus/commit/5c4e30400063c5696a9616a20f37605f7f1255b7))
+
+
+
+
+
 # [1.22.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.21.1...admob-plus-cordova@1.22.0) (2021-08-27)
 
 
