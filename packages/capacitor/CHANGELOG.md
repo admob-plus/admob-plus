@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.19.1](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.19.0...@admob-plus/capacitor@1.19.1) (2021-09-07)
+
+
+### Bug Fixes
+
+* add missing default keyword, close [#426](https://github.com/admob-plus/admob-plus/issues/426) ([131490d](https://github.com/admob-plus/admob-plus/commit/131490d30cb4aff1b98a9a345c9d040c6301a157))
+
+
+
+
+
 # [1.19.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.18.0...@admob-plus/capacitor@1.19.0) (2021-09-06)
 
 
