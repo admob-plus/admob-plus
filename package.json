@@ -30,7 +30,7 @@
     "@ionic-native/admob-plus": "^5.36.0",
     "@types/cordova": "^0.0.34",
     "@types/jest": "^27.0.1",
-    "@types/node": "^16.7.10",
+    "@types/node": "^16.7.13",
     "@types/xml2js": "^0.4.9",
     "canvas": "^2.8.0",
     "cordova": "10.0.0",
@@ -62,7 +62,7 @@
     "swiftlint": "^1.0.1",
     "ts-jest": "^27.0.5",
     "ts-node": "^10.2.1",
-    "typescript": "~4.3.5"
+    "typescript": "~4.4.2"
   },
   "repository": "admob-plus/admob-plus",
   "commitlint": {
@@ -110,7 +110,7 @@
     "@admob-plus/capacitor": "link:./packages/capacitor",
     "@admob-plus/ionic": "workspace:*",
     "@admob-plus/react-native": "workspace:*",
-    "@types/node": "^16.7.10",
+    "@types/node": "^16.7.13",
     "@types/react": "17.0.5",
     "@typescript-eslint/parser": "^4.24.0",
     "@typescript-eslint/eslint-plugin": "^4.24.0",
