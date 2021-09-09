@@ -122,6 +122,7 @@
   },
   "workspaces": [
     "examples/*",
+    "!examples/ionic3",
     "internal/*",
     "packages/*",
     "website"

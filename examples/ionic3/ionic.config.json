@@ -1,0 +1,8 @@
+{
+  "name": "AdMobPlusExample",
+  "app_id": "example.admob.plus.ionic3",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
