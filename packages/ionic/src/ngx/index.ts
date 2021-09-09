@@ -210,7 +210,7 @@ export class AdMob
   public readonly RewardedInterstitialAd = RewardedInterstitialAd
 
   private get admob(): IAdMob {
-    return AdMob.getPlugin()
+    return AdMob.getPlugin() ?? (window as any).admob
   }
 
   public configRequest(
