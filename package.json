@@ -45,6 +45,7 @@
     "eslint-plugin-react": "^7.25.1",
     "eslint-plugin-unicorn": "^35.0.0",
     "execa": "^5.1.1",
+    "ionic-angular": "^3.9.10",
     "is-ci": "^3.0.0",
     "jest": "^27.1.1",
     "lerna": "^4.0.0",
