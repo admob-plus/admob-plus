@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/ionic@1.4.6...@admob-plus/ionic@1.5.0) (2021-09-10)
+
+
+### Bug Fixes
+
+* **ionic:** add fallback to get plugin ([7f884d9](https://github.com/admob-plus/admob-plus/commit/7f884d92890a4eca741e64972f04f4fa42e18d35))
+
+
+### Features
+
+* **ionic:** access plugin instance via helper ([10d0e21](https://github.com/admob-plus/admob-plus/commit/10d0e2131b535558db66f9602aabb703d808ab6d))
+
+
+
+
+
 ## [1.4.6](https://github.com/admob-plus/admob-plus/compare/@admob-plus/ionic@1.4.5...@admob-plus/ionic@1.4.6) (2021-09-07)
 
 **Note:** Version bump only for package @admob-plus/ionic

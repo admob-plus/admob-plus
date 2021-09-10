@@ -1,6 +1,6 @@
 {
   "name": "@admob-plus/ionic",
-  "version": "1.4.6",
+  "version": "1.5.0",
   "description": "Ionic Native wrapper for admob-plus-cordova",
   "main": "lib/index.js",
   "module": "lib/index.js",
