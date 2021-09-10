@@ -207,6 +207,7 @@ jobs:
             README.md
             packages/*/README.md
             website/**/*.md
+            --base https://admob-plus.github.io
             --config lychee.toml
       - name: Fail if there were link errors
         run: exit ${{ steps.lc.outputs.exit_code }}
