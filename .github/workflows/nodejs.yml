@@ -248,6 +248,7 @@ jobs:
         env:
           GIT_USER: "${{ secrets.GH_NAME }}"
           USE_SSH: true
+          DEPLOYMENT_BRANCH: master
 
       - name: Archive yarn.lock
         uses: actions/upload-artifact@v2
