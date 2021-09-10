@@ -214,7 +214,7 @@ jobs:
 
   deploy-docs:
     name: Deploy website
-    needs: [link-checker, test]
+    needs: [test]
     if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     steps:
