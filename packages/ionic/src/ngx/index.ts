@@ -33,36 +33,36 @@ export class BannerAd
   public static pluginName = pluginName
   public static pluginRef = 'admob.BannerAd'
 
-  #obj: IBannerAd
+  private obj: IBannerAd
 
   constructor(opts: BannerAdOptions) {
     super()
 
-    this.#obj = new h.admob.BannerAd(opts)
+    this.obj = new h.admob.BannerAd(opts)
   }
 
   get adUnitId() {
-    return this.#obj.adUnitId
+    return this.obj.adUnitId
   }
 
   get id() {
-    return this.#obj.id
+    return this.obj.id
   }
 
   load() {
-    return this.#obj.load()
+    return this.obj.load()
   }
 
   show() {
-    return this.#obj.show()
+    return this.obj.show()
   }
 
   hide() {
-    return this.#obj.hide()
+    return this.obj.hide()
   }
 
   on(...opts: Parameters<MobileAd["on"]>) {
-    return this.#obj.on(...opts)
+    return this.obj.on(...opts)
   }
 }
 
@@ -74,36 +74,36 @@ export class InterstitialAd
   public static pluginName = pluginName
   public static pluginRef = 'admob.InterstitialAd'
 
-  #obj: IInterstitialAd
+  private obj: IInterstitialAd
 
   constructor(opts: { adUnitId: string }) {
     super()
 
-    this.#obj = new h.admob.InterstitialAd(opts)
+    this.obj = new h.admob.InterstitialAd(opts)
   }
 
   get adUnitId() {
-    return this.#obj.adUnitId
+    return this.obj.adUnitId
   }
 
   get id() {
-    return this.#obj.id
+    return this.obj.id
   }
 
   public isLoaded() {
-    return this.#obj.isLoaded()
+    return this.obj.isLoaded()
   }
 
   public load() {
-    return this.#obj.load()
+    return this.obj.load()
   }
 
   public show() {
-    return this.#obj.show()
+    return this.obj.show()
   }
 
   on(...opts: Parameters<MobileAd["on"]>) {
-    return this.#obj.on(...opts)
+    return this.obj.on(...opts)
   }
 }
 
@@ -115,36 +115,36 @@ export class RewardedAd
   public static pluginName = pluginName
   public static pluginRef = 'admob.RewardedAd'
 
-  #obj: IRewardedAd
+  private obj: IRewardedAd
 
   constructor(opts: RewardedAdOptions) {
     super()
 
-    this.#obj = new h.admob.RewardedAd(opts)
+    this.obj = new h.admob.RewardedAd(opts)
   }
 
   get adUnitId() {
-    return this.#obj.adUnitId
+    return this.obj.adUnitId
   }
 
   get id() {
-    return this.#obj.id
+    return this.obj.id
   }
 
   public isLoaded() {
-    return this.#obj.isLoaded()
+    return this.obj.isLoaded()
   }
 
   public load() {
-    return this.#obj.load()
+    return this.obj.load()
   }
 
   public show() {
-    return this.#obj.show()
+    return this.obj.show()
   }
 
   on(...opts: Parameters<MobileAd["on"]>) {
-    return this.#obj.on(...opts)
+    return this.obj.on(...opts)
   }
 }
 
@@ -156,36 +156,36 @@ export class RewardedInterstitialAd
   public static pluginName = pluginName
   public static pluginRef = 'admob.RewardedInterstitialAd'
 
-  #obj: IRewardedInterstitialAd
+  private obj: IRewardedInterstitialAd
 
   constructor(opts: RewardedInterstitialAdOptions) {
     super()
 
-    this.#obj = new h.admob.RewardedInterstitialAd(opts)
+    this.obj = new h.admob.RewardedInterstitialAd(opts)
   }
 
   get adUnitId() {
-    return this.#obj.adUnitId
+    return this.obj.adUnitId
   }
 
   get id() {
-    return this.#obj.id
+    return this.obj.id
   }
 
   public isLoaded() {
-    return this.#obj.isLoaded()
+    return this.obj.isLoaded()
   }
 
   public load() {
-    return this.#obj.load()
+    return this.obj.load()
   }
 
   public show() {
-    return this.#obj.show()
+    return this.obj.show()
   }
 
   on(...opts: Parameters<MobileAd["on"]>) {
-    return this.#obj.on(...opts)
+    return this.obj.on(...opts)
   }
 }
 
