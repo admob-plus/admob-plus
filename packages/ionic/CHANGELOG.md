@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.1](https://github.com/admob-plus/admob-plus/compare/@admob-plus/ionic@1.5.0...@admob-plus/ionic@1.5.1) (2021-09-10)
+
+
+### Bug Fixes
+
+* **ionic:** target es5 ([f721029](https://github.com/admob-plus/admob-plus/commit/f72102976d94005492f5a351895b269d652dfa8d))
+
+
+
+
+
 # [1.5.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/ionic@1.4.6...@admob-plus/ionic@1.5.0) (2021-09-10)
 
 
