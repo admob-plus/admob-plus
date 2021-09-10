@@ -1,6 +1,7 @@
 {
   "extends": "@admob-plus-internal/tsconfig",
   "compilerOptions": {
+    "target": "esnext",
     "esModuleInterop": true,
     "suppressImplicitAnyIndexErrors": true
   },

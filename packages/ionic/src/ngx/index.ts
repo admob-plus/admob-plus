@@ -18,6 +18,13 @@ import { fromEvent, Observable } from 'rxjs'
 const plugin = 'admob-plus-cordova'
 const pluginName = 'AdMob'
 
+// helper
+class h {
+  static get admob(): IAdMob {
+    return (window as any).admob
+  }
+}
+
 export class BannerAd
   extends IonicNativePlugin
   implements Omit<IBannerAd, 'opts'>
@@ -26,36 +33,36 @@ export class BannerAd
   public static pluginName = pluginName
   public static pluginRef = 'admob.BannerAd'
 
-  private _objectInstance: IBannerAd
+  #obj: IBannerAd
 
   constructor(opts: BannerAdOptions) {
     super()
 
-    this._objectInstance = new (BannerAd.getPlugin())(opts)
+    this.#obj = new h.admob.BannerAd(opts)
   }
 
   get adUnitId() {
-    return this._objectInstance.adUnitId
+    return this.#obj.adUnitId
   }
 
   get id() {
-    return this._objectInstance.id
+    return this.#obj.id
   }
 
   load() {
-    return this._objectInstance.load()
+    return this.#obj.load()
   }
 
   show() {
-    return this._objectInstance.show()
+    return this.#obj.show()
   }
 
   hide() {
-    return this._objectInstance.hide()
+    return this.#obj.hide()
   }
 
   on(...opts: Parameters<MobileAd["on"]>) {
-    return this._objectInstance.on(...opts)
+    return this.#obj.on(...opts)
   }
 }
 
@@ -67,36 +74,36 @@ export class InterstitialAd
   public static pluginName = pluginName
   public static pluginRef = 'admob.InterstitialAd'
 
-  private _objectInstance: IInterstitialAd
+  #obj: IInterstitialAd
 
   constructor(opts: { adUnitId: string }) {
     super()
 
-    this._objectInstance = new (InterstitialAd.getPlugin())(opts)
+    this.#obj = new h.admob.InterstitialAd(opts)
   }
 
   get adUnitId() {
-    return this._objectInstance.adUnitId
+    return this.#obj.adUnitId
   }
 
   get id() {
-    return this._objectInstance.id
+    return this.#obj.id
   }
 
   public isLoaded() {
-    return this._objectInstance.isLoaded()
+    return this.#obj.isLoaded()
   }
 
   public load() {
-    return this._objectInstance.load()
+    return this.#obj.load()
   }
 
   public show() {
-    return this._objectInstance.show()
+    return this.#obj.show()
   }
 
   on(...opts: Parameters<MobileAd["on"]>) {
-    return this._objectInstance.on(...opts)
+    return this.#obj.on(...opts)
   }
 }
 
@@ -108,36 +115,36 @@ export class RewardedAd
   public static pluginName = pluginName
   public static pluginRef = 'admob.RewardedAd'
 
-  private _objectInstance: IRewardedAd
+  #obj: IRewardedAd
 
   constructor(opts: RewardedAdOptions) {
     super()
 
-    this._objectInstance = new (RewardedAd.getPlugin())(opts)
+    this.#obj = new h.admob.RewardedAd(opts)
   }
 
   get adUnitId() {
-    return this._objectInstance.adUnitId
+    return this.#obj.adUnitId
   }
 
   get id() {
-    return this._objectInstance.id
+    return this.#obj.id
   }
 
   public isLoaded() {
-    return this._objectInstance.isLoaded()
+    return this.#obj.isLoaded()
   }
 
   public load() {
-    return this._objectInstance.load()
+    return this.#obj.load()
   }
 
   public show() {
-    return this._objectInstance.show()
+    return this.#obj.show()
   }
 
   on(...opts: Parameters<MobileAd["on"]>) {
-    return this._objectInstance.on(...opts)
+    return this.#obj.on(...opts)
   }
 }
 
@@ -149,36 +156,36 @@ export class RewardedInterstitialAd
   public static pluginName = pluginName
   public static pluginRef = 'admob.RewardedInterstitialAd'
 
-  private _objectInstance: IRewardedInterstitialAd
+  #obj: IRewardedInterstitialAd
 
   constructor(opts: RewardedInterstitialAdOptions) {
     super()
 
-    this._objectInstance = new (RewardedInterstitialAd.getPlugin())(opts)
+    this.#obj = new h.admob.RewardedInterstitialAd(opts)
   }
 
   get adUnitId() {
-    return this._objectInstance.adUnitId
+    return this.#obj.adUnitId
   }
 
   get id() {
-    return this._objectInstance.id
+    return this.#obj.id
   }
 
   public isLoaded() {
-    return this._objectInstance.isLoaded()
+    return this.#obj.isLoaded()
   }
 
   public load() {
-    return this._objectInstance.load()
+    return this.#obj.load()
   }
 
   public show() {
-    return this._objectInstance.show()
+    return this.#obj.show()
   }
 
   on(...opts: Parameters<MobileAd["on"]>) {
-    return this._objectInstance.on(...opts)
+    return this.#obj.on(...opts)
   }
 }
 
@@ -209,34 +216,30 @@ export class AdMob
   public readonly RewardedAd = RewardedAd
   public readonly RewardedInterstitialAd = RewardedInterstitialAd
 
-  private get admob(): IAdMob {
-    return AdMob.getPlugin() ?? (window as any).admob
-  }
-
   public configRequest(
     ...opts: Parameters<IAdMob[NativeActions.configRequest]>
   ) {
-    return this.admob.configRequest(...opts)
+    return h.admob.configRequest(...opts)
   }
 
   public start() {
-    return this.admob.start()
+    return h.admob.start()
   }
 
   public configure(...opts: Parameters<IAdMob[NativeActions.configure]>) {
-    return this.admob.configure(...opts)
+    return h.admob.configure(...opts)
   }
 
   public setAppMuted(...opts: Parameters<IAdMob[NativeActions.setAppMuted]>) {
-    return this.admob.setAppMuted(...opts)
+    return h.admob.setAppMuted(...opts)
   }
 
   public setAppVolume(...opts: Parameters<IAdMob[NativeActions.setAppVolume]>) {
-    return this.admob.setAppVolume(...opts)
+    return h.admob.setAppVolume(...opts)
   }
 
   public requestTrackingAuthorization() {
-    return this.admob.requestTrackingAuthorization()
+    return h.admob.requestTrackingAuthorization()
   }
 
   public on(event: string): Observable<any> {
