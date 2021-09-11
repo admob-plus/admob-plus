@@ -11,6 +11,7 @@ export type AdMobConfig = {
   appMuted?: boolean
   appVolume?: number
   maxAdContentRating?: MaxAdContentRating
+  sameAppKey?: boolean
   tagForChildDirectedTreatment?: boolean | null
   tagForUnderAgeOfConsent?: boolean | null
   testDeviceIds?: string[]
