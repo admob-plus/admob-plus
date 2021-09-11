@@ -132,6 +132,7 @@ export enum MaxAdContentRating {
 
 export type RequestConfig = {
   maxAdContentRating?: MaxAdContentRating
+  sameAppKey?: boolean,
   tagForChildDirectedTreatment?: boolean | null
   tagForUnderAgeOfConsent?: boolean | null
   testDeviceIds?: string[]
