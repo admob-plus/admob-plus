@@ -48,7 +48,7 @@ Renames and exports: [AdMob](classes/AdMob.md)
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:152
+code/github/admob-plus/packages/cordova/ts/api.ts:153
 
 ___
 
@@ -83,6 +83,7 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `maxAdContentRating?` | [`MaxAdContentRating`](enums/MaxAdContentRating.md) |
+| `sameAppKey?` | `boolean` |
 | `tagForChildDirectedTreatment?` | `boolean` \| ``null`` |
 | `tagForUnderAgeOfConsent?` | `boolean` \| ``null`` |
 | `testDeviceIds?` | `string`[] |

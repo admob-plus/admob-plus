@@ -14,7 +14,7 @@ custom_edit_url: null
 
 #### Defined in
 
-cordova/lib/api.d.ts:55
+cordova/lib/api.d.ts:56
 
 ___
 
@@ -24,7 +24,7 @@ ___
 
 #### Defined in
 
-cordova/lib/api.d.ts:54
+cordova/lib/api.d.ts:55
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 #### Defined in
 
-cordova/lib/api.d.ts:52
+cordova/lib/api.d.ts:53
 
 ___
 
@@ -44,4 +44,4 @@ ___
 
 #### Defined in
 
-cordova/lib/api.d.ts:53
+cordova/lib/api.d.ts:54

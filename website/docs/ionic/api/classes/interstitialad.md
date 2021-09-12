@@ -35,17 +35,17 @@ IonicNativePlugin.constructor
 
 #### Defined in
 
-ionic/src/ngx/index.ts:72
+ionic/src/ngx/index.ts:79
 
 ## Properties
 
-### \_objectInstance
+### obj
 
-• `Private` **\_objectInstance**: `default`
+• `Private` **obj**: `default`
 
 #### Defined in
 
-ionic/src/ngx/index.ts:70
+ionic/src/ngx/index.ts:77
 
 ___
 
@@ -59,7 +59,7 @@ IonicNativePlugin.plugin
 
 #### Defined in
 
-ionic/src/ngx/index.ts:66
+ionic/src/ngx/index.ts:73
 
 ___
 
@@ -73,7 +73,7 @@ IonicNativePlugin.pluginName
 
 #### Defined in
 
-ionic/src/ngx/index.ts:67
+ionic/src/ngx/index.ts:74
 
 ___
 
@@ -87,7 +87,7 @@ IonicNativePlugin.pluginRef
 
 #### Defined in
 
-ionic/src/ngx/index.ts:68
+ionic/src/ngx/index.ts:75
 
 ## Accessors
 
@@ -101,7 +101,7 @@ ionic/src/ngx/index.ts:68
 
 #### Defined in
 
-ionic/src/ngx/index.ts:78
+ionic/src/ngx/index.ts:85
 
 ___
 
@@ -115,7 +115,7 @@ ___
 
 #### Defined in
 
-ionic/src/ngx/index.ts:82
+ionic/src/ngx/index.ts:89
 
 ## Methods
 
@@ -133,7 +133,7 @@ Omit.isLoaded
 
 #### Defined in
 
-ionic/src/ngx/index.ts:86
+ionic/src/ngx/index.ts:93
 
 ___
 
@@ -151,7 +151,7 @@ Omit.load
 
 #### Defined in
 
-ionic/src/ngx/index.ts:90
+ionic/src/ngx/index.ts:97
 
 ___
 
@@ -181,7 +181,7 @@ Omit.on
 
 #### Defined in
 
-ionic/src/ngx/index.ts:98
+ionic/src/ngx/index.ts:105
 
 ___
 
@@ -199,4 +199,4 @@ Omit.show
 
 #### Defined in
 
-ionic/src/ngx/index.ts:94
+ionic/src/ngx/index.ts:101

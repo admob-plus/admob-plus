@@ -34,7 +34,7 @@ IonicNativePlugin.constructor
 
 #### Defined in
 
-ionic/src/ngx/index.ts:207
+ionic/src/ngx/index.ts:214
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 #### Defined in
 
-ionic/src/ngx/index.ts:208
+ionic/src/ngx/index.ts:215
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 #### Defined in
 
-ionic/src/ngx/index.ts:209
+ionic/src/ngx/index.ts:216
 
 ___
 
@@ -64,7 +64,7 @@ ___
 
 #### Defined in
 
-ionic/src/ngx/index.ts:210
+ionic/src/ngx/index.ts:217
 
 ___
 
@@ -78,7 +78,7 @@ IonicNativePlugin.platforms
 
 #### Defined in
 
-ionic/src/ngx/index.ts:201
+ionic/src/ngx/index.ts:208
 
 ___
 
@@ -92,7 +92,7 @@ IonicNativePlugin.plugin
 
 #### Defined in
 
-ionic/src/ngx/index.ts:202
+ionic/src/ngx/index.ts:209
 
 ___
 
@@ -106,7 +106,7 @@ IonicNativePlugin.pluginName
 
 #### Defined in
 
-ionic/src/ngx/index.ts:203
+ionic/src/ngx/index.ts:210
 
 ___
 
@@ -120,7 +120,7 @@ IonicNativePlugin.pluginRef
 
 #### Defined in
 
-ionic/src/ngx/index.ts:204
+ionic/src/ngx/index.ts:211
 
 ___
 
@@ -131,20 +131,6 @@ ___
 #### Overrides
 
 IonicNativePlugin.repo
-
-#### Defined in
-
-ionic/src/ngx/index.ts:205
-
-## Accessors
-
-### admob
-
-• `Private` `get` **admob**(): `AdMob`
-
-#### Returns
-
-`AdMob`
 
 #### Defined in
 
@@ -172,7 +158,7 @@ Omit.configRequest
 
 #### Defined in
 
-ionic/src/ngx/index.ts:216
+ionic/src/ngx/index.ts:219
 
 ___
 
@@ -196,7 +182,7 @@ Omit.configure
 
 #### Defined in
 
-ionic/src/ngx/index.ts:226
+ionic/src/ngx/index.ts:229
 
 ___
 
@@ -216,7 +202,7 @@ ___
 
 #### Defined in
 
-ionic/src/ngx/index.ts:242
+ionic/src/ngx/index.ts:245
 
 ___
 
@@ -234,7 +220,7 @@ Omit.requestTrackingAuthorization
 
 #### Defined in
 
-ionic/src/ngx/index.ts:238
+ionic/src/ngx/index.ts:241
 
 ___
 
@@ -258,7 +244,7 @@ Omit.setAppMuted
 
 #### Defined in
 
-ionic/src/ngx/index.ts:230
+ionic/src/ngx/index.ts:233
 
 ___
 
@@ -282,7 +268,7 @@ Omit.setAppVolume
 
 #### Defined in
 
-ionic/src/ngx/index.ts:234
+ionic/src/ngx/index.ts:237
 
 ___
 
@@ -300,4 +286,4 @@ Omit.start
 
 #### Defined in
 
-ionic/src/ngx/index.ts:222
+ionic/src/ngx/index.ts:225

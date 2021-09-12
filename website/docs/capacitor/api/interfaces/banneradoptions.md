@@ -24,7 +24,7 @@ MobileAdOptions.adUnitId
 
 #### Defined in
 
-definitions.ts:30
+definitions.ts:31
 
 ___
 

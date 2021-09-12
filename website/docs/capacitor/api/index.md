@@ -55,7 +55,7 @@ ___
 
 #### Defined in
 
-definitions.ts:30
+definitions.ts:31
 
 ___
 
@@ -68,6 +68,7 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `maxAdContentRating?` | [`MaxAdContentRating`](enums/MaxAdContentRating.md) |
+| `sameAppKey?` | `boolean` |
 | `tagForChildDirectedTreatment?` | `boolean` \| ``null`` |
 | `tagForUnderAgeOfConsent?` | `boolean` \| ``null`` |
 | `testDeviceIds?` | `string`[] |

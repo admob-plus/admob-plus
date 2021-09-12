@@ -40,6 +40,7 @@ Renames and exports: [AdMobPlus](index.md#admobplus)
 | `appMuted?` | `boolean` |
 | `appVolume?` | `number` |
 | `maxAdContentRating?` | [`MaxAdContentRating`](enums/MaxAdContentRating.md) |
+| `sameAppKey?` | `boolean` |
 | `tagForChildDirectedTreatment?` | `boolean` \| ``null`` |
 | `tagForUnderAgeOfConsent?` | `boolean` \| ``null`` |
 | `testDeviceIds?` | `string`[] |
@@ -62,7 +63,7 @@ ___
 
 #### Defined in
 
-definitions.ts:19
+definitions.ts:20
 
 ## Variables
 
