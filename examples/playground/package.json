@@ -19,7 +19,7 @@
   "devDependencies": {
     "@admob-plus-internal/cli": "file:../../internal/cli",
     "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^12.0.0",
+    "@testing-library/react": "^12.1.0",
     "@testing-library/user-event": "^13.2.1",
     "@types/cordova": "^0.0.34",
     "@types/fs-extra": "^9.0.12",
@@ -41,7 +41,7 @@
     "internal-ip": "^6.2.0",
     "react-scripts": "4.0.3",
     "ts-node": "^10.2.1",
-    "typescript": "^4.4.2"
+    "typescript": "^4.4.3"
   },
   "scripts": {
     "start": "ts-node -TH -P ../../internal/cli/tsconfig.json scripts/dev.ts",
