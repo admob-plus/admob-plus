@@ -5,4 +5,5 @@ exclude = [
   "https://github.com/admob-plus/admob-plus/blob/",
   "https://npmjs.org/package/admob-plus-cordova-native",
   "https://admob-plus.github.io/docs/cordova/ads/native",
+  "admob-plus.github.io",
 ]
