@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.15.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/react-native@1.14.1...@admob-plus/react-native@1.15.0) (2021-09-12)
+
+
+### Features
+
+* **react-native/ios:** allow config same app key ([806c81d](https://github.com/admob-plus/admob-plus/commit/806c81d4cf0a63a4b305ec37c5e55b5818cebf47))
+
+
+
+
+
 ## [1.14.1](https://github.com/admob-plus/admob-plus/compare/@admob-plus/react-native@1.14.0...@admob-plus/react-native@1.14.1) (2021-09-07)
 
 

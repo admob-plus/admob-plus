@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.20.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.19.1...@admob-plus/capacitor@1.20.0) (2021-09-12)
+
+
+### Features
+
+* **capacitor/ios:** allow config same app key ([ca3337d](https://github.com/admob-plus/admob-plus/commit/ca3337dca10a2ef0b1f14fd3c2093493de00dbde))
+
+
+
+
+
 ## [1.19.1](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.19.0...@admob-plus/capacitor@1.19.1) (2021-09-07)
 
 
