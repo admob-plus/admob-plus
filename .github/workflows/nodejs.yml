@@ -201,7 +201,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: lychee Link Checker
         id: lc
-        uses: lycheeverse/lychee-action@master
+        uses: lycheeverse/lychee-action@v1.0.8
         with:
           args: >
             README.md
@@ -249,6 +249,16 @@ jobs:
           GIT_USER: "${{ secrets.GH_NAME }}"
           USE_SSH: true
           DEPLOYMENT_BRANCH: master
+
+      - name: Check links
+        id: lc
+        uses: lycheeverse/lychee-action@v1.0.8
+        with:
+          args: >
+            build/**/*.html
+            --config lychee.toml
+      - name: Fail if there were link errors
+        run: exit ${{ steps.lc.outputs.exit_code }}
 
       - name: Archive yarn.lock
         uses: actions/upload-artifact@v2

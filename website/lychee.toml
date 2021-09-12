@@ -2,10 +2,8 @@ verbose = true
 
 exclude = [
   "adlic.rjfun.com",
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd/",
   "https://github.com/admob-plus/admob-plus/blob/",
   "https://github.com/admob-plus/admob-plus/edit/",
   "https://github.com/admob-plus/admob-plus/tree/",
-  "https://npmjs.org/package/admob-plus-cordova-native",
-  "https://admob-plus.github.io/docs/cordova/ads/native",
-  "admob-plus.github.io",
 ]
