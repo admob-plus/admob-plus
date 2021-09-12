@@ -12,8 +12,7 @@ const Showcase = ({ user }) => (
 )
 
 const Users = () => {
-  const context = useDocusaurusContext()
-  const { siteConfig = {} } = context
+  const { siteConfig } = useDocusaurusContext()
   return (
     <Layout title={`Users - ${siteConfig.title}`}>
       <main className="container margin-vert--lg">
@@ -21,7 +20,7 @@ const Users = () => {
           <h1>Who is using AdMob Plus?</h1>
         </div>
         <div className="row logos">
-          {users.map(user => (
+          {users.map((user) => (
             <Showcase key={user.image} user={user} />
           ))}
         </div>
