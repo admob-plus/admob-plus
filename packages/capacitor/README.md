@@ -213,7 +213,7 @@ addListener(eventName: string, listenerFunc: (event: any) => void) => Promise<Pl
 
 #### RequestConfig
 
-<code>{ maxAdContentRating?: <a href="#maxadcontentrating">MaxAdContentRating</a> tagForChildDirectedTreatment?: boolean | null tagForUnderAgeOfConsent?: boolean | null testDeviceIds?: string[] }</code>
+<code>{ maxAdContentRating?: <a href="#maxadcontentrating">MaxAdContentRating</a> sameAppKey?: boolean tagForChildDirectedTreatment?: boolean | null tagForUnderAgeOfConsent?: boolean | null testDeviceIds?: string[] }</code>
 
 
 #### MobileAdOptions
