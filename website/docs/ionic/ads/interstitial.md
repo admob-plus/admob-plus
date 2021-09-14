@@ -18,8 +18,6 @@ import { Platform } from '@ionic/angular';
 export class HomePage {
   constructor(private platform: Platform, private admob: AdMob) {
     this.platform.ready().then(async () => {
-      await this.admob.start();
-
       const interstitial = new this.admob.InterstitialAd({
         adUnitId: 'ca-app-pub-xxx/yyy',
       })
