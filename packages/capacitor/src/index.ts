@@ -50,7 +50,7 @@ class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
 
   protected async load() {
     await this.init()
-    return AdMobPlus.adLoad({ id: this.id })
+    return AdMobPlus.adLoad({ ...this.opts, id: this.id })
   }
 
   protected async show() {
