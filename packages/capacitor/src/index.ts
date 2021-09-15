@@ -24,8 +24,8 @@ class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
 
   protected readonly opts: T
 
-  private _created = false
-  private _init: Promise<any> | null = null
+  #created = false
+  #init: Promise<any> | null = null
 
   constructor(opts: T) {
     this.opts = opts
@@ -64,27 +64,27 @@ class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
   }
 
   protected async init() {
-    if (this._created) return
+    if (this.#created) return
 
     if (!started) {
       if (startPromise === null) start()
       await startPromise
     }
 
-    if (this._init === null) {
+    if (this.#init === null) {
       const cls =
         (this.constructor as unknown as { cls?: string }).cls ??
         this.constructor.name
 
-      this._init = AdMobPlus.adCreate({
+      this.#init = AdMobPlus.adCreate({
         ...this.opts,
         id: this.id,
         cls,
       })
     }
 
-    await this._init
-    this._created = true
+    await this.#init
+    this.#created = true
   }
 }
 
@@ -96,7 +96,7 @@ export interface BannerAdOptions extends MobileAdOptions {
 
 class BannerAd extends MobileAd {
   static cls = 'BannerAd'
-  _loaded = false
+  #loaded = false
 
   constructor(opts: BannerAdOptions) {
     super({
@@ -111,11 +111,11 @@ class BannerAd extends MobileAd {
 
   async load() {
     await super.load()
-    this._loaded = true
+    this.#loaded = true
   }
 
   async show() {
-    if (!this._loaded) await this.load()
+    if (!this.#loaded) await this.load()
     await super.show()
   }
 
