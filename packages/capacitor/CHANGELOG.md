@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.20.1](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.20.0...@admob-plus/capacitor@1.20.1) (2021-09-15)
+
+
+### Bug Fixes
+
+* **capacitor:** pass load() options ([1320a54](https://github.com/admob-plus/admob-plus/commit/1320a5416575b6fcf87a3dcf002d84142b49d9b3))
+
+
+
+
+
 # [1.20.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.19.1...@admob-plus/capacitor@1.20.0) (2021-09-12)
 
 
