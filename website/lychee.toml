@@ -1,5 +1,7 @@
 verbose = true
 
+max-concurrency = 16
+
 exclude = [
   "adlic.rjfun.com",
   "http://www.apple.com/DTDs/PropertyList-1.0.dtd/",

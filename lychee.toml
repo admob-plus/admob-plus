@@ -1,5 +1,7 @@
 verbose = true
 
+max-concurrency = 16
+
 exclude = [
   "adlic.rjfun.com",
   "https://github.com/admob-plus/admob-plus/blob/",
