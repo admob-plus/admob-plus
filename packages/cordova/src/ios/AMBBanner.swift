@@ -53,25 +53,9 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
         return rootView.subviews.first(where: { $0.frame.equalTo(statusBarFrame) })
     }
 
-    static var topAnchor: NSLayoutYAxisAnchor {
-        if #available(iOS 11.0, *) {
-            return rootView.safeAreaLayoutGuide.topAnchor
-        } else {
-            return rootView.topAnchor
-        }
-    }
+    static let topConstraint = stackView.topAnchor.constraint(equalTo: AMBHelper.topAnchor, constant: 0)
 
-    static var bottomAnchor: NSLayoutYAxisAnchor {
-        if #available(iOS 11.0, *) {
-            return rootView.safeAreaLayoutGuide.bottomAnchor
-        } else {
-            return rootView.bottomAnchor
-        }
-    }
-
-    static let topConstraint = stackView.topAnchor.constraint(equalTo: topAnchor, constant: 0)
-
-    static let bottomConstraint = stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0)
+    static let bottomConstraint = stackView.bottomAnchor.constraint(equalTo: AMBHelper.bottomAnchor, constant: 0)
 
     static func config(_ ctx: AMBContext) {
         if let bgColor = ctx.optBackgroundColor() {
