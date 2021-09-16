@@ -99,6 +99,7 @@ class AMBContext: AMBCoreContext {
         return opt("marginBottom") as? CGFloat
     }
 
+    // swiftlint:disable cyclomatic_complexity
     func optAdSize() -> GADAdSize {
         if let adSizeType = opt("size") as? Int {
             switch adSizeType {
@@ -115,14 +116,38 @@ class AMBContext: AMBCoreContext {
             default: break
             }
         }
-        guard let adSizeDict = opt("size") as? NSDictionary,
-              let width = adSizeDict.value(forKey: "width") as? Int,
-              let height = adSizeDict.value(forKey: "height") as? Int
-        else {
-            return kGADAdSizeBanner
+        if let adSizeDict = opt("size") as? NSDictionary {
+            if let adaptive = adSizeDict["adaptive"] as? String {
+                if adaptive == "inline",
+                   let maxHeight = adSizeDict["maxHeight"] as? CGFloat {
+                    if let width = adSizeDict["width"] as? CGFloat {
+                        return GADInlineAdaptiveBannerAdSizeWithWidthAndMaxHeight(width, maxHeight)
+                    } else {
+                        return GADInlineAdaptiveBannerAdSizeWithWidthAndMaxHeight(AMBHelper.frame.size.width, maxHeight)
+                    }
+                } else {
+                    var f = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth
+                    if let orientation = adSizeDict["orientation"] as? String {
+                        if orientation == "portrait" {
+                            f = GADPortraitAnchoredAdaptiveBannerAdSizeWithWidth
+                        } else if orientation == "landscape" {
+                            f = GADLandscapeAnchoredAdaptiveBannerAdSizeWithWidth
+                        }
+                    }
+                    if let width = adSizeDict["width"] as? CGFloat {
+                        return f(width)
+                    } else {
+                        return f(AMBHelper.frame.size.width)
+                    }
+                }
+            } else if let width = adSizeDict["width"] as? Int,
+                 let height = adSizeDict["height"] as? Int {
+                return GADAdSizeFromCGSize(CGSize(width: width, height: height))
+            }
         }
-        return GADAdSizeFromCGSize(CGSize(width: width, height: height))
+        return kGADAdSizeBanner
     }
+    // swiftlint:enable cyclomatic_complexity
 
     func optGADServerSideVerificationOptions() -> GADServerSideVerificationOptions? {
         guard let ssv = opt("serverSideVerification") as? NSDictionary

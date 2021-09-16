@@ -56,6 +56,8 @@ const app = {
     this.initButton('show-banner-btn', this.showBannerAd)
     this.initButton('show-offset-banner-btn', this.showBannerAdOffset)
     this.initButton('show-top-banner-btn', this.showBannerAdTop)
+    this.initButton('show-adaptive-banner-btn', this.showBannerAdAdaptive)
+    this.initButton('show-inline-adaptive-banner-btn', this.showBannerAdAdaptiveInline)
     this.initButton('show-interstitial-btn', this.showInterstitialAd)
     this.initButton('show-rewarded-btn', this.showRewardedAd)
     this.initButton('show-rewardedi-btn', this.showRewardedInterstitialAd)
@@ -107,6 +109,27 @@ const app = {
     const banner = new admob.BannerAd({
       adUnitId: 'ca-app-pub-3940256099942544/6300978111',
       position: 'top',
+    })
+    return banner.show()
+  },
+
+  showBannerAdAdaptive() {
+    const banner = new admob.BannerAd({
+      adUnitId: 'ca-app-pub-3940256099942544/6300978111',
+      size: {
+        adaptive: "anchored"
+      }
+    })
+    return banner.show()
+  },
+
+  showBannerAdAdaptiveInline() {
+    const banner = new admob.BannerAd({
+      adUnitId: 'ca-app-pub-3940256099942544/6300978111',
+      size: {
+        adaptive: "inline",
+        maxHeight: 150,
+      }
     })
     return banner.show()
   },
