@@ -2,6 +2,11 @@ import GoogleMobileAds
 import UIKit
 
 class AMBBannerStackView: UIStackView {
+    static let shared = AMBBannerStackView(frame: AMBHelper.window.frame)
+
+    static let topConstraint = shared.topAnchor.constraint(equalTo: AMBHelper.topAnchor, constant: 0)
+    static let bottomConstraint = shared.bottomAnchor.constraint(equalTo: AMBHelper.bottomAnchor, constant: 0)
+
     lazy var contentView: UIView = {
         let v = UIView(frame: self.frame)
         v.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -33,7 +38,7 @@ class AMBBannerStackView: UIStackView {
 }
 
 class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
-    static let stackView = AMBBannerStackView(frame: rootView.frame)
+    static let stackView = AMBBannerStackView.shared
 
     static let priortyLeast = UILayoutPriority(10)
 
@@ -53,20 +58,16 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
         return rootView.subviews.first(where: { $0.frame.equalTo(statusBarFrame) })
     }
 
-    static let topConstraint = stackView.topAnchor.constraint(equalTo: AMBHelper.topAnchor, constant: 0)
-
-    static let bottomConstraint = stackView.bottomAnchor.constraint(equalTo: AMBHelper.bottomAnchor, constant: 0)
-
     static func config(_ ctx: AMBContext) {
         if let bgColor = ctx.optBackgroundColor() {
             Self.rootView.backgroundColor = bgColor
         }
         Self.marginTop = ctx.optMarginTop()
         if Self.marginTop != nil {
-            Self.topConstraint.constant = Self.marginTop!
+            AMBBannerStackView.topConstraint.constant = Self.marginTop!
         }
         if let marginBottom = ctx.optMarginBottom() {
-            Self.bottomConstraint.constant = marginBottom * -1
+            AMBBannerStackView.bottomConstraint.constant = marginBottom * -1
         }
         ctx.resolve()
     }
@@ -113,21 +114,11 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
             NSLayoutConstraint.activate([
                 stackView.topAnchor.constraint(equalTo: barView.bottomAnchor, constant: Self.marginTop ?? 0)
             ])
-        } else if stackView.hasTopBanner {
-            NSLayoutConstraint.activate([
-                topConstraint
-            ])
         } else {
-            topConstraint.isActive = false
+            AMBBannerStackView.topConstraint.isActive = stackView.hasTopBanner
         }
 
-        if stackView.hasBottomBanner {
-            NSLayoutConstraint.activate([
-                bottomConstraint
-            ])
-        } else {
-            bottomConstraint.isActive = false
-        }
+        AMBBannerStackView.bottomConstraint.isActive = stackView.hasBottomBanner
     }
 
     let adSize: GADAdSize!
