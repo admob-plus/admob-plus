@@ -9,6 +9,14 @@ class AMBBannerStackView: UIStackView {
         return v
     }()
 
+    var hasTopBanner: Bool {
+        return self.arrangedSubviews.first is AMBBannerPlaceholder
+    }
+
+    var hasBottomBanner: Bool {
+        return self.arrangedSubviews.last is AMBBannerPlaceholder
+    }
+
     func prepare() {
         if !self.arrangedSubviews.isEmpty {
             return
@@ -121,7 +129,7 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
             NSLayoutConstraint.activate([
                 stackView.topAnchor.constraint(equalTo: barView.bottomAnchor, constant: Self.marginTop ?? 0)
             ])
-        } else if stackView.arrangedSubviews.first is AMBBannerPlaceholder {
+        } else if stackView.hasTopBanner {
             NSLayoutConstraint.activate([
                 topConstraint
             ])
@@ -129,7 +137,7 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
             topConstraint.isActive = false
         }
 
-        if stackView.arrangedSubviews.last is AMBBannerPlaceholder {
+        if stackView.hasBottomBanner {
             NSLayoutConstraint.activate([
                 bottomConstraint
             ])
