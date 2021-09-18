@@ -1,6 +1,7 @@
 package admob.plus.cordova;
 
 import android.app.Activity;
+import android.content.res.Resources;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,6 +19,7 @@ import java.util.List;
 import admob.plus.cordova.ads.Banner.AdSizeType;
 import admob.plus.core.Ad;
 import admob.plus.core.Context;
+import admob.plus.core.Helper;
 
 import static admob.plus.core.Helper.jsonArray2stringList;
 
@@ -135,15 +137,31 @@ public class ExecuteContext implements Context {
         if (!opts.has(name)) {
             return AdSize.SMART_BANNER;
         }
-        AdSize adSize = AdSizeType.getAdSize(opts.optInt(name));
-        if (adSize != null) {
-            return adSize;
-        }
         JSONObject adSizeObj = opts.optJSONObject(name);
+        AdSize adSize = AdSizeType.getAdSize(opts.optInt(name));
         if (adSizeObj == null) {
+            if (adSize != null) {
+                return adSize;
+            }
             return AdSize.SMART_BANNER;
         }
-        return new AdSize(adSizeObj.optInt("width"), adSizeObj.optInt("height"));
+        String adaptive = adSizeObj.optString("adaptive");
+        int w = Helper.pxToDp(adSizeObj.has("width") ? adSizeObj.optInt("width") : Resources.getSystem().getDisplayMetrics().widthPixels);
+        if ("inline".equals(adaptive)) {
+            if (adSizeObj.has("maxHeight")) {
+                return AdSize.getInlineAdaptiveBannerAdSize(w, Helper.pxToDp(adSizeObj.optInt("maxHeight")));
+            }
+        } else {
+            switch (adSizeObj.optString("orientation")) {
+                case "portrait":
+                    return AdSize.getPortraitAnchoredAdaptiveBannerAdSize(getActivity(), w);
+                case "landscape":
+                    return AdSize.getLandscapeAnchoredAdaptiveBannerAdSize(getActivity(), w);
+                default:
+                    return AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(getActivity(), w);
+            }
+        }
+        return new AdSize(w, Helper.pxToDp(adSizeObj.optInt("height")));
     }
 
     public Activity getActivity() {
