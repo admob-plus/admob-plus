@@ -34,9 +34,37 @@ index.ts:101
 
 ## Properties
 
-### \_loaded
+### #created
 
-• **\_loaded**: `boolean` = `false`
+• `Private` **#created**: `boolean` = `false`
+
+#### Inherited from
+
+MobileAd.#created
+
+#### Defined in
+
+index.ts:27
+
+___
+
+### #init
+
+• `Private` **#init**: ``null`` \| `Promise`<`any`\> = `null`
+
+#### Inherited from
+
+MobileAd.#init
+
+#### Defined in
+
+index.ts:28
+
+___
+
+### #loaded
+
+• `Private` **#loaded**: `boolean` = `false`
 
 #### Defined in
 

@@ -34,6 +34,34 @@ index.ts:30
 
 ## Properties
 
+### #created
+
+• `Private` **#created**: `boolean` = `false`
+
+#### Inherited from
+
+MobileAd.#created
+
+#### Defined in
+
+index.ts:27
+
+___
+
+### #init
+
+• `Private` **#init**: ``null`` \| `Promise`<`any`\> = `null`
+
+#### Inherited from
+
+MobileAd.#init
+
+#### Defined in
+
+index.ts:28
+
+___
+
 ### id
 
 • `Readonly` **id**: `number`
