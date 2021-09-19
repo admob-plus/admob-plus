@@ -1,6 +1,6 @@
 verbose = true
 
-max-concurrency = 16
+max-concurrency = 8
 
 exclude = [
   "adlic.rjfun.com",
