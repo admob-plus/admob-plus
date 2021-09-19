@@ -118,26 +118,21 @@ class AMBContext: AMBCoreContext {
         }
         if let adSizeDict = opt("size") as? NSDictionary {
             if let adaptive = adSizeDict["adaptive"] as? String {
+                var width = AMBHelper.frame.size.width
+                if let w = adSizeDict["width"] as? CGFloat {
+                    width = w
+                }
                 if adaptive == "inline",
                    let maxHeight = adSizeDict["maxHeight"] as? CGFloat {
-                    if let width = adSizeDict["width"] as? CGFloat {
-                        return GADInlineAdaptiveBannerAdSizeWithWidthAndMaxHeight(width, maxHeight)
-                    } else {
-                        return GADInlineAdaptiveBannerAdSizeWithWidthAndMaxHeight(AMBHelper.frame.size.width, maxHeight)
-                    }
+                    return GADInlineAdaptiveBannerAdSizeWithWidthAndMaxHeight(width, maxHeight)
                 } else {
-                    var f = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth
-                    if let orientation = adSizeDict["orientation"] as? String {
-                        if orientation == "portrait" {
-                            f = GADPortraitAnchoredAdaptiveBannerAdSizeWithWidth
-                        } else if orientation == "landscape" {
-                            f = GADLandscapeAnchoredAdaptiveBannerAdSizeWithWidth
-                        }
-                    }
-                    if let width = adSizeDict["width"] as? CGFloat {
-                        return f(width)
-                    } else {
-                        return f(AMBHelper.frame.size.width)
+                    switch adSizeDict["orientation"] as? String {
+                    case "portrait":
+                        return GADPortraitAnchoredAdaptiveBannerAdSizeWithWidth(width)
+                    case "landscape":
+                        return GADLandscapeAnchoredAdaptiveBannerAdSizeWithWidth(width)
+                    default:
+                        return GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(width)
                     }
                 }
             } else if let width = adSizeDict["width"] as? Int,
