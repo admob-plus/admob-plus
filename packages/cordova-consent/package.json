@@ -13,7 +13,7 @@
   "devDependencies": {
     "@admob-plus-internal/rollup-config": "file:../../internal/rollup-config",
     "@types/cordova": "^0.0.34",
-    "@types/node": "^16.9.1",
+    "@types/node": "^16.9.3",
     "cordova": "^10.0.0",
     "rollup": "^2.56.3",
     "sync-package-version": "^0.1.1",
