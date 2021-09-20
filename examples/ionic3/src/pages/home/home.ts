@@ -32,6 +32,7 @@ export class HomePage {
   }
 
   async hideBannerAd() {
-    await this.banner?.hide();
+    if (!this.banner) return;
+    await this.banner.hide();
   }
 }
