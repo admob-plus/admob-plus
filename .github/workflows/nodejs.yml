@@ -186,12 +186,19 @@ jobs:
           yarn prepare
           yarn example cordova platform rm android
           popd
+          pushd examples/ionic3
+          touch yarn.lock
+          yarn
+          popd
 
       - name: Test
         run: |
           yarn test-ios
           pushd examples/cordova
           yarn test:ios
+          popd
+          pushd examples/ionic3
+          yarn build --prod
           popd
 
   link-checker:
