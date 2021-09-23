@@ -1,7 +1,10 @@
 import {
   AdSizeType,
-  execAsync, MobileAd, MobileAdOptions, NativeActions,
-  Platforms
+  execAsync,
+  MobileAd,
+  MobileAdOptions,
+  NativeActions,
+  Platforms,
 } from './shared'
 
 type Position = 'top' | 'bottom'
@@ -33,9 +36,23 @@ const colorToRGBA = (function () {
   }
 })()
 
+type BannerSize =
+  | AdSizeType
+  | { width: number; height: number }
+  | {
+      adaptive: 'anchored'
+      orientation?: 'portrait' | 'landscape'
+      width?: number
+    }
+  | {
+      adaptive: 'inline'
+      maxHeight: number
+      width?: number
+    }
+
 export interface BannerAdOptions extends MobileAdOptions {
   position?: Position
-  size?: AdSizeType
+  size?: BannerSize
   offset?: number
 }
 

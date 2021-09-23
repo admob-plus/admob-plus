@@ -123,7 +123,7 @@ class AMBContext: AMBCoreContext {
                     width = w
                 }
                 if adaptive == "inline",
-                   let maxHeight = adSizeDict["maxHeight"] as? CGFloat {
+                    let maxHeight = adSizeDict["maxHeight"] as? CGFloat {
                     return GADInlineAdaptiveBannerAdSizeWithWidthAndMaxHeight(width, maxHeight)
                 } else {
                     switch adSizeDict["orientation"] as? String {
