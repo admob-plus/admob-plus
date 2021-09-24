@@ -8,7 +8,7 @@ custom_edit_url: null
 
 ## Hierarchy
 
-- [`MobileAdOptions`](../index.md#mobileadoptions)
+- [`MobileAdOptions`](../#mobileadoptions)
 
   ↳ **`BannerAdOptions`**
 
@@ -90,7 +90,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/banner.ts:39
+code/github/admob-plus/packages/cordova/ts/banner.ts:56
 
 ___
 
@@ -100,14 +100,14 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/banner.ts:37
+code/github/admob-plus/packages/cordova/ts/banner.ts:54
 
 ___
 
 ### size
 
-• `Optional` **size**: [`AdSizeType`](../enums/AdSizeType.md)
+• `Optional` **size**: `BannerSize`
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/banner.ts:38
+code/github/admob-plus/packages/cordova/ts/banner.ts:55

@@ -1,7 +1,7 @@
 ---
 id: "index"
 title: "cordova-plugin-consent"
-slug: "/cordova/consent/api"
+slug: "/cordova/consent/api/"
 sidebar_label: "Exports"
 sidebar_position: 0.5
 custom_edit_url: null
@@ -9,11 +9,11 @@ custom_edit_url: null
 
 ## Enumerations
 
-- [DebugGeography](enums/DebugGeography.md)
-- [FormStatus](enums/FormStatus.md)
-- [TrackingAuthorizationStatus](enums/TrackingAuthorizationStatus.md)
+- [DebugGeography](enums/DebugGeography)
+- [FormStatus](enums/FormStatus)
+- [TrackingAuthorizationStatus](enums/TrackingAuthorizationStatus)
 
 ## Classes
 
-- [Consent](classes/Consent.md)
-- [ConsentForm](classes/ConsentForm.md)
+- [Consent](classes/Consent)
+- [ConsentForm](classes/ConsentForm)

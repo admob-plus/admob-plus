@@ -22,7 +22,7 @@ custom_edit_url: null
 
 | Name | Type |
 | :------ | :------ |
-| `opts` | [`MobileAdOptions`](../index.md#mobileadoptions) |
+| `opts` | [`MobileAdOptions`](../#mobileadoptions) |
 
 #### Inherited from
 
@@ -50,7 +50,7 @@ ___
 
 ### opts
 
-• `Protected` `Readonly` **opts**: [`MobileAdOptions`](../index.md#mobileadoptions)
+• `Protected` `Readonly` **opts**: [`MobileAdOptions`](../#mobileadoptions)
 
 #### Inherited from
 

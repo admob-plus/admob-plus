@@ -16,7 +16,7 @@ custom_edit_url: null
 
 | Name | Type |
 | :------ | :------ |
-| `O` | extends [`MobileAdOptions`](../index.md#mobileadoptions) |
+| `O` | extends [`MobileAdOptions`](../#mobileadoptions) |
 
 #### Parameters
 
@@ -105,7 +105,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `config` | [`AdMobConfig`](../index.md#admobconfig) |
+| `config` | [`AdMobConfig`](../#admobconfig) |
 
 #### Returns
 

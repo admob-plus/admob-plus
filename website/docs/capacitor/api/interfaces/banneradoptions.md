@@ -8,7 +8,7 @@ custom_edit_url: null
 
 ## Hierarchy
 
-- [`MobileAdOptions`](../index.md#mobileadoptions)
+- [`MobileAdOptions`](../#mobileadoptions)
 
   ↳ **`BannerAdOptions`**
 

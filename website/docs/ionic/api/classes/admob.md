@@ -30,7 +30,7 @@ IonicNativePlugin.constructor
 
 ### BannerAd
 
-• `Readonly` **BannerAd**: typeof [`BannerAd`](BannerAd.md)
+• `Readonly` **BannerAd**: typeof [`BannerAd`](BannerAd)
 
 #### Defined in
 
@@ -40,7 +40,7 @@ ___
 
 ### InterstitialAd
 
-• `Readonly` **InterstitialAd**: typeof [`InterstitialAd`](InterstitialAd.md)
+• `Readonly` **InterstitialAd**: typeof [`InterstitialAd`](InterstitialAd)
 
 #### Defined in
 
@@ -50,7 +50,7 @@ ___
 
 ### RewardedAd
 
-• `Readonly` **RewardedAd**: typeof [`RewardedAd`](RewardedAd.md)
+• `Readonly` **RewardedAd**: typeof [`RewardedAd`](RewardedAd)
 
 #### Defined in
 
@@ -60,7 +60,7 @@ ___
 
 ### RewardedInterstitialAd
 
-• `Readonly` **RewardedInterstitialAd**: typeof [`RewardedInterstitialAd`](RewardedInterstitialAd.md)
+• `Readonly` **RewardedInterstitialAd**: typeof [`RewardedInterstitialAd`](RewardedInterstitialAd)
 
 #### Defined in
 
@@ -208,11 +208,11 @@ ___
 
 ### requestTrackingAuthorization
 
-▸ **requestTrackingAuthorization**(): `Promise`<``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)\>
+▸ **requestTrackingAuthorization**(): `Promise`<``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus)\>
 
 #### Returns
 
-`Promise`<``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)\>
+`Promise`<``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus)\>
 
 #### Implementation of
 

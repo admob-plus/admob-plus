@@ -12,23 +12,23 @@ custom_edit_url: null
 
 | Name | Type |
 | :------ | :------ |
-| `T` | extends [`MobileAdOptions`](../index.md#mobileadoptions)[`MobileAdOptions`](../index.md#mobileadoptions) |
+| `T` | extends [`MobileAdOptions`](../#mobileadoptions)[`MobileAdOptions`](../#mobileadoptions) |
 
 ## Hierarchy
 
 - **`MobileAd`**
 
-  ↳ [`AppOpenAd`](AppOpenAd.md)
+  ↳ [`AppOpenAd`](AppOpenAd)
 
-  ↳ [`BannerAd`](BannerAd.md)
+  ↳ [`BannerAd`](BannerAd)
 
-  ↳ [`InterstitialAd`](InterstitialAd.md)
+  ↳ [`InterstitialAd`](InterstitialAd)
 
-  ↳ [`NativeAd`](NativeAd.md)
+  ↳ [`NativeAd`](NativeAd)
 
-  ↳ [`RewardedAd`](RewardedAd.md)
+  ↳ [`RewardedAd`](RewardedAd)
 
-  ↳ [`RewardedInterstitialAd`](RewardedInterstitialAd.md)
+  ↳ [`RewardedInterstitialAd`](RewardedInterstitialAd)
 
 ## Constructors
 
@@ -40,7 +40,7 @@ custom_edit_url: null
 
 | Name | Type |
 | :------ | :------ |
-| `T` | extends [`MobileAdOptions`](../index.md#mobileadoptions)[`MobileAdOptions`](../index.md#mobileadoptions) |
+| `T` | extends [`MobileAdOptions`](../#mobileadoptions)[`MobileAdOptions`](../#mobileadoptions) |
 
 #### Parameters
 
@@ -100,7 +100,7 @@ ___
 
 #### Index signature
 
-▪ [s: `number`]: [`MobileAd`](MobileAd.md)
+▪ [s: `number`]: [`MobileAd`](MobileAd)
 
 #### Defined in
 
@@ -206,7 +206,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `...args` | [type: string, listener: function, useCapture?: boolean] |
+| `...args` | [type: string, listener: Function, useCapture?: boolean] |
 
 #### Returns
 
@@ -246,7 +246,7 @@ ___
 
 ### getAdById
 
-▸ `Static` **getAdById**(`id`): [`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../index.md#mobileadoptions)\>
+▸ `Static` **getAdById**(`id`): [`MobileAd`](MobileAd)<[`MobileAdOptions`](../#mobileadoptions)\>
 
 #### Parameters
 
@@ -256,7 +256,7 @@ ___
 
 #### Returns
 
-[`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../index.md#mobileadoptions)\>
+[`MobileAd`](MobileAd)<[`MobileAdOptions`](../#mobileadoptions)\>
 
 #### Defined in
 

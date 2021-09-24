@@ -1,7 +1,7 @@
 ---
 id: "index"
 title: "@admob-plus/react-native"
-slug: "/react-native/api"
+slug: "/react-native/api/"
 sidebar_label: "Exports"
 sidebar_position: 0.5
 custom_edit_url: null
@@ -9,23 +9,23 @@ custom_edit_url: null
 
 ## Enumerations
 
-- [MaxAdContentRating](enums/MaxAdContentRating.md)
+- [MaxAdContentRating](enums/MaxAdContentRating)
 
 ## Classes
 
-- [InterstitialAd](classes/InterstitialAd.md)
-- [RewardedAd](classes/RewardedAd.md)
-- [RewardedInterstitialAd](classes/RewardedInterstitialAd.md)
+- [InterstitialAd](classes/InterstitialAd)
+- [RewardedAd](classes/RewardedAd)
+- [RewardedInterstitialAd](classes/RewardedInterstitialAd)
 
 ## Interfaces
 
-- [AdMobPlusPlugin](interfaces/AdMobPlusPlugin.md)
+- [AdMobPlusPlugin](interfaces/AdMobPlusPlugin)
 
 ## References
 
 ### default
 
-Renames and exports: [AdMobPlus](index.md#admobplus)
+• **default**: `Object`
 
 ## Type aliases
 
@@ -39,7 +39,7 @@ Renames and exports: [AdMobPlus](index.md#admobplus)
 | :------ | :------ |
 | `appMuted?` | `boolean` |
 | `appVolume?` | `number` |
-| `maxAdContentRating?` | [`MaxAdContentRating`](enums/MaxAdContentRating.md) |
+| `maxAdContentRating?` | [`MaxAdContentRating`](enums/MaxAdContentRating) |
 | `sameAppKey?` | `boolean` |
 | `tagForChildDirectedTreatment?` | `boolean` \| ``null`` |
 | `tagForUnderAgeOfConsent?` | `boolean` \| ``null`` |
@@ -69,7 +69,7 @@ definitions.ts:20
 
 ### AdMobPlus
 
-• `Const` **AdMobPlus**: [`AdMobPlusPlugin`](interfaces/AdMobPlusPlugin.md)
+• **AdMobPlus**: [`AdMobPlusPlugin`](interfaces/AdMobPlusPlugin)
 
 #### Defined in
 
@@ -79,7 +79,7 @@ ___
 
 ### eventEmitter
 
-• `Const` **eventEmitter**: `NativeEventEmitter`
+• **eventEmitter**: `NativeEventEmitter`
 
 #### Defined in
 

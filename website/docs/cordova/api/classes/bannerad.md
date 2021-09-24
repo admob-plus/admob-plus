@@ -8,7 +8,7 @@ custom_edit_url: null
 
 ## Hierarchy
 
-- [`MobileAd`](MobileAd.md)<[`BannerAdOptions`](../interfaces/BannerAdOptions.md)\>
+- [`MobileAd`](MobileAd)<[`BannerAdOptions`](../interfaces/BannerAdOptions)\>
 
   ↳ **`BannerAd`**
 
@@ -22,15 +22,15 @@ custom_edit_url: null
 
 | Name | Type |
 | :------ | :------ |
-| `opts` | [`BannerAdOptions`](../interfaces/BannerAdOptions.md) |
+| `opts` | [`BannerAdOptions`](../interfaces/BannerAdOptions) |
 
 #### Overrides
 
-[MobileAd](MobileAd.md).[constructor](MobileAd.md#constructor)
+[MobileAd](MobileAd).[constructor](MobileAd#constructor)
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/banner.ts:47
+code/github/admob-plus/packages/cordova/ts/banner.ts:64
 
 ## Properties
 
@@ -40,7 +40,7 @@ code/github/admob-plus/packages/cordova/ts/banner.ts:47
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/banner.ts:45
+code/github/admob-plus/packages/cordova/ts/banner.ts:62
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 #### Inherited from
 
-[MobileAd](MobileAd.md).[id](MobileAd.md#id)
+[MobileAd](MobileAd).[id](MobileAd#id)
 
 #### Defined in
 
@@ -60,11 +60,11 @@ ___
 
 ### opts
 
-• `Protected` `Readonly` **opts**: [`BannerAdOptions`](../interfaces/BannerAdOptions.md)
+• `Protected` `Readonly` **opts**: [`BannerAdOptions`](../interfaces/BannerAdOptions)
 
 #### Inherited from
 
-[MobileAd](MobileAd.md).[opts](MobileAd.md#opts)
+[MobileAd](MobileAd).[opts](MobileAd#opts)
 
 #### Defined in
 
@@ -78,7 +78,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/banner.ts:43
+code/github/admob-plus/packages/cordova/ts/banner.ts:60
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 #### Inherited from
 
-[MobileAd](MobileAd.md).[type](MobileAd.md#type)
+[MobileAd](MobileAd).[type](MobileAd#type)
 
 #### Defined in
 
@@ -120,11 +120,11 @@ code/github/admob-plus/packages/cordova/ts/api.ts:61
 
 #### Overrides
 
-[MobileAd](MobileAd.md).[hide](MobileAd.md#hide)
+[MobileAd](MobileAd).[hide](MobileAd#hide)
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/banner.ts:82
+code/github/admob-plus/packages/cordova/ts/banner.ts:99
 
 ___
 
@@ -138,7 +138,7 @@ ___
 
 #### Inherited from
 
-[MobileAd](MobileAd.md).[init](MobileAd.md#init)
+[MobileAd](MobileAd).[init](MobileAd#init)
 
 #### Defined in
 
@@ -156,7 +156,7 @@ ___
 
 #### Inherited from
 
-[MobileAd](MobileAd.md).[isLoaded](MobileAd.md#isloaded)
+[MobileAd](MobileAd).[isLoaded](MobileAd#isloaded)
 
 #### Defined in
 
@@ -174,11 +174,11 @@ ___
 
 #### Overrides
 
-[MobileAd](MobileAd.md).[load](MobileAd.md#load)
+[MobileAd](MobileAd).[load](MobileAd#load)
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/banner.ts:69
+code/github/admob-plus/packages/cordova/ts/banner.ts:86
 
 ___
 
@@ -190,7 +190,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `...args` | [type: string, listener: function, useCapture?: boolean] |
+| `...args` | [type: string, listener: Function, useCapture?: boolean] |
 
 #### Returns
 
@@ -204,7 +204,7 @@ ___
 
 #### Inherited from
 
-[MobileAd](MobileAd.md).[on](MobileAd.md#on)
+[MobileAd](MobileAd).[on](MobileAd#on)
 
 #### Defined in
 
@@ -222,11 +222,11 @@ ___
 
 #### Overrides
 
-[MobileAd](MobileAd.md).[show](MobileAd.md#show)
+[MobileAd](MobileAd).[show](MobileAd#show)
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/banner.ts:74
+code/github/admob-plus/packages/cordova/ts/banner.ts:91
 
 ___
 
@@ -249,13 +249,13 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/banner.ts:55
+code/github/admob-plus/packages/cordova/ts/banner.ts:72
 
 ___
 
 ### getAdById
 
-▸ `Static` **getAdById**(`id`): [`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../index.md#mobileadoptions)\>
+▸ `Static` **getAdById**(`id`): [`MobileAd`](MobileAd)<[`MobileAdOptions`](../#mobileadoptions)\>
 
 #### Parameters
 
@@ -265,11 +265,11 @@ ___
 
 #### Returns
 
-[`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../index.md#mobileadoptions)\>
+[`MobileAd`](MobileAd)<[`MobileAdOptions`](../#mobileadoptions)\>
 
 #### Inherited from
 
-[MobileAd](MobileAd.md).[getAdById](MobileAd.md#getadbyid)
+[MobileAd](MobileAd).[getAdById](MobileAd#getadbyid)
 
 #### Defined in
 

@@ -8,11 +8,11 @@ custom_edit_url: null
 
 ## Hierarchy
 
-- [`MobileAdOptions`](../index.md#mobileadoptions)
+- [`MobileAdOptions`](../#mobileadoptions)
 
   ↳ **`RewardedAdOptions`**
 
-  ↳↳ [`RewardedInterstitialAdOptions`](RewardedInterstitialAdOptions.md)
+  ↳↳ [`RewardedInterstitialAdOptions`](RewardedInterstitialAdOptions)
 
 ## Properties
 
@@ -88,7 +88,7 @@ ___
 
 ### serverSideVerification
 
-• `Optional` **serverSideVerification**: [`ServerSideVerificationOptions`](ServerSideVerificationOptions.md)
+• `Optional` **serverSideVerification**: [`ServerSideVerificationOptions`](ServerSideVerificationOptions)
 
 #### Defined in
 

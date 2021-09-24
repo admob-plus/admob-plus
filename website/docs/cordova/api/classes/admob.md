@@ -20,7 +20,7 @@ code/github/admob-plus/packages/cordova/ts/index.ts:50
 
 ### AppOpenAd
 
-• `Readonly` **AppOpenAd**: typeof [`AppOpenAd`](AppOpenAd.md)
+• `Readonly` **AppOpenAd**: typeof [`AppOpenAd`](AppOpenAd)
 
 #### Defined in
 
@@ -30,7 +30,7 @@ ___
 
 ### BannerAd
 
-• `Readonly` **BannerAd**: typeof [`BannerAd`](BannerAd.md)
+• `Readonly` **BannerAd**: typeof [`BannerAd`](BannerAd)
 
 #### Defined in
 
@@ -40,7 +40,7 @@ ___
 
 ### Events
 
-• `Readonly` **Events**: typeof [`Events`](../enums/Events.md)
+• `Readonly` **Events**: typeof [`Events`](../enums/Events)
 
 #### Defined in
 
@@ -50,7 +50,7 @@ ___
 
 ### InterstitialAd
 
-• `Readonly` **InterstitialAd**: typeof [`InterstitialAd`](InterstitialAd.md)
+• `Readonly` **InterstitialAd**: typeof [`InterstitialAd`](InterstitialAd)
 
 #### Defined in
 
@@ -60,7 +60,7 @@ ___
 
 ### NativeAd
 
-• `Readonly` **NativeAd**: typeof [`NativeAd`](NativeAd.md)
+• `Readonly` **NativeAd**: typeof [`NativeAd`](NativeAd)
 
 #### Defined in
 
@@ -70,7 +70,7 @@ ___
 
 ### RewardedAd
 
-• `Readonly` **RewardedAd**: typeof [`RewardedAd`](RewardedAd.md)
+• `Readonly` **RewardedAd**: typeof [`RewardedAd`](RewardedAd)
 
 #### Defined in
 
@@ -80,7 +80,7 @@ ___
 
 ### RewardedInterstitialAd
 
-• `Readonly` **RewardedInterstitialAd**: typeof [`RewardedInterstitialAd`](RewardedInterstitialAd.md)
+• `Readonly` **RewardedInterstitialAd**: typeof [`RewardedInterstitialAd`](RewardedInterstitialAd)
 
 #### Defined in
 
@@ -90,7 +90,7 @@ ___
 
 ### TrackingAuthorizationStatus
 
-• `Readonly` **TrackingAuthorizationStatus**: typeof [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)
+• `Readonly` **TrackingAuthorizationStatus**: typeof [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus)
 
 #### Defined in
 
@@ -106,7 +106,7 @@ code/github/admob-plus/packages/cordova/ts/index.ts:48
 
 | Name | Type |
 | :------ | :------ |
-| `requestConfig` | [`RequestConfig`](../index.md#requestconfig) |
+| `requestConfig` | [`RequestConfig`](../#requestconfig) |
 
 #### Returns
 
@@ -126,7 +126,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `config` | [`AdMobConfig`](../index.md#admobconfig) |
+| `config` | [`AdMobConfig`](../#admobconfig) |
 
 #### Returns
 
@@ -140,11 +140,11 @@ ___
 
 ### requestTrackingAuthorization
 
-▸ **requestTrackingAuthorization**(): `Promise`<``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)\>
+▸ **requestTrackingAuthorization**(): `Promise`<``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus)\>
 
 #### Returns
 
-`Promise`<``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)\>
+`Promise`<``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus)\>
 
 #### Defined in
 

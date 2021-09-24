@@ -1,7 +1,7 @@
 ---
 id: "index"
 title: "@admob-plus/capacitor"
-slug: "/capacitor/api"
+slug: "/capacitor/api/"
 sidebar_label: "Exports"
 sidebar_position: 0.5
 custom_edit_url: null
@@ -9,20 +9,20 @@ custom_edit_url: null
 
 ## Enumerations
 
-- [MaxAdContentRating](enums/MaxAdContentRating.md)
-- [TrackingAuthorizationStatus](enums/TrackingAuthorizationStatus.md)
+- [MaxAdContentRating](enums/MaxAdContentRating)
+- [TrackingAuthorizationStatus](enums/TrackingAuthorizationStatus)
 
 ## Classes
 
-- [BannerAd](classes/BannerAd.md)
-- [InterstitialAd](classes/InterstitialAd.md)
-- [RewardedAd](classes/RewardedAd.md)
-- [RewardedInterstitialAd](classes/RewardedInterstitialAd.md)
+- [BannerAd](classes/BannerAd)
+- [InterstitialAd](classes/InterstitialAd)
+- [RewardedAd](classes/RewardedAd)
+- [RewardedInterstitialAd](classes/RewardedInterstitialAd)
 
 ## Interfaces
 
-- [AdMobPlusPlugin](interfaces/AdMobPlusPlugin.md)
-- [BannerAdOptions](interfaces/BannerAdOptions.md)
+- [AdMobPlusPlugin](interfaces/AdMobPlusPlugin)
+- [BannerAdOptions](interfaces/BannerAdOptions)
 
 ## Type aliases
 
@@ -67,7 +67,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `maxAdContentRating?` | [`MaxAdContentRating`](enums/MaxAdContentRating.md) |
+| `maxAdContentRating?` | [`MaxAdContentRating`](enums/MaxAdContentRating) |
 | `sameAppKey?` | `boolean` |
 | `tagForChildDirectedTreatment?` | `boolean` \| ``null`` |
 | `tagForUnderAgeOfConsent?` | `boolean` \| ``null`` |
@@ -81,7 +81,7 @@ definitions.ts:16
 
 ### AdMobPlus
 
-• `Const` **AdMobPlus**: [`AdMobPlusPlugin`](interfaces/AdMobPlusPlugin.md)
+• **AdMobPlus**: [`AdMobPlusPlugin`](interfaces/AdMobPlusPlugin)
 
 #### Defined in
 

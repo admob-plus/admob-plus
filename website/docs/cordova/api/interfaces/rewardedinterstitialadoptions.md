@@ -8,7 +8,7 @@ custom_edit_url: null
 
 ## Hierarchy
 
-- [`RewardedAdOptions`](RewardedAdOptions.md)
+- [`RewardedAdOptions`](RewardedAdOptions)
 
   ↳ **`RewardedInterstitialAdOptions`**
 
@@ -20,7 +20,7 @@ custom_edit_url: null
 
 #### Inherited from
 
-[RewardedAdOptions](RewardedAdOptions.md).[adUnitId](RewardedAdOptions.md#adunitid)
+[RewardedAdOptions](RewardedAdOptions).[adUnitId](RewardedAdOptions#adunitid)
 
 #### Defined in
 
@@ -34,7 +34,7 @@ ___
 
 #### Inherited from
 
-[RewardedAdOptions](RewardedAdOptions.md).[contentUrl](RewardedAdOptions.md#contenturl)
+[RewardedAdOptions](RewardedAdOptions).[contentUrl](RewardedAdOptions#contenturl)
 
 #### Defined in
 
@@ -48,7 +48,7 @@ ___
 
 #### Inherited from
 
-[RewardedAdOptions](RewardedAdOptions.md).[id](RewardedAdOptions.md#id)
+[RewardedAdOptions](RewardedAdOptions).[id](RewardedAdOptions#id)
 
 #### Defined in
 
@@ -62,7 +62,7 @@ ___
 
 #### Inherited from
 
-[RewardedAdOptions](RewardedAdOptions.md).[keywords](RewardedAdOptions.md#keywords)
+[RewardedAdOptions](RewardedAdOptions).[keywords](RewardedAdOptions#keywords)
 
 #### Defined in
 
@@ -76,7 +76,7 @@ ___
 
 #### Inherited from
 
-[RewardedAdOptions](RewardedAdOptions.md).[npa](RewardedAdOptions.md#npa)
+[RewardedAdOptions](RewardedAdOptions).[npa](RewardedAdOptions#npa)
 
 #### Defined in
 
@@ -86,11 +86,11 @@ ___
 
 ### serverSideVerification
 
-• `Optional` **serverSideVerification**: [`ServerSideVerificationOptions`](ServerSideVerificationOptions.md)
+• `Optional` **serverSideVerification**: [`ServerSideVerificationOptions`](ServerSideVerificationOptions)
 
 #### Inherited from
 
-[RewardedAdOptions](RewardedAdOptions.md).[serverSideVerification](RewardedAdOptions.md#serversideverification)
+[RewardedAdOptions](RewardedAdOptions).[serverSideVerification](RewardedAdOptions#serversideverification)
 
 #### Defined in
 

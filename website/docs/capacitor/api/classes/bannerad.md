@@ -22,7 +22,7 @@ custom_edit_url: null
 
 | Name | Type |
 | :------ | :------ |
-| `opts` | [`BannerAdOptions`](../interfaces/BannerAdOptions.md) |
+| `opts` | [`BannerAdOptions`](../interfaces/BannerAdOptions) |
 
 #### Overrides
 
@@ -88,7 +88,7 @@ ___
 
 ### opts
 
-• `Protected` `Readonly` **opts**: [`MobileAdOptions`](../index.md#mobileadoptions)
+• `Protected` `Readonly` **opts**: [`MobileAdOptions`](../#mobileadoptions)
 
 #### Inherited from
 

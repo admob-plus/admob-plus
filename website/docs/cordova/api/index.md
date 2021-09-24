@@ -1,7 +1,7 @@
 ---
 id: "index"
 title: "admob-plus-cordova"
-slug: "/cordova/api"
+slug: "/cordova/api/"
 sidebar_label: "Exports"
 sidebar_position: 0.5
 custom_edit_url: null
@@ -9,42 +9,42 @@ custom_edit_url: null
 
 ## Enumerations
 
-- [AdSizeType](enums/AdSizeType.md)
-- [Events](enums/Events.md)
-- [MaxAdContentRating](enums/MaxAdContentRating.md)
-- [NativeActions](enums/NativeActions.md)
-- [Platforms](enums/Platforms.md)
-- [TrackingAuthorizationStatus](enums/TrackingAuthorizationStatus.md)
+- [AdSizeType](enums/AdSizeType)
+- [Events](enums/Events)
+- [MaxAdContentRating](enums/MaxAdContentRating)
+- [NativeActions](enums/NativeActions)
+- [Platforms](enums/Platforms)
+- [TrackingAuthorizationStatus](enums/TrackingAuthorizationStatus)
 
 ## Classes
 
-- [AdMob](classes/AdMob.md)
-- [AppOpenAd](classes/AppOpenAd.md)
-- [BannerAd](classes/BannerAd.md)
-- [InterstitialAd](classes/InterstitialAd.md)
-- [MobileAd](classes/MobileAd.md)
-- [NativeAd](classes/NativeAd.md)
-- [RewardedAd](classes/RewardedAd.md)
-- [RewardedInterstitialAd](classes/RewardedInterstitialAd.md)
+- [AdMob](classes/AdMob)
+- [AppOpenAd](classes/AppOpenAd)
+- [BannerAd](classes/BannerAd)
+- [InterstitialAd](classes/InterstitialAd)
+- [MobileAd](classes/MobileAd)
+- [NativeAd](classes/NativeAd)
+- [RewardedAd](classes/RewardedAd)
+- [RewardedInterstitialAd](classes/RewardedInterstitialAd)
 
 ## Interfaces
 
-- [BannerAdOptions](interfaces/BannerAdOptions.md)
-- [RewardedAdOptions](interfaces/RewardedAdOptions.md)
-- [RewardedInterstitialAdOptions](interfaces/RewardedInterstitialAdOptions.md)
-- [ServerSideVerificationOptions](interfaces/ServerSideVerificationOptions.md)
+- [BannerAdOptions](interfaces/BannerAdOptions)
+- [RewardedAdOptions](interfaces/RewardedAdOptions)
+- [RewardedInterstitialAdOptions](interfaces/RewardedInterstitialAdOptions)
+- [ServerSideVerificationOptions](interfaces/ServerSideVerificationOptions)
 
 ## References
 
 ### default
 
-Renames and exports: [AdMob](classes/AdMob.md)
+• **default**: `Object`
 
 ## Type aliases
 
 ### AdMobConfig
 
-Ƭ **AdMobConfig**: { `appMuted?`: `boolean` ; `appVolume?`: `number`  } & [`RequestConfig`](index.md#requestconfig)
+Ƭ **AdMobConfig**: { `appMuted?`: `boolean` ; `appVolume?`: `number`  } & [`RequestConfig`](#requestconfig)
 
 #### Defined in
 
@@ -82,7 +82,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `maxAdContentRating?` | [`MaxAdContentRating`](enums/MaxAdContentRating.md) |
+| `maxAdContentRating?` | [`MaxAdContentRating`](enums/MaxAdContentRating) |
 | `sameAppKey?` | `boolean` |
 | `tagForChildDirectedTreatment?` | `boolean` \| ``null`` |
 | `tagForUnderAgeOfConsent?` | `boolean` \| ``null`` |
@@ -102,7 +102,7 @@ code/github/admob-plus/packages/cordova/ts/api.ts:133
 
 | Name | Type |
 | :------ | :------ |
-| `action` | [`NativeActions`](enums/NativeActions.md) |
+| `action` | [`NativeActions`](enums/NativeActions) |
 | `args?` | `any`[] |
 
 #### Returns
