@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@chakra-ui/react": "^1.6.7",
+    "@chakra-ui/react": "^1.6.8",
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
     "admob-plus-cordova": "file:../../packages/cordova",
@@ -14,7 +14,7 @@
     "react-icons": "^4.2.0",
     "recoil": "^0.4.1",
     "web-vitals": "^2.1.0",
-    "wouter": "^2.7.4"
+    "wouter": "^2.7.5"
   },
   "devDependencies": {
     "@admob-plus-internal/cli": "file:../../internal/cli",
@@ -22,11 +22,11 @@
     "@testing-library/react": "^12.1.0",
     "@testing-library/user-event": "^13.2.1",
     "@types/cordova": "^0.0.34",
-    "@types/fs-extra": "^9.0.12",
-    "@types/jest": "^27.0.1",
+    "@types/fs-extra": "^9.0.13",
+    "@types/jest": "^27.0.2",
     "@types/lodash": "^4.14.173",
-    "@types/node": "^16.9.3",
-    "@types/react": "^17.0.21",
+    "@types/node": "^16.9.6",
+    "@types/react": "^17.0.24",
     "@types/react-dom": "^17.0.9",
     "@types/recoil": "^0.0.1",
     "cordova": "^10.0.1-nightly.2021.2.10.189ac49b",
