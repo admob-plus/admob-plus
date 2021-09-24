@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.25.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.24.0...admob-plus-cordova@1.25.0) (2021-09-24)
+
+
+### Features
+
+* **cordova/android:** support adaptive banner ([6b511f2](https://github.com/admob-plus/admob-plus/commit/6b511f256ccc2caf82ee30ee33fae8c47d86c078))
+* **cordova/ios:** support adaptive banner ([f9e724e](https://github.com/admob-plus/admob-plus/commit/f9e724e94f820ab81184514caca887c7e4930fae))
+* **cordova:** add BannerSize type ([a60439d](https://github.com/admob-plus/admob-plus/commit/a60439dd58576ee3361e03f41d40142bb76156d9))
+* update Google-Mobile-Ads-SDK to 8.11.0 ([fb59775](https://github.com/admob-plus/admob-plus/commit/fb5977513c872e4cc5435f5ae4d4513e5571c586))
+
+
+
+
+
 # [1.24.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.23.1...admob-plus-cordova@1.24.0) (2021-09-12)
 
 
