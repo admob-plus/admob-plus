@@ -32,6 +32,14 @@ class AMBHelper {
         }
     }
 
+    static var frame: CGRect {
+        if #available(iOS 11.0, *) {
+            return window.frame.inset(by: window.safeAreaInsets)
+        } else {
+            return window.frame
+        }
+    }
+
     let adapter: AMBHelperAdapter
 
     init(_ adapter: AMBHelperAdapter) {
