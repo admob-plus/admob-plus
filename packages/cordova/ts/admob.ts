@@ -2,11 +2,7 @@ import cordova from 'cordova'
 import channel from 'cordova/channel'
 import exec from 'cordova/exec'
 import { AdMob } from '.'
-import {
-  MobileAd,
-  NativeActions
-} from './shared'
-
+import { MobileAd, NativeActions } from './shared'
 
 const admob = new AdMob()
 
@@ -18,12 +14,13 @@ function onMessageFromNative(event: any) {
   cordova.fireDocumentEvent(event.type, data)
 }
 
-channel.createSticky('onAdMobPlusReady')
-channel.waitForInitialization('onAdMobPlusReady')
+const feature = 'onAdMobPlusReady'
+channel.createSticky(feature)
+channel.waitForInitialization(feature)
 
 channel.onCordovaReady.subscribe(() => {
   exec(onMessageFromNative, console.error, 'AdMob', NativeActions.ready, [])
-  channel.initializationComplete('onAdMobPlusReady')
+  channel.initializationComplete(feature)
 })
 
 export default admob
