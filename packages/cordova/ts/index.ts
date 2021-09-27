@@ -47,27 +47,6 @@ export class AdMob {
   public readonly Events = Events
   public readonly TrackingAuthorizationStatus = TrackingAuthorizationStatus
 
-  constructor() {
-    document.addEventListener(
-      'deviceready',
-      () => {
-        cordova.exec(
-          (event) => {
-            const { data } = event
-            if (data && data.adId) {
-              data.ad = MobileAd.getAdById(data.adId)
-            }
-            fireDocumentEvent(event.type, data)
-          },
-          console.error,
-          'AdMob',
-          NativeActions.ready,
-        )
-      },
-      false,
-    )
-  }
-
   configure(config: AdMobConfig) {
     return execAsync(NativeActions.configure, [config])
   }
