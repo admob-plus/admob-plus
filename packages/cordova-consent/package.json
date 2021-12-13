@@ -6,7 +6,7 @@
   "typings": "www/consent.d.ts",
   "scripts": {
     "prepublishOnly": "yarn build",
-    "version": "yarn sync-pkg-version --cordova-plugin",
+    "version": "yarn cordova-plus plugin version",
     "build": "rollup -c",
     "test": "tsc --noEmit"
   },
@@ -15,8 +15,8 @@
     "@types/cordova": "^0.0.34",
     "@types/node": "^16.10.1",
     "cordova": "^10.0.0",
+    "cordova-plus": "^0.2.0",
     "rollup": "^2.57.0",
-    "sync-package-version": "^0.1.1",
     "ts-node": "^10.2.1",
     "typescript": "~4.4.3"
   },
