@@ -7,7 +7,7 @@
   "scripts": {
     "prepublishOnly": "yarn build",
     "version": "yarn cordova-plus plugin version",
-    "build": "tsc -b && rollup -c",
+    "build": "cordova-plus plugin build",
     "test": "tsc --noEmit"
   },
   "dependencies": {
