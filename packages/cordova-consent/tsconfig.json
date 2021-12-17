@@ -1,8 +1,0 @@
-{
-  "extends": "../cordova/tsconfig.json",
-  "compilerOptions": {
-    "rootDir": "ts",
-    "outDir": "www"
-  },
-  "include": ["ts/**/*.ts"]
-}

@@ -7,16 +7,14 @@
   "scripts": {
     "prepublishOnly": "yarn build",
     "version": "yarn cordova-plus plugin version",
-    "build": "rollup -c",
+    "build": "yarn cordova-plus plugin build",
     "test": "tsc --noEmit"
   },
   "devDependencies": {
-    "@admob-plus-internal/rollup-config": "file:../../internal/rollup-config",
     "@types/cordova": "^0.0.34",
     "@types/node": "^16.10.1",
     "cordova": "^10.0.0",
     "cordova-plus": "^0.2.0",
-    "rollup": "^2.57.0",
     "ts-node": "^10.2.1",
     "typescript": "~4.4.3"
   },
@@ -24,6 +22,13 @@
   "license": "MIT",
   "repository": "admob-plus/admob-plus",
   "homepage": "https://admob-plus.github.io/docs/cordova/consent",
+  "files": [
+    "*.json",
+    "*.md",
+    "*.xml",
+    "src",
+    "www"
+  ],
   "keywords": [
     "cordova",
     "plugin",
