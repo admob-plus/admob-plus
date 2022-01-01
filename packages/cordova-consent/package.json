@@ -2,21 +2,21 @@
   "name": "cordova-plugin-consent",
   "version": "2.2.0",
   "description": "Google Consent SDK Cordova Plugin",
-  "main": "www/consent.js",
-  "typings": "www/consent.d.ts",
+  "main": "./lib/index.js",
+  "typings": "./lib/index.d.ts",
   "scripts": {
     "prepublishOnly": "yarn build",
     "version": "yarn cordova-plus plugin version",
-    "build": "yarn cordova-plus plugin build",
-    "test": "tsc --noEmit"
+    "build": "yarn cordova-plus plugin build --input=./src/www/consent.ts --lib",
+    "test": "yarn cordova-plus plugin test"
   },
   "devDependencies": {
     "@types/cordova": "^0.0.34",
-    "@types/node": "^16.10.1",
-    "cordova": "^10.0.0",
-    "cordova-plus": "^0.2.0",
-    "ts-node": "^10.2.1",
-    "typescript": "~4.4.3"
+    "@types/node": "^17.0.6",
+    "cordova": "^11.0.0",
+    "cordova-plus": "^0.3.1",
+    "ts-node": "^10.4.0",
+    "typescript": "~4.5.4"
   },
   "author": "Ratson",
   "license": "MIT",
@@ -26,6 +26,7 @@
     "*.json",
     "*.md",
     "*.xml",
+    "lib",
     "src",
     "www"
   ],
