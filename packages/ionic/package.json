@@ -7,7 +7,7 @@
   "typings": "lib/index.d.ts",
   "scripts": {
     "prepublishOnly": "yarn build",
-    "build": "ts-node -TH --skip-project scripts/build",
+    "build": "ts-node -TH --skip-project scripts/build.ts",
     "test": "tsc --noEmit"
   },
   "peerDependencies": {

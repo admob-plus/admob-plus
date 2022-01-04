@@ -6,12 +6,14 @@ import {
   BannerAdOptions,
   InterstitialAd as IInterstitialAd,
   MobileAd,
+  NativeAdOptions,
   NativeActions,
   RewardedAd as IRewardedAd,
   RewardedAdOptions,
   RewardedInterstitialAd as IRewardedInterstitialAd,
+  NativeAd as INativeAd,
   RewardedInterstitialAdOptions,
-  TrackingAuthorizationStatus
+  TrackingAuthorizationStatus,
 } from 'admob-plus-cordova'
 import { fromEvent, Observable } from 'rxjs'
 
@@ -61,7 +63,7 @@ export class BannerAd
     return this.obj.hide()
   }
 
-  on(...opts: Parameters<MobileAd["on"]>) {
+  on(...opts: Parameters<MobileAd['on']>) {
     return this.obj.on(...opts)
   }
 }
@@ -102,7 +104,7 @@ export class InterstitialAd
     return this.obj.show()
   }
 
-  on(...opts: Parameters<MobileAd["on"]>) {
+  on(...opts: Parameters<MobileAd['on']>) {
     return this.obj.on(...opts)
   }
 }
@@ -143,7 +145,7 @@ export class RewardedAd
     return this.obj.show()
   }
 
-  on(...opts: Parameters<MobileAd["on"]>) {
+  on(...opts: Parameters<MobileAd['on']>) {
     return this.obj.on(...opts)
   }
 }
@@ -184,7 +186,56 @@ export class RewardedInterstitialAd
     return this.obj.show()
   }
 
-  on(...opts: Parameters<MobileAd["on"]>) {
+  on(...opts: Parameters<MobileAd['on']>) {
+    return this.obj.on(...opts)
+  }
+}
+
+export class NativeAd
+  extends IonicNativePlugin
+  implements Omit<INativeAd, 'opts'>
+{
+  public static plugin = plugin
+  public static pluginName = pluginName
+  public static pluginRef = 'admob.NativeAd'
+
+  private obj: INativeAd
+
+  constructor(opts: NativeAdOptions) {
+    super()
+
+    this.obj = new h.admob.NativeAd(opts)
+  }
+
+  get adUnitId() {
+    return this.obj.adUnitId
+  }
+
+  get id() {
+    return this.obj.id
+  }
+
+  public isLoaded() {
+    return this.obj.isLoaded()
+  }
+
+  public load() {
+    return this.obj.load()
+  }
+
+  public show(...args: Parameters<INativeAd['show']>) {
+    return this.obj.show(...args)
+  }
+
+  hide() {
+    return this.obj.hide()
+  }
+
+  showWith(...args: Parameters<INativeAd['showWith']>) {
+    return this.obj.showWith(...args)
+  }
+
+  on(...opts: Parameters<MobileAd['on']>) {
     return this.obj.on(...opts)
   }
 }
@@ -215,6 +266,7 @@ export class AdMob
   public readonly InterstitialAd = InterstitialAd
   public readonly RewardedAd = RewardedAd
   public readonly RewardedInterstitialAd = RewardedInterstitialAd
+  public readonly NativeAd = NativeAd
 
   public configRequest(
     ...opts: Parameters<IAdMob[NativeActions.configRequest]>

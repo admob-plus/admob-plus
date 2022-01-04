@@ -30,7 +30,7 @@ fixer:
   parallel: true
   commands:
     js-fixer:
-      glob: "*.{js,jsx,ts,tsx}"
+      glob: "*.{js,jsx}"
       run: >
         yarn prettier-eslint --write {staged_files} &&
         yarn eslint --ext .js,.jsx,.ts,tsx --fix {staged_files}

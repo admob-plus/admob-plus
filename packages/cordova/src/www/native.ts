@@ -2,9 +2,11 @@ import { MobileAd, MobileAdOptions } from './shared'
 
 type ShowOptions = { x: number; y: number; width: number; height: number }
 
-export default class NativeAd extends MobileAd<
-  MobileAdOptions & { view?: string }
-> {
+export interface NativeAdOptions extends MobileAdOptions {
+  view?: string
+}
+
+export default class NativeAd extends MobileAd<NativeAdOptions> {
   static cls = 'NativeAd'
 
   public isLoaded() {
@@ -13,6 +15,10 @@ export default class NativeAd extends MobileAd<
 
   async hide() {
     return super.hide()
+  }
+
+  public load() {
+    return super.load()
   }
 
   async show(opts?: ShowOptions) {

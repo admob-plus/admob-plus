@@ -1,7 +1,7 @@
 import AppOpenAd from './app-open'
 import BannerAd, { BannerAdOptions } from './banner'
 import InterstitialAd from './interstitial'
-import NativeAd from './native'
+import NativeAd, { NativeAdOptions } from './native'
 import RewardedAd, {
   RewardedAdOptions,
   ServerSideVerificationOptions,
@@ -29,6 +29,7 @@ export {
   BannerAdOptions,
   InterstitialAd,
   NativeAd,
+  NativeAdOptions,
   RewardedAd,
   RewardedAdOptions,
   RewardedInterstitialAd,
