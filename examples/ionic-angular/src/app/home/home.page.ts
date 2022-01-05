@@ -13,11 +13,11 @@ export class HomePage {
     this.platform.ready().then(async () => {
       await this.admob.start();
 
-      Object.values(Events).forEach(eventName => {
+      Object.values(Events).forEach((eventName) => {
         this.admob.on(eventName).subscribe((event) => {
           console.log(eventName, JSON.stringify(event));
         });
-      })
+      });
     });
   }
 
@@ -50,5 +50,29 @@ export class HomePage {
     });
     await rewarded.load();
     await rewarded.show();
+  }
+
+  async showNativeAd() {
+    const ad = new this.admob.NativeAd({
+      adUnitId: 'ca-app-pub-3940256099942544/3986624511',
+    });
+
+    await ad.load();
+
+    await ad.show({
+      x: 0,
+      y: 30,
+      width: window.screen.width,
+      height: 300,
+    });
+
+    await new Promise((resolve) =>
+      setTimeout(() => {
+        ad.hide();
+        resolve(undefined);
+      }, 5000)
+    );
+
+    await ad.showWith(document.getElementById('native-ad'));
   }
 }
