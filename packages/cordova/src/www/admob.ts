@@ -1,4 +1,4 @@
-import * as  cordova from 'cordova'
+import * as cordova from 'cordova'
 import channel from 'cordova/channel'
 import exec from 'cordova/exec'
 import { AdMob } from '.'

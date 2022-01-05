@@ -2,8 +2,9 @@
  * @jest-environment jsdom
  */
 /// <reference types="@types/jest" />
+import '../src/www/cordova.d.ts'
 import 'cordova-browser/cordova-lib/cordova'
-import { fireDocumentEvent, waitEvent } from '../ts/shared'
+import { fireDocumentEvent, waitEvent } from '../src/www/shared'
 
 test('waitEvent() once for sucess event', async () => {
   const p = waitEvent('sucess')

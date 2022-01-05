@@ -34,6 +34,7 @@
     "@types/xml2js": "^0.4.9",
     "canvas": "^2.8.0",
     "cordova": "10.0.0",
+    "cordova-plus": "^0.3.3",
     "cordova-testbed": "^0.8.0",
     "del-cli": "^3.0.1",
     "eslint": "^7.32.0",
