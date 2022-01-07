@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/ionic@1.5.3...@admob-plus/ionic@1.6.0) (2022-02-20)
+
+
+### Features
+
+* **ionic:** add NativeAd wrapper ([7db380b](https://github.com/admob-plus/admob-plus/commit/7db380b4845099e4dc2eed2eb140e6e5a1349697))
+
+
+
+
+
 ## [1.5.3](https://github.com/admob-plus/admob-plus/compare/@admob-plus/ionic@1.5.2...@admob-plus/ionic@1.5.3) (2021-09-24)
 
 **Note:** Version bump only for package @admob-plus/ionic

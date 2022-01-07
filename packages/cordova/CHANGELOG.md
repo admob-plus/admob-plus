@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.26.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.25.0...admob-plus-cordova@1.26.0) (2022-02-20)
+
+
+### Bug Fixes
+
+* **cordova-native:** remove broken tsconfig ([3d242e1](https://github.com/admob-plus/admob-plus/commit/3d242e1592287b01ac65c06b5d0f462dbc8800ab))
+
+
+### Features
+
+* **ionic:** add NativeAd wrapper ([7db380b](https://github.com/admob-plus/admob-plus/commit/7db380b4845099e4dc2eed2eb140e6e5a1349697))
+* update com.google.android.gms:play-services-ads to 20.4.0 ([76557ea](https://github.com/admob-plus/admob-plus/commit/76557eaf95905e1012a2084383c4bb34bcf05ecd))
+
+
+
+
+
 # [1.25.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.24.0...admob-plus-cordova@1.25.0) (2021-09-24)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0](https://github.com/admob-plus/admob-plus/compare/cordova-plugin-consent@2.2.0...cordova-plugin-consent@2.3.0) (2022-02-20)
+
+
+### Features
+
+* **cordova-consent:** emit lib/ ([9ae40c5](https://github.com/admob-plus/admob-plus/commit/9ae40c5a0618a5d1e17c6e6579ed748b7705c61b))
+
+
+
+
+
 # [2.2.0](https://github.com/admob-plus/admob-plus/compare/cordova-plugin-consent@2.1.11...cordova-plugin-consent@2.2.0) (2021-07-10)
 
 
