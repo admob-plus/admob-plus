@@ -9,12 +9,13 @@ custom_edit_url: null
 
 ## Enumerations
 
-- [TrackingAuthorizationStatus](enums/TrackingAuthorizationStatus)
+- [TrackingAuthorizationStatus](enums/TrackingAuthorizationStatus.md)
 
 ## Classes
 
-- [AdMob](classes/AdMob)
-- [BannerAd](classes/BannerAd)
-- [InterstitialAd](classes/InterstitialAd)
-- [RewardedAd](classes/RewardedAd)
-- [RewardedInterstitialAd](classes/RewardedInterstitialAd)
+- [AdMob](classes/AdMob.md)
+- [BannerAd](classes/BannerAd.md)
+- [InterstitialAd](classes/InterstitialAd.md)
+- [NativeAd](classes/NativeAd.md)
+- [RewardedAd](classes/RewardedAd.md)
+- [RewardedInterstitialAd](classes/RewardedInterstitialAd.md)

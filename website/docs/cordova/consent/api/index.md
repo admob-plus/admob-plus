@@ -9,11 +9,11 @@ custom_edit_url: null
 
 ## Enumerations
 
-- [DebugGeography](enums/DebugGeography)
-- [FormStatus](enums/FormStatus)
-- [TrackingAuthorizationStatus](enums/TrackingAuthorizationStatus)
+- [DebugGeography](enums/DebugGeography.md)
+- [FormStatus](enums/FormStatus.md)
+- [TrackingAuthorizationStatus](enums/TrackingAuthorizationStatus.md)
 
 ## Classes
 
-- [Consent](classes/Consent)
-- [ConsentForm](classes/ConsentForm)
+- [Consent](classes/Consent.md)
+- [ConsentForm](classes/ConsentForm.md)

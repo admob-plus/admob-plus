@@ -108,7 +108,7 @@ module.exports = {
         ...typedocConfig,
         id: 'typedoc-capacitor',
         entryPoints: ['../packages/capacitor/src/index.ts'],
-        tsconfig: '../packages/capacitor/src/tsconfig.json',
+        tsconfig: '../packages/capacitor/tsconfig.json',
         out: 'capacitor/api',
       },
     ],
@@ -117,7 +117,7 @@ module.exports = {
       {
         ...typedocConfig,
         id: 'typedoc-cordova',
-        entryPoints: ['../packages/cordova/ts/index.ts'],
+        entryPoints: ['../packages/cordova/src/www/index.ts'],
         tsconfig: '../packages/cordova/tsconfig.json',
         out: 'cordova/api',
       },
@@ -127,7 +127,7 @@ module.exports = {
       {
         ...typedocConfig,
         id: 'typedoc-cordova-consent',
-        entryPoints: ['../packages/cordova-consent/ts/index.ts'],
+        entryPoints: ['../packages/cordova-consent/src/www/index.ts'],
         tsconfig: '../packages/cordova-consent/tsconfig.json',
         out: 'cordova/consent/api',
       },

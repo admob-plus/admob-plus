@@ -125,7 +125,7 @@ function Home() {
           <section className={styles.features}>
             <div className="container">
               <div className="row">
-                {features.map(props => (
+                {features.map((props) => (
                   // eslint-disable-next-line react/jsx-props-no-spreading
                   <Feature key={props.title} {...props} />
                 ))}

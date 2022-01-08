@@ -1,7 +1,7 @@
 ---
-id: "RewardedAd"
-title: "Class: RewardedAd"
-sidebar_label: "RewardedAd"
+id: "RewardedInterstitialAd"
+title: "Class: RewardedInterstitialAd"
+sidebar_label: "RewardedInterstitialAd"
 sidebar_position: 0
 custom_edit_url: null
 ---
@@ -10,13 +10,13 @@ custom_edit_url: null
 
 - `MobileAd`
 
-  ↳ **`RewardedAd`**
+  ↳ **`RewardedInterstitialAd`**
 
 ## Constructors
 
 ### constructor
 
-• **new RewardedAd**(`opts`)
+• **new RewardedInterstitialAd**(`opts`)
 
 #### Parameters
 
@@ -92,11 +92,11 @@ ___
 
 ### cls
 
-▪ `Static` **cls**: `string` = `'RewardedAd'`
+▪ `Static` **cls**: `string` = `'RewardedInterstitialAd'`
 
 #### Defined in
 
-index.ts:144
+index.ts:160
 
 ## Accessors
 
@@ -107,6 +107,10 @@ index.ts:144
 #### Returns
 
 `string`
+
+#### Inherited from
+
+MobileAd.adUnitId
 
 #### Defined in
 
@@ -164,7 +168,7 @@ MobileAd.isLoaded
 
 #### Defined in
 
-index.ts:146
+index.ts:162
 
 ___
 
@@ -182,7 +186,7 @@ MobileAd.load
 
 #### Defined in
 
-index.ts:150
+index.ts:166
 
 ___
 
@@ -200,4 +204,4 @@ MobileAd.show
 
 #### Defined in
 
-index.ts:154
+index.ts:170

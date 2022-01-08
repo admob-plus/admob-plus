@@ -24,7 +24,7 @@ MobileAdOptions.adUnitId
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:8
+code/github/admob-plus/packages/cordova/src/www/api.ts:8
 
 ___
 
@@ -38,7 +38,7 @@ MobileAdOptions.contentUrl
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:9
+code/github/admob-plus/packages/cordova/src/www/api.ts:9
 
 ___
 
@@ -52,7 +52,7 @@ MobileAdOptions.id
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:7
+code/github/admob-plus/packages/cordova/src/www/api.ts:7
 
 ___
 
@@ -66,7 +66,7 @@ MobileAdOptions.keywords
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:10
+code/github/admob-plus/packages/cordova/src/www/api.ts:10
 
 ___
 
@@ -80,7 +80,7 @@ MobileAdOptions.npa
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:11
+code/github/admob-plus/packages/cordova/src/www/api.ts:11
 
 ___
 
@@ -90,7 +90,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/banner.ts:56
+code/github/admob-plus/packages/cordova/src/www/banner.ts:56
 
 ___
 
@@ -100,7 +100,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/banner.ts:54
+code/github/admob-plus/packages/cordova/src/www/banner.ts:54
 
 ___
 
@@ -110,4 +110,4 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/banner.ts:55
+code/github/admob-plus/packages/cordova/src/www/banner.ts:55

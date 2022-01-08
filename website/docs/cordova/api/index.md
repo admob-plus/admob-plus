@@ -9,36 +9,37 @@ custom_edit_url: null
 
 ## Enumerations
 
-- [AdSizeType](enums/AdSizeType)
-- [Events](enums/Events)
-- [MaxAdContentRating](enums/MaxAdContentRating)
-- [NativeActions](enums/NativeActions)
-- [Platforms](enums/Platforms)
-- [TrackingAuthorizationStatus](enums/TrackingAuthorizationStatus)
+- [AdSizeType](enums/AdSizeType.md)
+- [Events](enums/Events.md)
+- [MaxAdContentRating](enums/MaxAdContentRating.md)
+- [NativeActions](enums/NativeActions.md)
+- [Platforms](enums/Platforms.md)
+- [TrackingAuthorizationStatus](enums/TrackingAuthorizationStatus.md)
 
 ## Classes
 
-- [AdMob](classes/AdMob)
-- [AppOpenAd](classes/AppOpenAd)
-- [BannerAd](classes/BannerAd)
-- [InterstitialAd](classes/InterstitialAd)
-- [MobileAd](classes/MobileAd)
-- [NativeAd](classes/NativeAd)
-- [RewardedAd](classes/RewardedAd)
-- [RewardedInterstitialAd](classes/RewardedInterstitialAd)
+- [AdMob](classes/AdMob.md)
+- [AppOpenAd](classes/AppOpenAd.md)
+- [BannerAd](classes/BannerAd.md)
+- [InterstitialAd](classes/InterstitialAd.md)
+- [MobileAd](classes/MobileAd.md)
+- [NativeAd](classes/NativeAd.md)
+- [RewardedAd](classes/RewardedAd.md)
+- [RewardedInterstitialAd](classes/RewardedInterstitialAd.md)
 
 ## Interfaces
 
-- [BannerAdOptions](interfaces/BannerAdOptions)
-- [RewardedAdOptions](interfaces/RewardedAdOptions)
-- [RewardedInterstitialAdOptions](interfaces/RewardedInterstitialAdOptions)
-- [ServerSideVerificationOptions](interfaces/ServerSideVerificationOptions)
+- [BannerAdOptions](interfaces/BannerAdOptions.md)
+- [NativeAdOptions](interfaces/NativeAdOptions.md)
+- [RewardedAdOptions](interfaces/RewardedAdOptions.md)
+- [RewardedInterstitialAdOptions](interfaces/RewardedInterstitialAdOptions.md)
+- [ServerSideVerificationOptions](interfaces/ServerSideVerificationOptions.md)
 
 ## References
 
 ### default
 
-• **default**: `Object`
+Renames and re-exports [AdMob](classes/AdMob.md)
 
 ## Type aliases
 
@@ -48,7 +49,7 @@ custom_edit_url: null
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:153
+code/github/admob-plus/packages/cordova/src/www/api.ts:153
 
 ___
 
@@ -70,7 +71,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:6
+code/github/admob-plus/packages/cordova/src/www/api.ts:6
 
 ___
 
@@ -82,7 +83,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `maxAdContentRating?` | [`MaxAdContentRating`](enums/MaxAdContentRating) |
+| `maxAdContentRating?` | [`MaxAdContentRating`](enums/MaxAdContentRating.md) |
 | `sameAppKey?` | `boolean` |
 | `tagForChildDirectedTreatment?` | `boolean` \| ``null`` |
 | `tagForUnderAgeOfConsent?` | `boolean` \| ``null`` |
@@ -90,19 +91,19 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:133
+code/github/admob-plus/packages/cordova/src/www/api.ts:133
 
 ## Functions
 
 ### execAsync
 
-▸ `Const` **execAsync**(`action`, `args?`): `Promise`<`unknown`\>
+▸ **execAsync**(`action`, `args?`): `Promise`<`unknown`\>
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `action` | [`NativeActions`](enums/NativeActions) |
+| `action` | [`NativeActions`](enums/NativeActions.md) |
 | `args?` | `any`[] |
 
 #### Returns
@@ -111,20 +112,20 @@ code/github/admob-plus/packages/cordova/ts/api.ts:133
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/generated.ts:79
+code/github/admob-plus/packages/cordova/src/www/generated.ts:79
 
 ___
 
 ### start
 
-▸ **start**(): `Promise`<`Object`\>
+▸ **start**(): `Promise`<{ `version`: `string`  }\>
 
 **`internal`**
 
 #### Returns
 
-`Promise`<`Object`\>
+`Promise`<{ `version`: `string`  }\>
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:18
+code/github/admob-plus/packages/cordova/src/www/api.ts:18

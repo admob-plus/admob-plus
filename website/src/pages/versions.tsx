@@ -1,5 +1,8 @@
 import Link from '@docusaurus/Link'
-import { useLatestVersion, useVersions } from '@theme/hooks/useDocs'
+import {
+  useLatestVersion,
+  useVersions,
+} from '@docusaurus/plugin-content-docs/client'
 import Layout from '@theme/Layout'
 import React from 'react'
 

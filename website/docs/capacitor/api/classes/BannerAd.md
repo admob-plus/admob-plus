@@ -1,7 +1,7 @@
 ---
-id: "RewardedInterstitialAd"
-title: "Class: RewardedInterstitialAd"
-sidebar_label: "RewardedInterstitialAd"
+id: "BannerAd"
+title: "Class: BannerAd"
+sidebar_label: "BannerAd"
 sidebar_position: 0
 custom_edit_url: null
 ---
@@ -10,27 +10,27 @@ custom_edit_url: null
 
 - `MobileAd`
 
-  ↳ **`RewardedInterstitialAd`**
+  ↳ **`BannerAd`**
 
 ## Constructors
 
 ### constructor
 
-• **new RewardedInterstitialAd**(`opts`)
+• **new BannerAd**(`opts`)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `opts` | [`MobileAdOptions`](../#mobileadoptions) |
+| `opts` | [`BannerAdOptions`](../interfaces/BannerAdOptions.md) |
 
-#### Inherited from
+#### Overrides
 
 MobileAd.constructor
 
 #### Defined in
 
-index.ts:30
+index.ts:101
 
 ## Properties
 
@@ -59,6 +59,16 @@ MobileAd.#init
 #### Defined in
 
 index.ts:28
+
+___
+
+### #loaded
+
+• `Private` **#loaded**: `boolean` = `false`
+
+#### Defined in
+
+index.ts:99
 
 ___
 
@@ -92,11 +102,11 @@ ___
 
 ### cls
 
-▪ `Static` **cls**: `string` = `'RewardedInterstitialAd'`
+▪ `Static` **cls**: `string` = `'BannerAd'`
 
 #### Defined in
 
-index.ts:160
+index.ts:98
 
 ## Accessors
 
@@ -108,6 +118,10 @@ index.ts:160
 
 `string`
 
+#### Inherited from
+
+MobileAd.adUnitId
+
 #### Defined in
 
 index.ts:42
@@ -116,19 +130,19 @@ index.ts:42
 
 ### hide
 
-▸ `Protected` **hide**(): `Promise`<`void`\>
+▸ **hide**(): `Promise`<`void`\>
 
 #### Returns
 
 `Promise`<`void`\>
 
-#### Inherited from
+#### Overrides
 
 MobileAd.hide
 
 #### Defined in
 
-index.ts:61
+index.ts:122
 
 ___
 
@@ -164,7 +178,7 @@ MobileAd.isLoaded
 
 #### Defined in
 
-index.ts:162
+index.ts:108
 
 ___
 
@@ -182,7 +196,7 @@ MobileAd.load
 
 #### Defined in
 
-index.ts:166
+index.ts:112
 
 ___
 
@@ -200,4 +214,4 @@ MobileAd.show
 
 #### Defined in
 
-index.ts:170
+index.ts:117

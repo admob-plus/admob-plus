@@ -80,6 +80,10 @@ index.ts:127
 
 `string`
 
+#### Inherited from
+
+MobileAd.adUnitId
+
 #### Defined in
 
 index.ts:54

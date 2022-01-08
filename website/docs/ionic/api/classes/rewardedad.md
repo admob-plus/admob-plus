@@ -34,7 +34,7 @@ IonicNativePlugin.constructor
 
 #### Defined in
 
-ionic/src/ngx/index.ts:120
+ionic/src/ngx/index.ts:122
 
 ## Properties
 
@@ -44,13 +44,13 @@ ionic/src/ngx/index.ts:120
 
 #### Defined in
 
-ionic/src/ngx/index.ts:118
+ionic/src/ngx/index.ts:120
 
 ___
 
 ### plugin
 
-▪ `Static` **plugin**: `string`
+▪ `Static` **plugin**: `string` = `plugin`
 
 #### Overrides
 
@@ -58,13 +58,13 @@ IonicNativePlugin.plugin
 
 #### Defined in
 
-ionic/src/ngx/index.ts:114
+ionic/src/ngx/index.ts:116
 
 ___
 
 ### pluginName
 
-▪ `Static` **pluginName**: `string`
+▪ `Static` **pluginName**: `string` = `pluginName`
 
 #### Overrides
 
@@ -72,7 +72,7 @@ IonicNativePlugin.pluginName
 
 #### Defined in
 
-ionic/src/ngx/index.ts:115
+ionic/src/ngx/index.ts:117
 
 ___
 
@@ -86,7 +86,7 @@ IonicNativePlugin.pluginRef
 
 #### Defined in
 
-ionic/src/ngx/index.ts:116
+ionic/src/ngx/index.ts:118
 
 ## Accessors
 
@@ -98,9 +98,13 @@ ionic/src/ngx/index.ts:116
 
 `string`
 
+#### Implementation of
+
+Omit.adUnitId
+
 #### Defined in
 
-ionic/src/ngx/index.ts:126
+ionic/src/ngx/index.ts:128
 
 ___
 
@@ -112,9 +116,13 @@ ___
 
 `number`
 
+#### Implementation of
+
+Omit.id
+
 #### Defined in
 
-ionic/src/ngx/index.ts:130
+ionic/src/ngx/index.ts:132
 
 ## Methods
 
@@ -132,7 +140,7 @@ Omit.isLoaded
 
 #### Defined in
 
-ionic/src/ngx/index.ts:134
+ionic/src/ngx/index.ts:136
 
 ___
 
@@ -150,7 +158,7 @@ Omit.load
 
 #### Defined in
 
-ionic/src/ngx/index.ts:138
+ionic/src/ngx/index.ts:140
 
 ___
 
@@ -180,7 +188,7 @@ Omit.on
 
 #### Defined in
 
-ionic/src/ngx/index.ts:146
+ionic/src/ngx/index.ts:148
 
 ___
 
@@ -198,4 +206,4 @@ Omit.show
 
 #### Defined in
 
-ionic/src/ngx/index.ts:142
+ionic/src/ngx/index.ts:144

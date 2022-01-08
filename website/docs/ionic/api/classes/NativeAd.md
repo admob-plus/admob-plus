@@ -1,7 +1,7 @@
 ---
-id: "InterstitialAd"
-title: "Class: InterstitialAd"
-sidebar_label: "InterstitialAd"
+id: "NativeAd"
+title: "Class: NativeAd"
+sidebar_label: "NativeAd"
 sidebar_position: 0
 custom_edit_url: null
 ---
@@ -10,24 +10,23 @@ custom_edit_url: null
 
 - `IonicNativePlugin`
 
-  ↳ **`InterstitialAd`**
+  ↳ **`NativeAd`**
 
 ## Implements
 
-- `Omit`<`IInterstitialAd`, ``"opts"``\>
+- `Omit`<`INativeAd`, ``"opts"``\>
 
 ## Constructors
 
 ### constructor
 
-• **new InterstitialAd**(`opts`)
+• **new NativeAd**(`opts`)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `opts` | `Object` |
-| `opts.adUnitId` | `string` |
+| `opts` | `NativeAdOptions` |
 
 #### Overrides
 
@@ -35,7 +34,7 @@ IonicNativePlugin.constructor
 
 #### Defined in
 
-ionic/src/ngx/index.ts:81
+ionic/src/ngx/index.ts:204
 
 ## Properties
 
@@ -45,7 +44,7 @@ ionic/src/ngx/index.ts:81
 
 #### Defined in
 
-ionic/src/ngx/index.ts:79
+ionic/src/ngx/index.ts:202
 
 ___
 
@@ -59,7 +58,7 @@ IonicNativePlugin.plugin
 
 #### Defined in
 
-ionic/src/ngx/index.ts:75
+ionic/src/ngx/index.ts:198
 
 ___
 
@@ -73,13 +72,13 @@ IonicNativePlugin.pluginName
 
 #### Defined in
 
-ionic/src/ngx/index.ts:76
+ionic/src/ngx/index.ts:199
 
 ___
 
 ### pluginRef
 
-▪ `Static` **pluginRef**: `string` = `'admob.InterstitialAd'`
+▪ `Static` **pluginRef**: `string` = `'admob.NativeAd'`
 
 #### Overrides
 
@@ -87,7 +86,7 @@ IonicNativePlugin.pluginRef
 
 #### Defined in
 
-ionic/src/ngx/index.ts:77
+ionic/src/ngx/index.ts:200
 
 ## Accessors
 
@@ -105,7 +104,7 @@ Omit.adUnitId
 
 #### Defined in
 
-ionic/src/ngx/index.ts:87
+ionic/src/ngx/index.ts:210
 
 ___
 
@@ -123,9 +122,27 @@ Omit.id
 
 #### Defined in
 
-ionic/src/ngx/index.ts:91
+ionic/src/ngx/index.ts:214
 
 ## Methods
+
+### hide
+
+▸ **hide**(): `Promise`<`unknown`\>
+
+#### Returns
+
+`Promise`<`unknown`\>
+
+#### Implementation of
+
+Omit.hide
+
+#### Defined in
+
+ionic/src/ngx/index.ts:230
+
+___
 
 ### isLoaded
 
@@ -141,7 +158,7 @@ Omit.isLoaded
 
 #### Defined in
 
-ionic/src/ngx/index.ts:95
+ionic/src/ngx/index.ts:218
 
 ___
 
@@ -159,7 +176,7 @@ Omit.load
 
 #### Defined in
 
-ionic/src/ngx/index.ts:99
+ionic/src/ngx/index.ts:222
 
 ___
 
@@ -189,13 +206,19 @@ Omit.on
 
 #### Defined in
 
-ionic/src/ngx/index.ts:107
+ionic/src/ngx/index.ts:238
 
 ___
 
 ### show
 
-▸ **show**(): `Promise`<`unknown`\>
+▸ **show**(...`args`): `Promise`<`unknown`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...args` | [opts?: ShowOptions] |
 
 #### Returns
 
@@ -207,4 +230,28 @@ Omit.show
 
 #### Defined in
 
-ionic/src/ngx/index.ts:103
+ionic/src/ngx/index.ts:226
+
+___
+
+### showWith
+
+▸ **showWith**(...`args`): `Promise`<`void`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...args` | [elm: HTMLElement] |
+
+#### Returns
+
+`Promise`<`void`\>
+
+#### Implementation of
+
+Omit.showWith
+
+#### Defined in
+
+ionic/src/ngx/index.ts:234

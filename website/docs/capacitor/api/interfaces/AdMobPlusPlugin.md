@@ -181,11 +181,11 @@ ___
 
 ### requestTrackingAuthorization
 
-▸ **requestTrackingAuthorization**(): `Promise`<`Object`\>
+▸ **requestTrackingAuthorization**(): `Promise`<{ `status`: ``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)  }\>
 
 #### Returns
 
-`Promise`<`Object`\>
+`Promise`<{ `status`: ``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)  }\>
 
 #### Defined in
 
@@ -209,11 +209,11 @@ ___
 
 ### trackingAuthorizationStatus
 
-▸ **trackingAuthorizationStatus**(): `Promise`<`Object`\>
+▸ **trackingAuthorizationStatus**(): `Promise`<{ `status`: ``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)  }\>
 
 #### Returns
 
-`Promise`<`Object`\>
+`Promise`<{ `status`: ``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)  }\>
 
 #### Defined in
 

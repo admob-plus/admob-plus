@@ -30,41 +30,51 @@ IonicNativePlugin.constructor
 
 ### BannerAd
 
-• `Readonly` **BannerAd**: typeof [`BannerAd`](BannerAd)
+• `Readonly` **BannerAd**: typeof [`BannerAd`](BannerAd.md) = `BannerAd`
 
 #### Defined in
 
-ionic/src/ngx/index.ts:214
+ionic/src/ngx/index.ts:265
 
 ___
 
 ### InterstitialAd
 
-• `Readonly` **InterstitialAd**: typeof [`InterstitialAd`](InterstitialAd)
+• `Readonly` **InterstitialAd**: typeof [`InterstitialAd`](InterstitialAd.md) = `InterstitialAd`
 
 #### Defined in
 
-ionic/src/ngx/index.ts:215
+ionic/src/ngx/index.ts:266
+
+___
+
+### NativeAd
+
+• `Readonly` **NativeAd**: typeof [`NativeAd`](NativeAd.md) = `NativeAd`
+
+#### Defined in
+
+ionic/src/ngx/index.ts:269
 
 ___
 
 ### RewardedAd
 
-• `Readonly` **RewardedAd**: typeof [`RewardedAd`](RewardedAd)
+• `Readonly` **RewardedAd**: typeof [`RewardedAd`](RewardedAd.md) = `RewardedAd`
 
 #### Defined in
 
-ionic/src/ngx/index.ts:216
+ionic/src/ngx/index.ts:267
 
 ___
 
 ### RewardedInterstitialAd
 
-• `Readonly` **RewardedInterstitialAd**: typeof [`RewardedInterstitialAd`](RewardedInterstitialAd)
+• `Readonly` **RewardedInterstitialAd**: typeof [`RewardedInterstitialAd`](RewardedInterstitialAd.md) = `RewardedInterstitialAd`
 
 #### Defined in
 
-ionic/src/ngx/index.ts:217
+ionic/src/ngx/index.ts:268
 
 ___
 
@@ -78,13 +88,13 @@ IonicNativePlugin.platforms
 
 #### Defined in
 
-ionic/src/ngx/index.ts:208
+ionic/src/ngx/index.ts:259
 
 ___
 
 ### plugin
 
-▪ `Static` **plugin**: `string`
+▪ `Static` **plugin**: `string` = `plugin`
 
 #### Overrides
 
@@ -92,13 +102,13 @@ IonicNativePlugin.plugin
 
 #### Defined in
 
-ionic/src/ngx/index.ts:209
+ionic/src/ngx/index.ts:260
 
 ___
 
 ### pluginName
 
-▪ `Static` **pluginName**: `string`
+▪ `Static` **pluginName**: `string` = `pluginName`
 
 #### Overrides
 
@@ -106,7 +116,7 @@ IonicNativePlugin.pluginName
 
 #### Defined in
 
-ionic/src/ngx/index.ts:210
+ionic/src/ngx/index.ts:261
 
 ___
 
@@ -120,7 +130,7 @@ IonicNativePlugin.pluginRef
 
 #### Defined in
 
-ionic/src/ngx/index.ts:211
+ionic/src/ngx/index.ts:262
 
 ___
 
@@ -134,7 +144,7 @@ IonicNativePlugin.repo
 
 #### Defined in
 
-ionic/src/ngx/index.ts:212
+ionic/src/ngx/index.ts:263
 
 ## Methods
 
@@ -158,7 +168,7 @@ Omit.configRequest
 
 #### Defined in
 
-ionic/src/ngx/index.ts:219
+ionic/src/ngx/index.ts:271
 
 ___
 
@@ -182,7 +192,7 @@ Omit.configure
 
 #### Defined in
 
-ionic/src/ngx/index.ts:229
+ionic/src/ngx/index.ts:281
 
 ___
 
@@ -202,17 +212,17 @@ ___
 
 #### Defined in
 
-ionic/src/ngx/index.ts:245
+ionic/src/ngx/index.ts:297
 
 ___
 
 ### requestTrackingAuthorization
 
-▸ **requestTrackingAuthorization**(): `Promise`<``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus)\>
+▸ **requestTrackingAuthorization**(): `Promise`<``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)\>
 
 #### Returns
 
-`Promise`<``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus)\>
+`Promise`<``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)\>
 
 #### Implementation of
 
@@ -220,7 +230,7 @@ Omit.requestTrackingAuthorization
 
 #### Defined in
 
-ionic/src/ngx/index.ts:241
+ionic/src/ngx/index.ts:293
 
 ___
 
@@ -244,7 +254,7 @@ Omit.setAppMuted
 
 #### Defined in
 
-ionic/src/ngx/index.ts:233
+ionic/src/ngx/index.ts:285
 
 ___
 
@@ -268,17 +278,17 @@ Omit.setAppVolume
 
 #### Defined in
 
-ionic/src/ngx/index.ts:237
+ionic/src/ngx/index.ts:289
 
 ___
 
 ### start
 
-▸ **start**(): `Promise`<`Object`\>
+▸ **start**(): `Promise`<{ `version`: `string`  }\>
 
 #### Returns
 
-`Promise`<`Object`\>
+`Promise`<{ `version`: `string`  }\>
 
 #### Implementation of
 
@@ -286,4 +296,4 @@ Omit.start
 
 #### Defined in
 
-ionic/src/ngx/index.ts:225
+ionic/src/ngx/index.ts:277

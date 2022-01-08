@@ -8,7 +8,7 @@ custom_edit_url: null
 
 ## Hierarchy
 
-- [`MobileAd`](MobileAd)<[`BannerAdOptions`](../interfaces/BannerAdOptions)\>
+- [`MobileAd`](MobileAd.md)<[`BannerAdOptions`](../interfaces/BannerAdOptions.md)\>
 
   ↳ **`BannerAd`**
 
@@ -22,15 +22,15 @@ custom_edit_url: null
 
 | Name | Type |
 | :------ | :------ |
-| `opts` | [`BannerAdOptions`](../interfaces/BannerAdOptions) |
+| `opts` | [`BannerAdOptions`](../interfaces/BannerAdOptions.md) |
 
 #### Overrides
 
-[MobileAd](MobileAd).[constructor](MobileAd#constructor)
+[MobileAd](MobileAd.md).[constructor](MobileAd.md#constructor)
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/banner.ts:64
+code/github/admob-plus/packages/cordova/src/www/banner.ts:64
 
 ## Properties
 
@@ -40,7 +40,7 @@ code/github/admob-plus/packages/cordova/ts/banner.ts:64
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/banner.ts:62
+code/github/admob-plus/packages/cordova/src/www/banner.ts:62
 
 ___
 
@@ -50,25 +50,25 @@ ___
 
 #### Inherited from
 
-[MobileAd](MobileAd).[id](MobileAd#id)
+[MobileAd](MobileAd.md).[id](MobileAd.md#id)
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:32
+code/github/admob-plus/packages/cordova/src/www/api.ts:32
 
 ___
 
 ### opts
 
-• `Protected` `Readonly` **opts**: [`BannerAdOptions`](../interfaces/BannerAdOptions)
+• `Protected` `Readonly` **opts**: [`BannerAdOptions`](../interfaces/BannerAdOptions.md)
 
 #### Inherited from
 
-[MobileAd](MobileAd).[opts](MobileAd#opts)
+[MobileAd](MobileAd.md).[opts](MobileAd.md#opts)
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:34
+code/github/admob-plus/packages/cordova/src/www/api.ts:34
 
 ___
 
@@ -78,7 +78,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/banner.ts:60
+code/github/admob-plus/packages/cordova/src/www/banner.ts:60
 
 ___
 
@@ -88,11 +88,11 @@ ___
 
 #### Inherited from
 
-[MobileAd](MobileAd).[type](MobileAd#type)
+[MobileAd](MobileAd.md).[type](MobileAd.md#type)
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:27
+code/github/admob-plus/packages/cordova/src/www/api.ts:27
 
 ## Accessors
 
@@ -104,9 +104,13 @@ code/github/admob-plus/packages/cordova/ts/api.ts:27
 
 `string`
 
+#### Inherited from
+
+MobileAd.adUnitId
+
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:61
+code/github/admob-plus/packages/cordova/src/www/api.ts:61
 
 ## Methods
 
@@ -120,11 +124,11 @@ code/github/admob-plus/packages/cordova/ts/api.ts:61
 
 #### Overrides
 
-[MobileAd](MobileAd).[hide](MobileAd#hide)
+[MobileAd](MobileAd.md).[hide](MobileAd.md#hide)
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/banner.ts:99
+code/github/admob-plus/packages/cordova/src/www/banner.ts:99
 
 ___
 
@@ -138,11 +142,11 @@ ___
 
 #### Inherited from
 
-[MobileAd](MobileAd).[init](MobileAd#init)
+[MobileAd](MobileAd.md).[init](MobileAd.md#init)
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:102
+code/github/admob-plus/packages/cordova/src/www/api.ts:102
 
 ___
 
@@ -156,11 +160,11 @@ ___
 
 #### Inherited from
 
-[MobileAd](MobileAd).[isLoaded](MobileAd#isloaded)
+[MobileAd](MobileAd.md).[isLoaded](MobileAd.md#isloaded)
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:80
+code/github/admob-plus/packages/cordova/src/www/api.ts:80
 
 ___
 
@@ -174,11 +178,11 @@ ___
 
 #### Overrides
 
-[MobileAd](MobileAd).[load](MobileAd#load)
+[MobileAd](MobileAd.md).[load](MobileAd.md#load)
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/banner.ts:86
+code/github/admob-plus/packages/cordova/src/www/banner.ts:86
 
 ___
 
@@ -204,11 +208,11 @@ ___
 
 #### Inherited from
 
-[MobileAd](MobileAd).[on](MobileAd#on)
+[MobileAd](MobileAd.md).[on](MobileAd.md#on)
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:65
+code/github/admob-plus/packages/cordova/src/www/api.ts:65
 
 ___
 
@@ -222,11 +226,11 @@ ___
 
 #### Overrides
 
-[MobileAd](MobileAd).[show](MobileAd#show)
+[MobileAd](MobileAd.md).[show](MobileAd.md#show)
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/banner.ts:91
+code/github/admob-plus/packages/cordova/src/www/banner.ts:91
 
 ___
 
@@ -249,13 +253,13 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/banner.ts:72
+code/github/admob-plus/packages/cordova/src/www/banner.ts:72
 
 ___
 
 ### getAdById
 
-▸ `Static` **getAdById**(`id`): [`MobileAd`](MobileAd)<[`MobileAdOptions`](../#mobileadoptions)\>
+▸ `Static` **getAdById**(`id`): [`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../#mobileadoptions)\>
 
 #### Parameters
 
@@ -265,12 +269,12 @@ ___
 
 #### Returns
 
-[`MobileAd`](MobileAd)<[`MobileAdOptions`](../#mobileadoptions)\>
+[`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../#mobileadoptions)\>
 
 #### Inherited from
 
-[MobileAd](MobileAd).[getAdById](MobileAd#getadbyid)
+[MobileAd](MobileAd.md).[getAdById](MobileAd.md#getadbyid)
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:45
+code/github/admob-plus/packages/cordova/src/www/api.ts:45

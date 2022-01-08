@@ -12,23 +12,23 @@ custom_edit_url: null
 
 | Name | Type |
 | :------ | :------ |
-| `T` | extends [`MobileAdOptions`](../#mobileadoptions)[`MobileAdOptions`](../#mobileadoptions) |
+| `T` | extends [`MobileAdOptions`](../#mobileadoptions) = [`MobileAdOptions`](../#mobileadoptions) |
 
 ## Hierarchy
 
 - **`MobileAd`**
 
-  ↳ [`AppOpenAd`](AppOpenAd)
+  ↳ [`AppOpenAd`](AppOpenAd.md)
 
-  ↳ [`BannerAd`](BannerAd)
+  ↳ [`BannerAd`](BannerAd.md)
 
-  ↳ [`InterstitialAd`](InterstitialAd)
+  ↳ [`InterstitialAd`](InterstitialAd.md)
 
-  ↳ [`NativeAd`](NativeAd)
+  ↳ [`NativeAd`](NativeAd.md)
 
-  ↳ [`RewardedAd`](RewardedAd)
+  ↳ [`RewardedAd`](RewardedAd.md)
 
-  ↳ [`RewardedInterstitialAd`](RewardedInterstitialAd)
+  ↳ [`RewardedInterstitialAd`](RewardedInterstitialAd.md)
 
 ## Constructors
 
@@ -40,7 +40,7 @@ custom_edit_url: null
 
 | Name | Type |
 | :------ | :------ |
-| `T` | extends [`MobileAdOptions`](../#mobileadoptions)[`MobileAdOptions`](../#mobileadoptions) |
+| `T` | extends [`MobileAdOptions`](../#mobileadoptions) = [`MobileAdOptions`](../#mobileadoptions) |
 
 #### Parameters
 
@@ -50,7 +50,7 @@ custom_edit_url: null
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:38
+code/github/admob-plus/packages/cordova/src/www/api.ts:38
 
 ## Properties
 
@@ -60,7 +60,7 @@ code/github/admob-plus/packages/cordova/ts/api.ts:38
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:35
+code/github/admob-plus/packages/cordova/src/www/api.ts:35
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:36
+code/github/admob-plus/packages/cordova/src/www/api.ts:36
 
 ___
 
@@ -80,7 +80,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:32
+code/github/admob-plus/packages/cordova/src/www/api.ts:32
 
 ___
 
@@ -90,7 +90,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:34
+code/github/admob-plus/packages/cordova/src/www/api.ts:34
 
 ___
 
@@ -100,11 +100,11 @@ ___
 
 #### Index signature
 
-▪ [s: `number`]: [`MobileAd`](MobileAd)
+▪ [s: `number`]: [`MobileAd`](MobileAd.md)
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:29
+code/github/admob-plus/packages/cordova/src/www/api.ts:29
 
 ___
 
@@ -114,7 +114,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:30
+code/github/admob-plus/packages/cordova/src/www/api.ts:30
 
 ___
 
@@ -124,7 +124,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:27
+code/github/admob-plus/packages/cordova/src/www/api.ts:27
 
 ## Accessors
 
@@ -138,7 +138,7 @@ code/github/admob-plus/packages/cordova/ts/api.ts:27
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:61
+code/github/admob-plus/packages/cordova/src/www/api.ts:61
 
 ## Methods
 
@@ -152,7 +152,7 @@ code/github/admob-plus/packages/cordova/ts/api.ts:61
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:98
+code/github/admob-plus/packages/cordova/src/www/api.ts:98
 
 ___
 
@@ -166,7 +166,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:102
+code/github/admob-plus/packages/cordova/src/www/api.ts:102
 
 ___
 
@@ -180,7 +180,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:80
+code/github/admob-plus/packages/cordova/src/www/api.ts:80
 
 ___
 
@@ -194,7 +194,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:87
+code/github/admob-plus/packages/cordova/src/www/api.ts:87
 
 ___
 
@@ -220,7 +220,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:65
+code/github/admob-plus/packages/cordova/src/www/api.ts:65
 
 ___
 
@@ -240,13 +240,13 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:93
+code/github/admob-plus/packages/cordova/src/www/api.ts:93
 
 ___
 
 ### getAdById
 
-▸ `Static` **getAdById**(`id`): [`MobileAd`](MobileAd)<[`MobileAdOptions`](../#mobileadoptions)\>
+▸ `Static` **getAdById**(`id`): [`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../#mobileadoptions)\>
 
 #### Parameters
 
@@ -256,11 +256,11 @@ ___
 
 #### Returns
 
-[`MobileAd`](MobileAd)<[`MobileAdOptions`](../#mobileadoptions)\>
+[`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../#mobileadoptions)\>
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:45
+code/github/admob-plus/packages/cordova/src/www/api.ts:45
 
 ___
 
@@ -274,4 +274,4 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:49
+code/github/admob-plus/packages/cordova/src/www/api.ts:49

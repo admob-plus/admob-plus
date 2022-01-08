@@ -1,7 +1,7 @@
 ---
-id: "RewardedAdOptions"
-title: "Interface: RewardedAdOptions"
-sidebar_label: "RewardedAdOptions"
+id: "NativeAdOptions"
+title: "Interface: NativeAdOptions"
+sidebar_label: "NativeAdOptions"
 sidebar_position: 0
 custom_edit_url: null
 ---
@@ -10,9 +10,7 @@ custom_edit_url: null
 
 - [`MobileAdOptions`](../#mobileadoptions)
 
-  ↳ **`RewardedAdOptions`**
-
-  ↳↳ [`RewardedInterstitialAdOptions`](RewardedInterstitialAdOptions)
+  ↳ **`NativeAdOptions`**
 
 ## Properties
 
@@ -26,7 +24,7 @@ MobileAdOptions.adUnitId
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:8
+code/github/admob-plus/packages/cordova/src/www/api.ts:8
 
 ___
 
@@ -40,7 +38,7 @@ MobileAdOptions.contentUrl
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:9
+code/github/admob-plus/packages/cordova/src/www/api.ts:9
 
 ___
 
@@ -54,7 +52,7 @@ MobileAdOptions.id
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:7
+code/github/admob-plus/packages/cordova/src/www/api.ts:7
 
 ___
 
@@ -68,7 +66,7 @@ MobileAdOptions.keywords
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:10
+code/github/admob-plus/packages/cordova/src/www/api.ts:10
 
 ___
 
@@ -82,14 +80,14 @@ MobileAdOptions.npa
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/api.ts:11
+code/github/admob-plus/packages/cordova/src/www/api.ts:11
 
 ___
 
-### serverSideVerification
+### view
 
-• `Optional` **serverSideVerification**: [`ServerSideVerificationOptions`](ServerSideVerificationOptions)
+• `Optional` **view**: `string`
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/ts/rewarded.ts:9
+code/github/admob-plus/packages/cordova/src/www/native.ts:6
