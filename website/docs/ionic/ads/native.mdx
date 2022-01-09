@@ -1,0 +1,49 @@
+---
+title: Native Ad
+sidebar_label: Native
+---
+
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+
+## Installation
+
+```sh-session
+ionic cordova plugin add admob-plus-cordova-native --save
+```
+
+## Usage
+
+```ts
+import { AdMob } from '@admob-plus/ionic/ngx'
+import { Component } from '@angular/core'
+import { Platform } from '@ionic/angular'
+
+@Component({
+  selector: 'app-home',
+  templateUrl: 'home.page.html',
+  styleUrls: ['home.page.scss'],
+})
+export class HomePage {
+  constructor(private platform: Platform, private admob: AdMob) {
+    this.platform.ready().then(async () => {
+      const banner = new this.admob.NativeAd({
+        adUnitId: 'ca-app-pub-xxx/yyy',
+      })
+
+      await ad.load()
+
+      await ad.show({
+        x: 0,
+        y: 30,
+        width: window.screen.width,
+        height: 300,
+      })
+    })
+  }
+}
+```
+
+## Related
+
+- [Native Ad - Cordova](/docs/cordova/ads/native)

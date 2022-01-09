@@ -66,6 +66,7 @@ module.exports = {
           'Ad Formats': [
             'ionic/ads/banner',
             'ionic/ads/interstitial',
+            'ionic/ads/native',
             'ionic/ads/rewarded',
             'ionic/ads/rewarded-interstitial',
           ],
