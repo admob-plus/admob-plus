@@ -259,13 +259,12 @@ jobs:
 
       - name: Check links
         id: lc
-        uses: lycheeverse/lychee-action@v1.0.8
+        uses: lycheeverse/lychee-action@v1.3.1
         with:
           args: >
             build/**/*.html
             --config lychee.toml
-      - name: Fail if there were link errors
-        run: exit ${{ steps.lc.outputs.exit_code }}
+          fail: true
 
       - name: Archive yarn.lock
         uses: actions/upload-artifact@v2
