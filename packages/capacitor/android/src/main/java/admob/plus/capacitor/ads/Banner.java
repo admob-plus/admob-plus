@@ -132,6 +132,10 @@ public class Banner extends AdBase implements GenericAd {
         }
 
         if (wvParentView != null && wvParentView != parentView) {
+            if (getParentView(parentView) != null) {
+                parentView.removeAllViews();
+                removeFromParentView(parentView);
+            }
             wvParentView.removeView(webView);
             LinearLayout content = (LinearLayout) parentView;
             content.setOrientation(LinearLayout.VERTICAL);
