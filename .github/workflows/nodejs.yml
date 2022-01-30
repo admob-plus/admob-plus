@@ -208,7 +208,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: lychee Link Checker
         id: lc
-        uses: lycheeverse/lychee-action@v1.0.8
+        uses: lycheeverse/lychee-action@v1.3.1
         with:
           args: >
             README.md
@@ -216,8 +216,7 @@ jobs:
             website/**/*.md
             --base https://admob-plus.github.io
             --config lychee.toml
-      - name: Fail if there were link errors
-        run: exit ${{ steps.lc.outputs.exit_code }}
+          fail: true
 
   deploy-docs:
     name: Deploy website
