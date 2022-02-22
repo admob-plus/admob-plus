@@ -69,6 +69,13 @@ const users: { caption: string; image: string; infoLink: string }[] = [
     infoLink:
       'https://play.google.com/store/apps/details?id=com.fteams.analysis.teams',
   },
+    {
+    caption: 'Ionic Enterprise Apps',
+    image:
+      'https://ionic-enterprise-apps.s3.amazonaws.com/ionic-enterprise-apps-logo-digital-agency.png',
+    infoLink:
+      'https://ionicenterpriseapps.com',
+  },
 ]
 
 export default users
