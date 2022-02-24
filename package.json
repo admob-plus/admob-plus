@@ -5,7 +5,7 @@
   "scripts": {
     "postinstall": "is-ci || lefthook install",
     "prepare": "run-s 'prepare:*'",
-    "prepare:ts": "tsc -b --verbose",
+    "prepare:ts": "yarn workspace 'admob-plus-cordova' build && tsc -b --verbose",
     "prepare:lerna": "lerna run prepare",
     "prepublishOnly": "del '*.tsbuildinfo' 'packages/*/*.tsbuildinfo'",
     "test": "run-s 'test:*'",
