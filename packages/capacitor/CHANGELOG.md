@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.22.1](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.22.0...@admob-plus/capacitor@1.22.1) (2022-02-24)
+
+
+### Bug Fixes
+
+* **cordova:** prevent addBannerView error on Android ([#489](https://github.com/admob-plus/admob-plus/issues/489)) ([819d3f6](https://github.com/admob-plus/admob-plus/commit/819d3f69f0b2eabc334565d11eca9a4d2fe4b6d7))
+* restrict Google-Mobile-Ads-SDK version range ([d2c5863](https://github.com/admob-plus/admob-plus/commit/d2c5863434977121672ef0de3b843a0301a019ae))
+
+
+
+
+
 # [1.22.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.21.0...@admob-plus/capacitor@1.22.0) (2022-02-20)
 
 
