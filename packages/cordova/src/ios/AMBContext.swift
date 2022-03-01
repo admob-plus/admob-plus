@@ -104,15 +104,15 @@ class AMBContext: AMBCoreContext {
         if let adSizeType = opt("size") as? Int {
             switch adSizeType {
             case 0:
-                return kGADAdSizeBanner
+                return GADAdSizeBanner
             case 1:
-                return kGADAdSizeLargeBanner
+                return GADAdSizeLargeBanner
             case 2:
-                return kGADAdSizeMediumRectangle
+                return GADAdSizeMediumRectangle
             case 3:
-                return kGADAdSizeFullBanner
+                return GADAdSizeFullBanner
             case 4:
-                return kGADAdSizeLeaderboard
+                return GADAdSizeLeaderboard
             default: break
             }
         }
@@ -140,7 +140,7 @@ class AMBContext: AMBCoreContext {
                 return GADAdSizeFromCGSize(CGSize(width: width, height: height))
             }
         }
-        return kGADAdSizeBanner
+        return GADAdSizeBanner
     }
     // swiftlint:enable cyclomatic_complexity
 

@@ -55,7 +55,7 @@ class AMBBanner: AMBAdBase, GADAdSizeDelegate, GADBannerViewDelegate {
             return nil
         }
 
-        let adSize = kGADAdSizeBanner
+        let adSize = GADAdSizeBanner
         self.init(id: id,
                   adUnitId: adUnitId,
                   adRequest: ctx.optGADRequest(),
