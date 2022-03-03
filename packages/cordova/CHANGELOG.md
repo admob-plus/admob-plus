@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.27.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.26.1...admob-plus-cordova@1.27.0) (2022-03-03)
+
+
+### Bug Fixes
+
+* use GAD prefix constants ([ac74eb8](https://github.com/admob-plus/admob-plus/commit/ac74eb8542ea252169e0c951b54dd2394f090be5))
+
+
+### Features
+
+* update Google-Mobile-Ads-SDK to 8.13.0 ([9b6c259](https://github.com/admob-plus/admob-plus/commit/9b6c25932f3ee5ddb310a3a7b406116c3830b36a))
+
+
+
+
+
 ## [1.26.1](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.26.0...admob-plus-cordova@1.26.1) (2022-02-24)
 
 **Note:** Version bump only for package admob-plus-cordova
