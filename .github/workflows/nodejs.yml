@@ -16,7 +16,11 @@ jobs:
       matrix:
         node-version: [12.x, 14.x, 16.x, 17.x]
         os: [ubuntu-latest, windows-latest, macos-latest]
-
+        exclude:
+          - os: macos-latest
+            node-version: 12.x
+          - os: macos-latest
+            node-version: 14.x
     steps:
       - name: Config git
         run: git config --global core.autocrlf input
