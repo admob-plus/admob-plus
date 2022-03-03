@@ -64,6 +64,7 @@
     "@capacitor/core": "^3.4.1"
   },
   "homepage": "https://admob-plus.github.io/docs/capacitor",
+  "funding": "https://admob-plus.github.io/funding",
   "publishConfig": {
     "access": "public"
   },

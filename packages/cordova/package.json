@@ -32,6 +32,7 @@
   "license": "MIT",
   "repository": "admob-plus/admob-plus",
   "homepage": "https://admob-plus.github.io/docs/cordova",
+  "funding": "https://admob-plus.github.io/funding",
   "files": [
     "*.ts",
     "*.md",

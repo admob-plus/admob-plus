@@ -26,6 +26,7 @@
     "url": "git+https://github.com/admob-plus/admob-plus.git"
   },
   "homepage": "https://admob-plus.github.io/docs/react-native",
+  "funding": "https://admob-plus.github.io/funding",
   "keywords": [
     "react-native",
     "admob",

@@ -33,6 +33,7 @@
   "license": "MIT",
   "repository": "admob-plus/admob-plus",
   "homepage": "https://admob-plus.github.io/docs/ionic",
+  "funding": "https://admob-plus.github.io/funding",
   "publishConfig": {
     "access": "public"
   },

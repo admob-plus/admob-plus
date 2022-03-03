@@ -51,6 +51,7 @@
   "license": "MIT",
   "repository": "admob-plus/admob-plus",
   "homepage": "https://admob-plus.github.io",
+  "funding": "https://admob-plus.github.io/funding",
   "main": "lib/index.js",
   "scripts": {
     "prepublishOnly": "yarn build",
