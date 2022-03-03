@@ -212,7 +212,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: lychee Link Checker
         id: lc
-        uses: lycheeverse/lychee-action@v1.3.1
+        uses: lycheeverse/lychee-action@v1
         with:
           args: >
             README.md
@@ -262,7 +262,7 @@ jobs:
 
       - name: Check links
         id: lc
-        uses: lycheeverse/lychee-action@v1.3.1
+        uses: lycheeverse/lychee-action@v1
         with:
           args: >
             build/**/*.html
