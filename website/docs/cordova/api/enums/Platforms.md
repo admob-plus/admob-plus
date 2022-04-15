@@ -14,7 +14,7 @@ custom_edit_url: null
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/src/www/api.ts:142
+packages/cordova/src/www/api.ts:142
 
 ___
 
@@ -24,4 +24,4 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/src/www/api.ts:143
+packages/cordova/src/www/api.ts:143

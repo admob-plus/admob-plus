@@ -1,7 +1,7 @@
 ---
-id: "InterstitialAd"
-title: "Class: InterstitialAd"
-sidebar_label: "InterstitialAd"
+id: "BannerAd"
+title: "Class: BannerAd"
+sidebar_label: "BannerAd"
 sidebar_position: 0
 custom_edit_url: null
 ---
@@ -10,24 +10,23 @@ custom_edit_url: null
 
 - `IonicNativePlugin`
 
-  ↳ **`InterstitialAd`**
+  ↳ **`BannerAd`**
 
 ## Implements
 
-- `Omit`<`IInterstitialAd`, ``"opts"``\>
+- `Omit`<`IBannerAd`, ``"opts"``\>
 
 ## Constructors
 
 ### constructor
 
-• **new InterstitialAd**(`opts`)
+• **new BannerAd**(`opts`)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `opts` | `Object` |
-| `opts.adUnitId` | `string` |
+| `opts` | `BannerAdOptions` |
 
 #### Overrides
 
@@ -35,7 +34,7 @@ IonicNativePlugin.constructor
 
 #### Defined in
 
-ionic/src/ngx/index.ts:81
+packages/ionic/src/ngx/index.ts:40
 
 ## Properties
 
@@ -45,7 +44,7 @@ ionic/src/ngx/index.ts:81
 
 #### Defined in
 
-ionic/src/ngx/index.ts:79
+packages/ionic/src/ngx/index.ts:38
 
 ___
 
@@ -59,7 +58,7 @@ IonicNativePlugin.plugin
 
 #### Defined in
 
-ionic/src/ngx/index.ts:75
+packages/ionic/src/ngx/index.ts:34
 
 ___
 
@@ -73,13 +72,13 @@ IonicNativePlugin.pluginName
 
 #### Defined in
 
-ionic/src/ngx/index.ts:76
+packages/ionic/src/ngx/index.ts:35
 
 ___
 
 ### pluginRef
 
-▪ `Static` **pluginRef**: `string` = `'admob.InterstitialAd'`
+▪ `Static` **pluginRef**: `string` = `'admob.BannerAd'`
 
 #### Overrides
 
@@ -87,7 +86,7 @@ IonicNativePlugin.pluginRef
 
 #### Defined in
 
-ionic/src/ngx/index.ts:77
+packages/ionic/src/ngx/index.ts:36
 
 ## Accessors
 
@@ -105,7 +104,7 @@ Omit.adUnitId
 
 #### Defined in
 
-ionic/src/ngx/index.ts:87
+packages/ionic/src/ngx/index.ts:46
 
 ___
 
@@ -123,25 +122,25 @@ Omit.id
 
 #### Defined in
 
-ionic/src/ngx/index.ts:91
+packages/ionic/src/ngx/index.ts:50
 
 ## Methods
 
-### isLoaded
+### hide
 
-▸ **isLoaded**(): `Promise`<`boolean`\>
+▸ **hide**(): `Promise`<`unknown`\>
 
 #### Returns
 
-`Promise`<`boolean`\>
+`Promise`<`unknown`\>
 
 #### Implementation of
 
-Omit.isLoaded
+Omit.hide
 
 #### Defined in
 
-ionic/src/ngx/index.ts:95
+packages/ionic/src/ngx/index.ts:62
 
 ___
 
@@ -159,7 +158,7 @@ Omit.load
 
 #### Defined in
 
-ionic/src/ngx/index.ts:99
+packages/ionic/src/ngx/index.ts:54
 
 ___
 
@@ -171,7 +170,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `...opts` | [type: string, listener: EventListenerOrEventListenerObject, options?: boolean \| AddEventListenerOptions] |
+| `...opts` | [type: string, listener: Function, useCapture?: boolean] |
 
 #### Returns
 
@@ -189,7 +188,7 @@ Omit.on
 
 #### Defined in
 
-ionic/src/ngx/index.ts:107
+packages/ionic/src/ngx/index.ts:66
 
 ___
 
@@ -207,4 +206,4 @@ Omit.show
 
 #### Defined in
 
-ionic/src/ngx/index.ts:103
+packages/ionic/src/ngx/index.ts:58

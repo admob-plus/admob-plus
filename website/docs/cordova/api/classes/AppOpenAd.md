@@ -30,7 +30,7 @@ custom_edit_url: null
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/src/www/api.ts:38
+packages/cordova/src/www/api.ts:38
 
 ## Properties
 
@@ -44,7 +44,7 @@ code/github/admob-plus/packages/cordova/src/www/api.ts:38
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/src/www/api.ts:32
+packages/cordova/src/www/api.ts:32
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/src/www/api.ts:34
+packages/cordova/src/www/api.ts:34
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/src/www/app-open.ts:14
+packages/cordova/src/www/app-open.ts:14
 
 ___
 
@@ -78,7 +78,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/src/www/app-open.ts:13
+packages/cordova/src/www/app-open.ts:13
 
 ___
 
@@ -92,7 +92,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/src/www/api.ts:27
+packages/cordova/src/www/api.ts:27
 
 ## Accessors
 
@@ -110,7 +110,7 @@ MobileAd.adUnitId
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/src/www/api.ts:61
+packages/cordova/src/www/api.ts:61
 
 ## Methods
 
@@ -128,7 +128,7 @@ code/github/admob-plus/packages/cordova/src/www/api.ts:61
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/src/www/api.ts:98
+packages/cordova/src/www/api.ts:98
 
 ___
 
@@ -146,7 +146,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/src/www/api.ts:102
+packages/cordova/src/www/api.ts:102
 
 ___
 
@@ -164,7 +164,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/src/www/app-open.ts:16
+packages/cordova/src/www/app-open.ts:16
 
 ___
 
@@ -182,7 +182,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/src/www/app-open.ts:20
+packages/cordova/src/www/app-open.ts:20
 
 ___
 
@@ -212,7 +212,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/src/www/api.ts:65
+packages/cordova/src/www/api.ts:65
 
 ___
 
@@ -230,7 +230,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/src/www/app-open.ts:24
+packages/cordova/src/www/app-open.ts:24
 
 ___
 
@@ -254,4 +254,4 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/src/www/api.ts:45
+packages/cordova/src/www/api.ts:45

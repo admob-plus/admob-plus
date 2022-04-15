@@ -1,7 +1,6 @@
 ---
 id: "index"
 title: "@admob-plus/react-native"
-slug: "/react-native/api/"
 sidebar_label: "Exports"
 sidebar_position: 0.5
 custom_edit_url: null

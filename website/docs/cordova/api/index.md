@@ -1,7 +1,6 @@
 ---
 id: "index"
 title: "admob-plus-cordova"
-slug: "/cordova/api/"
 sidebar_label: "Exports"
 sidebar_position: 0.5
 custom_edit_url: null
@@ -49,7 +48,7 @@ Renames and re-exports [AdMob](classes/AdMob.md)
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/src/www/api.ts:153
+packages/cordova/src/www/api.ts:153
 
 ___
 
@@ -71,7 +70,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/src/www/api.ts:6
+packages/cordova/src/www/api.ts:6
 
 ___
 
@@ -91,7 +90,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/src/www/api.ts:133
+packages/cordova/src/www/api.ts:133
 
 ## Functions
 
@@ -112,7 +111,7 @@ code/github/admob-plus/packages/cordova/src/www/api.ts:133
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/src/www/generated.ts:79
+packages/cordova/src/www/generated.ts:79
 
 ___
 
@@ -128,4 +127,4 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/src/www/api.ts:18
+packages/cordova/src/www/api.ts:18

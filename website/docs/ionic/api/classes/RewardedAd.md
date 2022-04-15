@@ -1,7 +1,7 @@
 ---
-id: "RewardedInterstitialAd"
-title: "Class: RewardedInterstitialAd"
-sidebar_label: "RewardedInterstitialAd"
+id: "RewardedAd"
+title: "Class: RewardedAd"
+sidebar_label: "RewardedAd"
 sidebar_position: 0
 custom_edit_url: null
 ---
@@ -10,23 +10,23 @@ custom_edit_url: null
 
 - `IonicNativePlugin`
 
-  ↳ **`RewardedInterstitialAd`**
+  ↳ **`RewardedAd`**
 
 ## Implements
 
-- `Omit`<`IRewardedInterstitialAd`, ``"opts"``\>
+- `Omit`<`IRewardedAd`, ``"opts"``\>
 
 ## Constructors
 
 ### constructor
 
-• **new RewardedInterstitialAd**(`opts`)
+• **new RewardedAd**(`opts`)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `opts` | `RewardedInterstitialAdOptions` |
+| `opts` | `RewardedAdOptions` |
 
 #### Overrides
 
@@ -34,7 +34,7 @@ IonicNativePlugin.constructor
 
 #### Defined in
 
-ionic/src/ngx/index.ts:163
+packages/ionic/src/ngx/index.ts:122
 
 ## Properties
 
@@ -44,7 +44,7 @@ ionic/src/ngx/index.ts:163
 
 #### Defined in
 
-ionic/src/ngx/index.ts:161
+packages/ionic/src/ngx/index.ts:120
 
 ___
 
@@ -58,7 +58,7 @@ IonicNativePlugin.plugin
 
 #### Defined in
 
-ionic/src/ngx/index.ts:157
+packages/ionic/src/ngx/index.ts:116
 
 ___
 
@@ -72,13 +72,13 @@ IonicNativePlugin.pluginName
 
 #### Defined in
 
-ionic/src/ngx/index.ts:158
+packages/ionic/src/ngx/index.ts:117
 
 ___
 
 ### pluginRef
 
-▪ `Static` **pluginRef**: `string` = `'admob.RewardedInterstitialAd'`
+▪ `Static` **pluginRef**: `string` = `'admob.RewardedAd'`
 
 #### Overrides
 
@@ -86,7 +86,7 @@ IonicNativePlugin.pluginRef
 
 #### Defined in
 
-ionic/src/ngx/index.ts:159
+packages/ionic/src/ngx/index.ts:118
 
 ## Accessors
 
@@ -104,7 +104,7 @@ Omit.adUnitId
 
 #### Defined in
 
-ionic/src/ngx/index.ts:169
+packages/ionic/src/ngx/index.ts:128
 
 ___
 
@@ -122,7 +122,7 @@ Omit.id
 
 #### Defined in
 
-ionic/src/ngx/index.ts:173
+packages/ionic/src/ngx/index.ts:132
 
 ## Methods
 
@@ -140,7 +140,7 @@ Omit.isLoaded
 
 #### Defined in
 
-ionic/src/ngx/index.ts:177
+packages/ionic/src/ngx/index.ts:136
 
 ___
 
@@ -158,7 +158,7 @@ Omit.load
 
 #### Defined in
 
-ionic/src/ngx/index.ts:181
+packages/ionic/src/ngx/index.ts:140
 
 ___
 
@@ -170,7 +170,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `...opts` | [type: string, listener: EventListenerOrEventListenerObject, options?: boolean \| AddEventListenerOptions] |
+| `...opts` | [type: string, listener: Function, useCapture?: boolean] |
 
 #### Returns
 
@@ -188,7 +188,7 @@ Omit.on
 
 #### Defined in
 
-ionic/src/ngx/index.ts:189
+packages/ionic/src/ngx/index.ts:148
 
 ___
 
@@ -206,4 +206,4 @@ Omit.show
 
 #### Defined in
 
-ionic/src/ngx/index.ts:185
+packages/ionic/src/ngx/index.ts:144

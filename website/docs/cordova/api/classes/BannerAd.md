@@ -30,7 +30,7 @@ custom_edit_url: null
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/src/www/banner.ts:64
+packages/cordova/src/www/banner.ts:64
 
 ## Properties
 
@@ -40,7 +40,7 @@ code/github/admob-plus/packages/cordova/src/www/banner.ts:64
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/src/www/banner.ts:62
+packages/cordova/src/www/banner.ts:62
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/src/www/api.ts:32
+packages/cordova/src/www/api.ts:32
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/src/www/api.ts:34
+packages/cordova/src/www/api.ts:34
 
 ___
 
@@ -78,7 +78,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/src/www/banner.ts:60
+packages/cordova/src/www/banner.ts:60
 
 ___
 
@@ -92,7 +92,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/src/www/api.ts:27
+packages/cordova/src/www/api.ts:27
 
 ## Accessors
 
@@ -110,7 +110,7 @@ MobileAd.adUnitId
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/src/www/api.ts:61
+packages/cordova/src/www/api.ts:61
 
 ## Methods
 
@@ -128,7 +128,7 @@ code/github/admob-plus/packages/cordova/src/www/api.ts:61
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/src/www/banner.ts:99
+packages/cordova/src/www/banner.ts:99
 
 ___
 
@@ -146,7 +146,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/src/www/api.ts:102
+packages/cordova/src/www/api.ts:102
 
 ___
 
@@ -164,7 +164,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/src/www/api.ts:80
+packages/cordova/src/www/api.ts:80
 
 ___
 
@@ -182,7 +182,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/src/www/banner.ts:86
+packages/cordova/src/www/banner.ts:86
 
 ___
 
@@ -212,7 +212,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/src/www/api.ts:65
+packages/cordova/src/www/api.ts:65
 
 ___
 
@@ -230,7 +230,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/src/www/banner.ts:91
+packages/cordova/src/www/banner.ts:91
 
 ___
 
@@ -253,7 +253,7 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/src/www/banner.ts:72
+packages/cordova/src/www/banner.ts:72
 
 ___
 
@@ -277,4 +277,4 @@ ___
 
 #### Defined in
 
-code/github/admob-plus/packages/cordova/src/www/api.ts:45
+packages/cordova/src/www/api.ts:45

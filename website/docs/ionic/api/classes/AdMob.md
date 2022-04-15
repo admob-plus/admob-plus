@@ -34,7 +34,7 @@ IonicNativePlugin.constructor
 
 #### Defined in
 
-ionic/src/ngx/index.ts:265
+packages/ionic/src/ngx/index.ts:265
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 #### Defined in
 
-ionic/src/ngx/index.ts:266
+packages/ionic/src/ngx/index.ts:266
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 #### Defined in
 
-ionic/src/ngx/index.ts:269
+packages/ionic/src/ngx/index.ts:269
 
 ___
 
@@ -64,7 +64,7 @@ ___
 
 #### Defined in
 
-ionic/src/ngx/index.ts:267
+packages/ionic/src/ngx/index.ts:267
 
 ___
 
@@ -74,7 +74,7 @@ ___
 
 #### Defined in
 
-ionic/src/ngx/index.ts:268
+packages/ionic/src/ngx/index.ts:268
 
 ___
 
@@ -88,7 +88,7 @@ IonicNativePlugin.platforms
 
 #### Defined in
 
-ionic/src/ngx/index.ts:259
+packages/ionic/src/ngx/index.ts:259
 
 ___
 
@@ -102,7 +102,7 @@ IonicNativePlugin.plugin
 
 #### Defined in
 
-ionic/src/ngx/index.ts:260
+packages/ionic/src/ngx/index.ts:260
 
 ___
 
@@ -116,7 +116,7 @@ IonicNativePlugin.pluginName
 
 #### Defined in
 
-ionic/src/ngx/index.ts:261
+packages/ionic/src/ngx/index.ts:261
 
 ___
 
@@ -130,7 +130,7 @@ IonicNativePlugin.pluginRef
 
 #### Defined in
 
-ionic/src/ngx/index.ts:262
+packages/ionic/src/ngx/index.ts:262
 
 ___
 
@@ -144,7 +144,7 @@ IonicNativePlugin.repo
 
 #### Defined in
 
-ionic/src/ngx/index.ts:263
+packages/ionic/src/ngx/index.ts:263
 
 ## Methods
 
@@ -168,7 +168,7 @@ Omit.configRequest
 
 #### Defined in
 
-ionic/src/ngx/index.ts:271
+packages/ionic/src/ngx/index.ts:271
 
 ___
 
@@ -192,7 +192,7 @@ Omit.configure
 
 #### Defined in
 
-ionic/src/ngx/index.ts:281
+packages/ionic/src/ngx/index.ts:281
 
 ___
 
@@ -212,7 +212,7 @@ ___
 
 #### Defined in
 
-ionic/src/ngx/index.ts:297
+packages/ionic/src/ngx/index.ts:297
 
 ___
 
@@ -230,7 +230,7 @@ Omit.requestTrackingAuthorization
 
 #### Defined in
 
-ionic/src/ngx/index.ts:293
+packages/ionic/src/ngx/index.ts:293
 
 ___
 
@@ -254,7 +254,7 @@ Omit.setAppMuted
 
 #### Defined in
 
-ionic/src/ngx/index.ts:285
+packages/ionic/src/ngx/index.ts:285
 
 ___
 
@@ -278,7 +278,7 @@ Omit.setAppVolume
 
 #### Defined in
 
-ionic/src/ngx/index.ts:289
+packages/ionic/src/ngx/index.ts:289
 
 ___
 
@@ -296,4 +296,4 @@ Omit.start
 
 #### Defined in
 
-ionic/src/ngx/index.ts:277
+packages/ionic/src/ngx/index.ts:277
