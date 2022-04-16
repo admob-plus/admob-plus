@@ -1,15 +1,7 @@
-'use strict'
-
 module.exports = {
-  extends: ['concise'],
+  // eslint-disable-next-line node/no-unpublished-require
+  extends: [require.resolve('gts/.eslintrc.json')],
   overrides: [
-    {
-      files: ['*.ts', '*.tsx'],
-      extends: ['concise-typescript'],
-      rules: {
-        '@typescript-eslint/explicit-module-boundary-types': 'off',
-      },
-    },
     {
       files: ['__tests__/**/*.ts'],
       rules: {
@@ -27,6 +19,13 @@ module.exports = {
   rules: {
     'function-paren-newline': 'off',
     'max-classes-per-file': 'off',
-    'unicorn/prefer-spread': 'warn',
+    'node/no-extraneous-import': 'warn',
+    'node/no-extraneous-require': 'warn',
+    'node/no-unpublished-import': 'warn',
+    'node/no-unpublished-require': 'warn',
+    'node/no-unsupported-features/es-syntax': [
+      'warn',
+      {version: '>=14', ignores: []},
+    ],
   },
-}
+};

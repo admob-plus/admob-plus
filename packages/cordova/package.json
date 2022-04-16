@@ -60,10 +60,5 @@
       "android",
       "ios"
     ]
-  },
-  "eslintConfig": {
-    "extends": [
-      "concise-esnext"
-    ]
   }
 }
