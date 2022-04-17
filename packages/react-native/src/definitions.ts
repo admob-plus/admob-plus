@@ -8,23 +8,23 @@ export enum MaxAdContentRating {
 }
 
 export type AdMobConfig = {
-  appMuted?: boolean
-  appVolume?: number
-  maxAdContentRating?: MaxAdContentRating
-  sameAppKey?: boolean
-  tagForChildDirectedTreatment?: boolean | null
-  tagForUnderAgeOfConsent?: boolean | null
-  testDeviceIds?: string[]
-}
+  appMuted?: boolean;
+  appVolume?: number;
+  maxAdContentRating?: MaxAdContentRating;
+  sameAppKey?: boolean;
+  tagForChildDirectedTreatment?: boolean | null;
+  tagForUnderAgeOfConsent?: boolean | null;
+  testDeviceIds?: string[];
+};
 
-export type MobileAdOptions = { adUnitId: string }
+export type MobileAdOptions = {adUnitId: string};
 
 export interface AdMobPlusPlugin {
-  start(): Promise<void>
-  configure(config: AdMobConfig): Promise<void>
+  start(): Promise<void>;
+  configure(config: AdMobConfig): Promise<void>;
 
-  adCreate<O extends MobileAdOptions>(opts: O): Promise<void>
-  adIsLoaded(opts: { id: number }): Promise<boolean>
-  adLoad(opts: { id: number }): Promise<void>
-  adShow(opts: { id: number }): Promise<void>
+  adCreate<O extends MobileAdOptions>(opts: O): Promise<void>;
+  adIsLoaded(opts: {id: number}): Promise<boolean>;
+  adLoad(opts: {id: number}): Promise<void>;
+  adShow(opts: {id: number}): Promise<void>;
 }

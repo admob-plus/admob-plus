@@ -1,13 +1,13 @@
-import _ from 'lodash'
-import { pkgsDirJoin } from '../utils'
-import { AdEvents } from './capacitor'
+import _ from 'lodash';
+import {pkgsDirJoin} from '../utils';
+import {AdEvents} from './capacitor';
 import {
   buildUtils,
   renderJavaContants,
   renderSwiftContants,
   renderTsContants,
   warnMessage,
-} from './shared'
+} from './shared';
 
 const Actions = _.mapValues(
   {
@@ -42,8 +42,8 @@ const Actions = _.mapValues(
     rewardedInterstitialLoad: null,
     rewardedInterstitialShow: null,
   },
-  (v, k) => (v === null ? k : v) as string,
-)
+  (v, k) => (v === null ? k : v) as string
+);
 
 const EventsUnsorted = _.mapValues(
   {
@@ -51,8 +51,8 @@ const EventsUnsorted = _.mapValues(
     ...AdEvents,
     bannerSize: 'banner.size',
   },
-  (v, k) => `admob.${v === null ? k : v}`,
-)
+  (v, k) => `admob.${v === null ? k : v}`
+);
 const Events = Object.keys(EventsUnsorted)
   .sort()
   .reduce(
@@ -60,8 +60,8 @@ const Events = Object.keys(EventsUnsorted)
       ...obj,
       [key]: EventsUnsorted[key as never],
     }),
-    {},
-  )
+    {}
+  );
 
 const AdSizeTypes = [
   'BANNER',
@@ -70,11 +70,11 @@ const AdSizeTypes = [
   'FULL_BANNER',
   'LEADERBOARD',
   'SMART_BANNER',
-]
+];
 
 function buildJava(): string {
-  const linesActions = renderJavaContants(Actions)
-  const linesEvents = renderJavaContants(Events)
+  const linesActions = renderJavaContants(Actions);
+  const linesEvents = renderJavaContants(Events);
 
   return `// ${warnMessage}
 package admob.plus.cordova;
@@ -88,11 +88,11 @@ ${linesActions}
 ${linesEvents}
     }
 }
-`
+`;
 }
 
 function buildSwift(): string {
-  const linesEvents = renderSwiftContants(Events)
+  const linesEvents = renderSwiftContants(Events);
 
   return `// ${warnMessage}
 struct AMBBannerPosition {
@@ -103,14 +103,14 @@ struct AMBBannerPosition {
 struct AMBEvents {
 ${linesEvents}
 }
-`
+`;
 }
 
 function buildTypeScript(): string {
-  const linesActions = renderTsContants(Actions)
-  const linesEvents = renderTsContants(Events)
+  const linesActions = renderTsContants(Actions);
+  const linesEvents = renderTsContants(Events);
 
-  const adSizeType = AdSizeTypes.map((s) => `  ${s},`).join('\n')
+  const adSizeType = AdSizeTypes.map(s => `  ${s},`).join('\n');
 
   return `// ${warnMessage}
 export enum NativeActions {
@@ -125,13 +125,13 @@ export enum AdSizeType {
 ${adSizeType}
 }
 ${buildUtils('AdMob', 'NativeActions')}
-`
+`;
 }
 
 const buildProxyJs = () => {
   const linesActions = _.map(Actions, (v, k) => `  ${k}() {},`)
     .sort()
-    .join('\n')
+    .join('\n');
 
   return `// ${warnMessage}
 'use strict'
@@ -142,19 +142,19 @@ ${linesActions}
 
 // eslint-disable-next-line node/no-missing-require
 require('cordova/exec/proxy').add('AdMob', AdMob)
-`
-}
+`;
+};
 
 export default async () => ({
   files: [
-    { path: 'cordova/src/android/cordova/Generated.java', f: buildJava },
+    {path: 'cordova/src/android/cordova/Generated.java', f: buildJava},
     {
       path: 'cordova/src/ios/AMBGenerated.swift',
       f: buildSwift,
     },
-    { path: 'cordova/ts/generated.ts', f: buildTypeScript },
-    { path: 'cordova/src/browser/AdMobProxy.js', f: buildProxyJs },
+    {path: 'cordova/ts/generated.ts', f: buildTypeScript},
+    {path: 'cordova/src/browser/AdMobProxy.js', f: buildProxyJs},
   ],
   pkgDir: pkgsDirJoin('cordova'),
   targetDir: 'src/admob/plus',
-})
+});

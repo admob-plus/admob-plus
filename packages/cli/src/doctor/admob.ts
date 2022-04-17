@@ -1,3 +1,3 @@
-import { testAppIds as testAppIdsMap } from '../test-ids'
+import {testAppIds as testAppIdsMap} from '../test-ids';
 
-export const testAppIds = new Set(Object.values(testAppIdsMap))
+export const testAppIds = new Set(Object.values(testAppIdsMap));

@@ -1,9 +1,9 @@
-import commonjs from '@rollup/plugin-commonjs'
-import resolve from '@rollup/plugin-node-resolve'
-import typescript from '@rollup/plugin-typescript'
-import type { RollupOptions } from 'rollup'
+import commonjs from '@rollup/plugin-commonjs';
+import resolve from '@rollup/plugin-node-resolve';
+import typescript from '@rollup/plugin-typescript';
+import type {RollupOptions} from 'rollup';
 
-const outDir = 'www'
+const outDir = 'www';
 
 export default (config: RollupOptions): RollupOptions => ({
   external: ['cordova'],
@@ -27,4 +27,4 @@ export default (config: RollupOptions): RollupOptions => ({
     commonjs(),
   ],
   ...config,
-})
+});

@@ -1,5 +1,5 @@
-import _ from 'lodash'
-import { pkgsDirJoin } from '../utils'
+import _ from 'lodash';
+import {pkgsDirJoin} from '../utils';
 import {
   buildUtils,
   indent4,
@@ -7,7 +7,7 @@ import {
   renderSwiftContants,
   renderTsContants,
   warnMessage,
-} from './shared'
+} from './shared';
 
 const Actions = _.mapValues(
   {
@@ -21,31 +21,31 @@ const Actions = _.mapValues(
     trackingAuthorizationStatus: null,
     requestTrackingAuthorization: null,
   },
-  (v, k) => (v === null ? k : v) as string,
-)
+  (v, k) => (v === null ? k : v) as string
+);
 
 const Events = _.mapValues(
-  { ready: null },
-  (v, k) => `consent.${v === null ? k : v}`,
-)
+  {ready: null},
+  (v, k) => `consent.${v === null ? k : v}`
+);
 
 const ConsentStatus: Record<string, number> = {
   Unknown: 0,
   Required: 1,
   NotRequired: 2,
   Obtained: 3,
-}
+};
 
 function buildJava(): string {
-  const linesActions = renderJavaContants(Actions)
-  const linesEvents = renderJavaContants(Events)
+  const linesActions = renderJavaContants(Actions);
+  const linesEvents = renderJavaContants(Events);
   const linesConsentStatus = _.map(
     ConsentStatus,
     (v, k) =>
       `${indent4(2)}public static final int ${_.snakeCase(
-        k,
-      ).toUpperCase()} = ${v};`,
-  ).join('\n')
+        k
+      ).toUpperCase()} = ${v};`
+  ).join('\n');
 
   return `// ${warnMessage}
 package cordova.plugin.consent;
@@ -63,17 +63,17 @@ ${linesEvents}
 ${linesConsentStatus}
     }
 }
-`
+`;
 }
 
 function buildSwift(): string {
-  const linesEvents = renderSwiftContants(Events)
+  const linesEvents = renderSwiftContants(Events);
 
   return `// ${warnMessage}
 struct CSNEvents {
 ${linesEvents}
 }
-`
+`;
 }
 
 function buildTypeScript(): string {
@@ -90,18 +90,18 @@ export enum ConsentStatus {
 ${_.map(ConsentStatus, (v, k) => `  ${k} = ${v},`).join('\n')}
 }
 ${buildUtils('Consent')}
-`
+`;
 }
 
 export default () => ({
   files: [
-    { path: 'cordova-consent/src/android/Generated.java', f: buildJava },
+    {path: 'cordova-consent/src/android/Generated.java', f: buildJava},
     {
       path: 'cordova-consent/src/ios/CSNGenerated.swift',
       f: buildSwift,
     },
-    { path: 'cordova-consent/ts/generated.ts', f: buildTypeScript },
+    {path: 'cordova-consent/ts/generated.ts', f: buildTypeScript},
   ],
   pkgDir: pkgsDirJoin('cordova-consent'),
   targetDir: 'src/cordova/plugin/consent',
-})
+});

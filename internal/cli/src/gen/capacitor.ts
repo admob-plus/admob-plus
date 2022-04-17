@@ -1,13 +1,13 @@
-import assert from 'assert'
-import _ from 'lodash'
-import ts from 'typescript'
-import { pkgsDirJoin } from '../utils'
+import assert from 'assert';
+import _ from 'lodash';
+import ts from 'typescript';
+import {pkgsDirJoin} from '../utils';
 import {
   indent4,
   renderJavaContants,
   renderSwiftContants,
   warnMessage,
-} from './shared'
+} from './shared';
 
 export const AdEvents = {
   // Ad
@@ -50,13 +50,13 @@ export const AdEvents = {
   rewardedInterstitialReward: 'rewardedi.reward',
   rewardedInterstitialShow: 'rewardedi.show',
   rewardedInterstitialShowFail: 'rewardedi.showfail',
-}
+};
 _.forEach(AdEvents, (v, k) => {
-  assert.strictEqual(v, v.toLowerCase())
-})
+  assert.strictEqual(v, v.toLowerCase());
+});
 
 function buildJava(): string {
-  const linesEvents = renderJavaContants(AdEvents)
+  const linesEvents = renderJavaContants(AdEvents);
 
   return `// ${warnMessage}
 package admob.plus.capacitor;
@@ -66,43 +66,41 @@ public final class Generated {
 ${linesEvents}
     }
 }
-`
+`;
 }
 
 export const extractClassInfo = (
   definitionsPath: string,
-  className: string,
+  className: string
 ) => {
-  const program = ts.createProgram([definitionsPath], {})
-  const checker = program.getTypeChecker()
-  const source = program.getSourceFile(definitionsPath)
+  const program = ts.createProgram([definitionsPath], {});
+  const checker = program.getTypeChecker();
+  const source = program.getSourceFile(definitionsPath);
   /* eslint-disable @typescript-eslint/no-non-null-asserted-optional-chain */
   const node = source
     ?.getChildAt(0)
     ?.getChildren()
-    .find((x) => _.get(x, 'name.escapedText') === className)!
+    .find(x => _.get(x, 'name.escapedText') === className)!;
   /* eslint-enable @typescript-eslint/no-non-null-asserted-optional-chain */
-  const cls = checker.getTypeAtLocation(node)
+  const cls = checker.getTypeAtLocation(node);
   return {
     checker,
     cls,
     properties: checker.getPropertiesOfType(cls),
     methodSignatures: cls
       .getProperties()
-      .filter(
-        (x) => x.valueDeclaration?.kind === ts.SyntaxKind.MethodSignature,
-      ),
-  }
-}
+      .filter(x => x.valueDeclaration?.kind === ts.SyntaxKind.MethodSignature),
+  };
+};
 
 const pluginMethods = (() => {
   const definitionsPath = require.resolve(
-    '@admob-plus/capacitor/src/definitions.ts',
-  )
+    '@admob-plus/capacitor/src/definitions.ts'
+  );
   return extractClassInfo(definitionsPath, 'AdMobPlusPlugin')
-    .methodSignatures.map((x) => x.getName())
-    .filter((x) => !['addListener'].includes(x))
-})()
+    .methodSignatures.map(x => x.getName())
+    .filter(x => !['addListener'].includes(x));
+})();
 
 const buildIosMacro = () => `// ${warnMessage}
 #import <Foundation/Foundation.h>
@@ -112,21 +110,19 @@ const buildIosMacro = () => `// ${warnMessage}
 // each method the plugin supports using the CAP_PLUGIN_METHOD macro.
 CAP_PLUGIN(AdMobPlusPlugin, "AdMobPlus",
 ${pluginMethods
-    .map(
-      (x) => `${indent4(2)}   CAP_PLUGIN_METHOD(${x}, CAPPluginReturnPromise);`,
-    )
-    .join('\n')}
+  .map(x => `${indent4(2)}   CAP_PLUGIN_METHOD(${x}, CAPPluginReturnPromise);`)
+  .join('\n')}
 )
-`
+`;
 
 function buildSwift(): string {
-  const linesEvents = renderSwiftContants(AdEvents)
+  const linesEvents = renderSwiftContants(AdEvents);
 
   return `// ${warnMessage}
 struct AMBEvents {
 ${linesEvents}
 }
-`
+`;
 }
 
 const renderMethod = (method: string) => {
@@ -134,17 +130,17 @@ const renderMethod = (method: string) => {
     case 'adIsLoaded':
       return `
     console.log('${method}', opts)
-    return false`
+    return false`;
     case 'trackingAuthorizationStatus':
     case 'requestTrackingAuthorization':
       return `
     console.log('${method}', opts)
-    return { status: false }`
+    return { status: false }`;
     default:
       return `
-    console.log('${method}', opts)`
+    console.log('${method}', opts)`;
   }
-}
+};
 
 const buildWeb = () => `// ${warnMessage}
 import { WebPlugin } from '@capacitor/core'
@@ -152,15 +148,15 @@ import type { AdMobPlusPlugin } from './definitions'
 
 export class AdMobPlusWeb extends WebPlugin implements AdMobPlusPlugin {
 ${pluginMethods
-    .map(
-      (x) => `  async ${x}(
+  .map(
+    x => `  async ${x}(
     ...opts: Parameters<AdMobPlusPlugin['${x}']>
   ): ReturnType<AdMobPlusPlugin['${x}']> {${renderMethod(x)}
-  }`,
-    )
-    .join('\n\n')}
+  }`
+  )
+  .join('\n\n')}
 }
-`
+`;
 
 export default async () => ({
   files: [
@@ -183,4 +179,4 @@ export default async () => ({
   ],
   pkgDir: pkgsDirJoin('capacitor'),
   targetDir: '',
-})
+});

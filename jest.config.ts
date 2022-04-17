@@ -1,5 +1,5 @@
-import type { Config } from '@jest/types'
-import { defaults } from 'jest-config'
+import type {Config} from '@jest/types';
+import {defaults} from 'jest-config';
 
 export default async (): Promise<Config.InitialOptions> => ({
   transform: {
@@ -17,4 +17,4 @@ export default async (): Promise<Config.InitialOptions> => ({
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$',
   testURL: 'http://localhost/',
   moduleFileExtensions: ['ts', 'tsx', ...defaults.moduleFileExtensions],
-})
+});

@@ -1,93 +1,92 @@
-import envinfo from '@frat/envinfo'
-import clipboardy from 'clipboardy'
-import elementtree from 'elementtree'
-import execa from 'execa'
-import fse from 'fs-extra'
-import _ from 'lodash'
-import findPkg from 'pkg-proxy'
-import { Arguments, CommandBuilder } from 'yargs'
+import envinfo from '@frat/envinfo';
+import clipboardy from 'clipboardy';
+import elementtree from 'elementtree';
+import execa from 'execa';
+import fse from 'fs-extra';
+import _ from 'lodash';
+import findPkg from 'pkg-proxy';
+import {Arguments, CommandBuilder} from 'yargs';
 
 const collectionAndroidManifestInfo = async () => {
   const content = await fse.readFile(
     'platforms/android/app/src/main/AndroidManifest.xml',
-    'utf8',
-  )
-  const etree = elementtree.parse(content)
+    'utf8'
+  );
+  const etree = elementtree.parse(content);
   const items = etree.findall(
-    './application/meta-data/[@android:name="com.google.android.gms.ads.APPLICATION_ID"]',
-  )
+    './application/meta-data/[@android:name="com.google.android.gms.ads.APPLICATION_ID"]'
+  );
 
-  const result: { [k: string]: string } = {}
+  const result: {[k: string]: string} = {};
   const appIdKey =
-    '<meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" ... />'
+    '<meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" ... />';
 
-  result[appIdKey] = 'missing'
+  result[appIdKey] = 'missing';
   switch (items.length) {
     case 0:
-      result[appIdKey] = 'missing'
-      break
+      result[appIdKey] = 'missing';
+      break;
     case 1: {
-      const appId = items[0].get('android:value') || '-'
+      const appId = items[0].get('android:value') || '-';
       result[appIdKey] = ['ca-app-pub-xxx~yyy', 'test', '-'].includes(appId)
         ? appId
-        : 'looks ok'
-      break
+        : 'looks ok';
+      break;
     }
     default:
-      result[appIdKey] = 'multiple'
+      result[appIdKey] = 'multiple';
   }
 
-  return result
-}
+  return result;
+};
 
-export const command = 'info'
+export const command = 'info';
 
 export const desc =
-  'Get relevant version info about OS, toolchain and libraries'
+  'Get relevant version info about OS, toolchain and libraries';
 
-type Options = { clipboard: boolean }
+type Options = {clipboard: boolean};
 
 export const builder: CommandBuilder<unknown, Options> = {
   clipboard: {
     type: 'boolean',
     desc: 'Copy the environment report output to the clipboard',
   },
-}
+};
 
 export const handler = async (argv: Arguments<Options>) => {
-  const pkg = { ...(await findPkg({ searchParents: true })) }
-  const extraInfo: { [x: string]: unknown } = {}
+  const pkg = {...(await findPkg({searchParents: true}))};
+  const extraInfo: {[x: string]: unknown} = {};
 
-  const { stdout: cordovaVersion } = await execa('cordova', ['--version'], {
+  const {stdout: cordovaVersion} = await execa('cordova', ['--version'], {
     reject: false,
-  })
+  });
 
-  const deps: { [k: string]: string } = {
+  const deps: {[k: string]: string} = {
     ...pkg.devDependencies,
     ...pkg.dependencies,
-  }
+  };
   const cordovaPlugins = _.reduce(
     _.get(pkg, 'cordova.plugins'),
-    (acc, v, k) => ({ ...acc, [k]: deps[k] }),
-    {},
-  )
+    (acc, v, k) => ({...acc, [k]: deps[k]}),
+    {}
+  );
   extraInfo.Cordova = {
     Version: cordovaVersion || '-',
     Plugins: cordovaPlugins,
-  }
-  const { stdout: ionicVersion } = await execa('ionic', ['--version'], {
+  };
+  const {stdout: ionicVersion} = await execa('ionic', ['--version'], {
     reject: false,
-  })
-  extraInfo.Ionic = { Version: ionicVersion || '-' }
-
+  });
+  extraInfo.Ionic = {Version: ionicVersion || '-'};
   try {
-    const androidInfo = await collectionAndroidManifestInfo()
-    extraInfo['AndroidManifest.xml'] = androidInfo
+    const androidInfo = await collectionAndroidManifestInfo();
+    extraInfo['AndroidManifest.xml'] = androidInfo;
   } catch {
-    extraInfo['AndroidManifest.xml'] = { Version: '-' }
+    extraInfo['AndroidManifest.xml'] = {Version: '-'};
   }
 
-  let infoText = ''
+  let infoText = '';
   try {
     infoText = await envinfo.run(
       {
@@ -118,17 +117,17 @@ export const handler = async (argv: Arguments<Options>) => {
         console: false,
         title: 'AdMob Plus Environment Info',
         transform(x) {
-          return { ...x, ...extraInfo }
+          return {...x, ...extraInfo};
         },
-      },
-    )
+      }
+    );
   } catch (err) {
-    console.error(err)
+    console.error(err);
   }
 
-  console.log(infoText)
+  console.log(infoText);
 
   if (argv.clipboard) {
-    clipboardy.writeSync(infoText)
+    clipboardy.writeSync(infoText);
   }
-}
+};

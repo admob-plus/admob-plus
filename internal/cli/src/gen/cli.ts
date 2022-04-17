@@ -1,42 +1,42 @@
-import assert from 'assert'
-import execa from 'execa'
-import fse from 'fs-extra'
-import handlebars from 'handlebars'
-import markdownMagic from 'markdown-magic'
-import { pkgsDirJoin } from '../utils'
+import assert from 'assert';
+import execa from 'execa';
+import fse from 'fs-extra';
+import handlebars from 'handlebars';
+import markdownMagic from 'markdown-magic';
+import {pkgsDirJoin} from '../utils';
 
 const updateCliReadme = async () => {
-  const markdownPath = pkgsDirJoin('cli/README.md')
-  const templatePath = require.resolve('../../templates/cli-readme.md.hbs')
-  const template = handlebars.compile(await fse.readFile(templatePath, 'utf8'))
+  const markdownPath = pkgsDirJoin('cli/README.md');
+  const templatePath = require.resolve('../../templates/cli-readme.md.hbs');
+  const template = handlebars.compile(await fse.readFile(templatePath, 'utf8'));
 
   const [usage, ...commands] = await Promise.all<any>([
-    execa('yarn', ['admob-plus', '--help']).then((o) => o.stdout),
-    ...['doctor', 'info'].map(async (x) => {
-      const { stdout } = await execa('yarn', ['admob-plus', x, '--help'])
-      const m = stdout.match(/^([^\n]+)\s+([^\n]+)([\S\s]+)$/)
-      assert(m)
+    execa('yarn', ['admob-plus', '--help']).then(o => o.stdout),
+    ...['doctor', 'info'].map(async x => {
+      const {stdout} = await execa('yarn', ['admob-plus', x, '--help']);
+      const m = stdout.match(/^([^\n]+)\s+([^\n]+)([\S\s]+)$/);
+      assert(m);
       return {
         cmd: m[1],
         desc: m[2].trim(),
         help: m[3].trim(),
-      }
+      };
     }),
-  ])
+  ]);
 
-  await new Promise((resolve) => {
+  await new Promise(resolve => {
     markdownMagic(
       markdownPath,
       {
         transforms: {
           CLI() {
-            return template({ usage, commands }).trim()
+            return template({usage, commands}).trim();
           },
         },
       },
-      resolve,
-    )
-  })
-}
+      resolve
+    );
+  });
+};
 
-export default updateCliReadme
+export default updateCliReadme;

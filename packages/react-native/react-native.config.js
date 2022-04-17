@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 module.exports = {
   dependency: {
@@ -11,4 +11,4 @@ module.exports = {
       },
     },
   },
-}
+};

@@ -1,10 +1,10 @@
 export const testAppIds = {
   android: 'ca-app-pub-3940256099942544~3347511713',
   ios: 'ca-app-pub-3940256099942544~1458002511',
-}
+};
 
 export const testAdUnitIds: {
-  [k: string]: { android: string; ios: string }
+  [k: string]: {android: string; ios: string};
 } = {
   'App Open': {
     android: 'ca-app-pub-3940256099942544/3419835294',
@@ -38,4 +38,4 @@ export const testAdUnitIds: {
     android: 'ca-app-pub-3940256099942544/1044960115',
     ios: 'ca-app-pub-3940256099942544/2521693316',
   },
-}
+};
