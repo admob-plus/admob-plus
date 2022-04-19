@@ -1,7 +1,7 @@
 commit-msg:
   commands:
     commitlint:
-      run: yarn commitlint -e
+      run: npx commitlint -e
 
 pre-commit:
   parallel: true
@@ -12,19 +12,19 @@ pre-commit:
         git add {staged_files}
     remark:
       glob: "*.md"
-      run: yarn remark --no-stdout {staged_files}
+      run: npx remark --no-stdout {staged_files}
     swiftlint:
       glob: "*.swift"
-      run: yarn node-swiftlint lint --strict --path {staged_files}
+      run: npx node-swiftlint lint --strict --path {staged_files}
     pkg-deps:
       glob: package.json
-      run: yarn jest __tests__/package-json.ts
+      run: npx jest __tests__/package-json.ts
 
 pre-push:
   parallel: true
   commands:
     jest:
-      run: yarn jest
+      run: npx jest
 
 fixer:
   parallel: true
@@ -34,4 +34,4 @@ fixer:
       run: npx gts fix {staged_files}
     pkg-json-fixed:
       glob: examples/*/package.json
-      run: yarn prettier --write {staged_files}
+      run: npx prettier --write {staged_files}
