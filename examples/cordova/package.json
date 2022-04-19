@@ -41,9 +41,6 @@
     ]
   },
   "eslintConfig": {
-    "extends": [
-      "concise-browser"
-    ],
     "globals": {
       "admob": true
     }

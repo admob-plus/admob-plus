@@ -29,8 +29,6 @@
     "@types/react-router-dom": "^5.3.3",
     "cordova-common": "^4.0.2",
     "docusaurus-plugin-typedoc": "~0.17.5",
-    "eslint-config-concise-esnext": "^0.40.1",
-    "eslint-config-concise-react": "^0.40.1",
     "markdown-magic": "^2.6.0",
     "replace-in-file": "^6.3.2",
     "ts-node": "^10.7.0",
