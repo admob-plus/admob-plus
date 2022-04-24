@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "preinstall": "touch yarn.lock",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
@@ -34,12 +33,6 @@
     "react-test-renderer": "17.0.2",
     "typescript": "^4.4.3"
   },
-  "resolutions": {
-    "@admob-plus-internal/cli": "file:../../internal/cli",
-    "@admob-plus/react-native": "file:../../packages/react-native",
-    "@types/react": "^17.0.0",
-    "pkg-proxy": "file:../../packages/pkg-proxy"
-  },
   "jest": {
     "preset": "react-native",
     "moduleFileExtensions": [
@@ -51,10 +44,7 @@
       "node"
     ]
   },
-  "workspaces": [
-    "../../internal/*",
-    "../../packages/cli",
-    "../../packages/pkg-proxy",
-    "../../packages/react-native"
-  ]
+  "installConfig": {
+    "hoistingLimits": "workspaces"
+  }
 }
