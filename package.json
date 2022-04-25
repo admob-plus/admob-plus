@@ -113,7 +113,6 @@
   "workspaces": [
     "examples/*",
     "!examples/ionic3",
-    "!examples/ionic-angular",
     "internal/*",
     "packages/*",
     "website"

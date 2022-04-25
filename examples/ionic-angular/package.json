@@ -83,5 +83,8 @@
       "ios",
       "android"
     ]
+  },
+  "installConfig": {
+    "hoistingLimits": "workspaces"
   }
 }
