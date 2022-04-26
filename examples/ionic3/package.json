@@ -41,9 +41,6 @@
     "ionic": "3.20.1",
     "typescript": "2.6.2"
   },
-  "resolutions": {
-    "node-sass": "6.0.1"
-  },
   "cordova": {
     "plugins": {
       "admob-plus-cordova": {
@@ -63,5 +60,8 @@
     "platforms": [
       "ios"
     ]
+  },
+  "installConfig": {
+    "hoistingLimits": "workspaces"
   }
 }
