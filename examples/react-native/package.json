@@ -13,7 +13,7 @@
   "dependencies": {
     "@admob-plus/react-native": "*",
     "react": "17.0.2",
-    "react-native": "0.65.1"
+    "react-native": "0.68.2"
   },
   "devDependencies": {
     "@admob-plus-internal/cli": "file:../../internal/cli",
