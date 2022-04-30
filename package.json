@@ -11,6 +11,7 @@
     "test": "run-s 'test:*'",
     "test:pkgs": "lerna run test",
     "test:jest": "jest",
+    "fmt": "echo -n cordova cordova-consent ionic-angular ionic3 playground | xargs -d ' ' -I #dir cordova-plus fmt --cwd examples/#dir",
     "lint": "gts lint",
     "gen": "yarn workspace @admob-plus-internal/cli run gen",
     "test-android": "run-s 'test-android:*'",
