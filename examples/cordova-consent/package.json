@@ -20,18 +20,18 @@
     "cordova": "^10.0.0"
   },
   "cordova": {
-    "plugins": {
-      "cordova-plugin-whitelist": {},
-      "cordova-plugin-consent": {},
-      "admob-plus-cordova": {
-        "APP_ID_ANDROID": "ca-app-pub-3940256099942544~3347511713",
-        "APP_ID_IOS": "ca-app-pub-3940256099942544~1458002511"
-      }
-    },
     "platforms": [
       "android",
       "ios"
-    ]
+    ],
+    "plugins": {
+      "admob-plus-cordova": {
+        "APP_ID_ANDROID": "ca-app-pub-3940256099942544~3347511713",
+        "APP_ID_IOS": "ca-app-pub-3940256099942544~1458002511"
+      },
+      "cordova-plugin-consent": {},
+      "cordova-plugin-whitelist": {}
+    }
   },
   "eslintConfig": {
     "globals": {

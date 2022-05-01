@@ -42,24 +42,24 @@
     "typescript": "2.6.2"
   },
   "cordova": {
+    "platforms": [
+      "ios"
+    ],
     "plugins": {
       "admob-plus-cordova": {
         "APP_ID_ANDROID": "ca-app-pub-3940256099942544~3347511713",
         "APP_ID_IOS": "ca-app-pub-3940256099942544~1458002511",
+        "DISABLESDKCRASHREPORTING": "false",
         "PLAY_SERVICES_VERSION": "19.8.0",
-        "USAGE": "This identifier will be used to deliver personalized ads to you.",
-        "DISABLESDKCRASHREPORTING": "false"
+        "USAGE": "This identifier will be used to deliver personalized ads to you."
       },
-      "cordova-plugin-whitelist": {},
-      "cordova-plugin-statusbar": {},
       "cordova-plugin-device": {},
-      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-ionic-keyboard": {},
       "cordova-plugin-ionic-webview": {},
-      "cordova-plugin-ionic-keyboard": {}
-    },
-    "platforms": [
-      "ios"
-    ]
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-whitelist": {}
+    }
   },
   "installConfig": {
     "hoistingLimits": "workspaces"
