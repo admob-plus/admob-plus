@@ -22,12 +22,13 @@
     "ora": "^5.4.1",
     "pkg-proxy": "^0.2.3",
     "semver": "^7.3.5",
-    "tslib": "^2.3.1",
+    "tslib": "^2.4.0",
     "update-notifier": "^5.1.0",
     "yargs": "^17.3.1"
   },
   "devDependencies": {
     "@admob-plus-internal/tsconfig": "file:../../internal/tsconfig",
+    "@tsconfig/node12": "^1.0.9",
     "@types/elementtree": "^0.1.1",
     "@types/fs-extra": "^9.0.13",
     "@types/js-yaml": "^4.0.5",
@@ -36,8 +37,8 @@
     "@types/semver": "^7.3.9",
     "@types/update-notifier": "^5.1.0",
     "@types/yargs": "^17.0.9",
-    "ts-node": "^10.6.0",
-    "typescript": "~4.6.2"
+    "ts-node": "^10.7.0",
+    "typescript": "~4.6.4"
   },
   "engines": {
     "node": ">=12.0.0"
