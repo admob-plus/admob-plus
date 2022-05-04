@@ -15,6 +15,8 @@ export default async (): Promise<Config.InitialOptions> => ({
     '/examples/playground/',
   ],
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$',
-  testURL: 'http://localhost/',
+  testEnvironmentOptions: {
+    url: 'http://localhost/',
+  },
   moduleFileExtensions: ['ts', 'tsx', ...defaults.moduleFileExtensions],
 });
