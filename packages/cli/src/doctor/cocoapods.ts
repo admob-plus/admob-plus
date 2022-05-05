@@ -1,5 +1,5 @@
 import {ListrTask} from 'listr2';
-import {getPodSpec} from './ios';
+import {getPodSpec} from './ios.js';
 
 export default {
   title: 'CocoaPods',

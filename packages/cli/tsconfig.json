@@ -2,9 +2,10 @@
   "extends": "@tsconfig/node12",
   "compilerOptions": {
     "composite": true,
-    "typeRoots" : ["admob-plus"],
     "importHelpers": true,
-    "module": "commonjs",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noImplicitAny": false,
     "outDir": "lib",
     "rootDir": "src"
   },

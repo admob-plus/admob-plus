@@ -1,9 +1,14 @@
 /* eslint-disable max-classes-per-file */
 import assert from 'assert';
-import {prompt} from 'enquirer';
+import enquirer from 'enquirer';
 import execa from 'execa';
-import findPkg, {PkgProxy} from 'pkg-proxy';
-import {Arguments, CommandBuilder} from 'yargs';
+import pkgProxy from 'pkg-proxy';
+import { Arguments, CommandBuilder } from 'yargs';
+
+import type {PkgProxy} from 'pkg-proxy';
+
+const {default: findPkg} = pkgProxy as any;
+const {prompt} = enquirer;
 
 abstract class Project {
   readonly pkg;

@@ -1,11 +1,14 @@
-import envinfo from '@frat/envinfo';
 import clipboardy from 'clipboardy';
 import elementtree from 'elementtree';
 import execa from 'execa';
 import fse from 'fs-extra';
 import _ from 'lodash';
-import findPkg from 'pkg-proxy';
-import {Arguments, CommandBuilder} from 'yargs';
+import pkgProxy from 'pkg-proxy';
+import { Arguments, CommandBuilder } from 'yargs';
+
+import envinfo from '@frat/envinfo';
+
+const {default: findPkg} = pkgProxy as any;
 
 const collectionAndroidManifestInfo = async () => {
   const content = await fse.readFile(

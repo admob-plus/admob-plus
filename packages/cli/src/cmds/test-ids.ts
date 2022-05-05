@@ -1,6 +1,7 @@
 import Table from 'cli-table3';
 import _ from 'lodash';
-import {testAppIds, testAdUnitIds} from '../test-ids';
+
+import { testAdUnitIds, testAppIds } from '../test-ids.js';
 
 export const command = 'test-ids';
 

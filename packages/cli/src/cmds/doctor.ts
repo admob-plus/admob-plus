@@ -1,4 +1,4 @@
-import handler from '../doctor';
+import handler from '../doctor/index.js';
 
 export const command = 'doctor';
 

@@ -1,7 +1,8 @@
-import {ListrTask} from 'listr2';
+import { ListrTask } from 'listr2';
 import _ from 'lodash';
-import {testAppIds} from './admob';
-import {Ctx} from './listr';
+
+import { testAppIds } from './admob.js';
+import { Ctx } from './listr.js';
 
 export default [
   {
