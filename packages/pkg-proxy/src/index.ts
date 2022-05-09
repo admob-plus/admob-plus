@@ -88,4 +88,6 @@ export class Pkg {
   }
 }
 
-export default Pkg.createProxy.bind(Pkg);
+export const findPkg = Pkg.createProxy.bind(Pkg);
+
+export default findPkg;
