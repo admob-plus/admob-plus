@@ -2,12 +2,9 @@
 import assert from 'assert';
 import enquirer from 'enquirer';
 import execa from 'execa';
-import pkgProxy from 'pkg-proxy';
-import { Arguments, CommandBuilder } from 'yargs';
+import {findPkg, PkgProxy} from 'pkg-proxy';
+import {Arguments, CommandBuilder} from 'yargs';
 
-import type {PkgProxy} from 'pkg-proxy';
-
-const {default: findPkg} = pkgProxy as any;
 const {prompt} = enquirer;
 
 abstract class Project {

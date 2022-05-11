@@ -6,13 +6,12 @@ import yaml from 'js-yaml';
 import {ListrTask} from 'listr2';
 import _ from 'lodash';
 import path from 'path';
-import pkgProxy, {type PackageJson} from 'pkg-proxy';
+import {findPkg, PackageJson} from 'pkg-proxy';
 import semver from 'semver';
 
 import {collectDependencies} from './android.js';
 import {Ctx} from './listr';
 
-const {default: findPkg} = pkgProxy as any;
 const {ConfigParser, PluginInfo} = cordovaCommon;
 
 export type PackageCordovaConfig = {

@@ -1,11 +1,11 @@
 import assert from 'assert';
 import got from 'got';
-import { Listr, ListrTask } from 'listr2';
-import findPkg from 'pkg-proxy';
+import {Listr, ListrTask} from 'listr2';
+import {findPkg} from 'pkg-proxy';
 
 import taskCocoapods from './cocoapods.js';
-import tasksCordova, { readAdMobPlusPluginInfo } from './cordova.js';
-import { Ctx, options as listrOptions } from './listr.js';
+import tasksCordova, {readAdMobPlusPluginInfo} from './cordova.js';
+import {Ctx, options as listrOptions} from './listr.js';
 import tasksNode from './node.js';
 
 const taskConnection: ListrTask = {
