@@ -1,6 +1,6 @@
 import cordovaCommon from 'cordova-common';
 import elementtree from 'elementtree';
-import execa from 'execa';
+import {execa} from 'execa';
 import glob from 'fast-glob';
 import yaml from 'js-yaml';
 import {ListrTask} from 'listr2';

@@ -1,6 +1,6 @@
 import clipboardy from 'clipboardy';
 import elementtree from 'elementtree';
-import execa from 'execa';
+import {execa} from 'execa';
 import fse from 'fs-extra';
 import _ from 'lodash';
 import {findPkg} from 'pkg-proxy';

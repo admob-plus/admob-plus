@@ -1,4 +1,4 @@
-import execa from 'execa';
+import {execa} from 'execa';
 
 export const getPodSpec = async (name: string) => {
   const p = await execa('pod', ['spec', 'cat', name], {

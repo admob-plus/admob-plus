@@ -1,7 +1,7 @@
 /* eslint-disable max-classes-per-file */
 import assert from 'assert';
 import enquirer from 'enquirer';
-import execa from 'execa';
+import {execa} from 'execa';
 import {findPkg, PkgProxy} from 'pkg-proxy';
 import {Arguments, CommandBuilder} from 'yargs';
 

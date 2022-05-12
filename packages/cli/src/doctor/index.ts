@@ -1,6 +1,6 @@
 import assert from 'assert';
 import got from 'got';
-import {Listr, ListrTask} from 'listr2';
+import {Listr, type ListrTask} from 'listr2';
 import {findPkg} from 'pkg-proxy';
 
 import taskCocoapods from './cocoapods.js';
