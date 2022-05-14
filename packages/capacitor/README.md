@@ -29,7 +29,7 @@ npx cap sync
 * [`adHide(...)`](#adhide)
 * [`trackingAuthorizationStatus()`](#trackingauthorizationstatus)
 * [`requestTrackingAuthorization()`](#requesttrackingauthorization)
-* [`addListener(string, ...)`](#addlistenerstring-)
+* [`addListener(string, ...)`](#addlistenerstring)
 * [Interfaces](#interfaces)
 * [Type Aliases](#type-aliases)
 * [Enums](#enums)
@@ -42,10 +42,8 @@ npx cap sync
 ### start()
 
 ```typescript
-start() => any
+start() => Promise<void>
 ```
-
-**Returns:** <code>any</code>
 
 --------------------
 
@@ -53,14 +51,12 @@ start() => any
 ### configure(...)
 
 ```typescript
-configure(config: AdMobConfig) => any
+configure(config: AdMobConfig) => Promise<void>
 ```
 
 | Param        | Type                                                |
 | ------------ | --------------------------------------------------- |
 | **`config`** | <code><a href="#admobconfig">AdMobConfig</a></code> |
-
-**Returns:** <code>any</code>
 
 --------------------
 
@@ -68,14 +64,12 @@ configure(config: AdMobConfig) => any
 ### configRequest(...)
 
 ```typescript
-configRequest(requestConfig: RequestConfig) => any
+configRequest(requestConfig: RequestConfig) => Promise<void>
 ```
 
 | Param               | Type                                                    |
 | ------------------- | ------------------------------------------------------- |
 | **`requestConfig`** | <code><a href="#requestconfig">RequestConfig</a></code> |
-
-**Returns:** <code>any</code>
 
 --------------------
 
@@ -83,14 +77,12 @@ configRequest(requestConfig: RequestConfig) => any
 ### adCreate(...)
 
 ```typescript
-adCreate<O extends MobileAdOptions>(opts: O) => any
+adCreate<O extends MobileAdOptions>(opts: O) => Promise<void>
 ```
 
 | Param      | Type           |
 | ---------- | -------------- |
 | **`opts`** | <code>O</code> |
-
-**Returns:** <code>any</code>
 
 --------------------
 
@@ -98,14 +90,14 @@ adCreate<O extends MobileAdOptions>(opts: O) => any
 ### adIsLoaded(...)
 
 ```typescript
-adIsLoaded(opts: { id: number; }) => any
+adIsLoaded(opts: { id: number; }) => Promise<boolean>
 ```
 
 | Param      | Type                         |
 | ---------- | ---------------------------- |
 | **`opts`** | <code>{ id: number; }</code> |
 
-**Returns:** <code>any</code>
+**Returns:** <code>Promise&lt;boolean&gt;</code>
 
 --------------------
 
@@ -113,14 +105,12 @@ adIsLoaded(opts: { id: number; }) => any
 ### adLoad(...)
 
 ```typescript
-adLoad(opts: { id: number; }) => any
+adLoad(opts: { id: number; }) => Promise<void>
 ```
 
 | Param      | Type                         |
 | ---------- | ---------------------------- |
 | **`opts`** | <code>{ id: number; }</code> |
-
-**Returns:** <code>any</code>
 
 --------------------
 
@@ -128,14 +118,12 @@ adLoad(opts: { id: number; }) => any
 ### adShow(...)
 
 ```typescript
-adShow(opts: { id: number; }) => any
+adShow(opts: { id: number; }) => Promise<void>
 ```
 
 | Param      | Type                         |
 | ---------- | ---------------------------- |
 | **`opts`** | <code>{ id: number; }</code> |
-
-**Returns:** <code>any</code>
 
 --------------------
 
@@ -143,14 +131,12 @@ adShow(opts: { id: number; }) => any
 ### adHide(...)
 
 ```typescript
-adHide(opts: { id: number; }) => any
+adHide(opts: { id: number; }) => Promise<void>
 ```
 
 | Param      | Type                         |
 | ---------- | ---------------------------- |
 | **`opts`** | <code>{ id: number; }</code> |
-
-**Returns:** <code>any</code>
 
 --------------------
 
@@ -158,10 +144,10 @@ adHide(opts: { id: number; }) => any
 ### trackingAuthorizationStatus()
 
 ```typescript
-trackingAuthorizationStatus() => any
+trackingAuthorizationStatus() => Promise<{ status: TrackingAuthorizationStatus | false; }>
 ```
 
-**Returns:** <code>any</code>
+**Returns:** <code>Promise&lt;{ status: false | <a href="#trackingauthorizationstatus">TrackingAuthorizationStatus</a>; }&gt;</code>
 
 --------------------
 
@@ -169,10 +155,10 @@ trackingAuthorizationStatus() => any
 ### requestTrackingAuthorization()
 
 ```typescript
-requestTrackingAuthorization() => any
+requestTrackingAuthorization() => Promise<{ status: TrackingAuthorizationStatus | false; }>
 ```
 
-**Returns:** <code>any</code>
+**Returns:** <code>Promise&lt;{ status: false | <a href="#trackingauthorizationstatus">TrackingAuthorizationStatus</a>; }&gt;</code>
 
 --------------------
 
@@ -188,7 +174,7 @@ addListener(eventName: string, listenerFunc: (event: any) => void) => Promise<Pl
 | **`eventName`**    | <code>string</code>                  |
 | **`listenerFunc`** | <code>(event: any) =&gt; void</code> |
 
-**Returns:** <code>any</code>
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 --------------------
 
@@ -198,9 +184,9 @@ addListener(eventName: string, listenerFunc: (event: any) => void) => Promise<Pl
 
 #### PluginListenerHandle
 
-| Prop         | Type                      |
-| ------------ | ------------------------- |
-| **`remove`** | <code>() =&gt; any</code> |
+| Prop         | Type                                      |
+| ------------ | ----------------------------------------- |
+| **`remove`** | <code>() =&gt; Promise&lt;void&gt;</code> |
 
 
 ### Type Aliases
