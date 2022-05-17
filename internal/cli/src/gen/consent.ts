@@ -100,7 +100,7 @@ export default () => ({
       path: 'cordova-consent/src/ios/CSNGenerated.swift',
       f: buildSwift,
     },
-    {path: 'cordova-consent/ts/generated.ts', f: buildTypeScript},
+    {path: 'cordova-consent/src/www/generated.ts', f: buildTypeScript},
   ],
   pkgDir: pkgsDirJoin('cordova-consent'),
   targetDir: 'src/cordova/plugin/consent',

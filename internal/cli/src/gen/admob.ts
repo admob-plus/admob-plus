@@ -152,7 +152,7 @@ export default async () => ({
       path: 'cordova/src/ios/AMBGenerated.swift',
       f: buildSwift,
     },
-    {path: 'cordova/ts/generated.ts', f: buildTypeScript},
+    {path: 'cordova/src/www/generated.ts', f: buildTypeScript},
     {path: 'cordova/src/browser/AdMobProxy.js', f: buildProxyJs},
   ],
   pkgDir: pkgsDirJoin('cordova'),
