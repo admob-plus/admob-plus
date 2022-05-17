@@ -5,7 +5,7 @@
   "scripts": {
     "postinstall": "is-ci || lefthook install",
     "prepare": "run-s 'prepare:*'",
-    "prepare:ts": "yarn workspace 'admob-plus-cordova' build && tsc -b --verbose",
+    "prepare:ts": "wireit",
     "prepare:lerna": "lerna run prepare",
     "prepublishOnly": "del '*.tsbuildinfo' 'packages/*/*.tsbuildinfo'",
     "test": "run-s 'test:*'",
@@ -13,12 +13,14 @@
     "test:jest": "jest",
     "fmt": "echo -n cordova cordova-consent ionic-angular ionic3 playground | xargs -d ' ' -I #dir cordova-plus fmt --cwd examples/#dir",
     "lint": "gts lint",
-    "gen": "yarn workspace @admob-plus-internal/cli run gen",
+    "gen": "wireit",
     "test-android": "run-s 'test-android:*'",
     "//test-android:testbed": "cordova-testbed --platform android --plugin packages/cordova --build-only",
     "test-ios": "run-s 'test-ios:*'",
     "test-ios:lint": "node-swiftlint --path packages/cordova/src/ios",
-    "//test-ios:testbed": "cordova-testbed --platform ios --plugin packages/cordova --build-only"
+    "//test-ios:testbed": "cordova-testbed --platform ios --plugin packages/cordova --build-only",
+    "build": "wireit",
+    "build:ts": "wireit"
   },
   "devDependencies": {
     "@admob-plus-internal/cli": "file:./internal/cli",
@@ -56,7 +58,8 @@
     "swiftlint": "^1.0.1",
     "ts-jest": "^28.0.2",
     "ts-node": "^10.7.0",
-    "typescript": "~4.6.4"
+    "typescript": "~4.6.4",
+    "wireit": "^0.4.3"
   },
   "repository": "admob-plus/admob-plus",
   "commitlint": {
@@ -119,5 +122,20 @@
     "packages/*",
     "website"
   ],
-  "packageManager": "yarn@3.2.1"
+  "packageManager": "yarn@3.2.1",
+  "wireit": {
+    "build": {
+      "dependencies": ["build:ts"]
+    },
+    "build:ts": {
+      "command:": "tsc -b --verbose",
+      "dependencies": ["./packages/cordova:build"]
+    },
+    "gen": {
+      "dependencies": ["./internal/cli:gen"]
+    },
+    "prepare:ts": {
+      "dependencies": ["build:ts"]
+    }
+  }
 }
