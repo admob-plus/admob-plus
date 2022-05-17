@@ -12,8 +12,8 @@
   },
   "dependencies": {
     "fast-glob": "^3.2.11",
-    "fs-extra": "^10.0.1",
-    "plist": "^3.0.4",
+    "fs-extra": "^10.1.0",
+    "plist": "^3.0.5",
     "replace-in-file": "^6.3.2"
   },
   "devDependencies": {
@@ -25,8 +25,8 @@
     "cordova-plus": "^0.3.5",
     "cordova-ts-hook": "^0.0.3",
     "npm-run-all": "^4.1.5",
-    "rollup": "^2.69.0",
-    "typescript": "~4.6.2"
+    "rollup": "^2.73.0",
+    "typescript": "~4.6.4"
   },
   "author": "Ratson",
   "license": "MIT",
