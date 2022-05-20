@@ -1,6 +1,7 @@
 /**
  * @jest-environment jsdom
  */
+import {expect} from '@jest/globals';
 import '../src/www/cordova.d.ts';
 
 test.skip('export admob', async () => {
