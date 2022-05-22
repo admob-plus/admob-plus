@@ -20,7 +20,7 @@
 
     <platform name="android">
         <preference name="APP_ID_ANDROID" default="ca-app-pub-xxx~yyy" />
-        <preference name="PLAY_SERVICES_VERSION" default="20.4.0" />
+        <preference name="PLAY_SERVICES_VERSION" default="20.6.0" />
 
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
             <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:name="com.google.android.gms.ads.AdActivity" android:noHistory="true" />

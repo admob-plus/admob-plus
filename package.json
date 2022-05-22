@@ -56,7 +56,7 @@
     "remark-preset-lint-recommended": "^6.1.2",
     "swiftlint": "^1.0.1",
     "ts-jest": "^28.0.2",
-    "ts-node": "^10.7.0",
+    "ts-node": "^10.8.0",
     "typescript": "~4.6.4",
     "wireit": "^0.4.3"
   },
