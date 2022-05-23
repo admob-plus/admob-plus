@@ -4,6 +4,7 @@ import {execa} from 'execa';
 import glob from 'fast-glob';
 import yaml from 'js-yaml';
 import {ListrTask} from 'listr2';
+import {createRequire} from 'module';
 import _ from 'lodash';
 import path from 'path';
 import {findPkg, PackageJson} from 'pkg-proxy';
@@ -13,6 +14,7 @@ import {collectDependencies} from './android.js';
 import {Ctx} from './listr';
 
 const {ConfigParser, PluginInfo} = cordovaCommon;
+const require = createRequire(import.meta.url);
 
 export type PackageCordovaConfig = {
   cordova?: {
