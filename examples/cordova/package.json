@@ -20,8 +20,10 @@
   "devDependencies": {
     "@admob-plus-internal/cli": "file:../../internal/cli",
     "@types/cordova": "^0.0.34",
+    "admob-plus": "../../packages/cli",
     "cordova": "^11.0.0",
     "cordova-plus": "^0.4.0",
+    "npm": "^6.14.16",
     "npm-run-all": "^4.1.5"
   },
   "cordova": {
