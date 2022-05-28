@@ -1,12 +1,11 @@
 {
   "extends": "@admob-plus-internal/tsconfig",
   "compilerOptions": {
-    "esModuleInterop": true,
     "moduleResolution": "node",
-    "module": "commonjs",
+    "module": "esnext",
     "outDir": "lib",
     "rootDir": "src",
-    "target": "es2017"
+    "target": "esnext"
   },
   "include": ["src/**/*"]
 }
