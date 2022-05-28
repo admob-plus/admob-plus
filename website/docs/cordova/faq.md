@@ -73,6 +73,29 @@ Edit `pacakge.json` to fix:
   }
 }
 ```
+### How to handle `> Task :app:checkDebugAarMetadata FAILED`?
+
+If the error looks like the following,
+
+```
+* What went wrong:
+Execution failed for task ':app:checkDebugAarMetadata'.
+> A failure occurred while executing com.android.build.gradle.internal.tasks.CheckAarMetadataWorkAction
+   > The minCompileSdk (31) specified in a
+     dependency's AAR metadata (META-INF/com/android/build/gradle/aar-metadata.properties)
+     is greater than this module's compileSdkVersion (android-30).
+     Dependency: androidx.work:work-runtime:2.7.0.
+```
+
+Try set the `android-targetSdkVersion` to `32` in `config.xml`, e.g.
+
+```xml
+<platform name="android">
+    <preference name="android-minSdkVersion" value="32" />
+    ...
+</platform>
+```
+
 
 ## iOS
 
