@@ -1,4 +1,4 @@
-import {pkgsDirJoin} from '../utils';
+import {pkgsDirJoin} from '../utils.js';
 
 export default () => ({
   files: [],

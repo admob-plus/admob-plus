@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import {pkgsDirJoin} from '../utils';
+import {pkgsDirJoin} from '../utils.js';
 import {
   buildUtils,
   indent4,
@@ -7,7 +7,7 @@ import {
   renderSwiftContants,
   renderTsContants,
   warnMessage,
-} from './shared';
+} from './shared.js';
 
 const Actions = _.mapValues(
   {

@@ -39,7 +39,7 @@ export const execAsync = (action: ${actionType}, args?: any[]) => {
 }
 
 export function fireDocumentEvent(eventName: string, data = undefined) {
-  // @ts-expect-error
+  // @ts-ignore
   cordova.fireDocumentEvent(eventName, data)
 }
 

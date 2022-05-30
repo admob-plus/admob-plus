@@ -1,12 +1,12 @@
 import _ from 'lodash';
-import {pkgsDirJoin} from '../utils';
-import {AdEvents, extractClassInfo} from './capacitor';
+import {pkgsDirJoin} from '../utils.js';
+import {AdEvents, extractClassInfo} from './capacitor.js';
 import {
   indent4,
   renderSwiftEnumCases,
   renderJavaContants,
   warnMessage,
-} from './shared';
+} from './shared.js';
 
 const Events = _.omitBy(
   AdEvents,

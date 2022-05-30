@@ -1,13 +1,13 @@
 import _ from 'lodash';
-import {pkgsDirJoin} from '../utils';
-import {AdEvents} from './capacitor';
+import {pkgsDirJoin} from '../utils.js';
+import {AdEvents} from './capacitor.js';
 import {
   buildUtils,
   renderJavaContants,
   renderSwiftContants,
   renderTsContants,
   warnMessage,
-} from './shared';
+} from './shared.js';
 
 const Actions = _.mapValues(
   {

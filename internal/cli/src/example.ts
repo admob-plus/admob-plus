@@ -1,24 +1,30 @@
 #!/usr/bin/env node
-import sane from '@frat/sane';
-import assert from 'assert';
+import {createRequire} from 'node:module';
+import assert from 'node:assert';
 import cpy from 'cpy';
 import debounce from 'debounce-promise';
 import del from 'del';
-import execa from 'execa';
+import {execa, Options} from 'execa';
 import glob from 'fast-glob';
 import fse from 'fs-extra';
 import PQueue from 'p-queue';
 import path from 'path';
 import findPkg, {PackageJson} from 'pkg-proxy';
-import {replaceInFile} from 'replace-in-file';
-import yargs from 'yargs';
-import {collectPkgs, pkgsDirJoin} from './utils';
+import replaceInFileDefault from 'replace-in-file';
+// import * as yargsMod from 'yargs';
+import {collectPkgs, pkgsDirJoin} from './utils.js';
 
+// const yargs = yargsMod;
+// console.dir(yargsMod);
+const require = createRequire(import.meta.url);
+const sane = require('@frat/sane');
+const yargs = require('yargs');
+const {replaceInFile} = replaceInFileDefault;
 const cordovaPath = require.resolve('cordova/bin/cordova');
 
-const nodeBin = (args: string[], opts: execa.Options<string>) =>
+const nodeBin = (args: string[], opts: Options<string>) =>
   execa('yarn', ['node', ...args], {stdio: 'inherit', ...opts});
-const cordovaBin = (args: string[], opts: execa.Options<string>) =>
+const cordovaBin = (args: string[], opts: Options<string>) =>
   nodeBin([cordovaPath, ...args], opts);
 
 const watchCopy = async (sourceDir: string, targetDir: string) => {
@@ -37,7 +43,6 @@ const watchCopy = async (sourceDir: string, targetDir: string) => {
       }
 
       await cpy(filepath, targetDir, {
-        parents: true,
         cwd: root,
       });
     });
@@ -142,7 +147,7 @@ const prepare = async (opts: {cwd: string}) => {
         stdio: 'inherit',
       });
 
-      const pluginVars = pkgExample.cordova.plugins[pkg.name];
+      const pluginVars = pkgExample.cordova.plugins[pkg.name] ?? {};
       const addOpts = Object.keys(pluginVars)
         .map(k => ['--variable', `${k}=${pluginVars[k]}`])
         .flat();
@@ -227,7 +232,7 @@ async function startDev(opts: any) {
   const platform = opts.platform ?? 'ios';
   const {cwd} = opts;
   const promises: Promise<any>[] = [];
-  const openArgs = [];
+  const openArgs: string[] = [];
   const syncDirs: {src: string; dest: string}[] = [];
 
   switch (path.basename(cwd)) {
@@ -345,7 +350,7 @@ async function startDev(opts: any) {
   }
   promises.push(
     ...syncDirs.map(async o => {
-      await cpy('**/*', o.dest, {parents: true, cwd: o.src});
+      await cpy('**/*', o.dest, {cwd: o.src});
       watchCopy(o.dest, o.src);
     })
   );

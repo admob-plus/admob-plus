@@ -5,14 +5,14 @@ import fsp from 'fs/promises';
 import _ from 'lodash';
 import path from 'path';
 import {replaceInFile} from 'replace-in-file';
-import {pkgsDirJoin} from '../utils';
-import admob from './admob';
-import capacitor from './capacitor';
-import updateCliReadme from './cli';
-import consent from './consent';
-import cordovaNative from './cordova-native';
-import rn from './rn';
-import {indent4} from './shared';
+import {pkgsDirJoin} from '../utils.js';
+import admob from './admob.js';
+import capacitor from './capacitor.js';
+import updateCliReadme from './cli.js';
+import consent from './consent.js';
+import cordovaNative from './cordova-native.js';
+import rn from './rn.js';
+import {indent4} from './shared.js';
 
 async function copyCore() {
   const srcPathAndroid = pkgsDirJoin(

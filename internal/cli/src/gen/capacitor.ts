@@ -1,13 +1,13 @@
 import assert from 'assert';
 import _ from 'lodash';
 import ts from 'typescript';
-import {pkgsDirJoin} from '../utils';
+import {pkgsDirJoin} from '../utils.js';
 import {
   indent4,
   renderJavaContants,
   renderSwiftContants,
   warnMessage,
-} from './shared';
+} from './shared.js';
 
 export const AdEvents = {
   // Ad

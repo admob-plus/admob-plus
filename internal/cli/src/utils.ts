@@ -1,4 +1,4 @@
-import assert from 'assert';
+import assert from 'node:assert';
 import escaladeSync from 'escalade/sync';
 import glob from 'fast-glob';
 import path from 'path';

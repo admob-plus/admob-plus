@@ -1,10 +1,13 @@
 {
   "extends": "@admob-plus-internal/tsconfig",
   "compilerOptions": {
-    "esModuleInterop": true,
-    "lib": ["es2019"],
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": false,
+    "moduleResolution": "node",
+    "module": "esnext",
     "rootDir": "src",
-    "outDir": "lib"
+    "outDir": "lib",
+    "target": "esnext"
   },
   "include": ["src"]
 }
