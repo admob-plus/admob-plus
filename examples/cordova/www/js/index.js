@@ -43,6 +43,9 @@ const app = {
 
     admob
       .start()
+      .then(() => admob.configure({
+        testDeviceIds: ['33BE2250B43518CCDA7DE426D04EE231'],
+      }))
       .then(() => this.initAppOpenAd())
       .then(() =>
         admob.BannerAd.config({
