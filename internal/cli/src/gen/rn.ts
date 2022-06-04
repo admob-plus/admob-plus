@@ -1,3 +1,4 @@
+import {createRequire} from 'node:module';
 import _ from 'lodash';
 import {pkgsDirJoin} from '../utils.js';
 import {AdEvents, extractClassInfo} from './capacitor.js';
@@ -7,6 +8,8 @@ import {
   renderJavaContants,
   warnMessage,
 } from './shared.js';
+
+const require = createRequire(import.meta.url);
 
 const Events = _.omitBy(
   AdEvents,

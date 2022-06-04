@@ -11,11 +11,8 @@ import PQueue from 'p-queue';
 import path from 'path';
 import findPkg, {PackageJson} from 'pkg-proxy';
 import replaceInFileDefault from 'replace-in-file';
-// import * as yargsMod from 'yargs';
 import {collectPkgs, pkgsDirJoin} from './utils.js';
 
-// const yargs = yargsMod;
-// console.dir(yargsMod);
 const require = createRequire(import.meta.url);
 const sane = require('@frat/sane');
 const yargs = require('yargs');

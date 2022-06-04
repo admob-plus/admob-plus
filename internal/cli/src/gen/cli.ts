@@ -1,9 +1,12 @@
-import * as assert from 'assert';
+import assert from 'node:assert';
+import {createRequire} from 'node:module';
 import {execa} from 'execa';
-import * as fse from 'fs-extra';
-import * as handlebars from 'handlebars';
+import fse from 'fs-extra';
+import handlebars from 'handlebars';
 import markdownMagic from 'markdown-magic';
 import {pkgsDirJoin} from '../utils.js';
+
+const require = createRequire(import.meta.url);
 
 const updateCliReadme = async () => {
   const markdownPath = pkgsDirJoin('cli/README.md');

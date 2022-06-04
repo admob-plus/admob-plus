@@ -78,6 +78,8 @@ ${linesEvents}
 
 function buildTypeScript(): string {
   return `// ${warnMessage}
+/// <reference types="cordova-plus" />
+
 export enum NativeActions {
 ${renderTsContants(Actions)}
 }

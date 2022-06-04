@@ -4,7 +4,7 @@ import fse from 'fs-extra';
 import fsp from 'fs/promises';
 import _ from 'lodash';
 import path from 'path';
-import {replaceInFile} from 'replace-in-file';
+import replaceInFileDefault from 'replace-in-file';
 import {pkgsDirJoin} from '../utils.js';
 import admob from './admob.js';
 import capacitor from './capacitor.js';
@@ -13,6 +13,8 @@ import consent from './consent.js';
 import cordovaNative from './cordova-native.js';
 import rn from './rn.js';
 import {indent4} from './shared.js';
+
+const {replaceInFile} = replaceInFileDefault;
 
 async function copyCore() {
   const srcPathAndroid = pkgsDirJoin(

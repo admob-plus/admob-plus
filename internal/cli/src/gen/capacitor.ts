@@ -1,4 +1,5 @@
-import assert from 'assert';
+import assert from 'node:assert';
+import {createRequire} from 'node:module';
 import _ from 'lodash';
 import ts from 'typescript';
 import {pkgsDirJoin} from '../utils.js';
@@ -8,6 +9,8 @@ import {
   renderSwiftContants,
   warnMessage,
 } from './shared.js';
+
+const require = createRequire(import.meta.url);
 
 export const AdEvents = {
   // Ad
