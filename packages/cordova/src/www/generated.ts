@@ -83,7 +83,6 @@ export const execAsync = (action: NativeActions, args?: any[]) => {
 }
 
 export function fireDocumentEvent(eventName: string, data = undefined) {
-  // @ts-ignore
   cordova.fireDocumentEvent(eventName, data)
 }
 

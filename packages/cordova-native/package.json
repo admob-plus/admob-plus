@@ -21,7 +21,7 @@
     "cordova-plus": "^0.4.0",
     "npm-run-all": "^4.1.5",
     "rollup": "^2.74.1",
-    "typescript": "~4.6.4"
+    "typescript": "~4.7.2"
   },
   "author": "Ratson",
   "license": "MIT",
