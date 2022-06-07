@@ -7,7 +7,9 @@
   "scripts": {
     "prepublishOnly": "yarn build",
     "version": "yarn cordova-plus plugin version",
-    "build": "cordova-plus plugin build --input=./src/www/admob.ts --lib && tsc -p scripts",
+    "build": "wireit",
+    "build:lib": "wireit",
+    "build:scripts": "wireit",
     "test": "cordova-plus plugin test"
   },
   "dependencies": {
@@ -26,7 +28,8 @@
     "cordova-ts-hook": "^0.0.3",
     "npm-run-all": "^4.1.5",
     "rollup": "^2.75.5",
-    "typescript": "~4.7.3"
+    "typescript": "~4.7.3",
+    "wireit": "^0.5.0"
   },
   "author": "Ratson",
   "license": "MIT",
@@ -60,5 +63,19 @@
       "android",
       "ios"
     ]
+  },
+  "wireit": {
+    "build:lib": {
+      "command": "cordova-plus plugin build --input=./src/www/admob.ts --lib"
+    },
+    "build:scripts": {
+      "command": "tsc -p scripts"
+    },
+    "build": {
+      "dependencies": [
+        "build:lib",
+        "build:scripts"
+      ]
+    }
   }
 }
