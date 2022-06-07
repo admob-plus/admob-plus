@@ -50,14 +50,18 @@
   },
   "wireit": {
     "prepack": {
-      "dependencies": ["build"]
+      "dependencies": [
+        "build"
+      ]
     },
     "build": {
       "command": "tsc -b"
     },
     "gen": {
       "command": "node lib/gen",
-      "dependencies": ["build"]
+      "dependencies": [
+        "build"
+      ]
     }
   }
 }

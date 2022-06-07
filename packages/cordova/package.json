@@ -14,7 +14,7 @@
     "fast-glob": "^3.2.11",
     "fs-extra": "^10.1.0",
     "plist": "^3.0.5",
-    "replace-in-file": "^6.3.3"
+    "replace-in-file": "^6.3.5"
   },
   "devDependencies": {
     "@admob-plus-internal/rollup-config": "file:../../internal/rollup-config",
@@ -25,8 +25,8 @@
     "cordova-plus": "^0.4.0",
     "cordova-ts-hook": "^0.0.3",
     "npm-run-all": "^4.1.5",
-    "rollup": "^2.74.1",
-    "typescript": "~4.7.2"
+    "rollup": "^2.75.5",
+    "typescript": "~4.7.3"
   },
   "author": "Ratson",
   "license": "MIT",
