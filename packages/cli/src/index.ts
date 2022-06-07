@@ -11,6 +11,14 @@ export {testAppIds};
 export default (name: string) => {
   const {argv} = yargs(hideBin(process.argv))
     .scriptName(name)
+    .option('cwd', {
+      default: '.',
+      normalize: true,
+      coerce(x) {
+        process.chdir(x);
+        return x;
+      },
+    })
     .command(doctorCmd)
     .command(infoCmd)
     .command(installCmd)
