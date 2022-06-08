@@ -184,12 +184,16 @@ export default [
         return;
       }
       task.title = filename;
-      const {stdout} = await execa('xcodeproj', [
-        'show',
-        '--format=tree_hash',
-        filename,
-      ]);
-      const o = yaml.load(stdout);
+      const p = await execa(
+        'xcodeproj',
+        ['show', '--format=tree_hash', filename],
+        {reject: false}
+      );
+      if (p.failed) {
+        task.skip();
+        return;
+      }
+      const o = yaml.load(p.stdout);
 
       const title = 'SWIFT_VERSION';
       return task.newListr([
