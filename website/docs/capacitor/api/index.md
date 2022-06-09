@@ -23,7 +23,7 @@ custom_edit_url: null
 - [AdMobPlusPlugin](interfaces/AdMobPlusPlugin.md)
 - [BannerAdOptions](interfaces/BannerAdOptions.md)
 
-## Type aliases
+## Type Aliases
 
 ### AdMobConfig
 

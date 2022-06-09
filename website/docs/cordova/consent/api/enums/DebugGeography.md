@@ -6,11 +6,11 @@ sidebar_position: 0
 custom_edit_url: null
 ---
 
-## Enumeration members
+## Enumeration Members
 
 ### Disabled
 
-• **Disabled** = `0`
+• **Disabled**
 
 #### Defined in
 
@@ -20,7 +20,7 @@ ___
 
 ### EEA
 
-• **EEA** = `1`
+• **EEA**
 
 #### Defined in
 
@@ -30,7 +30,7 @@ ___
 
 ### NotEEA
 
-• **NotEEA** = `2`
+• **NotEEA**
 
 #### Defined in
 

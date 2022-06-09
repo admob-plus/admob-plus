@@ -6,11 +6,11 @@ sidebar_position: 0
 custom_edit_url: null
 ---
 
-## Enumeration members
+## Enumeration Members
 
 ### android
 
-• **android** = `"android"`
+• **android**
 
 #### Defined in
 
@@ -20,7 +20,7 @@ ___
 
 ### ios
 
-• **ios** = `"ios"`
+• **ios**
 
 #### Defined in
 

@@ -6,11 +6,11 @@ sidebar_position: 0
 custom_edit_url: null
 ---
 
-## Enumeration members
+## Enumeration Members
 
 ### BANNER
 
-• **BANNER** = `0`
+• **BANNER**
 
 #### Defined in
 
@@ -20,7 +20,7 @@ ___
 
 ### FULL\_BANNER
 
-• **FULL\_BANNER** = `3`
+• **FULL\_BANNER**
 
 #### Defined in
 
@@ -30,7 +30,7 @@ ___
 
 ### LARGE\_BANNER
 
-• **LARGE\_BANNER** = `1`
+• **LARGE\_BANNER**
 
 #### Defined in
 
@@ -40,7 +40,7 @@ ___
 
 ### LEADERBOARD
 
-• **LEADERBOARD** = `4`
+• **LEADERBOARD**
 
 #### Defined in
 
@@ -50,7 +50,7 @@ ___
 
 ### MEDIUM\_RECTANGLE
 
-• **MEDIUM\_RECTANGLE** = `2`
+• **MEDIUM\_RECTANGLE**
 
 #### Defined in
 
@@ -60,7 +60,7 @@ ___
 
 ### SMART\_BANNER
 
-• **SMART\_BANNER** = `5`
+• **SMART\_BANNER**
 
 #### Defined in
 

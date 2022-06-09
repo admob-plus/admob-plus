@@ -6,11 +6,11 @@ sidebar_position: 0
 custom_edit_url: null
 ---
 
-## Enumeration members
+## Enumeration Members
 
 ### Available
 
-• **Available** = `1`
+• **Available**
 
 #### Defined in
 
@@ -20,7 +20,7 @@ ___
 
 ### Unavailable
 
-• **Unavailable** = `2`
+• **Unavailable**
 
 #### Defined in
 
@@ -30,7 +30,7 @@ ___
 
 ### Unknown
 
-• **Unknown** = `0`
+• **Unknown**
 
 #### Defined in
 

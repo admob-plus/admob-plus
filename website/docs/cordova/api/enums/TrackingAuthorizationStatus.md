@@ -6,11 +6,11 @@ sidebar_position: 0
 custom_edit_url: null
 ---
 
-## Enumeration members
+## Enumeration Members
 
 ### authorized
 
-• **authorized** = `3`
+• **authorized**
 
 #### Defined in
 
@@ -20,7 +20,7 @@ ___
 
 ### denied
 
-• **denied** = `2`
+• **denied**
 
 #### Defined in
 
@@ -30,7 +30,7 @@ ___
 
 ### notDetermined
 
-• **notDetermined** = `0`
+• **notDetermined**
 
 #### Defined in
 
@@ -40,7 +40,7 @@ ___
 
 ### restricted
 
-• **restricted** = `1`
+• **restricted**
 
 #### Defined in
 

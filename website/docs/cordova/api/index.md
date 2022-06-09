@@ -40,7 +40,7 @@ custom_edit_url: null
 
 Renames and re-exports [AdMob](classes/AdMob.md)
 
-## Type aliases
+## Type Aliases
 
 ### AdMobConfig
 

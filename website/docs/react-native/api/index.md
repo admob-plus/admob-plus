@@ -26,7 +26,7 @@ custom_edit_url: null
 
 Renames and re-exports [AdMobPlus](#admobplus)
 
-## Type aliases
+## Type Aliases
 
 ### AdMobConfig
 

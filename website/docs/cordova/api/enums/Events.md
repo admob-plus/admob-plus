@@ -6,11 +6,11 @@ sidebar_position: 0
 custom_edit_url: null
 ---
 
-## Enumeration members
+## Enumeration Members
 
 ### adClick
 
-• **adClick** = `"admob.ad.click"`
+• **adClick**
 
 #### Defined in
 
@@ -20,7 +20,7 @@ ___
 
 ### adDismiss
 
-• **adDismiss** = `"admob.ad.dismiss"`
+• **adDismiss**
 
 #### Defined in
 
@@ -30,7 +30,7 @@ ___
 
 ### adImpression
 
-• **adImpression** = `"admob.ad.impression"`
+• **adImpression**
 
 #### Defined in
 
@@ -40,7 +40,7 @@ ___
 
 ### adLoad
 
-• **adLoad** = `"admob.ad.load"`
+• **adLoad**
 
 #### Defined in
 
@@ -50,7 +50,7 @@ ___
 
 ### adLoadFail
 
-• **adLoadFail** = `"admob.ad.loadfail"`
+• **adLoadFail**
 
 #### Defined in
 
@@ -60,7 +60,7 @@ ___
 
 ### adReward
 
-• **adReward** = `"admob.ad.reward"`
+• **adReward**
 
 #### Defined in
 
@@ -70,7 +70,7 @@ ___
 
 ### adShow
 
-• **adShow** = `"admob.ad.show"`
+• **adShow**
 
 #### Defined in
 
@@ -80,7 +80,7 @@ ___
 
 ### adShowFail
 
-• **adShowFail** = `"admob.ad.showfail"`
+• **adShowFail**
 
 #### Defined in
 
@@ -90,7 +90,7 @@ ___
 
 ### bannerClick
 
-• **bannerClick** = `"admob.banner.click"`
+• **bannerClick**
 
 #### Defined in
 
@@ -100,7 +100,7 @@ ___
 
 ### bannerClose
 
-• **bannerClose** = `"admob.banner.close"`
+• **bannerClose**
 
 #### Defined in
 
@@ -110,7 +110,7 @@ ___
 
 ### bannerImpression
 
-• **bannerImpression** = `"admob.banner.impression"`
+• **bannerImpression**
 
 #### Defined in
 
@@ -120,7 +120,7 @@ ___
 
 ### bannerLoad
 
-• **bannerLoad** = `"admob.banner.load"`
+• **bannerLoad**
 
 #### Defined in
 
@@ -130,7 +130,7 @@ ___
 
 ### bannerLoadFail
 
-• **bannerLoadFail** = `"admob.banner.loadfail"`
+• **bannerLoadFail**
 
 #### Defined in
 
@@ -140,7 +140,7 @@ ___
 
 ### bannerOpen
 
-• **bannerOpen** = `"admob.banner.open"`
+• **bannerOpen**
 
 #### Defined in
 
@@ -150,7 +150,7 @@ ___
 
 ### bannerSize
 
-• **bannerSize** = `"admob.banner.size"`
+• **bannerSize**
 
 #### Defined in
 
@@ -160,7 +160,7 @@ ___
 
 ### bannerSizeChange
 
-• **bannerSizeChange** = `"admob.banner.sizechange"`
+• **bannerSizeChange**
 
 #### Defined in
 
@@ -170,7 +170,7 @@ ___
 
 ### interstitialDismiss
 
-• **interstitialDismiss** = `"admob.interstitial.dismiss"`
+• **interstitialDismiss**
 
 #### Defined in
 
@@ -180,7 +180,7 @@ ___
 
 ### interstitialImpression
 
-• **interstitialImpression** = `"admob.interstitial.impression"`
+• **interstitialImpression**
 
 #### Defined in
 
@@ -190,7 +190,7 @@ ___
 
 ### interstitialLoad
 
-• **interstitialLoad** = `"admob.interstitial.load"`
+• **interstitialLoad**
 
 #### Defined in
 
@@ -200,7 +200,7 @@ ___
 
 ### interstitialLoadFail
 
-• **interstitialLoadFail** = `"admob.interstitial.loadfail"`
+• **interstitialLoadFail**
 
 #### Defined in
 
@@ -210,7 +210,7 @@ ___
 
 ### interstitialShow
 
-• **interstitialShow** = `"admob.interstitial.show"`
+• **interstitialShow**
 
 #### Defined in
 
@@ -220,7 +220,7 @@ ___
 
 ### interstitialShowFail
 
-• **interstitialShowFail** = `"admob.interstitial.showfail"`
+• **interstitialShowFail**
 
 #### Defined in
 
@@ -230,7 +230,7 @@ ___
 
 ### ready
 
-• **ready** = `"admob.ready"`
+• **ready**
 
 #### Defined in
 
@@ -240,7 +240,7 @@ ___
 
 ### rewardedDismiss
 
-• **rewardedDismiss** = `"admob.rewarded.dismiss"`
+• **rewardedDismiss**
 
 #### Defined in
 
@@ -250,7 +250,7 @@ ___
 
 ### rewardedImpression
 
-• **rewardedImpression** = `"admob.rewarded.impression"`
+• **rewardedImpression**
 
 #### Defined in
 
@@ -260,7 +260,7 @@ ___
 
 ### rewardedInterstitialDismiss
 
-• **rewardedInterstitialDismiss** = `"admob.rewardedi.dismiss"`
+• **rewardedInterstitialDismiss**
 
 #### Defined in
 
@@ -270,7 +270,7 @@ ___
 
 ### rewardedInterstitialImpression
 
-• **rewardedInterstitialImpression** = `"admob.rewardedi.impression"`
+• **rewardedInterstitialImpression**
 
 #### Defined in
 
@@ -280,7 +280,7 @@ ___
 
 ### rewardedInterstitialLoad
 
-• **rewardedInterstitialLoad** = `"admob.rewardedi.load"`
+• **rewardedInterstitialLoad**
 
 #### Defined in
 
@@ -290,7 +290,7 @@ ___
 
 ### rewardedInterstitialLoadFail
 
-• **rewardedInterstitialLoadFail** = `"admob.rewardedi.loadfail"`
+• **rewardedInterstitialLoadFail**
 
 #### Defined in
 
@@ -300,7 +300,7 @@ ___
 
 ### rewardedInterstitialReward
 
-• **rewardedInterstitialReward** = `"admob.rewardedi.reward"`
+• **rewardedInterstitialReward**
 
 #### Defined in
 
@@ -310,7 +310,7 @@ ___
 
 ### rewardedInterstitialShow
 
-• **rewardedInterstitialShow** = `"admob.rewardedi.show"`
+• **rewardedInterstitialShow**
 
 #### Defined in
 
@@ -320,7 +320,7 @@ ___
 
 ### rewardedInterstitialShowFail
 
-• **rewardedInterstitialShowFail** = `"admob.rewardedi.showfail"`
+• **rewardedInterstitialShowFail**
 
 #### Defined in
 
@@ -330,7 +330,7 @@ ___
 
 ### rewardedLoad
 
-• **rewardedLoad** = `"admob.rewarded.load"`
+• **rewardedLoad**
 
 #### Defined in
 
@@ -340,7 +340,7 @@ ___
 
 ### rewardedLoadFail
 
-• **rewardedLoadFail** = `"admob.rewarded.loadfail"`
+• **rewardedLoadFail**
 
 #### Defined in
 
@@ -350,7 +350,7 @@ ___
 
 ### rewardedReward
 
-• **rewardedReward** = `"admob.rewarded.reward"`
+• **rewardedReward**
 
 #### Defined in
 
@@ -360,7 +360,7 @@ ___
 
 ### rewardedShow
 
-• **rewardedShow** = `"admob.rewarded.show"`
+• **rewardedShow**
 
 #### Defined in
 
@@ -370,7 +370,7 @@ ___
 
 ### rewardedShowFail
 
-• **rewardedShowFail** = `"admob.rewarded.showfail"`
+• **rewardedShowFail**
 
 #### Defined in
 
