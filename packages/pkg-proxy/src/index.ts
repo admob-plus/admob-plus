@@ -1,6 +1,6 @@
 import escalade from 'escalade';
-import fse from 'fs-extra';
-import path from 'path';
+import * as fse from 'fs-extra';
+import * as path from 'path';
 import {PackageJson as PackageJsonBase} from 'types-package-json';
 
 export type PackageJsonFileName = 'package.json';
