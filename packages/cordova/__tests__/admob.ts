@@ -1,10 +1,13 @@
 /**
  * @jest-environment jsdom
  */
-import {expect} from '@jest/globals';
-import '../src/www/cordova.d.ts';
+/// <reference types="jest" />
 
-test.skip('export admob', async () => {
-  const {default: admob} = await import('../src/www/admob');
-  expect(admob).toMatchObject(expect.any(Object));
+test('export admob', async () => {
+  const admob = await import('..');
+  expect(admob.default).not.toBeUndefined();
+  expect(admob).toMatchObject({
+    default: expect.any(Function),
+    BannerAd: expect.any(Function),
+  });
 });
