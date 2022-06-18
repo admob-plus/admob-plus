@@ -1,23 +1,31 @@
 /**
  * @jest-environment jsdom
  */
-/// <reference types="@types/jest" />
-import '../src/www/cordova.d.ts';
-import 'cordova-browser/cordova-lib/cordova';
-import {fireDocumentEvent, waitEvent} from '../src/www/shared';
+/// <reference types="cordova-plus/types" />
+/// <reference types="jest" />
+import {waitEvent} from '../src/www/shared';
 
-test('waitEvent() once for sucess event', async () => {
-  const p = waitEvent('sucess');
-  fireDocumentEvent('sucess');
+describe('waitEvent', () => {
+  const fireDocumentEvent =
+    typeof cordova !== 'undefined'
+      ? cordova.fireDocumentEvent
+      : jest.fn(event => {
+          document.dispatchEvent(new Event(event));
+        });
 
-  const event = await p;
-  expect(event.type).toBe('sucess');
-});
+  test('waitEvent() once for sucess event', async () => {
+    const p = waitEvent('sucess');
+    fireDocumentEvent('sucess', undefined);
 
-test('waitEvent() once for fail event', async () => {
-  const p = waitEvent('sucess', 'fail');
-  fireDocumentEvent('fail');
+    const event = await p;
+    expect(event.type).toBe('sucess');
+  });
 
-  const event = await p.catch((x: Event) => x);
-  expect(event.type).toBe('fail');
+  test('waitEvent() once for fail event', async () => {
+    const p = waitEvent('sucess', 'fail');
+    fireDocumentEvent('fail', undefined);
+
+    const event = await p.catch((x: Event) => x);
+    expect(event.type).toBe('fail');
+  });
 });
