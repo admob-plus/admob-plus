@@ -13,8 +13,6 @@ import {
   AdMobConfig,
   Events,
   execAsync,
-  fireDocumentEvent,
-  MobileAd,
   NativeActions,
   Platforms,
   RequestConfig,
