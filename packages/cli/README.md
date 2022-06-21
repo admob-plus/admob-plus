@@ -29,6 +29,7 @@ Commands:
 
 Options:
   --version  Show version number                                       [boolean]
+  --cwd                                                  [string] [default: "."]
   --help     Show help                                                 [boolean]
 ```
 
@@ -41,6 +42,7 @@ Check your project setup for potential problems
 ```
 Options:
   --version  Show version number                                       [boolean]
+  --cwd                                                  [string] [default: "."]
   --help     Show help                                                 [boolean]
 ```
 
@@ -51,6 +53,7 @@ Get relevant version info about OS, toolchain and libraries
 ```
 Options:
   --version    Show version number                                     [boolean]
+  --cwd                                                  [string] [default: "."]
   --help       Show help                                               [boolean]
   --clipboard  Copy the environment report output to the clipboard     [boolean]
 ```
