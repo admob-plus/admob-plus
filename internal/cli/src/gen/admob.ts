@@ -134,14 +134,14 @@ const buildProxyJs = () => {
     .join('\n');
 
   return `// ${warnMessage}
-'use strict'
+'use strict';
 
 const AdMob = {
 ${linesActions}
-}
+};
 
 // eslint-disable-next-line node/no-missing-require
-require('cordova/exec/proxy').add('AdMob', AdMob)
+require('cordova/exec/proxy').add('AdMob', AdMob);
 `;
 };
 

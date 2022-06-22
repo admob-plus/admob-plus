@@ -30,10 +30,6 @@ export const execAsync = (action: string, args?: any[]) => {
   })
 }
 
-export function fireDocumentEvent(eventName: string, data = undefined) {
-  cordova.fireDocumentEvent(eventName, data)
-}
-
 export function waitEvent(
   successEvent: string,
   failEvent = '',
@@ -65,7 +61,7 @@ export const initPlugin = () => {
     () => {
       cordova.exec(
         (event) => {
-          fireDocumentEvent(event.type, event.data)
+          cordova.fireDocumentEvent(event.type, event.data)
         },
         console.error,
         'Consent',
