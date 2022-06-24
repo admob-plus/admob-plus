@@ -20,7 +20,7 @@ custom_edit_url: null
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:41
+packages/cordova/src/www/index.ts:39
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:42
+packages/cordova/src/www/index.ts:40
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:48
+packages/cordova/src/www/index.ts:46
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:43
+packages/cordova/src/www/index.ts:41
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:44
+packages/cordova/src/www/index.ts:42
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:45
+packages/cordova/src/www/index.ts:43
 
 ___
 
@@ -80,7 +80,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:46
+packages/cordova/src/www/index.ts:44
 
 ___
 
@@ -90,7 +90,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:49
+packages/cordova/src/www/index.ts:47
 
 ## Methods
 
@@ -110,7 +110,7 @@ packages/cordova/src/www/index.ts:49
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:55
+packages/cordova/src/www/index.ts:53
 
 ___
 
@@ -130,7 +130,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:51
+packages/cordova/src/www/index.ts:49
 
 ___
 
@@ -144,7 +144,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:71
+packages/cordova/src/www/index.ts:69
 
 ___
 
@@ -164,7 +164,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:59
+packages/cordova/src/www/index.ts:57
 
 ___
 
@@ -184,7 +184,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:63
+packages/cordova/src/www/index.ts:61
 
 ___
 
@@ -198,4 +198,4 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:67
+packages/cordova/src/www/index.ts:65
