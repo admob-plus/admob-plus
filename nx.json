@@ -1,0 +1,67 @@
+{
+  "extends": "nx/presets/npm.json",
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "nx/tasks-runners/default",
+      "options": {
+        "cacheableOperations": [
+          "prepack",
+          "android",
+          "ios",
+          "test",
+          "typescript",
+          "lint",
+          "prepare",
+          "release",
+          "example",
+          "pods",
+          "bootstrap",
+          "clean",
+          "test:android",
+          "test:ios",
+          "test:wdio",
+          "ng",
+          "build",
+          "e2e",
+          "eject",
+          "upgrade",
+          "gen",
+          "postinstall",
+          "verify",
+          "verify:ios",
+          "verify:android",
+          "verify:web",
+          "fmt",
+          "eslint",
+          "prettier",
+          "swiftlint",
+          "docgen",
+          "watch",
+          "prepublishOnly",
+          "version",
+          "build:lib",
+          "build:scripts",
+          "docusaurus",
+          "swizzle",
+          "deploy",
+          "favicon"
+        ]
+      }
+    }
+  },
+  "targetDefaults": {
+    "prepare": {
+      "dependsOn": [
+        "^prepare"
+      ]
+    },
+    "build": {
+      "dependsOn": [
+        "^build"
+      ]
+    }
+  },
+  "affected": {
+    "defaultBase": "master"
+  }
+}
