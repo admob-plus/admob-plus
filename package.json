@@ -78,8 +78,8 @@
     ]
   },
   "dependenciesMeta": {
-    "@angular/compiler-cli": {
-      "unplugged": true
+    "appium-chromedriver": {
+      "built": false
     },
     "core-js": {
       "built": false
@@ -89,15 +89,6 @@
     },
     "fsevents": {
       "built": false
-    },
-    "metro-runtime": {
-      "unplugged": true
-    },
-    "native-run": {
-      "unplugged": true
-    },
-    "react-native-codegen": {
-      "unplugged": true
     }
   },
   "resolutions": {
