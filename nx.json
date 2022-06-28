@@ -63,5 +63,9 @@
   },
   "affected": {
     "defaultBase": "master"
+  },
+  "workspaceLayout": {
+    "appsDir": "examples",
+    "libsDir": "packages"
   }
 }
