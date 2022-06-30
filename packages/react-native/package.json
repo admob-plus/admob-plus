@@ -17,7 +17,7 @@
     "!**/xcuserdata"
   ],
   "scripts": {
-    "prepublishOnly": "yarn build",
+    "prepublishOnly": "npm run build",
     "build": "tsc -b",
     "test": "tsc --noEmit --composite false"
   },

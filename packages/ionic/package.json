@@ -6,7 +6,7 @@
   "module": "lib/index.js",
   "typings": "lib/index.d.ts",
   "scripts": {
-    "prepublishOnly": "yarn build",
+    "prepublishOnly": "npm run build",
     "build": "ts-node -TH --skip-project scripts/build.ts",
     "test": "tsc --noEmit"
   },
