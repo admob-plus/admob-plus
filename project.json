@@ -1,0 +1,13 @@
+{
+  "projectType": "application",
+  "targets": {
+    "jest": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage"],
+      "options": {
+        "jestConfig": "jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
