@@ -2,6 +2,21 @@
   "projectType": "application",
   "root": ".",
   "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsc -b --verbose"
+      },
+      "dependsOn": [
+        "build-cordova"
+      ]
+    },
+    "build-cordova": {
+      "executor": "nx:run-commands",
+      "options": {
+      "command": "nx build admob-plus-cordova"
+      }
+    },
     "test": {
       "executor": "nx:run-commands",
       "options": {

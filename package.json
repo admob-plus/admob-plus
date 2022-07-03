@@ -5,7 +5,7 @@
   "scripts": {
     "postinstall": "is-ci || lefthook install",
     "prepare": "run-s 'prepare:*'",
-    "prepare:ts": "wireit",
+    "prepare:ts": "nx build .",
     "prepare:lerna": "lerna run prepare",
     "prepublishOnly": "del '*.tsbuildinfo' 'packages/*/*.tsbuildinfo'",
     "test": "nx test .",
@@ -17,8 +17,7 @@
     "test-ios": "run-s 'test-ios:*'",
     "test-ios:lint": "node-swiftlint --path packages/cordova/src/ios",
     "//test-ios:testbed": "cordova-testbed --platform ios --plugin packages/cordova --build-only",
-    "build": "wireit",
-    "build:ts": "wireit"
+    "build": "nx build ."
   },
   "devDependencies": {
     "@admob-plus-internal/cli": "file:./internal/cli",
@@ -115,25 +114,9 @@
   ],
   "packageManager": "yarn@3.2.1",
   "wireit": {
-    "build": {
-      "dependencies": [
-        "build:ts"
-      ]
-    },
-    "build:ts": {
-      "command:": "tsc -b --verbose",
-      "dependencies": [
-        "./packages/cordova:build"
-      ]
-    },
     "gen": {
       "dependencies": [
         "./internal/cli:gen"
-      ]
-    },
-    "prepare:ts": {
-      "dependencies": [
-        "build:ts"
       ]
     }
   }
