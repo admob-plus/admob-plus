@@ -1,9 +1,19 @@
 {
   "projectType": "application",
+  "root": ".",
   "targets": {
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "lerna run test"
+      },
+      "dependsOn": [
+        "jest"
+      ]
+    },
     "jest": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage"],
+      "outputs": [],
       "options": {
         "jestConfig": "jest.config.ts",
         "passWithNoTests": true
