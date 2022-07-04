@@ -9,6 +9,7 @@ export default async (): Promise<Config.InitialOptions> => ({
   },
   testPathIgnorePatterns: [
     ...defaults.testPathIgnorePatterns,
+    '/examples/.*/platforms/',
     '/examples/.*/plugins/',
     '/examples/ionic-angular/',
     '/examples/ionic-angular-capacitor',

@@ -6,8 +6,6 @@
   "scripts": {
     "prepare": "example prepare",
     "test": "run-s 'test:*'",
-    "test:android": "test -d platforms/android && adb --version && cordova build android",
-    "test:ios": "test -d platforms/ios && swift --version && cordova build ios",
     "test:wdio": "ts-node -T tests/index.ts"
   },
   "dependencies": {
