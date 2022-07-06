@@ -6,9 +6,11 @@ import path from 'path';
 import portReady from 'port-ready';
 import * as wdio from 'webdriverio';
 
-test(
-  'wdio',
-  async () => {
+describe('wdio', () => {
+  let appium: execa.ExecaChildProcess<string>;
+  let browser: Awaited<ReturnType<typeof wdio.remote>>;
+
+  beforeAll(async () => {
     const app = path.join(
       __dirname,
       '../platforms/android/app/build/outputs/apk/debug/app-debug.apk'
@@ -18,7 +20,7 @@ test(
     }
 
     const port = 4723;
-    const appium = execa(
+    appium = execa(
       'appium',
       ['--allow-insecure', 'chromedriver_autodownload'],
       {stdio: 'inherit'}
@@ -36,15 +38,11 @@ test(
       },
       connectionRetryTimeout: ms('15m'),
     });
-    const browser = client;
+    browser = client;
+  }, 1000 * 60 * 10);
 
-    const btnShowBanner = await browser.$('#show-banner-btn');
-    await btnShowBanner.click();
-
-    const btnShowInterstitial = await browser.$('#show-interstitial-btn');
-    await btnShowInterstitial.click();
-
-    await client.deleteSession();
+  afterAll(async () => {
+    await browser.deleteSession();
 
     await Promise.all([
       appium,
@@ -52,6 +50,15 @@ test(
         appium.kill();
       })(),
     ]);
-  },
-  1000 * 60 * 10
-);
+  });
+
+  it('click banner button', async () => {
+    const btnShowBanner = await browser.$('#show-banner-btn');
+    await btnShowBanner.click();
+  });
+
+  it('click interstitial button', async () => {
+    const btnShowInterstitial = await browser.$('#show-interstitial-btn');
+    await btnShowInterstitial.click();
+  });
+});
