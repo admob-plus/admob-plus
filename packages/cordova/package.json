@@ -5,12 +5,8 @@
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "scripts": {
-    "prepublishOnly": "npm run build",
-    "version": "npx cordova-plus plugin version",
-    "build": "wireit",
-    "build:lib": "wireit",
-    "build:scripts": "wireit",
-    "test": "cordova-plus plugin test"
+    "prepublishOnly": "nx build cordova",
+    "version": "npx cordova-plus plugin version"
   },
   "dependencies": {
     "fast-glob": "^3.2.11",
@@ -26,10 +22,8 @@
     "cordova": "11.0.0",
     "cordova-plus": "^0.4.0",
     "cordova-ts-hook": "^0.0.3",
-    "npm-run-all": "^4.1.5",
     "rollup": "^2.75.7",
-    "typescript": "~4.7.4",
-    "wireit": "^0.7.1"
+    "typescript": "~4.7.4"
   },
   "author": "Ratson",
   "license": "MIT",
@@ -63,19 +57,5 @@
       "android",
       "ios"
     ]
-  },
-  "wireit": {
-    "build:lib": {
-      "command": "cordova-plus plugin build --input=./src/www/admob.ts --lib"
-    },
-    "build:scripts": {
-      "command": "tsc -p scripts"
-    },
-    "build": {
-      "dependencies": [
-        "build:lib",
-        "build:scripts"
-      ]
-    }
   }
 }
