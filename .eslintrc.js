@@ -5,7 +5,7 @@ module.exports = {
     {
       files: ['__tests__/**/*.ts'],
       rules: {
-        '@typescript-eslint/no-var-requires': 'warn',
+        '@typescript-eslint/no-var-requires': 'off',
       },
     },
   ],
