@@ -8,9 +8,7 @@
     "gen": "./lib/gen/index.js"
   },
   "scripts": {
-    "prepack": "wireit",
-    "build": "wireit",
-    "gen": "wireit"
+    "prepack": "nx build internal-cli"
   },
   "dependencies": {
     "@admob-plus-internal/tsconfig": "file:../tsconfig",
@@ -42,26 +40,9 @@
     "@types/markdown-magic": "^1.0.1",
     "@types/xml2js": "^0.4.11",
     "@types/yargs": "^17.0.10",
-    "ts-node": "^10.8.1",
-    "wireit": "^0.5.0"
+    "ts-node": "^10.8.1"
   },
   "installConfig": {
     "hoistingLimits": "workspaces"
-  },
-  "wireit": {
-    "prepack": {
-      "dependencies": [
-        "build"
-      ]
-    },
-    "build": {
-      "command": "tsc -b"
-    },
-    "gen": {
-      "command": "node lib/gen",
-      "dependencies": [
-        "build"
-      ]
-    }
   }
 }

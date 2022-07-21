@@ -11,7 +11,7 @@
     "test": "nx test .",
     "fmt": "cordova-plus fmt examples/{cordova,cordova-consent,ionic-angular,ionic3,playground}",
     "lint": "gts lint",
-    "gen": "wireit",
+    "gen": "nx gen internal-cli",
     "test-android": "run-s 'test-android:*'",
     "//test-android:testbed": "cordova-testbed --platform android --plugin packages/cordova --build-only",
     "test-ios": "run-s 'test-ios:*'",
@@ -57,8 +57,7 @@
     "swiftlint": "^1.0.1",
     "ts-jest": "^28.0.5",
     "ts-node": "^10.8.2",
-    "typescript": "~4.7.4",
-    "wireit": "^0.7.1"
+    "typescript": "~4.7.4"
   },
   "repository": "admob-plus/admob-plus",
   "commitlint": {
@@ -90,6 +89,7 @@
       "built": false
     }
   },
+  "packageManager": "yarn@3.2.1",
   "resolutions": {
     "@admob-plus-internal/cli": "workspace:*",
     "@admob-plus-internal/rollup-config": "workspace:*",
@@ -111,13 +111,5 @@
     "internal/*",
     "packages/*",
     "website"
-  ],
-  "packageManager": "yarn@3.2.1",
-  "wireit": {
-    "gen": {
-      "dependencies": [
-        "./internal/cli:gen"
-      ]
-    }
-  }
+  ]
 }
