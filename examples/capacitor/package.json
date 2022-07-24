@@ -9,12 +9,12 @@
   "dependencies": {
     "@admob-plus-internal/cli": "file:../../internal/cli",
     "@admob-plus/capacitor": "file:../../packages/capacitor",
-    "@capacitor/core": "^3.5.1",
-    "@capacitor/ios": "^3.5.1"
+    "@capacitor/core": "^3.6.0",
+    "@capacitor/ios": "^3.6.0"
   },
   "devDependencies": {
-    "@capacitor/cli": "^3.5.1",
-    "webpack": "^5.72.1",
-    "webpack-cli": "^4.9.2"
+    "@capacitor/cli": "^3.6.0",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0"
   }
 }
