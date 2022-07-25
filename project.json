@@ -1,20 +1,12 @@
 {
   "projectType": "application",
   "root": ".",
+  "implicitDependencies": ["cordova"],
   "targets": {
     "build": {
       "executor": "nx:run-commands",
       "options": {
         "command": "tsc -b --verbose"
-      },
-      "dependsOn": [
-        "build-cordova"
-      ]
-    },
-    "build-cordova": {
-      "executor": "nx:run-commands",
-      "options": {
-      "command": "nx build admob-plus-cordova"
       }
     },
     "test": {

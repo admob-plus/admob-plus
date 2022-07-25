@@ -10,16 +10,18 @@
     "build-lib": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "cordova-plus plugin build --input=./src/www/admob.ts --lib",
+        "command": "cordova-plus plugin build --input=./src/www/admob.ts --lib --esm",
         "cwd": "packages/cordova"
-      }
+      },
+      "outputs": ["esm", "lib", "www"]
     },
     "build-scripts": {
       "executor": "nx:run-commands",
       "options": {
         "command": "tsc -p scripts",
         "cwd": "packages/cordova"
-      }
+      },
+      "outputs": ["scripts/*.js"]
     },
     "test": {
       "executor": "nx:run-commands",
