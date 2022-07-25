@@ -1,4 +1,5 @@
 import assert from 'node:assert';
+import {expect, test} from '@jest/globals';
 import findPkg from './src';
 
 test('pkg-proxy', async () => {

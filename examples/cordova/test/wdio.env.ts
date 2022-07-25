@@ -53,20 +53,24 @@ class WdioEnvironment extends NodeEnvironment {
         platformName: 'Android',
         app,
         autoWebview: true,
-        autoWebviewTimeout: 30_000,
+        autoWebviewTimeout: 180_000,
         automationName: 'UiAutomator2',
         newCommandTimeout: 60_000,
-      recreateChromeDriverSessions: true
+        autoDismissAlerts: true,
+        // recreateChromeDriverSessions: true,
       },
       connectionRetryTimeout: ms('15m'),
-      connectionRetryCount: 5,
+      connectionRetryCount: 3,
     });
   }
 
   async teardown() {
-    await this.global.browser?.deleteSession();
+    const {appium, browser} = this.global;
 
-    const {appium} = this.global;
+    await browser?.closeWindow();
+    await browser?.closeApp();
+    await browser?.deleteSession();
+
     await Promise.all([
       appium,
       killPortProcess(this.port, {signal: 'SIGTERM'}),
