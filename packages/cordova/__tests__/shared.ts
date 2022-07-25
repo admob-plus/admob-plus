@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 /// <reference types="cordova-plus/types" />
-/// <reference types="jest" />
+import {describe, expect, test} from '@jest/globals';
 import {waitEvent} from '../src/www/shared';
 
 describe('waitEvent', () => {

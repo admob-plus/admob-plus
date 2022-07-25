@@ -44,7 +44,8 @@
           "docusaurus",
           "swizzle",
           "deploy",
-          "favicon"
+          "favicon",
+          "jest"
         ]
       }
     }

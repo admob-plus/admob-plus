@@ -1,7 +1,7 @@
 /**
  * @jest-environment jsdom
  */
-/// <reference types="jest" />
+import {expect, test} from '@jest/globals';
 
 test('export admob', async () => {
   const admob = await import('..');
