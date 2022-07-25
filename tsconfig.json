@@ -2,7 +2,8 @@
   "extends": "@admob-plus-internal/tsconfig",
   "compilerOptions": {
     "esModuleInterop": true,
-    "suppressImplicitAnyIndexErrors": true
+    "suppressImplicitAnyIndexErrors": true,
+    "module": "Node16"
   },
   "references": [
     { "path": "packages/pkg-proxy" },
@@ -17,5 +18,9 @@
     { "path": "packages/react-native" },
     { "path": "website" }
   ],
-  "files": []
+  "files": [],
+  "ts-node": {
+    "esm": true,
+    "transpileOnly": true
+  }
 }
