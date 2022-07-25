@@ -24,7 +24,7 @@ pre-push:
   parallel: true
   commands:
     jest:
-      run: npx jest
+      run: nx jest .
 
 fixer:
   parallel: true
