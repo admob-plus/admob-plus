@@ -22,13 +22,6 @@
         "cwd": "packages/cordova"
       },
       "outputs": ["scripts/*.js"]
-    },
-    "test": {
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "cordova-plus plugin test",
-        "cwd": "packages/cordova"
-      }
     }
   }
 }

@@ -7,7 +7,8 @@
   "typings": "esm/index.d.ts",
   "scripts": {
     "prepublishOnly": "nx build cordova",
-    "version": "npx cordova-plus plugin version"
+    "version": "npx cordova-plus plugin version",
+    "test": "cordova-plus plugin test"
   },
   "dependencies": {
     "fast-glob": "^3.2.11",

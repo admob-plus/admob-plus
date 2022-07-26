@@ -6,7 +6,8 @@
     "start": "ionic-app-scripts serve",
     "clean": "ionic-app-scripts clean",
     "build": "ionic-app-scripts build",
-    "lint": "ionic-app-scripts lint"
+    "lint": "ionic-app-scripts lint",
+    "android": "ionic cordova run android --prod --verbose --stacktrace"
   },
   "dependencies": {
     "@admob-plus/ionic": "^1.5.3",
@@ -23,6 +24,7 @@
     "@ionic-native/status-bar": "4.20.0",
     "@ionic/storage": "2.2.0",
     "admob-plus-cordova": "1.25.0",
+    "cordova-android": "^10.1.2",
     "cordova-ios": "6.3.0-nightly.2021.5.18.a3a3936a",
     "ionic-angular": "3.9.10",
     "ionicons": "3.0.0",
@@ -32,18 +34,19 @@
   },
   "devDependencies": {
     "@ionic/app-scripts": "3.2.4",
-    "cordova-plugin-device": "2.0.2",
+    "cordova": "^10.0.0",
+    "cordova-plugin-device": "2.1.0",
     "cordova-plugin-ionic-keyboard": "^2.0.5",
     "cordova-plugin-ionic-webview": "^4.0.0",
     "cordova-plugin-splashscreen": "5.0.2",
     "cordova-plugin-statusbar": "2.4.2",
-    "cordova-plugin-whitelist": "^1.3.3",
     "ionic": "3.20.1",
     "typescript": "2.6.2"
   },
   "cordova": {
     "platforms": [
-      "ios"
+      "ios",
+      "android"
     ],
     "plugins": {
       "admob-plus-cordova": {
@@ -55,10 +58,11 @@
       },
       "cordova-plugin-device": {},
       "cordova-plugin-ionic-keyboard": {},
-      "cordova-plugin-ionic-webview": {},
+      "cordova-plugin-ionic-webview": {
+        "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
+      },
       "cordova-plugin-splashscreen": {},
-      "cordova-plugin-statusbar": {},
-      "cordova-plugin-whitelist": {}
+      "cordova-plugin-statusbar": {}
     }
   },
   "installConfig": {

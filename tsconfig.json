@@ -2,6 +2,7 @@
   "extends": "@admob-plus-internal/tsconfig",
   "compilerOptions": {
     "esModuleInterop": true,
+    "resolveJsonModule": true,
     "suppressImplicitAnyIndexErrors": true,
     "module": "Node16"
   },

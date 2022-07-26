@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "test": {
+      "executor": "nx:run-script",
+      "options": {
+        "script": "lint"
+      },
+      "dependsOn": ["build"]
+    }
+  }
+}
