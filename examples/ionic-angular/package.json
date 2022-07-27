@@ -3,7 +3,7 @@
   "name": "example.ionic-angular",
   "version": "0.0.1",
   "scripts": {
-    "prepare": "example prepare",
+    "//prepare": "example prepare",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",

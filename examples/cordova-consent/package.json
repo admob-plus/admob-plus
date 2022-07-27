@@ -5,7 +5,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "prepare": "example prepare"
+    "//prepare": "example prepare"
   },
   "dependencies": {
     "admob-plus-cordova": "file:../../packages/cordova",

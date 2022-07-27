@@ -10,7 +10,7 @@
     "android": "ionic cordova run android --prod --verbose --stacktrace"
   },
   "dependencies": {
-    "@admob-plus/ionic": "^1.5.3",
+    "@admob-plus/ionic": "*",
     "@angular/animations": "5.2.11",
     "@angular/common": "5.2.11",
     "@angular/compiler": "5.2.11",
@@ -23,7 +23,6 @@
     "@ionic-native/splash-screen": "4.20.0",
     "@ionic-native/status-bar": "4.20.0",
     "@ionic/storage": "2.2.0",
-    "admob-plus-cordova": "1.25.0",
     "cordova-android": "^10.1.2",
     "cordova-ios": "6.3.0-nightly.2021.5.18.a3a3936a",
     "ionic-angular": "3.9.10",
@@ -34,6 +33,7 @@
   },
   "devDependencies": {
     "@ionic/app-scripts": "3.2.4",
+    "admob-plus-cordova": "*",
     "cordova": "^10.0.0",
     "cordova-plugin-device": "2.1.0",
     "cordova-plugin-ionic-keyboard": "^2.0.5",
@@ -41,6 +41,7 @@
     "cordova-plugin-splashscreen": "5.0.2",
     "cordova-plugin-statusbar": "2.4.2",
     "ionic": "3.20.1",
+    "npm": "^6.14.17",
     "typescript": "2.6.2"
   },
   "cordova": {

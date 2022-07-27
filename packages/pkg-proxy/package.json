@@ -26,7 +26,7 @@
   "repository": "admob-plus/admob-plus",
   "main": "lib/index.js",
   "scripts": {
-    "prepublishOnly": "npm run build",
+    "prepublishOnly": "nx build pkg-proxy",
     "build": "tsc -b",
     "test": "tsc --noEmit"
   },

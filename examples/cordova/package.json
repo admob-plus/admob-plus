@@ -4,7 +4,7 @@
   "displayName": "AdmobBasicExample",
   "version": "0.16.15",
   "scripts": {
-    "prepare": "example prepare"
+    "//prepare": "example prepare"
   },
   "dependencies": {
     "admob-plus-cordova": "../../packages/cordova",

@@ -32,20 +32,20 @@
     "typescript"
   ],
   "scripts": {
-    "verify": "yarn verify:ios && yarn verify:android && yarn verify:web",
+    "verify": "npm run verify:ios && npm run verify:android && npm run verify:web",
     "verify:ios": "cd ios && pod install && xcodebuild -workspace Plugin.xcworkspace -scheme Plugin && cd ..",
     "verify:android": "cd android && ./gradlew clean build test && cd ..",
-    "verify:web": "yarn build",
-    "lint": "yarn eslint && yarn prettier -- --check && yarn swiftlint -- lint",
-    "fmt": "yarn eslint -- --fix && yarn prettier -- --write && yarn swiftlint -- autocorrect --format",
+    "verify:web": "nx build capacitor",
+    "lint": "npm run eslint && npm run prettier -- --check && yarn swiftlint -- lint",
+    "fmt": "npm run eslint -- --fix && npm run prettier -- --write && npm run swiftlint -- autocorrect --format",
     "eslint": "eslint . --ext ts",
     "prettier": "prettier \"**/*.{css,html,ts,js,java}\"",
     "swiftlint": "node-swiftlint",
     "docgen": "docgen --api AdMobPlusPlugin --output-readme README.md --output-json dist/docs.json",
-    "build": "yarn clean && yarn docgen && tsc && rollup -c rollup.config.js",
+    "build": "npm run clean && npm run docgen && tsc && rollup -c rollup.config.js",
     "clean": "rimraf ./dist",
     "watch": "tsc --watch",
-    "prepublishOnly": "yarn build",
+    "prepublishOnly": "nx build capacitor",
     "test": "tsc --noEmit"
   },
   "devDependencies": {

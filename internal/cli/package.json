@@ -13,7 +13,9 @@
   "dependencies": {
     "@admob-plus-internal/tsconfig": "file:../tsconfig",
     "@admob-plus/capacitor": "file:../../packages/capacitor",
+    "@capacitor/core": "^3.6.0",
     "@frat/sane": "^4.3.0",
+    "@types/node": "^18.6.1",
     "admob-plus": "file:../../packages/cli",
     "cordova": "^11.0.0",
     "cpy": "^9.0.1",

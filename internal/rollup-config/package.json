@@ -4,8 +4,8 @@
   "private": true,
   "main": "./index.js",
   "scripts": {
-    "postinstall": "yarn build",
-    "prepack": "yarn build",
+    "postinstall": "nx build internal-rollup-config",
+    "prepack": "nx build internal-rollup-config",
     "build": "tsc -b"
   },
   "dependencies": {
