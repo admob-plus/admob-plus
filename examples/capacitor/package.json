@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "prepare": "webpack --mode production && cap sync"
+    "sync": "webpack --mode production && cap sync"
   },
   "dependencies": {
     "@admob-plus-internal/cli": "file:../../internal/cli",
