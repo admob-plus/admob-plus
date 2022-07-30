@@ -20,7 +20,7 @@ const {replaceInFile} = replaceInFileDefault;
 const cordovaPath = require.resolve('cordova/bin/cordova');
 
 const nodeBin = (args: string[], opts: Options<string>) =>
-  execa('yarn', ['node', ...args], {stdio: 'inherit', ...opts});
+  execa('pnpm', ['node', ...args], {stdio: 'inherit', ...opts});
 const cordovaBin = (args: string[], opts: Options<string>) =>
   nodeBin([cordovaPath, ...args], opts);
 
@@ -85,11 +85,11 @@ const prepare = async (opts: {cwd: string}) => {
 
   switch (path.basename(cwd)) {
     case 'capacitor': {
-      await execa('yarn', ['webpack', '--mode', 'production'], {
+      await execa('pnpm', ['webpack', '--mode', 'production'], {
         stdio: 'inherit',
         cwd,
       });
-      await execa('yarn', ['cap', 'sync'], {
+      await execa('pnpm', ['cap', 'sync'], {
         stdio: 'inherit',
         cwd,
       });
@@ -117,16 +117,16 @@ const prepare = async (opts: {cwd: string}) => {
       return;
     }
     case 'react-native': {
-      await execa('yarn', {
+      await execa('pnpm', {
         stdio: 'inherit',
         cwd: pkgsDirJoin('react-native'),
       });
-      await execa('yarn', ['build'], {
+      await execa('pnpm', ['build'], {
         stdio: 'inherit',
         cwd: pkgsDirJoin('react-native'),
       });
-      await execa('yarn', {stdio: 'inherit', cwd});
-      await execa('yarn', ['pod-install'], {stdio: 'inherit', cwd});
+      await execa('pnpm', {stdio: 'inherit', cwd});
+      await execa('pnpm', ['pod-install'], {stdio: 'inherit', cwd});
       return;
     }
     default:
@@ -139,7 +139,7 @@ const prepare = async (opts: {cwd: string}) => {
   const linkTasks = new PQueue({concurrency: 1, autoStart: false});
   await Promise.all(
     pluginPkgs.map(async pkg => {
-      await execa('yarn', ['build'], {
+      await execa('pnpm', ['build'], {
         cwd: pkg.dir,
         stdio: 'inherit',
       });
@@ -176,7 +176,7 @@ const androidRun = async (argv: {
   const {cwd} = argv;
   if (argv.clean) {
     await clean({cwd});
-    await execa('yarn', ['prepare'], {cwd, stdio: 'inherit'});
+    await execa('pnpm', ['prepare'], {cwd, stdio: 'inherit'});
   }
   await cordovaBin(
     ['run', 'android', '--verbose', ...(argv.device ? ['--device'] : [])],
@@ -237,7 +237,7 @@ async function startDev(opts: any) {
       const sourceDir = path.join(cwd, 'src');
       const watcher = sane(sourceDir, {glob: ['**/*'], watchman: true});
       promises.push(
-        execa('yarn', ['webpack', '--mode', 'production', '--watch'], {
+        execa('pnpm', ['webpack', '--mode', 'production', '--watch'], {
           stdio: 'inherit',
           cwd,
         }),
@@ -246,7 +246,7 @@ async function startDev(opts: any) {
             'change',
             debounce(async (filepath: string) => {
               console.log('file changed', filepath);
-              await execa('yarn', ['cap', 'sync'], {stdio: 'inherit', cwd});
+              await execa('pnpm', ['cap', 'sync'], {stdio: 'inherit', cwd});
             }, 1000)
           );
         })
@@ -282,7 +282,7 @@ async function startDev(opts: any) {
         'change',
         debounce(async (filepath: string) => {
           console.log('file changed', filepath);
-          await execa('yarn', ['cordova', 'prepare', platform], {
+          await execa('pnpm', ['cordova', 'prepare', platform], {
             stdio: 'inherit',
             cwd,
           });
@@ -326,7 +326,7 @@ async function startDev(opts: any) {
         dest: path.join(cwd, 'node_modules/@admob-plus/react-native'),
       });
 
-      promises.push(execa('yarn', ['start'], {stdio: 'inherit', cwd}));
+      promises.push(execa('pnpm', ['start'], {stdio: 'inherit', cwd}));
 
       if (platform === 'android') {
         openArgs.push('-a', 'Android Studio', 'android');

@@ -4,7 +4,6 @@
   "version": "0.0.1",
   "scripts": {
     "//prepare": "example prepare",
-    "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "lint": "ng lint",
@@ -80,8 +79,5 @@
       "cordova-plugin-statusbar": {},
       "cordova-plugin-whitelist": {}
     }
-  },
-  "installConfig": {
-    "hoistingLimits": "workspaces"
   }
 }

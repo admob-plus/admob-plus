@@ -26,8 +26,8 @@
     "@commitlint/config-lerna-scopes": "^17.0.2",
     "@commitlint/prompt-cli": "^17.0.3",
     "@ionic-native/admob-plus": "^5.36.0",
-    "@nrwl/jest": "^14.4.3",
-    "@nrwl/workspace": "^14.4.3",
+    "@nrwl/jest": "^14.5.1",
+    "@nrwl/workspace": "^14.5.1",
     "@types/cordova": "^0.0.34",
     "@types/jest": "^28.1.6",
     "@types/node": "^18.6.2",
@@ -43,7 +43,7 @@
     "jest-environment-jsdom": "^28.1.3",
     "lerna": "^5.3.0",
     "npm-run-all": "^4.1.5",
-    "nx": "14.4.3",
+    "nx": "14.5.1",
     "remark-cli": "^11.0.0",
     "remark-lint-are-links-valid-duplicate": "^0.2.2",
     "remark-lint-heading-whitespace": "^1.0.0",
@@ -73,20 +73,6 @@
       "remark-lint-no-empty-sections"
     ]
   },
-  "dependenciesMeta": {
-    "appium-chromedriver": {
-      "built": false
-    },
-    "core-js": {
-      "built": false
-    },
-    "core-js-pure": {
-      "built": false
-    },
-    "fsevents": {
-      "built": false
-    }
-  },
   "packageManager": "pnpm@7.6.0",
   "pnpm": {
     "neverBuiltDependencies": [
@@ -97,9 +83,10 @@
       "fsevents"
     ],
     "overrides": {
-      "node-sass": "6.0.1",
+      "@admob-plus-internal/cli": "link:./internal/cli",
       "@types/node": "^18.6.2",
-      "@types/react": "17.0.39"
+      "@types/react": "17.0.39",
+      "node-sass": "6.0.1"
     }
   },
   "volta": {
