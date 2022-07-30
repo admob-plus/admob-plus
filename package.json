@@ -30,10 +30,10 @@
     "@nrwl/workspace": "^14.5.1",
     "@types/cordova": "^0.0.34",
     "@types/jest": "^28.1.6",
-    "@types/node": "^18.6.2",
+    "@types/node": "^18.6.3",
     "@types/xml2js": "^0.4.11",
     "cordova": "11.0.0",
-    "cordova-plus": "^0.5.0",
+    "cordova-plus": "^0.6.0",
     "cordova-testbed": "^0.8.0",
     "del-cli": "^5.0.0",
     "gts": "^3.1.0",
@@ -84,7 +84,7 @@
     ],
     "overrides": {
       "@admob-plus-internal/cli": "link:./internal/cli",
-      "@types/node": "^18.6.2",
+      "@types/node": "^18.6.3",
       "@types/react": "17.0.39",
       "node-sass": "6.0.1"
     }
