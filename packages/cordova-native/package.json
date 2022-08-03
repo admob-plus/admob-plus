@@ -3,11 +3,12 @@
   "version": "0.2.17",
   "description": "Cordova Plugin for AdMob Plus Native Ad",
   "main": "lib/index.js",
-  "typings": "lib/index.d.ts",
+  "typings": "esm/index.d.ts",
+  "module": "esm/index.js",
   "scripts": {
     "prepublishOnly": "nx build cordova-native",
     "version": "npx cordova-plus plugin version",
-    "build": "cordova-plus plugin build",
+    "build": "cordova-plus plugin build --lib --esm",
     "test": "tsc --noEmit"
   },
   "dependencies": {
@@ -32,6 +33,7 @@
     "*.ts",
     "*.md",
     "*.xml",
+    "esm",
     "lib",
     "scripts",
     "src",
