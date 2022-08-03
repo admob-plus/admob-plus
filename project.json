@@ -7,7 +7,10 @@
       "executor": "nx:run-commands",
       "options": {
         "command": "tsc -b --verbose"
-      }
+      },
+      "dependsOn": [
+        "clean"
+      ]
     },
     "test": {
       "executor": "nx:run-commands",

@@ -6,7 +6,7 @@
   "scripts": {
     "postinstall": "nx build internal-rollup-config",
     "prepack": "nx build internal-rollup-config",
-    "build": "tsc -b"
+    "build": "tsc -b && echo"
   },
   "dependencies": {
     "@rollup/plugin-commonjs": "^22.0.1",

@@ -41,6 +41,7 @@
           "version",
           "build-lib",
           "build-scripts",
+          "build-tsc",
           "docusaurus",
           "swizzle",
           "deploy",

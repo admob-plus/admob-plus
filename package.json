@@ -5,7 +5,8 @@
   "scripts": {
     "postinstall": "is-ci || lefthook install",
     "prepare": "nx build .",
-    "prepublishOnly": "del '*.tsbuildinfo' 'packages/*/*.tsbuildinfo'",
+    "prepublishOnly": "nx clean .",
+    "clean": "del '*.tsbuildinfo' 'packages/*/*.tsbuildinfo'",
     "test": "nx test .",
     "fmt": "cordova-plus fmt examples/{cordova,cordova-consent,ionic-angular,ionic3,playground}",
     "lint": "gts lint",
@@ -20,20 +21,21 @@
   "devDependencies": {
     "@admob-plus-internal/cli": "file:./internal/cli",
     "@admob-plus-internal/tsconfig": "file:./internal/tsconfig",
-    "@arkweid/lefthook": "^0.7.7",
+    "@evilmartians/lefthook": "^1.0.5",
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
     "@commitlint/config-lerna-scopes": "^17.0.2",
     "@commitlint/prompt-cli": "^17.0.3",
     "@ionic-native/admob-plus": "^5.36.0",
-    "@nrwl/jest": "^14.5.1",
-    "@nrwl/workspace": "^14.5.1",
+    "@nrwl/jest": "^14.5.2",
+    "@nrwl/node": "^14.5.2",
+    "@nrwl/workspace": "^14.5.2",
     "@types/cordova": "^0.0.34",
     "@types/jest": "^28.1.6",
     "@types/node": "^18.6.3",
     "@types/xml2js": "^0.4.11",
     "cordova": "11.0.0",
-    "cordova-plus": "^0.6.0",
+    "cordova-plus": "^0.7.0",
     "cordova-testbed": "^0.8.0",
     "del-cli": "^5.0.0",
     "gts": "^3.1.0",
@@ -43,7 +45,7 @@
     "jest-environment-jsdom": "^28.1.3",
     "lerna": "^5.3.0",
     "npm-run-all": "^4.1.5",
-    "nx": "14.5.1",
+    "nx": "14.5.2",
     "remark-cli": "^11.0.0",
     "remark-lint-are-links-valid-duplicate": "^0.2.2",
     "remark-lint-heading-whitespace": "^1.0.0",
@@ -73,7 +75,7 @@
       "remark-lint-no-empty-sections"
     ]
   },
-  "packageManager": "pnpm@7.6.0",
+  "packageManager": "pnpm@7.8.0",
   "pnpm": {
     "neverBuiltDependencies": [
       "appium-chromedriver",
@@ -86,7 +88,7 @@
       "@admob-plus-internal/cli": "link:./internal/cli",
       "@types/node": "^18.6.3",
       "@types/react": "17.0.39",
-      "node-sass": "6.0.1"
+      "node-sass": "7.0.1"
     }
   },
   "volta": {

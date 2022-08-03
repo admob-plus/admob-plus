@@ -42,8 +42,8 @@
     "prettier": "prettier \"**/*.{css,html,ts,js,java}\"",
     "swiftlint": "node-swiftlint",
     "docgen": "docgen --api AdMobPlusPlugin --output-readme README.md --output-json dist/docs.json",
-    "build": "npm run clean && npm run docgen && tsc && rollup -c rollup.config.js",
-    "clean": "rimraf ./dist",
+    "build": "nx build capacitor",
+    "clean": "echo del dist",
     "watch": "tsc --watch",
     "prepublishOnly": "nx build capacitor",
     "test": "tsc --noEmit"
@@ -56,7 +56,7 @@
     "@ionic/eslint-config": "^0.3.0",
     "@ionic/prettier-config": "^2.0.0",
     "@ionic/swiftlint-config": "^1.1.2",
-    "rimraf": "^3.0.2",
+    "del-cli": "^5.0.0",
     "rollup": "^2.77.0",
     "typescript": "~4.7.4"
   },

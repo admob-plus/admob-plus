@@ -18,7 +18,7 @@
   ],
   "scripts": {
     "prepublishOnly": "nx build react-native",
-    "build": "tsc -b",
+    "build": "tsc -b && echo done",
     "test": "tsc --noEmit --composite false"
   },
   "repository": {

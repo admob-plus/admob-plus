@@ -27,7 +27,7 @@
   "main": "lib/index.js",
   "scripts": {
     "prepublishOnly": "nx build pkg-proxy",
-    "build": "tsc -b",
+    "build": "tsc -b && echo",
     "test": "tsc --noEmit"
   },
   "types": "lib/index.d.ts"

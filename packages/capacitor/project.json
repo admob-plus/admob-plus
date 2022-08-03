@@ -1,1 +1,36 @@
-{}
+{
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "rollup -c rollup.config.js",
+        "cwd": "packages/capacitor"
+      },
+      "dependsOn": ["build-tsc"],
+      "outputs": ["dist"]
+    },
+    "build-tsc": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsc",
+        "cwd": "packages/capacitor"
+      },
+      "dependsOn": ["docgen"],
+      "outputs": ["dist"]
+    },
+    "docgen": {
+      "executor": "nx:run-script",
+      "options": {
+        "script": "docgen"
+      },
+      "outputs": ["README.md", "dist/docs.json"]
+    },
+    "clean": {
+      "executor": "nx:run-script",
+      "options": {
+        "script": "clean"
+      },
+      "outputs": ["dist"]
+    }
+  }
+}
