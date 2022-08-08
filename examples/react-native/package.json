@@ -45,8 +45,5 @@
       "json",
       "node"
     ]
-  },
-  "installConfig": {
-    "hoistingLimits": "workspaces"
   }
 }
