@@ -10,6 +10,7 @@ export default async (): Promise<InitialOptionsTsJest> => ({
     },
   },
   moduleNameMapper: {
+    ...defaults.moduleNameMapper,
     '^(\\.{1,2}/.*)\\.js$': '$1',
   },
   transform: {
