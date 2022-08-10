@@ -1,6 +1,6 @@
 import execa from 'execa';
 import fse from 'fs-extra';
-import path from 'path';
+import path from 'node:path';
 
 const rootDir = (...args: Parameters<typeof path.join>) =>
   path.join(__dirname, '..', ...args);
