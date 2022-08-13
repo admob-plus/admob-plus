@@ -56,8 +56,6 @@ ___
 
 Ƭ **MobileAdOptions**: `Object`
 
-**`internal`**
-
 #### Type declaration
 
 | Name | Type |
@@ -118,8 +116,6 @@ ___
 ### start
 
 ▸ **start**(): `Promise`<{ `version`: `string`  }\>
-
-**`internal`**
 
 #### Returns
 

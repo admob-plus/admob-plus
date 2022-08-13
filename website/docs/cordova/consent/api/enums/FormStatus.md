@@ -10,7 +10,7 @@ custom_edit_url: null
 
 ### Available
 
-• **Available**
+• **Available** = ``1``
 
 #### Defined in
 
@@ -20,7 +20,7 @@ ___
 
 ### Unavailable
 
-• **Unavailable**
+• **Unavailable** = ``2``
 
 #### Defined in
 
@@ -30,7 +30,7 @@ ___
 
 ### Unknown
 
-• **Unknown**
+• **Unknown** = ``0``
 
 #### Defined in
 

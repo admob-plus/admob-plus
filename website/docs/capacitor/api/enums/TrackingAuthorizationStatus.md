@@ -10,7 +10,7 @@ custom_edit_url: null
 
 ### authorized
 
-• **authorized**
+• **authorized** = ``3``
 
 #### Defined in
 
@@ -20,7 +20,7 @@ ___
 
 ### denied
 
-• **denied**
+• **denied** = ``2``
 
 #### Defined in
 
@@ -30,7 +30,7 @@ ___
 
 ### notDetermined
 
-• **notDetermined**
+• **notDetermined** = ``0``
 
 #### Defined in
 
@@ -40,7 +40,7 @@ ___
 
 ### restricted
 
-• **restricted**
+• **restricted** = ``1``
 
 #### Defined in
 

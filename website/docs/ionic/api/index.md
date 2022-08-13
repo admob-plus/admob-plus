@@ -6,10 +6,6 @@ sidebar_position: 0.5
 custom_edit_url: null
 ---
 
-## Enumerations
-
-- [TrackingAuthorizationStatus](enums/TrackingAuthorizationStatus.md)
-
 ## Classes
 
 - [AdMob](classes/AdMob.md)

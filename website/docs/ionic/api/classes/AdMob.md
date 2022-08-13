@@ -218,11 +218,11 @@ ___
 
 ### requestTrackingAuthorization
 
-▸ **requestTrackingAuthorization**(): `Promise`<``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)\>
+▸ **requestTrackingAuthorization**(): `Promise`<``false`` \| `TrackingAuthorizationStatus`\>
 
 #### Returns
 
-`Promise`<``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)\>
+`Promise`<``false`` \| `TrackingAuthorizationStatus`\>
 
 #### Implementation of
 
@@ -284,11 +284,11 @@ ___
 
 ### start
 
-▸ **start**(): `Promise`<{ `version`: `string`  }\>
+▸ **start**(): `Promise`<{}\>
 
 #### Returns
 
-`Promise`<{ `version`: `string`  }\>
+`Promise`<{}\>
 
 #### Implementation of
 

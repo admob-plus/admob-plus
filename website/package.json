@@ -13,28 +13,28 @@
     "gen": "ts-node -TH scripts/gen.ts"
   },
   "dependencies": {
-    "@docusaurus/core": "2.0.0-beta.21",
-    "@docusaurus/preset-classic": "2.0.0-beta.21",
+    "@docusaurus/core": "2.0.1",
+    "@docusaurus/preset-classic": "2.0.1",
     "@mdx-js/react": "^1.6.22",
-    "clsx": "^1.1.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "clsx": "^1.2.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "2.0.0-beta.21",
+    "@docusaurus/module-type-aliases": "2.0.1",
     "@tsconfig/docusaurus": "^1.0.6",
-    "@types/node": "^17.0.42",
-    "@types/react": "^17.0.39",
+    "@types/node": "^18.7.3",
+    "@types/react": "^18.0.17",
     "@types/react-helmet": "^6.1.5",
     "@types/react-router-dom": "^5.3.3",
     "cordova-common": "^4.0.2",
     "docusaurus-plugin-typedoc": "~0.17.5",
     "markdown-magic": "^2.6.0",
     "replace-in-file": "^6.3.5",
-    "ts-node": "^10.8.1",
-    "typedoc": "~0.22.17",
-    "typedoc-plugin-markdown": "~3.12.1",
-    "typescript": "~4.7.3"
+    "ts-node": "^10.9.1",
+    "typedoc": "~0.23.10",
+    "typedoc-plugin-markdown": "~3.13.4",
+    "typescript": "~4.7.4"
   },
   "browserslist": {
     "production": [

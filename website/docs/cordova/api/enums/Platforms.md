@@ -10,7 +10,7 @@ custom_edit_url: null
 
 ### android
 
-• **android**
+• **android** = ``"android"``
 
 #### Defined in
 
@@ -20,7 +20,7 @@ ___
 
 ### ios
 
-• **ios**
+• **ios** = ``"ios"``
 
 #### Defined in
 
