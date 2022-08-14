@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.28.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.27.0...admob-plus-cordova@1.28.0) (2022-08-14)
+
+
+### Features
+
+* **cordova:** emit esm module ([230aa66](https://github.com/admob-plus/admob-plus/commit/230aa66a76c3f99c1ec2db990dc753a2f4497c06))
+* emit esm module ([fc4bc0e](https://github.com/admob-plus/admob-plus/commit/fc4bc0e8e0edce0b4d32ca7cf660cf4453548546))
+* update com.google.android.gms:play-services-ads to 20.6.0 ([3e334cd](https://github.com/admob-plus/admob-plus/commit/3e334cd4d0f929a94ef4b801ce46784fca5b2e61))
+
+
+
+
+
 # [1.27.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.26.1...admob-plus-cordova@1.27.0) (2022-03-03)
 
 

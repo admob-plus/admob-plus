@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova-native@0.2.17...admob-plus-cordova-native@0.3.0) (2022-08-14)
+
+
+### Bug Fixes
+
+* **example/cordova:** pin npm to v6 ([b77c5ac](https://github.com/admob-plus/admob-plus/commit/b77c5aca74c5333265f12150721ed8c44a503e04))
+
+
+### Features
+
+* emit esm module ([fc4bc0e](https://github.com/admob-plus/admob-plus/commit/fc4bc0e8e0edce0b4d32ca7cf660cf4453548546))
+
+
+
+
+
 ## [0.2.17](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova-native@0.2.16...admob-plus-cordova-native@0.2.17) (2022-03-03)
 
 **Note:** Version bump only for package admob-plus-cordova-native

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0](https://github.com/admob-plus/admob-plus/compare/cordova-plugin-consent@2.3.2...cordova-plugin-consent@2.4.0) (2022-08-14)
+
+
+### Features
+
+* emit esm module ([fc4bc0e](https://github.com/admob-plus/admob-plus/commit/fc4bc0e8e0edce0b4d32ca7cf660cf4453548546))
+
+
+
+
+
 ## [2.3.2](https://github.com/admob-plus/admob-plus/compare/cordova-plugin-consent@2.3.1...cordova-plugin-consent@2.3.2) (2022-03-03)
 
 **Note:** Version bump only for package cordova-plugin-consent

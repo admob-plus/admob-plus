@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/ionic@1.6.2...@admob-plus/ionic@1.7.0) (2022-08-14)
+
+
+### Features
+
+* **ionic:** emit cjs main ([ae8cb94](https://github.com/admob-plus/admob-plus/commit/ae8cb9474601c89031e7657af10c8bd9c8e54cb1))
+
+
+
+
+
 ## [1.6.2](https://github.com/admob-plus/admob-plus/compare/@admob-plus/ionic@1.6.1...@admob-plus/ionic@1.6.2) (2022-03-03)
 
 **Note:** Version bump only for package @admob-plus/ionic

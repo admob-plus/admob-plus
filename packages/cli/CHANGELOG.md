@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.11.0](https://github.com/admob-plus/admob-plus/compare/admob-plus@1.10.0...admob-plus@1.11.0) (2022-08-14)
+
+
+### Bug Fixes
+
+* **cli:** create require for require.resovle ([cc5ef07](https://github.com/admob-plus/admob-plus/commit/cc5ef07ab31d77356d4151533ebc5b70a71184ad))
+
+
+### Features
+
+* **cli/doctor:** skip xcodeproj test when xcodeproj command fail ([9c5c802](https://github.com/admob-plus/admob-plus/commit/9c5c80249c504abfe267c292df89164712238db6))
+* **cli:** add --cwd global flag ([2c94d1b](https://github.com/admob-plus/admob-plus/commit/2c94d1b8ed3f6c89452fcbea561ddac26fe0f6c2))
+* **cli:** convert to es module ([b253de9](https://github.com/admob-plus/admob-plus/commit/b253de9d90b87436c203d832944ca67427dbe57a))
+
+
+
+
+
 # [1.10.0](https://github.com/admob-plus/admob-plus/compare/admob-plus@1.9.4...admob-plus@1.10.0) (2021-08-27)
 
 

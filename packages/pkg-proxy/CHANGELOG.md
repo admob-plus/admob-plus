@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/admob-plus/admob-plus/compare/pkg-proxy@0.2.3...pkg-proxy@0.3.0) (2022-08-14)
+
+
+### Bug Fixes
+
+* **pkg-proxy:** import wildcard ([6999704](https://github.com/admob-plus/admob-plus/commit/6999704525ae7b5d2c7bc1bd36319bb3e04625b3))
+
+
+### Features
+
+* **pkg-proxy:** convert to es module ([ccf867c](https://github.com/admob-plus/admob-plus/commit/ccf867cc40b077b7795e46ab0a2566fee7eaf669))
+* **pkg-proxy:** export findPkg ([6d899ca](https://github.com/admob-plus/admob-plus/commit/6d899ca83016ce580753cc3dd0207d620fd2e156))
+
+
+
+
+
 ## [0.2.3](https://github.com/admob-plus/admob-plus/compare/pkg-proxy@0.2.2...pkg-proxy@0.2.3) (2021-05-28)
 
 **Note:** Version bump only for package pkg-proxy
