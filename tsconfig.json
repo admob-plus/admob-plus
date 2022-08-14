@@ -17,7 +17,7 @@
     { "path": "packages/cordova/scripts" },
     { "path": "packages/ionic" },
     { "path": "packages/react-native" },
-    { "path": "website" }
+    // { "path": "website" }
   ],
   "files": [],
   "ts-node": {
