@@ -26,7 +26,9 @@ export default async (): Promise<InitialOptionsTsJest> => ({
     '/examples/ionic-angular/',
     '/examples/ionic-angular-capacitor',
     '/examples/playground/',
-  ],
+  ].concat(
+    process.env.WDIO_TEST ? [] : ['/examples/cordova/test/wdio.test.ts']
+  ),
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$',
   testEnvironmentOptions: {
     url: 'http://localhost/',

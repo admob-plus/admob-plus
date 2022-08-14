@@ -34,6 +34,11 @@ class WdioEnvironment extends NodeEnvironment {
 
     if (!(await fse.pathExists(app))) return;
 
+    const adb = await execa('adb', ['devices', '-l'], {reject: false});
+    if (adb.failed) return;
+    if (adb.stdout.replace('List of devices attached', '').trim().length === 0)
+      return;
+
     this.global.appium = execa(
       'npx',
       [

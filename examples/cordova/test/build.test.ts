@@ -16,7 +16,7 @@ test(
       return;
     }
 
-    await execa('cordova', ['build', 'android'], {
+    await execa('npx', ['cordova', 'build', 'android'], {
       cwd: rootDir(),
       stdio: 'inherit',
     });
@@ -35,7 +35,7 @@ test(
       return;
     }
 
-    await execa('cordova', ['build', 'ios'], {
+    await execa('npx', ['cordova', 'build', 'ios'], {
       cwd: rootDir(),
       stdio: 'inherit',
     });
