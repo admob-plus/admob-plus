@@ -13,7 +13,6 @@
     "**/*.md",
     "**/package.json"
   ],
-  "npmClient": "yarn",
   "useNx": true,
   "version": "independent"
 }
