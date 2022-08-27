@@ -1,4 +1,5 @@
 {
+  "name": "internal-cli",
   "targets": {
     "gen": {
       "executor": "nx:run-commands",
@@ -6,9 +7,7 @@
         "command": "node lib/gen",
         "cwd": "internal/cli"
       },
-      "dependsOn": [
-        "build"
-      ]
+      "dependsOn": ["build"]
     }
   }
 }

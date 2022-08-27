@@ -1,6 +1,6 @@
 {
+  "name": ".",
   "projectType": "application",
-  "root": ".",
   "implicitDependencies": ["cordova"],
   "targets": {
     "build": {
@@ -8,18 +8,14 @@
       "options": {
         "command": "tsc -b --verbose"
       },
-      "dependsOn": [
-        "clean"
-      ]
+      "dependsOn": ["clean"]
     },
     "test": {
       "executor": "nx:run-commands",
       "options": {
         "command": "lerna run test"
       },
-      "dependsOn": [
-        "jest"
-      ]
+      "dependsOn": ["jest"]
     },
     "jest": {
       "executor": "@nrwl/jest:jest",
