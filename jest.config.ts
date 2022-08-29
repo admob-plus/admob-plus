@@ -1,14 +1,9 @@
 import {defaults} from 'jest-config';
-import type {InitialOptionsTsJest} from 'ts-jest';
+import type {JestConfigWithTsJest} from 'ts-jest';
 import {defaultsESM as tsDefaults} from 'ts-jest/presets';
 
-export default async (): Promise<InitialOptionsTsJest> => ({
+export default async (): Promise<JestConfigWithTsJest> => ({
   preset: 'ts-jest/presets/default-esm',
-  globals: {
-    'ts-jest': {
-      useESM: true,
-    },
-  },
   moduleNameMapper: {
     ...defaults.moduleNameMapper,
     '^(\\.{1,2}/.*)\\.js$': '$1',
@@ -17,10 +12,16 @@ export default async (): Promise<InitialOptionsTsJest> => ({
     // @ts-expect-error wrong type
     ...defaults.transform,
     ...tsDefaults.transform,
-    '^.+\\.tsx?$': 'ts-jest',
+    '^.+\\.tsx?$': [
+      'ts-jest',
+      {
+        useESM: true,
+      },
+    ],
   },
   testPathIgnorePatterns: [
     ...defaults.testPathIgnorePatterns,
+    '<rootDir>/[.].*',
     '/examples/.*/platforms/',
     '/examples/.*/plugins/',
     '/examples/ionic-angular/',

@@ -1,5 +1,5 @@
 {
-  "name": "cordova",
+  "name": "admob-plus-cordova",
   "targets": {
     "build": {
       "executor": "nx:noop",

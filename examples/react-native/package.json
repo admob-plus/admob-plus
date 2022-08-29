@@ -6,7 +6,7 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "clean": "react-native clean-project-auto --clean-android-project --keep-node_modules",
     "upgrade": "git init && git add . && git commit -m 'upgrading' && react-native upgrade; del .git"

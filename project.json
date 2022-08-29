@@ -1,7 +1,7 @@
 {
   "name": ".",
   "projectType": "application",
-  "implicitDependencies": ["cordova"],
+  "implicitDependencies": ["admob-plus-cordova"],
   "targets": {
     "build": {
       "executor": "nx:run-commands",
