@@ -1,5 +1,6 @@
 {
   "name": "internal-cli",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "targets": {
     "gen": {
       "executor": "nx:run-commands",

@@ -13,7 +13,6 @@
     "**/*.md",
     "**/package.json"
   ],
-  "useNx": true,
   "useWorkspaces": true,
   "version": "independent"
 }

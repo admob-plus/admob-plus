@@ -1,3 +1,4 @@
 {
-  "name": "internal-rollup-config"
+  "name": "internal-rollup-config",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json"
 }
