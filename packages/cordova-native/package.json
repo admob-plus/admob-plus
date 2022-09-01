@@ -6,7 +6,7 @@
   "typings": "esm/index.d.ts",
   "module": "esm/index.js",
   "scripts": {
-    "prepublishOnly": "nx build cordova-native",
+    "prepublishOnly": "nx build",
     "version": "npx cordova-plus plugin version",
     "build": "cordova-plus plugin build --lib --esm",
     "test": "tsc --noEmit"

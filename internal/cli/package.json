@@ -9,7 +9,7 @@
     "npm": "./lib/npm.js"
   },
   "scripts": {
-    "prepack": "nx build internal-cli",
+    "prepack": "nx build",
     "build": "tsc -b"
   },
   "dependencies": {

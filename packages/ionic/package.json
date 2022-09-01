@@ -6,7 +6,7 @@
   "module": "lib/index.js",
   "typings": "lib/index.d.ts",
   "scripts": {
-    "prepublishOnly": "nx build ionic",
+    "prepublishOnly": "nx build",
     "build": "ts-node -TH --skip-project scripts/build.ts",
     "test": "tsc --noEmit"
   },

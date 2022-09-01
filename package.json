@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "postinstall": "is-ci || lefthook install",
-    "prepare": "nx build .",
-    "prepublishOnly": "nx clean .",
+    "prepare": "nx build",
+    "prepublishOnly": "nx clean",
     "clean": "del '*.tsbuildinfo' 'packages/*/*.tsbuildinfo'",
     "test": "nx test .",
     "fmt": "cordova-plus fmt examples/{cordova,cordova-consent,ionic-angular,ionic3,playground}",
@@ -16,7 +16,7 @@
     "test-ios": "run-s 'test-ios:*'",
     "test-ios:lint": "node-swiftlint --path packages/cordova/src/ios",
     "//test-ios:testbed": "cordova-testbed --platform ios --plugin packages/cordova --build-only",
-    "build": "nx build ."
+    "build": "nx build"
   },
   "devDependencies": {
     "@admob-plus-internal/cli": "file:./internal/cli",
@@ -101,4 +101,3 @@
     "website"
   ]
 }
-

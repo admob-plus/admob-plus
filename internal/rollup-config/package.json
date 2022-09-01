@@ -4,8 +4,8 @@
   "private": true,
   "main": "./index.js",
   "scripts": {
-    "postinstall": "nx build internal-rollup-config",
-    "prepack": "nx build internal-rollup-config",
+    "postinstall": "nx build",
+    "prepack": "nx build",
     "build": "tsc -b && echo"
   },
   "dependencies": {
