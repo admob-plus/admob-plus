@@ -157,7 +157,7 @@ export default [
           vars,
           (v, k) =>
             ({
-              title: k,
+              title: `${k}`,
               async task(_ctx, taskVar) {
                 if (!xmlVars[k]) {
                   taskVar.skip();

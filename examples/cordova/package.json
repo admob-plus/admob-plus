@@ -18,9 +18,9 @@
     "@types/cordova": "^0.0.34",
     "admob-plus": "../../packages/cli",
     "appium": "^1.22.3",
-    "appium-android-driver": "^5.2.7",
-    "appium-doctor": "^1.16.0",
-    "appium-uiautomator2-driver": "^2.4.6",
+    "appium-android-driver": "^5.7.2",
+    "appium-doctor": "^1.16.2",
+    "appium-uiautomator2-driver": "^2.10.2",
     "cordova": "^11.0.0",
     "cordova-plus": "^0.7.0",
     "execa": "^5.0.0",
@@ -29,7 +29,7 @@
     "kill-port-process": "^3.1.0",
     "port-ready": "^0.1.0",
     "ts-node": "^10.9.1",
-    "webdriverio": "^7.20.9"
+    "webdriverio": "^7.27.0"
   },
   "cordova": {
     "platforms": [

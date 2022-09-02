@@ -58,7 +58,7 @@
     "@ionic/swiftlint-config": "^1.1.2",
     "del-cli": "^5.0.0",
     "rollup": "^2.78.0",
-    "typescript": "~4.7.4"
+    "typescript": "~4.9.3"
   },
   "peerDependencies": {
     "@capacitor/core": "^3.6.0"
