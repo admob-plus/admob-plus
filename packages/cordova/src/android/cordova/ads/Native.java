@@ -20,7 +20,7 @@ import admob.plus.cordova.ExecuteContext;
 import admob.plus.cordova.Generated.Events;
 import admob.plus.core.Context;
 
-import static admob.plus.core.Helper.dpToPx;
+import static admob.plus.core.UtilKt.dpToPx;
 
 public class Native extends AdBase {
     public static final String VIEW_DEFAULT_KEY = "default";

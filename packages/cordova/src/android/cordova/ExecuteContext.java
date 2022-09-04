@@ -19,9 +19,9 @@ import java.util.List;
 import admob.plus.cordova.ads.Banner.AdSizeType;
 import admob.plus.core.Ad;
 import admob.plus.core.Context;
-import admob.plus.core.Helper;
 
-import static admob.plus.core.Helper.jsonArray2stringList;
+import static admob.plus.core.UtilKt.jsonArray2stringList;
+import static admob.plus.core.UtilKt.pxToDp;
 
 public class ExecuteContext implements Context {
     public static AdMob plugin;
@@ -146,10 +146,10 @@ public class ExecuteContext implements Context {
             return AdSize.SMART_BANNER;
         }
         String adaptive = adSizeObj.optString("adaptive");
-        int w = Helper.pxToDp(adSizeObj.has("width") ? adSizeObj.optInt("width") : Resources.getSystem().getDisplayMetrics().widthPixels);
+        int w = pxToDp(adSizeObj.has("width") ? adSizeObj.optInt("width") : Resources.getSystem().getDisplayMetrics().widthPixels);
         if ("inline".equals(adaptive)) {
             if (adSizeObj.has("maxHeight")) {
-                return AdSize.getInlineAdaptiveBannerAdSize(w, Helper.pxToDp(adSizeObj.optInt("maxHeight")));
+                return AdSize.getInlineAdaptiveBannerAdSize(w, pxToDp(adSizeObj.optInt("maxHeight")));
             }
         } else {
             switch (adSizeObj.optString("orientation")) {
@@ -161,7 +161,7 @@ public class ExecuteContext implements Context {
                     return AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(getActivity(), w);
             }
         }
-        return new AdSize(w, Helper.pxToDp(adSizeObj.optInt("height")));
+        return new AdSize(w, pxToDp(adSizeObj.optInt("height")));
     }
 
     public Activity getActivity() {

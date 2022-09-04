@@ -25,7 +25,7 @@ import admob.plus.cordova.Generated.Events;
 import admob.plus.core.Context;
 
 import static admob.plus.core.Helper.getParentView;
-import static admob.plus.core.Helper.pxToDp;
+import static admob.plus.core.UtilKt.pxToDp;
 import static admob.plus.core.Helper.removeFromParentView;
 
 public class Banner extends AdBase {

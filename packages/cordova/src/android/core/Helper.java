@@ -2,9 +2,7 @@ package admob.plus.core;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.res.Resources;
 import android.provider.Settings;
-import android.util.DisplayMetrics;
 import android.util.SparseArray;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,12 +13,9 @@ import androidx.annotation.Nullable;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.RequestConfiguration;
 
-import org.json.JSONArray;
-
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -35,30 +30,6 @@ public class Helper {
 
     public static Ad getAd(Integer id) {
         return ads.get(id);
-    }
-
-    public static double dpToPx(double dp) {
-        return dp * Resources.getSystem().getDisplayMetrics().density;
-    }
-
-    public static int pxToDp(int px) {
-        DisplayMetrics displayMetrics = Resources.getSystem().getDisplayMetrics();
-        int dp = Math.round(px / (displayMetrics.xdpi / DisplayMetrics.DENSITY_DEFAULT));
-        return dp;
-    }
-
-    public static List<String> jsonArray2stringList(@Nullable JSONArray a) {
-        final List<String> result = new ArrayList<String>();
-        if (a == null) {
-            return result;
-        }
-        for (int i = 0; i < a.length(); i++) {
-            String testDeviceId = a.optString(i);
-            if (testDeviceId != null) {
-                result.add(testDeviceId);
-            }
-        }
-        return result;
     }
 
     @Nullable
