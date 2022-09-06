@@ -4,7 +4,6 @@
   "private": true,
   "main": "./index.js",
   "scripts": {
-    "postinstall": "pnpm prepack",
     "prepack": "nx build"
   },
   "dependencies": {
