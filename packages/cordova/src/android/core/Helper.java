@@ -1,5 +1,7 @@
 package admob.plus.core;
 
+import static admob.plus.core.UtilKt.md5;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.provider.Settings;
@@ -13,9 +15,6 @@ import androidx.annotation.Nullable;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.RequestConfiguration;
 
-import java.math.BigInteger;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -46,17 +45,6 @@ public class Helper {
 
     public static void NOT_IMPLEMENTED() {
         throw new UnsupportedOperationException("Not implemented.");
-    }
-
-    private static String md5(String s) {
-        try {
-            MessageDigest digest = MessageDigest.getInstance("MD5");
-            digest.update(s.getBytes());
-            BigInteger bigInt = new BigInteger(1, digest.digest());
-            return String.format("%32s", bigInt.toString(16)).replace(' ', '0');
-        } catch (NoSuchAlgorithmException ignore) {
-        }
-        return "";
     }
 
     public Activity getActivity() {
