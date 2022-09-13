@@ -3,6 +3,9 @@ package admob.plus.core
 import android.content.res.Resources
 import android.util.DisplayMetrics
 import org.json.JSONArray
+import java.math.BigInteger
+import java.security.MessageDigest
+import java.security.NoSuchAlgorithmException
 import kotlin.math.roundToInt
 
 fun dpToPx(dp: Double): Double {
@@ -26,4 +29,15 @@ fun jsonArray2stringList(a: JSONArray?): List<String> {
         }
     }
     return result
+}
+
+fun md5(s: String): String {
+    try {
+        val digest = MessageDigest.getInstance("MD5")
+        digest.update(s.toByteArray())
+        val bigInt = BigInteger(1, digest.digest())
+        return String.format("%32s", bigInt.toString(16)).replace(' ', '0')
+    } catch (ignore: NoSuchAlgorithmException) {
+    }
+    return ""
 }

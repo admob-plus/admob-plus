@@ -3,6 +3,7 @@ package admob.plus.core
 import org.json.JSONArray
 import kotlin.test.Test
 import kotlin.test.assertContentEquals
+import kotlin.test.assertEquals
 
 class UtilUnitTest {
     @Test
@@ -13,5 +14,10 @@ class UtilUnitTest {
             arrayListOf("1", "2", "3"),
             jsonArray2stringList(JSONArray(listOf(1, 2, 3)))
         )
+    }
+
+    @Test
+    fun md5() {
+        assertEquals("d41d8cd98f00b204e9800998ecf8427e", md5(""))
     }
 }
