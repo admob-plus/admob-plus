@@ -1,12 +1,48 @@
 package admob.plus.core
 
+import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.res.Resources
+import android.provider.Settings
 import android.util.DisplayMetrics
+import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.RequestConfiguration
 import org.json.JSONArray
 import java.math.BigInteger
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
+import java.util.Locale
 import kotlin.math.roundToInt
+
+fun configForTestLab(activity: Activity) {
+    if (!isRunningInTestLab(activity)) {
+        return
+    }
+    val config: RequestConfiguration = MobileAds.getRequestConfiguration()
+    val testDeviceIds: MutableList<String> = config.testDeviceIds
+    val deviceId = computeDeviceID(activity)
+    if (testDeviceIds.contains(deviceId)) {
+        return
+    }
+    testDeviceIds.add(deviceId)
+    val builder: RequestConfiguration.Builder = config.toBuilder()
+    builder.setTestDeviceIds(testDeviceIds)
+    MobileAds.setRequestConfiguration(builder.build())
+}
+
+fun computeDeviceID(activity: Activity): String {
+    // This will request test ads on the emulator and device by passing this hashed device ID.
+    @SuppressLint("HardwareIds") val androidID = Settings.Secure.getString(
+        activity.contentResolver, Settings.Secure.ANDROID_ID
+    )
+    return md5(androidID).uppercase(Locale.getDefault())
+}
+
+fun isRunningInTestLab(activity: Activity): Boolean {
+    val testLabSetting =
+        Settings.System.getString(activity.contentResolver, "firebase.test.lab")
+    return "true" == testLabSetting
+}
 
 fun dpToPx(dp: Double): Double {
     return dp * Resources.getSystem().displayMetrics.density

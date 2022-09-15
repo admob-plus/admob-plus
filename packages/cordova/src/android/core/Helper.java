@@ -1,22 +1,13 @@
 package admob.plus.core;
 
-import static admob.plus.core.UtilKt.md5;
-
-import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.provider.Settings;
 import android.util.SparseArray;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.RequestConfiguration;
-
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class Helper {
@@ -52,33 +43,11 @@ public class Helper {
     }
 
     public boolean isRunningInTestLab() {
-        String testLabSetting = Settings.System.getString(getActivity().getContentResolver(), "firebase.test.lab");
-        return "true".equals(testLabSetting);
+        return UtilKt.isRunningInTestLab(getActivity());
     }
 
     public void configForTestLab() {
-        if (!isRunningInTestLab()) {
-            return;
-        }
-        RequestConfiguration config = MobileAds.getRequestConfiguration();
-        List<String> testDeviceIds = config.getTestDeviceIds();
-
-        final String deviceId = getDeviceId();
-        if (testDeviceIds.contains(deviceId)) {
-            return;
-        }
-        testDeviceIds.add(deviceId);
-
-        RequestConfiguration.Builder builder = config.toBuilder();
-        builder.setTestDeviceIds(testDeviceIds);
-        MobileAds.setRequestConfiguration(builder.build());
-    }
-
-    @NonNull
-    private String getDeviceId() {
-        // This will request test ads on the emulator and device by passing this hashed device ID.
-        @SuppressLint("HardwareIds") String ANDROID_ID = Settings.Secure.getString(getActivity().getContentResolver(), Settings.Secure.ANDROID_ID);
-        return md5(ANDROID_ID).toUpperCase();
+        UtilKt.configForTestLab(getActivity());
     }
 
     public interface Adapter {
