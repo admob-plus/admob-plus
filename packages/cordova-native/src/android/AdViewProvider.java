@@ -8,6 +8,8 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+
 import com.google.android.gms.ads.nativead.MediaView;
 import com.google.android.gms.ads.nativead.NativeAd;
 import com.google.android.gms.ads.nativead.NativeAdView;
@@ -115,5 +117,13 @@ public class AdViewProvider implements Native.ViewProvider {
 
     private int id(final String name) {
         return getResourceId(name, "id");
+    }
+
+    @Override
+    public void didShow(@NonNull Native ad) {
+    }
+
+    @Override
+    public void didHide(@NonNull Native ad) {
     }
 }

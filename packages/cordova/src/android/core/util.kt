@@ -6,7 +6,6 @@ import android.content.res.Resources
 import android.provider.Settings
 import android.util.DisplayMetrics
 import com.google.android.gms.ads.MobileAds
-import com.google.android.gms.ads.RequestConfiguration
 import org.json.JSONArray
 import java.math.BigInteger
 import java.security.MessageDigest
@@ -14,18 +13,18 @@ import java.security.NoSuchAlgorithmException
 import java.util.Locale
 import kotlin.math.roundToInt
 
-fun configForTestLab(activity: Activity) {
+fun configForTestLabIfNeeded(activity: Activity) {
     if (!isRunningInTestLab(activity)) {
         return
     }
-    val config: RequestConfiguration = MobileAds.getRequestConfiguration()
-    val testDeviceIds: MutableList<String> = config.testDeviceIds
+    val config = MobileAds.getRequestConfiguration()
+    val testDeviceIds = config.testDeviceIds
     val deviceId = computeDeviceID(activity)
-    if (testDeviceIds.contains(deviceId)) {
+    if (deviceId in testDeviceIds) {
         return
     }
     testDeviceIds.add(deviceId)
-    val builder: RequestConfiguration.Builder = config.toBuilder()
+    val builder = config.toBuilder()
     builder.setTestDeviceIds(testDeviceIds)
     MobileAds.setRequestConfiguration(builder.build())
 }
@@ -55,13 +54,11 @@ fun pxToDp(px: Int): Int {
 
 fun jsonArray2stringList(a: JSONArray?): List<String> {
     val result: MutableList<String> = ArrayList()
-    if (a == null) {
-        return result
-    }
-    for (i in 0 until a.length()) {
-        val testDeviceId = a.optString(i)
-        if (testDeviceId != null) {
-            result.add(testDeviceId)
+    a?.let {
+        for (i in 0 until it.length()) {
+            it.optString(i)?.let { id ->
+                result.add(id)
+            }
         }
     }
     return result
