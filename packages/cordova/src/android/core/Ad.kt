@@ -11,7 +11,7 @@ interface Adapter {
 
     val contentView: ViewGroup? get() = activity.findViewById(R.id.content)
 
-    fun emit(eventName: String, data: Map<String, Any> = mapOf())
+    fun emit(eventName: String, data: Map<String, Any?> = mapOf())
 }
 
 interface Ad {
@@ -33,7 +33,7 @@ interface Ad {
         TODO("Not yet implemented")
     }
 
-    fun emit(eventName: String, data: Map<String, Any> = mapOf()) {
+    fun emit(eventName: String, data: Map<String, Any?> = mapOf()) {
         adapter.emit(eventName, mapOf("adId" to id) + data)
     }
 

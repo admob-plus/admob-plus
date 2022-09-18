@@ -83,7 +83,7 @@ class AdMob : CordovaPlugin(), Adapter {
     private fun executeStart(ctx: ExecuteContext) {
         MobileAds.initialize(ctx.activity) {
             configForTestLabIfNeeded(ctx.activity)
-            ctx.resolve(mapOf("version" to MobileAds.getVersionString()))
+            ctx.resolve(mapOf("version" to MobileAds.getVersion()))
         }
     }
 
@@ -163,7 +163,7 @@ class AdMob : CordovaPlugin(), Adapter {
 
     override val contentView: ViewGroup? get() = super.contentView ?: getParentView(webView.view)
 
-    override fun emit(eventName: String, data: Map<String, Any>) {
+    override fun emit(eventName: String, data: Map<String, Any?>) {
 
         val event = JSONObject(mapOf("type" to eventName, "data" to data))
         val result = PluginResult(PluginResult.Status.OK, event)
