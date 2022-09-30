@@ -20,12 +20,13 @@
 
     <platform name="android">
         <preference name="APP_ID_ANDROID" default="ca-app-pub-xxx~yyy" />
-        <preference name="PLAY_SERVICES_VERSION" default="20.6.0" />
+        <preference name="PLAY_SERVICES_VERSION" default="21.2.0" />
 
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
             <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:name="com.google.android.gms.ads.AdActivity" android:noHistory="true" />
             <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" android:value="$APP_ID_ANDROID" />
             <meta-data android:name="com.google.android.gms.ads.DELAY_APP_MEASUREMENT_INIT" android:value="true"/>
+            <meta-data android:name="com.google.android.gms.ads.INTEGRATION_MANAGER" android:value="webview"/>
         </config-file>
 
         <config-file target="res/xml/config.xml" parent="/*">
@@ -41,6 +42,7 @@
         <source-file src="src/android/cordova/ExecuteContext.java" target-dir="src/admob/plus/cordova" />
         <source-file src="src/android/cordova/Generated.java" target-dir="src/admob/plus/cordova" />
         <source-file src="src/android/cordova/ads/AdBase.java" target-dir="src/admob/plus/cordova/ads" />
+        <source-file src="src/android/cordova/ads/WebViewAd.java" target-dir="src/admob/plus/cordova/ads" />
         <source-file src="src/android/cordova/ads/AppOpen.java" target-dir="src/admob/plus/cordova/ads" />
         <source-file src="src/android/cordova/ads/Banner.java" target-dir="src/admob/plus/cordova/ads" />
         <source-file src="src/android/cordova/ads/Interstitial.java" target-dir="src/admob/plus/cordova/ads" />

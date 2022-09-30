@@ -1,8 +1,11 @@
 package admob.plus.cordova;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.Configuration;
+import android.net.Uri;
 import android.util.Log;
+import android.webkit.WebView;
 
 import com.google.android.gms.ads.MobileAds;
 
@@ -19,6 +22,7 @@ import java.util.Map;
 
 import admob.plus.cordova.Generated.Actions;
 import admob.plus.cordova.ads.AdBase;
+import admob.plus.cordova.ads.WebViewAd;
 import admob.plus.cordova.ads.AppOpen;
 import admob.plus.cordova.ads.Banner;
 import admob.plus.cordova.ads.Interstitial;
@@ -46,9 +50,41 @@ public class AdMob extends CordovaPlugin implements Helper.Adapter {
     protected void pluginInitialize() {
         super.pluginInitialize();
         Log.i(TAG, "Initialize plugin");
-
-        helper = new Helper(this);
         ExecuteContext.plugin = this;
+        this.cordova.getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                boolean adMobPlusWebViewAd = preferences.getBoolean("AdMobPlusWebViewAd", false);
+                if(adMobPlusWebViewAd) {
+                    WebView webView = (WebView) ExecuteContext.plugin.webView.getView();
+                    MobileAds.registerWebView(webView);
+                    webView.reload();
+                    Log.d(TAG, "Integrated the WebView API for Ads in "+webView.getUrl()+" WebView");
+                }
+            }
+        });
+        helper = new Helper(this);
+    }
+
+    // Extracted from cordova-plugin-openblank-mobi
+    @Override
+    public boolean onOverrideUrlLoading(String url) {
+        Log.d(TAG, "onOverrideUrlLoading called with URL " + url);
+        try {
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            // Omitting the MIME type for file: URLs causes "No Activity found to handle Intent".
+            // Adding the MIME type to http: URLs causes them to not be handled by the downloader.
+            Uri uri = Uri.parse(url);
+            if ("http".equals(uri.getScheme()) || "https".equals(uri.getScheme())) {
+                webView.sendJavascript("cordova.InAppBrowser.open('" + url + "', '_system');");
+            } else {
+                return false;
+            }
+            return true; // true prevents navigation navigation
+        } catch (android.content.ActivityNotFoundException e) {
+            Log.d(TAG, "onOverrideUrlLoading: Error loading url " + url + ":" + e.toString());
+            return false;
+        }
     }
 
     @Override
@@ -63,7 +99,7 @@ public class AdMob extends CordovaPlugin implements Helper.Adapter {
                 MobileAds.initialize(cordova.getActivity(), status -> {
                     helper.configForTestLab();
                     callbackContext.success(new JSONObject(new HashMap<String, Object>() {{
-                        put("version", MobileAds.getVersionString());
+                        put("version", MobileAds.getVersion());
                     }}));
                 });
                 break;
@@ -78,6 +114,9 @@ public class AdMob extends CordovaPlugin implements Helper.Adapter {
                 } else {
                     GenericAd ad = null;
                     switch (adClass) {
+                        case "WebViewAd":
+                            ad = new WebViewAd(ctx);
+                            break;
                         case "AppOpenAd":
                             ad = new AppOpen(ctx);
                             break;

@@ -1,3 +1,4 @@
+import WebViewAd from './webview'
 import AppOpenAd from './app-open'
 import BannerAd, { BannerAdOptions } from './banner'
 import InterstitialAd from './interstitial'
@@ -22,6 +23,7 @@ import {
 
 export * from './api'
 export {
+  WebViewAd,
   AppOpenAd,
   BannerAd,
   BannerAdOptions,
@@ -36,6 +38,7 @@ export {
 }
 
 export class AdMob {
+  public readonly WebViewAd = WebViewAd
   public readonly AppOpenAd = AppOpenAd
   public readonly BannerAd = BannerAd
   public readonly InterstitialAd = InterstitialAd
