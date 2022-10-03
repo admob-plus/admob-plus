@@ -11,6 +11,8 @@ import com.google.android.gms.ads.MobileAds;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.CordovaWebView;
+import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -47,23 +49,29 @@ public class AdMob extends CordovaPlugin implements Helper.Adapter {
     }
 
     @Override
-    protected void pluginInitialize() {
-        super.pluginInitialize();
-        Log.i(TAG, "Initialize plugin");
-        ExecuteContext.plugin = this;
+    public void initialize(CordovaInterface cordova, CordovaWebView cordovaWebView) {
+        super.initialize(cordova, cordovaWebView);
         this.cordova.getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 boolean adMobPlusWebViewAd = preferences.getBoolean("AdMobPlusWebViewAd", false);
                 if(adMobPlusWebViewAd) {
-                    WebView webView = (WebView) ExecuteContext.plugin.webView.getView();
+                    WebView webView = (WebView) cordovaWebView.getView();
                     MobileAds.registerWebView(webView);
                     webView.reload();
                     Log.d(TAG, "Integrated the WebView API for Ads in "+webView.getUrl()+" WebView");
                 }
             }
         });
+    }
+
+    @Override
+    protected void pluginInitialize() {
+        super.pluginInitialize();
+        Log.i(TAG, "Initialize plugin");
+
         helper = new Helper(this);
+        ExecuteContext.plugin = this;
     }
 
     // Extracted from cordova-plugin-openblank-mobi
