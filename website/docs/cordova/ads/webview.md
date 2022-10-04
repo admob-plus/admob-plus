@@ -57,6 +57,19 @@ document.addEventListener('deviceready', async () => {
 }, false)
 ```
 
+## Ad Slot
+
+AdSense ad unit id, AdSense/WebView supported ad units are `Banner`, `Native`, `Interstitial` and `Rewarded`, although AdSense supports `Interstitial` and `Rewarded`, it is preferable to use the native AdMob ones.
+
+See also: [Ad units, ad formats, & ad types](https://support.google.com/admob/answer/6128738)
+
+```js
+webViewAd.addAd({
+  element: document.querySelector('.yourAddElement'),
+  slot: '000000000', // Ad slot id, supported ads https://support.google.com/admob/answer/6128738
+});
+```
+
 ## Ad Format
 
 By default, banner ad is displayed at the `auto` ad format, which enables the auto-sizing behavior for the responsive ad unit.
