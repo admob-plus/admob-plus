@@ -1,0 +1,93 @@
+---
+title: WebView Ad
+sidebar_label: WebView
+---
+
+WebView Ad is the integration of [WebView API for Ads](https://developers.google.com/admob/android/webview) in the Cordova WebView, with this ads you can show AdSense ads in your app.
+
+## AdSense
+
+In order to use these ads you need to have an active [AdSense](https://www.google.com/adsense/start/) account, content in the WebView is subject to the same [content policy requirement](https://support.google.com/publisherpolicies/answer/11112688) as when it is in a browser.
+
+See also:
+
+https://support.google.com/admob/answer/48182#trs
+https://support.google.com/publisherpolicies/answer/11112688
+
+## Getting Started
+
+Before you can display ads in the WebView, you'll need to do some preliminary steps.
+
+### Preferences in config.xml
+
+Enable the WebView API for Ads by adding `AdMobPlusWebViewAd` in `config.xml`, this option causes the WebView to be registered with the AdMob SDK.
+
+It is also necessary to add your AdSense domain as `Hostname` of the CordovaWebView.
+
+**Warning:** If you use localStorage to storage data, please note that the previously data will not be accessible when you change the hostname.
+
+```xml
+<preference name="Scheme" value="https" />
+<preference name="Hostname" value="example.com" />
+<preference name="AdMobPlusWebViewAd" value="true" />
+```
+
+### Content-Security-Policy in index.html
+
+If you have a strict CSP on your app, you will need to add Google/AdSense domains to your CSP.
+
+If you see any missing or extra domains, you can open a pull request or a issue in the repo.
+
+``` bash
+https://2mdn.net https://google.com https://google.ca https://google.co.in https://google.co.kr https://google.co.uk https://google.co.za https://google.com.ar https://google.com.au https://google.com.br https://google.com.co https://google.com.gt https://google.com.mx https://google.com.pe https://google.com.ph https://google.com.pk https://google.com.tr https://google.com.tw https://google.com.vn https://google.de https://google.dk https://google.es https://google.fr https://google.nl https://google.no https://google.pl https://google.ru https://google.vg https://app-measurement.com https://doubleclick.com https://doubleclick.net https://doubleclickbygoogle.com https://google-analytics.com https://googleadservices.com https://googlesyndication.com https://googletagmanager.com https://googletagservices.com https://gemius.pl https://ampproject.org https://gstatic.com https://google.ad https://google.ae https://google.com.af https://google.com.ag https://google.com.ai https://google.al https://google.co.ao https://google.as https://google.at https://google.az https://google.com.bd https://google.be https://google.bf https://google.bg https://google.com.bh https://google.bi https://google.bj https://google.com.bn https://google.com.bo https://google.bs https://google.bt https://google.co.bw https://google.com.bz https://google.cd https://google.cf https://google.cg https://google.ch https://google.ci https://google.co.ck https://google.cl https://google.cm https://google.co.cr https://google.com.cu https://google.cv https://google.com.cy https://google.cz https://google.dj https://google.dm https://google.dz https://google.com.ec https://google.ee https://google.com.eg https://google.com.et https://google.fi https://google.com.fj https://google.fm https://google.ga https://google.ge https://google.gg https://google.com.gh https://google.com.gi https://google.gl https://google.gm https://google.gr https://google.gy https://google.com.hk https://google.hn https://google.hr https://google.ht https://google.hu https://google.co.id https://google.ie https://google.co.il https://google.im https://google.iq https://google.is https://google.it https://google.je https://google.com.jm https://google.jo https://google.co.jp https://google.co.ke https://google.com.kh https://google.ki https://google.kg https://google.com.kw https://google.kz https://google.la https://google.com.lb https://google.li https://google.lk https://google.co.ls https://google.lt https://google.lu https://google.lv https://google.com.ly https://google.md https://google.me https://google.mg https://google.mk https://google.ml https://google.com.mm https://google.mn https://google.ms https://google.com.mt https://google.mu https://google.mv https://google.mw https://google.com.my https://google.co.mz https://google.com.na https://google.com.ng https://google.com.ni https://google.ne https://google.com.np https://google.nr https://google.nu https://google.co.nz https://google.com.om https://google.com.pa https://google.com.pg https://google.pn https://google.com.pr https://google.ps https://google.pt https://google.com.py https://google.com.qa https://google.ro https://google.rw https://google.com.sa https://google.com.sb https://google.sc https://google.se https://google.com.sg https://google.sh https://google.si https://google.sk https://google.sn https://google.so https://google.sm https://google.sr https://google.st https://google.com.sv https://google.td https://google.tg https://google.co.th https://google.com.tj https://google.tl https://google.tm https://google.tn https://google.to https://google.tt https://google.co.tz https://google.com.ua https://google.co.ug https://google.com.uy https://google.co.uz https://google.com.vc https://google.co.ve https://google.co.vi https://google.vu https://google.ws https://google.rs https://google.co.zm https://google.co.zw https://google.cat https://googleapis.com https://*.2mdn.net https://*.google.com https://*.google.ca https://*.google.co.in https://*.google.co.kr https://*.google.co.uk https://*.google.co.za https://*.google.com.ar https://*.google.com.au https://*.google.com.br https://*.google.com.co https://*.google.com.gt https://*.google.com.mx https://*.google.com.pe https://*.google.com.ph https://*.google.com.pk https://*.google.com.tr https://*.google.com.tw https://*.google.com.vn https://*.google.de https://*.google.dk https://*.google.es https://*.google.fr https://*.google.nl https://*.google.no https://*.google.pl https://*.google.ru https://*.google.vg https://*.app-measurement.com https://*.doubleclick.com https://*.doubleclick.net https://*.doubleclickbygoogle.com https://*.google-analytics.com https://*.googleadservices.com https://*.googlesyndication.com https://*.googletagmanager.com https://*.googletagservices.com https://*.gemius.pl https://*.ampproject.org https://*.gstatic.com https://*.google.ad https://*.google.ae https://*.google.com.af https://*.google.com.ag https://*.google.com.ai https://*.google.al https://*.google.co.ao https://*.google.as https://*.google.at https://*.google.az https://*.google.com.bd https://*.google.be https://*.google.bf https://*.google.bg https://*.google.com.bh https://*.google.bi https://*.google.bj https://*.google.com.bn https://*.google.com.bo https://*.google.bs https://*.google.bt https://*.google.co.bw https://*.google.com.bz https://*.google.cd https://*.google.cf https://*.google.cg https://*.google.ch https://*.google.ci https://*.google.co.ck https://*.google.cl https://*.google.cm https://*.google.co.cr https://*.google.com.cu https://*.google.cv https://*.google.com.cy https://*.google.cz https://*.google.dj https://*.google.dm https://*.google.dz https://*.google.com.ec https://*.google.ee https://*.google.com.eg https://*.google.com.et https://*.google.fi https://*.google.com.fj https://*.google.fm https://*.google.ga https://*.google.ge https://*.google.gg https://*.google.com.gh https://*.google.com.gi https://*.google.gl https://*.google.gm https://*.google.gr https://*.google.gy https://*.google.com.hk https://*.google.hn https://*.google.hr https://*.google.ht https://*.google.hu https://*.google.co.id https://*.google.ie https://*.google.co.il https://*.google.im https://*.google.iq https://*.google.is https://*.google.it https://*.google.je https://*.google.com.jm https://*.google.jo https://*.google.co.jp https://*.google.co.ke https://*.google.com.kh https://*.google.ki https://*.google.kg https://*.google.com.kw https://*.google.kz https://*.google.la https://*.google.com.lb https://*.google.li https://*.google.lk https://*.google.co.ls https://*.google.lt https://*.google.lu https://*.google.lv https://*.google.com.ly https://*.google.md https://*.google.me https://*.google.mg https://*.google.mk https://*.google.ml https://*.google.com.mm https://*.google.mn https://*.google.ms https://*.google.com.mt https://*.google.mu https://*.google.mv https://*.google.mw https://*.google.com.my https://*.google.co.mz https://*.google.com.na https://*.google.com.ng https://*.google.com.ni https://*.google.ne https://*.google.com.np https://*.google.nr https://*.google.nu https://*.google.co.nz https://*.google.com.om https://*.google.com.pa https://*.google.com.pg https://*.google.pn https://*.google.com.pr https://*.google.ps https://*.google.pt https://*.google.com.py https://*.google.com.qa https://*.google.ro https://*.google.rw https://*.google.com.sa https://*.google.com.sb https://*.google.sc https://*.google.se https://*.google.com.sg https://*.google.sh https://*.google.si https://*.google.sk https://*.google.sn https://*.google.so https://*.google.sm https://*.google.sr https://*.google.st https://*.google.com.sv https://*.google.td https://*.google.tg https://*.google.co.th https://*.google.com.tj https://*.google.tl https://*.google.tm https://*.google.tn https://*.google.to https://*.google.tt https://*.google.co.tz https://*.google.com.ua https://*.google.co.ug https://*.google.com.uy https://*.google.co.uz https://*.google.com.vc https://*.google.co.ve https://*.google.co.vi https://*.google.vu https://*.google.ws https://*.google.rs https://*.google.co.zm https://*.google.co.zw https://*.google.cat https://*.googleapis.com
+```
+
+## Usage
+
+```js
+let webViewAd
+
+document.addEventListener('deviceready', async () => {
+  // Only call this the first time
+  const webViewAd = new admob.WebViewAd({
+    src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
+    adsense: 'ca-pub-xxx', // Your adsense account
+    npa: nonPersonalizedAds ? '1' : '',
+  });
+}, false)
+```
+
+## Ad Format
+
+By default, banner ad is displayed at the `auto` ad format, which enables the auto-sizing behavior for the responsive ad unit.
+
+However, you can set a general shape for your responsive ad unit by changing the value of ad format to one of these values: `rectangle`, `vertical`, `horizontal` or any combination of these separated by a comma, e.g. `rectangle, horizontal`.
+
+See also: [How to use responsive ad tag parameters: ad-format](https://support.google.com/adsense/answer/9183460?hl=en#zippy=%2Chorizontal-shape-example)
+
+```js
+webViewAd.addAd({
+  element: document.querySelector('.yourAddElement'),
+  slot: '000000000', // Ad slot id, supported ads https://support.google.com/admob/answer/6128738
+  format: 'rectangle, horizontal',
+});
+```
+
+## Full Width Responsive
+
+The `fullWidth` parameter determines whether your responsive ad unit expands to use the full width of the mobile device screen. Depending on how you use the `fullWidth` parameter, you can make your responsive ad unit behave in different ways.
+
+By setting `fullWidth` to `false`, the ad don't want to automatically expand to use the full width of the mobile device screen.
+
+By default set to `true`
+
+See also: [How to use responsive ad tag parameters: full-width-responsive](https://support.google.com/adsense/answer/9183460?hl=en#zippy=%2Cparameter-set-to-true-example)
+
+```js
+webViewAd.addAd({
+  element: document.querySelector('.yourAddElement'),
+  slot: '000000000', // Ad slot id, supported ads https://support.google.com/admob/answer/6128738
+  format: 'horizontal',
+  fullWidth: false,
+});
+```
