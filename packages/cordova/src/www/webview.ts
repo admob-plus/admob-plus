@@ -14,6 +14,7 @@ export default class WebViewAd extends MobileAd<WebViewAdOptions> {
   private _loaded = false
   private _src = ''
   private _adsense = ''
+  private _originalHref = (<any>window).location.href || ''
 
   constructor(opts: WebViewAdOptions) {
     opts.adUnitId = '';
@@ -73,7 +74,7 @@ export default class WebViewAd extends MobileAd<WebViewAdOptions> {
     return node;
   }
 
-  private nodeScriptClone(node){
+  private nodeScriptClone(node) {
     let script  = document.createElement('script');
     script.text = node.innerHTML;
     let attrs = node.attributes;
@@ -85,6 +86,36 @@ export default class WebViewAd extends MobileAd<WebViewAdOptions> {
 
   private isNodeScript(node) {
     return node.tagName === 'SCRIPT';
+  }
+
+  private historyReplaceState(url: string) {
+    if(!this._originalHref) {
+      this._originalHref = (<any>window).location.href
+    }
+    if(this._loaded) {
+      (<any>window).history.replaceState(null, '', url)
+    }
+  }
+
+  private historySetPage(page: string, parameters = {}) {
+    let _parameters: string[] = []
+    for(let name in parameters) {
+      _parameters.push(name+'='+encodeURI(parameters[name]))
+    }
+    let url = page+(_parameters.length > 0 ? '?'+_parameters.join('&') : '')
+    this.historyReplaceState(url)
+  }
+
+  private historyOriginalHref() {
+    return this._originalHref || (<any>window).location.href
+  }
+
+  private historyCurrentHref() {
+    return (<any>window).location.href
+  }
+
+  private historyRestoreOriginalHref() {
+    this.historyReplaceState(this.historyOriginalHref());
   }
 
   public async show() {

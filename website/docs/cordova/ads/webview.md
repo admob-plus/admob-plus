@@ -49,7 +49,7 @@ let webViewAd
 
 document.addEventListener('deviceready', async () => {
   // Only call this the first time
-  const webViewAd = new admob.WebViewAd({
+  webViewAd = new admob.WebViewAd({
     src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
     adsense: 'ca-pub-xxx', // Your adsense account
     npa: nonPersonalizedAds ? '1' : '',
@@ -57,7 +57,7 @@ document.addEventListener('deviceready', async () => {
 }, false)
 ```
 
-## Ad Slot
+### Ad Slot
 
 AdSense ad unit id, AdSense/WebView supported ad units are `Banner`, `Native`, `Interstitial` and `Rewarded`, although AdSense supports `Interstitial` and `Rewarded`, it is preferable to use the native AdMob ones.
 
@@ -70,7 +70,7 @@ webViewAd.addAd({
 });
 ```
 
-## Ad Format
+### Ad Format
 
 By default, banner ad is displayed at the `auto` ad format, which enables the auto-sizing behavior for the responsive ad unit.
 
@@ -86,7 +86,7 @@ webViewAd.addAd({
 });
 ```
 
-## Full Width Responsive
+### Full Width Responsive
 
 The `fullWidth` parameter determines whether your responsive ad unit expands to use the full width of the mobile device screen. Depending on how you use the `fullWidth` parameter, you can make your responsive ad unit behave in different ways.
 
@@ -103,4 +103,48 @@ webViewAd.addAd({
   format: 'horizontal',
   fullWidth: false,
 });
+```
+
+## History
+
+AdSense applies policy restrictions at the page or account level, to prevent page level restrictions from affecting your entire app, it is recommended that you change the current WebView url depending on the open page in your app, if possible, It is recommended that these urls are the same as those used in the web version of your app.
+
+### Set Page
+
+The simple way to replace the url, the following code generates a url something similar to `https://example.com/article.html?id=754`
+
+```js
+webViewAd.historySetPage('article.html', {id: 754});
+```
+
+### Replace State
+
+With this you can replace the current url in a more personalized way, is the same as [`History.replaceState(stateObj, unused, url)`](https://developer.mozilla.org/en-US/docs/Web/API/History/replaceState) without `stateObj` and `unused`, the following code generates a url something similar to `https://example.com/name-of-the-article-745`
+
+```js
+webViewAd.historyReplaceState('name-of-the-article-745');
+```
+
+### Original Href
+
+Return the original href of the WebView, something similar to `https://example.com/index.html`
+
+```js
+let originalHref = webViewAd.historyOriginalHref();
+```
+
+### Current Href
+
+Return the current href of the WebView, is the same as `window.location.href`
+
+```js
+let currentHref = webViewAd.historyCurrentHref();
+```
+
+### Restore Original Href
+
+This restores the original href of the WebView.
+
+```js
+webViewAd.historyRestoreOriginalHref();
 ```
