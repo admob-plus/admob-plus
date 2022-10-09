@@ -104,6 +104,7 @@ export default class WebViewAd extends MobileAd<WebViewAdOptions> {
     }
     let url = page+(_parameters.length > 0 ? '?'+_parameters.join('&') : '')
     this.historyReplaceState(url)
+    return url
   }
 
   private historyOriginalHref() {
