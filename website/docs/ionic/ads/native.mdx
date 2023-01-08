@@ -27,7 +27,7 @@ import { Platform } from '@ionic/angular'
 export class HomePage {
   constructor(private platform: Platform, private admob: AdMob) {
     this.platform.ready().then(async () => {
-      const banner = new this.admob.NativeAd({
+      const ad = new this.admob.NativeAd({
         adUnitId: 'ca-app-pub-xxx/yyy',
       })
 
