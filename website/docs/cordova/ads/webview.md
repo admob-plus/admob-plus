@@ -109,6 +109,10 @@ webViewAd.addAd({
 
 AdSense applies policy restrictions at the page or account level, to prevent page level restrictions from affecting your entire app, it is recommended that you change the current WebView url depending on the open page in your app, if possible, It is recommended that these urls are the same as those used in the web version of your app.
 
+All URLs set with `historySetPage` and `historyReplaceState` (Including `index.html`) have to be accessible in the web version of your app (And they also must have the AdSense code applied and show the same ads as the app), this is necessary for the AdSense bot to be able to access them, if they are not accessible you will receive a warning/policy violation in the Policy Center, because of this, it is recommended to only set the urls on the pages where you want to display ads.
+
+It is also recommended that your app be prepared to stop displaying ads on a particular page (And stop use `historySetPage/historyReplaceState` in this), in case you receive a policy violation on that page.
+
 ### Set Page
 
 The simple way to replace the url, the following code generates a url something similar to `https://example.com/article.html?id=754`
