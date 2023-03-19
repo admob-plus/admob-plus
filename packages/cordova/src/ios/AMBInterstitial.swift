@@ -51,7 +51,7 @@ class AMBInterstitial: AMBAdBase, GADFullScreenContentDelegate {
         self.emit(AMBEvents.interstitialShowFail, error)
     }
 
-    func adDidPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+    func adWillPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
         self.emit(AMBEvents.adShow)
         self.emit(AMBEvents.interstitialShow)
     }
