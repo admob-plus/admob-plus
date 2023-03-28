@@ -5,10 +5,10 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [1.29.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.27.0...admob-plus-cordova@1.28.0) (2022-08-14)
 
-
 ### Features
 
-* **Admob SDK:** upgraded to 9.12.0
+* **Admob SDK:** upgraded to 10.1.0
+* **Play Services:** upgraded to 21.5.0
 
 
 

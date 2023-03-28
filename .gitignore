@@ -10,3 +10,4 @@ examples/*/plugins
 website/translated_docs
 website/build/
 website/i18n/*
+/.idea/
