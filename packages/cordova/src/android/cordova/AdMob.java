@@ -36,7 +36,6 @@ import admob.plus.core.Helper;
 
 import static admob.plus.core.Helper.ads;
 
-
 public class AdMob extends CordovaPlugin implements Helper.Adapter {
     public static final String NATIVE_VIEW_DEFAULT = Native.VIEW_DEFAULT_KEY;
     private static final String TAG = "AdMobPlus";
@@ -83,8 +82,11 @@ public class AdMob extends CordovaPlugin implements Helper.Adapter {
             // Omitting the MIME type for file: URLs causes "No Activity found to handle Intent".
             // Adding the MIME type to http: URLs causes them to not be handled by the downloader.
             Uri uri = Uri.parse(url);
+            intent.setData(uri);
             if ("http".equals(uri.getScheme()) || "https".equals(uri.getScheme())) {
-                webView.sendJavascript("cordova.InAppBrowser.open('" + url + "', '_system');");
+                cordova.getActivity().startActivity(intent);
+                Log.d(TAG, "Open Iframe URL to browser " + url);
+                //webView.sendJavascript("cordova.InAppBrowser.open('" + url + "', '_system');");
             } else {
                 return false;
             }
