@@ -4,7 +4,7 @@
 import GoogleMobileAds
 
 @objc(AMBPlugin)
-class AMBPlugin: CDVPlugin {
+class AMBPlugin: CDVPlugin, WKNavigationDelegate {
     static func registerNativeAdViewProviders(_ providers: [String: AMBNativeAdViewProvider]) {
         AMBNativeAd.providers.merge(providers) {(_, new) in new}
     }
@@ -20,10 +20,30 @@ class AMBPlugin: CDVPlugin {
 
         AMBContext.plugin = self
 
+        if let x = self.commandDelegate.settings["AdMobPlusWebViewAd".lowercased()] as? String,
+           x == "true" {
+            let webView = self.webViewEngine.engineWebView as! WKWebView
+            GADMobileAds.sharedInstance().register(webView)
+            // webView.reload()
+
+            webView.navigationDelegate = self
+        }
+
         if let x = self.commandDelegate.settings["disableSDKCrashReporting".lowercased()] as? String,
            x == "true" {
             GADMobileAds.sharedInstance().disableSDKCrashReporting()
         }
+    }
+
+    @objc func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        if navigationAction.navigationType == .linkActivated {
+            if let url = navigationAction.request.url, url.scheme == "http" || url.scheme == "https" {
+                UIApplication.shared.open(url)
+                decisionHandler(.cancel)
+                return
+            }
+        }
+        decisionHandler(.allow)
     }
 
     @objc func ready(_ command: CDVInvokedUrlCommand) {
