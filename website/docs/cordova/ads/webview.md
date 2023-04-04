@@ -164,6 +164,8 @@ webViewAd.historyRestoreOriginalHref();
 Sometimes AdSense may not load any ads in the element, in these cases AdSense changes the ad height to 0, but if you have any margin/padding on the ad element or his parents, these will still take some space, you can use a ResizeObserver to detect this and remove margin/padding.
 
 ```js
+var webViewResizeObserver = false;
+
 // Only first time
 if(typeof ResizeObserver !== 'undefined') {
   if(!webViewResizeObserver) {

@@ -70,7 +70,7 @@
         "APP_ID_ANDROID": "ca-app-pub-3940256099942544~3347511713",
         "APP_ID_IOS": "ca-app-pub-3940256099942544~1458002511",
         "USAGE": "This identifier will be used to deliver personalized ads to you.",
-        "PLAY_SERVICES_VERSION": "21.5.0"
+        "PLAY_SERVICES_VERSION": "22.0.0"
       },
       "admob-plus-cordova-native": {},
       "cordova-plugin-device": {},
