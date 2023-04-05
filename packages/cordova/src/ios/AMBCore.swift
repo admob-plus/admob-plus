@@ -14,7 +14,7 @@ extension AMBHelperAdapter {
 }
 
 class AMBHelper {
-    static let window = UIApplication.shared.keyWindow!
+    static let window = UIApplication.shared.windows.first(where: { $0.isKeyWindow })!
 
     static var topAnchor: NSLayoutYAxisAnchor {
         if #available(iOS 11.0, *) {
