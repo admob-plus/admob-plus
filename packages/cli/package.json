@@ -6,7 +6,7 @@
   "type": "module",
   "dependencies": {
     "@frat/envinfo": "^7.10.1",
-    "admob-plus-cordova": "latest",
+    "community-admob-plus-cordova": "latest",
     "cli-table3": "^0.6.2",
     "clipboardy": "^3.0.0",
     "cordova-common": "^4.0.2",

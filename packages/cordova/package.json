@@ -1,5 +1,5 @@
 {
-  "name": "admob-plus-cordova",
+  "name": "community-admob-plus-cordova",
   "version": "1.29.0",
   "description": "Trustable Google AdMob Cordova Plugin",
   "main": "lib/index.js",
@@ -55,7 +55,7 @@
     "typescript"
   ],
   "cordova": {
-    "id": "admob-plus-cordova",
+    "id": "community-admob-plus-cordova",
     "platforms": [
       "android",
       "ios"

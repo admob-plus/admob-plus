@@ -8,7 +8,7 @@
     "//prepare": "example prepare"
   },
   "dependencies": {
-    "admob-plus-cordova": "file:../../packages/cordova",
+    "community-admob-plus-cordova": "file:../../packages/cordova",
     "cordova-android": "^11.0.0",
     "cordova-ios": "^6.2.0",
     "cordova-plugin-consent": "file:../../packages/cordova-consent"
@@ -24,7 +24,7 @@
       "ios"
     ],
     "plugins": {
-      "admob-plus-cordova": {
+      "community-admob-plus-cordova": {
         "APP_ID_ANDROID": "ca-app-pub-3940256099942544~3347511713",
         "APP_ID_IOS": "ca-app-pub-3940256099942544~1458002511"
       },

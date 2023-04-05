@@ -12,7 +12,7 @@
     "test": "tsc --noEmit"
   },
   "dependencies": {
-    "admob-plus-cordova": "^1.28.0"
+    "community-admob-plus-cordova": "^1.29.0"
   },
   "devDependencies": {
     "@admob-plus-internal/rollup-config": "file:../../internal/rollup-config",

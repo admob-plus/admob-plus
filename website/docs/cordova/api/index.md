@@ -1,6 +1,6 @@
 ---
 id: "index"
-title: "admob-plus-cordova"
+title: "community-admob-plus-cordova"
 sidebar_label: "Exports"
 sidebar_position: 0.5
 custom_edit_url: null

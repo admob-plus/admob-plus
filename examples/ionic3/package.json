@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@ionic/app-scripts": "3.2.4",
-    "admob-plus-cordova": "*",
+    "community-admob-plus-cordova": "*",
     "cordova": "^9.0.0",
     "cordova-plugin-device": "2.1.0",
     "cordova-plugin-ionic-keyboard": "^2.0.5",
@@ -49,7 +49,7 @@
       "android"
     ],
     "plugins": {
-      "admob-plus-cordova": {
+      "community-admob-plus-cordova": {
         "APP_ID_ANDROID": "ca-app-pub-3940256099942544~3347511713",
         "APP_ID_IOS": "ca-app-pub-3940256099942544~1458002511",
         "DISABLESDKCRASHREPORTING": "false",
