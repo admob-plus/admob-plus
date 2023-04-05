@@ -2,6 +2,7 @@
     import AppTrackingTransparency
 #endif
 import GoogleMobileAds
+import os.log
 
 @objc(AMBPlugin)
 class AMBPlugin: CDVPlugin, WKNavigationDelegate {
@@ -36,7 +37,7 @@ class AMBPlugin: CDVPlugin, WKNavigationDelegate {
     }
 
     @objc func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        if navigationAction.navigationType == .linkActivated {
+        if navigationAction.sourceFrame == nil {
             if let url = navigationAction.request.url, url.scheme == "http" || url.scheme == "https" {
                 UIApplication.shared.open(url)
                 decisionHandler(.cancel)
