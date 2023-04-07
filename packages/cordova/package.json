@@ -29,8 +29,8 @@
   },
   "author": "Ratson",
   "license": "MIT",
-  "repository": "admob-plus/admob-plus",
-  "homepage": "https://admob-plus.github.io/docs/cordova",
+  "repository": "EYALIN/community-admob-plus/tree/master/packages/cordova",
+  "homepage": "https://github.com/EYALIN/community-admob-plus/tree/master/packages/cordova",
   "funding": "https://admob-plus.github.io/funding",
   "files": [
     "*.ts",
