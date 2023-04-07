@@ -63,7 +63,7 @@ public class AdMob extends CordovaPlugin implements Helper.Adapter {
                 MobileAds.initialize(cordova.getActivity(), status -> {
                     helper.configForTestLab();
                     callbackContext.success(new JSONObject(new HashMap<String, Object>() {{
-                        put("version", MobileAds.getVersionString());
+                        put("version", MobileAds.getVersion());
                     }}));
                 });
                 break;
