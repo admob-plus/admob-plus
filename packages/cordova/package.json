@@ -1,6 +1,6 @@
 {
-  "name": "admob-plus-cordova",
-  "version": "1.29.0",
+  "name": "community-admob-plus-cordova",
+  "version": "1.29.1",
   "description": "Trustable Google AdMob Cordova Plugin",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -29,8 +29,8 @@
   },
   "author": "Ratson",
   "license": "MIT",
-  "repository": "admob-plus/admob-plus",
-  "homepage": "https://admob-plus.github.io/docs/cordova",
+  "repository": "EYALIN/community-admob-plus/tree/master/packages/cordova",
+  "homepage": "https://github.com/EYALIN/community-admob-plus/tree/master/packages/cordova",
   "funding": "https://admob-plus.github.io/funding",
   "files": [
     "*.ts",
@@ -55,7 +55,7 @@
     "typescript"
   ],
   "cordova": {
-    "id": "admob-plus-cordova",
+    "id": "community-admob-plus-cordova",
     "platforms": [
       "android",
       "ios"

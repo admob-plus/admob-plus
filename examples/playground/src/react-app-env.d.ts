@@ -1,2 +1,2 @@
 /// <reference types="react-scripts" />
-/// <reference types="admob-plus-cordova" />
+/// <reference types="community-admob-plus-cordova" />
