@@ -30,7 +30,7 @@ You can find the documentation [on the website](https://admob-plus.github.io/doc
 
 ## Sponsors
 
-[This project needs sponsors!](https://admob-plus.github.io/funding)
+[This project needs sponsors!](https://github.com/sponsors/EYALIN)
 
 ## Disclaimer
 
