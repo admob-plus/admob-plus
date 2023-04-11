@@ -1,9 +1,13 @@
+#### This is a fork of the original plugin admob-plus
+
 <h1 align="center">
   <p align="center">AdMob Plus</p>
   <a href="https://admob-plus.github.io">
     <img alt="AdMob Plus" src="https://admob-plus.github.io/img/logo.png" width="320px">
   </a>
 </h1>
+
+
 
 [**AdMob Plus**](https://admob-plus.github.io) is the successor of [cordova-plugin-admob-free](https://github.com/ratson/cordova-plugin-admob-free), provides a clean API and is built with modern tools.
 
