@@ -1,12 +1,6 @@
-[![NPM version](https://img.shields.io/npm/v/admob-plus-cordova.svg)](https://npmjs.org/package/admob-plus-cordova)
-[![GitHub last commit](https://img.shields.io/github/last-commit/admob-plus/admob-plus)](https://github.com/admob-plus/admob-plus)
-![Dependency status](https://img.shields.io/librariesio/release/npm/admob-plus-cordova)
-![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/npm/admob-plus-cordova)
-![NPM license](https://img.shields.io/npm/l/admob-plus-cordova)
-<!--
-![NPM downloads per month](https://img.shields.io/npm/dm/admob-plus-cordova.svg)
-![NPM downloads total](https://img.shields.io/npm/dt/admob-plus-cordova.svg)
--->
+[![NPM version](https://img.shields.io/npm/v/community-admob-plus-cordova)](https://www.npmjs.com/package/community-admob-plus-cordova)
+[![Downloads](https://img.shields.io/npm/dm/community-admob-plus-cordova)](https://www.npmjs.com/package/community-admob-plus-cordova)
+
 #### This is a fork of the original plugin admob-plus-cordova
 # [AdMob Plus Cordova](https://admob-plus.github.io)
 
@@ -27,7 +21,7 @@ You can find the documentation [on the website](https://admob-plus.github.io/doc
 
 - Star this repository
 - Open issue for feature requests
-- [Sponsor this project](https://admob-plus.github.io/funding)
+- [Sponsor this project](https://github.com/sponsors/EYALIN)
 
 ## License
 
