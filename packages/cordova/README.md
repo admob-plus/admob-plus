@@ -7,9 +7,9 @@
 ![NPM downloads per month](https://img.shields.io/npm/dm/admob-plus-cordova.svg)
 ![NPM downloads total](https://img.shields.io/npm/dt/admob-plus-cordova.svg)
 -->
-
-# [AdMob Plus Cordova](https://admob-plus.github.io)
 ###This is a fork of the original plugin admob-plus-cordova
+# [AdMob Plus Cordova](https://admob-plus.github.io)
+
 AdMob Plus Cordova is the successor of [cordova-plugin-admob-free](https://github.com/ratson/cordova-plugin-admob-free), which provides a cleaner API and build with modern tools.
 
 ## WebView API for Ads Info
