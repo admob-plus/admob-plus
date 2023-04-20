@@ -32,6 +32,100 @@ It is also necessary to add your AdSense domain as `Hostname` of the CordovaWebV
 <preference name="AdMobPlusWebViewAd" value="true" />
 ```
 
+### Performance issue (Only Android)
+
+In order for the ads to show, the WebView needs to be registered with the AdMob SDK using `MobileAds.registerWebView(webView)`, this has to be done before the URL is set to the WebView (https://developers.google.com/admob/android/webview#register_the_webview), for my part, I have not managed to do it before cordova does it, so for it to work I had to reload the WebView with `WebView.reload()`, this affects the time of loading of the app, but I don't know if it is appreciable, it is possible to avoid this by registering the WebView in the `MainActivity.java`, how to do it below.
+
+Any solution to this withoud changing the `MainActivity.java` is welcome.
+
+<details><summary>Way that avoid reloadin the WebView</summary>
+<p>
+
+Create a **MainActivity.java** file.
+``` java
+/*
+       Licensed to the Apache Software Foundation (ASF) under one
+       or more contributor license agreements.  See the NOTICE file
+       distributed with this work for additional information
+       regarding copyright ownership.  The ASF licenses this file
+       to you under the Apache License, Version 2.0 (the
+       "License"); you may not use this file except in compliance
+       with the License.  You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+       Unless required by applicable law or agreed to in writing,
+       software distributed under the License is distributed on an
+       "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+       KIND, either express or implied.  See the License for the
+       specific language governing permissions and limitations
+       under the License.
+ */
+
+package app.package.name;
+
+import android.os.Bundle;
+import android.util.Log;
+import android.webkit.WebView;
+
+import com.google.android.gms.ads.MobileAds;
+
+import org.apache.cordova.*;
+
+public class MainActivity extends CordovaActivity
+{
+    @Override
+    public void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+
+        // enable Cordova apps to be started in the background
+        Bundle extras = getIntent().getExtras();
+        if (extras != null && extras.getBoolean("cdvStartInBackground", false)) {
+            moveTaskToBack(true);
+        }
+
+        loadUrl(launchUrl);
+
+        final CordovaActivity me = this;
+
+        me.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                WebView webView = (WebView) appView.getView();
+                MobileAds.registerWebView(webView);
+                Log.d("AdMobPlus", "Integrated the WebView API for Ads in "+webView.getUrl()+" WebView from MainActivity");
+            }
+        });
+    }
+}
+
+```
+
+Change `app.package.name` to you app name.
+
+Remove this from `config.xml` or change to `false` (If you also use the WebView API for Ads on iOS, move it to `<platform  name="ios">` and set to `true`)
+```xml
+<preference name="AdMobPlusWebViewAd" value="true" />
+```
+and add this hook:
+```xml
+<hook type="before_build" src="update_main_activity.sh" />
+```
+
+Create a **update_main_activity.sh** file.
+
+```bash
+#!/bin/bash
+cp MainActivity.java platforms/android/app/src/main/java/app/package/name/
+```
+Change the `app/package/name/` to you app name.
+
+Now `registerWebView` works without reloading the webview.
+
+</p>
+</details>
+  
 ### Content-Security-Policy in index.html
 
 If you have a strict CSP on your app, you will need to add Google/AdSense domains to your CSP.
