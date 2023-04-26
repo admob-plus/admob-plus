@@ -1,6 +1,6 @@
 {
   "name": "community-admob-plus-cordova",
-  "version": "1.29.1",
+  "version": "1.29.3",
   "description": "Trustable Google AdMob Cordova Plugin",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -31,7 +31,7 @@
   "license": "MIT",
   "repository": "EYALIN/community-admob-plus/tree/master/packages/cordova",
   "homepage": "https://github.com/EYALIN/community-admob-plus/tree/master/packages/cordova",
-  "funding": "https://admob-plus.github.io/funding",
+  "funding": "https://github.com/sponsors/EYALIN",
   "files": [
     "*.ts",
     "*.md",
