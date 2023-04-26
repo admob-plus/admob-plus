@@ -32,6 +32,12 @@ It is also necessary to add your AdSense domain as `Hostname` of the CordovaWebV
 <preference name="AdMobPlusWebViewAd" value="true" />
 ```
 
+If ads are not displayed correctly (Probably on iOS), you may also need to add the following config to your `config.xml`
+
+```xml
+<allow-navigation href="*" />
+```
+
 ### Performance issue (Only Android)
 
 In order for the ads to show, the WebView needs to be registered with the AdMob SDK using `MobileAds.registerWebView(webView)`, this has to be done before the URL is set to the WebView (https://developers.google.com/admob/android/webview#register_the_webview), for my part, I have not managed to do it before cordova does it, so for it to work I had to reload the WebView with `WebView.reload()`, this affects the time of loading of the app, but I don't know if it is appreciable, it is possible to avoid this by registering the WebView in the `MainActivity.java`, how to do it below.
