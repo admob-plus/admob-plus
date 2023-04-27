@@ -5,7 +5,7 @@
   "scripts": {
     "prepare": "nx build .",
     "prepublishOnly": "nx clean .",
-    "clean": "del '*.tsbuildinfo' 'packages/*/*.tsbuildinfo'",
+    "clean": "",
     "test": "nx test .",
     "fmt": "cordova-plus fmt examples/{cordova,cordova-consent,ionic-angular,ionic3,playground}",
     "lint": "gts lint",

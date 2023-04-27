@@ -6,7 +6,7 @@
     "@chakra-ui/react": "^1.6.8",
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
-    "admob-plus-cordova": "file:../../packages/cordova",
+    "community-admob-plus-cordova": "file:../../packages/cordova",
     "framer-motion": "^4.1.17",
     "lodash": "^4.17.21",
     "react": "^17.0.2",
@@ -74,7 +74,7 @@
       "browser"
     ],
     "plugins": {
-      "admob-plus-cordova": {
+      "community-admob-plus-cordova": {
         "APP_ID_ANDROID": "ca-app-pub-3940256099942544~3347511713",
         "APP_ID_IOS": "ca-app-pub-3940256099942544~1458002511"
       },

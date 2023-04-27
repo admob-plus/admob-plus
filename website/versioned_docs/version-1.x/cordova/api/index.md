@@ -1,6 +1,6 @@
 ---
 id: "index"
-title: "admob-plus-cordova"
+title: "community-admob-plus-cordova"
 slug: "/cordova/api"
 sidebar_label: "Exports"
 sidebar_position: 0.5

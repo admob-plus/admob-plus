@@ -1,13 +1,7 @@
-[![NPM version](https://img.shields.io/npm/v/admob-plus-cordova-webview-api-for-ads.svg)](https://npmjs.org/package/admob-plus-cordova-webview-api-for-ads)
-[![GitHub last commit](https://img.shields.io/github/last-commit/ollm/admob-plus)](https://github.com/ollm/admob-plus)
-![Dependency status](https://img.shields.io/librariesio/release/npm/admob-plus-cordova-webview-api-for-ads)
-![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/npm/admob-plus-cordova-webview-api-for-ads)
-![NPM license](https://img.shields.io/npm/l/admob-plus-cordova-webview-api-for-ads)
-<!--
-![NPM downloads per month](https://img.shields.io/npm/dm/admob-plus-cordova-webview-api-for-ads.svg)
-![NPM downloads total](https://img.shields.io/npm/dt/admob-plus-cordova-webview-api-for-ads.svg)
--->
+[![NPM version](https://img.shields.io/npm/v/community-admob-plus-cordova)](https://www.npmjs.com/package/community-admob-plus-cordova)
+[![Downloads](https://img.shields.io/npm/dm/community-admob-plus-cordova)](https://www.npmjs.com/package/community-admob-plus-cordova)
 
+#### This is a fork of the original plugin admob-plus-cordova
 # [AdMob Plus Cordova](https://admob-plus.github.io)
 
 AdMob Plus Cordova is the successor of [cordova-plugin-admob-free](https://github.com/ratson/cordova-plugin-admob-free), which provides a cleaner API and build with modern tools.
@@ -28,7 +22,7 @@ You can find the documentation [on the website](https://admob-plus.github.io/doc
 
 - Star this repository
 - Open issue for feature requests
-- [Sponsor this project](https://admob-plus.github.io/funding)
+- [Sponsor this project](https://github.com/sponsors/EYALIN)
 
 ## License
 

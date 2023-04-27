@@ -19,7 +19,7 @@
     "@angular/router": "12.2.0",
     "@ionic-native/core": "^5.36.0",
     "@ionic/angular": "^5.8.1",
-    "admob-plus-cordova": "../../packages/cordova",
+    "community-admob-plus-cordova": "../../packages/cordova",
     "admob-plus-cordova-native": "../../packages/cordova-native",
     "tslib": "^2.3.1",
     "zone.js": "~0.11.7"
@@ -66,7 +66,7 @@
       "android"
     ],
     "plugins": {
-      "admob-plus-cordova": {
+      "community-admob-plus-cordova": {
         "APP_ID_ANDROID": "ca-app-pub-3940256099942544~3347511713",
         "APP_ID_IOS": "ca-app-pub-3940256099942544~1458002511",
         "USAGE": "This identifier will be used to deliver personalized ads to you.",
