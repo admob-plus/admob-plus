@@ -16,7 +16,7 @@ https://support.google.com/publisherpolicies/answer/11112688
 
 ## Getting Started
 
-Before you can display ads in the WebView, you'll need to do some preliminary steps.
+Before you can display ads in the WebView, you'll need to do some preliminary steps and have done the [Getting Started](https://admob-plus.github.io/docs/cordova) steps of the plugin.
 
 ### Preferences in config.xml
 
@@ -154,12 +154,18 @@ app://yourdomain.com app://*.yourdomain.com
 let webViewAd
 
 document.addEventListener('deviceready', async () => {
+  // Obtain user consent first
+
+  await admob.start(); // or start loading ads
+
   // Only call this the first time
   webViewAd = new admob.WebViewAd({
     src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
     adsense: 'ca-pub-xxx', // Your adsense account
     npa: nonPersonalizedAds ? '1' : '',
   });
+
+  // Load ads here
 }, false)
 ```
 
@@ -266,40 +272,39 @@ Sometimes AdSense may not load any ads in the element, in these cases AdSense ch
 ```js
 var webViewResizeObserver = false;
 
-// Only first time
-if(typeof ResizeObserver !== 'undefined') {
-  if(!webViewResizeObserver) {
-    webViewResizeObserver = new ResizeObserver(function(entries) {
-      for(let i = 0, len = entries.length; i < len; i++)
-      {
-        let entry = entries[i];
-        let element = entry.target;
+// Just once
+if(typeof ResizeObserver !== 'undefined' && !webViewResizeObserver) {
+  webViewResizeObserver = new ResizeObserver((entries) => {
+    for(let i = 0, len = entries.length; i < len; i++) {
+      let entry = entries[i];
+      let element = entry.target;
 
-        // Use if the margin/pading is owned by a parent
-        element = element.closest('.webViewParentName');
+      // Use if the margin/pading is owned by a parent
+      element = element.closest('.webViewParentName');
 
-        if(element) {
-          if(entry.contentRect.height == 0) {
-            element.style.marginTop = '0px';
-            element.style.marginBottom = '0px';
-            element.style.paddingTop = '0px';
-            element.style.paddingBottom = '0px';
-          } else {
-            element.style.marginTop = '';
-            element.style.marginBottom = '';
-            element.style.paddingTop = '';
-            element.style.paddingBottom = '';
-          }
+      if(element) {
+        if(entry.contentRect.height == 0) {
+          element.style.marginTop = '0px';
+          element.style.marginBottom = '0px';
+          element.style.paddingTop = '0px';
+          element.style.paddingBottom = '0px';
+          ...
+        } else {
+          element.style.marginTop = '';
+          element.style.marginBottom = '';
+          element.style.paddingTop = '';
+          element.style.paddingBottom = '';
+          ...
         }
       }
-    });
-  }
+    }
+  });
 }
 ```
 
 and now
 
 ```js
-// Add the element you have pass in webViewAd.addAd
+// Add the element you have pass in webViewAd.addAd, this will have to be done for each ad
 webViewResizeObserver.observe(webViewAd.element);
 ```
