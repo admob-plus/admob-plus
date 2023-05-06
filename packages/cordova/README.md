@@ -25,7 +25,8 @@ https://github.com/admob-plus/admob-plus/pull/539
 
 ## Documentation
 
-[WebView API for Ads Documentation](../../website/docs/cordova/ads/webview.md)
+<!--[WebView API for Ads Documentation](../../website/docs/cordova/ads/webview.md)-->
+[WebView API for Ads Documentation](https://github.com/ollm/admob-plus/blob/master/website/docs/cordova/ads/webview.md)
 
 You can find the documentation [on the website](https://admob-plus.github.io/docs/cordova).
 
