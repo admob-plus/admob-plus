@@ -2,7 +2,6 @@
     import AppTrackingTransparency
 #endif
 import GoogleMobileAds
-import os.log
 
 @objc(AMBPlugin)
 class AMBPlugin: CDVPlugin, WKNavigationDelegate {
@@ -26,8 +25,6 @@ class AMBPlugin: CDVPlugin, WKNavigationDelegate {
             let webView = self.webViewEngine.engineWebView as! WKWebView
             GADMobileAds.sharedInstance().register(webView)
             // webView.reload()
-
-            webView.navigationDelegate = self
         }
 
         if let x = self.commandDelegate.settings["disableSDKCrashReporting".lowercased()] as? String,
@@ -101,6 +98,12 @@ class AMBPlugin: CDVPlugin, WKNavigationDelegate {
         GADMobileAds.sharedInstance().start(completionHandler: { _ in
             ctx.resolve(["version": GADMobileAds.sharedInstance().sdkVersion])
         })
+
+        if let x = self.commandDelegate.settings["AdMobPlusWebViewAd".lowercased()] as? String,
+           x == "true" {
+            let webView = self.webViewEngine.engineWebView as! WKWebView
+            webView.navigationDelegate = self
+        }
     }
 
     @objc func setAppMuted(_ command: CDVInvokedUrlCommand) {
