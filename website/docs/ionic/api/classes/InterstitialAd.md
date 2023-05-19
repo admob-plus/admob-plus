@@ -165,7 +165,7 @@ ___
 
 ### on
 
-▸ **on**(...`opts`): () => `void`
+▸ **on**(`...opts`): () => `void`
 
 #### Parameters
 
