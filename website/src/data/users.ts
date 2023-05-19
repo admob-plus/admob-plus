@@ -1,5 +1,11 @@
 const users: { caption: string; image: string; infoLink: string }[] = [
   {
+    caption: 'Breakfast Crunch',
+    image:
+      'https://play-lh.googleusercontent.com/6owXrb1YBANzRLkSkdTdbBJg8L4riBRn2orWc2A1dwkbRrveUeQSFdmUpwz-hfS0Wg=w240-h480-rw',
+    infoLink: 'https://play.google.com/store/apps/details?id=ng.com.omarkaj.breakfastcrunch',
+  }
+  {
     caption: 'Magiscore',
     image:
       'https://lh3.googleusercontent.com/aCf8h8BVsRjqMsLfXqJCE5Kj771unVP5gBdyq1_CIOAJF959X2yyD1hWvUBBGG3vA9o=s360',
