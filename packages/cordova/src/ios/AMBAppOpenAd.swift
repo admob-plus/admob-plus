@@ -71,7 +71,7 @@ class AMBAppOpenAd: AMBAdBase, GADFullScreenContentDelegate {
         self.emit(AMBEvents.adShowFail, error)
     }
 
-    func adDidPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+    func adWillPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
         self.emit(AMBEvents.adShow)
     }
 
