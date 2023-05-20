@@ -20,6 +20,7 @@
     "@admob-plus-internal/rollup-config": "file:../../internal/rollup-config",
     "@tsconfig/node10": "^1.0.9",
     "@types/cordova": "^0.0.34",
+    "@types/fs-extra": "^9.0.13",
     "@types/plist": "^3.0.2",
     "cordova": "11.0.0",
     "cordova-plus": "^0.7.0",
