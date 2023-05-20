@@ -16,6 +16,7 @@
   "devDependencies": {
     "@admob-plus-internal/cli": "file:../../internal/cli",
     "@types/cordova": "^0.0.34",
+    "@types/fs-extra": "^9.0.13",
     "admob-plus": "../../packages/cli",
     "appium": "^1.22.3",
     "appium-android-driver": "^5.7.2",

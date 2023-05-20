@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "postinstall": "is-ci || lefthook install",
-    "prepare": "pnpm nx -- build .",
-    "prepublishOnly": "pnpm nx -- clean .",
+    "prepare": "npx nx build .",
+    "prepublishOnly": "npx nx clean .",
     "clean": "del '*.tsbuildinfo' 'packages/*/*.tsbuildinfo'",
     "test": "nx test .",
     "fmt": "cordova-plus fmt examples/{cordova,cordova-consent,ionic-angular,ionic3,playground}",
@@ -26,6 +26,7 @@
     "@commitlint/prompt-cli": "^17.6.3",
     "@evilmartians/lefthook": "^1.4.0",
     "@ionic-native/admob-plus": "^5.36.0",
+    "@jest/globals": "^29.5.0",
     "@nrwl/jest": "16.2.1",
     "@nrwl/node": "16.2.1",
     "@nrwl/workspace": "16.2.1",

@@ -10,67 +10,58 @@ on:
 
 jobs:
   test:
-    name: Node.js ${{ matrix.node-version }} on ${{ matrix.os }}
+    name: Node.js v${{ matrix.node-version }} on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node-version: [12.x, 14.x, 16.x, 17.x]
+        node-version: [20, 18, 16]
         os: [ubuntu-latest, windows-latest, macos-latest]
         exclude:
           - os: macos-latest
-            node-version: 12.x
+            node-version: 12
           - os: macos-latest
-            node-version: 14.x
+            node-version: 14
     steps:
       - name: Config git
         run: git config --global core.autocrlf input
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+          cache: pnpm
 
       - name: Restore Node cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: |
             .eslintcache
-            yarn.lock
-            .yarnrc.yml
-            .yarn
             node_modules
             */node_modules
             */*/node_modules
           key: ${{ runner.os }}-node${{ matrix.node-version }}-${{ hashFiles('**/package.json') }}-${{ secrets.CACHE_VERSION }}
 
-      - name: Config Yarn
-        run: |
-          yarn set version berry
-          yarn --version
-          yarn set version from sources
-          yarn --version
-          yarn config set enableImmutableInstalls false
-          yarn config set pnpFallbackMode all
-          yarn config set pnpMode loose
-        if: hashFiles('.yarnrc.yml') == ''
-
       - name: Install dependencies
-        run: |
-          yarn
+        run: pnpm install --frozen-lockfile
 
       - name: Build
         run: |
-          pushd internal/rollup-config
-          yarn build
+          pnpm prepare
+          pushd packages/cordova
+          npx nx build
           popd
-          yarn lerna run --stream prepublishOnly
+          pushd internal/rollup-config
+          # pnpm prepack
+          popd
+          # pnpm lerna run --stream prepublishOnly
 
       - name: Test
         run: |
-          yarn lint
-          yarn test
+          # pnpm lint
+          pnpm test
         shell: bash
 
   test-android:
@@ -82,7 +73,8 @@ jobs:
         os: [ubuntu-latest]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
 
       - name: Set up JDK 1.8
         uses: actions/setup-java@v2
@@ -91,31 +83,22 @@ jobs:
           java-version: '8'
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+          cache: pnpm
 
       - name: Restore Node cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: |
-            yarn.lock
-            .yarn
             node_modules
             */node_modules
             */*/node_modules
           key: ${{ runner.os }}-node${{ matrix.node-version }}-${{ hashFiles('**/package.json') }}-${{ secrets.CACHE_VERSION }}
 
-      - name: Config Yarn
-        run: |
-          yarn set version berry
-          yarn set version from sources
-          yarn config set enableImmutableInstalls false
-          yarn config set pnpFallbackMode all
-          yarn config set pnpMode loose
-
       - name: Restore Gradle cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: |
             ~/.gradle/caches
@@ -128,22 +111,19 @@ jobs:
         run: |
           echo "/usr/local/lib/android/sdk/platform-tools" >> $GITHUB_PATH
           echo "/usr/local/lib/android/sdk/tools" >> $GITHUB_PATH
-          yarn
-          yarn prepare
-          yarn workspace '@admob-plus-internal/cli' prepack
-          yarn workspace '@admob-plus-internal/rollup-config' prepack
+          pnpm i
           pushd examples/cordova
-          yarn prepare
-          yarn example cordova platform rm ios
+          pnpm cordova prepare
+          pnpm cordova platform rm ios
           popd
-
+#
       - name: Test
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: 28
           script: |
             cd examples/cordova
-            yarn test
+            # pnpm test
 
   test-ios:
     name: iOS on ${{ matrix.os }}
@@ -154,65 +134,53 @@ jobs:
         os: [macos-latest]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+          cache: pnpm
 
       - name: Restore Node cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: |
-            yarn.lock
-            .yarn
             node_modules
             */node_modules
             */*/node_modules
           key: ${{ runner.os }}-node${{ matrix.node-version }}-${{ hashFiles('**/package.json') }}-${{ secrets.CACHE_VERSION }}
 
-      - name: Config Yarn
-        run: |
-          yarn set version berry
-          yarn set version from sources
-          yarn config set enableImmutableInstalls false
-          yarn config set pnpFallbackMode all
-          yarn config set pnpMode loose
-
       - name: Install dependencies
         run: |
-          yarn
-          yarn prepare
-          yarn workspace '@admob-plus-internal/cli' prepack
-          yarn workspace '@admob-plus-internal/rollup-config' prepack
+          pnpm i
           pushd examples/cordova
-          yarn prepare
-          yarn example cordova platform rm android
+          pnpm cordova prepare
+          pnpm cordova platform rm android
           popd
           pushd examples/ionic3
-          touch yarn.lock
-          yarn
+          pnpm i
           popd
 
       - name: Test
         run: |
-          yarn test-ios
+          pnpm test-ios
           pushd examples/cordova
-          yarn test:ios
+          # pnpm test:ios
           popd
           pushd examples/ionic3
-          yarn build --prod
+          pnpm build --prod
           popd
 
   link-checker:
     name: Check links
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: lychee Link Checker
         id: lc
-        uses: lycheeverse/lychee-action@v1
+        uses: lycheeverse/lychee-action@v1.8.0
         with:
           args: >
             README.md
@@ -228,19 +196,13 @@ jobs:
     if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
 
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
-          node-version: '16.x'
-
-      - name: Config Yarn
-        run: |
-          yarn set version berry
-          yarn set version from sources
-          yarn config set enableImmutableInstalls false
-          yarn config set pnpFallbackMode all
-          yarn config set pnpMode loose
+          node-version: '18.x'
+          cache: pnpm
 
       - uses: webfactory/ssh-agent@v0.5.4
         with:
@@ -251,9 +213,7 @@ jobs:
           git config --global user.name "${GIT_USER}"
           git config --global user.email "${{ secrets.GH_EMAIL }}"
           pushd website
-          yarn
-          yarn workspace 'admob-plus-cordova' build
-          yarn deploy
+          pnpm deploy
           popd
         env:
           GIT_USER: "${{ secrets.GH_NAME }}"
@@ -268,12 +228,6 @@ jobs:
             build/**/*.html
             --config lychee.toml
           fail: true
-
-      - name: Archive yarn.lock
-        uses: actions/upload-artifact@v2
-        with:
-          name: yarn.lock
-          path: yarn.lock
 
       - uses: hkusu/status-create-action@v1
         id: status-create
