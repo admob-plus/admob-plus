@@ -37,16 +37,6 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: pnpm
 
-      - name: Restore Node cache
-        uses: actions/cache@v3
-        with:
-          path: |
-            .eslintcache
-            node_modules
-            */node_modules
-            */*/node_modules
-          key: ${{ runner.os }}-node${{ matrix.node-version }}-${{ hashFiles('**/package.json') }}-${{ secrets.CACHE_VERSION }}
-
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
@@ -90,15 +80,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: pnpm
-
-      - name: Restore Node cache
-        uses: actions/cache@v3
-        with:
-          path: |
-            node_modules
-            */node_modules
-            */*/node_modules
-          key: ${{ runner.os }}-node${{ matrix.node-version }}-${{ hashFiles('**/package.json') }}-${{ secrets.CACHE_VERSION }}
 
       - name: Restore Gradle cache
         uses: actions/cache@v3
@@ -147,15 +128,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: pnpm
-
-      - name: Restore Node cache
-        uses: actions/cache@v3
-        with:
-          path: |
-            node_modules
-            */node_modules
-            */*/node_modules
-          key: ${{ runner.os }}-node${{ matrix.node-version }}-${{ hashFiles('**/package.json') }}-${{ secrets.CACHE_VERSION }}
 
       - name: Install dependencies
         run: |
