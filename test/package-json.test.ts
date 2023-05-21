@@ -25,7 +25,7 @@ test('ionic example dependencies', () => {
     .filter(([k]) => k.includes('angular') || ['typescript'].includes(k))
     .reduce((acc, [k, v]) => ({...acc, [k]: v}), {});
   expect(deps).toMatchInlineSnapshot(`
-    Object {
+    {
       "@angular-devkit/build-angular": "12.2.0",
       "@angular/cli": "12.2.0",
       "@angular/common": "12.2.0",

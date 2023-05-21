@@ -24,7 +24,7 @@ document.addEventListener('deviceready', async () => {
       // make sure to add logic to control when to display the ad.
       if (!await ad.show()) {
         await ad.load()
-      })
+      }
     },
     false,
   )

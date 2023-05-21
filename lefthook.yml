@@ -1,15 +1,37 @@
 commit-msg:
   commands:
-    
+    commitlint:
+      run: npx commitlint -e
 
 pre-commit:
   parallel: true
   commands:
+    fixer:
+      run: >
+        lefthook run fixer &&
+        git add {staged_files}
+    remark:
+      glob: "*.md"
+      run: npx remark --no-stdout {staged_files}
+    swiftlint:
+      glob: "*.swift"
+      run: npx node-swiftlint lint --strict --path {staged_files}
+    pkg-deps:
+      glob: package.json
+      run: npx jest test/package-json.test.ts
 
 pre-push:
   parallel: true
+  commands:
+    jest:
+      run: npx nx jest .
 
 fixer:
   parallel: true
   commands:
-    
+    js-fixer:
+      glob: "*.{js,jsx,ts,tsx}"
+      run: npx gts fix {staged_files}
+    pkg-json-fixed:
+      glob: examples/*/package.json
+      run: npx prettier --write {staged_files}

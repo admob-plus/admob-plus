@@ -1,11 +1,10 @@
 {
+  "name": "admob-plus-cordova",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "targets": {
     "build": {
       "executor": "nx:noop",
-      "dependsOn": [
-        "build-lib",
-        "build-scripts"
-      ]
+      "dependsOn": ["build-lib", "build-scripts"]
     },
     "build-lib": {
       "executor": "nx:run-commands",
@@ -13,7 +12,11 @@
         "command": "cordova-plus plugin build --input=./src/www/admob.ts --lib --esm",
         "cwd": "packages/cordova"
       },
-      "outputs": ["esm", "lib", "www"]
+      "outputs": [
+        "{workspaceRoot}/esm",
+        "{workspaceRoot}/lib",
+        "{workspaceRoot}/www"
+      ]
     },
     "build-scripts": {
       "executor": "nx:run-commands",
@@ -21,7 +24,7 @@
         "command": "tsc -p scripts",
         "cwd": "packages/cordova"
       },
-      "outputs": ["scripts/*.js"]
+      "outputs": ["{workspaceRoot}/scripts/*.js"]
     }
   }
 }

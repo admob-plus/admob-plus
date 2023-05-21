@@ -28,7 +28,7 @@ const main = async () => {
     fse.copy('./build/cjs/ngx', './ngx/cjs', {overwrite: true}),
     fse.outputJSON('./ngx/package.json', {
       ...require('../package.json'),
-      typings: 'index.d.ts',
+      types: 'index.d.ts',
       main: './cjs/index.js',
       module: 'index.js',
     })

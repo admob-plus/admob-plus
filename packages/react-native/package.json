@@ -17,7 +17,7 @@
     "!**/xcuserdata"
   ],
   "scripts": {
-    "prepublishOnly": "nx build react-native",
+    "prepublishOnly": "nx build",
     "build": "tsc -b && echo done",
     "test": "tsc --noEmit --composite false"
   },

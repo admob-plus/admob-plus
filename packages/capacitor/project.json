@@ -1,4 +1,6 @@
 {
+  "name": "@admob-plus/capacitor",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "targets": {
     "build": {
       "executor": "nx:run-commands",
@@ -7,7 +9,7 @@
         "cwd": "packages/capacitor"
       },
       "dependsOn": ["build-tsc"],
-      "outputs": ["dist"]
+      "outputs": ["{workspaceRoot}/dist"]
     },
     "build-tsc": {
       "executor": "nx:run-commands",
@@ -16,21 +18,21 @@
         "cwd": "packages/capacitor"
       },
       "dependsOn": ["docgen"],
-      "outputs": ["dist"]
+      "outputs": ["{workspaceRoot}/dist"]
     },
     "docgen": {
       "executor": "nx:run-script",
       "options": {
         "script": "docgen"
       },
-      "outputs": ["README.md", "dist/docs.json"]
+      "outputs": ["{workspaceRoot}/README.md", "{workspaceRoot}/dist/docs.json"]
     },
     "clean": {
       "executor": "nx:run-script",
       "options": {
         "script": "clean"
       },
-      "outputs": ["dist"]
+      "outputs": ["{workspaceRoot}/dist"]
     }
   }
 }
