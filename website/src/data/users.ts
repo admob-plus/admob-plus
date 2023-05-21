@@ -1,5 +1,11 @@
 const users: { caption: string; image: string; infoLink: string }[] = [
   {
+    caption: 'Breakfast Crunch',
+    image:
+      'https://play-lh.googleusercontent.com/6owXrb1YBANzRLkSkdTdbBJg8L4riBRn2orWc2A1dwkbRrveUeQSFdmUpwz-hfS0Wg=w240-h480-rw',
+    infoLink: 'https://play.google.com/store/apps/details?id=ng.com.omarkaj.breakfastcrunch',
+  },
+  {
     caption: 'Magiscore',
     image:
       'https://lh3.googleusercontent.com/aCf8h8BVsRjqMsLfXqJCE5Kj771unVP5gBdyq1_CIOAJF959X2yyD1hWvUBBGG3vA9o=s360',
@@ -69,12 +75,19 @@ const users: { caption: string; image: string; infoLink: string }[] = [
     infoLink:
       'https://play.google.com/store/apps/details?id=com.fteams.analysis.teams',
   },
-    {
+  {
     caption: 'Ionic Enterprise Apps',
     image:
       'https://ionic-enterprise-apps.s3.amazonaws.com/ionic-enterprise-apps-logo-digital-agency.png',
     infoLink:
       'https://ionicenterpriseapps.com',
+  },
+  {
+    caption: 'PlayMax App',
+    image:
+      'https://playmax.mx/images/logos/logo-border.png',
+    infoLink:
+      'https://playmax.mx/official-apps',
   },
 ]
 

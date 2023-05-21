@@ -182,7 +182,7 @@ ___
 
 ### on
 
-▸ **on**(...`opts`): () => `void`
+▸ **on**(`...opts`): () => `void`
 
 #### Parameters
 
@@ -212,7 +212,7 @@ ___
 
 ### show
 
-▸ **show**(...`args`): `Promise`<`unknown`\>
+▸ **show**(`...args`): `Promise`<`unknown`\>
 
 #### Parameters
 
@@ -236,7 +236,7 @@ ___
 
 ### showWith
 
-▸ **showWith**(...`args`): `Promise`<`void`\>
+▸ **showWith**(`...args`): `Promise`<`void`\>
 
 #### Parameters
 

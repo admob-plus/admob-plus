@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.google.android.gms.example.bannerexample" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>AdmobBasicExample</name>
-    <content src="index.html" />
+    <content src="http://192.168.5.124:3000" src_="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -12,6 +12,9 @@
     <platform name="android">
         <preference name="android-targetSdkVersion" value="32" />
         <preference name="AndroidXEnabled" value="true" />
+        <preference name="GradlePluginKotlinEnabled" value="true" />
+        <preference name="GradlePluginKotlinCodeStyle" value="official" />
+        <preference name="GradlePluginKotlinVersion" value="1.6.10" />
         <allow-intent href="market:*" />
     </platform>
     <platform name="ios">
@@ -28,4 +31,5 @@
     <engine name="ios" spec="6.2.0" />
     <engine name="android" spec="9.1.0" />
     <engine name="browser" spec="6.0.0" />
+    <allow-navigation dev="true" href="http://*/*" />
 </widget>

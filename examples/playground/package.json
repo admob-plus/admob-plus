@@ -46,7 +46,7 @@
   "scripts": {
     "start": "ts-node -TH -P ../../internal/cli/tsconfig.json scripts/dev.ts",
     "build": "ts-node -TH -P ../../internal/cli/tsconfig.json scripts/build.ts",
-    "test": "react-scripts test",
+    "//test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

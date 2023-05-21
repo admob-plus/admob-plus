@@ -150,7 +150,7 @@ packages/ionic/src/ngx/index.ts:263
 
 ### configRequest
 
-▸ **configRequest**(...`opts`): `Promise`<`unknown`\>
+▸ **configRequest**(`...opts`): `Promise`<`unknown`\>
 
 #### Parameters
 
@@ -174,7 +174,7 @@ ___
 
 ### configure
 
-▸ **configure**(...`opts`): `Promise`<`unknown`\>
+▸ **configure**(`...opts`): `Promise`<`unknown`\>
 
 #### Parameters
 
@@ -236,7 +236,7 @@ ___
 
 ### setAppMuted
 
-▸ **setAppMuted**(...`opts`): `Promise`<`unknown`\>
+▸ **setAppMuted**(`...opts`): `Promise`<`unknown`\>
 
 #### Parameters
 
@@ -260,7 +260,7 @@ ___
 
 ### setAppVolume
 
-▸ **setAppVolume**(...`opts`): `Promise`<`unknown`\>
+▸ **setAppVolume**(`...opts`): `Promise`<`unknown`\>
 
 #### Parameters
 

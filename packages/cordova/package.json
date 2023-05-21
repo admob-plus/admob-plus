@@ -4,14 +4,14 @@
   "description": "Trustable Google AdMob Cordova Plugin",
   "main": "lib/index.js",
   "module": "esm/index.js",
-  "typings": "esm/index.d.ts",
+  "types": "esm/index.d.ts",
   "scripts": {
-    "prepublishOnly": "nx build cordova",
+    "prepublishOnly": "nx build",
     "version": "npx cordova-plus plugin version",
     "test": "cordova-plus plugin test"
   },
   "dependencies": {
-    "fast-glob": "^3.2.11",
+    "fast-glob": "^3.2.12",
     "fs-extra": "^10.1.0",
     "plist": "^3.0.6",
     "replace-in-file": "^6.3.5"
@@ -20,12 +20,13 @@
     "@admob-plus-internal/rollup-config": "file:../../internal/rollup-config",
     "@tsconfig/node10": "^1.0.9",
     "@types/cordova": "^0.0.34",
+    "@types/fs-extra": "^9.0.13",
     "@types/plist": "^3.0.2",
     "cordova": "11.0.0",
     "cordova-plus": "^0.7.0",
     "cordova-ts-hook": "^0.0.3",
     "rollup": "^2.78.0",
-    "typescript": "~4.7.4"
+    "typescript": "~4.9.3"
   },
   "author": "Ratson",
   "license": "MIT",
