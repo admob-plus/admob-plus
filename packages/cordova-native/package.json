@@ -3,7 +3,7 @@
   "version": "0.3.0",
   "description": "Cordova Plugin for AdMob Plus Native Ad",
   "main": "lib/index.js",
-  "typings": "esm/index.d.ts",
+  "types": "esm/index.d.ts",
   "module": "esm/index.js",
   "scripts": {
     "prepublishOnly": "nx build",

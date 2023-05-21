@@ -4,7 +4,7 @@
   "description": "Trustable Google AdMob Cordova Plugin",
   "main": "lib/index.js",
   "module": "esm/index.js",
-  "typings": "esm/index.d.ts",
+  "types": "esm/index.d.ts",
   "scripts": {
     "prepublishOnly": "nx build",
     "version": "npx cordova-plus plugin version",

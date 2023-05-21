@@ -4,7 +4,7 @@
   "description": "Ionic Native wrapper for admob-plus-cordova",
   "main": "lib/cjs/index.js",
   "module": "lib/index.js",
-  "typings": "lib/index.d.ts",
+  "types": "lib/index.d.ts",
   "scripts": {
     "prepublishOnly": "nx build",
     "build": "ts-node -TH --skip-project scripts/build.ts",

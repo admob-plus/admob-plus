@@ -3,7 +3,7 @@
   "version": "2.4.0",
   "description": "Google Consent SDK Cordova Plugin",
   "main": "./lib/index.js",
-  "typings": "./esm/index.d.ts",
+  "types": "./esm/index.d.ts",
   "module": "./esm/index.js",
   "scripts": {
     "prepublishOnly": "npx nx build",
