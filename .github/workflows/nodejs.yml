@@ -62,7 +62,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node-version: [16.x]
+        node-version: [18.x]
         os: [ubuntu-latest]
 
     steps:
@@ -70,7 +70,7 @@ jobs:
       - uses: pnpm/action-setup@v2
 
       - name: Set up JDK 1.8
-        uses: actions/setup-java@v2
+        uses: actions/setup-java@v3
         with:
           distribution: 'adopt'
           java-version: '8'
@@ -99,8 +99,8 @@ jobs:
           pushd examples/cordova
           pnpm cordova platform rm ios || true
           pnpm cordova plugin rm admob-plus-cordova || true
-          pnpm cordova prepare
           pnpm cordova plugin add ../../packages/cordova --link
+          pnpm cordova prepare
           popd
 #
       - name: Test
@@ -116,7 +116,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node-version: [16.x]
+        node-version: [18.x]
         os: [macos-latest]
 
     steps:
@@ -135,8 +135,8 @@ jobs:
           pushd examples/cordova
           pnpm cordova platform rm android || true
           pnpm cordova plugin rm admob-plus-cordova || true
-          pnpm cordova prepare
           pnpm cordova plugin add ../../packages/cordova --link
+          pnpm cordova prepare
           popd
           pushd examples/ionic3
           # pnpm i
