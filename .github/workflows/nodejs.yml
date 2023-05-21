@@ -42,19 +42,19 @@ jobs:
 
       - name: Build
         run: |
-          pnpm prepare
+          npm run prepare
           pushd packages/cordova
           npx nx build
           popd
           pushd internal/rollup-config
-          # pnpm prepack
+          # npm run prepack
           popd
-          # pnpm lerna run --stream prepublishOnly
+          # npx lerna run --stream prepublishOnly
 
       - name: Test
         run: |
-          # pnpm lint
-          pnpm test
+          # npm run lint
+          npm test
         shell: bash
 
   test-android:
@@ -97,10 +97,10 @@ jobs:
           echo "/usr/local/lib/android/sdk/tools" >> $GITHUB_PATH
           pnpm i
           pushd examples/cordova
-          pnpm cordova platform rm ios || true
-          pnpm cordova plugin rm admob-plus-cordova || true
-          pnpm cordova plugin add ../../packages/cordova --link
-          pnpm cordova prepare
+          npx cordova platform rm ios || true
+          npx cordova plugin rm admob-plus-cordova || true
+          npx cordova plugin add ../../packages/cordova --link
+          npx cordova prepare
           popd
 #
       - name: Test
@@ -109,7 +109,7 @@ jobs:
           api-level: 28
           script: |
             cd examples/cordova
-            # pnpm test
+            # npm test
 
   test-ios:
     name: iOS on ${{ matrix.os }}
@@ -133,10 +133,10 @@ jobs:
         run: |
           pnpm i
           pushd examples/cordova
-          pnpm cordova platform rm android || true
-          pnpm cordova plugin rm admob-plus-cordova || true
-          pnpm cordova plugin add ../../packages/cordova --link
-          pnpm cordova prepare
+          npx cordova platform rm android || true
+          npx cordova plugin rm admob-plus-cordova || true
+          npx cordova plugin add ../../packages/cordova --link
+          npx cordova prepare
           popd
           pushd examples/ionic3
           # pnpm i
@@ -144,12 +144,12 @@ jobs:
 
       - name: Test
         run: |
-          pnpm test-ios
+          npm run test-ios
           pushd examples/cordova
-          # pnpm test:ios
+          # npm run test:ios
           popd
           pushd examples/ionic3
-          pnpm build --prod
+          npm run build --prod
           popd
 
   link-checker:
@@ -192,7 +192,7 @@ jobs:
           git config --global user.name "${GIT_USER}"
           git config --global user.email "${{ secrets.GH_EMAIL }}"
           pushd website
-          pnpm run deploy
+          npm run deploy
           popd
         env:
           GIT_USER: "${{ secrets.GH_NAME }}"
