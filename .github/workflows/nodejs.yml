@@ -116,7 +116,7 @@ jobs:
           echo "/usr/local/lib/android/sdk/tools" >> $GITHUB_PATH
           pnpm i
           pushd examples/cordova
-          pnpm cordova platform rm ios
+          pnpm cordova platform rm ios || true
           pnpm cordova plugin rm admob-plus-cordova || true
           pnpm cordova prepare
           pnpm cordova plugin add ../../packages/cordova --link
@@ -161,13 +161,13 @@ jobs:
         run: |
           pnpm i
           pushd examples/cordova
-          pnpm cordova platform rm android
+          pnpm cordova platform rm android || true
           pnpm cordova plugin rm admob-plus-cordova || true
           pnpm cordova prepare
           pnpm cordova plugin add ../../packages/cordova --link
           popd
           pushd examples/ionic3
-          pnpm i
+          # pnpm i
           popd
 
       - name: Test
