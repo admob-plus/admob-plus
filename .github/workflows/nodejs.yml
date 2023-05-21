@@ -192,7 +192,7 @@ jobs:
           git config --global user.name "${GIT_USER}"
           git config --global user.email "${{ secrets.GH_EMAIL }}"
           pushd website
-          pnpm deploy
+          pnpm run deploy
           popd
         env:
           GIT_USER: "${{ secrets.GH_NAME }}"
