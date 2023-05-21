@@ -95,7 +95,7 @@ jobs:
         run: |
           echo "/usr/local/lib/android/sdk/platform-tools" >> $GITHUB_PATH
           echo "/usr/local/lib/android/sdk/tools" >> $GITHUB_PATH
-          pnpm i
+          pnpm install --frozen-lockfile
           pushd examples/cordova
           npx cordova platform rm ios || true
           npx cordova plugin rm admob-plus-cordova || true
@@ -131,7 +131,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pnpm i
+          pnpm install --frozen-lockfile
           pushd examples/cordova
           npx cordova platform rm android || true
           npx cordova plugin rm admob-plus-cordova || true
@@ -191,6 +191,7 @@ jobs:
         run: |
           git config --global user.name "${GIT_USER}"
           git config --global user.email "${{ secrets.GH_EMAIL }}"
+          pnpm install --frozen-lockfile
           pushd website
           npm run deploy
           popd
