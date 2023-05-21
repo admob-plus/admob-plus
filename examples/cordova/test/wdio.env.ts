@@ -1,17 +1,15 @@
-import path from 'path';
-import NodeEnvironment from 'jest-environment-node';
-import ms from 'ms';
-import * as wdio from 'webdriverio';
-import type {Browser} from 'webdriverio';
 import execa from 'execa';
 import * as fse from 'fs-extra';
-// @ts-expect-error no-type
-import portReady from 'port-ready';
-import {killPortProcess} from 'kill-port-process';
 import getPort from 'get-port';
+import NodeEnvironment from 'jest-environment-node';
+import { killPortProcess } from 'kill-port-process';
+import ms from 'ms';
+import path from 'path';
+import portReady from 'port-ready';
+import * as wdio from 'webdriverio';
 
 declare global {
-  var browser: Browser<'async'> | undefined;
+  var browser: wdio.Browser<'async'> | undefined;
 }
 
 class WdioEnvironment extends NodeEnvironment {

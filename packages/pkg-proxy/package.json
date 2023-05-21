@@ -10,9 +10,9 @@
   },
   "devDependencies": {
     "@types/fs-extra": "^9.0.13",
-    "@types/node": "^18.7.3",
+    "@types/node": "^18.11.9",
     "ts-node": "^10.9.1",
-    "typescript": "~4.7.4"
+    "typescript": "~4.9.3"
   },
   "engines": {
     "node": ">=12.0.0"
@@ -26,7 +26,7 @@
   "repository": "admob-plus/admob-plus",
   "main": "lib/index.js",
   "scripts": {
-    "prepublishOnly": "nx build pkg-proxy",
+    "prepublishOnly": "npx nx build",
     "build": "tsc -b && echo",
     "test": "tsc --noEmit"
   },

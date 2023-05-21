@@ -1,5 +1,3 @@
-verbose = true
-
 max-concurrency = 8
 
 exclude = [

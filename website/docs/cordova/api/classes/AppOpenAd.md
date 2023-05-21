@@ -188,7 +188,7 @@ ___
 
 ### on
 
-▸ **on**(...`args`): () => `void`
+▸ **on**(`...args`): () => `void`
 
 #### Parameters
 

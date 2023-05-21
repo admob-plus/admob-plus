@@ -14,7 +14,7 @@ test('deps', async () => {
     )
     .reduce((acc, [k, v]) => ({...acc, [k]: v}), {});
   expect(deps).toMatchInlineSnapshot(`
-    Object {
+    {
       "@angular/animations": "5.2.11",
       "@angular/common": "5.2.11",
       "@angular/compiler": "5.2.11",
