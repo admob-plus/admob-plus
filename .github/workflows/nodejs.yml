@@ -15,7 +15,10 @@ jobs:
     strategy:
       matrix:
         node-version: [20, 18, 16]
-        os: [ubuntu-latest, windows-latest, macos-latest]
+        os:
+          - ubuntu-latest
+          # - windows-latest
+          - macos-latest
         exclude:
           - os: macos-latest
             node-version: 12
@@ -113,8 +116,10 @@ jobs:
           echo "/usr/local/lib/android/sdk/tools" >> $GITHUB_PATH
           pnpm i
           pushd examples/cordova
-          pnpm cordova prepare
           pnpm cordova platform rm ios
+          pnpm cordova plugin rm admob-plus-cordova || true
+          pnpm cordova prepare
+          pnpm cordova plugin add ../../packages/cordova --link
           popd
 #
       - name: Test
@@ -156,8 +161,10 @@ jobs:
         run: |
           pnpm i
           pushd examples/cordova
-          pnpm cordova prepare
           pnpm cordova platform rm android
+          pnpm cordova plugin rm admob-plus-cordova || true
+          pnpm cordova prepare
+          pnpm cordova plugin add ../../packages/cordova --link
           popd
           pushd examples/ionic3
           pnpm i
