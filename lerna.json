@@ -1,6 +1,7 @@
 {
   "command": {
     "publish": {
+      "private": false,
       "conventionalCommits": true,
       "message": "chore(release): publish"
     }
