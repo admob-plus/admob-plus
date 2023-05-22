@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova-native@0.3.0...admob-plus-cordova-native@1.0.0-alpha.0) (2023-05-22)
+
+
+### Features
+
+* **cordova/android:** rewrite in kotlin ([2973d57](https://github.com/admob-plus/admob-plus/commit/2973d570f3f23e405efcfc1d0137511a5fc253a5))
+
+
+
+
+
 # [0.3.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova-native@0.2.17...admob-plus-cordova-native@0.3.0) (2022-08-14)
 
 

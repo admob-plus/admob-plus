@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.24.0...@admob-plus/capacitor@2.0.0-alpha.0) (2023-05-22)
+
+
+### Bug Fixes
+
+* **cordova:** install missing fs-extra type ([6f80de6](https://github.com/admob-plus/admob-plus/commit/6f80de6b0e5415e7cfda2dec3c5c44b37925602a))
+
+
+
+
+
 # [1.24.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.23.0...@admob-plus/capacitor@1.24.0) (2022-08-14)
 
 

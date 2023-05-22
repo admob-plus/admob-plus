@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.0](https://github.com/admob-plus/admob-plus/compare/cordova-plugin-consent@2.4.0...cordova-plugin-consent@3.0.0-alpha.0) (2023-05-22)
+
+
+### Bug Fixes
+
+* **cordova:** install missing fs-extra type ([6f80de6](https://github.com/admob-plus/admob-plus/commit/6f80de6b0e5415e7cfda2dec3c5c44b37925602a))
+
+
+
+
+
 # [2.4.0](https://github.com/admob-plus/admob-plus/compare/cordova-plugin-consent@2.3.2...cordova-plugin-consent@2.4.0) (2022-08-14)
 
 
