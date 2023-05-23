@@ -32,5 +32,4 @@
     <engine name="ios" spec="6.2.0" />
     <engine name="android" spec="9.1.0" />
     <engine name="browser" spec="6.0.0" />
-    <allow-navigation dev="true" href="http://*/*" />
 </widget>
