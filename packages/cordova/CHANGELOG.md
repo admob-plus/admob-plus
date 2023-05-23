@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.28.0...admob-plus-cordova@2.0.0-alpha.0) (2023-05-22)
+
+
+### Bug Fixes
+
+* **cordova:** install missing fs-extra type ([6f80de6](https://github.com/admob-plus/admob-plus/commit/6f80de6b0e5415e7cfda2dec3c5c44b37925602a))
+
+
+### Features
+
+* **cordova/android:** rewrite in kotlin ([2973d57](https://github.com/admob-plus/admob-plus/commit/2973d570f3f23e405efcfc1d0137511a5fc253a5))
+* **cordova/android:** update PLAY_SERVICES_VERSION to 22.0.0 ([d263f9c](https://github.com/admob-plus/admob-plus/commit/d263f9c73bad1f8d4dc5a802ddd98caf431e9f16))
+* **cordova/ios:** feat: update Google-Mobile-Ads-SDK to 10.5.0 ([07e29de](https://github.com/admob-plus/admob-plus/commit/07e29deeb6a41a4a1af174d17d6c2b76e7ba938d))
+* **cordova/ios:** update SKAdNetworkIdentifier ([c909bf0](https://github.com/admob-plus/admob-plus/commit/c909bf02484717bb4092493a5a68334923fd4f2b))
+
+
+
+
+
 # [1.28.0](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@1.27.0...admob-plus-cordova@1.28.0) (2022-08-14)
 
 

@@ -76,7 +76,7 @@
       "remark-lint-no-empty-sections"
     ]
   },
-  "packageManager": "pnpm@8.5.0",
+  "packageManager": "pnpm@8.5.1",
   "pnpm": {
     "neverBuiltDependencies": [
       "appium-chromedriver",

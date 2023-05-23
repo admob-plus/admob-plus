@@ -1,6 +1,7 @@
 {
   "command": {
     "publish": {
+      "private": false,
       "conventionalCommits": true,
       "message": "chore(release): publish"
     }
@@ -13,6 +14,7 @@
     "**/*.md",
     "**/package.json"
   ],
+  "npmClient": "pnpm",
   "useWorkspaces": true,
   "version": "independent"
 }
