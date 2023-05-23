@@ -29,7 +29,7 @@ export default class WebViewAd extends MobileAd<WebViewAdOptions> {
       }
       html += '<script>(window.adsbygoogle = window.adsbygoogle || []).push({google_ad_client: "'+this._adsense+'", enable_page_level_ads: true, overlays: false});</script>';
       let div = document.createElement('div');
-      div.innerHTML = html;    
+      div.innerHTML = html;
       document.head.appendChild(div);
       this.nodeScriptReplace(div);
       this._loaded = true
