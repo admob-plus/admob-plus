@@ -1,4 +1,3 @@
-import WebViewAd from './webview'
 import AppOpenAd from './app-open'
 import BannerAd, { BannerAdOptions } from './banner'
 import InterstitialAd from './interstitial'
@@ -13,17 +12,17 @@ import RewardedInterstitialAd, {
 import {
   AdMobConfig,
   Events,
-  execAsync,
   NativeActions,
   Platforms,
   RequestConfig,
-  start,
   TrackingAuthorizationStatus,
+  execAsync,
+  start,
 } from './shared'
+import WebViewAd from './webview'
 
 export * from './api'
 export {
-  WebViewAd,
   AppOpenAd,
   BannerAd,
   BannerAdOptions,
@@ -35,16 +34,17 @@ export {
   RewardedInterstitialAd,
   RewardedInterstitialAdOptions,
   ServerSideVerificationOptions,
+  WebViewAd,
 }
 
 export class AdMob {
-  public readonly WebViewAd = WebViewAd
   public readonly AppOpenAd = AppOpenAd
   public readonly BannerAd = BannerAd
   public readonly InterstitialAd = InterstitialAd
   public readonly NativeAd = NativeAd
   public readonly RewardedAd = RewardedAd
   public readonly RewardedInterstitialAd = RewardedInterstitialAd
+  public readonly WebViewAd = WebViewAd
 
   public readonly Events = Events
   public readonly TrackingAuthorizationStatus = TrackingAuthorizationStatus

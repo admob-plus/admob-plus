@@ -66,6 +66,7 @@ const app = {
     this.initButton('show-rewardedi-btn', this.showRewardedInterstitialAd)
     this.initButton('show-native-btn', this.showNativeAd)
     this.initButton('show-webview-btn', this.showWebviewAd)
+    this.initButton('show-webview-check-btn', this.checkWebviewAd)
   },
 
   initAppOpenAd() {
@@ -206,6 +207,10 @@ const app = {
       adsense: 'ca-app-pub-3940256099942544~3347511713', // Your adsense account
     });
     return ad.show()
+  },
+
+  checkWebviewAd() {
+    return admob.WebViewAd.checkIntegration()
   },
 
   receivedEvent(id) {

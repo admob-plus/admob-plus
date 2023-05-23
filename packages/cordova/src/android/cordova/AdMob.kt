@@ -51,21 +51,20 @@ class AdMob : CordovaPlugin(), Adapter {
         Actions.AD_HIDE to ::executeAdHide,
         Actions.SET_APP_MUTED to ::executeSetAppMute,
         Actions.SET_APP_VOLUME to ::executeSetAppVolume,
+        "webview-goto" to ::executeWebviewGoto,
     )
 
     override fun initialize(cordova: CordovaInterface, cordovaWebView: CordovaWebView) {
         super.initialize(cordova, cordovaWebView)
-        cordova.activity.runOnUiThread(object : Runnable {
-            override fun run() {
-                val adMobPlusWebViewAd: Boolean = preferences.getBoolean("AdMobPlusWebViewAd", false)
-                if (adMobPlusWebViewAd) {
-                    val webView: WebView = cordovaWebView.getView() as WebView
-                    MobileAds.registerWebView(webView)
-                    webView.reload()
-                    Log.d(TAG, "Integrated the WebView API for Ads in " + webView.getUrl() + " WebView")
-                }
+        cordova.activity.runOnUiThread {
+            val adMobPlusWebViewAd: Boolean = preferences.getBoolean("AdMobPlusWebViewAd", false)
+            if (adMobPlusWebViewAd) {
+                val webView: WebView = cordovaWebView.view as WebView
+                MobileAds.registerWebView(webView)
+                webView.reload()
+                Log.d(TAG, "Integrated the WebView API for Ads in " + webView.url + " WebView")
             }
-        })
+        }
     }
 
     override fun pluginInitialize() {
@@ -202,6 +201,14 @@ class AdMob : CordovaPlugin(), Adapter {
         val value = BigDecimal.valueOf(ctx.args.optDouble(0)).toFloat()
         MobileAds.setAppVolume(value)
         ctx.resolve()
+    }
+
+    private fun executeWebviewGoto(ctx: ExecuteContext) {
+        cordova.activity.runOnUiThread {
+            val webView = webView.view as WebView
+            webView.loadUrl(ctx.args.getString(0))
+            ctx.resolve()
+        }
     }
 
     override val activity: Activity get() = cordova.activity
