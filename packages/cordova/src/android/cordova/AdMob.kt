@@ -43,6 +43,10 @@ class AdMob : CordovaPlugin(), Adapter {
         preferences.getBoolean("AdMobPlusWebViewAd", false)
     }
 
+    private val isWebviewAdOnOverrideUrlLoadingEnabled: Boolean by lazy {
+        preferences.getBoolean("AdMobPlusWebViewAdOnOverrideUrlLoading", false)
+    }
+
     private val actions = mapOf(
         Actions.READY to ::executeReady,
         Actions.START to ::executeStart,
@@ -77,7 +81,7 @@ class AdMob : CordovaPlugin(), Adapter {
 
     // Extracted from cordova-plugin-openblank-mobi
     override fun onOverrideUrlLoading(url: String): Boolean {
-        if (!isWebviewAdEnabled) return super.onOverrideUrlLoading(url)
+        if (!isWebviewAdEnabled && !isWebviewAdOnOverrideUrlLoadingEnabled) return super.onOverrideUrlLoading(url)
 
         Log.d(TAG, "onOverrideUrlLoading called with URL $url")
         return try {

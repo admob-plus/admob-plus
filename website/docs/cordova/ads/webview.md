@@ -114,8 +114,9 @@ Remove this from `config.xml` or change to `false` (If you also use the WebView 
 ```xml
 <preference name="AdMobPlusWebViewAd" value="true" />
 ```
-and add this hook:
+And add this preference and hook:
 ```xml
+<preference name="AdMobPlusWebViewAdOnOverrideUrlLoading" value="true" />
 <hook type="before_build" src="update_main_activity.sh" />
 ```
 
