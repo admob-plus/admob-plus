@@ -225,33 +225,6 @@ All URLs set with `historySetPage` and `historyReplaceState` (Including `index.h
 
 It is also recommended that your app be prepared to stop displaying ads on a particular page (And stop use `historySetPage/historyReplaceState` in this), in case you receive a policy violation on that page.
 
-### Bug on iOS (White screen when reopening iOS app)
-
-Currently on iOS it is possible that your app receives a memory cleanup when it's in the background, in this case cordova reloads the WebView when the app comes back from the background, but when the page/url is changed via `historySetPage` or `historyReplaceState` cordova will load a wrong url and show a white screen ([apache/cordova-ios#1235](https://github.com/apache/cordova-ios/pull/1235) and [meteor/meteor#11811](https://github.com/meteor/meteor/issues/11811))
-
-This is a temporary fix for this bug:
-
-``` js
-let historyCurrentHref = false;
-
-document.addEventListener('pause', async () => {
-
-  if(webViewAd) {
-    historyCurrentHref = webViewAd.historyCurrentHref();
-    webViewAd.historyRestoreOriginalHref();
-  }
-
-}, false)
-
-document.addEventListener('resume', async () => {
-
-  if(webViewAd && historyCurrentHref) {
-    webViewAd.historyReplaceState(historyCurrentHref);
-  }
-
-}, false)
-```
-
 ### Set Page
 
 The simple way to replace the url, the following code generates a url something similar to `https://example.com/article.html?id=754`

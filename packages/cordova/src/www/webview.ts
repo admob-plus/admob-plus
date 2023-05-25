@@ -18,6 +18,7 @@ export default class WebViewAd extends MobileAd<WebViewAdOptions> {
   private _src = '';
   private _adsense = '';
   private _originalHref = (<any>window).location.href || '';
+  private _historyCurrentHref = '';
 
   constructor(opts: WebViewAdOptions) {
     opts.adUnitId = '';
@@ -58,6 +59,18 @@ export default class WebViewAd extends MobileAd<WebViewAdOptions> {
     } else {
       console.error('WebView does not appear to be setup correctly');
     }
+
+    document.addEventListener('pause', () => {
+      this._historyCurrentHref = this.historyCurrentHref();
+      this.historyRestoreOriginalHref();
+    });
+
+    document.addEventListener('resume', () => {
+      if (this._historyCurrentHref) {
+        this.historyReplaceState(this._historyCurrentHref);
+      }
+    });
+
   }
 
   public addAd(opts: {
