@@ -254,6 +254,7 @@ export class AdMob
       | 'RewardedAd'
       | 'RewardedInterstitialAd'
       | 'TrackingAuthorizationStatus'
+      | 'WebViewAd'
     >
 {
   public static platforms = ['Android', 'iOS']
