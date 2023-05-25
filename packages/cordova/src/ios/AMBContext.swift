@@ -160,6 +160,10 @@ class AMBContext: AMBCoreContext {
         return options
     }
 
+    func optWebviewGoto() -> String {
+        return command.argument(at: 0) as! String
+    }
+
     func sendResult(_ message: CDVPluginResult?) {
         self.commandDelegate.send(message, callbackId: command.callbackId)
     }

@@ -4,7 +4,7 @@
 import GoogleMobileAds
 
 @objc(AMBPlugin)
-class AMBPlugin: CDVPlugin {
+class AMBPlugin: CDVPlugin, WKNavigationDelegate {
     static func registerNativeAdViewProviders(_ providers: [String: AMBNativeAdViewProvider]) {
         AMBNativeAd.providers.merge(providers) {(_, new) in new}
     }
@@ -20,10 +20,30 @@ class AMBPlugin: CDVPlugin {
 
         AMBContext.plugin = self
 
+        if let x = self.commandDelegate.settings["AdMobPlusWebViewAd".lowercased()] as? String,
+           x == "true" {
+            let webView = self.webViewEngine.engineWebView as! WKWebView
+            GADMobileAds.sharedInstance().register(webView)
+            // webView.reload()
+        }
+
         if let x = self.commandDelegate.settings["disableSDKCrashReporting".lowercased()] as? String,
            x == "true" {
             GADMobileAds.sharedInstance().disableSDKCrashReporting()
         }
+    }
+
+    var overrideUrlLoading: Bool = true
+
+    @objc func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        if navigationAction.sourceFrame == nil, overrideUrlLoading {
+            if let url = navigationAction.request.url, url.scheme == "http" || url.scheme == "https" {
+                UIApplication.shared.open(url)
+                decisionHandler(.cancel)
+                return
+            }
+        }
+        decisionHandler(.allow)
     }
 
     @objc func ready(_ command: CDVInvokedUrlCommand) {
@@ -80,6 +100,12 @@ class AMBPlugin: CDVPlugin {
         GADMobileAds.sharedInstance().start(completionHandler: { _ in
             ctx.resolve(["version": GADMobileAds.sharedInstance().sdkVersion])
         })
+
+        if let x = self.commandDelegate.settings["AdMobPlusWebViewAd".lowercased()] as? String,
+           x == "true" {
+            let webView = self.webViewEngine.engineWebView as! WKWebView
+            webView.navigationDelegate = self
+        }
     }
 
     @objc func setAppMuted(_ command: CDVInvokedUrlCommand) {
@@ -187,6 +213,18 @@ class AMBPlugin: CDVPlugin {
 
         DispatchQueue.main.async {
             AMBBanner.config(ctx)
+        }
+    }
+
+    @objc func webviewGoto(_ command: CDVInvokedUrlCommand) {
+        let ctx = AMBContext(command)
+
+        DispatchQueue.main.async {
+            if let url = URL(string: ctx.optWebviewGoto()) {
+                let webView = self.webViewEngine.engineWebView as! WKWebView
+                self.overrideUrlLoading = false
+                webView.load(URLRequest(url: url))
+            }
         }
     }
 

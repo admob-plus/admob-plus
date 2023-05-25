@@ -1,6 +1,7 @@
 package admob.plus.cordova
 
 import admob.plus.cordova.ads.AdBase
+import admob.plus.cordova.ads.WebViewAd
 import admob.plus.cordova.ads.AppOpen
 import admob.plus.cordova.ads.Banner
 import admob.plus.cordova.ads.Interstitial
@@ -16,9 +17,14 @@ import android.app.Activity
 import android.content.res.Configuration
 import android.util.Log
 import android.view.ViewGroup
+import android.webkit.WebView
+import android.net.Uri
+import android.content.Intent
 import com.google.android.gms.ads.MobileAds
 import org.apache.cordova.CallbackContext
 import org.apache.cordova.CordovaPlugin
+import org.apache.cordova.CordovaWebView
+import org.apache.cordova.CordovaInterface
 import org.apache.cordova.PluginResult
 import org.json.JSONArray
 import org.json.JSONException
@@ -33,6 +39,14 @@ class AdMob : CordovaPlugin(), Adapter {
     private var readyCallbackContext: CallbackContext? = null
     private val eventQueue: ArrayList<PluginResult> = arrayListOf()
 
+    private val isWebviewAdEnabled: Boolean by lazy {
+        preferences.getBoolean("AdMobPlusWebViewAd", false)
+    }
+
+    private val isWebviewAdOnOverrideUrlLoadingEnabled: Boolean by lazy {
+        preferences.getBoolean("AdMobPlusWebViewAdOnOverrideUrlLoading", false)
+    }
+
     private val actions = mapOf(
         Actions.READY to ::executeReady,
         Actions.START to ::executeStart,
@@ -45,11 +59,49 @@ class AdMob : CordovaPlugin(), Adapter {
         Actions.AD_HIDE to ::executeAdHide,
         Actions.SET_APP_MUTED to ::executeSetAppMute,
         Actions.SET_APP_VOLUME to ::executeSetAppVolume,
+        "webviewGoto" to ::executeWebviewGoto,
     )
+
+    override fun initialize(cordova: CordovaInterface, cordovaWebView: CordovaWebView) {
+        cordova.activity.runOnUiThread {
+            if (isWebviewAdEnabled) {
+                val webView = cordovaWebView.view as WebView
+                MobileAds.registerWebView(webView)
+                webView.reload()
+                Log.d(TAG, "Integrated the WebView API for Ads in ${webView.url} WebView")
+            }
+        }
+        super.initialize(cordova, cordovaWebView)
+    }
 
     override fun pluginInitialize() {
         super.pluginInitialize()
         Log.i(TAG, "Initialize plugin")
+    }
+
+    // Extracted from cordova-plugin-openblank-mobi
+    override fun onOverrideUrlLoading(url: String): Boolean {
+        if (!isWebviewAdEnabled && !isWebviewAdOnOverrideUrlLoadingEnabled) return super.onOverrideUrlLoading(url)
+
+        Log.d(TAG, "onOverrideUrlLoading called with URL $url")
+        return try {
+            val intent = Intent(Intent.ACTION_VIEW)
+            // Omitting the MIME type for file: URLs causes "No Activity found to handle Intent".
+            // Adding the MIME type to http: URLs causes them to not be handled by the downloader.
+            val uri = Uri.parse(url)
+            intent.setData(uri)
+            if (uri.scheme in setOf("http", "https")) {
+                cordova.activity.startActivity(intent)
+                Log.d(TAG, "Open Iframe URL to browser $url")
+                //webView.sendJavascript("cordova.InAppBrowser.open('" + url + "', '_system');");
+            } else {
+                return false
+            }
+            true // true prevents navigation navigation
+        } catch (e: android.content.ActivityNotFoundException) {
+            Log.d(TAG, "onOverrideUrlLoading: Error loading url $url:$e")
+            false
+        }
     }
 
     @Throws(JSONException::class)
@@ -97,6 +149,7 @@ class AdMob : CordovaPlugin(), Adapter {
 
         ctx.optString("cls")?.also {
             val ad = when (it) {
+                "WebViewAd" -> WebViewAd(ctx)
                 "AppOpenAd" -> AppOpen(ctx)
                 "BannerAd" -> Banner(ctx)
                 "InterstitialAd" -> Interstitial(ctx)
@@ -157,6 +210,14 @@ class AdMob : CordovaPlugin(), Adapter {
         val value = BigDecimal.valueOf(ctx.args.optDouble(0)).toFloat()
         MobileAds.setAppVolume(value)
         ctx.resolve()
+    }
+
+    private fun executeWebviewGoto(ctx: ExecuteContext) {
+        cordova.activity.runOnUiThread {
+            val webView = webView.view as WebView
+            webView.loadUrl(ctx.args.getString(0))
+            ctx.resolve()
+        }
     }
 
     override val activity: Activity get() = cordova.activity

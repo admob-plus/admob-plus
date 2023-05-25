@@ -43,6 +43,7 @@
         <source-file src="src/android/cordova/ExecuteContext.kt" target-dir="app/src/main/kotlin/admob/plus/cordova" />
         <source-file src="src/android/cordova/Generated.kt" target-dir="app/src/main/kotlin/admob/plus/cordova" />
         <source-file src="src/android/cordova/ads/AdBase.kt" target-dir="app/src/main/kotlin/admob/plus/cordova/ads" />
+        <source-file src="src/android/cordova/ads/WebViewAd.kt" target-dir="app/src/main/kotlin/admob/plus/cordova/ads" />
         <source-file src="src/android/cordova/ads/AppOpen.kt" target-dir="app/src/main/kotlin/admob/plus/cordova/ads" />
         <source-file src="src/android/cordova/ads/Banner.kt" target-dir="app/src/main/kotlin/admob/plus/cordova/ads" />
         <source-file src="src/android/cordova/ads/Interstitial.kt" target-dir="app/src/main/kotlin/admob/plus/cordova/ads" />

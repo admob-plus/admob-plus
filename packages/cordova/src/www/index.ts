@@ -12,13 +12,14 @@ import RewardedInterstitialAd, {
 import {
   AdMobConfig,
   Events,
-  execAsync,
   NativeActions,
   Platforms,
   RequestConfig,
-  start,
   TrackingAuthorizationStatus,
+  execAsync,
+  start,
 } from './shared'
+import WebViewAd from './webview'
 
 export * from './api'
 export {
@@ -33,6 +34,7 @@ export {
   RewardedInterstitialAd,
   RewardedInterstitialAdOptions,
   ServerSideVerificationOptions,
+  WebViewAd,
 }
 
 export class AdMob {
@@ -42,6 +44,7 @@ export class AdMob {
   public readonly NativeAd = NativeAd
   public readonly RewardedAd = RewardedAd
   public readonly RewardedInterstitialAd = RewardedInterstitialAd
+  public readonly WebViewAd = WebViewAd
 
   public readonly Events = Events
   public readonly TrackingAuthorizationStatus = TrackingAuthorizationStatus

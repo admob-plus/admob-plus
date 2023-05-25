@@ -4,12 +4,11 @@ import android.app.Activity
 import android.view.ViewGroup
 import com.google.android.gms.ads.AdError
 import com.google.android.gms.ads.rewarded.RewardItem
-import com.google.android.gms.example.bannerexample.R
 
 interface Adapter {
     val activity: Activity
 
-    val contentView: ViewGroup? get() = activity.findViewById(R.id.content)
+    val contentView: ViewGroup? get() = activity.findViewById(android.R.id.content)
 
     fun emit(eventName: String, data: Map<String, Any?> = mapOf())
 }
