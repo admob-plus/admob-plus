@@ -33,8 +33,10 @@ class AMBPlugin: CDVPlugin, WKNavigationDelegate {
         }
     }
 
+    var overrideUrlLoading: Bool = true
+
     @objc func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        if navigationAction.sourceFrame == nil {
+        if navigationAction.sourceFrame == nil, overrideUrlLoading {
             if let url = navigationAction.request.url, url.scheme == "http" || url.scheme == "https" {
                 UIApplication.shared.open(url)
                 decisionHandler(.cancel)
@@ -211,6 +213,18 @@ class AMBPlugin: CDVPlugin, WKNavigationDelegate {
 
         DispatchQueue.main.async {
             AMBBanner.config(ctx)
+        }
+    }
+
+    @objc func webviewGoto(_ command: CDVInvokedUrlCommand) {
+        let ctx = AMBContext(command)
+
+        DispatchQueue.main.async {
+            if let url = URL(string: ctx.optWebviewGoto()) {
+                let webView = self.webViewEngine.engineWebView as! WKWebView
+                self.overrideUrlLoading = false
+                webView.load(URLRequest(url: url))
+            }
         }
     }
 

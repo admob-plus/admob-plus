@@ -55,7 +55,7 @@ class AdMob : CordovaPlugin(), Adapter {
         Actions.AD_HIDE to ::executeAdHide,
         Actions.SET_APP_MUTED to ::executeSetAppMute,
         Actions.SET_APP_VOLUME to ::executeSetAppVolume,
-        "webview-goto" to ::executeWebviewGoto,
+        "webviewGoto" to ::executeWebviewGoto,
     )
 
     override fun initialize(cordova: CordovaInterface, cordovaWebView: CordovaWebView) {

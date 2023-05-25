@@ -9,7 +9,7 @@ export interface WebViewAdOptions extends MobileAdOptions {
 
 export default class WebViewAd extends MobileAd<WebViewAdOptions> {
   static async checkIntegration() {
-    await execAsync('webview-goto' as never, [
+    await execAsync('webviewGoto' as never, [
       'https://webview-api-for-ads-test.glitch.me/',
     ]);
   }
