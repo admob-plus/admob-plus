@@ -25,6 +25,7 @@ custom_edit_url: null
 - [NativeAd](classes/NativeAd.md)
 - [RewardedAd](classes/RewardedAd.md)
 - [RewardedInterstitialAd](classes/RewardedInterstitialAd.md)
+- [WebViewAd](classes/WebViewAd.md)
 
 ## Interfaces
 

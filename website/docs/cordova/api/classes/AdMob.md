@@ -20,7 +20,7 @@ custom_edit_url: null
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:39
+packages/cordova/src/www/index.ts:41
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:40
+packages/cordova/src/www/index.ts:42
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:46
+packages/cordova/src/www/index.ts:49
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:41
+packages/cordova/src/www/index.ts:43
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:42
+packages/cordova/src/www/index.ts:44
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:43
+packages/cordova/src/www/index.ts:45
 
 ___
 
@@ -80,13 +80,23 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:44
+packages/cordova/src/www/index.ts:46
 
 ___
 
 ### TrackingAuthorizationStatus
 
 • `Readonly` **TrackingAuthorizationStatus**: typeof [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md) = `TrackingAuthorizationStatus`
+
+#### Defined in
+
+packages/cordova/src/www/index.ts:50
+
+___
+
+### WebViewAd
+
+• `Readonly` **WebViewAd**: typeof [`WebViewAd`](WebViewAd.md) = `WebViewAd`
 
 #### Defined in
 
@@ -110,7 +120,7 @@ packages/cordova/src/www/index.ts:47
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:53
+packages/cordova/src/www/index.ts:56
 
 ___
 
@@ -130,7 +140,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:49
+packages/cordova/src/www/index.ts:52
 
 ___
 
@@ -144,7 +154,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:69
+packages/cordova/src/www/index.ts:72
 
 ___
 
@@ -164,7 +174,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:57
+packages/cordova/src/www/index.ts:60
 
 ___
 
@@ -184,7 +194,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:61
+packages/cordova/src/www/index.ts:64
 
 ___
 
@@ -198,4 +208,4 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:65
+packages/cordova/src/www/index.ts:68

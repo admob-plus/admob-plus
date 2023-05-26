@@ -28,6 +28,8 @@ custom_edit_url: null
 
   ↳ [`RewardedInterstitialAd`](RewardedInterstitialAd.md)
 
+  ↳ [`WebViewAd`](WebViewAd.md)
+
 ## Constructors
 
 ### constructor
