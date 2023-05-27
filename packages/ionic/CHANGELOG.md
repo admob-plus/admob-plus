@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.1](https://github.com/admob-plus/admob-plus/compare/@admob-plus/ionic@2.0.0-alpha.0...@admob-plus/ionic@2.0.0-alpha.1) (2023-05-27)
+
+
+### Bug Fixes
+
+* **ionic:** no WebViewAd ([9cf2165](https://github.com/admob-plus/admob-plus/commit/9cf2165ebc4dbda3badeec2e1a7692e08fe36ee8))
+
+
+
+
+
 # [2.0.0-alpha.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/ionic@1.7.0...@admob-plus/ionic@2.0.0-alpha.0) (2023-05-22)
 
 **Note:** Version bump only for package @admob-plus/ionic

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.1](https://github.com/admob-plus/admob-plus/compare/pkg-proxy@0.3.0...pkg-proxy@0.3.1) (2023-05-27)
+
+
+### Bug Fixes
+
+* **cordova:** install missing fs-extra type ([6f80de6](https://github.com/admob-plus/admob-plus/commit/6f80de6b0e5415e7cfda2dec3c5c44b37925602a))
+
+
+
+
+
 # [0.3.0](https://github.com/admob-plus/admob-plus/compare/pkg-proxy@0.2.3...pkg-proxy@0.3.0) (2022-08-14)
 
 

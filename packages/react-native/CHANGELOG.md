@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.1](https://github.com/admob-plus/admob-plus/compare/@admob-plus/react-native@2.0.0-alpha.0...@admob-plus/react-native@2.0.0-alpha.1) (2023-05-27)
+
+
+### Features
+
+* **cordova:** support for WebView API for Ads on Android and iOS ([#539](https://github.com/admob-plus/admob-plus/issues/539)) ([6f2a9fc](https://github.com/admob-plus/admob-plus/commit/6f2a9fc26ba9eebe5ab00253f7c69855e4a84484))
+
+
+
+
+
 # [2.0.0-alpha.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/react-native@1.19.0...@admob-plus/react-native@2.0.0-alpha.0) (2023-05-22)
 
 **Note:** Version bump only for package @admob-plus/react-native

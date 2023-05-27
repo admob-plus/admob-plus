@@ -1186,7 +1186,7 @@ importers:
   packages/cordova-native:
     dependencies:
       admob-plus-cordova:
-        specifier: ^2.0.0-alpha.0
+        specifier: ^2.0.0-alpha.1
         version: link:../cordova
     devDependencies:
       '@admob-plus-internal/rollup-config':
@@ -46668,7 +46668,7 @@ packages:
   file:packages/cli:
     resolution: {directory: packages/cli, type: directory}
     name: admob-plus
-    version: 2.0.0-alpha.0
+    version: 2.0.0-alpha.1
     engines: {node: '>=12.2.0'}
     hasBin: true
     dependencies:
@@ -46704,7 +46704,7 @@ packages:
   file:packages/cordova:
     resolution: {directory: packages/cordova, type: directory}
     name: admob-plus-cordova
-    version: 2.0.0-alpha.0
+    version: 2.0.0-alpha.1
     dependencies:
       fast-glob: 3.2.12
       fs-extra: 10.1.0
@@ -46720,7 +46720,7 @@ packages:
   file:packages/pkg-proxy:
     resolution: {directory: packages/pkg-proxy, type: directory}
     name: pkg-proxy
-    version: 0.3.0
+    version: 0.3.1
     engines: {node: '>=12.0.0'}
     dependencies:
       escalade: 3.1.1
@@ -46732,7 +46732,7 @@ packages:
     resolution: {directory: packages/react-native, type: directory}
     id: file:packages/react-native
     name: '@admob-plus/react-native'
-    version: 2.0.0-alpha.0
+    version: 2.0.0-alpha.1
     peerDependencies:
       react: '>=16.8.1'
       react-native: '>=0.60.0-rc.0 <1.0.x'
