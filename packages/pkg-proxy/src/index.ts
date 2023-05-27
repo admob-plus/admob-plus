@@ -26,7 +26,7 @@ async function findPackageJson(opts?: Options) {
   if (opts?.searchParents) {
     const result = await escalade(
       cwd,
-      (_dir, names) => names.includes(fileName) && fileName
+      (_dir: string, names: string[]) => names.includes(fileName) && fileName
     );
     if (result) return result;
   }
