@@ -3,6 +3,12 @@ title: WebView Ad
 sidebar_label: WebView
 ---
 
+:::warning
+
+This feature requires careful handling about how your app is loading and presented to conform the Google AdSense requirements, your account may be banned from mis-configuration.
+
+:::
+
 WebView Ad is the integration of [WebView API for Ads](https://developers.google.com/admob/android/webview) for [Android](https://developers.google.com/admob/android/webview) and [iOS](https://developers.google.com/admob/ios/webview) in the Cordova WebView, with this ads you can show AdSense ads in your app.
 
 ## AdSense
@@ -11,8 +17,8 @@ In order to use these ads you need to have an active [AdSense](https://www.googl
 
 See also:
 
-https://support.google.com/admob/answer/48182#trs
-https://support.google.com/publisherpolicies/answer/11112688
+- [Technical requirements for web content viewing frames for apps](https://support.google.com/admob/answer/48182#trs)
+- [Google-served ads on screens without publisher-content](https://support.google.com/publisherpolicies/answer/11112688)
 
 ## Getting Started
 
@@ -49,25 +55,6 @@ Any solution to this without changing the `MainActivity.java` is welcome.
 
 Create a **MainActivity.java** file.
 ``` java
-/*
-       Licensed to the Apache Software Foundation (ASF) under one
-       or more contributor license agreements.  See the NOTICE file
-       distributed with this work for additional information
-       regarding copyright ownership.  The ASF licenses this file
-       to you under the Apache License, Version 2.0 (the
-       "License"); you may not use this file except in compliance
-       with the License.  You may obtain a copy of the License at
-
-         http://www.apache.org/licenses/LICENSE-2.0
-
-       Unless required by applicable law or agreed to in writing,
-       software distributed under the License is distributed on an
-       "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-       KIND, either express or implied.  See the License for the
-       specific language governing permissions and limitations
-       under the License.
- */
-
 package app.package.name;
 
 import android.os.Bundle;
@@ -94,7 +81,7 @@ public class MainActivity extends CordovaActivity
         loadUrl(launchUrl);
 
         final CordovaActivity me = this;
-
+        // highlight-start
         me.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -103,6 +90,7 @@ public class MainActivity extends CordovaActivity
                 Log.d("AdMobPlus", "Integrated the WebView API for Ads in "+webView.getUrl()+" WebView from MainActivity");
             }
         });
+        // highlight-end
     }
 }
 

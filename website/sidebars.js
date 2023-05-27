@@ -35,6 +35,7 @@ module.exports = {
             'cordova/ads/native',
             'cordova/ads/rewarded',
             'cordova/ads/rewarded-interstitial',
+            'cordova/ads/webview',
           ],
         },
         'cordova/test-ads',
