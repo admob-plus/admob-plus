@@ -44,7 +44,7 @@ class AdMob : CordovaPlugin(), Adapter {
     }
 
     private val isWebviewAdOnOverrideUrlLoadingEnabled: Boolean by lazy {
-        preferences.getBoolean("AdMobPlusWebViewAdOnOverrideUrlLoading", false)
+        preferences.getBoolean("AdMobPlusOverrideUrlLoading", false)
     }
 
     private val actions = mapOf(
