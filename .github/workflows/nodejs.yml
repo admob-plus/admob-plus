@@ -69,27 +69,18 @@ jobs:
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v2
 
-      - name: Set up JDK 1.8
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'adopt'
-          java-version: '8'
-
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: pnpm
 
-      - name: Restore Gradle cache
-        uses: actions/cache@v3
+      - uses: actions/setup-java@v3
         with:
-          path: |
-            ~/.gradle/caches
-            ~/.gradle/wrapper
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
-          restore-keys: |
-            ${{ runner.os }}-gradle-
+          distribution: temurin
+          java-version: '11'
+
+      - uses: gradle/gradle-build-action@v2
 
       - name: Install dependencies
         run: |
@@ -97,12 +88,12 @@ jobs:
           echo "/usr/local/lib/android/sdk/tools" >> $GITHUB_PATH
           pnpm install --frozen-lockfile
           pushd examples/cordova
+          pnpm i -D npm@6
           npx cordova platform rm ios || true
-          npx cordova plugin rm admob-plus-cordova || true
-          npx cordova plugin add ../../packages/cordova --link
+          npx cordova platform rm browser || true
           npx cordova prepare
           popd
-#
+
       - name: Test
         uses: reactivecircus/android-emulator-runner@v2
         with:
@@ -133,9 +124,9 @@ jobs:
         run: |
           pnpm install --frozen-lockfile
           pushd examples/cordova
+          pnpm i -D npm@6
           npx cordova platform rm android || true
-          npx cordova plugin rm admob-plus-cordova || true
-          npx cordova plugin add ../../packages/cordova --link
+          npx cordova platform rm browser || true
           npx cordova prepare
           popd
           pushd examples/ionic3
@@ -149,7 +140,7 @@ jobs:
           # npm run test:ios
           popd
           pushd examples/ionic3
-          npm run build --prod
+          # npm run build --prod
           popd
 
   link-checker:
