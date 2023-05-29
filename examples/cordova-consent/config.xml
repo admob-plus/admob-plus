@@ -17,6 +17,8 @@
     <allow-intent href="geo:*" />
     <platform name="android">
         <preference name="AndroidXEnabled" value="true" />
+        <preference name="GradlePluginKotlinEnabled" value="true" />
+        <preference name="GradlePluginKotlinCodeStyle" value="official" />
         <allow-intent href="market:*" />
     </platform>
     <platform name="ios">
@@ -25,12 +27,11 @@
         <preference name="deployment-target" value="11.0" />
         <preference name="SwiftVersion" value="5.3" />
     </platform>
-    <plugin name="cordova-plugin-whitelist" spec="1.3.4" />
     <plugin name="admob-plus-cordova" spec="../../packages/cordova">
         <variable name="APP_ID_ANDROID" value="ca-app-pub-3940256099942544~3347511713" />
         <variable name="APP_ID_IOS" value="ca-app-pub-3940256099942544~1458002511" />
     </plugin>
     <plugin name="cordova-plugin-consent" spec="../../packages/cordova-consent" />
-    <engine name="ios" spec="6.1.1" />
-    <engine name="android" spec="9.0.0" />
+    <engine name="ios" spec="6.2.0" />
+    <engine name="android" spec="9.1.0" />
 </widget>

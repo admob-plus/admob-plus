@@ -87,14 +87,14 @@
     ],
     "overrides": {
       "@admob-plus-internal/cli": "link:./internal/cli",
-      "@types/node": "^18.11.9",
-      "@types/react": "17.0.39",
+      "@types/node": "^20.2.5",
+      "@types/react": "18.2.7",
       "node-sass": "8.0.0",
-      "sharp": "0.31.2"
+      "sharp": "0.32.1"
     }
   },
   "volta": {
-    "node": "16.18.1"
+    "node": "16.20.0"
   },
   "workspaces": [
     "examples/*",

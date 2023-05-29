@@ -45,7 +45,7 @@ const initRequestInfoUpdate = async () => {
     try {
       btn.innerHTML = `${await consent.requestInfoUpdate({
         debugGeography: consent.DebugGeography.EEA,
-        // NOTE put your test device id herer
+        // NOTE put your test device id here
         testDeviceIds: ["TEST-DEVICE-HASHED-ID"],
       })}`
     } catch (err) {
