@@ -46701,7 +46701,7 @@ packages:
   file:packages/cordova-consent:
     resolution: {directory: packages/cordova-consent, type: directory}
     name: cordova-plugin-consent
-    version: 3.0.0-alpha.0
+    version: 3.0.0-alpha.1
     dev: false
 
   file:packages/pkg-proxy:

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.1](https://github.com/admob-plus/admob-plus/compare/cordova-plugin-consent@3.0.0-alpha.0...cordova-plugin-consent@3.0.0-alpha.1) (2023-05-29)
+
+
+### Features
+
+* **cordova-consent:** rewrite in kotlin ([d5b5d80](https://github.com/admob-plus/admob-plus/commit/d5b5d80f8651aa72df1710df5597da136ad0e056))
+
+
+
+
+
 # [3.0.0-alpha.0](https://github.com/admob-plus/admob-plus/compare/cordova-plugin-consent@2.4.0...cordova-plugin-consent@3.0.0-alpha.0) (2023-05-22)
 
 
