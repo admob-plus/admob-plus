@@ -8,7 +8,7 @@ pre-commit:
   commands:
     fixer:
       run: >
-        lefthook run fixer &&
+        npx lefthook run fixer &&
         git add {staged_files}
     remark:
       glob: "*.md"
