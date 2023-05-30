@@ -35,7 +35,7 @@
     "verify": "npm run verify:ios && npm run verify:android && npm run verify:web",
     "verify:ios": "cd ios && pod install && xcodebuild -workspace Plugin.xcworkspace -scheme Plugin && cd ..",
     "verify:android": "cd android && ./gradlew clean build test && cd ..",
-    "verify:web": "nx build",
+    "verify:web": "npm run build",
     "lint": "npm run eslint && npm run prettier -- --check && yarn swiftlint -- lint",
     "fmt": "npm run eslint -- --fix && npm run prettier -- --write && npm run swiftlint -- autocorrect --format",
     "eslint": "eslint . --ext ts",
@@ -45,23 +45,23 @@
     "build": "npx nx build",
     "clean": "echo del dist",
     "watch": "tsc --watch",
-    "prepublishOnly": "npm run build",
+    "prepublishOnly": "npx nx build",
     "test": "tsc --noEmit"
   },
   "devDependencies": {
-    "@capacitor/android": "^3.6.0",
-    "@capacitor/core": "^3.6.0",
-    "@capacitor/docgen": "^0.2.0",
-    "@capacitor/ios": "^3.6.0",
+    "@capacitor/android": "^5.0.4",
+    "@capacitor/core": "^5.0.4",
+    "@capacitor/docgen": "^0.2.1",
+    "@capacitor/ios": "^5.0.4",
     "@ionic/eslint-config": "^0.3.0",
-    "@ionic/prettier-config": "^2.0.0",
+    "@ionic/prettier-config": "^3.0.0",
     "@ionic/swiftlint-config": "^1.1.2",
     "del-cli": "^5.0.0",
     "rollup": "^2.78.0",
-    "typescript": "~4.9.3"
+    "typescript": "~5.0.4"
   },
   "peerDependencies": {
-    "@capacitor/core": "^3.6.0"
+    "@capacitor/core": "^5.0.0"
   },
   "homepage": "https://admob-plus.github.io/docs/capacitor",
   "funding": "https://admob-plus.github.io/funding",
