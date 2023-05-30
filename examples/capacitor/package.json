@@ -1,21 +1,24 @@
 {
   "private": true,
-  "name": "admob-plus-capacitor-example",
+  "name": "capacitor-app",
   "version": "1.0.0",
+  "description": "An Amazing Capacitor App",
   "main": "index.js",
   "scripts": {
-    "sync": "webpack --mode production && cap sync"
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@admob-plus-internal/cli": "file:../../internal/cli",
-    "@admob-plus/capacitor": "file:../../packages/capacitor",
-    "@capacitor/android": "^3.6.0",
-    "@capacitor/core": "^3.6.0",
-    "@capacitor/ios": "^3.6.0"
+    "@admob-plus/capacitor": "workspace:*",
+    "@capacitor/android": "^5.0.4",
+    "@capacitor/camera": "^5.0.2",
+    "@capacitor/core": "^5.0.4",
+    "@capacitor/ios": "^5.0.4",
+    "@capacitor/splash-screen": "^5.0.2"
   },
   "devDependencies": {
-    "@capacitor/cli": "^3.6.0",
-    "webpack": "^5.74.0",
-    "webpack-cli": "^4.10.0"
+    "@capacitor/cli": "^5.0.4",
+    "vite": "^2.9.13"
   }
 }

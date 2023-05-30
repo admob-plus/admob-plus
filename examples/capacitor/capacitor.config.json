@@ -1,8 +1,7 @@
 {
-  "appId": "com.example.app",
+  "appId": "example.capacitor",
   "appName": "AdMobPlusCapacitorExample",
-  "bundledWebRuntime": true,
-  "webDir": "www",
+  "webDir": "dist",
   "plugins": {
     "SplashScreen": {
       "launchShowDuration": 0

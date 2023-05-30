@@ -19,19 +19,10 @@
       src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.js"
     ></script>
 
-    <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico" />
-    <link rel="manifest" href="manifest.json" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/x-icon" href="./assets/icon/favicon.ico" />
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="stylesheet" href="./css/style.css" />
     <meta name="theme-color" content="#31d53d" />
-
-    <!-- un-comment this code to enable service worker
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js')
-        .then(() => console.log('service worker installed'))
-        .catch(err => console.log('Error', err));
-    }
-  </script>-->
   </head>
   <body>
     <p>top</p>
@@ -49,13 +40,7 @@
       <button id="show-rewarded-interstitial-btn">Show Rewarded Interstitial</button>
     </p>
     <div class="bottom">bottom</div>
-    <!--
-    This simple example uses Capacitor Core as a bundled file.
-    For large apps, we recommend using a bundler/module loader such as
-    rollup or webpack and importing Capacitor using ES2015 imports.
-    -->
-    <script src="capacitor.js"></script>
 
-    <script src="dist/main.js"></script>
+    <script src="./js/main.js" type="module"></script>
   </body>
 </html>

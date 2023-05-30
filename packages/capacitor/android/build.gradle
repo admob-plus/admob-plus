@@ -19,6 +19,7 @@ buildscript {
 apply plugin: 'com.android.library'
 
 android {
+    namespace "admob.plus.capacitor"
     compileSdkVersion project.hasProperty('compileSdkVersion') ? rootProject.ext.compileSdkVersion : 30
     defaultConfig {
         minSdkVersion project.hasProperty('minSdkVersion') ? rootProject.ext.minSdkVersion : 21
