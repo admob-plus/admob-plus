@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.1](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@2.0.0-alpha.0...@admob-plus/capacitor@2.0.0-alpha.1) (2023-05-30)
+
+
+### Features
+
+* **capacitor/android:** rewrite in kotlin ([55fcbb5](https://github.com/admob-plus/admob-plus/commit/55fcbb5cd2bb09c91e005a98271cf798772fe543))
+* **examples/capacitor:** re-create in capacitor v5 ([330c76d](https://github.com/admob-plus/admob-plus/commit/330c76d94e29a32e1dbdb2a2951ddad0b04427ad))
+
+
+
+
+
 # [2.0.0-alpha.0](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@1.24.0...@admob-plus/capacitor@2.0.0-alpha.0) (2023-05-22)
 
 
