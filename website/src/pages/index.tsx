@@ -1,16 +1,16 @@
-import Link from '@docusaurus/Link'
-import useBaseUrl from '@docusaurus/useBaseUrl'
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
-import Layout from '@theme/Layout'
-import clsx from 'clsx'
-import React from 'react'
-import styles from './styles.module.css'
+import Link from '@docusaurus/Link';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import Layout from '@theme/Layout';
+import clsx from 'clsx';
+import React from 'react';
+import styles from './styles.module.css';
 
-const ExternalLink = ({ href, children }) => (
+const ExternalLink = ({href, children}) => (
   <a href={href} rel="external nofollow">
     {children}
   </a>
-)
+);
 
 const features = [
   {
@@ -18,7 +18,10 @@ const features = [
     imageUrl: 'img/saco.svg',
     description: (
       <>
-        Unlike&nbsp;
+        <ExternalLink href="https://github.com/cozycodegh/cordova-plugin-ads/blob/3d8f14ac02a8a7bad0ab4b472e6b776640f88c15/www/ads.js#L32">
+          Unlike
+        </ExternalLink>
+        &nbsp;
         <ExternalLink href="https://github.com/appfeel/admob-google-cordova/blob/3f122f278a323a4bc9e580f400182a7bd690a346/src/android/AdMobAds.java#L569">
           some
         </ExternalLink>
@@ -82,10 +85,10 @@ const features = [
       </>
     ),
   },
-]
+];
 
-function Feature({ imageUrl, title, description }) {
-  const imgUrl = useBaseUrl(imageUrl)
+function Feature({imageUrl, title, description}) {
+  const imgUrl = useBaseUrl(imageUrl);
   return (
     <div className={clsx('col col--4', styles.feature)}>
       {imgUrl && (
@@ -96,11 +99,11 @@ function Feature({ imageUrl, title, description }) {
       <h3>{title}</h3>
       <p>{description}</p>
     </div>
-  )
+  );
 }
 
 function Home() {
-  const { siteConfig } = useDocusaurusContext()
+  const {siteConfig} = useDocusaurusContext();
   return (
     <Layout title={siteConfig.title} description={siteConfig.tagline}>
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
@@ -111,7 +114,7 @@ function Home() {
             <Link
               className={clsx(
                 'button button--outline button--secondary button--lg',
-                styles.getStarted,
+                styles.getStarted
               )}
               to={useBaseUrl('docs/')}
             >
@@ -125,7 +128,7 @@ function Home() {
           <section className={styles.features}>
             <div className="container">
               <div className="row">
-                {features.map((props) => (
+                {features.map(props => (
                   // eslint-disable-next-line react/jsx-props-no-spreading
                   <Feature key={props.title} {...props} />
                 ))}
@@ -135,7 +138,7 @@ function Home() {
         )}
       </main>
     </Layout>
-  )
+  );
 }
 
-export default Home
+export default Home;
