@@ -8,6 +8,7 @@ import * as testIdsCmd from './cmds/test-ids.js';
 import {testAppIds} from './doctor/admob.js';
 
 export {testAppIds};
+
 export default (name: string) => {
   const {argv} = yargs(hideBin(process.argv))
     .scriptName(name)

@@ -46,7 +46,9 @@ export const command = 'info';
 export const desc =
   'Get relevant version info about OS, toolchain and libraries';
 
-type Options = {clipboard: boolean};
+interface Options {
+  clipboard?: boolean;
+}
 
 export const builder: CommandBuilder<unknown, Options> = {
   clipboard: {

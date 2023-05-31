@@ -1,4 +1,4 @@
-import assert from 'assert';
+import assert from 'node:assert';
 import got from 'got';
 import {Listr, type ListrTask} from 'listr2';
 import {findPkg} from 'pkg-proxy';
@@ -45,7 +45,7 @@ export default async () => {
   try {
     await tasks.run();
   } catch {
-    const issueCount = tasks.err.length;
+    const issueCount = tasks.errors.length;
     console.error(`Found ${issueCount} issue${issueCount === 1 ? '' : 's'}.`);
     // eslint-disable-next-line no-process-exit
     process.exit(1);

@@ -155,7 +155,7 @@ export const command = 'install';
 
 export const desc = 'Install plugin';
 
-type Options = {project: string};
+type Options = {project?: string};
 
 export const builder: CommandBuilder<unknown, Options> = {
   project: {

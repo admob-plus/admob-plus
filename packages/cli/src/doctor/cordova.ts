@@ -11,7 +11,7 @@ import {findPkg, PackageJson} from 'pkg-proxy';
 import semver from 'semver';
 
 import {collectDependencies} from './android.js';
-import {Ctx} from './listr';
+import {Ctx} from './listr.js';
 
 const {ConfigParser, PluginInfo} = cordovaCommon;
 const require = createRequire(import.meta.url);

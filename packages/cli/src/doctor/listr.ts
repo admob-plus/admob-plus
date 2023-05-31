@@ -8,8 +8,11 @@ export interface Ctx {
   iosSDKVersion: string;
 }
 
-export const options: ListrBaseClassOptions<any, any, 'verbose'> = {
+export const options: ListrBaseClassOptions<any, any, 'simple'> = {
   concurrent: true,
   exitOnError: false,
-  rendererOptions: {collapse: false, persistentOutput: true},
+  rendererOptions: {
+    collapse: false,
+    persistentOutput: true,
+  },
 };
