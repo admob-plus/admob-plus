@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.2](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@2.0.0-alpha.1...admob-plus-cordova@2.0.0-alpha.2) (2023-05-31)
+
+
+### Features
+
+* **cordova/android:** allow enable AdMobPlusOverrideUrlLoading without webview ad enabled ([c6bf09f](https://github.com/admob-plus/admob-plus/commit/c6bf09fa07d814e6a534464fe5029d1d3259e4d8))
+* **cordova/android:** optimize initialization and ad loading ([6e168d0](https://github.com/admob-plus/admob-plus/commit/6e168d048385f9f6399ed5cfd4a285afcfcdace8))
+* **cordova/android:** update PLAY_SERVICES_VERSION to 22.1.0 ([613f974](https://github.com/admob-plus/admob-plus/commit/613f9742dd83c9b756a0e3f4a2670a64b9be1bef))
+
+
+
+
+
 # [2.0.0-alpha.1](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@2.0.0-alpha.0...admob-plus-cordova@2.0.0-alpha.1) (2023-05-27)
 
 

@@ -1190,7 +1190,7 @@ importers:
   packages/cordova-native:
     dependencies:
       admob-plus-cordova:
-        specifier: ^2.0.0-alpha.1
+        specifier: ^2.0.0-alpha.2
         version: link:../cordova
     devDependencies:
       '@admob-plus-internal/rollup-config':
@@ -46620,7 +46620,7 @@ packages:
   file:packages/cli:
     resolution: {directory: packages/cli, type: directory}
     name: admob-plus
-    version: 2.0.0-alpha.1
+    version: 2.0.0-alpha.2
     engines: {node: '>=16.0.0'}
     hasBin: true
     dependencies:
@@ -46656,7 +46656,7 @@ packages:
   file:packages/cordova:
     resolution: {directory: packages/cordova, type: directory}
     name: admob-plus-cordova
-    version: 2.0.0-alpha.1
+    version: 2.0.0-alpha.2
     dependencies:
       fast-glob: 3.2.12
       fs-extra: 10.1.0

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.3](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova-native@1.0.0-alpha.2...admob-plus-cordova-native@1.0.0-alpha.3) (2023-05-31)
+
+**Note:** Version bump only for package admob-plus-cordova-native
+
+
+
+
+
 # [1.0.0-alpha.2](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova-native@1.0.0-alpha.1...admob-plus-cordova-native@1.0.0-alpha.2) (2023-05-29)
 
 
