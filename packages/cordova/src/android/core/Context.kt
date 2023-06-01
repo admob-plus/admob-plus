@@ -2,7 +2,6 @@ package admob.plus.core
 
 import android.app.Activity
 import android.os.Bundle
-import android.util.SparseArray
 import com.google.ads.mediation.admob.AdMobAdapter
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
@@ -10,7 +9,7 @@ import com.google.android.gms.ads.RequestConfiguration
 import com.google.android.gms.ads.rewarded.ServerSideVerificationOptions
 import org.json.JSONObject
 
-val ads = SparseArray<Ad>()
+val ads = mutableMapOf<String, Ad>()
 
 interface Context {
     val activity: Activity
@@ -41,8 +40,8 @@ interface Context {
     fun optStringList(name: String): List<String>?
     fun optObject(name: String): JSONObject?
 
-    fun optId(): Int? {
-        return optInt("id")
+    fun optId(): String? {
+        return optInt("id")?.toString()
     }
 
     fun optAd(): Ad? {

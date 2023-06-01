@@ -234,34 +234,30 @@ class AdMob : CordovaPlugin(), Adapter {
 
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
-        for (i in 0 until ads.size()) {
-            val ad = ads.valueAt(i) as AdBase
-            ad.onConfigurationChanged(newConfig)
+        ads.forEach { it as AdBase
+            it.onConfigurationChanged(newConfig)
         }
     }
 
 
     override fun onPause(multitasking: Boolean) {
-        for (i in 0 until ads.size()) {
-            val ad = ads.valueAt(i) as AdBase
-            ad.onPause(multitasking)
+        ads.forEach { it as AdBase
+            it.onPause(multitasking)
         }
         super.onPause(multitasking)
     }
 
     override fun onResume(multitasking: Boolean) {
         super.onResume(multitasking)
-        for (i in 0 until ads.size()) {
-            val ad = ads.valueAt(i) as AdBase
-            ad.onResume(multitasking)
+        ads.forEach { it as AdBase
+            it.onResume(multitasking)
         }
     }
 
     override fun onDestroy() {
         readyCallbackContext = null
-        for (i in 0 until ads.size()) {
-            val ad = ads.valueAt(i) as AdBase
-            ad.onDestroy()
+        ads.forEach { it as AdBase
+            it.onDestroy()
         }
         Banner.destroyParentView()
         super.onDestroy()

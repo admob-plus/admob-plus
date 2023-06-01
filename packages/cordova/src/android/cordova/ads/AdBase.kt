@@ -23,7 +23,7 @@ fun removeFromParentView(view: View?): ViewGroup? {
 }
 
 abstract class AdBase(ctx: ExecuteContext) : Ad {
-    final override val id: Int
+    final override val id: String
     val adUnitId: String
     protected val adRequest: AdRequest
 
@@ -36,7 +36,7 @@ abstract class AdBase(ctx: ExecuteContext) : Ad {
     val webViewParent: ViewGroup get() = webView.parent as ViewGroup
 
     init {
-        id = Objects.requireNonNull<Int>(ctx.optId())
+        id = Objects.requireNonNull<String>(ctx.optId())
         adUnitId = Objects.requireNonNull<String>(ctx.optAdUnitID())
         adRequest = ctx.optAdRequest()
         plugin = ctx.plugin

@@ -15,7 +15,7 @@ interface Adapter {
 
 interface Ad {
     val adapter: Adapter
-    val id: Int
+    val id: String
 
     val isLoaded: Boolean
         get() = TODO("Not yet implemented")
