@@ -4,7 +4,7 @@ export { execAsync, AdSizeType, Events, NativeActions } from './generated'
 
 /** @internal */
 export type MobileAdOptions = {
-  id?: number
+  id?: string
   adUnitId: string
   contentUrl?: string
   keywords?: string[]
@@ -26,10 +26,9 @@ export async function start() {
 export class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
   public static readonly type: string = ''
 
-  private static allAds: { [s: number]: MobileAd } = {}
-  private static idCounter = 0
+  private static allAds: { [s: string]: MobileAd } = {}
 
-  public readonly id: number
+  public readonly id: string
 
   protected readonly opts: T
   private _created = false
@@ -38,24 +37,12 @@ export class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
   constructor(opts: T) {
     this.opts = opts
 
-    this.id = opts.id ?? MobileAd.nextId()
+    this.id = opts.id ?? opts.adUnitId
     MobileAd.allAds[this.id] = this
   }
 
-  public static getAdById(id: number) {
+  public static getAdById(id: string) {
     return this.allAds[id]
-  }
-
-  private static nextId() {
-    const storage = window.localStorage
-    const key = 'admob-ad-id-counter'
-    const value = storage.getItem(key)
-    if (value !== null) {
-      MobileAd.idCounter = Number(value)
-    }
-    MobileAd.idCounter += 1
-    storage.setItem(key, `${MobileAd.idCounter}`)
-    return MobileAd.idCounter
   }
 
   public get adUnitId() {
