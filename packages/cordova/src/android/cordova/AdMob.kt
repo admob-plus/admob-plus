@@ -37,6 +37,7 @@ private const val TAG = "AdMobPlus"
 class AdMob : CordovaPlugin(), Adapter {
     lateinit var context: CallbackContext
     private var readyCallbackContext: CallbackContext? = null
+    private var sdkInited = false
     private val eventQueue: ArrayList<PluginResult> = arrayListOf()
 
     private val isWebviewAdEnabled: Boolean by lazy {
@@ -133,10 +134,12 @@ class AdMob : CordovaPlugin(), Adapter {
     }
 
     private fun executeStart(ctx: ExecuteContext) {
+        if (sdkInited) return
         MobileAds.initialize(ctx.activity) {
             configForTestLabIfNeeded(ctx.activity)
             ctx.resolve(mapOf("version" to MobileAds.getVersion()))
         }
+        sdkInited = true
     }
 
     private fun executeConfigure(ctx: ExecuteContext) {
