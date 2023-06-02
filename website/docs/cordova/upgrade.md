@@ -22,3 +22,7 @@ Instead of auto-generated `id` for the ad instance, it is now default to `adUnit
 The change is introduced to avoid new instances are being created after the webview is reloaded.
 
 The `id` property is used to reference the same instance in the native code, so it should be the same between page reload.
+
+### Remove specific ad-type events
+
+They are replaced with `admob.ad.*` events.

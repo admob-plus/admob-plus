@@ -80,22 +80,18 @@ class Banner(ctx: ExecuteContext) : AdBase(ctx) {
         adView.adListener = object : AdListener() {
             override fun onAdClicked() {
                 emit(Events.AD_CLICK)
-                emit(Events.BANNER_CLICK)
             }
 
             override fun onAdClosed() {
                 emit(Events.AD_DISMISS)
-                emit(Events.BANNER_CLOSE)
             }
 
             override fun onAdFailedToLoad(error: LoadAdError) {
                 emit(Events.AD_LOAD_FAIL, error)
-                emit(Events.BANNER_LOAD_FAIL, error)
             }
 
             override fun onAdImpression() {
                 emit(Events.AD_IMPRESSION)
-                emit(Events.BANNER_IMPRESSION)
             }
 
             override fun onAdLoaded() {
@@ -107,12 +103,10 @@ class Banner(ctx: ExecuteContext) : AdBase(ctx) {
                     emit(Events.BANNER_SIZE, computeAdSize())
                 }
                 emit(Events.AD_LOAD, computeAdSize())
-                emit(Events.BANNER_LOAD)
             }
 
             override fun onAdOpened() {
                 emit(Events.AD_SHOW)
-                emit(Events.BANNER_OPEN)
             }
         }
         return adView

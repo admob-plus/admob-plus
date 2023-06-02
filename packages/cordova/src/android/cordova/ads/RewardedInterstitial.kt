@@ -26,7 +26,6 @@ class RewardedInterstitial(ctx: ExecuteContext) : AdBase(ctx) {
                 override fun onAdFailedToLoad(loadAdError: LoadAdError) {
                     mAd = null
                     emit(Events.AD_LOAD_FAIL, loadAdError)
-                    emit(Events.REWARDED_INTERSTITIAL_LOAD_FAIL, loadAdError)
                     ctx.reject(loadAdError.toString())
                 }
 
@@ -39,27 +38,22 @@ class RewardedInterstitial(ctx: ExecuteContext) : AdBase(ctx) {
                     mAd!!.fullScreenContentCallback = object : FullScreenContentCallback() {
                         override fun onAdDismissedFullScreenContent() {
                             emit(Events.AD_DISMISS)
-                            emit(Events.REWARDED_INTERSTITIAL_DISMISS)
                         }
 
                         override fun onAdFailedToShowFullScreenContent(adError: AdError) {
                             emit(Events.AD_SHOW_FAIL, adError)
-                            emit(Events.REWARDED_INTERSTITIAL_SHOW_FAIL, adError)
                         }
 
                         override fun onAdShowedFullScreenContent() {
                             mAd = null
                             emit(Events.AD_SHOW)
-                            emit(Events.REWARDED_INTERSTITIAL_SHOW)
                         }
 
                         override fun onAdImpression() {
                             emit(Events.AD_IMPRESSION)
-                            emit(Events.REWARDED_INTERSTITIAL_IMPRESSION)
                         }
                     }
                     emit(Events.AD_LOAD)
-                    emit(Events.REWARDED_INTERSTITIAL_LOAD)
                     ctx.resolve()
                 }
             })
@@ -72,7 +66,6 @@ class RewardedInterstitial(ctx: ExecuteContext) : AdBase(ctx) {
         if (this.isLoaded) {
             mAd!!.show(adapter.activity) { rewardItem: RewardItem? ->
                 emit(Events.AD_REWARD, rewardItem!!)
-                emit(Events.REWARDED_INTERSTITIAL_REWARD, rewardItem)
             }
             ctx.resolve()
         } else {

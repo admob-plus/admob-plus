@@ -26,34 +26,28 @@ class Interstitial(ctx: ExecuteContext) : AdBase(ctx) {
                 mAd!!.fullScreenContentCallback = object : FullScreenContentCallback() {
                     override fun onAdDismissedFullScreenContent() {
                         emit(Events.AD_DISMISS)
-                        emit(Events.INTERSTITIAL_DISMISS)
                     }
 
                     override fun onAdFailedToShowFullScreenContent(adError: AdError) {
                         emit(Events.AD_SHOW_FAIL, adError)
-                        emit(Events.INTERSTITIAL_SHOW_FAIL, adError)
                     }
 
                     override fun onAdShowedFullScreenContent() {
                         mAd = null
                         emit(Events.AD_SHOW)
-                        emit(Events.INTERSTITIAL_SHOW)
                     }
 
                     override fun onAdImpression() {
                         emit(Events.AD_IMPRESSION)
-                        emit(Events.INTERSTITIAL_IMPRESSION)
                     }
                 }
                 emit(Events.AD_LOAD)
-                emit(Events.INTERSTITIAL_LOAD)
                 ctx.resolve()
             }
 
             override fun onAdFailedToLoad(loadAdError: LoadAdError) {
                 mAd = null
                 emit(Events.AD_LOAD_FAIL, loadAdError)
-                emit(Events.INTERSTITIAL_LOAD_FAIL, loadAdError)
                 ctx.reject(loadAdError.toString())
             }
         })
