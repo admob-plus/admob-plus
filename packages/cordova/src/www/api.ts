@@ -31,7 +31,6 @@ export class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
   public readonly id: string
 
   protected readonly opts: T
-  private _created = false
   private _init: Promise<any> | null = null
 
   constructor(opts: T) {
@@ -39,6 +38,8 @@ export class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
 
     this.id = opts.id ?? opts.adUnitId
     MobileAd.allAds[this.id] = this
+
+    this.init()
   }
 
   public static getAdById(id: string) {
@@ -83,12 +84,11 @@ export class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
   }
 
   protected async hide() {
+    await this.init()
     return execAsync(NativeActions.adHide, [{ id: this.id }])
   }
 
   protected async init() {
-    if (this._created) return
-
     if (!started) {
       if (startPromise === null) start()
       await startPromise
@@ -104,8 +104,11 @@ export class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
       ])
     }
 
-    await this._init
-    this._created = true
+    try {
+      await this._init
+    } catch {
+      // ignore error
+    }
   }
 }
 
