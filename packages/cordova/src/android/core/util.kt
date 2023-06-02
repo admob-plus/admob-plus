@@ -1,5 +1,6 @@
 package admob.plus.core
 
+import admob.plus.cordova.ads.AdSizeType
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.res.Resources
@@ -8,6 +9,7 @@ import android.provider.Settings
 import android.util.DisplayMetrics
 import com.google.ads.mediation.admob.AdMobAdapter
 import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdSize
 import com.google.android.gms.ads.MobileAds
 import org.json.JSONArray
 import org.json.JSONObject
@@ -28,6 +30,44 @@ fun buildAdRequest(opts: JSONObject): AdRequest {
         }
     }
     return builder.addNetworkExtrasBundle(AdMobAdapter::class.java, extras).build()
+}
+
+fun buildAdSize(opts: JSONObject, activity: Activity): AdSize {
+    val name = "size"
+    if (!opts.has(name)) {
+        return AdSize.SMART_BANNER
+    }
+    val adSizeObj = opts.optJSONObject(name)
+    val adSize = AdSizeType.getAdSize(opts.optInt(name))
+    if (adSizeObj == null) {
+        return adSize ?: AdSize.SMART_BANNER
+    }
+    val adaptive = adSizeObj.optString("adaptive")
+    val w =
+        pxToDp(if (adSizeObj.has("width")) adSizeObj.optInt("width") else Resources.getSystem().displayMetrics.widthPixels)
+    if ("inline" == adaptive) {
+        if (adSizeObj.has("maxHeight")) {
+            return AdSize.getInlineAdaptiveBannerAdSize(
+                w,
+                pxToDp(adSizeObj.optInt("maxHeight"))
+            )
+        }
+    } else {
+        return when (adSizeObj.optString("orientation")) {
+            "portrait" -> AdSize.getPortraitAnchoredAdaptiveBannerAdSize(
+                activity, w
+            )
+
+            "landscape" -> AdSize.getLandscapeAnchoredAdaptiveBannerAdSize(
+                activity, w
+            )
+
+            else -> AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(
+                activity, w
+            )
+        }
+    }
+    return AdSize(w, pxToDp(adSizeObj.optInt("height")))
 }
 
 fun configForTestLabIfNeeded(activity: Activity) {

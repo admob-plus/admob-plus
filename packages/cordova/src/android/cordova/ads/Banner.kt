@@ -3,6 +3,7 @@ package admob.plus.cordova.ads
 import admob.plus.cordova.Events
 import admob.plus.cordova.ExecuteContext
 import admob.plus.core.Context
+import admob.plus.core.buildAdSize
 import admob.plus.core.pxToDp
 import android.annotation.SuppressLint
 import android.content.res.Configuration
@@ -48,7 +49,7 @@ class Banner(ctx: ExecuteContext) : AdBase(ctx) {
         get() = mAdView != null
 
     init {
-        adSize = ctx.optAdSize()
+        adSize = buildAdSize(initOpts, ctx.activity)
         gravity = if ("top" == ctx.optPosition()) Gravity.TOP else Gravity.BOTTOM
         offset = ctx.optOffset()
     }

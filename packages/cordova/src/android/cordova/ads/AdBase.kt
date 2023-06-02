@@ -23,7 +23,7 @@ fun removeFromParentView(view: View?): ViewGroup? {
 }
 
 abstract class AdBase(ctx: ExecuteContext) : Ad {
-    private val initOpts: JSONObject
+    protected val initOpts: JSONObject
 
     final override val id: String get() = initOpts.getString("id")
     val adUnitId: String get() = initOpts.getString("adUnitId")
