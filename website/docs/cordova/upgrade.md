@@ -23,6 +23,6 @@ The change is introduced to avoid new instances are being created after the webv
 
 The `id` property is used to reference the same instance in the native code, so it should be the same between page reload.
 
-### Remove specific ad-type events
+### Remove ad-type specific events
 
 They are replaced with `admob.ad.*` events.
