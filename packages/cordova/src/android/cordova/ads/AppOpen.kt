@@ -2,13 +2,18 @@ package admob.plus.cordova.ads
 
 import admob.plus.cordova.Events
 import admob.plus.cordova.ExecuteContext
-import admob.plus.core.Context
+import admob.plus.core.buildAdRequest
 import com.google.android.gms.ads.AdError
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.FullScreenContentCallback
 import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.appopen.AppOpenAd
 import com.google.android.gms.ads.appopen.AppOpenAd.AppOpenAdLoadCallback
+import org.json.JSONObject
+
+fun optInt(opts: JSONObject, name: String): Int? {
+    return if (opts.has(name)) opts.optInt(name) else null
+}
 
 class AppOpen(ctx: ExecuteContext) : AdBase(ctx) {
     private val mAdRequest: AdRequest
@@ -16,8 +21,8 @@ class AppOpen(ctx: ExecuteContext) : AdBase(ctx) {
     private var mAd: AppOpenAd? = null
 
     init {
-        mAdRequest = ctx.optAdRequest()
-        val o = ctx.optInt("orientation")
+        mAdRequest = buildAdRequest(initOpts)
+        val o = optInt(initOpts, "orientation")
         mOrientation =
             if (o == null || o == 1 || o == 2) AppOpenAd.APP_OPEN_AD_ORIENTATION_PORTRAIT else AppOpenAd.APP_OPEN_AD_ORIENTATION_LANDSCAPE
     }
@@ -27,7 +32,7 @@ class AppOpen(ctx: ExecuteContext) : AdBase(ctx) {
         super.onDestroy()
     }
 
-    override fun load(ctx: Context) {
+    override fun load(ctx: ExecuteContext) {
         clear()
         AppOpenAd.load(adapter.activity,
             adUnitId,
@@ -68,7 +73,7 @@ class AppOpen(ctx: ExecuteContext) : AdBase(ctx) {
 
     override val isLoaded: Boolean get() = mAd != null
 
-    override fun show(ctx: Context) {
+    override fun show(ctx: ExecuteContext) {
         mAd!!.show(adapter.activity)
         ctx.resolve(true)
     }

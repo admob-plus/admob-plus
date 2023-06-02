@@ -2,13 +2,27 @@ package admob.plus.cordova.ads
 
 import admob.plus.cordova.Events
 import admob.plus.cordova.ExecuteContext
-import admob.plus.core.Context
 import com.google.android.gms.ads.AdError
 import com.google.android.gms.ads.FullScreenContentCallback
 import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.rewarded.RewardItem
 import com.google.android.gms.ads.rewarded.RewardedAd
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
+import com.google.android.gms.ads.rewarded.ServerSideVerificationOptions
+import org.json.JSONObject
+
+fun buildServerSideVerificationOptions(opts: JSONObject): ServerSideVerificationOptions? {
+    val param = "serverSideVerification"
+    val serverSideVerification = opts.optJSONObject(param) ?: return null
+    val builder = ServerSideVerificationOptions.Builder()
+    if (serverSideVerification.has("customData")) {
+        builder.setCustomData(serverSideVerification.optString("customData"))
+    }
+    if (serverSideVerification.has("userId")) {
+        builder.setUserId(serverSideVerification.optString("userId"))
+    }
+    return builder.build()
+}
 
 class Rewarded(ctx: ExecuteContext) : AdBase(ctx) {
     private var mAd: RewardedAd? = null
@@ -17,7 +31,7 @@ class Rewarded(ctx: ExecuteContext) : AdBase(ctx) {
         super.onDestroy()
     }
 
-    override fun load(ctx: Context) {
+    override fun load(ctx: ExecuteContext) {
         clear()
         RewardedAd.load(adapter.activity, adUnitId, adRequest, object : RewardedAdLoadCallback() {
             override fun onAdFailedToLoad(loadAdError: LoadAdError) {
@@ -29,7 +43,7 @@ class Rewarded(ctx: ExecuteContext) : AdBase(ctx) {
 
             override fun onAdLoaded(rewardedAd: RewardedAd) {
                 mAd = rewardedAd
-                val ssv = ctx.optServerSideVerificationOptions()
+                val ssv = buildServerSideVerificationOptions(initOpts)
                 if (ssv != null) {
                     mAd!!.setServerSideVerificationOptions(ssv)
                 }
@@ -64,7 +78,7 @@ class Rewarded(ctx: ExecuteContext) : AdBase(ctx) {
 
     override val isLoaded: Boolean get() = mAd != null
 
-    override fun show(ctx: Context) {
+    override fun show(ctx: ExecuteContext) {
         if (this.isLoaded) {
             mAd!!.show(adapter.activity) { rewardItem: RewardItem? ->
                 emit(Events.AD_REWARD, rewardItem!!)

@@ -11,6 +11,7 @@ import com.google.ads.mediation.admob.AdMobAdapter
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdSize
 import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.RequestConfiguration
 import org.json.JSONArray
 import org.json.JSONObject
 import java.math.BigInteger
@@ -68,6 +69,46 @@ fun buildAdSize(opts: JSONObject, activity: Activity): AdSize {
         }
     }
     return AdSize(w, pxToDp(adSizeObj.optInt("height")))
+}
+
+fun optBooleanToInt(opts: JSONObject, name: String, vNull: Int, vTrue: Int, vFalse: Int): Int? {
+    if (!opts.has(name)) return null
+    if (opts.opt(name) === null) return vNull
+    return if (opts.optBoolean(name)) vTrue else vFalse
+}
+
+fun optFloat(opts: JSONObject, name: String): Float? {
+    val v = opts.optDouble(name) ?: return null
+    return v.toFloat()
+}
+
+fun buildRequestConfiguration(opts: JSONObject): RequestConfiguration {
+    val builder = RequestConfiguration.Builder()
+    opts.optString("maxAdContentRating", null)?.let {
+        builder.setMaxAdContentRating(it)
+    }
+    optBooleanToInt(
+        opts,
+        "tagForChildDirectedTreatment",
+        RequestConfiguration.TAG_FOR_CHILD_DIRECTED_TREATMENT_UNSPECIFIED,
+        RequestConfiguration.TAG_FOR_CHILD_DIRECTED_TREATMENT_TRUE,
+        RequestConfiguration.TAG_FOR_CHILD_DIRECTED_TREATMENT_FALSE
+    )?.let {
+        builder.setTagForChildDirectedTreatment(it)
+    }
+    optBooleanToInt(
+        opts,
+        "tagForUnderAgeOfConsent",
+        RequestConfiguration.TAG_FOR_UNDER_AGE_OF_CONSENT_UNSPECIFIED,
+        RequestConfiguration.TAG_FOR_UNDER_AGE_OF_CONSENT_TRUE,
+        RequestConfiguration.TAG_FOR_UNDER_AGE_OF_CONSENT_FALSE
+    )?.let {
+        builder.setTagForUnderAgeOfConsent(it)
+    }
+    if (opts.has("testDeviceIds")) {
+        builder.setTestDeviceIds(jsonArray2stringList(opts.optJSONArray("testDeviceIds")))
+    }
+    return builder.build()
 }
 
 fun configForTestLabIfNeeded(activity: Activity) {

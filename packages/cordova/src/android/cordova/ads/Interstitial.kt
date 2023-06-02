@@ -2,7 +2,6 @@ package admob.plus.cordova.ads
 
 import admob.plus.cordova.Events
 import admob.plus.cordova.ExecuteContext
-import admob.plus.core.Context
 import com.google.android.gms.ads.AdError
 import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.interstitial.InterstitialAd
@@ -19,7 +18,7 @@ class Interstitial(ctx: ExecuteContext) : AdBase(ctx) {
         super.onDestroy()
     }
 
-    override fun load(ctx: Context) {
+    override fun load(ctx: ExecuteContext) {
         clear()
         InterstitialAd.load(ctx.activity, adUnitId, adRequest, object : InterstitialAdLoadCallback() {
             override fun onAdLoaded(interstitialAd: InterstitialAd) {
@@ -60,7 +59,7 @@ class Interstitial(ctx: ExecuteContext) : AdBase(ctx) {
         })
     }
 
-    override fun show(ctx: Context) {
+    override fun show(ctx: ExecuteContext) {
         if (isLoaded) {
             mAd!!.show(ctx.activity)
             ctx.resolve()

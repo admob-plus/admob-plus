@@ -2,7 +2,6 @@ package admob.plus.cordova.ads
 
 import admob.plus.cordova.Events
 import admob.plus.cordova.ExecuteContext
-import admob.plus.core.Context
 import com.google.android.gms.ads.AdError
 import com.google.android.gms.ads.FullScreenContentCallback
 import com.google.android.gms.ads.LoadAdError
@@ -17,7 +16,7 @@ class RewardedInterstitial(ctx: ExecuteContext) : AdBase(ctx) {
         super.onDestroy()
     }
 
-    override fun load(ctx: Context) {
+    override fun load(ctx: ExecuteContext) {
         clear()
         RewardedInterstitialAd.load(
             adapter.activity,
@@ -33,7 +32,7 @@ class RewardedInterstitial(ctx: ExecuteContext) : AdBase(ctx) {
 
                 override fun onAdLoaded(rewardedAd: RewardedInterstitialAd) {
                     mAd = rewardedAd
-                    val ssv = ctx.optServerSideVerificationOptions()
+                    val ssv = buildServerSideVerificationOptions(initOpts)
                     if (ssv != null) {
                         mAd!!.setServerSideVerificationOptions(ssv)
                     }
@@ -69,7 +68,7 @@ class RewardedInterstitial(ctx: ExecuteContext) : AdBase(ctx) {
     override val isLoaded: Boolean
         get() = mAd != null
 
-    override fun show(ctx: Context) {
+    override fun show(ctx: ExecuteContext) {
         if (this.isLoaded) {
             mAd!!.show(adapter.activity) { rewardItem: RewardItem? ->
                 emit(Events.AD_REWARD, rewardItem!!)

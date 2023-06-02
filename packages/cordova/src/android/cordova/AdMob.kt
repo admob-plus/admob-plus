@@ -10,7 +10,7 @@ import admob.plus.cordova.ads.Rewarded
 import admob.plus.cordova.ads.RewardedInterstitial
 import admob.plus.cordova.ads.getParentView
 import admob.plus.core.Adapter
-import admob.plus.core.ads
+import admob.plus.cordova.ads
 import admob.plus.core.configForTestLabIfNeeded
 import admob.plus.core.isRunningInTestLab
 import android.app.Activity

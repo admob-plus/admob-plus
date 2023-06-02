@@ -1,5 +1,6 @@
 package admob.plus.core
 
+import admob.plus.cordova.ExecuteContext
 import android.app.Activity
 import android.view.ViewGroup
 import com.google.android.gms.ads.AdError
@@ -20,15 +21,15 @@ interface Ad {
     val isLoaded: Boolean
         get() = TODO("Not yet implemented")
 
-    fun load(ctx: Context) {
+    fun load(ctx: ExecuteContext) {
         TODO("Not yet implemented")
     }
 
-    fun show(ctx: Context) {
+    fun show(ctx: ExecuteContext) {
         TODO("Not yet implemented")
     }
 
-    fun hide(ctx: Context) {
+    fun hide(ctx: ExecuteContext) {
         TODO("Not yet implemented")
     }
 

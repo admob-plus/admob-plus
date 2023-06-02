@@ -2,7 +2,6 @@ package admob.plus.cordova.ads
 
 import admob.plus.cordova.Events
 import admob.plus.cordova.ExecuteContext
-import admob.plus.core.Context
 import admob.plus.core.buildAdSize
 import admob.plus.core.pxToDp
 import android.annotation.SuppressLint
@@ -18,6 +17,7 @@ import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdSize
 import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.LoadAdError
+import org.json.JSONObject
 
 enum class AdSizeType {
     BANNER, LARGE_BANNER, MEDIUM_RECTANGLE, FULL_BANNER, LEADERBOARD, SMART_BANNER;
@@ -37,6 +37,16 @@ enum class AdSizeType {
     }
 }
 
+fun buildGravity(opts: JSONObject): Int {
+    return if ("top" == opts.optString("position")) Gravity.TOP else Gravity.BOTTOM
+}
+
+fun buildOffset(opts: JSONObject): Int? {
+    return if (opts.has("offset")) {
+        opts.optInt("offset")
+    } else null
+}
+
 class Banner(ctx: ExecuteContext) : AdBase(ctx) {
     private val adSize: AdSize
     private val gravity: Int
@@ -50,11 +60,11 @@ class Banner(ctx: ExecuteContext) : AdBase(ctx) {
 
     init {
         adSize = buildAdSize(initOpts, ctx.activity)
-        gravity = if ("top" == ctx.optPosition()) Gravity.TOP else Gravity.BOTTOM
-        offset = ctx.optOffset()
+        gravity = buildGravity(initOpts)
+        offset = buildOffset(initOpts)
     }
 
-    override fun load(ctx: Context) {
+    override fun load(ctx: ExecuteContext) {
         if (mAdView == null) {
             mAdView = createBannerView()
         }
@@ -121,7 +131,7 @@ class Banner(ctx: ExecuteContext) : AdBase(ctx) {
         )
     }
 
-    override fun show(ctx: Context) {
+    override fun show(ctx: ExecuteContext) {
         if (mAdView!!.parent == null) {
             addBannerView()
         } else if (mAdView!!.visibility == View.GONE) {
@@ -137,7 +147,7 @@ class Banner(ctx: ExecuteContext) : AdBase(ctx) {
         ctx.resolve()
     }
 
-    override fun hide(ctx: Context) {
+    override fun hide(ctx: ExecuteContext) {
         if (mAdView != null) {
             mAdView!!.pause()
             mAdView!!.visibility = View.GONE

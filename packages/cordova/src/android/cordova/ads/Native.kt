@@ -2,7 +2,7 @@ package admob.plus.cordova.ads
 
 import admob.plus.cordova.Events
 import admob.plus.cordova.ExecuteContext
-import admob.plus.core.Context
+import admob.plus.core.buildAdRequest
 import admob.plus.core.dpToPx
 import android.util.Log
 import android.view.View
@@ -23,8 +23,8 @@ class Native(ctx: ExecuteContext) : AdBase(ctx) {
     private var view: View? = null
 
     init {
-        mAdRequest = ctx.optAdRequest()
-        val key = ctx.optString("view") ?: VIEW_DEFAULT_KEY
+        mAdRequest = buildAdRequest(initOpts)
+        val key = initOpts.optString("view") ?: VIEW_DEFAULT_KEY
         viewProvider = providers[key] ?: throw RuntimeException("cannot find viewProvider: $key")
     }
 
@@ -35,7 +35,7 @@ class Native(ctx: ExecuteContext) : AdBase(ctx) {
 
     override val isLoaded: Boolean get() = mLoader != null && !mLoader!!.isLoading
 
-    override fun load(ctx: Context) {
+    override fun load(ctx: ExecuteContext) {
         clear()
         mLoader = AdLoader.Builder(adapter.activity, adUnitId)
             .forNativeAd { nativeAd -> mAd = nativeAd }
@@ -75,7 +75,7 @@ class Native(ctx: ExecuteContext) : AdBase(ctx) {
             }
     }
 
-    override fun show(ctx: Context) {
+    override fun show(ctx: ExecuteContext) {
         val ad = mAd ?: return ctx.reject("ad not loaded")
         view = view ?: let {
             val v = viewProvider.createView(ad)
@@ -84,12 +84,12 @@ class Native(ctx: ExecuteContext) : AdBase(ctx) {
         }
         view?.let {
             it.visibility = View.VISIBLE
-            it.x = dpToPx(ctx.optDouble("x", 0.0)).toFloat()
-            it.y = dpToPx(ctx.optDouble("y", 0.0)).toFloat()
+            it.x = dpToPx(initOpts.optDouble("x", 0.0)).toFloat()
+            it.y = dpToPx(initOpts.optDouble("y", 0.0)).toFloat()
 
             val params = it.layoutParams
-            params.width = dpToPx(ctx.optDouble("width", 0.0)).toInt()
-            params.height = dpToPx(ctx.optDouble("height", 0.0)).toInt()
+            params.width = dpToPx(initOpts.optDouble("width", 0.0)).toInt()
+            params.height = dpToPx(initOpts.optDouble("height", 0.0)).toInt()
             it.layoutParams = params
 
             viewProvider.didShow(this)
@@ -98,7 +98,7 @@ class Native(ctx: ExecuteContext) : AdBase(ctx) {
         ctx.resolve(true)
     }
 
-    override fun hide(ctx: Context) {
+    override fun hide(ctx: ExecuteContext) {
         view?.let {
             it.visibility = View.GONE
         }

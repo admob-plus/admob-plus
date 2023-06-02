@@ -4,7 +4,7 @@ import admob.plus.cordova.AdMob
 import admob.plus.cordova.ExecuteContext
 import admob.plus.core.Ad
 import admob.plus.core.Adapter
-import admob.plus.core.ads
+import admob.plus.cordova.ads
 import admob.plus.core.buildAdRequest
 import android.content.res.Configuration
 import android.view.View
