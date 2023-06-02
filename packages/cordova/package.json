@@ -48,10 +48,13 @@
   "keywords": [
     "cordova",
     "admob",
-    "plugin",
     "ecosystem:cordova",
+    "cordova-admob",
     "cordova-android",
     "cordova-ios",
+    "cordova-plugin",
+    "ad",
+    "admob-plus",
     "monetization",
     "typescript"
   ],
