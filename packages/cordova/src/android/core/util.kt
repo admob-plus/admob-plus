@@ -3,15 +3,32 @@ package admob.plus.core
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.res.Resources
+import android.os.Bundle
 import android.provider.Settings
 import android.util.DisplayMetrics
+import com.google.ads.mediation.admob.AdMobAdapter
+import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
 import org.json.JSONArray
+import org.json.JSONObject
 import java.math.BigInteger
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
 import java.util.Locale
 import kotlin.math.roundToInt
+
+fun buildAdRequest(opts: JSONObject): AdRequest {
+    val builder = AdRequest.Builder()
+    opts.optString("contentUrl", null)?.let {
+        builder.setContentUrl(it)
+    }
+    val extras = Bundle().apply {
+        opts.optString("npa", null)?.let { npa ->
+            putString("npa", npa)
+        }
+    }
+    return builder.addNetworkExtrasBundle(AdMobAdapter::class.java, extras).build()
+}
 
 fun configForTestLabIfNeeded(activity: Activity) {
     if (!isRunningInTestLab(activity)) {
