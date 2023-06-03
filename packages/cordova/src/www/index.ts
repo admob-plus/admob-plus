@@ -19,7 +19,7 @@ import {
   start,
 } from './shared';
 import WebViewAd from './ads/webview';
-import {Platform} from './constants';
+import {Platform} from './common';
 
 export * from './ads/base';
 export {

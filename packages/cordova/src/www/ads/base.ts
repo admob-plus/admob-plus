@@ -1,6 +1,4 @@
-import {execAsync, NativeActions} from '../generated';
-
-export {execAsync, AdSizeType, Events, NativeActions} from '../generated';
+import {execAsync} from '../common';
 
 /** @internal */
 export type MobileAdOptions = {
@@ -16,7 +14,7 @@ let startPromise: Promise<{version: string}> | null = null;
 
 /** @internal */
 export async function start() {
-  startPromise = execAsync(NativeActions.start) as Promise<{version: string}>;
+  startPromise = execAsync('start') as Promise<{version: string}>;
   const result = await startPromise;
   started = true;
   return result;
@@ -29,7 +27,7 @@ export class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
   public readonly id: string;
 
   protected readonly opts: T;
-  private _init: Promise<any> | null = null;
+  private _init: Promise<unknown> | null = null;
   private _inited = false;
 
   constructor(opts: T) {
@@ -64,25 +62,23 @@ export class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
 
   protected async isLoaded() {
     await this.init();
-    return execAsync(NativeActions.adIsLoaded, [
-      {id: this.id},
-    ]) as Promise<boolean>;
+    return execAsync('adIsLoaded', [{id: this.id}]) as Promise<boolean>;
   }
 
   protected async load() {
     await this.init();
     // TODO read `opts` in native code?
-    await execAsync(NativeActions.adLoad, [{...this.opts, id: this.id}]);
+    await execAsync('adLoad', [{...this.opts, id: this.id}]);
   }
 
-  protected async show(opts?: Record<string, any>) {
+  protected async show(opts?: Record<string, unknown>) {
     await this.init();
-    return execAsync(NativeActions.adShow, [{...opts, id: this.id}]);
+    return execAsync('adShow', [{...opts, id: this.id}]);
   }
 
   protected async hide() {
     await this.init();
-    return execAsync(NativeActions.adHide, [{id: this.id}]);
+    return execAsync('adHide', [{id: this.id}]);
   }
 
   protected async init() {
@@ -98,9 +94,7 @@ export class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
         (this.constructor as unknown as {cls?: string}).cls ??
         this.constructor.name;
 
-      this._init = execAsync(NativeActions.adCreate, [
-        {...this.opts, id: this.id, cls},
-      ]);
+      this._init = execAsync('adCreate', [{...this.opts, id: this.id, cls}]);
     }
 
     try {

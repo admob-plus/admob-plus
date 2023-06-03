@@ -5,7 +5,7 @@ import {
   MobileAdOptions,
   NativeActions,
 } from '../shared';
-import {Platform} from '../constants';
+import {Platform} from '../common';
 
 type Position = 'top' | 'bottom';
 

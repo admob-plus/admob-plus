@@ -1,10 +1,9 @@
 import * as cordova from 'cordova';
 import channel from 'cordova/channel';
 import exec from 'cordova/exec';
-import {AdMob} from '.';
+import {AdMob} from './index';
 import {MobileAd} from './ads/base';
-import {SERVICE} from './constants';
-import {NativeActions} from './shared';
+import {CordovaAction, CordovaService} from './common';
 
 const admob = new AdMob();
 
@@ -21,7 +20,13 @@ channel.createSticky(feature);
 channel.waitForInitialization(feature);
 
 channel.onCordovaReady.subscribe(() => {
-  exec(onMessageFromNative, console.error, SERVICE, NativeActions.ready, []);
+  exec(
+    onMessageFromNative,
+    console.error,
+    CordovaService,
+    'ready' satisfies CordovaAction,
+    []
+  );
   channel.initializationComplete(feature);
 });
 
