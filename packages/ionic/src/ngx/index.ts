@@ -1,19 +1,16 @@
 import {Injectable} from '@angular/core';
 import {IonicNativePlugin} from '@ionic-native/core';
-import {
+import type {
   AdMob as IAdMob,
   BannerAd as IBannerAd,
   BannerAdOptions,
   InterstitialAd as IInterstitialAd,
-  MobileAd,
   NativeAdOptions,
-  NativeActions,
   RewardedAd as IRewardedAd,
   RewardedAdOptions,
   RewardedInterstitialAd as IRewardedInterstitialAd,
   NativeAd as INativeAd,
   RewardedInterstitialAdOptions,
-  TrackingAuthorizationStatus,
 } from 'admob-plus-cordova';
 import {fromEvent, Observable} from 'rxjs';
 
@@ -21,11 +18,11 @@ const plugin = 'admob-plus-cordova';
 const pluginName = 'AdMob';
 
 // helper
-class h {
-  static get admob(): IAdMob {
-    return (window as any).admob;
-  }
-}
+const h = {
+  get admob() {
+    return (window as unknown as {admob: IAdMob}).admob;
+  },
+};
 
 export class BannerAd
   extends IonicNativePlugin
@@ -63,7 +60,7 @@ export class BannerAd
     return this.obj.hide();
   }
 
-  on(...opts: Parameters<MobileAd['on']>) {
+  on(...opts: Parameters<IBannerAd['on']>) {
     return this.obj.on(...opts);
   }
 }
@@ -104,7 +101,7 @@ export class InterstitialAd
     return this.obj.show();
   }
 
-  on(...opts: Parameters<MobileAd['on']>) {
+  on(...opts: Parameters<IInterstitialAd['on']>) {
     return this.obj.on(...opts);
   }
 }
@@ -145,7 +142,7 @@ export class RewardedAd
     return this.obj.show();
   }
 
-  on(...opts: Parameters<MobileAd['on']>) {
+  on(...opts: Parameters<IRewardedAd['on']>) {
     return this.obj.on(...opts);
   }
 }
@@ -186,7 +183,7 @@ export class RewardedInterstitialAd
     return this.obj.show();
   }
 
-  on(...opts: Parameters<MobileAd['on']>) {
+  on(...opts: Parameters<IRewardedInterstitialAd['on']>) {
     return this.obj.on(...opts);
   }
 }
@@ -235,7 +232,7 @@ export class NativeAd
     return this.obj.showWith(...args);
   }
 
-  on(...opts: Parameters<MobileAd['on']>) {
+  on(...opts: Parameters<INativeAd['on']>) {
     return this.obj.on(...opts);
   }
 }
@@ -248,11 +245,20 @@ export class AdMob
       IAdMob,
       | 'AppOpenAd'
       | 'BannerAd'
+      | 'BannerAd'
+      | 'configRequest'
       | 'Events'
       | 'InterstitialAd'
+      | 'InterstitialAd'
       | 'NativeAd'
+      | 'NativeAd'
+      | 'requestTrackingAuthorization'
+      | 'RewardedAd'
       | 'RewardedAd'
       | 'RewardedInterstitialAd'
+      | 'RewardedInterstitialAd'
+      | 'setAppMuted'
+      | 'setAppVolume'
       | 'TrackingAuthorizationStatus'
       | 'WebViewAd'
     >
@@ -263,41 +269,15 @@ export class AdMob
   public static pluginRef = 'admob';
   public static repo = 'https://github.com/admob-plus/admob-plus';
 
-  public readonly BannerAd = BannerAd;
-  public readonly InterstitialAd = InterstitialAd;
-  public readonly RewardedAd = RewardedAd;
-  public readonly RewardedInterstitialAd = RewardedInterstitialAd;
-  public readonly NativeAd = NativeAd;
-
-  public configRequest(
-    ...opts: Parameters<IAdMob[NativeActions.configRequest]>
-  ) {
-    return h.admob.configRequest(...opts);
-  }
-
   public start() {
     return h.admob.start();
   }
 
-  public configure(...opts: Parameters<IAdMob[NativeActions.configure]>) {
+  public configure(...opts: Parameters<IAdMob['configure']>) {
     return h.admob.configure(...opts);
   }
 
-  public setAppMuted(...opts: Parameters<IAdMob[NativeActions.setAppMuted]>) {
-    return h.admob.setAppMuted(...opts);
-  }
-
-  public setAppVolume(...opts: Parameters<IAdMob[NativeActions.setAppVolume]>) {
-    return h.admob.setAppVolume(...opts);
-  }
-
-  public requestTrackingAuthorization() {
-    return h.admob.requestTrackingAuthorization();
-  }
-
-  public on(event: string): Observable<any> {
+  public on(event: string): Observable<unknown> {
     return fromEvent(document, event);
   }
 }
-
-export {TrackingAuthorizationStatus};
