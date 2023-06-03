@@ -105,30 +105,9 @@ export class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
   }
 }
 
-export enum MaxAdContentRating {
-  G = 'G',
-  MA = 'MA',
-  PG = 'PG',
-  T = 'T',
-  UNSPECIFIED = '',
-}
-
-export type RequestConfig = {
-  maxAdContentRating?: MaxAdContentRating;
-  sameAppKey?: boolean;
-  tagForChildDirectedTreatment?: boolean | null;
-  tagForUnderAgeOfConsent?: boolean | null;
-  testDeviceIds?: string[];
-};
-
 export enum TrackingAuthorizationStatus {
   notDetermined = 0,
   restricted = 1,
   denied = 2,
   authorized = 3,
 }
-
-export type AdMobConfig = {
-  appMuted?: boolean;
-  appVolume?: number;
-} & RequestConfig;

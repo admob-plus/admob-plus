@@ -9,20 +9,13 @@ import RewardedAd, {
 import RewardedInterstitialAd, {
   RewardedInterstitialAdOptions,
 } from './ads/rewarded-interstitial';
-import {
-  AdMobConfig,
-  Events,
-  NativeActions,
-  RequestConfig,
-  TrackingAuthorizationStatus,
-  execAsync,
-  start,
-} from './shared';
 import WebViewAd from './ads/webview';
-import {Platform} from './common';
+import {AdMobConfig, Platform, execAsync} from './common';
+import {Events, TrackingAuthorizationStatus, start} from './shared';
 
 export * from './ads/base';
 export {
+  AdMobConfig,
   AppOpenAd,
   BannerAd,
   BannerAdOptions,
@@ -50,19 +43,7 @@ export class AdMob {
   public readonly TrackingAuthorizationStatus = TrackingAuthorizationStatus;
 
   configure(config: AdMobConfig) {
-    return execAsync(NativeActions.configure, [config]);
-  }
-
-  public configRequest(requestConfig: RequestConfig) {
-    return execAsync(NativeActions.configRequest, [requestConfig]);
-  }
-
-  public setAppMuted(value: boolean) {
-    return execAsync(NativeActions.setAppMuted, [value]);
-  }
-
-  public setAppVolume(value: number) {
-    return execAsync(NativeActions.setAppVolume, [value]);
+    return execAsync('configure', [config]);
   }
 
   public start() {
@@ -73,7 +54,7 @@ export class AdMob {
     TrackingAuthorizationStatus | false
   > {
     if (cordova.platformId === Platform.ios) {
-      const n = await execAsync(NativeActions.requestTrackingAuthorization);
+      const n = await execAsync('requestTrackingAuthorization');
       if (n !== false) {
         return TrackingAuthorizationStatus[
           TrackingAuthorizationStatus[n as number]
