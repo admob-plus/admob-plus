@@ -1,7 +1,7 @@
-import { MobileAd, MobileAdOptions } from '../shared'
+import { MobileAd, MobileAdOptions } from './base'
 
 export default class InterstitialAd extends MobileAd<MobileAdOptions> {
-  static cls = 'InterstitialAd'
+  static readonly cls = 'InterstitialAd'
 
   public isLoaded() {
     return super.isLoaded()

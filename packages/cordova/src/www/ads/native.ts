@@ -1,4 +1,4 @@
-import { MobileAd, MobileAdOptions } from '../shared'
+import { MobileAd, MobileAdOptions } from './base'
 
 type ShowOptions = { x: number; y: number; width: number; height: number }
 
@@ -7,7 +7,7 @@ export interface NativeAdOptions extends MobileAdOptions {
 }
 
 export default class NativeAd extends MobileAd<NativeAdOptions> {
-  static cls = 'NativeAd'
+  static readonly cls = 'NativeAd'
 
   public isLoaded() {
     return super.isLoaded()
