@@ -6,6 +6,7 @@
   "type": "module",
   "dependencies": {
     "@frat/envinfo": "^7.10.1",
+    "@inquirer/prompts": "^1.2.3",
     "admob-plus-cordova": "latest",
     "cli-table3": "^0.6.3",
     "clipboardy": "^3.0.0",
@@ -24,7 +25,7 @@
     "ora": "^6.3.1",
     "pkg-proxy": "workspace:*",
     "semver": "^7.5.1",
-    "tslib": "^2.5.2",
+    "tslib": "^2.5.3",
     "update-notifier": "^6.0.2",
     "yargs": "^17.7.2"
   },
@@ -40,7 +41,7 @@
     "@types/update-notifier": "^6.0.4",
     "@types/yargs": "^17.0.24",
     "ts-node": "^10.9.1",
-    "typescript": "~5.0.4"
+    "typescript": "~5.1.3"
   },
   "engines": {
     "node": ">=16.0.0"

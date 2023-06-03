@@ -1,4 +1,5 @@
 /* eslint-disable max-classes-per-file */
+import {confirm} from '@inquirer/prompts';
 import assert from 'assert';
 import enquirer from 'enquirer';
 import {execa} from 'execa';
@@ -26,16 +27,7 @@ abstract class Project {
   }
 
   async confirmRun(cmd: string) {
-    const {answer} = await prompt<{answer: boolean}>([
-      {
-        type: 'confirm',
-        name: 'answer',
-        initial: true,
-        hint: `\n${cmd}`,
-        message: 'Run?',
-      },
-    ]);
-    return answer;
+    return confirm({default: true, message: `Run "${cmd}"?`});
   }
 
   async confirmThenRun(cmds: Array<string[]>) {
@@ -162,7 +154,7 @@ export const builder: CommandBuilder<unknown, Options> = {
     alias: 'p',
     type: 'string',
     desc: 'Project type',
-    choices: projects.map(P => new P({} as any).type),
+    choices: projects.map(P => new P({} as never).type),
   },
 };
 
@@ -195,7 +187,7 @@ export const handler = async (argv: Arguments<Options>) => {
       choices: projectHandlers.map(x => x.type),
       initial,
       result(value) {
-        return projectHandlers.find(x => x.type === value) as any;
+        return projectHandlers.find(x => x.type === value) as never;
       },
     });
     project = response.project;
