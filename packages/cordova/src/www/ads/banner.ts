@@ -5,7 +5,7 @@ import {
   MobileAdOptions,
   NativeActions,
   Platforms,
-} from './shared'
+} from '../shared'
 
 type Position = 'top' | 'bottom'
 

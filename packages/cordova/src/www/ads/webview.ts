@@ -1,5 +1,5 @@
-import {execAsync} from './generated';
-import {MobileAd, MobileAdOptions} from './shared';
+import {execAsync} from '../generated';
+import {MobileAd, MobileAdOptions} from '../shared';
 
 export interface WebViewAdOptions extends MobileAdOptions {
   src?: string;

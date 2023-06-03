@@ -1,6 +1,6 @@
-import { execAsync, NativeActions } from './generated'
+import { execAsync, NativeActions } from '../generated'
 
-export { execAsync, AdSizeType, Events, NativeActions } from './generated'
+export { execAsync, AdSizeType, Events, NativeActions } from '../generated'
 
 /** @internal */
 export type MobileAdOptions = {
@@ -24,8 +24,6 @@ export async function start() {
 
 /** @internal */
 export class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
-  public static readonly type: string = ''
-
   private static allAds: { [s: string]: MobileAd } = {}
 
   public readonly id: string

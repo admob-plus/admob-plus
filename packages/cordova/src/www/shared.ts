@@ -1,2 +1,2 @@
-export * from './api'
+export * from './ads/base'
 export * from './generated'

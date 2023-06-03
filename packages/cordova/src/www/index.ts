@@ -1,14 +1,14 @@
-import AppOpenAd from './app-open'
-import BannerAd, { BannerAdOptions } from './banner'
-import InterstitialAd from './interstitial'
-import NativeAd, { NativeAdOptions } from './native'
+import AppOpenAd from './ads/app-open'
+import BannerAd, { BannerAdOptions } from './ads/banner'
+import InterstitialAd from './ads/interstitial'
+import NativeAd, { NativeAdOptions } from './ads/native'
 import RewardedAd, {
   RewardedAdOptions,
   ServerSideVerificationOptions,
-} from './rewarded'
+} from './ads/rewarded'
 import RewardedInterstitialAd, {
   RewardedInterstitialAdOptions,
-} from './rewarded-interstitial'
+} from './ads/rewarded-interstitial'
 import {
   AdMobConfig,
   Events,
@@ -19,9 +19,9 @@ import {
   execAsync,
   start,
 } from './shared'
-import WebViewAd from './webview'
+import WebViewAd from './ads/webview'
 
-export * from './api'
+export * from './ads/base'
 export {
   AppOpenAd,
   BannerAd,

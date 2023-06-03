@@ -1,4 +1,4 @@
-import { MobileAd, MobileAdOptions } from './shared'
+import { MobileAd, MobileAdOptions } from '../shared'
 
 type ShowOptions = { x: number; y: number; width: number; height: number }
 

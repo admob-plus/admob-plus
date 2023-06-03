@@ -1,4 +1,4 @@
-import { MobileAd, MobileAdOptions } from './shared'
+import { MobileAd, MobileAdOptions } from '../shared'
 
 export interface ServerSideVerificationOptions {
   customData?: string
