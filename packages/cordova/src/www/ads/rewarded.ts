@@ -9,7 +9,7 @@ export interface RewardedAdOptions extends MobileAdOptions {
   serverSideVerification?: ServerSideVerificationOptions;
 }
 
-export default class RewardedAd extends MobileAd<RewardedAdOptions> {
+export class RewardedAd extends MobileAd<RewardedAdOptions> {
   static readonly cls = 'RewardedAd';
 
   public isLoaded() {

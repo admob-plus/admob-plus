@@ -1,6 +1,6 @@
 import {MobileAd, MobileAdOptions} from './base';
 
-export default class InterstitialAd extends MobileAd<MobileAdOptions> {
+export class InterstitialAd extends MobileAd<MobileAdOptions> {
   static readonly cls = 'InterstitialAd';
 
   public isLoaded() {

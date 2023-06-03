@@ -1,13 +1,13 @@
 import {MobileAd, MobileAdOptions} from './base';
 
-enum AppOpenAdOrientation {
+export enum AppOpenAdOrientation {
   Portrait = 1,
   PortraitUpsideDown = 2,
   LandscapeRight = 3,
   LandscapeLeft = 4,
 }
 
-export default class AppOpenAd extends MobileAd<
+export class AppOpenAd extends MobileAd<
   MobileAdOptions & {orientation: AppOpenAdOrientation}
 > {
   static readonly cls = 'AppOpenAd';

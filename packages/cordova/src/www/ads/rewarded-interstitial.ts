@@ -3,7 +3,7 @@ import {MobileAd} from './base';
 
 export type RewardedInterstitialAdOptions = RewardedAdOptions;
 
-export default class RewardedInterstitialAd extends MobileAd<RewardedInterstitialAdOptions> {
+export class RewardedInterstitialAd extends MobileAd<RewardedInterstitialAdOptions> {
   static readonly cls = 'RewardedInterstitialAd';
 
   public isLoaded() {

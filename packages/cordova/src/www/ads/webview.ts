@@ -7,7 +7,7 @@ export interface WebViewAdOptions extends MobileAdOptions {
   npa?: '1';
 }
 
-export default class WebViewAd extends MobileAd<WebViewAdOptions> {
+export class WebViewAd extends MobileAd<WebViewAdOptions> {
   static readonly cls = 'WebViewAd';
 
   static async checkIntegration() {

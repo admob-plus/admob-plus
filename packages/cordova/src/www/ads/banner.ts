@@ -56,7 +56,7 @@ export interface BannerAdOptions extends MobileAdOptions {
   offset?: number;
 }
 
-export default class BannerAd extends MobileAd<BannerAdOptions> {
+export class BannerAd extends MobileAd<BannerAdOptions> {
   static readonly cls = 'BannerAd';
 
   private _loaded = false;

@@ -6,7 +6,7 @@ export interface NativeAdOptions extends MobileAdOptions {
   view?: string;
 }
 
-export default class NativeAd extends MobileAd<NativeAdOptions> {
+export class NativeAd extends MobileAd<NativeAdOptions> {
   static readonly cls = 'NativeAd';
 
   public isLoaded() {
