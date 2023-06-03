@@ -9,7 +9,7 @@ const main = async () => {
   await fse.outputFile(
     './src/lib/index.ts',
     s
-      .replace("import { Injectable } from '@angular/core'\n", '')
+      .replace("import {Injectable} from '@angular/core';\n", '')
       .replace('@Injectable()\n', '')
   );
 
@@ -31,7 +31,7 @@ const main = async () => {
       types: 'index.d.ts',
       main: './cjs/index.js',
       module: 'index.js',
-    })
+    }),
   ]);
 
   await del(['build']);

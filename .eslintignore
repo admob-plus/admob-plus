@@ -14,5 +14,7 @@ packages/cordova/lib
 packages/cordova/www
 packages/cordova/scripts
 
+!packages/ionic
+
 !packages/react-native
 packages/react-native/dist
