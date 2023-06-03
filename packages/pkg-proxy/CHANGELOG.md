@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.2](https://github.com/admob-plus/admob-plus/compare/pkg-proxy@0.3.1...pkg-proxy@0.3.2) (2023-06-03)
+
+
+### Bug Fixes
+
+* **pkg-proxy:** prevent fse.readJson TypeError ([615825c](https://github.com/admob-plus/admob-plus/commit/615825ccf889759ea4873a49c124411d5e0c99f9))
+
+
+
+
+
 ## [0.3.1](https://github.com/admob-plus/admob-plus/compare/pkg-proxy@0.3.0...pkg-proxy@0.3.1) (2023-05-27)
 
 

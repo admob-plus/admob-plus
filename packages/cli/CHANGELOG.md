@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.3](https://github.com/admob-plus/admob-plus/compare/admob-plus@2.0.0-alpha.2...admob-plus@2.0.0-alpha.3) (2023-06-03)
+
+
+### Bug Fixes
+
+* **pkg-proxy:** prevent fse.readJson TypeError ([615825c](https://github.com/admob-plus/admob-plus/commit/615825ccf889759ea4873a49c124411d5e0c99f9))
+
+
+
+
+
 # [2.0.0-alpha.2](https://github.com/admob-plus/admob-plus/compare/admob-plus@2.0.0-alpha.1...admob-plus@2.0.0-alpha.2) (2023-05-31)
 
 **Note:** Version bump only for package admob-plus

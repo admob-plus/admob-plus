@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.3](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@2.0.0-alpha.2...admob-plus-cordova@2.0.0-alpha.3) (2023-06-03)
+
+
+### Bug Fixes
+
+* **cordova/android:** set banner ad size ([b6bf954](https://github.com/admob-plus/admob-plus/commit/b6bf95412c55e48ee8507a5f73e188ac23b67d8a))
+
+
+### Features
+
+* **cordova/ios:** remove ad-type specific events ([fc5192e](https://github.com/admob-plus/admob-plus/commit/fc5192e51570e0bcf6f642753ac473c15506c51d))
+* **cordova/ios:** store ad id as String ([b597a0c](https://github.com/admob-plus/admob-plus/commit/b597a0cd0ef30f81b6baf3bf9b784405b5245721))
+* **cordova:** ignore ad create error ([86ab9c6](https://github.com/admob-plus/admob-plus/commit/86ab9c6a390c67415b8fc91559ab1fcfbb4631df))
+* **cordova:** remove ad-type specific events ([2513479](https://github.com/admob-plus/admob-plus/commit/25134795d2a09f76ee8993905f20016d6973f380))
+* **cordova:** set ad id default to adUnitId ([0273ed3](https://github.com/admob-plus/admob-plus/commit/0273ed3438cafcedd962da334dafadc36ff6485d))
+
+
+
+
+
 # [2.0.0-alpha.2](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@2.0.0-alpha.1...admob-plus-cordova@2.0.0-alpha.2) (2023-05-31)
 
 

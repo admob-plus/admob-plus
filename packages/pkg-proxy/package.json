@@ -1,7 +1,7 @@
 {
   "name": "pkg-proxy",
   "description": "Query package.json without boilerplate",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "type": "module",
   "dependencies": {
     "escalade": "^3.1.1",
