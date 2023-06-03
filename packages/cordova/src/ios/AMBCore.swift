@@ -77,8 +77,8 @@ extension AMBCoreContext {
         return optFloat("appVolume")
     }
 
-    func optId() -> Int? {
-        return optInt("id")
+    func optId() -> String? {
+        return optString("id")
     }
 
     func optPosition() -> String {
@@ -102,7 +102,7 @@ extension AMBCoreContext {
         if let ad = optAd() {
             return ad
         } else {
-            reject("Ad not found: \(optId() ?? -1)")
+            reject("Ad not found: \(optId() ?? "-")")
             return nil
         }
     }
@@ -196,13 +196,13 @@ extension AMBCoreContext {
 }
 
 class AMBCoreAd: NSObject {
-    static var ads = [Int: AMBCoreAd]()
+    static var ads = [String: AMBCoreAd]()
 
-    let id: Int
+    let id: String
     let adUnitId: String
     let adRequest: GADRequest
 
-    init(id: Int, adUnitId: String, adRequest: GADRequest) {
+    init(id: String, adUnitId: String, adRequest: GADRequest) {
         self.id = id
         self.adUnitId = adUnitId
         self.adRequest = adRequest

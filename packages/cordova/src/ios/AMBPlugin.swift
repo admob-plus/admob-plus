@@ -155,7 +155,7 @@ class AMBPlugin: CDVPlugin, WKNavigationDelegate {
                 if ad != nil {
                     ctx.resolve()
                 } else {
-                    ctx.reject("fail to create ad: \(ctx.optId() ?? -1)")
+                    ctx.reject("fail to create ad: \(ctx.optId() ?? "-")")
                 }
             } else {
                 ctx.reject()

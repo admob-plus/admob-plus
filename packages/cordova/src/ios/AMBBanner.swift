@@ -127,7 +127,7 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
     var bannerView: GADBannerView!
     let placeholder = AMBBannerPlaceholder()
 
-    init(id: Int, adUnitId: String, adSize: GADAdSize, adRequest: GADRequest, position: String, offset: CGFloat?) {
+    init(id: String, adUnitId: String, adSize: GADAdSize, adRequest: GADRequest, position: String, offset: CGFloat?) {
         self.adSize = adSize
         self.position = position
         self.offset = offset

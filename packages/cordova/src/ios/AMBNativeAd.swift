@@ -25,7 +25,7 @@ class AMBNativeAd: AMBAdBase, GADNativeAdLoaderDelegate, GADNativeAdDelegate {
         return viewProvider.createView(mAd!)
     }()
 
-    init(id: Int, adUnitId: String, adRequest: GADRequest, viewProvider: AMBNativeAdViewProvider) {
+    init(id: String, adUnitId: String, adRequest: GADRequest, viewProvider: AMBNativeAdViewProvider) {
         self.viewProvider = viewProvider
 
         super.init(id: id, adUnitId: adUnitId, adRequest: adRequest)

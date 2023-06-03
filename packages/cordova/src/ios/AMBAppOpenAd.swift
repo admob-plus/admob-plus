@@ -7,7 +7,7 @@ class AMBAppOpenAd: AMBAdBase, GADFullScreenContentDelegate {
 
     var mAd: GADAppOpenAd?
 
-    init(id: Int, adUnitId: String, adRequest: GADRequest, orientation: UIInterfaceOrientation) {
+    init(id: String, adUnitId: String, adRequest: GADRequest, orientation: UIInterfaceOrientation) {
         self.orientation = orientation
 
         super.init(id: id, adUnitId: adUnitId, adRequest: adRequest)
