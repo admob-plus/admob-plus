@@ -127,11 +127,6 @@ export type RequestConfig = {
   testDeviceIds?: string[]
 }
 
-export const enum Platforms {
-  android = 'android',
-  ios = 'ios',
-}
-
 export enum TrackingAuthorizationStatus {
   notDetermined = 0,
   restricted = 1,

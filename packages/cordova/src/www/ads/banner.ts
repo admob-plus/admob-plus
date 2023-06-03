@@ -4,8 +4,8 @@ import {
   MobileAd,
   MobileAdOptions,
   NativeActions,
-  Platforms,
 } from '../shared'
+import {Platform} from '../constants'
 
 type Position = 'top' | 'bottom'
 
@@ -74,7 +74,7 @@ export default class BannerAd extends MobileAd<BannerAdOptions> {
     marginTop?: number
     marginBottom?: number
   }) {
-    if (cordova.platformId === Platforms.ios) {
+    if (cordova.platformId === Platform.ios) {
       const { backgroundColor: bgColor } = opts
       return execAsync(NativeActions.bannerConfig, [
         { ...opts, backgroundColor: bgColor ? colorToRGBA(bgColor) : bgColor },

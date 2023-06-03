@@ -13,13 +13,13 @@ import {
   AdMobConfig,
   Events,
   NativeActions,
-  Platforms,
   RequestConfig,
   TrackingAuthorizationStatus,
   execAsync,
   start,
 } from './shared'
 import WebViewAd from './ads/webview'
+import {Platform} from './constants'
 
 export * from './ads/base'
 export {
@@ -72,7 +72,7 @@ export class AdMob {
   public async requestTrackingAuthorization(): Promise<
     TrackingAuthorizationStatus | false
   > {
-    if (cordova.platformId === Platforms.ios) {
+    if (cordova.platformId === Platform.ios) {
       const n = await execAsync(NativeActions.requestTrackingAuthorization)
       if (n !== false) {
         return TrackingAuthorizationStatus[
