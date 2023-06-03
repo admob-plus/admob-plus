@@ -240,12 +240,10 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
     func bannerView(_ bannerView: GADBannerView,
                     didFailToReceiveAdWithError error: Error) {
         self.emit(AMBEvents.adLoadFail, error)
-        self.emit(AMBEvents.bannerLoadFail, error)
     }
 
     func bannerViewDidRecordImpression(_ bannerView: GADBannerView) {
         self.emit(AMBEvents.adImpression)
-        self.emit(AMBEvents.bannerImpression)
     }
 
     func bannerViewDidRecordClick(_ bannerView: GADBannerView) {
@@ -254,7 +252,6 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
 
     func bannerViewWillPresentScreen(_ bannerView: GADBannerView) {
         self.emit(AMBEvents.adShow)
-        self.emit(AMBEvents.bannerOpen)
     }
 
     func bannerViewWillDismissScreen(_ bannerView: GADBannerView) {
@@ -262,7 +259,6 @@ class AMBBanner: AMBAdBase, GADBannerViewDelegate, GADAdSizeDelegate {
 
     func bannerViewDidDismissScreen(_ bannerView: GADBannerView) {
         self.emit(AMBEvents.adDismiss)
-        self.emit(AMBEvents.bannerClose)
     }
 
     func adView(_ bannerView: GADBannerView, willChangeAdSizeTo size: GADAdSize) {
