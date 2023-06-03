@@ -73,10 +73,9 @@ class Banner(ctx: ExecuteContext) : AdBase(ctx) {
     }
 
     private fun createBannerView(): AdView {
-        val adView = AdView(adapter.activity)
+        val adView = AdView(plugin.activity)
         adView.adUnitId = adUnitId
-        // FIXME no more resize support?
-        // adView.adSize = adSize
+        adView.setAdSize(adSize)
         adView.adListener = object : AdListener() {
             override fun onAdClicked() {
                 emit(Events.AD_CLICK)

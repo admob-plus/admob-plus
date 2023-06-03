@@ -29,7 +29,7 @@ abstract class AdBase(ctx: ExecuteContext) : Ad {
     val adUnitId: String get() = initOpts.getString("adUnitId")
     val adRequest get() = buildAdRequest(initOpts)
 
-    private val plugin: AdMob
+    protected val plugin: AdMob
 
     override val adapter: Adapter get() = plugin
 

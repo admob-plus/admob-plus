@@ -152,13 +152,13 @@ class AdMob : CordovaPlugin(), Adapter {
 
         ctx.optString("cls")?.also {
             val ad = when (it) {
-                "WebViewAd" -> WebViewAd(ctx)
                 "AppOpenAd" -> AppOpen(ctx)
                 "BannerAd" -> Banner(ctx)
                 "InterstitialAd" -> Interstitial(ctx)
                 "NativeAd" -> Native(ctx)
                 "RewardedAd" -> Rewarded(ctx)
                 "RewardedInterstitialAd" -> RewardedInterstitial(ctx)
+                "WebViewAd" -> WebViewAd(ctx)
                 else -> null
             }
             ad?.also {
