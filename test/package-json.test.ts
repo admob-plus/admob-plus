@@ -2,9 +2,8 @@
 
 test('@admob-plus/ionic peerDependencies', () => {
   const pkg = require('../packages/ionic/package.json');
-  const pkgRef = require('@ionic-native/admob-plus//package.json');
   expect(pkg.peerDependencies).toMatchObject({
-    'admob-plus-cordova': '^1.0.0',
+    'admob-plus-cordova': '>=1.0.0',
   });
 });
 
