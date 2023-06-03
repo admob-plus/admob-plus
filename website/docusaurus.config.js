@@ -22,7 +22,7 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'admob-plus',
   projectName: 'admob-plus.github.io',
-  trailingSlash: true,
+  trailingSlash: false,
   onBrokenLinks: 'warn',
   themeConfig: {
     colorMode: {

@@ -3,7 +3,7 @@ title: Installation
 sidebar_label: Installation
 ---
 
-This package is a wrapper of [`admob-plus-cordova`](/docs/cordova), hence the Cordova plugin configuration is used.
+This package is a wrapper of [`admob-plus-cordova`](../cordova), hence the Cordova plugin configuration is used.
 
 First, set your AdMob application information in `package.json`.
 
