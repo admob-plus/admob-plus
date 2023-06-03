@@ -8,7 +8,6 @@ export type CordovaAction =
   | 'adShow'
   | 'configure'
   | 'ready'
-  | 'requestTrackingAuthorization'
   | 'start'
   | 'webviewGoto';
 

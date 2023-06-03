@@ -1,5 +1,6 @@
 import AppOpenAd from './ads/app-open';
 import BannerAd, {BannerAdOptions} from './ads/banner';
+import {start} from './ads/base';
 import InterstitialAd from './ads/interstitial';
 import NativeAd, {NativeAdOptions} from './ads/native';
 import RewardedAd, {
@@ -10,8 +11,8 @@ import RewardedInterstitialAd, {
   RewardedInterstitialAdOptions,
 } from './ads/rewarded-interstitial';
 import WebViewAd from './ads/webview';
-import {AdMobConfig, Platform, execAsync} from './common';
-import {Events, TrackingAuthorizationStatus, start} from './shared';
+import {AdMobConfig, execAsync} from './common';
+import {Events} from './shared';
 
 export * from './ads/base';
 export {
@@ -40,7 +41,6 @@ export class AdMob {
   public readonly WebViewAd = WebViewAd;
 
   public readonly Events = Events;
-  public readonly TrackingAuthorizationStatus = TrackingAuthorizationStatus;
 
   configure(config: AdMobConfig) {
     return execAsync('configure', [config]);
@@ -48,20 +48,6 @@ export class AdMob {
 
   public start() {
     return start();
-  }
-
-  public async requestTrackingAuthorization(): Promise<
-    TrackingAuthorizationStatus | false
-  > {
-    if (cordova.platformId === Platform.ios) {
-      const n = await execAsync('requestTrackingAuthorization');
-      if (n !== false) {
-        return TrackingAuthorizationStatus[
-          TrackingAuthorizationStatus[n as number]
-        ];
-      }
-    }
-    return false;
   }
 }
 
