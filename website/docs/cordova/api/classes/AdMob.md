@@ -16,113 +16,83 @@ custom_edit_url: null
 
 ### AppOpenAd
 
-• `Readonly` **AppOpenAd**: typeof [`AppOpenAd`](AppOpenAd.md) = `AppOpenAd`
+• `Readonly` **AppOpenAd**: typeof [`AppOpenAd`](AppOpenAd.md) = `ads.AppOpenAd`
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:41
+packages/cordova/src/www/index.ts:9
 
 ___
 
 ### BannerAd
 
-• `Readonly` **BannerAd**: typeof [`BannerAd`](BannerAd.md) = `BannerAd`
+• `Readonly` **BannerAd**: typeof [`BannerAd`](BannerAd.md) = `ads.BannerAd`
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:42
+packages/cordova/src/www/index.ts:10
 
 ___
 
 ### Events
 
-• `Readonly` **Events**: typeof [`Events`](../enums/Events.md) = `Events`
+• `Readonly` **Events**: typeof `Events` = `Events`
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:49
+packages/cordova/src/www/index.ts:17
 
 ___
 
 ### InterstitialAd
 
-• `Readonly` **InterstitialAd**: typeof [`InterstitialAd`](InterstitialAd.md) = `InterstitialAd`
+• `Readonly` **InterstitialAd**: typeof [`InterstitialAd`](InterstitialAd.md) = `ads.InterstitialAd`
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:43
+packages/cordova/src/www/index.ts:11
 
 ___
 
 ### NativeAd
 
-• `Readonly` **NativeAd**: typeof [`NativeAd`](NativeAd.md) = `NativeAd`
+• `Readonly` **NativeAd**: typeof [`NativeAd`](NativeAd.md) = `ads.NativeAd`
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:44
+packages/cordova/src/www/index.ts:12
 
 ___
 
 ### RewardedAd
 
-• `Readonly` **RewardedAd**: typeof [`RewardedAd`](RewardedAd.md) = `RewardedAd`
+• `Readonly` **RewardedAd**: typeof [`RewardedAd`](RewardedAd.md) = `ads.RewardedAd`
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:45
+packages/cordova/src/www/index.ts:13
 
 ___
 
 ### RewardedInterstitialAd
 
-• `Readonly` **RewardedInterstitialAd**: typeof [`RewardedInterstitialAd`](RewardedInterstitialAd.md) = `RewardedInterstitialAd`
+• `Readonly` **RewardedInterstitialAd**: typeof [`RewardedInterstitialAd`](RewardedInterstitialAd.md) = `ads.RewardedInterstitialAd`
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:46
-
-___
-
-### TrackingAuthorizationStatus
-
-• `Readonly` **TrackingAuthorizationStatus**: typeof [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md) = `TrackingAuthorizationStatus`
-
-#### Defined in
-
-packages/cordova/src/www/index.ts:50
+packages/cordova/src/www/index.ts:14
 
 ___
 
 ### WebViewAd
 
-• `Readonly` **WebViewAd**: typeof [`WebViewAd`](WebViewAd.md) = `WebViewAd`
+• `Readonly` **WebViewAd**: typeof [`WebViewAd`](WebViewAd.md) = `ads.WebViewAd`
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:47
+packages/cordova/src/www/index.ts:15
 
 ## Methods
-
-### configRequest
-
-▸ **configRequest**(`requestConfig`): `Promise`<`unknown`\>
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `requestConfig` | [`RequestConfig`](../#requestconfig) |
-
-#### Returns
-
-`Promise`<`unknown`\>
-
-#### Defined in
-
-packages/cordova/src/www/index.ts:56
-
-___
 
 ### configure
 
@@ -132,7 +102,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `config` | [`AdMobConfig`](../#admobconfig) |
+| `config` | `AdMobConfig` |
 
 #### Returns
 
@@ -140,61 +110,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:52
-
-___
-
-### requestTrackingAuthorization
-
-▸ **requestTrackingAuthorization**(): `Promise`<``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)\>
-
-#### Returns
-
-`Promise`<``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)\>
-
-#### Defined in
-
-packages/cordova/src/www/index.ts:72
-
-___
-
-### setAppMuted
-
-▸ **setAppMuted**(`value`): `Promise`<`unknown`\>
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value` | `boolean` |
-
-#### Returns
-
-`Promise`<`unknown`\>
-
-#### Defined in
-
-packages/cordova/src/www/index.ts:60
-
-___
-
-### setAppVolume
-
-▸ **setAppVolume**(`value`): `Promise`<`unknown`\>
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value` | `number` |
-
-#### Returns
-
-`Promise`<`unknown`\>
-
-#### Defined in
-
-packages/cordova/src/www/index.ts:64
+packages/cordova/src/www/index.ts:19
 
 ___
 
@@ -208,4 +124,4 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:68
+packages/cordova/src/www/index.ts:23

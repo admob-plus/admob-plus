@@ -8,12 +8,7 @@ custom_edit_url: null
 
 ## Enumerations
 
-- [AdSizeType](enums/AdSizeType.md)
-- [Events](enums/Events.md)
-- [MaxAdContentRating](enums/MaxAdContentRating.md)
-- [NativeActions](enums/NativeActions.md)
-- [Platforms](enums/Platforms.md)
-- [TrackingAuthorizationStatus](enums/TrackingAuthorizationStatus.md)
+- [AppOpenAdOrientation](enums/AppOpenAdOrientation.md)
 
 ## Classes
 
@@ -32,8 +27,8 @@ custom_edit_url: null
 - [BannerAdOptions](interfaces/BannerAdOptions.md)
 - [NativeAdOptions](interfaces/NativeAdOptions.md)
 - [RewardedAdOptions](interfaces/RewardedAdOptions.md)
-- [RewardedInterstitialAdOptions](interfaces/RewardedInterstitialAdOptions.md)
 - [ServerSideVerificationOptions](interfaces/ServerSideVerificationOptions.md)
+- [WebViewAdOptions](interfaces/WebViewAdOptions.md)
 
 ## References
 
@@ -42,16 +37,6 @@ custom_edit_url: null
 Renames and re-exports [AdMob](classes/AdMob.md)
 
 ## Type Aliases
-
-### AdMobConfig
-
-Ƭ **AdMobConfig**: { `appMuted?`: `boolean` ; `appVolume?`: `number`  } & [`RequestConfig`](#requestconfig)
-
-#### Defined in
-
-packages/cordova/src/www/api.ts:153
-
-___
 
 ### MobileAdOptions
 
@@ -63,65 +48,20 @@ ___
 | :------ | :------ |
 | `adUnitId` | `string` |
 | `contentUrl?` | `string` |
-| `id?` | `number` |
+| `id?` | `string` |
 | `keywords?` | `string`[] |
 | `npa?` | ``"1"`` |
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:6
+packages/cordova/src/www/ads/base.ts:4
 
 ___
 
-### RequestConfig
+### RewardedInterstitialAdOptions
 
-Ƭ **RequestConfig**: `Object`
-
-#### Type declaration
-
-| Name | Type |
-| :------ | :------ |
-| `maxAdContentRating?` | [`MaxAdContentRating`](enums/MaxAdContentRating.md) |
-| `sameAppKey?` | `boolean` |
-| `tagForChildDirectedTreatment?` | `boolean` \| ``null`` |
-| `tagForUnderAgeOfConsent?` | `boolean` \| ``null`` |
-| `testDeviceIds?` | `string`[] |
+Ƭ **RewardedInterstitialAdOptions**: [`RewardedAdOptions`](interfaces/RewardedAdOptions.md)
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:133
-
-## Functions
-
-### execAsync
-
-▸ **execAsync**(`action`, `args?`): `Promise`<`unknown`\>
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `action` | [`NativeActions`](enums/NativeActions.md) |
-| `args?` | `any`[] |
-
-#### Returns
-
-`Promise`<`unknown`\>
-
-#### Defined in
-
-packages/cordova/src/www/generated.ts:79
-
-___
-
-### start
-
-▸ **start**(): `Promise`<{ `version`: `string`  }\>
-
-#### Returns
-
-`Promise`<{ `version`: `string`  }\>
-
-#### Defined in
-
-packages/cordova/src/www/api.ts:18
+packages/cordova/src/www/ads/rewarded-interstitial.ts:4

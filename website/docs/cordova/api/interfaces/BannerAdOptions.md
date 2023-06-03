@@ -24,7 +24,7 @@ MobileAdOptions.adUnitId
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:8
+packages/cordova/src/www/ads/base.ts:6
 
 ___
 
@@ -38,13 +38,13 @@ MobileAdOptions.contentUrl
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:9
+packages/cordova/src/www/ads/base.ts:7
 
 ___
 
 ### id
 
-• `Optional` **id**: `number`
+• `Optional` **id**: `string`
 
 #### Inherited from
 
@@ -52,7 +52,7 @@ MobileAdOptions.id
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:7
+packages/cordova/src/www/ads/base.ts:5
 
 ___
 
@@ -66,7 +66,7 @@ MobileAdOptions.keywords
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:10
+packages/cordova/src/www/ads/base.ts:8
 
 ___
 
@@ -80,7 +80,7 @@ MobileAdOptions.npa
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:11
+packages/cordova/src/www/ads/base.ts:9
 
 ___
 
@@ -90,7 +90,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/banner.ts:56
+packages/cordova/src/www/ads/banner.ts:56
 
 ___
 
@@ -100,7 +100,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/banner.ts:54
+packages/cordova/src/www/ads/banner.ts:54
 
 ___
 
@@ -110,4 +110,4 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/banner.ts:55
+packages/cordova/src/www/ads/banner.ts:55

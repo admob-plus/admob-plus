@@ -14,7 +14,7 @@ custom_edit_url: null
 
 #### Defined in
 
-packages/cordova/src/www/rewarded.ts:4
+packages/cordova/src/www/ads/rewarded.ts:4
 
 ___
 
@@ -24,4 +24,4 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/rewarded.ts:5
+packages/cordova/src/www/ads/rewarded.ts:5

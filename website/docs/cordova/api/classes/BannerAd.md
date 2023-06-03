@@ -30,7 +30,7 @@ custom_edit_url: null
 
 #### Defined in
 
-packages/cordova/src/www/banner.ts:64
+packages/cordova/src/www/ads/banner.ts:64
 
 ## Properties
 
@@ -40,13 +40,13 @@ packages/cordova/src/www/banner.ts:64
 
 #### Defined in
 
-packages/cordova/src/www/banner.ts:62
+packages/cordova/src/www/ads/banner.ts:62
 
 ___
 
 ### id
 
-• `Readonly` **id**: `number`
+• `Readonly` **id**: `string`
 
 #### Inherited from
 
@@ -54,7 +54,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:32
+packages/cordova/src/www/ads/base.ts:27
 
 ___
 
@@ -68,31 +68,17 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:34
+packages/cordova/src/www/ads/base.ts:29
 
 ___
 
 ### cls
 
-▪ `Static` **cls**: `string` = `'BannerAd'`
+▪ `Static` `Readonly` **cls**: ``"BannerAd"``
 
 #### Defined in
 
-packages/cordova/src/www/banner.ts:60
-
-___
-
-### type
-
-▪ `Static` `Readonly` **type**: `string` = `''`
-
-#### Inherited from
-
-[MobileAd](MobileAd.md).[type](MobileAd.md#type)
-
-#### Defined in
-
-packages/cordova/src/www/api.ts:27
+packages/cordova/src/www/ads/banner.ts:60
 
 ## Accessors
 
@@ -110,7 +96,7 @@ MobileAd.adUnitId
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:61
+packages/cordova/src/www/ads/base.ts:44
 
 ## Methods
 
@@ -128,7 +114,7 @@ packages/cordova/src/www/api.ts:61
 
 #### Defined in
 
-packages/cordova/src/www/banner.ts:99
+packages/cordova/src/www/ads/banner.ts:99
 
 ___
 
@@ -146,7 +132,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:102
+packages/cordova/src/www/ads/base.ts:84
 
 ___
 
@@ -164,7 +150,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:80
+packages/cordova/src/www/ads/base.ts:63
 
 ___
 
@@ -182,7 +168,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/banner.ts:86
+packages/cordova/src/www/ads/banner.ts:86
 
 ___
 
@@ -212,7 +198,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:65
+packages/cordova/src/www/ads/base.ts:48
 
 ___
 
@@ -230,7 +216,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/banner.ts:91
+packages/cordova/src/www/ads/banner.ts:91
 
 ___
 
@@ -253,7 +239,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/banner.ts:72
+packages/cordova/src/www/ads/banner.ts:72
 
 ___
 
@@ -265,7 +251,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `id` | `number` |
+| `id` | `string` |
 
 #### Returns
 
@@ -277,4 +263,4 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:45
+packages/cordova/src/www/ads/base.ts:40

@@ -1,7 +1,7 @@
 ---
-id: "RewardedAdOptions"
-title: "Interface: RewardedAdOptions"
-sidebar_label: "RewardedAdOptions"
+id: "WebViewAdOptions"
+title: "Interface: WebViewAdOptions"
+sidebar_label: "WebViewAdOptions"
 sidebar_position: 0
 custom_edit_url: null
 ---
@@ -10,7 +10,7 @@ custom_edit_url: null
 
 - [`MobileAdOptions`](../#mobileadoptions)
 
-  ↳ **`RewardedAdOptions`**
+  ↳ **`WebViewAdOptions`**
 
 ## Properties
 
@@ -25,6 +25,16 @@ MobileAdOptions.adUnitId
 #### Defined in
 
 packages/cordova/src/www/ads/base.ts:6
+
+___
+
+### adsense
+
+• **adsense**: `string`
+
+#### Defined in
+
+packages/cordova/src/www/ads/webview.ts:6
 
 ___
 
@@ -74,20 +84,20 @@ ___
 
 • `Optional` **npa**: ``"1"``
 
-#### Inherited from
+#### Overrides
 
 MobileAdOptions.npa
 
 #### Defined in
 
-packages/cordova/src/www/ads/base.ts:9
+packages/cordova/src/www/ads/webview.ts:7
 
 ___
 
-### serverSideVerification
+### src
 
-• `Optional` **serverSideVerification**: [`ServerSideVerificationOptions`](ServerSideVerificationOptions.md)
+• `Optional` **src**: `string`
 
 #### Defined in
 
-packages/cordova/src/www/ads/rewarded.ts:9
+packages/cordova/src/www/ads/webview.ts:5

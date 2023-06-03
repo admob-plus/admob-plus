@@ -26,7 +26,7 @@ custom_edit_url: null
 
 | Name | Type |
 | :------ | :------ |
-| `opts` | `RewardedInterstitialAdOptions` |
+| `opts` | `RewardedAdOptions` |
 
 #### Overrides
 
@@ -34,17 +34,17 @@ IonicNativePlugin.constructor
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:163
+packages/ionic/src/ngx/index.ts:160
 
 ## Properties
 
 ### obj
 
-• `Private` **obj**: `default`
+• `Private` **obj**: `RewardedInterstitialAd`
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:161
+packages/ionic/src/ngx/index.ts:158
 
 ___
 
@@ -58,7 +58,7 @@ IonicNativePlugin.plugin
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:157
+packages/ionic/src/ngx/index.ts:154
 
 ___
 
@@ -72,7 +72,7 @@ IonicNativePlugin.pluginName
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:158
+packages/ionic/src/ngx/index.ts:155
 
 ___
 
@@ -86,7 +86,7 @@ IonicNativePlugin.pluginRef
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:159
+packages/ionic/src/ngx/index.ts:156
 
 ## Accessors
 
@@ -104,17 +104,17 @@ Omit.adUnitId
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:169
+packages/ionic/src/ngx/index.ts:166
 
 ___
 
 ### id
 
-• `get` **id**(): `number`
+• `get` **id**(): `string`
 
 #### Returns
 
-`number`
+`string`
 
 #### Implementation of
 
@@ -122,7 +122,7 @@ Omit.id
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:173
+packages/ionic/src/ngx/index.ts:170
 
 ## Methods
 
@@ -140,7 +140,7 @@ Omit.isLoaded
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:177
+packages/ionic/src/ngx/index.ts:174
 
 ___
 
@@ -158,7 +158,7 @@ Omit.load
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:181
+packages/ionic/src/ngx/index.ts:178
 
 ___
 
@@ -188,7 +188,7 @@ Omit.on
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:189
+packages/ionic/src/ngx/index.ts:186
 
 ___
 
@@ -206,4 +206,4 @@ Omit.show
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:185
+packages/ionic/src/ngx/index.ts:182

@@ -50,37 +50,37 @@ custom_edit_url: null
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:38
+packages/cordova/src/www/ads/base.ts:33
 
 ## Properties
 
-### \_created
+### \_init
 
-• `Private` **\_created**: `boolean` = `false`
+• `Private` **\_init**: ``null`` \| `Promise`<`unknown`\> = `null`
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:35
+packages/cordova/src/www/ads/base.ts:30
 
 ___
 
-### \_init
+### \_inited
 
-• `Private` **\_init**: ``null`` \| `Promise`<`any`\> = `null`
+• `Private` **\_inited**: `boolean` = `false`
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:36
+packages/cordova/src/www/ads/base.ts:31
 
 ___
 
 ### id
 
-• `Readonly` **id**: `number`
+• `Readonly` **id**: `string`
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:32
+packages/cordova/src/www/ads/base.ts:27
 
 ___
 
@@ -90,7 +90,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:34
+packages/cordova/src/www/ads/base.ts:29
 
 ___
 
@@ -100,31 +100,11 @@ ___
 
 #### Index signature
 
-▪ [s: `number`]: [`MobileAd`](MobileAd.md)
+▪ [s: `string`]: [`MobileAd`](MobileAd.md)
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:29
-
-___
-
-### idCounter
-
-▪ `Static` `Private` **idCounter**: `number` = `0`
-
-#### Defined in
-
-packages/cordova/src/www/api.ts:30
-
-___
-
-### type
-
-▪ `Static` `Readonly` **type**: `string` = `''`
-
-#### Defined in
-
-packages/cordova/src/www/api.ts:27
+packages/cordova/src/www/ads/base.ts:25
 
 ## Accessors
 
@@ -138,7 +118,7 @@ packages/cordova/src/www/api.ts:27
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:61
+packages/cordova/src/www/ads/base.ts:44
 
 ## Methods
 
@@ -152,7 +132,7 @@ packages/cordova/src/www/api.ts:61
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:98
+packages/cordova/src/www/ads/base.ts:79
 
 ___
 
@@ -166,7 +146,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:102
+packages/cordova/src/www/ads/base.ts:84
 
 ___
 
@@ -180,7 +160,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:80
+packages/cordova/src/www/ads/base.ts:63
 
 ___
 
@@ -194,7 +174,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:87
+packages/cordova/src/www/ads/base.ts:68
 
 ___
 
@@ -220,7 +200,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:65
+packages/cordova/src/www/ads/base.ts:48
 
 ___
 
@@ -232,7 +212,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `opts?` | `Record`<`string`, `any`\> |
+| `opts?` | `Record`<`string`, `unknown`\> |
 
 #### Returns
 
@@ -240,7 +220,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:93
+packages/cordova/src/www/ads/base.ts:74
 
 ___
 
@@ -252,7 +232,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `id` | `number` |
+| `id` | `string` |
 
 #### Returns
 
@@ -260,18 +240,4 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:45
-
-___
-
-### nextId
-
-▸ `Static` `Private` **nextId**(): `number`
-
-#### Returns
-
-`number`
-
-#### Defined in
-
-packages/cordova/src/www/api.ts:49
+packages/cordova/src/www/ads/base.ts:40

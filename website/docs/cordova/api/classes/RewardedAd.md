@@ -30,13 +30,13 @@ custom_edit_url: null
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:38
+packages/cordova/src/www/ads/base.ts:33
 
 ## Properties
 
 ### id
 
-• `Readonly` **id**: `number`
+• `Readonly` **id**: `string`
 
 #### Inherited from
 
@@ -44,7 +44,7 @@ packages/cordova/src/www/api.ts:38
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:32
+packages/cordova/src/www/ads/base.ts:27
 
 ___
 
@@ -58,31 +58,17 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:34
+packages/cordova/src/www/ads/base.ts:29
 
 ___
 
 ### cls
 
-▪ `Static` **cls**: `string` = `'RewardedAd'`
+▪ `Static` `Readonly` **cls**: ``"RewardedAd"``
 
 #### Defined in
 
-packages/cordova/src/www/rewarded.ts:13
-
-___
-
-### type
-
-▪ `Static` `Readonly` **type**: `string` = `''`
-
-#### Inherited from
-
-[MobileAd](MobileAd.md).[type](MobileAd.md#type)
-
-#### Defined in
-
-packages/cordova/src/www/api.ts:27
+packages/cordova/src/www/ads/rewarded.ts:13
 
 ## Accessors
 
@@ -100,7 +86,7 @@ MobileAd.adUnitId
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:61
+packages/cordova/src/www/ads/base.ts:44
 
 ## Methods
 
@@ -118,7 +104,7 @@ packages/cordova/src/www/api.ts:61
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:98
+packages/cordova/src/www/ads/base.ts:79
 
 ___
 
@@ -136,7 +122,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:102
+packages/cordova/src/www/ads/base.ts:84
 
 ___
 
@@ -154,7 +140,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/rewarded.ts:15
+packages/cordova/src/www/ads/rewarded.ts:15
 
 ___
 
@@ -172,7 +158,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/rewarded.ts:19
+packages/cordova/src/www/ads/rewarded.ts:19
 
 ___
 
@@ -202,7 +188,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:65
+packages/cordova/src/www/ads/base.ts:48
 
 ___
 
@@ -220,7 +206,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/rewarded.ts:23
+packages/cordova/src/www/ads/rewarded.ts:23
 
 ___
 
@@ -232,7 +218,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `id` | `number` |
+| `id` | `string` |
 
 #### Returns
 
@@ -244,4 +230,4 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:45
+packages/cordova/src/www/ads/base.ts:40

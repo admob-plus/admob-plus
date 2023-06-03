@@ -35,17 +35,17 @@ IonicNativePlugin.constructor
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:81
+packages/ionic/src/ngx/index.ts:78
 
 ## Properties
 
 ### obj
 
-• `Private` **obj**: `default`
+• `Private` **obj**: `InterstitialAd`
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:79
+packages/ionic/src/ngx/index.ts:76
 
 ___
 
@@ -59,7 +59,7 @@ IonicNativePlugin.plugin
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:75
+packages/ionic/src/ngx/index.ts:72
 
 ___
 
@@ -73,7 +73,7 @@ IonicNativePlugin.pluginName
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:76
+packages/ionic/src/ngx/index.ts:73
 
 ___
 
@@ -87,7 +87,7 @@ IonicNativePlugin.pluginRef
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:77
+packages/ionic/src/ngx/index.ts:74
 
 ## Accessors
 
@@ -105,17 +105,17 @@ Omit.adUnitId
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:87
+packages/ionic/src/ngx/index.ts:84
 
 ___
 
 ### id
 
-• `get` **id**(): `number`
+• `get` **id**(): `string`
 
 #### Returns
 
-`number`
+`string`
 
 #### Implementation of
 
@@ -123,7 +123,7 @@ Omit.id
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:91
+packages/ionic/src/ngx/index.ts:88
 
 ## Methods
 
@@ -141,7 +141,7 @@ Omit.isLoaded
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:95
+packages/ionic/src/ngx/index.ts:92
 
 ___
 
@@ -159,7 +159,7 @@ Omit.load
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:99
+packages/ionic/src/ngx/index.ts:96
 
 ___
 
@@ -189,7 +189,7 @@ Omit.on
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:107
+packages/ionic/src/ngx/index.ts:104
 
 ___
 
@@ -207,4 +207,4 @@ Omit.show
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:103
+packages/ionic/src/ngx/index.ts:100

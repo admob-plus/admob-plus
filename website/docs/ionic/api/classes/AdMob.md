@@ -14,7 +14,7 @@ custom_edit_url: null
 
 ## Implements
 
-- `Omit`<`IAdMob`, ``"AppOpenAd"`` \| ``"BannerAd"`` \| ``"Events"`` \| ``"InterstitialAd"`` \| ``"NativeAd"`` \| ``"RewardedAd"`` \| ``"RewardedInterstitialAd"`` \| ``"TrackingAuthorizationStatus"`` \| ``"WebViewAd"``\>
+- `Omit`<`IAdMob`, ``"AppOpenAd"`` \| ``"BannerAd"`` \| ``"BannerAd"`` \| ``"configRequest"`` \| ``"Events"`` \| ``"InterstitialAd"`` \| ``"InterstitialAd"`` \| ``"NativeAd"`` \| ``"NativeAd"`` \| ``"requestTrackingAuthorization"`` \| ``"RewardedAd"`` \| ``"RewardedAd"`` \| ``"RewardedInterstitialAd"`` \| ``"RewardedInterstitialAd"`` \| ``"setAppMuted"`` \| ``"setAppVolume"`` \| ``"TrackingAuthorizationStatus"`` \| ``"WebViewAd"``\>
 
 ## Constructors
 
@@ -28,56 +28,6 @@ IonicNativePlugin.constructor
 
 ## Properties
 
-### BannerAd
-
-• `Readonly` **BannerAd**: typeof [`BannerAd`](BannerAd.md) = `BannerAd`
-
-#### Defined in
-
-packages/ionic/src/ngx/index.ts:266
-
-___
-
-### InterstitialAd
-
-• `Readonly` **InterstitialAd**: typeof [`InterstitialAd`](InterstitialAd.md) = `InterstitialAd`
-
-#### Defined in
-
-packages/ionic/src/ngx/index.ts:267
-
-___
-
-### NativeAd
-
-• `Readonly` **NativeAd**: typeof [`NativeAd`](NativeAd.md) = `NativeAd`
-
-#### Defined in
-
-packages/ionic/src/ngx/index.ts:270
-
-___
-
-### RewardedAd
-
-• `Readonly` **RewardedAd**: typeof [`RewardedAd`](RewardedAd.md) = `RewardedAd`
-
-#### Defined in
-
-packages/ionic/src/ngx/index.ts:268
-
-___
-
-### RewardedInterstitialAd
-
-• `Readonly` **RewardedInterstitialAd**: typeof [`RewardedInterstitialAd`](RewardedInterstitialAd.md) = `RewardedInterstitialAd`
-
-#### Defined in
-
-packages/ionic/src/ngx/index.ts:269
-
-___
-
 ### platforms
 
 ▪ `Static` **platforms**: `string`[]
@@ -88,7 +38,7 @@ IonicNativePlugin.platforms
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:260
+packages/ionic/src/ngx/index.ts:266
 
 ___
 
@@ -102,7 +52,7 @@ IonicNativePlugin.plugin
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:261
+packages/ionic/src/ngx/index.ts:267
 
 ___
 
@@ -116,7 +66,7 @@ IonicNativePlugin.pluginName
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:262
+packages/ionic/src/ngx/index.ts:268
 
 ___
 
@@ -130,7 +80,7 @@ IonicNativePlugin.pluginRef
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:263
+packages/ionic/src/ngx/index.ts:269
 
 ___
 
@@ -144,33 +94,9 @@ IonicNativePlugin.repo
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:264
+packages/ionic/src/ngx/index.ts:270
 
 ## Methods
-
-### configRequest
-
-▸ **configRequest**(`...opts`): `Promise`<`unknown`\>
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `...opts` | [requestConfig: RequestConfig] |
-
-#### Returns
-
-`Promise`<`unknown`\>
-
-#### Implementation of
-
-Omit.configRequest
-
-#### Defined in
-
-packages/ionic/src/ngx/index.ts:272
-
-___
 
 ### configure
 
@@ -192,13 +118,13 @@ Omit.configure
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:282
+packages/ionic/src/ngx/index.ts:276
 
 ___
 
 ### on
 
-▸ **on**(`event`): `Observable`<`any`\>
+▸ **on**(`event`): `Observable`<`unknown`\>
 
 #### Parameters
 
@@ -208,87 +134,21 @@ ___
 
 #### Returns
 
-`Observable`<`any`\>
+`Observable`<`unknown`\>
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:298
-
-___
-
-### requestTrackingAuthorization
-
-▸ **requestTrackingAuthorization**(): `Promise`<``false`` \| `TrackingAuthorizationStatus`\>
-
-#### Returns
-
-`Promise`<``false`` \| `TrackingAuthorizationStatus`\>
-
-#### Implementation of
-
-Omit.requestTrackingAuthorization
-
-#### Defined in
-
-packages/ionic/src/ngx/index.ts:294
-
-___
-
-### setAppMuted
-
-▸ **setAppMuted**(`...opts`): `Promise`<`unknown`\>
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `...opts` | [value: boolean] |
-
-#### Returns
-
-`Promise`<`unknown`\>
-
-#### Implementation of
-
-Omit.setAppMuted
-
-#### Defined in
-
-packages/ionic/src/ngx/index.ts:286
-
-___
-
-### setAppVolume
-
-▸ **setAppVolume**(`...opts`): `Promise`<`unknown`\>
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `...opts` | [value: number] |
-
-#### Returns
-
-`Promise`<`unknown`\>
-
-#### Implementation of
-
-Omit.setAppVolume
-
-#### Defined in
-
-packages/ionic/src/ngx/index.ts:290
+packages/ionic/src/ngx/index.ts:280
 
 ___
 
 ### start
 
-▸ **start**(): `Promise`<{}\>
+▸ **start**(): `Promise`<{ `version`: `string`  }\>
 
 #### Returns
 
-`Promise`<{}\>
+`Promise`<{ `version`: `string`  }\>
 
 #### Implementation of
 
@@ -296,4 +156,4 @@ Omit.start
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:278
+packages/ionic/src/ngx/index.ts:272

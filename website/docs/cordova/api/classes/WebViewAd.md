@@ -8,7 +8,7 @@ custom_edit_url: null
 
 ## Hierarchy
 
-- [`MobileAd`](MobileAd.md)<`WebViewAdOptions`\>
+- [`MobileAd`](MobileAd.md)<[`WebViewAdOptions`](../interfaces/WebViewAdOptions.md)\>
 
   ↳ **`WebViewAd`**
 
@@ -22,7 +22,7 @@ custom_edit_url: null
 
 | Name | Type |
 | :------ | :------ |
-| `opts` | `WebViewAdOptions` |
+| `opts` | [`WebViewAdOptions`](../interfaces/WebViewAdOptions.md) |
 
 #### Overrides
 
@@ -30,7 +30,7 @@ custom_edit_url: null
 
 #### Defined in
 
-packages/cordova/src/www/webview.ts:23
+packages/cordova/src/www/ads/webview.ts:25
 
 ## Properties
 
@@ -40,7 +40,7 @@ packages/cordova/src/www/webview.ts:23
 
 #### Defined in
 
-packages/cordova/src/www/webview.ts:19
+packages/cordova/src/www/ads/webview.ts:21
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/webview.ts:21
+packages/cordova/src/www/ads/webview.ts:23
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/webview.ts:17
+packages/cordova/src/www/ads/webview.ts:19
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/webview.ts:20
+packages/cordova/src/www/ads/webview.ts:22
 
 ___
 
@@ -80,13 +80,13 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/webview.ts:18
+packages/cordova/src/www/ads/webview.ts:20
 
 ___
 
 ### id
 
-• `Readonly` **id**: `number`
+• `Readonly` **id**: `string`
 
 #### Inherited from
 
@@ -94,13 +94,13 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:32
+packages/cordova/src/www/ads/base.ts:27
 
 ___
 
 ### opts
 
-• `Protected` `Readonly` **opts**: `WebViewAdOptions`
+• `Protected` `Readonly` **opts**: [`WebViewAdOptions`](../interfaces/WebViewAdOptions.md)
 
 #### Inherited from
 
@@ -108,21 +108,17 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:34
+packages/cordova/src/www/ads/base.ts:29
 
 ___
 
-### type
+### cls
 
-▪ `Static` `Readonly` **type**: `string` = `''`
-
-#### Inherited from
-
-[MobileAd](MobileAd.md).[type](MobileAd.md#type)
+▪ `Static` `Readonly` **cls**: ``"WebViewAd"``
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:27
+packages/cordova/src/www/ads/webview.ts:11
 
 ## Accessors
 
@@ -140,7 +136,7 @@ MobileAd.adUnitId
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:61
+packages/cordova/src/www/ads/base.ts:44
 
 ## Methods
 
@@ -165,7 +161,7 @@ packages/cordova/src/www/api.ts:61
 
 #### Defined in
 
-packages/cordova/src/www/webview.ts:76
+packages/cordova/src/www/ads/webview.ts:77
 
 ___
 
@@ -183,7 +179,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:98
+packages/cordova/src/www/ads/base.ts:79
 
 ___
 
@@ -197,7 +193,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/webview.ts:165
+packages/cordova/src/www/ads/webview.ts:166
 
 ___
 
@@ -211,7 +207,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/webview.ts:161
+packages/cordova/src/www/ads/webview.ts:162
 
 ___
 
@@ -231,7 +227,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/webview.ts:140
+packages/cordova/src/www/ads/webview.ts:141
 
 ___
 
@@ -245,7 +241,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/webview.ts:169
+packages/cordova/src/www/ads/webview.ts:170
 
 ___
 
@@ -266,7 +262,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/webview.ts:149
+packages/cordova/src/www/ads/webview.ts:150
 
 ___
 
@@ -284,7 +280,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:102
+packages/cordova/src/www/ads/base.ts:84
 
 ___
 
@@ -302,7 +298,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:80
+packages/cordova/src/www/ads/base.ts:63
 
 ___
 
@@ -322,7 +318,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/webview.ts:136
+packages/cordova/src/www/ads/webview.ts:137
 
 ___
 
@@ -340,7 +336,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:87
+packages/cordova/src/www/ads/base.ts:68
 
 ___
 
@@ -360,7 +356,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/webview.ts:126
+packages/cordova/src/www/ads/webview.ts:127
 
 ___
 
@@ -380,7 +376,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/webview.ts:114
+packages/cordova/src/www/ads/webview.ts:115
 
 ___
 
@@ -410,7 +406,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:65
+packages/cordova/src/www/ads/base.ts:48
 
 ___
 
@@ -428,7 +424,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/webview.ts:173
+packages/cordova/src/www/ads/webview.ts:174
 
 ___
 
@@ -442,7 +438,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/webview.ts:11
+packages/cordova/src/www/ads/webview.ts:13
 
 ___
 
@@ -454,7 +450,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `id` | `number` |
+| `id` | `string` |
 
 #### Returns
 
@@ -466,4 +462,4 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:45
+packages/cordova/src/www/ads/base.ts:40

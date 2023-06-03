@@ -8,7 +8,7 @@ custom_edit_url: null
 
 ## Hierarchy
 
-- [`MobileAd`](MobileAd.md)<[`RewardedInterstitialAdOptions`](../interfaces/RewardedInterstitialAdOptions.md)\>
+- [`MobileAd`](MobileAd.md)<[`RewardedInterstitialAdOptions`](../#rewardedinterstitialadoptions)\>
 
   ↳ **`RewardedInterstitialAd`**
 
@@ -22,7 +22,7 @@ custom_edit_url: null
 
 | Name | Type |
 | :------ | :------ |
-| `opts` | [`RewardedInterstitialAdOptions`](../interfaces/RewardedInterstitialAdOptions.md) |
+| `opts` | [`RewardedAdOptions`](../interfaces/RewardedAdOptions.md) |
 
 #### Inherited from
 
@@ -30,13 +30,13 @@ custom_edit_url: null
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:38
+packages/cordova/src/www/ads/base.ts:33
 
 ## Properties
 
 ### id
 
-• `Readonly` **id**: `number`
+• `Readonly` **id**: `string`
 
 #### Inherited from
 
@@ -44,13 +44,13 @@ packages/cordova/src/www/api.ts:38
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:32
+packages/cordova/src/www/ads/base.ts:27
 
 ___
 
 ### opts
 
-• `Protected` `Readonly` **opts**: [`RewardedInterstitialAdOptions`](../interfaces/RewardedInterstitialAdOptions.md)
+• `Protected` `Readonly` **opts**: [`RewardedAdOptions`](../interfaces/RewardedAdOptions.md)
 
 #### Inherited from
 
@@ -58,31 +58,17 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:34
+packages/cordova/src/www/ads/base.ts:29
 
 ___
 
 ### cls
 
-▪ `Static` **cls**: `string` = `'RewardedInterstitialAd'`
+▪ `Static` `Readonly` **cls**: ``"RewardedInterstitialAd"``
 
 #### Defined in
 
-packages/cordova/src/www/rewarded-interstitial.ts:7
-
-___
-
-### type
-
-▪ `Static` `Readonly` **type**: `string` = `''`
-
-#### Inherited from
-
-[MobileAd](MobileAd.md).[type](MobileAd.md#type)
-
-#### Defined in
-
-packages/cordova/src/www/api.ts:27
+packages/cordova/src/www/ads/rewarded-interstitial.ts:7
 
 ## Accessors
 
@@ -100,7 +86,7 @@ MobileAd.adUnitId
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:61
+packages/cordova/src/www/ads/base.ts:44
 
 ## Methods
 
@@ -118,7 +104,7 @@ packages/cordova/src/www/api.ts:61
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:98
+packages/cordova/src/www/ads/base.ts:79
 
 ___
 
@@ -136,7 +122,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:102
+packages/cordova/src/www/ads/base.ts:84
 
 ___
 
@@ -154,7 +140,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/rewarded-interstitial.ts:9
+packages/cordova/src/www/ads/rewarded-interstitial.ts:9
 
 ___
 
@@ -172,7 +158,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/rewarded-interstitial.ts:13
+packages/cordova/src/www/ads/rewarded-interstitial.ts:13
 
 ___
 
@@ -202,7 +188,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:65
+packages/cordova/src/www/ads/base.ts:48
 
 ___
 
@@ -220,7 +206,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/rewarded-interstitial.ts:17
+packages/cordova/src/www/ads/rewarded-interstitial.ts:17
 
 ___
 
@@ -232,7 +218,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `id` | `number` |
+| `id` | `string` |
 
 #### Returns
 
@@ -244,4 +230,4 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/api.ts:45
+packages/cordova/src/www/ads/base.ts:40
