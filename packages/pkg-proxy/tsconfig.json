@@ -5,7 +5,8 @@
     "module": "esnext",
     "outDir": "lib",
     "rootDir": "src",
-    "target": "esnext"
+    "target": "esnext",
+    "allowSyntheticDefaultImports": true
   },
   "include": ["src/**/*"]
 }
