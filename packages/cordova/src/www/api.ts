@@ -32,14 +32,13 @@ export class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
 
   protected readonly opts: T
   private _init: Promise<any> | null = null
+  private _inited = false
 
   constructor(opts: T) {
     this.opts = opts
 
     this.id = opts.id ?? opts.adUnitId
     MobileAd.allAds[this.id] = this
-
-    this.init()
   }
 
   public static getAdById(id: string) {
@@ -54,7 +53,7 @@ export class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
     const [eventName, cb, ...rest] = args
     const type = `admob.ad.${eventName.toLowerCase()}`
     const listener = (evt: any) => {
-      if (evt.ad === this) {
+      if (evt.adId === this.id) {
         cb(evt)
       }
     }
@@ -89,6 +88,8 @@ export class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
   }
 
   protected async init() {
+    if (this._inited) return
+
     if (!started) {
       if (startPromise === null) start()
       await startPromise
@@ -106,8 +107,8 @@ export class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
 
     try {
       await this._init
-    } catch {
-      // ignore error
+    } finally {
+      this._inited = true
     }
   }
 }
