@@ -1,26 +1,26 @@
-import { MobileAd, MobileAdOptions } from './base'
+import {MobileAd, MobileAdOptions} from './base';
 
 export interface ServerSideVerificationOptions {
-  customData?: string
-  userId?: string
+  customData?: string;
+  userId?: string;
 }
 
 export interface RewardedAdOptions extends MobileAdOptions {
-  serverSideVerification?: ServerSideVerificationOptions
+  serverSideVerification?: ServerSideVerificationOptions;
 }
 
 export default class RewardedAd extends MobileAd<RewardedAdOptions> {
-  static readonly cls = 'RewardedAd'
+  static readonly cls = 'RewardedAd';
 
   public isLoaded() {
-    return super.isLoaded()
+    return super.isLoaded();
   }
 
   public load() {
-    return super.load()
+    return super.load();
   }
 
   public show() {
-    return super.show()
+    return super.show();
   }
 }

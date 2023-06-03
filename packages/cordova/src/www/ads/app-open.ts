@@ -1,4 +1,4 @@
-import { MobileAd, MobileAdOptions } from './base'
+import {MobileAd, MobileAdOptions} from './base';
 
 enum AppOpenAdOrientation {
   Portrait = 1,
@@ -8,20 +8,20 @@ enum AppOpenAdOrientation {
 }
 
 export default class AppOpenAd extends MobileAd<
-  MobileAdOptions & { orientation: AppOpenAdOrientation }
+  MobileAdOptions & {orientation: AppOpenAdOrientation}
 > {
-  static readonly cls = 'AppOpenAd'
-  static readonly Orientation = AppOpenAdOrientation
+  static readonly cls = 'AppOpenAd';
+  static readonly Orientation = AppOpenAdOrientation;
 
   public isLoaded() {
-    return super.isLoaded()
+    return super.isLoaded();
   }
 
   public load() {
-    return super.load()
+    return super.load();
   }
 
   async show() {
-    return super.show() as Promise<boolean>
+    return super.show() as Promise<boolean>;
   }
 }

@@ -1,20 +1,20 @@
-import { RewardedAdOptions } from './rewarded'
-import { MobileAd } from './base'
+import {RewardedAdOptions} from './rewarded';
+import {MobileAd} from './base';
 
-export interface RewardedInterstitialAdOptions extends RewardedAdOptions {}
+export type RewardedInterstitialAdOptions = RewardedAdOptions;
 
 export default class RewardedInterstitialAd extends MobileAd<RewardedInterstitialAdOptions> {
-  static readonly cls = 'RewardedInterstitialAd'
+  static readonly cls = 'RewardedInterstitialAd';
 
   public isLoaded() {
-    return super.isLoaded()
+    return super.isLoaded();
   }
 
   public load() {
-    return super.load()
+    return super.load();
   }
 
   public show() {
-    return super.show()
+    return super.show();
   }
 }

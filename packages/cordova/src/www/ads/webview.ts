@@ -8,7 +8,7 @@ export interface WebViewAdOptions extends MobileAdOptions {
 }
 
 export default class WebViewAd extends MobileAd<WebViewAdOptions> {
-  static readonly cls = 'WebViewAd'
+  static readonly cls = 'WebViewAd';
 
   static async checkIntegration() {
     await execAsync('webviewGoto' as never, [
@@ -72,7 +72,6 @@ export default class WebViewAd extends MobileAd<WebViewAdOptions> {
         this.historyReplaceState(this._historyCurrentHref);
       }
     });
-
   }
 
   public addAd(opts: {
@@ -117,7 +116,7 @@ export default class WebViewAd extends MobileAd<WebViewAdOptions> {
     if (this.isNodeScript(node) === true) {
       node.parentNode.replaceChild(this.nodeScriptClone(node), node);
     } else {
-      let children = node.childNodes;
+      const children = node.childNodes;
       for (let i = 0, len = children.length; i < len; i++) {
         this.nodeScriptReplace(children[i]);
       }
@@ -126,9 +125,9 @@ export default class WebViewAd extends MobileAd<WebViewAdOptions> {
   }
 
   private nodeScriptClone(node) {
-    let script = document.createElement('script');
+    const script = document.createElement('script');
     script.text = node.innerHTML;
-    let attrs = node.attributes;
+    const attrs = node.attributes;
     for (let i = 0, len = attrs.length; i < len; i++) {
       script.setAttribute(attrs[i].name, attrs[i].value);
     }
@@ -149,8 +148,8 @@ export default class WebViewAd extends MobileAd<WebViewAdOptions> {
   }
 
   private historySetPage(page: string, parameters = {}) {
-    let _parameters: string[] = [];
-    for (let name in parameters) {
+    const _parameters: string[] = [];
+    for (const name in parameters) {
       _parameters.push(name + '=' + encodeURI(parameters[name]));
     }
     const url = `${page}${

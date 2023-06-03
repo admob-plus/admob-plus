@@ -1,17 +1,17 @@
-import { MobileAd, MobileAdOptions } from './base'
+import {MobileAd, MobileAdOptions} from './base';
 
 export default class InterstitialAd extends MobileAd<MobileAdOptions> {
-  static readonly cls = 'InterstitialAd'
+  static readonly cls = 'InterstitialAd';
 
   public isLoaded() {
-    return super.isLoaded()
+    return super.isLoaded();
   }
 
   public load() {
-    return super.load()
+    return super.load();
   }
 
   public show() {
-    return super.show()
+    return super.show();
   }
 }

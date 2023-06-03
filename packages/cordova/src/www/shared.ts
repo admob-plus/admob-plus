@@ -1,2 +1,2 @@
-export * from './ads/base'
-export * from './generated'
+export * from './ads/base';
+export * from './generated';

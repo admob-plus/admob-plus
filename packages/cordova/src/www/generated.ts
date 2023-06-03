@@ -78,33 +78,33 @@ export enum AdSizeType {
 
 export const execAsync = (action: NativeActions, args?: any[]) => {
   return new Promise((resolve, reject) => {
-    cordova.exec(resolve, reject, 'AdMob', action, args)
-  })
-}
+    cordova.exec(resolve, reject, 'AdMob', action, args);
+  });
+};
 
 export function waitEvent(
   successEvent: string,
-  failEvent = '',
+  failEvent = ''
 ): Promise<CustomEvent> {
   return new Promise((resolve, reject) => {
     document.addEventListener(
       successEvent as any,
       (event: CustomEvent) => {
-        resolve(event)
+        resolve(event);
       },
-      false,
-    )
+      false
+    );
 
     if (failEvent) {
       document.addEventListener(
         failEvent as any,
         (failedEvent: CustomEvent) => {
-          reject(failedEvent)
+          reject(failedEvent);
         },
-        false,
-      )
+        false
+      );
     }
-  })
+  });
 }
 
 export const initPlugin = () => {
@@ -112,14 +112,14 @@ export const initPlugin = () => {
     'deviceready',
     () => {
       cordova.exec(
-        (event) => {
-          cordova.fireDocumentEvent(event.type, event.data)
+        event => {
+          cordova.fireDocumentEvent(event.type, event.data);
         },
         console.error,
         'AdMob',
-        NativeActions.ready,
-      )
+        NativeActions.ready
+      );
     },
-    false,
-  )
-}
+    false
+  );
+};

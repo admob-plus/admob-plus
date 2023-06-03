@@ -12,7 +12,6 @@ packages/cli/lib
 !packages/cordova
 packages/cordova/lib
 packages/cordova/www
-packages/cordova/src/www
 packages/cordova/scripts
 
 !packages/react-native
