@@ -1,9 +1,9 @@
 import * as ads from './ads';
 import {start} from './ads/base';
-import {AdMobConfig, execAsync} from './common';
-import {Events} from './shared';
+import {AdMobConfig, Events, execAsync} from './common';
 
 export * from './ads';
+export * from './common';
 
 export class AdMob {
   public readonly AppOpenAd = ads.AppOpenAd;

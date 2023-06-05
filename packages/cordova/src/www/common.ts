@@ -6,10 +6,23 @@ export type CordovaAction =
   | 'adIsLoaded'
   | 'adLoad'
   | 'adShow'
+  | 'bannerConfig'
   | 'configure'
   | 'ready'
   | 'start'
   | 'webviewGoto';
+
+export enum Events {
+  adClick = 'admob.ad.click',
+  adDismiss = 'admob.ad.dismiss',
+  adImpression = 'admob.ad.impression',
+  adLoad = 'admob.ad.load',
+  adLoadFail = 'admob.ad.loadfail',
+  adReward = 'admob.ad.reward',
+  adShow = 'admob.ad.show',
+  adShowFail = 'admob.ad.showfail',
+  ready = 'admob.ready',
+}
 
 export const enum Platform {
   android = 'android',
@@ -40,6 +53,7 @@ export interface AdMobConfig extends RequestConfig {
   appVolume?: number;
 }
 
+/** @internal */
 export function execAsync<T>(action: CordovaAction, args?: unknown[]) {
   return new Promise<T>((resolve, reject) => {
     cordova.exec(resolve, reject, CordovaService, action, args);

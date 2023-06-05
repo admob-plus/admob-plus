@@ -48,6 +48,7 @@ export class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
   public on(...args: Parameters<typeof document.addEventListener>): () => void {
     const [eventName, cb, ...rest] = args;
     const type = `admob.ad.${eventName.toLowerCase()}`;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const listener = (evt: any) => {
       if (evt.adId === this.id) {
         cb(evt);

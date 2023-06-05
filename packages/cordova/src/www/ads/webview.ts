@@ -1,4 +1,4 @@
-import {execAsync} from '../generated';
+import {execAsync} from '../common';
 import {MobileAd, MobileAdOptions} from './base';
 
 export interface WebViewAdOptions extends MobileAdOptions {
@@ -11,7 +11,7 @@ export class WebViewAd extends MobileAd<WebViewAdOptions> {
   static readonly cls = 'WebViewAd';
 
   static async checkIntegration() {
-    await execAsync('webviewGoto' as never, [
+    await execAsync('webviewGoto', [
       'https://webview-api-for-ads-test.glitch.me/',
     ]);
   }

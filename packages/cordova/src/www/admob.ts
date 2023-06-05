@@ -7,6 +7,7 @@ import {CordovaAction, CordovaService} from './common';
 
 const admob = new AdMob();
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function onMessageFromNative(event: any) {
   const {data} = event;
   if (data && data.adId) {

@@ -1,13 +1,16 @@
-import {
-  AdSizeType,
-  execAsync,
-  MobileAd,
-  MobileAdOptions,
-  NativeActions,
-} from '../shared';
-import {Platform} from '../common';
+import {Platform, execAsync} from '../common';
+import {MobileAd, MobileAdOptions} from './base';
 
 type Position = 'top' | 'bottom';
+
+export enum AdSizeType {
+  BANNER,
+  LARGE_BANNER,
+  MEDIUM_RECTANGLE,
+  FULL_BANNER,
+  LEADERBOARD,
+  SMART_BANNER,
+}
 
 const colorToRGBA = (function () {
   const canvas = document.createElement('canvas');
@@ -76,7 +79,7 @@ export class BannerAd extends MobileAd<BannerAdOptions> {
   }) {
     if (cordova.platformId === Platform.ios) {
       const {backgroundColor: bgColor} = opts;
-      return execAsync(NativeActions.bannerConfig, [
+      return execAsync('bannerConfig', [
         {...opts, backgroundColor: bgColor ? colorToRGBA(bgColor) : bgColor},
       ]);
     }
