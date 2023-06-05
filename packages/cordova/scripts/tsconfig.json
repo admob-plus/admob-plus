@@ -1,5 +1,0 @@
-{
-  "extends": "@tsconfig/node10",
-  "compilerOptions": {},
-  "include": ["*.ts"]
-}
