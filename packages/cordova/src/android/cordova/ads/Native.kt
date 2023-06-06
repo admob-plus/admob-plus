@@ -37,7 +37,7 @@ class Native(ctx: ExecuteContext) : AdBase(ctx) {
 
     override fun load(ctx: ExecuteContext) {
         clear()
-        mLoader = AdLoader.Builder(adapter.activity, adUnitId)
+        mLoader = AdLoader.Builder(plugin.activity, adUnitId)
             .forNativeAd { nativeAd -> mAd = nativeAd }
             .withAdListener(object : AdListener() {
                 override fun onAdFailedToLoad(adError: LoadAdError) {
@@ -79,7 +79,7 @@ class Native(ctx: ExecuteContext) : AdBase(ctx) {
         val ad = mAd ?: return ctx.reject("ad not loaded")
         view = view ?: let {
             val v = viewProvider.createView(ad)
-            Objects.requireNonNull<ViewGroup>(adapter.contentView).addView(v)
+            Objects.requireNonNull<ViewGroup>(plugin.contentView).addView(v)
             v
         }
         view?.let {

@@ -33,7 +33,7 @@ class Rewarded(ctx: ExecuteContext) : AdBase(ctx) {
 
     override fun load(ctx: ExecuteContext) {
         clear()
-        RewardedAd.load(adapter.activity, adUnitId, adRequest, object : RewardedAdLoadCallback() {
+        RewardedAd.load(plugin.activity, adUnitId, adRequest, object : RewardedAdLoadCallback() {
             override fun onAdFailedToLoad(loadAdError: LoadAdError) {
                 mAd = null
                 emit(Events.AD_LOAD_FAIL, loadAdError)
@@ -74,7 +74,7 @@ class Rewarded(ctx: ExecuteContext) : AdBase(ctx) {
 
     override fun show(ctx: ExecuteContext) {
         if (this.isLoaded) {
-            mAd!!.show(adapter.activity) { rewardItem: RewardItem? ->
+            mAd!!.show(plugin.activity) { rewardItem: RewardItem? ->
                 emit(Events.AD_REWARD, rewardItem!!)
             }
             ctx.resolve()

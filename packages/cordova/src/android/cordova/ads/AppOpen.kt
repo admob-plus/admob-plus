@@ -34,7 +34,7 @@ class AppOpen(ctx: ExecuteContext) : AdBase(ctx) {
 
     override fun load(ctx: ExecuteContext) {
         clear()
-        AppOpenAd.load(adapter.activity,
+        AppOpenAd.load(plugin.activity,
             adUnitId,
             mAdRequest,
             mOrientation, object : AppOpenAdLoadCallback() {
@@ -74,7 +74,7 @@ class AppOpen(ctx: ExecuteContext) : AdBase(ctx) {
     override val isLoaded: Boolean get() = mAd != null
 
     override fun show(ctx: ExecuteContext) {
-        mAd!!.show(adapter.activity)
+        mAd!!.show(plugin.activity)
         ctx.resolve(true)
     }
 

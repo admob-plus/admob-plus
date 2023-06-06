@@ -1,6 +1,6 @@
 package admob.plus.cordova
 
-import admob.plus.core.Ad
+import admob.plus.cordova.ads.AdBase
 import admob.plus.core.buildRequestConfiguration
 import admob.plus.core.configForTestLabIfNeeded
 import admob.plus.core.optFloat
@@ -11,7 +11,7 @@ import org.apache.cordova.PluginResult
 import org.json.JSONArray
 import org.json.JSONObject
 
-val ads = mutableMapOf<String, Ad>()
+val ads = mutableMapOf<String, AdBase>()
 
 data class ExecuteContext(
     val action: String,
@@ -75,13 +75,13 @@ data class ExecuteContext(
         return optString("id")
     }
 
-    fun optAd(): Ad? {
+    fun optAd(): AdBase? {
         return optId()?.let {
             ads[it]
         }
     }
 
-    fun optAdOrReject(): Ad? {
+    fun optAdOrReject(): AdBase? {
         return optAd() ?: let {
             reject("Ad not found")
             null

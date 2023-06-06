@@ -150,10 +150,10 @@ class Banner(ctx: ExecuteContext) : AdBase(ctx) {
 
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
-        val w = adapter.activity.resources.displayMetrics.widthPixels
+        val w = plugin.activity.resources.displayMetrics.widthPixels
         if (w != screenWidth) {
             screenWidth = w
-            adapter.activity.runOnUiThread { reloadBannerView() }
+            plugin.activity.runOnUiThread { reloadBannerView() }
         }
     }
 
@@ -220,7 +220,7 @@ class Banner(ctx: ExecuteContext) : AdBase(ctx) {
             if (getParentView(mAdView) === mRelativeLayout && mRelativeLayout != null) return
             addBannerViewWithRelativeLayout()
         }
-        adapter.contentView?.let {
+        plugin.contentView?.let {
             it.bringToFront()
             it.requestLayout()
             it.requestFocus()
@@ -230,7 +230,7 @@ class Banner(ctx: ExecuteContext) : AdBase(ctx) {
     private fun addBannerViewWithLinearLayout() {
         val wvParentView = getParentView(webView)
         if (rootLinearLayout == null) {
-            rootLinearLayout = LinearLayout(adapter.activity)
+            rootLinearLayout = LinearLayout(plugin.activity)
         }
         if (wvParentView != null && wvParentView !== rootLinearLayout) {
             wvParentView.removeView(webView)
@@ -259,7 +259,7 @@ class Banner(ctx: ExecuteContext) : AdBase(ctx) {
         } else {
             rootLinearLayout!!.addView(mAdView)
         }
-        adapter.contentView?.let {
+        plugin.contentView?.let {
             for (i in 0 until it.childCount) {
                 val view = it.getChildAt(i)
                 (view as? RelativeLayout)?.bringToFront()
@@ -274,7 +274,7 @@ class Banner(ctx: ExecuteContext) : AdBase(ctx) {
         )
         paramsContent.addRule(if (isPositionTop) RelativeLayout.ALIGN_PARENT_TOP else RelativeLayout.ALIGN_PARENT_BOTTOM)
         if (mRelativeLayout == null) {
-            mRelativeLayout = RelativeLayout(adapter.activity)
+            mRelativeLayout = RelativeLayout(plugin.activity)
             val params = RelativeLayout.LayoutParams(
                 RelativeLayout.LayoutParams.MATCH_PARENT,
                 RelativeLayout.LayoutParams.MATCH_PARENT
@@ -284,7 +284,7 @@ class Banner(ctx: ExecuteContext) : AdBase(ctx) {
             } else {
                 params.setMargins(0, 0, 0, offset!!)
             }
-            adapter.contentView?.addView(mRelativeLayout, params)
+            plugin.contentView?.addView(mRelativeLayout, params)
                 ?: Log.e(TAG, "Unable to find content view")
         }
         removeFromParentView(mAdView)

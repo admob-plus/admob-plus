@@ -33,8 +33,6 @@
 
         <framework src="com.google.android.gms:play-services-ads:$PLAY_SERVICES_VERSION" />
 
-        <source-file src="src/android/core/Ad.kt" target-dir="app/src/main/kotlin/admob/plus/core" />
-        <source-file src="src/android/core/Context.kt" target-dir="app/src/main/kotlin/admob/plus/core" />
         <source-file src="src/android/core/util.kt" target-dir="app/src/main/kotlin/admob/plus/core" />
         <source-file src="src/android/cordova/AdMob.kt" target-dir="app/src/main/kotlin/admob/plus/cordova" />
         <source-file src="src/android/cordova/ExecuteContext.kt" target-dir="app/src/main/kotlin/admob/plus/cordova" />

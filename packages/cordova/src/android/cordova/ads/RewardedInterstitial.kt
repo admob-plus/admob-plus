@@ -19,7 +19,7 @@ class RewardedInterstitial(ctx: ExecuteContext) : AdBase(ctx) {
     override fun load(ctx: ExecuteContext) {
         clear()
         RewardedInterstitialAd.load(
-            adapter.activity,
+            plugin.activity,
             adUnitId,
             adRequest,
             object : RewardedInterstitialAdLoadCallback() {
@@ -64,7 +64,7 @@ class RewardedInterstitial(ctx: ExecuteContext) : AdBase(ctx) {
 
     override fun show(ctx: ExecuteContext) {
         if (this.isLoaded) {
-            mAd!!.show(adapter.activity) { rewardItem: RewardItem? ->
+            mAd!!.show(plugin.activity) { rewardItem: RewardItem? ->
                 emit(Events.AD_REWARD, rewardItem!!)
             }
             ctx.resolve()

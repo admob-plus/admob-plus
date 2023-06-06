@@ -1,30 +1,28 @@
 package admob.plus.cordova
 
 import admob.plus.cordova.ads.AdBase
-import admob.plus.cordova.ads.WebViewAd
 import admob.plus.cordova.ads.AppOpen
 import admob.plus.cordova.ads.Banner
 import admob.plus.cordova.ads.Interstitial
 import admob.plus.cordova.ads.Native
 import admob.plus.cordova.ads.Rewarded
 import admob.plus.cordova.ads.RewardedInterstitial
+import admob.plus.cordova.ads.WebViewAd
 import admob.plus.cordova.ads.getParentView
-import admob.plus.core.Adapter
-import admob.plus.cordova.ads
 import admob.plus.core.configForTestLabIfNeeded
 import admob.plus.core.isRunningInTestLab
 import android.app.Activity
+import android.content.Intent
 import android.content.res.Configuration
+import android.net.Uri
 import android.util.Log
 import android.view.ViewGroup
 import android.webkit.WebView
-import android.net.Uri
-import android.content.Intent
 import com.google.android.gms.ads.MobileAds
 import org.apache.cordova.CallbackContext
+import org.apache.cordova.CordovaInterface
 import org.apache.cordova.CordovaPlugin
 import org.apache.cordova.CordovaWebView
-import org.apache.cordova.CordovaInterface
 import org.apache.cordova.PluginResult
 import org.json.JSONArray
 import org.json.JSONException
@@ -34,7 +32,7 @@ import java.math.BigDecimal
 
 private const val TAG = "AdMobPlus"
 
-class AdMob : CordovaPlugin(), Adapter {
+class AdMob : CordovaPlugin() {
     lateinit var context: CallbackContext
     private var readyCallbackContext: CallbackContext? = null
     private var sdkInited = false
@@ -223,11 +221,13 @@ class AdMob : CordovaPlugin(), Adapter {
         }
     }
 
-    override val activity: Activity get() = cordova.activity
+    val activity: Activity get() = cordova.activity
 
-    override val contentView: ViewGroup? get() = super.contentView ?: getParentView(webView.view)
+    val contentView: ViewGroup?
+        get() = activity.findViewById(android.R.id.content)
+            ?: getParentView(webView.view)
 
-    override fun emit(eventName: String, data: Map<String, Any?>) {
+    fun emit(eventName: String, data: Map<String, Any?>) {
 
         val event = JSONObject(mapOf("type" to eventName, "data" to data))
         val result = PluginResult(PluginResult.Status.OK, event)
@@ -237,14 +237,16 @@ class AdMob : CordovaPlugin(), Adapter {
 
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
-        ads.forEach { it as AdBase
+        ads.forEach {
+            it as AdBase
             it.onConfigurationChanged(newConfig)
         }
     }
 
 
     override fun onPause(multitasking: Boolean) {
-        ads.forEach { it as AdBase
+        ads.forEach {
+            it as AdBase
             it.onPause(multitasking)
         }
         super.onPause(multitasking)
@@ -252,14 +254,16 @@ class AdMob : CordovaPlugin(), Adapter {
 
     override fun onResume(multitasking: Boolean) {
         super.onResume(multitasking)
-        ads.forEach { it as AdBase
+        ads.forEach {
+            it as AdBase
             it.onResume(multitasking)
         }
     }
 
     override fun onDestroy() {
         readyCallbackContext = null
-        ads.forEach { it as AdBase
+        ads.forEach {
+            it as AdBase
             it.onDestroy()
         }
         Banner.destroyParentView()
