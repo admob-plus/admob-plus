@@ -21,6 +21,7 @@ export enum Events {
   adReward = 'admob.ad.reward',
   adShow = 'admob.ad.show',
   adShowFail = 'admob.ad.showfail',
+  bannerSize = 'admob.banner.size',
   ready = 'admob.ready',
 }
 

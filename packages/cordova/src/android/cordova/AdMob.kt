@@ -55,7 +55,7 @@ class AdMob : CordovaPlugin() {
         Actions.AD_LOAD to ::executeAdLoad,
         Actions.AD_SHOW to ::executeAdShow,
         Actions.AD_HIDE to ::executeAdHide,
-        "webviewGoto" to ::executeWebviewGoto,
+        Actions.WEBVIEW_GOTO to ::executeWebviewGoto,
     )
 
     override fun initialize(cordova: CordovaInterface, cordovaWebView: CordovaWebView) {
