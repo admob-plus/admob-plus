@@ -23,6 +23,7 @@
             <meta-data android:name="com.google.android.gms.ads.DELAY_APP_MEASUREMENT_INIT" android:value="true"/>
             <meta-data android:name="com.google.android.gms.ads.flag.OPTIMIZE_INITIALIZATION" android:value="true" />
             <meta-data android:name="com.google.android.gms.ads.flag.OPTIMIZE_AD_LOADING" android:value="true" />
+            <meta-data android:name="com.google.android.gms.ads.flag.INTEGRATION_MANAGER" android:value="webview" />
         </config-file>
 
         <config-file target="res/xml/config.xml" parent="/*">
@@ -82,6 +83,10 @@
 
         <config-file target="*-Info.plist" parent="NSUserTrackingUsageDescription">
             <string>$USAGE</string>
+        </config-file>
+
+        <config-file target="*-Info.plist" parent="GADIntegrationManager">
+            <string>webview</string>
         </config-file>
 
         <config-file target="*-Info.plist" parent="SKAdNetworkItems">

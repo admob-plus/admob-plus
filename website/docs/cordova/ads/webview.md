@@ -36,6 +36,7 @@ It is also necessary to add your AdSense domain as `Hostname` of the CordovaWebV
 <preference name="Scheme" value="https" />
 <preference name="Hostname" value="example.com" />
 <preference name="AdMobPlusWebViewAd" value="true" />
+<preference name="AdMobPlusOverrideUrlLoading" value="true" />
 ```
 
 If ads are not displayed correctly (Probably on iOS), you may also need to add the following config to your `config.xml`
@@ -102,9 +103,8 @@ Remove this from `config.xml` or change to `false` (If you also use the WebView 
 ```xml
 <preference name="AdMobPlusWebViewAd" value="true" />
 ```
-And add this preference and hook:
+And add this hook:
 ```xml
-<preference name="AdMobPlusOverrideUrlLoading" value="true" />
 <hook type="before_build" src="update_main_activity.sh" />
 ```
 

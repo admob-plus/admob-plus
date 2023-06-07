@@ -86,7 +86,7 @@ class AdMob : CordovaPlugin() {
             // Adding the MIME type to http: URLs causes them to not be handled by the downloader.
             val uri = Uri.parse(url)
             intent.setData(uri)
-            if (uri.scheme in setOf("http", "https")) {
+            if (uri.scheme in setOf("http", "https") && url != webView.getUrl()) {
                 cordova.activity.startActivity(intent)
                 Log.d(TAG, "Open Iframe URL to browser $url")
                 //webView.sendJavascript("cordova.InAppBrowser.open('" + url + "', '_system');");
