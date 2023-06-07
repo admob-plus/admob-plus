@@ -84,6 +84,10 @@
             <string>$USAGE</string>
         </config-file>
 
+        <config-file target="*-Info.plist" parent="GADIntegrationManager">
+            <string>webview</string>
+        </config-file>
+
         <config-file target="*-Info.plist" parent="SKAdNetworkItems">
             <array>
                 <dict>
