@@ -50,14 +50,11 @@ class AdMob : CordovaPlugin() {
         Actions.READY to ::executeReady,
         Actions.START to ::executeStart,
         Actions.CONFIGURE to ::executeConfigure,
-        Actions.CONFIG_REQUEST to ::executeConfigure,
         Actions.AD_CREATE to ::executeAdCreate,
         Actions.AD_IS_LOADED to ::executeAdIsLoaded,
         Actions.AD_LOAD to ::executeAdLoad,
         Actions.AD_SHOW to ::executeAdShow,
         Actions.AD_HIDE to ::executeAdHide,
-        Actions.SET_APP_MUTED to ::executeSetAppMute,
-        Actions.SET_APP_VOLUME to ::executeSetAppVolume,
         "webviewGoto" to ::executeWebviewGoto,
     )
 
@@ -199,18 +196,6 @@ class AdMob : CordovaPlugin() {
                 ad.hide(ctx)
             }
         }
-    }
-
-    private fun executeSetAppMute(ctx: ExecuteContext) {
-        val value = ctx.args.optBoolean(0)
-        MobileAds.setAppMuted(value)
-        ctx.resolve()
-    }
-
-    private fun executeSetAppVolume(ctx: ExecuteContext) {
-        val value = BigDecimal.valueOf(ctx.args.optDouble(0)).toFloat()
-        MobileAds.setAppVolume(value)
-        ctx.resolve()
     }
 
     private fun executeWebviewGoto(ctx: ExecuteContext) {
