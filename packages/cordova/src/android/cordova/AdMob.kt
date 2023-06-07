@@ -38,14 +38,6 @@ class AdMob : CordovaPlugin() {
     private var sdkInited = false
     private val eventQueue: ArrayList<PluginResult> = arrayListOf()
 
-    private val isWebviewAdEnabled: Boolean by lazy {
-        preferences.getBoolean("AdMobPlusWebViewAd", false)
-    }
-
-    private val isOverrideUrlLoadingEnabled: Boolean by lazy {
-        preferences.getBoolean("AdMobPlusOverrideUrlLoading", false)
-    }
-
     private val actions = mapOf(
         Actions.READY to ::executeReady,
         Actions.START to ::executeStart,
@@ -58,46 +50,9 @@ class AdMob : CordovaPlugin() {
         Actions.WEBVIEW_GOTO to ::executeWebviewGoto,
     )
 
-    override fun initialize(cordova: CordovaInterface, cordovaWebView: CordovaWebView) {
-        cordova.activity.runOnUiThread {
-            if (isWebviewAdEnabled) {
-                val webView = cordovaWebView.view as WebView
-                MobileAds.registerWebView(webView)
-                webView.reload()
-                Log.d(TAG, "Integrated the WebView API for Ads in ${webView.url} WebView")
-            }
-        }
-        super.initialize(cordova, cordovaWebView)
-    }
-
     override fun pluginInitialize() {
         super.pluginInitialize()
         Log.i(TAG, "Initialize plugin")
-    }
-
-    // Extracted from cordova-plugin-openblank-mobi
-    override fun onOverrideUrlLoading(url: String): Boolean {
-        if (!isOverrideUrlLoadingEnabled) return super.onOverrideUrlLoading(url)
-
-        Log.d(TAG, "onOverrideUrlLoading called with URL $url")
-        return try {
-            val intent = Intent(Intent.ACTION_VIEW)
-            // Omitting the MIME type for file: URLs causes "No Activity found to handle Intent".
-            // Adding the MIME type to http: URLs causes them to not be handled by the downloader.
-            val uri = Uri.parse(url)
-            intent.setData(uri)
-            if (uri.scheme in setOf("http", "https") && url != webView.getUrl()) {
-                cordova.activity.startActivity(intent)
-                Log.d(TAG, "Open Iframe URL to browser $url")
-                //webView.sendJavascript("cordova.InAppBrowser.open('" + url + "', '_system');");
-            } else {
-                return false
-            }
-            true // true prevents navigation navigation
-        } catch (e: android.content.ActivityNotFoundException) {
-            Log.d(TAG, "onOverrideUrlLoading: Error loading url $url:$e")
-            false
-        }
     }
 
     @Throws(JSONException::class)

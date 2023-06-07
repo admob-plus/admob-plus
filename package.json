@@ -47,6 +47,7 @@
     "lerna": "^6.6.2",
     "npm-run-all": "^4.1.5",
     "nx": "16.3.2",
+    "plugman": "^3.0.1",
     "remark-cli": "^11.0.0",
     "remark-lint-are-links-valid-duplicate": "^0.2.2",
     "remark-lint-heading-whitespace": "^1.0.0",
