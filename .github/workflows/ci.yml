@@ -40,7 +40,7 @@ jobs:
           cache: pnpm
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm i --frozen-lockfile || pnpm i
 
       - name: Build
         run: |
@@ -90,7 +90,7 @@ jobs:
         run: |
           echo "/usr/local/lib/android/sdk/platform-tools" >> $GITHUB_PATH
           echo "/usr/local/lib/android/sdk/tools" >> $GITHUB_PATH
-          pnpm install --frozen-lockfile
+          pnpm i --frozen-lockfile || pnpm i
           pushd examples/cordova
           pnpm i -D npm@6
           npx cordova platform rm ios || true
@@ -128,7 +128,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pnpm install --frozen-lockfile
+          pnpm i --frozen-lockfile || pnpm i
           pushd examples/cordova
           pnpm i -D npm@6
           npx cordova platform rm android || true
@@ -190,7 +190,7 @@ jobs:
         run: |
           git config --global user.name "${GIT_USER}"
           git config --global user.email "${{ secrets.GH_EMAIL }}"
-          pnpm install --frozen-lockfile
+          pnpm i --frozen-lockfile || pnpm i
           pushd website
           npm run deploy
           popd
