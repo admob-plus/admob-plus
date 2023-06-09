@@ -2,7 +2,7 @@ import del from 'del';
 import execa from 'execa';
 import * as fse from 'fs-extra';
 
-const main = async () => {
+async function main() {
   await del(['build', 'lib', 'ngx', '*.tsbuildinfo']);
 
   const s = await fse.readFile('./src/ngx/index.ts', 'utf8');
@@ -35,6 +35,6 @@ const main = async () => {
   ]);
 
   await del(['build']);
-};
+}
 
 main();
