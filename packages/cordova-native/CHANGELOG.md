@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.5](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova-native@1.0.0-alpha.4...admob-plus-cordova-native@1.0.0-alpha.5) (2023-06-09)
+
+
+### Features
+
+* **cordova-webview-ad:** init plugin ([7555be0](https://github.com/admob-plus/admob-plus/commit/7555be003381d184ab5e8fe46f5bd9b5c1451ae6))
+
+
+
+
+
 # [1.0.0-alpha.4](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova-native@1.0.0-alpha.3...admob-plus-cordova-native@1.0.0-alpha.4) (2023-06-03)
 
 **Note:** Version bump only for package admob-plus-cordova-native

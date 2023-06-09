@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.4](https://github.com/admob-plus/admob-plus/compare/@admob-plus/ionic@2.0.0-alpha.3...@admob-plus/ionic@2.0.0-alpha.4) (2023-06-09)
+
+
+### Features
+
+* **ionic:** remove old methods ([b2e120f](https://github.com/admob-plus/admob-plus/commit/b2e120fdc961b73a822e56e1b92c981c38901289))
+
+
+
+
+
 # [2.0.0-alpha.3](https://github.com/admob-plus/admob-plus/compare/@admob-plus/ionic@2.0.0-alpha.2...@admob-plus/ionic@2.0.0-alpha.3) (2023-06-03)
 
 **Note:** Version bump only for package @admob-plus/ionic

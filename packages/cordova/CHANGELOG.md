@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.4](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@2.0.0-alpha.3...admob-plus-cordova@2.0.0-alpha.4) (2023-06-09)
+
+
+### Bug Fixes
+
+* **cordova/android:** iterate over values without cast, fix [#583](https://github.com/admob-plus/admob-plus/issues/583) ([c65c219](https://github.com/admob-plus/admob-plus/commit/c65c21987e191b51ac010d32aceef491e911597f))
+* **cordova:** some fixes for the WebView API for Ads ([#582](https://github.com/admob-plus/admob-plus/issues/582)) ([275d24b](https://github.com/admob-plus/admob-plus/commit/275d24bc6dafa4ebab4f652147912fe8b4d4b32c)), closes [EYALIN/community-admob-plus#6](https://github.com/EYALIN/community-admob-plus/issues/6)
+
+
+### Features
+
+* **cordova-webview-ad:** init plugin ([7555be0](https://github.com/admob-plus/admob-plus/commit/7555be003381d184ab5e8fe46f5bd9b5c1451ae6))
+* **cordova/android:** remove core Ad class ([b6a3e19](https://github.com/admob-plus/admob-plus/commit/b6a3e190e12559900754cd78379b84d6a3bdd1d5))
+* **cordova/android:** remove old config actions ([0007810](https://github.com/admob-plus/admob-plus/commit/000781079b79ac1afa10cae15ef46448c34caab1))
+* **cordova:** remove old config actions ([9a797ff](https://github.com/admob-plus/admob-plus/commit/9a797ffc6e007afdee3fcf0d13faac80a7b9424b))
+* **cordova:** remove requestTrackingAuthorization() ([c543bad](https://github.com/admob-plus/admob-plus/commit/c543bad98f76be892b6cef123d50ffb2ac529e5d))
+
+
+
+
+
 # [2.0.0-alpha.3](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@2.0.0-alpha.2...admob-plus-cordova@2.0.0-alpha.3) (2023-06-03)
 
 

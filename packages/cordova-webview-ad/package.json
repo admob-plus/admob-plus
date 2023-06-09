@@ -1,51 +1,51 @@
 {
-    "name": "admob-plus-cordova-webview-ad",
-    "version": "0.0.0",
-    "description": "Cordova Plugin for AdMob Plus WebView Ad",
-    "main": "lib/index.js",
-    "types": "esm/index.d.ts",
-    "module": "esm/index.js",
-    "scripts": {
-      "prepublishOnly": "nx build",
-      "version": "cordova-plus plugin version",
-      "build": "cordova-plus plugin build --lib --esm"
-    },
-    "dependencies": {
-      "admob-plus-cordova": "^2.0.0-alpha.3"
-    },
-    "devDependencies": {
-      "cordova-plus": "^0.9.2"
-    },
-    "author": "Ratson",
-    "license": "MIT",
-    "repository": "admob-plus/admob-plus",
-    "homepage": "https://admob-plus.github.io/docs/cordova/ads/webview",
-    "funding": "https://admob-plus.github.io/funding",
-    "files": [
-      "*.ts",
-      "*.md",
-      "*.xml",
-      "esm",
-      "lib",
-      "src",
-      "www",
-      "!**/*.tsbuildinfo"
-    ],
-    "keywords": [
-      "cordova",
-      "admob",
-      "plugin",
-      "ecosystem:cordova",
-      "cordova-android",
-      "cordova-ios",
-      "monetization",
-      "typescript"
-    ],
-    "cordova": {
-      "id": "admob-plus-cordova-webview-ad",
-      "platforms": [
-        "android",
-        "ios"
-      ]
-    }
+  "name": "admob-plus-cordova-webview-ad",
+  "version": "0.1.0",
+  "description": "Cordova Plugin for AdMob Plus WebView Ad",
+  "main": "lib/index.js",
+  "types": "esm/index.d.ts",
+  "module": "esm/index.js",
+  "scripts": {
+    "prepublishOnly": "nx build",
+    "version": "cordova-plus plugin version",
+    "build": "cordova-plus plugin build --lib --esm"
+  },
+  "dependencies": {
+    "admob-plus-cordova": "^2.0.0-alpha.4"
+  },
+  "devDependencies": {
+    "cordova-plus": "^0.9.2"
+  },
+  "author": "Ratson",
+  "license": "MIT",
+  "repository": "admob-plus/admob-plus",
+  "homepage": "https://admob-plus.github.io/docs/cordova/ads/webview",
+  "funding": "https://admob-plus.github.io/funding",
+  "files": [
+    "*.ts",
+    "*.md",
+    "*.xml",
+    "esm",
+    "lib",
+    "src",
+    "www",
+    "!**/*.tsbuildinfo"
+  ],
+  "keywords": [
+    "cordova",
+    "admob",
+    "plugin",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "monetization",
+    "typescript"
+  ],
+  "cordova": {
+    "id": "admob-plus-cordova-webview-ad",
+    "platforms": [
+      "android",
+      "ios"
+    ]
   }
+}
