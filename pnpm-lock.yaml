@@ -1014,8 +1014,8 @@ importers:
         specifier: ^7.10.1
         version: 7.10.1
       '@inquirer/prompts':
-        specifier: ^1.2.3
-        version: 1.2.3
+        specifier: ^2.1.1
+        version: 2.1.1
       admob-plus-cordova:
         specifier: latest
         version: link:../cordova
@@ -1029,8 +1029,8 @@ importers:
         specifier: ^5.0.0
         version: 5.0.0
       cordova-plus:
-        specifier: ^0.9.0
-        version: 0.9.0(enquirer@2.3.6)
+        specifier: ^0.9.2
+        version: 0.9.2(enquirer@2.3.6)
       elementtree:
         specifier: ^0.1.7
         version: 0.1.7
@@ -1047,8 +1047,8 @@ importers:
         specifier: ^11.1.1
         version: 11.1.1
       got:
-        specifier: ^12.5.3
-        version: 12.6.0
+        specifier: ^13.0.0
+        version: 13.0.0
       js-yaml:
         specifier: ^4.1.0
         version: 4.1.0
@@ -5131,7 +5131,7 @@ packages:
     dependencies:
       '@babel/core': 7.14.8
       '@babel/helper-builder-binary-assignment-operator-visitor': 7.18.9
-      '@babel/helper-plugin-utils': 7.21.5
+      '@babel/helper-plugin-utils': 7.18.9
     dev: true
 
   /@babel/plugin-transform-exponentiation-operator@7.18.6(@babel/core@7.18.9):
@@ -5152,7 +5152,7 @@ packages:
     dependencies:
       '@babel/core': 7.21.8
       '@babel/helper-builder-binary-assignment-operator-visitor': 7.18.9
-      '@babel/helper-plugin-utils': 7.21.5
+      '@babel/helper-plugin-utils': 7.18.9
 
   /@babel/plugin-transform-flow-strip-types@7.18.9(@babel/core@7.18.9):
     resolution: {integrity: sha512-+G6rp2zRuOAInY5wcggsx4+QVao1qPM0osC9fTUVlAV3zOrzTCnrMAFVnR6+a3T8wz1wFIH7KhYMcMB3u1n80A==}
@@ -8665,29 +8665,29 @@ packages:
     engines: {node: '>=6.9.0'}
     dev: true
 
-  /@inquirer/checkbox@1.2.8:
-    resolution: {integrity: sha512-yTnAsimBDy2Ft5Ky/0nNqJLkLYTX9/teuvkAHKm+aeOMVSaUfp8bPchkj6VThR5AHwzUhSnUswuYVUzTzWMzsw==}
+  /@inquirer/checkbox@1.3.1:
+    resolution: {integrity: sha512-3l3aC6gYOPGaVOa9cNe4dZ8t96e3CFifC3Hee1MD+F7qaRxGAuXnhCQiUr4ngj2P7xd9U3DCDbLXNsLKQoHYCg==}
     engines: {node: '>=14.18.0'}
     dependencies:
-      '@inquirer/core': 1.3.0
-      '@inquirer/type': 1.0.5
+      '@inquirer/core': 2.1.0
+      '@inquirer/type': 1.1.0
       ansi-escapes: 4.3.2
       chalk: 4.1.2
       figures: 3.2.0
 
-  /@inquirer/confirm@1.0.11:
-    resolution: {integrity: sha512-UWYJ+0dN9rWw0czTPqqKRGLqHsLML9rrQlScn5oOVUtiL2WDTxs95JehP2axKsNkSBMxmFAdA7TdctJkZFJcxA==}
+  /@inquirer/confirm@2.0.2:
+    resolution: {integrity: sha512-2/Ogb3fkVyCp/V9aowa3Ge/aNiZCwH58BPYLeaMxRGDRtGV70aw50194/WSfceNfliHOFGQF6Db39c7Q85Dpkg==}
     engines: {node: '>=14.18.0'}
     dependencies:
-      '@inquirer/core': 1.3.0
-      '@inquirer/type': 1.0.5
+      '@inquirer/core': 2.1.0
+      '@inquirer/type': 1.1.0
       chalk: 4.1.2
 
-  /@inquirer/core@1.3.0:
-    resolution: {integrity: sha512-W7EA48gIMahFLiGW/zF+rgoineqTDK5IQizsOmwvbFfYgiQ8Asetut94THBmB3KnW0nrZL5UPHUK6QzcjEzaCw==}
+  /@inquirer/core@2.1.0:
+    resolution: {integrity: sha512-Hq9hZ5G/VUaeWkSs283HZwwMbe79lcOI5HWwW1GIM1ohouy2/x489Qf/A1BJYvMUj+QG4LSB5LtVMjn9P3Ge6Q==}
     engines: {node: '>=14.18.0'}
     dependencies:
-      '@inquirer/type': 1.0.5
+      '@inquirer/type': 1.1.0
       ansi-escapes: 4.3.2
       chalk: 4.1.2
       cli-spinners: 2.9.0
@@ -8699,74 +8699,74 @@ packages:
       strip-ansi: 6.0.1
       wrap-ansi: 6.2.0
 
-  /@inquirer/editor@1.0.11:
-    resolution: {integrity: sha512-fAvkEKVRelMe5NzB1GM2zmAqbV0OWwAhXd6r34VgCKBAEfwI622A3M06g0ObL9qkcs0U+YW0G943X0ZqcUmKnQ==}
+  /@inquirer/editor@1.2.0:
+    resolution: {integrity: sha512-NMXLLNadvqIR6TD6mNZRa/PKHTvdaa4ndGGeXl+DwybQ4K7cVSJNRrztixpM1KDEoG8Ape5ightNwq25cyugTg==}
     engines: {node: '>=14.18.0'}
     dependencies:
-      '@inquirer/core': 1.3.0
-      '@inquirer/type': 1.0.5
+      '@inquirer/core': 2.1.0
+      '@inquirer/type': 1.1.0
       chalk: 4.1.2
       external-editor: 3.1.0
 
-  /@inquirer/expand@1.0.11:
-    resolution: {integrity: sha512-7JBEHJGyNx2KdRbrVrkD7aNz9P8FI54ug3WORwaJ3q/z19jy8+ItkswEkSn0cy1QHhB30fx3QlJdjFX14i59wA==}
+  /@inquirer/expand@1.1.1:
+    resolution: {integrity: sha512-fXk5NG2FOAiluDWPYfXHuof3sklL/HhZh3NnXfnBZ2IhTCRzXvlXRcQcPlev2sGcZknHn0g6JdKlxjSa+7H2nQ==}
     engines: {node: '>=14.18.0'}
     dependencies:
-      '@inquirer/core': 1.3.0
-      '@inquirer/type': 1.0.5
+      '@inquirer/core': 2.1.0
+      '@inquirer/type': 1.1.0
       chalk: 4.1.2
       figures: 3.2.0
 
-  /@inquirer/input@1.1.2:
-    resolution: {integrity: sha512-7/fS1EE9gvQJ7/NVKpsoyJeZAqbEoOiQBg6D8+YaCwnbEldXhKSyS53VlWoYrDWryw8XNutMpJI3o9vLxDw8KQ==}
+  /@inquirer/input@1.2.1:
+    resolution: {integrity: sha512-OYwG3dEo1+lMAE6rYB8b1HTg8eSP++jk0pHSjKZu00gTlN5IHW/dliB82nsWe9Bn//93E9LJ1KrhjFMqOzkCFw==}
     engines: {node: '>=14.18.0'}
     dependencies:
-      '@inquirer/core': 1.3.0
-      '@inquirer/type': 1.0.5
+      '@inquirer/core': 2.1.0
+      '@inquirer/type': 1.1.0
       chalk: 4.1.2
 
-  /@inquirer/password@1.0.11:
-    resolution: {integrity: sha512-2GtNIBN906V5PzLFe0GIrXKInZM47T7QZdET0ML0sdGn4HFI7WEN+Gw0W2yC+0xhiTtm1kdrhFxRNIq8AZFnLA==}
+  /@inquirer/password@1.1.1:
+    resolution: {integrity: sha512-3M03aA04hOA4lRjLviB9uGoNmmd1YDNo4CYSFM9Uh4qlXdgvhke3xPU07k3kVstRIo0Te1hF14RL7vEgHJQ8tA==}
     engines: {node: '>=14.18.0'}
     dependencies:
-      '@inquirer/input': 1.1.2
-      '@inquirer/type': 1.0.5
+      '@inquirer/input': 1.2.1
+      '@inquirer/type': 1.1.0
       chalk: 4.1.2
 
-  /@inquirer/prompts@1.2.3:
-    resolution: {integrity: sha512-vcPUWXA/boMJc5IDVx/9+ihf1FupsBK1RThnEXnLTpF6hR1iJCoaBoSpREZRdDp/XcPHe/b+QovehBYJoWsUhg==}
+  /@inquirer/prompts@2.1.1:
+    resolution: {integrity: sha512-DTtdrf3JoXQpfD5vAhW9isUE7lgcOBN5ikkxTqhkXZY41CnrFt7I2DTOmUUUbkh5shrcwq7zzAmVesoW2KM5EA==}
     engines: {node: '>=14.18.0'}
     dependencies:
-      '@inquirer/checkbox': 1.2.8
-      '@inquirer/confirm': 1.0.11
-      '@inquirer/core': 1.3.0
-      '@inquirer/editor': 1.0.11
-      '@inquirer/expand': 1.0.11
-      '@inquirer/input': 1.1.2
-      '@inquirer/password': 1.0.11
-      '@inquirer/rawlist': 1.1.3
-      '@inquirer/select': 1.1.7
+      '@inquirer/checkbox': 1.3.1
+      '@inquirer/confirm': 2.0.2
+      '@inquirer/core': 2.1.0
+      '@inquirer/editor': 1.2.0
+      '@inquirer/expand': 1.1.1
+      '@inquirer/input': 1.2.1
+      '@inquirer/password': 1.1.1
+      '@inquirer/rawlist': 1.2.1
+      '@inquirer/select': 1.2.1
 
-  /@inquirer/rawlist@1.1.3:
-    resolution: {integrity: sha512-aBlXdQeADYbk9pFG4Z8HvRnjM7i/RYKJmf311infV2ivkD+d1QIdWdo0RnCuqk0m/6tdYsRgkhWGVhEkeh0nQg==}
+  /@inquirer/rawlist@1.2.1:
+    resolution: {integrity: sha512-t8lMbE3Gqook4PvQYQl9eVJrl/mBy5kCgolwY9El8HLyGZ7Wc3SGIqHnQUlha4qms8HPOdUIBzyPfcAXl5+3SQ==}
     engines: {node: '>=14.18.0'}
     dependencies:
-      '@inquirer/core': 1.3.0
-      '@inquirer/type': 1.0.5
+      '@inquirer/core': 2.1.0
+      '@inquirer/type': 1.1.0
       chalk: 4.1.2
 
-  /@inquirer/select@1.1.7:
-    resolution: {integrity: sha512-3Ym0WOoVduu/AG5GwIxa+fNz8Eop7S1zADbUmMsllrubdYu7qMe9HaTHCb5JOjaVNSoFJuYPH6TizFzGVFVrCQ==}
+  /@inquirer/select@1.2.1:
+    resolution: {integrity: sha512-13JDLtlwFoqQUYRdMzz5wP3a4DWccJfNA/8M8MDUhhZ8HeKZ3MPaTMlpxwY+Q0Jgbmt56nf7xUuck0XXPce8Xw==}
     engines: {node: '>=14.18.0'}
     dependencies:
-      '@inquirer/core': 1.3.0
-      '@inquirer/type': 1.0.5
+      '@inquirer/core': 2.1.0
+      '@inquirer/type': 1.1.0
       ansi-escapes: 4.3.2
       chalk: 4.1.2
       figures: 3.2.0
 
-  /@inquirer/type@1.0.5:
-    resolution: {integrity: sha512-MCEsk3Ep4D8UwwyCGdMmtoTwfC78oxHusUKex1qR+WTJP4MKK/mykCTCXApbYYRBYuTpT71kdoOr9vxySh+l5Q==}
+  /@inquirer/type@1.1.0:
+    resolution: {integrity: sha512-XMaorygt2o/mXinZg/OOz6d3JKuV3o4jRc/3KDiVPeKLLkjiO4iJErbLKtKn+Od2ZC2lbiFQkrIuloVpEubisA==}
     engines: {node: '>=14.18.0'}
 
   /@ionic-native/admob-plus@5.36.0(@ionic-native/core@5.36.0)(rxjs@5.5.11):
@@ -19712,56 +19712,6 @@ packages:
       - utf-8-validate
     dev: true
 
-  /cordova-plus@0.9.0(enquirer@2.3.6):
-    resolution: {integrity: sha512-r6jpbY55AkIe5X3Uwno37dAEOYYXNpoqp/MuI0XGw9R83sDCoKe/Cu5hqZcutwoE+7/xs7sN47JoYwkvXO71cg==}
-    engines: {node: '>= 12'}
-    hasBin: true
-    dependencies:
-      '@frat/envinfo': 7.10.1
-      '@npmcli/package-json': 3.1.0
-      '@rollup/plugin-commonjs': 25.0.0(rollup@3.23.0)
-      '@rollup/plugin-node-resolve': 15.1.0(rollup@3.23.0)
-      '@rollup/plugin-typescript': 11.1.1(rollup@3.23.0)(tslib@2.5.3)(typescript@5.1.3)
-      '@types/cordova': 11.0.0
-      '@types/node': 20.2.5
-      browser-sync: 2.29.3
-      chokidar: 3.5.3
-      clipboardy: 3.0.0
-      cordova: 12.0.0
-      cordova-android: 12.0.0
-      cordova-browser: 7.0.0
-      cordova-common: 5.0.0
-      cordova-ios: 6.3.0
-      cordova-lib: 12.0.1
-      cordova-serve: 4.0.1
-      elementtree: 0.1.7
-      execa: 7.1.1
-      fast-glob: 3.2.12
-      fs-extra: 11.1.1
-      json-stable-stringify: 1.0.2
-      listr2: 6.6.0(enquirer@2.3.6)
-      lodash: 4.17.21
-      pino: 8.14.1
-      pino-pretty: 10.0.0
-      rollup: 3.23.0
-      semver: 7.5.1
-      serve-handler: 6.1.5
-      signal-exit: 4.0.2
-      tempy: 3.0.0
-      tslib: 2.5.3
-      typescript: 5.1.3
-      ua-parser-js: 1.0.35
-      untildify: 4.0.0
-      yargs: 17.7.2
-    transitivePeerDependencies:
-      - bluebird
-      - bufferutil
-      - debug
-      - enquirer
-      - supports-color
-      - utf-8-validate
-    dev: false
-
   /cordova-plus@0.9.2(enquirer@2.3.6):
     resolution: {integrity: sha512-uiSJ/RAagkTIF6VpGiqfuuq6leylir6JYxejppej+9jFVT4iEoSS1AuVGhlAEJ2nO+gHnLdUAzk2D+gNdmdfDQ==}
     engines: {node: '>= 12'}
@@ -24786,6 +24736,22 @@ packages:
   /got@12.6.0:
     resolution: {integrity: sha512-WTcaQ963xV97MN3x0/CbAriXFZcXCfgxVp91I+Ze6pawQOa7SgzwSx2zIJJsX+kTajMnVs0xcFD1TxZKFqhdnQ==}
     engines: {node: '>=14.16'}
+    dependencies:
+      '@sindresorhus/is': 5.3.0
+      '@szmarczak/http-timer': 5.0.1
+      cacheable-lookup: 7.0.0
+      cacheable-request: 10.2.10
+      decompress-response: 6.0.0
+      form-data-encoder: 2.1.4
+      get-stream: 6.0.1
+      http2-wrapper: 2.2.0
+      lowercase-keys: 3.0.0
+      p-cancelable: 3.0.0
+      responselike: 3.0.0
+
+  /got@13.0.0:
+    resolution: {integrity: sha512-XfBk1CxOOScDcMr9O1yKkNaQyy865NbYs+F7dr4H0LZMVgCj2Le59k6PqbNHoL5ToeaEQUYh6c6yMfVcc6SJxA==}
+    engines: {node: '>=16'}
     dependencies:
       '@sindresorhus/is': 5.3.0
       '@szmarczak/http-timer': 5.0.1
@@ -42626,7 +42592,7 @@ packages:
     hasBin: true
     dependencies:
       '@frat/envinfo': 7.10.1
-      '@inquirer/prompts': 1.2.3
+      '@inquirer/prompts': 2.1.1
       admob-plus-cordova: 2.0.0-alpha.3
       cli-table3: 0.6.3
       clipboardy: 3.0.0
@@ -42637,7 +42603,7 @@ packages:
       execa: 7.1.1
       fast-glob: 3.2.12
       fs-extra: 11.1.1
-      got: 12.6.0
+      got: 13.0.0
       js-yaml: 4.1.0
       kleur: 4.1.5
       listr2: 6.6.0(enquirer@2.3.6)
