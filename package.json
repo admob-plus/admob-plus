@@ -18,22 +18,19 @@
     "//test-ios:testbed": "cordova-testbed --platform ios --plugin packages/cordova --build-only"
   },
   "devDependencies": {
-    "@admob-plus-internal/cli": "file:./internal/cli",
-    "@admob-plus-internal/tsconfig": "file:./internal/tsconfig",
+    "@admob-plus-internal/cli": "workspace:*",
+    "@admob-plus-internal/tsconfig": "workspace:*",
     "@commitlint/cli": "^17.6.5",
     "@commitlint/config-conventional": "^17.6.5",
     "@commitlint/config-lerna-scopes": "^17.6.3",
     "@commitlint/prompt-cli": "^17.6.5",
     "@evilmartians/lefthook": "^1.4.1",
-    "@ionic-native/admob-plus": "^5.36.0",
     "@jest/globals": "^29.5.0",
     "@nrwl/jest": "16.3.2",
     "@nrwl/node": "16.3.2",
     "@nrwl/workspace": "16.3.2",
-    "@types/cordova": "^11.0.0",
     "@types/jest": "^29.5.2",
     "@types/node": "^20.2.5",
-    "@types/xml2js": "^0.4.11",
     "cordova": "12.0.0",
     "cordova-plus": "^0.9.2",
     "cordova-testbed": "^0.8.0",
@@ -41,7 +38,6 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.1",
     "gts": "^4.0.1",
-    "ionic-angular": "^3.9.10",
     "is-ci": "^3.0.1",
     "jest": "^29.5.0",
     "jest-config": "^29.5.0",
@@ -49,7 +45,6 @@
     "lerna": "^7.0.0",
     "npm-run-all": "^4.1.5",
     "nx": "16.3.2",
-    "plugman": "^3.0.1",
     "remark-cli": "^11.0.0",
     "remark-lint-are-links-valid-duplicate": "^0.2.2",
     "remark-lint-heading-whitespace": "^1.0.0",
@@ -95,9 +90,6 @@
       "node-sass": "8.0.0",
       "sharp": "0.32.1"
     }
-  },
-  "volta": {
-    "node": "16.20.0"
   },
   "workspaces": [
     "examples/*",
