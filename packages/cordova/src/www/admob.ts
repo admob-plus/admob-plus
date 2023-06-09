@@ -21,13 +21,8 @@ channel.createSticky(feature);
 channel.waitForInitialization(feature);
 
 channel.onCordovaReady.subscribe(() => {
-  exec(
-    onMessageFromNative,
-    console.error,
-    CordovaService,
-    'ready' satisfies CordovaAction,
-    []
-  );
+  const action: CordovaAction = 'ready';
+  exec(onMessageFromNative, console.error, CordovaService, action, []);
   channel.initializationComplete(feature);
 });
 
