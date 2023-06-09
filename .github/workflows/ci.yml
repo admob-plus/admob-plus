@@ -44,7 +44,7 @@ jobs:
 
       - name: Build
         run: |
-          npm run prepare
+          npx nx prepare
           pushd packages/cordova
           npx nx build
           popd
