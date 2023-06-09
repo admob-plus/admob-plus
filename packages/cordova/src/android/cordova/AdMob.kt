@@ -1,6 +1,5 @@
 package admob.plus.cordova
 
-import admob.plus.cordova.ads.AdBase
 import admob.plus.cordova.ads.AppOpen
 import admob.plus.cordova.ads.Banner
 import admob.plus.cordova.ads.Interstitial
@@ -12,22 +11,17 @@ import admob.plus.cordova.ads.getParentView
 import admob.plus.core.configForTestLabIfNeeded
 import admob.plus.core.isRunningInTestLab
 import android.app.Activity
-import android.content.Intent
 import android.content.res.Configuration
-import android.net.Uri
 import android.util.Log
 import android.view.ViewGroup
 import android.webkit.WebView
 import com.google.android.gms.ads.MobileAds
 import org.apache.cordova.CallbackContext
-import org.apache.cordova.CordovaInterface
 import org.apache.cordova.CordovaPlugin
-import org.apache.cordova.CordovaWebView
 import org.apache.cordova.PluginResult
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
-import java.math.BigDecimal
 
 
 private const val TAG = "AdMobPlus"
@@ -147,9 +141,7 @@ class AdMob : CordovaPlugin() {
 
     private fun executeAdHide(ctx: ExecuteContext) {
         cordova.activity.runOnUiThread {
-            ctx.optAdOrReject()?.let { ad ->
-                ad.hide(ctx)
-            }
+            ctx.optAdOrReject()?.hide(ctx)
         }
     }
 
@@ -177,34 +169,29 @@ class AdMob : CordovaPlugin() {
 
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
-        ads.forEach {
-            it as AdBase
-            it.onConfigurationChanged(newConfig)
+        ads.forEach { (_, ad) ->
+            ad.onConfigurationChanged(newConfig)
         }
     }
 
-
     override fun onPause(multitasking: Boolean) {
-        ads.forEach {
-            it as AdBase
-            it.onPause(multitasking)
+        ads.forEach { (_, ad) ->
+            ad.onPause(multitasking)
         }
         super.onPause(multitasking)
     }
 
     override fun onResume(multitasking: Boolean) {
         super.onResume(multitasking)
-        ads.forEach {
-            it as AdBase
-            it.onResume(multitasking)
+        ads.forEach { (_, ad) ->
+            ad.onResume(multitasking)
         }
     }
 
     override fun onDestroy() {
         readyCallbackContext = null
-        ads.forEach {
-            it as AdBase
-            it.onDestroy()
+        ads.forEach { (_, ad) ->
+            ad.onDestroy()
         }
         Banner.destroyParentView()
         super.onDestroy()
