@@ -104,7 +104,7 @@ packages/cordova/src/www/ads/base.ts:44
 
 #### Defined in
 
-packages/cordova/src/www/ads/base.ts:79
+packages/cordova/src/www/ads/base.ts:80
 
 ___
 
@@ -122,7 +122,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/base.ts:84
+packages/cordova/src/www/ads/base.ts:85
 
 ___
 

@@ -90,7 +90,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/banner.ts:56
+packages/cordova/src/www/ads/banner.ts:59
 
 ___
 
@@ -100,7 +100,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/banner.ts:54
+packages/cordova/src/www/ads/banner.ts:57
 
 ___
 
@@ -110,4 +110,4 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/banner.ts:55
+packages/cordova/src/www/ads/banner.ts:58

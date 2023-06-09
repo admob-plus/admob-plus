@@ -179,7 +179,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/base.ts:79
+packages/cordova/src/www/ads/base.ts:80
 
 ___
 
@@ -280,7 +280,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/base.ts:84
+packages/cordova/src/www/ads/base.ts:85
 
 ___
 
@@ -298,7 +298,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/base.ts:63
+packages/cordova/src/www/ads/base.ts:64
 
 ___
 
@@ -336,7 +336,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/base.ts:68
+packages/cordova/src/www/ads/base.ts:69
 
 ___
 

@@ -36,7 +36,7 @@ ___
 
 ### Events
 
-• `Readonly` **Events**: typeof `Events` = `Events`
+• `Readonly` **Events**: typeof [`Events`](../enums/Events.md) = `Events`
 
 #### Defined in
 
@@ -102,7 +102,7 @@ packages/cordova/src/www/index.ts:15
 
 | Name | Type |
 | :------ | :------ |
-| `config` | `AdMobConfig` |
+| `config` | [`AdMobConfig`](../interfaces/AdMobConfig.md) |
 
 #### Returns
 

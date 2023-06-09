@@ -8,7 +8,10 @@ custom_edit_url: null
 
 ## Enumerations
 
+- [AdSizeType](enums/AdSizeType.md)
 - [AppOpenAdOrientation](enums/AppOpenAdOrientation.md)
+- [Events](enums/Events.md)
+- [Platform](enums/Platform.md)
 
 ## Classes
 
@@ -24,8 +27,10 @@ custom_edit_url: null
 
 ## Interfaces
 
+- [AdMobConfig](interfaces/AdMobConfig.md)
 - [BannerAdOptions](interfaces/BannerAdOptions.md)
 - [NativeAdOptions](interfaces/NativeAdOptions.md)
+- [RequestConfig](interfaces/RequestConfig.md)
 - [RewardedAdOptions](interfaces/RewardedAdOptions.md)
 - [ServerSideVerificationOptions](interfaces/ServerSideVerificationOptions.md)
 - [WebViewAdOptions](interfaces/WebViewAdOptions.md)
@@ -37,6 +42,16 @@ custom_edit_url: null
 Renames and re-exports [AdMob](classes/AdMob.md)
 
 ## Type Aliases
+
+### CordovaAction
+
+Ƭ **CordovaAction**: ``"adCreate"`` \| ``"adHide"`` \| ``"adIsLoaded"`` \| ``"adLoad"`` \| ``"adShow"`` \| ``"bannerConfig"`` \| ``"configure"`` \| ``"ready"`` \| ``"start"`` \| ``"webviewGoto"``
+
+#### Defined in
+
+packages/cordova/src/www/common.ts:3
+
+___
 
 ### MobileAdOptions
 
@@ -65,3 +80,40 @@ ___
 #### Defined in
 
 packages/cordova/src/www/ads/rewarded-interstitial.ts:4
+
+## Variables
+
+### CordovaService
+
+• `Const` **CordovaService**: ``"AdMob"``
+
+#### Defined in
+
+packages/cordova/src/www/common.ts:1
+
+## Functions
+
+### execAsync
+
+▸ **execAsync**<`T`\>(`action`, `args?`): `Promise`<`T`\>
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `T` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `action` | [`CordovaAction`](#cordovaaction) |
+| `args?` | `unknown`[] |
+
+#### Returns
+
+`Promise`<`T`\>
+
+#### Defined in
+
+packages/cordova/src/www/common.ts:58

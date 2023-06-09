@@ -122,7 +122,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/base.ts:84
+packages/cordova/src/www/ads/base.ts:85
 
 ___
 

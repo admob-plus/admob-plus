@@ -14,7 +14,7 @@ custom_edit_url: null
 
 #### Defined in
 
-packages/cordova/src/www/generated.ts:71
+packages/cordova/src/www/ads/banner.ts:7
 
 ___
 
@@ -24,7 +24,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/generated.ts:74
+packages/cordova/src/www/ads/banner.ts:10
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/generated.ts:72
+packages/cordova/src/www/ads/banner.ts:8
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/generated.ts:75
+packages/cordova/src/www/ads/banner.ts:11
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/generated.ts:73
+packages/cordova/src/www/ads/banner.ts:9
 
 ___
 
@@ -64,4 +64,4 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/generated.ts:76
+packages/cordova/src/www/ads/banner.ts:12

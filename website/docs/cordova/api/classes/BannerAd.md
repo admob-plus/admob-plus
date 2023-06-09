@@ -30,7 +30,7 @@ custom_edit_url: null
 
 #### Defined in
 
-packages/cordova/src/www/ads/banner.ts:64
+packages/cordova/src/www/ads/banner.ts:67
 
 ## Properties
 
@@ -40,7 +40,7 @@ packages/cordova/src/www/ads/banner.ts:64
 
 #### Defined in
 
-packages/cordova/src/www/ads/banner.ts:62
+packages/cordova/src/www/ads/banner.ts:65
 
 ___
 
@@ -78,7 +78,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/banner.ts:60
+packages/cordova/src/www/ads/banner.ts:63
 
 ## Accessors
 
@@ -114,7 +114,7 @@ packages/cordova/src/www/ads/base.ts:44
 
 #### Defined in
 
-packages/cordova/src/www/ads/banner.ts:99
+packages/cordova/src/www/ads/banner.ts:102
 
 ___
 
@@ -132,7 +132,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/base.ts:84
+packages/cordova/src/www/ads/base.ts:85
 
 ___
 
@@ -150,7 +150,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/base.ts:63
+packages/cordova/src/www/ads/base.ts:64
 
 ___
 
@@ -168,7 +168,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/banner.ts:86
+packages/cordova/src/www/ads/banner.ts:89
 
 ___
 
@@ -216,7 +216,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/banner.ts:91
+packages/cordova/src/www/ads/banner.ts:94
 
 ___
 
@@ -239,7 +239,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/banner.ts:72
+packages/cordova/src/www/ads/banner.ts:75
 
 ___
 

@@ -8,7 +8,7 @@ custom_edit_url: null
 
 ## Hierarchy
 
-- `RequestConfig`
+- [`RequestConfig`](RequestConfig.md)
 
   ↳ **`AdMobConfig`**
 
@@ -20,7 +20,7 @@ custom_edit_url: null
 
 #### Defined in
 
-packages/cordova/src/www/common.ts:39
+packages/cordova/src/www/common.ts:53
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/common.ts:40
+packages/cordova/src/www/common.ts:54
 
 ___
 
@@ -40,11 +40,11 @@ ___
 
 #### Inherited from
 
-RequestConfig.maxAdContentRating
+[RequestConfig](RequestConfig.md).[maxAdContentRating](RequestConfig.md#maxadcontentrating)
 
 #### Defined in
 
-packages/cordova/src/www/common.ts:31
+packages/cordova/src/www/common.ts:45
 
 ___
 
@@ -54,11 +54,11 @@ ___
 
 #### Inherited from
 
-RequestConfig.sameAppKey
+[RequestConfig](RequestConfig.md).[sameAppKey](RequestConfig.md#sameappkey)
 
 #### Defined in
 
-packages/cordova/src/www/common.ts:32
+packages/cordova/src/www/common.ts:46
 
 ___
 
@@ -68,11 +68,11 @@ ___
 
 #### Inherited from
 
-RequestConfig.tagForChildDirectedTreatment
+[RequestConfig](RequestConfig.md).[tagForChildDirectedTreatment](RequestConfig.md#tagforchilddirectedtreatment)
 
 #### Defined in
 
-packages/cordova/src/www/common.ts:33
+packages/cordova/src/www/common.ts:47
 
 ___
 
@@ -82,11 +82,11 @@ ___
 
 #### Inherited from
 
-RequestConfig.tagForUnderAgeOfConsent
+[RequestConfig](RequestConfig.md).[tagForUnderAgeOfConsent](RequestConfig.md#tagforunderageofconsent)
 
 #### Defined in
 
-packages/cordova/src/www/common.ts:34
+packages/cordova/src/www/common.ts:48
 
 ___
 
@@ -96,8 +96,8 @@ ___
 
 #### Inherited from
 
-RequestConfig.testDeviceIds
+[RequestConfig](RequestConfig.md).[testDeviceIds](RequestConfig.md#testdeviceids)
 
 #### Defined in
 
-packages/cordova/src/www/common.ts:35
+packages/cordova/src/www/common.ts:49
