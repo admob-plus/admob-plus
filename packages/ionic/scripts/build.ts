@@ -23,15 +23,19 @@ async function main() {
     fse.copy('./build/lib', './lib', {overwrite: true}),
     fse.copy('./build/ngx', './ngx', {overwrite: true}),
   ]);
+
+  const pkg = {
+    ...require('../package.json'),
+    types: 'index.d.ts',
+    main: './cjs/index.js',
+    module: 'index.js',
+  };
+  pkg.devDependencies['admob-plus-cordova'] = '*';
+
   await Promise.all([
     fse.copy('./build/cjs/lib', './lib/cjs', {overwrite: true}),
     fse.copy('./build/cjs/ngx', './ngx/cjs', {overwrite: true}),
-    fse.outputJSON('./ngx/package.json', {
-      ...require('../package.json'),
-      types: 'index.d.ts',
-      main: './cjs/index.js',
-      module: 'index.js',
-    }),
+    fse.outputJSON('./ngx/package.json', pkg, {spaces: 2}),
   ]);
 
   await del(['build']);
