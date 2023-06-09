@@ -61,7 +61,7 @@
     "typescript": "~5.1.3"
   },
   "peerDependencies": {
-    "@capacitor/core": "*"
+    "@capacitor/core": ">=3"
   },
   "homepage": "https://admob-plus.github.io/docs/capacitor",
   "funding": "https://admob-plus.github.io/funding",
