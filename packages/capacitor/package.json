@@ -45,20 +45,20 @@
     "build": "npx nx build",
     "clean": "echo del dist",
     "watch": "tsc --watch",
-    "prepublishOnly": "npx nx build",
+    "prepublishOnly": "nx build",
     "test": "tsc --noEmit"
   },
   "devDependencies": {
-    "@capacitor/android": "^5.0.4",
-    "@capacitor/core": "^5.0.4",
+    "@capacitor/android": "^5.0.5",
+    "@capacitor/core": "^5.0.5",
     "@capacitor/docgen": "^0.2.1",
-    "@capacitor/ios": "^5.0.4",
+    "@capacitor/ios": "^5.0.5",
     "@ionic/eslint-config": "^0.3.0",
     "@ionic/prettier-config": "^3.0.0",
     "@ionic/swiftlint-config": "^1.1.2",
     "del-cli": "^5.0.0",
     "rollup": "^2.78.0",
-    "typescript": "~5.0.4"
+    "typescript": "~5.1.3"
   },
   "peerDependencies": {
     "@capacitor/core": "*"
