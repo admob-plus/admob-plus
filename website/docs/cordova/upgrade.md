@@ -27,4 +27,41 @@ You should set the `id` to a different value if you are displaying multiple ads 
 
 ### Remove ad-type specific events
 
+The following events are removed.
+
+- `admob.banner.load`
+- `admob.banner.loadfail`
+- `admob.banner.impression`
+- `admob.interstitial.load`
+- `admob.interstitial.loadfail`
+- `admob.interstitial.show`
+- `admob.interstitial.dismiss`
+- `admob.rewarded.load`
+- `admob.rewarded.loadfail`
+- `admob.rewarded.reward`
+- `admob.rewarded.show`
+- `admob.rewarded.dismiss`
+
 They are replaced with `admob.ad.*` events.
+
+It is recommend to use `on` method provided by the ad class,
+
+```js
+banner = new admob.BannerAd({
+  adUnitId: 'ca-app-pub-xxx/yyy',
+})
+
+banner.on('impression', async (evt) => {
+  await banner.hide()
+})
+```
+
+To listen the event via `document.addEventListener`,
+
+```js
+document.addEventListener('admob.ad.load', async (evt) => {
+  if (evt.ad instanceof admob.NativeAd) {
+    // handle event here
+  }
+})
+```
