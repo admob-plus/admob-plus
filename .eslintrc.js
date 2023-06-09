@@ -1,6 +1,9 @@
 module.exports = {
-  // eslint-disable-next-line node/no-unpublished-require
-  extends: [require.resolve('gts/.eslintrc.json')],
+  extends: [
+    // eslint-disable-next-line node/no-unpublished-require
+    require.resolve('gts/.eslintrc.json'),
+    'plugin:react-hooks/recommended',
+  ],
   overrides: [
     {
       files: ['__tests__/**/*.ts'],
@@ -17,4 +20,5 @@ module.exports = {
     'node/no-unpublished-require': 'warn',
     'node/no-unsupported-features/es-syntax': 'off',
   },
+  plugins: ['react-refresh'],
 };

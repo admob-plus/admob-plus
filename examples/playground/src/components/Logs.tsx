@@ -1,64 +1,63 @@
-import { Box, useColorMode } from '@chakra-ui/react'
-import { Events } from 'admob-plus-cordova'
-import * as React from 'react'
+import { Collapse, Group } from "@mantine/core";
+import { useDisclosure } from "@mantine/hooks";
+import { Prism } from "@mantine/prism";
+import { signal } from "@preact/signals-react";
+import { Events } from "admob-plus-cordova";
+import { type FC } from "react";
+import TimeAgo from "react-timeago";
 
-const eventTypes = ['deviceready', ...Object.values(Events)]
+const eventTypes = [
+  "DOMContentLoaded",
+  "deviceready",
+  ...Object.values(Events),
+];
 
-type Log = { time: Date; event: Event }
+type Log = { time: Date; event: Event };
 
-const logLine = (log: Log) => {
-  const s = JSON.stringify({
-    ...log.event,
-    isTrusted: undefined,
-  })
-  if (s === '{}') {
-    return log.event.type
-  }
-  return `${log.event.type}: ${s}`
+const logs = signal<Log[]>([]);
+
+for (const eventType of eventTypes) {
+  document.addEventListener(eventType, (event) => {
+    logs.value = [{
+      time: new Date(),
+      event,
+    }, ...logs.value];
+  }, false);
 }
 
-export interface LogsProps {}
-
-const Logs: React.FC<LogsProps> = () => {
-  const [logs, setLogs] = React.useState<Array<Log>>([])
-  const { colorMode } = useColorMode()
-
-  React.useEffect(() => {
-    const listener = (event: Event) => {
-      setLogs((prev) => [
-        ...prev,
-        {
-          time: new Date(),
-          event,
-        },
-      ])
-    }
-
-    for (const eventType of eventTypes) {
-      document.addEventListener(eventType, listener, false)
-    }
-
-    return () => {
-      for (const eventType of eventTypes) {
-        document.removeEventListener(eventType, listener)
-      }
-    }
-  }, [])
+const LogItem: FC<{ log: Log }> = ({ log }) => {
+  const [opened, { toggle }] = useDisclosure(false);
+  const s = JSON.stringify(
+    {
+      ...log.event,
+      isTrusted: undefined,
+    },
+    null,
+    2,
+  );
 
   return (
-    <Box
-      style={{ overflow: 'auto' }}
-      bg={colorMode === 'dark' ? 'gray.700' : 'gray.200'}
-      w="100%"
-    >
-      {logs
-        .slice()
-        .reverse()
-        .map((log, i) => (
-          <div key={i}>{logLine(log)}</div>
-        ))}
-    </Box>
-  )
-}
+    <>
+      <Group position="apart" onClick={toggle}>
+        {log.event.type}
+        <TimeAgo date={log.time} />
+      </Group>
+      {s !== "{}" && (
+        <Collapse in={opened}>
+          <Prism language="json">{s}</Prism>
+        </Collapse>
+      )}
+    </>
+  );
+};
 
-export default Logs
+const Logs: FC = () => {
+  return (
+    <>
+      {logs.value
+        .map((log, i) => <LogItem key={i} log={log} />)}
+    </>
+  );
+};
+
+export default Logs;

@@ -1,77 +1,121 @@
 import {
-  Box,
-  Container,
-  Flex,
-  Heading,
-  HStack,
-  Link,
-  SimpleGrid,
-  Spacer,
-} from '@chakra-ui/react'
-import React from 'react'
-import { Link as RouterLink, Route, Switch } from 'wouter'
-import ColorModeSwitcher from './components/ColorModeSwitcher'
-import Logs from './components/Logs'
-import BannerAd from './routes/BannerAd'
-import Home from './routes/Home'
-import InterstitialAd from './routes/InterstitialAd'
-import RewardedAd from './routes/RewardedAd'
-import RewardedInterstitialAd from './routes/RewardedInterstitialAd'
+  ActionIcon,
+  Anchor,
+  AppShell,
+  Burger,
+  Footer,
+  Group,
+  Header,
+  MediaQuery,
+  Navbar,
+  NavLink,
+  useMantineColorScheme,
+  useMantineTheme,
+} from '@mantine/core';
+import { IconMoonStars, IconSun } from '@tabler/icons-react';
+import { useState } from 'react';
+import { Link, Route, Switch } from 'wouter';
+import Logs from './components/Logs';
+import BannerAd from './pages/BannerAd';
+import WebviewAd from './pages/WebviewAd';
+import Home from './pages/Home';
+import InterstitialAd from './pages/InterstitialAd';
 
-interface AppProps {}
-
-const App: React.FC<AppProps> = () => {
+function ThemeToggle() {
+  const {colorScheme, toggleColorScheme} = useMantineColorScheme();
   return (
-    <SimpleGrid height="100vh" spacingY="20px" templateRows="auto 1fr 1fr">
-      <Container as="header">
-        <Heading>
-          <Flex>
-            <Link as={RouterLink} to="/">
-              AdMob Plus
-            </Link>
-            <Spacer />
-            <ColorModeSwitcher justifySelf="flex-end" />
-          </Flex>
-        </Heading>
-        <HStack as="nav">
-          <Link as={RouterLink} to="/banner">
-            Banner Ad
-          </Link>
-          <Link as={RouterLink} to="/interstitial">
-            Interstitial Ad
-          </Link>
-          <Link as={RouterLink} to="/rewarded">
-            Rewarded Ad
-          </Link>
-          <Link as={RouterLink} to="/rewarded-interstitial">
-            Rewarded Interstitial Ad
-          </Link>
-        </HStack>
-      </Container>
-      <Container>
-        <Switch>
-          <Route path="/">
-            <Home />
-          </Route>
-          <Route path="/banner">
-            <BannerAd />
-          </Route>
-          <Route path="/interstitial">
-            <InterstitialAd />
-          </Route>
-          <Route path="/rewarded">
-            <RewardedAd />
-          </Route>
-          <Route path="/rewarded-interstitial">
-            <RewardedInterstitialAd />
-          </Route>
-        </Switch>
-      </Container>
-      <Flex maxH="50vh">
-        <Logs />
-      </Flex>
-    </SimpleGrid>
-  )
+    <ActionIcon variant="default" onClick={() => toggleColorScheme()} size={30}>
+      {colorScheme === 'dark' ? (
+        <IconSun size="1rem" />
+      ) : (
+        <IconMoonStars size="1rem" />
+      )}
+    </ActionIcon>
+  );
 }
 
-export default App
+function App() {
+  const theme = useMantineTheme();
+  const [opened, setOpened] = useState(false);
+
+  return (
+    <AppShell
+      styles={{
+        main: {
+          background:
+            theme.colorScheme === 'dark'
+              ? theme.colors.dark[8]
+              : theme.colors.gray[0],
+        },
+      }}
+      navbarOffsetBreakpoint="sm"
+      asideOffsetBreakpoint="sm"
+      navbar={
+        <Navbar
+          p="md"
+          hiddenBreakpoint="sm"
+          hidden={!opened}
+          width={{sm: 200, lg: 300}}
+          onClick={() => {
+            setOpened(!opened);
+          }}
+        >
+          <NavLink component={Link} href="/banner-ad" label="Banner Ad" />
+          <NavLink
+            component={Link}
+            href="/interstitial-ad"
+            label="Interstitial Ad"
+          />
+          <NavLink
+            component={Link}
+            href="/webview-ad"
+            label="Webview Ad"
+          />
+        </Navbar>
+      }
+      footer={
+        <Footer height={180} p="md" style={{overflowY: 'scroll'}}>
+          <Logs />
+        </Footer>
+      }
+      header={
+        <Header height={{base: 60, md: 70}} p="md">
+          <Group position="apart">
+            <MediaQuery largerThan="sm" styles={{display: 'none'}}>
+              <Burger
+                opened={opened}
+                onClick={() => setOpened(o => !o)}
+                size="sm"
+                color={theme.colors.gray[6]}
+                mr="xl"
+              />
+            </MediaQuery>
+
+            <Anchor component={Link} href="/">
+              AdMob Plus
+            </Anchor>
+            <ThemeToggle />
+          </Group>
+        </Header>
+      }
+    >
+      <Switch>
+        <Route path="/">
+          <BannerAd />
+          <Home />
+        </Route>
+        <Route path="/banner-ad">
+          <BannerAd />
+        </Route>
+        <Route path="/interstitial-ad">
+          <InterstitialAd />
+        </Route>
+        <Route path="/webview-ad">
+          <WebviewAd />
+        </Route>
+      </Switch>
+    </AppShell>
+  );
+}
+
+export default App;

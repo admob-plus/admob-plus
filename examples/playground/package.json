@@ -1,76 +1,55 @@
 {
   "name": "example.playground",
-  "version": "0.1.0",
   "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "postinstall": "mkdir -p platforms plugins && echo '{\"private\": true}' | tee platforms/package.json | tee plugins/package.json"
+  },
   "dependencies": {
-    "@chakra-ui/react": "^1.6.8",
-    "@emotion/react": "^11.4.1",
-    "@emotion/styled": "^11.3.0",
-    "admob-plus-cordova": "file:../../packages/cordova",
-    "framer-motion": "^4.1.17",
+    "admob-plus-cordova": "../../packages/cordova",
+    "cordova-plugin-consent": "../../packages/cordova-consent",
+    "admob-plus-cordova-native": "../../packages/cordova-native",
+    "admob-plus-cordova-webview-ad": "../../packages/cordova-webview-ad",
+    "@emotion/react": "^11.11.1",
+    "@mantine/core": "^6.0.13",
+    "@mantine/form": "^6.0.13",
+    "@mantine/hooks": "^6.0.13",
+    "@mantine/prism": "^6.0.13",
+    "@preact/signals-react": "^1.3.2",
+    "@tabler/icons-react": "^2.22.0",
     "lodash": "^4.17.21",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-icons": "^4.2.0",
-    "recoil": "^0.4.1",
-    "web-vitals": "^2.1.0",
-    "wouter": "^2.7.5"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-timeago": "^7.1.0",
+    "wouter": "^2.11.0"
   },
   "devDependencies": {
-    "@admob-plus-internal/cli": "file:../../internal/cli",
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^12.1.0",
-    "@testing-library/user-event": "^13.2.1",
-    "@types/cordova": "^0.0.34",
-    "@types/fs-extra": "^9.0.13",
-    "@types/jest": "^27.0.2",
-    "@types/lodash": "^4.14.174",
-    "@types/node": "^16.10.1",
-    "@types/react": "^17.0.24",
-    "@types/react-dom": "^17.0.9",
-    "@types/recoil": "^0.0.1",
-    "cordova": "^10.0.1-nightly.2021.2.10.189ac49b",
-    "cordova-android": "10.1.1",
-    "cordova-browser": "6.0.0",
-    "cordova-ios": "6.3.0-nightly.2021.2.10.a3a3936a",
-    "cordova-plugin-whitelist": "1.3.5",
-    "cra-build-watch": "^3.4.0",
-    "dotenv": "^10.0.0",
-    "execa": "^5.1.1",
-    "fs-extra": "^10.0.0",
-    "internal-ip": "^6.2.0",
-    "react-scripts": "4.0.3",
-    "ts-node": "^10.2.1",
-    "typescript": "^4.4.3"
-  },
-  "scripts": {
-    "start": "ts-node -TH -P ../../internal/cli/tsconfig.json scripts/dev.ts",
-    "build": "ts-node -TH -P ../../internal/cli/tsconfig.json scripts/build.ts",
-    "//test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "admob-plus": "workspace:*",
+    "@types/react": "^18.2.9",
+    "@types/react-dom": "^18.2.4",
+    "@types/react-timeago": "^4.1.3",
+    "@typescript-eslint/eslint-plugin": "^5.59.9",
+    "@typescript-eslint/parser": "^5.59.9",
+    "@vitejs/plugin-react": "^4.0.0",
+    "cordova": "^12.0.0",
+    "cordova-android": "^12.0.0",
+    "cordova-browser": "^7.0.0",
+    "cordova-ios": "^6.3.0",
+    "eslint": "^8.42.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.1",
+    "typescript": "^5.1.3",
+    "vite": "^4.3.9"
   },
   "cordova": {
     "platforms": [
-      "ios",
       "android",
+      "ios",
       "browser"
     ],
     "plugins": {
@@ -78,7 +57,9 @@
         "APP_ID_ANDROID": "ca-app-pub-3940256099942544~3347511713",
         "APP_ID_IOS": "ca-app-pub-3940256099942544~1458002511"
       },
-      "cordova-plugin-whitelist": {}
+      "admob-plus-cordova-webview-ad": {},
+      "cordova-plugin-consent": {},
+      "admob-plus-cordova-native": {}
     }
   }
 }
