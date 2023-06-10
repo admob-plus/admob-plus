@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "postinstall": "is-ci || lefthook install",
+    "postinstall": "is-ci || simple-git-hooks",
     "prepare": "nx build .",
     "prepublishOnly": "nx clean .",
     "clean": "del '*.tsbuildinfo' 'packages/*/*.tsbuildinfo'",
@@ -24,7 +24,6 @@
     "@commitlint/config-conventional": "^17.6.5",
     "@commitlint/config-lerna-scopes": "^17.6.3",
     "@commitlint/prompt-cli": "^17.6.5",
-    "@evilmartians/lefthook": "^1.4.1",
     "@jest/globals": "^29.5.0",
     "@nrwl/jest": "16.3.2",
     "@nrwl/node": "16.3.2",
@@ -43,6 +42,7 @@
     "jest-config": "^29.5.0",
     "jest-environment-jsdom": "^29.5.0",
     "lerna": "^7.0.0",
+    "lint-staged": "^13.2.2",
     "npm-run-all": "^4.1.5",
     "nx": "16.3.2",
     "remark-cli": "^11.0.0",
@@ -53,6 +53,7 @@
     "remark-preset-lint-consistent": "^5.1.2",
     "remark-preset-lint-markdown-style-guide": "^5.1.3",
     "remark-preset-lint-recommended": "^6.1.3",
+    "simple-git-hooks": "^2.8.1",
     "swiftlint": "^1.0.2",
     "ts-jest": "^29.1.0",
     "ts-node": "^10.9.1",
@@ -64,6 +65,13 @@
       "@commitlint/config-conventional"
     ]
   },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": "gts fix",
+    "*.md": "remark --no-stdout",
+    "*.swift": "node-swiftlint lint --strict --path",
+    "examples/*/package.json": "prettier --write",
+    "package.json": "jest test/package-json.test.ts"
+  },
   "remarkConfig": {
     "plugins": [
       "remark-preset-lint-recommended",
@@ -73,6 +81,11 @@
       "remark-lint-heading-whitespace",
       "remark-lint-no-empty-sections"
     ]
+  },
+  "simple-git-hooks": {
+    "commit-msg": "npx commitlint -e \"$1\"",
+    "pre-commit": "npx lint-staged",
+    "pre-push": "npx nx jest ."
   },
   "packageManager": "pnpm@8.6.0",
   "pnpm": {
