@@ -3,12 +3,12 @@
   "compilerOptions": {
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "suppressImplicitAnyIndexErrors": true,
     "module": "Node16"
   },
   "references": [
     { "path": "packages/pkg-proxy" },
     { "path": "internal/cli" },
+    { "path": "internal/npm-bin" },
     { "path": "internal/rollup-config" },
     { "path": "packages/capacitor" },
     { "path": "packages/cordova-consent" },
