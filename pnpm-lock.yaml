@@ -1045,7 +1045,7 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
       admob-plus-cordova:
-        specifier: latest
+        specifier: workspace:*
         version: link:../cordova
       cli-table3:
         specifier: ^0.6.3
@@ -1109,8 +1109,8 @@ importers:
         version: 17.7.2
     devDependencies:
       '@admob-plus-internal/tsconfig':
-        specifier: file:../../internal/tsconfig
-        version: file:internal/tsconfig
+        specifier: workspace:*
+        version: link:../../internal/tsconfig
       '@tsconfig/node16':
         specifier: ^1.0.4
         version: 1.0.4
@@ -14523,14 +14523,6 @@ packages:
     resolution: {integrity: sha512-TFi4HBKSGfIKsK5YCkKaaFG2m4PEDyViZmEwof3MTIgzimHLto6muaHVpbrljdIvIrFZzEq/p4nafOeLcYegrg==}
     engines: {node: '>=0.3.0'}
     dev: true
-
-  /admob-plus-cordova@2.0.0-alpha.3:
-    resolution: {integrity: sha512-9oFJQwAfPtm07BCOA3jMzR6r6IBAqlx9/yKNha7OhostcnJYCJNoj0rVxPFc3oKTrIbYgP00qM9PYm6Yvx3WTA==}
-    dependencies:
-      fast-glob: 3.2.12
-      fs-extra: 10.1.0
-      plist: 3.0.6
-      replace-in-file: 6.3.5
 
   /after@0.8.2:
     resolution: {integrity: sha512-QbJ0NTQ/I9DI3uSJA4cbexiwQeRAfjPScqIbSjUDd9TOrcg6pTkdgziesOqxBMBzit8vFCTwrP27t13vFOORRA==}
@@ -36571,6 +36563,7 @@ packages:
       chalk: 4.1.2
       glob: 7.2.3
       yargs: 17.6.2
+    dev: false
 
   /replace-in-file@7.0.1:
     resolution: {integrity: sha512-KbhgPq04eA+TxXuUxpgWIH9k/TjF+28ofon2PXP7vq6izAILhxOtksCVcLuuQLtyjouBaPdlH6RJYYcSPVxCOA==}
@@ -42819,7 +42812,7 @@ packages:
     dependencies:
       '@frat/envinfo': 7.10.1
       '@inquirer/prompts': 2.1.1
-      admob-plus-cordova: 2.0.0-alpha.3
+      admob-plus-cordova: link:packages/cordova
       cli-table3: 0.6.3
       clipboardy: 3.0.0
       cordova-common: 5.0.0
