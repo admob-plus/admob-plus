@@ -1,60 +1,32 @@
 import cordovaCommon from 'cordova-common';
-import elementtree from 'elementtree';
+import 'cordova-plus';
 import {execa} from 'execa';
 import glob from 'fast-glob';
 import yaml from 'js-yaml';
 import {ListrTask} from 'listr2';
-import {createRequire} from 'module';
 import _ from 'lodash';
-import path from 'path';
+import {createRequire} from 'node:module';
+import path from 'node:path';
 import {findPkg, PackageJson} from 'pkg-proxy';
 import semver from 'semver';
-
 import {collectDependencies} from './android.js';
 import {Ctx} from './listr.js';
 
 const {ConfigParser, PluginInfo} = cordovaCommon;
 const require = createRequire(import.meta.url);
 
-export type PackageCordovaConfig = {
-  cordova?: {
-    plugins?: {[k: string]: any};
-    platforms?: string[];
-  };
-};
-type Plugin = {
-  name: string;
-  spec: string;
-  variables: {
-    [k: string]: string;
-  };
-};
-
-// see https://github.com/apache/cordova-common/blob/master/src/ConfigParser/ConfigParser.js
-interface AppConfig {
-  getPlugin(id: string): Plugin | undefined;
-  getPluginIdList(): string[];
-  getPlugins(): Plugin[];
-  getPreference(name: string, platform: string): string;
-}
-
-export const readConfigXml = async (filename: string) => {
+export async function readConfigXml(filename: string) {
   try {
-    const appConfig = new ConfigParser(filename);
-    return appConfig as AppConfig;
+    return new ConfigParser(filename);
   } catch {
     return null;
   }
-};
-
-interface IPluginInfo {
-  _et: elementtree.ElementTree;
 }
 
 export async function readPluginInfo(pkgName: string) {
   const plugin = new PluginInfo(
     path.dirname(require.resolve(`${pkgName}/plugin.xml`))
-  ) as IPluginInfo;
+  );
   return plugin;
 }
 

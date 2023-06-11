@@ -1,6 +1,6 @@
 import {execa} from 'execa';
 
-export const getPodSpec = async (name: string) => {
+export async function getPodSpec(name: string) {
   const p = await execa('pod', ['spec', 'cat', name], {
     reject: false,
   });
@@ -13,4 +13,4 @@ export const getPodSpec = async (name: string) => {
     // ignore error
   }
   return null;
-};
+}
