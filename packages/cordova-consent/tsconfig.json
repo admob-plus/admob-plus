@@ -1,5 +1,5 @@
 {
-  "extends": "cordova-plus/plugin/tsconfig.json",
+  "extends": "cordova-plus/plugin",
   "compilerOptions": {
     "outDir": "www"
   },

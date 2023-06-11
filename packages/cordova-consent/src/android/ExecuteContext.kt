@@ -8,16 +8,13 @@ import org.json.JSONArray
 import org.json.JSONObject
 import java.util.Objects
 
-class ExecuteContext internal constructor(
+data class ExecuteContext(
     val actionKey: String,
     val args: JSONArray,
-    @JvmField val callbackContext: CallbackContext
+    val callbackContext: CallbackContext,
+    val plugin: Consent,
 ) {
-    val opts: JSONObject?
-
-    init {
-        opts = args.optJSONObject(0)
-    }
+    val opts: JSONObject? = args.optJSONObject(0)
 
     fun optId(): Int {
         return opts!!.optInt("id")
@@ -35,7 +32,7 @@ class ExecuteContext internal constructor(
         return builder.build()
     }
 
-    fun optConsentDebugSettings(): ConsentDebugSettings {
+    private fun optConsentDebugSettings(): ConsentDebugSettings {
         val builder = ConsentDebugSettings.Builder(activity)
         if (opts!!.has("debugGeography")) {
             builder.setDebugGeography(opts.optInt("debugGeography"))
@@ -43,7 +40,7 @@ class ExecuteContext internal constructor(
         if (opts.has("testDeviceIds")) {
             val ids = opts.optJSONArray("testDeviceIds")
             for (i in 0 until Objects.requireNonNull(ids).length()) {
-                val testDeviceId = ids.optString(i)
+                val testDeviceId = ids?.optString(i)
                 if (testDeviceId != null) {
                     builder.addTestDeviceHashedId(testDeviceId)
                 }
@@ -53,10 +50,5 @@ class ExecuteContext internal constructor(
     }
 
     private val activity: Activity
-        private get() = plugin!!.cordova.activity
-
-    companion object {
-        @JvmField
-        var plugin: Consent? = null
-    }
+        get() = plugin.cordova.activity
 }

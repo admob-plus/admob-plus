@@ -7,9 +7,7 @@ import com.google.android.ump.ConsentInformation
 import com.google.android.ump.FormError
 import com.google.android.ump.UserMessagingPlatform
 import org.apache.cordova.CallbackContext
-import org.apache.cordova.CordovaInterface
 import org.apache.cordova.CordovaPlugin
-import org.apache.cordova.CordovaWebView
 import org.apache.cordova.PluginResult
 import org.json.JSONArray
 import org.json.JSONException
@@ -19,18 +17,14 @@ class Consent : CordovaPlugin() {
     private val eventQueue = ArrayList<PluginResult>()
     private val TAG = this.javaClass.simpleName
     private var readyCallbackContext: CallbackContext? = null
-    override fun initialize(cordova: CordovaInterface, webView: CordovaWebView) {
-        super.initialize(cordova, webView)
-        ExecuteContext.plugin = this
-    }
 
     override fun execute(
         actionKey: String,
         args: JSONArray,
         callbackContext: CallbackContext
     ): Boolean {
-        val ctx: ExecuteContext =
-            ExecuteContext(actionKey, args, callbackContext)
+        val ctx =
+            ExecuteContext(actionKey, args, callbackContext, this)
         Log.d(TAG, actionKey)
         when (actionKey) {
             Generated.Actions.READY -> return executeReady(callbackContext)
@@ -56,7 +50,7 @@ class Consent : CordovaPlugin() {
     }
 
     private val consentStatus: Int
-        private get() {
+        get() {
             val status = consentInformation.consentStatus
             return when (status) {
                 ConsentInformation.ConsentStatus.NOT_REQUIRED -> Generated.ConsentStatus.NOT_REQUIRED

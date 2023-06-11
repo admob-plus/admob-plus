@@ -1,4 +1,4 @@
-import { ConsentStatus, execAsync, initPlugin, NativeActions } from './generated'
+import {ConsentStatus, execAsync, initPlugin, NativeActions} from './generated';
 
 export enum DebugGeography {
   Disabled = 0,
@@ -7,10 +7,10 @@ export enum DebugGeography {
 }
 
 type RequestInfoUpdateOptions = {
-  debugGeography?: DebugGeography
-  tagForUnderAgeOfConsent?: boolean
-  testDeviceIds?: string[]
-}
+  debugGeography?: DebugGeography;
+  tagForUnderAgeOfConsent?: boolean;
+  testDeviceIds?: string[];
+};
 
 export enum FormStatus {
   Unknown = 0,
@@ -26,74 +26,80 @@ export enum TrackingAuthorizationStatus {
 }
 
 export class ConsentForm {
-  public readonly id: number
+  public readonly id: number;
 
   constructor(id: number) {
-    this.id = id
+    this.id = id;
   }
 
   public show() {
-    return execAsync(NativeActions.showForm, [{ id: this.id }])
+    return execAsync(NativeActions.showForm, [{id: this.id}]);
   }
 }
 
+export {ConsentStatus};
+
 export class Consent {
-  public readonly ConsentStatus = ConsentStatus
-  public readonly DebugGeography = DebugGeography
-  public readonly FormStatus = FormStatus
+  public readonly ConsentStatus = ConsentStatus;
+  public readonly DebugGeography = DebugGeography;
+  public readonly FormStatus = FormStatus;
 
   constructor() {
-    initPlugin()
+    initPlugin();
   }
 
   public async trackingAuthorizationStatus(): Promise<
     TrackingAuthorizationStatus | false
   > {
     if (cordova.platformId === 'ios') {
-      const n = await execAsync(NativeActions.trackingAuthorizationStatus)
+      const n = await execAsync(NativeActions.trackingAuthorizationStatus);
       if (n !== false) {
         return TrackingAuthorizationStatus[
           TrackingAuthorizationStatus[n as number]
-        ]
+        ];
       }
     }
-    return false
+    return false;
   }
 
   public async requestTrackingAuthorization(): Promise<
     TrackingAuthorizationStatus | false
   > {
     if (cordova.platformId === 'ios') {
-      const n = await execAsync(NativeActions.requestTrackingAuthorization)
+      const n = await execAsync(NativeActions.requestTrackingAuthorization);
       if (n !== false) {
         return TrackingAuthorizationStatus[
           TrackingAuthorizationStatus[n as number]
-        ]
+        ];
       }
     }
-    return false
+    return false;
   }
 
   public async getConsentStatus(): Promise<ConsentStatus> {
-    const n = await execAsync(NativeActions.getConsentStatus)
-    return ConsentStatus[ConsentStatus[n as number]]
+    const n = await execAsync(NativeActions.getConsentStatus);
+    return ConsentStatus[ConsentStatus[n as number]];
   }
 
   public async getFormStatus(): Promise<FormStatus> {
-    const n = await execAsync(NativeActions.getFormStatus)
-    return FormStatus[FormStatus[n as number]]
+    const n = await execAsync(NativeActions.getFormStatus);
+    return FormStatus[FormStatus[n as number]];
   }
 
   public requestInfoUpdate(opts: RequestInfoUpdateOptions = {}) {
-    return execAsync(NativeActions.requestInfoUpdate, [opts])
+    return execAsync(NativeActions.requestInfoUpdate, [opts]);
   }
 
   public async loadForm() {
-    const id = await execAsync(NativeActions.loadForm)
-    return new ConsentForm(id as number)
+    const id = await execAsync(NativeActions.loadForm);
+    return new ConsentForm(id as number);
   }
 
   public reset() {
-    return execAsync(NativeActions.reset)
+    return execAsync(NativeActions.reset);
   }
+}
+
+declare global {
+  const consent: Consent;
 }
