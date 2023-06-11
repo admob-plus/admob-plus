@@ -1,7 +1,5 @@
 examples/*
 internal/cli/lib
-internal/rollup-config/*.js
-internal/rollup-config/*.d.ts
 packages/*
 scripts/*
 website/*

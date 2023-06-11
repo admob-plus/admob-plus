@@ -15,7 +15,6 @@
     "admob-plus-cordova": "^2.0.0-alpha.4"
   },
   "devDependencies": {
-    "@admob-plus-internal/rollup-config": "file:../../internal/rollup-config",
     "@types/cordova": "^0.0.34",
     "@types/plist": "^3.0.2",
     "cordova": "11.0.0",

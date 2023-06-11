@@ -48,9 +48,6 @@ jobs:
           pushd packages/cordova
           npx nx build
           popd
-          pushd internal/rollup-config
-          # npm run prepack
-          popd
           # npx lerna run --stream prepublishOnly
 
       - name: Test
