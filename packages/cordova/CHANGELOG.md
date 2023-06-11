@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.5](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@2.0.0-alpha.4...admob-plus-cordova@2.0.0-alpha.5) (2023-06-11)
+
+
+### Features
+
+* **cordova-webview-ad/ios:** moved code from cordova/ios ([#586](https://github.com/admob-plus/admob-plus/issues/586)) ([2bccb1e](https://github.com/admob-plus/admob-plus/commit/2bccb1e61cea9b3c762f9695a982dfe556725a13))
+
+
+
+
+
 # [2.0.0-alpha.4](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@2.0.0-alpha.3...admob-plus-cordova@2.0.0-alpha.4) (2023-06-09)
 
 
