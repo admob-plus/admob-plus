@@ -1,8 +1,8 @@
-import { ListrTask } from 'listr2';
+import {ListrTask} from 'listr2';
 import _ from 'lodash';
 
-import { testAppIds } from './admob.js';
-import { Ctx } from './listr.js';
+import {testAppIds} from './admob.js';
+import {Ctx} from './listr.js';
 
 export default [
   {
@@ -15,7 +15,7 @@ export default [
       }
 
       const appIdKeys = ['APP_ID_ANDROID', 'APP_ID_IOS'];
-      const tasks: ListrTask<Ctx, any>[] = _.flatMap(appIdKeys, k => {
+      const tasks: ListrTask<Ctx>[] = _.flatMap(appIdKeys, k => {
         const configPath = `cordova.plugins.admob-plus-cordova.${k}`;
         const appId = _.get(pkg, configPath);
         if (!appId) {
@@ -26,7 +26,7 @@ export default [
           title: configPath,
           async task(_ctx, taskConfig) {
             if (testAppIds.has(appId)) {
-              taskConfig.output = `${appId} is a test ID`;
+              taskConfig.output = `Test ID is used: ${appId}`;
               throw new Error(configPath);
             }
           },
