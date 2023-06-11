@@ -1,9 +1,9 @@
 import {Listr} from 'listr2';
 import assert from 'node:assert';
 import {findPkg} from 'pkg-proxy';
-import taskCocoapods from '../doctor/cocoapods.js';
-import tasksCordova, {readAdMobPlusPluginInfo} from '../doctor/cordova.js';
 import {adServerHost, connectAdServer} from '../doctor/connection.js';
+import tasksCordova, {readAdMobPlusPluginInfo} from '../doctor/cordova.js';
+import * as ios from '../doctor/ios.js';
 import {Ctx, options as listrOptions} from '../doctor/listr.js';
 import tasksNode from '../doctor/node.js';
 
@@ -32,11 +32,36 @@ export async function handler() {
             await connectAdServer();
           } catch (err) {
             task.output = `${err}`;
-            throw err;
+            throw new Error(adServerHost);
           }
         },
+        options: {persistentOutput: true},
       },
-      taskCocoapods,
+      {
+        title: 'CocoaPods',
+        enabled: process.platform === 'darwin',
+        async task(_, task) {
+          return task.newListr([
+            {
+              async task(_, task) {
+                const sdk = await ios.checkSDK();
+                task.title = sdk.name;
+
+                const expectedVersion = ctx.iosSDKVersion;
+                if (sdk.version !== expectedVersion) {
+                  task.output = 'Run `pod repo update`';
+                  throw new Error(
+                    `${sdk.name}: ${sdk.version} != ${expectedVersion}`
+                  );
+                }
+
+                task.title = `${sdk.name}} v${sdk.version}`;
+              },
+              options: {persistentOutput: true},
+            },
+          ]);
+        },
+      },
       ...tasksNode,
       ...tasksCordova,
     ],

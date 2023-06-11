@@ -14,3 +14,9 @@ export async function getPodSpec(name: string) {
   }
   return null;
 }
+
+export async function checkSDK() {
+  const name = 'Google-Mobile-Ads-SDK';
+  const spec = await getPodSpec(name);
+  return {name, version: spec?.version};
+}
