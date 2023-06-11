@@ -13,15 +13,16 @@
   "dependencies": {
     "execa": "^7.1.1",
     "find-cache-dir": "^4.0.0",
-    "tsx": "^3.12.7",
-    "which": "^3.0.1",
-    "winston": "^3.9.0"
+    "pino": "^8.14.1",
+    "pino-pretty": "^10.0.0",
+    "which": "^3.0.1"
   },
   "devDependencies": {
     "@tsconfig/esm": "^1.0.3",
     "@tsconfig/node16": "^1.0.4",
     "@types/find-cache-dir": "^3.2.1",
     "@types/which": "^3.0.0",
+    "tsx": "^3.12.7",
     "typescript": "~5.1.3"
   }
 }

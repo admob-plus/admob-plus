@@ -2,28 +2,34 @@ import {execa} from 'execa';
 import findCacheDir from 'find-cache-dir';
 import path from 'node:path';
 import {exit} from 'node:process';
+import pino from 'pino';
 import which from 'which';
-import winston from 'winston';
 
 async function main() {
-  const args = process.argv.slice(2);
-  const cacheDir = findCacheDir({name: 'npm-bin'}) ?? '/tmp';
+  const cacheDir = findCacheDir({name: 'npm-bin', create: true}) ?? '/tmp';
 
-  const logger = winston.createLogger({
-    format: winston.format.combine(
-      winston.format.timestamp(),
-      winston.format.prettyPrint()
-    ),
-    transports: [
-      new winston.transports.File({
-        filename: path.join(cacheDir, 'run.log'),
-      }),
+  const transport = pino.transport({
+    targets: [
+      {
+        level: 'info',
+        target: 'pino-pretty',
+        options: {destination: 2},
+      },
+      {
+        level: 'trace',
+        target: 'pino/file',
+        options: {destination: path.join(cacheDir, 'run.log')},
+      },
     ],
   });
+  const logger = pino(transport);
 
-  logger.info('argv', process.argv);
+  const args = process.argv.slice(2);
 
-  if (args.indexOf('--no-save') > -1 || args[0] === 'install') {
+  logger.child(process.argv).info('argv');
+
+  if (args.includes('install')) return;
+  if (args.indexOf('--no-save') > -1) {
     args.splice(args.indexOf('--no-save'), 1);
   }
 
