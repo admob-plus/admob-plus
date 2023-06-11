@@ -12,14 +12,15 @@ import {
   useMantineColorScheme,
   useMantineTheme,
 } from '@mantine/core';
-import { IconMoonStars, IconSun } from '@tabler/icons-react';
-import { useState } from 'react';
-import { Link, Route, Switch } from 'wouter';
+import {IconMoonStars, IconSun} from '@tabler/icons-react';
+import {useState} from 'react';
+import {Link, Route, Switch} from 'wouter';
 import Logs from './components/Logs';
 import BannerAd from './pages/BannerAd';
-import WebviewAd from './pages/WebviewAd';
+import Consent from './pages/Consent';
 import Home from './pages/Home';
 import InterstitialAd from './pages/InterstitialAd';
+import WebviewAd from './pages/WebviewAd';
 
 function ThemeToggle() {
   const {colorScheme, toggleColorScheme} = useMantineColorScheme();
@@ -60,17 +61,14 @@ function App() {
             setOpened(!opened);
           }}
         >
+          <NavLink component={Link} href="/consent" label="Consent" />
           <NavLink component={Link} href="/banner-ad" label="Banner Ad" />
           <NavLink
             component={Link}
             href="/interstitial-ad"
             label="Interstitial Ad"
           />
-          <NavLink
-            component={Link}
-            href="/webview-ad"
-            label="Webview Ad"
-          />
+          <NavLink component={Link} href="/webview-ad" label="Webview Ad" />
         </Navbar>
       }
       footer={
@@ -106,6 +104,9 @@ function App() {
         </Route>
         <Route path="/banner-ad">
           <BannerAd />
+        </Route>
+        <Route path="/consent">
+          <Consent />
         </Route>
         <Route path="/interstitial-ad">
           <InterstitialAd />
