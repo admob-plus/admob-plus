@@ -11,6 +11,14 @@ This feature requires careful handling about how your app is loading and present
 
 WebView Ad is the integration of [WebView API for Ads](https://developers.google.com/admob/android/webview) for [Android](https://developers.google.com/admob/android/webview) and [iOS](https://developers.google.com/admob/ios/webview) in the Cordova WebView, with this ads you can show AdSense ads in your app.
 
+In addtion to installing `admob-plus-cordova`, you will need to install `admob-plus-cordova-webview-ad` for displaying WebView ads.
+
+## Installation
+
+```sh-session
+cordova plugin add admob-plus-cordova-webview-ad --save
+```
+
 ## AdSense
 
 In order to use these ads you need to have an active [AdSense](https://www.google.com/adsense/start/) account, content in the WebView is subject to the same [content policy requirement](https://support.google.com/publisherpolicies/answer/11112688) as when it is in a browser.
