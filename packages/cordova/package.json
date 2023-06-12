@@ -7,7 +7,7 @@
   "types": "esm/index.d.ts",
   "scripts": {
     "prepublishOnly": "nx build",
-    "version": "npx cordova-plus plugin version",
+    "version": "cordova-plus plugin version",
     "test": "cordova-plus plugin test"
   },
   "devDependencies": {

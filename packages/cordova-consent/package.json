@@ -7,7 +7,7 @@
   "module": "./esm/index.js",
   "scripts": {
     "prepublishOnly": "nx build",
-    "version": "npx cordova-plus plugin version",
+    "version": "cordova-plus plugin version",
     "build": "cordova-plus plugin build --input=./src/www/consent.ts --lib --esm",
     "test": "cordova-plus plugin test"
   },
