@@ -8,6 +8,7 @@
         "command": "cordova-plus plugin build --input=./src/www/admob.ts --lib --esm",
         "cwd": "packages/cordova"
       },
+      "dependsOn": ["clean"],
       "outputs": [
         "{workspaceRoot}/esm",
         "{workspaceRoot}/lib",

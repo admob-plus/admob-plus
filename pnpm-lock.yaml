@@ -1131,6 +1131,9 @@ importers:
       cordova-plus:
         specifier: ^0.9.2
         version: 0.9.2(enquirer@2.3.6)
+      del-cli:
+        specifier: ^5.0.0
+        version: 5.0.0
       tslib:
         specifier: ^2.5.3
         version: 2.5.3

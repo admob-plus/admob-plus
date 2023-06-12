@@ -53,11 +53,6 @@
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "extends": "nx/presets/npm.json",
   "targetDefaults": {
-    "prepare": {
-      "dependsOn": [
-        "^prepare"
-      ]
-    },
     "build": {
       "dependsOn": [
         "^build"
