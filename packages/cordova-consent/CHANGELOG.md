@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.2](https://github.com/admob-plus/admob-plus/compare/cordova-plugin-consent@3.0.0-alpha.1...cordova-plugin-consent@3.0.0-alpha.2) (2023-06-12)
+
+
+### Features
+
+* **consent/android:** update UMP_VERSION to v2.0.0 ([5a00b8b](https://github.com/admob-plus/admob-plus/commit/5a00b8b114a3b39b3594749ec2312e8a2762c72f))
+
+
+
+
+
 # [3.0.0-alpha.1](https://github.com/admob-plus/admob-plus/compare/cordova-plugin-consent@3.0.0-alpha.0...cordova-plugin-consent@3.0.0-alpha.1) (2023-05-29)
 
 
