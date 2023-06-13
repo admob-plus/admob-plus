@@ -78,7 +78,10 @@ class AdMob : CordovaPlugin() {
     }
 
     private fun executeStart(ctx: ExecuteContext) {
-        if (sdkInited) return
+        if (sdkInited) {
+            ctx.resolve(mapOf("version" to MobileAds.getVersion()))
+            return
+        }
         MobileAds.initialize(ctx.activity) {
             configForTestLabIfNeeded(ctx.activity)
             ctx.resolve(mapOf("version" to MobileAds.getVersion()))
