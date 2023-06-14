@@ -16,8 +16,7 @@ export class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
   public readonly id: string;
 
   protected readonly opts: T;
-  private _init: Promise<unknown> | null = null;
-  private _inited = false;
+  private _initPromise: ReturnType<typeof this._init> | undefined;
 
   constructor(opts: T) {
     this.opts = opts;
@@ -72,22 +71,16 @@ export class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
   }
 
   protected async init() {
-    if (this._inited) return;
+    return (this._initPromise ??= this._init());
+  }
 
+  private async _init() {
     await admob.start();
 
-    if (this._init === null) {
-      const cls =
-        (this.constructor as unknown as {cls?: string}).cls ??
-        this.constructor.name;
+    const cls =
+      (this.constructor as unknown as {cls?: string}).cls ??
+      this.constructor.name;
 
-      this._init = execAsync('adCreate', [{...this.opts, id: this.id, cls}]);
-    }
-
-    try {
-      await this._init;
-    } finally {
-      this._inited = true;
-    }
+    return execAsync('adCreate', [{...this.opts, id: this.id, cls}]);
   }
 }
