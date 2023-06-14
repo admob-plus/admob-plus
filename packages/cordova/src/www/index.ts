@@ -1,5 +1,4 @@
 import * as ads from './ads';
-import {start} from './ads/base';
 import {AdMobConfig, Events, execAsync} from './common';
 
 export * from './ads';
@@ -16,12 +15,18 @@ export class AdMob {
 
   public readonly Events = Events;
 
+  private _startPromise: ReturnType<typeof this._start> | undefined;
+
   configure(config: AdMobConfig) {
     return execAsync('configure', [config]);
   }
 
   public start() {
-    return start();
+    return (this._startPromise ??= this._start());
+  }
+
+  private _start() {
+    return execAsync<{version: string}>('start');
   }
 }
 

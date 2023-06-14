@@ -9,17 +9,6 @@ export type MobileAdOptions = {
   npa?: '1';
 };
 
-let started = false;
-let startPromise: Promise<{version: string}> | null = null;
-
-/** @internal */
-export async function start() {
-  startPromise = execAsync('start') as Promise<{version: string}>;
-  const result = await startPromise;
-  started = true;
-  return result;
-}
-
 /** @internal */
 export class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
   private static allAds: {[s: string]: MobileAd} = {};
@@ -85,10 +74,7 @@ export class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
   protected async init() {
     if (this._inited) return;
 
-    if (!started) {
-      if (startPromise === null) start();
-      await startPromise;
-    }
+    await admob.start();
 
     if (this._init === null) {
       const cls =
