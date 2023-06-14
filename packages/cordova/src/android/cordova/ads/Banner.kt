@@ -320,9 +320,12 @@ class Banner(ctx: ExecuteContext) : AdBase(ctx) {
         private var rootLinearLayout: ViewGroup? = null
         private var screenWidth = 0
         fun destroyParentView() {
-            val vg = getParentView(rootLinearLayout)
-            vg?.removeAllViews()
-            rootLinearLayout = null
+            try {
+                val vg = getParentView(rootLinearLayout)
+                vg?.removeAllViews()
+            } finally {
+                rootLinearLayout = null
+            }
         }
 
         private fun runJustBeforeBeingDrawn(view: View, runnable: Runnable) {
