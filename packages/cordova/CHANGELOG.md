@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.7](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@2.0.0-alpha.6...admob-plus-cordova@2.0.0-alpha.7) (2023-06-14)
+
+
+### Bug Fixes
+
+* **cordova/android:** ignore exception, fix [#588](https://github.com/admob-plus/admob-plus/issues/588) ([e57f1a6](https://github.com/admob-plus/admob-plus/commit/e57f1a6feb39a1894f9370fe2d78a97cad72567b))
+* **cordova/android:** resolve on duplicate start() ([3a3da63](https://github.com/admob-plus/admob-plus/commit/3a3da63ee6294b403362bfdeb79bac949f222343))
+
+
+
+
+
 # [2.0.0-alpha.6](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@2.0.0-alpha.5...admob-plus-cordova@2.0.0-alpha.6) (2023-06-12)
 
 **Note:** Version bump only for package admob-plus-cordova

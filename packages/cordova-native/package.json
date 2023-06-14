@@ -1,6 +1,6 @@
 {
   "name": "admob-plus-cordova-native",
-  "version": "1.0.0-alpha.7",
+  "version": "1.0.0-alpha.8",
   "description": "Cordova Plugin for AdMob Plus Native Ad",
   "main": "lib/index.js",
   "types": "esm/index.d.ts",
@@ -12,7 +12,7 @@
     "test": "tsc --noEmit"
   },
   "dependencies": {
-    "admob-plus-cordova": "^2.0.0-alpha.6"
+    "admob-plus-cordova": "^2.0.0-alpha.7"
   },
   "devDependencies": {
     "@types/cordova": "^11.0.0",
