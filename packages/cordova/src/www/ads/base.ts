@@ -9,10 +9,12 @@ export type MobileAdOptions = {
   npa?: '1';
 };
 
+interface MyWindow extends Window {
+  admobAds?: Record<string, MobileAd>;
+}
+
 /** @internal */
 export class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
-  private static allAds: {[s: string]: MobileAd} = {};
-
   public readonly id: string;
 
   protected readonly opts: T;
@@ -23,6 +25,12 @@ export class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
 
     this.id = opts.id ?? opts.adUnitId;
     MobileAd.allAds[this.id] = this;
+  }
+
+  private static get allAds() {
+    const win: MyWindow = window;
+    if (typeof win.admobAds === 'undefined') win.admobAds = {};
+    return win.admobAds;
   }
 
   public static getAdById(id: string) {
