@@ -46,7 +46,7 @@ importers:
         version: 17.6.5
       '@commitlint/config-lerna-scopes':
         specifier: ^17.6.3
-        version: 17.6.3(lerna@7.0.1)
+        version: 17.6.3(lerna@7.0.2)
       '@commitlint/prompt-cli':
         specifier: ^17.6.5
         version: 17.6.5
@@ -105,8 +105,8 @@ importers:
         specifier: ^29.5.0
         version: 29.5.0
       lerna:
-        specifier: ^7.0.1
-        version: 7.0.1
+        specifier: ^7.0.2
+        version: 7.0.2
       lint-staged:
         specifier: ^13.2.2
         version: 13.2.2
@@ -6665,7 +6665,7 @@ packages:
       conventional-changelog-conventionalcommits: 5.0.0
     dev: true
 
-  /@commitlint/config-lerna-scopes@17.6.3(lerna@7.0.1):
+  /@commitlint/config-lerna-scopes@17.6.3(lerna@7.0.2):
     resolution: {integrity: sha512-mjT+cvc/aOOV2hH9UDOD4uT25MUqjFg1dFV+ol1w2ESv/VwLZEMUpQ+DPMkOlaH/et8c7BIaEZYyKByoNO9Ukw==}
     engines: {node: '>=v14'}
     peerDependencies:
@@ -6677,7 +6677,7 @@ packages:
       '@lerna/project': 6.0.3
       glob: 8.0.3
       import-from: 4.0.0
-      lerna: 7.0.1
+      lerna: 7.0.2
       semver: 7.5.0
     dev: true
 
@@ -9256,8 +9256,8 @@ packages:
   /@leichtgewicht/ip-codec@2.0.4:
     resolution: {integrity: sha512-Hcv+nVC0kZnQ3tD9GVu5xSMR4VVYOteQIr/hwFPVEvPdlXqgGEuRjiheChHgdM+JyqdgNcmzZOX/tnl0JOiI7A==}
 
-  /@lerna/child-process@7.0.1:
-    resolution: {integrity: sha512-lov3hXcX+g76fjQ5kg6+QdffL6kFw/aH3sG7NGk61mZfsWCDum9kcp9biqIRAmD6xJbrQsr1i0i9YeCMnHJ6pA==}
+  /@lerna/child-process@7.0.2:
+    resolution: {integrity: sha512-15lMrNBL/pvREMJPSfIPieaBtyyapDco/TNjALLEL53JGzO9g8rj5PipfE9h5ILx8aq/GaP17XCh209aVCun/w==}
     engines: {node: ^14.17.0 || >=16.0.0}
     dependencies:
       chalk: 4.1.2
@@ -9265,11 +9265,11 @@ packages:
       strong-log-transformer: 2.1.0
     dev: true
 
-  /@lerna/create@7.0.1:
-    resolution: {integrity: sha512-vv9gtbrn/gBwQLdDlUeatO3uY58nxMktv9h9/5GEFcBesV9MAeQ0zRz8zkr2C0DX/m25lE+J5KTzJqZtMb03kw==}
+  /@lerna/create@7.0.2:
+    resolution: {integrity: sha512-1arGpEpWbWmci1MyaGKvP2SqCAPFWpLqZp0swckianX1kx1mso9B16BWFvcHhU57zCD0Co/z+jX+02UEzZGP7Q==}
     engines: {node: ^14.17.0 || >=16.0.0}
     dependencies:
-      '@lerna/child-process': 7.0.1
+      '@lerna/child-process': 7.0.2
       dedent: 0.7.0
       fs-extra: 11.1.1
       init-package-json: 5.0.0
@@ -23776,13 +23776,13 @@ packages:
       - supports-color
     dev: true
 
-  /lerna@7.0.1:
-    resolution: {integrity: sha512-kX279o8N/L2URwoR3Pf4TdIl5P8G443qAFy095ZD+Vu1tOMo8U6xOc221EgHoMuYhdqlT3f0vgn5bMMr/xNYhQ==}
+  /lerna@7.0.2:
+    resolution: {integrity: sha512-omFpf1pTiaObC2YOC7K+euaDwhQA9CyKN1kXxmlSwaSkh8b8QTs4SC8jp3oNeXfcHpVS1ttuuz98AvQvJD46wA==}
     engines: {node: ^14.17.0 || >=16.0.0}
     hasBin: true
     dependencies:
-      '@lerna/child-process': 7.0.1
-      '@lerna/create': 7.0.1
+      '@lerna/child-process': 7.0.2
+      '@lerna/create': 7.0.2
       '@npmcli/run-script': 6.0.2
       '@nx/devkit': 16.3.2(nx@16.3.2)
       '@octokit/plugin-enterprise-rest': 6.0.1
@@ -32943,7 +32943,7 @@ packages:
     hasBin: true
     dependencies:
       duplexer: 0.1.2
-      minimist: 1.2.6
+      minimist: 1.2.8
       through: 2.3.8
     dev: true
 
