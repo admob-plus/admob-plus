@@ -4,13 +4,12 @@
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
-    "start": "npm run gen && docusaurus start",
+    "start": "docusaurus start",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "serve": "docusaurus serve",
-    "favicon": "convert static/img/logo.png -define icon:auto-resize=64,48,32,16 static/img/favicon.ico",
-    "gen": "ts-node -TH scripts/gen.ts"
+    "favicon": "convert static/img/logo.png -define icon:auto-resize=64,48,32,16 static/img/favicon.ico"
   },
   "dependencies": {
     "@docusaurus/core": "2.4.1",
@@ -24,15 +23,11 @@
     "@docusaurus/module-type-aliases": "2.4.1",
     "@docusaurus/plugin-content-docs": "^2.4.1",
     "@tsconfig/docusaurus": "^1.0.7",
-    "@types/node": "^20.2.5",
-    "@types/react": "^18.2.9",
+    "@types/react": "^18.2.12",
     "@types/react-helmet": "^6.1.6",
     "@types/react-router-dom": "^5.3.3",
-    "cordova-common": "^5.0.0",
     "docusaurus-plugin-typedoc": "~0.19.2",
     "markdown-magic": "^2.6.1",
-    "replace-in-file": "^7.0.1",
-    "ts-node": "^10.9.1",
     "typedoc": "~0.24.8",
     "typedoc-plugin-markdown": "~3.15.3",
     "typescript": "~5.1.3"
