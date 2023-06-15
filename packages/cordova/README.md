@@ -14,6 +14,17 @@ AdMob Plus Cordova is the successor of [cordova-plugin-admob-free](https://githu
 
 You can find the documentation [on the website](https://admob-plus.github.io/docs/cordova).
 
+## Features
+
+- App Open Ads
+- Banner Ads
+- Interstitial Ads
+- Rewarded Ads
+- Rewarded Interstitial Ads
+- [Native Ads](https://www.npmjs.com/package/admob-plus-cordova-native)
+- [WebView Ads](https://www.npmjs.com/package/admob-plus-cordova-webview-ad)
+- [User Consent](https://www.npmjs.com/package/cordova-plugin-consent)
+
 ## Compare to other projects
 
 |              Project              |  No Ad-Sharing  |    Fully Open Sourced     |        No Remote Control        |

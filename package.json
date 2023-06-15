@@ -17,7 +17,6 @@
     "//test-ios:testbed": "cordova-testbed --platform ios --plugin packages/cordova --build-only"
   },
   "devDependencies": {
-    "admob-plus": "workspace:*",
     "@admob-plus-internal/cli": "workspace:*",
     "@admob-plus-internal/tsconfig": "workspace:*",
     "@commitlint/cli": "^17.6.5",
@@ -30,10 +29,12 @@
     "@nrwl/workspace": "16.3.2",
     "@types/jest": "^29.5.2",
     "@types/node": "^20.3.1",
+    "admob-plus": "workspace:*",
     "cordova": "12.0.0",
     "cordova-plus": "^0.9.2",
     "cordova-testbed": "^0.8.0",
     "del-cli": "^5.0.0",
+    "escalade": "^3.1.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.1",
     "gts": "^4.0.1",
