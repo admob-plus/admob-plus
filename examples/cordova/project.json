@@ -1,0 +1,29 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "targets": {
+    "test-android": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "cordova platform rm ios || true",
+          "cordova platform rm browser || true",
+          "cordova prepare"
+        ],
+        "cwd": "examples/cordova",
+        "parallel": false
+      }
+    },
+    "test-ios": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "cordova platform rm android || true",
+          "cordova platform rm browser || true",
+          "cordova prepare"
+        ],
+        "cwd": "examples/cordova",
+        "parallel": false
+      }
+    }
+  }
+}

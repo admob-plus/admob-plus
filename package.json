@@ -10,9 +10,9 @@
     "fmt": "cordova-plus fmt examples/{cordova,cordova-consent,ionic-angular,ionic3,playground}",
     "lint": "gts lint",
     "gen": "nx gen internal-cli",
-    "test-android": "run-s 'test-android:*'",
+    "test-android": "lerna run test-android",
     "//test-android:testbed": "cordova-testbed --platform android --plugin packages/cordova --build-only",
-    "test-ios": "run-s 'test-ios:*'",
+    "test-ios": "lerna run test-ios",
     "test-ios:lint": "node-swiftlint --path packages/cordova/src/ios",
     "//test-ios:testbed": "cordova-testbed --platform ios --plugin packages/cordova --build-only"
   },

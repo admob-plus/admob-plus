@@ -83,19 +83,13 @@ jobs:
           echo "/usr/local/lib/android/sdk/platform-tools" >> $GITHUB_PATH
           echo "/usr/local/lib/android/sdk/tools" >> $GITHUB_PATH
           pnpm i || pnpm i --no-frozen-lockfile
-          pushd examples/cordova
-          npx cordova platform rm ios || true
-          npx cordova platform rm browser || true
-          npx cordova prepare
-          popd
 
       - name: Test
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: 28
           script: |
-            cd examples/cordova
-            # npm test
+            pnpm test-android
 
   test-ios:
     name: iOS on ${{ matrix.os }}
@@ -120,25 +114,10 @@ jobs:
       - name: Install dependencies
         run: |
           pnpm i || pnpm i --no-frozen-lockfile
-          pushd examples/cordova
-          pnpm i -D npm@6
-          npx cordova platform rm android || true
-          npx cordova platform rm browser || true
-          npx cordova prepare
-          popd
-          pushd examples/ionic3
-          # pnpm i
-          popd
 
       - name: Test
         run: |
-          npm run test-ios
-          pushd examples/cordova
-          # npm run test:ios
-          popd
-          pushd examples/ionic3
-          # npm run build --prod
-          popd
+          pnpm test-ios
 
   link-checker:
     name: Check links
