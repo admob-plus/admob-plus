@@ -3,32 +3,15 @@
   "name": "example.admob.basic",
   "displayName": "AdmobBasicExample",
   "version": "0.16.15",
-  "dependencies": {
+  "devDependencies": {
     "admob-plus-cordova": "../../packages/cordova",
     "admob-plus-cordova-native": "../../packages/cordova-native",
     "cordova-android": "12.0.0",
     "cordova-browser": "7.0.0",
-    "cordova-ios": "6.3.0"
-  },
-  "devDependencies": {
-    "@admob-plus-internal/cli": "workspace:*",
+    "cordova-ios": "6.3.0",
     "@admob-plus-internal/npm-bin": "workspace:*",
-    "@types/cordova": "^11.0.0",
-    "@types/fs-extra": "^11.0.1",
-    "admob-plus": "workspace:*",
-    "appium": "^1.22.3",
-    "appium-android-driver": "^5.13.2",
-    "appium-doctor": "^1.16.2",
-    "appium-uiautomator2-driver": "^2.25.1",
     "cordova": "^12.0.0",
-    "cordova-plus": "^0.8.1",
-    "execa": "^5.0.0",
-    "fs-extra": "^11.1.1",
-    "get-port": "^6.1.2",
-    "kill-port-process": "^3.1.0",
-    "port-ready": "^0.1.0",
-    "ts-node": "^10.9.1",
-    "webdriverio": "^8.10.5"
+    "cordova-plus": "^0.9.2"
   },
   "cordova": {
     "platforms": [

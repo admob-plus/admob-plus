@@ -17,6 +17,7 @@
     "//test-ios:testbed": "cordova-testbed --platform ios --plugin packages/cordova --build-only"
   },
   "devDependencies": {
+    "admob-plus": "workspace:*",
     "@admob-plus-internal/cli": "workspace:*",
     "@admob-plus-internal/tsconfig": "workspace:*",
     "@commitlint/cli": "^17.6.5",
