@@ -2,38 +2,46 @@ import {Events} from '../../packages/cordova/src/www/common';
 import {getUnionTypeValues, renderKotlinConstants, warnMessage} from './common';
 import path from 'node:path';
 
-function buildKotlin(pkgDir: string) {
-  const filePath = path.join(pkgDir, 'src/www/common.ts');
+class Generator {
+  constructor(private rootDir: string) {}
 
-  const linesActions = renderKotlinConstants(
-    getUnionTypeValues(filePath, 'CordovaAction').reduce(
+  pkgDir(...args: string[]) {
+    return path.join(this.rootDir, 'packages/cordova', ...args);
+  }
+
+  get cordovaActions() {
+    const filePath = this.pkgDir('src/www/common.ts');
+    return getUnionTypeValues(filePath, 'CordovaAction').reduce(
       (acc, cur) => ({
         ...acc,
         [cur]: cur,
       }),
       {}
-    )
-  );
-  const linesEvents = renderKotlinConstants(Events);
+    );
+  }
 
-  return `// ${warnMessage}
-package admob.plus.cordova
+  buildKotlin() {
+    const linesActions = renderKotlinConstants(this.cordovaActions);
+    const linesEvents = renderKotlinConstants(Events);
 
-object Actions {
-${linesActions}
+    return `// ${warnMessage}
+  package admob.plus.cordova
+
+  object Actions {
+  ${linesActions}
+  }
+
+  object Events {
+  ${linesEvents}
+  }
+  `;
+  }
+
+  async files() {
+    return {
+      [this.pkgDir('src/android/cordova/Generated.kt')]: this.buildKotlin(),
+    };
+  }
 }
 
-object Events {
-${linesEvents}
-}
-`;
-}
-
-export default async (rootDir: string) => {
-  const pkgDir = path.join(rootDir, 'packages/cordova');
-
-  return {
-    [path.join(pkgDir, 'src/android/cordova/Generated.kt')]:
-      buildKotlin(pkgDir),
-  };
-};
+export default Generator;
