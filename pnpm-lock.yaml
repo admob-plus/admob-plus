@@ -1145,8 +1145,8 @@ importers:
   scripts:
     dependencies:
       '@pnpm/find-workspace-dir':
-        specifier: ^6.0.1
-        version: 6.0.1
+        specifier: ^6.0.2
+        version: 6.0.2
       lodash:
         specifier: ^4.17.21
         version: 4.17.21
@@ -10278,23 +10278,23 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@pnpm/constants@7.1.0:
-    resolution: {integrity: sha512-PzpiPtGF+bIrmkNaHgOIfBZw669+rkUtt/5UFzHukiETwI4/+BTYz8FAr+m5Dfuns531Y+fYRFOpB0PdbAU0+w==}
+  /@pnpm/constants@7.1.1:
+    resolution: {integrity: sha512-31pZqMtjwV+Vaq7MaPrT1EoDFSYwye3dp6BiHIGRJmVThCQwySRKM7hCvqqI94epNkqFAAYoWrNynWoRYosGdw==}
     engines: {node: '>=16.14'}
     dev: false
 
-  /@pnpm/error@5.0.1:
-    resolution: {integrity: sha512-JQSOeSEqrV6k6+kKgrlSJ7gddJRcjxtNCxSVJRIqwckkGSdSTNpXmKEdGgLlaDuEwElPAZUmLDGSqk5InJ5pMA==}
+  /@pnpm/error@5.0.2:
+    resolution: {integrity: sha512-0TEm+tWNYm+9uh6DSKyRbv8pv/6b4NL0PastLvMxIoqZbBZ5Zj1cYi332R9xsSUi31ZOsu2wpgn/bC7DA9hrjg==}
     engines: {node: '>=16.14'}
     dependencies:
-      '@pnpm/constants': 7.1.0
+      '@pnpm/constants': 7.1.1
     dev: false
 
-  /@pnpm/find-workspace-dir@6.0.1:
-    resolution: {integrity: sha512-cwTNob36N6HEc3CntFsLjNGpB+xt+mKClMNi/wi8VirsvLsCBOWjlHD7mSobX2++GnFv0U2yLjms+YyXhBgHsQ==}
+  /@pnpm/find-workspace-dir@6.0.2:
+    resolution: {integrity: sha512-JSrpQUFCs4vY1D5tOmj7qBb+oE2j/lO6341giEdUpvYf3FijY8CY13l8rPjfHV2y3m//utzl0An+q+qx14S6Nw==}
     engines: {node: '>=16.14'}
     dependencies:
-      '@pnpm/error': 5.0.1
+      '@pnpm/error': 5.0.2
       find-up: 5.0.0
     dev: false
 
@@ -11742,7 +11742,7 @@ packages:
       eslint: 7.32.0
       functional-red-black-tree: 1.0.1
       regexpp: 3.2.0
-      semver: 7.3.7
+      semver: 7.5.1
       tsutils: 3.21.0(typescript@5.1.3)
       typescript: 5.1.3
     transitivePeerDependencies:

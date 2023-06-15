@@ -8,26 +8,11 @@ const AdMob = {
   adLoad() {},
   adShow() {},
   bannerConfig() {},
-  bannerHide() {},
-  bannerLoad() {},
-  bannerShow() {},
-  configRequest() {},
   configure() {},
-  interstitialIsLoaded() {},
-  interstitialLoad() {},
-  interstitialShow() {},
   ready() {},
-  requestTrackingAuthorization() {},
-  rewardedInterstitialIsLoaded() {},
-  rewardedInterstitialLoad() {},
-  rewardedInterstitialShow() {},
-  rewardedIsLoaded() {},
-  rewardedLoad() {},
-  rewardedShow() {},
-  setAppMuted() {},
-  setAppVolume() {},
   start() {},
+  webviewGoto() {},
 };
 
-// eslint-disable-next-line node/no-missing-require
+// eslint-disable-next-line
 require('cordova/exec/proxy').add('AdMob', AdMob);

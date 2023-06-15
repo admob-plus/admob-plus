@@ -25,21 +25,40 @@ class Generator {
     const linesEvents = renderKotlinConstants(Events);
 
     return `// ${warnMessage}
-  package admob.plus.cordova
+package admob.plus.cordova
 
-  object Actions {
-  ${linesActions}
+object Actions {
+${linesActions}
+}
+
+object Events {
+${linesEvents}
+}
+`;
   }
 
-  object Events {
-  ${linesEvents}
-  }
-  `;
+  buildProxyJs() {
+    const linesActions = Object.entries(this.cordovaActions)
+      .map(([k, v]) => `  ${k}() {},`)
+      .sort()
+      .join('\n');
+
+    return `// ${warnMessage}
+'use strict';
+
+const AdMob = {
+${linesActions}
+};
+
+// eslint-disable-next-line
+require('cordova/exec/proxy').add('AdMob', AdMob);
+`;
   }
 
   async files() {
     return {
       [this.pkgDir('src/android/cordova/Generated.kt')]: this.buildKotlin(),
+      [this.pkgDir('src/browser/AdMobProxy.js')]: this.buildProxyJs(),
     };
   }
 }

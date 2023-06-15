@@ -1,7 +1,10 @@
 {
   "private": true,
+  "scripts": {
+    "gen": "tsx gen/index.ts"
+  },
   "dependencies": {
-    "@pnpm/find-workspace-dir": "^6.0.1",
+    "@pnpm/find-workspace-dir": "^6.0.2",
     "lodash": "^4.17.21",
     "typescript": "^5.1.3"
   },
