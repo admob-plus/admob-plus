@@ -1,4 +1,4 @@
-import escalade from 'escalade';
+import findUp from 'find-up';
 import fse from 'fs-extra';
 import * as path from 'path';
 import {PackageJson as PackageJsonBase} from 'types-package-json';
@@ -24,11 +24,8 @@ async function findPackageJson(opts?: Options) {
     return filename;
   }
   if (opts?.searchParents) {
-    const result = await escalade(
-      cwd,
-      (_dir: string, names: string[]) => names.includes(fileName) && fileName
-    );
-    if (result) return result;
+    const result = await findUp(fileName, {cwd});
+    return result;
   }
 }
 

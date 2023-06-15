@@ -83,9 +83,6 @@ importers:
       del-cli:
         specifier: ^5.0.0
         version: 5.0.0
-      escalade:
-        specifier: ^3.1.1
-        version: 3.1.1
       eslint-plugin-react-hooks:
         specifier: ^4.6.0
         version: 4.6.0(eslint@8.42.0)
@@ -1101,9 +1098,9 @@ importers:
 
   packages/pkg-proxy:
     dependencies:
-      escalade:
-        specifier: ^3.1.1
-        version: 3.1.1
+      find-up:
+        specifier: ^5.0.0
+        version: 5.0.0
       fs-extra:
         specifier: ^11.1.1
         version: 11.1.1
@@ -1111,6 +1108,9 @@ importers:
         specifier: ^2.0.39
         version: 2.0.39
     devDependencies:
+      '@tsconfig/node16':
+        specifier: ^1.0.4
+        version: 1.0.4
       '@types/fs-extra':
         specifier: ^11.0.1
         version: 11.0.1

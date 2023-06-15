@@ -1,12 +1,13 @@
 {
-  "extends": "@admob-plus-internal/tsconfig",
+  "extends": "@tsconfig/node16",
   "compilerOptions": {
-    "moduleResolution": "node",
+    "composite": true,
     "module": "esnext",
+    "moduleResolution": "node16",
+    "noImplicitAny": false,
     "outDir": "lib",
     "rootDir": "src",
-    "target": "esnext",
-    "allowSyntheticDefaultImports": true
+    "target": "esnext"
   },
   "include": ["src/**/*"]
 }
