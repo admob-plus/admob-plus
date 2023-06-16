@@ -1,14 +1,14 @@
 {
   "name": "@admob-plus-internal/npm-bin",
   "version": "1.0.0",
-  "private": false,
+  "private": true,
   "type": "module",
   "bin": {
     "npm": "./lib/npm.js"
   },
   "scripts": {
-    "prepack": "nx build",
-    "build": "tsc -b"
+    "prepare": "nx build",
+    "build": "tsc -b && echo"
   },
   "dependencies": {
     "execa": "^7.1.1",

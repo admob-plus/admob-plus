@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import {execa} from 'execa';
 import findCacheDir from 'find-cache-dir';
 import path from 'node:path';

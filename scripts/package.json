@@ -1,4 +1,6 @@
 {
+  "name": "@admob-plus-internal/scripts",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "gen": "tsx gen/index.ts"

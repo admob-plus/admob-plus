@@ -5,7 +5,7 @@
   "scripts": {
     "postinstall": "is-ci || simple-git-hooks",
     "prepublishOnly": "nx build .",
-    "clean": "del '*.tsbuildinfo' 'packages/*/*.tsbuildinfo'",
+    "clean": "del '*.tsbuildinfo' 'packages/*.tsbuildinfo' 'packages/*/*.tsbuildinfo'",
     "test": "nx test .",
     "fmt": "cordova-plus fmt examples/{cordova,cordova-consent,ionic-angular,ionic3,playground}",
     "lint": "gts lint",
@@ -18,6 +18,7 @@
   },
   "devDependencies": {
     "@admob-plus-internal/cli": "workspace:*",
+    "@admob-plus-internal/npm-bin": "workspace:*",
     "@admob-plus-internal/tsconfig": "workspace:*",
     "@commitlint/cli": "^17.6.5",
     "@commitlint/config-conventional": "^17.6.5",
@@ -103,12 +104,5 @@
       "node-sass": "8.0.0",
       "sharp": "0.32.1"
     }
-  },
-  "workspaces": [
-    "examples/*",
-    "internal/*",
-    "packages/*",
-    "scripts",
-    "website"
-  ]
+  }
 }
