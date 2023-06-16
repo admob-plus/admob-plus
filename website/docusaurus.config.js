@@ -1,19 +1,21 @@
-const versions = require('./versions.json')
+// @ts-check
+const versions = require('./versions.json');
 
 const allDocHomesPaths = [
   '/docs/',
   '/docs/next/',
-  ...versions.slice(1).map((version) => `/docs/${version}/`),
-]
+  ...versions.slice(1).map(version => `/docs/${version}/`),
+];
 
 const typedocConfig = {
   readme: 'none',
   sidebar: {
     sidebarFile: null,
   },
-}
+};
 
-module.exports = {
+/** @type {import('@docusaurus/types').Config} */
+const config = {
   title: 'AdMob Plus',
   tagline: 'Trustable AdMob Plugin for Cordova, Capacitor, Ionic',
   url: 'https://admob-plus.github.io',
@@ -23,7 +25,6 @@ module.exports = {
   organizationName: 'admob-plus',
   projectName: 'admob-plus.github.io',
   trailingSlash: false,
-  onBrokenLinks: 'warn',
   themeConfig: {
     colorMode: {
       respectPrefersColorScheme: true,
@@ -44,8 +45,8 @@ module.exports = {
           label: 'Docs',
           position: 'left',
         },
-        { to: 'blog', label: 'Blog', position: 'left' },
-        { to: 'users', label: 'Users', position: 'left' },
+        {to: 'blog', label: 'Blog', position: 'left'},
+        {to: 'users', label: 'Users', position: 'left'},
         {
           type: 'docsVersionDropdown',
           position: 'right',
@@ -57,7 +58,7 @@ module.exports = {
             },
           ],
         },
-        { to: 'funding', label: 'Funding', position: 'right' },
+        {to: 'funding', label: 'Funding', position: 'right'},
         {
           href: 'https://github.com/admob-plus/admob-plus',
           label: 'GitHub',
@@ -159,7 +160,8 @@ module.exports = {
   presets: [
     [
       '@docusaurus/preset-classic',
-      {
+      /** @type {import('@docusaurus/preset-classic').Options} */
+      ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
@@ -174,7 +176,9 @@ module.exports = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
-      },
+      }),
     ],
   ],
-}
+};
+
+module.exports = config;

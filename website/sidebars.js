@@ -1,4 +1,7 @@
-module.exports = {
+// @ts-check
+
+/** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
+const config = {
   docs: [
     'index',
     {
@@ -101,3 +104,5 @@ module.exports = {
     'troubleshooting',
   ],
 };
+
+module.exports = config;
