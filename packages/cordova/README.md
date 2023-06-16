@@ -52,10 +52,10 @@ Click ❌ to see the detail.
 [p4-remote1]: https://github.com/sunnycupertino/cordova-plugin-admob-simple/blob/f7cc64e9e018f2146b2735b5ae8d3b780fa24f72/src/android/AdMob.java#L728
 [p5]: https://www.npmjs.com/package/cordova-plugin-admobpro
 [p5-share]: https://github.com/floatinghotpot/cordova-admob-pro/wiki/License-Agreement#2-win-win-partnership
-[p5-bin1]: https://github.com/floatinghotpot/cordova-extension/blob/master/src/android/cordova-generic-ad.jar
-[p5-bin2]: https://github.com/floatinghotpot/cordova-extension/blob/master/src/ios/libCordovaGenericAd.a
-[p5-remote1]: https://github.com/floatinghotpot/cordova-admob-pro/issues/326
-[p5-remote2]: https://github.com/floatinghotpot/cordova-admob-pro/issues/450
+[p5-bin1]: https://unpkg.com/browse/cordova-plugin-extension@1.6.0/src/android/CordovaAd.jar
+[p5-bin2]: https://unpkg.com/browse/cordova-plugin-extension@1.6.0/src/ios/libCordovaAd.a
+[p5-remote1]: https://github.com/floatinghotpot/cordova-admob-pro/pull/658
+[p5-remote2]: https://github.com/ratson/cordova-plugin-admob-free/issues/354
 [p6]: https://www.npmjs.com/package/cordova-plugin-ads
 [p6-share]: https://github.com/cozycodegh/cordova-plugin-ads/blob/3d8f14ac02a8a7bad0ab4b472e6b776640f88c15/www/ads.js#L32
 
