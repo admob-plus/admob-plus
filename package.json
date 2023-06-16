@@ -87,7 +87,7 @@
     "pre-commit": "npx lint-staged",
     "pre-push": "npx nx jest ."
   },
-  "packageManager": "pnpm@8.6.0",
+  "packageManager": "pnpm@8.6.1",
   "pnpm": {
     "neverBuiltDependencies": [
       "appium-chromedriver",
@@ -99,7 +99,7 @@
     "overrides": {
       "@admob-plus-internal/cli": "link:./internal/cli",
       "@types/node": "^20.2.5",
-      "@types/react": "18.2.11",
+      "@types/react": "^18.2.12",
       "node-sass": "8.0.0",
       "sharp": "0.32.1"
     }
@@ -108,6 +108,7 @@
     "examples/*",
     "internal/*",
     "packages/*",
+    "scripts",
     "website"
   ]
 }

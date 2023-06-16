@@ -7,7 +7,7 @@
         "commands": [
           "cordova platform rm ios || true",
           "cordova platform rm browser || true",
-          "cordova prepare || true"
+          "cordova prepare --verbose || true"
         ],
         "cwd": "examples/cordova",
         "parallel": false
@@ -19,7 +19,7 @@
         "commands": [
           "cordova platform rm android || true",
           "cordova platform rm browser || true",
-          "cordova prepare || true"
+          "cordova prepare --verbose || true"
         ],
         "cwd": "examples/cordova",
         "parallel": false

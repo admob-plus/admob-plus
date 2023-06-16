@@ -83,6 +83,10 @@ jobs:
           echo "/usr/local/lib/android/sdk/platform-tools" >> $GITHUB_PATH
           echo "/usr/local/lib/android/sdk/tools" >> $GITHUB_PATH
           pnpm i || pnpm i --no-frozen-lockfile
+          pushd examples/cordova
+          pnpm npm --version
+          popd
+
 
       - name: Test
         uses: reactivecircus/android-emulator-runner@v2
@@ -114,6 +118,9 @@ jobs:
       - name: Install dependencies
         run: |
           pnpm i || pnpm i --no-frozen-lockfile
+          pushd examples/cordova
+          pnpm npm --version
+          popd
 
       - name: Test
         run: |
