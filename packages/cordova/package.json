@@ -1,7 +1,7 @@
 {
   "name": "admob-plus-cordova",
   "version": "2.0.0-alpha.8",
-  "description": "Trustable Google AdMob Cordova Plugin, successor of cordova-plugin-admob-free. Unlike some Cordova AdMob plugins, no ad-sharing, free to use. TypeScript friendly. Compatible with Cordova CLI, Ionic. admob-plus-cordova is one of the most popular Cordova AdMob plugins.",
+  "description": "Trustable Google AdMob Cordova Plugin, successor of cordova-plugin-admob-free. Unlike some Cordova AdMob plugins, no ad-sharing, free to use. TypeScript friendly. Compatible with Ionic. admob-plus-cordova is one of the most popular Cordova AdMob plugins.",
   "main": "lib/index.js",
   "module": "esm/index.js",
   "types": "esm/index.d.ts",
@@ -52,6 +52,13 @@
     "monetization",
     "typescript"
   ],
+  "source": {
+    "coverage": {
+      "include": [
+        "src/www/**/*.ts"
+      ]
+    }
+  },
   "cordova": {
     "id": "admob-plus-cordova",
     "platforms": [
