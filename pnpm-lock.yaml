@@ -2695,11 +2695,11 @@ packages:
     dependencies:
       '@babel/core': 7.14.8
       '@babel/helper-annotate-as-pure': 7.18.6
-      '@babel/helper-environment-visitor': 7.21.5
-      '@babel/helper-function-name': 7.21.0
+      '@babel/helper-environment-visitor': 7.18.9
+      '@babel/helper-function-name': 7.18.9
       '@babel/helper-member-expression-to-functions': 7.18.9
       '@babel/helper-optimise-call-expression': 7.18.6
-      '@babel/helper-replace-supers': 7.21.5
+      '@babel/helper-replace-supers': 7.18.9
       '@babel/helper-split-export-declaration': 7.18.6
     transitivePeerDependencies:
       - supports-color
@@ -2730,11 +2730,11 @@ packages:
     dependencies:
       '@babel/core': 7.21.8
       '@babel/helper-annotate-as-pure': 7.18.6
-      '@babel/helper-environment-visitor': 7.21.5
-      '@babel/helper-function-name': 7.21.0
+      '@babel/helper-environment-visitor': 7.18.9
+      '@babel/helper-function-name': 7.18.9
       '@babel/helper-member-expression-to-functions': 7.18.9
       '@babel/helper-optimise-call-expression': 7.18.6
-      '@babel/helper-replace-supers': 7.21.5
+      '@babel/helper-replace-supers': 7.18.9
       '@babel/helper-split-export-declaration': 7.18.6
     transitivePeerDependencies:
       - supports-color
@@ -5475,7 +5475,7 @@ packages:
     dependencies:
       '@babel/core': 7.14.8
       '@babel/helper-builder-binary-assignment-operator-visitor': 7.18.9
-      '@babel/helper-plugin-utils': 7.21.5
+      '@babel/helper-plugin-utils': 7.18.9
     dev: true
 
   /@babel/plugin-transform-exponentiation-operator@7.18.6(@babel/core@7.18.9):
@@ -5496,7 +5496,7 @@ packages:
     dependencies:
       '@babel/core': 7.21.4
       '@babel/helper-builder-binary-assignment-operator-visitor': 7.18.9
-      '@babel/helper-plugin-utils': 7.21.5
+      '@babel/helper-plugin-utils': 7.18.9
     dev: true
 
   /@babel/plugin-transform-exponentiation-operator@7.18.6(@babel/core@7.21.8):
@@ -5507,7 +5507,7 @@ packages:
     dependencies:
       '@babel/core': 7.21.8
       '@babel/helper-builder-binary-assignment-operator-visitor': 7.18.9
-      '@babel/helper-plugin-utils': 7.21.5
+      '@babel/helper-plugin-utils': 7.18.9
 
   /@babel/plugin-transform-flow-strip-types@7.18.9(@babel/core@7.18.9):
     resolution: {integrity: sha512-+G6rp2zRuOAInY5wcggsx4+QVao1qPM0osC9fTUVlAV3zOrzTCnrMAFVnR6+a3T8wz1wFIH7KhYMcMB3u1n80A==}
@@ -5990,7 +5990,7 @@ packages:
     dependencies:
       '@babel/core': 7.14.8
       '@babel/helper-create-regexp-features-plugin': 7.18.6(@babel/core@7.14.8)
-      '@babel/helper-plugin-utils': 7.21.5
+      '@babel/helper-plugin-utils': 7.18.9
     dev: true
 
   /@babel/plugin-transform-named-capturing-groups-regex@7.18.6(@babel/core@7.18.9):

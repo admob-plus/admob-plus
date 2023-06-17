@@ -76,4 +76,4 @@ This plugin utilizes Google AdMob SDKs to provide support for Cordova applicatio
 
 ## License
 
-AdMob Plus Cordova is [MIT licensed](../../LICENSE).
+AdMob Plus Cordova is [MIT licensed](https://github.com/admob-plus/admob-plus/blob/master/LICENSE).
