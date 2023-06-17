@@ -66,6 +66,14 @@ Click ❌ to see the detail.
 - Open issue for feature requests
 - [Sponsor this project](https://admob-plus.github.io/funding)
 
+## Disclaimer
+
+This is third party software, not a product of Google Inc.
+
+Google AdMob is a trademark of Google, Inc.
+
+This plugin utilizes Google AdMob SDKs to provide support for Cordova applications.
+
 ## License
 
 AdMob Plus Cordova is [MIT licensed](../../LICENSE).

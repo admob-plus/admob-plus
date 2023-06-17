@@ -7,7 +7,7 @@
 
 [**AdMob Plus**](https://admob-plus.github.io) is the successor of [cordova-plugin-admob-free](https://github.com/ratson/cordova-plugin-admob-free), provides a clean API and is built with modern tools.
 
-## Other features
+## Features
 
 - No Ad-Sharing
 - No Remote Control
@@ -30,7 +30,9 @@ You can find the documentation [on the website](https://admob-plus.github.io/doc
 
 ## Disclaimer
 
-This does not affiliate Google, but a community plugin utilize Google AdMob SDKs to provide better developer experience for hybrid applications.
+This is third party software, not a product of Google Inc.
+
+Google AdMob is a trademark of Google, Inc.
 
 ## License
 
