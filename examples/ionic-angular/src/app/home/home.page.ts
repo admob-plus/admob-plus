@@ -1,7 +1,13 @@
-import { AdMob } from '@admob-plus/ionic/ngx';
-import { Component } from '@angular/core';
-import { Platform } from '@ionic/angular';
-import { Events } from 'admob-plus-cordova';
+import {Component} from '@angular/core';
+import {
+  BannerAd,
+  InterstitialAd,
+  RewardedInterstitialAd,
+  NativeAd,
+  RewardedAd,
+  Events,
+} from 'admob-plus-cordova';
+import {Platform} from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -9,12 +15,13 @@ import { Events } from 'admob-plus-cordova';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  constructor(private platform: Platform, private admob: AdMob) {
+  constructor(private platform: Platform) {
+    // document.addEventListener('deviceready', async () => {
     this.platform.ready().then(async () => {
-      await this.admob.start();
+      await admob.start().catch(alert);
 
-      Object.values(Events).forEach((eventName) => {
-        this.admob.on(eventName).subscribe((event) => {
+      Object.values(Events).forEach(eventName => {
+        document.addEventListener(eventName, event => {
           console.log(eventName, JSON.stringify(event));
         });
       });
@@ -22,14 +29,14 @@ export class HomePage {
   }
 
   async showBannerAd() {
-    const banner = new this.admob.BannerAd({
+    const banner = new BannerAd({
       adUnitId: 'ca-app-pub-3940256099942544/6300978111',
     });
     await banner.show();
   }
 
   async showInterstitialAd() {
-    const interstitial = new this.admob.InterstitialAd({
+    const interstitial = new InterstitialAd({
       adUnitId: 'ca-app-pub-3940256099942544/1033173712',
     });
     await interstitial.load();
@@ -37,7 +44,7 @@ export class HomePage {
   }
 
   async showRewardedAd() {
-    const rewarded = new this.admob.RewardedAd({
+    const rewarded = new RewardedAd({
       adUnitId: 'ca-app-pub-3940256099942544/5224354917',
     });
     await rewarded.load();
@@ -45,7 +52,7 @@ export class HomePage {
   }
 
   async showRewardedInterstitialAd() {
-    const rewarded = new this.admob.RewardedInterstitialAd({
+    const rewarded = new RewardedInterstitialAd({
       adUnitId: 'ca-app-pub-3940256099942544/6978759866',
     });
     await rewarded.load();
@@ -53,7 +60,7 @@ export class HomePage {
   }
 
   async showNativeAd() {
-    const ad = new this.admob.NativeAd({
+    const ad = new NativeAd({
       adUnitId: 'ca-app-pub-3940256099942544/3986624511',
     });
 
@@ -66,13 +73,13 @@ export class HomePage {
       height: 300,
     });
 
-    await new Promise((resolve) =>
+    await new Promise(resolve =>
       setTimeout(() => {
         ad.hide();
         resolve(undefined);
       }, 5000)
     );
 
-    await ad.showWith(document.getElementById('native-ad'));
+    await ad.showWith(document.getElementById('native-ad')!);
   }
 }

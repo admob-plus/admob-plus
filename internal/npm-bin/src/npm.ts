@@ -12,14 +12,14 @@ async function main() {
   const transport = pino.transport({
     targets: [
       {
-        level: 'info',
+        level: 'warn',
         target: 'pino-pretty',
         options: {destination: 2},
       },
       {
-        level: 'trace',
+        level: 'debug',
         target: 'pino/file',
-        options: {destination: path.join(cacheDir, 'run.log')},
+        options: {level: 'debug', destination: path.join(cacheDir, 'run.log')},
       },
     ],
   });
@@ -27,7 +27,7 @@ async function main() {
 
   const args = process.argv.slice(2);
 
-  logger.child(process.argv).info('argv');
+  logger.child({argv: process.argv, cwd: process.cwd()}).info('npm command');
 
   if (args.includes('install')) return;
   if (args.indexOf('--no-save') > -1) {
