@@ -4,11 +4,7 @@
     "test-android": {
       "executor": "nx:run-commands",
       "options": {
-        "commands": [
-          "is-ci && cordova platform rm ios || true",
-          "is-ci && cordova platform rm browser || true",
-          "cordova prepare --verbose"
-        ],
+        "command": "cordova prepare android --verbose",
         "cwd": "examples/cordova",
         "parallel": false
       }
@@ -16,11 +12,7 @@
     "test-ios": {
       "executor": "nx:run-commands",
       "options": {
-        "commands": [
-          "is-ci && cordova platform rm android || true",
-          "is-ci && cordova platform rm browser || true",
-          "cordova prepare --verbose"
-        ],
+        "command": "cordova prepare ios --verbose",
         "cwd": "examples/cordova",
         "parallel": false
       }
