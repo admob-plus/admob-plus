@@ -12,4 +12,7 @@
     <platform name="android">
         <preference name="GradlePluginKotlinEnabled" value="true" />
     </platform>
+    <platform name="ios">
+        <preference name="SwiftVersion" value="5.8.1" />
+    </platform>
 </widget>

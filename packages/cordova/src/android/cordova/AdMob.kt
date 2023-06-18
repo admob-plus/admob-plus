@@ -98,8 +98,11 @@ class AdMob : CordovaPlugin() {
         optFloat(ctx.opts, "appVolume")?.let {
             MobileAds.setAppVolume(it)
         }
+        ctx.optBoolean("sameAppKey")?.let {
+            MobileAds.enableSameAppKey(it)
+        }
         MobileAds.setRequestConfiguration(buildRequestConfiguration(ctx.opts))
-        configForTestLabIfNeeded(ctx.activity)
+        configForTestLabIfNeeded(activity)
         ctx.resolve()
     }
 

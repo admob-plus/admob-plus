@@ -43,7 +43,6 @@ type MaxAdContentRating =
 
 export interface RequestConfig {
   maxAdContentRating?: MaxAdContentRating;
-  sameAppKey?: boolean;
   tagForChildDirectedTreatment?: boolean | null;
   tagForUnderAgeOfConsent?: boolean | null;
   testDeviceIds?: string[];
@@ -52,6 +51,7 @@ export interface RequestConfig {
 export interface AdMobConfig extends RequestConfig {
   appMuted?: boolean;
   appVolume?: number;
+  sameAppKey?: boolean;
 }
 
 /** @internal */
