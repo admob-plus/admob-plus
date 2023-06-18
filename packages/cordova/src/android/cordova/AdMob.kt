@@ -8,8 +8,10 @@ import admob.plus.cordova.ads.Rewarded
 import admob.plus.cordova.ads.RewardedInterstitial
 import admob.plus.cordova.ads.WebViewAd
 import admob.plus.cordova.ads.getParentView
+import admob.plus.core.buildRequestConfiguration
 import admob.plus.core.configForTestLabIfNeeded
 import admob.plus.core.isRunningInTestLab
+import admob.plus.core.optFloat
 import android.app.Activity
 import android.content.res.Configuration
 import android.util.Log
@@ -90,7 +92,14 @@ class AdMob : CordovaPlugin() {
     }
 
     private fun executeConfigure(ctx: ExecuteContext) {
-        ctx.configure()
+        ctx.optBoolean("appMuted")?.let {
+            MobileAds.setAppMuted(it)
+        }
+        optFloat(ctx.opts, "appVolume")?.let {
+            MobileAds.setAppVolume(it)
+        }
+        MobileAds.setRequestConfiguration(buildRequestConfiguration(ctx.opts))
+        configForTestLabIfNeeded(ctx.activity)
         ctx.resolve()
     }
 

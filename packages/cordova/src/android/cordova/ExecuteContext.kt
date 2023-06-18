@@ -19,7 +19,7 @@ data class ExecuteContext(
     val callbackContext: CallbackContext,
     val plugin: AdMob,
 ) {
-    private val opts by lazy { args.optJSONObject(0) }
+    val opts: JSONObject by lazy { args.optJSONObject(0) }
 
     val activity: Activity get() = plugin.cordova.activity
 
@@ -54,17 +54,6 @@ data class ExecuteContext(
 
     fun sendResult(result: PluginResult?) {
         callbackContext.sendPluginResult(result)
-    }
-
-    fun configure() {
-        optBoolean("appMuted")?.let {
-            MobileAds.setAppMuted(it)
-        }
-        optFloat(opts, "appVolume")?.let {
-            MobileAds.setAppVolume(it)
-        }
-        MobileAds.setRequestConfiguration(buildRequestConfiguration(opts))
-        configForTestLabIfNeeded(activity)
     }
 
     fun optDouble(name: String, defaultValue: Double): Double {
