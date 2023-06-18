@@ -315,7 +315,7 @@
                 <source url="https://cdn.cocoapods.org/" />
             </config>
             <pods use-frameworks="true">
-                <pod name="Google-Mobile-Ads-SDK" spec="~> 10.5.0" />
+                <pod name="Google-Mobile-Ads-SDK" spec="~> 10.6.0" />
             </pods>
         </podspec>
     </platform>
