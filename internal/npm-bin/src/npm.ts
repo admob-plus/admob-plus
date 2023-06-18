@@ -29,7 +29,7 @@ async function main() {
 
   logger.child({argv: process.argv, cwd: process.cwd()}).info('npm command');
 
-  if (args.includes('install')) return;
+  if (args.includes('install') || args.includes('uninstall')) return;
   if (args.indexOf('--no-save') > -1) {
     args.splice(args.indexOf('--no-save'), 1);
   }
