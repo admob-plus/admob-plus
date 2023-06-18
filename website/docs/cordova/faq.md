@@ -121,7 +121,7 @@ Run `pod repo update` and `cd platforms/ios && pod install --repo-update` to ens
 
 A clean build / remove then re-add the plugin may be necessary.
 
-### Shoud I use Apple’s ATT prompt?
+### Should I use Apple’s ATT prompt?
 
 As part of iOS 14, you may choose to employ the new [AppTrackingTransparency (ATT) framework](https://developer.apple.com/documentation/apptrackingtransparency) by calling `admob.requestTrackingAuthorization()`.
 
@@ -130,3 +130,16 @@ If your app is not using ATT, you need to state that during submission or your a
 > If your app integrates AppTrackingTransparency, please indicate where in your app we can find the AppTrackingTransparency permission request.
 >
 > If your app does not integrate AppTrackingTransparency, please indicate this information in the Review Notes section for each version of your app in App Store Connect when submitting for review.
+
+### How to fix error `Origin null is not allowed by Access-Control-Allow-Origin`?
+
+Add the following to `config.xml`,
+
+```xml
+<preference name="scheme" value="app" />
+<preference name="hostname" value="localhost" />
+```
+
+Or try [`cordova-plugin-wkwebview-file-xhr`](https://www.npmjs.com/package/cordova-plugin-wkwebview-file-xhr).
+
+See [cordova-android#1354](https://github.com/apache/cordova-android/issues/1354#issuecomment-921752541).

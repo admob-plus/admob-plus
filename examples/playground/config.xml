@@ -13,6 +13,8 @@
         <preference name="GradlePluginKotlinEnabled" value="true" />
     </platform>
     <platform name="ios">
+        <preference name="scheme" value="app" />
+        <preference name="hostname" value="localhost" />
         <preference name="SwiftVersion" value="5.8.1" />
     </platform>
 </widget>
