@@ -76,12 +76,10 @@ jobs:
           distribution: temurin
           java-version: '11'
 
-      - uses: gradle/gradle-build-action@v2
+      - uses: gradle/gradle-build-action@v2.4.2
 
       - name: Install dependencies
         run: |
-          echo "/usr/local/lib/android/sdk/platform-tools" >> $GITHUB_PATH
-          echo "/usr/local/lib/android/sdk/tools" >> $GITHUB_PATH
           pnpm i || pnpm i --no-frozen-lockfile
           pnpm npm --version
           pnpm i
