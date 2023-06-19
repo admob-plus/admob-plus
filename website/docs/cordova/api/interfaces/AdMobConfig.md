@@ -20,7 +20,7 @@ custom_edit_url: null
 
 #### Defined in
 
-packages/cordova/src/www/common.ts:53
+packages/cordova/src/www/common.ts:52
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/common.ts:54
+packages/cordova/src/www/common.ts:53
 
 ___
 
@@ -52,13 +52,9 @@ ___
 
 • `Optional` **sameAppKey**: `boolean`
 
-#### Inherited from
-
-[RequestConfig](RequestConfig.md).[sameAppKey](RequestConfig.md#sameappkey)
-
 #### Defined in
 
-packages/cordova/src/www/common.ts:46
+packages/cordova/src/www/common.ts:54
 
 ___
 
@@ -72,7 +68,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/common.ts:47
+packages/cordova/src/www/common.ts:46
 
 ___
 
@@ -86,7 +82,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/common.ts:48
+packages/cordova/src/www/common.ts:47
 
 ___
 
@@ -100,4 +96,4 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/common.ts:49
+packages/cordova/src/www/common.ts:48

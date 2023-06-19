@@ -20,7 +20,7 @@ custom_edit_url: null
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:9
+packages/cordova/src/www/index.ts:8
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:10
+packages/cordova/src/www/index.ts:9
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:17
+packages/cordova/src/www/index.ts:16
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:11
+packages/cordova/src/www/index.ts:10
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:12
+packages/cordova/src/www/index.ts:11
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:13
+packages/cordova/src/www/index.ts:12
 
 ___
 
@@ -80,7 +80,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:14
+packages/cordova/src/www/index.ts:13
 
 ___
 
@@ -90,9 +90,33 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:15
+packages/cordova/src/www/index.ts:14
+
+___
+
+### \_startPromise
+
+• `Private` **\_startPromise**: `undefined` \| `Promise`<{ `version`: `string`  }\>
+
+#### Defined in
+
+packages/cordova/src/www/index.ts:18
 
 ## Methods
+
+### \_start
+
+▸ `Private` **_start**(): `Promise`<{ `version`: `string`  }\>
+
+#### Returns
+
+`Promise`<{ `version`: `string`  }\>
+
+#### Defined in
+
+packages/cordova/src/www/index.ts:28
+
+___
 
 ### configure
 
@@ -110,7 +134,7 @@ packages/cordova/src/www/index.ts:15
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:19
+packages/cordova/src/www/index.ts:20
 
 ___
 
@@ -124,4 +148,4 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:23
+packages/cordova/src/www/index.ts:24

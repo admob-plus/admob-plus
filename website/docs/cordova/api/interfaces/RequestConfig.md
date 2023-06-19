@@ -24,23 +24,13 @@ packages/cordova/src/www/common.ts:45
 
 ___
 
-### sameAppKey
-
-• `Optional` **sameAppKey**: `boolean`
-
-#### Defined in
-
-packages/cordova/src/www/common.ts:46
-
-___
-
 ### tagForChildDirectedTreatment
 
 • `Optional` **tagForChildDirectedTreatment**: ``null`` \| `boolean`
 
 #### Defined in
 
-packages/cordova/src/www/common.ts:47
+packages/cordova/src/www/common.ts:46
 
 ___
 
@@ -50,7 +40,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/common.ts:48
+packages/cordova/src/www/common.ts:47
 
 ___
 
@@ -60,4 +50,4 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/common.ts:49
+packages/cordova/src/www/common.ts:48

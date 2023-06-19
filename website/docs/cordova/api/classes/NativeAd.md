@@ -30,7 +30,7 @@ custom_edit_url: null
 
 #### Defined in
 
-packages/cordova/src/www/ads/base.ts:33
+packages/cordova/src/www/ads/base.ts:23
 
 ## Properties
 
@@ -44,7 +44,7 @@ packages/cordova/src/www/ads/base.ts:33
 
 #### Defined in
 
-packages/cordova/src/www/ads/base.ts:27
+packages/cordova/src/www/ads/base.ts:18
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/base.ts:29
+packages/cordova/src/www/ads/base.ts:20
 
 ___
 
@@ -86,7 +86,25 @@ MobileAd.adUnitId
 
 #### Defined in
 
-packages/cordova/src/www/ads/base.ts:44
+packages/cordova/src/www/ads/base.ts:40
+
+___
+
+### allAds
+
+• `Static` `Private` `get` **allAds**(): `Record`<`string`, [`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../#mobileadoptions)\>\>
+
+#### Returns
+
+`Record`<`string`, [`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../#mobileadoptions)\>\>
+
+#### Inherited from
+
+MobileAd.allAds
+
+#### Defined in
+
+packages/cordova/src/www/ads/base.ts:30
 
 ## Methods
 
@@ -110,11 +128,11 @@ ___
 
 ### init
 
-▸ `Protected` **init**(): `Promise`<`void`\>
+▸ `Protected` **init**(): `Promise`<`unknown`\>
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`<`unknown`\>
 
 #### Inherited from
 
@@ -122,7 +140,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/base.ts:85
+packages/cordova/src/www/ads/base.ts:81
 
 ___
 
@@ -188,7 +206,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/base.ts:48
+packages/cordova/src/www/ads/base.ts:44
 
 ___
 
@@ -256,4 +274,4 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/base.ts:40
+packages/cordova/src/www/ads/base.ts:36

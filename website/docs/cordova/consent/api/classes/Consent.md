@@ -14,17 +14,17 @@ custom_edit_url: null
 
 #### Defined in
 
-index.ts:45
+index.ts:47
 
 ## Properties
 
 ### ConsentStatus
 
-• `Readonly` **ConsentStatus**: typeof `ConsentStatus` = `ConsentStatus`
+• `Readonly` **ConsentStatus**: typeof [`ConsentStatus`](../enums/ConsentStatus.md) = `ConsentStatus`
 
 #### Defined in
 
-index.ts:41
+index.ts:43
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 #### Defined in
 
-index.ts:42
+index.ts:44
 
 ___
 
@@ -44,21 +44,21 @@ ___
 
 #### Defined in
 
-index.ts:43
+index.ts:45
 
 ## Methods
 
 ### getConsentStatus
 
-▸ **getConsentStatus**(): `Promise`<`ConsentStatus`\>
+▸ **getConsentStatus**(): `Promise`<[`ConsentStatus`](../enums/ConsentStatus.md)\>
 
 #### Returns
 
-`Promise`<`ConsentStatus`\>
+`Promise`<[`ConsentStatus`](../enums/ConsentStatus.md)\>
 
 #### Defined in
 
-index.ts:77
+index.ts:79
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 #### Defined in
 
-index.ts:82
+index.ts:84
 
 ___
 
@@ -86,7 +86,7 @@ ___
 
 #### Defined in
 
-index.ts:91
+index.ts:93
 
 ___
 
@@ -106,7 +106,7 @@ ___
 
 #### Defined in
 
-index.ts:87
+index.ts:89
 
 ___
 
@@ -120,7 +120,7 @@ ___
 
 #### Defined in
 
-index.ts:63
+index.ts:65
 
 ___
 
@@ -134,7 +134,7 @@ ___
 
 #### Defined in
 
-index.ts:96
+index.ts:98
 
 ___
 
@@ -148,4 +148,4 @@ ___
 
 #### Defined in
 
-index.ts:49
+index.ts:51

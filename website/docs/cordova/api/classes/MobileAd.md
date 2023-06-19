@@ -50,27 +50,17 @@ custom_edit_url: null
 
 #### Defined in
 
-packages/cordova/src/www/ads/base.ts:33
+packages/cordova/src/www/ads/base.ts:23
 
 ## Properties
 
-### \_init
+### \_initPromise
 
-• `Private` **\_init**: ``null`` \| `Promise`<`unknown`\> = `null`
-
-#### Defined in
-
-packages/cordova/src/www/ads/base.ts:30
-
-___
-
-### \_inited
-
-• `Private` **\_inited**: `boolean` = `false`
+• `Private` **\_initPromise**: `undefined` \| `Promise`<`unknown`\>
 
 #### Defined in
 
-packages/cordova/src/www/ads/base.ts:31
+packages/cordova/src/www/ads/base.ts:21
 
 ___
 
@@ -80,7 +70,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/base.ts:27
+packages/cordova/src/www/ads/base.ts:18
 
 ___
 
@@ -90,21 +80,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/base.ts:29
-
-___
-
-### allAds
-
-▪ `Static` `Private` **allAds**: `Object` = `{}`
-
-#### Index signature
-
-▪ [s: `string`]: [`MobileAd`](MobileAd.md)
-
-#### Defined in
-
-packages/cordova/src/www/ads/base.ts:25
+packages/cordova/src/www/ads/base.ts:20
 
 ## Accessors
 
@@ -118,9 +94,37 @@ packages/cordova/src/www/ads/base.ts:25
 
 #### Defined in
 
-packages/cordova/src/www/ads/base.ts:44
+packages/cordova/src/www/ads/base.ts:40
+
+___
+
+### allAds
+
+• `Static` `Private` `get` **allAds**(): `Record`<`string`, [`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../#mobileadoptions)\>\>
+
+#### Returns
+
+`Record`<`string`, [`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../#mobileadoptions)\>\>
+
+#### Defined in
+
+packages/cordova/src/www/ads/base.ts:30
 
 ## Methods
+
+### \_init
+
+▸ `Private` **_init**(): `Promise`<`unknown`\>
+
+#### Returns
+
+`Promise`<`unknown`\>
+
+#### Defined in
+
+packages/cordova/src/www/ads/base.ts:85
+
+___
 
 ### hide
 
@@ -132,21 +136,21 @@ packages/cordova/src/www/ads/base.ts:44
 
 #### Defined in
 
-packages/cordova/src/www/ads/base.ts:80
+packages/cordova/src/www/ads/base.ts:76
 
 ___
 
 ### init
 
-▸ `Protected` **init**(): `Promise`<`void`\>
+▸ `Protected` **init**(): `Promise`<`unknown`\>
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`<`unknown`\>
 
 #### Defined in
 
-packages/cordova/src/www/ads/base.ts:85
+packages/cordova/src/www/ads/base.ts:81
 
 ___
 
@@ -160,7 +164,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/base.ts:64
+packages/cordova/src/www/ads/base.ts:60
 
 ___
 
@@ -174,7 +178,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/base.ts:69
+packages/cordova/src/www/ads/base.ts:65
 
 ___
 
@@ -200,7 +204,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/base.ts:48
+packages/cordova/src/www/ads/base.ts:44
 
 ___
 
@@ -220,7 +224,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/base.ts:75
+packages/cordova/src/www/ads/base.ts:71
 
 ___
 
@@ -240,4 +244,4 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/base.ts:40
+packages/cordova/src/www/ads/base.ts:36

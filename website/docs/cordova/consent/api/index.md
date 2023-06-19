@@ -8,6 +8,7 @@ custom_edit_url: null
 
 ## Enumerations
 
+- [ConsentStatus](enums/ConsentStatus.md)
 - [DebugGeography](enums/DebugGeography.md)
 - [FormStatus](enums/FormStatus.md)
 - [TrackingAuthorizationStatus](enums/TrackingAuthorizationStatus.md)

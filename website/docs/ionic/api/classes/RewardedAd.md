@@ -34,7 +34,7 @@ IonicNativePlugin.constructor
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:119
+ionic/src/ngx/index.ts:119
 
 ## Properties
 
@@ -44,7 +44,7 @@ packages/ionic/src/ngx/index.ts:119
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:117
+ionic/src/ngx/index.ts:117
 
 ___
 
@@ -58,7 +58,7 @@ IonicNativePlugin.plugin
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:113
+ionic/src/ngx/index.ts:113
 
 ___
 
@@ -72,7 +72,7 @@ IonicNativePlugin.pluginName
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:114
+ionic/src/ngx/index.ts:114
 
 ___
 
@@ -86,7 +86,7 @@ IonicNativePlugin.pluginRef
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:115
+ionic/src/ngx/index.ts:115
 
 ## Accessors
 
@@ -104,7 +104,7 @@ Omit.adUnitId
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:125
+ionic/src/ngx/index.ts:125
 
 ___
 
@@ -122,7 +122,7 @@ Omit.id
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:129
+ionic/src/ngx/index.ts:129
 
 ## Methods
 
@@ -140,7 +140,7 @@ Omit.isLoaded
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:133
+ionic/src/ngx/index.ts:133
 
 ___
 
@@ -158,7 +158,7 @@ Omit.load
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:137
+ionic/src/ngx/index.ts:137
 
 ___
 
@@ -170,7 +170,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `...opts` | [type: string, listener: Function, useCapture?: boolean] |
+| `...opts` | [type: string, listener: EventListenerOrEventListenerObject, options?: boolean \| AddEventListenerOptions] |
 
 #### Returns
 
@@ -188,7 +188,7 @@ Omit.on
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:145
+ionic/src/ngx/index.ts:145
 
 ___
 
@@ -206,4 +206,4 @@ Omit.show
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:141
+ionic/src/ngx/index.ts:141

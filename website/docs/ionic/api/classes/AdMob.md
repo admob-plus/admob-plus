@@ -38,7 +38,7 @@ IonicNativePlugin.platforms
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:266
+ionic/src/ngx/index.ts:266
 
 ___
 
@@ -52,7 +52,7 @@ IonicNativePlugin.plugin
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:267
+ionic/src/ngx/index.ts:267
 
 ___
 
@@ -66,7 +66,7 @@ IonicNativePlugin.pluginName
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:268
+ionic/src/ngx/index.ts:268
 
 ___
 
@@ -80,7 +80,7 @@ IonicNativePlugin.pluginRef
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:269
+ionic/src/ngx/index.ts:269
 
 ___
 
@@ -94,7 +94,7 @@ IonicNativePlugin.repo
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:270
+ionic/src/ngx/index.ts:270
 
 ## Methods
 
@@ -118,7 +118,7 @@ Omit.configure
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:276
+ionic/src/ngx/index.ts:276
 
 ___
 
@@ -138,7 +138,7 @@ ___
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:280
+ionic/src/ngx/index.ts:280
 
 ___
 
@@ -156,4 +156,4 @@ Omit.start
 
 #### Defined in
 
-packages/ionic/src/ngx/index.ts:272
+ionic/src/ngx/index.ts:272
