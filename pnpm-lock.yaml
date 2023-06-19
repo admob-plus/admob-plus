@@ -320,6 +320,9 @@ importers:
       '@ionic/cli':
         specifier: ^7.1.1
         version: 7.1.1
+      '@types/fs-extra':
+        specifier: ^11.0.1
+        version: 11.0.1
       '@types/jasmine':
         specifier: ~4.3.0
         version: 4.3.0
@@ -365,9 +368,15 @@ importers:
       eslint-plugin-prefer-arrow:
         specifier: 1.2.2
         version: 1.2.2(eslint@7.32.0)
+      fs-extra:
+        specifier: ^11.1.1
+        version: 11.1.1
       ios-sim:
         specifier: ^9.0.0
         version: 9.0.0
+      is-ci:
+        specifier: ^3.0.1
+        version: 3.0.1
       jasmine-core:
         specifier: ~4.6.0
         version: 4.6.0
@@ -10217,7 +10226,7 @@ packages:
       '@types/node': 20.2.5
       ansi-escapes: 4.3.2
       chalk: 4.1.2
-      ci-info: 3.3.2
+      ci-info: 3.8.0
       exit: 0.1.2
       graceful-fs: 4.2.11
       jest-changed-files: 29.5.0
@@ -16803,10 +16812,6 @@ packages:
 
   /ci-info@2.0.0:
     resolution: {integrity: sha512-5tK7EtrZ0N+OLFMthtqOj4fI2Jeb88C4CAZPu25LDVUgXJ0A3Js4PMGqrn0JU1W0Mh1/Z8wZzYPxqUrXeBboCQ==}
-
-  /ci-info@3.3.2:
-    resolution: {integrity: sha512-xmDt/QIAdeZ9+nfdPsaBCpMvHNLFiLdjj59qjqn+6iPe6YmHGQ35sBnQ8uslRBXFmXkiZQOJRjvQeoGppoTjjg==}
-    dev: true
 
   /ci-info@3.8.0:
     resolution: {integrity: sha512-eXTggHWSooYhq49F2opQhuHWgzucfF2YgODK4e1566GQs5BIfP30B0oenwBJHfWxAs2fyPB1s7Mg949zLf61Yw==}
