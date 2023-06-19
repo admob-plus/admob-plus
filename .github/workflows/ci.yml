@@ -32,6 +32,7 @@ jobs:
         run: git config --global core.autocrlf input
 
       - uses: actions/checkout@v3
+      - uses: browser-actions/setup-chrome@v1
       - uses: pnpm/action-setup@v2
         with:
           version: latest
