@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.9](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@2.0.0-alpha.8...admob-plus-cordova@2.0.0-alpha.9) (2023-06-20)
+
+
+### Features
+
+* **cordova/android:** allow config sameAppKey ([dc16d80](https://github.com/admob-plus/admob-plus/commit/dc16d8066f944d642b007338f58862b6e8c95612))
+* **cordova/ios:** update Google-Mobile-Ads-SDK to 10.6.0 ([ade3e8a](https://github.com/admob-plus/admob-plus/commit/ade3e8a2cc0fb60e2225f0ea991cf6de8c96d85c))
+
+
+
+
+
 # [2.0.0-alpha.8](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@2.0.0-alpha.7...admob-plus-cordova@2.0.0-alpha.8) (2023-06-17)
 
 **Note:** Version bump only for package admob-plus-cordova
