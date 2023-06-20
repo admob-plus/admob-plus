@@ -1,12 +1,11 @@
 # [AdMob Plus Cordova](https://admob-plus.github.io)
 
-[![NPM version](https://img.shields.io/npm/v/admob-plus-cordova.svg)](https://npmjs.org/package/admob-plus-cordova)
-[![GitHub last commit](https://img.shields.io/github/last-commit/admob-plus/admob-plus)](https://github.com/admob-plus/admob-plus)
-![Dependency status](https://img.shields.io/librariesio/release/npm/admob-plus-cordova)
-[![Package Health](https://snyk.io/advisor/npm-package/admob-plus-cordova/badge.svg)](https://snyk.io/advisor/npm-package/admob-plus-cordova)
-![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/npm/admob-plus-cordova)
-![NPM license](https://img.shields.io/npm/l/admob-plus-cordova)
-
+[![NPM version][b1]][p0]
+[![GitHub last commit][b2]][b2-l]
+![Dependency status][b3]
+[![Package Health][b4]][b4-l]
+![Vulnerabilities][b5]
+[![NPM license][b6]][b6-l]
 
 AdMob Plus Cordova is the successor of [cordova-plugin-admob-free](https://github.com/ratson/cordova-plugin-admob-free), which provides a cleaner API and build with modern tools.
 
@@ -21,9 +20,9 @@ You can find the documentation [on the website](https://admob-plus.github.io/doc
 - Interstitial Ads
 - Rewarded Ads
 - Rewarded Interstitial Ads
-- [Native Ads](https://www.npmjs.com/package/admob-plus-cordova-native)
-- [WebView Ads](https://www.npmjs.com/package/admob-plus-cordova-webview-ad)
-- [User Consent](https://www.npmjs.com/package/cordova-plugin-consent)
+- Native Ads ([admob-plus-cordova-native](https://www.npmjs.com/package/admob-plus-cordova-native))
+- WebView Ads ([admob-plus-cordova-webview-ad](https://www.npmjs.com/package/admob-plus-cordova-webview-ad))
+- User Consent ([cordova-plugin-consent](https://www.npmjs.com/package/cordova-plugin-consent))
 
 ## Compare to other projects
 
@@ -76,4 +75,14 @@ This plugin utilizes Google AdMob SDKs to provide support for Cordova applicatio
 
 ## License
 
-AdMob Plus Cordova is [MIT licensed](https://github.com/admob-plus/admob-plus/blob/master/LICENSE).
+AdMob Plus Cordova is [MIT licensed][b6-l].
+
+[b1]: https://img.shields.io/npm/v/admob-plus-cordova.svg
+[b2]: https://img.shields.io/github/last-commit/admob-plus/admob-plus
+[b2-l]: https://github.com/admob-plus/admob-plus
+[b3]: https://img.shields.io/librariesio/release/npm/admob-plus-cordova
+[b4]: https://snyk.io/advisor/npm-package/admob-plus-cordova/badge.svg
+[b4-l]: https://snyk.io/advisor/npm-package/admob-plus-cordova
+[b5]: https://img.shields.io/snyk/vulnerabilities/npm/admob-plus-cordova
+[b6]: https://img.shields.io/npm/l/admob-plus-cordova
+[b6-l]: https://github.com/admob-plus/admob-plus/blob/master/LICENSE
