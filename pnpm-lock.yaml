@@ -1061,11 +1061,11 @@ importers:
         specifier: ^12.0.0
         version: 12.0.0
       cordova-plus:
-        specifier: ^0.9.2
-        version: 0.9.2(enquirer@2.3.6)
-      typescript:
-        specifier: ~5.1.3
-        version: 5.1.3
+        specifier: ^0.9.4
+        version: 0.9.4(enquirer@2.3.6)
+      tslib:
+        specifier: ^2.5.3
+        version: 2.5.3
 
   packages/cordova-native:
     dependencies:
@@ -10939,7 +10939,7 @@ packages:
       '@npmcli/metavuln-calculator': 5.0.1
       '@npmcli/name-from-folder': 2.0.0
       '@npmcli/node-gyp': 3.0.0
-      '@npmcli/package-json': 3.1.0
+      '@npmcli/package-json': 3.1.1
       '@npmcli/query': 3.0.0
       '@npmcli/run-script': 6.0.2
       bin-links: 4.0.1
@@ -10961,7 +10961,7 @@ packages:
       promise-all-reject-late: 1.0.1
       promise-call-limit: 1.0.2
       read-package-json-fast: 3.0.2
-      semver: 7.5.1
+      semver: 7.5.2
       ssri: 10.0.4
       treeverse: 3.0.0
       walk-up-path: 3.0.1
@@ -10979,7 +10979,7 @@ packages:
       nopt: 5.0.0
       proc-log: 2.0.1
       read-package-json-fast: 2.0.3
-      semver: 7.5.1
+      semver: 7.5.2
       walk-up-path: 1.0.0
     dev: true
 
@@ -10987,20 +10987,20 @@ packages:
     resolution: {integrity: sha512-8KG5RD0GVP4ydEzRn/I4BNDuxDtqVbOdm8675T49OIG/NGhaK0pjPX7ZcDlvKYbA+ulvVK3ztfcF4uBdOxuJbQ==}
     dependencies:
       '@gar/promisify': 1.1.3
-      semver: 7.5.1
+      semver: 7.5.2
 
   /@npmcli/fs@2.1.1:
     resolution: {integrity: sha512-1Q0uzx6c/NVNGszePbr5Gc2riSU1zLpNlo/1YWntH+eaPmMgBssAW0qXofCVkpdj3ce4swZtlDYQu+NKiYcptg==}
     engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
     dependencies:
       '@gar/promisify': 1.1.3
-      semver: 7.5.1
+      semver: 7.5.2
 
   /@npmcli/fs@3.1.0:
     resolution: {integrity: sha512-7kZUAaLscfgbwBQRbvdMYaZOWyMEcPTH/tJjnyAWJ/dvvs9Ef+CERx/qJb9GExJpl1qipaDGn7KqHnFGGixd0w==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
     dependencies:
-      semver: 7.5.1
+      semver: 7.5.2
 
   /@npmcli/git@2.1.0:
     resolution: {integrity: sha512-/hBFX/QG1b+N7PZBFs0bi+evgRZcK9nWBxQKZkGoXUT5hJSwl5c4d7y8/hm+NQZRPhQ67RzFaj5UM9YeyKoryw==}
@@ -11011,7 +11011,7 @@ packages:
       npm-pick-manifest: 6.1.1
       promise-inflight: 1.0.1
       promise-retry: 2.0.1
-      semver: 7.5.1
+      semver: 7.5.2
       which: 2.0.2
     transitivePeerDependencies:
       - bluebird
@@ -11026,7 +11026,22 @@ packages:
       proc-log: 3.0.0
       promise-inflight: 1.0.1
       promise-retry: 2.0.1
-      semver: 7.5.1
+      semver: 7.5.2
+      which: 3.0.1
+    transitivePeerDependencies:
+      - bluebird
+
+  /@npmcli/git@4.1.0:
+    resolution: {integrity: sha512-9hwoB3gStVfa0N31ymBmrX+GuDGdVA/QWShZVqE0HK2Af+7QGGrCTbZia/SW0ImUTjTne7SP91qxDmtXvDHRPQ==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
+    dependencies:
+      '@npmcli/promise-spawn': 6.0.2
+      lru-cache: 7.18.3
+      npm-pick-manifest: 8.0.1
+      proc-log: 3.0.0
+      promise-inflight: 1.0.1
+      promise-retry: 2.0.1
+      semver: 7.5.2
       which: 3.0.1
     transitivePeerDependencies:
       - bluebird
@@ -11073,7 +11088,7 @@ packages:
       cacache: 17.1.3
       json-parse-even-better-errors: 3.0.0
       pacote: 15.2.0
-      semver: 7.5.1
+      semver: 7.5.2
     transitivePeerDependencies:
       - bluebird
       - supports-color
@@ -11117,6 +11132,19 @@ packages:
       json-parse-even-better-errors: 3.0.0
       normalize-package-data: 5.0.0
       npm-normalize-package-bin: 3.0.1
+
+  /@npmcli/package-json@3.1.1:
+    resolution: {integrity: sha512-+UW0UWOYFKCkvszLoTwrYGrjNrT8tI5Ckeb/h+Z1y1fsNJEctl7HmerA5j2FgmoqFaLI2gsA1X9KgMFqx/bRmA==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
+    dependencies:
+      '@npmcli/git': 4.1.0
+      glob: 10.2.5
+      json-parse-even-better-errors: 3.0.0
+      normalize-package-data: 5.0.0
+      npm-normalize-package-bin: 3.0.1
+      proc-log: 3.0.0
+    transitivePeerDependencies:
+      - bluebird
 
   /@npmcli/promise-spawn@1.3.2:
     resolution: {integrity: sha512-QyAGYo/Fbj4MXeGdJcFzZ+FkDkomfRBrPM+9QYJSg+PxgAUL+LU3FneQk37rKR2/zjqkCV1BLHccX98wRXG3Sg==}
@@ -12453,6 +12481,23 @@ packages:
       magic-string: 0.27.0
       rollup: 3.23.0
 
+  /@rollup/plugin-commonjs@25.0.2(rollup@3.25.1):
+    resolution: {integrity: sha512-NGTwaJxIO0klMs+WSFFtBP7b9TdTJ3K76HZkewT8/+yHzMiUGVQgaPtLQxNVYIgT5F7lxkEyVID+yS3K7bhCow==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      rollup: ^2.68.0||^3.0.0
+    peerDependenciesMeta:
+      rollup:
+        optional: true
+    dependencies:
+      '@rollup/pluginutils': 5.0.2(rollup@3.25.1)
+      commondir: 1.0.1
+      estree-walker: 2.0.2
+      glob: 8.1.0
+      is-reference: 1.2.1
+      magic-string: 0.27.0
+      rollup: 3.25.1
+
   /@rollup/plugin-node-resolve@15.1.0(rollup@3.23.0):
     resolution: {integrity: sha512-xeZHCgsiZ9pzYVgAo9580eCGqwh/XCEUM9q6iQfGNocjgkufHAqC3exA+45URvhiYV8sBF9RlBai650eNs7AsA==}
     engines: {node: '>=14.0.0'}
@@ -12469,6 +12514,23 @@ packages:
       is-module: 1.0.0
       resolve: 1.22.2
       rollup: 3.23.0
+
+  /@rollup/plugin-node-resolve@15.1.0(rollup@3.25.1):
+    resolution: {integrity: sha512-xeZHCgsiZ9pzYVgAo9580eCGqwh/XCEUM9q6iQfGNocjgkufHAqC3exA+45URvhiYV8sBF9RlBai650eNs7AsA==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      rollup: ^2.78.0||^3.0.0
+    peerDependenciesMeta:
+      rollup:
+        optional: true
+    dependencies:
+      '@rollup/pluginutils': 5.0.2(rollup@3.25.1)
+      '@types/resolve': 1.20.2
+      deepmerge: 4.2.2
+      is-builtin-module: 3.2.1
+      is-module: 1.0.0
+      resolve: 1.22.2
+      rollup: 3.25.1
 
   /@rollup/plugin-typescript@11.1.1(rollup@3.23.0)(tslib@2.5.3)(typescript@5.1.3):
     resolution: {integrity: sha512-Ioir+x5Bejv72Lx2Zbz3/qGg7tvGbxQZALCLoJaGrkNXak/19+vKgKYJYM3i/fJxvsb23I9FuFQ8CUBEfsmBRg==}
@@ -12489,6 +12551,25 @@ packages:
       tslib: 2.5.3
       typescript: 5.1.3
 
+  /@rollup/plugin-typescript@11.1.1(rollup@3.25.1)(tslib@2.5.3)(typescript@5.1.3):
+    resolution: {integrity: sha512-Ioir+x5Bejv72Lx2Zbz3/qGg7tvGbxQZALCLoJaGrkNXak/19+vKgKYJYM3i/fJxvsb23I9FuFQ8CUBEfsmBRg==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      rollup: ^2.14.0||^3.0.0
+      tslib: '*'
+      typescript: '>=3.7.0'
+    peerDependenciesMeta:
+      rollup:
+        optional: true
+      tslib:
+        optional: true
+    dependencies:
+      '@rollup/pluginutils': 5.0.2(rollup@3.25.1)
+      resolve: 1.22.2
+      rollup: 3.25.1
+      tslib: 2.5.3
+      typescript: 5.1.3
+
   /@rollup/pluginutils@5.0.2(rollup@3.23.0):
     resolution: {integrity: sha512-pTd9rIsP92h+B6wWwFbW8RkZv4hiR/xKsqre4SIuAOaOEQRxi0lqLke9k2/7WegC85GgUs9pjmOjCUi3In4vwA==}
     engines: {node: '>=14.0.0'}
@@ -12502,6 +12583,20 @@ packages:
       estree-walker: 2.0.2
       picomatch: 2.3.1
       rollup: 3.23.0
+
+  /@rollup/pluginutils@5.0.2(rollup@3.25.1):
+    resolution: {integrity: sha512-pTd9rIsP92h+B6wWwFbW8RkZv4hiR/xKsqre4SIuAOaOEQRxi0lqLke9k2/7WegC85GgUs9pjmOjCUi3In4vwA==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      rollup: ^1.20.0||^2.0.0||^3.0.0
+    peerDependenciesMeta:
+      rollup:
+        optional: true
+    dependencies:
+      '@types/estree': 1.0.1
+      estree-walker: 2.0.2
+      picomatch: 2.3.1
+      rollup: 3.25.1
 
   /@schematics/angular@12.2.18:
     resolution: {integrity: sha512-niRS9Ly9y8uI0YmTSbo8KpdqCCiZ/ATMZWeS2id5M8JZvfXbngwiqJvojdSol0SWU+n1W4iA+lJBdt4gSKlD5w==}
@@ -13441,7 +13536,7 @@ packages:
       eslint: 7.32.0
       functional-red-black-tree: 1.0.1
       regexpp: 3.2.0
-      semver: 7.5.1
+      semver: 7.5.2
       tsutils: 3.21.0(typescript@5.1.3)
       typescript: 5.1.3
     transitivePeerDependencies:
@@ -13948,7 +14043,7 @@ packages:
       debug: 4.3.4(supports-color@6.1.0)
       globby: 11.1.0
       is-glob: 4.0.3
-      semver: 7.5.1
+      semver: 7.5.2
       tsutils: 3.21.0(typescript@4.4.4)
       typescript: 4.4.4
     transitivePeerDependencies:
@@ -13969,7 +14064,7 @@ packages:
       debug: 4.3.4(supports-color@6.1.0)
       globby: 11.1.0
       is-glob: 4.0.3
-      semver: 7.5.1
+      semver: 7.5.2
       tsutils: 3.21.0(typescript@4.4.4)
       typescript: 4.4.4
     transitivePeerDependencies:
@@ -13990,7 +14085,7 @@ packages:
       debug: 4.3.4(supports-color@6.1.0)
       globby: 11.1.0
       is-glob: 4.0.3
-      semver: 7.5.1
+      semver: 7.5.2
       tsutils: 3.21.0(typescript@5.1.3)
       typescript: 5.1.3
     transitivePeerDependencies:
@@ -14032,7 +14127,7 @@ packages:
       debug: 4.3.4(supports-color@6.1.0)
       globby: 11.1.0
       is-glob: 4.0.3
-      semver: 7.5.1
+      semver: 7.5.2
       tsutils: 3.21.0(typescript@4.7.4)
       typescript: 4.7.4
     transitivePeerDependencies:
@@ -14095,7 +14190,7 @@ packages:
       debug: 4.3.4(supports-color@6.1.0)
       globby: 11.1.0
       is-glob: 4.0.3
-      semver: 7.5.1
+      semver: 7.5.2
       tsutils: 3.21.0(typescript@5.0.2)
       typescript: 5.0.2
     transitivePeerDependencies:
@@ -14116,7 +14211,7 @@ packages:
       debug: 4.3.4(supports-color@6.1.0)
       globby: 11.1.0
       is-glob: 4.0.3
-      semver: 7.5.1
+      semver: 7.5.2
       tsutils: 3.21.0(typescript@5.1.3)
       typescript: 5.1.3
     transitivePeerDependencies:
@@ -14215,7 +14310,7 @@ packages:
       '@typescript-eslint/typescript-estree': 5.59.8(typescript@5.1.3)
       eslint: 8.42.0
       eslint-scope: 5.1.1
-      semver: 7.5.1
+      semver: 7.5.2
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -16323,7 +16418,7 @@ packages:
   /builtins@5.0.1:
     resolution: {integrity: sha512-qwVpFEHNfhYJIzNRBvd2C1kyo6jz3ZSMPyyuR47OPdiKWlbYnZNyDWuyR175qDnAJLiCo5fBBqPb3RiXgWlkOQ==}
     dependencies:
-      semver: 7.5.1
+      semver: 7.5.2
 
   /byte-size@8.1.1:
     resolution: {integrity: sha512-tUkzZWK0M/qdoLEqikxBWe4kumyuwjl3HO6zHTr4yEI23EojPtLYXdG1+AQY7MN0cGyNDvEaJ8wiYQm6P2bPxg==}
@@ -17287,7 +17382,7 @@ packages:
       json-schema-typed: 7.0.3
       onetime: 5.1.2
       pkg-up: 3.1.0
-      semver: 7.5.1
+      semver: 7.5.2
 
   /config-chain@1.1.13:
     resolution: {integrity: sha512-qj+f8APARXHrM0hraqXYb2/bOVSV4PvJQlNZ/DVj0QrmNM2q2euizkeuVckQ57J+W0mRH6Hvi+k50M4Jul2VRQ==}
@@ -17848,7 +17943,7 @@ packages:
       pacote: 11.3.5
       pify: 5.0.0
       resolve: 1.22.2
-      semver: 7.5.1
+      semver: 7.5.2
       which: 2.0.2
     transitivePeerDependencies:
       - bluebird
@@ -17867,7 +17962,7 @@ packages:
       pacote: 15.2.0
       pify: 5.0.0
       resolve: 1.22.2
-      semver: 7.5.1
+      semver: 7.5.2
       which: 3.0.1
     transitivePeerDependencies:
       - bluebird
@@ -17906,7 +18001,7 @@ packages:
       init-package-json: 2.0.5
       md5-file: 5.0.0
       pify: 5.0.0
-      semver: 7.5.1
+      semver: 7.5.2
       stringify-package: 1.0.1
       write-file-atomic: 3.0.3
     transitivePeerDependencies:
@@ -18052,6 +18147,56 @@ packages:
       typescript: 5.1.3
       ua-parser-js: 1.0.35
       untildify: 4.0.0
+      yargs: 17.7.2
+    transitivePeerDependencies:
+      - bluebird
+      - bufferutil
+      - debug
+      - enquirer
+      - supports-color
+      - utf-8-validate
+
+  /cordova-plus@0.9.4(enquirer@2.3.6):
+    resolution: {integrity: sha512-JXpChTMogzAMG4ZT15pfR7bvdhSobS4kF69pjDlwfij/up5/X5jTyxF/eGpXtnUVxgBbMu46IbS4w/+Z/tJQ4g==}
+    engines: {node: '>= 12'}
+    hasBin: true
+    dependencies:
+      '@frat/envinfo': 7.10.1
+      '@npmcli/package-json': 3.1.1
+      '@rollup/plugin-commonjs': 25.0.2(rollup@3.25.1)
+      '@rollup/plugin-node-resolve': 15.1.0(rollup@3.25.1)
+      '@rollup/plugin-typescript': 11.1.1(rollup@3.25.1)(tslib@2.5.3)(typescript@5.1.3)
+      '@types/cordova': 11.0.0
+      '@types/node': 20.2.5
+      browser-sync: 2.29.3
+      chokidar: 3.5.3
+      clipboardy: 3.0.0
+      cordova: 12.0.0
+      cordova-android: 12.0.0
+      cordova-browser: 7.0.0
+      cordova-common: 5.0.0
+      cordova-ios: 6.3.0
+      cordova-lib: 12.0.1
+      cordova-serve: 4.0.1
+      elementtree: 0.1.7
+      execa: 7.1.1
+      fast-glob: 3.2.12
+      find-cache-dir: 4.0.0
+      fs-extra: 11.1.1
+      json-stable-stringify: 1.0.2
+      listr2: 6.6.0(enquirer@2.3.6)
+      lodash: 4.17.21
+      pino: 8.14.1
+      pino-pretty: 10.0.0
+      rollup: 3.25.1
+      semver: 7.5.2
+      serve-handler: 6.1.5
+      signal-exit: 4.0.2
+      tempy: 3.0.0
+      tslib: 2.5.3
+      typescript: 5.1.3
+      ua-parser-js: 1.0.35
+      untildify: 5.0.0
       yargs: 17.7.2
     transitivePeerDependencies:
       - bluebird
@@ -18467,7 +18612,7 @@ packages:
       postcss-modules-scope: 3.0.0(postcss@8.4.24)
       postcss-modules-values: 4.0.0(postcss@8.4.24)
       postcss-value-parser: 4.2.0
-      semver: 7.5.1
+      semver: 7.5.2
       webpack: 5.50.0(esbuild@0.13.8)
     dev: true
 
@@ -18484,7 +18629,7 @@ packages:
       postcss-modules-scope: 3.0.0(postcss@8.4.24)
       postcss-modules-values: 4.0.0(postcss@8.4.24)
       postcss-value-parser: 4.2.0
-      semver: 7.5.1
+      semver: 7.5.2
       webpack: 5.84.1
 
   /css-loader@6.7.3(webpack@5.80.0):
@@ -18500,7 +18645,7 @@ packages:
       postcss-modules-scope: 3.0.0(postcss@8.4.24)
       postcss-modules-values: 4.0.0(postcss@8.4.24)
       postcss-value-parser: 4.2.0
-      semver: 7.5.1
+      semver: 7.5.2
       webpack: 5.80.0(esbuild@0.17.18)
     dev: true
 
@@ -21809,7 +21954,7 @@ packages:
       memfs: 3.5.3
       minimatch: 3.1.2
       schema-utils: 2.7.0
-      semver: 7.5.1
+      semver: 7.5.2
       tapable: 1.1.3
       typescript: 5.1.3
       webpack: 5.84.1
@@ -23411,7 +23556,7 @@ packages:
       promzard: 0.3.0
       read: 1.0.7
       read-package-json: 4.1.2
-      semver: 7.5.1
+      semver: 7.5.2
       validate-npm-package-license: 3.0.4
       validate-npm-package-name: 3.0.0
     dev: false
@@ -25168,7 +25313,7 @@ packages:
       jest-util: 28.1.3
       natural-compare: 1.4.0
       pretty-format: 28.1.3
-      semver: 7.5.1
+      semver: 7.5.2
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -25199,7 +25344,7 @@ packages:
       jest-util: 29.5.0
       natural-compare: 1.4.0
       pretty-format: 29.5.0
-      semver: 7.5.1
+      semver: 7.5.2
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -28687,7 +28832,7 @@ packages:
     resolution: {integrity: sha512-u4uAs/4Zzmp/jjsD9cyFYDXeISfUWaAVWshPmDZOFOv4Xl4SbzTXm53I04C2uRueYJ+0t5PEtLH/owbn2Npf/w==}
     engines: {node: '>=10'}
     dependencies:
-      semver: 7.5.1
+      semver: 7.5.2
     dev: true
 
   /node-addon-api@3.2.1:
@@ -28758,7 +28903,7 @@ packages:
       npmlog: 4.1.2
       request: 2.88.2
       rimraf: 3.0.2
-      semver: 7.5.1
+      semver: 7.5.2
       tar: 6.1.11
       which: 2.0.2
     dev: false
@@ -28775,7 +28920,7 @@ packages:
       nopt: 5.0.0
       npmlog: 6.0.2
       rimraf: 3.0.2
-      semver: 7.5.1
+      semver: 7.5.2
       tar: 6.1.11
       which: 2.0.2
     transitivePeerDependencies:
@@ -28795,7 +28940,7 @@ packages:
       nopt: 5.0.0
       npmlog: 6.0.2
       rimraf: 3.0.2
-      semver: 7.5.1
+      semver: 7.5.2
       tar: 6.1.11
       which: 2.0.2
     transitivePeerDependencies:
@@ -28859,7 +29004,7 @@ packages:
     dependencies:
       hosted-git-info: 4.1.0
       is-core-module: 2.12.1
-      semver: 7.5.1
+      semver: 7.5.2
       validate-npm-package-license: 3.0.4
 
   /normalize-package-data@5.0.0:
@@ -28868,7 +29013,7 @@ packages:
     dependencies:
       hosted-git-info: 6.1.1
       is-core-module: 2.12.1
-      semver: 7.5.1
+      semver: 7.5.2
       validate-npm-package-license: 3.0.4
 
   /normalize-path@2.1.1:
@@ -28913,13 +29058,13 @@ packages:
     resolution: {integrity: sha512-09OmyDkNLYwqKPOnbI8exiOZU2GVVmQp7tgez2BPi5OZC8M82elDAps7sxC4l//uSUtotWqoEIDwjRvWH4qz8w==}
     engines: {node: '>=10'}
     dependencies:
-      semver: 7.5.1
+      semver: 7.5.2
 
   /npm-install-checks@6.1.1:
     resolution: {integrity: sha512-dH3GmQL4vsPtld59cOn8uY0iOqRmqKvV+DLGwNXV/Q7MDgD2QfOADWd/mFXcIE5LVhYYGjA3baz6W9JneqnuCw==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
     dependencies:
-      semver: 7.5.1
+      semver: 7.5.2
 
   /npm-normalize-package-bin@1.0.1:
     resolution: {integrity: sha512-EPfafl6JL5/rU+ot6P3gRSCpPDW5VmIzX959Ob1+ySFUuuYHWHekXpwdUZcKP5C+DS4GEtdJluwBjnsNDl+fSA==}
@@ -29864,7 +30009,7 @@ packages:
       got: 12.6.0
       registry-auth-token: 5.0.1
       registry-url: 6.0.1
-      semver: 7.5.1
+      semver: 7.5.2
 
   /pacote@11.3.5:
     resolution: {integrity: sha512-fT375Yczn4zi+6Hkk2TBe1x1sP8FgFsEIZ2/iWaXY2r/NkhDJfxbcn5paz1+RTFCyNf+dPnaoBDJoAxXSU8Bkg==}
@@ -30778,7 +30923,7 @@ packages:
       cosmiconfig: 7.0.1
       klona: 2.0.5
       postcss: 8.3.6
-      semver: 7.5.1
+      semver: 7.5.2
       webpack: 5.50.0(esbuild@0.13.8)
     dev: true
 
@@ -30792,7 +30937,7 @@ packages:
       cosmiconfig: 7.0.1
       klona: 2.0.5
       postcss: 8.4.14
-      semver: 7.5.1
+      semver: 7.5.2
       webpack: 5.84.1
 
   /postcss-loader@7.2.4(@types/node@20.2.5)(postcss@8.4.23)(ts-node@8.3.0)(typescript@5.0.2)(webpack@5.80.0):
@@ -30813,7 +30958,7 @@ packages:
       cosmiconfig-typescript-loader: 4.3.0(@types/node@20.2.5)(cosmiconfig@8.2.0)(ts-node@8.3.0)(typescript@5.0.2)
       klona: 2.0.6
       postcss: 8.4.23
-      semver: 7.5.1
+      semver: 7.5.2
       ts-node: 8.3.0(typescript@5.0.2)
       typescript: 5.0.2
       webpack: 5.80.0(esbuild@0.17.18)
@@ -33945,6 +34090,13 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
 
+  /rollup@3.25.1:
+    resolution: {integrity: sha512-tywOR+rwIt5m2ZAWSe5AIJcTat8vGlnPFAv15ycCrw33t6iFsXZ6mzHVFh2psSjxQPmI+xgzMZZizUAukBI4aQ==}
+    engines: {node: '>=14.18.0', npm: '>=8.0.0'}
+    hasBin: true
+    optionalDependencies:
+      fsevents: 2.3.2
+
   /rrweb-cssom@0.6.0:
     resolution: {integrity: sha512-APM0Gt1KoXBz0iIkkdB/kfvGOwC4UuJFeG/c+yV7wSc7q96cG/kJ0HiYCnzivD9SB53cLV1MlHFNfOuPaadYSw==}
     dev: false
@@ -34294,7 +34446,7 @@ packages:
     resolution: {integrity: sha512-0Ju4+6A8iOnpL/Thra7dZsSlOHYAHIeMxfhWQRI1/VLcT3WDBZKKtQt/QkBOsiIN9ZpuvHE6cGZ0x4glCMmfiA==}
     engines: {node: '>=12'}
     dependencies:
-      semver: 7.5.1
+      semver: 7.5.2
 
   /semver@5.7.1:
     resolution: {integrity: sha512-sauaDf/PZdVgrLTNYHRtpXa1iRiKcaebiKQ1BJdpQlWH2lCvexQdX55snPFyK7QzpudqbCI0qXFfOasHdyNDGQ==}
@@ -34349,6 +34501,13 @@ packages:
 
   /semver@7.5.1:
     resolution: {integrity: sha512-Wvss5ivl8TMRZXXESstBA4uR5iXgEN/VC5/sOcuXdVLzcdkz4HWetIoRfG5gb5X+ij/G9rw9YoGn3QoQ8OCSpw==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dependencies:
+      lru-cache: 6.0.0
+
+  /semver@7.5.2:
+    resolution: {integrity: sha512-SoftuTROv/cRjCze/scjGyiDtcUyxw1rgYQSZY7XTmtR5hX+dm76iDbTH8TkLPHCQmlbQVSSbNZCPM2hb0knnQ==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
@@ -34511,7 +34670,7 @@ packages:
       detect-libc: 2.0.1
       node-addon-api: 6.1.0
       prebuild-install: 7.1.1
-      semver: 7.5.1
+      semver: 7.5.2
       simple-get: 4.0.1
       tar-fs: 2.1.1
       tunnel-agent: 0.6.0
@@ -37032,6 +37191,10 @@ packages:
     resolution: {integrity: sha512-KK8xQ1mkzZeg9inewmFVDNkg3l5LUhoq9kN6iWYB/CC9YMG8HA+c1Q8HwDe6dEX7kErrEVNVBO3fWsVq5iDgtw==}
     engines: {node: '>=8'}
 
+  /untildify@5.0.0:
+    resolution: {integrity: sha512-bOgQLUnd2G5rhzaTvh1VCI9Fo6bC5cLTpH17T5aFfamyXFYDbbdzN6IXdeoc3jBS7T9hNTmJtYUzJCJ2Xlc9gA==}
+    engines: {node: '>=16'}
+
   /unzip-response@2.0.1:
     resolution: {integrity: sha512-N0XH6lqDtFH84JxptQoZYmloF4nzrQqqrAymNj+/gW60AO2AZgOcf4O/nUXJcYfyQkqvMo9lSupBZmmgvuVXlw==}
     engines: {node: '>=4'}
@@ -37099,7 +37262,7 @@ packages:
       is-yarn-global: 0.3.0
       latest-version: 5.1.0
       pupa: 2.1.1
-      semver: 7.5.1
+      semver: 7.5.2
       semver-diff: 3.1.1
       xdg-basedir: 4.0.0
 
@@ -38898,7 +39061,7 @@ packages:
       cli-table3: 0.6.3
       clipboardy: 3.0.0
       cordova-common: 5.0.0
-      cordova-plus: 0.9.2(enquirer@2.3.6)
+      cordova-plus: 0.9.4(enquirer@2.3.6)
       elementtree: 0.1.7
       enquirer: 2.3.6
       execa: 7.1.1
@@ -38911,7 +39074,7 @@ packages:
       lodash: 4.17.21
       ora: 6.3.1
       pkg-proxy: link:packages/pkg-proxy
-      semver: 7.5.1
+      semver: 7.5.2
       tslib: 2.5.3
       update-notifier: 6.0.2
       yargs: 17.7.2
