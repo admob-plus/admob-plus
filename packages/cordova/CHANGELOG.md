@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.10](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@2.0.0-alpha.9...admob-plus-cordova@2.0.0-alpha.10) (2023-06-21)
+
+
+### Bug Fixes
+
+* **cordova/android:** use thread-safe hash map, [#592](https://github.com/admob-plus/admob-plus/issues/592) ([e9d2b20](https://github.com/admob-plus/admob-plus/commit/e9d2b20cfce1633934901c97edc5660d25074a31))
+
+
+
+
+
 # [2.0.0-alpha.9](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@2.0.0-alpha.8...admob-plus-cordova@2.0.0-alpha.9) (2023-06-20)
 
 
