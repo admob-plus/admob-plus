@@ -14,16 +14,16 @@ import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.nativead.NativeAd
 import com.google.android.gms.ads.nativead.NativeAdView
 import java.util.Objects
+import java.util.concurrent.ConcurrentHashMap
 
 class Native(ctx: ExecuteContext) : AdBase(ctx) {
-    private val mAdRequest: AdRequest
+    private val mAdRequest: AdRequest = buildAdRequest(initOpts)
     private val viewProvider: ViewProvider
     private var mLoader: AdLoader? = null
     private var mAd: NativeAd? = null
     private var view: View? = null
 
     init {
-        mAdRequest = buildAdRequest(initOpts)
         val key = initOpts.optString("view") ?: VIEW_DEFAULT_KEY
         viewProvider = providers[key] ?: throw RuntimeException("cannot find viewProvider: $key")
     }
@@ -139,6 +139,6 @@ class Native(ctx: ExecuteContext) : AdBase(ctx) {
         private const val TAG = "AdMobPlus.Native"
 
         const val VIEW_DEFAULT_KEY = "default"
-        val providers: HashMap<String, ViewProvider> = hashMapOf()
+        val providers = ConcurrentHashMap<String, ViewProvider>()
     }
 }

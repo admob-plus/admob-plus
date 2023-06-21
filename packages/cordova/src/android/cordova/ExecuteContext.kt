@@ -1,17 +1,14 @@
 package admob.plus.cordova
 
 import admob.plus.cordova.ads.AdBase
-import admob.plus.core.buildRequestConfiguration
-import admob.plus.core.configForTestLabIfNeeded
-import admob.plus.core.optFloat
 import android.app.Activity
-import com.google.android.gms.ads.MobileAds
 import org.apache.cordova.CallbackContext
 import org.apache.cordova.PluginResult
 import org.json.JSONArray
 import org.json.JSONObject
+import java.util.Collections.synchronizedMap
 
-val ads = mutableMapOf<String, AdBase>()
+val ads = synchronizedMap(mutableMapOf<String, AdBase>())
 
 data class ExecuteContext(
     val action: String,
