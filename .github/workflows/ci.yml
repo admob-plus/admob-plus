@@ -43,6 +43,12 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: pnpm
 
+      - name: Setup cache for Chrome binary
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/puppeteer
+          key: ${{ runner.os }}-Chrome-${{ hashFiles('package.json') }}
+
       - name: Install dependencies
         run: pnpm i || pnpm i --no-frozen-lockfile
 
