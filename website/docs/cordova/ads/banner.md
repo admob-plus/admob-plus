@@ -23,6 +23,8 @@ document.addEventListener('deviceready', async () => {
 }, false)
 ```
 
+Banner ads is default using the Google-optimized automatic refresh rate, or you may [custom it](https://support.google.com/admob/answer/3245199?hl=en).
+
 ## Display Position
 
 By default, banner ad is displayed at the `bottom` of screen.
