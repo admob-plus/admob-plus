@@ -5,5 +5,5 @@
     "outDir": "www",
     "rootDir": "src/www"
   },
-  "include": ["./src/www/**/*"]
+  "include": ["./node_modules/cordova-plus", "./src/www/**/*"]
 }

@@ -1,5 +1,5 @@
-import { Consent } from '.'
+import {Consent} from '.';
 
-const consent = new Consent()
+const consent = new Consent();
 
-export default consent
+export default consent;
