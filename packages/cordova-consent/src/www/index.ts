@@ -11,8 +11,7 @@ type CordovaAction =
   | 'showForm'
   | 'trackingAuthorizationStatus';
 
-/** @internal */
-export function execAsync<T>(action: CordovaAction, args?: unknown[]) {
+function execAsync<T>(action: CordovaAction, args?: unknown[]) {
   return new Promise<T>((resolve, reject) => {
     cordova.exec(resolve, reject, CordovaService, action, args);
   });

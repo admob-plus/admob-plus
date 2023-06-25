@@ -10,6 +10,7 @@ custom_edit_url: null
 
 - [ConsentStatus](enums/ConsentStatus.md)
 - [DebugGeography](enums/DebugGeography.md)
+- [Events](enums/Events.md)
 - [FormStatus](enums/FormStatus.md)
 - [TrackingAuthorizationStatus](enums/TrackingAuthorizationStatus.md)
 

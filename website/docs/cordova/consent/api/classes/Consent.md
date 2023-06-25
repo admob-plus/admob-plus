@@ -14,7 +14,7 @@ custom_edit_url: null
 
 #### Defined in
 
-index.ts:47
+index.ts:74
 
 ## Properties
 
@@ -24,7 +24,7 @@ index.ts:47
 
 #### Defined in
 
-index.ts:43
+index.ts:70
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 #### Defined in
 
-index.ts:44
+index.ts:71
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 #### Defined in
 
-index.ts:45
+index.ts:72
 
 ## Methods
 
@@ -58,7 +58,7 @@ index.ts:45
 
 #### Defined in
 
-index.ts:79
+index.ts:116
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 #### Defined in
 
-index.ts:84
+index.ts:121
 
 ___
 
@@ -86,7 +86,7 @@ ___
 
 #### Defined in
 
-index.ts:93
+index.ts:130
 
 ___
 
@@ -106,7 +106,7 @@ ___
 
 #### Defined in
 
-index.ts:89
+index.ts:126
 
 ___
 
@@ -120,7 +120,7 @@ ___
 
 #### Defined in
 
-index.ts:65
+index.ts:104
 
 ___
 
@@ -134,7 +134,7 @@ ___
 
 #### Defined in
 
-index.ts:98
+index.ts:135
 
 ___
 
@@ -148,4 +148,4 @@ ___
 
 #### Defined in
 
-index.ts:51
+index.ts:92
