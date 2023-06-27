@@ -9,23 +9,10 @@ import com.google.android.gms.ads.FullScreenContentCallback
 import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.appopen.AppOpenAd
 import com.google.android.gms.ads.appopen.AppOpenAd.AppOpenAdLoadCallback
-import org.json.JSONObject
-
-fun optInt(opts: JSONObject, name: String): Int? {
-    return if (opts.has(name)) opts.optInt(name) else null
-}
 
 class AppOpen(ctx: ExecuteContext) : AdBase(ctx) {
-    private val mAdRequest: AdRequest
-    private val mOrientation: Int
+    private val mAdRequest: AdRequest = buildAdRequest(initOpts)
     private var mAd: AppOpenAd? = null
-
-    init {
-        mAdRequest = buildAdRequest(initOpts)
-        val o = optInt(initOpts, "orientation")
-        mOrientation =
-            if (o == null || o == 1 || o == 2) AppOpenAd.APP_OPEN_AD_ORIENTATION_PORTRAIT else AppOpenAd.APP_OPEN_AD_ORIENTATION_LANDSCAPE
-    }
 
     override fun onDestroy() {
         clear()
@@ -37,7 +24,7 @@ class AppOpen(ctx: ExecuteContext) : AdBase(ctx) {
         AppOpenAd.load(plugin.activity,
             adUnitId,
             mAdRequest,
-            mOrientation, object : AppOpenAdLoadCallback() {
+            object : AppOpenAdLoadCallback() {
                 override fun onAdLoaded(ad: AppOpenAd) {
                     mAd = ad
                     ad.fullScreenContentCallback = object : FullScreenContentCallback() {
@@ -74,7 +61,7 @@ class AppOpen(ctx: ExecuteContext) : AdBase(ctx) {
     override val isLoaded: Boolean get() = mAd != null
 
     override fun show(ctx: ExecuteContext) {
-        mAd!!.show(plugin.activity)
+        mAd?.show(plugin.activity)
         ctx.resolve(true)
     }
 
