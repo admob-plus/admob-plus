@@ -59,6 +59,8 @@ App open ads help you monetize your app's loading screen, but it's important to 
 - Show app open ads during times when your users would otherwise be waiting for your app to load.
 - If you have a loading screen under the app open ad, and your loading screen completes loading before the ad is dismissed, you may want to dismiss your loading screen in the adDidDismissFullScreenContent method.
 
+You should also read [App open ad guidance](https://support.google.com/admob/answer/9341964) to avoid the potential policy violations.
+
 ## References
 
 - [App Open Ads - Mobile Ads SDK (Android)](https://developers.google.com/admob/android/app-open-ads)
