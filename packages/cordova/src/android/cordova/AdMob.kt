@@ -205,7 +205,7 @@ class AdMob : CordovaPlugin() {
 
     override fun onDestroy() {
         readyCallbackContext = null
-        ads.forEach { (_, ad) ->
+        for (ad in ads.values) {
             ad.onDestroy()
         }
         Banner.destroyParentView()

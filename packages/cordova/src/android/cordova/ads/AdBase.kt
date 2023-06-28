@@ -43,7 +43,9 @@ abstract class AdBase(ctx: ExecuteContext) {
     }
 
     fun destroy() {
-        ads.remove(id)
+        plugin.activity.runOnUiThread {
+            ads.remove(id)
+        }
     }
 
     open fun onConfigurationChanged(newConfig: Configuration) {}
