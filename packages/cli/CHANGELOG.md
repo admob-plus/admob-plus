@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.10](https://github.com/admob-plus/admob-plus/compare/admob-plus@2.0.0-alpha.9...admob-plus@2.0.0-alpha.10) (2023-06-28)
+
+**Note:** Version bump only for package admob-plus
+
+
+
+
+
 # [2.0.0-alpha.9](https://github.com/admob-plus/admob-plus/compare/admob-plus@2.0.0-alpha.8...admob-plus@2.0.0-alpha.9) (2023-06-21)
 
 **Note:** Version bump only for package admob-plus

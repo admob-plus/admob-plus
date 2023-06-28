@@ -1070,7 +1070,7 @@ importers:
   packages/cordova-native:
     dependencies:
       admob-plus-cordova:
-        specifier: ^2.0.0-alpha.10
+        specifier: ^2.0.0-alpha.11
         version: link:../cordova
     devDependencies:
       '@types/cordova':
@@ -1092,7 +1092,7 @@ importers:
   packages/cordova-webview-ad:
     dependencies:
       admob-plus-cordova:
-        specifier: ^2.0.0-alpha.10
+        specifier: ^2.0.0-alpha.11
         version: link:../cordova
     devDependencies:
       cordova-plus:
@@ -39051,7 +39051,7 @@ packages:
   file:packages/cli:
     resolution: {directory: packages/cli, type: directory}
     name: admob-plus
-    version: 2.0.0-alpha.9
+    version: 2.0.0-alpha.10
     engines: {node: '>=16.0.0'}
     hasBin: true
     dependencies:

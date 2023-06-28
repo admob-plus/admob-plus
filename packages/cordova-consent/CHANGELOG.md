@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.4](https://github.com/admob-plus/admob-plus/compare/cordova-plugin-consent@3.0.0-alpha.3...cordova-plugin-consent@3.0.0-alpha.4) (2023-06-28)
+
+
+### Bug Fixes
+
+* **cordova-consent:** include types in src/www ([0234a96](https://github.com/admob-plus/admob-plus/commit/0234a96031cabe90da4b22e924428e52579442b8))
+
+
+
+
+
 # [3.0.0-alpha.3](https://github.com/admob-plus/admob-plus/compare/cordova-plugin-consent@3.0.0-alpha.2...cordova-plugin-consent@3.0.0-alpha.3) (2023-06-21)
 
 **Note:** Version bump only for package cordova-plugin-consent

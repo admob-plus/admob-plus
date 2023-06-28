@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.11](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@2.0.0-alpha.10...admob-plus-cordova@2.0.0-alpha.11) (2023-06-28)
+
+
+### Bug Fixes
+
+* **cordova/android:** remove ads item in main thread, [#592](https://github.com/admob-plus/admob-plus/issues/592) ([a5f53ca](https://github.com/admob-plus/admob-plus/commit/a5f53caa99a9604dc64ffb3196c6bc9ff6bd6aeb))
+
+
+### Features
+
+* **cordova/android:** load app open ad without orientation ([3cd6fd1](https://github.com/admob-plus/admob-plus/commit/3cd6fd13c83bd8fd46856a8beb74c0b8a2af2d6e))
+* **cordova:** remove AppOpenAdOrientation ([2e39dbb](https://github.com/admob-plus/admob-plus/commit/2e39dbb4d47fe173c6b279f1af4f1ad2c8e5b67d))
+
+
+
+
+
 # [2.0.0-alpha.10](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@2.0.0-alpha.9...admob-plus-cordova@2.0.0-alpha.10) (2023-06-21)
 
 
