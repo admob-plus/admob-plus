@@ -12,7 +12,7 @@
     "jsdom": "^22.1.0",
     "lodash": "^4.17.21",
     "replace-in-file": "^7.0.1",
-    "typescript": "^5.1.3",
+    "typescript": "^5.1.6",
     "xml-formatter": "^3.4.1",
     "xml2js": "^0.6.0"
   },

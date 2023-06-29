@@ -16,7 +16,7 @@
     "cordova": "12.0.0",
     "cordova-plus": "^0.9.4",
     "del-cli": "^5.0.0",
-    "tslib": "^2.5.3"
+    "tslib": "^2.6.0"
   },
   "author": "Ratson",
   "license": "MIT",

@@ -13,10 +13,10 @@
   },
   "devDependencies": {
     "@types/cordova": "^11.0.0",
-    "@types/node": "^20.3.1",
+    "@types/node": "^20.3.2",
     "cordova": "^12.0.0",
     "cordova-plus": "^0.9.4",
-    "tslib": "^2.5.3"
+    "tslib": "^2.6.0"
   },
   "author": "Ratson",
   "license": "MIT",
