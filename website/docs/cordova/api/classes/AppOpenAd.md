@@ -8,7 +8,7 @@ custom_edit_url: null
 
 ## Hierarchy
 
-- [`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../#mobileadoptions) & { `orientation`: [`AppOpenAdOrientation`](../enums/AppOpenAdOrientation.md)  }\>
+- [`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../#mobileadoptions)\>
 
   ↳ **`AppOpenAd`**
 
@@ -22,7 +22,7 @@ custom_edit_url: null
 
 | Name | Type |
 | :------ | :------ |
-| `opts` | [`MobileAdOptions`](../#mobileadoptions) & { `orientation`: [`AppOpenAdOrientation`](../enums/AppOpenAdOrientation.md)  } |
+| `opts` | [`MobileAdOptions`](../#mobileadoptions) |
 
 #### Inherited from
 
@@ -50,7 +50,7 @@ ___
 
 ### opts
 
-• `Protected` `Readonly` **opts**: [`MobileAdOptions`](../#mobileadoptions) & { `orientation`: [`AppOpenAdOrientation`](../enums/AppOpenAdOrientation.md)  }
+• `Protected` `Readonly` **opts**: [`MobileAdOptions`](../#mobileadoptions)
 
 #### Inherited from
 
@@ -62,23 +62,13 @@ packages/cordova/src/www/ads/base.ts:20
 
 ___
 
-### Orientation
-
-▪ `Static` `Readonly` **Orientation**: typeof [`AppOpenAdOrientation`](../enums/AppOpenAdOrientation.md) = `AppOpenAdOrientation`
-
-#### Defined in
-
-packages/cordova/src/www/ads/app-open.ts:14
-
-___
-
 ### cls
 
 ▪ `Static` `Readonly` **cls**: ``"AppOpenAd"``
 
 #### Defined in
 
-packages/cordova/src/www/ads/app-open.ts:13
+packages/cordova/src/www/ads/app-open.ts:4
 
 ## Accessors
 
@@ -168,7 +158,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/app-open.ts:16
+packages/cordova/src/www/ads/app-open.ts:6
 
 ___
 
@@ -186,7 +176,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/app-open.ts:20
+packages/cordova/src/www/ads/app-open.ts:10
 
 ___
 
@@ -234,7 +224,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/app-open.ts:24
+packages/cordova/src/www/ads/app-open.ts:14
 
 ___
 

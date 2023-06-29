@@ -20,7 +20,7 @@ custom_edit_url: null
 
 #### Defined in
 
-index.ts:49
+index.ts:48
 
 ## Properties
 
@@ -30,7 +30,7 @@ index.ts:49
 
 #### Defined in
 
-index.ts:47
+index.ts:46
 
 ## Methods
 
@@ -44,4 +44,4 @@ index.ts:47
 
 #### Defined in
 
-index.ts:53
+index.ts:52

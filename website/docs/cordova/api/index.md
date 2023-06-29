@@ -9,7 +9,6 @@ custom_edit_url: null
 ## Enumerations
 
 - [AdSizeType](enums/AdSizeType.md)
-- [AppOpenAdOrientation](enums/AppOpenAdOrientation.md)
 - [Events](enums/Events.md)
 - [Platform](enums/Platform.md)
 
