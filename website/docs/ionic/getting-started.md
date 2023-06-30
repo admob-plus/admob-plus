@@ -3,14 +3,20 @@ title: Getting Started
 slug: /ionic
 ---
 
+:::warning
+
+This package is obsoleted.
+
+For Cordova integration, [`admob-plus-cordova`](./cordova) should be used directly.
+
+For Capacitor integration, use [`@admob-plus/capacitor`](./capacitor).
+
+:::
+
 `@admob-plus/ionic` is a wrapper of [`admob-plus-cordova`](./cordova) Cordova plugin providing similar APIs.
 
 It is recommended to first understand how the Cordova plugin works before installing this package.
 
-:::caution
-This plugin is for Ionic Cordova integration,
-use [`@admob-plus/capacitor`](./capacitor) if your project is using Capacitor.
-:::
 
 ## Installation
 
