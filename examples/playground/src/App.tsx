@@ -99,7 +99,6 @@ function App() {
     >
       <Switch>
         <Route path="/">
-          <BannerAd />
           <Home />
         </Route>
         <Route path="/banner-ad">

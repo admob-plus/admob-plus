@@ -78,6 +78,7 @@ fun optBooleanToInt(opts: JSONObject, name: String, vNull: Int, vTrue: Int, vFal
 }
 
 fun optFloat(opts: JSONObject, name: String): Float? {
+    if (!opts.has(name)) return null
     val v = opts.optDouble(name) ?: return null
     return v.toFloat()
 }
