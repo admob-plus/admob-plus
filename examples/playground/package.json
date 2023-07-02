@@ -8,7 +8,8 @@
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "postinstall": "tsx scripts/postinstall"
+    "postinstall": "tsx scripts/postinstall",
+    "test-android": "cd platforms/android && ./gradlew test"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -36,6 +37,7 @@
     "admob-plus": "workspace:*",
     "admob-plus-cordova": "../../packages/cordova",
     "admob-plus-cordova-native": "../../packages/cordova-native",
+    "admob-plus-cordova-tests": "../../packages/cordova/tests",
     "admob-plus-cordova-webview-ad": "../../packages/cordova-webview-ad",
     "cordova": "^12.0.0",
     "cordova-android": "^12.0.0",
@@ -62,8 +64,9 @@
         "APP_ID_ANDROID": "ca-app-pub-3940256099942544~3347511713",
         "APP_ID_IOS": "ca-app-pub-3940256099942544~1458002511"
       },
-      "admob-plus-cordova-webview-ad": {},
       "admob-plus-cordova-native": {},
+      "admob-plus-cordova-tests": {},
+      "admob-plus-cordova-webview-ad": {},
       "cordova-plugin-consent": {}
     }
   }

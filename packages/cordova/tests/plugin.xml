@@ -2,10 +2,16 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:rim="http://www.blackberry.com/ns/widgets"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    id="ccordova-admob-plus-tests"
+    id="admob-plus-cordova-tests"
     version="0.0.0">
-    <name>cordova-admob-plus-tests</name>
+    <name>admob-plus-cordova-tests</name>
 
     <js-module src="tests.js" name="tests">
     </js-module>
+
+    <platform name="android">
+        <source-file src="android/util_test.kt" target-dir="app/src/test/kotlin/admob/plus/core" />
+        <framework src="android/build.gradle" custom="true" type="gradleReference" />
+    </platform>
+
 </plugin>
