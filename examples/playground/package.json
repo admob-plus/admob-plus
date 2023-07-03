@@ -9,7 +9,7 @@
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "postinstall": "tsx scripts/postinstall",
-    "test-android": "cd platforms/android && ./gradlew test"
+    "test-android": "cordova prepare && cd platforms/android && ./gradlew check"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
