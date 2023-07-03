@@ -6,24 +6,29 @@ import kotlin.test.assertEquals
 
 internal class optFloatTest {
     @Test
-    fun `return null for undefined key`() {
+    fun `value = undefined`() {
         assertEquals(optFloat(JSONObject("{}"), "key"), null)
     }
 
     @Test
-    fun `return float`() {
-        assertEquals(optFloat(JSONObject("{\"v\": 1}"), "v"), 1.0f)
+    fun `value = null`() {
+        assertEquals(optFloat(JSONObject("""{"v": null}"""), "v"), null)
+    }
+
+    @Test
+    fun `value = 1`() {
+        assertEquals(optFloat(JSONObject("""{"v": 1}"""), "v"), 1.0f)
     }
 }
 
 internal class optBooleanToIntTest {
     @Test
-    fun `value =  undefined`() {
+    fun `value = undefined`() {
         assertEquals(optBooleanToInt(JSONObject("{}"), "v",1, 2, 3), null)
     }
 
     @Test
-    fun `value =  null`() {
+    fun `value = null`() {
         assertEquals(optBooleanToInt(JSONObject("""{"v": null}"""), "v",1, 2, 3), 1)
     }
 
@@ -33,7 +38,7 @@ internal class optBooleanToIntTest {
     }
 
     @Test
-    fun `value =  false`() {
+    fun `value = false`() {
         assertEquals(optBooleanToInt(JSONObject("""{"v": false}"""), "v",1, 2, 3), 3)
     }
 }

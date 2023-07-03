@@ -78,9 +78,8 @@ fun optBooleanToInt(opts: JSONObject, name: String, vNull: Int, vTrue: Int, vFal
 }
 
 fun optFloat(opts: JSONObject, name: String): Float? {
-    if (!opts.has(name)) return null
-    val v = opts.optDouble(name) ?: return null
-    return v.toFloat()
+    if (!opts.has(name) || opts.isNull(name)) return null
+    return opts.optDouble(name).toFloat()
 }
 
 fun buildRequestConfiguration(opts: JSONObject): RequestConfiguration {
