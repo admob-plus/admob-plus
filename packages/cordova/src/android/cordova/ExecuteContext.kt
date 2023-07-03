@@ -24,10 +24,6 @@ data class ExecuteContext(
         return if (opts.has(name)) opts.optBoolean(name) else null
     }
 
-    fun optDouble(name: String): Double? {
-        return if (opts.has(name)) opts.optDouble(name) else null
-    }
-
     fun optString(name: String): String? {
         return if (opts.has(name)) opts.optString(name) else null
     }
@@ -53,15 +49,11 @@ data class ExecuteContext(
         callbackContext.sendPluginResult(result)
     }
 
-    fun optDouble(name: String, defaultValue: Double): Double {
-        return optDouble(name) ?: defaultValue
-    }
-
     fun optId(): String? {
         return optString("id")
     }
 
-    fun optAd(): AdBase? {
+    private fun optAd(): AdBase? {
         return optId()?.let {
             ads[it]
         }
