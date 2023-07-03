@@ -73,7 +73,7 @@ fun buildAdSize(opts: JSONObject, activity: Activity): AdSize {
 
 fun optBooleanToInt(opts: JSONObject, name: String, vNull: Int, vTrue: Int, vFalse: Int): Int? {
     if (!opts.has(name)) return null
-    if (opts.opt(name) === null) return vNull
+    if (opts.isNull(name)) return vNull
     return if (opts.optBoolean(name)) vTrue else vFalse
 }
 
