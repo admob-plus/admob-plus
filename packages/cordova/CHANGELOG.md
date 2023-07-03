@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.12](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@2.0.0-alpha.11...admob-plus-cordova@2.0.0-alpha.12) (2023-07-03)
+
+
+### Bug Fixes
+
+* **cordova/android:** check null value correctly ([be4593f](https://github.com/admob-plus/admob-plus/commit/be4593f61c67af00502ab5b6f822b841862fb300))
+* **cordova/android:** do not crash when appVolume is not set ([a372849](https://github.com/admob-plus/admob-plus/commit/a372849a0da6d0966209fad2ab8e2aa4d99ed558))
+* **cordova/android:** handle null correctly for optFloat() ([46d846d](https://github.com/admob-plus/admob-plus/commit/46d846dbd2caacbcca75da0437306b9defd48630))
+
+
+
+
+
 # [2.0.0-alpha.11](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@2.0.0-alpha.10...admob-plus-cordova@2.0.0-alpha.11) (2023-06-28)
 
 
