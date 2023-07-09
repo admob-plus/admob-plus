@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.13](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@2.0.0-alpha.12...admob-plus-cordova@2.0.0-alpha.13) (2023-07-09)
+
+
+### Bug Fixes
+
+* **cordova/android:** clone map to remove item safely, [#592](https://github.com/admob-plus/admob-plus/issues/592) ([05bb250](https://github.com/admob-plus/admob-plus/commit/05bb25082b6b999d8b26717bacb52d0ac9a82bda))
+
+
+
+
+
 # [2.0.0-alpha.12](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@2.0.0-alpha.11...admob-plus-cordova@2.0.0-alpha.12) (2023-07-03)
 
 
