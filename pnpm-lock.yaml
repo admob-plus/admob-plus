@@ -90,8 +90,8 @@ importers:
         specifier: ^4.6.0
         version: 4.6.0(eslint@7.32.0)
       eslint-plugin-react-refresh:
-        specifier: ^0.4.1
-        version: 0.4.1(eslint@7.32.0)
+        specifier: ^0.4.2
+        version: 0.4.2(eslint@7.32.0)
       gts:
         specifier: ^4.0.1
         version: 4.0.1(typescript@5.1.6)
@@ -21860,20 +21860,20 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-plugin-react-refresh@0.4.1(eslint@7.32.0):
-    resolution: {integrity: sha512-QgrvtRJkmV+m4w953LS146+6RwEe5waouubFVNLBfOjXJf6MLczjymO8fOcKj9jMS8aKkTCMJqiPu2WEeFI99A==}
-    peerDependencies:
-      eslint: '>=7'
-    dependencies:
-      eslint: 7.32.0
-    dev: true
-
   /eslint-plugin-react-refresh@0.4.1(eslint@8.44.0):
     resolution: {integrity: sha512-QgrvtRJkmV+m4w953LS146+6RwEe5waouubFVNLBfOjXJf6MLczjymO8fOcKj9jMS8aKkTCMJqiPu2WEeFI99A==}
     peerDependencies:
       eslint: '>=7'
     dependencies:
       eslint: 8.44.0
+    dev: true
+
+  /eslint-plugin-react-refresh@0.4.2(eslint@7.32.0):
+    resolution: {integrity: sha512-AjT+7woNvaIiFoFqiD7nsd/M1MoW1h+8SAdfCpQ/1LSFkIH9DNAawBsTHj/1sWjijkVXRfF/rOiXFm+4xZrZ5Q==}
+    peerDependencies:
+      eslint: '>=7'
+    dependencies:
+      eslint: 7.32.0
     dev: true
 
   /eslint-plugin-react@7.32.2(eslint@7.32.0):
