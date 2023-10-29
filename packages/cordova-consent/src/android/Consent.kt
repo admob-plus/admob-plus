@@ -13,40 +13,31 @@ import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
 
+
 class Consent : CordovaPlugin() {
     private val eventQueue = ArrayList<PluginResult>()
     private val TAG = this.javaClass.simpleName
     private var readyCallbackContext: CallbackContext? = null
 
+    private val actions = mapOf(
+        Generated.Actions.READY to ::executeReady,
+        Generated.Actions.GET_CONSENT_STATUS to ::executeGetConsentStatus,
+        Generated.Actions.GET_FORM_STATUS to ::executeGetFormStatus,
+        Generated.Actions.REQUEST_INFO_UPDATE to ::executeRequestInfoUpdate,
+        Generated.Actions.LOAD_FORM to ::executeLoadForm,
+        Generated.Actions.SHOW_FORM to ::executeShowForm,
+        Generated.Actions.RESET to ::executeReset,
+    )
+
     override fun execute(
-        actionKey: String,
+        action: String,
         args: JSONArray,
         callbackContext: CallbackContext
     ): Boolean {
         val ctx =
-            ExecuteContext(actionKey, args, callbackContext, this)
-        Log.d(TAG, actionKey)
-        when (actionKey) {
-            Generated.Actions.READY -> return executeReady(callbackContext)
-            Generated.Actions.GET_CONSENT_STATUS -> callbackContext.success(
-                consentStatus
-            )
-
-            Generated.Actions.GET_FORM_STATUS -> callbackContext.success(if (consentInformation.isConsentFormAvailable) 1 else 2)
-            Generated.Actions.REQUEST_INFO_UPDATE -> return executeRequestInfoUpdate(
-                ctx
-            )
-
-            Generated.Actions.LOAD_FORM -> return executeLoadForm(ctx)
-            Generated.Actions.SHOW_FORM -> return executeShowForm(ctx)
-            Generated.Actions.RESET -> {
-                consentInformation.reset()
-                callbackContext.success()
-            }
-
-            else -> return false
-        }
-        return true
+            ExecuteContext(action, args, callbackContext, this)
+        Log.d(TAG, action)
+        return actions[action]?.invoke(ctx) != null
     }
 
     private val consentStatus: Int
@@ -59,31 +50,37 @@ class Consent : CordovaPlugin() {
             }
         }
 
-    private fun executeReady(callbackContext: CallbackContext): Boolean {
+    private fun executeReady(ctx: ExecuteContext) {
         if (readyCallbackContext == null) {
             for (result in eventQueue) {
-                callbackContext.sendPluginResult(result)
+                ctx.callbackContext.sendPluginResult(result)
             }
             eventQueue.clear()
         } else {
             Log.e(TAG, "Ready action should only be called once.")
         }
-        readyCallbackContext = callbackContext
+        readyCallbackContext = ctx.callbackContext
         emit(Generated.Events.READY)
-        return true
     }
 
-    private fun executeRequestInfoUpdate(ctx: ExecuteContext): Boolean {
+    private fun executeGetConsentStatus(ctx: ExecuteContext) {
+        ctx.callbackContext.success(consentStatus)
+    }
+
+    private fun executeGetFormStatus(ctx: ExecuteContext) {
+        ctx.callbackContext.success(if (consentInformation.isConsentFormAvailable) 1 else 2)
+    }
+
+    private fun executeRequestInfoUpdate(ctx: ExecuteContext) {
         val params = ctx.optConsentRequestParameters()
         val consentInformation = consentInformation
         consentInformation.requestConsentInfoUpdate(
             cordova.activity,
             params, { ctx.callbackContext.success() }
         ) { formError: FormError -> ctx.callbackContext.error(formError.message) }
-        return true
     }
 
-    private fun executeLoadForm(ctx: ExecuteContext): Boolean {
+    private fun executeLoadForm(ctx: ExecuteContext) {
         cordova.activity.runOnUiThread {
             UserMessagingPlatform.loadConsentForm(
                 cordova.activity,
@@ -93,10 +90,9 @@ class Consent : CordovaPlugin() {
                 }
             ) { formError: FormError -> ctx.callbackContext.error(formError.message) }
         }
-        return true
     }
 
-    private fun executeShowForm(ctx: ExecuteContext): Boolean {
+    private fun executeShowForm(ctx: ExecuteContext) {
         val consentForm = forms[ctx.optId()]
         cordova.activity.runOnUiThread {
             consentForm.show(
@@ -109,11 +105,15 @@ class Consent : CordovaPlugin() {
                 }
             }
         }
-        return true
+    }
+
+    private fun executeReset(ctx: ExecuteContext) {
+        consentInformation.reset()
+        ctx.callbackContext.success()
     }
 
     private val consentInformation: ConsentInformation
-        private get() = UserMessagingPlatform.getConsentInformation(cordova.activity)
+        get() = UserMessagingPlatform.getConsentInformation(cordova.activity)
 
     override fun onDestroy() {
         readyCallbackContext = null
