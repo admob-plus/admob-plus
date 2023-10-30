@@ -1,10 +1,11 @@
 import * as fse from 'fs-extra';
-import path from 'node:path';
 import {JSDOM} from 'jsdom';
-import xml2js from 'xml2js';
+import path from 'node:path';
 import xmlFormat from 'xml-formatter';
+import xml2js from 'xml2js';
 import {Events} from '../../packages/cordova/src/www/common';
 import {getUnionTypeDict, renderKotlinConstants, warnMessage} from './common';
+import Context from './context';
 
 async function androidLatestVersion() {
   let res = await fetch(
@@ -40,10 +41,10 @@ async function fetchSKAdNetworkItems() {
 }
 
 class Generator {
-  constructor(private rootDir: string) {}
+  constructor(private ctx: Context) {}
 
   pkgDir(...args: string[]) {
-    return path.join(this.rootDir, 'packages/cordova', ...args);
+    return this.ctx.rootDirJoin('packages/cordova', ...args);
   }
 
   get cordovaActions() {
@@ -86,7 +87,7 @@ require('cordova/exec/proxy').add('AdMob', AdMob);
   }
 
   async updatePluginXML() {
-    const filename = path.join(this.rootDir, 'packages/cordova/plugin.xml');
+    const filename = path.join(this.ctx.rootDir, 'packages/cordova/plugin.xml');
     const [latestSKAdNetworkItems, pluginXML] = await Promise.all([
       fetchSKAdNetworkItems(),
       fse.readFile(filename, 'utf8'),
