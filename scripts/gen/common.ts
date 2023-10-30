@@ -44,3 +44,10 @@ export function getUnionTypeValues(
   }
   return []; // return an empty array if not a union type or not found
 }
+
+export function getUnionTypeDict(
+  filePath: string,
+  typeName: string
+) {
+  return _.keyBy(getUnionTypeValues(filePath, typeName))
+}

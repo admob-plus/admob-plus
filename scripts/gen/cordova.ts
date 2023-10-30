@@ -4,7 +4,7 @@ import {JSDOM} from 'jsdom';
 import xml2js from 'xml2js';
 import xmlFormat from 'xml-formatter';
 import {Events} from '../../packages/cordova/src/www/common';
-import {getUnionTypeValues, renderKotlinConstants, warnMessage} from './common';
+import {getUnionTypeDict, renderKotlinConstants, warnMessage} from './common';
 
 async function androidLatestVersion() {
   let res = await fetch(
@@ -47,14 +47,7 @@ class Generator {
   }
 
   get cordovaActions() {
-    const filePath = this.pkgDir('src/www/common.ts');
-    return getUnionTypeValues(filePath, 'CordovaAction').reduce(
-      (acc, cur) => ({
-        ...acc,
-        [cur]: cur,
-      }),
-      {}
-    );
+    return getUnionTypeDict(this.pkgDir('src/www/common.ts'), 'CordovaAction');
   }
 
   buildKotlin() {
@@ -119,7 +112,7 @@ require('cordova/exec/proxy').add('AdMob', AdMob);
       m5,
       await iosLatestVersion(),
       m7,
-    ].join("");
+    ].join('');
 
     return {
       filename,
