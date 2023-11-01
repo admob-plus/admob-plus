@@ -20,13 +20,13 @@ class Consent : CordovaPlugin() {
     private var readyCallbackContext: CallbackContext? = null
 
     private val actions = mapOf(
-        Generated.Actions.READY to ::executeReady,
-        Generated.Actions.GET_CONSENT_STATUS to ::executeGetConsentStatus,
-        Generated.Actions.GET_FORM_STATUS to ::executeGetFormStatus,
-        Generated.Actions.REQUEST_INFO_UPDATE to ::executeRequestInfoUpdate,
-        Generated.Actions.LOAD_FORM to ::executeLoadForm,
-        Generated.Actions.SHOW_FORM to ::executeShowForm,
-        Generated.Actions.RESET to ::executeReset,
+        Actions.READY to ::executeReady,
+        Actions.GET_CONSENT_STATUS to ::executeGetConsentStatus,
+        Actions.GET_FORM_STATUS to ::executeGetFormStatus,
+        Actions.REQUEST_INFO_UPDATE to ::executeRequestInfoUpdate,
+        Actions.LOAD_FORM to ::executeLoadForm,
+        Actions.SHOW_FORM to ::executeShowForm,
+        Actions.RESET to ::executeReset,
     )
 
     override fun execute(
@@ -42,10 +42,9 @@ class Consent : CordovaPlugin() {
 
     private val consentStatus: Int
         get() {
-            val status = consentInformation.consentStatus
-            return when (status) {
-                ConsentInformation.ConsentStatus.NOT_REQUIRED -> Generated.ConsentStatus.NOT_REQUIRED
-                ConsentInformation.ConsentStatus.REQUIRED -> Generated.ConsentStatus.REQUIRED
+            return when (val status = consentInformation.consentStatus) {
+                ConsentInformation.ConsentStatus.NOT_REQUIRED -> ConsentStatus.NOT_REQUIRED
+                ConsentInformation.ConsentStatus.REQUIRED -> ConsentStatus.REQUIRED
                 else -> status
             }
         }
@@ -60,7 +59,7 @@ class Consent : CordovaPlugin() {
             Log.e(TAG, "Ready action should only be called once.")
         }
         readyCallbackContext = ctx.callbackContext
-        emit(Generated.Events.READY)
+        emit(Events.READY)
     }
 
     private fun executeGetConsentStatus(ctx: ExecuteContext) {

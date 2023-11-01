@@ -2,6 +2,7 @@ import {findWorkspaceDir} from '@pnpm/find-workspace-dir';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import Context from './context';
+import ConsentGen from './consent';
 import CordovaGen from './cordova';
 import DocsGen from './docs';
 
@@ -10,7 +11,7 @@ async function main() {
   if (!rootDir) throw new Error('Can not find root dir');
   const ctx = new Context(rootDir);
 
-  for (const Generator of [CordovaGen, DocsGen]) {
+  for (const Generator of [ConsentGen, CordovaGen, DocsGen]) {
     const g = new Generator(ctx);
     for (const [k, v] of Object.entries(await g.files())) {
       console.log(path.relative(rootDir, k));
