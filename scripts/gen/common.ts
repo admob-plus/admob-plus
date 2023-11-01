@@ -6,13 +6,23 @@ export const warnMessage =
 
 export const indent4 = (n: number) => _.repeat(' ', 4 * n);
 
-export const renderKotlinConstants = (m: {[key: string]: string}) =>
+export const renderKotlinConstants = <T extends Record<string, string>>(m: T) =>
   _.map(
     m,
     (v, k) => `${indent4(1)}const val ${_.snakeCase(k).toUpperCase()} = "${v}"`
   )
     .sort()
     .join('\n');
+
+export function renderKotlinEnums<T extends Record<number, string>>(m: T) {
+  return Object.values(m)
+    .filter(v => typeof v !== 'number')
+    .map(k => {
+      const v = m[k];
+      return `${indent4(1)}const val ${_.snakeCase(k).toUpperCase()} = ${v}`;
+    })
+    .join('\n');
+}
 
 export function getUnionTypeValues(
   filePath: string,
@@ -45,9 +55,6 @@ export function getUnionTypeValues(
   return []; // return an empty array if not a union type or not found
 }
 
-export function getUnionTypeDict(
-  filePath: string,
-  typeName: string
-) {
-  return _.keyBy(getUnionTypeValues(filePath, typeName))
+export function getUnionTypeDict(filePath: string, typeName: string) {
+  return _.keyBy(getUnionTypeValues(filePath, typeName));
 }

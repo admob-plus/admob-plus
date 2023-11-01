@@ -1,6 +1,6 @@
 import path from 'node:path';
-import {Events} from '../../packages/cordova-consent/src/www/index';
-import {getUnionTypeDict, renderKotlinConstants, warnMessage} from './common';
+import {ConsentStatus, Events} from '../../packages/cordova-consent/src/www/index';
+import {getUnionTypeDict, renderKotlinConstants, renderKotlinEnums, warnMessage} from './common';
 import Context from './context';
 
 class Generator {
@@ -17,6 +17,7 @@ class Generator {
   buildKotlin() {
     const linesActions = renderKotlinConstants(this.cordovaActions);
     const linesEvents = renderKotlinConstants(Events);
+    const linesConsentStatus = renderKotlinEnums(ConsentStatus);
 
     return `// ${warnMessage}
 package cordova.plugin.consent
@@ -30,10 +31,7 @@ ${linesEvents}
 }
 
 object ConsentStatus {
-    const val UNKNOWN = 0
-    const val REQUIRED = 1
-    const val NOT_REQUIRED = 2
-    const val OBTAINED = 3
+${linesConsentStatus}
 }
 `;
   }
