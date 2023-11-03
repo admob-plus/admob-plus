@@ -202,8 +202,8 @@ importers:
         specifier: ^12.0.0
         version: 12.0.0
       cordova-android:
-        specifier: 12.0.0
-        version: 12.0.0
+        specifier: 12.0.1
+        version: 12.0.1
       cordova-browser:
         specifier: 7.0.0
         version: 7.0.0
@@ -18575,6 +18575,27 @@ packages:
       string-argv: 0.3.2
       untildify: 4.0.0
       which: 3.0.1
+    dev: true
+
+  /cordova-android@12.0.1:
+    resolution: {integrity: sha512-6fXWoYb/X5AJlluhBg5RvOaX6iRxsvNH7yEOiXzUmLIflf5Ho7LtYCSKZaWMHh3f5cJe/sPCBKmFFBS+EWepVg==}
+    engines: {node: '>=16.13.0'}
+    dependencies:
+      android-versions: 1.8.1
+      cordova-common: 5.0.0
+      dedent: 1.5.1
+      execa: 5.1.1
+      fast-glob: 3.2.12
+      fs-extra: 11.1.1
+      is-path-inside: 3.0.3
+      nopt: 7.1.0
+      properties-parser: 0.3.1
+      semver: 7.5.3
+      string-argv: 0.3.2
+      untildify: 4.0.0
+      which: 3.0.1
+    transitivePeerDependencies:
+      - babel-plugin-macros
 
   /cordova-app-hello-world@4.0.0:
     resolution: {integrity: sha512-hTNYHUJT5YyMa1cQQE1naGyU6Eh5D5Jl33sMnCh3+q15ZwWTL/TOy3k8+mUvjTp8bwhO5eECGKULYoVO+fp9ZA==}
@@ -18960,7 +18981,7 @@ packages:
       chokidar: 3.5.3
       clipboardy: 3.0.0
       cordova: 12.0.0
-      cordova-android: 12.0.0
+      cordova-android: 12.0.1
       cordova-browser: 7.0.0
       cordova-common: 5.0.0
       cordova-ios: 6.3.0
@@ -18987,6 +19008,7 @@ packages:
       untildify: 4.0.0
       yargs: 17.7.2
     transitivePeerDependencies:
+      - babel-plugin-macros
       - bluebird
       - bufferutil
       - debug
@@ -19062,7 +19084,7 @@ packages:
       chokidar: 3.5.3
       clipboardy: 3.0.0
       cordova: 12.0.0
-      cordova-android: 12.0.0
+      cordova-android: 12.0.1
       cordova-browser: 7.0.0
       cordova-common: 5.0.0
       cordova-ios: 6.3.0
@@ -19089,6 +19111,7 @@ packages:
       untildify: 5.0.0
       yargs: 17.7.2
     transitivePeerDependencies:
+      - babel-plugin-macros
       - bluebird
       - bufferutil
       - debug
@@ -20031,6 +20054,14 @@ packages:
 
   /dedent@0.7.0:
     resolution: {integrity: sha512-Q6fKUPqnAHAyhiUgFU7BUzLiv0kd8saH9al7tnu5Q/okj6dnupxyTgFIBjVzJATdfIAm9NAsvXNzjaKa+bxVyA==}
+
+  /dedent@1.5.1:
+    resolution: {integrity: sha512-+LxW+KLWxu3HW3M2w2ympwtqPrqYRzU8fqi6Fhd18fBALe15blJPI/I4+UHveMVG6lJqB4JNd4UG0S5cnVHwIg==}
+    peerDependencies:
+      babel-plugin-macros: ^3.1.0
+    peerDependenciesMeta:
+      babel-plugin-macros:
+        optional: true
 
   /deep-equal@1.1.1:
     resolution: {integrity: sha512-yd9c5AdiqVcR+JjcwUQb9DkhJc8ngNr0MahEBGvDiJw8puWab2yZlh+nkasOnZP+EGTAP6rRp2JzJhJZzvNF8g==}
@@ -40109,6 +40140,7 @@ packages:
       update-notifier: 6.0.2
       yargs: 17.7.2
     transitivePeerDependencies:
+      - babel-plugin-macros
       - bluebird
       - bufferutil
       - debug

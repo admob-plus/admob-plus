@@ -22,11 +22,6 @@
         <preference name="deployment-target" value="11.0" />
         <preference name="SwiftVersion" value="5.3" />
     </platform>
-    <plugin name="admob-plus-cordova" spec="../../packages/cordova">
-        <variable name="APP_ID_ANDROID" value="ca-app-pub-3940256099942544~3347511713" />
-        <variable name="APP_ID_IOS" value="ca-app-pub-3940256099942544~1458002511" />
-    </plugin>
-    <plugin name="admob-plus-cordova-native" spec="../../packages/cordova-native" />
     <engine name="ios" spec="6.2.0" />
     <engine name="android" spec="9.1.0" />
     <engine name="browser" spec="6.0.0" />
