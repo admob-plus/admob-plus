@@ -3,17 +3,13 @@ import {
   Anchor,
   AppShell,
   Burger,
-  Footer,
   Group,
-  Header,
-  MediaQuery,
-  Navbar,
   NavLink,
   useMantineColorScheme,
   useMantineTheme,
 } from '@mantine/core';
+import {useDisclosure} from '@mantine/hooks';
 import {IconMoonStars, IconSun} from '@tabler/icons-react';
-import {useState} from 'react';
 import {Link, Route, Switch} from 'wouter';
 import Logs from './components/Logs';
 import BannerAd from './pages/BannerAd';
@@ -37,83 +33,70 @@ function ThemeToggle() {
 
 function App() {
   const theme = useMantineTheme();
-  const [opened, setOpened] = useState(false);
+  const [opened, {toggle}] = useDisclosure();
 
   return (
     <AppShell
-      styles={{
-        main: {
-          background:
-            theme.colorScheme === 'dark'
-              ? theme.colors.dark[8]
-              : theme.colors.gray[0],
-        },
+      navbar={{
+        breakpoint: 'sm',
+        collapsed: {mobile: !opened},
+        width: {sm: 200, lg: 300},
       }}
-      navbarOffsetBreakpoint="sm"
-      asideOffsetBreakpoint="sm"
-      navbar={
-        <Navbar
-          p="md"
-          hiddenBreakpoint="sm"
-          hidden={!opened}
-          width={{sm: 200, lg: 300}}
-          onClick={() => {
-            setOpened(!opened);
-          }}
-        >
-          <NavLink component={Link} href="/consent" label="Consent" />
-          <NavLink component={Link} href="/banner-ad" label="Banner Ad" />
-          <NavLink
-            component={Link}
-            href="/interstitial-ad"
-            label="Interstitial Ad"
-          />
-          <NavLink component={Link} href="/webview-ad" label="Webview Ad" />
-        </Navbar>
-      }
-      footer={
-        <Footer height={180} p="md" style={{overflowY: 'scroll'}}>
-          <Logs />
-        </Footer>
-      }
-      header={
-        <Header height={{base: 60, md: 70}} p="md">
-          <Group position="apart">
-            <MediaQuery largerThan="sm" styles={{display: 'none'}}>
-              <Burger
-                opened={opened}
-                onClick={() => setOpened(o => !o)}
-                size="sm"
-                color={theme.colors.gray[6]}
-                mr="xl"
-              />
-            </MediaQuery>
-
-            <Anchor component={Link} href="/">
-              AdMob Plus
-            </Anchor>
-            <ThemeToggle />
-          </Group>
-        </Header>
-      }
+      header={{height: {base: 60, md: 70}}}
+      footer={{height: 180}}
     >
-      <Switch>
-        <Route path="/">
-          <Home />
-        </Route>
-        <Route path="/banner-ad">
-          <BannerAd />
-        </Route>
-        <Route path="/consent">
-          <Consent />
-        </Route>
-        <Route path="/interstitial-ad">
-          <InterstitialAd />
-        </Route>
-        <Route path="/webview-ad">
-          <WebviewAd />
-        </Route>
-      </Switch>
+      <AppShell.Header p="md">
+        <Group justify="space-between">
+          <Burger
+            opened={opened}
+            onClick={toggle}
+            size="sm"
+            hiddenFrom="sm"
+            color={theme.colors.gray[6]}
+          />
+
+          <Anchor component={Link} href="/">
+            AdMob Plus
+          </Anchor>
+
+          <ThemeToggle />
+        </Group>
+      </AppShell.Header>
+
+      <AppShell.Navbar p="md" hidden={!opened} onClick={toggle}>
+        <NavLink component={Link} href="/consent" label="Consent" />
+        <NavLink component={Link} href="/banner-ad" label="Banner Ad" />
+        <NavLink
+          component={Link}
+          href="/interstitial-ad"
+          label="Interstitial Ad"
+        />
+        <NavLink component={Link} href="/webview-ad" label="Webview Ad" />
+      </AppShell.Navbar>
+
+      <AppShell.Main>
+        <Switch>
+          <Route path="/">
+            <Home />
+          </Route>
+          <Route path="/banner-ad">
+            <BannerAd />
+          </Route>
+          <Route path="/consent">
+            <Consent />
+          </Route>
+          <Route path="/interstitial-ad">
+            <InterstitialAd />
+          </Route>
+          <Route path="/webview-ad">
+            <WebviewAd />
+          </Route>
+        </Switch>
+      </AppShell.Main>
+
+      <AppShell.Footer p="md" style={{overflowY: 'scroll'}}>
+        <Logs />
+      </AppShell.Footer>
     </AppShell>
   );
 }

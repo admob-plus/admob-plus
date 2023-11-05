@@ -39,7 +39,7 @@ function ConfigForm() {
         />
       </Group>
 
-      <Group position="right" mt="md">
+      <Group justify="right" mt="md">
         <Button type="submit">admob.configure()</Button>
       </Group>
     </form>
