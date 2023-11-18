@@ -1205,39 +1205,39 @@ importers:
         specifier: ^4.17.21
         version: 4.17.21
       replace-in-file:
-        specifier: ^7.0.1
-        version: 7.0.1
+        specifier: ^7.0.2
+        version: 7.0.2
       typescript:
-        specifier: ^5.1.6
-        version: 5.1.6
+        specifier: ^5.2.2
+        version: 5.2.2
       xml-formatter:
-        specifier: ^3.4.1
-        version: 3.4.1
+        specifier: ^3.6.0
+        version: 3.6.0
       xml2js:
-        specifier: ^0.6.0
-        version: 0.6.0
+        specifier: ^0.6.2
+        version: 0.6.2
     devDependencies:
       '@ionic/cli':
         specifier: ^7.1.1
         version: 7.1.1
       '@types/fs-extra':
-        specifier: ^11.0.1
-        version: 11.0.1
+        specifier: ^11.0.3
+        version: 11.0.3
       '@types/jsdom':
-        specifier: ^21.1.1
-        version: 21.1.1
+        specifier: ^21.1.4
+        version: 21.1.6
       '@types/lodash':
-        specifier: ^4.14.195
-        version: 4.14.195
+        specifier: ^4.14.200
+        version: 4.14.202
       '@types/xml2js':
-        specifier: ^0.4.11
-        version: 0.4.11
+        specifier: ^0.4.13
+        version: 0.4.14
       plugman:
         specifier: ^3.0.1
         version: 3.0.1
       tsx:
-        specifier: ^3.12.7
-        version: 3.12.7
+        specifier: ^3.14.0
+        version: 3.14.0
 
   website:
     dependencies:
@@ -11817,7 +11817,7 @@ packages:
     peerDependencies:
       rxjs: ^5.5.0 || ^6.5.0
     dependencies:
-      '@types/cordova': 11.0.2
+      '@types/cordova': 11.0.3
       rxjs: 7.8.1
     dev: true
 
@@ -15302,6 +15302,10 @@ packages:
   /@types/cordova@11.0.2:
     resolution: {integrity: sha512-swXLtFffXPQYz80eEX4URII7obHBZCS01JtI2Fh0Gt6dxgwoyDB7ZzfkRZgHHDxl1qRdMVRICMvfx2USIHPWCA==}
 
+  /@types/cordova@11.0.3:
+    resolution: {integrity: sha512-kyuRQ40/NWQVhqGIHq78Ehu2Bf9Mlg0LhmSmis6ZFJK7z933FRfYi8tHe/k/0fB+PGfCf95rJC6TO7dopaFvAg==}
+    dev: true
+
   /@types/cors@2.8.12:
     resolution: {integrity: sha512-vt+kDhq/M2ayberEtJcIN/hxXy1Pk+59g2FV/ZQceeaTyCtCucjL2Q7FXlFjtWn4n15KCr1NE2lNNFhp0lEThw==}
 
@@ -15481,8 +15485,8 @@ packages:
       parse5: 7.1.2
     dev: true
 
-  /@types/jsdom@21.1.1:
-    resolution: {integrity: sha512-cZFuoVLtzKP3gmq9eNosUL1R50U+USkbLtUQ1bYVgl/lKp0FZM7Cq4aIHAL8oIvQ17uSHi7jXPtfDOdjPwBE7A==}
+  /@types/jsdom@21.1.6:
+    resolution: {integrity: sha512-/7kkMsC+/kMs7gAYmmBR9P0vGTnOoLhQhyhQJSlXGI5bzTHp6xdo0TtKWQAsz6pmSAeVqKSbqeyP6hytqr9FDw==}
     dependencies:
       '@types/node': 20.2.5
       '@types/tough-cookie': 4.0.2
@@ -15517,6 +15521,10 @@ packages:
 
   /@types/lodash@4.14.195:
     resolution: {integrity: sha512-Hwx9EUgdwf2GLarOjQp5ZH8ZmblzcbTBC2wtQWNKARBSxM9ezRIAUpeDTgoQRAFB0+8CNWXVA9+MaSOzOF3nPg==}
+    dev: true
+
+  /@types/lodash@4.14.202:
+    resolution: {integrity: sha512-OvlIYQK9tNneDlS0VN54LLd5uiPCBOp7gS5Z0f1mjoJYBrtStzgmJBxONW3U6OZqdtNzZPmn9BS/7WI7BFFcFQ==}
     dev: true
 
   /@types/markdown-magic@1.0.1:
@@ -15733,6 +15741,12 @@ packages:
 
   /@types/xml2js@0.4.11:
     resolution: {integrity: sha512-JdigeAKmCyoJUiQljjr7tQG3if9NkqGUgwEUqBvV0N7LM4HyQk7UXCnusRa1lnvXAEYJ8mw8GtZWioagNztOwA==}
+    dependencies:
+      '@types/node': 20.2.5
+    dev: true
+
+  /@types/xml2js@0.4.14:
+    resolution: {integrity: sha512-4YnrRemBShWRO2QjvUin8ESA41rH+9nQGLUGZV/1IDhi3SL9OhdpNC/MrulTWuptXKwhx/aDxE7toV0f/ypIXQ==}
     dependencies:
       '@types/node': 20.2.5
     dev: true
@@ -36525,8 +36539,8 @@ packages:
       yargs: 17.6.2
     dev: false
 
-  /replace-in-file@7.0.1:
-    resolution: {integrity: sha512-KbhgPq04eA+TxXuUxpgWIH9k/TjF+28ofon2PXP7vq6izAILhxOtksCVcLuuQLtyjouBaPdlH6RJYYcSPVxCOA==}
+  /replace-in-file@7.0.2:
+    resolution: {integrity: sha512-tPG+Qmqf+x2Rf1WVdb/9B5tFIf6KJ5hs3fgxh1OTzPRUugPPvyAva7NvCJtnSpmyq6r+ABYcuUOqZkm6yzGSUw==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
@@ -39627,7 +39641,6 @@ packages:
     resolution: {integrity: sha512-mI4WrpHsbCIcwT9cF4FZvr80QUeKvsUsUvKDoR+X/7XHQH98xYD8YHZg7ANtz2GtZt/CBq2QJ0thkGJMHfqc1w==}
     engines: {node: '>=14.17'}
     hasBin: true
-    dev: true
 
   /ua-parser-js@0.7.31:
     resolution: {integrity: sha512-qLK/Xe9E2uzmYI3qLeOmI0tEOt+TBBQyUIAh4aAgU05FVYzeZrKUdkAZfBNVGRaHVgV0TDkdEngJSw/SyQchkQ==}
@@ -41542,8 +41555,8 @@ packages:
   /xml-escape@1.1.0:
     resolution: {integrity: sha512-B/T4sDK8Z6aUh/qNr7mjKAwwncIljFuUP+DO/D5hloYFj+90O88z8Wf7oSucZTHxBAsC1/CTP4rtx/x1Uf72Mg==}
 
-  /xml-formatter@3.4.1:
-    resolution: {integrity: sha512-C7VwnZpz662mZlKtrdREucsABAIlmdph/nMEUszTMsRAGGPMSNfyNOU4UaPBqxXYVadb9uSpc1Xibbj6XpbGRA==}
+  /xml-formatter@3.6.0:
+    resolution: {integrity: sha512-Wic80ENNLF/5mLcc82hVLmoOWQlLDJtVv+N1/hkP4hBuVXPLKrXo92/4V23QYPKfUxvCU6Y2AcdpHCIA/xexFw==}
     engines: {node: '>= 14'}
     dependencies:
       xml-parser-xo: 4.1.0
@@ -41583,6 +41596,14 @@ packages:
 
   /xml2js@0.6.0:
     resolution: {integrity: sha512-eLTh0kA8uHceqesPqSE+VvO1CDDJWMwlQfB6LuN6T8w6MaDJ8Txm8P7s5cHD0miF0V+GGTZrDQfxPZQVsur33w==}
+    engines: {node: '>=4.0.0'}
+    dependencies:
+      sax: 1.2.4
+      xmlbuilder: 11.0.1
+    dev: false
+
+  /xml2js@0.6.2:
+    resolution: {integrity: sha512-T4rieHaC1EXcES0Kxxj4JWgaUQHDk+qwHcYOCFHfiwKz7tOVPLq7Hjq9dM1WCMhylqMEfP7hMcOIChvotiZegA==}
     engines: {node: '>=4.0.0'}
     dependencies:
       sax: 1.2.4

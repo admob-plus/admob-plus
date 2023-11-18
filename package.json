@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "postinstall": "is-ci || simple-git-hooks",
-    "prepublishOnly": "nx build .",
+    "prepublishOnly": "tsc -b --verbose",
     "clean": "del '*.tsbuildinfo' 'packages/*.tsbuildinfo' 'packages/*/*.tsbuildinfo'",
     "test": "nx test .",
     "fmt": "cordova-plus fmt examples/{cordova,cordova-consent,ionic-angular,ionic3,playground}",
