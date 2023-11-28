@@ -14,7 +14,8 @@
           devShells.default = pkgs.mkShell {
             nativeBuildInputs = with pkgs; [
               go-task
-            ] ++ (with nodePackages; [
+              lychee
+            ] ++ (with nodePackages_latest; [
               nodejs
               pnpm
             ]);
