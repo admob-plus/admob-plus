@@ -51,7 +51,9 @@ export interface RequestConfig {
 export interface AdMobConfig extends RequestConfig {
   appMuted?: boolean;
   appVolume?: number;
+  /** @deprecated Use publisherFirstPartyIDEnabled instead */
   sameAppKey?: boolean;
+  publisherFirstPartyIDEnabled?: boolean;
 }
 
 /** @internal */

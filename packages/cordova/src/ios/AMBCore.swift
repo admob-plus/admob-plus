@@ -190,6 +190,9 @@ extension AMBCoreContext {
         if let sameAppKey = optBool("sameAppKey") {
             requestConfiguration.setSameAppKeyEnabled(sameAppKey)
         }
+        if let publisherFirstPartyIDEnabled = optBool("publisherFirstPartyIDEnabled") {
+            requestConfiguration.setPublisherFirstPartyIDEnabled(publisherFirstPartyIDEnabled)
+        }
 
         resolve()
     }
