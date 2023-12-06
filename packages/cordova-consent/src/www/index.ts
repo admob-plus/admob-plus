@@ -9,7 +9,11 @@ type CordovaAction =
   | 'requestTrackingAuthorization'
   | 'reset'
   | 'showForm'
-  | 'trackingAuthorizationStatus';
+  | 'trackingAuthorizationStatus'
+  | 'canRequestAds'
+  | 'privacyOptionsRequirementStatus'
+  | 'loadAndPresentIfRequired'
+  | 'presentPrivacyOptionsForm';
 
 function execAsync<T>(action: CordovaAction, args?: unknown[]) {
   return new Promise<T>((resolve, reject) => {
@@ -61,6 +65,12 @@ export enum ConsentStatus {
   Obtained = 3,
 }
 
+export enum PrivacyOptionsRequirementStatus {
+  Unknown = 0,
+  Required = 1,
+  NotRequired = 2
+}
+
 export enum Events {
   ready = 'consent.ready',
 }
@@ -69,6 +79,7 @@ export class Consent {
   public readonly ConsentStatus = ConsentStatus;
   public readonly DebugGeography = DebugGeography;
   public readonly FormStatus = FormStatus;
+  public readonly PrivacyOptionsRequirementStatus = PrivacyOptionsRequirementStatus;
 
   constructor() {
     document.addEventListener(
@@ -86,6 +97,23 @@ export class Consent {
       },
       false
     );
+  }
+
+  public async canRequestAds() {
+    return await execAsync<boolean>('canRequestAds');
+  }
+
+  public async privacyOptionsRequirementStatus(): Promise<PrivacyOptionsRequirementStatus> {
+    const n =  await execAsync<number>('privacyOptionsRequirementStatus');
+    return PrivacyOptionsRequirementStatus[PrivacyOptionsRequirementStatus[n]];
+  }
+
+  public loadAndPresentIfRequired() {
+    return execAsync('loadAndPresentIfRequired');
+  }
+
+  public presentPrivacyOptionsForm() {
+    return execAsync('presentPrivacyOptionsForm');
   }
 
   public async trackingAuthorizationStatus(): Promise<
