@@ -2,9 +2,13 @@
 package cordova.plugin.consent
 
 object Actions {
+    const val CAN_REQUEST_ADS = "canRequestAds"
     const val GET_CONSENT_STATUS = "getConsentStatus"
     const val GET_FORM_STATUS = "getFormStatus"
+    const val LOAD_AND_PRESENT_IF_REQUIRED = "loadAndPresentIfRequired"
     const val LOAD_FORM = "loadForm"
+    const val PRESENT_PRIVACY_OPTIONS_FORM = "presentPrivacyOptionsForm"
+    const val PRIVACY_OPTIONS_REQUIREMENT_STATUS = "privacyOptionsRequirementStatus"
     const val READY = "ready"
     const val REQUEST_INFO_UPDATE = "requestInfoUpdate"
     const val REQUEST_TRACKING_AUTHORIZATION = "requestTrackingAuthorization"

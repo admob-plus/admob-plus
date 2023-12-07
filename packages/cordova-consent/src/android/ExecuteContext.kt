@@ -2,8 +2,10 @@ package cordova.plugin.consent
 
 import android.app.Activity
 import com.google.android.ump.ConsentDebugSettings
+import com.google.android.ump.ConsentInformation
 import com.google.android.ump.ConsentRequestParameters
 import org.apache.cordova.CallbackContext
+import org.apache.cordova.PluginResult
 import org.json.JSONArray
 import org.json.JSONObject
 import java.util.Objects
@@ -30,6 +32,23 @@ data class ExecuteContext(
         }
         builder.setConsentDebugSettings(optConsentDebugSettings())
         return builder.build()
+    }
+
+    fun resolve() {
+        callbackContext.success()
+    }
+
+    fun resolve(data: Boolean) {
+        val result = PluginResult(PluginResult.Status.OK, data)
+        sendResult(result)
+    }
+
+    fun resolve(status: ConsentInformation.PrivacyOptionsRequirementStatus) {
+        callbackContext.success(status.ordinal)
+    }
+
+    private fun sendResult(result: PluginResult?) {
+        callbackContext.sendPluginResult(result)
     }
 
     private fun optConsentDebugSettings(): ConsentDebugSettings {

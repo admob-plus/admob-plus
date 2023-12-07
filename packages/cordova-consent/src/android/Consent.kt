@@ -27,6 +27,10 @@ class Consent : CordovaPlugin() {
         Actions.LOAD_FORM to ::executeLoadForm,
         Actions.SHOW_FORM to ::executeShowForm,
         Actions.RESET to ::executeReset,
+        Actions.CAN_REQUEST_ADS to ::executeCanRequestAds,
+        Actions.LOAD_AND_PRESENT_IF_REQUIRED to ::executeLoadAndPresentIfRequired,
+        Actions.PRESENT_PRIVACY_OPTIONS_FORM to ::executeShowPrivacyOptionsForm,
+        Actions.PRIVACY_OPTIONS_REQUIREMENT_STATUS to ::executePrivacyOptionsRequirementStatus,
     )
 
     override fun execute(
@@ -60,6 +64,35 @@ class Consent : CordovaPlugin() {
         }
         readyCallbackContext = ctx.callbackContext
         emit(Events.READY)
+    }
+
+    private fun executeCanRequestAds(ctx: ExecuteContext) {
+        ctx.resolve(consentInformation.canRequestAds())
+    }
+
+    private fun executeLoadAndPresentIfRequired(ctx: ExecuteContext) {
+        UserMessagingPlatform.loadAndShowConsentFormIfRequired(cordova.activity
+        ) { loadAndShowError ->
+            loadAndShowError?.let {
+                ctx.callbackContext.error(it.message)
+            } ?: run {
+                ctx.resolve()
+            }
+        }
+    }
+
+    private fun executeShowPrivacyOptionsForm(ctx: ExecuteContext) {
+        UserMessagingPlatform.showPrivacyOptionsForm(cordova.activity) { formError ->
+            formError?.let {
+                ctx.callbackContext.error(it.message)
+            } ?: run {
+                ctx.resolve()
+            }
+        }
+    }
+
+    private fun executePrivacyOptionsRequirementStatus(ctx: ExecuteContext) {
+        ctx.resolve(consentInformation.privacyOptionsRequirementStatus)
     }
 
     private fun executeGetConsentStatus(ctx: ExecuteContext) {
