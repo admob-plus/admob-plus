@@ -34,7 +34,7 @@ class CSNConsent: CDVPlugin {
         ctx.success(UMPConsentInformation.sharedInstance.privacyOptionsRequirementStatus.rawValue)
     }
 
-    @objc func loadAndPresentIfRequired(_ command: CDVInvokedUrlCommand) {
+    @objc func loadAndShowIfRequired(_ command: CDVInvokedUrlCommand) {
         let ctx = CSNContext(command)
         UMPConsentForm.loadAndPresentIfRequired(from: self.viewController) {
             [weak self] loadAndPresentError in
@@ -48,7 +48,7 @@ class CSNConsent: CDVPlugin {
         }
     }
 
-    @objc func presentPrivacyOptionsForm(_ command: CDVInvokedUrlCommand) {
+    @objc func showPrivacyOptionsForm(_ command: CDVInvokedUrlCommand) {
         let ctx = CSNContext(command)
         UMPConsentForm.presentPrivacyOptionsForm(from: self.viewController) {
             [weak self] formError in

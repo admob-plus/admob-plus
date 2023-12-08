@@ -28,8 +28,8 @@ class Consent : CordovaPlugin() {
         Actions.SHOW_FORM to ::executeShowForm,
         Actions.RESET to ::executeReset,
         Actions.CAN_REQUEST_ADS to ::executeCanRequestAds,
-        Actions.LOAD_AND_PRESENT_IF_REQUIRED to ::executeLoadAndPresentIfRequired,
-        Actions.PRESENT_PRIVACY_OPTIONS_FORM to ::executeShowPrivacyOptionsForm,
+        Actions.LOAD_AND_SHOW_IF_REQUIRED to ::executeLoadAndShowIfRequired,
+        Actions.SHOW_PRIVACY_OPTIONS_FORM to ::executeShowPrivacyOptionsForm,
         Actions.PRIVACY_OPTIONS_REQUIREMENT_STATUS to ::executePrivacyOptionsRequirementStatus,
     )
 
@@ -70,7 +70,7 @@ class Consent : CordovaPlugin() {
         ctx.resolve(consentInformation.canRequestAds())
     }
 
-    private fun executeLoadAndPresentIfRequired(ctx: ExecuteContext) {
+    private fun executeLoadAndShowIfRequired(ctx: ExecuteContext) {
         UserMessagingPlatform.loadAndShowConsentFormIfRequired(cordova.activity
         ) { loadAndShowError ->
             loadAndShowError?.let {
