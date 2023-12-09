@@ -20,13 +20,17 @@ custom_edit_url: null
 
 ### constructor
 
-• **new NativeAd**(`opts`)
+• **new NativeAd**(`opts`): [`NativeAd`](NativeAd.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
 | `opts` | `NativeAdOptions` |
+
+#### Returns
+
+[`NativeAd`](NativeAd.md)
 
 #### Overrides
 

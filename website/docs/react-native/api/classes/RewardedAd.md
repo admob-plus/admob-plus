@@ -16,13 +16,17 @@ custom_edit_url: null
 
 ### constructor
 
-• **new RewardedAd**(`opts`)
+• **new RewardedAd**(`opts`): [`RewardedAd`](RewardedAd.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
 | `opts` | [`MobileAdOptions`](../#mobileadoptions) |
+
+#### Returns
+
+[`RewardedAd`](RewardedAd.md)
 
 #### Inherited from
 
@@ -92,7 +96,7 @@ index.ts:54
 
 ### init
 
-▸ `Protected` **init**(): `Promise`<`void`\>
+▸ **init**(): `Promise`<`void`\>
 
 #### Returns
 

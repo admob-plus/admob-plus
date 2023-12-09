@@ -20,7 +20,7 @@ custom_edit_url: null
 
 ### constructor
 
-• **new InterstitialAd**(`opts`)
+• **new InterstitialAd**(`opts`): [`InterstitialAd`](InterstitialAd.md)
 
 #### Parameters
 
@@ -28,6 +28,10 @@ custom_edit_url: null
 | :------ | :------ |
 | `opts` | `Object` |
 | `opts.adUnitId` | `string` |
+
+#### Returns
+
+[`InterstitialAd`](InterstitialAd.md)
 
 #### Overrides
 

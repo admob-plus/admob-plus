@@ -16,13 +16,17 @@ custom_edit_url: null
 
 ### constructor
 
-• **new WebViewAd**(`opts`)
+• **new WebViewAd**(`opts`): [`WebViewAd`](WebViewAd.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
 | `opts` | [`WebViewAdOptions`](../interfaces/WebViewAdOptions.md) |
+
+#### Returns
+
+[`WebViewAd`](WebViewAd.md)
 
 #### Overrides
 
@@ -142,7 +146,7 @@ ___
 
 ### allAds
 
-• `Static` `Private` `get` **allAds**(): `Record`<`string`, [`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../#mobileadoptions)\>\>
+• `get` **allAds**(): `Record`<`string`, [`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../#mobileadoptions)\>\>
 
 #### Returns
 
@@ -185,7 +189,7 @@ ___
 
 ### hide
 
-▸ `Protected` **hide**(): `Promise`<`unknown`\>
+▸ **hide**(): `Promise`<`unknown`\>
 
 #### Returns
 
@@ -203,7 +207,7 @@ ___
 
 ### historyCurrentHref
 
-▸ `Private` **historyCurrentHref**(): `any`
+▸ **historyCurrentHref**(): `any`
 
 #### Returns
 
@@ -217,7 +221,7 @@ ___
 
 ### historyOriginalHref
 
-▸ `Private` **historyOriginalHref**(): `any`
+▸ **historyOriginalHref**(): `any`
 
 #### Returns
 
@@ -231,7 +235,7 @@ ___
 
 ### historyReplaceState
 
-▸ `Private` **historyReplaceState**(`url`): `void`
+▸ **historyReplaceState**(`url`): `void`
 
 #### Parameters
 
@@ -251,7 +255,7 @@ ___
 
 ### historyRestoreOriginalHref
 
-▸ `Private` **historyRestoreOriginalHref**(): `void`
+▸ **historyRestoreOriginalHref**(): `void`
 
 #### Returns
 
@@ -265,7 +269,7 @@ ___
 
 ### historySetPage
 
-▸ `Private` **historySetPage**(`page`, `parameters?`): `string`
+▸ **historySetPage**(`page`, `parameters?`): `string`
 
 #### Parameters
 
@@ -286,7 +290,7 @@ ___
 
 ### init
 
-▸ `Protected` **init**(): `Promise`<`unknown`\>
+▸ **init**(): `Promise`<`unknown`\>
 
 #### Returns
 
@@ -304,7 +308,7 @@ ___
 
 ### isLoaded
 
-▸ `Protected` **isLoaded**(): `Promise`<`boolean`\>
+▸ **isLoaded**(): `Promise`<`boolean`\>
 
 #### Returns
 
@@ -322,7 +326,7 @@ ___
 
 ### isNodeScript
 
-▸ `Private` **isNodeScript**(`node`): `boolean`
+▸ **isNodeScript**(`node`): `boolean`
 
 #### Parameters
 
@@ -342,7 +346,7 @@ ___
 
 ### load
 
-▸ `Protected` **load**(): `Promise`<`void`\>
+▸ **load**(): `Promise`<`void`\>
 
 #### Returns
 
@@ -360,7 +364,7 @@ ___
 
 ### nodeScriptClone
 
-▸ `Private` **nodeScriptClone**(`node`): `HTMLScriptElement`
+▸ **nodeScriptClone**(`node`): `HTMLScriptElement`
 
 #### Parameters
 
@@ -380,7 +384,7 @@ ___
 
 ### nodeScriptReplace
 
-▸ `Private` **nodeScriptReplace**(`node`): `any`
+▸ **nodeScriptReplace**(`node`): `any`
 
 #### Parameters
 
@@ -448,7 +452,7 @@ ___
 
 ### checkIntegration
 
-▸ `Static` **checkIntegration**(): `Promise`<`void`\>
+▸ **checkIntegration**(): `Promise`<`void`\>
 
 #### Returns
 
@@ -462,7 +466,7 @@ ___
 
 ### getAdById
 
-▸ `Static` **getAdById**(`id`): [`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../#mobileadoptions)\>
+▸ **getAdById**(`id`): [`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../#mobileadoptions)\>
 
 #### Parameters
 

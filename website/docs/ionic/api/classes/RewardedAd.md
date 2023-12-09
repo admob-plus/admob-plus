@@ -20,13 +20,17 @@ custom_edit_url: null
 
 ### constructor
 
-• **new RewardedAd**(`opts`)
+• **new RewardedAd**(`opts`): [`RewardedAd`](RewardedAd.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
 | `opts` | `RewardedAdOptions` |
+
+#### Returns
+
+[`RewardedAd`](RewardedAd.md)
 
 #### Overrides
 

@@ -10,7 +10,7 @@ custom_edit_url: null
 
 ### constructor
 
-• **new ConsentForm**(`id`)
+• **new ConsentForm**(`id`): [`ConsentForm`](ConsentForm.md)
 
 #### Parameters
 
@@ -18,9 +18,13 @@ custom_edit_url: null
 | :------ | :------ |
 | `id` | `number` |
 
+#### Returns
+
+[`ConsentForm`](ConsentForm.md)
+
 #### Defined in
 
-index.ts:48
+index.ts:52
 
 ## Properties
 
@@ -30,7 +34,7 @@ index.ts:48
 
 #### Defined in
 
-index.ts:46
+index.ts:50
 
 ## Methods
 
@@ -44,4 +48,4 @@ index.ts:46
 
 #### Defined in
 
-index.ts:52
+index.ts:56

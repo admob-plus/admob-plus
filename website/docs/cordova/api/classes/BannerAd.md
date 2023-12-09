@@ -16,13 +16,17 @@ custom_edit_url: null
 
 ### constructor
 
-• **new BannerAd**(`opts`)
+• **new BannerAd**(`opts`): [`BannerAd`](BannerAd.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
 | `opts` | [`BannerAdOptions`](../interfaces/BannerAdOptions.md) |
+
+#### Returns
+
+[`BannerAd`](BannerAd.md)
 
 #### Overrides
 
@@ -102,7 +106,7 @@ ___
 
 ### allAds
 
-• `Static` `Private` `get` **allAds**(): `Record`<`string`, [`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../#mobileadoptions)\>\>
+• `get` **allAds**(): `Record`<`string`, [`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../#mobileadoptions)\>\>
 
 #### Returns
 
@@ -138,7 +142,7 @@ ___
 
 ### init
 
-▸ `Protected` **init**(): `Promise`<`unknown`\>
+▸ **init**(): `Promise`<`unknown`\>
 
 #### Returns
 
@@ -156,7 +160,7 @@ ___
 
 ### isLoaded
 
-▸ `Protected` **isLoaded**(): `Promise`<`boolean`\>
+▸ **isLoaded**(): `Promise`<`boolean`\>
 
 #### Returns
 
@@ -240,7 +244,7 @@ ___
 
 ### config
 
-▸ `Static` **config**(`opts`): ``false`` \| `Promise`<`unknown`\>
+▸ **config**(`opts`): ``false`` \| `Promise`<`unknown`\>
 
 #### Parameters
 
@@ -263,7 +267,7 @@ ___
 
 ### getAdById
 
-▸ `Static` **getAdById**(`id`): [`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../#mobileadoptions)\>
+▸ **getAdById**(`id`): [`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../#mobileadoptions)\>
 
 #### Parameters
 

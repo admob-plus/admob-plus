@@ -16,13 +16,17 @@ custom_edit_url: null
 
 ### constructor
 
-• **new InterstitialAd**(`opts`)
+• **new InterstitialAd**(`opts`): [`InterstitialAd`](InterstitialAd.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
 | `opts` | [`MobileAdOptions`](../#mobileadoptions) |
+
+#### Returns
+
+[`InterstitialAd`](InterstitialAd.md)
 
 #### Inherited from
 
@@ -120,7 +124,7 @@ index.ts:42
 
 ### hide
 
-▸ `Protected` **hide**(): `Promise`<`void`\>
+▸ **hide**(): `Promise`<`void`\>
 
 #### Returns
 
@@ -138,7 +142,7 @@ ___
 
 ### init
 
-▸ `Protected` **init**(): `Promise`<`void`\>
+▸ **init**(): `Promise`<`void`\>
 
 #### Returns
 

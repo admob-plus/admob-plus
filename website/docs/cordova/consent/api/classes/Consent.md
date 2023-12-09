@@ -10,11 +10,15 @@ custom_edit_url: null
 
 ### constructor
 
-• **new Consent**()
+• **new Consent**(): [`Consent`](Consent.md)
+
+#### Returns
+
+[`Consent`](Consent.md)
 
 #### Defined in
 
-index.ts:73
+index.ts:85
 
 ## Properties
 
@@ -24,7 +28,7 @@ index.ts:73
 
 #### Defined in
 
-index.ts:69
+index.ts:79
 
 ___
 
@@ -34,7 +38,7 @@ ___
 
 #### Defined in
 
-index.ts:70
+index.ts:80
 
 ___
 
@@ -44,9 +48,33 @@ ___
 
 #### Defined in
 
-index.ts:71
+index.ts:81
+
+___
+
+### PrivacyOptionsRequirementStatus
+
+• `Readonly` **PrivacyOptionsRequirementStatus**: typeof [`PrivacyOptionsRequirementStatus`](../enums/PrivacyOptionsRequirementStatus.md) = `PrivacyOptionsRequirementStatus`
+
+#### Defined in
+
+index.ts:82
 
 ## Methods
+
+### canRequestAds
+
+▸ **canRequestAds**(): `Promise`<`boolean`\>
+
+#### Returns
+
+`Promise`<`boolean`\>
+
+#### Defined in
+
+index.ts:103
+
+___
 
 ### getConsentStatus
 
@@ -58,7 +86,7 @@ index.ts:71
 
 #### Defined in
 
-index.ts:115
+index.ts:144
 
 ___
 
@@ -72,7 +100,21 @@ ___
 
 #### Defined in
 
-index.ts:120
+index.ts:149
+
+___
+
+### loadAndShowIfRequired
+
+▸ **loadAndShowIfRequired**(): `Promise`<`unknown`\>
+
+#### Returns
+
+`Promise`<`unknown`\>
+
+#### Defined in
+
+index.ts:112
 
 ___
 
@@ -86,7 +128,21 @@ ___
 
 #### Defined in
 
-index.ts:129
+index.ts:158
+
+___
+
+### privacyOptionsRequirementStatus
+
+▸ **privacyOptionsRequirementStatus**(): `Promise`<[`PrivacyOptionsRequirementStatus`](../enums/PrivacyOptionsRequirementStatus.md)\>
+
+#### Returns
+
+`Promise`<[`PrivacyOptionsRequirementStatus`](../enums/PrivacyOptionsRequirementStatus.md)\>
+
+#### Defined in
+
+index.ts:107
 
 ___
 
@@ -106,7 +162,7 @@ ___
 
 #### Defined in
 
-index.ts:125
+index.ts:154
 
 ___
 
@@ -120,7 +176,7 @@ ___
 
 #### Defined in
 
-index.ts:103
+index.ts:132
 
 ___
 
@@ -134,7 +190,21 @@ ___
 
 #### Defined in
 
-index.ts:134
+index.ts:163
+
+___
+
+### showPrivacyOptionsForm
+
+▸ **showPrivacyOptionsForm**(): `Promise`<`unknown`\>
+
+#### Returns
+
+`Promise`<`unknown`\>
+
+#### Defined in
+
+index.ts:116
 
 ___
 
@@ -148,4 +218,4 @@ ___
 
 #### Defined in
 
-index.ts:91
+index.ts:120

@@ -16,13 +16,17 @@ custom_edit_url: null
 
 ### constructor
 
-• **new NativeAd**(`opts`)
+• **new NativeAd**(`opts`): [`NativeAd`](NativeAd.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
 | `opts` | [`NativeAdOptions`](../interfaces/NativeAdOptions.md) |
+
+#### Returns
+
+[`NativeAd`](NativeAd.md)
 
 #### Inherited from
 
@@ -92,7 +96,7 @@ ___
 
 ### allAds
 
-• `Static` `Private` `get` **allAds**(): `Record`<`string`, [`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../#mobileadoptions)\>\>
+• `get` **allAds**(): `Record`<`string`, [`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../#mobileadoptions)\>\>
 
 #### Returns
 
@@ -128,7 +132,7 @@ ___
 
 ### init
 
-▸ `Protected` **init**(): `Promise`<`unknown`\>
+▸ **init**(): `Promise`<`unknown`\>
 
 #### Returns
 
@@ -256,7 +260,7 @@ ___
 
 ### getAdById
 
-▸ `Static` **getAdById**(`id`): [`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../#mobileadoptions)\>
+▸ **getAdById**(`id`): [`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../#mobileadoptions)\>
 
 #### Parameters
 

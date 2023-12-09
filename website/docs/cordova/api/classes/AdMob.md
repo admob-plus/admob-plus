@@ -10,7 +10,11 @@ custom_edit_url: null
 
 ### constructor
 
-• **new AdMob**()
+• **new AdMob**(): [`AdMob`](AdMob.md)
+
+#### Returns
+
+[`AdMob`](AdMob.md)
 
 ## Properties
 
@@ -96,7 +100,7 @@ ___
 
 ### \_startPromise
 
-• `Private` **\_startPromise**: `undefined` \| `Promise`<{ `version`: `string`  }\>
+• `Private` **\_startPromise**: `undefined` \| `Promise`<\{ `version`: `string`  }\>
 
 #### Defined in
 
@@ -106,11 +110,11 @@ packages/cordova/src/www/index.ts:18
 
 ### \_start
 
-▸ `Private` **_start**(): `Promise`<{ `version`: `string`  }\>
+▸ **_start**(): `Promise`<\{ `version`: `string`  }\>
 
 #### Returns
 
-`Promise`<{ `version`: `string`  }\>
+`Promise`<\{ `version`: `string`  }\>
 
 #### Defined in
 
@@ -140,11 +144,11 @@ ___
 
 ### start
 
-▸ **start**(): `Promise`<{ `version`: `string`  }\>
+▸ **start**(): `Promise`<\{ `version`: `string`  }\>
 
 #### Returns
 
-`Promise`<{ `version`: `string`  }\>
+`Promise`<\{ `version`: `string`  }\>
 
 #### Defined in
 

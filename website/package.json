@@ -23,15 +23,15 @@
     "@docusaurus/module-type-aliases": "2.4.1",
     "@docusaurus/plugin-content-docs": "^2.4.1",
     "@docusaurus/types": "^2.4.1",
-    "@tsconfig/docusaurus": "^2.0.0",
-    "@types/react": "^18.2.14",
-    "@types/react-helmet": "^6.1.6",
+    "@tsconfig/docusaurus": "^2.0.2",
+    "@types/react": "^18.2.43",
+    "@types/react-helmet": "^6.1.11",
     "@types/react-router-dom": "^5.3.3",
-    "docusaurus-plugin-typedoc": "~0.19.2",
+    "docusaurus-plugin-typedoc": "~0.21.0",
     "markdown-magic": "^2.6.1",
-    "typedoc": "~0.24.8",
-    "typedoc-plugin-markdown": "~3.15.3",
-    "typescript": "~5.1.6"
+    "typedoc": "~0.25.4",
+    "typedoc-plugin-markdown": "~3.17.1",
+    "typescript": "~5.3.3"
   },
   "browserslist": {
     "production": [

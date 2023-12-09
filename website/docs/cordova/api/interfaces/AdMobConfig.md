@@ -48,13 +48,27 @@ packages/cordova/src/www/common.ts:45
 
 ___
 
+### publisherFirstPartyIDEnabled
+
+• `Optional` **publisherFirstPartyIDEnabled**: `boolean`
+
+#### Defined in
+
+packages/cordova/src/www/common.ts:56
+
+___
+
 ### sameAppKey
 
 • `Optional` **sameAppKey**: `boolean`
 
+**`Deprecated`**
+
+Use publisherFirstPartyIDEnabled instead
+
 #### Defined in
 
-packages/cordova/src/www/common.ts:54
+packages/cordova/src/www/common.ts:55
 
 ___
 

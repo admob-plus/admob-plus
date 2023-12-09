@@ -1,7 +1,7 @@
 ---
-id: "ConsentStatus"
-title: "Enumeration: ConsentStatus"
-sidebar_label: "ConsentStatus"
+id: "PrivacyOptionsRequirementStatus"
+title: "Enumeration: PrivacyOptionsRequirementStatus"
+sidebar_label: "PrivacyOptionsRequirementStatus"
 sidebar_position: 0
 custom_edit_url: null
 ---
@@ -14,17 +14,7 @@ custom_edit_url: null
 
 #### Defined in
 
-index.ts:64
-
-___
-
-### Obtained
-
-• **Obtained** = ``3``
-
-#### Defined in
-
-index.ts:65
+index.ts:71
 
 ___
 
@@ -34,7 +24,7 @@ ___
 
 #### Defined in
 
-index.ts:63
+index.ts:70
 
 ___
 
@@ -44,4 +34,4 @@ ___
 
 #### Defined in
 
-index.ts:62
+index.ts:69

@@ -16,13 +16,17 @@ custom_edit_url: null
 
 ### constructor
 
-• **new RewardedAd**(`opts`)
+• **new RewardedAd**(`opts`): [`RewardedAd`](RewardedAd.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
 | `opts` | [`RewardedAdOptions`](../interfaces/RewardedAdOptions.md) |
+
+#### Returns
+
+[`RewardedAd`](RewardedAd.md)
 
 #### Inherited from
 
@@ -92,7 +96,7 @@ ___
 
 ### allAds
 
-• `Static` `Private` `get` **allAds**(): `Record`<`string`, [`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../#mobileadoptions)\>\>
+• `get` **allAds**(): `Record`<`string`, [`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../#mobileadoptions)\>\>
 
 #### Returns
 
@@ -110,7 +114,7 @@ packages/cordova/src/www/ads/base.ts:30
 
 ### hide
 
-▸ `Protected` **hide**(): `Promise`<`unknown`\>
+▸ **hide**(): `Promise`<`unknown`\>
 
 #### Returns
 
@@ -128,7 +132,7 @@ ___
 
 ### init
 
-▸ `Protected` **init**(): `Promise`<`unknown`\>
+▸ **init**(): `Promise`<`unknown`\>
 
 #### Returns
 
@@ -230,7 +234,7 @@ ___
 
 ### getAdById
 
-▸ `Static` **getAdById**(`id`): [`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../#mobileadoptions)\>
+▸ **getAdById**(`id`): [`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../#mobileadoptions)\>
 
 #### Parameters
 

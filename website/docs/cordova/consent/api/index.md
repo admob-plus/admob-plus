@@ -12,6 +12,7 @@ custom_edit_url: null
 - [DebugGeography](enums/DebugGeography.md)
 - [Events](enums/Events.md)
 - [FormStatus](enums/FormStatus.md)
+- [PrivacyOptionsRequirementStatus](enums/PrivacyOptionsRequirementStatus.md)
 - [TrackingAuthorizationStatus](enums/TrackingAuthorizationStatus.md)
 
 ## Classes

@@ -20,7 +20,11 @@ custom_edit_url: null
 
 ### constructor
 
-• **new AdMob**()
+• **new AdMob**(): [`AdMob`](AdMob.md)
+
+#### Returns
+
+[`AdMob`](AdMob.md)
 
 #### Inherited from
 
@@ -144,11 +148,11 @@ ___
 
 ### start
 
-▸ **start**(): `Promise`<{ `version`: `string`  }\>
+▸ **start**(): `Promise`<\{ `version`: `string`  }\>
 
 #### Returns
 
-`Promise`<{ `version`: `string`  }\>
+`Promise`<\{ `version`: `string`  }\>
 
 #### Implementation of
 

@@ -20,13 +20,17 @@ custom_edit_url: null
 
 ### constructor
 
-• **new RewardedInterstitialAd**(`opts`)
+• **new RewardedInterstitialAd**(`opts`): [`RewardedInterstitialAd`](RewardedInterstitialAd.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
 | `opts` | `RewardedAdOptions` |
+
+#### Returns
+
+[`RewardedInterstitialAd`](RewardedInterstitialAd.md)
 
 #### Overrides
 

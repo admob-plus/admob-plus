@@ -20,13 +20,17 @@ custom_edit_url: null
 
 ### constructor
 
-• **new BannerAd**(`opts`)
+• **new BannerAd**(`opts`): [`BannerAd`](BannerAd.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
 | `opts` | `BannerAdOptions` |
+
+#### Returns
+
+[`BannerAd`](BannerAd.md)
 
 #### Overrides
 

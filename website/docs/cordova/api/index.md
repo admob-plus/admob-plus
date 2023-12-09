@@ -115,4 +115,4 @@ packages/cordova/src/www/common.ts:1
 
 #### Defined in
 
-packages/cordova/src/www/common.ts:58
+packages/cordova/src/www/common.ts:60

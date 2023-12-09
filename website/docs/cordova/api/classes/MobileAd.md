@@ -34,7 +34,7 @@ custom_edit_url: null
 
 ### constructor
 
-• **new MobileAd**<`T`\>(`opts`)
+• **new MobileAd**<`T`\>(`opts`): [`MobileAd`](MobileAd.md)<`T`\>
 
 #### Type parameters
 
@@ -47,6 +47,10 @@ custom_edit_url: null
 | Name | Type |
 | :------ | :------ |
 | `opts` | `T` |
+
+#### Returns
+
+[`MobileAd`](MobileAd.md)<`T`\>
 
 #### Defined in
 
@@ -100,7 +104,7 @@ ___
 
 ### allAds
 
-• `Static` `Private` `get` **allAds**(): `Record`<`string`, [`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../#mobileadoptions)\>\>
+• `get` **allAds**(): `Record`<`string`, [`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../#mobileadoptions)\>\>
 
 #### Returns
 
@@ -114,7 +118,7 @@ packages/cordova/src/www/ads/base.ts:30
 
 ### \_init
 
-▸ `Private` **_init**(): `Promise`<`unknown`\>
+▸ **_init**(): `Promise`<`unknown`\>
 
 #### Returns
 
@@ -128,7 +132,7 @@ ___
 
 ### hide
 
-▸ `Protected` **hide**(): `Promise`<`unknown`\>
+▸ **hide**(): `Promise`<`unknown`\>
 
 #### Returns
 
@@ -142,7 +146,7 @@ ___
 
 ### init
 
-▸ `Protected` **init**(): `Promise`<`unknown`\>
+▸ **init**(): `Promise`<`unknown`\>
 
 #### Returns
 
@@ -156,7 +160,7 @@ ___
 
 ### isLoaded
 
-▸ `Protected` **isLoaded**(): `Promise`<`boolean`\>
+▸ **isLoaded**(): `Promise`<`boolean`\>
 
 #### Returns
 
@@ -170,7 +174,7 @@ ___
 
 ### load
 
-▸ `Protected` **load**(): `Promise`<`void`\>
+▸ **load**(): `Promise`<`void`\>
 
 #### Returns
 
@@ -210,7 +214,7 @@ ___
 
 ### show
 
-▸ `Protected` **show**(`opts?`): `Promise`<`unknown`\>
+▸ **show**(`opts?`): `Promise`<`unknown`\>
 
 #### Parameters
 
@@ -230,7 +234,7 @@ ___
 
 ### getAdById
 
-▸ `Static` **getAdById**(`id`): [`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../#mobileadoptions)\>
+▸ **getAdById**(`id`): [`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../#mobileadoptions)\>
 
 #### Parameters
 
