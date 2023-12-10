@@ -58,7 +58,11 @@ function ConsentFormActions() {
 
 function ConsentPage() {
   return (
-    <>
+    <div>
+      <ActionButton method="canRequestAds" />
+      <ActionButton method="privacyOptionsRequirementStatus" />
+      <ActionButton method="loadAndShowIfRequired" />
+      <ActionButton method="showPrivacyOptionsForm" />
       <ActionButton method="getConsentStatus" />
       <RequestButton />
       <ActionButton
@@ -73,7 +77,7 @@ function ConsentPage() {
       <ActionButton method="getFormStatus" />
       <ConsentFormActions />
       <ActionButton method="reset" />
-    </>
+    </div>
   );
 }
 
