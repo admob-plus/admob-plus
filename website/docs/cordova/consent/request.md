@@ -37,10 +37,10 @@ document.addEventListener('deviceready', async () => {
     await consent.requestInfoUpdate()
   }
 
-  const formStatus = await consent.getFormStatus()
-  if (formStatus === consent.FormStatus.Available) {
-      const form = await consent.loadForm()
-      form.show()
+  await consent.loadAndShowIfRequired()
+
+  if (await consent.canRequestAds()) {
+    // request ads
   }
 }, false)
 ```
