@@ -1,4 +1,4 @@
-import findUp from 'find-up';
+import {findUp} from 'find-up';
 import fse from 'fs-extra';
 import * as path from 'path';
 import {PackageJson as PackageJsonBase} from 'types-package-json';

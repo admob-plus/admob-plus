@@ -4,16 +4,16 @@
   "version": "0.3.4",
   "type": "module",
   "dependencies": {
-    "find-up": "^5.0.0",
-    "fs-extra": "^11.1.1",
+    "find-up": "^7.0.0",
+    "fs-extra": "^11.2.0",
     "types-package-json": "^2.0.39"
   },
   "devDependencies": {
-    "@tsconfig/node16": "^16.1.0",
-    "@types/fs-extra": "^11.0.1",
-    "@types/node": "^20.3.2",
-    "ts-node": "^10.9.1",
-    "typescript": "~5.1.6"
+    "@tsconfig/node18": "^18.2.2",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^20.10.4",
+    "ts-node": "^10.9.2",
+    "typescript": "~5.3.3"
   },
   "engines": {
     "node": ">=12.0.0"

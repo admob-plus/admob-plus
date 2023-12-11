@@ -79,7 +79,7 @@ importers:
         version: 12.0.0
       cordova-plus:
         specifier: ^0.9.4
-        version: 0.9.4
+        version: 0.9.4(enquirer@2.3.6)
       cordova-testbed:
         specifier: ^0.8.0
         version: 0.8.0
@@ -212,7 +212,7 @@ importers:
         version: 6.3.0
       cordova-plus:
         specifier: ^0.9.4
-        version: 0.9.4
+        version: 0.9.4(enquirer@2.3.6)
 
   examples/cordova-consent:
     dependencies:
@@ -666,7 +666,7 @@ importers:
         version: link:../../packages/cordova-consent
       cordova-plus:
         specifier: ^0.9.4
-        version: 0.9.4
+        version: 0.9.4(enquirer@2.3.6)
       eslint:
         specifier: ^8.55.0
         version: 8.55.0
@@ -1044,7 +1044,7 @@ importers:
         version: 12.0.0
       cordova-plus:
         specifier: ^0.9.4
-        version: 0.9.4
+        version: 0.9.4(enquirer@2.3.6)
       del-cli:
         specifier: ^5.1.0
         version: 5.1.0
@@ -1065,7 +1065,7 @@ importers:
         version: 12.0.0
       cordova-plus:
         specifier: ^0.9.4
-        version: 0.9.4
+        version: 0.9.4(enquirer@2.3.6)
       tslib:
         specifier: ^2.6.2
         version: 2.6.2
@@ -1087,7 +1087,7 @@ importers:
         version: 12.0.0
       cordova-plus:
         specifier: ^0.9.4
-        version: 0.9.4
+        version: 0.9.4(enquirer@2.3.6)
       typescript:
         specifier: ~5.1.6
         version: 5.1.6
@@ -1100,7 +1100,7 @@ importers:
     devDependencies:
       cordova-plus:
         specifier: ^0.9.4
-        version: 0.9.4
+        version: 0.9.4(enquirer@2.3.6)
 
   packages/ionic:
     devDependencies:
@@ -1141,30 +1141,30 @@ importers:
   packages/pkg-proxy:
     dependencies:
       find-up:
-        specifier: ^5.0.0
-        version: 5.0.0
+        specifier: ^7.0.0
+        version: 7.0.0
       fs-extra:
-        specifier: ^11.1.1
-        version: 11.1.1
+        specifier: ^11.2.0
+        version: 11.2.0
       types-package-json:
         specifier: ^2.0.39
         version: 2.0.39
     devDependencies:
-      '@tsconfig/node16':
-        specifier: ^16.1.0
-        version: 16.1.0
+      '@tsconfig/node18':
+        specifier: ^18.2.2
+        version: 18.2.2
       '@types/fs-extra':
-        specifier: ^11.0.1
-        version: 11.0.1
+        specifier: ^11.0.4
+        version: 11.0.4
       '@types/node':
         specifier: ^20.2.5
         version: 20.2.5
       ts-node:
-        specifier: ^10.9.1
-        version: 10.9.1(@types/node@20.2.5)(typescript@5.1.6)
+        specifier: ^10.9.2
+        version: 10.9.2(@types/node@20.2.5)(typescript@5.3.3)
       typescript:
-        specifier: ~5.1.6
-        version: 5.1.6
+        specifier: ~5.3.3
+        version: 5.3.3
 
   packages/react-native:
     devDependencies:
@@ -14630,26 +14630,6 @@ packages:
       rollup: 3.25.1
       tslib: 2.6.0
       typescript: 5.1.6
-    dev: true
-
-  /@rollup/plugin-typescript@11.1.1(rollup@3.25.1)(tslib@2.6.2)(typescript@5.1.6):
-    resolution: {integrity: sha512-Ioir+x5Bejv72Lx2Zbz3/qGg7tvGbxQZALCLoJaGrkNXak/19+vKgKYJYM3i/fJxvsb23I9FuFQ8CUBEfsmBRg==}
-    engines: {node: '>=14.0.0'}
-    peerDependencies:
-      rollup: ^2.14.0||^3.0.0
-      tslib: '*'
-      typescript: '>=3.7.0'
-    peerDependenciesMeta:
-      rollup:
-        optional: true
-      tslib:
-        optional: true
-    dependencies:
-      '@rollup/pluginutils': 5.0.2(rollup@3.25.1)
-      resolve: 1.22.2
-      rollup: 3.25.1
-      tslib: 2.6.2
-      typescript: 5.1.6
 
   /@rollup/pluginutils@5.0.2(rollup@3.23.0):
     resolution: {integrity: sha512-pTd9rIsP92h+B6wWwFbW8RkZv4hiR/xKsqre4SIuAOaOEQRxi0lqLke9k2/7WegC85GgUs9pjmOjCUi3In4vwA==}
@@ -15148,6 +15128,10 @@ packages:
     resolution: {integrity: sha512-cfwhqrdZEKS+Iqu1OPDwmKsOV/eo7q4sPhWzOXc1rU77nnPFV3+77yPg8uKQ2e8eir6mERCvrKnd+EGa4qo4bQ==}
     dev: true
 
+  /@tsconfig/node18@18.2.2:
+    resolution: {integrity: sha512-d6McJeGsuoRlwWZmVIeE8CUA27lu6jLjvv1JzqmpsytOYYbVi1tHZEnwCNVOXnj4pyLvneZlFlpXUK+X9wBWyw==}
+    dev: true
+
   /@tufjs/canonical-json@1.0.0:
     resolution: {integrity: sha512-QTnf++uxunWvG2z3UFNzAoQPHxnSXOwtaI3iJ+AohhV+5vONuArPjJE7aPXPVXfXJsqrVbZBu9b81AJoSd09IQ==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
@@ -15256,6 +15240,7 @@ packages:
 
   /@types/cordova@11.0.3:
     resolution: {integrity: sha512-kyuRQ40/NWQVhqGIHq78Ehu2Bf9Mlg0LhmSmis6ZFJK7z933FRfYi8tHe/k/0fB+PGfCf95rJC6TO7dopaFvAg==}
+    dev: true
 
   /@types/cors@2.8.12:
     resolution: {integrity: sha512-vt+kDhq/M2ayberEtJcIN/hxXy1Pk+59g2FV/ZQceeaTyCtCucjL2Q7FXlFjtWn4n15KCr1NE2lNNFhp0lEThw==}
@@ -20584,7 +20569,7 @@ packages:
       - utf-8-validate
     dev: false
 
-  /cordova-plus@0.9.4:
+  /cordova-plus@0.9.4(enquirer@2.3.6):
     resolution: {integrity: sha512-JXpChTMogzAMG4ZT15pfR7bvdhSobS4kF69pjDlwfij/up5/X5jTyxF/eGpXtnUVxgBbMu46IbS4w/+Z/tJQ4g==}
     engines: {node: '>= 12'}
     hasBin: true
@@ -20622,57 +20607,6 @@ packages:
       signal-exit: 4.0.2
       tempy: 3.0.0
       tslib: 2.6.0
-      typescript: 5.1.6
-      ua-parser-js: 1.0.35
-      untildify: 5.0.0
-      yargs: 17.7.2
-    transitivePeerDependencies:
-      - bluebird
-      - bufferutil
-      - debug
-      - enquirer
-      - supports-color
-      - utf-8-validate
-    dev: true
-
-  /cordova-plus@0.9.4(enquirer@2.3.6):
-    resolution: {integrity: sha512-JXpChTMogzAMG4ZT15pfR7bvdhSobS4kF69pjDlwfij/up5/X5jTyxF/eGpXtnUVxgBbMu46IbS4w/+Z/tJQ4g==}
-    engines: {node: '>= 12'}
-    hasBin: true
-    dependencies:
-      '@frat/envinfo': 7.10.1
-      '@npmcli/package-json': 3.1.1
-      '@rollup/plugin-commonjs': 25.0.2(rollup@3.25.1)
-      '@rollup/plugin-node-resolve': 15.1.0(rollup@3.25.1)
-      '@rollup/plugin-typescript': 11.1.1(rollup@3.25.1)(tslib@2.6.2)(typescript@5.1.6)
-      '@types/cordova': 11.0.3
-      '@types/node': 20.2.5
-      browser-sync: 2.29.3
-      chokidar: 3.5.3
-      clipboardy: 3.0.0
-      cordova: 12.0.0
-      cordova-android: 12.0.0
-      cordova-browser: 7.0.0
-      cordova-common: 5.0.0
-      cordova-ios: 6.3.0
-      cordova-lib: 12.0.1
-      cordova-serve: 4.0.1
-      elementtree: 0.1.7
-      execa: 7.1.1
-      fast-glob: 3.2.12
-      find-cache-dir: 4.0.0
-      fs-extra: 11.2.0
-      json-stable-stringify: 1.0.2
-      listr2: 6.6.0(enquirer@2.3.6)
-      lodash: 4.17.21
-      pino: 8.14.1
-      pino-pretty: 10.0.0
-      rollup: 3.25.1
-      semver: 7.5.4
-      serve-handler: 6.1.5
-      signal-exit: 4.0.2
-      tempy: 3.0.0
-      tslib: 2.6.2
       typescript: 5.1.6
       ua-parser-js: 1.0.35
       untildify: 5.0.0
@@ -24547,6 +24481,15 @@ packages:
     dependencies:
       locate-path: 7.2.0
       path-exists: 5.0.0
+
+  /find-up@7.0.0:
+    resolution: {integrity: sha512-YyZM99iHrqLKjmt4LJDj58KI+fYyufRLBSYcqycxf//KpBk9FoewoGX0450m9nB44qrZnovzC2oeP5hUibxc/g==}
+    engines: {node: '>=18'}
+    dependencies:
+      locate-path: 7.2.0
+      path-exists: 5.0.0
+      unicorn-magic: 0.1.0
+    dev: false
 
   /flat-cache@3.0.4:
     resolution: {integrity: sha512-dm9s5Pw7Jc0GvMYbshN6zchCA9RgQlzzEZX3vylR9IqFfS8XciblUXOKfW6SiuJ0e13eDYZoZV5wdrev7P3Nwg==}
@@ -39932,37 +39875,6 @@ packages:
       yn: 3.1.1
     dev: true
 
-  /ts-node@10.9.1(@types/node@20.2.5)(typescript@5.1.6):
-    resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
-    hasBin: true
-    peerDependencies:
-      '@swc/core': '>=1.2.50'
-      '@swc/wasm': '>=1.2.50'
-      '@types/node': ^20.2.5
-      typescript: '>=2.7'
-    peerDependenciesMeta:
-      '@swc/core':
-        optional: true
-      '@swc/wasm':
-        optional: true
-    dependencies:
-      '@cspotcode/source-map-support': 0.8.1
-      '@tsconfig/node10': 1.0.9
-      '@tsconfig/node12': 1.0.11
-      '@tsconfig/node14': 1.0.3
-      '@tsconfig/node16': 1.0.4
-      '@types/node': 20.2.5
-      acorn: 8.8.0
-      acorn-walk: 8.2.0
-      arg: 4.1.3
-      create-require: 1.1.1
-      diff: 4.0.2
-      make-error: 1.3.6
-      typescript: 5.1.6
-      v8-compile-cache-lib: 3.0.1
-      yn: 3.1.1
-    dev: true
-
   /ts-node@10.9.1(@types/node@20.2.5)(typescript@5.2.2):
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
     hasBin: true
@@ -40457,6 +40369,11 @@ packages:
   /unicode-property-aliases-ecmascript@2.0.0:
     resolution: {integrity: sha512-5Zfuy9q/DFr4tfO7ZPeVXb1aPoeQSdeFMLpYuFebehDAhbuevLs5yxSZmIFN1tP5F9Wl4IpJrYojg85/zgyZHQ==}
     engines: {node: '>=4'}
+
+  /unicorn-magic@0.1.0:
+    resolution: {integrity: sha512-lRfVq8fE8gz6QMBuDM6a+LO3IAzTi05H6gCVaUpir2E1Rwpo4ZUog45KpNXKC/Mn3Yb9UDuHumeFTo9iV/D9FQ==}
+    engines: {node: '>=18'}
+    dev: false
 
   /unified-args@11.0.1:
     resolution: {integrity: sha512-WEQghE91+0s3xPVs0YW6a5zUduNLjmANswX7YbBfksHNDGMjHxaWCql4SR7c9q0yov/XiIEdk6r/LqfPjaYGcw==}
