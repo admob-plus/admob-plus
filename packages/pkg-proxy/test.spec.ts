@@ -1,6 +1,6 @@
 import assert from 'node:assert';
-import {expect, test} from '@jest/globals';
-import findPkg from './src';
+import {expect, test} from 'vitest';
+import {findPkg} from '.';
 
 test('pkg-proxy', async () => {
   const pkg = await findPkg();

@@ -1,4 +1,4 @@
-/// <reference types="@types/jest" />
+import {expect, test} from 'vitest'
 
 test('@admob-plus/ionic peerDependencies', () => {
   const pkg = require('../packages/ionic/package.json');

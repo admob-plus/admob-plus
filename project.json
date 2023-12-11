@@ -6,16 +6,10 @@
     "test": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "lerna run test"
-      },
-      "dependsOn": ["jest"]
-    },
-    "jest": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": [],
-      "options": {
-        "jestConfig": "jest.config.ts",
-        "passWithNoTests": true
+        "commands": [
+          "vitest --run",
+          "lerna run test"
+        ]
       }
     }
   }
