@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/admob-plus/admob-plus/compare/pkg-proxy@0.3.4...pkg-proxy@0.4.0) (2023-12-12)
+
+
+### Features
+
+* **pkg-proxy:** require node >= 18 ([3e95c71](https://github.com/admob-plus/admob-plus/commit/3e95c71d2cc871f85f9e2d597ac4cfd6926efff6))
+
+
+
+
+
 ## [0.3.4](https://github.com/admob-plus/admob-plus/compare/pkg-proxy@0.3.3...pkg-proxy@0.3.4) (2023-06-17)
 
 **Note:** Version bump only for package pkg-proxy
