@@ -1,62 +1,85 @@
 {
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "nx/tasks-runners/default",
-      "options": {
-        "cacheableOperations": [
-          "prepack",
-          "android",
-          "ios",
-          "test",
-          "typescript",
-          "lint",
-          "prepare",
-          "release",
-          "example",
-          "pods",
-          "bootstrap",
-          "clean",
-          "test:android",
-          "test:ios",
-          "test:wdio",
-          "ng",
-          "build",
-          "e2e",
-          "eject",
-          "upgrade",
-          "gen",
-          "postinstall",
-          "verify",
-          "verify:ios",
-          "verify:android",
-          "verify:web",
-          "fmt",
-          "eslint",
-          "prettier",
-          "swiftlint",
-          "docgen",
-          "watch",
-          "prepublishOnly",
-          "version",
-          "build-lib",
-          "build-scripts",
-          "build-tsc",
-          "docusaurus",
-          "swizzle",
-          "deploy",
-          "favicon",
-          "jest"
-        ]
-      }
-    }
-  },
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "extends": "nx/presets/npm.json",
   "targetDefaults": {
     "build": {
-      "dependsOn": [
-        "^build"
-      ]
+      "dependsOn": ["^build"],
+      "cache": true
+    },
+    "prepack": {
+      "cache": true
+    },
+    "test": {
+      "cache": true
+    },
+    "lint": {
+      "cache": true
+    },
+    "prepare": {
+      "cache": true
+    },
+    "bootstrap": {
+      "cache": true
+    },
+    "clean": {
+      "cache": true
+    },
+    "test:android": {
+      "cache": true
+    },
+    "test:ios": {
+      "cache": true
+    },
+    "test:wdio": {
+      "cache": true
+    },
+    "e2e": {
+      "cache": true
+    },
+    "postinstall": {
+      "cache": true
+    },
+    "verify": {
+      "cache": true
+    },
+    "verify:ios": {
+      "cache": true
+    },
+    "verify:android": {
+      "cache": true
+    },
+    "verify:web": {
+      "cache": true
+    },
+    "fmt": {
+      "cache": true
+    },
+    "eslint": {
+      "cache": true
+    },
+    "prettier": {
+      "cache": true
+    },
+    "swiftlint": {
+      "cache": true
+    },
+    "docgen": {
+      "cache": true
+    },
+    "prepublishOnly": {
+      "cache": true
+    },
+    "build-lib": {
+      "cache": true
+    },
+    "build-scripts": {
+      "cache": true
+    },
+    "build-tsc": {
+      "cache": true
+    },
+    "favicon": {
+      "cache": true
     }
   },
   "affected": {

@@ -11,3 +11,5 @@ website/translated_docs
 website/build/
 website/i18n/*
 /.idea/
+
+.nx/cache
