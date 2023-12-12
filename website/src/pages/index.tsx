@@ -77,11 +77,7 @@ const features = [
           your application information
         </ExternalLink>
         &nbsp; to a remote server to control whether ad could be displayed.
-        Therefore, you don&apos;t lose revenue because{' '}
-        <ExternalLink href="https://drive.google.com/file/d/0B5vtpya8P4b-NUZTdUhBVkFlU0E/view">
-          some server bugs
-        </ExternalLink>
-        .
+        Therefore, you don&apos;t lose revenue because some server bugs.
       </>
     ),
   },

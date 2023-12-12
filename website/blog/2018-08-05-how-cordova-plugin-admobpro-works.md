@@ -35,19 +35,21 @@ app=com.rjfun.demo&os=ios&net=admob&lic=
 It returns a JSON data,
 
 ```json
-{"r":0,"b":"","i":"","n":"","v":"","js":""}
+{"r": 0, "b": "", "i": "", "n": "", "v": "", "js": ""}
 ```
 
 At this point, it is clear the plugin collecting your app info to the author owned server and response data for the plugin to consume. A guess usage would be [checking the license](https://github.com/floatinghotpot/cordova-admob-pro#license), but the author never mentions it in the documentation.
 
 ## Remote controlling ads
 
-Thanks to [a document shared by a user](https://drive.google.com/file/d/0B5vtpya8P4b-NUZTdUhBVkFlU0E/view), it revealed more about the black magic.
+Thanks to a document shared by a user (the original link is broken: https://drive.google.com/file/d/0B5vtpya8P4b-NUZTdUhBVkFlU0E/view), it revealed more about the black magic.
 
 From the user,
+
 > i am using your plugin in my app. I have never use any license key. I wanted to share 2% of my ad. BUT! Your plugin took 30% of my ad.
 
 From the plugin author,
+
 > After check, we find your app in the black list, and a random higher rate will be applied. Usually when a guy is using a fake license key, or send unusual attacking request (for example, request not from iOS/android cordova platform), the ant­crack logic will be triggered and move the app into the black list.
 >
 > As mentioned in the license agreement, if you have earned more than $1000, a valid license is required, or else some ad sharing will be applied. When you use my code in your app, you are assumed to accept the license agreement. If you did not accept my term, then you are not allowed to use my code without permission.
