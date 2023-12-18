@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.6](https://github.com/admob-plus/admob-plus/compare/cordova-plugin-consent@3.0.0-alpha.5...cordova-plugin-consent@3.0.0-alpha.6) (2023-12-18)
+
+
+### Bug Fixes
+
+* **cordova-consent/android:** run ui code in main thread, [#637](https://github.com/admob-plus/admob-plus/issues/637) ([8ee6802](https://github.com/admob-plus/admob-plus/commit/8ee6802f1467cf4c79db0c78ad109bdf1e14328a))
+
+
+
+
+
 # [3.0.0-alpha.5](https://github.com/admob-plus/admob-plus/compare/cordova-plugin-consent@3.0.0-alpha.4...cordova-plugin-consent@3.0.0-alpha.5) (2023-12-12)
 
 
