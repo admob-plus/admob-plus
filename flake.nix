@@ -15,7 +15,7 @@
             nativeBuildInputs = with pkgs; [
               go-task
               lychee
-            ] ++ (with nodePackages_latest; [
+            ] ++ (with nodePackages; [
               nodejs
               pnpm
             ]);

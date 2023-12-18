@@ -12,13 +12,13 @@
     "test-android": "nx build && cordova prepare && cd platforms/android && ./gradlew check"
   },
   "dependencies": {
-    "@mantine/code-highlight": "^7.3.1",
-    "@mantine/core": "^7.3.1",
-    "@mantine/form": "^7.3.1",
-    "@mantine/hooks": "^7.3.1",
-    "@mantine/nprogress": "^7.3.1",
+    "@mantine/code-highlight": "^7.3.2",
+    "@mantine/core": "^7.3.2",
+    "@mantine/form": "^7.3.2",
+    "@mantine/hooks": "^7.3.2",
+    "@mantine/nprogress": "^7.3.2",
     "@preact/signals-react": "^1.3.8",
-    "@tabler/icons-react": "^2.43.0",
+    "@tabler/icons-react": "^2.44.0",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -28,11 +28,11 @@
   "devDependencies": {
     "@admob-plus-internal/npm-bin": "workspace:*",
     "@types/fs-extra": "^11.0.4",
-    "@types/react": "^18.2.43",
-    "@types/react-dom": "^18.2.17",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
     "@types/react-timeago": "^4.1.6",
-    "@typescript-eslint/eslint-plugin": "^6.13.2",
-    "@typescript-eslint/parser": "^6.13.2",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
     "@vitejs/plugin-react": "^4.2.1",
     "admob-plus": "workspace:*",
     "admob-plus-cordova": "../../packages/cordova",
@@ -45,13 +45,13 @@
     "cordova-ios": "^7.0.1",
     "cordova-plugin-consent": "../../packages/cordova-consent",
     "cordova-plus": "^0.9.4",
-    "eslint": "^8.55.0",
+    "eslint": "^8.56.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "fs-extra": "^11.2.0",
     "tsx": "^4.6.2",
     "typescript": "^5.3.3",
-    "vite": "^5.0.7"
+    "vite": "^5.0.10"
   },
   "cordova": {
     "platforms": [

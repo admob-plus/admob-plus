@@ -24,7 +24,7 @@
     "@docusaurus/plugin-content-docs": "^2.4.1",
     "@docusaurus/types": "^2.4.1",
     "@tsconfig/docusaurus": "^2.0.2",
-    "@types/react": "^18.2.43",
+    "@types/react": "^18.2.45",
     "@types/react-helmet": "^6.1.11",
     "@types/react-router-dom": "^5.3.3",
     "docusaurus-plugin-typedoc": "~0.21.0",
