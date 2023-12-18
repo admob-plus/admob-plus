@@ -71,22 +71,27 @@ class Consent : CordovaPlugin() {
     }
 
     private fun executeLoadAndShowIfRequired(ctx: ExecuteContext) {
-        UserMessagingPlatform.loadAndShowConsentFormIfRequired(cordova.activity
-        ) { loadAndShowError ->
-            loadAndShowError?.let {
-                ctx.callbackContext.error(it.message)
-            } ?: run {
-                ctx.resolve()
+        cordova.activity.runOnUiThread {
+            UserMessagingPlatform.loadAndShowConsentFormIfRequired(
+                cordova.activity
+            ) { loadAndShowError ->
+                loadAndShowError?.let {
+                    ctx.callbackContext.error(it.message)
+                } ?: run {
+                    ctx.resolve()
+                }
             }
         }
     }
 
     private fun executeShowPrivacyOptionsForm(ctx: ExecuteContext) {
-        UserMessagingPlatform.showPrivacyOptionsForm(cordova.activity) { formError ->
-            formError?.let {
-                ctx.callbackContext.error(it.message)
-            } ?: run {
-                ctx.resolve()
+        cordova.activity.runOnUiThread {
+            UserMessagingPlatform.showPrivacyOptionsForm(cordova.activity) { formError ->
+                formError?.let {
+                    ctx.callbackContext.error(it.message)
+                } ?: run {
+                    ctx.resolve()
+                }
             }
         }
     }
@@ -106,10 +111,12 @@ class Consent : CordovaPlugin() {
     private fun executeRequestInfoUpdate(ctx: ExecuteContext) {
         val params = ctx.optConsentRequestParameters()
         val consentInformation = consentInformation
-        consentInformation.requestConsentInfoUpdate(
-            cordova.activity,
-            params, { ctx.callbackContext.success() }
-        ) { formError: FormError -> ctx.callbackContext.error(formError.message) }
+        cordova.activity.runOnUiThread {
+            consentInformation.requestConsentInfoUpdate(
+                cordova.activity,
+                params, { ctx.callbackContext.success() }
+            ) { formError: FormError -> ctx.callbackContext.error(formError.message) }
+        }
     }
 
     private fun executeLoadForm(ctx: ExecuteContext) {
