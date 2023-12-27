@@ -13,7 +13,7 @@ These ad units are **not** associated with your AdMob account, so there's no ris
 
 |       Ad Format       |       Demo Ad Unit ID (Android)        |         Demo Ad Unit ID (iOS)          |
 | --------------------- | -------------------------------------- | -------------------------------------- |
-| App Open              | ca-app-pub-3940256099942544/3419835294 | ca-app-pub-3940256099942544/5662855259 |
+| App Open              | ca-app-pub-3940256099942544/9257395921 | ca-app-pub-3940256099942544/5662855259 |
 | Banner                | ca-app-pub-3940256099942544/6300978111 | ca-app-pub-3940256099942544/2934735716 |
 | Interstitial          | ca-app-pub-3940256099942544/1033173712 | ca-app-pub-3940256099942544/4411468910 |
 | Interstitial Video    | ca-app-pub-3940256099942544/8691691433 | ca-app-pub-3940256099942544/5135589807 |
