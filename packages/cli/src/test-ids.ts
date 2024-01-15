@@ -7,7 +7,7 @@ export const testAdUnitIds: {
   [k: string]: {android: string; ios: string};
 } = {
   'App Open': {
-    android: 'ca-app-pub-3940256099942544/3419835294',
+    android: 'ca-app-pub-3940256099942544/9257395921',
     ios: 'ca-app-pub-3940256099942544/5662855259',
   },
   Banner: {
