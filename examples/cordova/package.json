@@ -7,9 +7,9 @@
     "@admob-plus-internal/npm-bin": "workspace:*",
     "admob-plus-cordova": "../../packages/cordova",
     "admob-plus-cordova-native": "../../packages/cordova-native",
-    "cordova-android": "12.0.0",
+    "cordova-android": "12.0.1",
     "cordova-browser": "7.0.0",
-    "cordova-ios": "6.3.0",
+    "cordova-ios": "7.0.1",
     "cordova": "^12.0.0",
     "cordova-plus": "^0.9.4"
   },
