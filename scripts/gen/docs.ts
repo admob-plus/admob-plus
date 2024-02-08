@@ -1,4 +1,6 @@
+/// <reference types="cordova-plus" />
 import {PluginInfo} from 'cordova-common';
+import assert from 'node:assert/strict';
 import path from 'node:path';
 import {replaceInFile} from 'replace-in-file';
 import Context from './context';
@@ -12,8 +14,9 @@ export default class Generator {
     const PLAY_SERVICES_VERSION = cordovaPlugin._et
       .find(
         './platform/[@name="android"]/preference/[@name="PLAY_SERVICES_VERSION"]'
-      )!
-      .get('default');
+      )
+      ?.get('default');
+    assert(PLAY_SERVICES_VERSION);
 
     await replaceInFile({
       files: path.join(

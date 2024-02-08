@@ -8,7 +8,7 @@ import {getUnionTypeDict, renderKotlinConstants, warnMessage} from './common';
 import Context from './context';
 
 async function androidLatestVersion() {
-  let res = await fetch(
+  const res = await fetch(
     'https://dl.google.com/dl/android/maven2/com/google/android/gms/play-services-ads/maven-metadata.xml'
   );
   const data = await res.text();

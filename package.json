@@ -21,13 +21,14 @@
     "@admob-plus-internal/cli": "workspace:*",
     "@admob-plus-internal/npm-bin": "workspace:*",
     "@admob-plus-internal/tsconfig": "workspace:*",
+    "@biomejs/biome": "1.5.3",
     "@commitlint/cli": "^18.4.4",
     "@commitlint/config-conventional": "^18.4.4",
     "@commitlint/config-lerna-scopes": "^18.4.4",
     "@commitlint/prompt-cli": "^18.4.4",
     "@nrwl/node": "17.2.8",
     "@nrwl/workspace": "17.2.8",
-    "@types/node": "^20.11.2",
+    "@types/node": "^20.11.3",
     "admob-plus": "workspace:*",
     "cordova": "12.0.0",
     "cordova-plus": "^0.9.4",
@@ -39,7 +40,7 @@
     "happy-dom": "^13.1.4",
     "is-ci": "^3.0.1",
     "lerna": "^8.0.2",
-    "lint-staged": "^15.2.0",
+    "lint-staged": "^15.2.2",
     "npm-run-all": "^4.1.5",
     "nx": "17.2.8",
     "remark-cli": "^12.0.0",
@@ -54,7 +55,7 @@
     "swiftlint": "^1.0.2",
     "ts-node": "^10.9.2",
     "typescript": "~5.3.3",
-    "vitest": "^1.2.0"
+    "vitest": "^1.2.2"
   },
   "repository": "admob-plus/admob-plus",
   "commitlint": {
@@ -67,7 +68,8 @@
     "*.md": "remark --no-stdout",
     "*.swift": "node-swiftlint lint --strict --path",
     "examples/*/package.json": "prettier --write",
-    "package.json": "vitest --run test/package-json.test.ts"
+    "package.json": "vitest --run test/package-json.test.ts",
+    "scripts/": "biome lint"
   },
   "remarkConfig": {
     "plugins": [
