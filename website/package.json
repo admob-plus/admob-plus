@@ -14,7 +14,7 @@
   "dependencies": {
     "@docusaurus/core": "3.1.1",
     "@docusaurus/preset-classic": "3.1.1",
-    "@mdx-js/react": "^3.0.0",
+    "@mdx-js/react": "^3.0.1",
     "clsx": "^2.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -30,7 +30,7 @@
     "docusaurus-mdx-checker": "^3.0.0",
     "docusaurus-plugin-typedoc": "~0.22.0",
     "markdown-magic": "^2.6.1",
-    "typedoc": "~0.25.7",
+    "typedoc": "~0.25.8",
     "typedoc-plugin-markdown": "~3.17.1",
     "typescript": "~5.3.3"
   },
