@@ -8,7 +8,7 @@ custom_edit_url: null
 
 ## Hierarchy
 
-- [MobileAd](mobilead.md)<[RewardedInterstitialAdOptions](../interfaces/rewardedinterstitialadoptions.md)\>
+- [MobileAd](mobilead.md)\<[RewardedInterstitialAdOptions](../interfaces/rewardedinterstitialadoptions.md)\>
 
   ↳ **RewardedInterstitialAd**
 
@@ -92,11 +92,11 @@ api.ts:33
 
 ### isLoaded
 
-▸ **isLoaded**(): `Promise`<unknown\>
+▸ **isLoaded**(): `Promise`\<`unknown`\>
 
 #### Returns
 
-`Promise`<unknown\>
+`Promise`\<`unknown`\>
 
 #### Defined in
 
@@ -106,11 +106,11 @@ ___
 
 ### load
 
-▸ **load**(): `Promise`<unknown\>
+▸ **load**(): `Promise`\<`unknown`\>
 
 #### Returns
 
-`Promise`<unknown\>
+`Promise`\<`unknown`\>
 
 #### Defined in
 
@@ -120,11 +120,11 @@ ___
 
 ### show
 
-▸ **show**(): `Promise`<unknown\>
+▸ **show**(): `Promise`\<`unknown`\>
 
 #### Returns
 
-`Promise`<unknown\>
+`Promise`\<`unknown`\>
 
 #### Defined in
 
@@ -134,7 +134,7 @@ ___
 
 ### getAdById
 
-▸ `Static` **getAdById**(`id`): [MobileAd](mobilead.md)<[MobileAdOptions](../index.md#mobileadoptions)\>
+▸ `Static` **getAdById**(`id`): [MobileAd](mobilead.md)\<[MobileAdOptions](../index.md#mobileadoptions)\>
 
 #### Parameters
 
@@ -144,7 +144,7 @@ ___
 
 #### Returns
 
-[MobileAd](mobilead.md)<[MobileAdOptions](../index.md#mobileadoptions)\>
+[MobileAd](mobilead.md)\<[MobileAdOptions](../index.md#mobileadoptions)\>
 
 #### Inherited from
 

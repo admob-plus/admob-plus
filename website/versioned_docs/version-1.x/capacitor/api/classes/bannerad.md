@@ -8,7 +8,7 @@ custom_edit_url: null
 
 ## Hierarchy
 
-- `MobileAd`<[BannerAdOptions](../interfaces/banneradoptions.md)\>
+- `MobileAd`\<[BannerAdOptions](../interfaces/banneradoptions.md)\>
 
   ↳ **BannerAd**
 
@@ -78,11 +78,11 @@ index.ts:30
 
 ### hide
 
-▸ **hide**(): `Promise`<void\>
+▸ **hide**(): `Promise`\<`void`\>
 
 #### Returns
 
-`Promise`<void\>
+`Promise`\<`void`\>
 
 #### Defined in
 
@@ -92,11 +92,11 @@ ___
 
 ### show
 
-▸ **show**(): `Promise`<void\>
+▸ **show**(): `Promise`\<`void`\>
 
 #### Returns
 
-`Promise`<void\>
+`Promise`\<`void`\>
 
 #### Defined in
 

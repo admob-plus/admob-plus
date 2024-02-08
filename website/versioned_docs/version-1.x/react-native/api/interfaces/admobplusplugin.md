@@ -10,7 +10,7 @@ custom_edit_url: null
 
 ### configure
 
-▸ **configure**(`config`): `Promise`<void\>
+▸ **configure**(`config`): `Promise`\<`void`\>
 
 #### Parameters
 
@@ -20,7 +20,7 @@ custom_edit_url: null
 
 #### Returns
 
-`Promise`<void\>
+`Promise`\<`void`\>
 
 #### Defined in
 
@@ -30,17 +30,17 @@ ___
 
 ### interstitialLoad
 
-▸ **interstitialLoad**(`opts`): `Promise`<void\>
+▸ **interstitialLoad**(`opts`): `Promise`\<`void`\>
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `opts` | [MobileAdOptions](../index.md#mobileadoptions) & { `id`: `number`  } |
+| `opts` | [MobileAdOptions](../index.md#mobileadoptions) & \{ `id`: `number`  } |
 
 #### Returns
 
-`Promise`<void\>
+`Promise`\<`void`\>
 
 #### Defined in
 
@@ -50,7 +50,7 @@ ___
 
 ### interstitialShow
 
-▸ **interstitialShow**(`opts`): `Promise`<void\>
+▸ **interstitialShow**(`opts`): `Promise`\<`void`\>
 
 #### Parameters
 
@@ -61,7 +61,7 @@ ___
 
 #### Returns
 
-`Promise`<void\>
+`Promise`\<`void`\>
 
 #### Defined in
 
@@ -71,17 +71,17 @@ ___
 
 ### rewardedInterstitialLoad
 
-▸ **rewardedInterstitialLoad**(`opts`): `Promise`<void\>
+▸ **rewardedInterstitialLoad**(`opts`): `Promise`\<`void`\>
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `opts` | [MobileAdOptions](../index.md#mobileadoptions) & { `id`: `number`  } |
+| `opts` | [MobileAdOptions](../index.md#mobileadoptions) & \{ `id`: `number`  } |
 
 #### Returns
 
-`Promise`<void\>
+`Promise`\<`void`\>
 
 #### Defined in
 
@@ -91,7 +91,7 @@ ___
 
 ### rewardedInterstitialShow
 
-▸ **rewardedInterstitialShow**(`opts`): `Promise`<void\>
+▸ **rewardedInterstitialShow**(`opts`): `Promise`\<`void`\>
 
 #### Parameters
 
@@ -102,7 +102,7 @@ ___
 
 #### Returns
 
-`Promise`<void\>
+`Promise`\<`void`\>
 
 #### Defined in
 
@@ -112,7 +112,7 @@ ___
 
 ### rewardedLoad
 
-▸ **rewardedLoad**(`opts`): `Promise`<void\>
+▸ **rewardedLoad**(`opts`): `Promise`\<`void`\>
 
 #### Parameters
 
@@ -124,7 +124,7 @@ ___
 
 #### Returns
 
-`Promise`<void\>
+`Promise`\<`void`\>
 
 #### Defined in
 
@@ -134,7 +134,7 @@ ___
 
 ### rewardedShow
 
-▸ **rewardedShow**(`opts`): `Promise`<void\>
+▸ **rewardedShow**(`opts`): `Promise`\<`void`\>
 
 #### Parameters
 
@@ -145,7 +145,7 @@ ___
 
 #### Returns
 
-`Promise`<void\>
+`Promise`\<`void`\>
 
 #### Defined in
 
@@ -155,11 +155,11 @@ ___
 
 ### start
 
-▸ **start**(): `Promise`<void\>
+▸ **start**(): `Promise`\<`void`\>
 
 #### Returns
 
-`Promise`<void\>
+`Promise`\<`void`\>
 
 #### Defined in
 

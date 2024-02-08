@@ -34,7 +34,7 @@ custom_edit_url: null
 
 ### constructor
 
-• **new MobileAd**<`T`\>(`opts`): [`MobileAd`](MobileAd.md)<`T`\>
+• **new MobileAd**\<`T`\>(`opts`): [`MobileAd`](MobileAd.md)\<`T`\>
 
 #### Type parameters
 
@@ -50,7 +50,7 @@ custom_edit_url: null
 
 #### Returns
 
-[`MobileAd`](MobileAd.md)<`T`\>
+[`MobileAd`](MobileAd.md)\<`T`\>
 
 #### Defined in
 
@@ -60,7 +60,7 @@ packages/cordova/src/www/ads/base.ts:23
 
 ### \_initPromise
 
-• `Private` **\_initPromise**: `undefined` \| `Promise`<`unknown`\>
+• `Private` **\_initPromise**: `undefined` \| `Promise`\<`unknown`\>
 
 #### Defined in
 
@@ -104,11 +104,11 @@ ___
 
 ### allAds
 
-• `get` **allAds**(): `Record`<`string`, [`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../#mobileadoptions)\>\>
+• `get` **allAds**(): `Record`\<`string`, [`MobileAd`](MobileAd.md)\<[`MobileAdOptions`](../#mobileadoptions)\>\>
 
 #### Returns
 
-`Record`<`string`, [`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../#mobileadoptions)\>\>
+`Record`\<`string`, [`MobileAd`](MobileAd.md)\<[`MobileAdOptions`](../#mobileadoptions)\>\>
 
 #### Defined in
 
@@ -118,11 +118,11 @@ packages/cordova/src/www/ads/base.ts:30
 
 ### \_init
 
-▸ **_init**(): `Promise`<`unknown`\>
+▸ **_init**(): `Promise`\<`unknown`\>
 
 #### Returns
 
-`Promise`<`unknown`\>
+`Promise`\<`unknown`\>
 
 #### Defined in
 
@@ -132,11 +132,11 @@ ___
 
 ### hide
 
-▸ **hide**(): `Promise`<`unknown`\>
+▸ **hide**(): `Promise`\<`unknown`\>
 
 #### Returns
 
-`Promise`<`unknown`\>
+`Promise`\<`unknown`\>
 
 #### Defined in
 
@@ -146,11 +146,11 @@ ___
 
 ### init
 
-▸ **init**(): `Promise`<`unknown`\>
+▸ **init**(): `Promise`\<`unknown`\>
 
 #### Returns
 
-`Promise`<`unknown`\>
+`Promise`\<`unknown`\>
 
 #### Defined in
 
@@ -160,11 +160,11 @@ ___
 
 ### isLoaded
 
-▸ **isLoaded**(): `Promise`<`boolean`\>
+▸ **isLoaded**(): `Promise`\<`boolean`\>
 
 #### Returns
 
-`Promise`<`boolean`\>
+`Promise`\<`boolean`\>
 
 #### Defined in
 
@@ -174,11 +174,11 @@ ___
 
 ### load
 
-▸ **load**(): `Promise`<`void`\>
+▸ **load**(): `Promise`\<`void`\>
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Defined in
 
@@ -214,17 +214,17 @@ ___
 
 ### show
 
-▸ **show**(`opts?`): `Promise`<`unknown`\>
+▸ **show**(`opts?`): `Promise`\<`unknown`\>
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `opts?` | `Record`<`string`, `unknown`\> |
+| `opts?` | `Record`\<`string`, `unknown`\> |
 
 #### Returns
 
-`Promise`<`unknown`\>
+`Promise`\<`unknown`\>
 
 #### Defined in
 
@@ -234,7 +234,7 @@ ___
 
 ### getAdById
 
-▸ **getAdById**(`id`): [`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../#mobileadoptions)\>
+▸ **getAdById**(`id`): [`MobileAd`](MobileAd.md)\<[`MobileAdOptions`](../#mobileadoptions)\>
 
 #### Parameters
 
@@ -244,7 +244,7 @@ ___
 
 #### Returns
 
-[`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../#mobileadoptions)\>
+[`MobileAd`](MobileAd.md)\<[`MobileAdOptions`](../#mobileadoptions)\>
 
 #### Defined in
 

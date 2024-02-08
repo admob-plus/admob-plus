@@ -92,11 +92,11 @@ api.ts:33
 
 ### isLoaded
 
-▸ **isLoaded**(): `Promise`<boolean\>
+▸ **isLoaded**(): `Promise`\<`boolean`\>
 
 #### Returns
 
-`Promise`<boolean\>
+`Promise`\<`boolean`\>
 
 #### Defined in
 
@@ -106,11 +106,11 @@ ___
 
 ### load
 
-▸ **load**(): `Promise`<void\>
+▸ **load**(): `Promise`\<`void`\>
 
 #### Returns
 
-`Promise`<void\>
+`Promise`\<`void`\>
 
 #### Defined in
 
@@ -120,11 +120,11 @@ ___
 
 ### show
 
-▸ **show**(): `Promise`<void\>
+▸ **show**(): `Promise`\<`void`\>
 
 #### Returns
 
-`Promise`<void\>
+`Promise`\<`void`\>
 
 #### Defined in
 
@@ -134,7 +134,7 @@ ___
 
 ### getAdById
 
-▸ `Static` **getAdById**(`id`): [MobileAd](mobilead.md)<[MobileAdOptions](../index.md#mobileadoptions)\>
+▸ `Static` **getAdById**(`id`): [MobileAd](mobilead.md)\<[MobileAdOptions](../index.md#mobileadoptions)\>
 
 #### Parameters
 
@@ -144,7 +144,7 @@ ___
 
 #### Returns
 
-[MobileAd](mobilead.md)<[MobileAdOptions](../index.md#mobileadoptions)\>
+[MobileAd](mobilead.md)\<[MobileAdOptions](../index.md#mobileadoptions)\>
 
 #### Inherited from
 

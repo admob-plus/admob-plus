@@ -10,7 +10,7 @@ custom_edit_url: null
 
 ### addListener
 
-▸ **addListener**(`eventName`, `listenerFunc`): `Promise`<PluginListenerHandle\> & `PluginListenerHandle`
+▸ **addListener**(`eventName`, `listenerFunc`): `Promise`\<PluginListenerHandle\> & `PluginListenerHandle`
 
 #### Parameters
 
@@ -21,7 +21,7 @@ custom_edit_url: null
 
 #### Returns
 
-`Promise`<PluginListenerHandle\> & `PluginListenerHandle`
+`Promise`\<PluginListenerHandle\> & `PluginListenerHandle`
 
 #### Defined in
 
@@ -31,7 +31,7 @@ ___
 
 ### bannerHide
 
-▸ **bannerHide**(`opts`): `Promise`<void\>
+▸ **bannerHide**(`opts`): `Promise`\<`void`\>
 
 #### Parameters
 
@@ -42,7 +42,7 @@ ___
 
 #### Returns
 
-`Promise`<void\>
+`Promise`\<`void`\>
 
 #### Defined in
 
@@ -52,7 +52,7 @@ ___
 
 ### bannerShow
 
-▸ **bannerShow**(`opts`): `Promise`<void\>
+▸ **bannerShow**(`opts`): `Promise`\<`void`\>
 
 #### Parameters
 
@@ -65,7 +65,7 @@ ___
 
 #### Returns
 
-`Promise`<void\>
+`Promise`\<`void`\>
 
 #### Defined in
 
@@ -75,7 +75,7 @@ ___
 
 ### configRequest
 
-▸ **configRequest**(`requestConfig`): `Promise`<void\>
+▸ **configRequest**(`requestConfig`): `Promise`\<`void`\>
 
 #### Parameters
 
@@ -85,7 +85,7 @@ ___
 
 #### Returns
 
-`Promise`<void\>
+`Promise`\<`void`\>
 
 #### Defined in
 
@@ -95,7 +95,7 @@ ___
 
 ### configure
 
-▸ **configure**(`config`): `Promise`<void\>
+▸ **configure**(`config`): `Promise`\<`void`\>
 
 #### Parameters
 
@@ -105,7 +105,7 @@ ___
 
 #### Returns
 
-`Promise`<void\>
+`Promise`\<`void`\>
 
 #### Defined in
 
@@ -115,7 +115,7 @@ ___
 
 ### interstitialLoad
 
-▸ **interstitialLoad**(`opts`): `Promise`<void\>
+▸ **interstitialLoad**(`opts`): `Promise`\<`void`\>
 
 #### Parameters
 
@@ -127,7 +127,7 @@ ___
 
 #### Returns
 
-`Promise`<void\>
+`Promise`\<`void`\>
 
 #### Defined in
 
@@ -137,7 +137,7 @@ ___
 
 ### interstitialShow
 
-▸ **interstitialShow**(`opts`): `Promise`<void\>
+▸ **interstitialShow**(`opts`): `Promise`\<`void`\>
 
 #### Parameters
 
@@ -148,7 +148,7 @@ ___
 
 #### Returns
 
-`Promise`<void\>
+`Promise`\<`void`\>
 
 #### Defined in
 
@@ -158,11 +158,11 @@ ___
 
 ### requestTrackingAuthorization
 
-▸ **requestTrackingAuthorization**(): `Promise`<`Object`\>
+▸ **requestTrackingAuthorization**(): `Promise`\<`Object`\>
 
 #### Returns
 
-`Promise`<`Object`\>
+`Promise`\<`Object`\>
 
 #### Defined in
 
@@ -172,7 +172,7 @@ ___
 
 ### rewardedInterstitialLoad
 
-▸ **rewardedInterstitialLoad**(`opts`): `Promise`<void\>
+▸ **rewardedInterstitialLoad**(`opts`): `Promise`\<`void`\>
 
 #### Parameters
 
@@ -184,7 +184,7 @@ ___
 
 #### Returns
 
-`Promise`<void\>
+`Promise`\<`void`\>
 
 #### Defined in
 
@@ -194,7 +194,7 @@ ___
 
 ### rewardedInterstitialShow
 
-▸ **rewardedInterstitialShow**(`opts`): `Promise`<void\>
+▸ **rewardedInterstitialShow**(`opts`): `Promise`\<`void`\>
 
 #### Parameters
 
@@ -205,7 +205,7 @@ ___
 
 #### Returns
 
-`Promise`<void\>
+`Promise`\<`void`\>
 
 #### Defined in
 
@@ -215,7 +215,7 @@ ___
 
 ### rewardedLoad
 
-▸ **rewardedLoad**(`opts`): `Promise`<void\>
+▸ **rewardedLoad**(`opts`): `Promise`\<`void`\>
 
 #### Parameters
 
@@ -227,7 +227,7 @@ ___
 
 #### Returns
 
-`Promise`<void\>
+`Promise`\<`void`\>
 
 #### Defined in
 
@@ -237,7 +237,7 @@ ___
 
 ### rewardedShow
 
-▸ **rewardedShow**(`opts`): `Promise`<void\>
+▸ **rewardedShow**(`opts`): `Promise`\<`void`\>
 
 #### Parameters
 
@@ -248,7 +248,7 @@ ___
 
 #### Returns
 
-`Promise`<void\>
+`Promise`\<`void`\>
 
 #### Defined in
 
@@ -258,11 +258,11 @@ ___
 
 ### start
 
-▸ **start**(): `Promise`<void\>
+▸ **start**(): `Promise`\<`void`\>
 
 #### Returns
 
-`Promise`<void\>
+`Promise`\<`void`\>
 
 #### Defined in
 

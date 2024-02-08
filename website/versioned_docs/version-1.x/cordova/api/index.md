@@ -83,7 +83,7 @@ api.ts:46
 
 ### execAsync
 
-▸ `Const` **execAsync**(`action`, `args?`): `Promise`<unknown\>
+▸ `Const` **execAsync**(`action`, `args?`): `Promise`\<`unknown`\>
 
 #### Parameters
 
@@ -94,7 +94,7 @@ api.ts:46
 
 #### Returns
 
-`Promise`<unknown\>
+`Promise`\<`unknown`\>
 
 #### Defined in
 

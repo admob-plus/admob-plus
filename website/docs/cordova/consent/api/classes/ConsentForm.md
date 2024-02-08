@@ -40,11 +40,11 @@ index.ts:50
 
 ### show
 
-▸ **show**(): `Promise`<`unknown`\>
+▸ **show**(): `Promise`\<`unknown`\>
 
 #### Returns
 
-`Promise`<`unknown`\>
+`Promise`\<`unknown`\>
 
 #### Defined in
 

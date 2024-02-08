@@ -54,7 +54,7 @@ ___
 
 ### #init
 
-• `Private` **#init**: ``null`` \| `Promise`<`any`\> = `null`
+• `Private` **#init**: ``null`` \| `Promise`\<`any`\> = `null`
 
 #### Inherited from
 
@@ -124,11 +124,11 @@ index.ts:42
 
 ### hide
 
-▸ **hide**(): `Promise`<`void`\>
+▸ **hide**(): `Promise`\<`void`\>
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Inherited from
 
@@ -142,11 +142,11 @@ ___
 
 ### init
 
-▸ **init**(): `Promise`<`void`\>
+▸ **init**(): `Promise`\<`void`\>
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Inherited from
 
@@ -160,11 +160,11 @@ ___
 
 ### isLoaded
 
-▸ **isLoaded**(): `Promise`<`boolean`\>
+▸ **isLoaded**(): `Promise`\<`boolean`\>
 
 #### Returns
 
-`Promise`<`boolean`\>
+`Promise`\<`boolean`\>
 
 #### Overrides
 
@@ -178,11 +178,11 @@ ___
 
 ### load
 
-▸ **load**(): `Promise`<`void`\>
+▸ **load**(): `Promise`\<`void`\>
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Overrides
 
@@ -196,11 +196,11 @@ ___
 
 ### show
 
-▸ **show**(): `Promise`<`void`\>
+▸ **show**(): `Promise`\<`void`\>
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Overrides
 

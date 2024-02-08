@@ -56,7 +56,7 @@ new admob.BannerAd({
 })
 ```
 
-The `npa` parameter is applicable to all ad formats, e.g. [`BannerAd`](./api/classes/bannerad), [`InterstitialAd`](./api/classes/interstitialad), [`RewardedAd`](./api/classes/rewardedad), [`RewardedInterstitialAd`](./api/classes/rewardedinterstitialad).
+The `npa` parameter is applicable to all ad formats, e.g. [`BannerAd`](./api/classes/BannerAd), [`InterstitialAd`](./api/classes/InterstitialAd), [`RewardedAd`](./api/classes/RewardedAd), [`RewardedInterstitialAd`](./api/classes/RewardedInterstitialAd).
 
 ## References
 

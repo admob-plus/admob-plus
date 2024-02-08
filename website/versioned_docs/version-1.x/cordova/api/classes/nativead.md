@@ -8,7 +8,7 @@ custom_edit_url: null
 
 ## Hierarchy
 
-- `GenericAd`<`Object`\>
+- `GenericAd`\<`Object`\>
 
   ↳ **NativeAd**
 
@@ -22,11 +22,11 @@ custom_edit_url: null
 
 | Name | Type |
 | :------ | :------ |
-| `opts` | [MobileAdOptions](../index.md#mobileadoptions) & { `_noinit?`: `boolean` ; `type`: `string`  } |
+| `opts` | [MobileAdOptions](../index.md#mobileadoptions) & \{ `_noinit?`: `boolean` ; `type`: `string`  } |
 
 #### Inherited from
 
-GenericAd<{
+GenericAd\<\{
   x: number
   y: number
   width: number
@@ -97,11 +97,11 @@ api.ts:33
 
 ### hide
 
-▸ **hide**(): `Promise`<unknown\>
+▸ **hide**(): `Promise`\<`unknown`\>
 
 #### Returns
 
-`Promise`<unknown\>
+`Promise`\<`unknown`\>
 
 #### Defined in
 
@@ -111,11 +111,11 @@ ___
 
 ### init
 
-▸ `Protected` **init**(): `Promise`<void\>
+▸ `Protected` **init**(): `Promise`\<`void`\>
 
 #### Returns
 
-`Promise`<void\>
+`Promise`\<`void`\>
 
 #### Inherited from
 
@@ -129,11 +129,11 @@ ___
 
 ### isLoaded
 
-▸ **isLoaded**(): `Promise`<boolean\>
+▸ **isLoaded**(): `Promise`\<`boolean`\>
 
 #### Returns
 
-`Promise`<boolean\>
+`Promise`\<`boolean`\>
 
 #### Inherited from
 
@@ -147,11 +147,11 @@ ___
 
 ### load
 
-▸ **load**(): `Promise`<void\>
+▸ **load**(): `Promise`\<`void`\>
 
 #### Returns
 
-`Promise`<void\>
+`Promise`\<`void`\>
 
 #### Inherited from
 
@@ -165,7 +165,7 @@ ___
 
 ### show
 
-▸ **show**(`opts?`): `Promise`<boolean\>
+▸ **show**(`opts?`): `Promise`\<`boolean`\>
 
 #### Parameters
 
@@ -179,7 +179,7 @@ ___
 
 #### Returns
 
-`Promise`<boolean\>
+`Promise`\<`boolean`\>
 
 #### Inherited from
 
@@ -193,7 +193,7 @@ ___
 
 ### getAdById
 
-▸ `Static` **getAdById**(`id`): [MobileAd](mobilead.md)<[MobileAdOptions](../index.md#mobileadoptions)\>
+▸ `Static` **getAdById**(`id`): [MobileAd](mobilead.md)\<[MobileAdOptions](../index.md#mobileadoptions)\>
 
 #### Parameters
 
@@ -203,7 +203,7 @@ ___
 
 #### Returns
 
-[MobileAd](mobilead.md)<[MobileAdOptions](../index.md#mobileadoptions)\>
+[MobileAd](mobilead.md)\<[MobileAdOptions](../index.md#mobileadoptions)\>
 
 #### Inherited from
 

@@ -8,7 +8,7 @@ custom_edit_url: null
 
 ## Hierarchy
 
-- [`MobileAd`](MobileAd.md)<[`WebViewAdOptions`](../interfaces/WebViewAdOptions.md)\>
+- [`MobileAd`](MobileAd.md)\<[`WebViewAdOptions`](../interfaces/WebViewAdOptions.md)\>
 
   ↳ **`WebViewAd`**
 
@@ -146,11 +146,11 @@ ___
 
 ### allAds
 
-• `get` **allAds**(): `Record`<`string`, [`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../#mobileadoptions)\>\>
+• `get` **allAds**(): `Record`\<`string`, [`MobileAd`](MobileAd.md)\<[`MobileAdOptions`](../#mobileadoptions)\>\>
 
 #### Returns
 
-`Record`<`string`, [`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../#mobileadoptions)\>\>
+`Record`\<`string`, [`MobileAd`](MobileAd.md)\<[`MobileAdOptions`](../#mobileadoptions)\>\>
 
 #### Inherited from
 
@@ -189,11 +189,11 @@ ___
 
 ### hide
 
-▸ **hide**(): `Promise`<`unknown`\>
+▸ **hide**(): `Promise`\<`unknown`\>
 
 #### Returns
 
-`Promise`<`unknown`\>
+`Promise`\<`unknown`\>
 
 #### Inherited from
 
@@ -290,11 +290,11 @@ ___
 
 ### init
 
-▸ **init**(): `Promise`<`unknown`\>
+▸ **init**(): `Promise`\<`unknown`\>
 
 #### Returns
 
-`Promise`<`unknown`\>
+`Promise`\<`unknown`\>
 
 #### Inherited from
 
@@ -308,11 +308,11 @@ ___
 
 ### isLoaded
 
-▸ **isLoaded**(): `Promise`<`boolean`\>
+▸ **isLoaded**(): `Promise`\<`boolean`\>
 
 #### Returns
 
-`Promise`<`boolean`\>
+`Promise`\<`boolean`\>
 
 #### Inherited from
 
@@ -346,11 +346,11 @@ ___
 
 ### load
 
-▸ **load**(): `Promise`<`void`\>
+▸ **load**(): `Promise`\<`void`\>
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Inherited from
 
@@ -434,11 +434,11 @@ ___
 
 ### show
 
-▸ **show**(): `Promise`<`unknown`\>
+▸ **show**(): `Promise`\<`unknown`\>
 
 #### Returns
 
-`Promise`<`unknown`\>
+`Promise`\<`unknown`\>
 
 #### Overrides
 
@@ -452,11 +452,11 @@ ___
 
 ### checkIntegration
 
-▸ **checkIntegration**(): `Promise`<`void`\>
+▸ **checkIntegration**(): `Promise`\<`void`\>
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Defined in
 
@@ -466,7 +466,7 @@ ___
 
 ### getAdById
 
-▸ **getAdById**(`id`): [`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../#mobileadoptions)\>
+▸ **getAdById**(`id`): [`MobileAd`](MobileAd.md)\<[`MobileAdOptions`](../#mobileadoptions)\>
 
 #### Parameters
 
@@ -476,7 +476,7 @@ ___
 
 #### Returns
 
-[`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../#mobileadoptions)\>
+[`MobileAd`](MobileAd.md)\<[`MobileAdOptions`](../#mobileadoptions)\>
 
 #### Inherited from
 

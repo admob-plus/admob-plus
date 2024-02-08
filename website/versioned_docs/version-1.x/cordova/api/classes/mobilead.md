@@ -30,7 +30,7 @@ custom_edit_url: null
 
 ### constructor
 
-• **new MobileAd**<T\>(`opts`)
+• **new MobileAd**\<T\>(`opts`)
 
 #### Type parameters
 
@@ -120,7 +120,7 @@ api.ts:33
 
 ### getAdById
 
-▸ `Static` **getAdById**(`id`): [MobileAd](mobilead.md)<[MobileAdOptions](../index.md#mobileadoptions)\>
+▸ `Static` **getAdById**(`id`): [MobileAd](mobilead.md)\<[MobileAdOptions](../index.md#mobileadoptions)\>
 
 #### Parameters
 
@@ -130,7 +130,7 @@ api.ts:33
 
 #### Returns
 
-[MobileAd](mobilead.md)<[MobileAdOptions](../index.md#mobileadoptions)\>
+[MobileAd](mobilead.md)\<[MobileAdOptions](../index.md#mobileadoptions)\>
 
 #### Defined in
 

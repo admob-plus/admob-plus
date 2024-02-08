@@ -59,7 +59,8 @@ In order for the ads to show, the WebView needs to be registered with the AdMob 
 
 Any solution to this without changing the `MainActivity.java` is welcome.
 
-<details><summary>Way that avoid reloading the WebView</summary>
+<details>
+<summary>Way that avoid reloading the WebView</summary>
 <p>
 
 Create a **MainActivity.java** file.

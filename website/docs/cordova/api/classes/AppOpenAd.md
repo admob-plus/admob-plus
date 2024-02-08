@@ -8,7 +8,7 @@ custom_edit_url: null
 
 ## Hierarchy
 
-- [`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../#mobileadoptions)\>
+- [`MobileAd`](MobileAd.md)\<[`MobileAdOptions`](../#mobileadoptions)\>
 
   ↳ **`AppOpenAd`**
 
@@ -96,11 +96,11 @@ ___
 
 ### allAds
 
-• `get` **allAds**(): `Record`<`string`, [`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../#mobileadoptions)\>\>
+• `get` **allAds**(): `Record`\<`string`, [`MobileAd`](MobileAd.md)\<[`MobileAdOptions`](../#mobileadoptions)\>\>
 
 #### Returns
 
-`Record`<`string`, [`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../#mobileadoptions)\>\>
+`Record`\<`string`, [`MobileAd`](MobileAd.md)\<[`MobileAdOptions`](../#mobileadoptions)\>\>
 
 #### Inherited from
 
@@ -114,11 +114,11 @@ packages/cordova/src/www/ads/base.ts:30
 
 ### hide
 
-▸ **hide**(): `Promise`<`unknown`\>
+▸ **hide**(): `Promise`\<`unknown`\>
 
 #### Returns
 
-`Promise`<`unknown`\>
+`Promise`\<`unknown`\>
 
 #### Inherited from
 
@@ -132,11 +132,11 @@ ___
 
 ### init
 
-▸ **init**(): `Promise`<`unknown`\>
+▸ **init**(): `Promise`\<`unknown`\>
 
 #### Returns
 
-`Promise`<`unknown`\>
+`Promise`\<`unknown`\>
 
 #### Inherited from
 
@@ -150,11 +150,11 @@ ___
 
 ### isLoaded
 
-▸ **isLoaded**(): `Promise`<`boolean`\>
+▸ **isLoaded**(): `Promise`\<`boolean`\>
 
 #### Returns
 
-`Promise`<`boolean`\>
+`Promise`\<`boolean`\>
 
 #### Overrides
 
@@ -168,11 +168,11 @@ ___
 
 ### load
 
-▸ **load**(): `Promise`<`void`\>
+▸ **load**(): `Promise`\<`void`\>
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Overrides
 
@@ -216,11 +216,11 @@ ___
 
 ### show
 
-▸ **show**(): `Promise`<`boolean`\>
+▸ **show**(): `Promise`\<`boolean`\>
 
 #### Returns
 
-`Promise`<`boolean`\>
+`Promise`\<`boolean`\>
 
 #### Overrides
 
@@ -234,7 +234,7 @@ ___
 
 ### getAdById
 
-▸ **getAdById**(`id`): [`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../#mobileadoptions)\>
+▸ **getAdById**(`id`): [`MobileAd`](MobileAd.md)\<[`MobileAdOptions`](../#mobileadoptions)\>
 
 #### Parameters
 
@@ -244,7 +244,7 @@ ___
 
 #### Returns
 
-[`MobileAd`](MobileAd.md)<[`MobileAdOptions`](../#mobileadoptions)\>
+[`MobileAd`](MobileAd.md)\<[`MobileAdOptions`](../#mobileadoptions)\>
 
 #### Inherited from
 

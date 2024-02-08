@@ -100,17 +100,17 @@ ___
 
 ### createAd
 
-• `Readonly` **createAd**: <Ad, O\>(`cls`: { `type`: `string`  }, `opts`: `O`) => `Promise`<InstanceType<typeof [MobileAd](mobilead.md)\>\>
+• `Readonly` **createAd**: \<Ad, O\>(`cls`: \{ `type`: `string`  }, `opts`: `O`) => `Promise`\<InstanceType\<typeof [MobileAd](mobilead.md)\>\>
 
 #### Type declaration
 
-▸ <Ad, O\>(`cls`, `opts`): `Promise`<InstanceType<typeof [MobileAd](mobilead.md)\>\>
+▸ \<Ad, O\>(`cls`, `opts`): `Promise`\<InstanceType\<typeof [MobileAd](mobilead.md)\>\>
 
 ##### Type parameters
 
 | Name | Type |
 | :------ | :------ |
-| `Ad` | `Ad`: [MobileAd](mobilead.md)<[MobileAdOptions](../index.md#mobileadoptions), Ad\> |
+| `Ad` | `Ad`: [MobileAd](mobilead.md)\<[MobileAdOptions](../index.md#mobileadoptions), Ad\> |
 | `O` | `O` = `O` |
 
 ##### Parameters
@@ -123,7 +123,7 @@ ___
 
 ##### Returns
 
-`Promise`<InstanceType<typeof [MobileAd](mobilead.md)\>\>
+`Promise`\<InstanceType\<typeof [MobileAd](mobilead.md)\>\>
 
 #### Defined in
 
@@ -133,7 +133,7 @@ index.ts:49
 
 ### configRequest
 
-▸ **configRequest**(`requestConfig`): `Promise`<unknown\>
+▸ **configRequest**(`requestConfig`): `Promise`\<`unknown`\>
 
 #### Parameters
 
@@ -143,7 +143,7 @@ index.ts:49
 
 #### Returns
 
-`Promise`<unknown\>
+`Promise`\<`unknown`\>
 
 #### Defined in
 
@@ -153,11 +153,11 @@ ___
 
 ### requestTrackingAuthorization
 
-▸ **requestTrackingAuthorization**(): `Promise`<``false`` \| [TrackingAuthorizationStatus](../enums/trackingauthorizationstatus.md)\>
+▸ **requestTrackingAuthorization**(): `Promise`\<``false`` \| [TrackingAuthorizationStatus](../enums/trackingauthorizationstatus.md)\>
 
 #### Returns
 
-`Promise`<``false`` \| [TrackingAuthorizationStatus](../enums/trackingauthorizationstatus.md)\>
+`Promise`\<``false`` \| [TrackingAuthorizationStatus](../enums/trackingauthorizationstatus.md)\>
 
 #### Defined in
 
@@ -167,7 +167,7 @@ ___
 
 ### setAppMuted
 
-▸ **setAppMuted**(`value`): `Promise`<unknown\>
+▸ **setAppMuted**(`value`): `Promise`\<`unknown`\>
 
 #### Parameters
 
@@ -177,7 +177,7 @@ ___
 
 #### Returns
 
-`Promise`<unknown\>
+`Promise`\<`unknown`\>
 
 #### Defined in
 
@@ -187,7 +187,7 @@ ___
 
 ### setAppVolume
 
-▸ **setAppVolume**(`value`): `Promise`<unknown\>
+▸ **setAppVolume**(`value`): `Promise`\<`unknown`\>
 
 #### Parameters
 
@@ -197,7 +197,7 @@ ___
 
 #### Returns
 
-`Promise`<unknown\>
+`Promise`\<`unknown`\>
 
 #### Defined in
 
@@ -207,11 +207,11 @@ ___
 
 ### start
 
-▸ **start**(): `Promise`<`Object`\>
+▸ **start**(): `Promise`\<`Object`\>
 
 #### Returns
 
-`Promise`<`Object`\>
+`Promise`\<`Object`\>
 
 #### Defined in
 

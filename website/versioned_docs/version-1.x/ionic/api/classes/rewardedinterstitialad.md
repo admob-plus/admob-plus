@@ -14,7 +14,7 @@ custom_edit_url: null
 
 ## Implements
 
-- `Omit`<IRewardedInterstitialAd, ``"opts"``\>
+- `Omit`\<IRewardedInterstitialAd, ``"opts"``\>
 
 ## Constructors
 
@@ -120,11 +120,11 @@ ionic/src/ngx/index.ts:151
 
 ### isLoaded
 
-▸ **isLoaded**(): `Promise`<unknown\>
+▸ **isLoaded**(): `Promise`\<`unknown`\>
 
 #### Returns
 
-`Promise`<unknown\>
+`Promise`\<`unknown`\>
 
 #### Implementation of
 
@@ -138,11 +138,11 @@ ___
 
 ### load
 
-▸ **load**(): `Promise`<unknown\>
+▸ **load**(): `Promise`\<`unknown`\>
 
 #### Returns
 
-`Promise`<unknown\>
+`Promise`\<`unknown`\>
 
 #### Implementation of
 
@@ -156,11 +156,11 @@ ___
 
 ### show
 
-▸ **show**(): `Promise`<unknown\>
+▸ **show**(): `Promise`\<`unknown`\>
 
 #### Returns
 
-`Promise`<unknown\>
+`Promise`\<`unknown`\>
 
 #### Implementation of
 

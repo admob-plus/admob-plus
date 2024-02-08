@@ -50,11 +50,11 @@ index.ts:43
 
 ### getConsentStatus
 
-▸ **getConsentStatus**(): `Promise`<[ConsentStatus](../enums/consentstatus.md)\>
+▸ **getConsentStatus**(): `Promise`\<[ConsentStatus](../enums/consentstatus.md)\>
 
 #### Returns
 
-`Promise`<[ConsentStatus](../enums/consentstatus.md)\>
+`Promise`\<[ConsentStatus](../enums/consentstatus.md)\>
 
 #### Defined in
 
@@ -64,11 +64,11 @@ ___
 
 ### getFormStatus
 
-▸ **getFormStatus**(): `Promise`<[FormStatus](../enums/formstatus.md)\>
+▸ **getFormStatus**(): `Promise`\<[FormStatus](../enums/formstatus.md)\>
 
 #### Returns
 
-`Promise`<[FormStatus](../enums/formstatus.md)\>
+`Promise`\<[FormStatus](../enums/formstatus.md)\>
 
 #### Defined in
 
@@ -78,11 +78,11 @@ ___
 
 ### loadForm
 
-▸ **loadForm**(): `Promise`<[ConsentForm](consentform.md)\>
+▸ **loadForm**(): `Promise`\<[ConsentForm](consentform.md)\>
 
 #### Returns
 
-`Promise`<[ConsentForm](consentform.md)\>
+`Promise`\<[ConsentForm](consentform.md)\>
 
 #### Defined in
 
@@ -92,7 +92,7 @@ ___
 
 ### requestInfoUpdate
 
-▸ **requestInfoUpdate**(`opts?`): `Promise`<unknown\>
+▸ **requestInfoUpdate**(`opts?`): `Promise`\<`unknown`\>
 
 #### Parameters
 
@@ -102,7 +102,7 @@ ___
 
 #### Returns
 
-`Promise`<unknown\>
+`Promise`\<`unknown`\>
 
 #### Defined in
 
@@ -112,11 +112,11 @@ ___
 
 ### reset
 
-▸ **reset**(): `Promise`<unknown\>
+▸ **reset**(): `Promise`\<`unknown`\>
 
 #### Returns
 
-`Promise`<unknown\>
+`Promise`\<`unknown`\>
 
 #### Defined in
 

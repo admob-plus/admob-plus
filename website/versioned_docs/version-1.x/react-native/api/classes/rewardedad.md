@@ -78,11 +78,11 @@ index.ts:28
 
 ### load
 
-▸ **load**(): `Promise`<void\>
+▸ **load**(): `Promise`\<`void`\>
 
 #### Returns
 
-`Promise`<void\>
+`Promise`\<`void`\>
 
 #### Defined in
 
@@ -92,11 +92,11 @@ ___
 
 ### show
 
-▸ **show**(): `Promise`<void\>
+▸ **show**(): `Promise`\<`void`\>
 
 #### Returns
 
-`Promise`<void\>
+`Promise`\<`void`\>
 
 #### Defined in
 

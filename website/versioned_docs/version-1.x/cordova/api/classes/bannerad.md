@@ -8,7 +8,7 @@ custom_edit_url: null
 
 ## Hierarchy
 
-- [MobileAd](mobilead.md)<[BannerAdOptions](../interfaces/banneradoptions.md)\>
+- [MobileAd](mobilead.md)\<[BannerAdOptions](../interfaces/banneradoptions.md)\>
 
   ↳ **BannerAd**
 
@@ -102,11 +102,11 @@ api.ts:33
 
 ### hide
 
-▸ **hide**(): `Promise`<unknown\>
+▸ **hide**(): `Promise`\<`unknown`\>
 
 #### Returns
 
-`Promise`<unknown\>
+`Promise`\<`unknown`\>
 
 #### Defined in
 
@@ -116,11 +116,11 @@ ___
 
 ### load
 
-▸ **load**(): `Promise`<unknown\>
+▸ **load**(): `Promise`\<`unknown`\>
 
 #### Returns
 
-`Promise`<unknown\>
+`Promise`\<`unknown`\>
 
 #### Defined in
 
@@ -130,11 +130,11 @@ ___
 
 ### show
 
-▸ **show**(): `Promise`<unknown\>
+▸ **show**(): `Promise`\<`unknown`\>
 
 #### Returns
 
-`Promise`<unknown\>
+`Promise`\<`unknown`\>
 
 #### Defined in
 
@@ -144,7 +144,7 @@ ___
 
 ### config
 
-▸ `Static` **config**(`opts`): ``false`` \| `Promise`<unknown\>
+▸ `Static` **config**(`opts`): ``false`` \| `Promise`\<`unknown`\>
 
 #### Parameters
 
@@ -157,7 +157,7 @@ ___
 
 #### Returns
 
-``false`` \| `Promise`<unknown\>
+``false`` \| `Promise`\<`unknown`\>
 
 #### Defined in
 
@@ -167,7 +167,7 @@ ___
 
 ### getAdById
 
-▸ `Static` **getAdById**(`id`): [MobileAd](mobilead.md)<[MobileAdOptions](../index.md#mobileadoptions)\>
+▸ `Static` **getAdById**(`id`): [MobileAd](mobilead.md)\<[MobileAdOptions](../index.md#mobileadoptions)\>
 
 #### Parameters
 
@@ -177,7 +177,7 @@ ___
 
 #### Returns
 
-[MobileAd](mobilead.md)<[MobileAdOptions](../index.md#mobileadoptions)\>
+[MobileAd](mobilead.md)\<[MobileAdOptions](../index.md#mobileadoptions)\>
 
 #### Inherited from
 

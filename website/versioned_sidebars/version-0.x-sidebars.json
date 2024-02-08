@@ -1,5 +1,5 @@
 {
-  "version-0.x/docs": [
+  "docs": [
     {
       "collapsed": true,
       "type": "category",
@@ -7,7 +7,7 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-0.x/installation"
+          "id": "installation"
         }
       ]
     },
@@ -18,15 +18,15 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-0.x/show-banner"
+          "id": "show-banner"
         },
         {
           "type": "doc",
-          "id": "version-0.x/show-interstitial"
+          "id": "show-interstitial"
         },
         {
           "type": "doc",
-          "id": "version-0.x/show-reward-video"
+          "id": "show-reward-video"
         }
       ]
     },
@@ -37,15 +37,15 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-0.x/test-ads"
+          "id": "test-ads"
         },
         {
           "type": "doc",
-          "id": "version-0.x/volume-control"
+          "id": "volume-control"
         },
         {
           "type": "doc",
-          "id": "version-0.x/designed-for-families"
+          "id": "designed-for-families"
         }
       ]
     },
@@ -56,7 +56,7 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-0.x/ionic"
+          "id": "ionic"
         }
       ]
     },
@@ -67,7 +67,7 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-0.x/ad-request-options"
+          "id": "ad-request-options"
         }
       ]
     },
@@ -78,7 +78,7 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-0.x/faq"
+          "id": "faq"
         }
       ]
     }

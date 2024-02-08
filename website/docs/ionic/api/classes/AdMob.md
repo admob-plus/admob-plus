@@ -14,7 +14,7 @@ custom_edit_url: null
 
 ## Implements
 
-- `Omit`<`IAdMob`, ``"AppOpenAd"`` \| ``"BannerAd"`` \| ``"BannerAd"`` \| ``"configRequest"`` \| ``"Events"`` \| ``"InterstitialAd"`` \| ``"InterstitialAd"`` \| ``"NativeAd"`` \| ``"NativeAd"`` \| ``"requestTrackingAuthorization"`` \| ``"RewardedAd"`` \| ``"RewardedAd"`` \| ``"RewardedInterstitialAd"`` \| ``"RewardedInterstitialAd"`` \| ``"setAppMuted"`` \| ``"setAppVolume"`` \| ``"TrackingAuthorizationStatus"`` \| ``"WebViewAd"``\>
+- `Omit`\<`IAdMob`, ``"AppOpenAd"`` \| ``"BannerAd"`` \| ``"BannerAd"`` \| ``"configRequest"`` \| ``"Events"`` \| ``"InterstitialAd"`` \| ``"InterstitialAd"`` \| ``"NativeAd"`` \| ``"NativeAd"`` \| ``"requestTrackingAuthorization"`` \| ``"RewardedAd"`` \| ``"RewardedAd"`` \| ``"RewardedInterstitialAd"`` \| ``"RewardedInterstitialAd"`` \| ``"setAppMuted"`` \| ``"setAppVolume"`` \| ``"TrackingAuthorizationStatus"`` \| ``"WebViewAd"``\>
 
 ## Constructors
 
@@ -104,7 +104,7 @@ ionic/src/ngx/index.ts:270
 
 ### configure
 
-▸ **configure**(`...opts`): `Promise`<`unknown`\>
+▸ **configure**(`...opts`): `Promise`\<`unknown`\>
 
 #### Parameters
 
@@ -114,7 +114,7 @@ ionic/src/ngx/index.ts:270
 
 #### Returns
 
-`Promise`<`unknown`\>
+`Promise`\<`unknown`\>
 
 #### Implementation of
 
@@ -128,7 +128,7 @@ ___
 
 ### on
 
-▸ **on**(`event`): `Observable`<`unknown`\>
+▸ **on**(`event`): `Observable`\<`unknown`\>
 
 #### Parameters
 
@@ -138,7 +138,7 @@ ___
 
 #### Returns
 
-`Observable`<`unknown`\>
+`Observable`\<`unknown`\>
 
 #### Defined in
 
@@ -148,11 +148,11 @@ ___
 
 ### start
 
-▸ **start**(): `Promise`<\{ `version`: `string`  }\>
+▸ **start**(): `Promise`\<\{ `version`: `string`  }\>
 
 #### Returns
 
-`Promise`<\{ `version`: `string`  }\>
+`Promise`\<\{ `version`: `string`  }\>
 
 #### Implementation of
 

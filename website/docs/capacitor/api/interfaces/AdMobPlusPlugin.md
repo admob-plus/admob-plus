@@ -10,7 +10,7 @@ custom_edit_url: null
 
 ### adCreate
 
-▸ **adCreate**<`O`\>(`opts`): `Promise`<`void`\>
+▸ **adCreate**\<`O`\>(`opts`): `Promise`\<`void`\>
 
 #### Type parameters
 
@@ -26,7 +26,7 @@ custom_edit_url: null
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Defined in
 
@@ -36,7 +36,7 @@ ___
 
 ### adHide
 
-▸ **adHide**(`opts`): `Promise`<`void`\>
+▸ **adHide**(`opts`): `Promise`\<`void`\>
 
 #### Parameters
 
@@ -47,7 +47,7 @@ ___
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Defined in
 
@@ -57,7 +57,7 @@ ___
 
 ### adIsLoaded
 
-▸ **adIsLoaded**(`opts`): `Promise`<`boolean`\>
+▸ **adIsLoaded**(`opts`): `Promise`\<`boolean`\>
 
 #### Parameters
 
@@ -68,7 +68,7 @@ ___
 
 #### Returns
 
-`Promise`<`boolean`\>
+`Promise`\<`boolean`\>
 
 #### Defined in
 
@@ -78,7 +78,7 @@ ___
 
 ### adLoad
 
-▸ **adLoad**(`opts`): `Promise`<`void`\>
+▸ **adLoad**(`opts`): `Promise`\<`void`\>
 
 #### Parameters
 
@@ -89,7 +89,7 @@ ___
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Defined in
 
@@ -99,7 +99,7 @@ ___
 
 ### adShow
 
-▸ **adShow**(`opts`): `Promise`<`void`\>
+▸ **adShow**(`opts`): `Promise`\<`void`\>
 
 #### Parameters
 
@@ -110,7 +110,7 @@ ___
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Defined in
 
@@ -120,7 +120,7 @@ ___
 
 ### addListener
 
-▸ **addListener**(`eventName`, `listenerFunc`): `Promise`<`PluginListenerHandle`\> & `PluginListenerHandle`
+▸ **addListener**(`eventName`, `listenerFunc`): `Promise`\<`PluginListenerHandle`\> & `PluginListenerHandle`
 
 #### Parameters
 
@@ -131,7 +131,7 @@ ___
 
 #### Returns
 
-`Promise`<`PluginListenerHandle`\> & `PluginListenerHandle`
+`Promise`\<`PluginListenerHandle`\> & `PluginListenerHandle`
 
 #### Defined in
 
@@ -141,7 +141,7 @@ ___
 
 ### configRequest
 
-▸ **configRequest**(`requestConfig`): `Promise`<`void`\>
+▸ **configRequest**(`requestConfig`): `Promise`\<`void`\>
 
 #### Parameters
 
@@ -151,7 +151,7 @@ ___
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Defined in
 
@@ -161,7 +161,7 @@ ___
 
 ### configure
 
-▸ **configure**(`config`): `Promise`<`void`\>
+▸ **configure**(`config`): `Promise`\<`void`\>
 
 #### Parameters
 
@@ -171,7 +171,7 @@ ___
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Defined in
 
@@ -181,11 +181,11 @@ ___
 
 ### requestTrackingAuthorization
 
-▸ **requestTrackingAuthorization**(): `Promise`<\{ `status`: ``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)  }\>
+▸ **requestTrackingAuthorization**(): `Promise`\<\{ `status`: ``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)  }\>
 
 #### Returns
 
-`Promise`<\{ `status`: ``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)  }\>
+`Promise`\<\{ `status`: ``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)  }\>
 
 #### Defined in
 
@@ -195,11 +195,11 @@ ___
 
 ### start
 
-▸ **start**(): `Promise`<`void`\>
+▸ **start**(): `Promise`\<`void`\>
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Defined in
 
@@ -209,11 +209,11 @@ ___
 
 ### trackingAuthorizationStatus
 
-▸ **trackingAuthorizationStatus**(): `Promise`<\{ `status`: ``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)  }\>
+▸ **trackingAuthorizationStatus**(): `Promise`\<\{ `status`: ``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)  }\>
 
 #### Returns
 
-`Promise`<\{ `status`: ``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)  }\>
+`Promise`\<\{ `status`: ``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)  }\>
 
 #### Defined in
 

@@ -14,7 +14,7 @@ custom_edit_url: null
 
 ## Implements
 
-- `Omit`<IAdMob, ``"AppOpenAd"`` \| ``"BannerAd"`` \| ``"createAd"`` \| ``"Events"`` \| ``"InterstitialAd"`` \| ``"NativeAd"`` \| ``"RewardedAd"`` \| ``"RewardedInterstitialAd"`` \| ``"TrackingAuthorizationStatus"``\>
+- `Omit`\<IAdMob, ``"AppOpenAd"`` \| ``"BannerAd"`` \| ``"createAd"`` \| ``"Events"`` \| ``"InterstitialAd"`` \| ``"NativeAd"`` \| ``"RewardedAd"`` \| ``"RewardedInterstitialAd"`` \| ``"TrackingAuthorizationStatus"``\>
 
 ## Constructors
 
@@ -154,7 +154,7 @@ ionic/src/ngx/index.ts:196
 
 ### configRequest
 
-▸ **configRequest**(...`opts`): `Promise`<unknown\>
+▸ **configRequest**(...`opts`): `Promise`\<`unknown`\>
 
 #### Parameters
 
@@ -164,7 +164,7 @@ ionic/src/ngx/index.ts:196
 
 #### Returns
 
-`Promise`<unknown\>
+`Promise`\<`unknown`\>
 
 #### Implementation of
 
@@ -178,7 +178,7 @@ ___
 
 ### on
 
-▸ **on**(`event`): `Observable`<any\>
+▸ **on**(`event`): `Observable`\<`any`\>
 
 #### Parameters
 
@@ -188,7 +188,7 @@ ___
 
 #### Returns
 
-`Observable`<any\>
+`Observable`\<`any`\>
 
 #### Defined in
 
@@ -198,11 +198,11 @@ ___
 
 ### requestTrackingAuthorization
 
-▸ **requestTrackingAuthorization**(): `Promise`<``false`` \| [TrackingAuthorizationStatus](../enums/trackingauthorizationstatus.md)\>
+▸ **requestTrackingAuthorization**(): `Promise`\<``false`` \| [TrackingAuthorizationStatus](../enums/trackingauthorizationstatus.md)\>
 
 #### Returns
 
-`Promise`<``false`` \| [TrackingAuthorizationStatus](../enums/trackingauthorizationstatus.md)\>
+`Promise`\<``false`` \| [TrackingAuthorizationStatus](../enums/trackingauthorizationstatus.md)\>
 
 #### Implementation of
 
@@ -216,7 +216,7 @@ ___
 
 ### setAppMuted
 
-▸ **setAppMuted**(...`opts`): `Promise`<unknown\>
+▸ **setAppMuted**(...`opts`): `Promise`\<`unknown`\>
 
 #### Parameters
 
@@ -226,7 +226,7 @@ ___
 
 #### Returns
 
-`Promise`<unknown\>
+`Promise`\<`unknown`\>
 
 #### Implementation of
 
@@ -240,7 +240,7 @@ ___
 
 ### setAppVolume
 
-▸ **setAppVolume**(...`opts`): `Promise`<unknown\>
+▸ **setAppVolume**(...`opts`): `Promise`\<`unknown`\>
 
 #### Parameters
 
@@ -250,7 +250,7 @@ ___
 
 #### Returns
 
-`Promise`<unknown\>
+`Promise`\<`unknown`\>
 
 #### Implementation of
 
@@ -264,11 +264,11 @@ ___
 
 ### start
 
-▸ **start**(): `Promise`<`Object`\>
+▸ **start**(): `Promise`\<`Object`\>
 
 #### Returns
 
-`Promise`<`Object`\>
+`Promise`\<`Object`\>
 
 #### Implementation of
 

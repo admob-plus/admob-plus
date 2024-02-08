@@ -10,7 +10,7 @@ custom_edit_url: null
 
 ### adCreate
 
-▸ **adCreate**<`O`\>(`opts`): `Promise`<`void`\>
+▸ **adCreate**\<`O`\>(`opts`): `Promise`\<`void`\>
 
 #### Type parameters
 
@@ -26,7 +26,7 @@ custom_edit_url: null
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Defined in
 
@@ -36,7 +36,7 @@ ___
 
 ### adIsLoaded
 
-▸ **adIsLoaded**(`opts`): `Promise`<`boolean`\>
+▸ **adIsLoaded**(`opts`): `Promise`\<`boolean`\>
 
 #### Parameters
 
@@ -47,7 +47,7 @@ ___
 
 #### Returns
 
-`Promise`<`boolean`\>
+`Promise`\<`boolean`\>
 
 #### Defined in
 
@@ -57,7 +57,7 @@ ___
 
 ### adLoad
 
-▸ **adLoad**(`opts`): `Promise`<`void`\>
+▸ **adLoad**(`opts`): `Promise`\<`void`\>
 
 #### Parameters
 
@@ -68,7 +68,7 @@ ___
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Defined in
 
@@ -78,7 +78,7 @@ ___
 
 ### adShow
 
-▸ **adShow**(`opts`): `Promise`<`void`\>
+▸ **adShow**(`opts`): `Promise`\<`void`\>
 
 #### Parameters
 
@@ -89,7 +89,7 @@ ___
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Defined in
 
@@ -99,7 +99,7 @@ ___
 
 ### configure
 
-▸ **configure**(`config`): `Promise`<`void`\>
+▸ **configure**(`config`): `Promise`\<`void`\>
 
 #### Parameters
 
@@ -109,7 +109,7 @@ ___
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Defined in
 
@@ -119,11 +119,11 @@ ___
 
 ### start
 
-▸ **start**(): `Promise`<`void`\>
+▸ **start**(): `Promise`\<`void`\>
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Defined in
 

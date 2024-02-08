@@ -1,8 +1,8 @@
 {
-  "version-1.x/docs": [
+  "docs": [
     {
       "type": "doc",
-      "id": "version-1.x/index"
+      "id": "index"
     },
     {
       "collapsed": true,
@@ -11,7 +11,7 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-1.x/capacitor/installation"
+          "id": "capacitor/installation"
         },
         {
           "collapsed": true,
@@ -20,19 +20,19 @@
           "items": [
             {
               "type": "doc",
-              "id": "version-1.x/capacitor/ads/banner"
+              "id": "capacitor/ads/banner"
             },
             {
               "type": "doc",
-              "id": "version-1.x/capacitor/ads/interstitial"
+              "id": "capacitor/ads/interstitial"
             },
             {
               "type": "doc",
-              "id": "version-1.x/capacitor/ads/rewarded"
+              "id": "capacitor/ads/rewarded"
             },
             {
               "type": "doc",
-              "id": "version-1.x/capacitor/ads/rewarded-interstitial"
+              "id": "capacitor/ads/rewarded-interstitial"
             }
           ]
         },
@@ -61,11 +61,11 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-1.x/cordova/getting-started"
+          "id": "cordova/getting-started"
         },
         {
           "type": "doc",
-          "id": "version-1.x/cordova/installation"
+          "id": "cordova/installation"
         },
         {
           "collapsed": true,
@@ -74,29 +74,29 @@
           "items": [
             {
               "type": "doc",
-              "id": "version-1.x/cordova/ads/app-open"
+              "id": "cordova/ads/app-open"
             },
             {
               "type": "doc",
-              "id": "version-1.x/cordova/ads/banner"
+              "id": "cordova/ads/banner"
             },
             {
               "type": "doc",
-              "id": "version-1.x/cordova/ads/interstitial"
+              "id": "cordova/ads/interstitial"
             },
             {
               "type": "doc",
-              "id": "version-1.x/cordova/ads/rewarded"
+              "id": "cordova/ads/rewarded"
             },
             {
               "type": "doc",
-              "id": "version-1.x/cordova/ads/rewarded-interstitial"
+              "id": "cordova/ads/rewarded-interstitial"
             }
           ]
         },
         {
           "type": "doc",
-          "id": "version-1.x/cordova/test-ads"
+          "id": "cordova/test-ads"
         },
         {
           "collapsed": true,
@@ -105,15 +105,15 @@
           "items": [
             {
               "type": "doc",
-              "id": "version-1.x/cordova/rewarded-ads-ssv"
+              "id": "cordova/rewarded-ads-ssv"
             },
             {
               "type": "doc",
-              "id": "version-1.x/cordova/targeting"
+              "id": "cordova/targeting"
             },
             {
               "type": "doc",
-              "id": "version-1.x/cordova/volume-control"
+              "id": "cordova/volume-control"
             }
           ]
         },
@@ -124,7 +124,7 @@
           "items": [
             {
               "type": "doc",
-              "id": "version-1.x/cordova/consent/request"
+              "id": "cordova/consent/request"
             },
             {
               "collapsed": true,
@@ -152,7 +152,7 @@
         },
         {
           "type": "doc",
-          "id": "version-1.x/cordova/faq"
+          "id": "cordova/faq"
         },
         {
           "type": "link",
@@ -168,11 +168,11 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-1.x/ionic/getting-started"
+          "id": "ionic/getting-started"
         },
         {
           "type": "doc",
-          "id": "version-1.x/ionic/installation"
+          "id": "ionic/installation"
         },
         {
           "collapsed": true,
@@ -181,19 +181,19 @@
           "items": [
             {
               "type": "doc",
-              "id": "version-1.x/ionic/ads/banner"
+              "id": "ionic/ads/banner"
             },
             {
               "type": "doc",
-              "id": "version-1.x/ionic/ads/interstitial"
+              "id": "ionic/ads/interstitial"
             },
             {
               "type": "doc",
-              "id": "version-1.x/ionic/ads/rewarded"
+              "id": "ionic/ads/rewarded"
             },
             {
               "type": "doc",
-              "id": "version-1.x/ionic/ads/rewarded-interstitial"
+              "id": "ionic/ads/rewarded-interstitial"
             }
           ]
         },
@@ -222,7 +222,7 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-1.x/react-native/installation"
+          "id": "react-native/installation"
         },
         {
           "collapsed": true,
@@ -231,15 +231,15 @@
           "items": [
             {
               "type": "doc",
-              "id": "version-1.x/react-native/ads/interstitial"
+              "id": "react-native/ads/interstitial"
             },
             {
               "type": "doc",
-              "id": "version-1.x/react-native/ads/rewarded"
+              "id": "react-native/ads/rewarded"
             },
             {
               "type": "doc",
-              "id": "version-1.x/react-native/ads/rewarded-interstitial"
+              "id": "react-native/ads/rewarded-interstitial"
             }
           ]
         },
@@ -263,7 +263,7 @@
     },
     {
       "type": "doc",
-      "id": "version-1.x/troubleshooting"
+      "id": "troubleshooting"
     }
   ]
 }

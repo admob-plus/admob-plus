@@ -94,7 +94,7 @@ packages/cordova/src/www/common.ts:1
 
 ### execAsync
 
-▸ **execAsync**<`T`\>(`action`, `args?`): `Promise`<`T`\>
+▸ **execAsync**\<`T`\>(`action`, `args?`): `Promise`\<`T`\>
 
 #### Type parameters
 
@@ -111,7 +111,7 @@ packages/cordova/src/www/common.ts:1
 
 #### Returns
 
-`Promise`<`T`\>
+`Promise`\<`T`\>
 
 #### Defined in
 

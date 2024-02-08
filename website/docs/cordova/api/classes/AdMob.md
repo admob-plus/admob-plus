@@ -100,7 +100,7 @@ ___
 
 ### \_startPromise
 
-• `Private` **\_startPromise**: `undefined` \| `Promise`<\{ `version`: `string`  }\>
+• `Private` **\_startPromise**: `undefined` \| `Promise`\<\{ `version`: `string`  }\>
 
 #### Defined in
 
@@ -110,11 +110,11 @@ packages/cordova/src/www/index.ts:18
 
 ### \_start
 
-▸ **_start**(): `Promise`<\{ `version`: `string`  }\>
+▸ **_start**(): `Promise`\<\{ `version`: `string`  }\>
 
 #### Returns
 
-`Promise`<\{ `version`: `string`  }\>
+`Promise`\<\{ `version`: `string`  }\>
 
 #### Defined in
 
@@ -124,7 +124,7 @@ ___
 
 ### configure
 
-▸ **configure**(`config`): `Promise`<`unknown`\>
+▸ **configure**(`config`): `Promise`\<`unknown`\>
 
 #### Parameters
 
@@ -134,7 +134,7 @@ ___
 
 #### Returns
 
-`Promise`<`unknown`\>
+`Promise`\<`unknown`\>
 
 #### Defined in
 
@@ -144,11 +144,11 @@ ___
 
 ### start
 
-▸ **start**(): `Promise`<\{ `version`: `string`  }\>
+▸ **start**(): `Promise`\<\{ `version`: `string`  }\>
 
 #### Returns
 
-`Promise`<\{ `version`: `string`  }\>
+`Promise`\<\{ `version`: `string`  }\>
 
 #### Defined in
 

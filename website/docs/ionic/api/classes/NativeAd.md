@@ -14,7 +14,7 @@ custom_edit_url: null
 
 ## Implements
 
-- `Omit`<`INativeAd`, ``"opts"``\>
+- `Omit`\<`INativeAd`, ``"opts"``\>
 
 ## Constructors
 
@@ -132,11 +132,11 @@ ionic/src/ngx/index.ts:211
 
 ### hide
 
-▸ **hide**(): `Promise`<`unknown`\>
+▸ **hide**(): `Promise`\<`unknown`\>
 
 #### Returns
 
-`Promise`<`unknown`\>
+`Promise`\<`unknown`\>
 
 #### Implementation of
 
@@ -150,11 +150,11 @@ ___
 
 ### isLoaded
 
-▸ **isLoaded**(): `Promise`<`boolean`\>
+▸ **isLoaded**(): `Promise`\<`boolean`\>
 
 #### Returns
 
-`Promise`<`boolean`\>
+`Promise`\<`boolean`\>
 
 #### Implementation of
 
@@ -168,11 +168,11 @@ ___
 
 ### load
 
-▸ **load**(): `Promise`<`void`\>
+▸ **load**(): `Promise`\<`void`\>
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Implementation of
 
@@ -216,7 +216,7 @@ ___
 
 ### show
 
-▸ **show**(`...args`): `Promise`<`unknown`\>
+▸ **show**(`...args`): `Promise`\<`unknown`\>
 
 #### Parameters
 
@@ -226,7 +226,7 @@ ___
 
 #### Returns
 
-`Promise`<`unknown`\>
+`Promise`\<`unknown`\>
 
 #### Implementation of
 
@@ -240,7 +240,7 @@ ___
 
 ### showWith
 
-▸ **showWith**(`...args`): `Promise`<`void`\>
+▸ **showWith**(`...args`): `Promise`\<`void`\>
 
 #### Parameters
 
@@ -250,7 +250,7 @@ ___
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Implementation of
 

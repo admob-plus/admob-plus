@@ -92,11 +92,11 @@ api.ts:33
 
 ### init
 
-▸ `Protected` **init**(): `Promise`<void\>
+▸ `Protected` **init**(): `Promise`\<`void`\>
 
 #### Returns
 
-`Promise`<void\>
+`Promise`\<`void`\>
 
 #### Inherited from
 
@@ -110,11 +110,11 @@ ___
 
 ### isLoaded
 
-▸ **isLoaded**(): `Promise`<boolean\>
+▸ **isLoaded**(): `Promise`\<`boolean`\>
 
 #### Returns
 
-`Promise`<boolean\>
+`Promise`\<`boolean`\>
 
 #### Inherited from
 
@@ -128,11 +128,11 @@ ___
 
 ### load
 
-▸ **load**(): `Promise`<void\>
+▸ **load**(): `Promise`\<`void`\>
 
 #### Returns
 
-`Promise`<void\>
+`Promise`\<`void`\>
 
 #### Inherited from
 
@@ -146,17 +146,17 @@ ___
 
 ### show
 
-▸ **show**(`opts?`): `Promise`<boolean\>
+▸ **show**(`opts?`): `Promise`\<`boolean`\>
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `opts?` | `Record`<string, any\> |
+| `opts?` | `Record`\<string, any\> |
 
 #### Returns
 
-`Promise`<boolean\>
+`Promise`\<`boolean`\>
 
 #### Inherited from
 
@@ -170,7 +170,7 @@ ___
 
 ### getAdById
 
-▸ `Static` **getAdById**(`id`): [MobileAd](mobilead.md)<[MobileAdOptions](../index.md#mobileadoptions)\>
+▸ `Static` **getAdById**(`id`): [MobileAd](mobilead.md)\<[MobileAdOptions](../index.md#mobileadoptions)\>
 
 #### Parameters
 
@@ -180,7 +180,7 @@ ___
 
 #### Returns
 
-[MobileAd](mobilead.md)<[MobileAdOptions](../index.md#mobileadoptions)\>
+[MobileAd](mobilead.md)\<[MobileAdOptions](../index.md#mobileadoptions)\>
 
 #### Inherited from
 

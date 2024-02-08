@@ -64,11 +64,11 @@ index.ts:82
 
 ### canRequestAds
 
-▸ **canRequestAds**(): `Promise`<`boolean`\>
+▸ **canRequestAds**(): `Promise`\<`boolean`\>
 
 #### Returns
 
-`Promise`<`boolean`\>
+`Promise`\<`boolean`\>
 
 #### Defined in
 
@@ -78,11 +78,11 @@ ___
 
 ### getConsentStatus
 
-▸ **getConsentStatus**(): `Promise`<[`ConsentStatus`](../enums/ConsentStatus.md)\>
+▸ **getConsentStatus**(): `Promise`\<[`ConsentStatus`](../enums/ConsentStatus.md)\>
 
 #### Returns
 
-`Promise`<[`ConsentStatus`](../enums/ConsentStatus.md)\>
+`Promise`\<[`ConsentStatus`](../enums/ConsentStatus.md)\>
 
 #### Defined in
 
@@ -92,11 +92,11 @@ ___
 
 ### getFormStatus
 
-▸ **getFormStatus**(): `Promise`<[`FormStatus`](../enums/FormStatus.md)\>
+▸ **getFormStatus**(): `Promise`\<[`FormStatus`](../enums/FormStatus.md)\>
 
 #### Returns
 
-`Promise`<[`FormStatus`](../enums/FormStatus.md)\>
+`Promise`\<[`FormStatus`](../enums/FormStatus.md)\>
 
 #### Defined in
 
@@ -106,11 +106,11 @@ ___
 
 ### loadAndShowIfRequired
 
-▸ **loadAndShowIfRequired**(): `Promise`<`unknown`\>
+▸ **loadAndShowIfRequired**(): `Promise`\<`unknown`\>
 
 #### Returns
 
-`Promise`<`unknown`\>
+`Promise`\<`unknown`\>
 
 #### Defined in
 
@@ -120,11 +120,11 @@ ___
 
 ### loadForm
 
-▸ **loadForm**(): `Promise`<[`ConsentForm`](ConsentForm.md)\>
+▸ **loadForm**(): `Promise`\<[`ConsentForm`](ConsentForm.md)\>
 
 #### Returns
 
-`Promise`<[`ConsentForm`](ConsentForm.md)\>
+`Promise`\<[`ConsentForm`](ConsentForm.md)\>
 
 #### Defined in
 
@@ -134,11 +134,11 @@ ___
 
 ### privacyOptionsRequirementStatus
 
-▸ **privacyOptionsRequirementStatus**(): `Promise`<[`PrivacyOptionsRequirementStatus`](../enums/PrivacyOptionsRequirementStatus.md)\>
+▸ **privacyOptionsRequirementStatus**(): `Promise`\<[`PrivacyOptionsRequirementStatus`](../enums/PrivacyOptionsRequirementStatus.md)\>
 
 #### Returns
 
-`Promise`<[`PrivacyOptionsRequirementStatus`](../enums/PrivacyOptionsRequirementStatus.md)\>
+`Promise`\<[`PrivacyOptionsRequirementStatus`](../enums/PrivacyOptionsRequirementStatus.md)\>
 
 #### Defined in
 
@@ -148,7 +148,7 @@ ___
 
 ### requestInfoUpdate
 
-▸ **requestInfoUpdate**(`opts?`): `Promise`<`unknown`\>
+▸ **requestInfoUpdate**(`opts?`): `Promise`\<`unknown`\>
 
 #### Parameters
 
@@ -158,7 +158,7 @@ ___
 
 #### Returns
 
-`Promise`<`unknown`\>
+`Promise`\<`unknown`\>
 
 #### Defined in
 
@@ -168,11 +168,11 @@ ___
 
 ### requestTrackingAuthorization
 
-▸ **requestTrackingAuthorization**(): `Promise`<``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)\>
+▸ **requestTrackingAuthorization**(): `Promise`\<``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)\>
 
 #### Returns
 
-`Promise`<``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)\>
+`Promise`\<``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)\>
 
 #### Defined in
 
@@ -182,11 +182,11 @@ ___
 
 ### reset
 
-▸ **reset**(): `Promise`<`unknown`\>
+▸ **reset**(): `Promise`\<`unknown`\>
 
 #### Returns
 
-`Promise`<`unknown`\>
+`Promise`\<`unknown`\>
 
 #### Defined in
 
@@ -196,11 +196,11 @@ ___
 
 ### showPrivacyOptionsForm
 
-▸ **showPrivacyOptionsForm**(): `Promise`<`unknown`\>
+▸ **showPrivacyOptionsForm**(): `Promise`\<`unknown`\>
 
 #### Returns
 
-`Promise`<`unknown`\>
+`Promise`\<`unknown`\>
 
 #### Defined in
 
@@ -210,11 +210,11 @@ ___
 
 ### trackingAuthorizationStatus
 
-▸ **trackingAuthorizationStatus**(): `Promise`<``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)\>
+▸ **trackingAuthorizationStatus**(): `Promise`\<``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)\>
 
 #### Returns
 
-`Promise`<``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)\>
+`Promise`\<``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)\>
 
 #### Defined in
 

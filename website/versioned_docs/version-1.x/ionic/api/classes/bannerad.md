@@ -14,7 +14,7 @@ custom_edit_url: null
 
 ## Implements
 
-- `Omit`<IBannerAd, ``"opts"``\>
+- `Omit`\<IBannerAd, ``"opts"``\>
 
 ## Constructors
 
@@ -120,11 +120,11 @@ ionic/src/ngx/index.ts:40
 
 ### hide
 
-▸ **hide**(): `Promise`<unknown\>
+▸ **hide**(): `Promise`\<`unknown`\>
 
 #### Returns
 
-`Promise`<unknown\>
+`Promise`\<`unknown`\>
 
 #### Implementation of
 
@@ -138,11 +138,11 @@ ___
 
 ### load
 
-▸ **load**(): `Promise`<unknown\>
+▸ **load**(): `Promise`\<`unknown`\>
 
 #### Returns
 
-`Promise`<unknown\>
+`Promise`\<`unknown`\>
 
 #### Implementation of
 
@@ -156,11 +156,11 @@ ___
 
 ### show
 
-▸ **show**(): `Promise`<unknown\>
+▸ **show**(): `Promise`\<`unknown`\>
 
 #### Returns
 
-`Promise`<unknown\>
+`Promise`\<`unknown`\>
 
 #### Implementation of
 
