@@ -89,9 +89,9 @@ class AdViewProvider(private val cordova: CordovaInterface) : ViewProvider {
 
     private fun getResourceId(name: String, defType: String): Int {
         val app = cordova.activity.application
-        val package_name = app.packageName
+        val packageName = app.packageName
         val resources = app.resources
-        return resources.getIdentifier(name, defType, package_name)
+        return resources.getIdentifier(name, defType, packageName)
     }
 
     private fun id(name: String): Int {

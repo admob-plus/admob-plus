@@ -31,7 +31,7 @@ private const val TAG = "AdMobPlus"
 class AdMob : CordovaPlugin() {
     lateinit var context: CallbackContext
     private var readyCallbackContext: CallbackContext? = null
-    private var sdkInited = false
+    private var sdkReady = false
     private val eventQueue: ArrayList<PluginResult> = arrayListOf()
 
     private val actions = mapOf(
@@ -80,7 +80,7 @@ class AdMob : CordovaPlugin() {
     }
 
     private fun executeStart(ctx: ExecuteContext) {
-        if (sdkInited) {
+        if (sdkReady) {
             ctx.resolve(mapOf("version" to MobileAds.getVersion()))
             return
         }
@@ -88,7 +88,7 @@ class AdMob : CordovaPlugin() {
             configForTestLabIfNeeded(ctx.activity)
             ctx.resolve(mapOf("version" to MobileAds.getVersion()))
         }
-        sdkInited = true
+        sdkReady = true
     }
 
     private fun executeConfigure(ctx: ExecuteContext) {

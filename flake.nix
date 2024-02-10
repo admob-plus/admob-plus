@@ -15,10 +15,20 @@
             nativeBuildInputs = with pkgs; [
               go-task
               lychee
+            ] ++ [
+              bundletool
+              ffmpeg
+              gst_all_1.gstreamer
+              opencv
+              (pkgs.writeShellScriptBin "bundletool.jar" ''
+                exec bundletool "$@"
+              '')
             ] ++ (with nodePackages; [
               nodejs
               pnpm
             ]);
+
+            OPENCV4NODEJS_DISABLE_AUTOBUILD = "1";
           };
         };
     };

@@ -293,7 +293,7 @@ class Banner(ctx: ExecuteContext) : AdBase(ctx) {
     }
 
     private val isPositionTop: Boolean
-        private get() = gravity == Gravity.TOP
+        get() = gravity == Gravity.TOP
 
     enum class AdSizeType {
         BANNER, LARGE_BANNER, MEDIUM_RECTANGLE, FULL_BANNER, LEADERBOARD, SMART_BANNER;
