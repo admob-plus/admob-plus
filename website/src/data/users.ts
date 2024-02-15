@@ -1,5 +1,29 @@
 const users: { caption: string; image: string; infoLink: string }[] = [
   {
+    caption: 'Lagos Battlers',
+    image:
+      'https://play-lh.googleusercontent.com/x3Elz2n82uiw9wLPQ520ZzBtdoTaojIiIW-PMIf6-_Q_MbBf2rRIz4EAw644ydH_aib-=w240-h480-rw',
+    infoLink: 'https://play.google.com/store/apps/details?id=ng.com.omarkaj.lagosbattlers',
+  },
+  {
+    caption: 'My Pet Dog',
+    image:
+      'https://play-lh.googleusercontent.com/evViOyEQQdNVliLuNiP-wK0hpFonG6BrqAo6FmOVjCgHlvqWBLGB7FxLc6uqCyrHIA=w240-h480-rw',
+    infoLink: 'https://play.google.com/store/apps/details?id=ng.com.omarkaj.mypetdog',
+  },
+  {
+    caption: 'My Little Mermaids',
+    image:
+      'https://play-lh.googleusercontent.com/EhS3uBT8Phqjmepo7-cVOenrQgsWR1IbSWbgITT1jqfKwPv_giWCBwZ1mYhaltmhDg=w240-h480-rw',
+    infoLink: 'https://play.google.com/store/apps/details?id=ng.com.omarkaj.mylittlemermaids',
+  },
+  {
+    caption: 'Orenjin Pets',
+    image:
+      'https://play-lh.googleusercontent.com/6owXrb1YBANzRLkSkdTdbBJg8L4riBRn2orWc2A1dwkbRrveUeQSFdmUpwz-hfS0Wg=w240-h480-rw',
+    infoLink: 'https://play.google.com/store/apps/details?id=ng.com.omarkaj.orenjinpets',
+  },
+  {
     caption: 'Breakfast Crunch',
     image:
       'https://play-lh.googleusercontent.com/6owXrb1YBANzRLkSkdTdbBJg8L4riBRn2orWc2A1dwkbRrveUeQSFdmUpwz-hfS0Wg=w240-h480-rw',
