@@ -101,6 +101,9 @@ class AdMob : CordovaPlugin() {
         ctx.optBoolean("sameAppKey")?.let {
             MobileAds.enableSameAppKey(it)
         }
+        ctx.optBoolean("publisherFirstPartyIDEnabled")?.let {
+            MobileAds.putPublisherFirstPartyIdEnabled(it)
+        }
         MobileAds.setRequestConfiguration(buildRequestConfiguration(ctx.opts))
         configForTestLabIfNeeded(activity)
         ctx.resolve()

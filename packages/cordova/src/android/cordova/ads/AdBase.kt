@@ -23,22 +23,19 @@ fun removeFromParentView(view: View?): ViewGroup? {
 }
 
 abstract class AdBase(ctx: ExecuteContext) {
-    protected val initOpts: JSONObject
+    protected val initOpts: JSONObject = ctx.args.optJSONObject(0)
 
     val id: String get() = initOpts.getString("id")
     val adUnitId: String get() = initOpts.getString("adUnitId")
     val adRequest get() = buildAdRequest(initOpts)
 
-    protected val plugin: AdMob
+    protected val plugin = ctx.plugin
 
-    val cordovaWebView: CordovaWebView get() = plugin.webView
+    private val cordovaWebView: CordovaWebView get() = plugin.webView
     val webView: View get() = cordovaWebView.view
     val webViewParent: ViewGroup get() = webView.parent as ViewGroup
 
     init {
-        initOpts = ctx.args.optJSONObject(0)
-        plugin = ctx.plugin
-
         this.also { ads[id] = it }
     }
 
