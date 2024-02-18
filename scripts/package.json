@@ -6,7 +6,7 @@
     "gen": "tsx gen/index.ts"
   },
   "dependencies": {
-    "@pnpm/find-workspace-dir": "^6.0.2",
+    "@pnpm/find-workspace-dir": "^6.0.3",
     "cordova-common": "^5.0.0",
     "fs-extra": "^11.2.0",
     "jsdom": "^24.0.0",
