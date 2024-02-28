@@ -24,7 +24,7 @@
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
-        <preference name="deployment-target" value="11.0" />
+        <preference name="deployment-target" value="12.0" />
         <preference name="SwiftVersion" value="5.3" />
     </platform>
     <plugin name="admob-plus-cordova" spec="../../packages/cordova">
