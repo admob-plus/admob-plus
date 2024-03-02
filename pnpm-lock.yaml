@@ -221,14 +221,14 @@ importers:
         version: link:../../packages/cordova-consent
     devDependencies:
       '@types/cordova':
-        specifier: ^11.0.0
-        version: 11.0.0
+        specifier: ^11.0.3
+        version: 11.0.3
       cordova:
         specifier: ^12.0.0
         version: 12.0.0
       cordova-android:
-        specifier: ^12.0.0
-        version: 12.0.0
+        specifier: ^12.0.1
+        version: 12.0.1
       cordova-ios:
         specifier: ^6.3.0
         version: 6.3.0
@@ -15078,6 +15078,7 @@ packages:
 
   /@types/cordova@11.0.0:
     resolution: {integrity: sha512-AtBm1IAqqXsXszJe6XxuA2iXLhraNCj25p/FHRyikPeW0Z3YfgM6qzWb+VJglJTmZc5lqRNy84cYM/sQI5v6Vw==}
+    dev: true
 
   /@types/cordova@11.0.3:
     resolution: {integrity: sha512-kyuRQ40/NWQVhqGIHq78Ehu2Bf9Mlg0LhmSmis6ZFJK7z933FRfYi8tHe/k/0fB+PGfCf95rJC6TO7dopaFvAg==}
@@ -20497,6 +20498,7 @@ packages:
       string-argv: 0.3.2
       untildify: 4.0.0
       which: 3.0.1
+    dev: true
 
   /cordova-android@12.0.1:
     resolution: {integrity: sha512-6fXWoYb/X5AJlluhBg5RvOaX6iRxsvNH7yEOiXzUmLIflf5Ho7LtYCSKZaWMHh3f5cJe/sPCBKmFFBS+EWepVg==}
@@ -20913,7 +20915,7 @@ packages:
       '@rollup/plugin-commonjs': 25.0.0(rollup@3.23.0)
       '@rollup/plugin-node-resolve': 15.1.0(rollup@3.23.0)
       '@rollup/plugin-typescript': 11.1.1(rollup@3.23.0)(tslib@2.5.3)(typescript@5.1.6)
-      '@types/cordova': 11.0.0
+      '@types/cordova': 11.0.3
       '@types/node': 20.2.5
       browser-sync: 2.29.3
       chokidar: 3.5.3
@@ -21022,7 +21024,7 @@ packages:
       chokidar: 3.5.3
       clipboardy: 3.0.0
       cordova: 12.0.0
-      cordova-android: 12.0.0
+      cordova-android: 12.0.1
       cordova-browser: 7.0.0
       cordova-common: 5.0.0
       cordova-ios: 6.3.0
@@ -21049,6 +21051,7 @@ packages:
       untildify: 5.0.0
       yargs: 17.7.2
     transitivePeerDependencies:
+      - babel-plugin-macros
       - bluebird
       - bufferutil
       - debug
@@ -43883,6 +43886,7 @@ packages:
       update-notifier: 6.0.2
       yargs: 17.7.2
     transitivePeerDependencies:
+      - babel-plugin-macros
       - bluebird
       - bufferutil
       - debug
