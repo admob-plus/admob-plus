@@ -179,16 +179,16 @@ extension AMBCoreContext {
             requestConfiguration.maxAdContentRating = maxAdContentRating
         }
         if let tag = optChildDirectedTreatmentTag() {
-            requestConfiguration.tag(forChildDirectedTreatment: tag)
+            requestConfiguration.tagForChildDirectedTreatment = NSNumber(value: tag)
         }
         if let tag = optUnderAgeOfConsentTag() {
-            requestConfiguration.tagForUnderAge(ofConsent: tag)
+            requestConfiguration.tagForUnderAgeOfConsent = NSNumber(value: tag)
         }
         if let testDevices = optTestDeviceIds() {
             requestConfiguration.testDeviceIdentifiers = testDevices
         }
         if let sameAppKey = optBool("sameAppKey") {
-            requestConfiguration.setSameAppKeyEnabled(sameAppKey)
+            requestConfiguration.setPublisherFirstPartyIDEnabled(sameAppKey)
         }
         if let
         publisherFirstPartyIDEnabled = optBool("publisherFirstPartyIDEnabled") {
