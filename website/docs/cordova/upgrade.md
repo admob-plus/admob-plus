@@ -15,6 +15,19 @@ Kotlin support is required for V2, make sure your project is enabled it.
 </platform>
 ```
 
+### Require iOS 12.0 or higher
+
+The latest iOS SDK prerequisites,
+
+- Use Xcode 15.1 or higher
+- Target iOS 12.0 or higher
+
+```xml title="config.xml" {2}
+<platform name="ios">
+    <preference name="deployment-target" value="12.0" />
+</platform>
+```
+
 ### Ad `id` defaults to `adUnitId`
 
 Instead of auto-generated `id` for the ad instance, it is now default to `adUnitId`.

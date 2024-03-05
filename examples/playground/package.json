@@ -28,11 +28,11 @@
   "devDependencies": {
     "@admob-plus-internal/npm-bin": "workspace:*",
     "@types/fs-extra": "^11.0.4",
-    "@types/react": "^18.2.60",
+    "@types/react": "^18.2.63",
     "@types/react-dom": "^18.2.19",
     "@types/react-timeago": "^4.1.7",
-    "@typescript-eslint/eslint-plugin": "^7.1.0",
-    "@typescript-eslint/parser": "^7.1.0",
+    "@typescript-eslint/eslint-plugin": "^7.1.1",
+    "@typescript-eslint/parser": "^7.1.1",
     "@vitejs/plugin-react": "^4.2.1",
     "admob-plus": "workspace:*",
     "admob-plus-cordova": "../../packages/cordova",
@@ -51,7 +51,7 @@
     "fs-extra": "^11.2.0",
     "tsx": "^4.7.1",
     "typescript": "^5.3.3",
-    "vite": "^5.1.4"
+    "vite": "^5.1.5"
   },
   "cordova": {
     "platforms": [
