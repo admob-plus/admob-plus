@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.15](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@2.0.0-alpha.14...admob-plus-cordova@2.0.0-alpha.15) (2024-03-05)
+
+
+### Bug Fixes
+
+* **cordova/ios:** update API ([da95f24](https://github.com/admob-plus/admob-plus/commit/da95f24b0ebabf708632a836630e450ef8a9b2a5))
+
+
+### Features
+
+* **cordova/android:** support publisherFirstPartyIDEnabled ([45c0e46](https://github.com/admob-plus/admob-plus/commit/45c0e46868fe67b89a67e763b4b42a08100f90dc))
+* **cordova/ios:** update Google-Mobile-Ads-SDK to 11.0.1 ([b16a27f](https://github.com/admob-plus/admob-plus/commit/b16a27f83296f3e5a288f91eff551b473da10263))
+
+
+
+
+
 # [2.0.0-alpha.14](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@2.0.0-alpha.13...admob-plus-cordova@2.0.0-alpha.14) (2023-12-12)
 
 
