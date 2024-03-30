@@ -99,7 +99,7 @@ class AdMob : CordovaPlugin() {
             MobileAds.setAppVolume(it)
         }
         ctx.optBoolean("sameAppKey")?.let {
-            MobileAds.enableSameAppKey(it)
+            MobileAds.putPublisherFirstPartyIdEnabled(it)
         }
         ctx.optBoolean("publisherFirstPartyIDEnabled")?.let {
             MobileAds.putPublisherFirstPartyIdEnabled(it)
