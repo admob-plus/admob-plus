@@ -41,7 +41,7 @@
                 <source url="https://cdn.cocoapods.org/" />
             </config>
             <pods use-frameworks="true">
-                <pod name="GoogleUserMessagingPlatform" spec="~> 2.2.0" />
+                <pod name="GoogleUserMessagingPlatform" spec="~> 2.3.0" />
             </pods>
         </podspec>
     </platform>
