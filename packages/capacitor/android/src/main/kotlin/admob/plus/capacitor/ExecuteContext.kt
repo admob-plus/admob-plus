@@ -10,7 +10,7 @@ import org.json.JSONException
 import org.json.JSONObject
 import java.lang.reflect.InvocationTargetException
 
-class ExecuteContext internal constructor(val call: PluginCall) : Context {
+class ExecuteContext internal constructor(private val call: PluginCall) : Context {
     fun <T : AdBase?> optAdOrCreate(type: Class<T>): T? {
         var ad = type.cast(optAd())
         if (ad == null) {
@@ -40,11 +40,11 @@ class ExecuteContext internal constructor(val call: PluginCall) : Context {
         return call.hasOption(name)
     }
 
-    override fun opt(name: String?): Any? {
+    override fun opt(name: String): Any? {
         return call.data.opt(name)
     }
 
-    override fun optBoolean(name: String?): Boolean? {
+    override fun optBoolean(name: String): Boolean? {
         return call.getBoolean(name)
     }
 
@@ -56,19 +56,19 @@ class ExecuteContext internal constructor(val call: PluginCall) : Context {
         return call.getFloat(name)
     }
 
-    override fun optInt(name: String?): Int? {
+    override fun optInt(name: String): Int? {
         return call.getInt(name)
     }
 
-    override fun optString(name: String?): String? {
+    override fun optString(name: String): String? {
         return call.getString(name)
     }
 
-    override fun optStringList(name: String?): List<String?> {
+    override fun optStringList(name: String): List<String?> {
         return jsonArray2stringList(call.getArray(name))
     }
 
-    override fun optObject(name: String?): JSONObject? {
+    override fun optObject(name: String): JSONObject? {
         return call.getObject(name, null)
     }
 

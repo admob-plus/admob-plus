@@ -36,7 +36,7 @@ class Banner(ctx: ExecuteContext) : AdBase(ctx), GenericAd {
         if (adView == null) {
             adView = AdView(activity)
             adView!!.adUnitId = adUnitId
-            adView!!.adSize = adSize
+            // adView!!.adSize = adSize
             adView!!.adListener = object : AdListener() {
                 override fun onAdClicked() {
                     emit(Generated.Events.BANNER_CLICK)
@@ -116,7 +116,7 @@ class Banner(ctx: ExecuteContext) : AdBase(ctx), GenericAd {
             wvParentView.removeView(webView)
             val content = parentView as LinearLayout?
             content!!.orientation = LinearLayout.VERTICAL
-            parentView.setLayoutParams(
+            content.setLayoutParams(
                 LinearLayout.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT,
                     ViewGroup.LayoutParams.MATCH_PARENT,
@@ -128,7 +128,7 @@ class Banner(ctx: ExecuteContext) : AdBase(ctx), GenericAd {
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 1.0f
             )
-            parentView.addView(webView)
+            content.addView(webView)
             wvParentView.addView(parentView)
         }
         if (gravity == Gravity.TOP) {

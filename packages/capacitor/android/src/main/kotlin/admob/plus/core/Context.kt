@@ -74,7 +74,7 @@ interface Context {
     fun optAdRequest(): AdRequest {
         val builder = AdRequest.Builder()
         if (has("contentUrl")) {
-            builder.setContentUrl(Objects.requireNonNull(optString("contentUrl")))
+            Objects.requireNonNull(optString("contentUrl"))?.let { builder.setContentUrl(it) }
         }
         val extras = Bundle()
         if (has("npa")) {

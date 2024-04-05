@@ -5,6 +5,6 @@ import admob.plus.core.Ad
 import admob.plus.core.Helper
 
 open class AdBase(ctx: ExecuteContext?) : Ad(ctx!!) {
-    override val adapter: Helper.Adapter?
-        protected get() = ExecuteContext.Companion.plugin
+    override val adapter: Helper.Adapter
+        get() = ExecuteContext.Companion.plugin!!
 }

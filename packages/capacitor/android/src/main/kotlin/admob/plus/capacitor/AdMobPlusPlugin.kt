@@ -6,6 +6,7 @@ import admob.plus.capacitor.ads.Rewarded
 import admob.plus.capacitor.ads.RewardedInterstitial
 import admob.plus.core.GenericAd
 import admob.plus.core.Helper
+import android.app.Activity
 import com.getcapacitor.JSObject
 import com.getcapacitor.Plugin
 import com.getcapacitor.PluginCall
@@ -18,7 +19,7 @@ import org.json.JSONObject
 
 @CapacitorPlugin(name = "AdMobPlus")
 class AdMobPlusPlugin : Plugin(), Helper.Adapter {
-    var helper: Helper? = null
+    private var helper: Helper? = null
     override fun load() {
         super.load()
         helper = Helper(this)
@@ -132,6 +133,9 @@ class AdMobPlusPlugin : Plugin(), Helper.Adapter {
     fun emit(eventName: String?, data: JSObject?) {
         notifyListeners(eventName, data)
     }
+
+    override val activity: Activity
+        get() = getActivity()
 
     override fun emit(eventName: String?, data: Map<String?, Any?>?) {
         try {
