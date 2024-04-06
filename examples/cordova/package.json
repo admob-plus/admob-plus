@@ -9,7 +9,7 @@
     "admob-plus-cordova-native": "../../packages/cordova-native",
     "cordova-android": "12.0.1",
     "cordova-browser": "7.0.0",
-    "cordova-ios": "7.0.1",
+    "cordova-ios": "7.1.0",
     "cordova": "^12.0.0",
     "cordova-plus": "^0.9.4"
   },

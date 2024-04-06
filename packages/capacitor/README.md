@@ -33,7 +33,7 @@ You can find the documentation [on the website](https://admob-plus.github.io/doc
 * [`adHide(...)`](#adhide)
 * [`trackingAuthorizationStatus()`](#trackingauthorizationstatus)
 * [`requestTrackingAuthorization()`](#requesttrackingauthorization)
-* [`addListener(string, ...)`](#addlistenerstring)
+* [`addListener(string, ...)`](#addlistenerstring-)
 * [Interfaces](#interfaces)
 * [Type Aliases](#type-aliases)
 * [Enums](#enums)

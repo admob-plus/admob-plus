@@ -15,11 +15,11 @@
     "admob-plus-cordova": "^2.0.0-alpha.15"
   },
   "devDependencies": {
-    "@types/cordova": "^11.0.0",
-    "@types/plist": "^3.0.2",
+    "@types/cordova": "^11.0.3",
+    "@types/plist": "^3.0.5",
     "cordova": "12.0.0",
     "cordova-plus": "^0.9.4",
-    "typescript": "~5.1.6"
+    "typescript": "~5.4.4"
   },
   "author": "Ratson",
   "license": "MIT",

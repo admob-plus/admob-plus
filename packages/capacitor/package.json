@@ -48,14 +48,14 @@
     "test": "tsc --noEmit"
   },
   "devDependencies": {
-    "@capacitor/android": "^5.0.5",
-    "@capacitor/core": "^5.0.5",
-    "@capacitor/docgen": "^0.2.1",
-    "@capacitor/ios": "^5.0.5",
+    "@capacitor/android": "^5.7.4",
+    "@capacitor/core": "^5.7.4",
+    "@capacitor/docgen": "^0.2.2",
+    "@capacitor/ios": "^5.7.4",
     "@ionic/eslint-config": "^0.3.0",
-    "@ionic/prettier-config": "^3.0.0",
+    "@ionic/prettier-config": "^4.0.0",
     "@ionic/swiftlint-config": "^1.1.2",
-    "del-cli": "^5.0.0",
+    "del-cli": "^5.1.0",
     "rollup": "^2.78.0",
     "typescript": "~5.1.3"
   },
