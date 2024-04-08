@@ -1,13 +1,13 @@
-import {MobileAd, MobileAdOptions} from './base';
+import { MobileAd, type MobileAdOptions } from "./base";
 
-type ShowOptions = {x: number; y: number; width: number; height: number};
+type ShowOptions = { x: number; y: number; width: number; height: number };
 
 export interface NativeAdOptions extends MobileAdOptions {
   view?: string;
 }
 
 export class NativeAd extends MobileAd<NativeAdOptions> {
-  static readonly cls = 'NativeAd';
+  static readonly cls = "NativeAd";
 
   public isLoaded() {
     return super.isLoaded();
@@ -47,8 +47,8 @@ export class NativeAd extends MobileAd<NativeAdOptions> {
       childList: true,
       subtree: true,
     });
-    document.addEventListener('scroll', update);
-    window.addEventListener('resize', update);
+    document.addEventListener("scroll", update);
+    window.addEventListener("resize", update);
     await update();
   }
 }

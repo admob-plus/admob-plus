@@ -1,27 +1,27 @@
-import * as cordova from 'cordova';
-import channel from 'cordova/channel';
-import exec from 'cordova/exec';
-import {AdMob} from './index';
-import {MobileAd} from './ads/base';
-import {CordovaAction, CordovaService} from './common';
+import * as cordova from "cordova";
+import channel from "cordova/channel";
+import exec from "cordova/exec";
+import { MobileAd } from "./ads/base";
+import { type CordovaAction, CordovaService } from "./common";
+import { AdMob } from "./index";
 
 const admob = new AdMob();
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+// biome-ignore lint/suspicious/noExplicitAny: ignore
 function onMessageFromNative(event: any) {
-  const {data} = event;
-  if (data && data.adId) {
+  const { data } = event;
+  if (data?.adId) {
     data.ad = MobileAd.getAdById(data.adId);
   }
   cordova.fireDocumentEvent(event.type, data);
 }
 
-const feature = 'onAdMobPlusReady';
+const feature = "onAdMobPlusReady";
 channel.createSticky(feature);
 channel.waitForInitialization(feature);
 
 channel.onCordovaReady.subscribe(() => {
-  const action: CordovaAction = 'ready';
+  const action: CordovaAction = "ready";
   exec(onMessageFromNative, console.error, CordovaService, action, []);
   channel.initializationComplete(feature);
 });

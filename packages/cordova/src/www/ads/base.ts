@@ -1,4 +1,4 @@
-import {execAsync} from '../common';
+import { execAsync } from "../common";
 
 /** @internal */
 export type MobileAdOptions = {
@@ -6,7 +6,7 @@ export type MobileAdOptions = {
   adUnitId: string;
   contentUrl?: string;
   keywords?: string[];
-  npa?: '1';
+  npa?: "1";
 };
 
 interface MyWindow extends Window {
@@ -29,12 +29,12 @@ export class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
 
   private static get allAds() {
     const win: MyWindow = window;
-    if (typeof win.admobAds === 'undefined') win.admobAds = {};
+    if (typeof win.admobAds === "undefined") win.admobAds = {};
     return win.admobAds;
   }
 
   public static getAdById(id: string) {
-    return this.allAds[id];
+    return MobileAd.allAds[id];
   }
 
   public get adUnitId() {
@@ -45,6 +45,7 @@ export class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
     const [eventName, cb, ...rest] = args;
     const type = `admob.ad.${eventName.toLowerCase()}`;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    // biome-ignore lint/suspicious/noExplicitAny: <explanation>
     const listener = (evt: any) => {
       if (evt.adId === this.id) {
         cb(evt);
@@ -59,26 +60,27 @@ export class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
 
   protected async isLoaded() {
     await this.init();
-    return execAsync('adIsLoaded', [{id: this.id}]) as Promise<boolean>;
+    return execAsync("adIsLoaded", [{ id: this.id }]) as Promise<boolean>;
   }
 
   protected async load() {
     await this.init();
     // TODO read `opts` in native code?
-    await execAsync('adLoad', [{...this.opts, id: this.id}]);
+    await execAsync("adLoad", [{ ...this.opts, id: this.id }]);
   }
 
   protected async show(opts?: Record<string, unknown>) {
     await this.init();
-    return execAsync('adShow', [{...opts, id: this.id}]);
+    return execAsync("adShow", [{ ...opts, id: this.id }]);
   }
 
   protected async hide() {
     await this.init();
-    return execAsync('adHide', [{id: this.id}]);
+    return execAsync("adHide", [{ id: this.id }]);
   }
 
   protected async init() {
+    // biome-ignore lint/suspicious/noAssignInExpressions: <explanation>
     return (this._initPromise ??= this._init());
   }
 
@@ -86,9 +88,9 @@ export class MobileAd<T extends MobileAdOptions = MobileAdOptions> {
     await admob.start();
 
     const cls =
-      (this.constructor as unknown as {cls?: string}).cls ??
+      (this.constructor as unknown as { cls?: string }).cls ??
       this.constructor.name;
 
-    return execAsync('adCreate', [{...this.opts, id: this.id, cls}]);
+    return execAsync("adCreate", [{ ...this.opts, id: this.id, cls }]);
   }
 }

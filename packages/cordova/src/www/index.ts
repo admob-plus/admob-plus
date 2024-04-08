@@ -1,8 +1,8 @@
-import * as ads from './ads';
-import {AdMobConfig, Events, execAsync} from './common';
+import * as ads from "./ads";
+import { type AdMobConfig, Events, execAsync } from "./common";
 
-export * from './ads';
-export * from './common';
+export * from "./ads";
+export * from "./common";
 
 export class AdMob {
   public readonly AppOpenAd = ads.AppOpenAd;
@@ -18,15 +18,16 @@ export class AdMob {
   private _startPromise: ReturnType<typeof this._start> | undefined;
 
   configure(config: AdMobConfig) {
-    return execAsync('configure', [config]);
+    return execAsync("configure", [config]);
   }
 
   public start() {
+    // biome-ignore lint/suspicious/noAssignInExpressions: ignore
     return (this._startPromise ??= this._start());
   }
 
   private _start() {
-    return execAsync<{version: string}>('start');
+    return execAsync<{ version: string }>("start");
   }
 }
 

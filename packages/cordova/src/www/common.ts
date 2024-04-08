@@ -1,33 +1,34 @@
-export const CordovaService = 'AdMob';
+export const CordovaService = "AdMob";
 
 export type CordovaAction =
-  | 'adCreate'
-  | 'adHide'
-  | 'adIsLoaded'
-  | 'adLoad'
-  | 'adShow'
-  | 'bannerConfig'
-  | 'configure'
-  | 'ready'
-  | 'start'
-  | 'webviewGoto';
+  | "adCreate"
+  | "adHide"
+  | "adIsLoaded"
+  | "adLoad"
+  | "adShow"
+  | "bannerConfig"
+  | "configure"
+  | "ready"
+  | "start"
+  | "webviewGoto";
 
 export enum Events {
-  adClick = 'admob.ad.click',
-  adDismiss = 'admob.ad.dismiss',
-  adImpression = 'admob.ad.impression',
-  adLoad = 'admob.ad.load',
-  adLoadFail = 'admob.ad.loadfail',
-  adReward = 'admob.ad.reward',
-  adShow = 'admob.ad.show',
-  adShowFail = 'admob.ad.showfail',
-  bannerSize = 'admob.banner.size',
-  ready = 'admob.ready',
+  adClick = "admob.ad.click",
+  adDismiss = "admob.ad.dismiss",
+  adImpression = "admob.ad.impression",
+  adLoad = "admob.ad.load",
+  adLoadFail = "admob.ad.loadfail",
+  adReward = "admob.ad.reward",
+  adShow = "admob.ad.show",
+  adShowFail = "admob.ad.showfail",
+  bannerSize = "admob.banner.size",
+  ready = "admob.ready",
 }
 
+// biome-ignore lint/suspicious/noConstEnum: ignore
 export const enum Platform {
-  android = 'android',
-  ios = 'ios',
+  android = "android",
+  ios = "ios",
 }
 
 /**
@@ -35,11 +36,11 @@ export const enum Platform {
  * @enum {string}
  */
 type MaxAdContentRating =
-  | /** Content suitable for general audiences, including families. */ 'G'
-  | /** Content suitable only for mature audiences. */ 'MA'
-  | /** Content suitable for most audiences with parental guidance. */ 'PG'
-  | /** Content suitable for teen and older audiences. */ 'T'
-  | /** Content suitability is unspecified. */ '';
+  | /** Content suitable for general audiences, including families. */ "G"
+  | /** Content suitable only for mature audiences. */ "MA"
+  | /** Content suitable for most audiences with parental guidance. */ "PG"
+  | /** Content suitable for teen and older audiences. */ "T"
+  | /** Content suitability is unspecified. */ "";
 
 export interface RequestConfig {
   maxAdContentRating?: MaxAdContentRating;

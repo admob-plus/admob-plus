@@ -1,10 +1,10 @@
-import {RewardedAdOptions} from './rewarded';
-import {MobileAd} from './base';
+import { MobileAd } from "./base";
+import type { RewardedAdOptions } from "./rewarded";
 
 export type RewardedInterstitialAdOptions = RewardedAdOptions;
 
 export class RewardedInterstitialAd extends MobileAd<RewardedInterstitialAdOptions> {
-  static readonly cls = 'RewardedInterstitialAd';
+  static readonly cls = "RewardedInterstitialAd";
 
   public isLoaded() {
     return super.isLoaded();

@@ -1,7 +1,7 @@
-import {MobileAd, MobileAdOptions} from './base';
+import { MobileAd, type MobileAdOptions } from "./base";
 
 export class AppOpenAd extends MobileAd<MobileAdOptions> {
-  static readonly cls = 'AppOpenAd';
+  static readonly cls = "AppOpenAd";
 
   public isLoaded() {
     return super.isLoaded();
