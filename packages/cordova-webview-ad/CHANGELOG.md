@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.11](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova-webview-ad@0.2.10...admob-plus-cordova-webview-ad@0.2.11) (2024-04-08)
+
+**Note:** Version bump only for package admob-plus-cordova-webview-ad
+
+
+
+
+
 ## [0.2.10](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova-webview-ad@0.2.9...admob-plus-cordova-webview-ad@0.2.10) (2024-03-05)
 
 **Note:** Version bump only for package admob-plus-cordova-webview-ad

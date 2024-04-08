@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.16](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@2.0.0-alpha.15...admob-plus-cordova@2.0.0-alpha.16) (2024-04-08)
+
+
+### Features
+
+* **cordova/android:** update PLAY_SERVICES_VERSION to 23.0.0 ([72f8f47](https://github.com/admob-plus/admob-plus/commit/72f8f47063270033025bf1d8a6b99e9a54cb25f5))
+* **cordova/ios:** update Google-Mobile-Ads-SDK to 11.2.0 ([38425cb](https://github.com/admob-plus/admob-plus/commit/38425cbeea09ff62f44a221fce84e579886cdf67))
+
+
+
+
+
 # [2.0.0-alpha.15](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@2.0.0-alpha.14...admob-plus-cordova@2.0.0-alpha.15) (2024-03-05)
 
 

@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.2](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@2.0.0-alpha.1...@admob-plus/capacitor@2.0.0-alpha.2) (2024-04-08)
+
+
+### Bug Fixes
+
+* **capacitor/android:** fix compile errors ([a5c1bfc](https://github.com/admob-plus/admob-plus/commit/a5c1bfc7a2dff5764ef1b0099c62d323c4dbdb34))
+
+
+### Features
+
+* **capacitor/android:** update googlePlayServicesAdsVersion to 23.0.0 ([18903cb](https://github.com/admob-plus/admob-plus/commit/18903cb5ff42c2f2c8bf4c5f5a0376ac7b357f59))
+* **capacitor/ios:** update Google-Mobile-Ads-SDK to 11.2.0 ([d98fe7c](https://github.com/admob-plus/admob-plus/commit/d98fe7cf19442882c4c1749faf9190b92e263fdc))
+* **capacitor:** require @capacitor/core >= 3, fix [#529](https://github.com/admob-plus/admob-plus/issues/529), [#551](https://github.com/admob-plus/admob-plus/issues/551) ([3e2eca7](https://github.com/admob-plus/admob-plus/commit/3e2eca770cc2d879f545738ee907a7a51d2ed2fa))
+
+
+
+
+
 # [2.0.0-alpha.1](https://github.com/admob-plus/admob-plus/compare/@admob-plus/capacitor@2.0.0-alpha.0...@admob-plus/capacitor@2.0.0-alpha.1) (2023-05-30)
 
 

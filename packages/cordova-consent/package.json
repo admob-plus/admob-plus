@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-consent",
-  "version": "3.0.0-alpha.7",
+  "version": "3.0.0-alpha.8",
   "description": "Google Consent SDK Cordova Plugin",
   "main": "./lib/index.js",
   "types": "./esm/index.d.ts",

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.8](https://github.com/admob-plus/admob-plus/compare/cordova-plugin-consent@3.0.0-alpha.7...cordova-plugin-consent@3.0.0-alpha.8) (2024-04-08)
+
+
+### Features
+
+* **cordova-consent/ios:** update GoogleUserMessagingPlatform to 2.3.0 ([81db7ce](https://github.com/admob-plus/admob-plus/commit/81db7ce43b9b08c5914c04e9a9137c2a20dc0a1e))
+
+
+
+
+
 # [3.0.0-alpha.7](https://github.com/admob-plus/admob-plus/compare/cordova-plugin-consent@3.0.0-alpha.6...cordova-plugin-consent@3.0.0-alpha.7) (2024-03-05)
 
 
