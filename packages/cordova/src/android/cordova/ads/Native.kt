@@ -24,7 +24,7 @@ class Native(ctx: ExecuteContext) : AdBase(ctx) {
     private var view: View? = null
 
     init {
-        val key = initOpts.optString("view") ?: VIEW_DEFAULT_KEY
+        val key = initOpts.optString("view").ifEmpty { VIEW_DEFAULT_KEY }
         viewProvider = providers[key] ?: throw RuntimeException("cannot find viewProvider: $key")
     }
 
