@@ -12,6 +12,7 @@ import com.google.android.gms.ads.AdLoader
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.nativead.NativeAd
+import com.google.android.gms.ads.nativead.NativeAdOptions
 import com.google.android.gms.ads.nativead.NativeAdView
 import java.util.Objects
 import java.util.concurrent.ConcurrentHashMap
@@ -70,6 +71,10 @@ class Native(ctx: ExecuteContext) : AdBase(ctx) {
                     emit(Events.AD_IMPRESSION)
                 }
             })
+            .withNativeAdOptions(
+                NativeAdOptions.Builder()
+                    .build()
+            )
             .build().also {
                 it.loadAd(mAdRequest)
             }
@@ -84,12 +89,12 @@ class Native(ctx: ExecuteContext) : AdBase(ctx) {
         }
         view?.let {
             it.visibility = View.VISIBLE
-            it.x = dpToPx(initOpts.optDouble("x", 0.0)).toFloat()
-            it.y = dpToPx(initOpts.optDouble("y", 0.0)).toFloat()
+            it.x = dpToPx(ctx.opts.optDouble("x", 0.0)).toFloat()
+            it.y = dpToPx(ctx.opts.optDouble("y", 0.0)).toFloat()
 
             val params = it.layoutParams
-            params.width = dpToPx(initOpts.optDouble("width", 0.0)).toInt()
-            params.height = dpToPx(initOpts.optDouble("height", 0.0)).toInt()
+            params.width = dpToPx(ctx.opts.optDouble("width", 0.0)).toInt()
+            params.height = dpToPx(ctx.opts.optDouble("height", 0.0)).toInt()
             it.layoutParams = params
 
             viewProvider.didShow(this)

@@ -19,8 +19,7 @@
             android:text="Ad"
             android:background="#FFCC66"
             android:width="15dp"
-            android:height="15dp"
-            android:orientation="vertical"/>
+            android:height="15dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
