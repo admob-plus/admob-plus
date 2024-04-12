@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.17](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@2.0.0-alpha.16...admob-plus-cordova@2.0.0-alpha.17) (2024-04-12)
+
+
+### Bug Fixes
+
+* **cordova-native:** read display options from show() ([0f75921](https://github.com/admob-plus/admob-plus/commit/0f75921f4b1c32464b1df0b198d5b6402bfbbf03))
+* **cordova/android:** load native view providers on load ([#662](https://github.com/admob-plus/admob-plus/issues/662)) ([619aa88](https://github.com/admob-plus/admob-plus/commit/619aa88228eff11f5086b1e936d8068f82c02545))
+
+
+
+
+
 # [2.0.0-alpha.16](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@2.0.0-alpha.15...admob-plus-cordova@2.0.0-alpha.16) (2024-04-08)
 
 
