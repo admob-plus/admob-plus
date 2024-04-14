@@ -1,10 +1,8 @@
 {
-  "extends": "@tsconfig/node16",
+  "extends": "@tsconfig/node18",
   "compilerOptions": {
     "composite": true,
     "importHelpers": true,
-    "module": "esnext",
-    "moduleResolution": "node16",
     "noImplicitAny": false,
     "outDir": "lib",
     "rootDir": "src"

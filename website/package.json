@@ -24,7 +24,7 @@
     "@docusaurus/plugin-content-docs": "^3.2.1",
     "@docusaurus/types": "^3.2.1",
     "@tsconfig/docusaurus": "^2.0.3",
-    "@types/react": "^18.2.77",
+    "@types/react": "^18.2.78",
     "@types/react-helmet": "^6.1.11",
     "@types/react-router-dom": "^5.3.3",
     "docusaurus-mdx-checker": "^3.0.0",
