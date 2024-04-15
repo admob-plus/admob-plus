@@ -126,7 +126,7 @@ packages/cordova/src/www/ads/base.ts:30
 
 #### Defined in
 
-packages/cordova/src/www/ads/base.ts:85
+packages/cordova/src/www/ads/base.ts:87
 
 ___
 
@@ -140,7 +140,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/base.ts:76
+packages/cordova/src/www/ads/base.ts:77
 
 ___
 
@@ -154,7 +154,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/base.ts:81
+packages/cordova/src/www/ads/base.ts:82
 
 ___
 
@@ -168,7 +168,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/base.ts:60
+packages/cordova/src/www/ads/base.ts:61
 
 ___
 
@@ -182,7 +182,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/base.ts:65
+packages/cordova/src/www/ads/base.ts:66
 
 ___
 
@@ -228,7 +228,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/base.ts:71
+packages/cordova/src/www/ads/base.ts:72
 
 ___
 

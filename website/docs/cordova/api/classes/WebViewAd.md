@@ -40,7 +40,7 @@ packages/cordova/src/www/ads/webview.ts:25
 
 ### \_adsense
 
-• `Private` **\_adsense**: `string` = `''`
+• `Private` **\_adsense**: `string` = `""`
 
 #### Defined in
 
@@ -50,7 +50,7 @@ ___
 
 ### \_historyCurrentHref
 
-• `Private` **\_historyCurrentHref**: `string` = `''`
+• `Private` **\_historyCurrentHref**: `string` = `""`
 
 #### Defined in
 
@@ -70,7 +70,7 @@ ___
 
 ### \_originalHref
 
-• `Private` **\_originalHref**: `any`
+• `Private` **\_originalHref**: `string`
 
 #### Defined in
 
@@ -80,7 +80,7 @@ ___
 
 ### \_src
 
-• `Private` **\_src**: `string` = `''`
+• `Private` **\_src**: `string` = `""`
 
 #### Defined in
 
@@ -164,18 +164,18 @@ packages/cordova/src/www/ads/base.ts:30
 
 ### addAd
 
-▸ **addAd**(`opts`): `boolean`
+▸ **addAd**(`options`): `boolean`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `opts` | `Object` |
-| `opts.element` | `HTMLElement` |
-| `opts.format?` | `string` |
-| `opts.fullWidth?` | `boolean` |
-| `opts.html?` | `string` |
-| `opts.slot` | `string` |
+| `options` | `Object` |
+| `options.element` | `HTMLElement` |
+| `options.format?` | `string` |
+| `options.fullWidth?` | `boolean` |
+| `options.html?` | `string` |
+| `options.slot` | `string` |
 
 #### Returns
 
@@ -183,7 +183,7 @@ packages/cordova/src/www/ads/base.ts:30
 
 #### Defined in
 
-packages/cordova/src/www/ads/webview.ts:77
+packages/cordova/src/www/ads/webview.ts:76
 
 ___
 
@@ -201,35 +201,35 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/base.ts:76
+packages/cordova/src/www/ads/base.ts:77
 
 ___
 
 ### historyCurrentHref
 
-▸ **historyCurrentHref**(): `any`
+▸ **historyCurrentHref**(): `string`
 
 #### Returns
 
-`any`
+`string`
 
 #### Defined in
 
-packages/cordova/src/www/ads/webview.ts:166
+packages/cordova/src/www/ads/webview.ts:161
 
 ___
 
 ### historyOriginalHref
 
-▸ **historyOriginalHref**(): `any`
+▸ **historyOriginalHref**(): `string`
 
 #### Returns
 
-`any`
+`string`
 
 #### Defined in
 
-packages/cordova/src/www/ads/webview.ts:162
+packages/cordova/src/www/ads/webview.ts:157
 
 ___
 
@@ -249,7 +249,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/webview.ts:141
+packages/cordova/src/www/ads/webview.ts:136
 
 ___
 
@@ -263,7 +263,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/webview.ts:170
+packages/cordova/src/www/ads/webview.ts:165
 
 ___
 
@@ -284,7 +284,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/webview.ts:150
+packages/cordova/src/www/ads/webview.ts:145
 
 ___
 
@@ -302,7 +302,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/base.ts:81
+packages/cordova/src/www/ads/base.ts:82
 
 ___
 
@@ -320,7 +320,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/base.ts:60
+packages/cordova/src/www/ads/base.ts:61
 
 ___
 
@@ -340,7 +340,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/webview.ts:137
+packages/cordova/src/www/ads/webview.ts:132
 
 ___
 
@@ -358,7 +358,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/base.ts:65
+packages/cordova/src/www/ads/base.ts:66
 
 ___
 
@@ -378,7 +378,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/webview.ts:127
+packages/cordova/src/www/ads/webview.ts:122
 
 ___
 
@@ -398,7 +398,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/webview.ts:115
+packages/cordova/src/www/ads/webview.ts:110
 
 ___
 
@@ -446,7 +446,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/webview.ts:174
+packages/cordova/src/www/ads/webview.ts:169
 
 ___
 

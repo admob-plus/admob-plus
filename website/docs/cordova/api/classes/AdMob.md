@@ -118,7 +118,7 @@ packages/cordova/src/www/index.ts:18
 
 #### Defined in
 
-packages/cordova/src/www/index.ts:28
+packages/cordova/src/www/index.ts:29
 
 ___
 

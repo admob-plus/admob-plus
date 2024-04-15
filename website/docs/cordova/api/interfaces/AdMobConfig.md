@@ -20,7 +20,7 @@ custom_edit_url: null
 
 #### Defined in
 
-packages/cordova/src/www/common.ts:52
+packages/cordova/src/www/common.ts:53
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/common.ts:53
+packages/cordova/src/www/common.ts:54
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/common.ts:45
+packages/cordova/src/www/common.ts:46
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/common.ts:56
+packages/cordova/src/www/common.ts:57
 
 ___
 
@@ -68,7 +68,7 @@ Use publisherFirstPartyIDEnabled instead
 
 #### Defined in
 
-packages/cordova/src/www/common.ts:55
+packages/cordova/src/www/common.ts:56
 
 ___
 
@@ -82,7 +82,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/common.ts:46
+packages/cordova/src/www/common.ts:47
 
 ___
 
@@ -96,7 +96,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/common.ts:47
+packages/cordova/src/www/common.ts:48
 
 ___
 
@@ -110,4 +110,4 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/common.ts:48
+packages/cordova/src/www/common.ts:49

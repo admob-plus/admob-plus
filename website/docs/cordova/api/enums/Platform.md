@@ -14,7 +14,7 @@ custom_edit_url: null
 
 #### Defined in
 
-packages/cordova/src/www/common.ts:29
+packages/cordova/src/www/common.ts:30
 
 ___
 
@@ -24,4 +24,4 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/common.ts:30
+packages/cordova/src/www/common.ts:31

@@ -154,7 +154,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/base.ts:81
+packages/cordova/src/www/ads/base.ts:82
 
 ___
 
@@ -172,7 +172,7 @@ ___
 
 #### Defined in
 
-packages/cordova/src/www/ads/base.ts:60
+packages/cordova/src/www/ads/base.ts:61
 
 ___
 
