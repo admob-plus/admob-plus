@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.18](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@2.0.0-alpha.17...admob-plus-cordova@2.0.0-alpha.18) (2024-04-17)
+
+
+### Features
+
+* **cordova/ios:** update Google-Mobile-Ads-SDK to 11.3 ([fec271b](https://github.com/admob-plus/admob-plus/commit/fec271bcb51362c29579b852123edb813bfb200d))
+
+
+
+
+
 # [2.0.0-alpha.17](https://github.com/admob-plus/admob-plus/compare/admob-plus-cordova@2.0.0-alpha.16...admob-plus-cordova@2.0.0-alpha.17) (2024-04-12)
 
 

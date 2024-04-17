@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.17](https://github.com/admob-plus/admob-plus/compare/admob-plus@2.0.0-alpha.16...admob-plus@2.0.0-alpha.17) (2024-04-17)
+
+
+### Features
+
+* **cli:** require nodejs 18 ([33ee52d](https://github.com/admob-plus/admob-plus/commit/33ee52da9a5f1aee6a428455daa2a52ef107735f))
+
+
+
+
+
 # [2.0.0-alpha.16](https://github.com/admob-plus/admob-plus/compare/admob-plus@2.0.0-alpha.15...admob-plus@2.0.0-alpha.16) (2024-04-12)
 
 **Note:** Version bump only for package admob-plus

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="admob-plus-cordova-native" version="1.0.0-alpha.18"
+<plugin id="admob-plus-cordova-native" version="1.0.0-alpha.19"
     xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <name>admob-plus-cordova-native</name>

@@ -1079,7 +1079,7 @@ importers:
   packages/cordova-native:
     dependencies:
       admob-plus-cordova:
-        specifier: ^2.0.0-alpha.17
+        specifier: ^2.0.0-alpha.18
         version: link:../cordova
     devDependencies:
       '@types/cordova':
@@ -1101,7 +1101,7 @@ importers:
   packages/cordova-webview-ad:
     dependencies:
       admob-plus-cordova:
-        specifier: ^2.0.0-alpha.17
+        specifier: ^2.0.0-alpha.18
         version: link:../cordova
     devDependencies:
       cordova-plus:
