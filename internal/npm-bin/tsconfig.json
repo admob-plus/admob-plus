@@ -1,8 +1,0 @@
-{
-    "extends": ["@tsconfig/node16", "@tsconfig/esm"],
-    "compilerOptions": {
-      "composite": true,
-      "rootDir": "src",
-      "outDir": "lib"
-    }
-  }

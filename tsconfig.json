@@ -8,7 +8,6 @@
   "references": [
     { "path": "packages/pkg-proxy" },
     { "path": "internal/cli" },
-    { "path": "internal/npm-bin" },
     { "path": "packages/capacitor" },
     { "path": "packages/cordova-consent" },
     { "path": "packages/cordova-native" },

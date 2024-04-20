@@ -30,7 +30,6 @@
     "zone.js": "~0.13.0"
   },
   "devDependencies": {
-    "@admob-plus-internal/npm-bin": "workspace:*",
     "@angular-devkit/build-angular": "^16.0.0",
     "@angular-eslint/builder": "^16.0.0",
     "@angular-eslint/eslint-plugin": "^16.0.0",
@@ -72,6 +71,7 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
     "native-run": "^1.7.2",
+    "pnpm-ftw": "0.0.3",
     "puppeteer": "^22.6.0",
     "ts-node": "^8.3.0",
     "typescript": "~5.0.2"

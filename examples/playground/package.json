@@ -26,7 +26,6 @@
     "wouter": "^3.1.2"
   },
   "devDependencies": {
-    "@admob-plus-internal/npm-bin": "workspace:*",
     "@types/fs-extra": "^11.0.4",
     "@types/react": "^18.2.79",
     "@types/react-dom": "^18.2.25",
@@ -49,6 +48,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
     "fs-extra": "^11.2.0",
+    "pnpm-ftw": "0.0.3",
     "tsx": "^4.7.2",
     "typescript": "^5.4.5",
     "vite": "^5.2.9"
