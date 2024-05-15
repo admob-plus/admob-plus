@@ -1,16 +1,10 @@
----
-id: "AdMob"
-title: "Class: AdMob"
-sidebar_label: "AdMob"
-sidebar_position: 0
-custom_edit_url: null
----
+# Class: AdMob
 
 ## Constructors
 
-### constructor
+### new AdMob()
 
-• **new AdMob**(): [`AdMob`](AdMob.md)
+> **new AdMob**(): [`AdMob`](AdMob.md)
 
 #### Returns
 
@@ -20,136 +14,142 @@ custom_edit_url: null
 
 ### AppOpenAd
 
-• `Readonly` **AppOpenAd**: typeof [`AppOpenAd`](AppOpenAd.md) = `ads.AppOpenAd`
+> `readonly` **AppOpenAd**: *typeof* [`AppOpenAd`](AppOpenAd.md) = `ads.AppOpenAd`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/index.ts:8
 
-___
+***
 
 ### BannerAd
 
-• `Readonly` **BannerAd**: typeof [`BannerAd`](BannerAd.md) = `ads.BannerAd`
+> `readonly` **BannerAd**: *typeof* [`BannerAd`](BannerAd.md) = `ads.BannerAd`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/index.ts:9
 
-___
+***
 
 ### Events
 
-• `Readonly` **Events**: typeof [`Events`](../enums/Events.md) = `Events`
+> `readonly` **Events**: *typeof* [`Events`](../enumerations/Events.md)
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/index.ts:16
 
-___
+***
 
 ### InterstitialAd
 
-• `Readonly` **InterstitialAd**: typeof [`InterstitialAd`](InterstitialAd.md) = `ads.InterstitialAd`
+> `readonly` **InterstitialAd**: *typeof* [`InterstitialAd`](InterstitialAd.md) = `ads.InterstitialAd`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/index.ts:10
 
-___
+***
 
 ### NativeAd
 
-• `Readonly` **NativeAd**: typeof [`NativeAd`](NativeAd.md) = `ads.NativeAd`
+> `readonly` **NativeAd**: *typeof* [`NativeAd`](NativeAd.md) = `ads.NativeAd`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/index.ts:11
 
-___
+***
 
 ### RewardedAd
 
-• `Readonly` **RewardedAd**: typeof [`RewardedAd`](RewardedAd.md) = `ads.RewardedAd`
+> `readonly` **RewardedAd**: *typeof* [`RewardedAd`](RewardedAd.md) = `ads.RewardedAd`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/index.ts:12
 
-___
+***
 
 ### RewardedInterstitialAd
 
-• `Readonly` **RewardedInterstitialAd**: typeof [`RewardedInterstitialAd`](RewardedInterstitialAd.md) = `ads.RewardedInterstitialAd`
+> `readonly` **RewardedInterstitialAd**: *typeof* [`RewardedInterstitialAd`](RewardedInterstitialAd.md) = `ads.RewardedInterstitialAd`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/index.ts:13
 
-___
+***
 
 ### WebViewAd
 
-• `Readonly` **WebViewAd**: typeof [`WebViewAd`](WebViewAd.md) = `ads.WebViewAd`
+> `readonly` **WebViewAd**: *typeof* [`WebViewAd`](WebViewAd.md) = `ads.WebViewAd`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/index.ts:14
 
-___
+***
 
 ### \_startPromise
 
-• `Private` **\_startPromise**: `undefined` \| `Promise`\<\{ `version`: `string`  }\>
+> `private` **\_startPromise**: `undefined` \| `Promise`\<`object`\>
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/index.ts:18
 
 ## Methods
 
-### \_start
+### \_start()
 
-▸ **_start**(): `Promise`\<\{ `version`: `string`  }\>
+> `private` **\_start**(): `Promise`\<`object`\>
 
 #### Returns
 
-`Promise`\<\{ `version`: `string`  }\>
+`Promise`\<`object`\>
 
-#### Defined in
+##### version
+
+> **version**: `string`
+
+#### Source
 
 packages/cordova/src/www/index.ts:29
 
-___
+***
 
-### configure
+### configure()
 
-▸ **configure**(`config`): `Promise`\<`unknown`\>
+> **configure**(`config`): `Promise`\<`unknown`\>
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `config` | [`AdMobConfig`](../interfaces/AdMobConfig.md) |
+• **config**: [`AdMobConfig`](../interfaces/AdMobConfig.md)
 
 #### Returns
 
 `Promise`\<`unknown`\>
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/index.ts:20
 
-___
+***
 
-### start
+### start()
 
-▸ **start**(): `Promise`\<\{ `version`: `string`  }\>
+> **start**(): `Promise`\<`object`\>
 
 #### Returns
 
-`Promise`\<\{ `version`: `string`  }\>
+`Promise`\<`object`\>
 
-#### Defined in
+##### version
+
+> **version**: `string`
+
+#### Source
 
 packages/cordova/src/www/index.ts:24

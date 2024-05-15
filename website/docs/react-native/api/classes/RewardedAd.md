@@ -1,28 +1,18 @@
----
-id: "RewardedAd"
-title: "Class: RewardedAd"
-sidebar_label: "RewardedAd"
-sidebar_position: 0
-custom_edit_url: null
----
+# Class: RewardedAd
 
-## Hierarchy
+## Extends
 
 - `MobileAd`
 
-  ↳ **`RewardedAd`**
-
 ## Constructors
 
-### constructor
+### new RewardedAd()
 
-• **new RewardedAd**(`opts`): [`RewardedAd`](RewardedAd.md)
+> **new RewardedAd**(`opts`): [`RewardedAd`](RewardedAd.md)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `opts` | [`MobileAdOptions`](../#mobileadoptions) |
+• **opts**: [`MobileAdOptions`](../type-aliases/MobileAdOptions.md)
 
 #### Returns
 
@@ -30,9 +20,9 @@ custom_edit_url: null
 
 #### Inherited from
 
-MobileAd.constructor
+`MobileAd.constructor`
 
-#### Defined in
+#### Source
 
 index.ts:30
 
@@ -40,37 +30,37 @@ index.ts:30
 
 ### id
 
-• `Readonly` **id**: `number`
+> `readonly` **id**: `number`
 
 #### Inherited from
 
-MobileAd.id
+`MobileAd.id`
 
-#### Defined in
+#### Source
 
 index.ts:24
 
-___
+***
 
 ### opts
 
-• `Protected` `Readonly` **opts**: [`MobileAdOptions`](../#mobileadoptions)
+> `protected` `readonly` **opts**: [`MobileAdOptions`](../type-aliases/MobileAdOptions.md)
 
 #### Inherited from
 
-MobileAd.opts
+`MobileAd.opts`
 
-#### Defined in
+#### Source
 
 index.ts:26
 
-___
+***
 
 ### cls
 
-▪ `Static` **cls**: `string` = `'RewardedAd'`
+> `static` **cls**: `string` = `'RewardedAd'`
 
-#### Defined in
+#### Source
 
 index.ts:111
 
@@ -78,25 +68,21 @@ index.ts:111
 
 ### adUnitId
 
-• `get` **adUnitId**(): `string`
+> `get` **adUnitId**(): `string`
 
 #### Returns
 
 `string`
 
-#### Inherited from
-
-MobileAd.adUnitId
-
-#### Defined in
+#### Source
 
 index.ts:54
 
 ## Methods
 
-### init
+### init()
 
-▸ **init**(): `Promise`\<`void`\>
+> `protected` **init**(): `Promise`\<`void`\>
 
 #### Returns
 
@@ -104,17 +90,17 @@ index.ts:54
 
 #### Inherited from
 
-MobileAd.init
+`MobileAd.init`
 
-#### Defined in
+#### Source
 
 index.ts:89
 
-___
+***
 
-### isLoaded
+### isLoaded()
 
-▸ **isLoaded**(): `Promise`\<`boolean`\>
+> **isLoaded**(): `Promise`\<`boolean`\>
 
 #### Returns
 
@@ -122,17 +108,17 @@ ___
 
 #### Overrides
 
-MobileAd.isLoaded
+`MobileAd.isLoaded`
 
-#### Defined in
+#### Source
 
 index.ts:113
 
-___
+***
 
-### load
+### load()
 
-▸ **load**(): `Promise`\<`void`\>
+> **load**(): `Promise`\<`void`\>
 
 #### Returns
 
@@ -140,25 +126,25 @@ ___
 
 #### Overrides
 
-MobileAd.load
+`MobileAd.load`
 
-#### Defined in
+#### Source
 
 index.ts:117
 
-___
+***
 
-### on
+### on()
 
-▸ **on**(`eventType`, `listener`, `context?`): `EmitterSubscription`
+> **on**(`eventType`, `listener`, `context`?): `EmitterSubscription`
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `eventType` | `string` |
-| `listener` | (`event`: `any`) => `void` |
-| `context?` | `Record`\<`string`, `unknown`\> |
+• **eventType**: `string`
+
+• **listener**
+
+• **context?**: `Record`\<`string`, `unknown`\>
 
 #### Returns
 
@@ -166,17 +152,17 @@ ___
 
 #### Inherited from
 
-MobileAd.on
+`MobileAd.on`
 
-#### Defined in
+#### Source
 
 index.ts:58
 
-___
+***
 
-### show
+### show()
 
-▸ **show**(): `Promise`\<`void`\>
+> **show**(): `Promise`\<`void`\>
 
 #### Returns
 
@@ -184,8 +170,8 @@ ___
 
 #### Overrides
 
-MobileAd.show
+`MobileAd.show`
 
-#### Defined in
+#### Source
 
 index.ts:121

@@ -1,26 +1,18 @@
----
-id: "AdMob"
-title: "Class: AdMob"
-sidebar_label: "AdMob"
-sidebar_position: 0
-custom_edit_url: null
----
+# Class: AdMob
 
-## Hierarchy
+## Extends
 
 - `IonicNativePlugin`
 
-  ↳ **`AdMob`**
-
 ## Implements
 
-- `Omit`\<`IAdMob`, ``"AppOpenAd"`` \| ``"BannerAd"`` \| ``"BannerAd"`` \| ``"configRequest"`` \| ``"Events"`` \| ``"InterstitialAd"`` \| ``"InterstitialAd"`` \| ``"NativeAd"`` \| ``"NativeAd"`` \| ``"requestTrackingAuthorization"`` \| ``"RewardedAd"`` \| ``"RewardedAd"`` \| ``"RewardedInterstitialAd"`` \| ``"RewardedInterstitialAd"`` \| ``"setAppMuted"`` \| ``"setAppVolume"`` \| ``"TrackingAuthorizationStatus"`` \| ``"WebViewAd"``\>
+- `Omit`\<`IAdMob`, `"AppOpenAd"` \| `"BannerAd"` \| `"BannerAd"` \| `"configRequest"` \| `"Events"` \| `"InterstitialAd"` \| `"InterstitialAd"` \| `"NativeAd"` \| `"NativeAd"` \| `"requestTrackingAuthorization"` \| `"RewardedAd"` \| `"RewardedAd"` \| `"RewardedInterstitialAd"` \| `"RewardedInterstitialAd"` \| `"setAppMuted"` \| `"setAppVolume"` \| `"TrackingAuthorizationStatus"` \| `"WebViewAd"`\>
 
 ## Constructors
 
-### constructor
+### new AdMob()
 
-• **new AdMob**(): [`AdMob`](AdMob.md)
+> **new AdMob**(): [`AdMob`](AdMob.md)
 
 #### Returns
 
@@ -28,89 +20,87 @@ custom_edit_url: null
 
 #### Inherited from
 
-IonicNativePlugin.constructor
+`IonicNativePlugin.constructor`
 
 ## Properties
 
 ### platforms
 
-▪ `Static` **platforms**: `string`[]
+> `static` **platforms**: `string`[]
 
 #### Overrides
 
-IonicNativePlugin.platforms
+`IonicNativePlugin.platforms`
 
-#### Defined in
+#### Source
 
 ionic/src/ngx/index.ts:266
 
-___
+***
 
 ### plugin
 
-▪ `Static` **plugin**: `string` = `plugin`
+> `static` **plugin**: `string`
 
 #### Overrides
 
-IonicNativePlugin.plugin
+`IonicNativePlugin.plugin`
 
-#### Defined in
+#### Source
 
 ionic/src/ngx/index.ts:267
 
-___
+***
 
 ### pluginName
 
-▪ `Static` **pluginName**: `string` = `pluginName`
+> `static` **pluginName**: `string`
 
 #### Overrides
 
-IonicNativePlugin.pluginName
+`IonicNativePlugin.pluginName`
 
-#### Defined in
+#### Source
 
 ionic/src/ngx/index.ts:268
 
-___
+***
 
 ### pluginRef
 
-▪ `Static` **pluginRef**: `string` = `'admob'`
+> `static` **pluginRef**: `string` = `'admob'`
 
 #### Overrides
 
-IonicNativePlugin.pluginRef
+`IonicNativePlugin.pluginRef`
 
-#### Defined in
+#### Source
 
 ionic/src/ngx/index.ts:269
 
-___
+***
 
 ### repo
 
-▪ `Static` **repo**: `string` = `'https://github.com/admob-plus/admob-plus'`
+> `static` **repo**: `string` = `'https://github.com/admob-plus/admob-plus'`
 
 #### Overrides
 
-IonicNativePlugin.repo
+`IonicNativePlugin.repo`
 
-#### Defined in
+#### Source
 
 ionic/src/ngx/index.ts:270
 
 ## Methods
 
-### configure
+### configure()
 
-▸ **configure**(`...opts`): `Promise`\<`unknown`\>
+> **configure**(...`opts`): `Promise`\<`unknown`\>
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `...opts` | [config: AdMobConfig] |
+• ...**opts**: [`AdMobConfig`]
 
 #### Returns
 
@@ -118,46 +108,48 @@ ionic/src/ngx/index.ts:270
 
 #### Implementation of
 
-Omit.configure
+`Omit.configure`
 
-#### Defined in
+#### Source
 
 ionic/src/ngx/index.ts:276
 
-___
+***
 
-### on
+### on()
 
-▸ **on**(`event`): `Observable`\<`unknown`\>
+> **on**(`event`): `Observable`\<`unknown`\>
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `event` | `string` |
+• **event**: `string`
 
 #### Returns
 
 `Observable`\<`unknown`\>
 
-#### Defined in
+#### Source
 
 ionic/src/ngx/index.ts:280
 
-___
+***
 
-### start
+### start()
 
-▸ **start**(): `Promise`\<\{ `version`: `string`  }\>
+> **start**(): `Promise`\<`object`\>
 
 #### Returns
 
-`Promise`\<\{ `version`: `string`  }\>
+`Promise`\<`object`\>
+
+##### version
+
+> **version**: `string`
 
 #### Implementation of
 
-Omit.start
+`Omit.start`
 
-#### Defined in
+#### Source
 
 ionic/src/ngx/index.ts:272

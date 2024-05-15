@@ -1,22 +1,16 @@
----
-id: "Consent"
-title: "Class: Consent"
-sidebar_label: "Consent"
-sidebar_position: 0
-custom_edit_url: null
----
+# Class: Consent
 
 ## Constructors
 
-### constructor
+### new Consent()
 
-• **new Consent**(): [`Consent`](Consent.md)
+> **new Consent**(): [`Consent`](Consent.md)
 
 #### Returns
 
 [`Consent`](Consent.md)
 
-#### Defined in
+#### Source
 
 index.ts:85
 
@@ -24,198 +18,196 @@ index.ts:85
 
 ### ConsentStatus
 
-• `Readonly` **ConsentStatus**: typeof [`ConsentStatus`](../enums/ConsentStatus.md) = `ConsentStatus`
+> `readonly` **ConsentStatus**: *typeof* [`ConsentStatus`](../enumerations/ConsentStatus.md)
 
-#### Defined in
+#### Source
 
 index.ts:79
 
-___
+***
 
 ### DebugGeography
 
-• `Readonly` **DebugGeography**: typeof [`DebugGeography`](../enums/DebugGeography.md) = `DebugGeography`
+> `readonly` **DebugGeography**: *typeof* [`DebugGeography`](../enumerations/DebugGeography.md)
 
-#### Defined in
+#### Source
 
 index.ts:80
 
-___
+***
 
 ### FormStatus
 
-• `Readonly` **FormStatus**: typeof [`FormStatus`](../enums/FormStatus.md) = `FormStatus`
+> `readonly` **FormStatus**: *typeof* [`FormStatus`](../enumerations/FormStatus.md)
 
-#### Defined in
+#### Source
 
 index.ts:81
 
-___
+***
 
 ### PrivacyOptionsRequirementStatus
 
-• `Readonly` **PrivacyOptionsRequirementStatus**: typeof [`PrivacyOptionsRequirementStatus`](../enums/PrivacyOptionsRequirementStatus.md) = `PrivacyOptionsRequirementStatus`
+> `readonly` **PrivacyOptionsRequirementStatus**: *typeof* [`PrivacyOptionsRequirementStatus`](../enumerations/PrivacyOptionsRequirementStatus.md)
 
-#### Defined in
+#### Source
 
 index.ts:82
 
 ## Methods
 
-### canRequestAds
+### canRequestAds()
 
-▸ **canRequestAds**(): `Promise`\<`boolean`\>
+> **canRequestAds**(): `Promise`\<`boolean`\>
 
 #### Returns
 
 `Promise`\<`boolean`\>
 
-#### Defined in
+#### Source
 
 index.ts:103
 
-___
+***
 
-### getConsentStatus
+### getConsentStatus()
 
-▸ **getConsentStatus**(): `Promise`\<[`ConsentStatus`](../enums/ConsentStatus.md)\>
+> **getConsentStatus**(): `Promise` \<[`ConsentStatus`](../enumerations/ConsentStatus.md)\>
 
 #### Returns
 
-`Promise`\<[`ConsentStatus`](../enums/ConsentStatus.md)\>
+`Promise` \<[`ConsentStatus`](../enumerations/ConsentStatus.md)\>
 
-#### Defined in
+#### Source
 
 index.ts:144
 
-___
+***
 
-### getFormStatus
+### getFormStatus()
 
-▸ **getFormStatus**(): `Promise`\<[`FormStatus`](../enums/FormStatus.md)\>
+> **getFormStatus**(): `Promise` \<[`FormStatus`](../enumerations/FormStatus.md)\>
 
 #### Returns
 
-`Promise`\<[`FormStatus`](../enums/FormStatus.md)\>
+`Promise` \<[`FormStatus`](../enumerations/FormStatus.md)\>
 
-#### Defined in
+#### Source
 
 index.ts:149
 
-___
+***
 
-### loadAndShowIfRequired
+### loadAndShowIfRequired()
 
-▸ **loadAndShowIfRequired**(): `Promise`\<`unknown`\>
+> **loadAndShowIfRequired**(): `Promise`\<`unknown`\>
 
 #### Returns
 
 `Promise`\<`unknown`\>
 
-#### Defined in
+#### Source
 
 index.ts:112
 
-___
+***
 
-### loadForm
+### loadForm()
 
-▸ **loadForm**(): `Promise`\<[`ConsentForm`](ConsentForm.md)\>
+> **loadForm**(): `Promise` \<[`ConsentForm`](ConsentForm.md)\>
 
 #### Returns
 
-`Promise`\<[`ConsentForm`](ConsentForm.md)\>
+`Promise` \<[`ConsentForm`](ConsentForm.md)\>
 
-#### Defined in
+#### Source
 
 index.ts:158
 
-___
+***
 
-### privacyOptionsRequirementStatus
+### privacyOptionsRequirementStatus()
 
-▸ **privacyOptionsRequirementStatus**(): `Promise`\<[`PrivacyOptionsRequirementStatus`](../enums/PrivacyOptionsRequirementStatus.md)\>
+> **privacyOptionsRequirementStatus**(): `Promise` \<[`PrivacyOptionsRequirementStatus`](../enumerations/PrivacyOptionsRequirementStatus.md)\>
 
 #### Returns
 
-`Promise`\<[`PrivacyOptionsRequirementStatus`](../enums/PrivacyOptionsRequirementStatus.md)\>
+`Promise` \<[`PrivacyOptionsRequirementStatus`](../enumerations/PrivacyOptionsRequirementStatus.md)\>
 
-#### Defined in
+#### Source
 
 index.ts:107
 
-___
+***
 
-### requestInfoUpdate
+### requestInfoUpdate()
 
-▸ **requestInfoUpdate**(`opts?`): `Promise`\<`unknown`\>
+> **requestInfoUpdate**(`opts`): `Promise`\<`unknown`\>
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `opts` | `RequestInfoUpdateOptions` |
+• **opts**: `RequestInfoUpdateOptions`= `{}`
 
 #### Returns
 
 `Promise`\<`unknown`\>
 
-#### Defined in
+#### Source
 
 index.ts:154
 
-___
+***
 
-### requestTrackingAuthorization
+### requestTrackingAuthorization()
 
-▸ **requestTrackingAuthorization**(): `Promise`\<``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)\>
+> **requestTrackingAuthorization**(): `Promise`\<`false` \| [`TrackingAuthorizationStatus`](../enumerations/TrackingAuthorizationStatus.md)\>
 
 #### Returns
 
-`Promise`\<``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)\>
+`Promise`\<`false` \| [`TrackingAuthorizationStatus`](../enumerations/TrackingAuthorizationStatus.md)\>
 
-#### Defined in
+#### Source
 
 index.ts:132
 
-___
+***
 
-### reset
+### reset()
 
-▸ **reset**(): `Promise`\<`unknown`\>
+> **reset**(): `Promise`\<`unknown`\>
 
 #### Returns
 
 `Promise`\<`unknown`\>
 
-#### Defined in
+#### Source
 
 index.ts:163
 
-___
+***
 
-### showPrivacyOptionsForm
+### showPrivacyOptionsForm()
 
-▸ **showPrivacyOptionsForm**(): `Promise`\<`unknown`\>
+> **showPrivacyOptionsForm**(): `Promise`\<`unknown`\>
 
 #### Returns
 
 `Promise`\<`unknown`\>
 
-#### Defined in
+#### Source
 
 index.ts:116
 
-___
+***
 
-### trackingAuthorizationStatus
+### trackingAuthorizationStatus()
 
-▸ **trackingAuthorizationStatus**(): `Promise`\<``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)\>
+> **trackingAuthorizationStatus**(): `Promise`\<`false` \| [`TrackingAuthorizationStatus`](../enumerations/TrackingAuthorizationStatus.md)\>
 
 #### Returns
 
-`Promise`\<``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)\>
+`Promise`\<`false` \| [`TrackingAuthorizationStatus`](../enumerations/TrackingAuthorizationStatus.md)\>
 
-#### Defined in
+#### Source
 
 index.ts:120

@@ -1,220 +1,209 @@
----
-id: "AdMobPlusPlugin"
-title: "Interface: AdMobPlusPlugin"
-sidebar_label: "AdMobPlusPlugin"
-sidebar_position: 0
-custom_edit_url: null
----
+# Interface: AdMobPlusPlugin
 
 ## Methods
 
-### adCreate
+### adCreate()
 
-▸ **adCreate**\<`O`\>(`opts`): `Promise`\<`void`\>
+> **adCreate**\<`O`\>(`opts`): `Promise`\<`void`\>
 
 #### Type parameters
 
-| Name | Type |
-| :------ | :------ |
-| `O` | extends [`MobileAdOptions`](../#mobileadoptions) |
+• **O** *extends* [`MobileAdOptions`](../type-aliases/MobileAdOptions.md)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `opts` | `O` |
+• **opts**: `O`
 
 #### Returns
 
 `Promise`\<`void`\>
 
-#### Defined in
+#### Source
 
 definitions.ts:38
 
-___
+***
 
-### adHide
+### adHide()
 
-▸ **adHide**(`opts`): `Promise`\<`void`\>
+> **adHide**(`opts`): `Promise`\<`void`\>
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `opts` | `Object` |
-| `opts.id` | `number` |
+• **opts**
+
+• **opts.id**: `number`
 
 #### Returns
 
 `Promise`\<`void`\>
 
-#### Defined in
+#### Source
 
 definitions.ts:42
 
-___
+***
 
-### adIsLoaded
+### adIsLoaded()
 
-▸ **adIsLoaded**(`opts`): `Promise`\<`boolean`\>
+> **adIsLoaded**(`opts`): `Promise`\<`boolean`\>
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `opts` | `Object` |
-| `opts.id` | `number` |
+• **opts**
+
+• **opts.id**: `number`
 
 #### Returns
 
 `Promise`\<`boolean`\>
 
-#### Defined in
+#### Source
 
 definitions.ts:39
 
-___
+***
 
-### adLoad
+### adLoad()
 
-▸ **adLoad**(`opts`): `Promise`\<`void`\>
+> **adLoad**(`opts`): `Promise`\<`void`\>
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `opts` | `Object` |
-| `opts.id` | `number` |
+• **opts**
+
+• **opts.id**: `number`
 
 #### Returns
 
 `Promise`\<`void`\>
 
-#### Defined in
+#### Source
 
 definitions.ts:40
 
-___
+***
 
-### adShow
+### adShow()
 
-▸ **adShow**(`opts`): `Promise`\<`void`\>
+> **adShow**(`opts`): `Promise`\<`void`\>
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `opts` | `Object` |
-| `opts.id` | `number` |
+• **opts**
+
+• **opts.id**: `number`
 
 #### Returns
 
 `Promise`\<`void`\>
 
-#### Defined in
+#### Source
 
 definitions.ts:41
 
-___
+***
 
-### addListener
+### addListener()
 
-▸ **addListener**(`eventName`, `listenerFunc`): `Promise`\<`PluginListenerHandle`\> & `PluginListenerHandle`
+> **addListener**(`eventName`, `listenerFunc`): `Promise`\<`PluginListenerHandle`\> & `PluginListenerHandle`
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `eventName` | `string` |
-| `listenerFunc` | (`event`: `any`) => `void` |
+• **eventName**: `string`
+
+• **listenerFunc**
 
 #### Returns
 
 `Promise`\<`PluginListenerHandle`\> & `PluginListenerHandle`
 
-#### Defined in
+#### Source
 
 definitions.ts:51
 
-___
+***
 
-### configRequest
+### configRequest()
 
-▸ **configRequest**(`requestConfig`): `Promise`\<`void`\>
+> **configRequest**(`requestConfig`): `Promise`\<`void`\>
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `requestConfig` | [`RequestConfig`](../#requestconfig) |
+• **requestConfig**: [`RequestConfig`](../type-aliases/RequestConfig.md)
 
 #### Returns
 
 `Promise`\<`void`\>
 
-#### Defined in
+#### Source
 
 definitions.ts:36
 
-___
+***
 
-### configure
+### configure()
 
-▸ **configure**(`config`): `Promise`\<`void`\>
+> **configure**(`config`): `Promise`\<`void`\>
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `config` | [`AdMobConfig`](../#admobconfig) |
+• **config**: [`AdMobConfig`](../type-aliases/AdMobConfig.md)
 
 #### Returns
 
 `Promise`\<`void`\>
 
-#### Defined in
+#### Source
 
 definitions.ts:35
 
-___
+***
 
-### requestTrackingAuthorization
+### requestTrackingAuthorization()
 
-▸ **requestTrackingAuthorization**(): `Promise`\<\{ `status`: ``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)  }\>
+> **requestTrackingAuthorization**(): `Promise`\<`object`\>
 
 #### Returns
 
-`Promise`\<\{ `status`: ``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)  }\>
+`Promise`\<`object`\>
 
-#### Defined in
+##### status
+
+> **status**: `false` \| [`TrackingAuthorizationStatus`](../enumerations/TrackingAuthorizationStatus.md)
+
+#### Source
 
 definitions.ts:47
 
-___
+***
 
-### start
+### start()
 
-▸ **start**(): `Promise`\<`void`\>
+> **start**(): `Promise`\<`void`\>
 
 #### Returns
 
 `Promise`\<`void`\>
 
-#### Defined in
+#### Source
 
 definitions.ts:34
 
-___
+***
 
-### trackingAuthorizationStatus
+### trackingAuthorizationStatus()
 
-▸ **trackingAuthorizationStatus**(): `Promise`\<\{ `status`: ``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)  }\>
+> **trackingAuthorizationStatus**(): `Promise`\<`object`\>
 
 #### Returns
 
-`Promise`\<\{ `status`: ``false`` \| [`TrackingAuthorizationStatus`](../enums/TrackingAuthorizationStatus.md)  }\>
+`Promise`\<`object`\>
 
-#### Defined in
+##### status
+
+> **status**: `false` \| [`TrackingAuthorizationStatus`](../enumerations/TrackingAuthorizationStatus.md)
+
+#### Source
 
 definitions.ts:44

@@ -1,28 +1,18 @@
----
-id: "RewardedInterstitialAd"
-title: "Class: RewardedInterstitialAd"
-sidebar_label: "RewardedInterstitialAd"
-sidebar_position: 0
-custom_edit_url: null
----
+# Class: RewardedInterstitialAd
 
-## Hierarchy
+## Extends
 
-- [`MobileAd`](MobileAd.md)\<[`RewardedInterstitialAdOptions`](../#rewardedinterstitialadoptions)\>
-
-  ↳ **`RewardedInterstitialAd`**
+- [`MobileAd`](MobileAd.md) \<[`RewardedInterstitialAdOptions`](../type-aliases/RewardedInterstitialAdOptions.md)\>
 
 ## Constructors
 
-### constructor
+### new RewardedInterstitialAd()
 
-• **new RewardedInterstitialAd**(`opts`): [`RewardedInterstitialAd`](RewardedInterstitialAd.md)
+> **new RewardedInterstitialAd**(`opts`): [`RewardedInterstitialAd`](RewardedInterstitialAd.md)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `opts` | [`RewardedAdOptions`](../interfaces/RewardedAdOptions.md) |
+• **opts**: [`RewardedAdOptions`](../interfaces/RewardedAdOptions.md)
 
 #### Returns
 
@@ -30,9 +20,9 @@ custom_edit_url: null
 
 #### Inherited from
 
-[MobileAd](MobileAd.md).[constructor](MobileAd.md#constructor)
+[`MobileAd`](MobileAd.md) . [`constructor`](MobileAd.md#constructors)
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/base.ts:23
 
@@ -40,37 +30,37 @@ packages/cordova/src/www/ads/base.ts:23
 
 ### id
 
-• `Readonly` **id**: `string`
+> `readonly` **id**: `string`
 
 #### Inherited from
 
-[MobileAd](MobileAd.md).[id](MobileAd.md#id)
+[`MobileAd`](MobileAd.md) . [`id`](MobileAd.md#id)
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/base.ts:18
 
-___
+***
 
 ### opts
 
-• `Protected` `Readonly` **opts**: [`RewardedAdOptions`](../interfaces/RewardedAdOptions.md)
+> `protected` `readonly` **opts**: [`RewardedAdOptions`](../interfaces/RewardedAdOptions.md)
 
 #### Inherited from
 
-[MobileAd](MobileAd.md).[opts](MobileAd.md#opts)
+[`MobileAd`](MobileAd.md) . [`opts`](MobileAd.md#opts)
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/base.ts:20
 
-___
+***
 
 ### cls
 
-▪ `Static` `Readonly` **cls**: ``"RewardedInterstitialAd"``
+> `static` `readonly` **cls**: `"RewardedInterstitialAd"` = `"RewardedInterstitialAd"`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/rewarded-interstitial.ts:7
 
@@ -78,43 +68,35 @@ packages/cordova/src/www/ads/rewarded-interstitial.ts:7
 
 ### adUnitId
 
-• `get` **adUnitId**(): `string`
+> `get` **adUnitId**(): `string`
 
 #### Returns
 
 `string`
 
-#### Inherited from
-
-MobileAd.adUnitId
-
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/base.ts:40
 
-___
+***
 
 ### allAds
 
-• `get` **allAds**(): `Record`\<`string`, [`MobileAd`](MobileAd.md)\<[`MobileAdOptions`](../#mobileadoptions)\>\>
+> `get` `static` `private` **allAds**(): `Record`\<`string`, [`MobileAd`](MobileAd.md) \<[`MobileAdOptions`](../type-aliases/MobileAdOptions.md)\>\>
 
 #### Returns
 
-`Record`\<`string`, [`MobileAd`](MobileAd.md)\<[`MobileAdOptions`](../#mobileadoptions)\>\>
+`Record`\<`string`, [`MobileAd`](MobileAd.md) \<[`MobileAdOptions`](../type-aliases/MobileAdOptions.md)\>\>
 
-#### Inherited from
-
-MobileAd.allAds
-
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/base.ts:30
 
 ## Methods
 
-### hide
+### hide()
 
-▸ **hide**(): `Promise`\<`unknown`\>
+> `protected` **hide**(): `Promise`\<`unknown`\>
 
 #### Returns
 
@@ -122,17 +104,17 @@ packages/cordova/src/www/ads/base.ts:30
 
 #### Inherited from
 
-[MobileAd](MobileAd.md).[hide](MobileAd.md#hide)
+[`MobileAd`](MobileAd.md) . [`hide`](MobileAd.md#hide)
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/base.ts:77
 
-___
+***
 
-### init
+### init()
 
-▸ **init**(): `Promise`\<`unknown`\>
+> `protected` **init**(): `Promise`\<`unknown`\>
 
 #### Returns
 
@@ -140,17 +122,17 @@ ___
 
 #### Inherited from
 
-[MobileAd](MobileAd.md).[init](MobileAd.md#init)
+[`MobileAd`](MobileAd.md) . [`init`](MobileAd.md#init)
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/base.ts:82
 
-___
+***
 
-### isLoaded
+### isLoaded()
 
-▸ **isLoaded**(): `Promise`\<`boolean`\>
+> **isLoaded**(): `Promise`\<`boolean`\>
 
 #### Returns
 
@@ -158,17 +140,17 @@ ___
 
 #### Overrides
 
-[MobileAd](MobileAd.md).[isLoaded](MobileAd.md#isloaded)
+[`MobileAd`](MobileAd.md) . [`isLoaded`](MobileAd.md#isloaded)
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/rewarded-interstitial.ts:9
 
-___
+***
 
-### load
+### load()
 
-▸ **load**(): `Promise`\<`void`\>
+> **load**(): `Promise`\<`void`\>
 
 #### Returns
 
@@ -176,29 +158,25 @@ ___
 
 #### Overrides
 
-[MobileAd](MobileAd.md).[load](MobileAd.md#load)
+[`MobileAd`](MobileAd.md) . [`load`](MobileAd.md#load)
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/rewarded-interstitial.ts:13
 
-___
+***
 
-### on
+### on()
 
-▸ **on**(`...args`): () => `void`
+> **on**(...`args`): () => `void`
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `...args` | [type: string, listener: Function, useCapture?: boolean] |
+• ...**args**: [`string`, (`ev`) => `any`, `boolean`]
 
 #### Returns
 
-`fn`
-
-▸ (): `void`
+`Function`
 
 ##### Returns
 
@@ -206,17 +184,17 @@ ___
 
 #### Inherited from
 
-[MobileAd](MobileAd.md).[on](MobileAd.md#on)
+[`MobileAd`](MobileAd.md) . [`on`](MobileAd.md#on)
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/base.ts:44
 
-___
+***
 
-### show
+### show()
 
-▸ **show**(): `Promise`\<`unknown`\>
+> **show**(): `Promise`\<`unknown`\>
 
 #### Returns
 
@@ -224,32 +202,30 @@ ___
 
 #### Overrides
 
-[MobileAd](MobileAd.md).[show](MobileAd.md#show)
+[`MobileAd`](MobileAd.md) . [`show`](MobileAd.md#show)
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/rewarded-interstitial.ts:17
 
-___
+***
 
-### getAdById
+### getAdById()
 
-▸ **getAdById**(`id`): [`MobileAd`](MobileAd.md)\<[`MobileAdOptions`](../#mobileadoptions)\>
+> `static` **getAdById**(`id`): [`MobileAd`](MobileAd.md) \<[`MobileAdOptions`](../type-aliases/MobileAdOptions.md)\>
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `id` | `string` |
+• **id**: `string`
 
 #### Returns
 
-[`MobileAd`](MobileAd.md)\<[`MobileAdOptions`](../#mobileadoptions)\>
+[`MobileAd`](MobileAd.md) \<[`MobileAdOptions`](../type-aliases/MobileAdOptions.md)\>
 
 #### Inherited from
 
-[MobileAd](MobileAd.md).[getAdById](MobileAd.md#getadbyid)
+[`MobileAd`](MobileAd.md) . [`getAdById`](MobileAd.md#getadbyid)
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/base.ts:36

@@ -60,7 +60,7 @@ The `npa` parameter is applicable to all ad formats, e.g. [`BannerAd`](./api/cla
 
 ## References
 
-- [TrackingAuthorizationStatus](./api/enums/TrackingAuthorizationStatus.md)
+- [TrackingAuthorizationStatus](./api/enumerations/TrackingAuthorizationStatus.md)
 - [UMP SDK for Android](https://developers.google.com/admob/ump/android/quick-start)
 - [UMP SDK for iOS](https://developers.google.com/admob/ump/ios/quick-start)
 - [AppTrackingTransparency Framework](https://developer.apple.com/documentation/apptrackingtransparency)

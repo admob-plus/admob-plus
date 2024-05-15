@@ -1,93 +1,85 @@
----
-id: "RewardedAdOptions"
-title: "Interface: RewardedAdOptions"
-sidebar_label: "RewardedAdOptions"
-sidebar_position: 0
-custom_edit_url: null
----
+# Interface: RewardedAdOptions
 
-## Hierarchy
+## Extends
 
-- [`MobileAdOptions`](../#mobileadoptions)
-
-  ↳ **`RewardedAdOptions`**
+- [`MobileAdOptions`](../type-aliases/MobileAdOptions.md)
 
 ## Properties
 
 ### adUnitId
 
-• **adUnitId**: `string`
+> **adUnitId**: `string`
 
 #### Inherited from
 
-MobileAdOptions.adUnitId
+`MobileAdOptions.adUnitId`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/base.ts:6
 
-___
+***
 
-### contentUrl
+### contentUrl?
 
-• `Optional` **contentUrl**: `string`
+> `optional` **contentUrl**: `string`
 
 #### Inherited from
 
-MobileAdOptions.contentUrl
+`MobileAdOptions.contentUrl`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/base.ts:7
 
-___
+***
 
-### id
+### id?
 
-• `Optional` **id**: `string`
+> `optional` **id**: `string`
 
 #### Inherited from
 
-MobileAdOptions.id
+`MobileAdOptions.id`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/base.ts:5
 
-___
+***
 
-### keywords
+### keywords?
 
-• `Optional` **keywords**: `string`[]
+> `optional` **keywords**: `string`[]
 
 #### Inherited from
 
-MobileAdOptions.keywords
+`MobileAdOptions.keywords`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/base.ts:8
 
-___
+***
 
-### npa
+### npa?
 
-• `Optional` **npa**: ``"1"``
+> `optional` **npa**: `"1"`
 
 #### Inherited from
 
-MobileAdOptions.npa
+`MobileAdOptions.npa`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/base.ts:9
 
-___
+***
 
-### serverSideVerification
+### serverSideVerification?
 
-• `Optional` **serverSideVerification**: [`ServerSideVerificationOptions`](ServerSideVerificationOptions.md)
+> `optional` **serverSideVerification**: [`ServerSideVerificationOptions`](ServerSideVerificationOptions.md)
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/rewarded.ts:9

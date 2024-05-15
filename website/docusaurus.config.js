@@ -1,14 +1,14 @@
 // @ts-check
-const versions = require('./versions.json');
+const versions = require("./versions.json");
 
 const allDocHomesPaths = [
-  '/docs/',
-  '/docs/next/',
-  ...versions.slice(1).map(version => `/docs/${version}/`),
+  "/docs/",
+  "/docs/next/",
+  ...versions.slice(1).map((version) => `/docs/${version}/`),
 ];
 
 const typedocConfig = {
-  readme: 'none',
+  readme: "none",
   sidebar: {
     sidebarFile: null,
   },
@@ -16,87 +16,87 @@ const typedocConfig = {
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'AdMob Plus',
-  tagline: 'Trustable AdMob Plugin for Cordova, Capacitor, Ionic',
-  url: 'https://admob-plus.github.io',
-  baseUrl: '/',
-  onBrokenLinks: 'throw',
-  favicon: 'img/favicon.ico',
-  organizationName: 'admob-plus',
-  projectName: 'admob-plus.github.io',
+  title: "AdMob Plus",
+  tagline: "Trustable AdMob Plugin for Cordova, Capacitor, Ionic",
+  url: "https://admob-plus.github.io",
+  baseUrl: "/",
+  onBrokenLinks: "throw",
+  favicon: "img/favicon.ico",
+  organizationName: "admob-plus",
+  projectName: "admob-plus.github.io",
   trailingSlash: false,
   themeConfig: {
     colorMode: {
       respectPrefersColorScheme: true,
     },
     prism: {
-      additionalLanguages: ['java', 'swift'],
+      additionalLanguages: ["java", "swift"],
     },
     navbar: {
-      title: 'AdMob Plus',
+      title: "AdMob Plus",
       logo: {
-        alt: 'AdMob Plus Logo',
-        src: 'img/logo.png',
+        alt: "AdMob Plus Logo",
+        src: "img/logo.png",
       },
       items: [
         {
-          to: 'docs/',
-          activeBasePath: 'docs',
-          label: 'Docs',
-          position: 'left',
+          to: "docs/",
+          activeBasePath: "docs",
+          label: "Docs",
+          position: "left",
         },
-        {to: 'blog', label: 'Blog', position: 'left'},
-        {to: 'users', label: 'Users', position: 'left'},
+        { to: "blog", label: "Blog", position: "left" },
+        { to: "users", label: "Users", position: "left" },
         {
-          type: 'docsVersionDropdown',
-          position: 'right',
+          type: "docsVersionDropdown",
+          position: "right",
           dropdownActiveClassDisabled: true,
           dropdownItemsAfter: [
             {
-              to: '/versions',
-              label: 'All versions',
+              to: "/versions",
+              label: "All versions",
             },
           ],
         },
-        {to: 'funding', label: 'Funding', position: 'right'},
+        { to: "funding", label: "Funding", position: "right" },
         {
-          href: 'https://github.com/admob-plus/admob-plus',
-          label: 'GitHub',
-          position: 'right',
+          href: "https://github.com/admob-plus/admob-plus",
+          label: "GitHub",
+          position: "right",
         },
       ],
     },
     footer: {
-      style: 'dark',
+      style: "dark",
       links: [
         {
-          title: 'Docs',
+          title: "Docs",
           items: [
             {
-              label: 'Getting Started',
-              to: 'docs/',
+              label: "Getting Started",
+              to: "docs/",
             },
           ],
         },
         {
-          title: 'Community',
+          title: "Community",
           items: [
             {
-              label: 'User Showcase',
-              href: '/users',
+              label: "User Showcase",
+              href: "/users",
             },
           ],
         },
         {
-          title: 'More',
+          title: "More",
           items: [
             {
-              label: 'Blog',
-              to: 'blog',
+              label: "Blog",
+              to: "blog",
             },
             {
-              label: 'GitHub',
-              href: 'https://github.com/admob-plus/admob-plus',
+              label: "GitHub",
+              href: "https://github.com/admob-plus/admob-plus",
             },
           ],
         },
@@ -106,75 +106,75 @@ const config = {
   },
   plugins: [
     [
-      'docusaurus-plugin-typedoc',
+      "docusaurus-plugin-typedoc",
       {
         ...typedocConfig,
-        id: 'typedoc-capacitor',
-        entryPoints: ['../packages/capacitor/src/index.ts'],
-        tsconfig: '../packages/capacitor/tsconfig.json',
-        out: 'capacitor/api',
+        id: "typedoc-capacitor",
+        entryPoints: ["../packages/capacitor/src/index.ts"],
+        tsconfig: "../packages/capacitor/tsconfig.json",
+        out: "./docs/capacitor/api",
       },
     ],
     [
-      'docusaurus-plugin-typedoc',
+      "docusaurus-plugin-typedoc",
       {
         ...typedocConfig,
-        id: 'typedoc-cordova',
-        entryPoints: ['../packages/cordova/src/www/index.ts'],
-        tsconfig: '../packages/cordova/tsconfig.json',
-        out: 'cordova/api',
+        id: "typedoc-cordova",
+        entryPoints: ["../packages/cordova/src/www/index.ts"],
+        tsconfig: "../packages/cordova/tsconfig.json",
+        out: "./docs/cordova/api",
       },
     ],
     [
-      'docusaurus-plugin-typedoc',
+      "docusaurus-plugin-typedoc",
       {
         ...typedocConfig,
-        id: 'typedoc-cordova-consent',
-        entryPoints: ['../packages/cordova-consent/src/www/index.ts'],
-        tsconfig: '../packages/cordova-consent/tsconfig.json',
-        out: 'cordova/consent/api',
+        id: "typedoc-cordova-consent",
+        entryPoints: ["../packages/cordova-consent/src/www/index.ts"],
+        tsconfig: "../packages/cordova-consent/tsconfig.json",
+        out: "./docs/cordova/consent/api",
       },
     ],
     [
-      'docusaurus-plugin-typedoc',
+      "docusaurus-plugin-typedoc",
       {
         ...typedocConfig,
-        id: 'typedoc-ionic',
-        entryPoints: ['../packages/ionic/src/ngx/index.ts'],
-        tsconfig: '../packages/ionic/tsconfig.json',
-        out: 'ionic/api',
+        id: "typedoc-ionic",
+        entryPoints: ["../packages/ionic/src/ngx/index.ts"],
+        tsconfig: "../packages/ionic/tsconfig.json",
+        out: "./docs/ionic/api",
         excludeExternals: true,
       },
     ],
     [
-      'docusaurus-plugin-typedoc',
+      "docusaurus-plugin-typedoc",
       {
         ...typedocConfig,
-        id: 'typedoc-react-native',
-        entryPoints: ['../packages/react-native/src/index.ts'],
-        tsconfig: '../packages/react-native/tsconfig.json',
-        out: 'react-native/api',
+        id: "typedoc-react-native",
+        entryPoints: ["../packages/react-native/src/index.ts"],
+        tsconfig: "../packages/react-native/tsconfig.json",
+        out: "./docs/react-native/api",
       },
     ],
   ],
   presets: [
     [
-      '@docusaurus/preset-classic',
+      "@docusaurus/preset-classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: require.resolve("./sidebars.js"),
           editUrl:
-            'https://github.com/admob-plus/admob-plus/edit/master/website/',
-          lastVersion: 'current',
+            "https://github.com/admob-plus/admob-plus/edit/master/website/",
+          lastVersion: "current",
         },
         blog: {
           showReadingTime: true,
           editUrl:
-            'https://github.com/admob-plus/admob-plus/edit/master/website/blog/',
+            "https://github.com/admob-plus/admob-plus/edit/master/website/blog/",
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve("./src/css/custom.css"),
         },
       }),
     ],

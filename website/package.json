@@ -12,26 +12,26 @@
     "favicon": "convert static/img/logo.png -define icon:auto-resize=64,48,32,16 static/img/favicon.ico"
   },
   "dependencies": {
-    "@docusaurus/core": "3.2.1",
-    "@docusaurus/preset-classic": "3.2.1",
+    "@docusaurus/core": "3.3.2",
+    "@docusaurus/preset-classic": "3.3.2",
     "@mdx-js/react": "^3.0.1",
-    "clsx": "^2.1.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "clsx": "^2.1.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "3.2.1",
-    "@docusaurus/plugin-content-docs": "^3.2.1",
-    "@docusaurus/types": "^3.2.1",
+    "@docusaurus/module-type-aliases": "3.3.2",
+    "@docusaurus/plugin-content-docs": "^3.3.2",
+    "@docusaurus/types": "^3.3.2",
     "@tsconfig/docusaurus": "^2.0.3",
-    "@types/react": "^18.2.79",
+    "@types/react": "^18.3.2",
     "@types/react-helmet": "^6.1.11",
     "@types/react-router-dom": "^5.3.3",
     "docusaurus-mdx-checker": "^3.0.0",
-    "docusaurus-plugin-typedoc": "~0.22.0",
-    "markdown-magic": "^3.0.9",
+    "docusaurus-plugin-typedoc": "~1.0.1",
+    "markdown-magic": "^3.0.10",
     "typedoc": "~0.25.13",
-    "typedoc-plugin-markdown": "~3.17.1",
+    "typedoc-plugin-markdown": "~4.0.2",
     "typescript": "~5.4.5"
   },
   "browserslist": {

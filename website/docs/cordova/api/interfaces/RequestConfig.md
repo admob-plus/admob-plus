@@ -1,53 +1,45 @@
----
-id: "RequestConfig"
-title: "Interface: RequestConfig"
-sidebar_label: "RequestConfig"
-sidebar_position: 0
-custom_edit_url: null
----
+# Interface: RequestConfig
 
-## Hierarchy
+## Extended by
 
-- **`RequestConfig`**
-
-  ↳ [`AdMobConfig`](AdMobConfig.md)
+- [`AdMobConfig`](AdMobConfig.md)
 
 ## Properties
 
-### maxAdContentRating
+### maxAdContentRating?
 
-• `Optional` **maxAdContentRating**: `MaxAdContentRating`
+> `optional` **maxAdContentRating**: `MaxAdContentRating`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/common.ts:46
 
-___
+***
 
-### tagForChildDirectedTreatment
+### tagForChildDirectedTreatment?
 
-• `Optional` **tagForChildDirectedTreatment**: ``null`` \| `boolean`
+> `optional` **tagForChildDirectedTreatment**: `null` \| `boolean`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/common.ts:47
 
-___
+***
 
-### tagForUnderAgeOfConsent
+### tagForUnderAgeOfConsent?
 
-• `Optional` **tagForUnderAgeOfConsent**: ``null`` \| `boolean`
+> `optional` **tagForUnderAgeOfConsent**: `null` \| `boolean`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/common.ts:48
 
-___
+***
 
-### testDeviceIds
+### testDeviceIds?
 
-• `Optional` **testDeviceIds**: `string`[]
+> `optional` **testDeviceIds**: `string`[]
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/common.ts:49

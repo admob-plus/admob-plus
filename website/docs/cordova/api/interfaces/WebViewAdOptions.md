@@ -1,103 +1,95 @@
----
-id: "WebViewAdOptions"
-title: "Interface: WebViewAdOptions"
-sidebar_label: "WebViewAdOptions"
-sidebar_position: 0
-custom_edit_url: null
----
+# Interface: WebViewAdOptions
 
-## Hierarchy
+## Extends
 
-- [`MobileAdOptions`](../#mobileadoptions)
-
-  ↳ **`WebViewAdOptions`**
+- [`MobileAdOptions`](../type-aliases/MobileAdOptions.md)
 
 ## Properties
 
 ### adUnitId
 
-• **adUnitId**: `string`
+> **adUnitId**: `string`
 
 #### Inherited from
 
-MobileAdOptions.adUnitId
+`MobileAdOptions.adUnitId`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/base.ts:6
 
-___
+***
 
 ### adsense
 
-• **adsense**: `string`
+> **adsense**: `string`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/webview.ts:6
 
-___
+***
 
-### contentUrl
+### contentUrl?
 
-• `Optional` **contentUrl**: `string`
+> `optional` **contentUrl**: `string`
 
 #### Inherited from
 
-MobileAdOptions.contentUrl
+`MobileAdOptions.contentUrl`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/base.ts:7
 
-___
+***
 
-### id
+### id?
 
-• `Optional` **id**: `string`
+> `optional` **id**: `string`
 
 #### Inherited from
 
-MobileAdOptions.id
+`MobileAdOptions.id`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/base.ts:5
 
-___
+***
 
-### keywords
+### keywords?
 
-• `Optional` **keywords**: `string`[]
+> `optional` **keywords**: `string`[]
 
 #### Inherited from
 
-MobileAdOptions.keywords
+`MobileAdOptions.keywords`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/base.ts:8
 
-___
+***
 
-### npa
+### npa?
 
-• `Optional` **npa**: ``"1"``
+> `optional` **npa**: `"1"`
 
 #### Overrides
 
-MobileAdOptions.npa
+`MobileAdOptions.npa`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/webview.ts:7
 
-___
+***
 
-### src
+### src?
 
-• `Optional` **src**: `string`
+> `optional` **src**: `string`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/webview.ts:5

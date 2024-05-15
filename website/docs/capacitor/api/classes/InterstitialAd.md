@@ -1,28 +1,18 @@
----
-id: "InterstitialAd"
-title: "Class: InterstitialAd"
-sidebar_label: "InterstitialAd"
-sidebar_position: 0
-custom_edit_url: null
----
+# Class: InterstitialAd
 
-## Hierarchy
+## Extends
 
 - `MobileAd`
 
-  ↳ **`InterstitialAd`**
-
 ## Constructors
 
-### constructor
+### new InterstitialAd()
 
-• **new InterstitialAd**(`opts`): [`InterstitialAd`](InterstitialAd.md)
+> **new InterstitialAd**(`opts`): [`InterstitialAd`](InterstitialAd.md)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `opts` | [`MobileAdOptions`](../#mobileadoptions) |
+• **opts**: [`MobileAdOptions`](../type-aliases/MobileAdOptions.md)
 
 #### Returns
 
@@ -30,9 +20,9 @@ custom_edit_url: null
 
 #### Inherited from
 
-MobileAd.constructor
+`MobileAd.constructor`
 
-#### Defined in
+#### Source
 
 index.ts:30
 
@@ -40,65 +30,65 @@ index.ts:30
 
 ### #created
 
-• `Private` **#created**: `boolean` = `false`
+> `private` **#created**: `boolean` = `false`
 
 #### Inherited from
 
-MobileAd.#created
+`MobileAd.#created`
 
-#### Defined in
+#### Source
 
 index.ts:27
 
-___
+***
 
 ### #init
 
-• `Private` **#init**: ``null`` \| `Promise`\<`any`\> = `null`
+> `private` **#init**: `null` \| `Promise`\<`any`\> = `null`
 
 #### Inherited from
 
-MobileAd.#init
+`MobileAd.#init`
 
-#### Defined in
+#### Source
 
 index.ts:28
 
-___
+***
 
 ### id
 
-• `Readonly` **id**: `number`
+> `readonly` **id**: `number`
 
 #### Inherited from
 
-MobileAd.id
+`MobileAd.id`
 
-#### Defined in
+#### Source
 
 index.ts:23
 
-___
+***
 
 ### opts
 
-• `Protected` `Readonly` **opts**: [`MobileAdOptions`](../#mobileadoptions)
+> `protected` `readonly` **opts**: [`MobileAdOptions`](../type-aliases/MobileAdOptions.md)
 
 #### Inherited from
 
-MobileAd.opts
+`MobileAd.opts`
 
-#### Defined in
+#### Source
 
 index.ts:25
 
-___
+***
 
 ### cls
 
-▪ `Static` **cls**: `string` = `'InterstitialAd'`
+> `static` **cls**: `string` = `'InterstitialAd'`
 
-#### Defined in
+#### Source
 
 index.ts:128
 
@@ -106,25 +96,21 @@ index.ts:128
 
 ### adUnitId
 
-• `get` **adUnitId**(): `string`
+> `get` **adUnitId**(): `string`
 
 #### Returns
 
 `string`
 
-#### Inherited from
-
-MobileAd.adUnitId
-
-#### Defined in
+#### Source
 
 index.ts:42
 
 ## Methods
 
-### hide
+### hide()
 
-▸ **hide**(): `Promise`\<`void`\>
+> `protected` **hide**(): `Promise`\<`void`\>
 
 #### Returns
 
@@ -132,17 +118,17 @@ index.ts:42
 
 #### Inherited from
 
-MobileAd.hide
+`MobileAd.hide`
 
-#### Defined in
+#### Source
 
 index.ts:61
 
-___
+***
 
-### init
+### init()
 
-▸ **init**(): `Promise`\<`void`\>
+> `protected` **init**(): `Promise`\<`void`\>
 
 #### Returns
 
@@ -150,17 +136,17 @@ ___
 
 #### Inherited from
 
-MobileAd.init
+`MobileAd.init`
 
-#### Defined in
+#### Source
 
 index.ts:66
 
-___
+***
 
-### isLoaded
+### isLoaded()
 
-▸ **isLoaded**(): `Promise`\<`boolean`\>
+> **isLoaded**(): `Promise`\<`boolean`\>
 
 #### Returns
 
@@ -168,17 +154,17 @@ ___
 
 #### Overrides
 
-MobileAd.isLoaded
+`MobileAd.isLoaded`
 
-#### Defined in
+#### Source
 
 index.ts:130
 
-___
+***
 
-### load
+### load()
 
-▸ **load**(): `Promise`\<`void`\>
+> **load**(): `Promise`\<`void`\>
 
 #### Returns
 
@@ -186,17 +172,17 @@ ___
 
 #### Overrides
 
-MobileAd.load
+`MobileAd.load`
 
-#### Defined in
+#### Source
 
 index.ts:134
 
-___
+***
 
-### show
+### show()
 
-▸ **show**(): `Promise`\<`void`\>
+> **show**(): `Promise`\<`void`\>
 
 #### Returns
 
@@ -204,8 +190,8 @@ ___
 
 #### Overrides
 
-MobileAd.show
+`MobileAd.show`
 
-#### Defined in
+#### Source
 
 index.ts:138

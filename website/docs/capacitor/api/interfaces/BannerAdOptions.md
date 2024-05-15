@@ -1,37 +1,29 @@
----
-id: "BannerAdOptions"
-title: "Interface: BannerAdOptions"
-sidebar_label: "BannerAdOptions"
-sidebar_position: 0
-custom_edit_url: null
----
+# Interface: BannerAdOptions
 
-## Hierarchy
+## Extends
 
-- [`MobileAdOptions`](../#mobileadoptions)
-
-  ↳ **`BannerAdOptions`**
+- [`MobileAdOptions`](../type-aliases/MobileAdOptions.md)
 
 ## Properties
 
 ### adUnitId
 
-• **adUnitId**: `string`
+> **adUnitId**: `string`
 
 #### Inherited from
 
-MobileAdOptions.adUnitId
+`MobileAdOptions.adUnitId`
 
-#### Defined in
+#### Source
 
 definitions.ts:31
 
-___
+***
 
-### position
+### position?
 
-• `Optional` **position**: `Position`
+> `optional` **position**: `Position`
 
-#### Defined in
+#### Source
 
 index.ts:94

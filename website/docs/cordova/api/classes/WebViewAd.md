@@ -1,28 +1,18 @@
----
-id: "WebViewAd"
-title: "Class: WebViewAd"
-sidebar_label: "WebViewAd"
-sidebar_position: 0
-custom_edit_url: null
----
+# Class: WebViewAd
 
-## Hierarchy
+## Extends
 
-- [`MobileAd`](MobileAd.md)\<[`WebViewAdOptions`](../interfaces/WebViewAdOptions.md)\>
-
-  ↳ **`WebViewAd`**
+- [`MobileAd`](MobileAd.md) \<[`WebViewAdOptions`](../interfaces/WebViewAdOptions.md)\>
 
 ## Constructors
 
-### constructor
+### new WebViewAd()
 
-• **new WebViewAd**(`opts`): [`WebViewAd`](WebViewAd.md)
+> **new WebViewAd**(`opts`): [`WebViewAd`](WebViewAd.md)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `opts` | [`WebViewAdOptions`](../interfaces/WebViewAdOptions.md) |
+• **opts**: [`WebViewAdOptions`](../interfaces/WebViewAdOptions.md)
 
 #### Returns
 
@@ -30,9 +20,9 @@ custom_edit_url: null
 
 #### Overrides
 
-[MobileAd](MobileAd.md).[constructor](MobileAd.md#constructor)
+[`MobileAd`](MobileAd.md) . [`constructor`](MobileAd.md#constructors)
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/webview.ts:25
 
@@ -40,87 +30,87 @@ packages/cordova/src/www/ads/webview.ts:25
 
 ### \_adsense
 
-• `Private` **\_adsense**: `string` = `""`
+> `private` **\_adsense**: `string` = `""`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/webview.ts:21
 
-___
+***
 
 ### \_historyCurrentHref
 
-• `Private` **\_historyCurrentHref**: `string` = `""`
+> `private` **\_historyCurrentHref**: `string` = `""`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/webview.ts:23
 
-___
+***
 
 ### \_loaded
 
-• `Private` **\_loaded**: `boolean` = `false`
+> `private` **\_loaded**: `boolean` = `false`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/webview.ts:19
 
-___
+***
 
 ### \_originalHref
 
-• `Private` **\_originalHref**: `string`
+> `private` **\_originalHref**: `string`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/webview.ts:22
 
-___
+***
 
 ### \_src
 
-• `Private` **\_src**: `string` = `""`
+> `private` **\_src**: `string` = `""`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/webview.ts:20
 
-___
+***
 
 ### id
 
-• `Readonly` **id**: `string`
+> `readonly` **id**: `string`
 
 #### Inherited from
 
-[MobileAd](MobileAd.md).[id](MobileAd.md#id)
+[`MobileAd`](MobileAd.md) . [`id`](MobileAd.md#id)
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/base.ts:18
 
-___
+***
 
 ### opts
 
-• `Protected` `Readonly` **opts**: [`WebViewAdOptions`](../interfaces/WebViewAdOptions.md)
+> `protected` `readonly` **opts**: [`WebViewAdOptions`](../interfaces/WebViewAdOptions.md)
 
 #### Inherited from
 
-[MobileAd](MobileAd.md).[opts](MobileAd.md#opts)
+[`MobileAd`](MobileAd.md) . [`opts`](MobileAd.md#opts)
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/base.ts:20
 
-___
+***
 
 ### cls
 
-▪ `Static` `Readonly` **cls**: ``"WebViewAd"``
+> `static` `readonly` **cls**: `"WebViewAd"` = `"WebViewAd"`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/webview.ts:11
 
@@ -128,68 +118,63 @@ packages/cordova/src/www/ads/webview.ts:11
 
 ### adUnitId
 
-• `get` **adUnitId**(): `string`
+> `get` **adUnitId**(): `string`
 
 #### Returns
 
 `string`
 
-#### Inherited from
-
-MobileAd.adUnitId
-
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/base.ts:40
 
-___
+***
 
 ### allAds
 
-• `get` **allAds**(): `Record`\<`string`, [`MobileAd`](MobileAd.md)\<[`MobileAdOptions`](../#mobileadoptions)\>\>
+> `get` `static` `private` **allAds**(): `Record`\<`string`, [`MobileAd`](MobileAd.md) \<[`MobileAdOptions`](../type-aliases/MobileAdOptions.md)\>\>
 
 #### Returns
 
-`Record`\<`string`, [`MobileAd`](MobileAd.md)\<[`MobileAdOptions`](../#mobileadoptions)\>\>
+`Record`\<`string`, [`MobileAd`](MobileAd.md) \<[`MobileAdOptions`](../type-aliases/MobileAdOptions.md)\>\>
 
-#### Inherited from
-
-MobileAd.allAds
-
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/base.ts:30
 
 ## Methods
 
-### addAd
+### addAd()
 
-▸ **addAd**(`options`): `boolean`
+> **addAd**(`options`): `boolean`
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `options` | `Object` |
-| `options.element` | `HTMLElement` |
-| `options.format?` | `string` |
-| `options.fullWidth?` | `boolean` |
-| `options.html?` | `string` |
-| `options.slot` | `string` |
+• **options**
+
+• **options.element**: `HTMLElement`
+
+• **options.format?**: `string`
+
+• **options.fullWidth?**: `boolean`
+
+• **options.html?**: `string`
+
+• **options.slot**: `string`
 
 #### Returns
 
 `boolean`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/webview.ts:76
 
-___
+***
 
-### hide
+### hide()
 
-▸ **hide**(): `Promise`\<`unknown`\>
+> `protected` **hide**(): `Promise`\<`unknown`\>
 
 #### Returns
 
@@ -197,100 +182,97 @@ ___
 
 #### Inherited from
 
-[MobileAd](MobileAd.md).[hide](MobileAd.md#hide)
+[`MobileAd`](MobileAd.md) . [`hide`](MobileAd.md#hide)
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/base.ts:77
 
-___
+***
 
-### historyCurrentHref
+### historyCurrentHref()
 
-▸ **historyCurrentHref**(): `string`
+> `private` **historyCurrentHref**(): `string`
 
 #### Returns
 
 `string`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/webview.ts:161
 
-___
+***
 
-### historyOriginalHref
+### historyOriginalHref()
 
-▸ **historyOriginalHref**(): `string`
+> `private` **historyOriginalHref**(): `string`
 
 #### Returns
 
 `string`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/webview.ts:157
 
-___
+***
 
-### historyReplaceState
+### historyReplaceState()
 
-▸ **historyReplaceState**(`url`): `void`
+> `private` **historyReplaceState**(`url`): `void`
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `url` | `string` |
+• **url**: `string`
 
 #### Returns
 
 `void`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/webview.ts:136
 
-___
+***
 
-### historyRestoreOriginalHref
+### historyRestoreOriginalHref()
 
-▸ **historyRestoreOriginalHref**(): `void`
+> `private` **historyRestoreOriginalHref**(): `void`
 
 #### Returns
 
 `void`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/webview.ts:165
 
-___
+***
 
-### historySetPage
+### historySetPage()
 
-▸ **historySetPage**(`page`, `parameters?`): `string`
+> `private` **historySetPage**(`page`, `parameters`): `string`
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `page` | `string` |
-| `parameters` | `Object` |
+• **page**: `string`
+
+• **parameters**= `{}`
 
 #### Returns
 
 `string`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/webview.ts:145
 
-___
+***
 
-### init
+### init()
 
-▸ **init**(): `Promise`\<`unknown`\>
+> `protected` **init**(): `Promise`\<`unknown`\>
 
 #### Returns
 
@@ -298,17 +280,17 @@ ___
 
 #### Inherited from
 
-[MobileAd](MobileAd.md).[init](MobileAd.md#init)
+[`MobileAd`](MobileAd.md) . [`init`](MobileAd.md#init)
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/base.ts:82
 
-___
+***
 
-### isLoaded
+### isLoaded()
 
-▸ **isLoaded**(): `Promise`\<`boolean`\>
+> `protected` **isLoaded**(): `Promise`\<`boolean`\>
 
 #### Returns
 
@@ -316,37 +298,35 @@ ___
 
 #### Inherited from
 
-[MobileAd](MobileAd.md).[isLoaded](MobileAd.md#isloaded)
+[`MobileAd`](MobileAd.md) . [`isLoaded`](MobileAd.md#isloaded)
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/base.ts:61
 
-___
+***
 
-### isNodeScript
+### isNodeScript()
 
-▸ **isNodeScript**(`node`): `boolean`
+> `private` **isNodeScript**(`node`): `boolean`
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `node` | `any` |
+• **node**: `any`
 
 #### Returns
 
 `boolean`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/webview.ts:132
 
-___
+***
 
-### load
+### load()
 
-▸ **load**(): `Promise`\<`void`\>
+> `protected` **load**(): `Promise`\<`void`\>
 
 #### Returns
 
@@ -354,69 +334,61 @@ ___
 
 #### Inherited from
 
-[MobileAd](MobileAd.md).[load](MobileAd.md#load)
+[`MobileAd`](MobileAd.md) . [`load`](MobileAd.md#load)
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/base.ts:66
 
-___
+***
 
-### nodeScriptClone
+### nodeScriptClone()
 
-▸ **nodeScriptClone**(`node`): `HTMLScriptElement`
+> `private` **nodeScriptClone**(`node`): `HTMLScriptElement`
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `node` | `any` |
+• **node**: `any`
 
 #### Returns
 
 `HTMLScriptElement`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/webview.ts:122
 
-___
+***
 
-### nodeScriptReplace
+### nodeScriptReplace()
 
-▸ **nodeScriptReplace**(`node`): `any`
+> `private` **nodeScriptReplace**(`node`): `any`
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `node` | `any` |
+• **node**: `any`
 
 #### Returns
 
 `any`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/webview.ts:110
 
-___
+***
 
-### on
+### on()
 
-▸ **on**(`...args`): () => `void`
+> **on**(...`args`): () => `void`
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `...args` | [type: string, listener: Function, useCapture?: boolean] |
+• ...**args**: [`string`, (`ev`) => `any`, `boolean`]
 
 #### Returns
 
-`fn`
-
-▸ (): `void`
+`Function`
 
 ##### Returns
 
@@ -424,17 +396,17 @@ ___
 
 #### Inherited from
 
-[MobileAd](MobileAd.md).[on](MobileAd.md#on)
+[`MobileAd`](MobileAd.md) . [`on`](MobileAd.md#on)
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/base.ts:44
 
-___
+***
 
-### show
+### show()
 
-▸ **show**(): `Promise`\<`unknown`\>
+> **show**(): `Promise`\<`unknown`\>
 
 #### Returns
 
@@ -442,46 +414,44 @@ ___
 
 #### Overrides
 
-[MobileAd](MobileAd.md).[show](MobileAd.md#show)
+[`MobileAd`](MobileAd.md) . [`show`](MobileAd.md#show)
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/webview.ts:169
 
-___
+***
 
-### checkIntegration
+### checkIntegration()
 
-▸ **checkIntegration**(): `Promise`\<`void`\>
+> `static` **checkIntegration**(): `Promise`\<`void`\>
 
 #### Returns
 
 `Promise`\<`void`\>
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/webview.ts:13
 
-___
+***
 
-### getAdById
+### getAdById()
 
-▸ **getAdById**(`id`): [`MobileAd`](MobileAd.md)\<[`MobileAdOptions`](../#mobileadoptions)\>
+> `static` **getAdById**(`id`): [`MobileAd`](MobileAd.md) \<[`MobileAdOptions`](../type-aliases/MobileAdOptions.md)\>
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `id` | `string` |
+• **id**: `string`
 
 #### Returns
 
-[`MobileAd`](MobileAd.md)\<[`MobileAdOptions`](../#mobileadoptions)\>
+[`MobileAd`](MobileAd.md) \<[`MobileAdOptions`](../type-aliases/MobileAdOptions.md)\>
 
 #### Inherited from
 
-[MobileAd](MobileAd.md).[getAdById](MobileAd.md#getadbyid)
+[`MobileAd`](MobileAd.md) . [`getAdById`](MobileAd.md#getadbyid)
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/base.ts:36

@@ -1,32 +1,22 @@
----
-id: "RewardedInterstitialAd"
-title: "Class: RewardedInterstitialAd"
-sidebar_label: "RewardedInterstitialAd"
-sidebar_position: 0
-custom_edit_url: null
----
+# Class: RewardedInterstitialAd
 
-## Hierarchy
+## Extends
 
 - `IonicNativePlugin`
 
-  ↳ **`RewardedInterstitialAd`**
-
 ## Implements
 
-- `Omit`\<`IRewardedInterstitialAd`, ``"opts"``\>
+- `Omit`\<`IRewardedInterstitialAd`, `"opts"`\>
 
 ## Constructors
 
-### constructor
+### new RewardedInterstitialAd()
 
-• **new RewardedInterstitialAd**(`opts`): [`RewardedInterstitialAd`](RewardedInterstitialAd.md)
+> **new RewardedInterstitialAd**(`opts`): [`RewardedInterstitialAd`](RewardedInterstitialAd.md)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `opts` | `RewardedAdOptions` |
+• **opts**: `RewardedAdOptions`
 
 #### Returns
 
@@ -34,9 +24,9 @@ custom_edit_url: null
 
 #### Overrides
 
-IonicNativePlugin.constructor
+`IonicNativePlugin.constructor`
 
-#### Defined in
+#### Source
 
 ionic/src/ngx/index.ts:160
 
@@ -44,51 +34,51 @@ ionic/src/ngx/index.ts:160
 
 ### obj
 
-• `Private` **obj**: `RewardedInterstitialAd`
+> `private` **obj**: `RewardedInterstitialAd`
 
-#### Defined in
+#### Source
 
 ionic/src/ngx/index.ts:158
 
-___
+***
 
 ### plugin
 
-▪ `Static` **plugin**: `string` = `plugin`
+> `static` **plugin**: `string`
 
 #### Overrides
 
-IonicNativePlugin.plugin
+`IonicNativePlugin.plugin`
 
-#### Defined in
+#### Source
 
 ionic/src/ngx/index.ts:154
 
-___
+***
 
 ### pluginName
 
-▪ `Static` **pluginName**: `string` = `pluginName`
+> `static` **pluginName**: `string`
 
 #### Overrides
 
-IonicNativePlugin.pluginName
+`IonicNativePlugin.pluginName`
 
-#### Defined in
+#### Source
 
 ionic/src/ngx/index.ts:155
 
-___
+***
 
 ### pluginRef
 
-▪ `Static` **pluginRef**: `string` = `'admob.RewardedInterstitialAd'`
+> `static` **pluginRef**: `string` = `'admob.RewardedInterstitialAd'`
 
 #### Overrides
 
-IonicNativePlugin.pluginRef
+`IonicNativePlugin.pluginRef`
 
-#### Defined in
+#### Source
 
 ionic/src/ngx/index.ts:156
 
@@ -96,43 +86,35 @@ ionic/src/ngx/index.ts:156
 
 ### adUnitId
 
-• `get` **adUnitId**(): `string`
+> `get` **adUnitId**(): `string`
 
 #### Returns
 
 `string`
 
-#### Implementation of
-
-Omit.adUnitId
-
-#### Defined in
+#### Source
 
 ionic/src/ngx/index.ts:166
 
-___
+***
 
 ### id
 
-• `get` **id**(): `string`
+> `get` **id**(): `string`
 
 #### Returns
 
 `string`
 
-#### Implementation of
-
-Omit.id
-
-#### Defined in
+#### Source
 
 ionic/src/ngx/index.ts:170
 
 ## Methods
 
-### isLoaded
+### isLoaded()
 
-▸ **isLoaded**(): `Promise`\<`boolean`\>
+> **isLoaded**(): `Promise`\<`boolean`\>
 
 #### Returns
 
@@ -140,17 +122,17 @@ ionic/src/ngx/index.ts:170
 
 #### Implementation of
 
-Omit.isLoaded
+`Omit.isLoaded`
 
-#### Defined in
+#### Source
 
 ionic/src/ngx/index.ts:174
 
-___
+***
 
-### load
+### load()
 
-▸ **load**(): `Promise`\<`void`\>
+> **load**(): `Promise`\<`void`\>
 
 #### Returns
 
@@ -158,29 +140,25 @@ ___
 
 #### Implementation of
 
-Omit.load
+`Omit.load`
 
-#### Defined in
+#### Source
 
 ionic/src/ngx/index.ts:178
 
-___
+***
 
-### on
+### on()
 
-▸ **on**(`...opts`): () => `void`
+> **on**(...`opts`): () => `void`
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `...opts` | [type: string, listener: EventListenerOrEventListenerObject, options?: boolean \| AddEventListenerOptions] |
+• ...**opts**: [`string`, `EventListenerOrEventListenerObject`, `boolean` \| `AddEventListenerOptions`]
 
 #### Returns
 
-`fn`
-
-▸ (): `void`
+`Function`
 
 ##### Returns
 
@@ -188,17 +166,17 @@ ___
 
 #### Implementation of
 
-Omit.on
+`Omit.on`
 
-#### Defined in
+#### Source
 
 ionic/src/ngx/index.ts:186
 
-___
+***
 
-### show
+### show()
 
-▸ **show**(): `Promise`\<`unknown`\>
+> **show**(): `Promise`\<`unknown`\>
 
 #### Returns
 
@@ -206,8 +184,8 @@ ___
 
 #### Implementation of
 
-Omit.show
+`Omit.show`
 
-#### Defined in
+#### Source
 
 ionic/src/ngx/index.ts:182

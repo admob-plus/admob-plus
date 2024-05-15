@@ -1,113 +1,105 @@
----
-id: "AdMobConfig"
-title: "Interface: AdMobConfig"
-sidebar_label: "AdMobConfig"
-sidebar_position: 0
-custom_edit_url: null
----
+# Interface: AdMobConfig
 
-## Hierarchy
+## Extends
 
 - [`RequestConfig`](RequestConfig.md)
 
-  ↳ **`AdMobConfig`**
-
 ## Properties
 
-### appMuted
+### appMuted?
 
-• `Optional` **appMuted**: `boolean`
+> `optional` **appMuted**: `boolean`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/common.ts:53
 
-___
+***
 
-### appVolume
+### appVolume?
 
-• `Optional` **appVolume**: `number`
+> `optional` **appVolume**: `number`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/common.ts:54
 
-___
+***
 
-### maxAdContentRating
+### maxAdContentRating?
 
-• `Optional` **maxAdContentRating**: `MaxAdContentRating`
+> `optional` **maxAdContentRating**: `MaxAdContentRating`
 
 #### Inherited from
 
-[RequestConfig](RequestConfig.md).[maxAdContentRating](RequestConfig.md#maxadcontentrating)
+[`RequestConfig`](RequestConfig.md) . [`maxAdContentRating`](RequestConfig.md#maxadcontentrating)
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/common.ts:46
 
-___
+***
 
-### publisherFirstPartyIDEnabled
+### publisherFirstPartyIDEnabled?
 
-• `Optional` **publisherFirstPartyIDEnabled**: `boolean`
+> `optional` **publisherFirstPartyIDEnabled**: `boolean`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/common.ts:57
 
-___
+***
 
-### sameAppKey
+### ~~sameAppKey?~~
 
-• `Optional` **sameAppKey**: `boolean`
+> `optional` **sameAppKey**: `boolean`
 
-**`Deprecated`**
+#### Deprecated
 
 Use publisherFirstPartyIDEnabled instead
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/common.ts:56
 
-___
+***
 
-### tagForChildDirectedTreatment
+### tagForChildDirectedTreatment?
 
-• `Optional` **tagForChildDirectedTreatment**: ``null`` \| `boolean`
+> `optional` **tagForChildDirectedTreatment**: `null` \| `boolean`
 
 #### Inherited from
 
-[RequestConfig](RequestConfig.md).[tagForChildDirectedTreatment](RequestConfig.md#tagforchilddirectedtreatment)
+[`RequestConfig`](RequestConfig.md) . [`tagForChildDirectedTreatment`](RequestConfig.md#tagforchilddirectedtreatment)
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/common.ts:47
 
-___
+***
 
-### tagForUnderAgeOfConsent
+### tagForUnderAgeOfConsent?
 
-• `Optional` **tagForUnderAgeOfConsent**: ``null`` \| `boolean`
+> `optional` **tagForUnderAgeOfConsent**: `null` \| `boolean`
 
 #### Inherited from
 
-[RequestConfig](RequestConfig.md).[tagForUnderAgeOfConsent](RequestConfig.md#tagforunderageofconsent)
+[`RequestConfig`](RequestConfig.md) . [`tagForUnderAgeOfConsent`](RequestConfig.md#tagforunderageofconsent)
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/common.ts:48
 
-___
+***
 
-### testDeviceIds
+### testDeviceIds?
 
-• `Optional` **testDeviceIds**: `string`[]
+> `optional` **testDeviceIds**: `string`[]
 
 #### Inherited from
 
-[RequestConfig](RequestConfig.md).[testDeviceIds](RequestConfig.md#testdeviceids)
+[`RequestConfig`](RequestConfig.md) . [`testDeviceIds`](RequestConfig.md#testdeviceids)
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/common.ts:49

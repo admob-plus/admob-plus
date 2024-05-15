@@ -1,28 +1,20 @@
----
-id: "ConsentForm"
-title: "Class: ConsentForm"
-sidebar_label: "ConsentForm"
-sidebar_position: 0
-custom_edit_url: null
----
+# Class: ConsentForm
 
 ## Constructors
 
-### constructor
+### new ConsentForm()
 
-• **new ConsentForm**(`id`): [`ConsentForm`](ConsentForm.md)
+> **new ConsentForm**(`id`): [`ConsentForm`](ConsentForm.md)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `id` | `number` |
+• **id**: `number`
 
 #### Returns
 
 [`ConsentForm`](ConsentForm.md)
 
-#### Defined in
+#### Source
 
 index.ts:52
 
@@ -30,22 +22,22 @@ index.ts:52
 
 ### id
 
-• `Readonly` **id**: `number`
+> `readonly` **id**: `number`
 
-#### Defined in
+#### Source
 
 index.ts:50
 
 ## Methods
 
-### show
+### show()
 
-▸ **show**(): `Promise`\<`unknown`\>
+> **show**(): `Promise`\<`unknown`\>
 
 #### Returns
 
 `Promise`\<`unknown`\>
 
-#### Defined in
+#### Source
 
 index.ts:56

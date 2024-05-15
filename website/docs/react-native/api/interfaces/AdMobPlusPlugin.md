@@ -1,130 +1,115 @@
----
-id: "AdMobPlusPlugin"
-title: "Interface: AdMobPlusPlugin"
-sidebar_label: "AdMobPlusPlugin"
-sidebar_position: 0
-custom_edit_url: null
----
+# Interface: AdMobPlusPlugin
 
 ## Methods
 
-### adCreate
+### adCreate()
 
-▸ **adCreate**\<`O`\>(`opts`): `Promise`\<`void`\>
+> **adCreate**\<`O`\>(`opts`): `Promise`\<`void`\>
 
 #### Type parameters
 
-| Name | Type |
-| :------ | :------ |
-| `O` | extends [`MobileAdOptions`](../#mobileadoptions) |
+• **O** *extends* [`MobileAdOptions`](../type-aliases/MobileAdOptions.md)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `opts` | `O` |
+• **opts**: `O`
 
 #### Returns
 
 `Promise`\<`void`\>
 
-#### Defined in
+#### Source
 
 definitions.ts:26
 
-___
+***
 
-### adIsLoaded
+### adIsLoaded()
 
-▸ **adIsLoaded**(`opts`): `Promise`\<`boolean`\>
+> **adIsLoaded**(`opts`): `Promise`\<`boolean`\>
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `opts` | `Object` |
-| `opts.id` | `number` |
+• **opts**
+
+• **opts.id**: `number`
 
 #### Returns
 
 `Promise`\<`boolean`\>
 
-#### Defined in
+#### Source
 
 definitions.ts:27
 
-___
+***
 
-### adLoad
+### adLoad()
 
-▸ **adLoad**(`opts`): `Promise`\<`void`\>
+> **adLoad**(`opts`): `Promise`\<`void`\>
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `opts` | `Object` |
-| `opts.id` | `number` |
+• **opts**
+
+• **opts.id**: `number`
 
 #### Returns
 
 `Promise`\<`void`\>
 
-#### Defined in
+#### Source
 
 definitions.ts:28
 
-___
+***
 
-### adShow
+### adShow()
 
-▸ **adShow**(`opts`): `Promise`\<`void`\>
+> **adShow**(`opts`): `Promise`\<`void`\>
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `opts` | `Object` |
-| `opts.id` | `number` |
+• **opts**
+
+• **opts.id**: `number`
 
 #### Returns
 
 `Promise`\<`void`\>
 
-#### Defined in
+#### Source
 
 definitions.ts:29
 
-___
+***
 
-### configure
+### configure()
 
-▸ **configure**(`config`): `Promise`\<`void`\>
+> **configure**(`config`): `Promise`\<`void`\>
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `config` | [`AdMobConfig`](../#admobconfig) |
+• **config**: [`AdMobConfig`](../type-aliases/AdMobConfig.md)
 
 #### Returns
 
 `Promise`\<`void`\>
 
-#### Defined in
+#### Source
 
 definitions.ts:24
 
-___
+***
 
-### start
+### start()
 
-▸ **start**(): `Promise`\<`void`\>
+> **start**(): `Promise`\<`void`\>
 
 #### Returns
 
 `Promise`\<`void`\>
 
-#### Defined in
+#### Source
 
 definitions.ts:23

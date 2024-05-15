@@ -1,27 +1,21 @@
----
-id: "ServerSideVerificationOptions"
-title: "Interface: ServerSideVerificationOptions"
-sidebar_label: "ServerSideVerificationOptions"
-sidebar_position: 0
-custom_edit_url: null
----
+# Interface: ServerSideVerificationOptions
 
 ## Properties
 
-### customData
+### customData?
 
-• `Optional` **customData**: `string`
+> `optional` **customData**: `string`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/rewarded.ts:4
 
-___
+***
 
-### userId
+### userId?
 
-• `Optional` **userId**: `string`
+> `optional` **userId**: `string`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/rewarded.ts:5

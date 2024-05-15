@@ -1,58 +1,34 @@
----
-id: "MobileAd"
-title: "Class: MobileAd<T>"
-sidebar_label: "MobileAd"
-sidebar_position: 0
-custom_edit_url: null
----
+# Class: MobileAd\<T\>
+
+## Extended by
+
+- [`AppOpenAd`](AppOpenAd.md)
+- [`BannerAd`](BannerAd.md)
+- [`InterstitialAd`](InterstitialAd.md)
+- [`NativeAd`](NativeAd.md)
+- [`RewardedAd`](RewardedAd.md)
+- [`RewardedInterstitialAd`](RewardedInterstitialAd.md)
+- [`WebViewAd`](WebViewAd.md)
 
 ## Type parameters
 
-| Name | Type |
-| :------ | :------ |
-| `T` | extends [`MobileAdOptions`](../#mobileadoptions) = [`MobileAdOptions`](../#mobileadoptions) |
-
-## Hierarchy
-
-- **`MobileAd`**
-
-  ↳ [`AppOpenAd`](AppOpenAd.md)
-
-  ↳ [`BannerAd`](BannerAd.md)
-
-  ↳ [`InterstitialAd`](InterstitialAd.md)
-
-  ↳ [`NativeAd`](NativeAd.md)
-
-  ↳ [`RewardedAd`](RewardedAd.md)
-
-  ↳ [`RewardedInterstitialAd`](RewardedInterstitialAd.md)
-
-  ↳ [`WebViewAd`](WebViewAd.md)
+• **T** *extends* [`MobileAdOptions`](../type-aliases/MobileAdOptions.md) = [`MobileAdOptions`](../type-aliases/MobileAdOptions.md)
 
 ## Constructors
 
-### constructor
+### new MobileAd()
 
-• **new MobileAd**\<`T`\>(`opts`): [`MobileAd`](MobileAd.md)\<`T`\>
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `T` | extends [`MobileAdOptions`](../#mobileadoptions) = [`MobileAdOptions`](../#mobileadoptions) |
+> **new MobileAd**\<`T`\>(`opts`): [`MobileAd`](MobileAd.md)\<`T`\>
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `opts` | `T` |
+• **opts**: `T`
 
 #### Returns
 
 [`MobileAd`](MobileAd.md)\<`T`\>
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/base.ts:23
 
@@ -60,29 +36,29 @@ packages/cordova/src/www/ads/base.ts:23
 
 ### \_initPromise
 
-• `Private` **\_initPromise**: `undefined` \| `Promise`\<`unknown`\>
+> `private` **\_initPromise**: `undefined` \| `Promise`\<`unknown`\>
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/base.ts:21
 
-___
+***
 
 ### id
 
-• `Readonly` **id**: `string`
+> `readonly` **id**: `string`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/base.ts:18
 
-___
+***
 
 ### opts
 
-• `Protected` `Readonly` **opts**: `T`
+> `protected` `readonly` **opts**: `T`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/base.ts:20
 
@@ -90,162 +66,154 @@ packages/cordova/src/www/ads/base.ts:20
 
 ### adUnitId
 
-• `get` **adUnitId**(): `string`
+> `get` **adUnitId**(): `string`
 
 #### Returns
 
 `string`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/base.ts:40
 
-___
+***
 
 ### allAds
 
-• `get` **allAds**(): `Record`\<`string`, [`MobileAd`](MobileAd.md)\<[`MobileAdOptions`](../#mobileadoptions)\>\>
+> `get` `static` `private` **allAds**(): `Record`\<`string`, [`MobileAd`](MobileAd.md) \<[`MobileAdOptions`](../type-aliases/MobileAdOptions.md)\>\>
 
 #### Returns
 
-`Record`\<`string`, [`MobileAd`](MobileAd.md)\<[`MobileAdOptions`](../#mobileadoptions)\>\>
+`Record`\<`string`, [`MobileAd`](MobileAd.md) \<[`MobileAdOptions`](../type-aliases/MobileAdOptions.md)\>\>
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/base.ts:30
 
 ## Methods
 
-### \_init
+### \_init()
 
-▸ **_init**(): `Promise`\<`unknown`\>
+> `private` **\_init**(): `Promise`\<`unknown`\>
 
 #### Returns
 
 `Promise`\<`unknown`\>
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/base.ts:87
 
-___
+***
 
-### hide
+### hide()
 
-▸ **hide**(): `Promise`\<`unknown`\>
+> `protected` **hide**(): `Promise`\<`unknown`\>
 
 #### Returns
 
 `Promise`\<`unknown`\>
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/base.ts:77
 
-___
+***
 
-### init
+### init()
 
-▸ **init**(): `Promise`\<`unknown`\>
+> `protected` **init**(): `Promise`\<`unknown`\>
 
 #### Returns
 
 `Promise`\<`unknown`\>
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/base.ts:82
 
-___
+***
 
-### isLoaded
+### isLoaded()
 
-▸ **isLoaded**(): `Promise`\<`boolean`\>
+> `protected` **isLoaded**(): `Promise`\<`boolean`\>
 
 #### Returns
 
 `Promise`\<`boolean`\>
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/base.ts:61
 
-___
+***
 
-### load
+### load()
 
-▸ **load**(): `Promise`\<`void`\>
+> `protected` **load**(): `Promise`\<`void`\>
 
 #### Returns
 
 `Promise`\<`void`\>
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/base.ts:66
 
-___
+***
 
-### on
+### on()
 
-▸ **on**(`...args`): () => `void`
+> **on**(...`args`): () => `void`
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `...args` | [type: string, listener: Function, useCapture?: boolean] |
+• ...**args**: [`string`, (`ev`) => `any`, `boolean`]
 
 #### Returns
 
-`fn`
-
-▸ (): `void`
+`Function`
 
 ##### Returns
 
 `void`
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/base.ts:44
 
-___
+***
 
-### show
+### show()
 
-▸ **show**(`opts?`): `Promise`\<`unknown`\>
+> `protected` **show**(`opts`?): `Promise`\<`unknown`\>
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `opts?` | `Record`\<`string`, `unknown`\> |
+• **opts?**: `Record`\<`string`, `unknown`\>
 
 #### Returns
 
 `Promise`\<`unknown`\>
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/base.ts:72
 
-___
+***
 
-### getAdById
+### getAdById()
 
-▸ **getAdById**(`id`): [`MobileAd`](MobileAd.md)\<[`MobileAdOptions`](../#mobileadoptions)\>
+> `static` **getAdById**(`id`): [`MobileAd`](MobileAd.md) \<[`MobileAdOptions`](../type-aliases/MobileAdOptions.md)\>
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `id` | `string` |
+• **id**: `string`
 
 #### Returns
 
-[`MobileAd`](MobileAd.md)\<[`MobileAdOptions`](../#mobileadoptions)\>
+[`MobileAd`](MobileAd.md) \<[`MobileAdOptions`](../type-aliases/MobileAdOptions.md)\>
 
-#### Defined in
+#### Source
 
 packages/cordova/src/www/ads/base.ts:36

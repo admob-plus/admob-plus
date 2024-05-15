@@ -1,32 +1,22 @@
----
-id: "NativeAd"
-title: "Class: NativeAd"
-sidebar_label: "NativeAd"
-sidebar_position: 0
-custom_edit_url: null
----
+# Class: NativeAd
 
-## Hierarchy
+## Extends
 
 - `IonicNativePlugin`
 
-  ↳ **`NativeAd`**
-
 ## Implements
 
-- `Omit`\<`INativeAd`, ``"opts"``\>
+- `Omit`\<`INativeAd`, `"opts"`\>
 
 ## Constructors
 
-### constructor
+### new NativeAd()
 
-• **new NativeAd**(`opts`): [`NativeAd`](NativeAd.md)
+> **new NativeAd**(`opts`): [`NativeAd`](NativeAd.md)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `opts` | `NativeAdOptions` |
+• **opts**: `NativeAdOptions`
 
 #### Returns
 
@@ -34,9 +24,9 @@ custom_edit_url: null
 
 #### Overrides
 
-IonicNativePlugin.constructor
+`IonicNativePlugin.constructor`
 
-#### Defined in
+#### Source
 
 ionic/src/ngx/index.ts:201
 
@@ -44,51 +34,51 @@ ionic/src/ngx/index.ts:201
 
 ### obj
 
-• `Private` **obj**: `NativeAd`
+> `private` **obj**: `NativeAd`
 
-#### Defined in
+#### Source
 
 ionic/src/ngx/index.ts:199
 
-___
+***
 
 ### plugin
 
-▪ `Static` **plugin**: `string` = `plugin`
+> `static` **plugin**: `string`
 
 #### Overrides
 
-IonicNativePlugin.plugin
+`IonicNativePlugin.plugin`
 
-#### Defined in
+#### Source
 
 ionic/src/ngx/index.ts:195
 
-___
+***
 
 ### pluginName
 
-▪ `Static` **pluginName**: `string` = `pluginName`
+> `static` **pluginName**: `string`
 
 #### Overrides
 
-IonicNativePlugin.pluginName
+`IonicNativePlugin.pluginName`
 
-#### Defined in
+#### Source
 
 ionic/src/ngx/index.ts:196
 
-___
+***
 
 ### pluginRef
 
-▪ `Static` **pluginRef**: `string` = `'admob.NativeAd'`
+> `static` **pluginRef**: `string` = `'admob.NativeAd'`
 
 #### Overrides
 
-IonicNativePlugin.pluginRef
+`IonicNativePlugin.pluginRef`
 
-#### Defined in
+#### Source
 
 ionic/src/ngx/index.ts:197
 
@@ -96,43 +86,35 @@ ionic/src/ngx/index.ts:197
 
 ### adUnitId
 
-• `get` **adUnitId**(): `string`
+> `get` **adUnitId**(): `string`
 
 #### Returns
 
 `string`
 
-#### Implementation of
-
-Omit.adUnitId
-
-#### Defined in
+#### Source
 
 ionic/src/ngx/index.ts:207
 
-___
+***
 
 ### id
 
-• `get` **id**(): `string`
+> `get` **id**(): `string`
 
 #### Returns
 
 `string`
 
-#### Implementation of
-
-Omit.id
-
-#### Defined in
+#### Source
 
 ionic/src/ngx/index.ts:211
 
 ## Methods
 
-### hide
+### hide()
 
-▸ **hide**(): `Promise`\<`unknown`\>
+> **hide**(): `Promise`\<`unknown`\>
 
 #### Returns
 
@@ -140,17 +122,17 @@ ionic/src/ngx/index.ts:211
 
 #### Implementation of
 
-Omit.hide
+`Omit.hide`
 
-#### Defined in
+#### Source
 
 ionic/src/ngx/index.ts:227
 
-___
+***
 
-### isLoaded
+### isLoaded()
 
-▸ **isLoaded**(): `Promise`\<`boolean`\>
+> **isLoaded**(): `Promise`\<`boolean`\>
 
 #### Returns
 
@@ -158,17 +140,17 @@ ___
 
 #### Implementation of
 
-Omit.isLoaded
+`Omit.isLoaded`
 
-#### Defined in
+#### Source
 
 ionic/src/ngx/index.ts:215
 
-___
+***
 
-### load
+### load()
 
-▸ **load**(): `Promise`\<`void`\>
+> **load**(): `Promise`\<`void`\>
 
 #### Returns
 
@@ -176,29 +158,25 @@ ___
 
 #### Implementation of
 
-Omit.load
+`Omit.load`
 
-#### Defined in
+#### Source
 
 ionic/src/ngx/index.ts:219
 
-___
+***
 
-### on
+### on()
 
-▸ **on**(`...opts`): () => `void`
+> **on**(...`opts`): () => `void`
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `...opts` | [type: string, listener: EventListenerOrEventListenerObject, options?: boolean \| AddEventListenerOptions] |
+• ...**opts**: [`string`, `EventListenerOrEventListenerObject`, `boolean` \| `AddEventListenerOptions`]
 
 #### Returns
 
-`fn`
-
-▸ (): `void`
+`Function`
 
 ##### Returns
 
@@ -206,23 +184,21 @@ ___
 
 #### Implementation of
 
-Omit.on
+`Omit.on`
 
-#### Defined in
+#### Source
 
 ionic/src/ngx/index.ts:235
 
-___
+***
 
-### show
+### show()
 
-▸ **show**(`...args`): `Promise`\<`unknown`\>
+> **show**(...`args`): `Promise`\<`unknown`\>
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `...args` | [opts?: ShowOptions] |
+• ...**args**: [`ShowOptions`]
 
 #### Returns
 
@@ -230,23 +206,21 @@ ___
 
 #### Implementation of
 
-Omit.show
+`Omit.show`
 
-#### Defined in
+#### Source
 
 ionic/src/ngx/index.ts:223
 
-___
+***
 
-### showWith
+### showWith()
 
-▸ **showWith**(`...args`): `Promise`\<`void`\>
+> **showWith**(...`args`): `Promise`\<`void`\>
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `...args` | [elm: HTMLElement] |
+• ...**args**: [`HTMLElement`]
 
 #### Returns
 
@@ -254,8 +228,8 @@ ___
 
 #### Implementation of
 
-Omit.showWith
+`Omit.showWith`
 
-#### Defined in
+#### Source
 
 ionic/src/ngx/index.ts:231

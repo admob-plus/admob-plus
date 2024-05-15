@@ -6,7 +6,7 @@
     "gen": "tsx gen/index.ts"
   },
   "dependencies": {
-    "@pnpm/find-workspace-dir": "^7.0.0",
+    "@pnpm/find-workspace-dir": "^7.0.1",
     "cordova-common": "^5.0.0",
     "fs-extra": "^11.2.0",
     "jsdom": "^24.0.0",
@@ -21,10 +21,10 @@
     "@ionic/cli": "^7.2.0",
     "@types/fs-extra": "^11.0.4",
     "@types/jsdom": "^21.1.6",
-    "@types/lodash": "^4.17.0",
+    "@types/lodash": "^4.17.4",
     "@types/plist": "^3.0.5",
     "@types/xml2js": "^0.4.14",
     "plugman": "^3.0.1",
-    "tsx": "^4.7.2"
+    "tsx": "^4.10.4"
   }
 }
