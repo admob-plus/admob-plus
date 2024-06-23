@@ -22,7 +22,7 @@
 
 `MobileAd.constructor`
 
-#### Source
+#### Defined in
 
 index.ts:30
 
@@ -36,7 +36,7 @@ index.ts:30
 
 `MobileAd.id`
 
-#### Source
+#### Defined in
 
 index.ts:24
 
@@ -50,7 +50,7 @@ index.ts:24
 
 `MobileAd.opts`
 
-#### Source
+#### Defined in
 
 index.ts:26
 
@@ -60,7 +60,7 @@ index.ts:26
 
 > `static` **cls**: `string` = `'InterstitialAd'`
 
-#### Source
+#### Defined in
 
 index.ts:95
 
@@ -74,7 +74,11 @@ index.ts:95
 
 `string`
 
-#### Source
+#### Inherited from
+
+`MobileAd.adUnitId`
+
+#### Defined in
 
 index.ts:54
 
@@ -92,7 +96,7 @@ index.ts:54
 
 `MobileAd.init`
 
-#### Source
+#### Defined in
 
 index.ts:89
 
@@ -110,7 +114,7 @@ index.ts:89
 
 `MobileAd.isLoaded`
 
-#### Source
+#### Defined in
 
 index.ts:97
 
@@ -128,7 +132,7 @@ index.ts:97
 
 `MobileAd.load`
 
-#### Source
+#### Defined in
 
 index.ts:101
 
@@ -154,7 +158,7 @@ index.ts:101
 
 `MobileAd.on`
 
-#### Source
+#### Defined in
 
 index.ts:58
 
@@ -172,6 +176,6 @@ index.ts:58
 
 `MobileAd.show`
 
-#### Source
+#### Defined in
 
 index.ts:105

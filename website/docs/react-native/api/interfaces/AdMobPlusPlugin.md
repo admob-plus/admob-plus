@@ -6,7 +6,7 @@
 
 > **adCreate**\<`O`\>(`opts`): `Promise`\<`void`\>
 
-#### Type parameters
+#### Type Parameters
 
 • **O** *extends* [`MobileAdOptions`](../type-aliases/MobileAdOptions.md)
 
@@ -18,7 +18,7 @@
 
 `Promise`\<`void`\>
 
-#### Source
+#### Defined in
 
 definitions.ts:26
 
@@ -38,7 +38,7 @@ definitions.ts:26
 
 `Promise`\<`boolean`\>
 
-#### Source
+#### Defined in
 
 definitions.ts:27
 
@@ -58,7 +58,7 @@ definitions.ts:27
 
 `Promise`\<`void`\>
 
-#### Source
+#### Defined in
 
 definitions.ts:28
 
@@ -78,7 +78,7 @@ definitions.ts:28
 
 `Promise`\<`void`\>
 
-#### Source
+#### Defined in
 
 definitions.ts:29
 
@@ -96,7 +96,7 @@ definitions.ts:29
 
 `Promise`\<`void`\>
 
-#### Source
+#### Defined in
 
 definitions.ts:24
 
@@ -110,6 +110,6 @@ definitions.ts:24
 
 `Promise`\<`void`\>
 
-#### Source
+#### Defined in
 
 definitions.ts:23

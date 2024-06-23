@@ -1,5 +1,7 @@
 # Class: BannerAd
 
+**`Internal`**
+
 ## Extends
 
 - [`MobileAd`](MobileAd.md) \<[`BannerAdOptions`](../interfaces/BannerAdOptions.md)\>
@@ -22,21 +24,11 @@
 
 [`MobileAd`](MobileAd.md) . [`constructor`](MobileAd.md#constructors)
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/banner.ts:67
 
 ## Properties
-
-### \_loaded
-
-> `private` **\_loaded**: `boolean` = `false`
-
-#### Source
-
-packages/cordova/src/www/ads/banner.ts:65
-
-***
 
 ### id
 
@@ -46,7 +38,7 @@ packages/cordova/src/www/ads/banner.ts:65
 
 [`MobileAd`](MobileAd.md) . [`id`](MobileAd.md#id)
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/base.ts:18
 
@@ -60,7 +52,7 @@ packages/cordova/src/www/ads/base.ts:18
 
 [`MobileAd`](MobileAd.md) . [`opts`](MobileAd.md#opts)
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/base.ts:20
 
@@ -68,9 +60,9 @@ packages/cordova/src/www/ads/base.ts:20
 
 ### cls
 
-> `static` `readonly` **cls**: `"BannerAd"` = `"BannerAd"`
+> `readonly` `static` **cls**: `"BannerAd"` = `"BannerAd"`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/banner.ts:63
 
@@ -84,23 +76,13 @@ packages/cordova/src/www/ads/banner.ts:63
 
 `string`
 
-#### Source
+#### Inherited from
+
+[`MobileAd`](MobileAd.md) . [`adUnitId`](MobileAd.md#adunitid)
+
+#### Defined in
 
 packages/cordova/src/www/ads/base.ts:40
-
-***
-
-### allAds
-
-> `get` `static` `private` **allAds**(): `Record`\<`string`, [`MobileAd`](MobileAd.md) \<[`MobileAdOptions`](../type-aliases/MobileAdOptions.md)\>\>
-
-#### Returns
-
-`Record`\<`string`, [`MobileAd`](MobileAd.md) \<[`MobileAdOptions`](../type-aliases/MobileAdOptions.md)\>\>
-
-#### Source
-
-packages/cordova/src/www/ads/base.ts:30
 
 ## Methods
 
@@ -116,7 +98,7 @@ packages/cordova/src/www/ads/base.ts:30
 
 [`MobileAd`](MobileAd.md) . [`hide`](MobileAd.md#hide)
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/banner.ts:102
 
@@ -134,7 +116,7 @@ packages/cordova/src/www/ads/banner.ts:102
 
 [`MobileAd`](MobileAd.md) . [`init`](MobileAd.md#init)
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/base.ts:82
 
@@ -152,7 +134,7 @@ packages/cordova/src/www/ads/base.ts:82
 
 [`MobileAd`](MobileAd.md) . [`isLoaded`](MobileAd.md#isloaded)
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/base.ts:61
 
@@ -170,7 +152,7 @@ packages/cordova/src/www/ads/base.ts:61
 
 [`MobileAd`](MobileAd.md) . [`load`](MobileAd.md#load)
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/banner.ts:89
 
@@ -196,7 +178,7 @@ packages/cordova/src/www/ads/banner.ts:89
 
 [`MobileAd`](MobileAd.md) . [`on`](MobileAd.md#on)
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/base.ts:44
 
@@ -214,7 +196,7 @@ packages/cordova/src/www/ads/base.ts:44
 
 [`MobileAd`](MobileAd.md) . [`show`](MobileAd.md#show)
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/banner.ts:94
 
@@ -238,7 +220,7 @@ packages/cordova/src/www/ads/banner.ts:94
 
 `false` \| `Promise`\<`unknown`\>
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/banner.ts:75
 
@@ -260,6 +242,6 @@ packages/cordova/src/www/ads/banner.ts:75
 
 [`MobileAd`](MobileAd.md) . [`getAdById`](MobileAd.md#getadbyid)
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/base.ts:36

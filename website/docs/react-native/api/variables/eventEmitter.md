@@ -2,6 +2,6 @@
 
 > `const` **eventEmitter**: `NativeEventEmitter`
 
-## Source
+## Defined in
 
 index.ts:12

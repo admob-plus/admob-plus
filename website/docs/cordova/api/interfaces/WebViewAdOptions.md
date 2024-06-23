@@ -1,5 +1,7 @@
 # Interface: WebViewAdOptions
 
+**`Internal`**
+
 ## Extends
 
 - [`MobileAdOptions`](../type-aliases/MobileAdOptions.md)
@@ -14,7 +16,7 @@
 
 `MobileAdOptions.adUnitId`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/base.ts:6
 
@@ -24,7 +26,7 @@ packages/cordova/src/www/ads/base.ts:6
 
 > **adsense**: `string`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/webview.ts:6
 
@@ -38,7 +40,7 @@ packages/cordova/src/www/ads/webview.ts:6
 
 `MobileAdOptions.contentUrl`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/base.ts:7
 
@@ -52,7 +54,7 @@ packages/cordova/src/www/ads/base.ts:7
 
 `MobileAdOptions.id`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/base.ts:5
 
@@ -66,7 +68,7 @@ packages/cordova/src/www/ads/base.ts:5
 
 `MobileAdOptions.keywords`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/base.ts:8
 
@@ -80,7 +82,7 @@ packages/cordova/src/www/ads/base.ts:8
 
 `MobileAdOptions.npa`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/webview.ts:7
 
@@ -90,6 +92,6 @@ packages/cordova/src/www/ads/webview.ts:7
 
 > `optional` **src**: `string`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/webview.ts:5

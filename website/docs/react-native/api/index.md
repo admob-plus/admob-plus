@@ -23,9 +23,3 @@
 
 - [AdMobPlus](variables/AdMobPlus.md)
 - [eventEmitter](variables/eventEmitter.md)
-
-## References
-
-### default
-
-Renames and re-exports [AdMobPlus](variables/AdMobPlus.md)

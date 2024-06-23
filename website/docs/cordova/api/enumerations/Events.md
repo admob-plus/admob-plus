@@ -6,7 +6,7 @@
 
 > **adClick**: `"admob.ad.click"`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/common.ts:16
 
@@ -16,7 +16,7 @@ packages/cordova/src/www/common.ts:16
 
 > **adDismiss**: `"admob.ad.dismiss"`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/common.ts:17
 
@@ -26,7 +26,7 @@ packages/cordova/src/www/common.ts:17
 
 > **adImpression**: `"admob.ad.impression"`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/common.ts:18
 
@@ -36,7 +36,7 @@ packages/cordova/src/www/common.ts:18
 
 > **adLoad**: `"admob.ad.load"`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/common.ts:19
 
@@ -46,7 +46,7 @@ packages/cordova/src/www/common.ts:19
 
 > **adLoadFail**: `"admob.ad.loadfail"`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/common.ts:20
 
@@ -56,7 +56,7 @@ packages/cordova/src/www/common.ts:20
 
 > **adReward**: `"admob.ad.reward"`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/common.ts:21
 
@@ -66,7 +66,7 @@ packages/cordova/src/www/common.ts:21
 
 > **adShow**: `"admob.ad.show"`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/common.ts:22
 
@@ -76,7 +76,7 @@ packages/cordova/src/www/common.ts:22
 
 > **adShowFail**: `"admob.ad.showfail"`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/common.ts:23
 
@@ -86,7 +86,7 @@ packages/cordova/src/www/common.ts:23
 
 > **bannerSize**: `"admob.banner.size"`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/common.ts:24
 
@@ -96,6 +96,6 @@ packages/cordova/src/www/common.ts:24
 
 > **ready**: `"admob.ready"`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/common.ts:25

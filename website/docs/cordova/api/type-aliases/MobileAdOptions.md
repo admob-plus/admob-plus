@@ -1,8 +1,8 @@
-# Type alias: MobileAdOptions
-
-`Internal`
+# Type Alias: MobileAdOptions
 
 > **MobileAdOptions**: `object`
+
+**`Internal`**
 
 ## Type declaration
 
@@ -26,6 +26,6 @@
 
 > `optional` **npa**: `"1"`
 
-## Source
+## Defined in
 
 packages/cordova/src/www/ads/base.ts:4

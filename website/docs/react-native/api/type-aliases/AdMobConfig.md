@@ -1,4 +1,4 @@
-# Type alias: AdMobConfig
+# Type Alias: AdMobConfig
 
 > **AdMobConfig**: `object`
 
@@ -32,6 +32,6 @@
 
 > `optional` **testDeviceIds**: `string`[]
 
-## Source
+## Defined in
 
 definitions.ts:10

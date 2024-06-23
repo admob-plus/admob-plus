@@ -6,7 +6,7 @@
 
 > **authorized**: `3`
 
-#### Source
+#### Defined in
 
 definitions.ts:28
 
@@ -16,7 +16,7 @@ definitions.ts:28
 
 > **denied**: `2`
 
-#### Source
+#### Defined in
 
 definitions.ts:27
 
@@ -26,7 +26,7 @@ definitions.ts:27
 
 > **notDetermined**: `0`
 
-#### Source
+#### Defined in
 
 definitions.ts:25
 
@@ -36,6 +36,6 @@ definitions.ts:25
 
 > **restricted**: `1`
 
-#### Source
+#### Defined in
 
 definitions.ts:26

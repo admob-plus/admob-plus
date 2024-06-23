@@ -2,6 +2,6 @@
 
 > `const` **AdMobPlus**: [`AdMobPlusPlugin`](../interfaces/AdMobPlusPlugin.md)
 
-## Source
+## Defined in
 
 index.ts:17

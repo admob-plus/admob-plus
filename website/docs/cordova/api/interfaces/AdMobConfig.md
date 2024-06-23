@@ -10,7 +10,7 @@
 
 > `optional` **appMuted**: `boolean`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/common.ts:53
 
@@ -20,7 +20,7 @@ packages/cordova/src/www/common.ts:53
 
 > `optional` **appVolume**: `number`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/common.ts:54
 
@@ -34,7 +34,7 @@ packages/cordova/src/www/common.ts:54
 
 [`RequestConfig`](RequestConfig.md) . [`maxAdContentRating`](RequestConfig.md#maxadcontentrating)
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/common.ts:46
 
@@ -44,7 +44,7 @@ packages/cordova/src/www/common.ts:46
 
 > `optional` **publisherFirstPartyIDEnabled**: `boolean`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/common.ts:57
 
@@ -58,7 +58,7 @@ packages/cordova/src/www/common.ts:57
 
 Use publisherFirstPartyIDEnabled instead
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/common.ts:56
 
@@ -72,7 +72,7 @@ packages/cordova/src/www/common.ts:56
 
 [`RequestConfig`](RequestConfig.md) . [`tagForChildDirectedTreatment`](RequestConfig.md#tagforchilddirectedtreatment)
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/common.ts:47
 
@@ -86,7 +86,7 @@ packages/cordova/src/www/common.ts:47
 
 [`RequestConfig`](RequestConfig.md) . [`tagForUnderAgeOfConsent`](RequestConfig.md#tagforunderageofconsent)
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/common.ts:48
 
@@ -100,6 +100,6 @@ packages/cordova/src/www/common.ts:48
 
 [`RequestConfig`](RequestConfig.md) . [`testDeviceIds`](RequestConfig.md#testdeviceids)
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/common.ts:49

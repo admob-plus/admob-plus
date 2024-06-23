@@ -6,7 +6,7 @@
 
 > **BANNER**: `0`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/banner.ts:7
 
@@ -16,7 +16,7 @@ packages/cordova/src/www/ads/banner.ts:7
 
 > **FULL\_BANNER**: `3`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/banner.ts:10
 
@@ -26,7 +26,7 @@ packages/cordova/src/www/ads/banner.ts:10
 
 > **LARGE\_BANNER**: `1`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/banner.ts:8
 
@@ -36,7 +36,7 @@ packages/cordova/src/www/ads/banner.ts:8
 
 > **LEADERBOARD**: `4`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/banner.ts:11
 
@@ -46,7 +46,7 @@ packages/cordova/src/www/ads/banner.ts:11
 
 > **MEDIUM\_RECTANGLE**: `2`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/banner.ts:9
 
@@ -56,6 +56,6 @@ packages/cordova/src/www/ads/banner.ts:9
 
 > **SMART\_BANNER**: `5`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/banner.ts:12

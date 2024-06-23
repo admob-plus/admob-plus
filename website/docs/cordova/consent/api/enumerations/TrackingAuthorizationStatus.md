@@ -6,7 +6,7 @@
 
 > **authorized**: `3`
 
-#### Source
+#### Defined in
 
 index.ts:46
 
@@ -16,7 +16,7 @@ index.ts:46
 
 > **denied**: `2`
 
-#### Source
+#### Defined in
 
 index.ts:45
 
@@ -26,7 +26,7 @@ index.ts:45
 
 > **notDetermined**: `0`
 
-#### Source
+#### Defined in
 
 index.ts:43
 
@@ -36,6 +36,6 @@ index.ts:43
 
 > **restricted**: `1`
 
-#### Source
+#### Defined in
 
 index.ts:44

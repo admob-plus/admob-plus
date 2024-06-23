@@ -6,7 +6,7 @@
 
 > **Available**: `1`
 
-#### Source
+#### Defined in
 
 index.ts:38
 
@@ -16,7 +16,7 @@ index.ts:38
 
 > **Unavailable**: `2`
 
-#### Source
+#### Defined in
 
 index.ts:39
 
@@ -26,6 +26,6 @@ index.ts:39
 
 > **Unknown**: `0`
 
-#### Source
+#### Defined in
 
 index.ts:37

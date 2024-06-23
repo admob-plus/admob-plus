@@ -32,7 +32,7 @@
 
 `IonicNativePlugin.platforms`
 
-#### Source
+#### Defined in
 
 ionic/src/ngx/index.ts:266
 
@@ -46,7 +46,7 @@ ionic/src/ngx/index.ts:266
 
 `IonicNativePlugin.plugin`
 
-#### Source
+#### Defined in
 
 ionic/src/ngx/index.ts:267
 
@@ -60,7 +60,7 @@ ionic/src/ngx/index.ts:267
 
 `IonicNativePlugin.pluginName`
 
-#### Source
+#### Defined in
 
 ionic/src/ngx/index.ts:268
 
@@ -74,7 +74,7 @@ ionic/src/ngx/index.ts:268
 
 `IonicNativePlugin.pluginRef`
 
-#### Source
+#### Defined in
 
 ionic/src/ngx/index.ts:269
 
@@ -88,7 +88,7 @@ ionic/src/ngx/index.ts:269
 
 `IonicNativePlugin.repo`
 
-#### Source
+#### Defined in
 
 ionic/src/ngx/index.ts:270
 
@@ -110,7 +110,7 @@ ionic/src/ngx/index.ts:270
 
 `Omit.configure`
 
-#### Source
+#### Defined in
 
 ionic/src/ngx/index.ts:276
 
@@ -128,7 +128,7 @@ ionic/src/ngx/index.ts:276
 
 `Observable`\<`unknown`\>
 
-#### Source
+#### Defined in
 
 ionic/src/ngx/index.ts:280
 
@@ -150,6 +150,6 @@ ionic/src/ngx/index.ts:280
 
 `Omit.start`
 
-#### Source
+#### Defined in
 
 ionic/src/ngx/index.ts:272

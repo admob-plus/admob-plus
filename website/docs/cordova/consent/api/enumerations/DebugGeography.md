@@ -6,7 +6,7 @@
 
 > **Disabled**: `0`
 
-#### Source
+#### Defined in
 
 index.ts:25
 
@@ -16,7 +16,7 @@ index.ts:25
 
 > **EEA**: `1`
 
-#### Source
+#### Defined in
 
 index.ts:26
 
@@ -26,6 +26,6 @@ index.ts:26
 
 > **NotEEA**: `2`
 
-#### Source
+#### Defined in
 
 index.ts:27

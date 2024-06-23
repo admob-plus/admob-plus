@@ -1,4 +1,4 @@
-# Type alias: RequestConfig
+# Type Alias: RequestConfig
 
 > **RequestConfig**: `object`
 
@@ -24,6 +24,6 @@
 
 > `optional` **testDeviceIds**: `string`[]
 
-## Source
+## Defined in
 
 definitions.ts:16

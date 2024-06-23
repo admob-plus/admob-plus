@@ -22,49 +22,11 @@
 
 `MobileAd.constructor`
 
-#### Source
+#### Defined in
 
 index.ts:101
 
 ## Properties
-
-### #created
-
-> `private` **#created**: `boolean` = `false`
-
-#### Inherited from
-
-`MobileAd.#created`
-
-#### Source
-
-index.ts:27
-
-***
-
-### #init
-
-> `private` **#init**: `null` \| `Promise`\<`any`\> = `null`
-
-#### Inherited from
-
-`MobileAd.#init`
-
-#### Source
-
-index.ts:28
-
-***
-
-### #loaded
-
-> `private` **#loaded**: `boolean` = `false`
-
-#### Source
-
-index.ts:99
-
-***
 
 ### id
 
@@ -74,7 +36,7 @@ index.ts:99
 
 `MobileAd.id`
 
-#### Source
+#### Defined in
 
 index.ts:23
 
@@ -88,7 +50,7 @@ index.ts:23
 
 `MobileAd.opts`
 
-#### Source
+#### Defined in
 
 index.ts:25
 
@@ -98,7 +60,7 @@ index.ts:25
 
 > `static` **cls**: `string` = `'BannerAd'`
 
-#### Source
+#### Defined in
 
 index.ts:98
 
@@ -112,7 +74,11 @@ index.ts:98
 
 `string`
 
-#### Source
+#### Inherited from
+
+`MobileAd.adUnitId`
+
+#### Defined in
 
 index.ts:42
 
@@ -130,7 +96,7 @@ index.ts:42
 
 `MobileAd.hide`
 
-#### Source
+#### Defined in
 
 index.ts:122
 
@@ -148,7 +114,7 @@ index.ts:122
 
 `MobileAd.init`
 
-#### Source
+#### Defined in
 
 index.ts:66
 
@@ -166,7 +132,7 @@ index.ts:66
 
 `MobileAd.isLoaded`
 
-#### Source
+#### Defined in
 
 index.ts:108
 
@@ -184,7 +150,7 @@ index.ts:108
 
 `MobileAd.load`
 
-#### Source
+#### Defined in
 
 index.ts:112
 
@@ -202,6 +168,6 @@ index.ts:112
 
 `MobileAd.show`
 
-#### Source
+#### Defined in
 
 index.ts:117

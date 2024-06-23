@@ -6,6 +6,6 @@
 
 > **ready**: `"consent.ready"`
 
-#### Source
+#### Defined in
 
 index.ts:75

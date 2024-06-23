@@ -6,7 +6,7 @@
 
 > **G**: `"G"`
 
-#### Source
+#### Defined in
 
 definitions.ts:4
 
@@ -16,7 +16,7 @@ definitions.ts:4
 
 > **MA**: `"MA"`
 
-#### Source
+#### Defined in
 
 definitions.ts:5
 
@@ -26,7 +26,7 @@ definitions.ts:5
 
 > **PG**: `"PG"`
 
-#### Source
+#### Defined in
 
 definitions.ts:6
 
@@ -36,7 +36,7 @@ definitions.ts:6
 
 > **T**: `"T"`
 
-#### Source
+#### Defined in
 
 definitions.ts:7
 
@@ -46,6 +46,6 @@ definitions.ts:7
 
 > **UNSPECIFIED**: `""`
 
-#### Source
+#### Defined in
 
 definitions.ts:8

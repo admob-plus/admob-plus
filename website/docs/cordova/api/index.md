@@ -41,9 +41,3 @@
 ## Functions
 
 - [execAsync](functions/execAsync.md)
-
-## References
-
-### default
-
-Renames and re-exports [AdMob](classes/AdMob.md)

@@ -1,5 +1,7 @@
 # Class: InterstitialAd
 
+**`Internal`**
+
 ## Extends
 
 - [`MobileAd`](MobileAd.md) \<[`MobileAdOptions`](../type-aliases/MobileAdOptions.md)\>
@@ -22,7 +24,7 @@
 
 [`MobileAd`](MobileAd.md) . [`constructor`](MobileAd.md#constructors)
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/base.ts:23
 
@@ -36,7 +38,7 @@ packages/cordova/src/www/ads/base.ts:23
 
 [`MobileAd`](MobileAd.md) . [`id`](MobileAd.md#id)
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/base.ts:18
 
@@ -50,7 +52,7 @@ packages/cordova/src/www/ads/base.ts:18
 
 [`MobileAd`](MobileAd.md) . [`opts`](MobileAd.md#opts)
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/base.ts:20
 
@@ -58,9 +60,9 @@ packages/cordova/src/www/ads/base.ts:20
 
 ### cls
 
-> `static` `readonly` **cls**: `"InterstitialAd"` = `"InterstitialAd"`
+> `readonly` `static` **cls**: `"InterstitialAd"` = `"InterstitialAd"`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/interstitial.ts:4
 
@@ -74,23 +76,13 @@ packages/cordova/src/www/ads/interstitial.ts:4
 
 `string`
 
-#### Source
+#### Inherited from
+
+[`MobileAd`](MobileAd.md) . [`adUnitId`](MobileAd.md#adunitid)
+
+#### Defined in
 
 packages/cordova/src/www/ads/base.ts:40
-
-***
-
-### allAds
-
-> `get` `static` `private` **allAds**(): `Record`\<`string`, [`MobileAd`](MobileAd.md) \<[`MobileAdOptions`](../type-aliases/MobileAdOptions.md)\>\>
-
-#### Returns
-
-`Record`\<`string`, [`MobileAd`](MobileAd.md) \<[`MobileAdOptions`](../type-aliases/MobileAdOptions.md)\>\>
-
-#### Source
-
-packages/cordova/src/www/ads/base.ts:30
 
 ## Methods
 
@@ -106,7 +98,7 @@ packages/cordova/src/www/ads/base.ts:30
 
 [`MobileAd`](MobileAd.md) . [`hide`](MobileAd.md#hide)
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/base.ts:77
 
@@ -124,7 +116,7 @@ packages/cordova/src/www/ads/base.ts:77
 
 [`MobileAd`](MobileAd.md) . [`init`](MobileAd.md#init)
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/base.ts:82
 
@@ -142,7 +134,7 @@ packages/cordova/src/www/ads/base.ts:82
 
 [`MobileAd`](MobileAd.md) . [`isLoaded`](MobileAd.md#isloaded)
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/interstitial.ts:6
 
@@ -160,7 +152,7 @@ packages/cordova/src/www/ads/interstitial.ts:6
 
 [`MobileAd`](MobileAd.md) . [`load`](MobileAd.md#load)
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/interstitial.ts:10
 
@@ -186,7 +178,7 @@ packages/cordova/src/www/ads/interstitial.ts:10
 
 [`MobileAd`](MobileAd.md) . [`on`](MobileAd.md#on)
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/base.ts:44
 
@@ -204,7 +196,7 @@ packages/cordova/src/www/ads/base.ts:44
 
 [`MobileAd`](MobileAd.md) . [`show`](MobileAd.md#show)
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/interstitial.ts:14
 
@@ -226,6 +218,6 @@ packages/cordova/src/www/ads/interstitial.ts:14
 
 [`MobileAd`](MobileAd.md) . [`getAdById`](MobileAd.md#getadbyid)
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/base.ts:36

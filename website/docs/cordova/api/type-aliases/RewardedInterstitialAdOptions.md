@@ -1,7 +1,7 @@
-# Type alias: RewardedInterstitialAdOptions
+# Type Alias: RewardedInterstitialAdOptions
 
 > **RewardedInterstitialAdOptions**: [`RewardedAdOptions`](../interfaces/RewardedAdOptions.md)
 
-## Source
+## Defined in
 
 packages/cordova/src/www/ads/rewarded-interstitial.ts:4

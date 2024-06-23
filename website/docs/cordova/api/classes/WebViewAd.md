@@ -1,5 +1,7 @@
 # Class: WebViewAd
 
+**`Internal`**
+
 ## Extends
 
 - [`MobileAd`](MobileAd.md) \<[`WebViewAdOptions`](../interfaces/WebViewAdOptions.md)\>
@@ -22,61 +24,11 @@
 
 [`MobileAd`](MobileAd.md) . [`constructor`](MobileAd.md#constructors)
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/webview.ts:25
 
 ## Properties
-
-### \_adsense
-
-> `private` **\_adsense**: `string` = `""`
-
-#### Source
-
-packages/cordova/src/www/ads/webview.ts:21
-
-***
-
-### \_historyCurrentHref
-
-> `private` **\_historyCurrentHref**: `string` = `""`
-
-#### Source
-
-packages/cordova/src/www/ads/webview.ts:23
-
-***
-
-### \_loaded
-
-> `private` **\_loaded**: `boolean` = `false`
-
-#### Source
-
-packages/cordova/src/www/ads/webview.ts:19
-
-***
-
-### \_originalHref
-
-> `private` **\_originalHref**: `string`
-
-#### Source
-
-packages/cordova/src/www/ads/webview.ts:22
-
-***
-
-### \_src
-
-> `private` **\_src**: `string` = `""`
-
-#### Source
-
-packages/cordova/src/www/ads/webview.ts:20
-
-***
 
 ### id
 
@@ -86,7 +38,7 @@ packages/cordova/src/www/ads/webview.ts:20
 
 [`MobileAd`](MobileAd.md) . [`id`](MobileAd.md#id)
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/base.ts:18
 
@@ -100,7 +52,7 @@ packages/cordova/src/www/ads/base.ts:18
 
 [`MobileAd`](MobileAd.md) . [`opts`](MobileAd.md#opts)
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/base.ts:20
 
@@ -108,9 +60,9 @@ packages/cordova/src/www/ads/base.ts:20
 
 ### cls
 
-> `static` `readonly` **cls**: `"WebViewAd"` = `"WebViewAd"`
+> `readonly` `static` **cls**: `"WebViewAd"` = `"WebViewAd"`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/webview.ts:11
 
@@ -124,23 +76,13 @@ packages/cordova/src/www/ads/webview.ts:11
 
 `string`
 
-#### Source
+#### Inherited from
+
+[`MobileAd`](MobileAd.md) . [`adUnitId`](MobileAd.md#adunitid)
+
+#### Defined in
 
 packages/cordova/src/www/ads/base.ts:40
-
-***
-
-### allAds
-
-> `get` `static` `private` **allAds**(): `Record`\<`string`, [`MobileAd`](MobileAd.md) \<[`MobileAdOptions`](../type-aliases/MobileAdOptions.md)\>\>
-
-#### Returns
-
-`Record`\<`string`, [`MobileAd`](MobileAd.md) \<[`MobileAdOptions`](../type-aliases/MobileAdOptions.md)\>\>
-
-#### Source
-
-packages/cordova/src/www/ads/base.ts:30
 
 ## Methods
 
@@ -166,7 +108,7 @@ packages/cordova/src/www/ads/base.ts:30
 
 `boolean`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/webview.ts:76
 
@@ -184,89 +126,9 @@ packages/cordova/src/www/ads/webview.ts:76
 
 [`MobileAd`](MobileAd.md) . [`hide`](MobileAd.md#hide)
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/base.ts:77
-
-***
-
-### historyCurrentHref()
-
-> `private` **historyCurrentHref**(): `string`
-
-#### Returns
-
-`string`
-
-#### Source
-
-packages/cordova/src/www/ads/webview.ts:161
-
-***
-
-### historyOriginalHref()
-
-> `private` **historyOriginalHref**(): `string`
-
-#### Returns
-
-`string`
-
-#### Source
-
-packages/cordova/src/www/ads/webview.ts:157
-
-***
-
-### historyReplaceState()
-
-> `private` **historyReplaceState**(`url`): `void`
-
-#### Parameters
-
-• **url**: `string`
-
-#### Returns
-
-`void`
-
-#### Source
-
-packages/cordova/src/www/ads/webview.ts:136
-
-***
-
-### historyRestoreOriginalHref()
-
-> `private` **historyRestoreOriginalHref**(): `void`
-
-#### Returns
-
-`void`
-
-#### Source
-
-packages/cordova/src/www/ads/webview.ts:165
-
-***
-
-### historySetPage()
-
-> `private` **historySetPage**(`page`, `parameters`): `string`
-
-#### Parameters
-
-• **page**: `string`
-
-• **parameters**= `{}`
-
-#### Returns
-
-`string`
-
-#### Source
-
-packages/cordova/src/www/ads/webview.ts:145
 
 ***
 
@@ -282,7 +144,7 @@ packages/cordova/src/www/ads/webview.ts:145
 
 [`MobileAd`](MobileAd.md) . [`init`](MobileAd.md#init)
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/base.ts:82
 
@@ -300,27 +162,9 @@ packages/cordova/src/www/ads/base.ts:82
 
 [`MobileAd`](MobileAd.md) . [`isLoaded`](MobileAd.md#isloaded)
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/base.ts:61
-
-***
-
-### isNodeScript()
-
-> `private` **isNodeScript**(`node`): `boolean`
-
-#### Parameters
-
-• **node**: `any`
-
-#### Returns
-
-`boolean`
-
-#### Source
-
-packages/cordova/src/www/ads/webview.ts:132
 
 ***
 
@@ -336,45 +180,9 @@ packages/cordova/src/www/ads/webview.ts:132
 
 [`MobileAd`](MobileAd.md) . [`load`](MobileAd.md#load)
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/base.ts:66
-
-***
-
-### nodeScriptClone()
-
-> `private` **nodeScriptClone**(`node`): `HTMLScriptElement`
-
-#### Parameters
-
-• **node**: `any`
-
-#### Returns
-
-`HTMLScriptElement`
-
-#### Source
-
-packages/cordova/src/www/ads/webview.ts:122
-
-***
-
-### nodeScriptReplace()
-
-> `private` **nodeScriptReplace**(`node`): `any`
-
-#### Parameters
-
-• **node**: `any`
-
-#### Returns
-
-`any`
-
-#### Source
-
-packages/cordova/src/www/ads/webview.ts:110
 
 ***
 
@@ -398,7 +206,7 @@ packages/cordova/src/www/ads/webview.ts:110
 
 [`MobileAd`](MobileAd.md) . [`on`](MobileAd.md#on)
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/base.ts:44
 
@@ -416,7 +224,7 @@ packages/cordova/src/www/ads/base.ts:44
 
 [`MobileAd`](MobileAd.md) . [`show`](MobileAd.md#show)
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/webview.ts:169
 
@@ -430,7 +238,7 @@ packages/cordova/src/www/ads/webview.ts:169
 
 `Promise`\<`void`\>
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/webview.ts:13
 
@@ -452,6 +260,6 @@ packages/cordova/src/www/ads/webview.ts:13
 
 [`MobileAd`](MobileAd.md) . [`getAdById`](MobileAd.md#getadbyid)
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/base.ts:36

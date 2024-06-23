@@ -1,5 +1,7 @@
 # Class: MobileAd\<T\>
 
+**`Internal`**
+
 ## Extended by
 
 - [`AppOpenAd`](AppOpenAd.md)
@@ -10,7 +12,7 @@
 - [`RewardedInterstitialAd`](RewardedInterstitialAd.md)
 - [`WebViewAd`](WebViewAd.md)
 
-## Type parameters
+## Type Parameters
 
 • **T** *extends* [`MobileAdOptions`](../type-aliases/MobileAdOptions.md) = [`MobileAdOptions`](../type-aliases/MobileAdOptions.md)
 
@@ -28,27 +30,17 @@
 
 [`MobileAd`](MobileAd.md)\<`T`\>
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/base.ts:23
 
 ## Properties
 
-### \_initPromise
-
-> `private` **\_initPromise**: `undefined` \| `Promise`\<`unknown`\>
-
-#### Source
-
-packages/cordova/src/www/ads/base.ts:21
-
-***
-
 ### id
 
 > `readonly` **id**: `string`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/base.ts:18
 
@@ -58,7 +50,7 @@ packages/cordova/src/www/ads/base.ts:18
 
 > `protected` `readonly` **opts**: `T`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/base.ts:20
 
@@ -72,39 +64,11 @@ packages/cordova/src/www/ads/base.ts:20
 
 `string`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/base.ts:40
 
-***
-
-### allAds
-
-> `get` `static` `private` **allAds**(): `Record`\<`string`, [`MobileAd`](MobileAd.md) \<[`MobileAdOptions`](../type-aliases/MobileAdOptions.md)\>\>
-
-#### Returns
-
-`Record`\<`string`, [`MobileAd`](MobileAd.md) \<[`MobileAdOptions`](../type-aliases/MobileAdOptions.md)\>\>
-
-#### Source
-
-packages/cordova/src/www/ads/base.ts:30
-
 ## Methods
-
-### \_init()
-
-> `private` **\_init**(): `Promise`\<`unknown`\>
-
-#### Returns
-
-`Promise`\<`unknown`\>
-
-#### Source
-
-packages/cordova/src/www/ads/base.ts:87
-
-***
 
 ### hide()
 
@@ -114,7 +78,7 @@ packages/cordova/src/www/ads/base.ts:87
 
 `Promise`\<`unknown`\>
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/base.ts:77
 
@@ -128,7 +92,7 @@ packages/cordova/src/www/ads/base.ts:77
 
 `Promise`\<`unknown`\>
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/base.ts:82
 
@@ -142,7 +106,7 @@ packages/cordova/src/www/ads/base.ts:82
 
 `Promise`\<`boolean`\>
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/base.ts:61
 
@@ -156,7 +120,7 @@ packages/cordova/src/www/ads/base.ts:61
 
 `Promise`\<`void`\>
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/base.ts:66
 
@@ -178,7 +142,7 @@ packages/cordova/src/www/ads/base.ts:66
 
 `void`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/base.ts:44
 
@@ -196,7 +160,7 @@ packages/cordova/src/www/ads/base.ts:44
 
 `Promise`\<`unknown`\>
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/base.ts:72
 
@@ -214,6 +178,6 @@ packages/cordova/src/www/ads/base.ts:72
 
 [`MobileAd`](MobileAd.md) \<[`MobileAdOptions`](../type-aliases/MobileAdOptions.md)\>
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/base.ts:36

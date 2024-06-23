@@ -16,7 +16,7 @@
 
 > `readonly` **AppOpenAd**: *typeof* [`AppOpenAd`](AppOpenAd.md) = `ads.AppOpenAd`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/index.ts:8
 
@@ -26,7 +26,7 @@ packages/cordova/src/www/index.ts:8
 
 > `readonly` **BannerAd**: *typeof* [`BannerAd`](BannerAd.md) = `ads.BannerAd`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/index.ts:9
 
@@ -36,7 +36,7 @@ packages/cordova/src/www/index.ts:9
 
 > `readonly` **Events**: *typeof* [`Events`](../enumerations/Events.md)
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/index.ts:16
 
@@ -46,7 +46,7 @@ packages/cordova/src/www/index.ts:16
 
 > `readonly` **InterstitialAd**: *typeof* [`InterstitialAd`](InterstitialAd.md) = `ads.InterstitialAd`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/index.ts:10
 
@@ -56,7 +56,7 @@ packages/cordova/src/www/index.ts:10
 
 > `readonly` **NativeAd**: *typeof* [`NativeAd`](NativeAd.md) = `ads.NativeAd`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/index.ts:11
 
@@ -66,7 +66,7 @@ packages/cordova/src/www/index.ts:11
 
 > `readonly` **RewardedAd**: *typeof* [`RewardedAd`](RewardedAd.md) = `ads.RewardedAd`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/index.ts:12
 
@@ -76,7 +76,7 @@ packages/cordova/src/www/index.ts:12
 
 > `readonly` **RewardedInterstitialAd**: *typeof* [`RewardedInterstitialAd`](RewardedInterstitialAd.md) = `ads.RewardedInterstitialAd`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/index.ts:13
 
@@ -86,39 +86,11 @@ packages/cordova/src/www/index.ts:13
 
 > `readonly` **WebViewAd**: *typeof* [`WebViewAd`](WebViewAd.md) = `ads.WebViewAd`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/index.ts:14
 
-***
-
-### \_startPromise
-
-> `private` **\_startPromise**: `undefined` \| `Promise`\<`object`\>
-
-#### Source
-
-packages/cordova/src/www/index.ts:18
-
 ## Methods
-
-### \_start()
-
-> `private` **\_start**(): `Promise`\<`object`\>
-
-#### Returns
-
-`Promise`\<`object`\>
-
-##### version
-
-> **version**: `string`
-
-#### Source
-
-packages/cordova/src/www/index.ts:29
-
-***
 
 ### configure()
 
@@ -132,7 +104,7 @@ packages/cordova/src/www/index.ts:29
 
 `Promise`\<`unknown`\>
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/index.ts:20
 
@@ -150,6 +122,6 @@ packages/cordova/src/www/index.ts:20
 
 > **version**: `string`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/index.ts:24

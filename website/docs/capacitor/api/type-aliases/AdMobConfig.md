@@ -1,4 +1,4 @@
-# Type alias: AdMobConfig
+# Type Alias: AdMobConfig
 
 > **AdMobConfig**: `object`
 
@@ -12,6 +12,6 @@
 
 > `optional` **appVolume**: `number`
 
-## Source
+## Defined in
 
 definitions.ts:11

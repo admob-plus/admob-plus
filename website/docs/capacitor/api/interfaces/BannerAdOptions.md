@@ -14,7 +14,7 @@
 
 `MobileAdOptions.adUnitId`
 
-#### Source
+#### Defined in
 
 definitions.ts:31
 
@@ -24,6 +24,6 @@ definitions.ts:31
 
 > `optional` **position**: `Position`
 
-#### Source
+#### Defined in
 
 index.ts:94

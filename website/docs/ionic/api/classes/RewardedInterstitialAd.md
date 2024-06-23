@@ -26,21 +26,11 @@
 
 `IonicNativePlugin.constructor`
 
-#### Source
+#### Defined in
 
 ionic/src/ngx/index.ts:160
 
 ## Properties
-
-### obj
-
-> `private` **obj**: `RewardedInterstitialAd`
-
-#### Source
-
-ionic/src/ngx/index.ts:158
-
-***
 
 ### plugin
 
@@ -50,7 +40,7 @@ ionic/src/ngx/index.ts:158
 
 `IonicNativePlugin.plugin`
 
-#### Source
+#### Defined in
 
 ionic/src/ngx/index.ts:154
 
@@ -64,7 +54,7 @@ ionic/src/ngx/index.ts:154
 
 `IonicNativePlugin.pluginName`
 
-#### Source
+#### Defined in
 
 ionic/src/ngx/index.ts:155
 
@@ -78,7 +68,7 @@ ionic/src/ngx/index.ts:155
 
 `IonicNativePlugin.pluginRef`
 
-#### Source
+#### Defined in
 
 ionic/src/ngx/index.ts:156
 
@@ -92,7 +82,11 @@ ionic/src/ngx/index.ts:156
 
 `string`
 
-#### Source
+#### Implementation of
+
+`Omit.adUnitId`
+
+#### Defined in
 
 ionic/src/ngx/index.ts:166
 
@@ -106,7 +100,11 @@ ionic/src/ngx/index.ts:166
 
 `string`
 
-#### Source
+#### Implementation of
+
+`Omit.id`
+
+#### Defined in
 
 ionic/src/ngx/index.ts:170
 
@@ -124,7 +122,7 @@ ionic/src/ngx/index.ts:170
 
 `Omit.isLoaded`
 
-#### Source
+#### Defined in
 
 ionic/src/ngx/index.ts:174
 
@@ -142,7 +140,7 @@ ionic/src/ngx/index.ts:174
 
 `Omit.load`
 
-#### Source
+#### Defined in
 
 ionic/src/ngx/index.ts:178
 
@@ -168,7 +166,7 @@ ionic/src/ngx/index.ts:178
 
 `Omit.on`
 
-#### Source
+#### Defined in
 
 ionic/src/ngx/index.ts:186
 
@@ -186,6 +184,6 @@ ionic/src/ngx/index.ts:186
 
 `Omit.show`
 
-#### Source
+#### Defined in
 
 ionic/src/ngx/index.ts:182

@@ -10,7 +10,7 @@
 
 [`Consent`](Consent.md)
 
-#### Source
+#### Defined in
 
 index.ts:85
 
@@ -20,7 +20,7 @@ index.ts:85
 
 > `readonly` **ConsentStatus**: *typeof* [`ConsentStatus`](../enumerations/ConsentStatus.md)
 
-#### Source
+#### Defined in
 
 index.ts:79
 
@@ -30,7 +30,7 @@ index.ts:79
 
 > `readonly` **DebugGeography**: *typeof* [`DebugGeography`](../enumerations/DebugGeography.md)
 
-#### Source
+#### Defined in
 
 index.ts:80
 
@@ -40,7 +40,7 @@ index.ts:80
 
 > `readonly` **FormStatus**: *typeof* [`FormStatus`](../enumerations/FormStatus.md)
 
-#### Source
+#### Defined in
 
 index.ts:81
 
@@ -50,7 +50,7 @@ index.ts:81
 
 > `readonly` **PrivacyOptionsRequirementStatus**: *typeof* [`PrivacyOptionsRequirementStatus`](../enumerations/PrivacyOptionsRequirementStatus.md)
 
-#### Source
+#### Defined in
 
 index.ts:82
 
@@ -64,7 +64,7 @@ index.ts:82
 
 `Promise`\<`boolean`\>
 
-#### Source
+#### Defined in
 
 index.ts:103
 
@@ -78,7 +78,7 @@ index.ts:103
 
 `Promise` \<[`ConsentStatus`](../enumerations/ConsentStatus.md)\>
 
-#### Source
+#### Defined in
 
 index.ts:144
 
@@ -92,7 +92,7 @@ index.ts:144
 
 `Promise` \<[`FormStatus`](../enumerations/FormStatus.md)\>
 
-#### Source
+#### Defined in
 
 index.ts:149
 
@@ -106,7 +106,7 @@ index.ts:149
 
 `Promise`\<`unknown`\>
 
-#### Source
+#### Defined in
 
 index.ts:112
 
@@ -120,7 +120,7 @@ index.ts:112
 
 `Promise` \<[`ConsentForm`](ConsentForm.md)\>
 
-#### Source
+#### Defined in
 
 index.ts:158
 
@@ -134,7 +134,7 @@ index.ts:158
 
 `Promise` \<[`PrivacyOptionsRequirementStatus`](../enumerations/PrivacyOptionsRequirementStatus.md)\>
 
-#### Source
+#### Defined in
 
 index.ts:107
 
@@ -146,13 +146,13 @@ index.ts:107
 
 #### Parameters
 
-• **opts**: `RequestInfoUpdateOptions`= `{}`
+• **opts**: `RequestInfoUpdateOptions` = `{}`
 
 #### Returns
 
 `Promise`\<`unknown`\>
 
-#### Source
+#### Defined in
 
 index.ts:154
 
@@ -166,7 +166,7 @@ index.ts:154
 
 `Promise`\<`false` \| [`TrackingAuthorizationStatus`](../enumerations/TrackingAuthorizationStatus.md)\>
 
-#### Source
+#### Defined in
 
 index.ts:132
 
@@ -180,7 +180,7 @@ index.ts:132
 
 `Promise`\<`unknown`\>
 
-#### Source
+#### Defined in
 
 index.ts:163
 
@@ -194,7 +194,7 @@ index.ts:163
 
 `Promise`\<`unknown`\>
 
-#### Source
+#### Defined in
 
 index.ts:116
 
@@ -208,6 +208,6 @@ index.ts:116
 
 `Promise`\<`false` \| [`TrackingAuthorizationStatus`](../enumerations/TrackingAuthorizationStatus.md)\>
 
-#### Source
+#### Defined in
 
 index.ts:120

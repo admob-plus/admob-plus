@@ -6,7 +6,7 @@
 
 > **android**: `"android"`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/common.ts:30
 
@@ -16,6 +16,6 @@ packages/cordova/src/www/common.ts:30
 
 > **ios**: `"ios"`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/common.ts:31

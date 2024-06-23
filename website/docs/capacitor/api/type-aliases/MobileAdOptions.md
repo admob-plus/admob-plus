@@ -1,4 +1,4 @@
-# Type alias: MobileAdOptions
+# Type Alias: MobileAdOptions
 
 > **MobileAdOptions**: `object`
 
@@ -8,6 +8,6 @@
 
 > **adUnitId**: `string`
 
-## Source
+## Defined in
 
 definitions.ts:31

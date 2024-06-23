@@ -6,7 +6,7 @@
 
 > **adCreate**\<`O`\>(`opts`): `Promise`\<`void`\>
 
-#### Type parameters
+#### Type Parameters
 
 • **O** *extends* [`MobileAdOptions`](../type-aliases/MobileAdOptions.md)
 
@@ -18,7 +18,7 @@
 
 `Promise`\<`void`\>
 
-#### Source
+#### Defined in
 
 definitions.ts:38
 
@@ -38,7 +38,7 @@ definitions.ts:38
 
 `Promise`\<`void`\>
 
-#### Source
+#### Defined in
 
 definitions.ts:42
 
@@ -58,7 +58,7 @@ definitions.ts:42
 
 `Promise`\<`boolean`\>
 
-#### Source
+#### Defined in
 
 definitions.ts:39
 
@@ -78,7 +78,7 @@ definitions.ts:39
 
 `Promise`\<`void`\>
 
-#### Source
+#### Defined in
 
 definitions.ts:40
 
@@ -98,7 +98,7 @@ definitions.ts:40
 
 `Promise`\<`void`\>
 
-#### Source
+#### Defined in
 
 definitions.ts:41
 
@@ -118,7 +118,7 @@ definitions.ts:41
 
 `Promise`\<`PluginListenerHandle`\> & `PluginListenerHandle`
 
-#### Source
+#### Defined in
 
 definitions.ts:51
 
@@ -136,7 +136,7 @@ definitions.ts:51
 
 `Promise`\<`void`\>
 
-#### Source
+#### Defined in
 
 definitions.ts:36
 
@@ -154,7 +154,7 @@ definitions.ts:36
 
 `Promise`\<`void`\>
 
-#### Source
+#### Defined in
 
 definitions.ts:35
 
@@ -172,7 +172,7 @@ definitions.ts:35
 
 > **status**: `false` \| [`TrackingAuthorizationStatus`](../enumerations/TrackingAuthorizationStatus.md)
 
-#### Source
+#### Defined in
 
 definitions.ts:47
 
@@ -186,7 +186,7 @@ definitions.ts:47
 
 `Promise`\<`void`\>
 
-#### Source
+#### Defined in
 
 definitions.ts:34
 
@@ -204,6 +204,6 @@ definitions.ts:34
 
 > **status**: `false` \| [`TrackingAuthorizationStatus`](../enumerations/TrackingAuthorizationStatus.md)
 
-#### Source
+#### Defined in
 
 definitions.ts:44

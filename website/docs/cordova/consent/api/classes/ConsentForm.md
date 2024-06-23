@@ -14,7 +14,7 @@
 
 [`ConsentForm`](ConsentForm.md)
 
-#### Source
+#### Defined in
 
 index.ts:52
 
@@ -24,7 +24,7 @@ index.ts:52
 
 > `readonly` **id**: `number`
 
-#### Source
+#### Defined in
 
 index.ts:50
 
@@ -38,6 +38,6 @@ index.ts:50
 
 `Promise`\<`unknown`\>
 
-#### Source
+#### Defined in
 
 index.ts:56

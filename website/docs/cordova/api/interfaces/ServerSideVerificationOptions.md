@@ -6,7 +6,7 @@
 
 > `optional` **customData**: `string`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/rewarded.ts:4
 
@@ -16,6 +16,6 @@ packages/cordova/src/www/ads/rewarded.ts:4
 
 > `optional` **userId**: `string`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/ads/rewarded.ts:5

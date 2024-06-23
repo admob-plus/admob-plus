@@ -6,7 +6,7 @@
 
 > **NotRequired**: `2`
 
-#### Source
+#### Defined in
 
 index.ts:71
 
@@ -16,7 +16,7 @@ index.ts:71
 
 > **Required**: `1`
 
-#### Source
+#### Defined in
 
 index.ts:70
 
@@ -26,6 +26,6 @@ index.ts:70
 
 > **Unknown**: `0`
 
-#### Source
+#### Defined in
 
 index.ts:69

@@ -10,7 +10,7 @@
 
 > `optional` **maxAdContentRating**: `MaxAdContentRating`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/common.ts:46
 
@@ -20,7 +20,7 @@ packages/cordova/src/www/common.ts:46
 
 > `optional` **tagForChildDirectedTreatment**: `null` \| `boolean`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/common.ts:47
 
@@ -30,7 +30,7 @@ packages/cordova/src/www/common.ts:47
 
 > `optional` **tagForUnderAgeOfConsent**: `null` \| `boolean`
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/common.ts:48
 
@@ -40,6 +40,6 @@ packages/cordova/src/www/common.ts:48
 
 > `optional` **testDeviceIds**: `string`[]
 
-#### Source
+#### Defined in
 
 packages/cordova/src/www/common.ts:49
