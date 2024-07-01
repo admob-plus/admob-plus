@@ -36,12 +36,12 @@
     "@types/elementtree": "^0.1.5",
     "@types/fs-extra": "^11.0.4",
     "@types/js-yaml": "^4.0.9",
-    "@types/lodash": "^4.17.5",
-    "@types/node": "^20.14.8",
+    "@types/lodash": "^4.17.6",
+    "@types/node": "^20.14.9",
     "@types/semver": "^7.5.8",
     "@types/update-notifier": "^6.0.8",
     "@types/yargs": "^17.0.32",
-    "tsx": "^4.15.7",
+    "tsx": "^4.16.0",
     "typescript": "~5.4.5"
   },
   "engines": {

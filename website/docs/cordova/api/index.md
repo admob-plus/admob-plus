@@ -1,5 +1,11 @@
 # admob-plus-cordova
 
+## References
+
+### default
+
+Renames and re-exports [AdMob](classes/AdMob.md)
+
 ## Enumerations
 
 - [AdSizeType](enumerations/AdSizeType.md)

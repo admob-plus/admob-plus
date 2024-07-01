@@ -12,7 +12,7 @@
     "jsdom": "^24.1.0",
     "lodash": "^4.17.21",
     "plist": "^3.1.0",
-    "replace-in-file": "^7.2.0",
+    "replace-in-file": "^8.0.1",
     "typescript": "^5.5.2",
     "xml-formatter": "^3.6.2",
     "xml2js": "^0.6.2"
@@ -21,10 +21,10 @@
     "@ionic/cli": "^7.2.0",
     "@types/fs-extra": "^11.0.4",
     "@types/jsdom": "^21.1.7",
-    "@types/lodash": "^4.17.5",
+    "@types/lodash": "^4.17.6",
     "@types/plist": "^3.0.5",
     "@types/xml2js": "^0.4.14",
     "plugman": "^3.0.1",
-    "tsx": "^4.15.7"
+    "tsx": "^4.16.0"
   }
 }
