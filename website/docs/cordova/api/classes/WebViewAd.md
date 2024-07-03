@@ -4,7 +4,7 @@
 
 ## Extends
 
-- [`MobileAd`](MobileAd.md) \<[`WebViewAdOptions`](../interfaces/WebViewAdOptions.md)\>
+- [`MobileAd`](MobileAd.md)\<[`WebViewAdOptions`](../interfaces/WebViewAdOptions.md)\>
 
 ## Constructors
 
@@ -22,7 +22,7 @@
 
 #### Overrides
 
-[`MobileAd`](MobileAd.md) . [`constructor`](MobileAd.md#constructors)
+[`MobileAd`](MobileAd.md).[`constructor`](MobileAd.md#constructors)
 
 #### Defined in
 
@@ -36,7 +36,7 @@ packages/cordova/src/www/ads/webview.ts:25
 
 #### Inherited from
 
-[`MobileAd`](MobileAd.md) . [`id`](MobileAd.md#id)
+[`MobileAd`](MobileAd.md).[`id`](MobileAd.md#id)
 
 #### Defined in
 
@@ -50,7 +50,7 @@ packages/cordova/src/www/ads/base.ts:18
 
 #### Inherited from
 
-[`MobileAd`](MobileAd.md) . [`opts`](MobileAd.md#opts)
+[`MobileAd`](MobileAd.md).[`opts`](MobileAd.md#opts)
 
 #### Defined in
 
@@ -78,7 +78,7 @@ packages/cordova/src/www/ads/webview.ts:11
 
 #### Inherited from
 
-[`MobileAd`](MobileAd.md) . [`adUnitId`](MobileAd.md#adunitid)
+[`MobileAd`](MobileAd.md).[`adUnitId`](MobileAd.md#adunitid)
 
 #### Defined in
 
@@ -124,7 +124,7 @@ packages/cordova/src/www/ads/webview.ts:76
 
 #### Inherited from
 
-[`MobileAd`](MobileAd.md) . [`hide`](MobileAd.md#hide)
+[`MobileAd`](MobileAd.md).[`hide`](MobileAd.md#hide)
 
 #### Defined in
 
@@ -142,7 +142,7 @@ packages/cordova/src/www/ads/base.ts:77
 
 #### Inherited from
 
-[`MobileAd`](MobileAd.md) . [`init`](MobileAd.md#init)
+[`MobileAd`](MobileAd.md).[`init`](MobileAd.md#init)
 
 #### Defined in
 
@@ -160,7 +160,7 @@ packages/cordova/src/www/ads/base.ts:82
 
 #### Inherited from
 
-[`MobileAd`](MobileAd.md) . [`isLoaded`](MobileAd.md#isloaded)
+[`MobileAd`](MobileAd.md).[`isLoaded`](MobileAd.md#isloaded)
 
 #### Defined in
 
@@ -178,7 +178,7 @@ packages/cordova/src/www/ads/base.ts:61
 
 #### Inherited from
 
-[`MobileAd`](MobileAd.md) . [`load`](MobileAd.md#load)
+[`MobileAd`](MobileAd.md).[`load`](MobileAd.md#load)
 
 #### Defined in
 
@@ -204,7 +204,7 @@ packages/cordova/src/www/ads/base.ts:66
 
 #### Inherited from
 
-[`MobileAd`](MobileAd.md) . [`on`](MobileAd.md#on)
+[`MobileAd`](MobileAd.md).[`on`](MobileAd.md#on)
 
 #### Defined in
 
@@ -222,7 +222,7 @@ packages/cordova/src/www/ads/base.ts:44
 
 #### Overrides
 
-[`MobileAd`](MobileAd.md) . [`show`](MobileAd.md#show)
+[`MobileAd`](MobileAd.md).[`show`](MobileAd.md#show)
 
 #### Defined in
 
@@ -246,7 +246,7 @@ packages/cordova/src/www/ads/webview.ts:13
 
 ### getAdById()
 
-> `static` **getAdById**(`id`): [`MobileAd`](MobileAd.md) \<[`MobileAdOptions`](../type-aliases/MobileAdOptions.md)\>
+> `static` **getAdById**(`id`): [`MobileAd`](MobileAd.md)\<[`MobileAdOptions`](../type-aliases/MobileAdOptions.md)\>
 
 #### Parameters
 
@@ -254,11 +254,11 @@ packages/cordova/src/www/ads/webview.ts:13
 
 #### Returns
 
-[`MobileAd`](MobileAd.md) \<[`MobileAdOptions`](../type-aliases/MobileAdOptions.md)\>
+[`MobileAd`](MobileAd.md)\<[`MobileAdOptions`](../type-aliases/MobileAdOptions.md)\>
 
 #### Inherited from
 
-[`MobileAd`](MobileAd.md) . [`getAdById`](MobileAd.md#getadbyid)
+[`MobileAd`](MobileAd.md).[`getAdById`](MobileAd.md#getadbyid)
 
 #### Defined in
 

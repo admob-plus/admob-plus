@@ -32,7 +32,7 @@ packages/cordova/src/www/common.ts:54
 
 #### Inherited from
 
-[`RequestConfig`](RequestConfig.md) . [`maxAdContentRating`](RequestConfig.md#maxadcontentrating)
+[`RequestConfig`](RequestConfig.md).[`maxAdContentRating`](RequestConfig.md#maxadcontentrating)
 
 #### Defined in
 
@@ -70,7 +70,7 @@ packages/cordova/src/www/common.ts:56
 
 #### Inherited from
 
-[`RequestConfig`](RequestConfig.md) . [`tagForChildDirectedTreatment`](RequestConfig.md#tagforchilddirectedtreatment)
+[`RequestConfig`](RequestConfig.md).[`tagForChildDirectedTreatment`](RequestConfig.md#tagforchilddirectedtreatment)
 
 #### Defined in
 
@@ -84,7 +84,7 @@ packages/cordova/src/www/common.ts:47
 
 #### Inherited from
 
-[`RequestConfig`](RequestConfig.md) . [`tagForUnderAgeOfConsent`](RequestConfig.md#tagforunderageofconsent)
+[`RequestConfig`](RequestConfig.md).[`tagForUnderAgeOfConsent`](RequestConfig.md#tagforunderageofconsent)
 
 #### Defined in
 
@@ -98,7 +98,7 @@ packages/cordova/src/www/common.ts:48
 
 #### Inherited from
 
-[`RequestConfig`](RequestConfig.md) . [`testDeviceIds`](RequestConfig.md#testdeviceids)
+[`RequestConfig`](RequestConfig.md).[`testDeviceIds`](RequestConfig.md#testdeviceids)
 
 #### Defined in
 

@@ -41,7 +41,7 @@
     "@types/semver": "^7.5.8",
     "@types/update-notifier": "^6.0.8",
     "@types/yargs": "^17.0.32",
-    "tsx": "^4.16.0",
+    "tsx": "^4.16.2",
     "typescript": "~5.4.5"
   },
   "engines": {

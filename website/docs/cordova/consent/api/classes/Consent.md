@@ -72,11 +72,11 @@ index.ts:103
 
 ### getConsentStatus()
 
-> **getConsentStatus**(): `Promise` \<[`ConsentStatus`](../enumerations/ConsentStatus.md)\>
+> **getConsentStatus**(): `Promise`\<[`ConsentStatus`](../enumerations/ConsentStatus.md)\>
 
 #### Returns
 
-`Promise` \<[`ConsentStatus`](../enumerations/ConsentStatus.md)\>
+`Promise`\<[`ConsentStatus`](../enumerations/ConsentStatus.md)\>
 
 #### Defined in
 
@@ -86,11 +86,11 @@ index.ts:144
 
 ### getFormStatus()
 
-> **getFormStatus**(): `Promise` \<[`FormStatus`](../enumerations/FormStatus.md)\>
+> **getFormStatus**(): `Promise`\<[`FormStatus`](../enumerations/FormStatus.md)\>
 
 #### Returns
 
-`Promise` \<[`FormStatus`](../enumerations/FormStatus.md)\>
+`Promise`\<[`FormStatus`](../enumerations/FormStatus.md)\>
 
 #### Defined in
 
@@ -114,11 +114,11 @@ index.ts:112
 
 ### loadForm()
 
-> **loadForm**(): `Promise` \<[`ConsentForm`](ConsentForm.md)\>
+> **loadForm**(): `Promise`\<[`ConsentForm`](ConsentForm.md)\>
 
 #### Returns
 
-`Promise` \<[`ConsentForm`](ConsentForm.md)\>
+`Promise`\<[`ConsentForm`](ConsentForm.md)\>
 
 #### Defined in
 
@@ -128,11 +128,11 @@ index.ts:158
 
 ### privacyOptionsRequirementStatus()
 
-> **privacyOptionsRequirementStatus**(): `Promise` \<[`PrivacyOptionsRequirementStatus`](../enumerations/PrivacyOptionsRequirementStatus.md)\>
+> **privacyOptionsRequirementStatus**(): `Promise`\<[`PrivacyOptionsRequirementStatus`](../enumerations/PrivacyOptionsRequirementStatus.md)\>
 
 #### Returns
 
-`Promise` \<[`PrivacyOptionsRequirementStatus`](../enumerations/PrivacyOptionsRequirementStatus.md)\>
+`Promise`\<[`PrivacyOptionsRequirementStatus`](../enumerations/PrivacyOptionsRequirementStatus.md)\>
 
 #### Defined in
 

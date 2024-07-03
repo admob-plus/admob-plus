@@ -12,8 +12,8 @@
     "jsdom": "^24.1.0",
     "lodash": "^4.17.21",
     "plist": "^3.1.0",
-    "replace-in-file": "^8.0.1",
-    "typescript": "^5.5.2",
+    "replace-in-file": "^8.1.0",
+    "typescript": "^5.5.3",
     "xml-formatter": "^3.6.2",
     "xml2js": "^0.6.2"
   },
@@ -25,6 +25,6 @@
     "@types/plist": "^3.0.5",
     "@types/xml2js": "^0.4.14",
     "plugman": "^3.0.1",
-    "tsx": "^4.16.0"
+    "tsx": "^4.16.2"
   }
 }
