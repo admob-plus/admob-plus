@@ -6,17 +6,17 @@
   "types": "./esm/index.d.ts",
   "module": "./esm/index.js",
   "scripts": {
-    "prepare": "nx build",
+    "prepare": "turbo run build",
     "version": "cordova-plus plugin version",
     "build": "cordova-plus plugin build --input=./src/www/consent.ts --lib --esm",
     "test": "cordova-plus plugin test"
   },
   "devDependencies": {
     "@types/cordova": "^11.0.3",
-    "@types/node": "^20.14.9",
+    "@types/node": "^22.8.7",
     "cordova": "^12.0.0",
     "cordova-plus": "^0.9.4",
-    "tslib": "^2.6.3"
+    "tslib": "^2.8.1"
   },
   "author": "Ratson",
   "license": "MIT",

@@ -9,7 +9,7 @@
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "postinstall": "tsx scripts/postinstall",
-    "test-android": "nx build && cordova prepare && cd platforms/android && ./gradlew check"
+    "test-android": "turbo run build && cordova prepare && cd platforms/android && ./gradlew check"
   },
   "dependencies": {
     "@mantine/code-highlight": "^7.11.1",

@@ -1,0 +1,51 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "ui": "tui",
+  "tasks": {
+    "//#clean:root": {},
+    "//#lint:gts": {},
+    "//#test:vitest": {},
+    "build": {
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        ".env*"
+      ],
+      "outputs": [
+        "build/**",
+        "dist/**",
+        "lib/**",
+        "esm/**",
+        "www/**",
+        ".next/**",
+        "!.next/cache/**"
+      ]
+    },
+    "clean": {
+      "cache": false,
+      "dependsOn": [
+        "//#clean:root"
+      ]
+    },
+    "gen": {
+      "outputs": [
+        "lib/**"
+      ],
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "lint": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "test": {
+      "dependsOn": [
+        "//#test:vitest"
+      ]
+    }
+  }
+}

@@ -35,7 +35,8 @@
     "verify": "npm run verify:ios && npm run verify:android && npm run verify:web",
     "verify:ios": "cd ios && pod install && xcodebuild -workspace Plugin.xcworkspace -scheme Plugin && cd ..",
     "verify:android": "cd android && ./gradlew clean build test && cd ..",
-    "verify:web": "nx build",
+    "verify:web": "turbo run build",
+    "build": "tsc && rollup -c rollup.config.js",
     "lint": "npm run eslint && npm run prettier -- --check && yarn swiftlint -- lint",
     "fmt": "npm run eslint -- --fix && npm run prettier -- --write && npm run swiftlint -- autocorrect --format",
     "eslint": "eslint . --ext ts",
@@ -44,7 +45,7 @@
     "docgen": "docgen --api AdMobPlusPlugin --output-readme README.md --output-json dist/docs.json",
     "clean": "del dist",
     "watch": "tsc --watch",
-    "prepublishOnly": "nx build",
+    "prepublishOnly": "turbo run build",
     "test": "tsc --noEmit"
   },
   "devDependencies": {

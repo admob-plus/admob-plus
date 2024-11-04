@@ -8,8 +8,9 @@
     "gen": "./lib/gen/index.js"
   },
   "scripts": {
-    "prepack": "nx build",
-    "build": "tsc -b"
+    "prepack": "turbo run build",
+    "build": "tsc -b",
+    "gen": "node lib/gen"
   },
   "dependencies": {
     "@admob-plus-internal/tsconfig": "workspace:*",

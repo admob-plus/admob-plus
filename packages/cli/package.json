@@ -59,7 +59,8 @@
   "funding": "https://admob-plus.github.io/funding",
   "main": "lib/index.js",
   "scripts": {
-    "prepublishOnly": "nx build",
+    "prepublishOnly": "turbo run build",
+    "build": "tsc -b",
     "test": "tsc --noEmit"
   },
   "types": "lib/index.d.ts"

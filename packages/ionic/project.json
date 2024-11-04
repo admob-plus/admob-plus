@@ -1,5 +1,0 @@
-{
-  "name": "@admob-plus/ionic",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "targets": {}
-}

@@ -6,7 +6,8 @@
   "module": "esm/index.js",
   "types": "esm/index.d.ts",
   "scripts": {
-    "prepublishOnly": "nx build",
+    "prepublishOnly": "turbo run build",
+    "build": "cordova-plus plugin build --input=./src/www/admob.ts --lib --esm",
     "clean": "del esm lib www",
     "version": "cordova-plus plugin version",
     "test": "cordova-plus plugin test"

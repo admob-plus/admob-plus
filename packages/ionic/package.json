@@ -6,7 +6,7 @@
   "module": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "prepublishOnly": "nx build",
+    "prepublishOnly": "turbo run build",
     "build": "tsx scripts/build.ts",
     "test": "tsc --noEmit"
   },

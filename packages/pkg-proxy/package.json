@@ -27,7 +27,8 @@
   "repository": "admob-plus/admob-plus",
   "main": "lib/index.js",
   "scripts": {
-    "prepublishOnly": "nx build",
+    "prepublishOnly": "turbo run build",
+    "build": "tsc -b",
     "test": "tsc --noEmit"
   },
   "types": "lib/index.d.ts"

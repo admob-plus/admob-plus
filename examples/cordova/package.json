@@ -3,6 +3,10 @@
   "name": "example.admob.basic",
   "displayName": "AdmobBasicExample",
   "version": "0.16.15",
+  "scripts": {
+    "test-android": "cordova prepare android --verbose",
+    "test-ios": "cordova prepare ios --verbose"
+  },
   "devDependencies": {
     "admob-plus-cordova": "../../packages/cordova",
     "admob-plus-cordova-native": "../../packages/cordova-native",

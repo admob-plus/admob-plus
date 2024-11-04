@@ -6,7 +6,7 @@
   "types": "esm/index.d.ts",
   "module": "esm/index.js",
   "scripts": {
-    "prepublishOnly": "nx build",
+    "prepublishOnly": "turbo run build",
     "version": "cordova-plus plugin version",
     "build": "cordova-plus plugin build --lib --esm"
   },
