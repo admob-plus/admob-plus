@@ -1,4 +1,4 @@
-import {Consent} from '.';
+import { Consent } from ".";
 
 const consent = new Consent();
 

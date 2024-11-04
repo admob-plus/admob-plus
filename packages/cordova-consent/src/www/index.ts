@@ -1,19 +1,19 @@
-const CordovaService = 'Consent';
+const CordovaService = "Consent";
 
 type CordovaAction =
-  | 'getConsentStatus'
-  | 'getFormStatus'
-  | 'loadForm'
-  | 'ready'
-  | 'requestInfoUpdate'
-  | 'requestTrackingAuthorization'
-  | 'reset'
-  | 'showForm'
-  | 'trackingAuthorizationStatus'
-  | 'canRequestAds'
-  | 'privacyOptionsRequirementStatus'
-  | 'loadAndShowIfRequired'
-  | 'showPrivacyOptionsForm';
+  | "getConsentStatus"
+  | "getFormStatus"
+  | "loadForm"
+  | "ready"
+  | "requestInfoUpdate"
+  | "requestTrackingAuthorization"
+  | "reset"
+  | "showForm"
+  | "trackingAuthorizationStatus"
+  | "canRequestAds"
+  | "privacyOptionsRequirementStatus"
+  | "loadAndShowIfRequired"
+  | "showPrivacyOptionsForm";
 
 function execAsync<T>(action: CordovaAction, args?: unknown[]) {
   return new Promise<T>((resolve, reject) => {
@@ -25,6 +25,8 @@ export enum DebugGeography {
   Disabled = 0,
   EEA = 1,
   NotEEA = 2,
+  RegulatedUsState = 3,
+  Other = 4,
 }
 
 type RequestInfoUpdateOptions = {
@@ -54,7 +56,7 @@ export class ConsentForm {
   }
 
   public show() {
-    return execAsync('showForm', [{id: this.id}]);
+    return execAsync("showForm", [{ id: this.id }]);
   }
 }
 
@@ -72,7 +74,7 @@ export enum PrivacyOptionsRequirementStatus {
 }
 
 export enum Events {
-  ready = 'consent.ready',
+  ready = "consent.ready",
 }
 
 export class Consent {
@@ -84,44 +86,44 @@ export class Consent {
 
   constructor() {
     document.addEventListener(
-      'deviceready',
+      "deviceready",
       () => {
-        const action: CordovaAction = 'ready';
+        const action: CordovaAction = "ready";
         cordova.exec(
-          event => {
+          (event) => {
             cordova.fireDocumentEvent(event.type, event.data);
           },
           console.error,
           CordovaService,
-          action
+          action,
         );
       },
-      false
+      false,
     );
   }
 
   public async canRequestAds() {
-    return await execAsync<boolean>('canRequestAds');
+    return await execAsync<boolean>("canRequestAds");
   }
 
   public async privacyOptionsRequirementStatus(): Promise<PrivacyOptionsRequirementStatus> {
-    const n = await execAsync<number>('privacyOptionsRequirementStatus');
+    const n = await execAsync<number>("privacyOptionsRequirementStatus");
     return PrivacyOptionsRequirementStatus[PrivacyOptionsRequirementStatus[n]];
   }
 
   public loadAndShowIfRequired() {
-    return execAsync('loadAndShowIfRequired');
+    return execAsync("loadAndShowIfRequired");
   }
 
   public showPrivacyOptionsForm() {
-    return execAsync('showPrivacyOptionsForm');
+    return execAsync("showPrivacyOptionsForm");
   }
 
   public async trackingAuthorizationStatus(): Promise<
     TrackingAuthorizationStatus | false
   > {
-    if (cordova.platformId === 'ios') {
-      const n = await execAsync<number | false>('trackingAuthorizationStatus');
+    if (cordova.platformId === "ios") {
+      const n = await execAsync<number | false>("trackingAuthorizationStatus");
       if (n !== false) {
         return TrackingAuthorizationStatus[TrackingAuthorizationStatus[n]];
       }
@@ -132,8 +134,8 @@ export class Consent {
   public async requestTrackingAuthorization(): Promise<
     TrackingAuthorizationStatus | false
   > {
-    if (cordova.platformId === 'ios') {
-      const n = await execAsync<number | false>('requestTrackingAuthorization');
+    if (cordova.platformId === "ios") {
+      const n = await execAsync<number | false>("requestTrackingAuthorization");
       if (n !== false) {
         return TrackingAuthorizationStatus[TrackingAuthorizationStatus[n]];
       }
@@ -142,26 +144,26 @@ export class Consent {
   }
 
   public async getConsentStatus(): Promise<ConsentStatus> {
-    const n = await execAsync<number>('getConsentStatus');
+    const n = await execAsync<number>("getConsentStatus");
     return ConsentStatus[ConsentStatus[n]];
   }
 
   public async getFormStatus(): Promise<FormStatus> {
-    const n = await execAsync<number>('getFormStatus');
+    const n = await execAsync<number>("getFormStatus");
     return FormStatus[FormStatus[n]];
   }
 
   public requestInfoUpdate(opts: RequestInfoUpdateOptions = {}) {
-    return execAsync('requestInfoUpdate', [opts]);
+    return execAsync("requestInfoUpdate", [opts]);
   }
 
   public async loadForm() {
-    const id = await execAsync<number>('loadForm');
+    const id = await execAsync<number>("loadForm");
     return new ConsentForm(id);
   }
 
   public reset() {
-    return execAsync('reset');
+    return execAsync("reset");
   }
 }
 
