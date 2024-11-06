@@ -23,7 +23,7 @@
   "devDependencies": {
     "@admob-plus-internal/cli": "workspace:*",
     "@admob-plus-internal/tsconfig": "workspace:*",
-    "@biomejs/biome": "1.8.3",
+    "@biomejs/biome": "1.9.4",
     "@commitlint/cli": "19.5.0",
     "@commitlint/config-conventional": "19.5.0",
     "@commitlint/prompt-cli": "19.5.0",
@@ -67,7 +67,7 @@
     ]
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "biome check --apply --no-errors-on-unmatched",
+    "*.{js,jsx,ts,tsx}": "biome check --write --no-errors-on-unmatched",
     "*.md": "remark --no-stdout",
     "*.swift": "node-swiftlint lint --strict --path",
     "examples/*/package.json": "prettier --write",
