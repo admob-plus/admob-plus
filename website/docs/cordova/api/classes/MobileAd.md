@@ -58,9 +58,11 @@ packages/cordova/src/www/ads/base.ts:20
 
 ### adUnitId
 
-> `get` **adUnitId**(): `string`
+#### Get Signature
 
-#### Returns
+> **get** **adUnitId**(): `string`
+
+##### Returns
 
 `string`
 

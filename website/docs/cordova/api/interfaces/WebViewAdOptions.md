@@ -8,6 +8,16 @@
 
 ## Properties
 
+### adsense
+
+> **adsense**: `string`
+
+#### Defined in
+
+packages/cordova/src/www/ads/webview.ts:6
+
+***
+
 ### adUnitId
 
 > **adUnitId**: `string`
@@ -19,16 +29,6 @@
 #### Defined in
 
 packages/cordova/src/www/ads/base.ts:6
-
-***
-
-### adsense
-
-> **adsense**: `string`
-
-#### Defined in
-
-packages/cordova/src/www/ads/webview.ts:6
 
 ***
 

@@ -70,9 +70,11 @@ packages/cordova/src/www/ads/rewarded.ts:13
 
 ### adUnitId
 
-> `get` **adUnitId**(): `string`
+#### Get Signature
 
-#### Returns
+> **get** **adUnitId**(): `string`
+
+##### Returns
 
 `string`
 

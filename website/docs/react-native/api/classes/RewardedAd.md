@@ -68,9 +68,11 @@ index.ts:111
 
 ### adUnitId
 
-> `get` **adUnitId**(): `string`
+#### Get Signature
 
-#### Returns
+> **get** **adUnitId**(): `string`
+
+##### Returns
 
 `string`
 

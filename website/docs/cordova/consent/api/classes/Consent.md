@@ -12,7 +12,7 @@
 
 #### Defined in
 
-index.ts:85
+index.ts:87
 
 ## Properties
 
@@ -22,7 +22,7 @@ index.ts:85
 
 #### Defined in
 
-index.ts:79
+index.ts:81
 
 ***
 
@@ -32,7 +32,7 @@ index.ts:79
 
 #### Defined in
 
-index.ts:80
+index.ts:82
 
 ***
 
@@ -42,7 +42,7 @@ index.ts:80
 
 #### Defined in
 
-index.ts:81
+index.ts:83
 
 ***
 
@@ -52,7 +52,7 @@ index.ts:81
 
 #### Defined in
 
-index.ts:82
+index.ts:84
 
 ## Methods
 
@@ -66,7 +66,7 @@ index.ts:82
 
 #### Defined in
 
-index.ts:103
+index.ts:105
 
 ***
 
@@ -80,7 +80,7 @@ index.ts:103
 
 #### Defined in
 
-index.ts:144
+index.ts:146
 
 ***
 
@@ -94,7 +94,7 @@ index.ts:144
 
 #### Defined in
 
-index.ts:149
+index.ts:151
 
 ***
 
@@ -108,7 +108,7 @@ index.ts:149
 
 #### Defined in
 
-index.ts:112
+index.ts:114
 
 ***
 
@@ -122,7 +122,7 @@ index.ts:112
 
 #### Defined in
 
-index.ts:158
+index.ts:160
 
 ***
 
@@ -136,7 +136,7 @@ index.ts:158
 
 #### Defined in
 
-index.ts:107
+index.ts:109
 
 ***
 
@@ -154,7 +154,7 @@ index.ts:107
 
 #### Defined in
 
-index.ts:154
+index.ts:156
 
 ***
 
@@ -168,7 +168,7 @@ index.ts:154
 
 #### Defined in
 
-index.ts:132
+index.ts:134
 
 ***
 
@@ -182,7 +182,7 @@ index.ts:132
 
 #### Defined in
 
-index.ts:163
+index.ts:165
 
 ***
 
@@ -196,7 +196,7 @@ index.ts:163
 
 #### Defined in
 
-index.ts:116
+index.ts:118
 
 ***
 
@@ -210,4 +210,4 @@ index.ts:116
 
 #### Defined in
 
-index.ts:120
+index.ts:122

@@ -29,3 +29,23 @@ index.ts:26
 #### Defined in
 
 index.ts:27
+
+***
+
+### Other
+
+> **Other**: `4`
+
+#### Defined in
+
+index.ts:29
+
+***
+
+### RegulatedUsState
+
+> **RegulatedUsState**: `3`
+
+#### Defined in
+
+index.ts:28

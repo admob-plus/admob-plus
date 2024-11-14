@@ -70,9 +70,11 @@ packages/cordova/src/www/ads/banner.ts:63
 
 ### adUnitId
 
-> `get` **adUnitId**(): `string`
+#### Get Signature
 
-#### Returns
+> **get** **adUnitId**(): `string`
+
+##### Returns
 
 `string`
 

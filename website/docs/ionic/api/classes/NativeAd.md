@@ -76,9 +76,11 @@ ionic/src/ngx/index.ts:197
 
 ### adUnitId
 
-> `get` **adUnitId**(): `string`
+#### Get Signature
 
-#### Returns
+> **get** **adUnitId**(): `string`
+
+##### Returns
 
 `string`
 
@@ -94,9 +96,11 @@ ionic/src/ngx/index.ts:207
 
 ### id
 
-> `get` **id**(): `string`
+#### Get Signature
 
-#### Returns
+> **get** **id**(): `string`
+
+##### Returns
 
 `string`
 

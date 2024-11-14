@@ -24,6 +24,26 @@ definitions.ts:38
 
 ***
 
+### addListener()
+
+> **addListener**(`eventName`, `listenerFunc`): `Promise`\<`PluginListenerHandle`\> & `PluginListenerHandle`
+
+#### Parameters
+
+• **eventName**: `string`
+
+• **listenerFunc**
+
+#### Returns
+
+`Promise`\<`PluginListenerHandle`\> & `PluginListenerHandle`
+
+#### Defined in
+
+definitions.ts:51
+
+***
+
 ### adHide()
 
 > **adHide**(`opts`): `Promise`\<`void`\>
@@ -101,26 +121,6 @@ definitions.ts:40
 #### Defined in
 
 definitions.ts:41
-
-***
-
-### addListener()
-
-> **addListener**(`eventName`, `listenerFunc`): `Promise`\<`PluginListenerHandle`\> & `PluginListenerHandle`
-
-#### Parameters
-
-• **eventName**: `string`
-
-• **listenerFunc**
-
-#### Returns
-
-`Promise`\<`PluginListenerHandle`\> & `PluginListenerHandle`
-
-#### Defined in
-
-definitions.ts:51
 
 ***
 

@@ -8,7 +8,7 @@
 
 #### Defined in
 
-index.ts:38
+index.ts:40
 
 ***
 
@@ -18,7 +18,7 @@ index.ts:38
 
 #### Defined in
 
-index.ts:39
+index.ts:41
 
 ***
 
@@ -28,4 +28,4 @@ index.ts:39
 
 #### Defined in
 
-index.ts:37
+index.ts:39

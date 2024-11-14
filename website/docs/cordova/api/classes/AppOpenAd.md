@@ -70,9 +70,11 @@ packages/cordova/src/www/ads/app-open.ts:4
 
 ### adUnitId
 
-> `get` **adUnitId**(): `string`
+#### Get Signature
 
-#### Returns
+> **get** **adUnitId**(): `string`
+
+##### Returns
 
 `string`
 

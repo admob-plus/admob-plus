@@ -16,7 +16,7 @@
 
 #### Defined in
 
-index.ts:52
+index.ts:54
 
 ## Properties
 
@@ -26,7 +26,7 @@ index.ts:52
 
 #### Defined in
 
-index.ts:50
+index.ts:52
 
 ## Methods
 
@@ -40,4 +40,4 @@ index.ts:50
 
 #### Defined in
 
-index.ts:56
+index.ts:58
