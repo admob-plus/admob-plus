@@ -6,25 +6,25 @@
     "gen": "tsx gen/index.ts"
   },
   "dependencies": {
-    "@pnpm/find-workspace-dir": "^7.0.1",
+    "@pnpm/find-workspace-dir": "^7.0.2",
     "cordova-common": "^5.0.0",
     "fs-extra": "^11.2.0",
-    "jsdom": "^24.1.0",
+    "happy-dom": "^15.11.6",
     "lodash": "^4.17.21",
     "plist": "^3.1.0",
-    "replace-in-file": "^8.1.0",
-    "typescript": "^5.5.3",
-    "xml-formatter": "^3.6.2",
+    "replace-in-file": "^8.2.0",
+    "typescript": "^5.6.3",
+    "xml-formatter": "^3.6.3",
     "xml2js": "^0.6.2"
   },
   "devDependencies": {
     "@ionic/cli": "^7.2.0",
     "@types/fs-extra": "^11.0.4",
     "@types/jsdom": "^21.1.7",
-    "@types/lodash": "^4.17.6",
+    "@types/lodash": "^4.17.13",
     "@types/plist": "^3.0.5",
     "@types/xml2js": "^0.4.14",
     "plugman": "^3.0.1",
-    "tsx": "^4.16.2"
+    "tsx": "^4.19.2"
   }
 }

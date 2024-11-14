@@ -1,6 +1,5 @@
 import path from "node:path";
 import * as fse from "fs-extra";
-import { JSDOM } from "jsdom";
 import xmlFormat from "xml-formatter";
 import xml2js from "xml2js";
 import { Events } from "../../packages/cordova/src/www/common";

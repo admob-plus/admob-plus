@@ -1,13 +1,14 @@
 import path from "node:path";
 import { findWorkspaceDir } from "@pnpm/find-workspace-dir";
-import { JSDOM } from "jsdom";
+import { Window } from "happy-dom";
 
 async function fetchSKAdNetworkItems() {
-  const dom = await JSDOM.fromURL(
-    "https://developers.google.com/admob/ios/quick-start",
-  );
-  const elm = dom.window.document.querySelector(
-    '#complete-snippet + pre.prettyprint[translate="no"][dir="ltr"]',
+  const url = "https://developers.google.com/admob/ios/quick-start";
+  const res = await fetch(url);
+  const { document } = new Window({ url });
+  document.write(await res.text());
+  const elm = document.querySelector(
+    '#complete-snippet + div + devsite-code > pre.devsite-click-to-copy[translate="no"][dir="ltr"]',
   );
   return elm?.textContent?.replace(/^[\s\S]+<key>SKAdNetworkItems<\/key>/, "");
 }

@@ -1,6 +1,6 @@
+/// <reference types="cordova-plus" />
 import assert from "node:assert/strict";
 import path from "node:path";
-/// <reference types="cordova-plus" />
 import { PluginInfo } from "cordova-common";
 import { replaceInFile } from "replace-in-file";
 import type Context from "./context";
