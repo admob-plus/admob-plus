@@ -22,11 +22,11 @@
     "kleur": "^4.1.5",
     "listr2": "6.6.0",
     "lodash": "^4.17.21",
-    "ora": "^8.0.1",
+    "ora": "^8.1.1",
     "pkg-proxy": "workspace:*",
-    "semver": "^7.6.2",
-    "tslib": "^2.6.3",
-    "update-notifier": "^7.0.0",
+    "semver": "^7.6.3",
+    "tslib": "^2.8.1",
+    "update-notifier": "^7.3.1",
     "yargs": "^17.7.2"
   },
   "devDependencies": {
@@ -36,13 +36,13 @@
     "@types/elementtree": "^0.1.5",
     "@types/fs-extra": "^11.0.4",
     "@types/js-yaml": "^4.0.9",
-    "@types/lodash": "^4.17.6",
-    "@types/node": "^20.14.9",
+    "@types/lodash": "^4.17.13",
+    "@types/node": "^22.9.0",
     "@types/semver": "^7.5.8",
     "@types/update-notifier": "^6.0.8",
-    "@types/yargs": "^17.0.32",
-    "tsx": "^4.16.2",
-    "typescript": "~5.4.5"
+    "@types/yargs": "^17.0.33",
+    "tsx": "^4.19.2",
+    "typescript": "~5.6.3"
   },
   "engines": {
     "node": ">=18.0.0"
