@@ -1,7 +1,7 @@
 {
   "name": "admob-plus",
   "description": "AdMob Plus CLI",
-  "version": "2.0.0-alpha.17",
+  "version": "2.0.0-alpha.18",
   "bin": "./lib/main.js",
   "type": "module",
   "dependencies": {
