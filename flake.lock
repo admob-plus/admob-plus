@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1733334667,
-        "narHash": "sha256-/ZcGOsCxMkbpJ4QwWEWg8ejz+xwkqnFO5NEhKp+9B2E=",
+        "lastModified": 1733589887,
+        "narHash": "sha256-EcyVKM80FlbG7uPntAmJMF0emt3VJ5IMgst4csbk5HQ=",
         "owner": "ratson",
         "repo": "conflake",
-        "rev": "78c95b3561f76a154b482456feeff86f28eb71a3",
+        "rev": "7a516a90228cd80aefaae1bd4673a9af59869804",
         "type": "github"
       },
       "original": {
@@ -22,11 +22,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1733097829,
-        "narHash": "sha256-9hbb1rqGelllb4kVUCZ307G2k3/UhmA8PPGBoyuWaSw=",
+        "lastModified": 1733376361,
+        "narHash": "sha256-aLJxoTDDSqB+/3orsulE6/qdlX6MzDLIITLZqdgMpqo=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "2c15aa59df0017ca140d9ba302412298ab4bf22a",
+        "rev": "929116e316068c7318c54eb4d827f7d9756d5e9c",
         "type": "github"
       },
       "original": {
