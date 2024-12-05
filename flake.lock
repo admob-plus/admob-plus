@@ -1,44 +1,44 @@
 {
   "nodes": {
-    "flakelight": {
+    "conflake": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1731328800,
-        "narHash": "sha256-gy6/aB9qY+PaOgqRXx5DQNsgKCkjjGKG1HYtth+WTlI=",
-        "owner": "nix-community",
-        "repo": "flakelight",
-        "rev": "76fce036c5e0daf15a926de77f1410ae997c5d4c",
+        "lastModified": 1733334667,
+        "narHash": "sha256-/ZcGOsCxMkbpJ4QwWEWg8ejz+xwkqnFO5NEhKp+9B2E=",
+        "owner": "ratson",
+        "repo": "conflake",
+        "rev": "78c95b3561f76a154b482456feeff86f28eb71a3",
         "type": "github"
       },
       "original": {
-        "owner": "nix-community",
-        "repo": "flakelight",
+        "owner": "ratson",
+        "repo": "conflake",
         "type": "github"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1731139594,
-        "narHash": "sha256-IigrKK3vYRpUu+HEjPL/phrfh7Ox881er1UEsZvw9Q4=",
+        "lastModified": 1733097829,
+        "narHash": "sha256-9hbb1rqGelllb4kVUCZ307G2k3/UhmA8PPGBoyuWaSw=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "76612b17c0ce71689921ca12d9ffdc9c23ce40b2",
+        "rev": "2c15aa59df0017ca140d9ba302412298ab4bf22a",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "nixos-unstable",
+        "ref": "nixpkgs-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
     },
     "root": {
       "inputs": {
-        "flakelight": "flakelight",
+        "conflake": "conflake",
         "nixpkgs": "nixpkgs"
       }
     }
