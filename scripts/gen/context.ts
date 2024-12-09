@@ -6,9 +6,10 @@ async function fetchSKAdNetworkItems() {
   const url = "https://developers.google.com/admob/ios/quick-start";
   const res = await fetch(url);
   const { document } = new Window({ url });
-  document.write(await res.text());
+  const html = await res.text();
+  document.write(html);
   const elm = document.querySelector(
-    '#complete-snippet + div + devsite-code > pre.devsite-click-to-copy[translate="no"][dir="ltr"]',
+    '#complete-snippet + pre[translate="no"][dir="ltr"]',
   );
   return elm?.textContent?.replace(/^[\s\S]+<key>SKAdNetworkItems<\/key>/, "");
 }
