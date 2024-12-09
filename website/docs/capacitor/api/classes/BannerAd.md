@@ -12,7 +12,9 @@
 
 #### Parameters
 
-• **opts**: [`BannerAdOptions`](../interfaces/BannerAdOptions.md)
+##### opts
+
+[`BannerAdOptions`](../interfaces/BannerAdOptions.md)
 
 #### Returns
 

@@ -16,7 +16,9 @@
 
 #### Parameters
 
-• **opts**: `NativeAdOptions`
+##### opts
+
+`NativeAdOptions`
 
 #### Returns
 
@@ -174,7 +176,9 @@ ionic/src/ngx/index.ts:219
 
 #### Parameters
 
-• ...**opts**: [`string`, `EventListenerOrEventListenerObject`, `boolean` \| `AddEventListenerOptions`]
+##### opts
+
+...[`string`, `EventListenerOrEventListenerObject`, `boolean` \| `AddEventListenerOptions`]
 
 #### Returns
 
@@ -200,7 +204,9 @@ ionic/src/ngx/index.ts:235
 
 #### Parameters
 
-• ...**args**: [`ShowOptions`]
+##### args
+
+...[`ShowOptions`]
 
 #### Returns
 
@@ -222,7 +228,9 @@ ionic/src/ngx/index.ts:223
 
 #### Parameters
 
-• ...**args**: [`HTMLElement`]
+##### args
+
+...[`HTMLElement`]
 
 #### Returns
 

@@ -16,7 +16,9 @@
 
 #### Parameters
 
-• **opts**: `RewardedAdOptions`
+##### opts
+
+`RewardedAdOptions`
 
 #### Returns
 
@@ -156,7 +158,9 @@ ionic/src/ngx/index.ts:178
 
 #### Parameters
 
-• ...**opts**: [`string`, `EventListenerOrEventListenerObject`, `boolean` \| `AddEventListenerOptions`]
+##### opts
+
+...[`string`, `EventListenerOrEventListenerObject`, `boolean` \| `AddEventListenerOptions`]
 
 #### Returns
 

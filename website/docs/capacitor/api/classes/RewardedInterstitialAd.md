@@ -12,7 +12,9 @@
 
 #### Parameters
 
-• **opts**: [`MobileAdOptions`](../type-aliases/MobileAdOptions.md)
+##### opts
+
+[`MobileAdOptions`](../type-aliases/MobileAdOptions.md)
 
 #### Returns
 

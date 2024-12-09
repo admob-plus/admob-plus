@@ -12,7 +12,9 @@
 
 #### Parameters
 
-• **opts**: [`MobileAdOptions`](../type-aliases/MobileAdOptions.md)
+##### opts
+
+[`MobileAdOptions`](../type-aliases/MobileAdOptions.md)
 
 #### Returns
 
@@ -146,11 +148,17 @@ index.ts:133
 
 #### Parameters
 
-• **eventType**: `string`
+##### eventType
 
-• **listener**
+`string`
 
-• **context?**: `Record`\<`string`, `unknown`\>
+##### listener
+
+(`event`) => `void`
+
+##### context?
+
+`Record`\<`string`, `unknown`\>
 
 #### Returns
 

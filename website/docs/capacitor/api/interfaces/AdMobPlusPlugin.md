@@ -12,7 +12,9 @@
 
 #### Parameters
 
-• **opts**: `O`
+##### opts
+
+`O`
 
 #### Returns
 
@@ -30,9 +32,13 @@ definitions.ts:38
 
 #### Parameters
 
-• **eventName**: `string`
+##### eventName
 
-• **listenerFunc**
+`string`
+
+##### listenerFunc
+
+(`event`) => `void`
 
 #### Returns
 
@@ -50,9 +56,11 @@ definitions.ts:51
 
 #### Parameters
 
-• **opts**
+##### opts
 
-• **opts.id**: `number`
+###### id
+
+`number`
 
 #### Returns
 
@@ -70,9 +78,11 @@ definitions.ts:42
 
 #### Parameters
 
-• **opts**
+##### opts
 
-• **opts.id**: `number`
+###### id
+
+`number`
 
 #### Returns
 
@@ -90,9 +100,11 @@ definitions.ts:39
 
 #### Parameters
 
-• **opts**
+##### opts
 
-• **opts.id**: `number`
+###### id
+
+`number`
 
 #### Returns
 
@@ -110,9 +122,11 @@ definitions.ts:40
 
 #### Parameters
 
-• **opts**
+##### opts
 
-• **opts.id**: `number`
+###### id
+
+`number`
 
 #### Returns
 
@@ -130,7 +144,9 @@ definitions.ts:41
 
 #### Parameters
 
-• **requestConfig**: [`RequestConfig`](../type-aliases/RequestConfig.md)
+##### requestConfig
+
+[`RequestConfig`](../type-aliases/RequestConfig.md)
 
 #### Returns
 
@@ -148,7 +164,9 @@ definitions.ts:36
 
 #### Parameters
 
-• **config**: [`AdMobConfig`](../type-aliases/AdMobConfig.md)
+##### config
+
+[`AdMobConfig`](../type-aliases/AdMobConfig.md)
 
 #### Returns
 
@@ -162,15 +180,11 @@ definitions.ts:35
 
 ### requestTrackingAuthorization()
 
-> **requestTrackingAuthorization**(): `Promise`\<`object`\>
+> **requestTrackingAuthorization**(): `Promise`\<\{ `status`: `false` \| [`TrackingAuthorizationStatus`](../enumerations/TrackingAuthorizationStatus.md); \}\>
 
 #### Returns
 
-`Promise`\<`object`\>
-
-##### status
-
-> **status**: `false` \| [`TrackingAuthorizationStatus`](../enumerations/TrackingAuthorizationStatus.md)
+`Promise`\<\{ `status`: `false` \| [`TrackingAuthorizationStatus`](../enumerations/TrackingAuthorizationStatus.md); \}\>
 
 #### Defined in
 
@@ -194,15 +208,11 @@ definitions.ts:34
 
 ### trackingAuthorizationStatus()
 
-> **trackingAuthorizationStatus**(): `Promise`\<`object`\>
+> **trackingAuthorizationStatus**(): `Promise`\<\{ `status`: `false` \| [`TrackingAuthorizationStatus`](../enumerations/TrackingAuthorizationStatus.md); \}\>
 
 #### Returns
 
-`Promise`\<`object`\>
-
-##### status
-
-> **status**: `false` \| [`TrackingAuthorizationStatus`](../enumerations/TrackingAuthorizationStatus.md)
+`Promise`\<\{ `status`: `false` \| [`TrackingAuthorizationStatus`](../enumerations/TrackingAuthorizationStatus.md); \}\>
 
 #### Defined in
 

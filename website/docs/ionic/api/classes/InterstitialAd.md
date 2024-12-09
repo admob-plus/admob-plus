@@ -16,9 +16,11 @@
 
 #### Parameters
 
-• **opts**
+##### opts
 
-• **opts.adUnitId**: `string`
+###### adUnitId
+
+`string`
 
 #### Returns
 
@@ -158,7 +160,9 @@ ionic/src/ngx/index.ts:96
 
 #### Parameters
 
-• ...**opts**: [`string`, `EventListenerOrEventListenerObject`, `boolean` \| `AddEventListenerOptions`]
+##### opts
+
+...[`string`, `EventListenerOrEventListenerObject`, `boolean` \| `AddEventListenerOptions`]
 
 #### Returns
 

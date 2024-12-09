@@ -146,7 +146,9 @@ index.ts:109
 
 #### Parameters
 
-• **opts**: `RequestInfoUpdateOptions` = `{}`
+##### opts
+
+`RequestInfoUpdateOptions` = `{}`
 
 #### Returns
 

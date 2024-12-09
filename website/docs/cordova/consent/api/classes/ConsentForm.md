@@ -8,7 +8,9 @@
 
 #### Parameters
 
-• **id**: `number`
+##### id
+
+`number`
 
 #### Returns
 

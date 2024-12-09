@@ -98,7 +98,9 @@ packages/cordova/src/www/index.ts:14
 
 #### Parameters
 
-• **config**: [`AdMobConfig`](../interfaces/AdMobConfig.md)
+##### config
+
+[`AdMobConfig`](../interfaces/AdMobConfig.md)
 
 #### Returns
 
@@ -112,15 +114,11 @@ packages/cordova/src/www/index.ts:20
 
 ### start()
 
-> **start**(): `Promise`\<`object`\>
+> **start**(): `Promise`\<\{ `version`: `string`; \}\>
 
 #### Returns
 
-`Promise`\<`object`\>
-
-##### version
-
-> **version**: `string`
+`Promise`\<\{ `version`: `string`; \}\>
 
 #### Defined in
 

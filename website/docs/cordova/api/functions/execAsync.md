@@ -10,9 +10,13 @@
 
 ## Parameters
 
-• **action**: [`CordovaAction`](../type-aliases/CordovaAction.md)
+### action
 
-• **args?**: `unknown`[]
+[`CordovaAction`](../type-aliases/CordovaAction.md)
+
+### args?
+
+`unknown`[]
 
 ## Returns
 

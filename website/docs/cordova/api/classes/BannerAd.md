@@ -14,7 +14,9 @@
 
 #### Parameters
 
-• **opts**: [`BannerAdOptions`](../interfaces/BannerAdOptions.md)
+##### opts
+
+[`BannerAdOptions`](../interfaces/BannerAdOptions.md)
 
 #### Returns
 
@@ -50,7 +52,7 @@ packages/cordova/src/www/ads/base.ts:18
 
 #### Inherited from
 
-[`MobileAd`](MobileAd.md).[`opts`](MobileAd.md#opts)
+[`MobileAd`](MobileAd.md).[`opts`](MobileAd.md#opts-1)
 
 #### Defined in
 
@@ -166,7 +168,9 @@ packages/cordova/src/www/ads/banner.ts:89
 
 #### Parameters
 
-• ...**args**: [`string`, (`ev`) => `any`, `boolean`]
+##### args
+
+...[`string`, (`ev`) => `any`, `boolean`]
 
 #### Returns
 
@@ -210,13 +214,19 @@ packages/cordova/src/www/ads/banner.ts:94
 
 #### Parameters
 
-• **opts**
+##### opts
 
-• **opts.backgroundColor?**: `string`
+###### backgroundColor
 
-• **opts.marginBottom?**: `number`
+`string`
 
-• **opts.marginTop?**: `number`
+###### marginBottom
+
+`number`
+
+###### marginTop
+
+`number`
 
 #### Returns
 
@@ -234,7 +244,9 @@ packages/cordova/src/www/ads/banner.ts:75
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 #### Returns
 

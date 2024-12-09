@@ -100,7 +100,9 @@ ionic/src/ngx/index.ts:270
 
 #### Parameters
 
-• ...**opts**: [`AdMobConfig`]
+##### opts
+
+...[`AdMobConfig`]
 
 #### Returns
 
@@ -122,7 +124,9 @@ ionic/src/ngx/index.ts:276
 
 #### Parameters
 
-• **event**: `string`
+##### event
+
+`string`
 
 #### Returns
 
@@ -136,15 +140,11 @@ ionic/src/ngx/index.ts:280
 
 ### start()
 
-> **start**(): `Promise`\<`object`\>
+> **start**(): `Promise`\<\{ `version`: `string`; \}\>
 
 #### Returns
 
-`Promise`\<`object`\>
-
-##### version
-
-> **version**: `string`
+`Promise`\<\{ `version`: `string`; \}\>
 
 #### Implementation of
 

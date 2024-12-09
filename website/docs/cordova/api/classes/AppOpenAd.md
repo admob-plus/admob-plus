@@ -14,7 +14,9 @@
 
 #### Parameters
 
-• **opts**: [`MobileAdOptions`](../type-aliases/MobileAdOptions.md)
+##### opts
+
+[`MobileAdOptions`](../type-aliases/MobileAdOptions.md)
 
 #### Returns
 
@@ -50,7 +52,7 @@ packages/cordova/src/www/ads/base.ts:18
 
 #### Inherited from
 
-[`MobileAd`](MobileAd.md).[`opts`](MobileAd.md#opts)
+[`MobileAd`](MobileAd.md).[`opts`](MobileAd.md#opts-1)
 
 #### Defined in
 
@@ -166,7 +168,9 @@ packages/cordova/src/www/ads/app-open.ts:10
 
 #### Parameters
 
-• ...**args**: [`string`, (`ev`) => `any`, `boolean`]
+##### args
+
+...[`string`, (`ev`) => `any`, `boolean`]
 
 #### Returns
 
@@ -210,7 +214,9 @@ packages/cordova/src/www/ads/app-open.ts:14
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 #### Returns
 

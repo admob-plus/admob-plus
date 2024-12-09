@@ -14,7 +14,9 @@
 
 #### Parameters
 
-• **opts**: [`NativeAdOptions`](../interfaces/NativeAdOptions.md)
+##### opts
+
+[`NativeAdOptions`](../interfaces/NativeAdOptions.md)
 
 #### Returns
 
@@ -50,7 +52,7 @@ packages/cordova/src/www/ads/base.ts:18
 
 #### Inherited from
 
-[`MobileAd`](MobileAd.md).[`opts`](MobileAd.md#opts)
+[`MobileAd`](MobileAd.md).[`opts`](MobileAd.md#opts-1)
 
 #### Defined in
 
@@ -166,7 +168,9 @@ packages/cordova/src/www/ads/native.ts:20
 
 #### Parameters
 
-• ...**args**: [`string`, (`ev`) => `any`, `boolean`]
+##### args
+
+...[`string`, (`ev`) => `any`, `boolean`]
 
 #### Returns
 
@@ -192,7 +196,9 @@ packages/cordova/src/www/ads/base.ts:44
 
 #### Parameters
 
-• **opts?**: `ShowOptions`
+##### opts?
+
+`ShowOptions`
 
 #### Returns
 
@@ -214,7 +220,9 @@ packages/cordova/src/www/ads/native.ts:24
 
 #### Parameters
 
-• **elm**: `HTMLElement`
+##### elm
+
+`HTMLElement`
 
 #### Returns
 
@@ -232,7 +240,9 @@ packages/cordova/src/www/ads/native.ts:34
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 #### Returns
 

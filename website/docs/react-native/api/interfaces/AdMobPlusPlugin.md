@@ -12,7 +12,9 @@
 
 #### Parameters
 
-• **opts**: `O`
+##### opts
+
+`O`
 
 #### Returns
 
@@ -30,9 +32,11 @@ definitions.ts:26
 
 #### Parameters
 
-• **opts**
+##### opts
 
-• **opts.id**: `number`
+###### id
+
+`number`
 
 #### Returns
 
@@ -50,9 +54,11 @@ definitions.ts:27
 
 #### Parameters
 
-• **opts**
+##### opts
 
-• **opts.id**: `number`
+###### id
+
+`number`
 
 #### Returns
 
@@ -70,9 +76,11 @@ definitions.ts:28
 
 #### Parameters
 
-• **opts**
+##### opts
 
-• **opts.id**: `number`
+###### id
+
+`number`
 
 #### Returns
 
@@ -90,7 +98,9 @@ definitions.ts:29
 
 #### Parameters
 
-• **config**: [`AdMobConfig`](../type-aliases/AdMobConfig.md)
+##### config
+
+[`AdMobConfig`](../type-aliases/AdMobConfig.md)
 
 #### Returns
 

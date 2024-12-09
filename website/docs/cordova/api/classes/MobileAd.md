@@ -24,7 +24,9 @@
 
 #### Parameters
 
-• **opts**: `T`
+##### opts
+
+`T`
 
 #### Returns
 
@@ -134,7 +136,9 @@ packages/cordova/src/www/ads/base.ts:66
 
 #### Parameters
 
-• ...**args**: [`string`, (`ev`) => `any`, `boolean`]
+##### args
+
+...[`string`, (`ev`) => `any`, `boolean`]
 
 #### Returns
 
@@ -156,7 +160,9 @@ packages/cordova/src/www/ads/base.ts:44
 
 #### Parameters
 
-• **opts?**: `Record`\<`string`, `unknown`\>
+##### opts?
+
+`Record`\<`string`, `unknown`\>
 
 #### Returns
 
@@ -174,7 +180,9 @@ packages/cordova/src/www/ads/base.ts:72
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 #### Returns
 

@@ -16,7 +16,9 @@
 
 #### Parameters
 
-• **opts**: `BannerAdOptions`
+##### opts
+
+`BannerAdOptions`
 
 #### Returns
 
@@ -156,7 +158,9 @@ ionic/src/ngx/index.ts:51
 
 #### Parameters
 
-• ...**opts**: [`string`, `EventListenerOrEventListenerObject`, `boolean` \| `AddEventListenerOptions`]
+##### opts
+
+...[`string`, `EventListenerOrEventListenerObject`, `boolean` \| `AddEventListenerOptions`]
 
 #### Returns
 

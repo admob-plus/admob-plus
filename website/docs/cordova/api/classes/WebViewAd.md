@@ -14,7 +14,9 @@
 
 #### Parameters
 
-• **opts**: [`WebViewAdOptions`](../interfaces/WebViewAdOptions.md)
+##### opts
+
+[`WebViewAdOptions`](../interfaces/WebViewAdOptions.md)
 
 #### Returns
 
@@ -50,7 +52,7 @@ packages/cordova/src/www/ads/base.ts:18
 
 #### Inherited from
 
-[`MobileAd`](MobileAd.md).[`opts`](MobileAd.md#opts)
+[`MobileAd`](MobileAd.md).[`opts`](MobileAd.md#opts-1)
 
 #### Defined in
 
@@ -94,17 +96,27 @@ packages/cordova/src/www/ads/base.ts:40
 
 #### Parameters
 
-• **options**
+##### options
 
-• **options.element**: `HTMLElement`
+###### element
 
-• **options.format?**: `string`
+`HTMLElement`
 
-• **options.fullWidth?**: `boolean`
+###### format
 
-• **options.html?**: `string`
+`string`
 
-• **options.slot**: `string`
+###### fullWidth
+
+`boolean`
+
+###### html
+
+`string`
+
+###### slot
+
+`string`
 
 #### Returns
 
@@ -194,7 +206,9 @@ packages/cordova/src/www/ads/base.ts:66
 
 #### Parameters
 
-• ...**args**: [`string`, (`ev`) => `any`, `boolean`]
+##### args
+
+...[`string`, (`ev`) => `any`, `boolean`]
 
 #### Returns
 
@@ -252,7 +266,9 @@ packages/cordova/src/www/ads/webview.ts:13
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 #### Returns
 
