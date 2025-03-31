@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "@types/cordova": "^11.0.3",
-    "@types/node": "^22.10.1",
+    "@types/node": "^22.13.14",
     "cordova": "^12.0.0",
     "cordova-plus": "^0.9.4",
     "tslib": "^2.8.1"

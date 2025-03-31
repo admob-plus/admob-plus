@@ -11,7 +11,7 @@
     <allow-intent href="geo:*" />
     <platform name="android">
         <preference name="AdMobPlusWebViewAd" value="true" />
-        <preference name="android-targetSdkVersion" value="34" />
+        <preference name="android-targetSdkVersion" value="35" />
         <preference name="AndroidXEnabled" value="true" />
         <preference name="GradlePluginKotlinEnabled" value="true" />
         <allow-intent href="market:*" />

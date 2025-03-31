@@ -5,15 +5,15 @@
   "type": "module",
   "dependencies": {
     "find-up": "^7.0.0",
-    "fs-extra": "^11.2.0",
+    "fs-extra": "^11.3.0",
     "types-package-json": "^2.0.39"
   },
   "devDependencies": {
     "@tsconfig/node18": "^18.2.4",
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^22.10.1",
+    "@types/node": "^22.13.14",
     "ts-node": "^10.9.2",
-    "typescript": "~5.7.2"
+    "typescript": "~5.8.2"
   },
   "engines": {
     "node": ">=12.0.0"
