@@ -14,6 +14,7 @@
         <preference name="android-targetSdkVersion" value="35" />
         <preference name="AndroidXEnabled" value="true" />
         <preference name="GradlePluginKotlinEnabled" value="true" />
+        <preference name="GradlePluginKotlinVersion" value="2.1.0" />
         <allow-intent href="market:*" />
     </platform>
     <platform name="ios">
