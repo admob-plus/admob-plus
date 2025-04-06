@@ -41,6 +41,10 @@ const app = {
 
     admob
       .start()
+      .then(({ version }) => {
+        document.querySelector("#deviceready .received").innerHTML =
+          `SDK v${version}`;
+      })
       .then(() =>
         admob.configure({
           testDeviceIds: ["33BE2250B43518CCDA7DE426D04EE231"],
