@@ -19,6 +19,7 @@
         <preference name="AndroidXEnabled" value="true" />
         <preference name="GradlePluginKotlinEnabled" value="true" />
         <preference name="GradlePluginKotlinCodeStyle" value="official" />
+        <preference name="GradlePluginKotlinVersion" value="2.1.0" />
         <allow-intent href="market:*" />
     </platform>
     <platform name="ios">
