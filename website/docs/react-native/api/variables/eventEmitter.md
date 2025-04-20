@@ -2,6 +2,4 @@
 
 > `const` **eventEmitter**: `NativeEventEmitter`
 
-## Defined in
-
-index.ts:12
+Defined in: index.ts:12

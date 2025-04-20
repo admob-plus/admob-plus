@@ -1,14 +1,18 @@
 # Class: InterstitialAd
 
+Defined in: index.ts:127
+
 ## Extends
 
 - `MobileAd`
 
 ## Constructors
 
-### new InterstitialAd()
+### Constructor
 
-> **new InterstitialAd**(`opts`): [`InterstitialAd`](InterstitialAd.md)
+> **new InterstitialAd**(`opts`): `InterstitialAd`
+
+Defined in: index.ts:30
 
 #### Parameters
 
@@ -18,15 +22,11 @@
 
 #### Returns
 
-[`InterstitialAd`](InterstitialAd.md)
+`InterstitialAd`
 
 #### Inherited from
 
 `MobileAd.constructor`
-
-#### Defined in
-
-index.ts:30
 
 ## Properties
 
@@ -34,13 +34,11 @@ index.ts:30
 
 > `readonly` **id**: `number`
 
+Defined in: index.ts:23
+
 #### Inherited from
 
 `MobileAd.id`
-
-#### Defined in
-
-index.ts:23
 
 ***
 
@@ -48,13 +46,11 @@ index.ts:23
 
 > `protected` `readonly` **opts**: [`MobileAdOptions`](../type-aliases/MobileAdOptions.md)
 
+Defined in: index.ts:25
+
 #### Inherited from
 
 `MobileAd.opts`
-
-#### Defined in
-
-index.ts:25
 
 ***
 
@@ -62,9 +58,7 @@ index.ts:25
 
 > `static` **cls**: `string` = `'InterstitialAd'`
 
-#### Defined in
-
-index.ts:128
+Defined in: index.ts:128
 
 ## Accessors
 
@@ -74,6 +68,8 @@ index.ts:128
 
 > **get** **adUnitId**(): `string`
 
+Defined in: index.ts:42
+
 ##### Returns
 
 `string`
@@ -82,15 +78,13 @@ index.ts:128
 
 `MobileAd.adUnitId`
 
-#### Defined in
-
-index.ts:42
-
 ## Methods
 
 ### hide()
 
 > `protected` **hide**(): `Promise`\<`void`\>
+
+Defined in: index.ts:61
 
 #### Returns
 
@@ -100,15 +94,13 @@ index.ts:42
 
 `MobileAd.hide`
 
-#### Defined in
-
-index.ts:61
-
 ***
 
 ### init()
 
 > `protected` **init**(): `Promise`\<`void`\>
+
+Defined in: index.ts:66
 
 #### Returns
 
@@ -118,15 +110,13 @@ index.ts:61
 
 `MobileAd.init`
 
-#### Defined in
-
-index.ts:66
-
 ***
 
 ### isLoaded()
 
 > **isLoaded**(): `Promise`\<`boolean`\>
+
+Defined in: index.ts:130
 
 #### Returns
 
@@ -136,15 +126,13 @@ index.ts:66
 
 `MobileAd.isLoaded`
 
-#### Defined in
-
-index.ts:130
-
 ***
 
 ### load()
 
 > **load**(): `Promise`\<`void`\>
+
+Defined in: index.ts:134
 
 #### Returns
 
@@ -154,15 +142,13 @@ index.ts:130
 
 `MobileAd.load`
 
-#### Defined in
-
-index.ts:134
-
 ***
 
 ### show()
 
 > **show**(): `Promise`\<`void`\>
+
+Defined in: index.ts:138
 
 #### Returns
 
@@ -171,7 +157,3 @@ index.ts:134
 #### Overrides
 
 `MobileAd.show`
-
-#### Defined in
-
-index.ts:138

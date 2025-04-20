@@ -1,5 +1,7 @@
 # Interface: RequestConfig
 
+Defined in: packages/cordova/src/www/common.ts:45
+
 ## Extended by
 
 - [`AdMobConfig`](AdMobConfig.md)
@@ -10,9 +12,7 @@
 
 > `optional` **maxAdContentRating**: `MaxAdContentRating`
 
-#### Defined in
-
-packages/cordova/src/www/common.ts:46
+Defined in: packages/cordova/src/www/common.ts:46
 
 ***
 
@@ -20,9 +20,7 @@ packages/cordova/src/www/common.ts:46
 
 > `optional` **tagForChildDirectedTreatment**: `null` \| `boolean`
 
-#### Defined in
-
-packages/cordova/src/www/common.ts:47
+Defined in: packages/cordova/src/www/common.ts:47
 
 ***
 
@@ -30,9 +28,7 @@ packages/cordova/src/www/common.ts:47
 
 > `optional` **tagForUnderAgeOfConsent**: `null` \| `boolean`
 
-#### Defined in
-
-packages/cordova/src/www/common.ts:48
+Defined in: packages/cordova/src/www/common.ts:48
 
 ***
 
@@ -40,6 +36,4 @@ packages/cordova/src/www/common.ts:48
 
 > `optional` **testDeviceIds**: `string`[]
 
-#### Defined in
-
-packages/cordova/src/www/common.ts:49
+Defined in: packages/cordova/src/www/common.ts:49

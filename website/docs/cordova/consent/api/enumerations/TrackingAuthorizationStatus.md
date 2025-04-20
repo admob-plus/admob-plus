@@ -1,14 +1,14 @@
 # Enumeration: TrackingAuthorizationStatus
 
+Defined in: index.ts:44
+
 ## Enumeration Members
 
 ### authorized
 
 > **authorized**: `3`
 
-#### Defined in
-
-index.ts:48
+Defined in: index.ts:48
 
 ***
 
@@ -16,9 +16,7 @@ index.ts:48
 
 > **denied**: `2`
 
-#### Defined in
-
-index.ts:47
+Defined in: index.ts:47
 
 ***
 
@@ -26,9 +24,7 @@ index.ts:47
 
 > **notDetermined**: `0`
 
-#### Defined in
-
-index.ts:45
+Defined in: index.ts:45
 
 ***
 
@@ -36,6 +32,4 @@ index.ts:45
 
 > **restricted**: `1`
 
-#### Defined in
-
-index.ts:46
+Defined in: index.ts:46

@@ -1,14 +1,18 @@
 # Class: BannerAd
 
+Defined in: index.ts:97
+
 ## Extends
 
 - `MobileAd`
 
 ## Constructors
 
-### new BannerAd()
+### Constructor
 
-> **new BannerAd**(`opts`): [`BannerAd`](BannerAd.md)
+> **new BannerAd**(`opts`): `BannerAd`
+
+Defined in: index.ts:101
 
 #### Parameters
 
@@ -18,15 +22,11 @@
 
 #### Returns
 
-[`BannerAd`](BannerAd.md)
+`BannerAd`
 
 #### Overrides
 
 `MobileAd.constructor`
-
-#### Defined in
-
-index.ts:101
 
 ## Properties
 
@@ -34,13 +34,11 @@ index.ts:101
 
 > `readonly` **id**: `number`
 
+Defined in: index.ts:23
+
 #### Inherited from
 
 `MobileAd.id`
-
-#### Defined in
-
-index.ts:23
 
 ***
 
@@ -48,13 +46,11 @@ index.ts:23
 
 > `protected` `readonly` **opts**: [`MobileAdOptions`](../type-aliases/MobileAdOptions.md)
 
+Defined in: index.ts:25
+
 #### Inherited from
 
 `MobileAd.opts`
-
-#### Defined in
-
-index.ts:25
 
 ***
 
@@ -62,9 +58,7 @@ index.ts:25
 
 > `static` **cls**: `string` = `'BannerAd'`
 
-#### Defined in
-
-index.ts:98
+Defined in: index.ts:98
 
 ## Accessors
 
@@ -74,6 +68,8 @@ index.ts:98
 
 > **get** **adUnitId**(): `string`
 
+Defined in: index.ts:42
+
 ##### Returns
 
 `string`
@@ -82,15 +78,13 @@ index.ts:98
 
 `MobileAd.adUnitId`
 
-#### Defined in
-
-index.ts:42
-
 ## Methods
 
 ### hide()
 
 > **hide**(): `Promise`\<`void`\>
+
+Defined in: index.ts:122
 
 #### Returns
 
@@ -100,15 +94,13 @@ index.ts:42
 
 `MobileAd.hide`
 
-#### Defined in
-
-index.ts:122
-
 ***
 
 ### init()
 
 > `protected` **init**(): `Promise`\<`void`\>
+
+Defined in: index.ts:66
 
 #### Returns
 
@@ -118,15 +110,13 @@ index.ts:122
 
 `MobileAd.init`
 
-#### Defined in
-
-index.ts:66
-
 ***
 
 ### isLoaded()
 
 > **isLoaded**(): `Promise`\<`boolean`\>
+
+Defined in: index.ts:108
 
 #### Returns
 
@@ -136,15 +126,13 @@ index.ts:66
 
 `MobileAd.isLoaded`
 
-#### Defined in
-
-index.ts:108
-
 ***
 
 ### load()
 
 > **load**(): `Promise`\<`void`\>
+
+Defined in: index.ts:112
 
 #### Returns
 
@@ -154,15 +142,13 @@ index.ts:108
 
 `MobileAd.load`
 
-#### Defined in
-
-index.ts:112
-
 ***
 
 ### show()
 
 > **show**(): `Promise`\<`void`\>
+
+Defined in: index.ts:117
 
 #### Returns
 
@@ -171,7 +157,3 @@ index.ts:112
 #### Overrides
 
 `MobileAd.show`
-
-#### Defined in
-
-index.ts:117

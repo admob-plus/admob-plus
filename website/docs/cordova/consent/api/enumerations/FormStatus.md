@@ -1,14 +1,14 @@
 # Enumeration: FormStatus
 
+Defined in: index.ts:38
+
 ## Enumeration Members
 
 ### Available
 
 > **Available**: `1`
 
-#### Defined in
-
-index.ts:40
+Defined in: index.ts:40
 
 ***
 
@@ -16,9 +16,7 @@ index.ts:40
 
 > **Unavailable**: `2`
 
-#### Defined in
-
-index.ts:41
+Defined in: index.ts:41
 
 ***
 
@@ -26,6 +24,4 @@ index.ts:41
 
 > **Unknown**: `0`
 
-#### Defined in
-
-index.ts:39
+Defined in: index.ts:39

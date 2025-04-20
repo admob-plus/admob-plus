@@ -1,12 +1,16 @@
 # Function: execAsync()
 
-> **execAsync**\<`T`\>(`action`, `args`?): `Promise`\<`T`\>
+> **execAsync**\<`T`\>(`action`, `args?`): `Promise`\<`T`\>
+
+Defined in: packages/cordova/src/www/common.ts:61
 
 **`Internal`**
 
 ## Type Parameters
 
-• **T**
+### T
+
+`T`
 
 ## Parameters
 
@@ -21,7 +25,3 @@
 ## Returns
 
 `Promise`\<`T`\>
-
-## Defined in
-
-packages/cordova/src/www/common.ts:61

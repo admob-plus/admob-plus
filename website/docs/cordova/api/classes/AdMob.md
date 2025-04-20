@@ -1,14 +1,16 @@
 # Class: AdMob
 
+Defined in: packages/cordova/src/www/index.ts:7
+
 ## Constructors
 
-### new AdMob()
+### Constructor
 
-> **new AdMob**(): [`AdMob`](AdMob.md)
+> **new AdMob**(): `AdMob`
 
 #### Returns
 
-[`AdMob`](AdMob.md)
+`AdMob`
 
 ## Properties
 
@@ -16,9 +18,7 @@
 
 > `readonly` **AppOpenAd**: *typeof* [`AppOpenAd`](AppOpenAd.md) = `ads.AppOpenAd`
 
-#### Defined in
-
-packages/cordova/src/www/index.ts:8
+Defined in: packages/cordova/src/www/index.ts:8
 
 ***
 
@@ -26,9 +26,7 @@ packages/cordova/src/www/index.ts:8
 
 > `readonly` **BannerAd**: *typeof* [`BannerAd`](BannerAd.md) = `ads.BannerAd`
 
-#### Defined in
-
-packages/cordova/src/www/index.ts:9
+Defined in: packages/cordova/src/www/index.ts:9
 
 ***
 
@@ -36,9 +34,7 @@ packages/cordova/src/www/index.ts:9
 
 > `readonly` **Events**: *typeof* [`Events`](../enumerations/Events.md)
 
-#### Defined in
-
-packages/cordova/src/www/index.ts:16
+Defined in: packages/cordova/src/www/index.ts:16
 
 ***
 
@@ -46,9 +42,7 @@ packages/cordova/src/www/index.ts:16
 
 > `readonly` **InterstitialAd**: *typeof* [`InterstitialAd`](InterstitialAd.md) = `ads.InterstitialAd`
 
-#### Defined in
-
-packages/cordova/src/www/index.ts:10
+Defined in: packages/cordova/src/www/index.ts:10
 
 ***
 
@@ -56,9 +50,7 @@ packages/cordova/src/www/index.ts:10
 
 > `readonly` **NativeAd**: *typeof* [`NativeAd`](NativeAd.md) = `ads.NativeAd`
 
-#### Defined in
-
-packages/cordova/src/www/index.ts:11
+Defined in: packages/cordova/src/www/index.ts:11
 
 ***
 
@@ -66,9 +58,7 @@ packages/cordova/src/www/index.ts:11
 
 > `readonly` **RewardedAd**: *typeof* [`RewardedAd`](RewardedAd.md) = `ads.RewardedAd`
 
-#### Defined in
-
-packages/cordova/src/www/index.ts:12
+Defined in: packages/cordova/src/www/index.ts:12
 
 ***
 
@@ -76,9 +66,7 @@ packages/cordova/src/www/index.ts:12
 
 > `readonly` **RewardedInterstitialAd**: *typeof* [`RewardedInterstitialAd`](RewardedInterstitialAd.md) = `ads.RewardedInterstitialAd`
 
-#### Defined in
-
-packages/cordova/src/www/index.ts:13
+Defined in: packages/cordova/src/www/index.ts:13
 
 ***
 
@@ -86,15 +74,15 @@ packages/cordova/src/www/index.ts:13
 
 > `readonly` **WebViewAd**: *typeof* [`WebViewAd`](WebViewAd.md) = `ads.WebViewAd`
 
-#### Defined in
-
-packages/cordova/src/www/index.ts:14
+Defined in: packages/cordova/src/www/index.ts:14
 
 ## Methods
 
 ### configure()
 
 > **configure**(`config`): `Promise`\<`unknown`\>
+
+Defined in: packages/cordova/src/www/index.ts:20
 
 #### Parameters
 
@@ -106,20 +94,14 @@ packages/cordova/src/www/index.ts:14
 
 `Promise`\<`unknown`\>
 
-#### Defined in
-
-packages/cordova/src/www/index.ts:20
-
 ***
 
 ### start()
 
 > **start**(): `Promise`\<\{ `version`: `string`; \}\>
 
+Defined in: packages/cordova/src/www/index.ts:24
+
 #### Returns
 
 `Promise`\<\{ `version`: `string`; \}\>
-
-#### Defined in
-
-packages/cordova/src/www/index.ts:24

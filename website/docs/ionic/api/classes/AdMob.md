@@ -1,5 +1,7 @@
 # Class: AdMob
 
+Defined in: ionic/src/ngx/index.ts:241
+
 ## Extends
 
 - `IonicNativePlugin`
@@ -10,13 +12,13 @@
 
 ## Constructors
 
-### new AdMob()
+### Constructor
 
-> **new AdMob**(): [`AdMob`](AdMob.md)
+> **new AdMob**(): `AdMob`
 
 #### Returns
 
-[`AdMob`](AdMob.md)
+`AdMob`
 
 #### Inherited from
 
@@ -28,13 +30,11 @@
 
 > `static` **platforms**: `string`[]
 
+Defined in: ionic/src/ngx/index.ts:266
+
 #### Overrides
 
 `IonicNativePlugin.platforms`
-
-#### Defined in
-
-ionic/src/ngx/index.ts:266
 
 ***
 
@@ -42,13 +42,11 @@ ionic/src/ngx/index.ts:266
 
 > `static` **plugin**: `string`
 
+Defined in: ionic/src/ngx/index.ts:267
+
 #### Overrides
 
 `IonicNativePlugin.plugin`
-
-#### Defined in
-
-ionic/src/ngx/index.ts:267
 
 ***
 
@@ -56,13 +54,11 @@ ionic/src/ngx/index.ts:267
 
 > `static` **pluginName**: `string`
 
+Defined in: ionic/src/ngx/index.ts:268
+
 #### Overrides
 
 `IonicNativePlugin.pluginName`
-
-#### Defined in
-
-ionic/src/ngx/index.ts:268
 
 ***
 
@@ -70,13 +66,11 @@ ionic/src/ngx/index.ts:268
 
 > `static` **pluginRef**: `string` = `'admob'`
 
+Defined in: ionic/src/ngx/index.ts:269
+
 #### Overrides
 
 `IonicNativePlugin.pluginRef`
-
-#### Defined in
-
-ionic/src/ngx/index.ts:269
 
 ***
 
@@ -84,13 +78,11 @@ ionic/src/ngx/index.ts:269
 
 > `static` **repo**: `string` = `'https://github.com/admob-plus/admob-plus'`
 
+Defined in: ionic/src/ngx/index.ts:270
+
 #### Overrides
 
 `IonicNativePlugin.repo`
-
-#### Defined in
-
-ionic/src/ngx/index.ts:270
 
 ## Methods
 
@@ -98,11 +90,13 @@ ionic/src/ngx/index.ts:270
 
 > **configure**(...`opts`): `Promise`\<`unknown`\>
 
+Defined in: ionic/src/ngx/index.ts:276
+
 #### Parameters
 
 ##### opts
 
-...[`AdMobConfig`]
+...\[`AdMobConfig`\]
 
 #### Returns
 
@@ -112,15 +106,13 @@ ionic/src/ngx/index.ts:270
 
 `Omit.configure`
 
-#### Defined in
-
-ionic/src/ngx/index.ts:276
-
 ***
 
 ### on()
 
 > **on**(`event`): `Observable`\<`unknown`\>
+
+Defined in: ionic/src/ngx/index.ts:280
 
 #### Parameters
 
@@ -132,15 +124,13 @@ ionic/src/ngx/index.ts:276
 
 `Observable`\<`unknown`\>
 
-#### Defined in
-
-ionic/src/ngx/index.ts:280
-
 ***
 
 ### start()
 
 > **start**(): `Promise`\<\{ `version`: `string`; \}\>
+
+Defined in: ionic/src/ngx/index.ts:272
 
 #### Returns
 
@@ -149,7 +139,3 @@ ionic/src/ngx/index.ts:280
 #### Implementation of
 
 `Omit.start`
-
-#### Defined in
-
-ionic/src/ngx/index.ts:272

@@ -1,5 +1,7 @@
 # Class: RewardedInterstitialAd
 
+Defined in: ionic/src/ngx/index.ts:150
+
 ## Extends
 
 - `IonicNativePlugin`
@@ -10,9 +12,11 @@
 
 ## Constructors
 
-### new RewardedInterstitialAd()
+### Constructor
 
-> **new RewardedInterstitialAd**(`opts`): [`RewardedInterstitialAd`](RewardedInterstitialAd.md)
+> **new RewardedInterstitialAd**(`opts`): `RewardedInterstitialAd`
+
+Defined in: ionic/src/ngx/index.ts:160
 
 #### Parameters
 
@@ -22,15 +26,11 @@
 
 #### Returns
 
-[`RewardedInterstitialAd`](RewardedInterstitialAd.md)
+`RewardedInterstitialAd`
 
 #### Overrides
 
 `IonicNativePlugin.constructor`
-
-#### Defined in
-
-ionic/src/ngx/index.ts:160
 
 ## Properties
 
@@ -38,13 +38,11 @@ ionic/src/ngx/index.ts:160
 
 > `static` **plugin**: `string`
 
+Defined in: ionic/src/ngx/index.ts:154
+
 #### Overrides
 
 `IonicNativePlugin.plugin`
-
-#### Defined in
-
-ionic/src/ngx/index.ts:154
 
 ***
 
@@ -52,13 +50,11 @@ ionic/src/ngx/index.ts:154
 
 > `static` **pluginName**: `string`
 
+Defined in: ionic/src/ngx/index.ts:155
+
 #### Overrides
 
 `IonicNativePlugin.pluginName`
-
-#### Defined in
-
-ionic/src/ngx/index.ts:155
 
 ***
 
@@ -66,13 +62,11 @@ ionic/src/ngx/index.ts:155
 
 > `static` **pluginRef**: `string` = `'admob.RewardedInterstitialAd'`
 
+Defined in: ionic/src/ngx/index.ts:156
+
 #### Overrides
 
 `IonicNativePlugin.pluginRef`
-
-#### Defined in
-
-ionic/src/ngx/index.ts:156
 
 ## Accessors
 
@@ -82,6 +76,8 @@ ionic/src/ngx/index.ts:156
 
 > **get** **adUnitId**(): `string`
 
+Defined in: ionic/src/ngx/index.ts:166
+
 ##### Returns
 
 `string`
@@ -89,10 +85,6 @@ ionic/src/ngx/index.ts:156
 #### Implementation of
 
 `Omit.adUnitId`
-
-#### Defined in
-
-ionic/src/ngx/index.ts:166
 
 ***
 
@@ -102,6 +94,8 @@ ionic/src/ngx/index.ts:166
 
 > **get** **id**(): `string`
 
+Defined in: ionic/src/ngx/index.ts:170
+
 ##### Returns
 
 `string`
@@ -110,15 +104,13 @@ ionic/src/ngx/index.ts:166
 
 `Omit.id`
 
-#### Defined in
-
-ionic/src/ngx/index.ts:170
-
 ## Methods
 
 ### isLoaded()
 
 > **isLoaded**(): `Promise`\<`boolean`\>
+
+Defined in: ionic/src/ngx/index.ts:174
 
 #### Returns
 
@@ -128,15 +120,13 @@ ionic/src/ngx/index.ts:170
 
 `Omit.isLoaded`
 
-#### Defined in
-
-ionic/src/ngx/index.ts:174
-
 ***
 
 ### load()
 
 > **load**(): `Promise`\<`void`\>
+
+Defined in: ionic/src/ngx/index.ts:178
 
 #### Returns
 
@@ -146,25 +136,23 @@ ionic/src/ngx/index.ts:174
 
 `Omit.load`
 
-#### Defined in
-
-ionic/src/ngx/index.ts:178
-
 ***
 
 ### on()
 
 > **on**(...`opts`): () => `void`
 
+Defined in: ionic/src/ngx/index.ts:186
+
 #### Parameters
 
 ##### opts
 
-...[`string`, `EventListenerOrEventListenerObject`, `boolean` \| `AddEventListenerOptions`]
+...\[`string`, `EventListenerOrEventListenerObject`, `boolean` \| `AddEventListenerOptions`\]
 
 #### Returns
 
-`Function`
+> (): `void`
 
 ##### Returns
 
@@ -174,15 +162,13 @@ ionic/src/ngx/index.ts:178
 
 `Omit.on`
 
-#### Defined in
-
-ionic/src/ngx/index.ts:186
-
 ***
 
 ### show()
 
 > **show**(): `Promise`\<`unknown`\>
+
+Defined in: ionic/src/ngx/index.ts:182
 
 #### Returns
 
@@ -191,7 +177,3 @@ ionic/src/ngx/index.ts:186
 #### Implementation of
 
 `Omit.show`
-
-#### Defined in
-
-ionic/src/ngx/index.ts:182

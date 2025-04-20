@@ -1,14 +1,14 @@
 # Enumeration: ConsentStatus
 
+Defined in: index.ts:63
+
 ## Enumeration Members
 
 ### NotRequired
 
 > **NotRequired**: `2`
 
-#### Defined in
-
-index.ts:66
+Defined in: index.ts:66
 
 ***
 
@@ -16,9 +16,7 @@ index.ts:66
 
 > **Obtained**: `3`
 
-#### Defined in
-
-index.ts:67
+Defined in: index.ts:67
 
 ***
 
@@ -26,9 +24,7 @@ index.ts:67
 
 > **Required**: `1`
 
-#### Defined in
-
-index.ts:65
+Defined in: index.ts:65
 
 ***
 
@@ -36,6 +32,4 @@ index.ts:65
 
 > **Unknown**: `0`
 
-#### Defined in
-
-index.ts:64
+Defined in: index.ts:64

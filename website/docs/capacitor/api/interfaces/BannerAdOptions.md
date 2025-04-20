@@ -1,5 +1,7 @@
 # Interface: BannerAdOptions
 
+Defined in: index.ts:93
+
 ## Extends
 
 - [`MobileAdOptions`](../type-aliases/MobileAdOptions.md)
@@ -10,13 +12,11 @@
 
 > **adUnitId**: `string`
 
+Defined in: definitions.ts:31
+
 #### Inherited from
 
-`MobileAdOptions.adUnitId`
-
-#### Defined in
-
-definitions.ts:31
+[`MobileAdOptions`](../type-aliases/MobileAdOptions.md).[`adUnitId`](../type-aliases/MobileAdOptions.md#adunitid)
 
 ***
 
@@ -24,6 +24,4 @@ definitions.ts:31
 
 > `optional` **position**: `Position`
 
-#### Defined in
-
-index.ts:94
+Defined in: index.ts:94

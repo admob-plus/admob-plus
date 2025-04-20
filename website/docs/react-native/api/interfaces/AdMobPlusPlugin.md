@@ -1,14 +1,20 @@
 # Interface: AdMobPlusPlugin
 
+Defined in: definitions.ts:22
+
 ## Methods
 
 ### adCreate()
 
 > **adCreate**\<`O`\>(`opts`): `Promise`\<`void`\>
 
+Defined in: definitions.ts:26
+
 #### Type Parameters
 
-• **O** *extends* [`MobileAdOptions`](../type-aliases/MobileAdOptions.md)
+##### O
+
+`O` *extends* [`MobileAdOptions`](../type-aliases/MobileAdOptions.md)
 
 #### Parameters
 
@@ -20,15 +26,13 @@
 
 `Promise`\<`void`\>
 
-#### Defined in
-
-definitions.ts:26
-
 ***
 
 ### adIsLoaded()
 
 > **adIsLoaded**(`opts`): `Promise`\<`boolean`\>
+
+Defined in: definitions.ts:27
 
 #### Parameters
 
@@ -42,15 +46,13 @@ definitions.ts:26
 
 `Promise`\<`boolean`\>
 
-#### Defined in
-
-definitions.ts:27
-
 ***
 
 ### adLoad()
 
 > **adLoad**(`opts`): `Promise`\<`void`\>
+
+Defined in: definitions.ts:28
 
 #### Parameters
 
@@ -63,10 +65,6 @@ definitions.ts:27
 #### Returns
 
 `Promise`\<`void`\>
-
-#### Defined in
-
-definitions.ts:28
 
 ***
 
@@ -74,6 +72,8 @@ definitions.ts:28
 
 > **adShow**(`opts`): `Promise`\<`void`\>
 
+Defined in: definitions.ts:29
+
 #### Parameters
 
 ##### opts
@@ -86,15 +86,13 @@ definitions.ts:28
 
 `Promise`\<`void`\>
 
-#### Defined in
-
-definitions.ts:29
-
 ***
 
 ### configure()
 
 > **configure**(`config`): `Promise`\<`void`\>
+
+Defined in: definitions.ts:24
 
 #### Parameters
 
@@ -106,20 +104,14 @@ definitions.ts:29
 
 `Promise`\<`void`\>
 
-#### Defined in
-
-definitions.ts:24
-
 ***
 
 ### start()
 
 > **start**(): `Promise`\<`void`\>
 
+Defined in: definitions.ts:23
+
 #### Returns
 
 `Promise`\<`void`\>
-
-#### Defined in
-
-definitions.ts:23

@@ -1,14 +1,14 @@
 # Enumeration: Events
 
+Defined in: packages/cordova/src/www/common.ts:15
+
 ## Enumeration Members
 
 ### adClick
 
 > **adClick**: `"admob.ad.click"`
 
-#### Defined in
-
-packages/cordova/src/www/common.ts:16
+Defined in: packages/cordova/src/www/common.ts:16
 
 ***
 
@@ -16,9 +16,7 @@ packages/cordova/src/www/common.ts:16
 
 > **adDismiss**: `"admob.ad.dismiss"`
 
-#### Defined in
-
-packages/cordova/src/www/common.ts:17
+Defined in: packages/cordova/src/www/common.ts:17
 
 ***
 
@@ -26,9 +24,7 @@ packages/cordova/src/www/common.ts:17
 
 > **adImpression**: `"admob.ad.impression"`
 
-#### Defined in
-
-packages/cordova/src/www/common.ts:18
+Defined in: packages/cordova/src/www/common.ts:18
 
 ***
 
@@ -36,9 +32,7 @@ packages/cordova/src/www/common.ts:18
 
 > **adLoad**: `"admob.ad.load"`
 
-#### Defined in
-
-packages/cordova/src/www/common.ts:19
+Defined in: packages/cordova/src/www/common.ts:19
 
 ***
 
@@ -46,9 +40,7 @@ packages/cordova/src/www/common.ts:19
 
 > **adLoadFail**: `"admob.ad.loadfail"`
 
-#### Defined in
-
-packages/cordova/src/www/common.ts:20
+Defined in: packages/cordova/src/www/common.ts:20
 
 ***
 
@@ -56,9 +48,7 @@ packages/cordova/src/www/common.ts:20
 
 > **adReward**: `"admob.ad.reward"`
 
-#### Defined in
-
-packages/cordova/src/www/common.ts:21
+Defined in: packages/cordova/src/www/common.ts:21
 
 ***
 
@@ -66,9 +56,7 @@ packages/cordova/src/www/common.ts:21
 
 > **adShow**: `"admob.ad.show"`
 
-#### Defined in
-
-packages/cordova/src/www/common.ts:22
+Defined in: packages/cordova/src/www/common.ts:22
 
 ***
 
@@ -76,9 +64,7 @@ packages/cordova/src/www/common.ts:22
 
 > **adShowFail**: `"admob.ad.showfail"`
 
-#### Defined in
-
-packages/cordova/src/www/common.ts:23
+Defined in: packages/cordova/src/www/common.ts:23
 
 ***
 
@@ -86,9 +72,7 @@ packages/cordova/src/www/common.ts:23
 
 > **bannerSize**: `"admob.banner.size"`
 
-#### Defined in
-
-packages/cordova/src/www/common.ts:24
+Defined in: packages/cordova/src/www/common.ts:24
 
 ***
 
@@ -96,6 +80,4 @@ packages/cordova/src/www/common.ts:24
 
 > **ready**: `"admob.ready"`
 
-#### Defined in
-
-packages/cordova/src/www/common.ts:25
+Defined in: packages/cordova/src/www/common.ts:25

@@ -1,5 +1,7 @@
 # Class: MobileAd\<T\>
 
+Defined in: packages/cordova/src/www/ads/base.ts:17
+
 **`Internal`**
 
 ## Extended by
@@ -14,13 +16,17 @@
 
 ## Type Parameters
 
-• **T** *extends* [`MobileAdOptions`](../type-aliases/MobileAdOptions.md) = [`MobileAdOptions`](../type-aliases/MobileAdOptions.md)
+### T
+
+`T` *extends* [`MobileAdOptions`](../type-aliases/MobileAdOptions.md) = [`MobileAdOptions`](../type-aliases/MobileAdOptions.md)
 
 ## Constructors
 
-### new MobileAd()
+### Constructor
 
-> **new MobileAd**\<`T`\>(`opts`): [`MobileAd`](MobileAd.md)\<`T`\>
+> **new MobileAd**\<`T`\>(`opts`): `MobileAd`\<`T`\>
+
+Defined in: packages/cordova/src/www/ads/base.ts:23
 
 #### Parameters
 
@@ -30,11 +36,7 @@
 
 #### Returns
 
-[`MobileAd`](MobileAd.md)\<`T`\>
-
-#### Defined in
-
-packages/cordova/src/www/ads/base.ts:23
+`MobileAd`\<`T`\>
 
 ## Properties
 
@@ -42,9 +44,7 @@ packages/cordova/src/www/ads/base.ts:23
 
 > `readonly` **id**: `string`
 
-#### Defined in
-
-packages/cordova/src/www/ads/base.ts:18
+Defined in: packages/cordova/src/www/ads/base.ts:18
 
 ***
 
@@ -52,9 +52,7 @@ packages/cordova/src/www/ads/base.ts:18
 
 > `protected` `readonly` **opts**: `T`
 
-#### Defined in
-
-packages/cordova/src/www/ads/base.ts:20
+Defined in: packages/cordova/src/www/ads/base.ts:20
 
 ## Accessors
 
@@ -64,13 +62,11 @@ packages/cordova/src/www/ads/base.ts:20
 
 > **get** **adUnitId**(): `string`
 
+Defined in: packages/cordova/src/www/ads/base.ts:40
+
 ##### Returns
 
 `string`
-
-#### Defined in
-
-packages/cordova/src/www/ads/base.ts:40
 
 ## Methods
 
@@ -78,13 +74,11 @@ packages/cordova/src/www/ads/base.ts:40
 
 > `protected` **hide**(): `Promise`\<`unknown`\>
 
+Defined in: packages/cordova/src/www/ads/base.ts:77
+
 #### Returns
 
 `Promise`\<`unknown`\>
-
-#### Defined in
-
-packages/cordova/src/www/ads/base.ts:77
 
 ***
 
@@ -92,13 +86,11 @@ packages/cordova/src/www/ads/base.ts:77
 
 > `protected` **init**(): `Promise`\<`unknown`\>
 
+Defined in: packages/cordova/src/www/ads/base.ts:82
+
 #### Returns
 
 `Promise`\<`unknown`\>
-
-#### Defined in
-
-packages/cordova/src/www/ads/base.ts:82
 
 ***
 
@@ -106,13 +98,11 @@ packages/cordova/src/www/ads/base.ts:82
 
 > `protected` **isLoaded**(): `Promise`\<`boolean`\>
 
+Defined in: packages/cordova/src/www/ads/base.ts:61
+
 #### Returns
 
 `Promise`\<`boolean`\>
-
-#### Defined in
-
-packages/cordova/src/www/ads/base.ts:61
 
 ***
 
@@ -120,13 +110,11 @@ packages/cordova/src/www/ads/base.ts:61
 
 > `protected` **load**(): `Promise`\<`void`\>
 
+Defined in: packages/cordova/src/www/ads/base.ts:66
+
 #### Returns
 
 `Promise`\<`void`\>
-
-#### Defined in
-
-packages/cordova/src/www/ads/base.ts:66
 
 ***
 
@@ -134,29 +122,29 @@ packages/cordova/src/www/ads/base.ts:66
 
 > **on**(...`args`): () => `void`
 
+Defined in: packages/cordova/src/www/ads/base.ts:44
+
 #### Parameters
 
 ##### args
 
-...[`string`, (`ev`) => `any`, `boolean`]
+...\[`string`, (`ev`) => `any`, `boolean`\]
 
 #### Returns
 
-`Function`
+> (): `void`
 
 ##### Returns
 
 `void`
 
-#### Defined in
-
-packages/cordova/src/www/ads/base.ts:44
-
 ***
 
 ### show()
 
-> `protected` **show**(`opts`?): `Promise`\<`unknown`\>
+> `protected` **show**(`opts?`): `Promise`\<`unknown`\>
+
+Defined in: packages/cordova/src/www/ads/base.ts:72
 
 #### Parameters
 
@@ -168,15 +156,13 @@ packages/cordova/src/www/ads/base.ts:44
 
 `Promise`\<`unknown`\>
 
-#### Defined in
-
-packages/cordova/src/www/ads/base.ts:72
-
 ***
 
 ### getAdById()
 
-> `static` **getAdById**(`id`): [`MobileAd`](MobileAd.md)\<[`MobileAdOptions`](../type-aliases/MobileAdOptions.md)\>
+> `static` **getAdById**(`id`): `MobileAd`\<[`MobileAdOptions`](../type-aliases/MobileAdOptions.md)\>
+
+Defined in: packages/cordova/src/www/ads/base.ts:36
 
 #### Parameters
 
@@ -186,8 +172,4 @@ packages/cordova/src/www/ads/base.ts:72
 
 #### Returns
 
-[`MobileAd`](MobileAd.md)\<[`MobileAdOptions`](../type-aliases/MobileAdOptions.md)\>
-
-#### Defined in
-
-packages/cordova/src/www/ads/base.ts:36
+`MobileAd`\<[`MobileAdOptions`](../type-aliases/MobileAdOptions.md)\>

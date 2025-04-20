@@ -1,14 +1,14 @@
 # Enumeration: PrivacyOptionsRequirementStatus
 
+Defined in: index.ts:70
+
 ## Enumeration Members
 
 ### NotRequired
 
 > **NotRequired**: `2`
 
-#### Defined in
-
-index.ts:73
+Defined in: index.ts:73
 
 ***
 
@@ -16,9 +16,7 @@ index.ts:73
 
 > **Required**: `1`
 
-#### Defined in
-
-index.ts:72
+Defined in: index.ts:72
 
 ***
 
@@ -26,6 +24,4 @@ index.ts:72
 
 > **Unknown**: `0`
 
-#### Defined in
-
-index.ts:71
+Defined in: index.ts:71

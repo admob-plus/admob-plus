@@ -1,14 +1,18 @@
 # Class: RewardedInterstitialAd
 
+Defined in: index.ts:126
+
 ## Extends
 
 - `MobileAd`
 
 ## Constructors
 
-### new RewardedInterstitialAd()
+### Constructor
 
-> **new RewardedInterstitialAd**(`opts`): [`RewardedInterstitialAd`](RewardedInterstitialAd.md)
+> **new RewardedInterstitialAd**(`opts`): `RewardedInterstitialAd`
+
+Defined in: index.ts:30
 
 #### Parameters
 
@@ -18,15 +22,11 @@
 
 #### Returns
 
-[`RewardedInterstitialAd`](RewardedInterstitialAd.md)
+`RewardedInterstitialAd`
 
 #### Inherited from
 
 `MobileAd.constructor`
-
-#### Defined in
-
-index.ts:30
 
 ## Properties
 
@@ -34,13 +34,11 @@ index.ts:30
 
 > `readonly` **id**: `number`
 
+Defined in: index.ts:24
+
 #### Inherited from
 
 `MobileAd.id`
-
-#### Defined in
-
-index.ts:24
 
 ***
 
@@ -48,13 +46,11 @@ index.ts:24
 
 > `protected` `readonly` **opts**: [`MobileAdOptions`](../type-aliases/MobileAdOptions.md)
 
+Defined in: index.ts:26
+
 #### Inherited from
 
 `MobileAd.opts`
-
-#### Defined in
-
-index.ts:26
 
 ***
 
@@ -62,9 +58,7 @@ index.ts:26
 
 > `static` **cls**: `string` = `'RewardedInterstitialAd'`
 
-#### Defined in
-
-index.ts:127
+Defined in: index.ts:127
 
 ## Accessors
 
@@ -74,6 +68,8 @@ index.ts:127
 
 > **get** **adUnitId**(): `string`
 
+Defined in: index.ts:54
+
 ##### Returns
 
 `string`
@@ -82,15 +78,13 @@ index.ts:127
 
 `MobileAd.adUnitId`
 
-#### Defined in
-
-index.ts:54
-
 ## Methods
 
 ### init()
 
 > `protected` **init**(): `Promise`\<`void`\>
+
+Defined in: index.ts:89
 
 #### Returns
 
@@ -100,15 +94,13 @@ index.ts:54
 
 `MobileAd.init`
 
-#### Defined in
-
-index.ts:89
-
 ***
 
 ### isLoaded()
 
 > **isLoaded**(): `Promise`\<`boolean`\>
+
+Defined in: index.ts:129
 
 #### Returns
 
@@ -118,15 +110,13 @@ index.ts:89
 
 `MobileAd.isLoaded`
 
-#### Defined in
-
-index.ts:129
-
 ***
 
 ### load()
 
 > **load**(): `Promise`\<`void`\>
+
+Defined in: index.ts:133
 
 #### Returns
 
@@ -136,15 +126,13 @@ index.ts:129
 
 `MobileAd.load`
 
-#### Defined in
-
-index.ts:133
-
 ***
 
 ### on()
 
-> **on**(`eventType`, `listener`, `context`?): `EmitterSubscription`
+> **on**(`eventType`, `listener`, `context?`): `EmitterSubscription`
+
+Defined in: index.ts:58
 
 #### Parameters
 
@@ -168,15 +156,13 @@ index.ts:133
 
 `MobileAd.on`
 
-#### Defined in
-
-index.ts:58
-
 ***
 
 ### show()
 
 > **show**(): `Promise`\<`void`\>
+
+Defined in: index.ts:137
 
 #### Returns
 
@@ -185,7 +171,3 @@ index.ts:58
 #### Overrides
 
 `MobileAd.show`
-
-#### Defined in
-
-index.ts:137

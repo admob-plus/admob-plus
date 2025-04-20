@@ -1,14 +1,14 @@
 # Enumeration: MaxAdContentRating
 
+Defined in: definitions.ts:3
+
 ## Enumeration Members
 
 ### G
 
 > **G**: `"G"`
 
-#### Defined in
-
-definitions.ts:4
+Defined in: definitions.ts:4
 
 ***
 
@@ -16,9 +16,7 @@ definitions.ts:4
 
 > **MA**: `"MA"`
 
-#### Defined in
-
-definitions.ts:5
+Defined in: definitions.ts:5
 
 ***
 
@@ -26,9 +24,7 @@ definitions.ts:5
 
 > **PG**: `"PG"`
 
-#### Defined in
-
-definitions.ts:6
+Defined in: definitions.ts:6
 
 ***
 
@@ -36,9 +32,7 @@ definitions.ts:6
 
 > **T**: `"T"`
 
-#### Defined in
-
-definitions.ts:7
+Defined in: definitions.ts:7
 
 ***
 
@@ -46,6 +40,4 @@ definitions.ts:7
 
 > **UNSPECIFIED**: `""`
 
-#### Defined in
-
-definitions.ts:8
+Defined in: definitions.ts:8

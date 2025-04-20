@@ -1,14 +1,14 @@
 # Enumeration: DebugGeography
 
+Defined in: index.ts:24
+
 ## Enumeration Members
 
 ### Disabled
 
 > **Disabled**: `0`
 
-#### Defined in
-
-index.ts:25
+Defined in: index.ts:25
 
 ***
 
@@ -16,9 +16,7 @@ index.ts:25
 
 > **EEA**: `1`
 
-#### Defined in
-
-index.ts:26
+Defined in: index.ts:26
 
 ***
 
@@ -26,9 +24,7 @@ index.ts:26
 
 > **NotEEA**: `2`
 
-#### Defined in
-
-index.ts:27
+Defined in: index.ts:27
 
 ***
 
@@ -36,9 +32,7 @@ index.ts:27
 
 > **Other**: `4`
 
-#### Defined in
-
-index.ts:29
+Defined in: index.ts:29
 
 ***
 
@@ -46,6 +40,4 @@ index.ts:29
 
 > **RegulatedUsState**: `3`
 
-#### Defined in
-
-index.ts:28
+Defined in: index.ts:28

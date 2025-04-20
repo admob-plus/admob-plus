@@ -1,13 +1,13 @@
 # Type Alias: MobileAdOptions
 
-> **MobileAdOptions**: `object`
+> **MobileAdOptions** = `object`
 
-## Type declaration
+Defined in: definitions.ts:20
+
+## Properties
 
 ### adUnitId
 
 > **adUnitId**: `string`
 
-## Defined in
-
-definitions.ts:20
+Defined in: definitions.ts:20

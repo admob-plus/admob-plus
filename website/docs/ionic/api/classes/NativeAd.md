@@ -1,5 +1,7 @@
 # Class: NativeAd
 
+Defined in: ionic/src/ngx/index.ts:191
+
 ## Extends
 
 - `IonicNativePlugin`
@@ -10,9 +12,11 @@
 
 ## Constructors
 
-### new NativeAd()
+### Constructor
 
-> **new NativeAd**(`opts`): [`NativeAd`](NativeAd.md)
+> **new NativeAd**(`opts`): `NativeAd`
+
+Defined in: ionic/src/ngx/index.ts:201
 
 #### Parameters
 
@@ -22,15 +26,11 @@
 
 #### Returns
 
-[`NativeAd`](NativeAd.md)
+`NativeAd`
 
 #### Overrides
 
 `IonicNativePlugin.constructor`
-
-#### Defined in
-
-ionic/src/ngx/index.ts:201
 
 ## Properties
 
@@ -38,13 +38,11 @@ ionic/src/ngx/index.ts:201
 
 > `static` **plugin**: `string`
 
+Defined in: ionic/src/ngx/index.ts:195
+
 #### Overrides
 
 `IonicNativePlugin.plugin`
-
-#### Defined in
-
-ionic/src/ngx/index.ts:195
 
 ***
 
@@ -52,13 +50,11 @@ ionic/src/ngx/index.ts:195
 
 > `static` **pluginName**: `string`
 
+Defined in: ionic/src/ngx/index.ts:196
+
 #### Overrides
 
 `IonicNativePlugin.pluginName`
-
-#### Defined in
-
-ionic/src/ngx/index.ts:196
 
 ***
 
@@ -66,13 +62,11 @@ ionic/src/ngx/index.ts:196
 
 > `static` **pluginRef**: `string` = `'admob.NativeAd'`
 
+Defined in: ionic/src/ngx/index.ts:197
+
 #### Overrides
 
 `IonicNativePlugin.pluginRef`
-
-#### Defined in
-
-ionic/src/ngx/index.ts:197
 
 ## Accessors
 
@@ -82,6 +76,8 @@ ionic/src/ngx/index.ts:197
 
 > **get** **adUnitId**(): `string`
 
+Defined in: ionic/src/ngx/index.ts:207
+
 ##### Returns
 
 `string`
@@ -89,10 +85,6 @@ ionic/src/ngx/index.ts:197
 #### Implementation of
 
 `Omit.adUnitId`
-
-#### Defined in
-
-ionic/src/ngx/index.ts:207
 
 ***
 
@@ -102,6 +94,8 @@ ionic/src/ngx/index.ts:207
 
 > **get** **id**(): `string`
 
+Defined in: ionic/src/ngx/index.ts:211
+
 ##### Returns
 
 `string`
@@ -110,15 +104,13 @@ ionic/src/ngx/index.ts:207
 
 `Omit.id`
 
-#### Defined in
-
-ionic/src/ngx/index.ts:211
-
 ## Methods
 
 ### hide()
 
 > **hide**(): `Promise`\<`unknown`\>
+
+Defined in: ionic/src/ngx/index.ts:227
 
 #### Returns
 
@@ -128,15 +120,13 @@ ionic/src/ngx/index.ts:211
 
 `Omit.hide`
 
-#### Defined in
-
-ionic/src/ngx/index.ts:227
-
 ***
 
 ### isLoaded()
 
 > **isLoaded**(): `Promise`\<`boolean`\>
+
+Defined in: ionic/src/ngx/index.ts:215
 
 #### Returns
 
@@ -146,15 +136,13 @@ ionic/src/ngx/index.ts:227
 
 `Omit.isLoaded`
 
-#### Defined in
-
-ionic/src/ngx/index.ts:215
-
 ***
 
 ### load()
 
 > **load**(): `Promise`\<`void`\>
+
+Defined in: ionic/src/ngx/index.ts:219
 
 #### Returns
 
@@ -164,25 +152,23 @@ ionic/src/ngx/index.ts:215
 
 `Omit.load`
 
-#### Defined in
-
-ionic/src/ngx/index.ts:219
-
 ***
 
 ### on()
 
 > **on**(...`opts`): () => `void`
 
+Defined in: ionic/src/ngx/index.ts:235
+
 #### Parameters
 
 ##### opts
 
-...[`string`, `EventListenerOrEventListenerObject`, `boolean` \| `AddEventListenerOptions`]
+...\[`string`, `EventListenerOrEventListenerObject`, `boolean` \| `AddEventListenerOptions`\]
 
 #### Returns
 
-`Function`
+> (): `void`
 
 ##### Returns
 
@@ -192,21 +178,19 @@ ionic/src/ngx/index.ts:219
 
 `Omit.on`
 
-#### Defined in
-
-ionic/src/ngx/index.ts:235
-
 ***
 
 ### show()
 
 > **show**(...`args`): `Promise`\<`unknown`\>
 
+Defined in: ionic/src/ngx/index.ts:223
+
 #### Parameters
 
 ##### args
 
-...[`ShowOptions`]
+...\[`ShowOptions`\]
 
 #### Returns
 
@@ -216,21 +200,19 @@ ionic/src/ngx/index.ts:235
 
 `Omit.show`
 
-#### Defined in
-
-ionic/src/ngx/index.ts:223
-
 ***
 
 ### showWith()
 
 > **showWith**(...`args`): `Promise`\<`void`\>
 
+Defined in: ionic/src/ngx/index.ts:231
+
 #### Parameters
 
 ##### args
 
-...[`HTMLElement`]
+...\[`HTMLElement`\]
 
 #### Returns
 
@@ -239,7 +221,3 @@ ionic/src/ngx/index.ts:223
 #### Implementation of
 
 `Omit.showWith`
-
-#### Defined in
-
-ionic/src/ngx/index.ts:231

@@ -1,5 +1,7 @@
 # Interface: BannerAdOptions
 
+Defined in: packages/cordova/src/www/ads/banner.ts:56
+
 **`Internal`**
 
 ## Extends
@@ -12,13 +14,11 @@
 
 > **adUnitId**: `string`
 
+Defined in: packages/cordova/src/www/ads/base.ts:6
+
 #### Inherited from
 
-`MobileAdOptions.adUnitId`
-
-#### Defined in
-
-packages/cordova/src/www/ads/base.ts:6
+[`MobileAdOptions`](../type-aliases/MobileAdOptions.md).[`adUnitId`](../type-aliases/MobileAdOptions.md#adunitid)
 
 ***
 
@@ -26,13 +26,11 @@ packages/cordova/src/www/ads/base.ts:6
 
 > `optional` **contentUrl**: `string`
 
+Defined in: packages/cordova/src/www/ads/base.ts:7
+
 #### Inherited from
 
-`MobileAdOptions.contentUrl`
-
-#### Defined in
-
-packages/cordova/src/www/ads/base.ts:7
+[`MobileAdOptions`](../type-aliases/MobileAdOptions.md).[`contentUrl`](../type-aliases/MobileAdOptions.md#contenturl)
 
 ***
 
@@ -40,13 +38,11 @@ packages/cordova/src/www/ads/base.ts:7
 
 > `optional` **id**: `string`
 
+Defined in: packages/cordova/src/www/ads/base.ts:5
+
 #### Inherited from
 
-`MobileAdOptions.id`
-
-#### Defined in
-
-packages/cordova/src/www/ads/base.ts:5
+[`MobileAdOptions`](../type-aliases/MobileAdOptions.md).[`id`](../type-aliases/MobileAdOptions.md#id)
 
 ***
 
@@ -54,13 +50,11 @@ packages/cordova/src/www/ads/base.ts:5
 
 > `optional` **keywords**: `string`[]
 
+Defined in: packages/cordova/src/www/ads/base.ts:8
+
 #### Inherited from
 
-`MobileAdOptions.keywords`
-
-#### Defined in
-
-packages/cordova/src/www/ads/base.ts:8
+[`MobileAdOptions`](../type-aliases/MobileAdOptions.md).[`keywords`](../type-aliases/MobileAdOptions.md#keywords)
 
 ***
 
@@ -68,13 +62,11 @@ packages/cordova/src/www/ads/base.ts:8
 
 > `optional` **npa**: `"1"`
 
+Defined in: packages/cordova/src/www/ads/base.ts:9
+
 #### Inherited from
 
-`MobileAdOptions.npa`
-
-#### Defined in
-
-packages/cordova/src/www/ads/base.ts:9
+[`MobileAdOptions`](../type-aliases/MobileAdOptions.md).[`npa`](../type-aliases/MobileAdOptions.md#npa)
 
 ***
 
@@ -82,9 +74,7 @@ packages/cordova/src/www/ads/base.ts:9
 
 > `optional` **offset**: `number`
 
-#### Defined in
-
-packages/cordova/src/www/ads/banner.ts:59
+Defined in: packages/cordova/src/www/ads/banner.ts:59
 
 ***
 
@@ -92,9 +82,7 @@ packages/cordova/src/www/ads/banner.ts:59
 
 > `optional` **position**: `Position`
 
-#### Defined in
-
-packages/cordova/src/www/ads/banner.ts:57
+Defined in: packages/cordova/src/www/ads/banner.ts:57
 
 ***
 
@@ -102,6 +90,4 @@ packages/cordova/src/www/ads/banner.ts:57
 
 > `optional` **size**: `BannerSize`
 
-#### Defined in
-
-packages/cordova/src/www/ads/banner.ts:58
+Defined in: packages/cordova/src/www/ads/banner.ts:58

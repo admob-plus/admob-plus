@@ -1,5 +1,7 @@
 # Interface: WebViewAdOptions
 
+Defined in: packages/cordova/src/www/ads/webview.ts:4
+
 **`Internal`**
 
 ## Extends
@@ -12,9 +14,7 @@
 
 > **adsense**: `string`
 
-#### Defined in
-
-packages/cordova/src/www/ads/webview.ts:6
+Defined in: packages/cordova/src/www/ads/webview.ts:6
 
 ***
 
@@ -22,13 +22,11 @@ packages/cordova/src/www/ads/webview.ts:6
 
 > **adUnitId**: `string`
 
+Defined in: packages/cordova/src/www/ads/base.ts:6
+
 #### Inherited from
 
-`MobileAdOptions.adUnitId`
-
-#### Defined in
-
-packages/cordova/src/www/ads/base.ts:6
+[`MobileAdOptions`](../type-aliases/MobileAdOptions.md).[`adUnitId`](../type-aliases/MobileAdOptions.md#adunitid)
 
 ***
 
@@ -36,13 +34,11 @@ packages/cordova/src/www/ads/base.ts:6
 
 > `optional` **contentUrl**: `string`
 
+Defined in: packages/cordova/src/www/ads/base.ts:7
+
 #### Inherited from
 
-`MobileAdOptions.contentUrl`
-
-#### Defined in
-
-packages/cordova/src/www/ads/base.ts:7
+[`MobileAdOptions`](../type-aliases/MobileAdOptions.md).[`contentUrl`](../type-aliases/MobileAdOptions.md#contenturl)
 
 ***
 
@@ -50,13 +46,11 @@ packages/cordova/src/www/ads/base.ts:7
 
 > `optional` **id**: `string`
 
+Defined in: packages/cordova/src/www/ads/base.ts:5
+
 #### Inherited from
 
-`MobileAdOptions.id`
-
-#### Defined in
-
-packages/cordova/src/www/ads/base.ts:5
+[`MobileAdOptions`](../type-aliases/MobileAdOptions.md).[`id`](../type-aliases/MobileAdOptions.md#id)
 
 ***
 
@@ -64,13 +58,11 @@ packages/cordova/src/www/ads/base.ts:5
 
 > `optional` **keywords**: `string`[]
 
+Defined in: packages/cordova/src/www/ads/base.ts:8
+
 #### Inherited from
 
-`MobileAdOptions.keywords`
-
-#### Defined in
-
-packages/cordova/src/www/ads/base.ts:8
+[`MobileAdOptions`](../type-aliases/MobileAdOptions.md).[`keywords`](../type-aliases/MobileAdOptions.md#keywords)
 
 ***
 
@@ -78,13 +70,11 @@ packages/cordova/src/www/ads/base.ts:8
 
 > `optional` **npa**: `"1"`
 
+Defined in: packages/cordova/src/www/ads/webview.ts:7
+
 #### Overrides
 
-`MobileAdOptions.npa`
-
-#### Defined in
-
-packages/cordova/src/www/ads/webview.ts:7
+[`MobileAdOptions`](../type-aliases/MobileAdOptions.md).[`npa`](../type-aliases/MobileAdOptions.md#npa)
 
 ***
 
@@ -92,6 +82,4 @@ packages/cordova/src/www/ads/webview.ts:7
 
 > `optional` **src**: `string`
 
-#### Defined in
-
-packages/cordova/src/www/ads/webview.ts:5
+Defined in: packages/cordova/src/www/ads/webview.ts:5

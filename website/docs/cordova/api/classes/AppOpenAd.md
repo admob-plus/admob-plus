@@ -1,5 +1,7 @@
 # Class: AppOpenAd
 
+Defined in: packages/cordova/src/www/ads/app-open.ts:3
+
 **`Internal`**
 
 ## Extends
@@ -8,9 +10,11 @@
 
 ## Constructors
 
-### new AppOpenAd()
+### Constructor
 
-> **new AppOpenAd**(`opts`): [`AppOpenAd`](AppOpenAd.md)
+> **new AppOpenAd**(`opts`): `AppOpenAd`
+
+Defined in: packages/cordova/src/www/ads/base.ts:23
 
 #### Parameters
 
@@ -20,15 +24,11 @@
 
 #### Returns
 
-[`AppOpenAd`](AppOpenAd.md)
+`AppOpenAd`
 
 #### Inherited from
 
-[`MobileAd`](MobileAd.md).[`constructor`](MobileAd.md#constructors)
-
-#### Defined in
-
-packages/cordova/src/www/ads/base.ts:23
+[`MobileAd`](MobileAd.md).[`constructor`](MobileAd.md#constructor)
 
 ## Properties
 
@@ -36,13 +36,11 @@ packages/cordova/src/www/ads/base.ts:23
 
 > `readonly` **id**: `string`
 
+Defined in: packages/cordova/src/www/ads/base.ts:18
+
 #### Inherited from
 
 [`MobileAd`](MobileAd.md).[`id`](MobileAd.md#id)
-
-#### Defined in
-
-packages/cordova/src/www/ads/base.ts:18
 
 ***
 
@@ -50,13 +48,11 @@ packages/cordova/src/www/ads/base.ts:18
 
 > `protected` `readonly` **opts**: [`MobileAdOptions`](../type-aliases/MobileAdOptions.md)
 
+Defined in: packages/cordova/src/www/ads/base.ts:20
+
 #### Inherited from
 
-[`MobileAd`](MobileAd.md).[`opts`](MobileAd.md#opts-1)
-
-#### Defined in
-
-packages/cordova/src/www/ads/base.ts:20
+[`MobileAd`](MobileAd.md).[`opts`](MobileAd.md#opts)
 
 ***
 
@@ -64,9 +60,7 @@ packages/cordova/src/www/ads/base.ts:20
 
 > `readonly` `static` **cls**: `"AppOpenAd"` = `"AppOpenAd"`
 
-#### Defined in
-
-packages/cordova/src/www/ads/app-open.ts:4
+Defined in: packages/cordova/src/www/ads/app-open.ts:4
 
 ## Accessors
 
@@ -76,6 +70,8 @@ packages/cordova/src/www/ads/app-open.ts:4
 
 > **get** **adUnitId**(): `string`
 
+Defined in: packages/cordova/src/www/ads/base.ts:40
+
 ##### Returns
 
 `string`
@@ -84,15 +80,13 @@ packages/cordova/src/www/ads/app-open.ts:4
 
 [`MobileAd`](MobileAd.md).[`adUnitId`](MobileAd.md#adunitid)
 
-#### Defined in
-
-packages/cordova/src/www/ads/base.ts:40
-
 ## Methods
 
 ### hide()
 
 > `protected` **hide**(): `Promise`\<`unknown`\>
+
+Defined in: packages/cordova/src/www/ads/base.ts:77
 
 #### Returns
 
@@ -102,15 +96,13 @@ packages/cordova/src/www/ads/base.ts:40
 
 [`MobileAd`](MobileAd.md).[`hide`](MobileAd.md#hide)
 
-#### Defined in
-
-packages/cordova/src/www/ads/base.ts:77
-
 ***
 
 ### init()
 
 > `protected` **init**(): `Promise`\<`unknown`\>
+
+Defined in: packages/cordova/src/www/ads/base.ts:82
 
 #### Returns
 
@@ -120,15 +112,13 @@ packages/cordova/src/www/ads/base.ts:77
 
 [`MobileAd`](MobileAd.md).[`init`](MobileAd.md#init)
 
-#### Defined in
-
-packages/cordova/src/www/ads/base.ts:82
-
 ***
 
 ### isLoaded()
 
 > **isLoaded**(): `Promise`\<`boolean`\>
+
+Defined in: packages/cordova/src/www/ads/app-open.ts:6
 
 #### Returns
 
@@ -138,15 +128,13 @@ packages/cordova/src/www/ads/base.ts:82
 
 [`MobileAd`](MobileAd.md).[`isLoaded`](MobileAd.md#isloaded)
 
-#### Defined in
-
-packages/cordova/src/www/ads/app-open.ts:6
-
 ***
 
 ### load()
 
 > **load**(): `Promise`\<`void`\>
+
+Defined in: packages/cordova/src/www/ads/app-open.ts:10
 
 #### Returns
 
@@ -156,25 +144,23 @@ packages/cordova/src/www/ads/app-open.ts:6
 
 [`MobileAd`](MobileAd.md).[`load`](MobileAd.md#load)
 
-#### Defined in
-
-packages/cordova/src/www/ads/app-open.ts:10
-
 ***
 
 ### on()
 
 > **on**(...`args`): () => `void`
 
+Defined in: packages/cordova/src/www/ads/base.ts:44
+
 #### Parameters
 
 ##### args
 
-...[`string`, (`ev`) => `any`, `boolean`]
+...\[`string`, (`ev`) => `any`, `boolean`\]
 
 #### Returns
 
-`Function`
+> (): `void`
 
 ##### Returns
 
@@ -184,15 +170,13 @@ packages/cordova/src/www/ads/app-open.ts:10
 
 [`MobileAd`](MobileAd.md).[`on`](MobileAd.md#on)
 
-#### Defined in
-
-packages/cordova/src/www/ads/base.ts:44
-
 ***
 
 ### show()
 
 > **show**(): `Promise`\<`boolean`\>
+
+Defined in: packages/cordova/src/www/ads/app-open.ts:14
 
 #### Returns
 
@@ -202,15 +186,13 @@ packages/cordova/src/www/ads/base.ts:44
 
 [`MobileAd`](MobileAd.md).[`show`](MobileAd.md#show)
 
-#### Defined in
-
-packages/cordova/src/www/ads/app-open.ts:14
-
 ***
 
 ### getAdById()
 
 > `static` **getAdById**(`id`): [`MobileAd`](MobileAd.md)\<[`MobileAdOptions`](../type-aliases/MobileAdOptions.md)\>
+
+Defined in: packages/cordova/src/www/ads/base.ts:36
 
 #### Parameters
 
@@ -225,7 +207,3 @@ packages/cordova/src/www/ads/app-open.ts:14
 #### Inherited from
 
 [`MobileAd`](MobileAd.md).[`getAdById`](MobileAd.md#getadbyid)
-
-#### Defined in
-
-packages/cordova/src/www/ads/base.ts:36

@@ -1,18 +1,18 @@
 # Class: Consent
 
+Defined in: index.ts:80
+
 ## Constructors
 
-### new Consent()
+### Constructor
 
-> **new Consent**(): [`Consent`](Consent.md)
+> **new Consent**(): `Consent`
+
+Defined in: index.ts:87
 
 #### Returns
 
-[`Consent`](Consent.md)
-
-#### Defined in
-
-index.ts:87
+`Consent`
 
 ## Properties
 
@@ -20,9 +20,7 @@ index.ts:87
 
 > `readonly` **ConsentStatus**: *typeof* [`ConsentStatus`](../enumerations/ConsentStatus.md)
 
-#### Defined in
-
-index.ts:81
+Defined in: index.ts:81
 
 ***
 
@@ -30,9 +28,7 @@ index.ts:81
 
 > `readonly` **DebugGeography**: *typeof* [`DebugGeography`](../enumerations/DebugGeography.md)
 
-#### Defined in
-
-index.ts:82
+Defined in: index.ts:82
 
 ***
 
@@ -40,9 +36,7 @@ index.ts:82
 
 > `readonly` **FormStatus**: *typeof* [`FormStatus`](../enumerations/FormStatus.md)
 
-#### Defined in
-
-index.ts:83
+Defined in: index.ts:83
 
 ***
 
@@ -50,9 +44,7 @@ index.ts:83
 
 > `readonly` **PrivacyOptionsRequirementStatus**: *typeof* [`PrivacyOptionsRequirementStatus`](../enumerations/PrivacyOptionsRequirementStatus.md)
 
-#### Defined in
-
-index.ts:84
+Defined in: index.ts:84
 
 ## Methods
 
@@ -60,13 +52,11 @@ index.ts:84
 
 > **canRequestAds**(): `Promise`\<`boolean`\>
 
+Defined in: index.ts:105
+
 #### Returns
 
 `Promise`\<`boolean`\>
-
-#### Defined in
-
-index.ts:105
 
 ***
 
@@ -74,13 +64,11 @@ index.ts:105
 
 > **getConsentStatus**(): `Promise`\<[`ConsentStatus`](../enumerations/ConsentStatus.md)\>
 
+Defined in: index.ts:146
+
 #### Returns
 
 `Promise`\<[`ConsentStatus`](../enumerations/ConsentStatus.md)\>
-
-#### Defined in
-
-index.ts:146
 
 ***
 
@@ -88,13 +76,11 @@ index.ts:146
 
 > **getFormStatus**(): `Promise`\<[`FormStatus`](../enumerations/FormStatus.md)\>
 
+Defined in: index.ts:151
+
 #### Returns
 
 `Promise`\<[`FormStatus`](../enumerations/FormStatus.md)\>
-
-#### Defined in
-
-index.ts:151
 
 ***
 
@@ -102,13 +88,11 @@ index.ts:151
 
 > **loadAndShowIfRequired**(): `Promise`\<`unknown`\>
 
+Defined in: index.ts:114
+
 #### Returns
 
 `Promise`\<`unknown`\>
-
-#### Defined in
-
-index.ts:114
 
 ***
 
@@ -116,13 +100,11 @@ index.ts:114
 
 > **loadForm**(): `Promise`\<[`ConsentForm`](ConsentForm.md)\>
 
+Defined in: index.ts:160
+
 #### Returns
 
 `Promise`\<[`ConsentForm`](ConsentForm.md)\>
-
-#### Defined in
-
-index.ts:160
 
 ***
 
@@ -130,19 +112,19 @@ index.ts:160
 
 > **privacyOptionsRequirementStatus**(): `Promise`\<[`PrivacyOptionsRequirementStatus`](../enumerations/PrivacyOptionsRequirementStatus.md)\>
 
+Defined in: index.ts:109
+
 #### Returns
 
 `Promise`\<[`PrivacyOptionsRequirementStatus`](../enumerations/PrivacyOptionsRequirementStatus.md)\>
-
-#### Defined in
-
-index.ts:109
 
 ***
 
 ### requestInfoUpdate()
 
 > **requestInfoUpdate**(`opts`): `Promise`\<`unknown`\>
+
+Defined in: index.ts:156
 
 #### Parameters
 
@@ -154,23 +136,17 @@ index.ts:109
 
 `Promise`\<`unknown`\>
 
-#### Defined in
-
-index.ts:156
-
 ***
 
 ### requestTrackingAuthorization()
 
 > **requestTrackingAuthorization**(): `Promise`\<`false` \| [`TrackingAuthorizationStatus`](../enumerations/TrackingAuthorizationStatus.md)\>
 
+Defined in: index.ts:134
+
 #### Returns
 
 `Promise`\<`false` \| [`TrackingAuthorizationStatus`](../enumerations/TrackingAuthorizationStatus.md)\>
-
-#### Defined in
-
-index.ts:134
 
 ***
 
@@ -178,13 +154,11 @@ index.ts:134
 
 > **reset**(): `Promise`\<`unknown`\>
 
+Defined in: index.ts:165
+
 #### Returns
 
 `Promise`\<`unknown`\>
-
-#### Defined in
-
-index.ts:165
 
 ***
 
@@ -192,13 +166,11 @@ index.ts:165
 
 > **showPrivacyOptionsForm**(): `Promise`\<`unknown`\>
 
+Defined in: index.ts:118
+
 #### Returns
 
 `Promise`\<`unknown`\>
-
-#### Defined in
-
-index.ts:118
 
 ***
 
@@ -206,10 +178,8 @@ index.ts:118
 
 > **trackingAuthorizationStatus**(): `Promise`\<`false` \| [`TrackingAuthorizationStatus`](../enumerations/TrackingAuthorizationStatus.md)\>
 
+Defined in: index.ts:122
+
 #### Returns
 
 `Promise`\<`false` \| [`TrackingAuthorizationStatus`](../enumerations/TrackingAuthorizationStatus.md)\>
-
-#### Defined in
-
-index.ts:122

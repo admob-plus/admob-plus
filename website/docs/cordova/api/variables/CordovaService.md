@@ -2,6 +2,4 @@
 
 > `const` **CordovaService**: `"AdMob"` = `"AdMob"`
 
-## Defined in
-
-packages/cordova/src/www/common.ts:1
+Defined in: packages/cordova/src/www/common.ts:1

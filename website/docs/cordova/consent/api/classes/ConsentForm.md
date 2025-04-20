@@ -1,10 +1,14 @@
 # Class: ConsentForm
 
+Defined in: index.ts:51
+
 ## Constructors
 
-### new ConsentForm()
+### Constructor
 
-> **new ConsentForm**(`id`): [`ConsentForm`](ConsentForm.md)
+> **new ConsentForm**(`id`): `ConsentForm`
+
+Defined in: index.ts:54
 
 #### Parameters
 
@@ -14,11 +18,7 @@
 
 #### Returns
 
-[`ConsentForm`](ConsentForm.md)
-
-#### Defined in
-
-index.ts:54
+`ConsentForm`
 
 ## Properties
 
@@ -26,9 +26,7 @@ index.ts:54
 
 > `readonly` **id**: `number`
 
-#### Defined in
-
-index.ts:52
+Defined in: index.ts:52
 
 ## Methods
 
@@ -36,10 +34,8 @@ index.ts:52
 
 > **show**(): `Promise`\<`unknown`\>
 
+Defined in: index.ts:58
+
 #### Returns
 
 `Promise`\<`unknown`\>
-
-#### Defined in
-
-index.ts:58

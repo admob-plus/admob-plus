@@ -1,14 +1,20 @@
 # Interface: AdMobPlusPlugin
 
+Defined in: definitions.ts:33
+
 ## Methods
 
 ### adCreate()
 
 > **adCreate**\<`O`\>(`opts`): `Promise`\<`void`\>
 
+Defined in: definitions.ts:38
+
 #### Type Parameters
 
-• **O** *extends* [`MobileAdOptions`](../type-aliases/MobileAdOptions.md)
+##### O
+
+`O` *extends* [`MobileAdOptions`](../type-aliases/MobileAdOptions.md)
 
 #### Parameters
 
@@ -20,15 +26,13 @@
 
 `Promise`\<`void`\>
 
-#### Defined in
-
-definitions.ts:38
-
 ***
 
 ### addListener()
 
 > **addListener**(`eventName`, `listenerFunc`): `Promise`\<`PluginListenerHandle`\> & `PluginListenerHandle`
+
+Defined in: definitions.ts:51
 
 #### Parameters
 
@@ -44,15 +48,13 @@ definitions.ts:38
 
 `Promise`\<`PluginListenerHandle`\> & `PluginListenerHandle`
 
-#### Defined in
-
-definitions.ts:51
-
 ***
 
 ### adHide()
 
 > **adHide**(`opts`): `Promise`\<`void`\>
+
+Defined in: definitions.ts:42
 
 #### Parameters
 
@@ -66,15 +68,13 @@ definitions.ts:51
 
 `Promise`\<`void`\>
 
-#### Defined in
-
-definitions.ts:42
-
 ***
 
 ### adIsLoaded()
 
 > **adIsLoaded**(`opts`): `Promise`\<`boolean`\>
+
+Defined in: definitions.ts:39
 
 #### Parameters
 
@@ -88,15 +88,13 @@ definitions.ts:42
 
 `Promise`\<`boolean`\>
 
-#### Defined in
-
-definitions.ts:39
-
 ***
 
 ### adLoad()
 
 > **adLoad**(`opts`): `Promise`\<`void`\>
+
+Defined in: definitions.ts:40
 
 #### Parameters
 
@@ -109,10 +107,6 @@ definitions.ts:39
 #### Returns
 
 `Promise`\<`void`\>
-
-#### Defined in
-
-definitions.ts:40
 
 ***
 
@@ -120,6 +114,8 @@ definitions.ts:40
 
 > **adShow**(`opts`): `Promise`\<`void`\>
 
+Defined in: definitions.ts:41
+
 #### Parameters
 
 ##### opts
@@ -132,15 +128,13 @@ definitions.ts:40
 
 `Promise`\<`void`\>
 
-#### Defined in
-
-definitions.ts:41
-
 ***
 
 ### configRequest()
 
 > **configRequest**(`requestConfig`): `Promise`\<`void`\>
+
+Defined in: definitions.ts:36
 
 #### Parameters
 
@@ -152,15 +146,13 @@ definitions.ts:41
 
 `Promise`\<`void`\>
 
-#### Defined in
-
-definitions.ts:36
-
 ***
 
 ### configure()
 
 > **configure**(`config`): `Promise`\<`void`\>
+
+Defined in: definitions.ts:35
 
 #### Parameters
 
@@ -172,23 +164,17 @@ definitions.ts:36
 
 `Promise`\<`void`\>
 
-#### Defined in
-
-definitions.ts:35
-
 ***
 
 ### requestTrackingAuthorization()
 
 > **requestTrackingAuthorization**(): `Promise`\<\{ `status`: `false` \| [`TrackingAuthorizationStatus`](../enumerations/TrackingAuthorizationStatus.md); \}\>
 
+Defined in: definitions.ts:47
+
 #### Returns
 
 `Promise`\<\{ `status`: `false` \| [`TrackingAuthorizationStatus`](../enumerations/TrackingAuthorizationStatus.md); \}\>
-
-#### Defined in
-
-definitions.ts:47
 
 ***
 
@@ -196,13 +182,11 @@ definitions.ts:47
 
 > **start**(): `Promise`\<`void`\>
 
+Defined in: definitions.ts:34
+
 #### Returns
 
 `Promise`\<`void`\>
-
-#### Defined in
-
-definitions.ts:34
 
 ***
 
@@ -210,10 +194,8 @@ definitions.ts:34
 
 > **trackingAuthorizationStatus**(): `Promise`\<\{ `status`: `false` \| [`TrackingAuthorizationStatus`](../enumerations/TrackingAuthorizationStatus.md); \}\>
 
+Defined in: definitions.ts:44
+
 #### Returns
 
 `Promise`\<\{ `status`: `false` \| [`TrackingAuthorizationStatus`](../enumerations/TrackingAuthorizationStatus.md); \}\>
-
-#### Defined in
-
-definitions.ts:44

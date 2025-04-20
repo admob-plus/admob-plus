@@ -1,11 +1,5 @@
 # @admob-plus/react-native
 
-## References
-
-### default
-
-Renames and re-exports [AdMobPlus](variables/AdMobPlus.md)
-
 ## Enumerations
 
 - [MaxAdContentRating](enumerations/MaxAdContentRating.md)
@@ -29,3 +23,9 @@ Renames and re-exports [AdMobPlus](variables/AdMobPlus.md)
 
 - [AdMobPlus](variables/AdMobPlus.md)
 - [eventEmitter](variables/eventEmitter.md)
+
+## References
+
+### default
+
+Renames and re-exports [AdMobPlus](variables/AdMobPlus.md)
