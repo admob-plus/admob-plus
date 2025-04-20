@@ -27,8 +27,14 @@
         let
           buildToolsVersion = "35.0.1";
           androidComposition = androidenv.composeAndroidPackages {
-            buildToolsVersions = [ buildToolsVersion ];
-            platformVersions = [ "35" ];
+            buildToolsVersions = [
+              "34.0.0"
+              buildToolsVersion
+            ];
+            platformVersions = [
+              "34"
+              "35"
+            ];
             includeEmulator = true;
             includeSources = false;
             includeSystemImages = true;
@@ -48,6 +54,7 @@
           buildInputs =
             with pkgs;
             [
+              biome
               go-task
               lychee
             ]
