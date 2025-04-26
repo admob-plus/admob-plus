@@ -283,7 +283,7 @@
                 <source url="https://cdn.cocoapods.org/" />
             </config>
             <pods use-frameworks="true">
-                <pod name="Google-Mobile-Ads-SDK" spec="~> 11.13.0" />
+                <pod name="Google-Mobile-Ads-SDK" spec="~> 12.3" />
             </pods>
         </podspec>
     </platform>

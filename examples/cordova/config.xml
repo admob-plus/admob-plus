@@ -20,8 +20,8 @@
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
-        <preference name="deployment-target" value="11.0" />
-        <preference name="SwiftVersion" value="5.3" />
+        <preference name="deployment-target" value="12.0" />
+        <preference name="SwiftVersion" value="5.8" />
     </platform>
     <engine name="ios" spec="6.2.0" />
     <engine name="android" spec="9.1.0" />
